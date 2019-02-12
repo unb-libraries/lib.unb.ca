@@ -1,7 +1,7 @@
 dockworker:
   version: 1.0
   instance:
-    project_prefix: LIBWEB
+    project_prefix: LIB
     name: lib.unb.ca
     upstream_image:
       - unblibraries/drupal:alpine-nginx-php7-8.x-composer
