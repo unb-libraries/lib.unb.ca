@@ -71,7 +71,7 @@
     "require": {
         "drupal/bootstrap_barrio": "4.19",
         "drupal/config_update": "1.5",
-        "drupal/core": "8.6.6",
+        "drupal/core": "8.6.9",
         "drupal/externalauth": "1.0",
         "drupal/features": "3.7",
         "farbelous/fontawesome-iconpicker": "~1.3",
