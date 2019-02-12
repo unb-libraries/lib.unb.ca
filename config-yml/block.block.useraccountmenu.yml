@@ -12,8 +12,8 @@ _core:
   default_config_hash: AMFzExHeHYGk5aODZ3JPkoZEJ7uRzp3kTEIETCup_0s
 id: useraccountmenu
 theme: lib_unb_ca
-region: footer
-weight: 0
+region: footer_first
+weight: -2
 provider: null
 plugin: 'system_menu_block:account'
 settings:
