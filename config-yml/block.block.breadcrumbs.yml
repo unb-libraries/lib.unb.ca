@@ -1,0 +1,22 @@
+uuid: dba62b5b-67c4-4f73-a8fd-4d8d7b99e066
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - lib_unb_ca
+_core:
+  default_config_hash: yYQE3W8bEnobjzrrMLMFWCk22GgCsQVrPwlxqPV4w3M
+id: breadcrumbs
+theme: lib_unb_ca
+region: header
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: visible
+visibility: {  }

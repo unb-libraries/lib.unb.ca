@@ -1,0 +1,22 @@
+uuid: 83ffa574-8a65-41cd-9c23-7c4f570005f9
+langcode: en
+status: true
+dependencies:
+  theme:
+    - lib_unb_ca
+_core:
+  default_config_hash: rjlLcjBUHn7STA26GjPGBZJ_SAHE8zE-4KNqNdQ5Zz8
+id: tabs
+theme: lib_unb_ca
+region: content
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

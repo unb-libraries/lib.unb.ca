@@ -1,0 +1,22 @@
+uuid: 18c580cc-9793-4741-bd92-c5718d2caac9
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - lib_unb_ca
+_core:
+  default_config_hash: Nmp5UXwSpgjLhTo96UlcP7dpkjNr5d5jwHZbIjaTePs
+id: mainpagecontent
+theme: lib_unb_ca
+region: content
+weight: 1
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: visible
+visibility: {  }
