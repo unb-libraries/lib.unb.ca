@@ -69,7 +69,7 @@
         }
     ],
     "require": {
-        "drupal/bootstrap_barrio": "4.19",
+        "drupal/bootstrap_barrio": "4.21",
         "drupal/config_update": "1.5",
         "drupal/core": "8.6.9",
         "drupal/externalauth": "1.0",
