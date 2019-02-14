@@ -16,9 +16,13 @@ module:
   field_ui: 0
   file: 0
   filter: 0
+  fontawesome: 0
+  fontawesome_iconpicker: 0
+  fontawesome_menu_icons: 0
   help: 0
   history: 0
   image: 0
+  libraries: 0
   link: 0
   menu_ui: 0
   node: 0
