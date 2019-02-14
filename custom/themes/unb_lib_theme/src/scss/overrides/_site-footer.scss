@@ -1,0 +1,86 @@
+.site-footer {
+    background: $footer-bg;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin-top: 3em;
+    padding-bottom: 0;
+    padding-top: 1em;
+}
+.site-footer .block {
+    border: none;
+    margin: 0;
+}
+.site-footer h2 {
+    color: $footer-heading;
+    font-size: 1.1em;
+}
+.site-footer a.nav-link {
+  @include nav-menu-style;
+}
+.site-footer a.nav-link:focus,
+.site-footer a.nav-link:hover {
+    @include nav-menu-hover-style;
+}
+.site-footer .container > div:not(.footer-middle) a.nav-link::after {
+    color: $red;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f105";
+    margin: 0px 5px;
+    padding-right: 2px;
+    vertical-align: middle;
+}
+.footer-top .block,
+.footer-middle .block,
+.footer-bottom .block {
+    padding: 0;
+}
+
+.footer-top ul {
+    display: block;
+    margin-left: .75em;
+    margin-bottom: 1em;
+}
+
+.footer-top .unb-logo {
+    text-align: right;
+}
+@media (max-width: 991px) {
+    .footer-top .unb-logo {
+        text-align: left;
+    }
+}
+.footer-top .unb-logo a {
+    display: block;
+}
+.footer-top .unb-logo a img {
+    border-bottom: 2px outset transparent;
+    transition: border-color .25s;
+    max-width: 200px;
+}
+.footer-top .unb-logo a:hover img {
+    border-bottom: 2px outset $navbar-dark-hover;
+}
+
+.footer-middle {
+    margin: 1.5em 0;
+}
+.footer-middle h2 {
+    margin-bottom: 0;
+}
+.footer-middle h2,
+.footer-middle ul {
+    display: inline-flex;
+}
+.footer-middle a.nav-link {
+    margin-left: 1em;
+}
+
+.footer-bottom {
+    background: $navbar-dark;
+}
+.footer-bottom-first  li:not(:first-child) {
+    margin-left: 0;
+}
+.footer-bottom-first  li:not(:last-child) {
+    margin-right: 1em;
+}

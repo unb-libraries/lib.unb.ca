@@ -1,0 +1,333 @@
+/**
+ * @file
+ * Subtheme specific CSS.
+ */
+
+/* Import Sass files */
+@import 'import';
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    color: $font-dark;
+    background: $white;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+/**
+ * Links
+ */
+a {
+    color: $link-color;
+    transition: color 0.25s;
+}
+a:focus,
+a:hover {
+    color: $link-hover-color;
+}
+a.nav-link[href$="//unb.ca"]::before {
+    background-image: url(/themes/custom/unb_lib_theme/dist/img/unb-sail-r.png);
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    content: '';
+    display: inline-block;
+    margin-right: 3px;
+    vertical-align: text-bottom;
+    width: 18px;
+    height: 18px;
+}
+a.navbar-brand img {
+    border-bottom: 3px outset transparent;
+    padding: 8px 0;
+}
+a.navbar-brand:hover img {
+    border-bottom: 3px solid $header-hover-color;
+}
+
+/**
+ * Focus ring
+ */
+.focus-ring-overlay {
+    background: rgba(192, 192, 192, 0.2);
+    transition: top 0.25s, left 0.25s, width 0.25s, height 0.25s, opacity 0.125s;
+}
+.focus-ring {
+    outline: 1px dashed $gray-light;
+}
+:focus:not(.focus-ring) {
+    outline: none;
+}
+
+/**
+ * Navbar
+ */
+.navbar {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+#navbar-top {
+    background-color: $navbar-dark;
+}
+.navbar-dark {
+    background: $navbar-dark;
+}
+.footer-bottom-first  ul,
+.menu--utilities-menu ul {
+    margin: .3em 0;
+}html {
+  scroll-behavior: smooth;
+}
+.footer-bottom-first  li,
+.menu--utilities-menu li {
+    display: inline;
+}
+.menu--utilities-menu li:not(:first-child) {
+    margin-left: 8px;
+}
+.menu--utilities-menu li:not(:last-child) {
+    margin-right: 8px;
+}
+.header .menu--utilities-menu li:not(:last-child) {
+    border-right: 1px solid $gray-medium;
+    padding-right: 15px;
+}
+.menu--utilities-menu a.nav-link {
+    @include nav-menu-style;
+}
+.megamenu a {
+    transition: background 0.25s;
+}
+.megamenu a.nav-link:focus,
+.megamenu a.nav-link:hover {
+    @include nav-menu-hover-style;
+}
+
+/**
+ * Accessibility
+ */
+
+/* Skip link */
+#skiptocontent a {
+    background: $skip-link-bg;
+    color: $white;
+    display: block;
+    font-size: 2em;
+    padding: .13em;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    top: -3.5rem;
+    -webkit-transition: all 1s ease-out;
+    transition: all .7s ease-out;
+    width: 100%;
+    z-index: 1000;
+}
+#skiptocontent a:focus {
+    box-shadow: 0 0 5px #000;
+    top: 0;
+    -webkit-transition: top .1s ease-in;
+    transition: top .2s linear;
+}
+.user-logged-in #skiptocontent a:focus {
+    position: relative;
+}
+#skiptocontent a:hover {
+    text-decoration: underline;
+}
+
+/* Superfish WIP
+#superfish-main .sf-depth-1 {
+    color: $black;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+.sf-depth-1 .sf-depth-1 {
+    background: none;
+    border-bottom: 3px solid transparent;
+    padding: 1.5em 2em;
+    text-decoration: none;
+}
+
+#superfish-main a.sf-depth-1:hover,
+#superfish-main li.sfHover > a.sf-depth-1 {
+    border-bottom: 3px solid $header-hover-color;
+}
+#superfish-main li.sf-depth-1 a.sf-depth-1 {
+    transition: background .25s, border .25s;
+}
+.sfHover .sf-clicked {
+    background: #e2e2e2;
+}
+ul.sf-menu.menu ul.sf-multicolumn {
+    background: #373f44;
+    top: 4.6em;
+}
+ul.sf-menu.menu ul.sf-multicolumn .sf-multicolumn-column ol {
+    padding: 15px 20px;
+}
+
+#superfish-main .nolink {
+    color: $header-link-color;
+    font-size: 1.3em;
+    padding: 0.5em 1em 0;
+}
+ul.sf-menu.menu ul a.sf-depth-3 {
+    color: $header-link-color;
+    display: block;
+    max-width: 100%;
+    padding: .5em 1em;
+    text-decoration: none;
+}
+ul.sf-menu.menu ul a.sf-depth-3:hover {
+    background: #333;
+}
+ul.sf-menu.menu ul a.sf-depth-3:before {
+    color: $red;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f105";
+    margin: 0px 3px;
+    vertical-align: middle;
+}
+.navbar-brand {
+    margin-right: 0;
+    min-width: 350px;
+}
+.sf-menu > li,
+.sf-menu > li:hover, .sf-menu > li.sfHover {
+    background: #fff!important;
+}
+*/
+
+/* MEGAMENU */
+#block-topmegamenu {
+    width: 100%;
+}
+ul[role="menubar"] a[role="button"] {
+    color: #000;
+    font-weight: bold;
+    font-size: larger;
+}
+.megamenu-li {
+    position: static;
+}
+.megamenu {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: #373f44;
+}
+.megamenu ul {
+    padding: 0;
+}
+.megamenu ul li {
+    list-style-type: none;
+}
+.megamenu h3 {
+    color: #ddd;
+    font-size: 1.3em;
+}
+
+.megamenu li a.nav-link {
+    @include nav-menu-style;
+}
+.megamenu li a.nav-link:focus,
+.megamenu li a.nav-link:hover {
+    @include nav-menu-hover-style;
+    background: $font-dark;
+}
+.megamenu li a.nav-link:before {
+    color: #f00;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f105";
+    margin: 0px 3px;
+}
+
+.navbar-expand-lg .megamenu-li > .nav-link {
+    border-bottom: 3px solid transparent;
+    padding: 2em 2.5em;
+}
+.navbar-expand-lg li.show > .nav-link,
+.navbar-expand-lg .megamenu-li > .nav-link:focus,
+.navbar-expand-lg .megamenu-li > .nav-link:hover {
+    border-bottom: 3px solid #bd0000;
+}
+li.show > a:first-child {
+    background-image: -webkit-linear-gradient(top,#dbdbdb 0,#e2e2e2 100%);
+    background-image: -o-linear-gradient(top,#dbdbdb 0,#e2e2e2 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#dbdbdb),to(#e2e2e2));
+    background-image: linear-gradient(to bottom,#dbdbdb 0,#e2e2e2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdbdbdb', endColorstr='#ffe2e2e2', GradientType=0);
+    background-repeat: repeat-x;
+    -webkit-box-shadow: inset 0 3px 9px rgba(0,0,0,.075);
+    box-shadow: inset 0 3px 9px rgba(0,0,0,.075);
+}
+
+.dropdown-menu {
+    margin-top: 0;
+}
+.dropdown-item {
+    white-space: normal;
+}
+#hours {
+    background: transparent url(./front-1.jpg) 0 0 no-repeat;
+}
+#hours .row {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding-top: 8px;
+    color: #fff;
+    font-size: .9em;
+}
+#hours ul {
+    padding-left: 7px;
+}
+#hours li {
+    color: #fff;
+    list-style: none;
+    padding-bottom: 3px;
+}
+#hours li a {
+    color: #fff;
+    float: left;
+    clear: both;
+    margin: 0px;
+    border-bottom: 1px dotted #ccc;
+    background-color: transparent;
+    text-decoration: none;
+    outline: none;
+}
+#hours li span {
+    display: block;
+    margin-left: 40%;
+}
+.quickLinksToggler {
+    color: #111;
+}
+#homeLinks #quickLinks {
+    display: inline-block !important;
+    padding-left: 0;
+}
+.utilities li, #quickLinks li {
+    list-style: none;
+    display: inline;
+    width: auto;
+    padding: 0 9px 0 0;
+    margin: 0 7px 0 0;
+    border-right: 1px solid #999;
+}
+
+body:not(.path-frontpage) .quicklinks-toggler,
+.path-frontpage .hours-toggler {
+    display: none;
+}
+.condensed {
+    display:none;
+}
+/* END MEGA */

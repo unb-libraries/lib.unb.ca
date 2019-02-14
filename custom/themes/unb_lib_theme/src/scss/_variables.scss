@@ -1,0 +1,39 @@
+/* VARIABLES */
+
+/* Colors */
+$red: #f00;
+$blue: #007fa3;
+$black: #000;
+$white: #fff;
+$gray-light: #ccc;
+$gray-medium: #999;
+$gray-dark: #373f44;
+$navbar-dark: #282C30;
+$header-link-color: #ddd;
+$header-hover-color: #bd0000;
+$footer-bg: #393E44;
+$footer-heading: #f4f4f4;
+
+/* Links */
+$link-color: $blue;
+$link-decoration: none;
+$link-hover-color: #900;
+$link-hover-decoration: none;
+$skip-link-bg: #bf1722;
+$navbar-dark-hover: #FEC700;
+
+/* Fonts */
+$font-dark: #333;
+
+@mixin nav-menu-style {
+  color: $white;
+  border: none;
+  display: inline-block;
+  line-height: 190%;
+  padding: 0;
+  text-decoration: none;
+  width: 100%;
+}
+@mixin nav-menu-hover-style {
+  color: $navbar-dark-hover;
+}

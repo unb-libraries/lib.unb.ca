@@ -1,0 +1,17 @@
+global-styling:
+  version: VERSION
+  js:
+    https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js: { type: external, minified: true }
+    dist/js/focus-ring.js: {}
+    dist/js/animated-focus-ring.js: {}
+    dist/js/global.js: {}
+  dependencies:
+    - core/jquery
+  css:
+    base:
+      '//fonts.googleapis.com/css?family=Source+Sans+Pro': { type: external }
+      '//use.fontawesome.com/releases/v5.6.3/css/brands.css': { type: external, minified: true }
+    theme:
+      dist/css/style.css: {}
+      dist/css/megafish.css: {}
+      #dist/css/print.css: { media: print }
