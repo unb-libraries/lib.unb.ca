@@ -9,13 +9,6 @@ Feature: Core
   I need to be able to view the site title and login
 
   @api
-    Scenario: Create users
-      Given users:
-      | name     | mail            | status |
-      | Joe User | joe@example.com | 1      |
-      When I visit "admin/people"
-      Then I should see the link "Joe User"
-
     Scenario: Login as a user created during this scenario
       Given users:
       | name      | status |
