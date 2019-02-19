@@ -10,7 +10,6 @@ global-styling:
   css:
     base:
       '//fonts.googleapis.com/css?family=Source+Sans+Pro': { type: external }
-      '//use.fontawesome.com/releases/v5.6.3/css/brands.css': { type: external, minified: true }
     theme:
       dist/css/style.css: {}
       dist/css/megafish.css: {}
