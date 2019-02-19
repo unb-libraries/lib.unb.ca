@@ -12,7 +12,7 @@ _core:
   default_config_hash: AMFzExHeHYGk5aODZ3JPkoZEJ7uRzp3kTEIETCup_0s
 id: unb_lib_theme_useraccountmenu
 theme: unb_lib_theme
-region: top_header_menu
+region: sidebar_second
 weight: -2
 provider: null
 plugin: 'system_menu_block:account'

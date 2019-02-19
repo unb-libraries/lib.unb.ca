@@ -10,8 +10,8 @@ _core:
   default_config_hash: yYQE3W8bEnobjzrrMLMFWCk22GgCsQVrPwlxqPV4w3M
 id: unb_lib_theme_breadcrumbs
 theme: unb_lib_theme
-region: header
-weight: 0
+region: breadcrumb
+weight: -2
 provider: null
 plugin: system_breadcrumb_block
 settings:
