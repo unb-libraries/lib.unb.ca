@@ -76,27 +76,29 @@ a.navbar-brand:hover img {
     background: $navbar-dark;
 }
 .footer-bottom-first  ul,
-.menu--utilities-menu ul {
+.utilities-menu ul {
     margin: .3em 0;
-}html {
-  scroll-behavior: smooth;
 }
+
 .footer-bottom-first  li,
-.menu--utilities-menu li {
+.utilities-menu li {
     display: inline;
 }
-.menu--utilities-menu li:not(:first-child) {
+.utilities-menu li:not(:first-child) {
     margin-left: 8px;
 }
-.menu--utilities-menu li:not(:last-child) {
+.utilities-menu li:not(:last-child) {
     margin-right: 8px;
 }
-.header .menu--utilities-menu li:not(:last-child) {
+.header .utilities-menu li:not(:last-child) {
     border-right: 1px solid $gray-medium;
     padding-right: 15px;
 }
-.menu--utilities-menu a.nav-link {
+.utilities-menu a.nav-link {
     @include nav-menu-style;
+}
+.utilities-menu a.nav-link:hover {
+    @include nav-menu-hover-style;
 }
 .megamenu a {
     transition: background 0.25s;
