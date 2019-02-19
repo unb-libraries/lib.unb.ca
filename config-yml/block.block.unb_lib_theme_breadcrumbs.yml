@@ -1,0 +1,22 @@
+uuid: 377fe2df-f336-4e27-b99f-06f871b0adaf
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - unb_lib_theme
+_core:
+  default_config_hash: yYQE3W8bEnobjzrrMLMFWCk22GgCsQVrPwlxqPV4w3M
+id: unb_lib_theme_breadcrumbs
+theme: unb_lib_theme
+region: header
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }
