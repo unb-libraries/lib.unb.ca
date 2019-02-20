@@ -1,0 +1,9 @@
+.affix {
+  background: $red;
+  box-shadow: 0 4px 4px -1px rgba(17,17,17,0.7);
+  position: fixed!important;
+  transition: all .25s ease-in;
+}
+.affix ul[role="menubar"] a[role="button"] {
+  color: $white;
+}
