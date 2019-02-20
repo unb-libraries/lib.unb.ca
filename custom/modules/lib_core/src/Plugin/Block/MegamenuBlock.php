@@ -9,7 +9,7 @@ use Drupal\Core\Block\BlockBase;
  *
  * @Block(
  *   id = "megamenu_block",
- *   admin_label = @Translation("UNB Libraries megamenu header block"),
+ *   admin_label = @Translation("UNB Libraries Mega Menu"),
  *   category = @Translation("UNB Libraries"),
  * )
  */
