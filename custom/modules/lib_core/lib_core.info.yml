@@ -1,0 +1,5 @@
+name: UNB Libraries Core
+description: Core Features for the UNB Libraries website.
+package: UNB Libraries
+type: module
+core: 8.x

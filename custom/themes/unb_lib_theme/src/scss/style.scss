@@ -40,11 +40,13 @@ a.nav-link[href$="//unb.ca"]::before {
     width: 18px;
     height: 18px;
 }
-a.navbar-brand img {
+a.unblib-logo img {
     border-bottom: 3px outset transparent;
-    padding: 8px 0;
+    padding: 6px 0;
+    max-width: 350px;
 }
-a.navbar-brand:hover img {
+a.unblib-logo:focus img,
+a.unblib-logo:hover img {
     border-bottom: 3px solid $header-hover-color;
 }
 
@@ -97,6 +99,7 @@ a.navbar-brand:hover img {
 .utilities-menu a.nav-link {
     @include nav-menu-style;
 }
+.utilities-menu a.nav-link:focus,
 .utilities-menu a.nav-link:hover {
     @include nav-menu-hover-style;
 }
@@ -206,7 +209,7 @@ ul.sf-menu.menu ul a.sf-depth-3:before {
 */
 
 /* MEGAMENU */
-#block-topmegamenu {
+.block-megamenu-block {
     width: 100%;
 }
 ul[role="menubar"] a[role="button"] {
