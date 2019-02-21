@@ -20,19 +20,14 @@
 .site-footer a.nav-link:hover {
     @include nav-menu-hover-style;
 }
-.site-footer .container > div:not(.footer-middle) a.nav-link::after {
+.site-footer > div:not(.footer-middle) a.nav-link::after {
     color: $red;
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     content: "\f105";
-    margin: 0px 5px;
+    margin: 0 0 0 4px;
     padding-right: 2px;
     vertical-align: middle;
-}
-.footer-top .block,
-.footer-middle .block,
-.footer-bottom .block {
-    padding: 0;
 }
 
 .footer-top ul {
@@ -61,12 +56,6 @@
     border-bottom: 2px outset $navbar-dark-hover;
 }
 
-.footer-middle {
-    margin: 1.5em 0;
-}
-.footer-middle h2 {
-    margin-bottom: 0;
-}
 .footer-middle h2,
 .footer-middle ul {
     display: inline-flex;
@@ -78,9 +67,9 @@
 .footer-bottom {
     background: $navbar-dark;
 }
-.footer-bottom-first  li:not(:first-child) {
+.footer-bottom  li:not(:first-child) {
     margin-left: 0;
 }
-.footer-bottom-first  li:not(:last-child) {
+.footer-bottom  li:not(:last-child) {
     margin-right: 1em;
 }
