@@ -4,6 +4,22 @@
   position: fixed!important;
   transition: all .25s ease-in;
 }
+.affix a,
+.affix a img {
+  transition: all .25s ease-out;
+}
+.affix .unblib-logo img {
+  content: url("/themes/custom/unb_lib_theme/dist/img/unb-libraries-w.png");
+}
 .affix ul[role="menubar"] a[role="button"] {
   color: $white;
+}
+.affix ul[role="menubar"] .show a[role="button"] {
+  color: $black;
+}
+#header .affix li.show > .nav-link,
+#header .affix .megamenu-li > .nav-link:focus,
+#header .affix .megamenu-li > .nav-link:hover,
+.affix a.unblib-logo:focus img, a.unblib-logo:hover img {
+  border-bottom: 3px solid $white;
 }
