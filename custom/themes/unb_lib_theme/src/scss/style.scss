@@ -78,25 +78,25 @@ a.unblib-logo:hover img {
     background: $navbar-dark;
 }
 
-.footer-bottom-first  li,
-.utilities-menu li {
+#navbar-top li,
+.footer-bottom-first  li {
     display: inline;
 }
-.utilities-menu li:not(:first-child) {
+#navbar-top li:not(:first-child) {
     margin-left: 8px;
 }
-.utilities-menu li:not(:last-child) {
+#navbar-top li:not(:last-child) {
     margin-right: 8px;
 }
-.header .utilities-menu li:not(:last-child) {
+#navbar-top li:not(:last-child) {
     border-right: 1px solid $gray-medium;
     padding-right: 15px;
 }
-.utilities-menu a.nav-link {
+#navbar-top a.nav-link {
     @include nav-menu-style;
 }
-.utilities-menu a.nav-link:focus,
-.utilities-menu a.nav-link:hover {
+#navbar-top a.nav-link:focus,
+#navbar-top a.nav-link:hover {
     @include nav-menu-hover-style;
 }
 .megamenu a {
@@ -315,7 +315,7 @@ li.show > a:first-child {
     display: inline-block !important;
     padding-left: 0;
 }
-.utilities li, #quickLinks li {
+#quickLinks li {
     list-style: none;
     display: inline;
     width: auto;

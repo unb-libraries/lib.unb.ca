@@ -68,11 +68,10 @@
 #}
 
 <header id="header" class="header" role="banner" aria-label="Site header">
-    <nav class="navbar py-2" id="navbar-top">
+    <div id="navbar-top" class="d-none d-md-block py-2">
         <div class="container">
-            <div class="d-none d-sm-block utilities-menu">
-                <nav role="navigation">
-                    <ul class="clearfix nav">
+                <nav  role="navigation">
+                    <ul class="clearfix nav justify-content-center justify-content-lg-start">
                         <li class="nav-item">
                             <a href="https://unb.ca" class="nav-link">UNB</a>
                         </li>
@@ -87,19 +86,18 @@
                         </li>
                     </ul>
                 </nav>
-            </div>
         </div>
-    </nav>
+    </div>
 
     <nav id="navbar-main" class="navbar navbar-expand-lg p-0">
         <div class="container">
-            <div class="d-flex col-md-12 col-lg-4 justify-content-center"><a class="unblib-logo" href="https://lib.unb.ca"><img alt="University of New Brunswick; established 1785" class="img-fluid" src="/themes/custom/unb_lib_theme/dist/img/unb-libraries-red-black.png"></a></div>
-            <div class="col-xs-4 navbar-toggler"><a aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="btn btn-danger" data-target="#navbar" data-toggle="collapse" href="#" role="button">Menu <span class="fas fa-bars"></span> </a></div>
-            <div class="col-xs-4 navbar-toggler quicklinks-toggler"><a aria-controls="navbar" aria-expanded="false" aria-label="Toggle QuickLinks" class="btn btn-danger" data-target="#quicklinks" data-toggle="collapse" href="#" role="button">QuickLinks <span class="fas fa-link"></span> </a></div>
+            <div class="d-flex col-md-12 col-lg-4 justify-content-center justify-content-lg-start px-0"><a class="unblib-logo" href="https://lib.unb.ca"><img alt="University of New Brunswick; established 1785" class="img-fluid" src="/themes/custom/unb_lib_theme/dist/img/unb-libraries-red-black.png"></a></div>
+            <div class="col-xs-4 mx-1 navbar-toggler"><a aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="btn btn-danger" data-target="#navbar" data-toggle="collapse" href="#" role="button">Menu <span class="fas fa-bars"></span> </a></div>
+            <div class="col-xs-4 navbar-toggler quicklinks-toggler"><a aria-controls="quicklinks" aria-expanded="false" aria-label="Toggle QuickLinks" class="btn btn-danger" data-target="#quicklinks" data-toggle="collapse" href="#" role="button">QuickLinks <span class="fas fa-link"></span> </a></div>
             <div class="col-xs-4 navbar-toggler hours-toggler"><a aria-controls="navbar" aria-expanded="false" aria-label="Toggle Hours" class="btn btn-danger" data-target="#hours" data-toggle="collapse" href="#" role="button">Hours <span class="fas fa-clock"></span> </a></div>
-            <div class="col-xs-4 navbar-toggler"><a class="btn btn-danger" href="https://lib.unb.ca/help/ask.php">AskUs <span class="fas fa-comments"></span></a></div>
+            <div class="col-xs-4 mx-1 navbar-toggler"><a class="btn btn-danger" href="https://lib.unb.ca/help/ask.php">AskUs <span class="fas fa-comments"></span></a></div>
 
-            <div class="collapse navbar-collapse justify-content-center" id="navbar">
+            <div class="collapse navbar-collapse justify-content-end px-2" id="navbar">
                 <ul class="navbar-nav" role="menubar">
                     <li class="nav-item dropdown megamenu-li"><a aria-expanded="false" aria-haspopup=" true" class="nav-link p-4" data-toggle="dropdown" href="#" id="about" role="button">About</a>
                         <div aria-labelledby="about" class="dropdown-menu megamenu m-0 p-3">
@@ -445,10 +443,10 @@
 
     <div class="footer-bottom py-2">
         <div class="container">
-            <div class="row">
-                <div class="footer-bottom-first col-lg-6 col-md-12">
+            <div class="row justify-content-center justify-content-lg-between">
+                <div class="col-sm-auto flex-lg-fill">
                     <nav role="navigation">
-                        <ul class="clearfix nav">
+                        <ul class="nav">
                             <li class="nav-item">
                                 <a href="https://www.unb.ca/copyright" class="nav-link"><i class="fa fa-copyright" aria-hidden="true"></i> Copyright</a>
                             </li>
@@ -464,9 +462,9 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="footer-bottom-second col-lg-6 col-md-12 d-flex justify-content-lg-end">
+                <div class="col-sm-auto pt-2 pt-lg-0">
                     <nav role="navigation">
-                        <ul class="clearfix nav">
+                        <ul class="nav">
                             <li class="nav-item">
                                 <a href="https://unb.ca" class="nav-link">UNB</a>
                             </li>
