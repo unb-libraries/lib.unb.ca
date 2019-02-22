@@ -20,6 +20,7 @@
 #header .affix li.show > .nav-link,
 #header .affix .megamenu-li > .nav-link:focus,
 #header .affix .megamenu-li > .nav-link:hover,
-.affix a.unblib-logo:focus img, a.unblib-logo:hover img {
+.affix a.unblib-logo:focus img,
+.affix a.unblib-logo:hover img {
   border-bottom: 3px solid $white;
 }
