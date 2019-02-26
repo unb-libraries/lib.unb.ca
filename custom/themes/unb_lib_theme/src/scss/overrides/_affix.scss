@@ -13,8 +13,8 @@
 #header .affix li.show > .nav-link,
 #header .affix .megamenu-li > .nav-link:focus,
 #header .affix .megamenu-li > .nav-link:hover,
-.affix a.branding:focus img,
-.affix a.branding:hover img {
+.affix a.branding:focus,
+.affix a.branding:hover {
   border-bottom: 3px solid $white;
 }
 /* Affix: swap unb lib logo img visibility. */

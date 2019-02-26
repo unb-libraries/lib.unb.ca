@@ -29,6 +29,16 @@ a:focus,
 a:hover {
     color: $link-hover-color;
 }
+a.branding,
+.megamenu-li a {
+    border-bottom: 3px solid transparent;
+}
+a.branding:focus,
+a.branding:hover,
+.megamenu-li a:focus,
+.megamenu-li a:hover {
+    border-bottom: 3px solid $link-hover-color;
+}
 a.nav-link[href$="//unb.ca"]::before {
     background-image: url(/themes/custom/unb_lib_theme/dist/img/unb-sail-r.png);
     background-size: 18px 18px;
@@ -40,16 +50,9 @@ a.nav-link[href$="//unb.ca"]::before {
     width: 18px;
     height: 18px;
 }
-a.branding img {
-    border-bottom: 3px outset transparent;
-    padding: 6px 0;
-    max-width: 350px;
+.branding img {
+    max-width: 320px;
 }
-a.branding:focus img,
-a.branding:hover img {
-    border-bottom: 3px solid $header-hover-color;
-}
-
 /**
  * Focus ring
  */
