@@ -300,7 +300,7 @@ body:not(.path-frontpage) .quicklinks-toggler,
     #header li.show > a[role="button"]:first-child {
         color: $black;
     }
-    #navbar-main .container {
+    #navbar-main div.container {
         max-width: 100%;
     }
     #header .navbar-nav a[role="button"]:after {
@@ -313,7 +313,6 @@ body:not(.path-frontpage) .quicklinks-toggler,
     }
     #header .navbar-nav a[aria-expanded="false"]:after {
         content: "\f078";
-
     }
 }
 /* END BUTTONS */
