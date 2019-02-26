@@ -1,15 +1,12 @@
 .affix {
   background: $red;
   box-shadow: 0 4px 4px -1px rgba(17,17,17,0.7);
-  position: fixed!important;
   transition: all .25s ease-in;
+  position: fixed!important;
 }
 .affix a,
 .affix a img {
   transition: all .25s ease-out;
-}
-.affix .unblib-logo img {
-  content: url("/themes/custom/unb_lib_theme/dist/img/unb-libraries-w.png");
 }
 .affix ul[role="menubar"] a[role="button"] {
   color: $white;
@@ -20,7 +17,20 @@
 #header .affix li.show > .nav-link,
 #header .affix .megamenu-li > .nav-link:focus,
 #header .affix .megamenu-li > .nav-link:hover,
-.affix a.unblib-logo:focus img,
-.affix a.unblib-logo:hover img {
+.affix a.branding:focus img,
+.affix a.branding:hover img {
   border-bottom: 3px solid $white;
+}
+/* Affix: swap unb lib logo img visibility. */
+.unblib-logo {
+  display: inline;
+}
+.unblib-logo-affix {
+  display: none;
+}
+.affix .unblib-logo {
+  display: none;
+}
+.affix .unblib-logo-affix {
+  display: inline;
 }
