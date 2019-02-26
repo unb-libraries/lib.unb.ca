@@ -4,10 +4,6 @@
   transition: all .25s ease-in;
   position: fixed!important;
 }
-.affix a,
-.affix a img {
-  transition: all .25s ease-out;
-}
 .affix ul[role="menubar"] a[role="button"] {
   color: $white;
 }
