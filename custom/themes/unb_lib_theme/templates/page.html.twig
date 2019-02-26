@@ -91,12 +91,16 @@
     <nav id="navbar-main" class="navbar navbar-expand-lg px-0">
         <div class="container">
             <div class="d-flex flex-fill justify-content-center">
-                <a class="branding py-2" href="https://lib.unb.ca">
+                {% if (is_front) %}
+                    <div class="branding py-2">
+                {% else %}
+                    <a class="branding py-2" href="https://lib.unb.ca">
+                {% endif %}
                     <h1 class="m-0">
                         <img alt="UNB Libraries" class="img-fluid unblib-logo" src="/themes/custom/unb_lib_theme/dist/img/unb-libraries-red-black.png">
                         <img alt="UNB Libraries" class="img-fluid unblib-logo-affix" src="/themes/custom/unb_lib_theme/dist/img/unb-libraries-w.png" />
                     </h1>
-                </a>
+                </{{ (is_front) ? 'div' : 'a' }}>
             </div>
             <div class="d-flex d-lg-none mx-0 p-2 w-100 border-bottom rounded-top button-toggles">
                 <ul class="container nav nav-pills justify-content-between">
