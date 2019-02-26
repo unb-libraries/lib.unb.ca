@@ -268,7 +268,11 @@ body:not(.path-frontpage) .quicklinks-toggler,
     display:none;
 }
 /* END MEGA */
-/* Extra-small to medium width buttons */
+/* HEADER BUTTONS */
+.btn-red {
+    color: $white;
+    background-color: $red;
+}
 .button-toggles {
     background: $red;
 }
@@ -276,9 +280,11 @@ body:not(.path-frontpage) .quicklinks-toggler,
 #header .button-toggles .btn:active {
     border: 1px solid $white;
 }
+.button-toggles .btn-red:focus {
+    box-shadow: none;
+}
 .button-toggles .btn[aria-expanded="true"] {
     background: $navbar-dark;
-    color: $white;
 }
 #header .button-toggles .btn:focus,
 #header .button-toggles .btn:hover {
@@ -315,4 +321,4 @@ body:not(.path-frontpage) .quicklinks-toggler,
         content: "\f078";
     }
 }
-/* END BUTTONS */
+/* END HEADER BUTTONS */
