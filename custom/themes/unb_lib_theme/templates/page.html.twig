@@ -90,38 +90,39 @@
 
     <nav id="navbar-main" class="navbar navbar-expand-lg px-0">
         <div class="container">
-            <div class="d-flex flex-fill justify-content-center">
+            <div class="d-flex flex-fill justify-content-center px-4">
                 {% if (is_front) %}
                     <div class="branding py-2">
                 {% else %}
                     <a class="branding py-2" href="https://lib.unb.ca">
                 {% endif %}
                     <h1 class="m-0">
-                        <img alt="UNB Libraries" class="img-fluid unblib-logo" src="/themes/custom/unb_lib_theme/dist/img/unb-libraries-red-black.png">
+                        <img alt="UNB Libraries" class="img-fluid unblib-logo" src="/themes/custom/unb_lib_theme/dist/img/unb-libraries-red-black.png" />
                         <img alt="UNB Libraries" class="img-fluid unblib-logo-affix" src="/themes/custom/unb_lib_theme/dist/img/unb-libraries-w.png" />
                     </h1>
                 </{{ (is_front) ? 'div' : 'a' }}>
             </div>
-            <div class="d-flex d-lg-none mx-0 p-2 w-100 border-bottom rounded-top button-toggles">
+            <div id="nav-btn" class="d-flex d-lg-none rounded-top border-bottom w-100 mx-0 p-2">
                 <ul class="container nav nav-pills justify-content-between">
-                    <li class="nav-item flex-fill text-center menu-toggler">
-                        <button class="btn btn-red" aria-haspopup="menu" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" data-target="#navbar" data-toggle="collapse" role="button">Menu <span class="fas fa-bars"></span> </button>
+                    <li class="nav-item flex-fill text-center">
+                        <button id="btn-menu" class="btn btn-red collspased" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">Menu <span class="fas fa-bars"></span> </button>
                     </li>
                     <li class="nav-item flex-fill text-center quicklinks-toggler">
-                        <button class="btn btn-red" aria-controls="quicklinks" aria-expanded="false" aria-label="Toggle QuickLinks"  data-target="#quicklinks" data-toggle="d-none" role="button">QuickLinks <span class="fas fa-link"></span></button>
+                        <button id="btn-quicklinks" class="btn btn-red" aria-controls="quicklinks" type="button" aria-expanded="false" aria-label="Toggle QuickLinks" data-target="#quicklinks" aria-label="Toggle QuickLinks">QuickLinks <span class="fas fa-link"></span></button>
                     </li>
-                    <li class="nav-item flex-fill text-center hours-toggler">
-                        <button class="btn btn-red" aria-controls="hours" aria-expanded="false" aria-label="Toggle Hours" data-target="#hours" data-toggle="collapse" role="button">Hours <span class="fas fa-clock"></span></button>
+                    <li class="nav-item flex-fill text-center">
+                        <button id="btn-hours" class="btn btn-red" aria-controls="hours" aria-expanded="false" data-target="#hours" data-toggle="collapse" aria-label="Toggle Hours">Hours <span class="fas fa-clock"></span></button>
                     </li>
-                    <li class="nav-item flex-fill text-center askus-toggler">
-                        <button class="btn btn-red" href="https://lib.unb.ca/help/ask.php">AskUs <span class="fas fa-comments"></span></button>
+                    <li class="nav-item flex-fill text-center">
+                        <a id="btn-askus" class="btn btn-red" href="https://lib.unb.ca/help/ask.php">AskUs <span class="fas fa-comments"></span></a>
                     </li>
                 </ul>
             </div>
-            <div class="collapse navbar-collapse" id="navbar">
+            <div id="navbar" class="collapse navbar-collapse justify-content-end w-100 px-lg-4">
                 <ul class="navbar-nav rounded-bottom p-1 p-lg-0" role="menubar">
-                    <li class="nav-item dropdown megamenu-li"><a aria-expanded="false" aria-haspopup="true" class="nav-link p-3 p-lg-4" data-toggle="dropdown" href="#" id="about" role="button">About</a>
-                        <div aria-labelledby="about" class="dropdown-menu megamenu m-0 pb-3">
+                    <li class="nav-item dropdown megamenu-li">
+                        <a id="btn-about" class="nav-link p-3 p-lg-4" href="#" role="button" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown">About</a>
+                        <div aria-labelledby="navbar btn-about" class="dropdown-menu megamenu m-0 pb-3">
                             <div class="container"><div class="row justify-content-lg-around">
                                 <div class="col-sm-12 col-md-6 col-lg-4 col-xl-auto">
                                     <h3 class="mt-4">General</h3>
@@ -159,8 +160,9 @@
                             </div></div>
                         </div>
                     </li>
-                    <li class="nav-item dropdown megamenu-li"><a aria-expanded="false" aria-haspopup="true" class="nav-link p-3 p-lg-4" data-toggle="dropdown" href="#" id="resources" role="button">Resources</a>
-                        <div aria-labelledby="resources" class="dropdown-menu megamenu m-0 pb-3">
+                    <li class="nav-item dropdown megamenu-li">
+                        <a id="btn-resources" class="nav-link p-3 p-lg-4" href="#" role="button" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown">Resources</a>
+                        <div aria-labelledby="navbar btn-resources" class="dropdown-menu megamenu m-0 pb-3">
                             <div class="container"><div class="row justify-content-lg-around">
                                 <div class="col-sm-12 col-md-6 col-lg-4 col-xl-auto">
                                     <h3 class="mt-4">Resources</h3>
@@ -214,8 +216,9 @@
                             </div></div>
                         </div>
                     </li>
-                    <li class="nav-item dropdown megamenu-li"><a aria-expanded="false" aria-haspopup="true" class="nav-link p-3 p-lg-4" data-toggle="dropdown" href="#" id="services" role="button">Services</a>
-                        <div aria-labelledby="services" class="dropdown-menu megamenu m-0 pb-3">
+                    <li class="nav-item dropdown megamenu-li">
+                        <a id="btn-services" class="nav-link p-3 p-lg-4" href="#" role="button" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown">Services</a>
+                        <div aria-labelledby="navbar btn-services" class="dropdown-menu megamenu m-0 pb-3">
                             <div class="container"><div class="row justify-content-around">
                                 <div class="col-sm-12 col-md-6 col-lg-4 col-xl-auto">
                                     <h3 class="mt-4">Help with</h3>
@@ -259,8 +262,9 @@
                             </div></div>
                         </div>
                     </li>
-                    <li class="nav-item dropdown megamenu-li"><a aria-expanded="false" aria-haspopup="true" class="nav-link p-3 p-lg-4" data-toggle="dropdown" href="#" id="faculty" role="button">Faculty</a>
-                        <div aria-labelledby="faculty" class="dropdown-menu megamenu m-0 pb-3">
+                    <li class="nav-item dropdown megamenu-li">
+                        <a id="btn-faculty" class="nav-link p-3 p-lg-4" href="#" role="button" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown">Faculty</a>
+                        <div aria-labelledby="navbar btn-faculty" class="dropdown-menu megamenu m-0 pb-3">
                             <div class="container"><div class="row justify-content-around">
                                 <div class="col-sm-12 col-md-6 col-lg-4 col-xl-auto">
                                     <h3 class="mt-4">Teaching</h3>
@@ -299,8 +303,9 @@
                             </div></div>
                         </div>
                     </li>
-                    <li class="nav-item dropdown megamenu-li"><a aria-expanded="false" aria-haspopup="true" class="nav-link p-3 p-lg-4" data-toggle="dropdown" href="#" id="help" role="button">Help</a>
-                        <div aria-labelledby="help" class="dropdown-menu megamenu m-0 pb-3">
+                    <li class="nav-item dropdown megamenu-li">
+                        <a id="btn-help" class="nav-link p-3 p-lg-4" href="#" role="button" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown">Help</a>
+                        <div aria-labelledby="navbar btn-help" class="dropdown-menu megamenu m-0 pb-3">
                             <div class="container"><div class="row justify-content-around">
                                 <div class="col-sm-12 col-md-6 col-xl-auto">
                                     <h3 class="mt-4">Research &amp; Writing</h3>

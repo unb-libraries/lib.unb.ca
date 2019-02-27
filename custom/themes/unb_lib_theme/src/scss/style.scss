@@ -276,21 +276,21 @@ body:not(.path-frontpage) .quicklinks-toggler,
     color: $white;
     background-color: $red;
 }
-.button-toggles {
+#nav-btn {
     background: $red;
 }
-#header .button-toggles .btn,
-#header .button-toggles .btn:active {
+#nav-btn .btn,
+#nav-btn .btn:active {
     border: 1px solid $white;
 }
-.button-toggles .btn-red:focus {
+#nav-btn .btn-red:focus {
     box-shadow: none;
 }
-.button-toggles .btn[aria-expanded="true"] {
+#nav-btn .btn[aria-expanded="true"] {
     background: $navbar-dark;
 }
-#header .button-toggles .btn:focus,
-#header .button-toggles .btn:hover {
+#nav-btn .btn:focus,
+#nav-btn .btn:hover {
     background: $navbar-dark;
     color: $navbar-dark-hover;
 }
