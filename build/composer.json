@@ -96,7 +96,7 @@
     "require": {
         "ckeditor/colorbutton": "~4.7",
         "ckeditor/panelbutton": "~4.7",
-        "drupal/bootstrap_barrio": "4.21",
+        "drupal/bootstrap_barrio": "4.22",
         "drupal/colorbutton": "1.1",
         "drupal/config_update": "1.5",
         "drupal/core": "8.6.10",
