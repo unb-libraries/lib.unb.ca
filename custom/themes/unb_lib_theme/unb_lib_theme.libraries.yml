@@ -12,5 +12,4 @@ global-styling:
       '//fonts.googleapis.com/css?family=Source+Sans+Pro': { type: external }
     theme:
       dist/css/style.css: {}
-      dist/css/megafish.css: {}
       #dist/css/print.css: { media: print }
