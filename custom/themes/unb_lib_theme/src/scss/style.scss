@@ -191,15 +191,16 @@ ul[role="menubar"] a[role="button"] {
     margin: 0px 3px;
 }
 
-.navbar-expand-lg .megamenu-li > .nav-link {
+.megamenu-li > .nav-link {
     border-bottom: 3px solid transparent;
 }
-.navbar-expand-lg li.show > .nav-link,
-.navbar-expand-lg .megamenu-li > .nav-link:focus,
-.navbar-expand-lg .megamenu-li > .nav-link:hover {
+
+.megamenu-li > .nav-link:focus,
+.megamenu-li > .nav-link:hover {
     border-bottom: 3px solid #bd0000;
+    color: $gray-medium;
 }
-li.show > a:first-child {
+.navbar-nav li.show > a:first-child {
     background-image: -webkit-linear-gradient(top,#dbdbdb 0,#e2e2e2 100%);
     background-image: -o-linear-gradient(top,#dbdbdb 0,#e2e2e2 100%);
     background-image: -webkit-gradient(linear,left top,left bottom,from(#dbdbdb),to(#e2e2e2));
@@ -208,6 +209,8 @@ li.show > a:first-child {
     background-repeat: repeat-x;
     -webkit-box-shadow: inset 0 3px 9px rgba(0,0,0,.075);
     box-shadow: inset 0 3px 9px rgba(0,0,0,.075);
+    border-bottom: 3px solid #bd0000;
+    color: $black;
 }
 
 .dropdown-menu {
