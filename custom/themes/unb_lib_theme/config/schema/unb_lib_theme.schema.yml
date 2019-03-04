@@ -1,5 +1,5 @@
-# Schema for the configuration files of the Bootstrap Barrio Subtheme.
+# Required to validate default theme settings.
 
 unb_lib_theme.settings:
   type: theme_settings
-  label: 'UNB Libraries Subtheme settings'
+  label: 'UNB Libraries Theme settings'
