@@ -12,7 +12,7 @@ use Drupal\Core\Form\FormStateInterface;
  */
 function unb_lib_theme_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
   // Create a section for unb lib header banner images.
-  $form['lib_banner_images'] = [
+  $form['lib_header_banner'] = [
     '#type' => 'details',
     '#title' => t('Banner Images'),
     '#description' => t('Banner images to be used for in the theme header.'),
@@ -20,8 +20,8 @@ function unb_lib_theme_form_system_theme_settings_alter(&$form, FormStateInterfa
     '#open' => TRUE,
   ];
 
-  $form['lib_banner_images']['images'] = [
-    '#default_value'  => theme_get_setting('images'),
+  $form['lib_header_banner']['banner_images'] = [
+    '#default_value' => theme_get_setting('banner_images'),
     '#type' => 'managed_file',
     '#upload_location' => 'public://banner-images/',
     '#multiple' => TRUE,
