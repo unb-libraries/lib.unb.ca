@@ -338,6 +338,11 @@
             </div>
         </div>
     </nav>
+    {% if header_banner_img %}
+        <div class="container d-none d-md-block">
+            <div id="header-banner" class="row no-gutters" style="background: url({{ header_banner_img }})"></div>
+        </div>
+    {% endif %}
 </header>
 
 {% block content %}
