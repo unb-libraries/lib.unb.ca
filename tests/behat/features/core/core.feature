@@ -14,8 +14,9 @@ Feature: Core
       | name      | status |
       | Test user |      1 |
       When I am logged in as "Test user"
-      Then I should see the link "Test user"
+      Then I should see the text "Member for"
 
     Scenario: Not logged in
       Given I am not logged in
+      When I visit "user/login"
       Then I should see the link "Log in"
