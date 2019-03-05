@@ -14,7 +14,7 @@ Feature: Core
       | name      | status |
       | Test user |      1 |
       When I am logged in as "Test user"
-      Then I should see the link "Log out"
+      Then I should see the link "Test user"
 
     Scenario: Not logged in
       Given I am not logged in
