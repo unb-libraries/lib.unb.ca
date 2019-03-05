@@ -9,14 +9,6 @@ Feature: Core
   I need to be able to view the site title and login
 
   @api
-    Scenario: Login as a user created during this scenario
-      Given users:
-      | name      | status |
-      | Test user |      1 |
-      When I am logged in as "Test user"
-      Then I should see the text "Member for"
-
-    Scenario: Not logged in
-      Given I am not logged in
-      When I visit "user/login"
-      Then I should see the link "Log in"
+    Scenario: Test login form
+      Given I am on "/user"
+      Then I should see "Log in"
