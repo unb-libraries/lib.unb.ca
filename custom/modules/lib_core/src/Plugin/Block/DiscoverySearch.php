@@ -20,7 +20,7 @@ class DiscoverySearch extends BlockBase {
    */
   public function build() {
     $html = '
-<div class="container">
+<div id="discovery-search">
     <ul id="tabs" class="nav nav-tabs" role="tablist">
         <li class="nav-item">
             <a id="tab-reserves" href="#pane-reserves" class="nav-link active" data-toggle="tab" role="tab">Reserves</a>
