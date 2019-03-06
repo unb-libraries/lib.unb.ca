@@ -333,6 +333,11 @@ ul[role="menubar"] a[role="button"] {
     background: $navbar-dark;
     color: $navbar-dark-hover;
 }
+/* END MEGA */
+
+#main {
+    margin-top: 1em;
+}
 @media (max-width: 991px) {
     ul[role="menubar"] {
         background: $red;
