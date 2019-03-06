@@ -1,0 +1,31 @@
+uuid: d7da670e-efac-4df2-b299-fc1d3d2e256e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic_block:f68c38f2-9480-4019-9e60-9c3550676eba'
+  module:
+    - block_content
+    - system
+  theme:
+    - unb_lib_theme
+id: discoverysearch
+theme: unb_lib_theme
+region: content
+weight: 0
+provider: null
+plugin: 'block_content:f68c38f2-9480-4019-9e60-9c3550676eba'
+settings:
+  id: 'block_content:f68c38f2-9480-4019-9e60-9c3550676eba'
+  label: 'Discovery search'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
