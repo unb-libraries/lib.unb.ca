@@ -307,14 +307,9 @@ ul[role="menubar"] a[role="button"] {
     border-top: 1px solid $gray-medium;
     height: 200px;
 }
-body:not(.path-frontpage) .quicklinks-toggler,
-.path-frontpage .hours-toggler {
-    display: none;
-}
 .condensed {
     display:none;
 }
-/* END MEGA */
 /* HEADER BUTTONS */
 .btn-red {
     color: $white;
