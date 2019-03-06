@@ -5,8 +5,10 @@
  */
 function unb_lib_theme_preprocess_page(&$variables) {
     $fids = theme_get_setting('banner_images');
-    $file_storage = \Drupal::entityTypeManager()->getStorage('file');
-    shuffle($fids);
-    $rand_banner_image = $file_storage->load($fids[0]);
-    $variables['header_banner_img'] = $rand_banner_image->url();
+    if (sizeof($fids) > 0) {
+        $file_storage = \Drupal::entityTypeManager()->getStorage('file');
+        shuffle($fids);
+        $rand_banner_image = $file_storage->load($fids[0]);
+        $variables['header_banner_img'] = $rand_banner_image->url();
+    }
 }
