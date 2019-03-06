@@ -1,0 +1,26 @@
+uuid: 73144542-f47e-43b2-bbc4-f032b953cbe8
+langcode: en
+status: true
+dependencies:
+  module:
+    - lib_core
+    - system
+  theme:
+    - unb_lib_theme
+id: unblibrariesdiscoverysearch
+theme: unb_lib_theme
+region: content
+weight: 0
+provider: null
+plugin: discovery_search_block
+settings:
+  id: discovery_search_block
+  label: 'UNB Libraries Discovery Search'
+  provider: lib_core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
