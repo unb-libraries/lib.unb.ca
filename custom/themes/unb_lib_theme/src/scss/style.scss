@@ -14,6 +14,43 @@ body {
     background: $white;
     font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+
+/* WIP Discovery Search */
+.nav-tabs {
+  display:none;
+}
+.nav-tabs .nav-item {
+    z-index: 9;
+}
+.card-body {
+    margin-top: -1px;
+}
+@media(min-width:992px) {
+  .nav-tabs {
+    display: flex;
+  }
+
+  .card {
+    border: none;
+  }
+
+  .card .card-header {
+    display:none;
+  }
+
+  .card .collapse{
+    display:block;
+  }
+}
+
+@media(max-width:991px){
+  .tab-content > .tab-pane {
+    display: block !important;
+    opacity: 1;
+  }
+}
+/* END Discovery Search */
+
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
