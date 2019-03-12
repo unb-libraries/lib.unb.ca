@@ -89,7 +89,7 @@ class QuickLinks extends BlockBase {
       '#attributes' => [
         'class' => [
           'inline-list',
-        ]
+        ],
       ],
       '#items' => $quicklinks,
     ];
