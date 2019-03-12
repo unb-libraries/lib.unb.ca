@@ -15,49 +15,6 @@ body {
     font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-/* WIP Discovery Search */
-.nav-tabs {
-  display:none;
-}
-.nav-tabs .nav-item {
-    z-index: 9;
-}
-#discovery-search {
-    flex-wrap: wrap;
-    margin-top: -1px;
-}
-#discovery-search .card-header h3 {
-    font-size: 1.2em;
-}
-@media(min-width: 992px) {
-    .nav-tabs {
-        display: flex;
-    }
-    .card {
-        border: none;
-    }
-    .card .card-header {
-        display: none;
-    }
-    .card .collapse{
-        display: block;
-    }
-    #discovery-search {
-        border: 1px solid $gray-300;
-    }
-}
-
-@media(max-width: 991px){
-    #discovery-search {
-        border: none;
-    }
-    .tab-content > .tab-pane {
-        display: block !important;
-        opacity: 1;
-    }
-}
-/* END Discovery Search */
-
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
@@ -188,7 +145,7 @@ a.nav-link[href$="//unb.ca"]::before {
 }
 
 
-/* MEGAMENU */
+/* MegaMenu */
 .block-megamenu-block {
     width: 100%;
 }
@@ -324,7 +281,7 @@ ul[role="menubar"] a[role="button"] {
 .condensed {
     display:none;
 }
-/* HEADER BUTTONS */
+/* Header Buttons */
 .btn-red {
     color: $white;
     background-color: $red;
@@ -347,11 +304,8 @@ ul[role="menubar"] a[role="button"] {
     background: $navbar-dark;
     color: $navbar-dark-hover;
 }
-/* END MEGA */
+/* END MegaMenu */
 
-#main {
-    margin-top: 1em;
-}
 @media (max-width: 991px) {
     ul[role="menubar"] {
         background: $red;
@@ -385,4 +339,80 @@ ul[role="menubar"] a[role="button"] {
         content: "\f078";
     }
 }
-/* END HEADER BUTTONS */
+/* END Header Buttons */
+
+/* Add larger breakpoint option for container */
+@media (min-width: 1366px) {
+    .container {
+        max-width: 1336px;
+    }
+}
+
+/* DEV TO MOVE TO lib_unb_ca_theme WHEN READY */
+
+#main {
+    margin-top: .5em;
+}
+
+/* WIP Discovery Search */
+.nav-tabs {
+    display:none;
+}
+.nav-tabs .nav-item {
+    z-index: 9;
+}
+#discovery-search {
+    flex-wrap: wrap;
+    margin-top: -1px;
+}
+#discovery-search .card-header h3 {
+    font-size: 1.2em;
+}
+@media(max-width: 991px) {
+    #discovery-search {
+        border: none;
+    }
+    .tab-content > .tab-pane {
+        display: block !important;
+        opacity: 1;
+    }
+}
+@media(min-width: 992px) {
+    .nav-tabs {
+        display: flex;
+    }
+    .card {
+        border: none;
+    }
+    .card .card-header {
+        display: none;
+    }
+    .card .collapse{
+        display: block;
+    }
+    #discovery-search {
+        border: 1px solid $gray-300;
+    }
+}
+/* END Discovery Search */
+
+/* QuickLinks */
+@media (min-width: 992px) {
+    /* Force visible on large display */
+    #quicklinks-wrapper:not(.show) {
+        display: block;
+    }
+}
+#quicklinks-wrapper h3 {
+    font-size: 1rem;
+}
+#quicklinks-wrapper ul.list-inline li {
+    padding-top: 0;
+}
+#quicklinks-wrapper ul.list-inline li:not(:last-child) {
+    border-right: 1px solid $gray-medium;
+}
+/* END QuickLinks */
+
+/* END DEV */
+
