@@ -83,12 +83,13 @@ class QuickLinks extends BlockBase {
       '#title' => 'QuickLinks:',
       '#theme' => 'item_list',
       '#list_type' => 'ul',
-      '#wrapper_attributes' => [
-        'id' => 'quicklink-wrapper',
+      '#context' => [
+        'list_style' => 'inline',
       ],
-      '#attributes' => [
+      '#wrapper_attributes' => [
+        'id' => 'quicklinks-wrapper',
         'class' => [
-          'inline-list',
+          'collapse',
         ],
       ],
       '#items' => $quicklinks,
