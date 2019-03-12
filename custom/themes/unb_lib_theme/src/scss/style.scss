@@ -235,6 +235,13 @@ ul[role="menubar"] a[role="button"] {
     margin: 0px 3px;
 }
 
+@media (min-width:992px) {
+    .megamenu-li {
+        margin-left: .5%;
+        margin-right: .5%;
+        width: 19%;
+    }
+}
 .megamenu-li > .nav-link {
     border-bottom: 3px solid transparent;
 }
