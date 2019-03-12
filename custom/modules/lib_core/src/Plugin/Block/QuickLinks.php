@@ -25,7 +25,7 @@ class QuickLinks extends BlockBase {
       [
         '#wrapper_attributes' => [
           'class' => [
-            'list-item-inline',
+            'list-inline-item',
           ],
         ],
         '#children' => Link::fromTextAndUrl(
@@ -36,7 +36,7 @@ class QuickLinks extends BlockBase {
       [
         '#wrapper_attributes' => [
           'class' => [
-            'list-item-inline',
+            'list-inline-item',
           ],
         ],
         '#children' => Link::fromTextAndUrl(
@@ -47,7 +47,7 @@ class QuickLinks extends BlockBase {
       [
         '#wrapper_attributes' => [
           'class' => [
-            'list-item-inline',
+            'list-inline-item',
           ],
         ],
         '#children' => Link::fromTextAndUrl(
@@ -58,7 +58,7 @@ class QuickLinks extends BlockBase {
       [
         '#wrapper_attributes' => [
           'class' => [
-            'list-item-inline',
+            'list-inline-item',
           ],
         ],
         '#children' => Link::fromTextAndUrl(
@@ -69,7 +69,7 @@ class QuickLinks extends BlockBase {
       [
         '#wrapper_attributes' => [
           'class' => [
-            'list-item-inline',
+            'list-inline-item',
           ],
         ],
         '#children' => Link::fromTextAndUrl(
@@ -80,7 +80,7 @@ class QuickLinks extends BlockBase {
     ];
 
     $render_array_list = [
-      '#title' => 'QuickLinks',
+      '#title' => 'QuickLinks:',
       '#theme' => 'item_list',
       '#list_type' => 'ul',
       '#wrapper_attributes' => [
