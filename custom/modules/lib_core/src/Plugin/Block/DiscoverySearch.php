@@ -23,25 +23,39 @@ class DiscoverySearch extends BlockBase {
 
     <ul id="tabs" class="flex-fill nav nav-tabs" role="tablist">
         <li class="nav-item">
-            <a id="tab-reserves" href="#pane-reserves" class="nav-link active" data-toggle="tab" role="tab">Reserves</a>
+            <a id="tab-reserves" href="#pane-reserves" class="nav-link active" data-toggle="tab" role="tab">
+                Reserves
+            </a>
         </li>
         <li class="nav-item">
-            <a id="tab-catalogue" href="#pane-catalogue" class="nav-link" data-toggle="tab" role="tab">Catalogue</a>
+            <a id="tab-catalogue" href="#pane-catalogue" class="nav-link" data-toggle="tab" role="tab">
+                Catalogue
+            </a>
         </li>
         <li class="nav-item">
-            <a id="tab-databases" href="#pane-databases" class="nav-link" data-toggle="tab" role="tab">Databases</a>
+            <a id="tab-databases" href="#pane-databases" class="nav-link" data-toggle="tab" role="tab">
+               Article Databases
+            </a>
         </li>
         <li class="nav-item">
-            <a id="tab-journals" href="#pane-journals" class="nav-link" data-toggle="tab" role="tab">Journals</a>
+            <a id="tab-journals" href="#pane-journals" class="nav-link" data-toggle="tab" role="tab">
+                Journals &amp; Newspapers
+            </a>
         </li>
         <li class="nav-item">
-            <a id="tab-encyclopedias" href="#pane-encyclopedias" class="nav-link" data-toggle="tab" role="tab">e-Encyclopedias</a>
+            <a id="tab-encyclopedias" href="#pane-encyclopedias" class="nav-link" data-toggle="tab" role="tab">
+                e-Encyclopedias, etc.
+            </a>
         </li>
         <li class="nav-item">
-            <a id="tab-ebooks" href="#pane-ebooks" class="nav-link" data-toggle="tab" role="tab">e-Books</a>
+            <a id="tab-ebooks" href="#pane-ebooks" class="nav-link" data-toggle="tab" role="tab">
+                e-Books
+            </a>
         </li>
         <li class="nav-item">
-            <a id="tab-videos" href="#pane-videos" class="nav-link" data-toggle="tab" role="tab">Videos</a>
+            <a id="tab-videos" href="#pane-videos" class="nav-link" data-toggle="tab" role="tab">
+                Videos
+            </a>
         </li>
     </ul>
     <div id="discovery-search" class="d-flex">
@@ -134,7 +148,7 @@ class DiscoverySearch extends BlockBase {
             <div class="card-header p-0" role="tab" id="heading-databases">
                 <h3 class="m-0">
                     <a class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-databases" aria-expanded="false" aria-controls="collapse-databases">
-                        Databases
+                       Article Databases
                     </a>
                 </h5>
             </div>
@@ -473,7 +487,7 @@ class DiscoverySearch extends BlockBase {
             <div class="card-header p-0" role="tab" id="heading-journals">
                 <h3 class="m-0">
                     <a class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-journals" aria-expanded="false" aria-controls="collapse-journals">
-                        Journals
+                        Journals &amp; Newspapers
                     </a>
                 </h5>
             </div>
@@ -533,7 +547,7 @@ class DiscoverySearch extends BlockBase {
             <div class="card-header p-0" role="tab" id="heading-encyclopedias">
                 <h3 class="m-0">
                     <a class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-encyclopedias" aria-expanded="false" aria-controls="collapse-encyclopedias">
-                        e-Encyclopedias
+                        e-Encyclopedias, etc.
                     </a>
                 </h5>
             </div>
