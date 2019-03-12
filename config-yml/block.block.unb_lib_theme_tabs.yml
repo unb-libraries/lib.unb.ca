@@ -9,7 +9,7 @@ _core:
 id: unb_lib_theme_tabs
 theme: unb_lib_theme
 region: content
-weight: -1
+weight: -2
 provider: null
 plugin: local_tasks_block
 settings:

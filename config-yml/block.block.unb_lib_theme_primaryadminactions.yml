@@ -9,7 +9,7 @@ _core:
 id: unb_lib_theme_primaryadminactions
 theme: unb_lib_theme
 region: content
-weight: 0
+weight: -1
 provider: null
 plugin: local_actions_block
 settings:
