@@ -308,14 +308,13 @@ ul[role="menubar"] a[role="button"] {
 
 @media (max-width: 991px) {
     ul[role="menubar"] {
-        background: $red;
+        background: $navbar-dark;
     }
     ul[role="menubar"] a[role="button"] {
         color: $white;
     }
     #header ul[role="menubar"] a[role="button"]:focus,
     #header ul[role="menubar"] a[role="button"]:hover {
-        border-bottom: 3px solid $white;
         color: $white;
     }
     #header li.show > a[role="button"]:first-child {
