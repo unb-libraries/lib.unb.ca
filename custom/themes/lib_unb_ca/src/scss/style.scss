@@ -1,2 +1,66 @@
 // If you wish to compile/extend Bootstrap then uncomment line below and disable subtheme CDN
-@import '../../../../../vendor/twbs/bootstrap/scss/bootstrap.scss';
+@import '../../../../../vendor/unb-libraries/unb_lib_theme/src/scss/style.scss';
+
+#main {
+  margin-top: .5em;
+}
+
+/* WIP Discovery Search */
+.nav-tabs {
+  display:none;
+}
+.nav-tabs .nav-item {
+  z-index: 9;
+}
+#discovery-search {
+  flex-wrap: wrap;
+  margin-top: -1px;
+}
+#discovery-search .card-header h3 {
+  font-size: 1.2em;
+}
+@media(max-width: 991px) {
+  #discovery-search {
+    border: none;
+  }
+  .tab-content > .tab-pane {
+    display: block !important;
+    opacity: 1;
+  }
+}
+@media(min-width: 992px) {
+  .nav-tabs {
+    display: flex;
+  }
+  .card {
+    border: none;
+  }
+  .card .card-header {
+    display: none;
+  }
+  .card .collapse{
+    display: block;
+  }
+  #discovery-search {
+    border: 1px solid $gray-300;
+  }
+}
+/* END Discovery Search */
+
+/* QuickLinks */
+@media (min-width: 992px) {
+  /* Force visible on large display */
+  #quicklinks-wrapper:not(.show) {
+    display: block;
+  }
+}
+#quicklinks-wrapper h3 {
+  font-size: 1rem;
+}
+#quicklinks-wrapper ul.list-inline li {
+  padding-top: 0;
+}
+#quicklinks-wrapper ul.list-inline li:not(:last-child) {
+  border-right: 1px solid $gray-medium;
+}
+/* END QuickLinks */
