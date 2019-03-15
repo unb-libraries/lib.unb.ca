@@ -69,7 +69,7 @@
 .tabs-theme-dark .card-header {
   background: $table-dark-bg;
 }
-.tabs-theme-dark a {
+.tabs-theme-dark a:nav-link {
   color: $white;
 }
 .tabs-theme-dark .nav-tabs .nav-link {
