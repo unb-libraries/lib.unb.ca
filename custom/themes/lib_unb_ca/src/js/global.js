@@ -9,7 +9,7 @@
 
     Drupal.behaviors.lib_unb_ca = {
         attach: function (context, settings) {
-            var header_logo = $("#navbar-main .branding > a");
+            var header_logo = $("#navbar-main .branding > *");
             var header_nav_buttons = $("#navbar-main .megamenu-li > a");
 
             $(window).scroll(function () {
