@@ -1,4 +1,9 @@
 global-styling:
+  version: VERSION
+  js:
+    dist/js/global.js: {}
+  dependencies:
+    - core/jquery
   css:
     theme:
       dist/css/style.css: {}
