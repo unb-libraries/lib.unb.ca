@@ -64,3 +64,27 @@
   border-right: 1px solid $gray-medium;
 }
 /* END QuickLinks */
+
+/* Dark-themed tabbed content nav */
+.tabs-theme-dark ul,
+.tabs-theme-dark .card-header {
+  background: $table-dark-bg;
+}
+.tabs-theme-dark a {
+  color: $white;
+}
+.tabs-theme-dark .nav-tabs .nav-link {
+  border-radius: 0;
+}
+.tabs-theme-dark .nav-tabs .nav-link:focus,
+.tabs-theme-dark .nav-tabs .nav-link:hover,
+.tabs-theme-dark .tab-pane .card-header a[aria-expanded="true"],
+.tabs-theme-dark .tab-pane .card-header a:focus,
+.tabs-theme-dark .tab-pane .card-header a:hover {
+  color: $navbar-dark-hover;
+}
+.tabs-theme-dark .nav-tabs .nav-link.active {
+  background: $yellow;
+  color: $black;
+  cursor: default;
+}
