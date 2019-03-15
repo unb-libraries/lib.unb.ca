@@ -2,7 +2,7 @@ core: 8.x
 type: theme
 base theme: unb_lib_theme
 
-name: 'lib_unb_ca'
+name: 'UNB Libraries Subtheme'
 description: 'For lib_unb_ca'
 package: 'lib_unb_ca'
 
