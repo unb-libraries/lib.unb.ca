@@ -47,12 +47,6 @@
 /* END Discovery Search */
 
 /* QuickLinks */
-@media (min-width: 992px) {
-  /* Force visible on large display */
-  #quicklinks-wrapper:not(.show) {
-    display: block;
-  }
-}
 #quicklinks-wrapper h3 {
   font-size: 1rem;
 }
@@ -62,28 +56,10 @@
 #quicklinks-wrapper ul.list-inline li:not(:last-child) {
   border-right: 1px solid $gray-medium;
 }
+@media (min-width: 992px) {
+  /* Force visible on large display */
+  #quicklinks-wrapper:not(.show) {
+    display: block;
+  }
+}
 /* END QuickLinks */
-
-/* Dark-themed tabbed content nav */
-.tabs-theme-dark ul,
-.tabs-theme-dark .card-header {
-  background: $table-dark-bg;
-}
-.tabs-theme-dark a.nav-link {
-  color: $white;
-}
-.tabs-theme-dark .nav-tabs .nav-link {
-  border-radius: 0;
-}
-.tabs-theme-dark .nav-tabs .nav-link:focus,
-.tabs-theme-dark .nav-tabs .nav-link:hover,
-.tabs-theme-dark .tab-pane .card-header a[aria-expanded="true"],
-.tabs-theme-dark .tab-pane .card-header a:focus,
-.tabs-theme-dark .tab-pane .card-header a:hover {
-  color: $navbar-dark-hover;
-}
-.tabs-theme-dark .nav-tabs .nav-link.active {
-  background: $yellow;
-  color: $black;
-  cursor: default;
-}
