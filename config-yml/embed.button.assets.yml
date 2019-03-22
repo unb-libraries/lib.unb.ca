@@ -1,0 +1,23 @@
+uuid: c37ea209-b28a-4b95-aa00-2fa446022fa1
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.file
+    - media.type.image
+  module:
+    - entity_embed
+    - media
+label: 'Media Library'
+id: assets
+type_id: entity
+type_settings:
+  entity_type: media
+  bundles:
+    - file
+    - image
+  display_plugins: {  }
+  entity_browser: ''
+  entity_browser_settings: null
+icon_uuid: null
+icon_path: themes/custom/lib_unb_ca/dist/img/media-lib-btn.png

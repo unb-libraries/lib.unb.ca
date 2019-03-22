@@ -30,8 +30,8 @@ settings:
         -
           name: Media
           items:
+            - assets
             - Blockquote
-            - DrupalImage
             - DrupalFontAwesome
         -
           name: Tools
@@ -42,6 +42,8 @@ settings:
       language_list: un
     stylescombo:
       styles: ''
+    colorbutton:
+      colors: ''
 image_upload:
   status: false
   scheme: public

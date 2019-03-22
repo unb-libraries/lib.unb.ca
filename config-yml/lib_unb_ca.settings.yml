@@ -87,4 +87,9 @@ bootstrap_barrio_system_messages: ''
 bootstrap_barrio_table_style: ''
 bootstrap_barrio_table_hover: 0
 bootstrap_barrio_table_head: ''
-banner_images: ''
+banner_images:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
