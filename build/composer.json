@@ -47,6 +47,9 @@
             },
             "drupal/bootstrap_barrio": {
                 "Fix CSS library 404": "https://www.drupal.org/files/issues/2019-02-19/3033946-6.patch"
+            },
+            "drupal/embed": {
+                "Allow non-managed button icon file": "https://www.drupal.org/files/issues/2018-09-25/embed-allow-non-managed-button-icon-files-2824110-19.patch"
             }
         }
     },
