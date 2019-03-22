@@ -17,6 +17,8 @@ settings:
           items:
             - Bold
             - Italic
+            - TextColor
+            - BGColor
         -
           name: Links
           items:
