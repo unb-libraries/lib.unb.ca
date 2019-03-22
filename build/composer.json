@@ -42,6 +42,9 @@
             ]
         },
         "patches": {
+            "drupal/core": {
+                "Allow span style attribute": "/tmp/drupal_build/patches/allow-style-attr.patch"
+            },
             "drupal/bootstrap_barrio": {
                 "Fix CSS library 404": "https://www.drupal.org/files/issues/2019-02-19/3033946-6.patch"
             }
