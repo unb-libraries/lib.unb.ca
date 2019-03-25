@@ -1,0 +1,42 @@
+uuid: cf53a0b8-af64-4ed5-93ea-f5ac7b15b320
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.assets_library
+  module:
+    - views
+name: assets_library
+label: 'Assets Library'
+display: iframe
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select entities'
+  auto_open: true
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  aef5eba2-a8f1-4cf6-a7ef-8d8f35defe75:
+    settings:
+      extensions: 'jpg jpeg png gif'
+      media_type: image
+      upload_location: 'public://'
+      multiple: '1'
+      submit_text: 'Select files'
+    uuid: aef5eba2-a8f1-4cf6-a7ef-8d8f35defe75
+    weight: 1
+    label: Upload
+    id: media_image_upload
+  a9649d16-1ed1-4813-b5fa-013b4dc722bb:
+    settings:
+      view: assets_library
+      view_display: entity_browser_1
+      submit_text: 'Select entities'
+      auto_select: false
+    uuid: a9649d16-1ed1-4813-b5fa-013b4dc722bb
+    weight: 2
+    label: Library
+    id: view
