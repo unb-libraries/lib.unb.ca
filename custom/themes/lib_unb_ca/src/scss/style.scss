@@ -63,3 +63,24 @@
   }
 }
 /* END QuickLinks */
+
+/* Media files */
+.file {
+  background: none;
+  font-family: "Font Awesome 5 Free";
+  padding-left: 0;
+}
+.file--application-pdf:before {
+  color: $red;
+  content: "\f1c1";
+}
+.file--mime-application-msword:before,
+.file--x-office-document:before {
+  color: #2b5999;
+  content: "\f1c2";
+}
+.file--mime-text-plain:before {
+  color: $gray-dark;
+  content: "\f15b";
+}
+/* End Media files */

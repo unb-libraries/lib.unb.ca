@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.media.file.field_media_file
+    - field.field.media.file.field_mime_type
     - media.type.file
   module:
     - file
@@ -15,7 +16,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -26,17 +27,9 @@ content:
     third_party_settings: {  }
     type: file_generic
     region: content
-  name:
-    type: string_textfield
-    weight: -5
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -44,16 +37,18 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 100
+    weight: 4
     region: content
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     region: content
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_mime_type: true
+  name: true

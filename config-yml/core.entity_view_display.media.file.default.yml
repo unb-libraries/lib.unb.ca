@@ -4,50 +4,66 @@ status: true
 dependencies:
   config:
     - field.field.media.file.field_media_file
+    - field.field.media.file.field_mime_type
     - image.style.thumbnail
     - media.type.file
   module:
     - file
     - image
-    - user
 id: media.file.default
 targetEntityType: media
 bundle: file
 mode: default
 content:
   created:
-    label: hidden
     type: timestamp
-    weight: 0
+    weight: 5
     region: content
+    label: above
     settings:
       date_format: medium
       custom_date_format: ''
       timezone: ''
     third_party_settings: {  }
   field_media_file:
-    weight: 6
-    label: above
+    weight: 1
+    label: hidden
     settings:
       use_description_as_link_text: true
     third_party_settings: {  }
     type: file_default
     region: content
+  field_mime_type:
+    type: string
+    weight: 3
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  name:
+    type: string
+    weight: 2
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
   thumbnail:
     type: image
-    weight: 5
+    weight: 0
+    region: content
     label: hidden
     settings:
       image_style: thumbnail
       image_link: ''
-    region: content
     third_party_settings: {  }
   uid:
-    label: hidden
-    type: author
-    weight: 0
+    type: entity_reference_label
+    weight: 4
     region: content
-    settings: {  }
+    label: above
+    settings:
+      link: true
     third_party_settings: {  }
-hidden:
-  name: true
+hidden: {  }

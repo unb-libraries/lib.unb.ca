@@ -1,0 +1,19 @@
+uuid: d4a02c01-03d7-4b19-9285-cefb623ac970
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_mime_type
+    - media.type.image
+id: media.image.field_mime_type
+field_name: field_mime_type
+entity_type: media
+bundle: image
+label: 'MIME type'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,55 @@
+uuid: ea228a74-258e-40c7-8ba5-9ab2b9cdc98e
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.media_entity_browser
+  module:
+    - views
+_core:
+  default_config_hash: UoGZLPH_DEy28wDjCYqiBKYsKoHlf6l6deygJjqdgPc
+name: media_entity_browser
+label: 'Media Assets Library'
+display: iframe
+display_configuration:
+  width: 99%
+  height: '800'
+  link_text: 'Select entities'
+  auto_open: true
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  6586703a-6976-4124-8a49-cbb07ceaa3b1:
+    settings:
+      view: media_entity_browser
+      view_display: entity_browser_1
+      submit_text: 'Embed selected media'
+      auto_select: false
+    uuid: 6586703a-6976-4124-8a49-cbb07ceaa3b1
+    weight: 1
+    label: 'Browse media library'
+    id: view
+  f7565be6-6607-469c-bbb1-48186792ad37:
+    settings:
+      extensions: 'jpg jpeg png gif tif'
+      media_type: image
+      upload_location: 'public://'
+      multiple: '1'
+      submit_text: 'Select files'
+    uuid: f7565be6-6607-469c-bbb1-48186792ad37
+    weight: 2
+    label: 'Insert local image'
+    id: media_image_upload
+  206a3c1f-77bc-4ca1-ac99-906aa3f82c97:
+    settings:
+      extensions: 'txt pdf docx doc'
+      media_type: file
+      upload_location: 'public://'
+      multiple: true
+      submit_text: 'Select files'
+    uuid: 206a3c1f-77bc-4ca1-ac99-906aa3f82c97
+    weight: 3
+    label: 'Insert local document'
+    id: media_upload

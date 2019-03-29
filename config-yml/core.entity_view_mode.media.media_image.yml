@@ -1,0 +1,10 @@
+uuid: 12cf50cd-da20-4d95-b146-ab01aa8a093e
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.media_image
+label: 'Media image'
+targetEntityType: media
+cache: true

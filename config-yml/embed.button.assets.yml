@@ -8,7 +8,7 @@ dependencies:
   module:
     - entity_embed
     - media
-label: 'Media Library'
+label: 'Local Media Library'
 id: assets
 type_id: entity
 type_settings:
@@ -16,8 +16,11 @@ type_settings:
   bundles:
     - file
     - image
-  display_plugins: {  }
-  entity_browser: assets_library
+  display_plugins:
+    - 'view_mode:media.file'
+    - 'view_mode:media.media_image'
+    - 'entity_reference:media_thumbnail'
+  entity_browser: media_entity_browser
   entity_browser_settings:
     display_review: false
 icon_uuid: null
