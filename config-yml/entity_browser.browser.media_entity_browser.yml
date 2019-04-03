@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - views.view.assets_library
     - views.view.media_entity_browser
   module:
     - views
@@ -12,7 +13,7 @@ name: media_entity_browser
 label: 'Media Assets Library'
 display: iframe
 display_configuration:
-  width: 99%
+  width: 100%
   height: '800'
   link_text: 'Select entities'
   auto_open: true
@@ -25,21 +26,21 @@ widgets:
     settings:
       view: media_entity_browser
       view_display: entity_browser_1
-      submit_text: 'Embed selected media'
+      submit_text: 'Embed selected media file'
       auto_select: false
     uuid: 6586703a-6976-4124-8a49-cbb07ceaa3b1
-    weight: 1
-    label: 'Browse media library'
+    weight: -9
+    label: 'Browse media library (thumbnail view)'
     id: view
   f7565be6-6607-469c-bbb1-48186792ad37:
     settings:
       extensions: 'jpg jpeg png gif tif'
       media_type: image
       upload_location: 'public://'
-      multiple: '1'
-      submit_text: 'Select files'
+      multiple: 0
+      submit_text: 'Select an image'
     uuid: f7565be6-6607-469c-bbb1-48186792ad37
-    weight: 2
+    weight: -8
     label: 'Insert local image'
     id: media_image_upload
   206a3c1f-77bc-4ca1-ac99-906aa3f82c97:
@@ -47,9 +48,19 @@ widgets:
       extensions: 'txt pdf docx doc'
       media_type: file
       upload_location: 'public://'
-      multiple: true
-      submit_text: 'Select files'
+      multiple: false
+      submit_text: 'Select a file'
     uuid: 206a3c1f-77bc-4ca1-ac99-906aa3f82c97
-    weight: 3
+    weight: -7
     label: 'Insert local document'
     id: media_upload
+  92ec8a25-06b1-4134-a6b5-8f686fc3f3e0:
+    settings:
+      view: assets_library
+      view_display: entity_browser_1
+      submit_text: 'Set selected file display options'
+      auto_select: false
+    uuid: 92ec8a25-06b1-4134-a6b5-8f686fc3f3e0
+    weight: -10
+    label: 'Browse media library (table view)'
+    id: view

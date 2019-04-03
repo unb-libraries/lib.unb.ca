@@ -18,7 +18,6 @@ type_settings:
     - image
   display_plugins:
     - 'view_mode:media.file'
-    - 'view_mode:media.media_image'
     - 'entity_reference:media_thumbnail'
   entity_browser: media_entity_browser
   entity_browser_settings:
