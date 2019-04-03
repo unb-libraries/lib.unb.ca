@@ -13,32 +13,66 @@ settings:
     rows:
       -
         -
+          name: Actions
+          items:
+            - '-'
+            - Maximize
+            - '-'
+            - Undo
+            - Redo
+            - '-'
+        -
           name: Formatting
           items:
+            - '-'
             - Bold
             - Italic
+            - RemoveFormat
             - TextColor
-            - BGColor
+            - Blockquote
+            - HorizontalRule
+            - '-'
+        -
+          name: Alignment
+          items:
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
         -
           name: Links
           items:
             - DrupalLink
             - DrupalUnlink
         -
-          name: Lists
+          name: 'Tables and Lists'
           items:
+            - Table
             - BulletedList
             - NumberedList
+            - Outdent
+            - Indent
+            - '-'
         -
-          name: Media
+          name: 'Media and Icons'
           items:
             - assets
-            - Blockquote
+            - DrupalImage
             - DrupalFontAwesome
+            - SpecialChar
+            - '-'
+        -
+          name: 'Text format'
+          items:
+            - '-'
+            - Format
+            - '-'
+            - '-'
         -
           name: Tools
           items:
             - Source
+            - '-'
+            - '-'
   plugins:
     language:
       language_list: un
