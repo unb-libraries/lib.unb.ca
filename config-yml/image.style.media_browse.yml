@@ -1,0 +1,15 @@
+uuid: 18f11d1c-f40c-4f08-9de3-27008de4b250
+langcode: en
+status: true
+dependencies: {  }
+name: media_browse
+label: 'Media Browse'
+effects:
+  372dc1d8-21d1-4ea8-9203-7abce88a9f5d:
+    uuid: 372dc1d8-21d1-4ea8-9203-7abce88a9f5d
+    id: image_scale
+    weight: 1
+    data:
+      width: 350
+      height: 200
+      upscale: true

@@ -1,0 +1,8 @@
+table-row-check:
+  css:
+    theme:
+      css/table-row-check.css: {}
+  js:
+    js/table-row-check.js: {}
+    dependencies:
+      - core/jquery

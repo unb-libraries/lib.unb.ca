@@ -1,0 +1,34 @@
+/* Media Entity Browser Tweaks */
+@media screen and (min-width: 37.5em) {
+    .entity-browser-form .view-media-entity-browser .views-row {
+        width: 25%;
+    }
+    .view-media-entity-browser .views-row:hover {
+        border: 2px solid #ff2a00;
+    }
+}
+
+.view-media-entity-browser .media-info {
+    background-color: rgba(0,0,0,.9);
+    word-break: break-all;
+}
+
+.view-media-entity-browser .media-info {
+    height: 3.5em;
+}
+.view-media-entity-browser .media-info span {
+    line-height: 1em;
+    margin-right: 0;
+}
+.media-info--File {
+    background: transparent url("../img/generic-w.png") no-repeat right center;
+}
+.entity-browser-form .view-media-entity-browser .views-row:after {
+    top: -1.5em;
+}
+th.is-active {
+    white-space: nowrap;
+}
+span.tablesort {
+    float: none;
+}
