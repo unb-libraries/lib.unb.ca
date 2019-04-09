@@ -1,13 +1,14 @@
-uuid: 57c99cc1-4411-4327-a52e-df4c518c568c
+uuid: b216cb07-8532-49dd-9b19-6118f58a0d78
 langcode: en
 status: true
 dependencies:
   module:
     - lib_core
+    - system
   theme:
-    - unb_lib_theme
+    - lib_unb_ca
 id: unblibrariesquicklinks
-theme: unb_lib_theme
+theme: lib_unb_ca
 region: content
 weight: -3
 provider: null
@@ -17,4 +18,9 @@ settings:
   label: 'UNB Libraries QuickLinks'
   provider: lib_core
   label_display: '0'
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
