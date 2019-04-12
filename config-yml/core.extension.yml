@@ -57,7 +57,6 @@ module:
   views: 10
   libweb: 1000
 theme:
-  stark: 0
   stable: 0
   bootstrap_barrio: 0
   classy: 0
