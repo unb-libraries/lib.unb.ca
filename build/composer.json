@@ -46,7 +46,8 @@
                 "Allow span style attribute": "/tmp/drupal_build/patches/allow-style-attr.patch"
             },
             "drupal/bootstrap_barrio": {
-                "Fix CSS library 404": "https://www.drupal.org/files/issues/2019-02-19/3033946-6.patch"
+                "Fix CSS library 404": "https://www.drupal.org/files/issues/2019-02-19/3033946-6.patch",
+                "Fix Layout Builder": "https://www.drupal.org/files/issues/2018-06-01/2976934-3.patch"
             },
             "drupal/embed": {
                 "Allow non-managed button icon file": "https://www.drupal.org/files/issues/2018-09-25/embed-allow-non-managed-button-icon-files-2824110-19.patch"
