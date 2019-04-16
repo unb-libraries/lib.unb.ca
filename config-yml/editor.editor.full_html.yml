@@ -16,7 +16,6 @@ settings:
           name: Actions
           items:
             - '-'
-            - Maximize
             - '-'
             - Undo
             - Redo
