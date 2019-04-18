@@ -2,14 +2,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.file.field_media_file
-    - media.type.file
+    - field.field.media.video.field_media_video_file
+    - media.type.video
   module:
     - file
     - path
-id: media.file.default
+id: media.video.default
 targetEntityType: media
-bundle: file
+bundle: video
 mode: default
 content:
   created:
@@ -18,12 +18,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_media_file:
+  field_media_video_file:
+    weight: 0
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
-    weight: 0
     region: content
   path:
     type: path
