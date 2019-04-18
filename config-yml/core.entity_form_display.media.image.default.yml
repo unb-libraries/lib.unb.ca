@@ -1,3 +1,4 @@
+uuid: d5a30221-0589-4ac6-a44a-9cce7f19377d
 langcode: en
 status: true
 dependencies:
@@ -50,4 +51,5 @@ content:
     region: content
     third_party_settings: {  }
 hidden:
+  field_mime_type: true
   name: true
