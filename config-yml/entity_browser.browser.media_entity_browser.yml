@@ -36,7 +36,7 @@ widgets:
     settings:
       extensions: 'jpg jpeg png gif tif'
       media_type: image
-      upload_location: 'public://'
+      upload_location: 'public://media/images'
       multiple: 0
       submit_text: 'Insert selected'
     uuid: f7565be6-6607-469c-bbb1-48186792ad37
@@ -47,7 +47,7 @@ widgets:
     settings:
       extensions: 'txt pdf docx doc'
       media_type: file
-      upload_location: 'public://'
+      upload_location: 'public://media/documents'
       multiple: false
       submit_text: 'Insert selected'
     uuid: 206a3c1f-77bc-4ca1-ac99-906aa3f82c97
