@@ -137,7 +137,7 @@
         "drupal/inline_entity_form": "1.0-rc1",
         "drupal/layout_builder_restrictions": "1.5",
         "drupal/layout_plugin_views": "2.0-alpha1",
-        "drupal/ldap": "3.0-beta5",
+        "drupal/ldap": "3.0-beta6",
         "drupal/media_entity_browser": "2.0-alpha1",
         "drupal/panelbutton": "1.2",
         "drupal/pathauto": "1.3",
