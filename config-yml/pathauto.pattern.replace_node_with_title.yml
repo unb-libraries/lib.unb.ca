@@ -1,0 +1,22 @@
+uuid: e9288413-680c-4ee0-a325-d056cb5d5be5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: replace_node_with_title
+label: 'Replace node/# with title'
+type: 'canonical_entities:node'
+pattern: '[node:title]'
+selection_criteria:
+  604ca9d3-85a5-45cc-b630-4e7f7cc9560a:
+    id: node_type
+    bundles:
+      basic_page: basic_page
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 604ca9d3-85a5-45cc-b630-4e7f7cc9560a
+selection_logic: and
+weight: -5
+relationships: {  }
