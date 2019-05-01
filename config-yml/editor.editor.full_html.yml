@@ -23,6 +23,9 @@ settings:
         -
           name: Formatting
           items:
+            - Format
+            - Language
+            - '-'
             - '-'
             - Bold
             - Italic
@@ -60,15 +63,9 @@ settings:
             - SpecialChar
             - '-'
         -
-          name: 'Text format'
-          items:
-            - '-'
-            - Format
-            - '-'
-            - '-'
-        -
           name: Tools
           items:
+            - ShowBlocks
             - Source
             - '-'
             - '-'
