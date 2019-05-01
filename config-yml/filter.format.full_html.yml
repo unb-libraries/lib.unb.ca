@@ -5,6 +5,7 @@ dependencies:
   module:
     - editor
     - entity_embed
+    - linkit
 _core:
   default_config_hash: jnh1eKuJM-Ej3qFFEKflhjUa038I1hqGvaHNpTUatQw
 name: 'Full HTML'
@@ -44,3 +45,10 @@ filters:
     status: true
     weight: 0
     settings: {  }
+  linkit:
+    id: linkit
+    provider: linkit
+    status: true
+    weight: 0
+    settings:
+      title: true
