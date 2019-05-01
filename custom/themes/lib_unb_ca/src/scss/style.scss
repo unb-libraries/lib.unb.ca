@@ -1,13 +1,12 @@
-// If you wish to compile/extend Bootstrap then uncomment line below and disable subtheme CDN
+/* If you wish to compile/extend Bootstrap then uncomment line below and disable subtheme CDN */
 @import '../../../../../vendor/unb-libraries/unb_lib_theme/src/scss/style.scss';
 
-#main {
-  margin-top: .5em;
-}
+/* Import Sass files */
+@import 'import';
 
 /* Discovery Search */
 .nav-tabs {
-  display:none;
+  display: none;
 }
 .nav-tabs .nav-item {
   z-index: 9;
@@ -24,7 +23,7 @@
   }
   .tab-content > .tab-pane {
     display: block !important;
-    opacity: 1;
+    @include opacity(1);
   }
 }
 @media(min-width: 992px) {
