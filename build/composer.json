@@ -70,11 +70,11 @@
             "type": "package",
             "package": {
                 "name": "ckeditor/colorbutton",
-                "version": "4.11.3",
+                "version": "4.11.4",
                 "type": "drupal-library",
                 "dist": {
                     "type": "zip",
-                    "url": "https://download.ckeditor.com/colorbutton/releases/colorbutton_4.11.3.zip"
+                    "url": "https://download.ckeditor.com/colorbutton/releases/colorbutton_4.11.4.zip"
                 }
             }
         },
@@ -82,11 +82,11 @@
             "type": "package",
             "package": {
                 "name": "ckeditor/panelbutton",
-                "version": "4.11.3",
+                "version": "4.11.4",
                 "type": "drupal-library",
                 "dist": {
                     "type": "zip",
-                    "url": "https://download.ckeditor.com/panelbutton/releases/panelbutton_4.11.3.zip"
+                    "url": "https://download.ckeditor.com/panelbutton/releases/panelbutton_4.11.4.zip"
                 }
             }
         },
@@ -116,8 +116,8 @@
         }
     ],
     "require": {
-        "ckeditor/colorbutton": "~4.7",
-        "ckeditor/panelbutton": "~4.7",
+        "ckeditor/colorbutton": "~4.11",
+        "ckeditor/panelbutton": "~4.11",
         "drupal/block_class": "1.0",
         "drupal/bootstrap_barrio": "4.22",
         "drupal/colorbutton": "1.1",
