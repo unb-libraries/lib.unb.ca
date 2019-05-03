@@ -13,8 +13,7 @@ services:
       - lib.unb.ca
 
   lib.unb.ca:
-    build:
-      context: .
+    image: lib.unb.ca:latest
     restart: always
     container_name: lib.unb.ca
     expose:

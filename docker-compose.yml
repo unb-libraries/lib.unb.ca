@@ -35,6 +35,16 @@ services:
       - ./custom/themes:/app/themes/custom
       - ./tests:/app/tests
 
+  mailhog:
+    image: mailhog/mailhog
+    expose:
+      - "1025"
+      - "8025"
+    ports:
+      - "4100:8025"
+    networks:
+      - lib.unb.ca
+
 networks:
   lib.unb.ca:
     name: lib.unb.ca

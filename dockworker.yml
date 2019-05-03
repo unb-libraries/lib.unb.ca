@@ -4,6 +4,6 @@ dockworker:
     project_prefix: LIB
     name: lib.unb.ca
     upstream_image:
-      - unblibraries/drupal:alpine-nginx-php7-8.x-composer
+      - unblibraries/drupal:8.x-1.x
       - mysql:5.7
   options:
