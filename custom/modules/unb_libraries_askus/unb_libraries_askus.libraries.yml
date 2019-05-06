@@ -1,0 +1,5 @@
+askus:
+  js:
+    js/askus.js: {}
+    dependencies:
+      - core/jquery
