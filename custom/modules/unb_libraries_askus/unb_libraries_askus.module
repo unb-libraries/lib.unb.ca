@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains unb_libraries_askus.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function unb_libraries_askus_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the unb_libraries_askus module.
+    case 'help.page.unb_libraries_askus':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('UNB Libraries chat feature powered by LibraryH3lp.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function unb_libraries_askus_theme() {
+  return [
+    'unb_libraries_askus' => [
+      'render element' => 'children',
+    ],
+  ];
+}

@@ -1,0 +1,14 @@
+{
+  "name": "drupal/unb_libraries_askus",
+  "type": "drupal-module",
+  "description": "UNB Libraries chat feature powered by LibraryH3lp.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/unb_libraries_askus",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/unb_libraries_askus",
+    "source": "http://cgit.drupalcode.org/unb_libraries_askus"
+  },
+  "require": { }
+}

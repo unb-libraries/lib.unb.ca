@@ -1,0 +1,5 @@
+name: 'UNB Libraries AskUs'
+type: module
+description: 'UNB Libraries chat feature powered by LibraryH3lp.'
+core: 8.x
+package: 'UNB Libraries'
