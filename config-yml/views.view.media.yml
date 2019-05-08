@@ -838,6 +838,7 @@ display:
     display_options:
       display_extenders: {  }
       path: admin/content/media
+      display_description: ''
       menu:
         type: tab
         title: Media
@@ -847,7 +848,6 @@ display:
         weight: 0
         context: '0'
         menu_name: main
-      display_description: ''
     cache_metadata:
       max-age: 0
       contexts:
