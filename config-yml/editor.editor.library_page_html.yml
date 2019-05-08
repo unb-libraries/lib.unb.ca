@@ -1,0 +1,80 @@
+uuid: 34abd0ca-19a3-468c-a113-86e23611171c
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.library_page_html
+  module:
+    - ckeditor
+format: library_page_html
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Actions
+          items:
+            - Undo
+            - Redo
+        -
+          name: Formatting
+          items:
+            - Format
+            - Language
+            - '-'
+            - Bold
+            - Italic
+            - RemoveFormat
+            - TextColor
+            - Blockquote
+            - HorizontalRule
+        -
+          name: Alignment
+          items:
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: 'Tables and Lists'
+          items:
+            - Table
+            - BulletedList
+            - NumberedList
+            - Outdent
+            - Indent
+        -
+          name: Media
+          items:
+            - assets
+            - DrupalImage
+            - DrupalFontAwesome
+            - SpecialChar
+        -
+          name: Tools
+          items:
+            - ShowBlocks
+            - Source
+  plugins:
+    drupallink:
+      linkit_enabled: true
+      linkit_profile: default
+    language:
+      language_list: un
+    stylescombo:
+      styles: ''
+    colorbutton:
+      colors: ''
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

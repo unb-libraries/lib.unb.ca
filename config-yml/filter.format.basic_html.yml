@@ -8,7 +8,7 @@ _core:
   default_config_hash: uf2SHb9XN0LzMPIBg6indJkQ0x3SQszWrPA2imxqmv0
 name: 'Basic HTML'
 format: basic_html
-weight: 0
+weight: -8
 filters:
   filter_html:
     id: filter_html

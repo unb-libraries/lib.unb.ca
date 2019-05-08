@@ -6,7 +6,7 @@ _core:
   default_config_hash: AbmxU5tFSttMfaf8weG1sd-i46qtNJ_79lz1Ue49zI0
 name: 'Restricted HTML'
 format: restricted_html
-weight: 0
+weight: -7
 filters:
   filter_html:
     id: filter_html
