@@ -1,5 +1,6 @@
 askus:
   js:
-    js/askus.js: {}
-    dependencies:
-      - core/jquery
+    js/askus.js: { weight: 50 }
+  dependencies:
+    - core/jquery
+    - core/drupal
