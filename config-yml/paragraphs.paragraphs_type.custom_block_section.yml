@@ -1,0 +1,9 @@
+uuid: c4f95da8-26a7-49f2-979e-98e3b5051320
+langcode: en
+status: true
+dependencies: {  }
+id: custom_block_section
+label: 'Reusable Content Block'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

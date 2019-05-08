@@ -1,0 +1,24 @@
+uuid: 7df6aa40-97b3-460f-9025-39fecffa3fce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_selected_block
+    - paragraphs.paragraphs_type.custom_block_section
+  module:
+    - block_field
+id: paragraph.custom_block_section.field_selected_block
+field_name: field_selected_block
+entity_type: paragraph
+bundle: custom_block_section
+label: 'Selected block'
+description: 'Choose an item from the content block library.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  plugin_ids:
+    'views_block:content_recent-block_1': 'views_block:content_recent-block_1'
+    discovery_search_block: discovery_search_block
+field_type: block_field

@@ -1,0 +1,22 @@
+uuid: b3b792f7-80a1-4deb-818e-84ed6ef55fd0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.custom_block_section.field_selected_block
+    - paragraphs.paragraphs_type.custom_block_section
+  module:
+    - block_field
+id: paragraph.custom_block_section.default
+targetEntityType: paragraph
+bundle: custom_block_section
+mode: default
+content:
+  field_selected_block:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: block_field
+    region: content
+hidden: {  }
