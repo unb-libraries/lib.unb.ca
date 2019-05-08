@@ -1,0 +1,71 @@
+<?php
+
+/**
+ * @file
+ * Contains group_path_permissions.module.
+ */
+
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+const SIMPLE_GROUP_PATH_PERMS_TAXONOMY_VID = 'simple_group_paths';
+
+/**
+ * Implements hook_help().
+ */
+function simple_group_path_perms_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the group_path_permissions module.
+    case 'help.page.simple_group_path_perms':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Simple Group Path Permissions') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_entity_base_field_info().
+ */
+function simple_group_path_perms_entity_base_field_info(EntityTypeInterface $entity_type) {
+  if ($entity_type->id() === 'simple_group') {
+
+    $fields['perm_content_paths'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Permissions : Content Paths'))
+      ->setDescription(t('Choose the paths that users within this group should be allowed to edit.'))
+      ->setSettings(
+        [
+          'target_type' => 'taxonomy_term',
+          'handler' => 'default:taxonomy_term',
+          'handler_settings' => [
+            'target_bundles' => [
+              SIMPLE_GROUP_PATH_PERMS_TAXONOMY_VID => SIMPLE_GROUP_PATH_PERMS_TAXONOMY_VID,
+            ],
+          ],
+        ]
+      )
+      ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED)
+      ->setRequired(FALSE)
+      ->setRevisionable(FALSE)
+      ->setDisplayOptions(
+        'view',
+        [
+          'label' => 'above',
+          'weight' => 0,
+        ]
+      )
+      ->setDisplayOptions(
+        'form',
+        [
+          'type' => 'options_select',
+          'weight' => 0,
+        ]
+      )
+      ->setDisplayConfigurable('form', TRUE);
+
+    return $fields;
+  }
+}

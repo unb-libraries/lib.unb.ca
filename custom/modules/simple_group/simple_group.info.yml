@@ -1,0 +1,5 @@
+name: 'Simple Group'
+type: module
+description: 'Simple Group'
+core: 8.x
+package: 'Simple Group'

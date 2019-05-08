@@ -1,0 +1,19 @@
+add simple group entities:
+  title: 'Create new Simple group entities'
+
+administer simple group entities:
+  title: 'Administer Simple group entities'
+  description: 'Allow to access the administration form to configure Simple group entities.'
+  restrict access: true
+
+delete simple group entities:
+  title: 'Delete Simple group entities'
+
+edit simple group entities:
+  title: 'Edit Simple group entities'
+
+view published simple group entities:
+  title: 'View published Simple group entities'
+
+view unpublished simple group entities:
+  title: 'View unpublished Simple group entities'

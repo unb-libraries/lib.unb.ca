@@ -1,0 +1,22 @@
+# Simple group routing definition
+simple_group.settings_tab:
+  route_name: simple_group.settings
+  title: 'Settings'
+  base_route: simple_group.settings
+
+entity.simple_group.canonical:
+  route_name: entity.simple_group.canonical
+  base_route: entity.simple_group.canonical
+  title: 'View'
+
+entity.simple_group.edit_form:
+  route_name: entity.simple_group.edit_form
+  base_route: entity.simple_group.canonical
+  title: 'Edit'
+
+entity.simple_group.delete_form:
+  route_name:  entity.simple_group.delete_form
+  base_route:  entity.simple_group.canonical
+  title: Delete
+  weight: 10
+

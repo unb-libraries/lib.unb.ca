@@ -1,0 +1,8 @@
+name: 'Simple Group Path Permissions'
+type: module
+description: 'Simple Group Path Permissions'
+core: 8.x
+package: 'Simple Group'
+dependencies:
+  - simple_group:simple_group
+  - drupal:taxonomy

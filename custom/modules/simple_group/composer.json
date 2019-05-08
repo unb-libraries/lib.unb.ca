@@ -1,0 +1,14 @@
+{
+  "name": "drupal/simple_group",
+  "type": "drupal-module",
+  "description": "Simple Group",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/simple_group",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/simple_group",
+    "source": "http://cgit.drupalcode.org/simple_group"
+  },
+  "require": { }
+}

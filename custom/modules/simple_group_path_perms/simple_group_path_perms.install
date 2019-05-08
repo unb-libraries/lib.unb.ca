@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Contains install and update functions for group_path_permissions.
+ */
+
+use Drupal\simple_group_path_perms\TaxonomyHelper;
+
+/**
+ * Implements hook_install().
+ */
+function simple_group_path_perms_install() {
+  module_set_weight('simple_group_path_perms', 100);
+  TaxonomyHelper::addDefaultPaths();
+}

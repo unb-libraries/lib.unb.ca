@@ -1,0 +1,65 @@
+<?php
+
+/**
+ * @file
+ * Contains simple_group.module.
+ */
+
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function simple_group_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the simple_group module.
+    case 'help.page.simple_group':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Simple Group') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_entity_base_field_info().
+ */
+function simple_group_entity_base_field_info(EntityTypeInterface $entity_type) {
+  if ($entity_type->id() === 'user') {
+
+    $fields['simple_groups'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Groups'))
+      ->setDescription(t('Select the groups this user is part of'))
+      ->setSettings(
+        [
+          'target_type' => 'simple_group',
+          'handler' => 'default',
+        ]
+      )
+      ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED)
+      ->setRequired(FALSE)
+      ->setRevisionable(FALSE)
+      ->setDisplayOptions(
+        'view',
+        [
+          'label' => 'above',
+          'weight' => 30,
+        ]
+      )
+      ->setDisplayOptions(
+        'form',
+        [
+          'type' => 'options_select',
+          'weight' => 30,
+        ]
+      )
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    return $fields;
+  }
+}
