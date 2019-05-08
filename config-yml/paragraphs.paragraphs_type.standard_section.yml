@@ -1,0 +1,9 @@
+uuid: 1cba7da6-0af2-491a-9b8f-9f92ed2cf1f1
+langcode: en
+status: true
+dependencies: {  }
+id: standard_section
+label: 'Standard Full Width Body Section'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

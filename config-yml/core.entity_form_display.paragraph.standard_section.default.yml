@@ -1,0 +1,26 @@
+uuid: 01706d48-e5e1-48ec-b4cb-8995a395771b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.standard_section.field_body
+    - paragraphs.paragraphs_type.standard_section
+  module:
+    - text
+id: paragraph.standard_section.default
+targetEntityType: paragraph
+bundle: standard_section
+mode: default
+content:
+  field_body:
+    weight: 0
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+hidden:
+  created: true
+  status: true

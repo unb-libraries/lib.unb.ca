@@ -1,0 +1,31 @@
+uuid: e32cda24-6b9c-449d-a2e7-ef74bdcf6155
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.standard_section.field_body
+    - paragraphs.paragraphs_type.standard_section
+  module:
+    - layout_builder
+    - layout_builder_restrictions
+    - text
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+  layout_builder_restrictions:
+    allowed_blocks: {  }
+    allowed_layouts: {  }
+id: paragraph.standard_section.default
+targetEntityType: paragraph
+bundle: standard_section
+mode: default
+content:
+  field_body:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

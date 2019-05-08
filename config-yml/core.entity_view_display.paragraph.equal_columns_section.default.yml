@@ -1,0 +1,76 @@
+uuid: d1dfc73b-98e1-4839-93eb-883f56841203
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.equal_columns_section.field_body_column1
+    - field.field.paragraph.equal_columns_section.field_body_column2
+    - paragraphs.paragraphs_type.equal_columns_section
+  module:
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          column_widths: 50-50
+        components:
+          c3b56910-05c2-490b-b88b-d80570af63c6:
+            uuid: c3b56910-05c2-490b-b88b-d80570af63c6
+            region: first
+            configuration:
+              id: 'field_block:paragraph:equal_columns_section:field_body_column1'
+              label: 'Column 1 Body'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+          38e99c5c-bef1-4044-90b7-ca2a6f1c825c:
+            uuid: 38e99c5c-bef1-4044-90b7-ca2a6f1c825c
+            region: second
+            configuration:
+              id: 'field_block:paragraph:equal_columns_section:field_body_column2'
+              label: 'Column 2 Body'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+id: paragraph.equal_columns_section.default
+targetEntityType: paragraph
+bundle: equal_columns_section
+mode: default
+content:
+  field_body_column1:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_body_column2:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

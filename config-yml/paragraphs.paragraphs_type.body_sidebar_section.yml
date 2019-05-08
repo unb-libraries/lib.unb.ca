@@ -1,0 +1,9 @@
+uuid: e36592b3-4a73-4316-b5a2-2399ff5ccbc0
+langcode: en
+status: true
+dependencies: {  }
+id: body_sidebar_section
+label: '2-Column Body with Sidebar Section'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

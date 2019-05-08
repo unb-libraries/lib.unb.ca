@@ -1,0 +1,9 @@
+uuid: 123f3922-7b96-492e-b4b0-a9e2b203b02f
+langcode: en
+status: true
+dependencies: {  }
+id: equal_columns_section
+label: '2 Equal Width Columns Section'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

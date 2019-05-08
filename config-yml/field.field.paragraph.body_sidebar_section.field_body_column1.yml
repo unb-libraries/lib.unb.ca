@@ -1,0 +1,22 @@
+uuid: 7d9d40af-70f4-4212-bfe2-391c2c00e879
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body_column1
+    - paragraphs.paragraphs_type.body_sidebar_section
+  module:
+    - text
+id: paragraph.body_sidebar_section.field_body_column1
+field_name: field_body_column1
+entity_type: paragraph
+bundle: body_sidebar_section
+label: 'Column 1 Body'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary
