@@ -158,7 +158,7 @@
         "drupal/media_entity_browser": "2.0-alpha1",
         "drupal/panelbutton": "1.2",
         "drupal/pathauto": "1.4",
-        "drupal/paragraphs": "1.7",
+        "drupal/paragraphs": "1.8",
         "drupal/redis": "1.0-rc2",
         "drupal/search_api": "1.12",
         "drupal/search_api_autocomplete": "1.2",
