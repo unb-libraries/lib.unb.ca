@@ -1,0 +1,30 @@
+uuid: 8962470a-b88b-4286-85a0-e18b1361e97b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.library_page.field_page_content
+    - node.type.library_page
+  module:
+    - entity_reference_revisions
+    - user
+id: node.library_page.default
+targetEntityType: node
+bundle: library_page
+mode: default
+content:
+  field_page_content:
+    type: entity_reference_revisions_entity_view
+    weight: 102
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }
