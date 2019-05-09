@@ -1,0 +1,14 @@
+langcode: en
+status: true
+name: 'UNB Libraries Page Paths'
+vid: unb_libraries_page_paths
+description: 'Page paths defined for UNB Libraries pages.'
+hierarchy: 0
+weight: 0
+
+dependencies:
+  module:
+    - taxonomy
+  enforced:
+    module:
+      - node_path_taxonomy

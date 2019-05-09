@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Contains install and update functions for unb_libraries_page_paths.
+ */
+
+use Drupal\node_path_taxonomy\Entity\NodeTaxonomyPathRelationship;
+
+/**
+ * Implements hook_install().
+ */
+function unb_libraries_page_paths_install() {
+  $config = \Drupal::config('unb_libraries_page_paths.taxonomy.unb_libraries_page_paths_default');
+  $paths = $config->get('default_paths');
+  NodeTaxonomyPathRelationship::createFromArray('unb_libraries_page_paths', $paths);
+}

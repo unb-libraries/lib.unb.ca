@@ -1,0 +1,7 @@
+name: 'UNB Libraries Page Paths'
+type: module
+description: "Add Paths to UNB Libraries Library Pages"
+core: 8.x
+package: UNB Libraries
+dependencies:
+  - node_path_taxonomy:node_path_taxonomy

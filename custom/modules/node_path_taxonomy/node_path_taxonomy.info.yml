@@ -1,0 +1,9 @@
+name: 'Node Paths from Taxonomy Tree'
+type: module
+description: 'Node path from taxonomy tree'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - drupal:node
+  - drupal:pathauto
+  - drupal:taxonomy

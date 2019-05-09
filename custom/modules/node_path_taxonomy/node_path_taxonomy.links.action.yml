@@ -1,0 +1,5 @@
+entity.node_taxonomy_path_relationship.add_form:
+  route_name: entity.node_taxonomy_path_relationship.add_form
+  title: 'Add Node taxonomy path relationship'
+  appears_on:
+    - entity.node_taxonomy_path_relationship.collection

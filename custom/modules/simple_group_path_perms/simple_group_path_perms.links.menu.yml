@@ -1,0 +1,7 @@
+simple_group_path_perms.simple_group_path_perms_settings_form:
+  title: 'Path Permissions Settings'
+  route_name: simple_group_path_perms.simple_group_path_perms_settings_form
+  description: 'Set options related to path permissions'
+  parent: system.admin_config_system
+  weight: 99
+

@@ -1,0 +1,14 @@
+langcode: en
+status: true
+name: 'Simple Group Permissions Paths'
+vid: node_path_tax_default
+description: 'Permissions Paths'
+hierarchy: 0
+weight: 0
+
+dependencies:
+  module:
+    - taxonomy
+  enforced:
+    module:
+      - node_path_taxonomy

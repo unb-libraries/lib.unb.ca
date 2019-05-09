@@ -1,0 +1,13 @@
+node_path_taxonomy.node_taxonomy_path_relationship.*:
+  type: config_entity
+  label: 'Node taxonomy path relationship config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    node_type:
+      type: string
+      label: 'Node Type'
+    vid:
+      type: string
+      label: 'Vocabulary ID'

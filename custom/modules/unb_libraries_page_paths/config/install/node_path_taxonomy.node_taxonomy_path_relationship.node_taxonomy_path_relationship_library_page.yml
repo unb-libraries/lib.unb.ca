@@ -1,0 +1,13 @@
+uuid: 03683cae-a0f1-46bd-9360-2b3f86fec735
+langcode: en
+status: true
+id: node_taxonomy_path_relationship_library_page
+node_type: library_page
+vid: unb_libraries_page_paths
+
+dependencies:
+  module:
+    - taxonomy
+  enforced:
+    module:
+      - node_path_taxonomy

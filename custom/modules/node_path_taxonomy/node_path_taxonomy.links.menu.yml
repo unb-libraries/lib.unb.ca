@@ -1,0 +1,6 @@
+entity.node_taxonomy_path_relationship.collection:
+  title: 'Node/Taxonomy Path Configuration'
+  route_name: entity.node_taxonomy_path_relationship.collection
+  description: 'Configure node path taxonomy relationships.'
+  parent: system.admin_config_system
+  weight: 99

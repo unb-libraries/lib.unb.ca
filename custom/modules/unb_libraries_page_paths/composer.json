@@ -1,0 +1,14 @@
+{
+  "name": "drupal/unb_libraries_page_paths",
+  "type": "drupal-module",
+  "description": "Add Paths to UNB Libraries Library Pages",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/unb_libraries_page_paths",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/unb_libraries_page_paths",
+    "source": "http://cgit.drupalcode.org/unb_libraries_page_paths"
+  },
+  "require": { }
+}

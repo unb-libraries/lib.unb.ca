@@ -1,0 +1,103 @@
+<?php
+
+/**
+ * @file
+ * Contains node_path_taxonomy.module.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\node_path_taxonomy\Entity\NodeTaxonomyPath;
+use Drupal\node_path_taxonomy\Entity\NodeTaxonomyPathRelationship;
+use Drupal\taxonomy\Entity\Term;
+
+const NODE_PATH_TAXONOMY_RELATIONSHIP_ID_PREFIX = 'node_taxonomy_path_relationship_';
+
+/**
+ * Implements hook_help().
+ */
+function node_path_taxonomy_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the node_path_taxonomy module.
+    case 'help.page.node_path_taxonomy':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Node path from taxonomy tree') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function node_path_taxonomy_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (NodeTaxonomyPathRelationship::getRelationshipSetFromFormState($form_state)) {
+    $node = $form_state->getFormObject()->getEntity();
+    $node_type = $node->bundle();
+    if ($form_id == "node_{$node_type}_form" || $form_id == "node_{$node_type}_edit_form") {
+      $paths = NodeTaxonomyPathRelationship::getPaths($node_type);
+      $cur_path_term = NodeTaxonomyPath::getNodePathTerm($node);
+      if (!empty($cur_path_tid) && !isset($paths[$cur_path_tid]) && $form_id == "node_{$node_type}_edit_form") {
+        \Drupal::messenger()
+          ->addWarning('The stored publication path for this node is no longer available.');
+      }
+      $default_path_value = $cur_path_term instanceof Term ? $cur_path_term->id() : NULL;
+
+      $form['node_path']['publication_path'] = [
+        '#type' => 'select',
+        '#title' => t('Publication Path'),
+        '#default_value' => $default_path_value,
+        '#options' => $paths,
+      ];
+
+      // Ensure paths are saved after submit but before pathauto hooks run.
+      array_unshift($form['actions']['submit']['#submit'], 'Drupal\node_path_taxonomy\Controller\NodeTaxonomyPathController::setPath');
+    }
+  }
+}
+
+/**
+ * Implements hook_pathauto_alias_alter().
+ */
+function node_path_taxonomy_pathauto_alias_alter(&$alias, array &$context) {
+  if ($context['module'] != 'node') {
+    return;
+  }
+  $node = $context['data']['node'];
+  $node_type = $node->bundle();
+  $path_tid = \Drupal::state()->get(NodeTaxonomyPath::getStateKey());
+
+  if (!empty($path_tid) && !empty(NodeTaxonomyPathRelationship::getPaths($node_type))) {
+    NodeTaxonomyPath::removeNodePaths($node);
+    NodeTaxonomyPath::addNodePath($node, $path_tid);
+    $clean_label = \Drupal::service('pathauto.alias_cleaner')->cleanString($node->label());
+    $alias = NodeTaxonomyPath::getNodePath($node) . "/$clean_label";
+    \Drupal::state()->delete(NodeTaxonomyPath::getStateKey());
+  }
+}
+
+/**
+ * Implements hook_field_widget_info_alter().
+ */
+function node_path_taxonomy_field_widget_info_alter(&$widgets) {
+  $widgets['path']['class'] = 'Drupal\node_path_taxonomy\NodeTaxonomyPathPathautoWidget';
+}
+
+/**
+ * Implements hook_entity_type_delete().
+ */
+function node_path_taxonomy_node_delete(EntityInterface $entity) {
+  NodeTaxonomyPath::removeNodePaths($entity);
+}
+
+/**
+ * Implements hook_entity_bundle_delete().
+ */
+function node_path_taxonomy_entity_bundle_delete($entity_type_id, $bundle) {
+  if ($entity_type_id == 'node') {
+    NodeTaxonomyPath::removeAllNodeTypePaths($bundle);
+  }
+}

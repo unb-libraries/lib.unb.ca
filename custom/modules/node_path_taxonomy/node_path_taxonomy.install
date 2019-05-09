@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Contains install and update functions for group_path_permissions.
+ */
+
+use Drupal\node_path_taxonomy\Entity\NodeTaxonomyPathRelationship;
+
+/**
+ * Implements hook_install().
+ */
+function node_path_taxonomy_install() {
+  // Ensure we are heavier than the pathauto module to override widget.
+  module_set_weight('node_path_taxonomy', 2);
+
+  // Load in a root element to the default vocabulary.
+  NodeTaxonomyPathRelationship::createFromArray('node_path_tax_default', []);
+
+  // Flush caches to override PathautoWidget.
+  drupal_flush_all_caches();
+}
