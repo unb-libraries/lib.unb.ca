@@ -6,3 +6,11 @@ table-row-check:
     js/table-row-check.js: {}
     dependencies:
       - core/jquery
+
+bootstrap-cdn:
+  version: VERSION
+  css:
+    base:
+      //stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css: { type: external, minified: true }
+    theme:
+      css/bootstrap-overrides.css: {}
