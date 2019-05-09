@@ -81,6 +81,21 @@
         {
             "type": "package",
             "package": {
+                "name": "ckeditor/div",
+                "version": "4.11.4",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "ckeditor/plugins/div"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://download.ckeditor.com/div/releases/div_4.11.4.zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
                 "name": "ckeditor/panelbutton",
                 "version": "4.11.4",
                 "type": "drupal-library",
@@ -132,11 +147,13 @@
     ],
     "require": {
         "ckeditor/colorbutton": "~4.11",
+        "ckeditor/div": "~4.11",
         "ckeditor/panelbutton": "~4.11",
         "drupal/block_class": "1.0",
         "drupal/block_field": "1.0-alpha8",
         "drupal/bootstrap_barrio": "4.22",
         "drupal/chosen": "2.7",
+        "drupal/ckeditor_div_manager": "1.0",
         "drupal/colorbutton": "1.1",
         "drupal/config_update": "1.5",
         "drupal/core": "8.7.1",

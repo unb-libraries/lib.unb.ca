@@ -58,7 +58,9 @@ settings:
         -
           name: Tools
           items:
+            - CreateDiv
             - ShowBlocks
+            - '-'
             - Source
   plugins:
     drupallink:
