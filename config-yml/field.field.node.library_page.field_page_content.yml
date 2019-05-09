@@ -12,7 +12,7 @@ field_name: field_page_content
 entity_type: node
 bundle: library_page
 label: 'Page content'
-description: "<p style=\"color: #734c00; background-color: #fdf8ed; box-shadow: -8px 0 0 #e09600; margin-left:8px; padding:.75rem;\">\r\n<i class=\"fas fa-info-circle\" style=\"color:#e09600;font-size:1.6rem;vertical-align:bottom\"></i>\r\nAdd page content using the button options below.</p>"
+description: "<p style=\"color: #734c00; background-color: #fdf8ed; box-shadow: -8px 0 0 #e09600; margin-left:8px; padding:.75rem;\">\r\n<i class=\"fas fa-info-circle\" style=\"color:#e09600;font-size:1.5rem;vertical-align:bottom\"></i>\r\nAdd page content using the button options below.</p>"
 required: false
 translatable: false
 default_value: {  }
