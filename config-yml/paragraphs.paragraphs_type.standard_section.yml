@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: standard_section
-label: 'Standard Full Width Body Section'
+label: 'Standard Full-Width Body Section'
 icon_uuid: null
 description: ''
 behavior_plugins: {  }

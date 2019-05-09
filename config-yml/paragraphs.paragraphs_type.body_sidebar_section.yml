@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: body_sidebar_section
-label: '2-Column Body with Sidebar Section'
+label: 'Body with Sidebar Section (67%/33%)'
 icon_uuid: null
 description: ''
 behavior_plugins: {  }

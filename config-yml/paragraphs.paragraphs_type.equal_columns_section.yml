@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: equal_columns_section
-label: '2 Equal Width Columns Section'
+label: 'Equal Width Columns Section (50%/50%)'
 icon_uuid: null
 description: ''
 behavior_plugins: {  }
