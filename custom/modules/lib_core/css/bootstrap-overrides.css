@@ -1,0 +1,5 @@
+/* Fix Bootstrap 4.x tabledrag icons */
+.js .field--widget-entity-reference-paragraphs .tabledrag-handle .handle {
+    width: 1.35rem;
+    height: 1.35rem;
+}
