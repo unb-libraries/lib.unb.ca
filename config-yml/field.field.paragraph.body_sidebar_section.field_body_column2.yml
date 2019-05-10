@@ -6,7 +6,15 @@ dependencies:
     - field.storage.paragraph.field_body_column2
     - paragraphs.paragraphs_type.body_sidebar_section
   module:
+    - allowed_formats
     - text
+third_party_settings:
+  allowed_formats:
+    library_page_html: library_page_html
+    full_html: '0'
+    basic_html: '0'
+    restricted_html: '0'
+    plain_text: '0'
 id: paragraph.body_sidebar_section.field_body_column2
 field_name: field_body_column2
 entity_type: paragraph

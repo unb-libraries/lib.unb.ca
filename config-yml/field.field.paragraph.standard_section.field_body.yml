@@ -6,7 +6,15 @@ dependencies:
     - field.storage.paragraph.field_body
     - paragraphs.paragraphs_type.standard_section
   module:
+    - allowed_formats
     - text
+third_party_settings:
+  allowed_formats:
+    library_page_html: library_page_html
+    full_html: '0'
+    basic_html: '0'
+    restricted_html: '0'
+    plain_text: '0'
 id: paragraph.standard_section.field_body
 field_name: field_body
 entity_type: paragraph
