@@ -13,22 +13,14 @@ settings:
     rows:
       -
         -
-          name: Actions
-          items:
-            - Undo
-            - Redo
-        -
           name: Formatting
           items:
             - Format
-            - Language
             - '-'
             - Bold
             - Italic
-            - RemoveFormat
-            - TextColor
             - Blockquote
-            - HorizontalRule
+            - TextColor
         -
           name: Alignment
           items:
@@ -41,27 +33,37 @@ settings:
             - DrupalLink
             - DrupalUnlink
         -
-          name: 'Tables and Lists'
+          name: 'Lists and Tables'
           items:
-            - Table
             - BulletedList
             - NumberedList
             - Outdent
             - Indent
+            - Table
         -
-          name: Media
+          name: 'Media and Characters'
           items:
             - assets
             - DrupalImage
             - DrupalFontAwesome
+            - HorizontalRule
             - SpecialChar
         -
           name: Tools
           items:
             - CreateDiv
             - ShowBlocks
+            - RemoveFormat
+            - '-'
+            - Language
+        -
+          name: Actions
+          items:
+            - Undo
+            - Redo
             - '-'
             - Source
+            - '-'
   plugins:
     drupallink:
       linkit_enabled: true
