@@ -149,6 +149,7 @@
         "ckeditor/colorbutton": "~4.11",
         "ckeditor/div": "~4.11",
         "ckeditor/panelbutton": "~4.11",
+        "drupal/allowed_formats": "1.1",
         "drupal/block_class": "1.0",
         "drupal/block_field": "1.0-alpha8",
         "drupal/bootstrap_barrio": "4.22",
