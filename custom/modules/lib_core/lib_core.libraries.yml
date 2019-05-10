@@ -12,5 +12,9 @@ bootstrap-cdn:
   css:
     base:
       //stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css: { type: external, minified: true }
+
+admin-overrides:
+  version: VERSION
+  css:
     theme:
-      css/bootstrap-overrides.css: {}
+      css/admin-overrides.css: {}

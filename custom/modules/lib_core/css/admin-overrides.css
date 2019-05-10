@@ -1,5 +1,15 @@
+/* Hide form field text format help text */
+.filter-wrapper {
+    display: none;
+}
+
 /* Fix Bootstrap 4.x tabledrag icons */
 .js .field--widget-entity-reference-paragraphs .tabledrag-handle .handle {
     width: 1.35rem;
     height: 1.35rem;
+}
+
+/* Add whitespace between Paragraph dropbuttons & Preview */
+.js .paragraph-type-top {
+    margin-bottom: .33rem;
 }
