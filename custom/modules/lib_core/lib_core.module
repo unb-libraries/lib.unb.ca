@@ -21,9 +21,30 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     case 'node_library_page_form':
       $form['#attached']['library'][] = 'lib_core/bootstrap-cdn';
       $form['#attached']['library'][] = 'lib_core/admin-overrides';
+      $form['#attached']['library'][] = 'lib_core/ckeditor_stylesheets';
       break;
 
     default:
       break;
+  }
+}
+
+/**
+ * Implements hook_editor_js_settings_alter().
+ *
+ * @see https://www.drupal.org/project/colorbutton/issues/2910028
+ */
+function lib_core_editor_js_settings_alter(array &$settings) {
+  $extra_editor_settings = [
+    'colorButton_foreStyle' => [
+      'element' => 'span',
+      'attributes' => [
+        'data-color' => '#(color)',
+      ],
+    ],
+  ];
+
+  if (array_key_exists('library_page_html', $settings['editor']['formats'])) {
+    $settings['editor']['formats']['library_page_html']['editorSettings'] += $extra_editor_settings;
   }
 }
