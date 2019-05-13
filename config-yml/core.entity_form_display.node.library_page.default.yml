@@ -33,25 +33,11 @@ content:
     region: content
   path:
     type: path
-    weight: 6
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
-  promote:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 4
-    region: content
-    third_party_settings: {  }
   status:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 7
-    region: content
-    third_party_settings: {  }
-  sticky:
     type: boolean_checkbox
     settings:
       display_label: true
@@ -75,4 +61,6 @@ content:
       placeholder: ''
     region: content
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  promote: true
+  sticky: true
