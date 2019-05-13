@@ -5,9 +5,12 @@ base theme: unb_lib_theme
 name: 'UNB Libraries Subtheme'
 description: 'For lib_unb_ca'
 package: 'lib_unb_ca'
+dependencies:
+  - lib_core
 
 libraries:
   - lib_unb_ca/global-styling
+  - lib_core/ckeditor_stylesheets
 
 regions:
   top_header: 'Top Header'
