@@ -18,3 +18,9 @@ admin-overrides:
   css:
     theme:
       css/admin-overrides.css: {}
+
+ckeditor_stylesheets:
+  version: VERSION
+  css:
+    theme:
+      css/color-button.css: {}
