@@ -13,3 +13,17 @@
 .js .paragraph-type-top {
     margin-bottom: .33rem;
 }
+
+/* Style for Library page Content type Help text */
+.library-page-help {
+    background-color: #f0f9ff;
+    box-shadow: -8px 0 0 #1e5c90;
+    color: #1e5c90;
+    font-size: .9rem;
+    margin-left: 8px;
+    padding: .75rem;
+}
+.library-page-help .fas {
+    font-size: 1.4rem;
+    vertical-align: bottom;
+}
