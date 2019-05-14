@@ -24,6 +24,7 @@ module:
   entity_browser_entity_form: 0
   entity_embed: 0
   entity_reference_revisions: 0
+  externalauth: 0
   field: 0
   field_ui: 0
   file: 0
@@ -38,6 +39,9 @@ module:
   layout_builder: 0
   layout_builder_restrictions: 0
   layout_discovery: 0
+  ldap_authentication: 0
+  ldap_servers: 0
+  ldap_user: 0
   lib_core: 0
   libraries: 0
   link: 0
