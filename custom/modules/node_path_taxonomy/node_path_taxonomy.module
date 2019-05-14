@@ -49,6 +49,7 @@ function node_path_taxonomy_form_alter(&$form, FormStateInterface $form_state, $
       $form['node_path']['publication_path'] = [
         '#type' => 'select',
         '#title' => t('Publication Path'),
+        '#description' => t('Choose the base path that this page should reside within. The path alias (URL) to the page will be generated automatically based on this selection and the page title.'),
         '#default_value' => $default_path_value,
         '#options' => $paths,
       ];

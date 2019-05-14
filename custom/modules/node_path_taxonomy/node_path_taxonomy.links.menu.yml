@@ -1,6 +1,6 @@
 entity.node_taxonomy_path_relationship.collection:
-  title: 'Node/Taxonomy Path Configuration'
+  title: 'Node Type / Path Taxonomy Associations'
   route_name: entity.node_taxonomy_path_relationship.collection
-  description: 'Configure node path taxonomy relationships.'
+  description: 'Create or delete associations between specific node types and a path alias taxonomy.'
   parent: system.admin_config_system
   weight: 99
