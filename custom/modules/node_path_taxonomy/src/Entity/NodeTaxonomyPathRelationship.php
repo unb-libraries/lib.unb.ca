@@ -66,51 +66,6 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
   protected $vid;
 
   /**
-   * Get the node type associated with this relationship.
-   *
-   * @return string
-   *   The node type associated with this relationship.
-   */
-  public function getNodeType() {
-    return $this->node_type;
-  }
-
-  /**
-   * Get the vocabulary ID associated with this relationship.
-   *
-   * @return string
-   *   The vocabulary ID associated with this relationship.
-   */
-  public function getVid() {
-    return $this->vid;
-  }
-
-  /**
-   * Get the vocabulary ID of the associated node type relationship.
-   *
-   * @param string $node_type
-   *   The node type to query.
-   *
-   * @return string
-   *   The VID of the vocabulary associated with the node type.
-   *
-   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
-   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
-   */
-  public static function loadByNodeType($node_type) {
-    $results = \Drupal::entityQuery('node_taxonomy_path_relationship')
-      ->condition('node_type', $node_type)
-      ->execute();
-    foreach ($results as $result) {
-      $config_entity = \Drupal::entityTypeManager()
-        ->getStorage('node_taxonomy_path_relationship')
-        ->load($result);
-      return $config_entity->get('vid');
-    }
-    return NULL;
-  }
-
-  /**
    * Create a node path taxonomy tree from an associative array.
    *
    * @param string $vid
@@ -206,53 +161,6 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
   }
 
   /**
-   * Get all paths that have been set for a node type.
-   *
-   * @param string $node_type
-   *   The node type to query.
-   *
-   * @return string[]
-   *   An associative array of paths for the node type, keyed by the Term ID.
-   *
-   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
-   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
-   */
-  public static function getPaths($node_type) {
-    $node_path_taxonomy = NodeTaxonomyPathRelationship::loadByNodeType(($node_type));
-    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($node_path_taxonomy, 0, NULL, TRUE);
-    $options = [];
-
-    foreach ($terms as $term) {
-      if ($term->label() == self::TAXONOMY_ROOT_ELEMENT) {
-        $options[$term->id()] = '/';
-      }
-      else {
-        $path_value = NodeTaxonomyPath::getTermPathValue($term);
-        $options[$term->id()] = $path_value;
-      }
-    }
-    \Drupal::moduleHandler()->invokeAll('node_path_taxonomy_alter_paths', [$node_type, $options]);
-
-    return $options;
-  }
-
-  /**
-   * Get the node types that have a configured taxonomy path.
-   *
-   * @return string[]
-   *   An array of node types that have a configured taxonomy path.
-   */
-  public static function getConfiguredNodeTypes() {
-    $configured_types = [];
-    $results = \Drupal::entityQuery('node_taxonomy_path_relationship')
-      ->execute();
-    foreach ($results as $result) {
-      $configured_types[] = str_replace(NODE_PATH_TAXONOMY_RELATIONSHIP_CONFIG_ID_PREFIX, '', $result);
-    }
-    return $configured_types;
-  }
-
-  /**
    * Get node types that do not have a configured taxonomy path associated.
    *
    * @return string[]
@@ -294,6 +202,22 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
   }
 
   /**
+   * Get the node types that have a configured taxonomy path.
+   *
+   * @return string[]
+   *   An array of node types that have a configured taxonomy path.
+   */
+  public static function getConfiguredNodeTypes() {
+    $configured_types = [];
+    $results = \Drupal::entityQuery('node_taxonomy_path_relationship')
+      ->execute();
+    foreach ($results as $result) {
+      $configured_types[] = str_replace(NODE_PATH_TAXONOMY_RELATIONSHIP_CONFIG_ID_PREFIX, '', $result);
+    }
+    return $configured_types;
+  }
+
+  /**
    * {@inheritdoc}
    */
   public static function preDelete(EntityStorageInterface $storage, array $entities) {
@@ -329,6 +253,82 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
       }
     }
     return FALSE;
+  }
+
+  /**
+   * Get all paths that have been set for a node type.
+   *
+   * @param string $node_type
+   *   The node type to query.
+   *
+   * @return string[]
+   *   An associative array of paths for the node type, keyed by the Term ID.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public static function getPaths($node_type) {
+    $node_path_taxonomy = NodeTaxonomyPathRelationship::loadByNodeType(($node_type));
+    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($node_path_taxonomy, 0, NULL, TRUE);
+    $options = [];
+
+    foreach ($terms as $term) {
+      if ($term->label() == self::TAXONOMY_ROOT_ELEMENT) {
+        $options[$term->id()] = '/';
+      }
+      else {
+        $path_value = NodeTaxonomyPath::getTermPathValue($term);
+        $options[$term->id()] = $path_value;
+      }
+    }
+    \Drupal::moduleHandler()->invokeAll('node_path_taxonomy_alter_paths', [$node_type, $options]);
+
+    return $options;
+  }
+
+  /**
+   * Get the vocabulary ID of the associated node type relationship.
+   *
+   * @param string $node_type
+   *   The node type to query.
+   *
+   * @return string
+   *   The VID of the vocabulary associated with the node type.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public static function loadByNodeType($node_type) {
+    $results = \Drupal::entityQuery('node_taxonomy_path_relationship')
+      ->condition('node_type', $node_type)
+      ->execute();
+    foreach ($results as $result) {
+      $config_entity = \Drupal::entityTypeManager()
+        ->getStorage('node_taxonomy_path_relationship')
+        ->load($result);
+      return $config_entity->get('vid');
+    }
+    return NULL;
+  }
+
+  /**
+   * Get the node type associated with this relationship.
+   *
+   * @return string
+   *   The node type associated with this relationship.
+   */
+  public function getNodeType() {
+    return $this->node_type;
+  }
+
+  /**
+   * Get the vocabulary ID associated with this relationship.
+   *
+   * @return string
+   *   The vocabulary ID associated with this relationship.
+   */
+  public function getVid() {
+    return $this->vid;
   }
 
 }

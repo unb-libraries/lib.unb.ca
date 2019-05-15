@@ -37,13 +37,6 @@ class NodeTaxonomyPathRelationshipDeleteForm extends EntityConfirmFormBase {
   /**
    * {@inheritdoc}
    */
-  public function getCancelUrl() {
-    return new Url('entity.node_taxonomy_path_relationship.collection');
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public function getConfirmText() {
     return $this->t('Delete');
   }
@@ -64,6 +57,13 @@ class NodeTaxonomyPathRelationshipDeleteForm extends EntityConfirmFormBase {
     );
 
     $form_state->setRedirectUrl($this->getCancelUrl());
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getCancelUrl() {
+    return new Url('entity.node_taxonomy_path_relationship.collection');
   }
 
 }
