@@ -171,6 +171,7 @@
         "drupal/ldap": "3.0-beta6",
         "drupal/linkit": "5.0-beta8",
         "drupal/media_entity_browser": "2.0-alpha1",
+        "drupal/noreqnewpass": "1.1",
         "drupal/panelbutton": "1.2",
         "drupal/pathauto": "1.4",
         "drupal/paragraphs": "1.8",
