@@ -12,14 +12,13 @@ use Drupal\node_path_taxonomy\Entity\NodeTaxonomyPath;
 use Drupal\node_path_taxonomy\Entity\NodeTaxonomyPathRelationship;
 use Drupal\taxonomy\Entity\Term;
 
-const NODE_PATH_TAXONOMY_RELATIONSHIP_ID_PREFIX = 'node_taxonomy_path_relationship_';
+const NODE_PATH_TAXONOMY_RELATIONSHIP_CONFIG_ID_PREFIX = 'node_taxonomy_path_relationship_';
 
 /**
  * Implements hook_help().
  */
 function node_path_taxonomy_help($route_name, RouteMatchInterface $route_match) {
   switch ($route_name) {
-    // Main module help for the node_path_taxonomy module.
     case 'help.page.node_path_taxonomy':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';

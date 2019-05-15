@@ -6,6 +6,8 @@ use Drupal\Core\Config\Entity\ConfigEntityInterface;
 
 /**
  * Provides an interface for defining Node taxonomy path relationship entities.
+ *
+ * @ingroup node_path_taxonomy
  */
 interface NodeTaxonomyPathRelationshipInterface extends ConfigEntityInterface {
 

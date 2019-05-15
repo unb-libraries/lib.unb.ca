@@ -82,7 +82,7 @@ class NodeTaxonomyPathRelationshipForm extends EntityForm {
     $id = $form_state->getValue('id');
     $node_type = $form_state->getValue('node_type');
     if (empty($id)) {
-      $form_state->setValue('id', NODE_PATH_TAXONOMY_RELATIONSHIP_ID_PREFIX . $node_type);
+      $form_state->setValue('id', NODE_PATH_TAXONOMY_RELATIONSHIP_CONFIG_ID_PREFIX . $node_type);
     }
 
     parent::submitForm($form, $form_state);

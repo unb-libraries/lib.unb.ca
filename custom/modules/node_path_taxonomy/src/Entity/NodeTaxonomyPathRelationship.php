@@ -247,7 +247,7 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
     $results = \Drupal::entityQuery('node_taxonomy_path_relationship')
       ->execute();
     foreach ($results as $result) {
-      $configured_types[] = str_replace(NODE_PATH_TAXONOMY_RELATIONSHIP_ID_PREFIX, '', $result);
+      $configured_types[] = str_replace(NODE_PATH_TAXONOMY_RELATIONSHIP_CONFIG_ID_PREFIX, '', $result);
     }
     return $configured_types;
   }
