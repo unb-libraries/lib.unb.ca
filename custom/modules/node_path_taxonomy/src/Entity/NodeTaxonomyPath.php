@@ -22,8 +22,8 @@ use Drupal\user\UserInterface;
  *   label = @Translation("Node taxonomy path"),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
- *     "list_builder" = "Drupal\node_path_taxonomy\NodeTaxonomyPathListBuilder",
- *     "views_data" = "Drupal\node_path_taxonomy\Entity\NodeTaxonomyPathViewsData",
+ *     "list_builder" = "Drupal\Core\Entity\EntityListBuilder",
+ *     "views_data" = "Drupal\views\EntityViewsData",
  *
  *     "form" = {
  *       "default" = "Drupal\node_path_taxonomy\Form\NodeTaxonomyPathForm",

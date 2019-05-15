@@ -34,7 +34,7 @@ class NodeTaxonomyPathRelationshipListBuilder extends ConfigEntityListBuilder {
    */
   public function render() {
     $build = parent::render();
-    // dpm($build);
+
     $markup_block = [];
     $markup_block['title'] = [
       '#markup' => '<h2>Lorem ipsum dolor sit amet</h2>',
@@ -43,6 +43,7 @@ class NodeTaxonomyPathRelationshipListBuilder extends ConfigEntityListBuilder {
       '#markup' => '<p>By associating a node type with a path alias taxonomy, you provide the user with a selectable list of base paths to use for each node\'s path alias.</p>',
     ];
     array_unshift($build, $markup_block);
+
     return $build;
   }
 

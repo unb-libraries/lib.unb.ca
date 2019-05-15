@@ -22,7 +22,7 @@ use Drupal\Core\Entity\EntityStorageInterface;
  *       "delete" = "Drupal\node_path_taxonomy\Form\NodeTaxonomyPathRelationshipDeleteForm"
  *     },
  *     "route_provider" = {
- *       "html" = "Drupal\node_path_taxonomy\NodeTaxonomyPathRelationshipHtmlRouteProvider",
+ *       "html" = "Drupal\Core\Entity\Routing\AdminHtmlRouteProvider",
  *     },
  *   },
  *   config_prefix = "node_taxonomy_path_relationship",
