@@ -5,6 +5,7 @@ namespace Drupal\node_path_taxonomy\Form;
 use Drupal\Core\Entity\EntityForm;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node_path_taxonomy\Entity\NodeTaxonomyPathRelationship;
+use Drupal\taxonomy\Entity\Vocabulary;
 
 /**
  * Class NodeTaxonomyPathRelationshipForm.
@@ -21,39 +22,39 @@ class NodeTaxonomyPathRelationshipForm extends EntityForm {
     // Type.
     $type_options = NodeTaxonomyPathRelationship::getUnConfiguredNodeTypes();
     if (empty($type_options) && $form_state->getFormObject()->getOperation() == 'add') {
-      $form['no_types'] = array(
+      $form['no_types'] = [
         '#markup' => '<p>All node types have assigned taxonomy path relationships. To change an existing relationship, first delete the existing relationship.</p>',
-      );
+      ];
       $form['#disabled'] = TRUE;
       return $form;
     }
 
-    $form['node_type'] = array(
+    $form['node_type'] = [
       '#type' => 'select',
       '#title' => t('Node Type'),
       '#options' => $type_options,
       '#default_value' => empty($node_taxonomy_path_relationship->getNodeType()) ? NULL : $node_taxonomy_path_relationship->getNodeType(),
       '#required' => TRUE,
-    );
+    ];
 
     $vocabulary_options = [];
-    $vocabularies = \Drupal\taxonomy\Entity\Vocabulary::loadMultiple();
+    $vocabularies = Vocabulary::loadMultiple();
     foreach ($vocabularies as $vocabulary) {
       $vocabulary_options[$vocabulary->id()] = $vocabulary->label();
     }
 
-    $form['vid'] = array(
+    $form['vid'] = [
       '#type' => 'select',
       '#options' => $vocabulary_options,
       '#title' => $this->t('Vocabulary'),
       '#default_value' => empty($node_taxonomy_path_relationship->getVid()) ? NULL : $node_taxonomy_path_relationship->getVid(),
       '#required' => TRUE,
-    );
+    ];
 
-    $form['id'] = array(
+    $form['id'] = [
       '#type' => 'hidden',
       '#default_value' => empty($node_taxonomy_path_relationship->id()) ? NULL : $node_taxonomy_path_relationship->id(),
-    );
+    ];
 
     return $form;
   }
@@ -70,6 +71,7 @@ class NodeTaxonomyPathRelationshipForm extends EntityForm {
       // New item.
     }
   }
+
   /**
    * {@inheritdoc}
    */

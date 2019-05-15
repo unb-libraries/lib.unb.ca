@@ -65,7 +65,7 @@ interface SimpleGroupInterface extends ContentEntityInterface, EntityChangedInte
    * Sets the published status of a Simple group.
    *
    * @param bool $published
-   *   TRUE to set this Simple group to published, FALSE to set it to unpublished.
+   *   TRUE to set this to published, FALSE to set it to unpublished.
    *
    * @return \Drupal\simple_group\Entity\SimpleGroupInterface
    *   The called Simple group entity.

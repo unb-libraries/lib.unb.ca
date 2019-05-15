@@ -2,11 +2,12 @@
 
 namespace Drupal\node_path_taxonomy\Entity;
 
-use Drupal\Core\Entity\EntityStorageInterface;
-use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityChangedTrait;
+use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
 use Drupal\taxonomy\TermInterface;
 use Drupal\user\UserInterface;
@@ -170,13 +171,16 @@ class NodeTaxonomyPath extends ContentEntityBase implements NodeTaxonomyPathInte
   }
 
   /**
-   * @param $node
+   * Remove the existing node paths relationships for a node.
+   *
+   * @param \Drupal\node\NodeInterface $node
+   *   The node to remove paths for.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public static function removeNodePaths($node) {
+  public static function removeNodePaths(NodeInterface $node) {
     $result = \Drupal::entityQuery('node_taxonomy_path')
       ->condition('nid', $node->id())
       ->execute();
@@ -187,7 +191,10 @@ class NodeTaxonomyPath extends ContentEntityBase implements NodeTaxonomyPathInte
   }
 
   /**
-   * @param $node_type
+   * Remove all existing node paths relationships for a node type.
+   *
+   * @param string $node_type
+   *   The node type to remove paths for.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
@@ -195,9 +202,9 @@ class NodeTaxonomyPath extends ContentEntityBase implements NodeTaxonomyPathInte
    */
   public static function removeAllNodeTypePaths($node_type) {
     $nids = \Drupal::entityQuery('node')
-      ->condition('type',$node_type)
+      ->condition('type', $node_type)
       ->execute();
-    $nodes =  \Drupal\node\Entity\Node::loadMultiple($nids);
+    $nodes = Node::loadMultiple($nids);
 
     foreach ($nodes as $node) {
       self::removeNodePaths($node);
@@ -205,19 +212,23 @@ class NodeTaxonomyPath extends ContentEntityBase implements NodeTaxonomyPathInte
   }
 
   /**
-   * @param $node
-   * @param $path_tid
+   * Add a node path relationship for a specific node.
+   *
+   * @param \Drupal\node\NodeInterface $node
+   *   The node to create the relationship for.
+   * @param int $path_tid
+   *   The path taxonomy term ID to associate with the node.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public static function addNodePath($node, $path_tid) {
-    $data = array(
+  public static function addNodePath(NodeInterface $node, $path_tid) {
+    $data = [
       'uid' => \Drupal::currentUser()->id(),
       'nid' => $node->id(),
-      'tid' => $path_tid
-    );
+      'tid' => $path_tid,
+    ];
     $node_taxonomy_path = \Drupal::entityManager()
       ->getStorage('node_taxonomy_path')
       ->create($data);
@@ -225,9 +236,14 @@ class NodeTaxonomyPath extends ContentEntityBase implements NodeTaxonomyPathInte
   }
 
   /**
-   * @param \Drupal\node\NodeInterface $node
+   * Get the path taxonomy term for a specific node.
    *
-   * @return \Drupal\taxonomy\TermInterface|NULL
+   * @param \Drupal\node\NodeInterface $node
+   *   The node to get the path taxonomy term for.
+   *
+   * @return \Drupal\taxonomy\TermInterface|null
+   *   The taxonomy term, if it is set. NULL otherwise.
+   *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
@@ -249,22 +265,32 @@ class NodeTaxonomyPath extends ContentEntityBase implements NodeTaxonomyPathInte
   }
 
   /**
-   * @param $node
+   * Get the base taxonomy path for a node.
+   *
+   * @param \Drupal\node\NodeInterface $node
+   *   The node to get the base path taxonomy string for.
    *
    * @return string|null
+   *   The base taxonomy path if it is set, NULL otherwise.
+   *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public static function getNodePath($node) {
+  public static function getNodePath(NodeInterface $node) {
     return self::getTermPathValue(
       self::getNodePathTerm($node)
     );
   }
 
   /**
+   * Get the base path value for a node path taxonomy term.
+   *
    * @param \Drupal\taxonomy\TermInterface $term
+   *   The term to determine the base path value for.
    *
    * @return string
+   *   The base path value, if it exists.
+   *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
@@ -284,7 +310,10 @@ class NodeTaxonomyPath extends ContentEntityBase implements NodeTaxonomyPathInte
   }
 
   /**
+   * Get the standardized state key to store/query when processing a node.
+   *
    * @return string
+   *   The standardized state key ID.
    */
   public static function getStateKey() {
     $user_id = \Drupal::currentUser()->id();
@@ -292,11 +321,13 @@ class NodeTaxonomyPath extends ContentEntityBase implements NodeTaxonomyPathInte
   }
 
   /**
-   * @param null $vid
+   * Get the standardized root TID for a specific taxonomy path vocabulary.
    *
-   * @return int|string|null
-   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
-   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @param string $vid
+   *   The VID to get the root TID for.
+   *
+   * @return int|null
+   *   The TID of the path vocabulary, NULL otherwise.DDDD
    */
   protected static function getRootTid($vid = NULL) {
     $properties = [
@@ -306,7 +337,7 @@ class NodeTaxonomyPath extends ContentEntityBase implements NodeTaxonomyPathInte
     $terms = \Drupal::entityManager()->getStorage('taxonomy_term')->loadByProperties($properties);
     $term = reset($terms);
 
-    return !empty($term) ? $term->id() : 0;
+    return !empty($term) ? $term->id() : NULL;
   }
 
 }

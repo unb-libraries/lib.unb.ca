@@ -5,7 +5,6 @@ namespace Drupal\node_path_taxonomy\Entity;
 use Drupal\Core\Config\Entity\ConfigEntityBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\taxonomy\Entity\Term;
-use Drupal\taxonomy\TermInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
 
 /**
@@ -67,23 +66,34 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
   protected $vid;
 
   /**
+   * Get the node type associated with this relationship.
+   *
    * @return string
+   *   The node type associated with this relationship.
    */
   public function getNodeType() {
     return $this->node_type;
   }
 
   /**
+   * Get the vocabulary ID associated with this relationship.
+   *
    * @return string
+   *   The vocabulary ID associated with this relationship.
    */
   public function getVid() {
     return $this->vid;
   }
 
   /**
-   * @param $node_type
+   * Get the vocabulary ID of the associated node type relationship.
+   *
+   * @param string $node_type
+   *   The node type to query.
    *
    * @return string
+   *   The VID of the vocabulary associated with the node type.
+   *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
@@ -101,14 +111,18 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
   }
 
   /**
-   * @param $vid
-   * @param $terms
+   * Create a node path taxonomy tree from an associative array.
+   *
+   * @param string $vid
+   *   The vocabulary ID to creat the tree within.
+   * @param int[] $terms
+   *   The associative array of terms to create.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public static function createFromArray($vid, $terms) {
+  public static function createFromArray($vid, array $terms) {
     $root_tid = self::getRootElement($vid);
 
     foreach ($terms as $parent_path => $sub_paths) {
@@ -136,9 +150,14 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
   }
 
   /**
-   * @param null $vid
+   * Get the root element of a taxonomy path vocabulary.
    *
-   * @return int|string|null
+   * @param string $vid
+   *   The vocabulary ID to query.
+   *
+   * @return int|null
+   *   The root element term ID, if it exists. NULL otherwise.
+   *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
@@ -160,10 +179,16 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
   }
 
   /**
-   * @param null $name
-   * @param null $vid
+   * Get the term ID of a vocabulary's term by the name of the term.
    *
-   * @return int|string|null
+   * @param string $name
+   *   The name of the term to query.
+   * @param string $vid
+   *   The vid of the vocabulary to query.
+   *
+   * @return int|null
+   *   The tid of the term if found, NULL otherwise.
+   *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
@@ -181,9 +206,14 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
   }
 
   /**
-   * @param $node_type
+   * Get all paths that have been set for a node type.
    *
-   * @return array
+   * @param string $node_type
+   *   The node type to query.
+   *
+   * @return string[]
+   *   An associative array of paths for the node type, keyed by the Term ID.
+   *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
@@ -207,27 +237,34 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
   }
 
   /**
-   * @return array
+   * Get the node types that have a configured taxonomy path.
+   *
+   * @return string[]
+   *   An array of node types that have a configured taxonomy path.
    */
   public static function getConfiguredNodeTypes() {
     $configured_types = [];
     $results = \Drupal::entityQuery('node_taxonomy_path_relationship')
       ->execute();
-    foreach($results as $result) {
+    foreach ($results as $result) {
       $configured_types[] = str_replace(NODE_PATH_TAXONOMY_RELATIONSHIP_ID_PREFIX, '', $result);
     }
     return $configured_types;
   }
 
   /**
-   * @return array
+   * Get node types that do not have a configured taxonomy path associated.
+   *
+   * @return string[]
+   *   An array of node types that do not have a configured taxonomy path.
+   *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
   public static function getUnConfiguredNodeTypes() {
     $types = self::getNodeTypes();
     $configured_types = self::getConfiguredNodeTypes();
-    foreach($configured_types as $configured_type) {
+    foreach ($configured_types as $configured_type) {
       if (isset($types[$configured_type])) {
         unset($types[$configured_type]);
       }
@@ -236,7 +273,11 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
   }
 
   /**
-   * @return array
+   * Get all created node types.
+   *
+   * @return string[]
+   *   An array of node types that are currently defined.
+   *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
@@ -253,7 +294,7 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
   }
 
   /**
-   * @inheritdoc
+   * {@inheritdoc}
    */
   public static function preDelete(EntityStorageInterface $storage, array $entities) {
     parent::preDelete($storage, $entities);
@@ -267,9 +308,14 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
   }
 
   /**
+   * Determine if a relationship is set for an entity base on its form state.
+   *
    * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   The form state to query.
    *
    * @return bool
+   *   TRUE if a relationship has been set, FALSE otherwise.
+   *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */

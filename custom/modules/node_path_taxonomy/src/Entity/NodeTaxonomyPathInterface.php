@@ -46,7 +46,7 @@ interface NodeTaxonomyPathInterface extends ContentEntityInterface, EntityChange
    * Sets the published status of a Node taxonomy path.
    *
    * @param bool $published
-   *   TRUE to set this Node taxonomy path to published, FALSE to set it to unpublished.
+   *   TRUE to set this to published, FALSE to set it to unpublished.
    *
    * @return \Drupal\node_path_taxonomy\Entity\NodeTaxonomyPathInterface
    *   The called Node taxonomy path entity.

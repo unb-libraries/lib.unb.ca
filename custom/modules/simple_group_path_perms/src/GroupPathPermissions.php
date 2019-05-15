@@ -1,9 +1,12 @@
 <?php
 
-
 namespace Drupal\simple_group_path_perms;
 
-
+/**
+ * Defines the permissions related to group path.
+ *
+ * @ingroup simple_group_path_perms
+ */
 class GroupPathPermissions {
 
   /**
