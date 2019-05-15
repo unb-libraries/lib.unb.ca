@@ -4,6 +4,8 @@ namespace Drupal\node_path_taxonomy\Entity;
 
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityChangedInterface;
+use Drupal\node\NodeInterface;
+use Drupal\taxonomy\TermInterface;
 use Drupal\user\EntityOwnerInterface;
 
 /**
@@ -52,5 +54,107 @@ interface NodeTaxonomyPathInterface extends ContentEntityInterface, EntityChange
    *   The called Node taxonomy path entity.
    */
   public function setPublished($published);
+
+  /**
+   * Remove all existing node paths relationships for a node type.
+   *
+   * @param string $node_type
+   *   The node type to remove paths for.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   */
+  public static function removeAllNodeTypePaths($node_type);
+
+  /**
+   * Remove the existing node paths relationships for a node.
+   *
+   * @param \Drupal\node\NodeInterface $node
+   *   The node to remove paths for.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   */
+  public static function removeNodePaths(NodeInterface $node);
+
+  /**
+   * Add a node path relationship for a specific node.
+   *
+   * @param \Drupal\node\NodeInterface $node
+   *   The node to create the relationship for.
+   * @param int $path_tid
+   *   The path taxonomy term ID to associate with the node.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   */
+  public static function addNodePath(NodeInterface $node, $path_tid);
+
+  /**
+   * Get the base taxonomy path for a node.
+   *
+   * @param \Drupal\node\NodeInterface $node
+   *   The node to get the base path taxonomy string for.
+   *
+   * @return string|null
+   *   The base taxonomy path if it is set, NULL otherwise.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public static function getNodePath(NodeInterface $node);
+
+  /**
+   * Get the base path value for a node path taxonomy term.
+   *
+   * @param \Drupal\taxonomy\TermInterface $term
+   *   The term to determine the base path value for.
+   *
+   * @return string
+   *   The base path value, if it exists.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public static function getTermPathValue(TermInterface $term);
+
+  /**
+   * Get the standardized root TID for a specific taxonomy path vocabulary.
+   *
+   * @param string $vid
+   *   The VID to get the root TID for.
+   *
+   * @return int|null
+   *   The TID of the path vocabulary, NULL otherwise.DDDD
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public static function getRootTid($vid = NULL);
+
+  /**
+   * Get the path taxonomy term for a specific node.
+   *
+   * @param \Drupal\node\NodeInterface $node
+   *   The node to get the path taxonomy term for.
+   *
+   * @return \Drupal\taxonomy\TermInterface|null
+   *   The taxonomy term, if it is set. NULL otherwise.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public static function getNodePathTerm(NodeInterface $node);
+
+  /**
+   * Get the standardized state key to store/query when processing a node.
+   *
+   * @return string
+   *   The standardized state key ID.
+   */
+  public static function getStateKey();
 
 }

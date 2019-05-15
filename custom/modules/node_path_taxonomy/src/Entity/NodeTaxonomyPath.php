@@ -111,14 +111,7 @@ class NodeTaxonomyPath extends ContentEntityBase implements NodeTaxonomyPathInte
   }
 
   /**
-   * Remove all existing node paths relationships for a node type.
-   *
-   * @param string $node_type
-   *   The node type to remove paths for.
-   *
-   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
-   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
-   * @throws \Drupal\Core\Entity\EntityStorageException
+   * {@inheritdoc}
    */
   public static function removeAllNodeTypePaths($node_type) {
     $nids = \Drupal::entityQuery('node')
@@ -132,14 +125,7 @@ class NodeTaxonomyPath extends ContentEntityBase implements NodeTaxonomyPathInte
   }
 
   /**
-   * Remove the existing node paths relationships for a node.
-   *
-   * @param \Drupal\node\NodeInterface $node
-   *   The node to remove paths for.
-   *
-   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
-   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
-   * @throws \Drupal\Core\Entity\EntityStorageException
+   * {@inheritdoc}
    */
   public static function removeNodePaths(NodeInterface $node) {
     $result = \Drupal::entityQuery('node_taxonomy_path')
@@ -152,16 +138,7 @@ class NodeTaxonomyPath extends ContentEntityBase implements NodeTaxonomyPathInte
   }
 
   /**
-   * Add a node path relationship for a specific node.
-   *
-   * @param \Drupal\node\NodeInterface $node
-   *   The node to create the relationship for.
-   * @param int $path_tid
-   *   The path taxonomy term ID to associate with the node.
-   *
-   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
-   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
-   * @throws \Drupal\Core\Entity\EntityStorageException
+   * {@inheritdoc}
    */
   public static function addNodePath(NodeInterface $node, $path_tid) {
     $data = [
@@ -176,16 +153,7 @@ class NodeTaxonomyPath extends ContentEntityBase implements NodeTaxonomyPathInte
   }
 
   /**
-   * Get the base taxonomy path for a node.
-   *
-   * @param \Drupal\node\NodeInterface $node
-   *   The node to get the base path taxonomy string for.
-   *
-   * @return string|null
-   *   The base taxonomy path if it is set, NULL otherwise.
-   *
-   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
-   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * {@inheritdoc}
    */
   public static function getNodePath(NodeInterface $node) {
     return self::getTermPathValue(
@@ -194,16 +162,7 @@ class NodeTaxonomyPath extends ContentEntityBase implements NodeTaxonomyPathInte
   }
 
   /**
-   * Get the base path value for a node path taxonomy term.
-   *
-   * @param \Drupal\taxonomy\TermInterface $term
-   *   The term to determine the base path value for.
-   *
-   * @return string
-   *   The base path value, if it exists.
-   *
-   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
-   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * {@inheritdoc}
    */
   public static function getTermPathValue(TermInterface $term) {
     $paths = [];
@@ -221,18 +180,9 @@ class NodeTaxonomyPath extends ContentEntityBase implements NodeTaxonomyPathInte
   }
 
   /**
-   * Get the standardized root TID for a specific taxonomy path vocabulary.
-   *
-   * @param string $vid
-   *   The VID to get the root TID for.
-   *
-   * @return int|null
-   *   The TID of the path vocabulary, NULL otherwise.DDDD
-   *
-   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
-   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * {@inheritdoc}
    */
-  protected static function getRootTid($vid = NULL) {
+  public static function getRootTid($vid = NULL) {
     $properties = [
       'name' => NodeTaxonomyPathRelationship::TAXONOMY_ROOT_ELEMENT,
       'vid' => $vid,
@@ -244,16 +194,7 @@ class NodeTaxonomyPath extends ContentEntityBase implements NodeTaxonomyPathInte
   }
 
   /**
-   * Get the path taxonomy term for a specific node.
-   *
-   * @param \Drupal\node\NodeInterface $node
-   *   The node to get the path taxonomy term for.
-   *
-   * @return \Drupal\taxonomy\TermInterface|null
-   *   The taxonomy term, if it is set. NULL otherwise.
-   *
-   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
-   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * {@inheritdoc}
    */
   public static function getNodePathTerm(NodeInterface $node) {
     $results = \Drupal::entityQuery('node_taxonomy_path')
@@ -273,10 +214,7 @@ class NodeTaxonomyPath extends ContentEntityBase implements NodeTaxonomyPathInte
   }
 
   /**
-   * Get the standardized state key to store/query when processing a node.
-   *
-   * @return string
-   *   The standardized state key ID.
+   * {@inheritdoc}
    */
   public static function getStateKey() {
     $user_id = \Drupal::currentUser()->id();

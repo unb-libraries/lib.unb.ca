@@ -66,16 +66,7 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
   protected $vid;
 
   /**
-   * Create a node path taxonomy tree from an associative array.
-   *
-   * @param string $vid
-   *   The vocabulary ID to creat the tree within.
-   * @param int[] $terms
-   *   The associative array of terms to create.
-   *
-   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
-   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
-   * @throws \Drupal\Core\Entity\EntityStorageException
+   * {@inheritdoc}
    */
   public static function createFromArray($vid, array $terms) {
     $root_tid = self::getRootElement($vid);
@@ -105,17 +96,7 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
   }
 
   /**
-   * Get the root element of a taxonomy path vocabulary.
-   *
-   * @param string $vid
-   *   The vocabulary ID to query.
-   *
-   * @return int|null
-   *   The root element term ID, if it exists. NULL otherwise.
-   *
-   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
-   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
-   * @throws \Drupal\Core\Entity\EntityStorageException
+   * {@inheritdoc}
    */
   public static function getRootElement($vid = NULL) {
     $cur_root_tid = self::getTidByName(self::TAXONOMY_ROOT_ELEMENT, $vid);
@@ -134,18 +115,7 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
   }
 
   /**
-   * Get the term ID of a vocabulary's term by the name of the term.
-   *
-   * @param string $name
-   *   The name of the term to query.
-   * @param string $vid
-   *   The vid of the vocabulary to query.
-   *
-   * @return int|null
-   *   The tid of the term if found, NULL otherwise.
-   *
-   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
-   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * {@inheritdoc}
    */
   public static function getTidByName($name = NULL, $vid = NULL) {
     $properties = [];
@@ -161,13 +131,7 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
   }
 
   /**
-   * Get node types that do not have a configured taxonomy path associated.
-   *
-   * @return string[]
-   *   An array of node types that do not have a configured taxonomy path.
-   *
-   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
-   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * {@inheritdoc}
    */
   public static function getUnConfiguredNodeTypes() {
     $types = self::getNodeTypes();
@@ -181,13 +145,7 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
   }
 
   /**
-   * Get all created node types.
-   *
-   * @return string[]
-   *   An array of node types that are currently defined.
-   *
-   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
-   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * {@inheritdoc}
    */
   public static function getNodeTypes() {
     $type_options = [];
@@ -202,10 +160,7 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
   }
 
   /**
-   * Get the node types that have a configured taxonomy path.
-   *
-   * @return string[]
-   *   An array of node types that have a configured taxonomy path.
+   * {@inheritdoc}
    */
   public static function getConfiguredNodeTypes() {
     $configured_types = [];
@@ -232,16 +187,7 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
   }
 
   /**
-   * Determine if a relationship is set for an entity base on its form state.
-   *
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
-   *   The form state to query.
-   *
-   * @return bool
-   *   TRUE if a relationship has been set, FALSE otherwise.
-   *
-   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
-   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * {@inheritdoc}
    */
   public static function getRelationshipSetFromFormState(FormStateInterface $form_state) {
     if (!empty($form_state->getFormObject()) && method_exists($form_state->getFormObject(), 'getEntity')) {
@@ -256,16 +202,7 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
   }
 
   /**
-   * Get all paths that have been set for a node type.
-   *
-   * @param string $node_type
-   *   The node type to query.
-   *
-   * @return string[]
-   *   An associative array of paths for the node type, keyed by the Term ID.
-   *
-   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
-   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * {@inheritdoc}
    */
   public static function getPaths($node_type) {
     $node_path_taxonomy = NodeTaxonomyPathRelationship::loadByNodeType(($node_type));
@@ -287,16 +224,7 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
   }
 
   /**
-   * Get the vocabulary ID of the associated node type relationship.
-   *
-   * @param string $node_type
-   *   The node type to query.
-   *
-   * @return string
-   *   The VID of the vocabulary associated with the node type.
-   *
-   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
-   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * {@inheritdoc}
    */
   public static function loadByNodeType($node_type) {
     $results = \Drupal::entityQuery('node_taxonomy_path_relationship')
@@ -312,20 +240,14 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
   }
 
   /**
-   * Get the node type associated with this relationship.
-   *
-   * @return string
-   *   The node type associated with this relationship.
+   * {@inheritdoc}
    */
   public function getNodeType() {
     return $this->node_type;
   }
 
   /**
-   * Get the vocabulary ID associated with this relationship.
-   *
-   * @return string
-   *   The vocabulary ID associated with this relationship.
+   * {@inheritdoc}
    */
   public function getVid() {
     return $this->vid;
