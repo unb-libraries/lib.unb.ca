@@ -74,7 +74,14 @@ function node_path_taxonomy_pathauto_alias_alter(&$alias, array &$context) {
     NodeTaxonomyPath::removeNodePaths($node);
     NodeTaxonomyPath::addNodePath($node, $path_tid);
     $clean_label = \Drupal::service('pathauto.alias_cleaner')->cleanString($node->label());
-    $alias = NodeTaxonomyPath::getNodePath($node) . "/$clean_label";
+    $node_path = NodeTaxonomyPath::getNodePath($node);
+    if ($node_path == '/') {
+      $alias = $clean_label;
+    }
+    else {
+      $alias = $node_path . "/$clean_label";
+    }
+
     \Drupal::state()->delete(NodeTaxonomyPath::getStateKey());
   }
 }
