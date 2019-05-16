@@ -88,3 +88,5 @@ bootstrap_barrio_table_style: ''
 bootstrap_barrio_table_hover: 0
 bootstrap_barrio_table_head: ''
 banner_images: {  }
+show_top_header_login: 0
+show_top_header_logout: 1
