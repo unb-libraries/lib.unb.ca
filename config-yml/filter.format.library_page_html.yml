@@ -65,7 +65,7 @@ filters:
     status: true
     weight: -50
     settings:
-      allowed_html: '<div class id role aria-labelledby> <p class id> <span class data-color> <br> <em> <strong> <ul class type> <ol class start type> <li class> <dl class> <dt> <dd> <h2 class id> <h3 class id> <h4 class id> <h5 class id> <h6 class id> <a href class id target title hreflang data-entity-substitution data-entity-type data-entity-uuid data-toggle role aria-controls> <img class src alt width height data-entity-type data-entity-uuid data-align data-caption> <table class id> <caption> <tbody> <thead> <tfoot> <th class> <td class> <tr class> <drupal-entity data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button> <button class type> <cite> <blockquote cite> <code> <sup> <sub> <hr class>'
+      allowed_html: '<div class id role aria-labelledby> <p class id> <span class data-color> <br> <em> <strong> <ul class type> <ol class start type> <li class> <dl class> <dt class> <dd class> <h2 class id> <h3 class id> <h4 class id> <h5 class id> <h6 class id> <a href class id target title hreflang data-entity-substitution data-entity-type data-entity-uuid data-toggle role aria-controls> <img class src alt width height data-entity-type data-entity-uuid data-align data-caption> <table class id> <caption> <tbody> <thead> <tfoot> <th class> <td class> <tr class> <drupal-entity data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button> <button class type> <cite> <blockquote cite> <code> <sup> <sub> <hr class>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_autop:
