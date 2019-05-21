@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Component\Utility\UrlHelper;
 
 /**
  * Implements hook_help().
@@ -32,4 +33,27 @@ function unb_libraries_askus_theme() {
       'render element' => 'children',
     ],
   ];
+}
+
+/**
+ * Implements Server-Side Presence Check.
+ *
+ * @see http://docs.libraryh3lp.com/code-presence-check-php.html
+ */
+function _unb_libraries_askus_presence_check($queue_id) {
+  $doc = new DOMDocument();
+  $url = UrlHelper::filterBadProtocol('http://libraryh3lp.com/presence/jid/' . $queue_id . '/chat.libraryh3lp.com/xml');
+  $doc->load($url);
+  dump()
+  $show = 'unavailable';
+  $resources = $doc->getElementsByTagName('resource');
+  if ($resources->length > 0) {
+    $show = $resources->item(0)->getAttribute('show');
+  }
+  if ($show == 'available' || $show == 'chat') {
+    echo 'You are available for chatting.';
+  }
+  else {
+    echo 'You are not available.';
+  }
 }
