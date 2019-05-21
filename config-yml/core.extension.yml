@@ -57,7 +57,7 @@ module:
   path: 0
   quickedit: 0
   rdf: 0
-  scroll_back_to_top: 0
+  scroll_to_top: 0
   search: 0
   system: 0
   taxonomy: 0
