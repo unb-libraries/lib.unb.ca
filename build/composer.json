@@ -81,12 +81,12 @@
                 "name": "ckeditor/div",
                 "version": "4.11.4",
                 "type": "drupal-library",
-                "extra": {
-                    "installer-name": "ckeditor/plugins/div"
-                },
                 "dist": {
                     "type": "zip",
                     "url": "https://download.ckeditor.com/div/releases/div_4.11.4.zip"
+                },
+                "extra": {
+                    "installer-name": "ckeditor/plugins/div"
                 }
             }
         },
@@ -127,6 +127,7 @@
             }
         },
         {
+            "type": "package",
             "package": {
                 "dist": {
                     "type": "zip",
@@ -138,8 +139,7 @@
                 },
                 "type": "drupal-library",
                 "version": "1.8.7"
-            },
-            "type": "package"
+            }
         }
     ],
     "require": {
@@ -176,6 +176,7 @@
         "drupal/pathauto": "1.4",
         "drupal/paragraphs": "1.8",
         "drupal/redis": "1.0-rc2",
+        "drupal/scroll_back_to_top": "1.0-rc1",
         "drupal/search_api": "1.12",
         "drupal/search_api_autocomplete": "1.2",
         "drupal/search_api_solr": "2.6",

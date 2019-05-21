@@ -1,0 +1,9 @@
+scroll_to_top_label: 'Back to top'
+scroll_to_top_position: '1'
+scroll_to_top_bg_color_hover: '#990000'
+scroll_to_top_bg_color_out: '#000000'
+scroll_to_top_display_text: 1
+scroll_to_top_enable_admin_theme: 1
+_core:
+  default_config_hash: BIrYYnO7RDi5akBhMEPGWqx83gI0QhA54a7oSUDF144
+scroll_to_top_preview: ''
