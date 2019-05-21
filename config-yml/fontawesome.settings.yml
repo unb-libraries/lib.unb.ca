@@ -1,7 +1,7 @@
 tag: span
 method: webfonts
 use_cdn: true
-external_svg_location: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css'
+external_svg_location: 'https://use.fontawesome.com/releases/v5.8.2/css/all.css'
 use_shim: false
 external_shim_location: 'https://use.fontawesome.com/releases/v5.5.0/css/v4-shims.css'
 _core:
