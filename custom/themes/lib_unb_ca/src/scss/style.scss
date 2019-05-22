@@ -94,3 +94,9 @@
   }
 }
 /* END QuickLinks */
+
+/* Scale content images to parent block element */
+.block img {
+  max-width: 100%;
+  height: auto
+}
