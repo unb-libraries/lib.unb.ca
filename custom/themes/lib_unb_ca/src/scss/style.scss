@@ -5,14 +5,15 @@
 @import 'import';
 
 /* Discovery Search */
-.nav-tabs {
-  display: none;
-}
-.nav-tabs .nav-item {
-  z-index: 9;
-}
 #discovery-search {
   flex-wrap: wrap;
+}
+#discovery-search .nav-tabs .nav-item {
+  z-index: 9;
+}
+#discovery-search .nav-link {
+  padding-left: .98rem;
+  padding-right: .98rem;
 }
 #discovery-search .card-header h3 {
   font-size: 1.2em;
@@ -20,6 +21,9 @@
 @media(max-width: 991px) {
   #discovery-search {
     border: none;
+  }
+  #discovery-search #tabs {
+    display: none;
   }
   .tab-content > .tab-pane {
     display: block !important;
