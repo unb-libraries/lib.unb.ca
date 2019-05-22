@@ -1,3 +1,7 @@
+#back-top #button {
+  border: 1px solid $white;
+}
+/* Visually hidden Back to top button text (for assistive tech) */
 #back-top #link {
   position: absolute;
   width: 1px;
@@ -6,6 +10,4 @@
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
-
-  border: 1px solid $white;
 }
