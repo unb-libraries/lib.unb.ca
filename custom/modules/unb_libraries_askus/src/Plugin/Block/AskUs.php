@@ -1,57 +1,51 @@
 <?php
 
-namespace Drupal\lib_core\Plugin\Block;
+namespace Drupal\unb_libraries_askus\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Link;
-use Drupal\Core\Url;
 
 /**
- * Provides the UNB Libraries AskUsBlock.
+ * Provides the UNB Libraries AskUs Block.
  *
  * @Block(
- *   id = "askus_block",
- *   admin_label = @Translation("UNB Libraries AskUs"),
- *   category = @Translation("UNB Libraries"),
+ *  id = "askus_block",
+ *  admin_label = @Translation("UNB Libraries AskUs"),
  * )
  */
-class QuickLinks extends BlockBase {
+class AskUs extends BlockBase {
 
   /**
    * {@inheritdoc}
    */
   public function build() {
-    $askus = [
-      [
-        '#wrapper_attributes' => [
-          'class' => [
-            'askPopUp',
-          ],
-        ],
-        '#children' => Link::fromTextAndUrl(
-          $this->t('Renew Books'),
-          Url::fromUri('https://ca.libraryh3lp.com/chat/askus@chat.ca.libraryh3lp.com?title=Ask+Us&theme=gota&css=//lib.unb.ca/core/css-2015/libraryh3lp.unb.lib.css')
-        )->toString(),
+    $html = '
+    <div class="askUs">
+        <h2>Ask Us</h2>
+        <noscript><p>Ask Us instant messaging requires JavaScript.</p></noscript>
+        <div class="askBubble">
+            <a class="askPopUp" href="//ca.libraryh3lp.com/chat/askus@chat.ca.libraryh3lp.com?title=Ask+Us&amp;theme=gota&amp;css=//lib.unb.ca/core/css-2015/libraryh3lp.unb.lib.css">Type here to CHAT.</a>
+        </div>
+        <p>
+            <a href="/help/ask.php"><span class="sr-only">Ask by:</span>
+                <span><i class="fas fa-envelope"></i> Email</span>
+                <span><i class="fas fa-mobile"></i> Text</span>
+                <span><i class="fas fa-phone"></i> Phone</span>
+                <span><i class="fas fa-user"></i> In-Person</span>
+            </a>
+        </p>
+    </div>
+    ';
+
+    $attachments = [
+      'library' => [
+        'unb_libraries_askus/askus',
       ],
     ];
 
-    $render_array_list = [
-      '#title' => 'Ask Us',
-      '#theme' => 'item_list',
-      '#list_type' => 'ul',
-      '#context' => [
-        'list_style' => 'inline',
-      ],
-      '#wrapper_attributes' => [
-        'id' => 'askus-wrapper',
-        'class' => [
-          'askBubble',
-        ],
-      ],
-      '#items' => $quicklinks,
+    return [
+      '#children' => $html,
+      '#attached' => $attachments,
     ];
-
-    return $render_array_list;
   }
 
 }

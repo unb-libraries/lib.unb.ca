@@ -6,7 +6,6 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\Component\Utility\UrlHelper;
 
 /**
  * Implements hook_help().
@@ -25,17 +24,6 @@ function unb_libraries_askus_help($route_name, RouteMatchInterface $route_match)
 }
 
 /**
- * Implements hook_theme().
- */
-function unb_libraries_askus_theme() {
-  return [
-    'unb_libraries_askus' => [
-      'render element' => 'children',
-    ],
-  ];
-}
-
-/**
  * Implements Server-Side Presence Check.
  *
  * @see http://docs.libraryh3lp.com/code-presence-check-php.html
@@ -44,7 +32,7 @@ function _unb_libraries_askus_presence_check($queue_id) {
   $doc = new DOMDocument();
   $url = UrlHelper::filterBadProtocol('http://libraryh3lp.com/presence/jid/' . $queue_id . '/chat.libraryh3lp.com/xml');
   $doc->load($url);
-  dump()
+
   $show = 'unavailable';
   $resources = $doc->getElementsByTagName('resource');
   if ($resources->length > 0) {
