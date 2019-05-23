@@ -35,6 +35,16 @@ services:
       - ./custom/themes:/app/themes/custom
       - ./tests:/app/tests
 
+  drupal-redis-lib-unb-ca:
+    image: redis:5-alpine
+    restart: always
+    expose:
+      - "6379"
+    networks:
+      - lib.unb.ca
+    env_file:
+      - ./env/redis.env
+
   mailhog:
     image: mailhog/mailhog
     expose:

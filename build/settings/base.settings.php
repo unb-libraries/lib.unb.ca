@@ -13,4 +13,7 @@ if (isset($_SERVER['APPLICATION_ENV'])) {
   }
 }
 
-// Add common includes below.
+// Redis Config.
+$settings['cache_prefix']['default'] = 'libweb_';
+$conf['chq_redis_cache_enabled'] = TRUE;
+include_once dirname(__FILE__) . "/settings.redis.inc";

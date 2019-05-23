@@ -4,6 +4,8 @@ dockworker:
     project_prefix: LIB
     name: lib.unb.ca
     upstream_image:
-      - unblibraries/drupal:8.x-1.x
+      - mailhog/mailhog
       - mysql:5.7
+      - redis:5-alpine
+      - unblibraries/drupal:8.x-1.x
   options:

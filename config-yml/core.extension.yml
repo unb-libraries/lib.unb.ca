@@ -56,6 +56,7 @@ module:
   panelbutton: 0
   path: 0
   quickedit: 0
+  redis: 0
   rdf: 0
   scroll_to_top: 0
   search: 0
