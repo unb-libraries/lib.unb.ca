@@ -1,4 +1,4 @@
-.askUs h2 {
+.askus h2 {
     background: url(../img/AskUslogo2.png) no-repeat center center transparent;
     height: 53px;
     margin-top: -5px;
@@ -6,27 +6,27 @@
     padding-top: 0;
     text-indent: -9999px;
 }
-.askUs p {
+.askus p {
     font-size: .9em;
     margin: 10px 0px 0px;
     padding: 0;
     text-align: center;
 }
-.askUs p a:hover {
+.askus p a:hover {
     text-decoration: none;
     border: none;
     color: #007fa3;
 }
-.askUs p span {
+.askus p span {
     padding-left: 8px;
     padding-right: 8px;
     white-space: nowrap;
 }
-.askUs p a span:hover {
+.askus p a span:hover {
     color: #990000;
     border-bottom: 1px dotted #ccc;
 }
-.askBubble {
+.askus-chatbox {
     background-color: #FFF;
     border: 1px solid #AAA;
     border-radius: 4px;
@@ -38,7 +38,7 @@
     position: relative;
     width: auto;
 }
-.askBubble a {
+a.askus-popup {
     text-decoration: none;
     border: none;
     color: #666;
