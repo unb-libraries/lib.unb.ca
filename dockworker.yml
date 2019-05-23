@@ -1,5 +1,4 @@
 dockworker:
-  version: 1.0
   instance:
     project_prefix: LIB
     name: lib.unb.ca
@@ -9,3 +8,4 @@ dockworker:
       - redis:5-alpine
       - unblibraries/drupal:8.x-1.x
   options:
+  version: 1.0
