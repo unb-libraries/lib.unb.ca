@@ -26,6 +26,8 @@ services:
     image: lib.unb.ca:latest
     restart: always
     container_name: lib.unb.ca
+    depends_on:
+      - drupal-mysql-lib-unb-ca
     expose:
       - "80"
     networks:
