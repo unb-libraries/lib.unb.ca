@@ -42,12 +42,19 @@ dependencies:
   - views_ui
 
   # This instance
+  - allowed_formats
+  - block_field
+  - chosen
+  - chosen_lib
+  - ckeditor_div_manager
   - colorbutton
   - ctools
   - embed
   - entity_browser
   - entity_browser_entity_form
   - entity_embed
+  - entity_reference_revisions
+  - externalauth
   - fontawesome
   - fontawesome_iconpicker
   - fontawesome_menu_icons
@@ -55,14 +62,20 @@ dependencies:
   - layout_builder
   - layout_builder_restrictions
   - layout_discovery
+  - ldap_authentication
+  - ldap_servers
+  - ldap_user
   - lib_core
   - libraries
   - linkit
   - media
   - media_entity_browser
+  - noreqnewpass
   - panelbutton
+  - paragraphs
   - pathauto
   - redis
+  - scroll_to_top
   - token
 
 themes:
