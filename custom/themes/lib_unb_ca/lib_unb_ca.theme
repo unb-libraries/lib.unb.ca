@@ -11,11 +11,19 @@ use Drupal\Core\Form\FormStateInterface;
  * Implements hook_form_system_theme_settings_alter().
  */
 function lib_unb_ca_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
-  // Hide unwanted inheritied Bootstrap Barrio settings from Appearance > Settings > Bootstrap Settings.
+  // Hide unwanted inheritied Barrio settings: Appearance > Settings > Bootstrap Settings.
   $form['affix']['#access'] = FALSE;
   $form['scroll_spy']['#access'] = FALSE;
   $form['fonts']['#access'] = FALSE;
   $form['layout']['sidebar_position']['#access'] = FALSE;
   $form['layout']['sidebar_first']['#access'] = FALSE;
   $form['layout']['sidebar_second']['#access'] = FALSE;
+}
+
+/**
+ * Implements hook_theme_preprocess_page().
+ */
+function lib_unb_ca_preprocess_page(&$variables) {
+  // Set flag for QuickLinks menu.
+  $variables['is_library'] = TRUE;
 }
