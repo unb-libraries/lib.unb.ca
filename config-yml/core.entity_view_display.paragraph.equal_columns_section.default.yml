@@ -3,12 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.equal_columns_section.field_body_column1
-    - field.field.paragraph.equal_columns_section.field_body_column2
+    - field.field.paragraph.equal_columns_section.field_column_1
+    - field.field.paragraph.equal_columns_section.field_column_2
     - paragraphs.paragraphs_type.equal_columns_section
   module:
+    - entity_reference_revisions
     - layout_builder
-    - text
+    - layout_builder_restrictions
 third_party_settings:
   layout_builder:
     allow_custom: false
@@ -19,58 +20,67 @@ third_party_settings:
         layout_settings:
           column_widths: 50-50
         components:
-          c3b56910-05c2-490b-b88b-d80570af63c6:
-            uuid: c3b56910-05c2-490b-b88b-d80570af63c6
+          ff1d635b-82a7-4a4e-8728-204a815985b0:
+            uuid: ff1d635b-82a7-4a4e-8728-204a815985b0
             region: first
             configuration:
-              id: 'field_block:paragraph:equal_columns_section:field_body_column1'
-              label: 'Column 1 Body'
+              id: 'field_block:paragraph:equal_columns_section:field_column_1'
+              label: 'Column 1'
               provider: layout_builder
               label_display: '0'
               formatter:
                 label: hidden
-                type: text_default
-                settings: {  }
+                type: entity_reference_revisions_entity_view
+                settings:
+                  view_mode: default
                 third_party_settings: {  }
               context_mapping:
                 entity: layout_builder.entity
             additional: {  }
             weight: 0
-          38e99c5c-bef1-4044-90b7-ca2a6f1c825c:
-            uuid: 38e99c5c-bef1-4044-90b7-ca2a6f1c825c
+          97b10601-6c00-442c-9c3b-a4799c7253ae:
+            uuid: 97b10601-6c00-442c-9c3b-a4799c7253ae
             region: second
             configuration:
-              id: 'field_block:paragraph:equal_columns_section:field_body_column2'
-              label: 'Column 2 Body'
+              id: 'field_block:paragraph:equal_columns_section:field_column_2'
+              label: 'Column 2'
               provider: layout_builder
               label_display: '0'
               formatter:
                 label: hidden
-                type: text_default
-                settings: {  }
+                type: entity_reference_revisions_entity_view
+                settings:
+                  view_mode: default
                 third_party_settings: {  }
               context_mapping:
                 entity: layout_builder.entity
             additional: {  }
             weight: 0
         third_party_settings: {  }
+  layout_builder_restrictions:
+    allowed_blocks: {  }
+    allowed_layouts: {  }
 id: paragraph.equal_columns_section.default
 targetEntityType: paragraph
 bundle: equal_columns_section
 mode: default
 content:
-  field_body_column1:
+  field_column_1:
     weight: 0
-    label: above
-    settings: {  }
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    type: text_default
+    type: entity_reference_revisions_entity_view
     region: content
-  field_body_column2:
+  field_column_2:
     weight: 1
-    label: above
-    settings: {  }
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    type: text_default
+    type: entity_reference_revisions_entity_view
     region: content
 hidden: {  }

@@ -1,0 +1,45 @@
+uuid: 259f7034-1bf3-4bd8-9770-ad0a68aec856
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_column_1
+    - paragraphs.paragraphs_type.body_section
+    - paragraphs.paragraphs_type.custom_block_section
+    - paragraphs.paragraphs_type.equal_columns_section
+  module:
+    - entity_reference_revisions
+id: paragraph.equal_columns_section.field_column_1
+field_name: field_column_1
+entity_type: paragraph
+bundle: equal_columns_section
+label: 'Column 1'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      body_section: body_section
+      custom_block_section: custom_block_section
+    target_bundles_drag_drop:
+      body_section:
+        enabled: true
+        weight: 6
+      body_sidebar_section:
+        weight: 7
+        enabled: false
+      custom_block_section:
+        enabled: true
+        weight: 8
+      equal_columns_section:
+        weight: 9
+        enabled: false
+      fullwidth_body_section:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions

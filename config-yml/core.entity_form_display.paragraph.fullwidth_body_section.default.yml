@@ -1,15 +1,15 @@
-uuid: 01706d48-e5e1-48ec-b4cb-8995a395771b
+uuid: d2c684f6-4627-426e-912d-f4a2e7af6726
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.standard_section.field_body
-    - paragraphs.paragraphs_type.standard_section
+    - field.field.paragraph.fullwidth_body_section.field_body
+    - paragraphs.paragraphs_type.fullwidth_body_section
   module:
     - text
-id: paragraph.standard_section.default
+id: paragraph.fullwidth_body_section.default
 targetEntityType: paragraph
-bundle: standard_section
+bundle: fullwidth_body_section
 mode: default
 content:
   field_body:

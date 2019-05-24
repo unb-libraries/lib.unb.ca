@@ -1,10 +1,10 @@
-uuid: 7d9d40af-70f4-4212-bfe2-391c2c00e879
+uuid: 37e16735-fccd-46af-a542-51f3fbaf9d29
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_body_column1
-    - paragraphs.paragraphs_type.body_sidebar_section
+    - field.storage.paragraph.field_body
+    - paragraphs.paragraphs_type.body_section
   module:
     - allowed_formats
     - text
@@ -15,11 +15,11 @@ third_party_settings:
     basic_html: '0'
     restricted_html: '0'
     plain_text: '0'
-id: paragraph.body_sidebar_section.field_body_column1
-field_name: field_body_column1
+id: paragraph.body_section.field_body
+field_name: field_body
 entity_type: paragraph
-bundle: body_sidebar_section
-label: 'Column 1 Body'
+bundle: body_section
+label: Body
 description: ''
 required: false
 translatable: true

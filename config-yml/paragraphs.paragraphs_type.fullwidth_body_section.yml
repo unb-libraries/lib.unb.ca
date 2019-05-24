@@ -1,0 +1,9 @@
+uuid: ec5ffac5-08fb-402a-9ece-379f3229d464
+langcode: en
+status: true
+dependencies: {  }
+id: fullwidth_body_section
+label: 'Full-Width Body Section'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

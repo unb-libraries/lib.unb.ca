@@ -1,0 +1,9 @@
+uuid: 20a3854a-8cbb-4238-8a5c-e0b562cc32ab
+langcode: en
+status: true
+dependencies: {  }
+id: body_section
+label: 'Body Section'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

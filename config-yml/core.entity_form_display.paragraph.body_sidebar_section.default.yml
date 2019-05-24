@@ -1,35 +1,41 @@
-uuid: 9b5fb947-c04f-41da-bc13-9eb50eac9bb7
+uuid: 54aefb1e-0003-413b-944e-8049d4ed6a55
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.body_sidebar_section.field_body_column1
-    - field.field.paragraph.body_sidebar_section.field_body_column2
+    - field.field.paragraph.body_sidebar_section.field_column_1
+    - field.field.paragraph.body_sidebar_section.field_column_2
     - paragraphs.paragraphs_type.body_sidebar_section
   module:
-    - text
+    - paragraphs
 id: paragraph.body_sidebar_section.default
 targetEntityType: paragraph
 bundle: body_sidebar_section
 mode: default
 content:
-  field_body_column1:
+  field_column_1:
+    type: entity_reference_paragraphs
     weight: 0
     settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: preview
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
     third_party_settings: {  }
-    type: text_textarea_with_summary
     region: content
-  field_body_column2:
+  field_column_2:
+    type: entity_reference_paragraphs
     weight: 1
     settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: preview
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
     third_party_settings: {  }
-    type: text_textarea_with_summary
     region: content
 hidden:
   created: true
