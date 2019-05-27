@@ -5,6 +5,7 @@
  * Contains unb_libraries_askus.module.
  */
 
+use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
@@ -24,24 +25,109 @@ function unb_libraries_askus_help($route_name, RouteMatchInterface $route_match)
 }
 
 /**
+ * Implements Ask Us chat widget.
+ */
+function _unb_libraries_askus_chat_widget($widget_style = "pop-up", $queue = "askus", $title = "Ask Us") {
+  $xml_show = _unb_libraries_askus_check_presence($queue);
+  // Process title to be used as argument.
+  $title = trim($title);
+  $title = preg_replace('/\s+/', '+', $title);
+  // For alternative themes see: https://libraryh3lp.com/presence/themes.
+  $theme = 'gota';
+  // Construct chat widget address.
+  $ask_src = '//ca.libraryh3lp.com/chat/' . $queue .
+    '@chat.ca.libraryh3lp.com?title=' . $title .
+    '&amp;theme=' . $theme .
+    '&amp;css=//' . $_SERVER['SERVER_NAME'] . '/core/css-2015/libraryh3lp.unb.lib.css';
+
+  return _unb_libraries_askus_render_widget($xml_show, $ask_src, $title, $widget_style);
+}
+
+/**
  * Implements Server-Side Presence Check.
+ *
+ * @param string $queue
+ *   The user/queue name to check presence for, our default queue = askus.
+ *
+ * @return string
+ *   The XMPP (Jabber) protocol response from the presence check.
  *
  * @see http://docs.libraryh3lp.com/code-presence-check-php.html
  */
-function _unb_libraries_askus_presence_check($queue_id) {
+function _unb_libraries_askus_check_presence($queue = 'askus') {
+  // Resource URL : {host}/presence/jid/{name}/[chat.]libraryh3lp.com/{format}[/{theme}].
+  // {host} : served over both HTTP and HTTPS (we use HTTPS).
+  // {name} : we only use 'queue' type therefore must include the optional '[chat.]'.
+  // {format} : specifies format for the presence indicator - can be text, xml, js, or image (we use xml).
+  // [/{theme}] : specifies optional theme when choosing image for {format} (we dont use).
+  $host = 'https://ca.libraryh3lp.com';
+  $name = trim($queue) . '/chat.';
+  $format = 'xml';
+  $url = UrlHelper::filterBadProtocol(
+    $host .
+    '/presence/jid/' .
+    $name .
+    'ca.libraryh3lp.com/' .
+    $format
+  );
   $doc = new DOMDocument();
-  $url = UrlHelper::filterBadProtocol('http://libraryh3lp.com/presence/jid/' . $queue_id . '/chat.libraryh3lp.com/xml');
   $doc->load($url);
 
-  $show = 'unavailable';
-  $resources = $doc->getElementsByTagName('resource');
-  if ($resources->length > 0) {
-    $show = $resources->item(0)->getAttribute('show');
-  }
-  if ($show == 'available' || $show == 'chat') {
-    echo 'You are available for chatting.';
+  $jabber_resources = $doc->getElementsByTagName('resource');
+  if ($jabber_resources->length > 0) {
+    $xml_show = $jabber_resources
+      ->item(0)
+      ->getAttribute('show');
   }
   else {
-    echo 'You are not available.';
+    $xml_show = 'Error: no presence resource';
   }
+
+  return $xml_show;
+}
+
+/**
+ * If queue online, output appropriate style widget else output offline message.
+ *
+ * @param string $xml_show
+ *   The user/queue name to check presence status for, UNB Libraries default queue = askus.
+ * @param string $ask_src
+ *   The user/queue name to check presence status for, UNB Libraries default queue = askus.
+ * @param string $title
+ *   The title text for the heading tag.
+ * @param string $widget_style
+ *   The user/queue name to check presence status for, UNB Libraries default queue = askus.
+ */
+function _unb_libraries_askus_render_widget($xml_show, $ask_src, $title, $widget_style) {
+  $html = '<h2>' . $title . '</h2>';
+  $html .= '<noscript><p>Ask Us instant messaging requires JavaScript.</p></noscript>';
+
+  if ($xml_show != 'available') {
+    if (in_array($xml_show, ['dnd', 'away'])) {
+      $note = 'AskUs is currently busy serving other patrons.';
+    }
+    else {
+      $note = 'TO DO: Get custom note from _getOfflineNote()';
+    }
+    $html .= '<p class="askus-offline">';
+    $html .= $note . '<br />';
+    $html .= '</p>';
+
+    return $html;
+  }
+  if ($widget_style == 'embedded') {
+    // Render embedded chat widget.
+    $html .= '<div class="chatWidget needs-js" style="position:relative;z-index:0;">';
+    $html .= '<iframe src="' . $ask_src . '" frameborder="0" style=""></iframe>';
+    $html .= '</div>';
+  }
+  else {
+    // Render pop-up chat widget.
+    $sendTxt = 'Type here to CHAT.';
+    $html .= '<div class="askus-chatbox">';
+    $html .= '<a class="askus-popup" href="' . $ask_src . '">' . $sendTxt . '</a>';
+    $html .= '</div>';
+  }
+
+  return $html;
 }
