@@ -1,4 +1,4 @@
-.askus h2 {
+.askus-chatbox > h2 {
     background: url(../img/AskUslogo2.png) no-repeat center center transparent;
     height: 53px;
     margin-top: -5px;
@@ -6,27 +6,27 @@
     padding-top: 0;
     text-indent: -9999px;
 }
-.askus p {
+.askus-footer {
     font-size: .9em;
     margin: 10px 0px 0px;
     padding: 0;
     text-align: center;
 }
-.askus p a:hover {
+.askus-footer a:hover {
     text-decoration: none;
     border: none;
     color: #007fa3;
 }
-.askus p span {
+.askus-footer span {
     padding-left: 8px;
     padding-right: 8px;
     white-space: nowrap;
 }
-.askus p a span:hover {
+.askus-footer a span:hover {
     color: #990000;
     border-bottom: 1px dotted #ccc;
 }
-.askus-chatbox {
+.libraryh3lp {
     background-color: #FFF;
     border: 1px solid #AAA;
     border-radius: 4px;
@@ -38,7 +38,7 @@
     position: relative;
     width: auto;
 }
-a.askus-popup {
+.libraryh3lp > a {
     text-decoration: none;
     border: none;
     color: #666;
@@ -51,4 +51,7 @@ a.askus-popup {
     cursor: text;
     background: none repeat scroll 0px 0px transparent;
     outline: 0;
+}
+.needs-js {
+    display: none;
 }

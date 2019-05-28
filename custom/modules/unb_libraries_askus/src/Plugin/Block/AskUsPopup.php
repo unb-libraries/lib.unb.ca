@@ -22,7 +22,7 @@ class AskUsPopup extends BlockBase {
     /* $module_handler = \Drupal::service('module_handler'); */
     /* $module_path = $module_handler->getModule('unb_libraries_askus')->getPath(); */
 
-    $html = _unb_libraries_askus_chat_widget();
+    $html = _unb_libraries_askus_chat_widget('popup');
 
     $attachments = [
       'library' => [
