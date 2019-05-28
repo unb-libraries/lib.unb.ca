@@ -7,12 +7,21 @@
 (function ($, Drupal) {
     Drupal.behaviors.AskUs = {
         attach: function (context, settings) {
-            var x = document.createElement("script");
-            x.type = "text/javascript";
-            x.async = true;
-            x.src = (document.location.protocol === "https:" ? "https://" : "http://") + "libraryh3lp.com/js/libraryh3lp.js?multi";
-            var y = document.getElementsByTagName("script")[0];
-            y.parentNode.insertBefore(x, y);
+            // Show iff javascript is enabled.
+            $('.needs-js').slideDown(300);
+
+            // Pop-up window
+            $('.libraryh3lp a').click(function(event) {
+                var url = $(this).attr('href');
+                var w = 400;
+                var h = 560;
+                var windowName = 'AskUs';
+                var windowAttributes = 'location=url,status=yes,copyhistory=no,menubar=no,toolbar=no,scrollbars=yes,resizable=yes,width='+w+',height='+h+',modal=yes,alwaysRaised=yes';
+                window.open(url, windowName, windowAttributes);
+                event.preventDefault();
+                event.stopPropagation();
+                return false;
+            });
         }
     };
 })(jQuery, Drupal);
