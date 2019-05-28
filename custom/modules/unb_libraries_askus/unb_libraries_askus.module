@@ -97,9 +97,13 @@ function _unb_libraries_askus_check_presence($queue = 'askus') {
  *   The title text for the heading tag.
  * @param string $widget_style
  *   The user/queue name to check presence status for, UNB Libraries default queue = askus.
+ *
+ * @return string
+ *   The html of the chat widget.
  */
 function _unb_libraries_askus_render_widget($xml_show, $ask_src, $title, $widget_style) {
-  $html = '<h2>' . $title . '</h2>';
+  $html = '<div class="askus">';
+  $html .= '<h2>' . $title . '</h2>';
   $html .= '<noscript><p>Ask Us instant messaging requires JavaScript.</p></noscript>';
 
   if ($xml_show != 'available') {
@@ -107,18 +111,16 @@ function _unb_libraries_askus_render_widget($xml_show, $ask_src, $title, $widget
       $note = 'AskUs is currently busy serving other patrons.';
     }
     else {
-      $note = 'TO DO: Get custom note from _getOfflineNote()';
+      $note = 'Ask Us is currently <strong>offline</strong>strong>. Get custom note from _getOfflineNote()';
     }
     $html .= '<p class="askus-offline">';
     $html .= $note . '<br />';
     $html .= '</p>';
-
-    return $html;
   }
-  if ($widget_style == 'embedded') {
+  elseif ($widget_style == 'embedded') {
     // Render embedded chat widget.
     $html .= '<div class="chatWidget needs-js" style="position:relative;z-index:0;">';
-    $html .= '<iframe src="' . $ask_src . '" frameborder="0" style=""></iframe>';
+    $html .= '<iframe src="' . $ask_src . '" frameborder="0"></iframe>';
     $html .= '</div>';
   }
   else {
@@ -128,6 +130,16 @@ function _unb_libraries_askus_render_widget($xml_show, $ask_src, $title, $widget
     $html .= '<a class="askus-popup" href="' . $ask_src . '">' . $sendTxt . '</a>';
     $html .= '</div>';
   }
+
+  $html .= '<p>';
+  $html .= '<a href="/help/ask"><span class="sr-only">Ask by:</span>';
+  $html .= '<span><i class="fas fa-envelope"></i> Email</span>';
+  $html .= '<span><i class="fas fa-sms"></i> Text</span>';
+  $html .= '<span><i class="fas fa-phone"></i> Phone</span>';
+  $html .= '<span><i class="fas fa-walking"></i> In-Person</span>';
+  $html .= '</a>';
+  $html .= '</p>';
+  $html .= '</div>';
 
   return $html;
 }
