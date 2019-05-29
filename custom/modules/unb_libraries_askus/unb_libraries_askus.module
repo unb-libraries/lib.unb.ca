@@ -106,6 +106,8 @@ function _unb_libraries_askus_check_presence($queue = 'askus') {
  */
 function _unb_libraries_askus_get_html($title, $widget_style, $ask_src, $xml_show) {
   if ($xml_show != 'available') {
+    $wrapperclass = 'chat-offline';
+
     if (in_array($xml_show, ['dnd', 'away'])) {
       $chatbox = '<p class="askus-note-busy">';
       $chatbox .= 'Ask Us is currently busy serving other patrons.';
@@ -120,27 +122,39 @@ function _unb_libraries_askus_get_html($title, $widget_style, $ask_src, $xml_sho
   }
   elseif ($widget_style == 'embedded') {
     // Provide embedded chat widget.
-    $chatbox = '<iframe src="' . $ask_src . '" frameborder="0"></iframe>';
+    $wrapperclass = 'chat-embedded';
+    $chatbox = '<iframe src="' . $ask_src . '"></iframe>';
   }
   else {
     // Provide default pop-up chat widget.
-    $chatbox = '<a class="askus-note-online" href="' . $ask_src . '">Type here to CHAT.</a>';
+    $wrapperclass = 'chat-popup';
+    $chatbox = '<p class="askus-note-online">';
+    $chatbox .= '<a href="' . $ask_src . '">Type here to CHAT.</a>';
+    $chatbox .= '</p>';
+
+    // Hide popup chat heading text because of background image.
+    $title = '<span class="sr-only">' . $title . '</span>';
   }
 
-  $wrapperstart = '<div class="askus">';
-  $header = '<h2><span class="sr-only">' . $title . '</span></h2>';
+  $wrapperstart = '<div class="' . $wrapperclass . '">';
+  $header = '<h2>' . $title . '</h2>';
   $body = '<noscript><p>Ask Us chat requires JavaScript.</p></noscript>';
   $body .= '<div class="libraryh3lp requires-js">';
   $body .= $chatbox;
   $body .= '</div>';
-  $footer = '<p class="askus-footer">';
-  $footer .= '<a href="/help/ask"><span class="sr-only">Ask by:</span>';
-  $footer .= '<span><i class="fas fa-envelope"></i> Email</span>';
-  $footer .= '<span><i class="fas fa-sms"></i> Text</span>';
-  $footer .= '<span><i class="fas fa-phone"></i> Phone</span>';
-  $footer .= '<span><i class="fas fa-walking"></i> In-Person</span>';
-  $footer .= '</a>';
-  $footer .= '</p>';
+  if ($widget_style != 'embedded') {
+    $footer = '<p class="askus-footer">';
+    $footer .= '<a href="/help/ask"><span class="sr-only">Ask by:</span>';
+    $footer .= '<span><i class="fas fa-envelope"></i> Email</span>';
+    $footer .= '<span><i class="fas fa-sms"></i> Text</span>';
+    $footer .= '<span><i class="fas fa-phone"></i> Phone</span>';
+    $footer .= '<span><i class="fas fa-walking"></i> In-Person</span>';
+    $footer .= '</a>';
+    $footer .= '</p>';
+  }
+  else {
+    $footer = NULL;
+  }
   $wrapperend = '</div>';
 
   return $wrapperstart . $header . $body . $footer . $wrapperend;
