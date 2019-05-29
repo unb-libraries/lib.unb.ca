@@ -2,18 +2,32 @@
     background: url(../img/AskUslogo2.png) no-repeat center center transparent;
     height: 52px;
 }
+.askus-note-online,
+.askus-note-busy,
+.askus-note-offline,
+.askus-footer {
+    font-size:.9rem;
+}
 .askus-note-online {
-    padding-top: .75em;
+    cursor: text;
+    display: block;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    text-align: center;
+    text-decoration: none;
+}
+.askus-note-online,
+.askus-note-online:focus,
+.askus-note-online:hover {
+    color: #666;
 }
 .askus-note-busy,
 .askus-note-offline {
-    font-size: .9em;
     margin: 0;
     padding: .5rem .75rem;
 }
 .askus-footer {
-    font-size: .9em;
-    margin: 10px 0px 0px;
+    margin: .75rem 0 0;
     padding: 0;
     text-align: center;
 }
@@ -40,19 +54,8 @@
     max-width: 340px;
     margin: 0 auto;
 }
-.libraryh3lp > a {
-    text-decoration: none;
-    border: none;
-    color: #666;
-    font-size: 0.9em;
-    text-align: center;
-    display: block;
-    width: 100%;
-    height: 50px;
-    max-height: 4em;
-    cursor: text;
-    background: none repeat scroll 0px 0px transparent;
-    outline: 0;
+.libraryh3lp>.focus-ring {
+    outline-color: #900;
 }
 .requires-js {
     display: none;
