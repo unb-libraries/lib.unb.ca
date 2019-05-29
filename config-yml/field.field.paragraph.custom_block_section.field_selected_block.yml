@@ -20,7 +20,7 @@ default_value_callback: ''
 settings:
   plugin_ids:
     'views_block:content_recent-block_1': 'views_block:content_recent-block_1'
-    askus_inline: askus_inline
+    askus_embedded: askus_embedded
     askus_popup: askus_popup
     discovery_search_block: discovery_search_block
 field_type: block_field
