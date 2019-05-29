@@ -1,17 +1,52 @@
-.askus > h2 {
+.chat-embedded {
+    min-width: 300px;
+}
+.chat-embedded > h2,
+.chat-offline > h2 {
+    color: #900;
+}
+.chat-popup > h2 {
     background: url(../img/AskUslogo2.png) no-repeat center center transparent;
     height: 52px;
+}
+.libraryh3lp {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+    padding: 1px;
+}
+.libraryh3lp>.focus-ring {
+    outline-color: #900;
+}
+.chat-popup .libraryh3lp,
+.chat-offline .libraryh3lp {
+    max-width: 340px;
+}
+.chat-offline .libraryh3lp {
+    margin: 0;
+}
+.chat-embedded .libraryh3lp {
+    border: 1px solid #aaa;
+    box-shadow: none;
+    margin: 0;
+}
+.chat-embedded .libraryh3lp iframe {
+    border: 0;
+    display: block;
+    height: 100%;
+    min-height: 300px;
+    width: 100%;
 }
 .askus-note-online,
 .askus-note-busy,
 .askus-note-offline,
 .askus-footer {
-    font-size:.9rem;
+    font-size: .9rem;
 }
 .askus-note-online {
     cursor: text;
     display: block;
-    padding-bottom: 1rem;
     padding-top: 1rem;
     text-align: center;
     text-decoration: none;
@@ -43,19 +78,8 @@
     white-space: nowrap;
 }
 .askus-footer a span:hover {
-    border-bottom: 1px dotted #ccc;
+    border-bottom: 1embeddedpx dotted #ccc;
     color: #900;
-}
-.libraryh3lp {
-    background-color: #FFF;
-    border: 1px solid #AAA;
-    border-radius: 4px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-    max-width: 340px;
-    margin: 0 auto;
-}
-.libraryh3lp>.focus-ring {
-    outline-color: #900;
 }
 .requires-js {
     display: none;
