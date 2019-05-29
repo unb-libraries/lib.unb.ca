@@ -16,7 +16,7 @@
     margin: 0 auto;
     padding: 1px;
 }
-.libraryh3lp>.focus-ring {
+.libraryh3lp .focus-ring {
     outline-color: #900;
 }
 .chat-popup .libraryh3lp,
@@ -34,7 +34,6 @@
 .chat-embedded .libraryh3lp iframe {
     border: 0;
     display: block;
-    height: 100%;
     min-height: 300px;
     width: 100%;
 }
@@ -45,15 +44,19 @@
     font-size: .9rem;
 }
 .askus-note-online {
+    margin: 0;
+}
+.askus-note-online a {
     cursor: text;
     display: block;
     padding-top: 1rem;
+    padding-bottom: 1rem;
     text-align: center;
     text-decoration: none;
 }
-.askus-note-online,
-.askus-note-online:focus,
-.askus-note-online:hover {
+.askus-note-online a,
+.askus-note-online a:focus,
+.askus-note-online a:hover {
     color: #666;
 }
 .askus-note-busy,
@@ -65,6 +68,9 @@
     margin: .75rem 0 0;
     padding: 0;
     text-align: center;
+}
+.askus-footer a {
+    padding: .25em 0;
 }
 .askus-footer a:hover {
     text-decoration: none;
@@ -78,7 +84,7 @@
     white-space: nowrap;
 }
 .askus-footer a span:hover {
-    border-bottom: 1embeddedpx dotted #ccc;
+    border-bottom: 1px dotted #ccc;
     color: #900;
 }
 .requires-js {
