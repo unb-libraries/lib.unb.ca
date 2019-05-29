@@ -1,10 +1,15 @@
-.askus-chatbox > h2 {
+.askus > h2 {
     background: url(../img/AskUslogo2.png) no-repeat center center transparent;
-    height: 53px;
-    margin-top: -5px;
-    margin-left: 0;
-    padding-top: 0;
-    text-indent: -9999px;
+    height: 52px;
+}
+.askus-note-online {
+    padding-top: .75em;
+}
+.askus-note-busy,
+.askus-note-offline {
+    font-size: .9em;
+    margin: 0;
+    padding: .5rem .75rem;
 }
 .askus-footer {
     font-size: .9em;
@@ -18,25 +23,22 @@
     color: #007fa3;
 }
 .askus-footer span {
-    padding-left: 8px;
-    padding-right: 8px;
+    margin-left: 8px;
+    margin-right: 8px;
+    transition: all .3s ease-in-out;
     white-space: nowrap;
 }
 .askus-footer a span:hover {
-    color: #990000;
     border-bottom: 1px dotted #ccc;
+    color: #900;
 }
 .libraryh3lp {
     background-color: #FFF;
     border: 1px solid #AAA;
     border-radius: 4px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-    max-width: 350px;
-    max-height: 45px;
+    max-width: 340px;
     margin: 0 auto;
-    padding: 5px 10px;
-    position: relative;
-    width: auto;
 }
 .libraryh3lp > a {
     text-decoration: none;
@@ -52,6 +54,6 @@
     background: none repeat scroll 0px 0px transparent;
     outline: 0;
 }
-.needs-js {
+.requires-js {
     display: none;
 }

@@ -19,10 +19,7 @@ class AskUsPopup extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    /* $module_handler = \Drupal::service('module_handler'); */
-    /* $module_path = $module_handler->getModule('unb_libraries_askus')->getPath(); */
-
-    $html = _unb_libraries_askus_chat_widget('popup');
+    $html = _unb_libraries_askus_chat_widget('Ask Us Chat', 'popup');
 
     $attachments = [
       'library' => [

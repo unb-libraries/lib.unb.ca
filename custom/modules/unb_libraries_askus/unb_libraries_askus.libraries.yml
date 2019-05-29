@@ -3,7 +3,6 @@ askus:
     theme:
       css/askus.css: {}
   js:
-    #https://ca.libraryh3lp.com/js/libraryh3lp.js?multi,poll: { type: external, minified: true }
     js/askus.js: {}
   dependencies:
     - core/jquery
