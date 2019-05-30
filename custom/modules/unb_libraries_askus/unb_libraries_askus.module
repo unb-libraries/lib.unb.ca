@@ -105,22 +105,7 @@ function _unb_libraries_askus_check_presence($queue = 'askus') {
  *   The html of the chat widget.
  */
 function _unb_libraries_askus_get_html($title, $widget_style, $ask_src, $xml_show) {
-  if ($xml_show != 'available') {
-    $wrapperclass = 'chat-offline';
-
-    if (in_array($xml_show, ['dnd', 'away'])) {
-      $chatbox = '<p class="askus-note-busy">';
-      $chatbox .= 'Ask Us is currently busy serving other patrons.';
-      $chatbox .= '</p>';
-    }
-    else {
-      $chatbox = '<p class="askus-note-offline">';
-      $chatbox .= 'Ask Us is currently <strong>offline</strong>. ';
-      $chatbox .= 'Chat service will re-open [day] at [time].';
-      $chatbox .= '</p>';
-    }
-  }
-  elseif ($widget_style == 'embedded') {
+  if ($widget_style == 'embedded') {
     // Provide embedded chat widget.
     $wrapperclass = 'chat-embedded';
     $chatbox = '<iframe src="' . $ask_src . '"></iframe>';
@@ -134,6 +119,20 @@ function _unb_libraries_askus_get_html($title, $widget_style, $ask_src, $xml_sho
 
     // Hide popup chat heading text because of background image.
     $title = '<span class="sr-only">' . $title . '</span>';
+  }
+
+  if ($xml_show != 'available') {
+    if (in_array($xml_show, ['dnd', 'away'])) {
+      $chatbox = '<p class="askus-note-busy">';
+      $chatbox .= 'Ask Us is currently busy serving other patrons.';
+      $chatbox .= '</p>';
+    }
+    else {
+      $chatbox = '<p class="askus-note-offline">';
+      $chatbox .= 'Ask Us is currently <strong>offline</strong>. ';
+      $chatbox .= _unb_libraries_askus_get_offline_note();
+      $chatbox .= '</p>';
+    }
   }
 
   $wrapperstart = '<div class="' . $wrapperclass . '">';
@@ -158,4 +157,17 @@ function _unb_libraries_askus_get_html($title, $widget_style, $ask_src, $xml_sho
   $wrapperend = '</div>';
 
   return $wrapperstart . $header . $body . $footer . $wrapperend;
+}
+
+/**
+ * If queue is offline, output message including the time and day it chat 're-opens'.
+ *
+ * @return string
+ *   The offline re-open text.
+ */
+function _unb_libraries_askus_get_offline_note() {
+  // Note: Integrate with Hours module when ready.
+  $note = 'Chat service will re-open at [time] [day].';
+
+  return $note;
 }
