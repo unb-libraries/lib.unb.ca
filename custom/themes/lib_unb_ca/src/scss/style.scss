@@ -5,6 +5,9 @@
 @import 'import';
 
 /* Discovery Search */
+#discovery-search-wrapper {
+  border: 1px solid $gray-dark;
+}
 #discovery-search {
   flex-wrap: wrap;
 }

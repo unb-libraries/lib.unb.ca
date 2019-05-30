@@ -40,190 +40,190 @@ class DiscoverySearch extends BlockBase {
     }
 
     $html = '
-    <div id="discovery-search" class="tabs-theme-dark">
-    <ul id="tabs" class="flex-fill nav nav-tabs justify-content-center" role="tablist">
-      <li class="nav-item">
-        <a id="tab-reserves" href="#pane-reserves" class="nav-link active" data-toggle="tab" role="tab">
-          Reserves
-        </a>
-      </li>
-      <li class="nav-item">
-        <a id="tab-catalogue" href="#pane-catalogue" class="nav-link" data-toggle="tab" role="tab">
-          Catalogue
-        </a>
-      </li>
-      <li class="nav-item">
-        <a id="tab-databases" href="#pane-databases" class="nav-link" data-toggle="tab" role="tab">
-           <span class="d-none d-xl-inline">Article</span> Databases
-        </a>
-      </li>
-      <li class="nav-item">
-        <a id="tab-journals" href="#pane-journals" class="nav-link" data-toggle="tab" role="tab">
-          Journals<span class="d-none d-xl-inline"> &amp; Newspapers</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a id="tab-encyclopedias" href="#pane-encyclopedias" class="nav-link" data-toggle="tab" role="tab">
-          e-Encyclopedias<span class="d-none d-xl-inline">, etc.</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a id="tab-ebooks" href="#pane-ebooks" class="nav-link" data-toggle="tab" role="tab">
-          e-Books
-        </a>
-      </li>
-      <li class="nav-item">
-        <a id="tab-videos" href="#pane-videos" class="nav-link" data-toggle="tab" role="tab">
-          Videos
-        </a>
-      </li>
-    </ul>
-    <div id="discovery-search" class="d-flex">
-    <div id="content" class="flex-grow-1 tab-content" role="tablist">
-      <div id="pane-reserves" class="flex-grow-1 card tab-pane my-1 fade show active" role="tabpanel" aria-labelledby="tab-reserves">
-        <div class="card-header p-0" role="tab" id="heading-reserves">
-          <h3 class="m-0">
-            <a class="nav-link mx-1 p-2" data-toggle="collapse" href="#collapse-reserves" aria-expanded="true" aria-controls="collapse-reserves">
-              Reserves
-            </a>
-          </h3>
-        </div>
-        <div id="collapse-reserves" class="collapse show" data-parent="#content" role="tabpanel" aria-labelledby="heading-reserves">
-          <div class="card-body">
-            <form action="/core/action/process_reserves_search.php" method="get" id="searchReserves">
-              <p class="padHeight">
-                <label for="keywords"><strong>Search by instructor, course name or course number:</strong></label><br>
-                <input type="search" id="keywords" name="keywords" value="" placeholder="Enter keywords">
-                <label for="semester" class="hide">Course Semester</label>
-                <select name="semester" id="semester">
-                  <option value="">All semesters</option>
-                  <option value="2019WI" selected="selected">Winter 2019</option>
-                  <option value="2018FA">Fall 2018</option>
-                  <option value="2018FY">Full Year 2018</option>
-                  <option value="2018SM">Summer 2018</option>
-                  <option value="2018WI">Winter 2018</option>
-                  <option value="2017FY">Full Year 2017</option>
-                  <option value="2017FA">Fall 2017</option>
-                  <option value="2017SM">Summer 2017</option>
-                  <option value="2017WI">Winter 2017</option>
-                </select>
-                <input type="submit" value="GO" class="btn btn-inverse" id="searchReservesSubmit" title="GO">
-              </p>
-              <p style="padding:10px 0 0 5px;"> <a href="/reserves/index.php?h=1"><i class="fa fa-user"></i> Login to My UNB Reserves</a></p>
-            </form>
+    <div id="discovery-search-wrapper" class="tabs-theme-dark">
+      <ul id="tabs" class="flex-fill nav nav-tabs justify-content-center" role="tablist">
+        <li class="nav-item">
+          <a id="tab-reserves" href="#pane-reserves" class="nav-link active" data-toggle="tab" role="tab">
+            Reserves
+          </a>
+        </li>
+        <li class="nav-item">
+          <a id="tab-catalogue" href="#pane-catalogue" class="nav-link" data-toggle="tab" role="tab">
+            Catalogue
+          </a>
+        </li>
+        <li class="nav-item">
+          <a id="tab-databases" href="#pane-databases" class="nav-link" data-toggle="tab" role="tab">
+             <span class="d-none d-xl-inline">Article</span> Databases
+          </a>
+        </li>
+        <li class="nav-item">
+          <a id="tab-journals" href="#pane-journals" class="nav-link" data-toggle="tab" role="tab">
+            Journals<span class="d-none d-xl-inline"> &amp; Newspapers</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a id="tab-encyclopedias" href="#pane-encyclopedias" class="nav-link" data-toggle="tab" role="tab">
+            e-Encyclopedias<span class="d-none d-xl-inline">, etc.</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a id="tab-ebooks" href="#pane-ebooks" class="nav-link" data-toggle="tab" role="tab">
+            e-Books
+          </a>
+        </li>
+        <li class="nav-item">
+          <a id="tab-videos" href="#pane-videos" class="nav-link" data-toggle="tab" role="tab">
+            Videos
+          </a>
+        </li>
+      </ul>
+      <div id="discovery-search" class="d-flex">
+        <div id="content" class="flex-grow-1 tab-content" role="tablist">
+          <div id="pane-reserves" class="flex-grow-1 card tab-pane my-1 fade show active" role="tabpanel" aria-labelledby="tab-reserves">
+            <div class="card-header p-0" role="tab" id="heading-reserves">
+              <h3 class="m-0">
+                <a class="nav-link mx-1 p-2" data-toggle="collapse" href="#collapse-reserves" aria-expanded="true" aria-controls="collapse-reserves">
+                  Reserves
+                </a>
+              </h3>
+            </div>
+            <div id="collapse-reserves" class="collapse show" data-parent="#content" role="tabpanel" aria-labelledby="heading-reserves">
+              <div class="card-body">
+                <form action="/core/action/process_reserves_search.php" method="get" id="searchReserves">
+                  <p class="padHeight">
+                    <label for="keywords"><strong>Search by instructor, course name or course number:</strong></label><br>
+                    <input type="search" id="keywords" name="keywords" value="" placeholder="Enter keywords">
+                    <label for="semester" class="hide">Course Semester</label>
+                    <select name="semester" id="semester">
+                      <option value="">All semesters</option>
+                      <option value="2019WI" selected="selected">Winter 2019</option>
+                      <option value="2018FA">Fall 2018</option>
+                      <option value="2018FY">Full Year 2018</option>
+                      <option value="2018SM">Summer 2018</option>
+                      <option value="2018WI">Winter 2018</option>
+                      <option value="2017FY">Full Year 2017</option>
+                      <option value="2017FA">Fall 2017</option>
+                      <option value="2017SM">Summer 2017</option>
+                      <option value="2017WI">Winter 2017</option>
+                    </select>
+                    <input type="submit" value="GO" class="btn btn-inverse" id="searchReservesSubmit" title="GO">
+                  </p>
+                  <p style="padding:10px 0 0 5px;"> <a href="/reserves/index.php?h=1"><i class="fa fa-user"></i> Login to My UNB Reserves</a></p>
+                </form>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-
-      <div id="pane-catalogue" class="flex-grow-1 card tab-pane my-1 fade" role="tabpanel" aria-labelledby="tab-catalogue">
-        <div class="card-header p-0" role="tab" id="heading-catalogue">
-          <h3 class="m-0">
-            <a class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-catalogue" aria-expanded="false" aria-controls="collapse-catalogue">
-              Catalogue
-            </a>
-          </h3>
-        </div>
-          <div id="collapse-catalogue" class="collapse" data-parent="#content" role="tabpanel" aria-labelledby="heading-catalogue">
-            <div class="card-body">
-              <form id="home_WCD" name="wcfw" method="post" accept-charset="UTF-8" action="/core/inc-2015/UNB-WorldCat-Discovery-search.php">
-                <p class="padHeight">
-                  <strong>Search UNB WorldCat:</strong>&nbsp; &nbsp;
-                  <label for="scope_UNBLibraries_WCD"><input type="radio" checked="checked" value="wz:66413" name="scope" id="scope_UNBLibraries_WCD" class="radioSelect">
-                    UNB Libraries
-                  </label>
-                  &nbsp;
-                  <label for="scope_worldwide_WCD"><input type="radio" value="" name="scope" id="scope_worldwide_WCD" class="radioSelect">
-                    Libraries Worldwide
-                  </label>
-                </p>
-                <p>
-                  <label for="queryString_WCD" class="hidden">
-                    Search for:
-                  </label>
-                  <input type="search" name="queryString" id="queryString_WCD" placeholder="Enter search terms">
-                  <label for="searchIndex_WCD" class="hide">
-                    Search index
-                  </label>
-                  <select name="searchIndex" id="searchIndex_WCD" class="pulldown" style="width:130px;">
+    
+          <div id="pane-catalogue" class="flex-grow-1 card tab-pane my-1 fade" role="tabpanel" aria-labelledby="tab-catalogue">
+            <div class="card-header p-0" role="tab" id="heading-catalogue">
+              <h3 class="m-0">
+                <a class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-catalogue" aria-expanded="false" aria-controls="collapse-catalogue">
+                  Catalogue
+                </a>
+              </h3>
+            </div>
+            <div id="collapse-catalogue" class="collapse" data-parent="#content" role="tabpanel" aria-labelledby="heading-catalogue">
+              <div class="card-body">
+                <form id="home_WCD" name="wcfw" method="post" accept-charset="UTF-8" action="/core/inc-2015/UNB-WorldCat-Discovery-search.php">
+                  <p class="padHeight">
+                    <strong>Search UNB WorldCat:</strong>&nbsp; &nbsp;
+                    <label for="scope_UNBLibraries_WCD"><input type="radio" checked="checked" value="wz:66413" name="scope" id="scope_UNBLibraries_WCD" class="radioSelect">
+                      UNB Libraries
+                    </label>
+                    &nbsp;
+                    <label for="scope_worldwide_WCD"><input type="radio" value="" name="scope" id="scope_worldwide_WCD" class="radioSelect">
+                      Libraries Worldwide
+                    </label>
+                  </p>
+                  <p>
+                    <label for="queryString_WCD" class="hidden">
+                      Search for:
+                    </label>
+                    <input type="search" name="queryString" id="queryString_WCD" placeholder="Enter search terms">
+                    <label for="searchIndex_WCD" class="hide">
+                      Search index
+                    </label>
+                    <select name="searchIndex" id="searchIndex_WCD" class="pulldown" style="width:130px;">
                       <option value="kw">keyword</option>
                       <option value="ti">title</option>
                       <option value="au">author</option>
                       <option value="nu">call number</option>
                       <option value="tj">journal title</option>
                       <option value="su">subject</option>
-                  </select>
-                  <input type="submit" value="GO" class="btn btn-inverse" id="search_WCD" title="Search">
-                </p>
-                <p style="padding:10px 0 0 5px;">
-                  <a href="http://unb.on.worldcat.org/advancedsearch">Advanced Search</a> |
-                  <a href="/about/loc_call/">Locations Guide</a> |
-                  <a href="/worldcat/FAQs.php" title="Using WorldCat Discovery"><i class="fa fa-question-circle"></i> Help</a>
-                </p>  		
-              </form>
+                    </select>
+                    <input type="submit" value="GO" class="btn btn-inverse" id="search_WCD" title="Search">
+                  </p>
+                  <p style="padding:10px 0 0 5px;">
+                    <a href="http://unb.on.worldcat.org/advancedsearch">Advanced Search</a> |
+                    <a href="/about/loc_call/">Locations Guide</a> |
+                    <a href="/worldcat/FAQs.php" title="Using WorldCat Discovery"><i class="fa fa-question-circle"></i> Help</a>
+                  </p>  		
+                </form>
+              </div>
             </div>
-        </div>
-      </div>
-
-        <div id="pane-databases" class="flex-grow-1 card tab-pane my-1 fade" role="tabpanel" aria-labelledby="tab-databases">
-          <div class="card-header p-0" role="tab" id="heading-databases">
-            <h3 class="m-0">
-              <a class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-databases" aria-expanded="false" aria-controls="collapse-databases">
-                <span class="d-none d-sm-inline">Article</span> Databases
-              </a>
-            </h3>
           </div>
-          <div id="collapse-databases" class="collapse" role="tabpanel" data-parent="#content" aria-labelledby="heading-databases">
-            <div class="card-body">
-              <form class="categorySelect">
-                <label for="category">
-                  Browse databases by subject
-                </label>
-                <div>
-                  <select name="category">
-                    <option value="">Select a subject...</option>
-                    <option value="anthropology">Anthropology</option>
-                    <option value="biology">Biology</option><option value="business">Business Administration</option>
-                    <option value="chemistry">Chemistry</option>
-                    <option value="classics">Classics and Ancient History</option>
-                    <option value="ics">Communication Studies</option>
-                    <option value="computerscience">Computer Science</option>
-                    <option value="criminology">Criminology</option>
-                    <option value="earth-sciences">Earth Sciences</option>
-                    <option value="economics">Economics</option>
-                    <option value="education">Education</option>
-                    <option value="engineering">Engineering</option><option value="english">English</option>
-                    <option value="entrepreneurship">Entrepreneurship</option>
-                    <option value="familyviolence">Family Violence Issues</option>
-                    <option value="film">Film Studies</option><option value="finearts">Fine Arts</option>
-                    <option value="forestry">Forestry &amp; Environmental Management</option>
-                    <option value="french">French</option><option value="womensstudies">Gender and Women\'s Studies</option>
-                    <option value="german">German Literature</option>
-                    <option value="gerontology">Gerontology</option><option value="history">History</option>
-                    <option value="development">International Development Studies</option>
-                    <option value="journalism">Journalism &amp; Communications</option>
-                    <option value="kinesiology">Kinesiology</option>
-                    <option value="law">Law</option><option value="math">Mathematics</option>
-                    <option value="media">Media Arts and Culture</option>
-                    <option value="music">Music</option><option value="nativestudies">Native Studies</option>
-                    <option value="nursing">Nursing &amp; Health Sciences</option>
-                    <option value="philosophy">Philosophy</option><option value="physics">Physics</option>
-                    <option value="politicalscience">Political Science</option>
-                    <option value="psychology">Psychology</option>
-                    <option value="religiousstudies">Religious Studies</option>
-                    <option value="sts">Science &amp; Technology Studies</option>
-                    <option value="socialwork">Social Work</option>
-                    <option value="sociology">Sociology</option>
-                    <option value="spanish">Spanish Literature</option>
-                  </select>
-                  <input type="submit" class="btn btn-inverse" value="GO">
-                </div>
-              </form>
-              <form id="title_results" method="get" action="/eresources/index.php">
-                <p>
-                  <label for="databaseID" class="searchOptionsDivider">
-                    <span>OR</span> &nbsp;<strong>Browse for databases by title</strong>
+    
+          <div id="pane-databases" class="flex-grow-1 card tab-pane my-1 fade" role="tabpanel" aria-labelledby="tab-databases">
+            <div class="card-header p-0" role="tab" id="heading-databases">
+              <h3 class="m-0">
+                <a class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-databases" aria-expanded="false" aria-controls="collapse-databases">
+                  <span class="d-none d-sm-inline">Article</span> Databases
+                </a>
+              </h3>
+            </div>
+            <div id="collapse-databases" class="collapse" role="tabpanel" data-parent="#content" aria-labelledby="heading-databases">
+              <div class="card-body">
+                <form class="categorySelect">
+                  <label for="category">
+                    Browse databases by subject
                   </label>
-                </p>
+                  <div>
+                    <select name="category">
+                      <option value="">Select a subject...</option>
+                      <option value="anthropology">Anthropology</option>
+                      <option value="biology">Biology</option><option value="business">Business Administration</option>
+                      <option value="chemistry">Chemistry</option>
+                      <option value="classics">Classics and Ancient History</option>
+                      <option value="ics">Communication Studies</option>
+                      <option value="computerscience">Computer Science</option>
+                      <option value="criminology">Criminology</option>
+                      <option value="earth-sciences">Earth Sciences</option>
+                      <option value="economics">Economics</option>
+                      <option value="education">Education</option>
+                      <option value="engineering">Engineering</option><option value="english">English</option>
+                      <option value="entrepreneurship">Entrepreneurship</option>
+                      <option value="familyviolence">Family Violence Issues</option>
+                      <option value="film">Film Studies</option><option value="finearts">Fine Arts</option>
+                      <option value="forestry">Forestry &amp; Environmental Management</option>
+                      <option value="french">French</option><option value="womensstudies">Gender and Women\'s Studies</option>
+                      <option value="german">German Literature</option>
+                      <option value="gerontology">Gerontology</option><option value="history">History</option>
+                      <option value="development">International Development Studies</option>
+                      <option value="journalism">Journalism &amp; Communications</option>
+                      <option value="kinesiology">Kinesiology</option>
+                      <option value="law">Law</option><option value="math">Mathematics</option>
+                      <option value="media">Media Arts and Culture</option>
+                      <option value="music">Music</option><option value="nativestudies">Native Studies</option>
+                      <option value="nursing">Nursing &amp; Health Sciences</option>
+                      <option value="philosophy">Philosophy</option><option value="physics">Physics</option>
+                      <option value="politicalscience">Political Science</option>
+                      <option value="psychology">Psychology</option>
+                      <option value="religiousstudies">Religious Studies</option>
+                      <option value="sts">Science &amp; Technology Studies</option>
+                      <option value="socialwork">Social Work</option>
+                      <option value="sociology">Sociology</option>
+                      <option value="spanish">Spanish Literature</option>
+                    </select>
+                    <input type="submit" class="btn btn-inverse" value="GO">
+                  </div>
+                </form>
+                <form id="title_results" method="get" action="/eresources/index.php">
+                  <p>
+                    <label for="databaseID" class="searchOptionsDivider">
+                      <span>OR</span> &nbsp;<strong>Browse for databases by title</strong>
+                    </label>
+                  </p>
                   <select name="id" id="databaseID">
                     <option value="">Choose a database title</option>
                     <option value="3606">17th and 18th century Nichols newspapers collection</option>
@@ -498,171 +498,171 @@ class DiscoverySearch extends BlockBase {
                     <i class="fa fa-list-ul"></i>
                     <a href="/eresources/index.php?sub=indexes">More Search Options</a>
                   </p>
-
+                </form>
+              </div>
             </div>
-            </div>
-        </div>
-        
-        <div id="pane-journals" class="flex-grow-1 card tab-pane my-1 fade" role="tabpanel" aria-labelledby="tab-journals">
-          <div class="card-header p-0" role="tab" id="heading-journals">
-            <h3 class="m-0">
-              <a class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-journals" aria-expanded="false" aria-controls="collapse-journals">
-                Journals<span class="d-none d-sm-inline"> &amp; Newspapers</span>
-              </a>
-            </h3>
           </div>
-            <div id="collapse-journals" class="collapse" role="tabpanel" data-parent="#content" aria-labelledby="heading-journals">
+            
+          <div id="pane-journals" class="flex-grow-1 card tab-pane my-1 fade" role="tabpanel" aria-labelledby="tab-journals">
+            <div class="card-header p-0" role="tab" id="heading-journals">
+              <h3 class="m-0">
+                <a class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-journals" aria-expanded="false" aria-controls="collapse-journals">
+                  Journals<span class="d-none d-sm-inline"> &amp; Newspapers</span>
+                </a>
+              </h3>
+            </div>
+              <div id="collapse-journals" class="collapse" role="tabpanel" data-parent="#content" aria-labelledby="heading-journals">
+                <div class="card-body">
+                  <form action="/eresources/index.php" method="get" id="search_results_journals">
+                    <input type="hidden" name="sub" id="sub" value="journals">
+                    <p class="padHeight">
+                      <label for="searchtype_every_journal"><input type="radio" checked="checked" value="every_word" name="searchtype" id="searchtype_every_journal" class="radioSelect">
+                        Word(s) in title
+                      </label>
+                      <label for="searchtype_browse_journal"><input type="radio" value="browse" name="searchtype" id="searchtype_browse_journal" class="radioSelect">
+                        Starts with
+                      </label>
+                      <label for="searchtype_exact_journal"><input type="radio" value="exact" name="searchtype" id="searchtype_exact_journal" class="radioSelect">
+                        Exact
+                      </label>
+                    </p>
+                    <p>
+                      <label for="title_journal" class="hide">
+                        title
+                      </label>
+                      <input id="title_journal" name="title" type="search" placeholder="Search for journal and newspaper titles">
+                      <input type="submit" value="GO" class="btn btn-inverse">
+                    </p>
+                    <p style="padding-left:5px;">
+                      <a href="/eresources/index.php?sub=journals&amp;packages=Y">
+                        Journal Packages
+                      </a> |
+                      <a href="/eresources/index.php?sub=journals&amp;browseNewsColl=Y&amp;limitResourceType=enewsColl">
+                        Newspaper Packages
+                      </a> |
+                      <a href="/eresources/newspapers.php" title="Guide to finding newspapers at UNB Libraries">
+                        <!--img src="//media.lib.unb.ca/core/img/question_mark.gif" alt="" style="position:relative;top:-3px;" width="17" height="16"/-->
+                        <i class="fa fa-question-circle"></i> Newspaper Guide
+                      </a>
+                    </p>
+                    <!--span style="text-align: center;padding:5px 10px;margin-bottom:1px;display:inline-block" class="alert alert-warning">
+                      <i class="fa fa-lg fa-exclamation-triangle text-danger"></i>
+                      <a href="/help/status.php" style="border:0;outline:0;">
+                        <strong>eJournals and eBooks Searching Currently Unavailable</strong>
+                        <i class="fa fa-chevron-right"></i>
+                      </a>
+                    </span-->
+                    <p class="moreOptions">
+                      <i class="fa fa-list-ul"></i>
+                      <a href="/eresources/index.php?sub=journals">
+                        More Search Options
+                      </a>
+                    </p>
+                  </form>
+                </div>
+              </div>
+          </div>
+  
+          <div id="pane-encyclopedias" class="flex-grow-1 card tab-pane my-1 fade" role="tabpanel" aria-labelledby="tab-encyclopedias">
+            <div class="card-header p-0" role="tab" id="heading-encyclopedias">
+              <h3 class="m-0">
+                <a class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-encyclopedias" aria-expanded="false" aria-controls="collapse-encyclopedias">
+                  e-Encyclopedias<span class="d-none d-sm-inline">, etc.</span>
+                </a>
+              </h3>
+            </div>
+              <div id="collapse-encyclopedias" class="collapse" role="tabpanel" data-parent="#content" aria-labelledby="heading-encyclopedias">
+                <div class="card-body">
+                  <form action="/eresources/index.php" method="get" id="search_results_refmat">
+                    <input type="hidden" name="sub" id="sub_refmat" value="refmat">
+                    <small class="first">Search for Reference Materials by title:</small>
+                    <p class="padHeight">
+                      <label for="searchtype_every_refmat"><input type="radio" checked="checked" value="every_word" name="searchtype" id="searchtype_every_refmat" class="radioSelect">
+                        Word(s) in title
+                      </label>
+                      <label for="searchtype_browse_refmat"><input type="radio" value="browse" name="searchtype" id="searchtype_browse_refmat" class="radioSelect">
+                        Starts with
+                      </label>
+                      <label for="searchtype_exact_refmat"><input type="radio" value="exact" name="searchtype" id="searchtype_exact_refmat" class="radioSelect">
+                        Exact
+                      </label>
+                    </p>
+                    <p class="padHeight">
+                      <label class="hide" for="title_refmat">
+                        title
+                      </label>
+                      <input type="search" value="" name="title" id="title_refmat" placeholder="Search for encyclopedias, dictionaries, etc.">
+                      <input type="submit" value="GO" class="btn btn-inverse">
+                    </p>
+                    <p style="padding-left:5px;" class="padHeight">
+                      <a href="/eresources/refguide.php" title="Guide to finding Reference Materials at UNB Libraries">
+                        <i class="fa fa-compass"></i> Reference Materials Guide
+                      </a> |
+                      <a href="https://guides.lib.unb.ca/guide/98">
+                        Browse dictionaries
+                      </a>
+                    </p>
+                    <p class="moreOptions">
+                      <i class="fa fa-th-list" aria-hidden="true"></i>
+                      <a href="/eresources/index.php?sub=refmat">
+                        More Search Options
+                      </a>
+                    </p>
+                  </form>
+                </div>
+              </div>
+          </div>
+            
+          <div id="pane-ebooks" class="flex-grow-1 card tab-pane my-1 fade" role="tabpanel" aria-labelledby="tab-ebooks">
+            <div class="card-header p-0" role="tab" id="heading-ebooks">
+              <h3 class="m-0">
+                <a class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-ebooks" aria-expanded="false" aria-controls="collapse-ebooks">
+                  e-Books
+                </a>
+              </h3>
+            </div>
+            <div id="collapse-ebooks" class="collapse" role="tabpanel" data-parent="#content" aria-labelledby="heading-ebooks">
               <div class="card-body">
-                <form action="/eresources/index.php" method="get" id="search_results_journals">
-                  <input type="hidden" name="sub" id="sub" value="journals">
+                <p><small class="discoverNote">Search our vast electronic book collections for titles suitable for your computer, tablet or eReader.</small></p>
+                <form action="/eresources/index.php" method="get" id="search_results_ebooks">
+                  <input type="hidden" name="sub" id="sub_ebooks" value="ebooks">
                   <p class="padHeight">
-                    <label for="searchtype_every_journal"><input type="radio" checked="checked" value="every_word" name="searchtype" id="searchtype_every_journal" class="radioSelect">
-                      Word(s) in title
+                    <label for="searchtype_every_ebooks">
+                      <input type="radio" checked="checked" value="every_word" name="searchtype" id="searchtype_every_ebooks" class="radioSelect">
+                       Word(s) in title
                     </label>
-                    <label for="searchtype_browse_journal"><input type="radio" value="browse" name="searchtype" id="searchtype_browse_journal" class="radioSelect">
-                      Starts with
+                    <label for="searchtype_exact_ebooks"><input type="radio" value="exact" name="searchtype" id="searchtype_exact_ebooks" class="radioSelect">
+                      Exact title
                     </label>
-                    <label for="searchtype_exact_journal"><input type="radio" value="exact" name="searchtype" id="searchtype_exact_journal" class="radioSelect">
-                      Exact
+                    <label for="searchtype_keyword_ebooks"><input type="radio" value="keyword" name="searchtype" id="searchtype_keyword_ebooks" class="radioSelect">
+                      Keyword search (title, author, publisher&hellip;)
                     </label>
-                  </p>
-                  <p>
-                    <label for="title_journal" class="hide">
+                    <br>
+                    <label class="hide" for="title_ebooks">
                       title
                     </label>
-                    <input id="title_journal" name="title" type="search" placeholder="Search for journal and newspaper titles">
+                    <input type="search" value="" name="title" id="title_ebooks">
                     <input type="submit" value="GO" class="btn btn-inverse">
                   </p>
-                  <p style="padding-left:5px;">
-                    <a href="/eresources/index.php?sub=journals&amp;packages=Y">
-                      Journal Packages
-                    </a> |
-                    <a href="/eresources/index.php?sub=journals&amp;browseNewsColl=Y&amp;limitResourceType=enewsColl">
-                      Newspaper Packages
-                    </a> |
-                    <a href="/eresources/newspapers.php" title="Guide to finding newspapers at UNB Libraries">
-                      <!--img src="//media.lib.unb.ca/core/img/question_mark.gif" alt="" style="position:relative;top:-3px;" width="17" height="16"/-->
-                      <i class="fa fa-question-circle"></i> Newspaper Guide
-                    </a>
-                  </p>
-                  <!--span style="text-align: center;padding:5px 10px;margin-bottom:1px;display:inline-block" class="alert alert-warning">
-                    <i class="fa fa-lg fa-exclamation-triangle text-danger"></i>
-                    <a href="/help/status.php" style="border:0;outline:0;">
-                      <strong>eJournals and eBooks Searching Currently Unavailable</strong>
-                      <i class="fa fa-chevron-right"></i>
-                    </a>
-                  </span-->
-                  <p class="moreOptions">
-                    <i class="fa fa-list-ul"></i>
-                    <a href="/eresources/index.php?sub=journals">
-                      More Search Options
+                  <p style="padding:10px 0 0 5px;">
+                    <a href="/eresources/index.php?sub=ebooks">
+                      <i class="fa fa-th-list"></i>
+                      Browse e-Book Collections
                     </a>
                   </p>
                 </form>
               </div>
             </div>
-        </div>
-        
-        <div id="pane-encyclopedias" class="flex-grow-1 card tab-pane my-1 fade" role="tabpanel" aria-labelledby="tab-encyclopedias">
-          <div class="card-header p-0" role="tab" id="heading-encyclopedias">
-            <h3 class="m-0">
-              <a class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-encyclopedias" aria-expanded="false" aria-controls="collapse-encyclopedias">
-                e-Encyclopedias<span class="d-none d-sm-inline">, etc.</span>
-              </a>
-            </h3>
           </div>
-            <div id="collapse-encyclopedias" class="collapse" role="tabpanel" data-parent="#content" aria-labelledby="heading-encyclopedias">
-              <div class="card-body">
-                <form action="/eresources/index.php" method="get" id="search_results_refmat">
-                  <input type="hidden" name="sub" id="sub_refmat" value="refmat">
-                  <small class="first">Search for Reference Materials by title:</small>
-                  <p class="padHeight">
-                    <label for="searchtype_every_refmat"><input type="radio" checked="checked" value="every_word" name="searchtype" id="searchtype_every_refmat" class="radioSelect">
-                      Word(s) in title
-                    </label>
-                    <label for="searchtype_browse_refmat"><input type="radio" value="browse" name="searchtype" id="searchtype_browse_refmat" class="radioSelect">
-                      Starts with
-                    </label>
-                    <label for="searchtype_exact_refmat"><input type="radio" value="exact" name="searchtype" id="searchtype_exact_refmat" class="radioSelect">
-                      Exact
-                    </label>
-                  </p>
-                  <p class="padHeight">
-                    <label class="hide" for="title_refmat">
-                      title
-                    </label>
-                    <input type="search" value="" name="title" id="title_refmat" placeholder="Search for encyclopedias, dictionaries, etc.">
-                    <input type="submit" value="GO" class="btn btn-inverse">
-                  </p>
-                  <p style="padding-left:5px;" class="padHeight">
-                    <a href="/eresources/refguide.php" title="Guide to finding Reference Materials at UNB Libraries">
-                      <i class="fa fa-compass"></i> Reference Materials Guide
-                    </a> |
-                    <a href="https://guides.lib.unb.ca/guide/98">
-                      Browse dictionaries
-                    </a>
-                  </p>
-                  <p class="moreOptions">
-                    <i class="fa fa-th-list" aria-hidden="true"></i>
-                    <a href="/eresources/index.php?sub=refmat">
-                      More Search Options
-                    </a>
-                  </p>
-                </form>
-              </div>
+            
+          <div id="pane-videos" class="flex-grow-1 card tab-pane my-1 fade" role="tabpanel" aria-labelledby="tab-videos">
+            <div class="card-header p-0" role="tab" id="heading-videos">
+              <h3 class="m-0">
+                <a class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-videos" aria-expanded="false" aria-controls="collapse-videos">
+                  Videos
+                </a>
+              </h3>
             </div>
-        </div>
-        
-        <div id="pane-ebooks" class="flex-grow-1 card tab-pane my-1 fade" role="tabpanel" aria-labelledby="tab-ebooks">
-          <div class="card-header p-0" role="tab" id="heading-ebooks">
-            <h3 class="m-0">
-              <a class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-ebooks" aria-expanded="false" aria-controls="collapse-ebooks">
-                e-Books
-              </a>
-            </h3>
-          </div>
-          <div id="collapse-ebooks" class="collapse" role="tabpanel" data-parent="#content" aria-labelledby="heading-ebooks">
-            <div class="card-body">
-              <p><small class="discoverNote">Search our vast electronic book collections for titles suitable for your computer, tablet or eReader.</small></p>
-              <form action="/eresources/index.php" method="get" id="search_results_ebooks">
-                <input type="hidden" name="sub" id="sub_ebooks" value="ebooks">
-                <p class="padHeight">
-                  <label for="searchtype_every_ebooks">
-                    <input type="radio" checked="checked" value="every_word" name="searchtype" id="searchtype_every_ebooks" class="radioSelect">
-                     Word(s) in title
-                  </label>
-                  <label for="searchtype_exact_ebooks"><input type="radio" value="exact" name="searchtype" id="searchtype_exact_ebooks" class="radioSelect">
-                    Exact title
-                  </label>
-                  <label for="searchtype_keyword_ebooks"><input type="radio" value="keyword" name="searchtype" id="searchtype_keyword_ebooks" class="radioSelect">
-                    Keyword search (title, author, publisher&hellip;)
-                  </label>
-                  <br>
-                  <label class="hide" for="title_ebooks">
-                    title
-                  </label>
-                  <input type="search" value="" name="title" id="title_ebooks">
-                  <input type="submit" value="GO" class="btn btn-inverse">
-                </p>
-                <p style="padding:10px 0 0 5px;">
-                  <a href="/eresources/index.php?sub=ebooks">
-                    <i class="fa fa-th-list"></i>
-                    Browse e-Book Collections
-                  </a>
-                </p>
-              </form>
-            </div>
-          </div>
-        </div>
-        
-        <div id="pane-videos" class="flex-grow-1 card tab-pane my-1 fade" role="tabpanel" aria-labelledby="tab-videos">
-          <div class="card-header p-0" role="tab" id="heading-videos">
-            <h3 class="m-0">
-              <a class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-videos" aria-expanded="false" aria-controls="collapse-videos">
-                Videos
-              </a>
-            </h3>
-          </div>
             <div id="collapse-videos" class="collapse" role="tabpanel" data-parent="#content" aria-labelledby="heading-videos">
               <div class="card-body">
                 <p><small class="discoverNote">Search across our online video collections.</small></p>
@@ -697,7 +697,7 @@ class DiscoverySearch extends BlockBase {
                 </form>
               </div>
             </div>
-        </div>
+          </div>
         </div>';
     $html .= $askus_block;
     $html .= '
