@@ -40,7 +40,7 @@ class DiscoverySearch extends BlockBase {
     }
 
     $html = '
-    <div id="discovery-search-wrapper" class="tabs-theme-dark">
+    <div id="discovery-search" class="tabs-theme-dark">
       <ul id="tabs" class="flex-fill nav nav-tabs justify-content-center" role="tablist">
         <li class="nav-item">
           <a id="tab-reserves" href="#pane-reserves" class="nav-link active" data-toggle="tab" role="tab">
@@ -78,7 +78,7 @@ class DiscoverySearch extends BlockBase {
           </a>
         </li>
       </ul>
-      <div id="discovery-search" class="d-flex">
+      <div class="d-flex">
         <div id="content" class="flex-grow-1 tab-content" role="tablist">
           <div id="pane-reserves" class="flex-grow-1 card tab-pane my-1 fade show active" role="tabpanel" aria-labelledby="tab-reserves">
             <div class="card-header p-0" role="tab" id="heading-reserves">
