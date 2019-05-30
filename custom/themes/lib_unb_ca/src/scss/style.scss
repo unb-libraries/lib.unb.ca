@@ -27,6 +27,7 @@
   }
   .tab-content > .tab-pane {
     display: block !important;
+    // Override fade '0' opacity.
     @include opacity(1);
   }
 }

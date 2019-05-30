@@ -1,0 +1,17 @@
+// Wider left side, narrower right side, whitespace between.
+.field--name-field-page-content .layout--twocol-section.layout--twocol-section--67-33 > .layout__region--first {
+  flex: 0 1 70%;
+  margin-right: 2%;
+}
+.field--name-field-page-content .layout--twocol-section.layout--twocol-section--67-33 > .layout__region--second {
+  flex: 0 1 28%;
+}
+
+// Begin col stack at larger resolution.
+@media (max-width: 991px) {
+  .field--name-field-page-content .layout--twocol-section.layout--twocol-section--67-33 > .layout__region--first,
+  .field--name-field-page-content .layout--twocol-section.layout--twocol-section--67-33 > .layout__region--second {
+    flex: auto;
+    margin-right: 0;
+  }
+}
