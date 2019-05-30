@@ -122,6 +122,7 @@ function _unb_libraries_askus_get_html($title, $widget_style, $ask_src, $xml_sho
   }
 
   if ($xml_show != 'available') {
+    $wrapperclass .= " offline";
     if (in_array($xml_show, ['dnd', 'away'])) {
       $chatbox = '<p class="askus-note-busy">';
       $chatbox .= 'Ask Us is currently busy serving other patrons.';

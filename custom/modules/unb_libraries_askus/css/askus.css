@@ -1,6 +1,6 @@
 .chat-embedded,
-.chat-embedded .libraryh3lp iframe {
-    min-width: 411px;
+.chat-popup {
+    max-width: 400px;
 }
 .chat-embedded > h2 {
     color: #900;
@@ -8,10 +8,6 @@
 .chat-popup > h2 {
     background: url(../img/AskUslogo2.png) no-repeat center center transparent;
     height: 52px;
-}
-.chat-embedded,
-.chat-popup {
-    max-width: 360px;
 }
 .libraryh3lp,
 .askus-footer {
@@ -22,12 +18,17 @@
     outline-color: #900;
 }
 .chat-embedded .libraryh3lp {
+    text-align: left;
+}
+.chat-embedded:not(.offline) .libraryh3lp {
     border: 1px solid #aaa;
     box-shadow: none;
 }
 .chat-embedded .libraryh3lp iframe {
     border: 0;
     display: block;
+    min-height: 300px;
+    padding: 0 1px;
     width: 100%;
 }
 .askus-note-online {
