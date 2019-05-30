@@ -31,7 +31,7 @@ class DiscoverySearch extends BlockBase {
       $askus_block = [];
     }
     else {
-      // Store block render array in variable before passing to render() - avoid notice.
+      // Store block render array in variable prior pass to render(): avoid notice.
       $render_array = $plugin_block->build();
 
       $askus_block = '<div class="d-none d-lg-block p-4 ask-us">';
@@ -41,7 +41,7 @@ class DiscoverySearch extends BlockBase {
 
     $html = '
     <div id="discovery-search" class="tabs-theme-dark">
-    <ul id="tabs" class="flex-fill nav nav-tabs" role="tablist">
+    <ul id="tabs" class="flex-fill nav nav-tabs justify-content-center" role="tablist">
       <li class="nav-item">
         <a id="tab-reserves" href="#pane-reserves" class="nav-link active" data-toggle="tab" role="tab">
           Reserves
