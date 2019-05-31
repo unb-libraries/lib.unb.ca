@@ -231,7 +231,8 @@ class DiscoverySearch extends BlockBase {
           <input type="submit" value="GO" class="btn btn-inverse" id="searchReservesSubmit" title="GO">
         </p>
         <p class="p-2">
-          <a href="/reserves/index.php?h=1"><i class="fas fa-user"></i>
+          <a href="/reserves/index.php?h=1">
+            <i class="fas fa-user"></i>
             Login to My UNB Reserves
           </a>
         </p>
@@ -626,8 +627,8 @@ class DiscoverySearch extends BlockBase {
         <input type="submit" value="GO" class="btn btn-inverse">
       </form>
       <p class="moreOptions">
-        <i class="fas fa-list-ul"></i>
         <a href="/eresources/index.php?sub=indexes">
+          <i class="fas fa-list-ul"></i>
           More Search Options
         </a>
       </p>';
@@ -666,8 +667,10 @@ class DiscoverySearch extends BlockBase {
           <i class="fas fa-question-circle"></i> Newspaper Guide</a>
         </p>
         <p class="moreOptions">
-          <i class="fas fa-list-ul"></i>
-          <a href="/eresources/index.php?sub=journals">More Search Options</a>
+          <a href="/eresources/index.php?sub=journals">
+            <i class="fas fa-list-ul"></i>
+            More Search Options
+          </a>
         </p>
       </form>';
 
@@ -711,8 +714,10 @@ class DiscoverySearch extends BlockBase {
           <a href="https://guides.lib.unb.ca/guide/98">Browse dictionaries</a>
         </p>
         <p class="moreOptions">
-          <i class="fa fa-th-list" aria-hidden="true"></i>
-          <a href="/eresources/index.php?sub=refmat">More Search Options</a>
+          <a href="/eresources/index.php?sub=refmat">
+            <i class="fa fa-th-list" aria-hidden="true"></i>
+            More Search Options
+          </a>
         </p>
       </form>';
 
