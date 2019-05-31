@@ -4,25 +4,40 @@
 /* Import Sass files */
 @import 'import';
 
-/* Discovery Search */
-#discovery-search {
+/* Discovery/e-Resources Search */
+.tabs-theme-dark {
   flex-wrap: wrap;
 }
-#discovery-search .nav-tabs .nav-item {
+.tabs-theme-dark .nav-tabs {
+  border-bottom: none;
+}
+.tabs-theme-dark .nav-tabs .nav-item {
+  margin-bottom: 0;
   z-index: 9;
 }
-#discovery-search .nav-link {
-  padding-left: .98rem;
-  padding-right: .98rem;
+.tabs-theme-dark .nav-link {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
-#discovery-search .card-header h3 {
+.tabs-theme-dark .card-header h3 {
   font-size: 1.2em;
 }
+.tabs-theme-dark .nav-tabs .nav-link:focus,
+.tabs-theme-dark .nav-tabs .nav-link:hover {
+    border-color: transparent;
+}
+.tabs-theme-dark .nav-tabs .nav-link.active {
+  border-color: #fc0;
+}
+.tabs-theme-dark .nav-tabs .nav-item a:not(.active):focus,
+.tabs-theme-dark .nav-tabs .nav-item a:not(.active):hover {
+  background-color: $gray-444;
+}
 @media(max-width: 991px) {
-  #discovery-search {
+  .tabs-theme-dark {
     border: none;
   }
-  #discovery-search #tabs {
+  .tabs-theme-dark #tabs {
     display: none;
   }
   .tab-content > .tab-pane {
@@ -44,11 +59,11 @@
   .card .collapse{
     display: block;
   }
-  #discovery-search {
+  .tabs-theme-dark {
     border: 1px solid $gray-dark;
   }
 }
-/* END Discovery Search */
+/* END Discovery/eResources Search */
 
 /* Layout builder */
 .form-actions input.btn {
