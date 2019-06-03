@@ -1,0 +1,15 @@
+#quicklinks-wrapper h3 {
+    font-size: 1rem;
+}
+#quicklinks-wrapper ul.list-inline li {
+    padding-top: 0;
+}
+#quicklinks-wrapper ul.list-inline li:not(:last-child) {
+    border-right: 1px solid $gray-medium;
+}
+@media (min-width: 992px) {
+    /* Force visible on large display */
+    #quicklinks-wrapper:not(.show) {
+        display: block;
+    }
+}

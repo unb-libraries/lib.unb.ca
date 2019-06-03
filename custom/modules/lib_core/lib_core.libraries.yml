@@ -1,3 +1,27 @@
+admin-overrides:
+  version: VERSION
+  css:
+    theme:
+      css/admin-overrides.css: {}
+
+bootstrap-cdn:
+  version: VERSION
+  css:
+    base:
+      //stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css: { type: external, minified: true }
+
+ckeditor_stylesheets:
+  version: VERSION
+  css:
+    theme:
+      css/color-button.css: {}
+
+quicklinks:
+  version: VERISON
+  css:
+    theme:
+      css/quicklinks.css: {}
+
 table-row-check:
   css:
     theme:
@@ -6,21 +30,3 @@ table-row-check:
     js/table-row-check.js: {}
     dependencies:
       - core/jquery
-
-bootstrap-cdn:
-  version: VERSION
-  css:
-    base:
-      //stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css: { type: external, minified: true }
-
-admin-overrides:
-  version: VERSION
-  css:
-    theme:
-      css/admin-overrides.css: {}
-
-ckeditor_stylesheets:
-  version: VERSION
-  css:
-    theme:
-      css/color-button.css: {}

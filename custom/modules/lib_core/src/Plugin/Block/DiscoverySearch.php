@@ -280,7 +280,9 @@ class DiscoverySearch extends BlockBase {
         <p class="p-2">
           <a href="http://unb.on.worldcat.org/advancedsearch">Advanced Search</a> |
           <a href="/about/loc_call/">Locations Guide</a> |
-          <a href="/worldcat/FAQs.php" title="Using WorldCat Discovery"><i class="fas fa-question-circle"></i> Help</a>
+          <a href="/worldcat/FAQs.php" title="Using WorldCat Discovery">
+            <i class="fas fa-question-circle"></i> Help
+          </a>
         </p>  		
       </form>';
 
@@ -349,7 +351,7 @@ class DiscoverySearch extends BlockBase {
       '<form id="title_results" method="get" action="/eresources/index.php">
         <div class="mt-2">
           <label for="databaseID" class="mb-0">
-            <span>OR</span> &nbsp;<strong>Browse for databases by title</strong>
+            <span class="red">OR</span> &nbsp;<strong>Browse for databases by title</strong>
           </label>
         </div>
         <select name="id" id="databaseID">
@@ -715,7 +717,7 @@ class DiscoverySearch extends BlockBase {
         </p>
         <p class="moreOptions">
           <a href="/eresources/index.php?sub=refmat">
-            <i class="fa fa-th-list" aria-hidden="true"></i>
+            <i class="fas fa-th-list" aria-hidden="true"></i>
             More Search Options
           </a>
         </p>
@@ -799,7 +801,7 @@ class DiscoverySearch extends BlockBase {
         <input type="submit" value="GO" class="btn btn-inverse">
         <p class="mt-3">
           <a href="/eresources/index.php?sub=video">
-            <i class="fa fa-th-list"></i>
+            <i class="fas fa-th-list"></i>
             Browse Video Collections
           </a>
         </p>

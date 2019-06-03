@@ -79,6 +79,12 @@ class QuickLinks extends BlockBase {
       ],
     ];
 
+    $attachments = [
+      'library' => [
+        'lib_core/quicklinks',
+      ],
+    ];
+
     $render_array_list = [
       '#title' => 'QuickLinks:',
       '#theme' => 'item_list',
@@ -93,6 +99,7 @@ class QuickLinks extends BlockBase {
         ],
       ],
       '#items' => $quicklinks,
+      '#attached' => $attachments,
     ];
 
     return $render_array_list;

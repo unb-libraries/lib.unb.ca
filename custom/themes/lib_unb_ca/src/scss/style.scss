@@ -65,13 +65,6 @@
 }
 /* END Discovery/eResources Search */
 
-/* Layout builder */
-.form-actions input.btn {
-  /* Normal size layout builder form buttons */
-  width: inherit;
-}
-/* END Layout builder */
-
 /* Media files */
 .file {
   background: none;
@@ -93,29 +86,12 @@
 }
 /* End Media files */
 
-/* QuickLinks */
-#quicklinks-wrapper h3 {
-  font-size: 1rem;
-}
-#quicklinks-wrapper ul.list-inline li {
-  padding-top: 0;
-}
-#quicklinks-wrapper ul.list-inline li:not(:last-child) {
-  border-right: 1px solid $gray-medium;
-}
-@media (min-width: 992px) {
-  /* Force visible on large display */
-  #quicklinks-wrapper:not(.show) {
-    display: block;
-  }
-}
-/* END QuickLinks */
-
 /* Scale content images to parent block element */
 .block img {
   max-width: 100%;
   height: auto
 }
+
 /* Copy/paste btn-inverse rule */
 .btn-inverse {
   color: $white;
@@ -126,4 +102,10 @@
 }
 .btn-inverse:hover, .btn-inverse:focus {
   color: #fc0;
+}
+
+/* Drupal alert messages */
+.alert-dismissible .close {
+  background: rgba(128,128,128,.1);
+  @include opacity(.8);
 }
