@@ -350,8 +350,9 @@ class DiscoverySearch extends BlockBase {
     $title_form =
       '<form id="title_results" method="get" action="/eresources/index.php">
         <div class="mt-2">
+         <div class="divider"></div>
           <label for="databaseID" class="mb-0">
-            <span class="red">OR</span> &nbsp;<strong>Browse for databases by title</strong>
+            <strong><span class="text-red">OR</span>&nbsp;&nbsp;Browse for databases by title</strong>
           </label>
         </div>
         <select name="id" id="databaseID">
