@@ -1,0 +1,43 @@
+uuid: b305c6db-21fa-448b-b1d0-ff99e1d6be57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_content
+    - node.type.news_post
+    - paragraphs.paragraphs_type.body_section
+  module:
+    - entity_reference_revisions
+id: node.news_post.field_page_content
+field_name: field_page_content
+entity_type: node
+bundle: news_post
+label: 'Page content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      body_section: body_section
+    target_bundles_drag_drop:
+      body_section:
+        enabled: true
+        weight: 6
+      body_sidebar_section:
+        weight: 7
+        enabled: false
+      custom_block_section:
+        weight: 8
+        enabled: false
+      equal_columns_section:
+        weight: 9
+        enabled: false
+      fullwidth_body_section:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions
