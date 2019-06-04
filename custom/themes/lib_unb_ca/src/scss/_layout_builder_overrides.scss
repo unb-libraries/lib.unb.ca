@@ -10,6 +10,10 @@
 .form-actions input.btn {
   width: inherit;
 }
+/* Fix label/checkbox inline */
+.checkbox label {
+  display: inline-block;
+}
 /* Begin col stack at larger resolution */
 @media (max-width: 991px) {
   .field--name-field-page-content .layout--twocol-section.layout--twocol-section--67-33 > .layout__region--first,
