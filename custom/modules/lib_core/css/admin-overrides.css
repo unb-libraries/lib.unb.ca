@@ -4,7 +4,7 @@
 }
 
 /* Fix Bootstrap 4.x tabledrag icons */
-.js .field--widget-entity-reference-paragraphs .tabledrag-handle .handle {
+.js .tabledrag-handle .handle {
     width: 1.35rem;
     height: 1.35rem;
 }
@@ -26,4 +26,7 @@
 .library-page-help .fas {
     font-size: 1.4rem;
     vertical-align: bottom;
+}
+.align-center {
+    text-align: center;
 }
