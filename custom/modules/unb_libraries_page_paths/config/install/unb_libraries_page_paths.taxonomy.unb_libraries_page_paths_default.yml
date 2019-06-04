@@ -39,7 +39,7 @@ default_paths:
   disted:
   about:
     - facilities
-    - loc-call
+    - loc_call
     - policies
     - bio
   help:

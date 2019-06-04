@@ -1,0 +1,164 @@
+id: lib_unb_pages
+label: Pages of UNB Libraries Core Website
+migration_group: UNBLIB
+migration_tags:
+  - html
+
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: dom
+
+  # A URL that lists all pages to process.
+  urls:
+    - 'https://systems.lib.unb.ca/lib-import-urls.html'
+
+  ids:
+    url:
+      type: string
+  item_selector: url
+
+  dom_config:
+    migration_tools:
+      -
+        source_operations:
+          -
+            operation: modifier
+            modifier: basicCleanup
+        fields:
+          url:
+            obtainer: ObtainLinkFile
+            jobs:
+              -
+                job: addSearch
+                method: findFileLinksHref
+                arguments:
+                  - 'body'
+                  - []
+                  - [ 'dev.lib.unb.ca' ]
+        dom_operations:
+          -
+            operation: modifier
+            modifier: convertBaseHrefLinks
+          -
+            operation: get_field
+            field: url
+
+  migration_tools:
+    -
+      source: url
+      source_type: url
+      source_operations:
+        -
+          operation: modifier
+          modifier: basicCleanup
+      fields:
+        title:
+          obtainer: ObtainTitle
+          jobs:
+            -
+              job: addSearch
+              method: pluckSelector
+              arguments:
+                - '#main h1'
+        chatwidget_sidebar:
+          obtainer: ObtainHTML
+          jobs:
+            -
+              job: addSearch
+              method: pluckSelector
+              arguments:
+                - '#main #sidebar div.chatWidget'
+                - 1
+                - innerHtml
+
+        chatwidget_offline_sidebar:
+          obtainer: ObtainHTML
+          jobs:
+            -
+              job: addSearch
+              method: pluckSelector
+              arguments:
+                - '#main #sidebar p.askus-offline'
+                - 1
+                - innerHtml
+
+        sidebar:
+          obtainer: ObtainHTML
+          jobs:
+            -
+              job: addSearch
+              method: pluckSelector
+              arguments:
+                - '#main #sidebar'
+                - 1
+                - innerHtml
+        non_sidebar:
+          obtainer: ObtainHTML
+          jobs:
+            -
+              job: addSearch
+              method: pluckSelector
+              arguments:
+                - '#main div.col-md-8'
+                - 1
+                - innerHtml
+        body:
+          obtainer: ObtainBody
+          jobs:
+            -
+              job: addSearch
+              method: pluckSelector
+              arguments:
+                - '#main'
+                - 1
+                - html
+
+      dom_operations:
+        -
+          operation: modifier
+          modifier: removeSelectorN
+          arguments:
+            - '#main #sidebar noscript'
+            - 1
+        -
+          operation: modifier
+          modifier: matchRemoveAll
+          arguments:
+            - '#main #sidebar h3'
+            - Instant Message
+            - text
+        -
+          operation: get_field
+          field: title
+        -
+          operation: get_field
+          field: chatwidget_sidebar
+        -
+          operation: get_field
+          field: chatwidget_offline_sidebar
+        -
+          operation: get_field
+          field: sidebar
+        -
+          operation: get_field
+          field: non_sidebar
+        -
+          operation: get_field
+          field: body
+
+process:
+  type:
+    plugin: default_value
+    default_value: library_page
+  title: title
+
+destination:
+  plugin: entity:node
+
+dependencies:
+  module:
+    - lib_unb_ca_pages
+  enforced:
+    module:
+      - lib_unb_ca_pages

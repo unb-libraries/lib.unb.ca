@@ -84,6 +84,16 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
   /**
    * {@inheritdoc}
    */
+  public static function addNodePathRelationshipFromPath(NodeInterface $node, $vid, $path) {
+    $path_term = NodeTaxonomyPath::getPathTermFromPath($vid, $path);
+    if (!empty($path_term)) {
+      self::addNodePathRelationship($node, $path_term->id());
+    }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public static function createFromArray($vid, array $terms) {
     $root_tid = self::getRootElement($vid);
 

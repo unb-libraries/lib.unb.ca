@@ -9,6 +9,7 @@ use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
+use Drupal\taxonomy\Entity\Term;
 use Drupal\taxonomy\TermInterface;
 use Drupal\user\UserInterface;
 
@@ -162,6 +163,67 @@ class NodeTaxonomyPath extends ContentEntityBase implements NodeTaxonomyPathInte
       }
     }
     return '/' . implode('/', $paths);
+  }
+
+  /**
+   * {@inheritdoc}
+   *
+   * @TODO: Oy vey.
+   */
+  public static function getPathTermFromPath($vid, $path) {
+    $root_tid = self::getRootTid($vid);
+    $path = trim($path);
+
+    # Path empty.
+    if (empty($path)) {
+      return NULL;
+    }
+
+    # No slashes.
+    if (!strstr($path, '/')) {
+      return NULL;
+    }
+
+    $term_names = explode('/', $path);
+
+    // Special case : root
+    if (isset($term_names[0]) && $term_names[0] == NULL && isset($term_names[1]) && $term_names[1] == NULL) {
+      return Term::load($root_tid);
+    }
+
+    // Not root so we know to skip the first term.
+    $parent_tid = $root_tid;
+    array_shift($term_names);
+
+    if (empty($term_names)) {
+      return NULL;
+    }
+
+    foreach ($term_names as $term_name) {
+      $properties = [
+        'name' => $term_name,
+        'vid' => $vid,
+        'parent' => [$parent_tid]
+      ];
+      $terms = \Drupal::entityManager()->getStorage('taxonomy_term')->loadByProperties($properties);
+
+      if (empty($terms)) {
+        return NULL;
+      }
+
+      if (empty($terms)) {
+        return NULL;
+      }
+
+      foreach($terms as $term) {
+        if ($term->getName() == $term_name) {
+          $parent_tid = $term->id();
+        }
+      }
+    }
+
+    // If we get here, the last term traversed is the term we want.
+    return Term::load($parent_tid);
   }
 
   /**
