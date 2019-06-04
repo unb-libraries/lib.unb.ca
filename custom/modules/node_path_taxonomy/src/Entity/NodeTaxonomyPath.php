@@ -140,21 +140,6 @@ class NodeTaxonomyPath extends ContentEntityBase implements NodeTaxonomyPathInte
   /**
    * {@inheritdoc}
    */
-  public static function addNodePath(NodeInterface $node, $path_tid) {
-    $data = [
-      'uid' => \Drupal::currentUser()->id(),
-      'nid' => $node->id(),
-      'tid' => $path_tid,
-    ];
-    $node_taxonomy_path = \Drupal::entityManager()
-      ->getStorage('node_taxonomy_path')
-      ->create($data);
-    $node_taxonomy_path->save();
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public static function getNodePath(NodeInterface $node) {
     return self::getTermPathValue(
       self::getNodePathTerm($node)

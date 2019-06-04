@@ -4,6 +4,7 @@ namespace Drupal\node_path_taxonomy\Entity;
 
 use Drupal\Core\Config\Entity\ConfigEntityBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeInterface;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\Core\Entity\EntityStorageInterface;
 
@@ -64,6 +65,21 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
    * @var string
    */
   protected $vid;
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function addNodePathRelationship(NodeInterface $node, $path_tid) {
+    $data = [
+      'uid' => \Drupal::currentUser()->id(),
+      'nid' => $node->id(),
+      'tid' => $path_tid,
+    ];
+    $node_taxonomy_path = \Drupal::entityManager()
+      ->getStorage('node_taxonomy_path')
+      ->create($data);
+    $node_taxonomy_path->save();
+  }
 
   /**
    * {@inheritdoc}

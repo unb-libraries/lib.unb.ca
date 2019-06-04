@@ -80,20 +80,6 @@ interface NodeTaxonomyPathInterface extends ContentEntityInterface, EntityChange
   public static function removeNodePaths(NodeInterface $node);
 
   /**
-   * Add a node path relationship for a specific node.
-   *
-   * @param \Drupal\node\NodeInterface $node
-   *   The node to create the relationship for.
-   * @param int $path_tid
-   *   The path taxonomy term ID to associate with the node.
-   *
-   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
-   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
-   * @throws \Drupal\Core\Entity\EntityStorageException
-   */
-  public static function addNodePath(NodeInterface $node, $path_tid);
-
-  /**
    * Get the base taxonomy path for a node.
    *
    * @param \Drupal\node\NodeInterface $node

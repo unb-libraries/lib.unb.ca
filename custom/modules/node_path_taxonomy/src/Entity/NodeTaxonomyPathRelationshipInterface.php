@@ -4,6 +4,7 @@ namespace Drupal\node_path_taxonomy\Entity;
 
 use Drupal\Core\Config\Entity\ConfigEntityInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeInterface;
 
 /**
  * Provides an interface for defining Node taxonomy path relationship entities.
@@ -40,6 +41,20 @@ interface NodeTaxonomyPathRelationshipInterface extends ConfigEntityInterface {
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
   public static function getRootElement($vid = NULL);
+
+  /**
+   * Add a node path relationship for a specific node.
+   *
+   * @param \Drupal\node\NodeInterface $node
+   *   The node to create the relationship for.
+   * @param int $path_tid
+   *   The path taxonomy term ID to associate with the node.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   */
+  public static function addNodePathRelationship(NodeInterface $node, $path_tid);
 
   /**
    * Get the term ID of a vocabulary's term by the name of the term.
