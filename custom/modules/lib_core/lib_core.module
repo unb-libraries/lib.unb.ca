@@ -37,8 +37,10 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
       $form['#attached']['library'][] = 'lib_core/table-row-check';
       break;
 
-    case 'node_library_page_edit_form':
     case 'node_library_page_form':
+    case 'node_library_page_edit_form':
+    case 'node_news_post_form':
+    case 'node_news_post_edit_form':
       // Attach CSS libraries for Library page content type form enhancements.
       $form['#attached']['library'][] = 'lib_core/bootstrap-cdn';
       $form['#attached']['library'][] = 'lib_core/admin-overrides';
