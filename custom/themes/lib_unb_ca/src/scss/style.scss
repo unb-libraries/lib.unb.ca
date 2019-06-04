@@ -4,9 +4,54 @@
 /* Import Sass files */
 @import 'import';
 
+h2 {
+  color: $red;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+h3 {
+  font-size: 1.1rem;
+}
+
+/* UTILITY CLASSES */
+/* Copy/paste btn-inverse rule */
+.btn-inverse {
+  color: $white;
+  background-color: #363636;
+  @include horizontal-gradient(#444, #222);
+  background-repeat: repeat-x;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+.btn-inverse:focus,
+.btn-inverse:hover {
+  color: $yellow;
+}
 .text-red {
   color: $red;
 }
+/* END UTILITY */
+
+/* OVERRIDES */
+/* Drupal alert messages */
+.alert-dismissible .close {
+  background: rgba(128,128,128,.1);
+  @include opacity(.8);
+}
+/* Embedded Media Image - centered */
+.align-center {
+  text-align: center;
+}
+.block,
+.layout {
+  margin-bottom: 2rem;
+}
+/* Scale content images to parent block element */
+.block img {
+  max-width: 100%;
+  height: auto
+}
+
+/* END OVERRIDES */
 
 /* Discovery/e-Resources Search */
 .tabs-theme-dark .card-body .divider {
@@ -95,26 +140,40 @@
 }
 /* End Media files */
 
-/* Scale content images to parent block element */
-.block img {
-  max-width: 100%;
-  height: auto
+/* Library News */
+.news-item h3 {
+  margin-bottom: 0;
 }
-
-/* Copy/paste btn-inverse rule */
-.btn-inverse {
-  color: $white;
-  background-color: #363636;
-  background-image: linear-gradient(to bottom, #444, #222);
-  background-repeat: repeat-x;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+.news-teaser {
+  position: relative;
 }
-.btn-inverse:hover, .btn-inverse:focus {
-  color: $yellow;
+.news-teaser:after {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to($white));
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, $white 100%);
+  bottom: 0;
+  content: "\00a0";
+  display: block;
+  position: absolute;
+  right: 0;
+  width: 3.5em;
 }
-
-/* Drupal alert messages */
-.alert-dismissible .close {
-  background: rgba(128,128,128,.1);
-  @include opacity(.8);
+.library-news .more-link:before {
+  content: '\f1ea';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-left: -2em;
+  margin-right: .25em;
 }
+.news-featured {
+  text-align: right;
+}
+.news-featured a img {
+  @include opacity(1);
+  @include css3-prefix(transition, opacity .3s, transform .3s);
+  @include css3-prefix(transform, scale(1));
+}
+.news-featured a:hover img {
+  @include opacity(.6);
+  @include css3-prefix(transform, scale(.97));
+}
+/* END Library News */
