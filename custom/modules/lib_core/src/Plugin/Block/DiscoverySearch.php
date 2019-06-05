@@ -34,7 +34,7 @@ class DiscoverySearch extends BlockBase {
       // Store block render array in variable prior pass to render().
       $render_array = $plugin_block->build();
 
-      $askus_block = '<div class="d-none d-lg-block p-4 ask-us">';
+      $askus_block = '<div class="d-none d-lg-flex flex-shrink-1 pr-4 py-4">';
       $askus_block .= render($render_array);
       $askus_block .= '</div>';
     }
@@ -78,9 +78,9 @@ class DiscoverySearch extends BlockBase {
             </a>
           </li>
         </ul>
-        <div class="d-flex p-lg-4">
+        <div class="d-flex flex-wrap p-lg-4">
           <div id="content" class="flex-grow-1 tab-content" role="tablist">
-            <div id="pane-reserves" class="flex-grow-1 card tab-pane my-1 fade show active" role="tabpanel" aria-labelledby="tab-reserves">
+            <div id="pane-reserves" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-reserves">
               <div class="card-header p-0" role="tab" id="heading-reserves">
                 <h3 class="m-0">
                   <a class="nav-link mx-1 p-2" data-toggle="collapse" href="#collapse-reserves" aria-expanded="true" aria-controls="collapse-reserves">
@@ -96,7 +96,7 @@ class DiscoverySearch extends BlockBase {
               </div>
             </div>
 
-            <div id="pane-catalogue" class="flex-grow-1 card tab-pane my-1 fade" role="tabpanel" aria-labelledby="tab-catalogue">
+            <div id="pane-catalogue" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-catalogue">
               <div class="card-header p-0" role="tab" id="heading-catalogue">
                 <h3 class="m-0">
                   <a class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-catalogue" aria-expanded="false" aria-controls="collapse-catalogue">
@@ -112,7 +112,7 @@ class DiscoverySearch extends BlockBase {
               </div>
             </div>
 
-            <div id="pane-databases" class="flex-grow-1 card tab-pane my-1 fade" role="tabpanel" aria-labelledby="tab-databases">
+            <div id="pane-databases" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-databases">
               <div class="card-header p-0" role="tab" id="heading-databases">
                 <h3 class="m-0">
                   <a class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-databases" aria-expanded="false" aria-controls="collapse-databases">
@@ -128,7 +128,7 @@ class DiscoverySearch extends BlockBase {
               </div>
             </div>
             
-            <div id="pane-journals" class="flex-grow-1 card tab-pane my-1 fade" role="tabpanel" aria-labelledby="tab-journals">
+            <div id="pane-journals" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-journals">
               <div class="card-header p-0" role="tab" id="heading-journals">
                 <h3 class="m-0">
                   <a class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-journals" aria-expanded="false" aria-controls="collapse-journals">
@@ -144,7 +144,7 @@ class DiscoverySearch extends BlockBase {
                 </div>
             </div>
 
-            <div id="pane-encyclopedias" class="flex-grow-1 card tab-pane my-1 fade" role="tabpanel" aria-labelledby="tab-encyclopedias">
+            <div id="pane-encyclopedias" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-encyclopedias">
               <div class="card-header p-0" role="tab" id="heading-encyclopedias">
                 <h3 class="m-0">
                   <a class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-encyclopedias" aria-expanded="false" aria-controls="collapse-encyclopedias">
@@ -160,7 +160,7 @@ class DiscoverySearch extends BlockBase {
                 </div>
             </div>
 
-            <div id="pane-ebooks" class="flex-grow-1 card tab-pane my-1 fade" role="tabpanel" aria-labelledby="tab-ebooks">
+            <div id="pane-ebooks" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-ebooks">
               <div class="card-header p-0" role="tab" id="heading-ebooks">
                 <h3 class="m-0">
                   <a class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-ebooks" aria-expanded="false" aria-controls="collapse-ebooks">
@@ -176,7 +176,7 @@ class DiscoverySearch extends BlockBase {
               </div>
             </div>
 
-            <div id="pane-videos" class="flex-grow-1 card tab-pane my-1 fade" role="tabpanel" aria-labelledby="tab-videos">
+            <div id="pane-videos" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-videos">
               <div class="card-header p-0" role="tab" id="heading-videos">
                 <h3 class="m-0">
                   <a class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-videos" aria-expanded="false" aria-controls="collapse-videos">
