@@ -34,7 +34,7 @@ widgets:
     id: view
   f7565be6-6607-469c-bbb1-48186792ad37:
     settings:
-      extensions: 'jpg jpeg png gif tif'
+      extensions: 'jpg jpeg png gif'
       media_type: image
       upload_location: 'public://media/images'
       multiple: 0
