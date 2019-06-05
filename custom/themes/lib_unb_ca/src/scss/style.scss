@@ -32,6 +32,13 @@ h3 {
 /* END UTILITY */
 
 /* OVERRIDES */
+/* Nav affix anchor offset */
+:target:before {
+  content: "\00a0";
+  display: block;
+  height: 156px;
+  margin-top: -156px;
+}
 /* Drupal alert messages */
 .alert-dismissible .close {
   background: rgba(128,128,128,.1);
