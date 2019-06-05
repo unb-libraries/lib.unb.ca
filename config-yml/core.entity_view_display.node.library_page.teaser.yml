@@ -20,3 +20,4 @@ content:
     region: content
 hidden:
   field_page_content: true
+  layout_builder__layout: true

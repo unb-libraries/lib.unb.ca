@@ -19,4 +19,6 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_categories: true
+  field_featured_image: true
   field_page_content: true
