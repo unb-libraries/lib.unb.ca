@@ -5,7 +5,7 @@
     padding-top: 0;
 }
 #quicklinks-wrapper ul.list-inline li:not(:last-child) {
-    border-right: 1px solid $gray-medium;
+    border-right: 1px solid #999;
 }
 @media (min-width: 992px) {
     /* Force visible on large display */
