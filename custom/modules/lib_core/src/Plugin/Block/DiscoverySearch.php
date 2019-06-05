@@ -34,7 +34,7 @@ class DiscoverySearch extends BlockBase {
       // Store block render array in variable prior pass to render().
       $render_array = $plugin_block->build();
 
-      $askus_block = '<div class="d-none d-lg-flex flex-shrink-1 pr-4 py-4">';
+      $askus_block = '<div class="d-none d-lg-flex flex-shrink-1 p-4">';
       $askus_block .= render($render_array);
       $askus_block .= '</div>';
     }
