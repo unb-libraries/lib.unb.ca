@@ -129,6 +129,11 @@ source:
             - Instant Message
             - text
         -
+          operation: modifier
+          modifier: removeSelectorAll
+          arguments:
+            - 'p.top'
+        -
           operation: get_field
           field: title
         -
