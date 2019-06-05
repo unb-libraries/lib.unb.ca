@@ -112,7 +112,7 @@ source:
               arguments:
                 - '#main'
                 - 1
-                - html
+                - innerHtml
 
       dom_operations:
         -
