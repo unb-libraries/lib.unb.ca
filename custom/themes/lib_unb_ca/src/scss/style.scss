@@ -202,3 +202,20 @@ h3 {
   @include css3-prefix(transform, scale(.97));
 }
 /* END Library News */
+/* Breadcrumbs */
+.breadcrumb li:first-of-type a {
+  display: inline-block;
+  position: relative;
+  right: 9999px;
+  width: 16px;
+}
+.breadcrumb li:first-of-type a:after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f015";
+  font-weight: 900;
+  height: 100%;
+  position: absolute;
+  right: -9999px;
+  top: 0;
+}
+/* END Breadcrumbs */
