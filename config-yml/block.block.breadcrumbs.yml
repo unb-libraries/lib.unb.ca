@@ -10,13 +10,13 @@ _core:
   default_config_hash: yYQE3W8bEnobjzrrMLMFWCk22GgCsQVrPwlxqPV4w3M
 id: breadcrumbs
 theme: lib_unb_ca
-region: header
-weight: 0
+region: breadcrumb
+weight: -4
 provider: null
 plugin: system_breadcrumb_block
 settings:
   id: system_breadcrumb_block
   label: Breadcrumbs
   provider: system
-  label_display: visible
+  label_display: '0'
 visibility: {  }
