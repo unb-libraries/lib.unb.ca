@@ -186,11 +186,31 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: bundle
-      sorts: {  }
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          entity_type: node
+          entity_field: created
+          plugin_id: date
       title: ''
       header: {  }
       footer: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<div class=\"card\">\r\n  <div class=\"card-body\">\r\n    <span class=\"fas fa-exclamation-circle\"></span>\r\n    Sorry, no news posts were found.\r\n  </div>\r\n</div>"
+            format: library_page_html
+          plugin_id: text
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
@@ -219,6 +239,7 @@ display:
         sorts: false
         filters: false
         filter_groups: false
+        css_class: false
       pager:
         type: some
         options:
@@ -232,7 +253,7 @@ display:
           default_row_class: true
           type: ul
           wrapper_class: ''
-          class: pl-4
+          class: item-list
       row:
         type: fields
         options:
@@ -375,6 +396,7 @@ display:
         operator: AND
         groups:
           1: AND
+      css_class: 'news news-recent'
     cache_metadata:
       max-age: -1
       contexts:
@@ -411,6 +433,7 @@ display:
         sorts: false
         title: false
         pager: false
+        css_class: false
       style:
         type: html_list
         options:
@@ -419,7 +442,7 @@ display:
           default_row_class: true
           type: ul
           wrapper_class: ''
-          class: pl-4
+          class: item-list
       row:
         type: fields
         options:
@@ -529,7 +552,7 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -562,8 +585,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: true
-            text: '({{ name_1 }})'
+            alter_text: false
+            text: ''
             make_link: false
             path: ''
             absolute: false
@@ -594,8 +617,8 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
+          element_wrapper_class: 'text-muted aggregation'
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -603,11 +626,11 @@ display:
           set_precision: false
           precision: 0
           decimal: .
-          separator: ', '
+          separator: ''
           format_plural: 0
           format_plural_string: !!binary MQNAY291bnQ=
-          prefix: ''
-          suffix: ''
+          prefix: (
+          suffix: )
           click_sort_column: value
           type: string
           settings:
@@ -650,6 +673,7 @@ display:
           offset: 0
       allow:
         items_per_page: false
+      css_class: 'news news-categories'
     cache_metadata:
       max-age: -1
       contexts:
@@ -724,6 +748,18 @@ display:
         relationships: false
         fields: false
         arguments: false
+        title: false
+        use_more: false
+        use_more_always: false
+        use_more_text: false
+        pager: false
+        link_display: false
+        link_url: false
+        css_class: false
+        style: false
+        row: false
+        group_by: false
+        sorts: false
       filter_groups:
         operator: AND
         groups:
@@ -815,7 +851,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          default_action: 'not found'
+          default_action: summary
           exception:
             value: all
             title_enable: false
@@ -827,12 +863,12 @@ display:
             argument: ''
           default_argument_skip_url: false
           summary_options:
-            base_path: ''
+            base_path: news/date
             count: true
             items_per_page: 25
             override: false
           summary:
-            sort_order: asc
+            sort_order: desc
             number_of_records: 0
             format: default_summary
           specify_validation: false
@@ -844,13 +880,57 @@ display:
           plugin_id: date_year_month
       allow:
         items_per_page: false
+      title: 'News Archives'
+      use_more: true
+      use_more_always: false
+      use_more_text: 'all news archives'
+      pager:
+        type: some
+        options:
+          items_per_page: 6
+          offset: 0
+      link_display: page_2
+      link_url: news/date/
+      css_class: 'news news-archive text-muted'
+      style:
+        type: html_list
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: false
+          type: ul
+          wrapper_class: item-list
+          class: ''
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      group_by: false
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+          entity_type: node
+          entity_field: created
+          plugin_id: date
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
@@ -1505,6 +1585,9 @@ display:
         filters: false
         filter_groups: false
         sorts: false
+        title: false
+        arguments: false
+        empty: false
       row:
         type: 'entity:node'
         options:
@@ -1641,11 +1724,477 @@ display:
           entity_type: node
           entity_field: created
           plugin_id: date
+      title: 'News @ UNB Libraries'
+      arguments:
+        created_year:
+          id: created_year
+          table: node_field_data
+          field: created_year
+          relationship: none
+          group_type: group
+          admin_label: ''
+          default_action: ignore
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: true
+          title: 'Yearly Archives: {{ arguments.created_year }}'
+          default_argument_type: fixed
+          default_argument_options:
+            argument: ''
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: true
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          entity_type: node
+          plugin_id: date_year
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<div class=\"card\">\r\n  <div class=\"card-body callout callout-warning\">\r\n    <span class=\"fas fa-exclamation-circle\"></span>\r\n    Sorry, no news posts were found.\r\n  </div>\r\n</div>"
+            format: library_page_html
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  page_2:
+    display_plugin: page
+    id: page_2
+    display_title: 'Monthly Archives Page'
+    position: 7
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      title: 'Monthly Archives'
+      defaults:
+        title: false
+        arguments: false
+        style: false
+        row: false
+        pager: false
+        fields: false
+        sorts: false
+      arguments:
+        created_year_month:
+          id: created_year_month
+          table: node_field_data
+          field: created_year_month
+          relationship: none
+          group_type: group
+          admin_label: ''
+          default_action: ignore
+          exception:
+            value: all
+            title_enable: true
+            title: All
+          title_enable: true
+          title: 'Monthly Archives: {{ arguments.created_year_month }}'
+          default_argument_type: fixed
+          default_argument_options:
+            argument: ''
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: true
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          entity_type: node
+          plugin_id: date_year_month
+      path: news/date
+      style:
+        type: html_list
+        options:
+          grouping:
+            -
+              field: created_1
+              rendered: true
+              rendered_strip: false
+          row_class: mb-2
+          default_row_class: false
+          type: ul
+          wrapper_class: 'item-list mb-4'
+          class: ''
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline:
+            created: created
+            uid: uid
+          separator: ''
+          hide_empty: false
+      pager:
+        type: mini
+        options:
+          items_per_page: 10
+          offset: 0
+          id: 0
+          total_pages: null
+          tags:
+            previous: '‹ Older posts'
+            next: 'Newer posts ›'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          entity_type: node
+          entity_field: title
+          label: ''
+          alter:
+            alter_text: false
+            make_link: false
+            absolute: false
+            trim: false
+            word_boundary: false
+            ellipsis: false
+            strip_tags: false
+            html: false
+          hide_empty: false
+          empty_zero: false
+          settings:
+            link_to_entity: true
+          plugin_id: field
+          relationship: none
+          group_type: group
+          admin_label: ''
+          exclude: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        created_1:
+          id: created_1
+          table: node_field_data
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: 'Month, Year'
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: timestamp
+          settings:
+            date_format: custom
+            custom_date_format: 'F Y'
+            timezone: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: node
+          entity_field: created
+          plugin_id: field
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: timestamp
+          settings:
+            date_format: custom
+            custom_date_format: 'l, F jS, Y \a\t H:i A'
+            timezone: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: node
+          entity_field: created
+          plugin_id: field
+        uid:
+          id: uid
+          table: node_field_data
+          field: uid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: node
+          entity_field: uid
+          plugin_id: field
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: Attribution
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: 'Posted {{ created }} by {{ uid }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: div
+          element_class: 'text-muted font-italic'
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+          plugin_id: custom
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
