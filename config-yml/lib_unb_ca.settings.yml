@@ -52,12 +52,12 @@ bootstrap_barrio_region_clean_footer_fourth: 0
 bootstrap_barrio_region_class_footer_fourth: row
 bootstrap_barrio_region_clean_footer_fifth: 0
 bootstrap_barrio_region_class_footer_fifth: row
-bootstrap_barrio_sidebar_position: left
+bootstrap_barrio_sidebar_position: right
 bootstrap_barrio_content_offset: '0'
 bootstrap_barrio_sidebar_collapse: 0
 bootstrap_barrio_sidebar_first_width: '2'
 bootstrap_barrio_sidebar_first_offset: '0'
-bootstrap_barrio_sidebar_second_width: '2'
+bootstrap_barrio_sidebar_second_width: '4'
 bootstrap_barrio_sidebar_second_offset: '0'
 bootstrap_barrio_button: 0
 bootstrap_barrio_button_size: ''
