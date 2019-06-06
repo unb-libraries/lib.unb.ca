@@ -85,7 +85,7 @@ h3 {
 }
 .tabs-theme-dark .nav-tabs .nav-link:focus,
 .tabs-theme-dark .nav-tabs .nav-link:hover {
-    border-color: transparent;
+  border-color: transparent;
 }
 .tabs-theme-dark .nav-tabs .nav-link.active {
   border-color: $yellow;
@@ -170,6 +170,24 @@ h3 {
   font-weight: 900;
   margin-left: -2em;
   margin-right: .25em;
+}
+.news-archive .item-list ul {
+  list-style: initial;
+  padding-left: 40px;
+}
+.news-archive .more-link {
+  font-size: .95rem;
+  text-align: right;
+}
+.news-archive .more-link a {
+  color: $red;
+}
+.news-archive .more-link:before {
+  color: $red;
+  content: '\f0fe';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: .25rem;
 }
 .news-featured {
   text-align: right;
