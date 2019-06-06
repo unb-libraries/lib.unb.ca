@@ -7,16 +7,16 @@ dependencies:
 id: new_post
 label: 'New post'
 type: 'canonical_entities:node'
-pattern: '/news/[node:author:created:custom:Y]/[node:author:created:custom:m]/[node:title]'
+pattern: '/news/[node:created:custom:Y]/[node:created:custom:m]/[node:title]'
 selection_criteria:
-  01f7cd50-e283-4c03-82d3-15a106923734:
+  0c4c2267-a62e-46bf-8851-a599384e55a4:
     id: node_type
     bundles:
       news_post: news_post
     negate: false
     context_mapping:
       node: node
-    uuid: 01f7cd50-e283-4c03-82d3-15a106923734
+    uuid: 0c4c2267-a62e-46bf-8851-a599384e55a4
 selection_logic: and
 weight: -5
 relationships: {  }
