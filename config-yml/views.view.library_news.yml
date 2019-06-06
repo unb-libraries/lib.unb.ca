@@ -863,7 +863,7 @@ display:
             argument: ''
           default_argument_skip_url: false
           summary_options:
-            base_path: news/date
+            base_path: news/archive
             count: true
             items_per_page: 25
             override: false
@@ -1836,7 +1836,7 @@ display:
           validate_options: {  }
           entity_type: node
           plugin_id: date_year_month
-      path: news/date
+      path: news/archive
       style:
         type: html_list
         options:
