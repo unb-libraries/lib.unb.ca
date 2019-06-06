@@ -1,0 +1,13 @@
+.sidebar h2 {
+  color: $black;
+  font-size: 1.5rem;
+}
+.sidebar .block {
+  border: none;
+  margin-bottom: 2.5rem;
+  padding: 0;
+}
+.sidebar .block .content {
+  font-size: 1rem;
+  line-height: inherit;
+}

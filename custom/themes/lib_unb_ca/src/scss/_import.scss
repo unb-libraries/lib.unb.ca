@@ -1,4 +1,5 @@
 /* SCSS IMPORTS */
 @import 'variables';
-@import 'scroll_to_top_overrides';
-@import 'layout_builder_overrides';
+@import 'overrides/scroll_to_top_overrides';
+@import 'overrides/layout_builder_overrides';
+@import 'overrides/sidebar';
