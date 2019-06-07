@@ -1126,6 +1126,7 @@ display:
         pager: false
         cache: false
         css_class: false
+        empty: false
       filter_groups:
         operator: AND
         groups:
@@ -1221,6 +1222,20 @@ display:
       allow:
         items_per_page: false
       css_class: 'news-featured float-right'
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<div class=\"card\">\r\n  <div class=\"card-body\">\r\n    <span class=\"fas fa-exclamation-circle\"></span>\r\n    No news posts are currently featured.\r\n  </div>\r\n</div>"
+            format: library_page_html
+          plugin_id: text
     cache_metadata:
       max-age: 0
       contexts:
