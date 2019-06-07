@@ -48,6 +48,25 @@ form .field-multiple-table .field-multiple-drag,
     flex-grow: 1!important;
     text-transform: uppercase;
 }
+/* News Featured Image form field */
+#field_featured_image-media-library-wrapper {
+    padding: 0;
+}
+#field_featured_image-media-library-wrapper .media-library-widget__toggle-weight {
+    top: -1em;
+}
+#field_featured_image-media-library-wrapper .media-library-selection .media-library-item__preview {
+    cursor: default;
+}
+#field_featured_image-media-library-wrapper legend {
+    background: #f5f5f2;
+    border: solid #bfbfba;
+    border-width: 1px 0;
+    color: #333;
+    padding: .5rem;
+    position: relative;
+    text-transform: uppercase;
+}
 /* Visible AJAX throbber */
 .paragraphs-subform .dropbutton-multiple .dropbutton-action .ajax-progress {
     display: inline-block;
