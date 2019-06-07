@@ -241,7 +241,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    */
   private function addContentNoSidebar() {
     $this->currentParagraph = Paragraph::create([
-      'type' => 'body_section',
+      'type' => 'fullwidth_body_section',
       'field_body' => [
         'value' => $this->currentRow->getSourceProperty('body'),
         'format' => 'library_page_html',
