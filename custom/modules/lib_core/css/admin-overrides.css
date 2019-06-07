@@ -48,3 +48,14 @@ form .field-multiple-table .field-multiple-drag,
     flex-grow: 1!important;
     text-transform: uppercase;
 }
+/* Visible AJAX throbber */
+.paragraphs-subform .dropbutton-multiple .dropbutton-action .ajax-progress {
+    display: inline-block;
+    left: 30em;
+    top: .15rem;
+}
+.paragraph-type-top .dropbutton-multiple .dropbutton-action .ajax-progress {
+    display: inline-block;
+    left: inherit;
+    right: 12.5rem;
+}
