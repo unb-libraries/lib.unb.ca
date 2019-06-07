@@ -3,6 +3,10 @@ admin-overrides:
   css:
     theme:
       css/admin-overrides.css: {}
+  js:
+    js/admin-overrides.js: {}
+    dependencies:
+      - core/jquery
 
 bootstrap-cdn:
   version: VERSION
