@@ -68,18 +68,26 @@ function node_path_taxonomy_pathauto_alias_alter(&$alias, array &$context) {
   }
   $node = $context['data']['node'];
   $node_type = $node->bundle();
-  $path_tid = \Drupal::state()->get(NodeTaxonomyPath::getStateKey());
+  $path_tid = \Drupal::state()->get(NodeTaxonomyPath::getOverrideAliasStateKey());
 
   if (!empty($path_tid) && !empty(NodeTaxonomyPathRelationship::getPaths($node_type))) {
     NodeTaxonomyPath::removeNodePaths($node);
     NodeTaxonomyPathRelationship::addNodePathRelationship($node, $path_tid);
-    $clean_label = \Drupal::service('pathauto.alias_cleaner')->cleanString($node->label());
-    $node_path = NodeTaxonomyPath::getNodePath($node);
-    if ($node_path == '/') {
-      $node_path = NULL;
+
+    $manual_path_override = \Drupal::state()->get(NodeTaxonomyPath::getManualAliasStateKey());
+    if ($manual_path_override) {
+      $alias = $manual_path_override;
+      \Drupal::state()->delete(NodeTaxonomyPath::getManualAliasStateKey());
     }
-    $alias = $node_path . "/$clean_label";
-    \Drupal::state()->delete(NodeTaxonomyPath::getStateKey());
+    else {
+      $clean_label = \Drupal::service('pathauto.alias_cleaner')->cleanString($node->label());
+      $node_path = NodeTaxonomyPath::getNodePath($node);
+      if ($node_path == '/') {
+        $node_path = NULL;
+      }
+      $alias = $node_path . "/$clean_label";
+    }
+    \Drupal::state()->delete(NodeTaxonomyPath::getOverrideAliasStateKey());
   }
 }
 

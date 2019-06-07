@@ -141,6 +141,6 @@ interface NodeTaxonomyPathInterface extends ContentEntityInterface, EntityChange
    * @return string
    *   The standardized state key ID.
    */
-  public static function getStateKey();
+  public static function getOverrideAliasStateKey();
 
 }
