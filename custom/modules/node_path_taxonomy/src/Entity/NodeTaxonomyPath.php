@@ -174,19 +174,19 @@ class NodeTaxonomyPath extends ContentEntityBase implements NodeTaxonomyPathInte
     $root_tid = self::getRootTid($vid);
     $path = trim($path);
 
-    # Path empty.
+    // Path empty.
     if (empty($path)) {
       return NULL;
     }
 
-    # No slashes.
+    // No slashes.
     if (!strstr($path, '/')) {
       return NULL;
     }
 
     $term_names = explode('/', $path);
 
-    // Special case : root
+    // Special case : root.
     if (isset($term_names[0]) && $term_names[0] == NULL && isset($term_names[1]) && $term_names[1] == NULL) {
       return Term::load($root_tid);
     }
@@ -203,7 +203,7 @@ class NodeTaxonomyPath extends ContentEntityBase implements NodeTaxonomyPathInte
       $properties = [
         'name' => $term_name,
         'vid' => $vid,
-        'parent' => [$parent_tid]
+        'parent' => [$parent_tid],
       ];
       $terms = \Drupal::entityManager()->getStorage('taxonomy_term')->loadByProperties($properties);
 
@@ -215,7 +215,7 @@ class NodeTaxonomyPath extends ContentEntityBase implements NodeTaxonomyPathInte
         return NULL;
       }
 
-      foreach($terms as $term) {
+      foreach ($terms as $term) {
         if ($term->getName() == $term_name) {
           $parent_tid = $term->id();
         }
