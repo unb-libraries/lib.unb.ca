@@ -1,0 +1,31 @@
+uuid: e86d1689-45cb-4118-b227-c4e158d894c7
+langcode: en
+status: true
+dependencies: {  }
+id: library_news_author
+label: 'Library News Author'
+weight: 2
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access files overview'
+  - 'access in-place editing'
+  - 'access media overview'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'create image media'
+  - 'create news_post content'
+  - 'create terms in categories'
+  - 'delete any news_post content'
+  - 'delete own image media'
+  - 'edit any image media'
+  - 'edit any news_post content'
+  - 'edit own file media'
+  - 'edit terms in categories'
+  - 'override news_post authored on option'
+  - 'override news_post promote to front page option'
+  - 'override news_post published option'
+  - 'revert news_post revisions'
+  - 'view news_post revisions'
+  - 'view own unpublished content'
+  - 'view the administration theme'

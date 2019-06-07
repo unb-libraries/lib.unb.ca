@@ -1,0 +1,14 @@
+uuid: 51dfb2e9-417f-49ee-8e12-1e328e9103ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.library_news_author
+  module:
+    - user
+id: user_remove_role_action.library_news_author
+label: 'Remove the Library News Author role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: library_news_author

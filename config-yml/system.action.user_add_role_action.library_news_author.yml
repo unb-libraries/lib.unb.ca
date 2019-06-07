@@ -1,0 +1,14 @@
+uuid: db00d8e7-a330-4476-b271-ad4114c21eb5
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.library_news_author
+  module:
+    - user
+id: user_add_role_action.library_news_author
+label: 'Add the Library News Author role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: library_news_author
