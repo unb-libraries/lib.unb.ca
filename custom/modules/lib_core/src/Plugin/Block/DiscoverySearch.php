@@ -293,6 +293,8 @@ class DiscoverySearch extends BlockBase {
    * {@inheritdoc}
    */
   protected function getDatabasesForm() {
+    $categories = _lib_core_get_guide_categories();
+
     $subject_form =
       '<form class="categorySelect">
         <div class="font-weight-bold">
@@ -301,49 +303,16 @@ class DiscoverySearch extends BlockBase {
           </label>
         </div>
         <select name="category">
-          <option value="">Select a subject&hellip;</option>
-          <option value="anthropology">Anthropology</option>
-          <option value="biology">Biology</option>
-          <option value="business">Business Administration</option>
-          <option value="chemistry">Chemistry</option>
-          <option value="classics">Classics and Ancient History</option>
-          <option value="ics">Communication Studies</option>
-          <option value="computerscience">Computer Science</option>
-          <option value="criminology">Criminology</option>
-          <option value="earth-sciences">Earth Sciences</option>
-          <option value="economics">Economics</option>
-          <option value="education">Education</option>
-          <option value="engineering">Engineering</option>
-          <option value="english">English</option>
-          <option value="entrepreneurship">Entrepreneurship</option>
-          <option value="familyviolence">Family Violence Issues</option>
-          <option value="film">Film Studies</option>
-          <option value="finearts">Fine Arts</option>
-          <option value="forestry">Forestry &amp; Environmental Management</option>
-          <option value="french">French</option>
-          <option value="womensstudies">Gender and Women\'s Studies</option>
-          <option value="german">German Literature</option>
-          <option value="gerontology">Gerontology</option>
-          <option value="history">History</option>
-          <option value="development">International Development Studies</option>
-          <option value="journalism">Journalism &amp; Communications</option>
-          <option value="kinesiology">Kinesiology</option>
-          <option value="law">Law</option>
-          <option value="math">Mathematics</option>
-          <option value="media">Media Arts and Culture</option>
-          <option value="music">Music</option>
-          <option value="nativestudies">Native Studies</option>
-          <option value="nursing">Nursing &amp; Health Sciences</option>
-          <option value="philosophy">Philosophy</option>
-          <option value="physics">Physics</option>
-          <option value="politicalscience">Political Science</option>
-          <option value="psychology">Psychology</option>
-          <option value="religiousstudies">Religious Studies</option>
-          <option value="sts">Science &amp; Technology Studies</option>
-          <option value="socialwork">Social Work</option>
-          <option value="sociology">Sociology</option>
-          <option value="spanish">Spanish Literature</option> 
-        </select>
+          <option value="">Select a subject&hellip;</option>';
+          foreach ($categories as $value => $label) {
+            $subject_form .=
+              '<option value="' .
+              $value . '">' .
+              $label .
+              '</option>';
+          }
+        $subject_form .=
+        '</select>
         <input type="submit" class="btn btn-inverse" value="GO">
       </form>';
 
