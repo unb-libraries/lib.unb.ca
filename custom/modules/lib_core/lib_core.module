@@ -57,3 +57,59 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
       break;
   }
 }
+
+/**
+ * Port get_guide_categories() from core/inc-2015/guide_categories.php.
+ *
+ * @return array
+ *   The array of Research Subjects.
+ */
+function _lib_core_get_guide_categories() {
+  $categories = [
+    'anthropology' => 'Anthropology',
+    'biology' => 'Biology',
+    'business' => 'Business Administration',
+    'chemistry' => 'Chemistry',
+    'classics' => 'Classics and Ancient History',
+    'computerscience' => 'Computer Science',
+    'criminology' => 'Criminology',
+    'development' => 'International Development Studies',
+    'earth-sciences' => 'Earth Sciences',
+    'economics' => 'Economics',
+    'education' => 'Education',
+    'engineering' => 'Engineering',
+    'english' => 'English',
+    'entrepreneurship' => 'Entrepreneurship',
+    'familyviolence' => 'Family Violence Issues',
+    'film' => 'Film Studies',
+    'finearts' => 'Fine Arts',
+    'forestry' => 'Forestry & Environmental Management',
+    'french' => 'French',
+    'german' => 'German Literature',
+    'gerontology' => 'Gerontology',
+    'history' => 'History',
+    'ics' => 'Communication Studies',
+    'journalism' => 'Journalism & Communications',
+    'kinesiology' => 'Kinesiology',
+    'law' => 'Law',
+    'math' => 'Mathematics',
+    'media' => 'Media Arts and Culture',
+    'miscellaneous' => 'Miscellaneous',
+    'music' => 'Music',
+    'nativestudies' => 'Native Studies',
+    'nursing' => 'Nursing & Health Sciences',
+    'philosophy' => 'Philosophy',
+    'physics' => 'Physics',
+    'politicalscience' => 'Political Science',
+    'psychology' => 'Psychology',
+    'religiousstudies' => 'Religious Studies',
+    'sts' => 'Science & Technology Studies',
+    'socialwork' => 'Social Work',
+    'sociology' => 'Sociology',
+    'spanish' => 'Spanish Literature',
+    'womensstudies' => 'Gender and Women\'s Studies',
+  ];
+  asort($categories);
+
+  return $categories;
+}
