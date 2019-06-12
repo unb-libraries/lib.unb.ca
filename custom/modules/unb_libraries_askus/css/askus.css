@@ -5,16 +5,16 @@
 .chat-embedded > h2 {
     color: #900;
 }
-.chat-popup > h2 {
+#lh3-chat > h2 {
     background: url(../img/AskUslogo2.png) no-repeat center center transparent;
     height: 52px;
 }
-.libraryh3lp,
+#lh3-chat,
 .askus-footer {
     font-size: .9rem;
     text-align: center;
 }
-.libraryh3lp .focus-ring {
+#lh3-chat .focus-ring {
     outline-color: #900;
 }
 .chat-embedded .libraryh3lp {
@@ -31,22 +31,22 @@
     padding: 0 1px;
     width: 100%;
 }
-.askus-note-online {
+#lh3-online {
     border: 1px solid #aaa;
     border-radius: 4px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     margin: 0 auto;
 }
-.askus-note-online a {
+#lh3-online a {
     cursor: text;
     display: block;
     padding-top: 1rem;
     padding-bottom: 1rem;
     text-decoration: none;
 }
-.askus-note-online a,
-.askus-note-online a:focus,
-.askus-note-online a:hover {
+#lh3-online a,
+#lh3-online a:focus,
+#lh3-online a:hover {
     color: #666;
 }
 .askus-note-busy,

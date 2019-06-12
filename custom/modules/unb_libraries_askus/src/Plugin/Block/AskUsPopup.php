@@ -19,18 +19,63 @@ class AskUsPopup extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    $html = _unb_libraries_askus_chat_widget('Ask Us Chat', 'popup');
+    $askus_src = 'https://ca.libraryh3lp.com/chat/askus
+      @chat.ca.libraryh3lp.com?title=Ask+Us
+      &amp;theme=gota
+      &amp;css=https://lib.unb.ca/core/css-2015/libraryh3lp.unb.lib.css';
 
-    $attachments = [
-      'library' => [
-        'unb_libraries_askus/askus',
+    $chat_widget =
+      '<h2><span class="sr-only">Ask Us Chat</span></h2>
+       <div class="requires-js">
+         <div id="lh3-online" style="display:none;">
+           <a href="' . $askus_src . '">Type here to CHAT.</a>
+         </div>
+         <div id="lh3-offline" style="display:none;">
+           Ask Us is currently <strong>offline</strong>.
+         </div>
+         <div id="lh3-away" style="display: none;">
+           Ask Us is currently busy serving other patrons.
+         </div>
+         <div id="lh3-busy" style="display: none;">
+           Ask Us is currently busy serving other patrons.
+         </div>
+       </div>
+       <div id="lh3-noscript">
+         Ask Us chat requires JavaScript.
+       </div>';
+    $chat_footer = '<p class="askus-footer">';
+    $chat_footer .= '<a href="/help/ask"><span class="sr-only">Ask by:</span>';
+    $chat_footer .= '<span><i class="fas fa-envelope"></i> Email</span>';
+    $chat_footer .= '<span><i class="fas fa-sms"></i> Text</span>';
+    $chat_footer .= '<span><i class="fas fa-phone"></i> Phone</span>';
+    $chat_footer .= '<span><i class="fas fa-walking"></i> In-Person</span>';
+    $chat_footer .= '</a>';
+    $chat_footer .= '</p>';
+
+    $render_array[] = [
+      '#attached' => [
+        'library' => [
+          'unb_libraries_askus/askus',
+        ],
       ],
     ];
-
-    return [
-      '#children' => $html,
-      '#attached' => $attachments,
+    $render_array['wrapper'] = [
+      '#type' => 'container',
+      '#attributes' => [
+        'id' => [
+          'lh3-chat',
+        ],
+        'class' => [
+          'chat-popup',
+        ],
+      ],
     ];
+    $render_array['wrapper']['children'] = [
+      '#type' => 'markup',
+      '#markup' => $chat_widget . $chat_footer,
+    ];
+
+    return $render_array;
   }
 
   /**
