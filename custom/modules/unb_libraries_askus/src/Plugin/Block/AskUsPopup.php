@@ -23,34 +23,34 @@ class AskUsPopup extends BlockBase {
       @chat.ca.libraryh3lp.com?title=Ask+Us
       &amp;theme=gota
       &amp;css=https://lib.unb.ca/core/css-2015/libraryh3lp.unb.lib.css';
-
     $chat_widget =
       '<h2><span class="sr-only">Ask Us Chat</span></h2>
-       <div class="requires-js">
-         <div id="lh3-online" style="display:none;">
-           <a href="' . $askus_src . '">Type here to CHAT.</a>
-         </div>
-         <div id="lh3-offline" style="display:none;">
-           Ask Us is currently <strong>offline</strong>.
-         </div>
-         <div id="lh3-away" style="display: none;">
-           Ask Us is currently busy serving other patrons.
-         </div>
-         <div id="lh3-busy" style="display: none;">
-           Ask Us is currently busy serving other patrons.
-         </div>
-       </div>
-       <div id="lh3-noscript">
-         Ask Us chat requires JavaScript.
-       </div>';
-    $chat_footer = '<p class="askus-footer">';
-    $chat_footer .= '<a href="/help/ask"><span class="sr-only">Ask by:</span>';
-    $chat_footer .= '<span><i class="fas fa-envelope"></i> Email</span>';
-    $chat_footer .= '<span><i class="fas fa-sms"></i> Text</span>';
-    $chat_footer .= '<span><i class="fas fa-phone"></i> Phone</span>';
-    $chat_footer .= '<span><i class="fas fa-walking"></i> In-Person</span>';
-    $chat_footer .= '</a>';
-    $chat_footer .= '</p>';
+      <div class="requires-js">
+        <div id="lh3-online" style="display:none;">
+          <a href="' . $askus_src . '">Type here to CHAT.</a>
+        </div>
+        <div id="lh3-offline" style="display:none;">
+          Ask Us is currently <strong>offline</strong>.
+        </div>
+        <div id="lh3-away" style="display: none;">
+          Ask Us is currently busy serving other patrons.
+        </div>
+        <div id="lh3-busy" style="display: none;">
+          Ask Us is currently busy serving other patrons.
+        </div>
+      </div>
+      <div id="lh3-noscript">
+        Ask Us chat requires JavaScript.
+      </div>';
+    $chat_footer =
+      '<p class="askus-footer">
+        <a href="/help/ask"><span class="sr-only">Ask by:</span>
+          <span><i class="fas fa-envelope"></i> Email</span>
+          <span><i class="fas fa-sms"></i> Text</span>
+          <span><i class="fas fa-phone"></i> Phone</span>
+          <span><i class="fas fa-walking"></i> In-Person</span>
+        </a>
+      </p>';
 
     $render_array[] = [
       '#attached' => [
@@ -70,9 +70,13 @@ class AskUsPopup extends BlockBase {
         ],
       ],
     ];
-    $render_array['wrapper']['children'] = [
+    $render_array['wrapper']['widget'] = [
       '#type' => 'markup',
-      '#markup' => $chat_widget . $chat_footer,
+      '#markup' => $chat_widget,
+    ];
+    $render_array['wrapper']['footer'] = [
+      '#type' => 'markup',
+      '#markup' => $chat_footer,
     ];
 
     return $render_array;
