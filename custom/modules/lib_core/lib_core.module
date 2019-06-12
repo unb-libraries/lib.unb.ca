@@ -94,7 +94,7 @@ function _lib_core_get_guide_categories() {
     'law' => 'Law',
     'math' => 'Mathematics',
     'media' => 'Media Arts and Culture',
-    'miscellaneous' => 'Miscellaneous',
+    // 'miscellaneous' => 'Miscellaneous',
     'music' => 'Music',
     'nativestudies' => 'Native Studies',
     'nursing' => 'Nursing & Health Sciences',
