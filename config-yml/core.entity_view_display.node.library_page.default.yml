@@ -9,7 +9,6 @@ dependencies:
   module:
     - entity_reference_revisions
     - layout_builder
-    - layout_builder_restrictions
     - layout_discovery
     - user
 third_party_settings:
@@ -49,9 +48,6 @@ third_party_settings:
             additional: {  }
             weight: 1
         third_party_settings: {  }
-  layout_builder_restrictions:
-    allowed_blocks: {  }
-    allowed_layouts: {  }
 id: node.library_page.default
 targetEntityType: node
 bundle: library_page

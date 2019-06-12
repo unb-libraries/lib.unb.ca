@@ -9,7 +9,6 @@ dependencies:
   module:
     - entity_reference_revisions
     - layout_builder
-    - layout_builder_restrictions
 third_party_settings:
   layout_builder:
     allow_custom: false
@@ -57,9 +56,6 @@ third_party_settings:
             additional: {  }
             weight: 0
         third_party_settings: {  }
-  layout_builder_restrictions:
-    allowed_blocks: {  }
-    allowed_layouts: {  }
 id: paragraph.body_sidebar_section.default
 targetEntityType: paragraph
 bundle: body_sidebar_section

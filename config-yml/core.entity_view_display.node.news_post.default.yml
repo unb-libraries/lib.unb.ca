@@ -10,7 +10,6 @@ dependencies:
   module:
     - entity_reference_revisions
     - layout_builder
-    - layout_builder_restrictions
     - layout_discovery
     - user
 third_party_settings:
@@ -69,9 +68,6 @@ third_party_settings:
             additional: {  }
             weight: 0
         third_party_settings: {  }
-  layout_builder_restrictions:
-    allowed_blocks: {  }
-    allowed_layouts: {  }
 id: node.news_post.default
 targetEntityType: node
 bundle: news_post
