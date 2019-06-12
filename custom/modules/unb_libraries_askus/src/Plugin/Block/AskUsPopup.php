@@ -20,9 +20,8 @@ class AskUsPopup extends BlockBase {
    */
   public function build() {
     $askus_src = 'https://ca.libraryh3lp.com/chat/askus
-      @chat.ca.libraryh3lp.com?title=Ask+Us
-      &amp;theme=gota
-      &amp;css=https://lib.unb.ca/core/css-2015/libraryh3lp.unb.lib.css';
+      @chat.ca.libraryh3lp.com?title=Ask+Us&amp;theme=gota';
+    $askus_src .= '&amp;css=https://lib.unb.ca/core/css-2015/libraryh3lp.unb.lib.css';
     $chat_widget =
       '<h2><span class="sr-only">Ask Us Chat</span></h2>
       <div class="requires-js">
