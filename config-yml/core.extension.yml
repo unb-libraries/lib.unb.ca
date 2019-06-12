@@ -32,13 +32,11 @@ module:
   filter: 0
   fontawesome: 0
   fontawesome_iconpicker: 0
-  fontawesome_menu_icons: 0
   help: 0
   history: 0
   image: 0
   inline_entity_form: 0
   layout_builder: 0
-  layout_builder_restrictions: 0
   layout_discovery: 0
   ldap_authentication: 0
   ldap_servers: 0
