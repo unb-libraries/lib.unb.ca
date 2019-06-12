@@ -209,12 +209,16 @@ class DiscoverySearch extends BlockBase {
   protected function getReservesForm() {
     $form_reserves =
       '<form action="/core/action/process_reserves_search.php" method="get" id="searchReserves">
-        <p class="padHeight">
+        <div class="form-row">
           <label for="keywords"><strong>Search by instructor, course name or course number:</strong></label>
-          <br>
-          <input type="search" id="keywords" name="keywords" value="" placeholder="Enter keywords">
+        </div>
+        <div class="form-row">
+        <div class="form-group col-md-5">
+          <input type="search" id="keywords" class="form-control" name="keywords" value="" placeholder="Enter keywords">
+        </div>
+        <div class="form-group col-md-5">
           <label for="semester" class="sr-only">Course Semester</label>
-          <select name="semester" id="semester">
+          <select name="semester" id="semester" class="form-control">
             <option value="">All semesters</option>
             <option value="ON">Ongoing </option>
             <option value="2019SM" selected="selected">Summer 2019</option>
@@ -228,8 +232,11 @@ class DiscoverySearch extends BlockBase {
             <option value="2017SM">Summer 2017</option>
             <option value="2017WI">Winter 2017</option>
           </select>
-          <input type="submit" value="GO" class="btn btn-inverse" id="searchReservesSubmit" title="GO">
-        </p>
+        </div>
+        <div class="form-group col-md-2">
+          <button type="submit" class="btn btn-primary" id="searchReservesSubmit">GO</button>
+        </div>
+        </div>
         <p class="p-2">
           <a href="/reserves/index.php?h=1">
             <i class="fas fa-user"></i>
