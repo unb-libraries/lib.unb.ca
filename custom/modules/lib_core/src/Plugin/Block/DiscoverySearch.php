@@ -208,18 +208,18 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getReservesForm() {
     $form_reserves =
-      '<form action="/core/action/process_reserves_search.php" method="get" id="searchReserves">
+      '<form action="//lib.unb.ca/core/action/process_reserves_search.php" id="searchReserves" method="get">
         <div class="form-group">
-          <div class="form-row">
-            <label for="keywords"><strong>Search by instructor, course name or course number:</strong></label>
+          <div class="form-row mb-1">
+            <label class="ml-1" for="keywords"><b>Search by instructor, course name or course number:</b></label>
           </div>
           <div class="form-row">
-            <div class="col-md-6">
-              <input type="search" id="keywords" class="form-control" name="keywords" value="" placeholder="Enter keywords">
+            <div class="col-md-6 mb-2">
+              <input class="form-control" id="keywords" name="keywords" placeholder="Enter keywords" type="search" value="">
             </div>
-            <div class="col-md-4">
-              <label for="semester" class="sr-only">Course Semester</label>
-              <select name="semester" id="semester" class="form-control">
+            <div class="col-md-4 mb-2">
+              <label class="sr-only" for="semester">Course Semester</label>
+              <select class="form-control" id="semester" name="semester">
                 <option value="">All semesters</option>
                 <option value="ON">Ongoing </option>
                 <option value="2019SM" selected="selected">Summer 2019</option>
@@ -234,18 +234,18 @@ class DiscoverySearch extends BlockBase {
                 <option value="2017WI">Winter 2017</option>
               </select>
             </div>
-            <div class="col-md-2">
-              <button type="submit" class="btn btn-primary" id="searchReservesSubmit">GO</button>
+            <div class="col-md-2 mb-2">
+              <button class="btn btn-primary" id="searchReservesSubmit" type="submit">GO</button>
             </div>
           </div>
         </div>
-        <p class="p-2">
-          <a href="/reserves/index.php?h=1">
-            <i class="fas fa-user"></i>
-            Login to My UNB Reserves
-          </a>
-        </p>
-      </form>';
+      </form>
+      <div class="px-2">
+        <a href="/reserves/index.php?h=1">
+          <i class="fas fa-user"></i>
+          Login to My UNB Reserves
+        </a>
+      </div>';
 
     return $form_reserves;
   }
@@ -255,45 +255,56 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getCatalogueForm() {
     $form_catalogue =
-      '<form id="home_WCD" name="wcfw" method="post" accept-charset="UTF-8" action="/core/inc-2015/UNB-WorldCat-Discovery-search.php">
-        <div class="mb-1">
-          <strong class="mr-2">Search UNB WorldCat:</strong>
-          <label for="scope_UNBLibraries_WCD" class="mr-2">
-            <input type="radio" checked="checked" value="wz:66413" name="scope" id="scope_UNBLibraries_WCD" class="radioSelect">
-            UNB Libraries
-          </label>
-    
-          <label for="scope_worldwide_WCD">
-            <input type="radio" value="" name="scope" id="scope_worldwide_WCD" class="radioSelect">
-            Libraries Worldwide
-          </label>
+      '<form accept-charset="UTF-8" action="/lib.unb.ca/core/inc-2015/UNB-WorldCat-Discovery-search.php" id="home_WCD" method="post" name="wcfw">
+        <div class="form-group">
+        <div class="form-row mb-2">
+          <div class="col-lg-4">
+            <b>Search UNB WorldCat:</b>
+          </div>
+          <div class="col-lg-8">
+            <div class="form-check form-check-inline">
+              <input checked="checked" class="form-check-input" id="scope_UNBLibraries_WCD" name="scope" type="radio" value="wz:66413">
+              <label class="form-check-label" for="scope_UNBLibraries_WCD">UNB Libraries</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" id="scope_worldwide_WCD" name="scope" type="radio" value="">
+              <label class="form-check-label" for="scope_worldwide_WCD">Libraries Worldwide</label>
+            </div>
+          </div>
         </div>
-        <p>
-          <label for="queryString_WCD" class="sr-only">
-            Search for:
-          </label>
-          <input type="search" name="queryString" id="queryString_WCD" placeholder="Enter search terms">
-          <label for="searchIndex_WCD" class="sr-only">
-            Search index
-          </label>
-          <select name="searchIndex" id="searchIndex_WCD" class="pulldown" style="width:130px;">
-            <option value="kw">keyword</option>
-            <option value="ti">title</option>
-            <option value="au">author</option>
-            <option value="nu">call number</option>
-            <option value="tj">journal title</option>
-            <option value="su">subject</option>
-          </select>
-          <input type="submit" value="GO" class="btn btn-inverse" id="search_WCD" title="Search">
-        </p>
-        <p class="p-2">
-          <a href="http://unb.on.worldcat.org/advancedsearch">Advanced Search</a> |
-          <a href="/about/loc_call/">Locations Guide</a> |
-          <a href="/worldcat/FAQs.php" title="Using WorldCat Discovery">
-            <i class="fas fa-question-circle"></i> Help
-          </a>
-        </p>  		
-      </form>';
+        <div class="form-row">
+          <div class="col-md-6 mb-2">
+            <label class="sr-only" for="queryString_WCD">
+              Search for:
+            </label>
+            <input class="form-control" id="queryString_WCD" name="queryString" placeholder="Enter search terms" type="search">
+            <label class="sr-only" for="searchIndex_WCD">
+              Search index
+            </label>
+          </div>
+           <div class="col-md-4 mb-2">
+            <select class="form-control" id="searchIndex_WCD" name="searchIndex">
+              <option value="kw">keyword</option>
+              <option value="ti">title</option>
+              <option value="au">author</option>
+              <option value="nu">call number</option>
+              <option value="tj">journal title</option>
+              <option value="su">subject</option>
+            </select>
+          </div>
+           <div class="col-md-2 mb-2">
+            <button class="btn btn-primary" id="search_WCD" title="Search" type="submit">GO</button>
+          </div>
+        </div>
+        </div>
+      </form>
+      <div class="px-2">
+        <a href="//unb.on.worldcat.org/advancedsearch">Advanced Search</a> |
+        <a href="/about/loc_call/">Locations Guide</a> |
+        <a href="/worldcat/FAQs.php" title="Using WorldCat Discovery">
+          <i class="fas fa-question-circle"></i> Help
+        </a>
+      </div>';
 
     return $form_catalogue;
   }
