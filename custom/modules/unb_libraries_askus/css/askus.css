@@ -15,7 +15,10 @@
     text-align: center;
 }
 #lh3-chat .focus-ring {
-    outline-color: #900;
+    border-color: #80bdff;
+    border-radius: .25rem;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+    outline: 0;
 }
 .chat-embedded .libraryh3lp {
     text-align: left;
