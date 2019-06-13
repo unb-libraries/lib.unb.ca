@@ -209,32 +209,34 @@ class DiscoverySearch extends BlockBase {
   protected function getReservesForm() {
     $form_reserves =
       '<form action="/core/action/process_reserves_search.php" method="get" id="searchReserves">
-        <div class="form-row">
-          <label for="keywords"><strong>Search by instructor, course name or course number:</strong></label>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <input type="search" id="keywords" class="form-control" name="keywords" value="" placeholder="Enter keywords">
+        <div class="form-group">
+          <div class="form-row">
+            <label for="keywords"><strong>Search by instructor, course name or course number:</strong></label>
           </div>
-          <div class="form-group col-md-4">
-            <label for="semester" class="sr-only">Course Semester</label>
-            <select name="semester" id="semester" class="form-control">
-              <option value="">All semesters</option>
-              <option value="ON">Ongoing </option>
-              <option value="2019SM" selected="selected">Summer 2019</option>
-              <option value="2019WI">Winter 2019</option>
-              <option value="2018FA">Fall 2018</option>
-              <option value="2018FY">Full Year 2018</option>
-              <option value="2018SM">Summer 2018</option>
-              <option value="2018WI">Winter 2018</option>
-              <option value="2017FY">Full Year 2017</option>
-              <option value="2017FA">Fall 2017</option>
-              <option value="2017SM">Summer 2017</option>
-              <option value="2017WI">Winter 2017</option>
-            </select>
-          </div>
-          <div class="form-group col-md-2">
-            <button type="submit" class="btn btn-primary" id="searchReservesSubmit">GO</button>
+          <div class="form-row">
+            <div class="col-md-6">
+              <input type="search" id="keywords" class="form-control" name="keywords" value="" placeholder="Enter keywords">
+            </div>
+            <div class="col-md-4">
+              <label for="semester" class="sr-only">Course Semester</label>
+              <select name="semester" id="semester" class="form-control">
+                <option value="">All semesters</option>
+                <option value="ON">Ongoing </option>
+                <option value="2019SM" selected="selected">Summer 2019</option>
+                <option value="2019WI">Winter 2019</option>
+                <option value="2018FA">Fall 2018</option>
+                <option value="2018FY">Full Year 2018</option>
+                <option value="2018SM">Summer 2018</option>
+                <option value="2018WI">Winter 2018</option>
+                <option value="2017FY">Full Year 2017</option>
+                <option value="2017FA">Fall 2017</option>
+                <option value="2017SM">Summer 2017</option>
+                <option value="2017WI">Winter 2017</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <button type="submit" class="btn btn-primary" id="searchReservesSubmit">GO</button>
+            </div>
           </div>
         </div>
         <p class="p-2">
