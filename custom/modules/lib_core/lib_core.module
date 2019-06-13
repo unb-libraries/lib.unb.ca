@@ -120,8 +120,7 @@ function _lib_core_get_guide_categories() {
  * @return array
  *   The array of eResource Titles.
  */
-function _lib_core_get_database_titles()
-{
+function _lib_core_get_database_titles() {
   $titles = [
     '3606' => '17th and 18th century Nichols newspapers collection',
     '3548' => '17th-18th century Burney Collection newspapers',
