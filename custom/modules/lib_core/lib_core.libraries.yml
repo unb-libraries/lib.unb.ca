@@ -20,6 +20,15 @@ ckeditor_stylesheets:
     theme:
       css/color-button.css: {}
 
+lib-chosen:
+  css:
+    theme:
+      //cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css: { type: external, minified: true }
+      css/chosen-overrides.css: {}
+  js:
+    //cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js: { type: external, minified: true }
+    js/lib-chosen.js: {}
+
 quicklinks:
   version: VERISON
   css:
@@ -34,3 +43,9 @@ table-row-check:
     js/table-row-check.js: {}
     dependencies:
       - core/jquery
+
+unblibtabs:
+  version: VERISON
+  css:
+    theme:
+      css/unblibtabs.css: {}

@@ -1,0 +1,27 @@
+.chosen-container-single .chosen-single {
+    border: none;
+    background: inherit;
+    box-shadow: none;
+    padding: 0;
+}
+.chosen-container-active.chosen-with-drop .chosen-single {
+    background: none;
+    border: none;
+}
+.chosen-container-single .chosen-drop {
+    border-color: #ced4da;
+    left: 0;
+}
+.chosen-container-single .chosen-search input[type=text] {
+    border-radius: .25rem;
+}
+.chosen-search .focus-ring {
+    border-color: #80bdff;
+    border-radius: .25rem;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+    outline: 0;
+}
+.chosen-container .chosen-results {
+    background: none;
+    color: inherit;
+}

@@ -200,6 +200,12 @@ class DiscoverySearch extends BlockBase {
 
     return [
       '#children' => $html,
+      '#attached' => [
+        'library' => [
+          'lib_core/unblibtabs',
+          'lib_core/lib-chosen',
+        ],
+      ],
     ];
   }
 
@@ -336,7 +342,7 @@ class DiscoverySearch extends BlockBase {
           </div>
           <div class="form-row">
             <div class="col-md-8 mb-1">
-              <select class="form-control" name="category">
+              <select class="chosen-select form-control" name="category">
                 <option value="">Select a subject&hellip;</option>';
                 foreach ($categories as $value => $label) {
                   $subject_form .=
@@ -360,13 +366,13 @@ class DiscoverySearch extends BlockBase {
       <form id="title_results" method="get" action="/eresources/index.php">
         <div class="form-group">
           <div class="form-row">
-            <label for="databaseID" class="mb-0 font-weight-bold">
+            <label for="databaseID" class="ml-1 font-weight-bold">
               <span class="text-red">OR</span>&nbsp;&nbsp;Browse for databases by title
             </label>
           </div>
           <div class="form-row">
             <div class="col-md-10 mb-1">
-              <select class="form-control" id="databaseID" name="id">
+              <select class="chosen-select form-control" id="databaseID" name="id">
                 <option value="">Choose a database title</option>';
                 foreach ($database_titles as $value => $label) {
                   $title_form .=
