@@ -215,7 +215,12 @@ class DiscoverySearch extends BlockBase {
           </div>
           <div class="form-row">
             <div class="col-md-6 mb-2">
-              <input class="form-control" id="keywords" name="keywords" placeholder="Enter keywords" type="search" value="">
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fas fa-search"></i></div>
+                </div>
+                <input class="form-control" id="keywords" name="keywords" placeholder="Enter keywords" type="search" value="">
+              </div>
             </div>
             <div class="col-md-4 mb-2">
               <label class="sr-only" for="semester">Course Semester</label>
@@ -277,7 +282,12 @@ class DiscoverySearch extends BlockBase {
             <label class="sr-only" for="queryString_WCD">
               Search for:
             </label>
-            <input class="form-control" id="queryString_WCD" name="queryString" placeholder="Enter search terms" type="search">
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fas fa-search"></i></div>
+              </div>
+              <input class="form-control" id="queryString_WCD" name="queryString" placeholder="Enter search terms" type="search">
+            </div>
             <label class="sr-only" for="searchIndex_WCD">
               Search index
             </label>
@@ -320,7 +330,7 @@ class DiscoverySearch extends BlockBase {
       '<form class="categorySelect">
         <div class="form-group">
           <div class="form-row">
-            <label class="mb-0 font-weight-bold" for="category">
+            <label class="ml-1 font-weight-bold" for="category">
               Browse databases by subject
             </label>
           </div>
@@ -407,7 +417,7 @@ class DiscoverySearch extends BlockBase {
         <p>
           <label for="title_journal" class="sr-only">title</label>
           <input id="title_journal" name="title" type="search" placeholder="Search for journal and newspaper titles">
-          <input type="submit" value="GO" class="btn btn-inverse">
+          <input type="submit" value="GO" class="btn btn-primary">
         </p>
         <p class="pl-1">
           <a href="/eresources/index.php?sub=journals&amp;packages=Y">Journal Packages</a> |
@@ -455,7 +465,7 @@ class DiscoverySearch extends BlockBase {
             title
           </label>
           <input type="search" value="" name="title" id="title_refmat" placeholder="Search for encyclopedias, dictionaries, etc.">
-          <input type="submit" value="GO" class="btn btn-inverse">
+          <input type="submit" value="GO" class="btn btn-primary">
         </div>
         <p class="pl-1 pb-2">
           <a href="/eresources/refguide.php" title="Guide to finding Reference Materials at UNB Libraries">
@@ -501,7 +511,7 @@ class DiscoverySearch extends BlockBase {
           title
         </label>
         <input type="search" value="" name="title" id="title_ebooks">
-        <input type="submit" value="GO" class="btn btn-inverse">        
+        <input type="submit" value="GO" class="btn btn-primary">
         <p class="mt-3">
           <a href="/eresources/index.php?sub=ebooks">
             <i class="fas fa-th-list"></i>
@@ -521,37 +531,54 @@ class DiscoverySearch extends BlockBase {
       '<p>
         <small class="discoverNote">Search across our online video collections.</small>
       </p>
-      <form action="/eresources/index.php" method="get" id="search_results_video">
-        <input type="hidden" name="sub" id="sub_video" value="video">
-        <div class="padHeight font-weight-bold">
-          <label for="searchtype_every_video" class="mr-2">
-            <input type="radio" checked="checked" value="every_word" name="searchtype" id="searchtype_every_video" class="radioSelect">
-            Word(s) in title
-          </label>
-          <label for="searchtype_browse_video" class="mr-2">
-            <input type="radio" value="browse" name="searchtype" id="searchtype_browse_video" class="radioSelect">
-            Title starts with
-          </label>
-          <label for="searchtype_exact_video" class="mr-2">
-            <input type="radio" value="exact" name="searchtype" id="searchtype_exact_video" class="radioSelect">
-            Exact title
-          </label>
-          <label for="searchtype_keyword_video">
-            <input type="radio" value="keyword" name="searchtype" id="searchtype_keyword_video" class="radioSelect">
-            Keyword search
-          </label>
+      <form action="/eresources/index.php" id="search_results_video" method="get" >
+        <div class="form-group">
+          <input id="sub_video" name="sub" type="hidden" value="video">
+          <div class="form-row mb-2">
+            <div class="form-inline font-weight-bold">
+              <div class="form-check ml-1">
+                <input checked="checked" class="align-self-start form-check-input" id="searchtype_every_video" name="searchtype" type="radio" value="every_word">
+                <label class="form-check-label mr-3" for="searchtype_every_video">
+                  Word(s) in title
+                </label>
+                <input class="align-self-start form-check-input" id="searchtype_browse_video" name="searchtype" type="radio" value="browse">
+                <label class="form-check-label mr-3" for="searchtype_browse_video">
+                  Title starts with
+                </label>
+                <input class="align-self-start form-check-input" id="searchtype_exact_video" name="searchtype" type="radio" value="exact">
+                <label class="form-check-label mr-3" for="searchtype_exact_video">
+                  Exact title
+                </label>
+                <input class="align-self-start form-check-input" id="searchtype_keyword_video" name="searchtype" type="radio" value="keyword">
+                <label class="form-check-label" for="searchtype_keyword_video">
+                  Keyword search
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="title_video" class="sr-only">
+              Title
+            </label>
+            <div class="col-md-8 mb-2">
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fas fa-search"></i></div>
+                </div>
+                <input class="form-control" name="title"  id="title_video" type="search" value="">
+              </div>
+            </div>
+            <div class="col-md-2 mb-2">
+              <button class="btn btn-primary" type="submit">GO</button>
+            </div>
+          </div>
         </div>
-        <label for="title_video" class="sr-only">
-          title
-        </label>
-        <input type="search" value="" name="title" id="title_video">
-        <input type="submit" value="GO" class="btn btn-inverse">
-        <p class="mt-3">
+        <div class="px-2">
           <a href="/eresources/index.php?sub=video">
             <i class="fas fa-th-list"></i>
             Browse Video Collections
           </a>
-        </p>
+        </div>
       </form>';
 
     return $form_videos;
