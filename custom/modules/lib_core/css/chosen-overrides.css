@@ -15,13 +15,14 @@
 .chosen-container-single .chosen-search input[type=text] {
     border-radius: .25rem;
 }
-.chosen-search .focus-ring {
+.chosen-container .chosen-results {
+    background: none;
+    color: inherit;
+}
+.chosen-search .focus-ring,
+.chosen-container-active:not(.chosen-with-drop) {
     border-color: #80bdff;
     border-radius: .25rem;
     box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
     outline: 0;
-}
-.chosen-container .chosen-results {
-    background: none;
-    color: inherit;
 }
