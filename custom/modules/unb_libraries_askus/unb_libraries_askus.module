@@ -107,10 +107,11 @@ function _unb_libraries_askus_get_widget($type) {
           default:
             $html .= '<a href="' . $askus_src . '">Type here to CHAT.</a>';
         }
-        $html .= '
-      </div >
+        $html .=
+      '</div >
       <div id = "lh3-offline" style = "display:none;" >
         Ask Us is currently < strong>offline </strong >.
+        _unb_libraries_askus_get_offline_note()
       </div >
       <div id = "lh3-away" style = "display: none;" >
         Ask Us is currently busy serving other patrons .
