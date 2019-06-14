@@ -25,24 +25,6 @@ function unb_libraries_askus_help($route_name, RouteMatchInterface $route_match)
 }
 
 /**
- * Implements Ask Us chat widget.
- */
-function _unb_libraries_get_askus_src() {
-  // Construct chat widget address.
-  // For alternative themes see: https://libraryh3lp.com/presence/themes.
-  $queue = 'askus';
-  $title = 'Ask+Us';
-  $theme = 'gota';
-  $custom_css_file = 'https://lib.unb.ca/core/css-2015/libraryh3lp.unb.lib.css';
-  $askus_src = 'https://ca.libraryh3lp.com/chat/' . $queue .
-    '@chat.ca.libraryh3lp.com?title=' . $title .
-    '&amp;theme=' . $theme .
-    '&amp;css=' . $custom_css_file;
-
-  return $askus_src;
-}
-
-/**
  * Implements Server-Side Presence Check.
  *
  * @param string $queue
@@ -86,6 +68,40 @@ function _unb_libraries_askus_check_presence($queue = 'askus') {
 }
 
 /**
+ * If queue is offline, output message including the time and day it chat 're-opens'.
+ *
+ * @return string
+ *   The offline re-open text.
+ */
+function _unb_libraries_askus_get_offline_note() {
+  // Note: Integrate with Hours module when ready.
+  $note = 'Chat service will re-open at [time] [day].';
+
+  return $note;
+}
+
+/**
+ * Constructs the url for AskUs chat box href/src attribute.
+ *
+ * @return string
+ *   The chat box url with queue, title, theme & external css file.
+ */
+function _unb_libraries_askus_get_src() {
+  // Construct chat widget address.
+  // For alternative themes see: https://libraryh3lp.com/presence/themes.
+  $queue = 'askus';
+  $title = 'Ask+Us';
+  $theme = 'gota';
+  $custom_css_file = 'https://lib.unb.ca/core/css-2015/libraryh3lp.unb.lib.css';
+  $askus_src = 'https://ca.libraryh3lp.com/chat/' . $queue .
+    '@chat.ca.libraryh3lp.com?title=' . $title .
+    '&amp;theme=' . $theme .
+    '&amp;css=' . $custom_css_file;
+
+  return $askus_src;
+}
+
+/**
  * If queue online, output appropriate style widget else output offline message.
  *
  * @param string $type
@@ -95,7 +111,7 @@ function _unb_libraries_askus_check_presence($queue = 'askus') {
  *   The html of the requested chat widget type.
  */
 function _unb_libraries_askus_get_widget($type) {
-  $askus_src = _unb_libraries_get_askus_src();
+  $askus_src = _unb_libraries_askus_get_src();
   $html =
     '<div class="requires-js" >
       <div id = "lh3-online" style="display:none;" >';
@@ -125,17 +141,4 @@ function _unb_libraries_askus_get_widget($type) {
     </div >';
 
   return $html;
-}
-
-/**
- * If queue is offline, output message including the time and day it chat 're-opens'.
- *
- * @return string
- *   The offline re-open text.
- */
-function _unb_libraries_askus_get_offline_note() {
-  // Note: Integrate with Hours module when ready.
-  $note = 'Chat service will re-open at [time] [day].';
-
-  return $note;
 }
