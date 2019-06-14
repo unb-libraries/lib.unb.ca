@@ -38,18 +38,22 @@ var lh3CheckPresence = function () {
 var lh3UpdatePresence = function () {
     var resource = jabber_resources[0];
     if (resource.show === "available" || resource.show === "chat") {
+        jQuery("#lh3-online").show();
         jQuery("#lh3-away").hide();
         jQuery("#lh3-busy").hide();
         jQuery("#lh3-offline").hide();
     } else if (resource.show === "unavailable" || resource.show==="xa") {
+        jQuery("#lh3-online").hide();
         jQuery("#lh3-away").hide();
         jQuery("#lh3-busy").hide();
         jQuery("#lh3-offline").show();
     } else if (resource.show === "away") {
+        jQuery("#lh3-online").hide();
         jQuery("#lh3-away").show();
         jQuery("#lh3-busy").hide();
         jQuery("#lh3-offline").hide();
     } else if (resource.show === "dnd") {
+        jQuery("#lh3-online").hide();
         jQuery("#lh3-away").hide();
         jQuery("#lh3-busy").show();
         jQuery("#lh3-offline").hide();
