@@ -27,23 +27,19 @@ function unb_libraries_askus_help($route_name, RouteMatchInterface $route_match)
 /**
  * Implements Ask Us chat widget.
  */
-function _unb_libraries_askus_chat_widget($title, $widget_style, $queue = "askus") {
-  $xml_show = _unb_libraries_askus_check_presence($queue);
-
-  // Process title to be used as argument.
-  $title = trim($title);
-
+function _unb_libraries_get_askus_src() {
   // Construct chat widget address.
   // For alternative themes see: https://libraryh3lp.com/presence/themes.
-  $ask_src_title = 'Ask+Us';
+  $queue = 'askus';
+  $title = 'Ask+Us';
   $theme = 'gota';
-  $css_file = 'https://lib.unb.ca/core/css-2015/libraryh3lp.unb.lib.css';
-  $ask_src = 'https://ca.libraryh3lp.com/chat/' . $queue .
-    '@chat.ca.libraryh3lp.com?title=' . $ask_src_title .
+  $custom_css_file = 'https://lib.unb.ca/core/css-2015/libraryh3lp.unb.lib.css';
+  $askus_src = 'https://ca.libraryh3lp.com/chat/' . $queue .
+    '@chat.ca.libraryh3lp.com?title=' . $title .
     '&amp;theme=' . $theme .
-    '&amp;css=' . $css_file;
+    '&amp;css=' . $custom_css_file;
 
-  return _unb_libraries_askus_get_html($title, $widget_style, $ask_src, $xml_show);
+  return $askus_src;
 }
 
 /**
@@ -92,72 +88,42 @@ function _unb_libraries_askus_check_presence($queue = 'askus') {
 /**
  * If queue online, output appropriate style widget else output offline message.
  *
- * @param string $title
- *   The title text for the heading tag.
- * @param string $widget_style
- *   The user/queue name to check presence status for, UNB Libraries default queue = askus.
- * @param string $ask_src
- *   The user/queue name to check presence status for, UNB Libraries default queue = askus.
- * @param string $xml_show
- *   The user/queue name to check presence status for, UNB Libraries default queue = askus.
+ * @param string $type
+ *   The chat widget type, i.e. embedded or pop-up.
  *
  * @return string
- *   The html of the chat widget.
+ *   The html of the requested chat widget type.
  */
-function _unb_libraries_askus_get_html($title, $widget_style, $ask_src, $xml_show) {
-  if ($widget_style == 'embedded') {
-    // Provide embedded chat widget.
-    $wrapperclass = 'chat-embedded';
-    $chatbox = '<iframe src="' . $ask_src . '"></iframe>';
-  }
-  else {
-    // Provide default pop-up chat widget.
-    $wrapperclass = 'chat-popup';
-    $chatbox = '<p class="askus-note-online">';
-    $chatbox .= '<a href="' . $ask_src . '">Type here to CHAT.</a>';
-    $chatbox .= '</p>';
+function _unb_libraries_askus_get_widget($type) {
+  $askus_src = _unb_libraries_get_askus_src();
+  $html =
+    '<div class="requires-js" >
+      <div id = "lh3-online" style="display:none;" >';
+        switch ($type) {
+          case 'embedded':
+            $html .= '<iframe src = "' . $askus_src . '"></iframe >';
+            break;
 
-    // Hide popup chat heading text because of background image.
-    $title = '<span class="sr-only">' . $title . '</span>';
-  }
+          default:
+            $html .= '<a href="' . $askus_src . '">Type here to CHAT.</a>';
+        }
+        $html .= '
+      </div >
+      <div id = "lh3-offline" style = "display:none;" >
+        Ask Us is currently < strong>offline </strong >.
+      </div >
+      <div id = "lh3-away" style = "display: none;" >
+        Ask Us is currently busy serving other patrons .
+      </div >
+      <div id = "lh3-busy" style = "display: none;" >
+        Ask Us is currently busy serving other patrons .
+      </div >
+    </div >
+    <div id = "lh3-noscript" >
+      Ask Us chat requires JavaScript .
+    </div >';
 
-  if ($xml_show != 'available') {
-    $wrapperclass .= " offline";
-    if (in_array($xml_show, ['dnd', 'away'])) {
-      $chatbox = '<p class="askus-note-busy">';
-      $chatbox .= 'Ask Us is currently busy serving other patrons.';
-      $chatbox .= '</p>';
-    }
-    else {
-      $chatbox = '<p class="askus-note-offline">';
-      $chatbox .= 'Ask Us is currently <strong>offline</strong>. ';
-      $chatbox .= _unb_libraries_askus_get_offline_note();
-      $chatbox .= '</p>';
-    }
-  }
-
-  $wrapperstart = '<div class="' . $wrapperclass . '">';
-  $header = '<h2>' . $title . '</h2>';
-  $body = '<noscript><p>Ask Us chat requires JavaScript.</p></noscript>';
-  $body .= '<div class="libraryh3lp requires-js">';
-  $body .= $chatbox;
-  $body .= '</div>';
-  if ($widget_style != 'embedded') {
-    $footer = '<p class="askus-footer">';
-    $footer .= '<a href="/help/ask"><span class="sr-only">Ask by:</span>';
-    $footer .= '<span><i class="fas fa-envelope"></i> Email</span>';
-    $footer .= '<span><i class="fas fa-sms"></i> Text</span>';
-    $footer .= '<span><i class="fas fa-phone"></i> Phone</span>';
-    $footer .= '<span><i class="fas fa-walking"></i> In-Person</span>';
-    $footer .= '</a>';
-    $footer .= '</p>';
-  }
-  else {
-    $footer = NULL;
-  }
-  $wrapperend = '</div>';
-
-  return $wrapperstart . $header . $body . $footer . $wrapperend;
+  return $html;
 }
 
 /**

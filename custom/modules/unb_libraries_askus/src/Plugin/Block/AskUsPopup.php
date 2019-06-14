@@ -19,28 +19,8 @@ class AskUsPopup extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    $askus_src = 'https://ca.libraryh3lp.com/chat/askus
-      @chat.ca.libraryh3lp.com?title=Ask+Us&amp;theme=gota';
-    $askus_src .= '&amp;css=https://lib.unb.ca/core/css-2015/libraryh3lp.unb.lib.css';
-    $chat_widget =
-      '<h2><span class="sr-only">Ask Us Chat</span></h2>
-      <div class="requires-js">
-        <div id="lh3-online" style="display:none;">
-          <a href="' . $askus_src . '">Type here to CHAT.</a>
-        </div>
-        <div id="lh3-offline" style="display:none;">
-          Ask Us is currently <strong>offline</strong>.
-        </div>
-        <div id="lh3-away" style="display: none;">
-          Ask Us is currently busy serving other patrons.
-        </div>
-        <div id="lh3-busy" style="display: none;">
-          Ask Us is currently busy serving other patrons.
-        </div>
-      </div>
-      <div id="lh3-noscript">
-        Ask Us chat requires JavaScript.
-      </div>';
+    $chat_header = '<h2><span class="sr-only">Ask Us Chat</span></h2>';
+    $chat_widget = _unb_libraries_askus_get_widget('popup');
     $chat_footer =
       '<p class="askus-footer">
         <a href="/help/ask"><span class="sr-only">Ask by:</span>
@@ -68,6 +48,10 @@ class AskUsPopup extends BlockBase {
           'chat-popup',
         ],
       ],
+    ];
+    $render_array['wrapper']['header'] = [
+      '#type' => 'markup',
+      '#markup' => $chat_header,
     ];
     $render_array['wrapper']['widget'] = [
       '#type' => 'markup',

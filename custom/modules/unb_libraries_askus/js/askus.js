@@ -29,8 +29,7 @@
 })(jQuery, Drupal);
 
 var lh3CheckPresence = function () {
-    var url = "https://ca.libraryh3lp.com/presence/jid/askus/" +
-        "chat.ca.libraryh3lp.com/js";
+    var url = "https://ca.libraryh3lp.com/presence/jid/askus/chat.ca.libraryh3lp.com/js";
     var script = document.createElement("script");
     script.src = url + "?cb=lh3UpdatePresence";
     document.getElementsByTagName("head")[0].appendChild(script);

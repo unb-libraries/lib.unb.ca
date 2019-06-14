@@ -5,7 +5,7 @@
 .chat-embedded > h2 {
     color: #900;
 }
-#lh3-chat > h2 {
+.chat-popup > h2 {
     background: url(../img/AskUslogo2.png) no-repeat center center transparent;
     height: 52px;
 }
@@ -20,21 +20,18 @@
     box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
     outline: 0;
 }
-.chat-embedded .libraryh3lp {
-    text-align: left;
-}
-.chat-embedded:not(.offline) .libraryh3lp {
+.chat-embedded #lh3-online {
     border: 1px solid #aaa;
     box-shadow: none;
 }
-.chat-embedded .libraryh3lp iframe {
+.chat-embedded iframe {
     border: 0;
     display: block;
     min-height: 300px;
     padding: 0 1px;
     width: 100%;
 }
-#lh3-online {
+.chat-popup #lh3-online {
     border: 1px solid #aaa;
     border-radius: 4px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
