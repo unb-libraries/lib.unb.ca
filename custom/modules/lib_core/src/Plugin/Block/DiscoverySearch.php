@@ -315,10 +315,17 @@ class DiscoverySearch extends BlockBase {
         </div>
       </form>
       <div class="px-2">
-        <a href="//unb.on.worldcat.org/advancedsearch">Advanced Search</a> |
-        <a href="/about/loc_call/">Locations Guide</a> |
+        <a href="//unb.on.worldcat.org/advancedsearch">
+          Advanced Search
+        </a>
+        |
+        <a href="/about/loc_call/">
+          Locations Guide
+        </a>
+        |
         <a href="/worldcat/FAQs.php" title="Using WorldCat Discovery">
-          <i class="fas fa-question-circle"></i> Help
+          <i class="fas fa-question-circle"></i>
+          Help
         </a>
       </div>';
 
@@ -335,8 +342,8 @@ class DiscoverySearch extends BlockBase {
     $subject_form =
       '<form id="category-select">
         <div class="form-group">
-          <div class="form-row">
-            <label class="ml-1 font-weight-bold" for="category">
+          <div class="form-row font-weight-bold">
+            <label class="ml-1" for="category">
               Browse databases by subject
             </label>
           </div>
@@ -365,8 +372,8 @@ class DiscoverySearch extends BlockBase {
       '<div class="divider"></div>
       <form action="/eresources/index.php" id="title_results" method="get">
         <div class="form-group">
-          <div class="form-row">
-            <label for="databaseID" class="ml-1 font-weight-bold">
+          <div class="form-row font-weight-bold">
+            <label class="ml-1" for="databaseID">
               <span class="text-red">OR</span>&nbsp;&nbsp;Browse for databases by title
             </label>
           </div>
@@ -407,37 +414,69 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getJournalsForm() {
     $form_journals =
-      '<form action="/eresources/index.php" method="get" id="search_results_journals">
-        <input type="hidden" name="sub" id="sub" value="journals">
-        <div class="font-weight-bold mb-1">
-          <label for="searchtype_every_journal">
-            <input type="radio" checked="checked" value="every_word" name="searchtype" id="searchtype_every_journal" class="radioSelect mr-1">Word(s) in title
-          </label>
-          <label for="searchtype_browse_journal" class="ml-2">
-            <input type="radio" value="browse" name="searchtype" id="searchtype_browse_journal" class="radioSelect mr-1">Starts with
-          </label>
-          <label for="searchtype_exact_journal" class="ml-2">
-            <input type="radio" value="exact" name="searchtype" id="searchtype_exact_journal" class="radioSelect mr-1">Exact
-          </label>
+      '<form action="/eresources/index.php" id="search_results_journals" method="get">
+        <div class="form-group">
+          <input id="sub" name="sub" type="hidden" value="journals">
+          <div class="form-row mt-1">
+            <div class="form-inline font-weight-bold">
+              <div class="form-check ml-1">
+                <input checked="checked" class="form-check-input" id="searchtype_every_journal" name="searchtype" type="radio" value="every_word">
+                <label class="form-check-label mr-3" for="searchtype_every_journal">
+                  Word(s) in title
+                </label>
+                <input class="form-check-input" name="searchtype" id="searchtype_browse_journal" type="radio" value="browse">
+                <label class="form-check-label mr-3" for="searchtype_browse_journal">
+                  Starts with
+                </label>
+                <input class="form-check-input" name="searchtype" id="searchtype_exact_journal" type="radio" value="exact">
+                <label class="form-check-label mr-3" for="searchtype_exact_journal">
+                  Exact
+                </label>
+              </div>
+            </div>
+          </div>
         </div>
-        <p>
-          <label for="title_journal" class="sr-only">title</label>
-          <input id="title_journal" name="title" type="search" placeholder="Search for journal and newspaper titles">
-          <input type="submit" value="GO" class="btn btn-primary">
-        </p>
-        <p class="pl-1">
-          <a href="/eresources/index.php?sub=journals&amp;packages=Y">Journal Packages</a> |
-          <a href="/eresources/index.php?sub=journals&amp;browseNewsColl=Y&amp;limitResourceType=enewsColl">Newspaper Packages</a> |
-          <a href="/eresources/newspapers.php" title="Guide to finding newspapers at UNB Libraries">
-          <i class="fas fa-question-circle"></i> Newspaper Guide</a>
-        </p>
-        <p class="moreOptions">
-          <a href="/eresources/index.php?sub=journals">
-            <i class="fas fa-list-ul"></i>
-            More Search Options
+        <div class="form-group">
+          <div class="form-row">        
+            <label class="sr-only" for="title_journal">
+              Title
+            </label>
+            <div class="col-md-8 mb-2">
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fas fa-search"></i>
+                  </div>
+                </div>
+                <input class="form-control" id="title_journal" name="title" placeholder="Search for journal and newspaper titles" type="search">
+              </div>
+            </div>
+            <div class="col-md-2 mb-2">
+              <button class="btn btn-primary" type="submit" >GO</button>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="px-2 mb-2">
+          <a href="/eresources/index.php?sub=journals&amp;packages=Y">
+            Journal Packages
           </a>
-        </p>
-      </form>';
+          |
+          <a href="/eresources/index.php?sub=journals&amp;browseNewsColl=Y&amp;limitResourceType=enewsColl">
+            Newspaper Packages
+          </a>
+          |
+          <a href="/eresources/newspapers.php" title="Guide to finding newspapers at UNB Libraries">
+            <i class="fas fa-question-circle"></i>
+            Newspaper Guide
+          </a>
+      </div>
+      <div class="px-2">
+        <a href="/eresources/index.php?sub=journals">
+          <i class="fas fa-list-ul"></i>
+          More Search Options
+        </a>
+      </div>';
 
     return $form_journals;
   }
@@ -453,7 +492,7 @@ class DiscoverySearch extends BlockBase {
       <form action="/eresources/index.php" method="get" id="search_results_refmat">
         <div class="form-group">
           <input id="sub_refmat" name="sub" type="hidden" value="refmat">
-          <div class="form-row mb-2">
+          <div class="form-row">
             <div class="form-inline font-weight-bold">
               <div class="form-check ml-1">
                 <input checked="checked" class="form-check-input" name="searchtype" type="radio" value="every_word">
@@ -471,6 +510,8 @@ class DiscoverySearch extends BlockBase {
               </div>
             </div>
           </div>
+        </div>
+        <div class="form-group">
           <div class="form-row">
             <label for="title_refmat" class="sr-only">
               Title
@@ -540,6 +581,8 @@ class DiscoverySearch extends BlockBase {
               </div>
             </div>
           </div>
+        </div>
+        <div class="form-group">
           <div class="form-row">
             <label class="sr-only" for="title_ebooks">
               Title
@@ -603,6 +646,8 @@ class DiscoverySearch extends BlockBase {
               </div>
             </div>
           </div>
+        </div>
+        <div class="form-group">
           <div class="form-row">
             <label for="title_video" class="sr-only">
               Title
