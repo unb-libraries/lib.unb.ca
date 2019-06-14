@@ -23,7 +23,7 @@
             });
             // Presence check with 30s refresh.
             lh3CheckPresence();
-            setInterval(lh3CheckPresence, 30000);
+            setInterval(lh3CheckPresence, 50000);
         }
     };
 })(jQuery, Drupal);
