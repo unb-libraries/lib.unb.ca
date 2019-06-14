@@ -363,7 +363,7 @@ class DiscoverySearch extends BlockBase {
 
     $title_form =
       '<div class="divider"></div>
-      <form id="title_results" method="get" action="/eresources/index.php">
+      <form action="/eresources/index.php" id="title_results" method="get">
         <div class="form-group">
           <div class="form-row">
             <label for="databaseID" class="ml-1 font-weight-bold">
@@ -447,44 +447,66 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getEncyclopediasForm() {
     $form_encyclopedias =
-      '<form action="/eresources/index.php" method="get" id="search_results_refmat">
-        <input type="hidden" name="sub" id="sub_refmat" value="refmat">
-        <p>
-          <small>Search for Reference Materials by title:</small>
-        </h4>
-        <div class="font-weight-bold mb-1">
-          <label for="searchtype_every_refmat" class="mr-2">
-            <input type="radio" checked="checked" value="every_word" name="searchtype" id="searchtype_every_refmat" class="radioSelect">
-            Word(s) in title
-          </label>
-          <label for="searchtype_browse_refmat" class="mr-2">
-            <input type="radio" value="browse" name="searchtype" id="searchtype_browse_refmat" class="radioSelect">
-            Starts with
-          </label>
-          <label for="searchtype_exact_refmat">
-            <input type="radio" value="exact" name="searchtype" id="searchtype_exact_refmat" class="radioSelect">
-            Exact
-          </label>
+      '<p>
+        <small>Search for Reference Materials by title:</small>
+      </p>
+      <form action="/eresources/index.php" method="get" id="search_results_refmat">
+        <div class="form-group">
+          <input id="sub_refmat" name="sub" type="hidden" value="refmat">
+          <div class="form-row mb-2">
+            <div class="form-inline font-weight-bold">
+              <div class="form-check ml-1">
+                <input checked="checked" class="form-check-input" name="searchtype" type="radio" value="every_word">
+                <label class="form-check-label mr-3" for="searchtype_every_refmat">
+                  Word(s) in title
+                </label>
+                <input class="form-check-input" id="searchtype_browse_refmat" name="searchtype" type="radio" value="browse">
+                <label class="form-check-label mr-3" for="searchtype_browse_refmat">
+                  Starts with
+                </label>
+                <input class="form-check-input" id="searchtype_exact_refmat" name="searchtype" type="radio" value="exact">
+                <label class="form-check-label mr-3" for="searchtype_exact_refmat">
+                  Exact
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="title_refmat" class="sr-only">
+              Title
+            </label>
+            <div class="col-md-8 mb-2">
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fas fa-search"></i>
+                  </div>
+                </div>
+                <input class="form-control" id="title_refmat" name="title" placeholder="Search for encyclopedias, dictionaries, etc." type="search" value="">
+              </div>
+            </div>
+            <div class="col-md-2 mb-2">
+              <button class="btn btn-primary" type="submit">GO</button>
+            </div>
+          </div>
         </div>
-        <div class="mb-1">
-          <label for="title_refmat" class="sr-only">
-            title
-          </label>
-          <input type="search" value="" name="title" id="title_refmat" placeholder="Search for encyclopedias, dictionaries, etc.">
-          <input type="submit" value="GO" class="btn btn-primary">
+        </form>
+        <div class="px-2 pb-2">
+          <a href="/eresources/refguide.php">
+            <i class="fas fa-compass"></i>
+            Reference Materials Guide
+          </a>
+          |
+          <a href="//guides.lib.unb.ca/guide/98">
+            Browse dictionaries
+          </a>
         </div>
-        <p class="pl-1 pb-2">
-          <a href="/eresources/refguide.php" title="Guide to finding Reference Materials at UNB Libraries">
-          <i class="fa fa-compass"></i> Reference Materials Guide</a> |
-          <a href="https://guides.lib.unb.ca/guide/98">Browse dictionaries</a>
-        </p>
-        <p class="moreOptions">
+        <div class="px-2">
           <a href="/eresources/index.php?sub=refmat">
             <i class="fas fa-th-list" aria-hidden="true"></i>
             More Search Options
           </a>
-        </p>
-      </form>';
+        </div>';
 
     return $form_encyclopedias;
   }
@@ -495,12 +517,12 @@ class DiscoverySearch extends BlockBase {
   protected function getEbooksForm() {
     $form_ebooks =
       '<p>
-        <small class="discoverNote">Search our vast electronic book collections for titles suitable for your computer, tablet or eReader.</small>
+        <small>Search our vast electronic book collections for titles suitable for your computer, tablet or eReader.</small>
       </p>
       <form action="/eresources/index.php" method="get" id="search_results_ebooks">
         <div class="form-group">
-          <input type="hidden" name="sub" id="sub_ebooks" value="ebooks">
-           <div class="form-row mb-2">
+          <input id="sub_ebooks" name="sub" type="hidden" value="ebooks">
+          <div class="form-row mb-2">
             <div class="form-inline font-weight-bold">
               <div class="form-check ml-1">
                 <input checked="checked" class="form-check-input" id="searchtype_every_ebooks" name="searchtype" type="radio" value="every_word">
@@ -508,7 +530,7 @@ class DiscoverySearch extends BlockBase {
                   Word(s) in title
                 </label>
                 <input class="form-check-input" id="searchtype_exact_ebooks" name="searchtype" type="radio" value="exact">
-                <label class="form-check-label mr-3" for="searchtype_exact_ebooks" class="mr-2">
+                <label class="form-check-label mr-3" for="searchtype_exact_ebooks">
                   Exact title
                 </label>
                 <input class="form-check-input" id="searchtype_keyword_ebooks" name="searchtype" type="radio" value="keyword">
