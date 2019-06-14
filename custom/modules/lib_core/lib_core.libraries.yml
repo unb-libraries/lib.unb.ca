@@ -49,3 +49,7 @@ unblibtabs:
   css:
     theme:
       css/unblibtabs.css: {}
+  js:
+    js/unblibtabs.js: {}
+    dependencies:
+      - core/jquery

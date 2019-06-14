@@ -333,7 +333,7 @@ class DiscoverySearch extends BlockBase {
     $database_titles = _lib_core_get_database_titles();
 
     $subject_form =
-      '<form class="categorySelect">
+      '<form id="category-select">
         <div class="form-group">
           <div class="form-row">
             <label class="ml-1 font-weight-bold" for="category">
