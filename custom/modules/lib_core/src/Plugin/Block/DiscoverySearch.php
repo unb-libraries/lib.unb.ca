@@ -498,33 +498,52 @@ class DiscoverySearch extends BlockBase {
         <small class="discoverNote">Search our vast electronic book collections for titles suitable for your computer, tablet or eReader.</small>
       </p>
       <form action="/eresources/index.php" method="get" id="search_results_ebooks">
-        <input type="hidden" name="sub" id="sub_ebooks" value="ebooks">
-        <div class="padHeight font-weight-bold">
-          <label for="searchtype_every_ebooks" class="mr-2">
-            <input type="radio" checked="checked" value="every_word" name="searchtype" id="searchtype_every_ebooks" class="radioSelect">
-            Word(s) in title
-          </label>
-          <label for="searchtype_exact_ebooks" class="mr-2">
-            <input type="radio" value="exact" name="searchtype" id="searchtype_exact_ebooks" class="radioSelect">
-            Exact title
-          </label>
-          <label for="searchtype_keyword_ebooks">
-            <input type="radio" value="keyword" name="searchtype" id="searchtype_keyword_ebooks" class="radioSelect">
-            Keyword search (title, author, publisher&hellip;)
-          </label>
+        <div class="form-group">
+          <input type="hidden" name="sub" id="sub_ebooks" value="ebooks">
+           <div class="form-row mb-2">
+            <div class="form-inline font-weight-bold">
+              <div class="form-check ml-1">
+                <input checked="checked" class="form-check-input" id="searchtype_every_ebooks" name="searchtype" type="radio" value="every_word">
+                <label class="form-check-label mr-3" for="searchtype_every_ebooks">
+                  Word(s) in title
+                </label>
+                <input class="form-check-input" id="searchtype_exact_ebooks" name="searchtype" type="radio" value="exact">
+                <label class="form-check-label mr-3" for="searchtype_exact_ebooks" class="mr-2">
+                  Exact title
+                </label>
+                <input class="form-check-input" id="searchtype_keyword_ebooks" name="searchtype" type="radio" value="keyword">
+                <label class="form-check-label mr-3" for="searchtype_keyword_ebooks">
+                  Keyword search (title, author, publisher&hellip;)
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <label class="sr-only" for="title_ebooks">
+              Title
+            </label>
+            <div class="col-md-8 mb-2">
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fas fa-search"></i>
+                  </div>
+                </div>
+                <input class="form-control" id="title_ebooks" name="title" placeholder="Enter search terms" type="search" value="">
+              </div>
+            </div>
+            <div class="col-md-2 mb-2">
+              <button class="btn btn-primary" type="submit">GO</button>
+            </div>
+          </div>
         </div>
-        <label for="title_ebooks" class="sr-only">
-          title
-        </label>
-        <input type="search" value="" name="title" id="title_ebooks">
-        <input type="submit" value="GO" class="btn btn-primary">
-        <p class="mt-3">
-          <a href="/eresources/index.php?sub=ebooks">
-            <i class="fas fa-th-list"></i>
-            Browse e-Book Collections
-          </a>
-        </p>
-      </form>';
+      </form>
+      <div class="px-2">
+        <a href="/eresources/index.php?sub=ebooks">
+          <i class="fas fa-th-list"></i>
+          Browse e-Book Collections
+        </a>
+      </div>';
 
     return $form_ebooks;
   }
@@ -535,7 +554,7 @@ class DiscoverySearch extends BlockBase {
   protected function getVideosForm() {
     $form_videos =
       '<p>
-        <small class="discoverNote">Search across our online video collections.</small>
+        <small>Search across our online video collections.</small>
       </p>
       <form action="/eresources/index.php" id="search_results_video" method="get" >
         <div class="form-group">
@@ -569,9 +588,11 @@ class DiscoverySearch extends BlockBase {
             <div class="col-md-8 mb-2">
               <div class="input-group mb-2">
                 <div class="input-group-prepend">
-                    <div class="input-group-text"><i class="fas fa-search"></i></div>
+                    <div class="input-group-text">
+                      <i class="fas fa-search"></i>
+                    </div>
                 </div>
-                <input class="form-control" name="title"  id="title_video" type="search" value="">
+                <input class="form-control" name="title" id="title_video" placeholder="Enter search terms" type="search" value="">
               </div>
             </div>
             <div class="col-md-2 mb-2">
