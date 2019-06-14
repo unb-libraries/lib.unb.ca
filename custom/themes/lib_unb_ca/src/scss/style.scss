@@ -49,11 +49,6 @@ h3 {
 /* END OVERRIDES */
 
 /* Discovery/e-Resources Search */
-.tabs-theme-dark .card-body .divider {
-  border-top: 1px solid $yellow;
-  margin: 1rem 0;
-  max-width: 16rem;
-}
 .tabs-theme-dark {
   flex-wrap: wrap;
 }
@@ -68,9 +63,6 @@ h3 {
   padding-left: 1rem;
   padding-right: 1rem;
 }
-.tabs-theme-dark .card-header h3 {
-  font-size: 1.2em;
-}
 .tabs-theme-dark .nav-tabs .nav-link:focus,
 .tabs-theme-dark .nav-tabs .nav-link:hover {
   border-color: transparent;
@@ -81,6 +73,18 @@ h3 {
 .tabs-theme-dark .nav-tabs .nav-item a:not(.active):focus,
 .tabs-theme-dark .nav-tabs .nav-item a:not(.active):hover {
   background-color: $gray-444;
+}
+.tabs-theme-dark .card-header h3 {
+  font-size: 1.2em;
+}
+.tabs-theme-dark .card-body p,
+.tabs-theme-dark .card-body .form-check-label {
+  line-height: 1rem;
+}
+.tabs-theme-dark .card-body .divider {
+  border-top: 1px solid $yellow;
+  margin: 1rem 0;
+  max-width: 16rem;
 }
 @media(max-width: 991px) {
   .tabs-theme-dark {
@@ -110,6 +114,11 @@ h3 {
   }
   .tabs-theme-dark {
     border: 1px solid $gray-dark;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  #discovery-search .card-body {
+    max-width: 538px;
   }
 }
 /* END Discovery/eResources Search */

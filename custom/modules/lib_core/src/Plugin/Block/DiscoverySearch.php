@@ -348,7 +348,7 @@ class DiscoverySearch extends BlockBase {
             </label>
           </div>
           <div class="form-row">
-            <div class="col-md-8 mb-1">
+            <div class="col-md-9 mb-1">
               <select class="chosen-select form-control" name="category">
                 <option value="">Select a subject&hellip;</option>';
                 foreach ($categories as $value => $label) {
@@ -441,7 +441,7 @@ class DiscoverySearch extends BlockBase {
             <label class="sr-only" for="title_journal">
               Title
             </label>
-            <div class="col-md-8 mb-2">
+            <div class="col-md-9 mb-2">
               <div class="input-group mb-2">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
@@ -513,10 +513,10 @@ class DiscoverySearch extends BlockBase {
         </div>
         <div class="form-group">
           <div class="form-row">
-            <label for="title_refmat" class="sr-only">
+            <label class="sr-only" for="title_refmat">
               Title
             </label>
-            <div class="col-md-8 mb-2">
+            <div class="col-md-9 mb-2">
               <div class="input-group mb-2">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
@@ -560,21 +560,21 @@ class DiscoverySearch extends BlockBase {
       '<p>
         <small>Search our vast electronic book collections for titles suitable for your computer, tablet or eReader.</small>
       </p>
-      <form action="/eresources/index.php" method="get" id="search_results_ebooks">
+      <form action="/eresources/index.php" id="search_results_ebooks" method="get">
         <div class="form-group">
           <input id="sub_ebooks" name="sub" type="hidden" value="ebooks">
-          <div class="form-row mb-2">
+          <div class="form-row">
             <div class="form-inline font-weight-bold">
               <div class="form-check ml-1">
-                <input checked="checked" class="form-check-input" id="searchtype_every_ebooks" name="searchtype" type="radio" value="every_word">
+                <input checked="checked" class="align-self-start form-check-input" id="searchtype_every_ebooks" name="searchtype" type="radio" value="every_word">
                 <label class="form-check-label mr-3" for="searchtype_every_ebooks">
                   Word(s) in title
                 </label>
-                <input class="form-check-input" id="searchtype_exact_ebooks" name="searchtype" type="radio" value="exact">
+                <input class="align-self-start form-check-input" id="searchtype_exact_ebooks" name="searchtype" type="radio" value="exact">
                 <label class="form-check-label mr-3" for="searchtype_exact_ebooks">
                   Exact title
                 </label>
-                <input class="form-check-input" id="searchtype_keyword_ebooks" name="searchtype" type="radio" value="keyword">
+                <input class="align-self-start form-check-input" id="searchtype_keyword_ebooks" name="searchtype" type="radio" value="keyword">
                 <label class="form-check-label mr-3" for="searchtype_keyword_ebooks">
                   Keyword search (title, author, publisher&hellip;)
                 </label>
@@ -587,7 +587,7 @@ class DiscoverySearch extends BlockBase {
             <label class="sr-only" for="title_ebooks">
               Title
             </label>
-            <div class="col-md-8 mb-2">
+            <div class="col-md-9 mb-2">
               <div class="input-group mb-2">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
@@ -646,13 +646,13 @@ class DiscoverySearch extends BlockBase {
               </div>
             </div>
           </div>
-        </div>
-        <div class="form-group">
+         </div>
+         <div class-"form-group">
           <div class="form-row">
             <label for="title_video" class="sr-only">
               Title
             </label>
-            <div class="col-md-8 mb-2">
+            <div class="col-md-9 mb-2">
               <div class="input-group mb-2">
                 <div class="input-group-prepend">
                     <div class="input-group-text">
@@ -668,7 +668,7 @@ class DiscoverySearch extends BlockBase {
           </div>
         </div>
         <div class="px-2">
-          <a href="/eresources/index.php?sub=video">
+          <a href="//legacy.lib.unb.ca/eresources/index.php?sub=video">
             <i class="fas fa-th-list"></i>
             Browse Video Collections
           </a>

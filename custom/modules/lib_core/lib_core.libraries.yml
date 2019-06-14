@@ -46,9 +46,6 @@ table-row-check:
 
 unblibtabs:
   version: VERISON
-  css:
-    theme:
-      css/unblibtabs.css: {}
   js:
     js/unblibtabs.js: {}
     dependencies:
