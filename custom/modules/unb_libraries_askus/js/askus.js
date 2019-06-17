@@ -11,7 +11,7 @@
             $("#lh3-noscript").hide();
 
             // Pop-up chat window
-            $("#lh3-chat a").click(function(event) {
+            $("#lh3-online a").click(function(event) {
                 var url = $(this).attr("href");
                 var windowName = "Ask Us Chat";
                 var windowAttributes = "height=560,width=400,menubar=no," +
