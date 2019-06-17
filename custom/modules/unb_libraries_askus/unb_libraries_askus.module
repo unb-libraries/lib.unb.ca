@@ -126,7 +126,7 @@ function _unb_libraries_askus_get_widget($type) {
         $html .=
       '</div >
       <div id="lh3-offline" style="display:none;">
-        Ask Us is currently <strong>offline</strong>.';
+        Ask Us is currently <strong>offline</strong>.<br />';
         $html .= _unb_libraries_askus_get_offline_note();
       $html .=
       '</div >
