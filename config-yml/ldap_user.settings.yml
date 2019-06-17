@@ -53,7 +53,7 @@ ldapUserSyncMappings:
       prov_events:
         - create_drupal_user
     field-field_room_number:
-      ldap_attr: '[roomnumber]'
+      ldap_attr: '[l]'
       user_attr: '[field.field_room_number]'
       convert: false
       direction: drupal
