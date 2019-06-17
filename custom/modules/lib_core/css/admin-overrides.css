@@ -12,6 +12,16 @@ form .field-multiple-table .field-multiple-drag,
     width: 1.35rem;
     height: 1.35rem;
 }
+/* Improve paragraphs dropdown widget layout */
+.js td .dropbutton-wrapper {
+    min-height: 1rem;
+}
+.js .paragraphs-dropbutton-wrapper .dropbutton-wrapper .dropbutton-widget .dropbutton-action input:hover,
+.js .paragraphs-subform .dropbutton-wrapper .dropbutton-widget .dropbutton-action input:hover{
+    background: none;
+    box-shadow: none;
+    color: #900;
+}
 
 /* Add whitespace between Paragraph dropbuttons & Preview */
 .js .paragraph-type-top {
