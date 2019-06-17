@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_display_on_staff_directory
     - field.field.user.user.field_first_name
     - field.field.user.user.field_last_name
     - field.field.user.user.field_on_leave
@@ -17,6 +18,16 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
+  field_display_on_staff_directory:
+    weight: 7
+    label: inline
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
   field_first_name:
     weight: 1
     label: inline

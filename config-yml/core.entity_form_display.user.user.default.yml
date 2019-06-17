@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_display_on_staff_directory
     - field.field.user.user.field_first_name
     - field.field.user.user.field_last_name
     - field.field.user.user.field_on_leave
@@ -18,17 +19,24 @@ bundle: user
 mode: default
 content:
   account:
-    weight: -10
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
   contact:
-    weight: 5
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_first_name:
+  field_display_on_staff_directory:
     weight: 9
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_first_name:
+    weight: 6
     settings:
       size: 60
       placeholder: ''
@@ -36,7 +44,7 @@ content:
     type: string_textfield
     region: content
   field_last_name:
-    weight: 10
+    weight: 7
     settings:
       size: 60
       placeholder: ''
@@ -44,21 +52,21 @@ content:
     type: string_textfield
     region: content
   field_on_leave:
-    weight: 12
+    weight: 10
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
   field_phone_number:
-    weight: 7
+    weight: 4
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: telephone_default
     region: content
   field_position_title:
-    weight: 8
+    weight: 5
     settings:
       size: 60
       placeholder: ''
@@ -66,7 +74,7 @@ content:
     type: string_textfield
     region: content
   field_room_number:
-    weight: 11
+    weight: 8
     settings:
       size: 60
       placeholder: ''
@@ -74,12 +82,12 @@ content:
     type: string_textfield
     region: content
   language:
-    weight: 0
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
   timezone:
-    weight: 6
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }

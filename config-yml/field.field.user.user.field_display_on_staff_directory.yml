@@ -1,0 +1,24 @@
+uuid: fec2ca3a-2781-4f9d-b45f-1633e4800054
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_display_on_staff_directory
+  module:
+    - user
+id: user.user.field_display_on_staff_directory
+field_name: field_display_on_staff_directory
+entity_type: user
+bundle: user
+label: 'Display on Staff Directory'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

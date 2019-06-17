@@ -1,0 +1,18 @@
+uuid: f672059f-b578-4153-b078-5bfc1b681adf
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_display_on_staff_directory
+field_name: field_display_on_staff_directory
+entity_type: user
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
