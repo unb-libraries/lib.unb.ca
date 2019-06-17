@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.user.user.field_first_name
     - field.field.user.user.field_last_name
+    - field.field.user.user.field_on_leave
     - field.field.user.user.field_phone_number
     - field.field.user.user.field_position_title
     - field.field.user.user.field_room_number
@@ -31,6 +32,16 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_on_leave:
+    weight: 6
+    label: inline
+    settings:
+      format: yes-no
+      format_custom_true: ''
+      format_custom_false: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_phone_number:
     weight: 4

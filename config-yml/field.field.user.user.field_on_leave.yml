@@ -1,0 +1,24 @@
+uuid: efae42ce-cc93-4a12-bdc9-a73e0b441d51
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_on_leave
+  module:
+    - user
+id: user.user.field_on_leave
+field_name: field_on_leave
+entity_type: user
+bundle: user
+label: 'On Leave'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean
