@@ -2,6 +2,11 @@
 .filter-wrapper {
     display: none;
 }
+form div.description,
+form .form-item .description {
+    color: #856404;
+    font-family: monospace;
+}
 /* Lower tabledrag icon position */
 form .field-multiple-table .field-multiple-drag,
 .js .field--widget-entity-reference-paragraphs td.field-multiple-drag {
@@ -87,4 +92,10 @@ form .field-multiple-table .field-multiple-drag,
     display: inline-block;
     left: inherit;
     right: 12.5rem;
+}
+#edit-delete:before {
+    content: '\f2ed';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-right: .25rem;
 }
