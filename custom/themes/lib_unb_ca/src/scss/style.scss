@@ -116,20 +116,21 @@ dl.two-cols {
   }
 }
 @media(min-width: 992px) {
-  .nav-tabs {
-    display: flex;
-  }
   .card {
     border: none;
-  }
-  .card .card-header {
-    display: none;
   }
   .card .collapse{
     display: block;
   }
+  .card .card-header {
+    display: none;
+  }
+  .nav-tabs {
+    display: flex;
+  }
   .tabs-theme-dark {
     border: 1px solid $gray-dark;
+    min-height: 323px;
   }
 }
 @media (min-width: 992px) and (max-width: 1200px) {
