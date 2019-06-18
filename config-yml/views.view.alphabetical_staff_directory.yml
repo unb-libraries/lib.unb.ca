@@ -747,7 +747,7 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
-      css_class: row
+      css_class: ''
     cache_metadata:
       max-age: -1
       contexts:
