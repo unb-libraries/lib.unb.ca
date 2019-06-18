@@ -26,8 +26,8 @@ class AskUsPopup extends BlockBase {
         <a href="/help/ask"><span class="sr-only">Ask by:</span>
           <span><i class="fas fa-envelope"></i> Email</span>
           <span><i class="fas fa-sms"></i> Text</span>
-          <span><i class="fas fa-phone"></i> Phone</span>
-          <span><i class="fas fa-walking"></i> In-Person</span>
+          <span><i class="fas fa-phone-alt"></i> Phone</span>
+          <span><i class="fas fa-user-alt"></i> In-Person</span>
         </a>
       </p>';
 
