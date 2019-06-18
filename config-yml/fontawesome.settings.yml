@@ -1,9 +1,9 @@
 tag: span
 method: webfonts
 use_cdn: true
-external_svg_location: 'https://use.fontawesome.com/releases/v5.8.2/css/all.css'
+external_svg_location: 'https://use.fontawesome.com/releases/v5.9.0/css/all.css'
 use_shim: false
-external_shim_location: 'https://use.fontawesome.com/releases/v5.5.0/css/v4-shims.css'
+external_shim_location: 'https://use.fontawesome.com/releases/v5.9.0/css/v4-shims.css'
 _core:
   default_config_hash: g9fbNCLj8LyjSgLgS1PHCbN6oKrd1M4QsK5NLneNpOk
 allow_pseudo_elements: true
