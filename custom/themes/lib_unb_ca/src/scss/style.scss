@@ -202,7 +202,7 @@ dl.two-cols {
 /* Library news listing page */
 .library-news {
   .news-title {
-    border-bottom: 1px solid $gray-light;
+    border-bottom: 1px solid $gray-500;
     margin-bottom: .5rem;
     padding-bottom: .5rem;
   }
@@ -249,18 +249,21 @@ dl.two-cols {
 /* Library new post metadata */
 .news-metadata,
 .field--name-field-categories {
+  color: $gray-600;
   font-size: .9rem;
 
   .field__item {
     display: inline-block;
-    margin-right: .75rem;
+    margin-right: .5rem;
   }
   &:before {
+    display: inline-block;
     font-family: "Font Awesome 5 Free";
     font-size: .8rem;
     font-weight: 900;
     margin-right: .25rem;
     vertical-align: top;
+    width: .8rem
   }
 }
 .news-metadata:before {
