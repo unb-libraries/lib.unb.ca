@@ -161,75 +161,132 @@ dl.two-cols {
 }
 /* End Media files */
 
-/* Library News */
-.news-item h3 {
-  margin-bottom: 0;
+/* LIBRARY NEWS */
+/* Front page recent block */
+.library-news-recent-teasers {
+  .more-link {
+    a {
+      border-bottom: 1px dotted transparent;
+      color: $red;
+      &:hover {
+        border-bottom: 1px dotted $gray-light;
+      }
+    }
+    &:before {
+      content: '\f1ea';
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      margin-left: -1em;
+      margin-right: .25em;
+    }
+  }
+  .views-row h3 {
+    margin-bottom: 0;
+  }
 }
-.news-teaser {
-  position: relative;
-}
-.news-teaser:after {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to($white));
-  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, $white 100%);
-  bottom: 0;
-  content: "\00a0";
-  display: block;
-  position: absolute;
-  right: 0;
-  width: 3.5em;
-}
-.library-news .more-link:before {
-  content: '\f1ea';
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  margin-left: -2em;
-  margin-right: .25em;
-}
-.news-archive .item-list ul {
-  list-style: initial;
-  padding-left: 40px;
-}
-.news-archive .more-link {
-  font-size: .95rem;
-  text-align: right;
-}
-.news-archive .more-link a {
-  color: $red;
-}
-.news-archive .more-link:before {
-  color: $red;
-  content: '\f0fe';
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  margin-right: .25rem;
-}
+
+/* Front page featured image */
 .news-featured {
   text-align: right;
+  a img {
+    @include opacity(1);
+    @include css3-prefix(transition, opacity .3s, transform .3s);
+    @include css3-prefix(transform, scale(1));
+  }
+  a:hover img {
+    @include opacity(.7);
+    @include css3-prefix(transform, scale(.98));
+  }
 }
-.news-featured a img {
-  @include opacity(1);
-  @include css3-prefix(transition, opacity .3s, transform .3s);
-  @include css3-prefix(transform, scale(1));
+
+/* Library news listing page */
+.library-news {
+  .news-title {
+    border-bottom: 1px solid $gray-light;
+    margin-bottom: .5rem;
+    padding-bottom: .5rem;
+  }
+  span.page-link {
+    color: $gray-dark;
+    &:hover {
+      background: inherit;
+      cursor: default;
+    }
+  }
 }
-.news-featured a:hover img {
-  @include opacity(.6);
-  @include css3-prefix(transform, scale(.97));
+
+/* Library news post */
+.node--type-news-post .paragraph {
+  margin-top: 1.5rem;
+}
+
+/* Listing page sidebar archive block */
+.news-archive {
+  .item-list ul {
+    list-style: initial;
+    padding-left: 40px;
+  }
+
+  .more-link {
+    font-size: .95rem;
+    text-align: right;
+
+    &:before {
+      color: $nav-red;
+      content: '\f0fe';
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      margin-right: .25rem;
+      vertical-align: top;
+    }
+
+    a {
+      color: $nav-red;
+    }
+  }
+}
+
+/* Library new post metadata */
+.news-metadata,
+.field--name-field-categories {
+  font-size: .9rem;
+
+  .field__item {
+    display: inline-block;
+    margin-right: .75rem;
+  }
+  &:before {
+    font-family: "Font Awesome 5 Free";
+    font-size: .8rem;
+    font-weight: 900;
+    margin-right: .25rem;
+    vertical-align: top;
+  }
+}
+.news-metadata:before {
+  content: '\f783';
+}
+.field--name-field-categories:before {
+  content: '\f02c';
 }
 /* END Library News */
+
 /* Breadcrumbs */
-.breadcrumb li:first-of-type a {
-  display: inline-block;
-  position: relative;
-  right: 9999px;
-  width: 16px;
-}
-.breadcrumb li:first-of-type a:after {
-  font-family: "Font Awesome 5 Free";
-  content: "\f015";
-  font-weight: 900;
-  height: 100%;
-  position: absolute;
-  right: -9999px;
-  top: 0;
+.breadcrumb {
+  li:first-of-type a {
+    display: inline-block;
+    position: relative;
+    right: 9999px;
+    width: 1rem;
+    &:after {
+      font-family: "Font Awesome 5 Free";
+      content: "\f015";
+      font-weight: 900;
+      height: 100%;
+      position: absolute;
+      right: -9999px;
+      top: 0;
+    }
+  }
 }
 /* END Breadcrumbs */
