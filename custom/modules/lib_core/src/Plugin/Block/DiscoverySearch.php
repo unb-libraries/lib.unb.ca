@@ -348,7 +348,12 @@ class DiscoverySearch extends BlockBase {
             </label>
           </div>
           <div class="form-row">
-            <div class="col-md-9 mb-1">
+            <div class="col-md-9 input-group mb-1">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-database"></i>
+                </span>
+              </div>
               <select class="chosen-select form-control" name="category">
                 <option value="">Select a subject&hellip;</option>';
                 foreach ($categories as $value => $label) {
@@ -378,7 +383,12 @@ class DiscoverySearch extends BlockBase {
             </label>
           </div>
           <div class="form-row">
-            <div class="col-md-10 mb-1">
+            <div class="col-md-10 input-group mb-1">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-database"></i>
+                </span>
+              </div>
               <select class="chosen-select form-control" id="databaseID" name="id">
                 <option value="">Choose a database title</option>';
                 foreach ($database_titles as $value => $label) {
