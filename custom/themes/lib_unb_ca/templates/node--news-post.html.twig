@@ -85,7 +85,7 @@
     {% if display_submitted %}
       <div {{ author_attributes.addClass('news-metadata') }}>
         {% block submitted %}
-            {% trans %}Posted on {{ node.getCreatedTime()|date("Y") }} by {{ author_name }} {% endtrans %}
+            {% trans %}Posted on {{ formatted_date }} by {{ author }} {% endtrans %}
         {% endblock %}
         {{ metadata }}
       </div>
