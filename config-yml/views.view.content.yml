@@ -2,6 +2,8 @@ uuid: a3f71984-d818-4928-a4b6-dd567afd6863
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.library_page
   module:
     - node
     - user
@@ -404,7 +406,8 @@ display:
           group_type: group
           admin_label: ''
           operator: in
-          value: {  }
+          value:
+            library_page: library_page
           group: 1
           exposed: true
           expose:
@@ -420,7 +423,7 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
-              administrator: '0'
+              library_news_author: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -558,6 +561,7 @@ display:
         groups:
           1: AND
       display_extenders: {  }
+      use_ajax: true
     display_plugin: default
     display_title: Master
     id: default
