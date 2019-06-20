@@ -12,7 +12,7 @@ _core:
 id: news_content
 label: 'News Content'
 module: node
-description: 'Find and manage content.'
+description: 'Find and manage News Post content.'
 tag: default
 base_table: node_field_data
 base_field: nid
@@ -496,14 +496,18 @@ display:
           group: 1
           entity_type: node
       sorts: {  }
-      title: Content
+      title: 'Library News Posts'
       empty:
         area_text_custom:
           id: area_text_custom
           table: views
           field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
           empty: true
-          content: 'No content available.'
+          tokenize: false
+          content: 'No news post content available.'
           plugin_id: text_custom
       arguments: {  }
       relationships:
@@ -520,6 +524,7 @@ display:
         groups:
           1: AND
       display_extenders: {  }
+      use_ajax: true
     display_plugin: default
     display_title: Master
     id: default
@@ -535,16 +540,18 @@ display:
         - user.permissions
       max-age: 0
       tags: {  }
-  page_1:
+  page_overview:
     display_options:
-      path: admin/content/news/%
+      path: admin/content/news
       menu:
-        type: 'default tab'
-        title: Content
+        type: tab
+        title: News
         description: ''
-        menu_name: admin
+        expanded: false
+        parent: ''
         weight: -10
-        context: ''
+        context: '0'
+        menu_name: account
       tab_options:
         type: normal
         title: Content
