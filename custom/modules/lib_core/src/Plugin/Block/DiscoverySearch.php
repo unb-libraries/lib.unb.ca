@@ -221,7 +221,7 @@ class DiscoverySearch extends BlockBase {
           </div>
           <div class="form-row">
             <div class="col-md-6 mb-2">
-              <div class="input-group mb-2">
+              <div class="input-group">
                 <div class="input-group-prepend">
                     <div class="input-group-text"><i class="fas fa-search"></i></div>
                 </div>
@@ -251,7 +251,7 @@ class DiscoverySearch extends BlockBase {
           </div>
         </div>
       </form>
-      <div class="px-2">
+      <div class="p-2">
         <a href="/reserves/index.php?h=1">
           <i class="fas fa-user"></i>
           Login to My UNB Reserves
@@ -288,7 +288,7 @@ class DiscoverySearch extends BlockBase {
               <label class="sr-only" for="queryString_WCD">
                 Search for:
               </label>
-              <div class="input-group mb-2">
+              <div class="input-group">
                 <div class="input-group-prepend">
                     <div class="input-group-text"><i class="fas fa-search"></i></div>
                 </div>
@@ -314,7 +314,7 @@ class DiscoverySearch extends BlockBase {
           </div>
         </div>
       </form>
-      <div class="px-2">
+      <div class="p-2">
         <a href="//unb.on.worldcat.org/advancedsearch">
           Advanced Search
         </a>
@@ -408,7 +408,7 @@ class DiscoverySearch extends BlockBase {
           </div>
         </div>
       </form>
-      <div class="px-2">
+      <div class="p-2">
         <a href="/eresources/index.php?sub=indexes">
           <i class="fas fa-list-ul"></i>
           More Search Options
@@ -454,7 +454,7 @@ class DiscoverySearch extends BlockBase {
               Title
             </label>
             <div class="col-md-9 mb-2">
-              <div class="input-group mb-2">
+              <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
                     <i class="fas fa-search"></i>
@@ -469,7 +469,7 @@ class DiscoverySearch extends BlockBase {
           </div>
         </div>
       </form>
-      <div class="px-2 mb-2">
+      <div class="p-2">
           <a href="/eresources/index.php?sub=journals&amp;packages=Y">
             Journal Packages
           </a>
@@ -531,7 +531,7 @@ class DiscoverySearch extends BlockBase {
               Title
             </label>
             <div class="col-md-9 mb-2">
-              <div class="input-group mb-2">
+              <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
                     <i class="fas fa-search"></i>
@@ -546,7 +546,7 @@ class DiscoverySearch extends BlockBase {
           </div>
         </div>
         </form>
-        <div class="px-2 pb-2">
+        <div class="p-2">
           <a href="/eresources/refguide.php">
             <i class="fas fa-compass"></i>
             Reference Materials Guide
@@ -604,7 +604,7 @@ class DiscoverySearch extends BlockBase {
               Title
             </label>
             <div class="col-md-9 mb-2">
-              <div class="input-group mb-2">
+              <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
                     <i class="fas fa-search"></i>
@@ -619,7 +619,7 @@ class DiscoverySearch extends BlockBase {
           </div>
         </div>
       </form>
-      <div class="px-2">
+      <div class="p-2">
         <a href="/eresources/index.php?sub=ebooks">
           <i class="fas fa-th-list"></i>
           Browse e-Book Collections
@@ -667,13 +667,13 @@ class DiscoverySearch extends BlockBase {
             </div>
           </div>
          </div>
-         <div class="form-group mt-2">
+         <div class="form-group">
           <div class="form-row">
             <label for="title_video" class="sr-only">
               Title
             </label>
             <div class="col-md-9 mb-2">
-              <div class="input-group mb-2">
+              <div class="input-group">
                 <div class="input-group-prepend">
                     <div class="input-group-text">
                       <i class="fas fa-search"></i>
@@ -687,7 +687,7 @@ class DiscoverySearch extends BlockBase {
             </div>
           </div>
         </div>
-        <div class="px-2">
+        <div class="p-2">
           <a href="//legacy.lib.unb.ca/eresources/index.php?sub=video">
             <i class="fas fa-th-list"></i>
             Browse Video Collections
