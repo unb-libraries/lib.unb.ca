@@ -253,7 +253,7 @@ class DiscoverySearch extends BlockBase {
       </form>
       <div class="p-2">
         <a href="/reserves/index.php?h=1">
-          <i class="fas fa-user"></i>
+          <i class="fas fa-user-lock"></i>
           Login to My UNB Reserves
         </a>
       </div>';
@@ -269,7 +269,7 @@ class DiscoverySearch extends BlockBase {
       '<form accept-charset="UTF-8" action="/lib.unb.ca/core/inc-2015/UNB-WorldCat-Discovery-search.php" id="home_WCD" method="post" name="wcfw">
         <div class="form-group">
           <div class="form-row font-weight-bold mb-2 ml-1">
-            <div class="mr-3">
+            <div class="mb-1 mr-3">
               Search UNB WorldCat:
             </div>
             <div>
@@ -351,7 +351,7 @@ class DiscoverySearch extends BlockBase {
             <div class="col-md-9 input-group mb-1">
               <div class="input-group-prepend">
                 <span class="input-group-text">
-                  <i class="fas fa-list"></i>
+                  <i class="fas fa-list-ul"></i>
                 </span>
               </div>
               <select class="chosen-select form-control" name="category">
@@ -386,7 +386,7 @@ class DiscoverySearch extends BlockBase {
             <div class="col-md-10 input-group mb-1">
               <div class="input-group-prepend">
                 <span class="input-group-text">
-                  <i class="fas fa-list"></i>
+                  <i class="fas fa-list-ul"></i>
                 </span>
               </div>
               <select class="chosen-select form-control" id="databaseID" name="id">
@@ -410,7 +410,7 @@ class DiscoverySearch extends BlockBase {
       </form>
       <div class="p-2">
         <a href="/eresources/index.php?sub=indexes">
-          <i class="fas fa-list-ul"></i>
+          <i class="fas fa-search-plus"></i>
           More Search Options
         </a>
       </div>';
@@ -485,7 +485,7 @@ class DiscoverySearch extends BlockBase {
       </div>
       <div class="px-2">
         <a href="/eresources/index.php?sub=journals">
-          <i class="fas fa-list-ul"></i>
+          <i class="fas fa-search-plus"></i>
           More Search Options
         </a>
       </div>';
@@ -558,7 +558,7 @@ class DiscoverySearch extends BlockBase {
         </div>
         <div class="px-2">
           <a href="/eresources/index.php?sub=refmat">
-            <i class="fas fa-th-list" aria-hidden="true"></i>
+            <i class="fas fa-search-plus" aria-hidden="true"></i>
             More Search Options
           </a>
         </div>';
