@@ -343,7 +343,7 @@ class DiscoverySearch extends BlockBase {
       '<form id="category-select">
         <div class="form-group">
           <div class="form-row font-weight-bold">
-            <label class="ml-1" for="category">
+            <label class="ml-2" for="category">
               Browse databases by subject
             </label>
           </div>
@@ -351,7 +351,7 @@ class DiscoverySearch extends BlockBase {
             <div class="col-md-9 input-group mb-1">
               <div class="input-group-prepend">
                 <span class="input-group-text">
-                  <i class="fas fa-database"></i>
+                  <i class="fas fa-list"></i>
                 </span>
               </div>
               <select class="chosen-select form-control" name="category">
@@ -378,7 +378,7 @@ class DiscoverySearch extends BlockBase {
       <form action="/eresources/index.php" id="title_results" method="get">
         <div class="form-group">
           <div class="form-row font-weight-bold">
-            <label class="ml-1" for="databaseID">
+            <label class="ml-2" for="databaseID">
               <span class="text-red">OR</span>&nbsp;&nbsp;Browse for databases by title
             </label>
           </div>
@@ -386,7 +386,7 @@ class DiscoverySearch extends BlockBase {
             <div class="col-md-10 input-group mb-1">
               <div class="input-group-prepend">
                 <span class="input-group-text">
-                  <i class="fas fa-database"></i>
+                  <i class="fas fa-list"></i>
                 </span>
               </div>
               <select class="chosen-select form-control" id="databaseID" name="id">

@@ -11,6 +11,7 @@
 .chosen-container-single .chosen-drop {
     border-color: #ced4da;
     left: 0;
+    margin-top: 0;
 }
 .chosen-container-single .chosen-search input[type=text] {
     border-radius: .25rem;
