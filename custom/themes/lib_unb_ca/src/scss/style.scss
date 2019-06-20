@@ -202,9 +202,9 @@ dl.two-cols {
 /* Library news listing page */
 .library-news {
   .news-title {
-    border-bottom: 1px solid $gray-500;
+    border-bottom: 1px solid $gray-light;
     margin-bottom: .5rem;
-    padding-bottom: .5rem;
+    padding-bottom:.25rem;
   }
   span.page-link {
     color: $gray-dark;
@@ -247,7 +247,7 @@ dl.two-cols {
 }
 
 /* Library new post metadata */
-.news-metadata,
+.attribution,
 .field--name-field-categories {
   color: $gray-600;
   font-size: .9rem;
@@ -266,10 +266,12 @@ dl.two-cols {
     width: .8rem
   }
 }
+
 .news-metadata {
   padding-right: 1.5rem;
   position: relative;
-  &:before {
+
+  .attribution:before {
     content: '\f783';
   }
 
@@ -279,10 +281,8 @@ dl.two-cols {
     top: 0;
   }
   .badge-stickied {
-    background: $nav-red;
-    border-radius: 10rem;
-    color: $white;
-    padding: .3rem .55rem;
+    color: $nav-red;
+    font-size: 95%;
     vertical-align: text-top;
   }
 }

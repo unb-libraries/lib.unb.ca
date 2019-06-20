@@ -84,10 +84,12 @@
     {% if display_submitted %}
       <div {{ author_attributes.addClass('news-metadata') }}>
         {% block submitted %}
-            {% trans %}Posted on {{ formatted_date }} by {{ author }}{% endtrans %}
-            {% if stickied %}
-                <span class="badge badge-stickied"><i class="fas fa-thumbtack"></i></span>
-            {% endif %}
+            <div class="attribution">
+                {% trans %}Posted on {{ formatted_date }} by {{ author }}{% endtrans %}
+                {% if stickied %}
+                    <span class="badge badge-stickied"><i class="fas fa-thumbtack"></i></span>
+                {% endif %}
+            </div>
         {% endblock %}
         {{ metadata }}
       </div>
