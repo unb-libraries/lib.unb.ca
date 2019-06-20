@@ -79,6 +79,8 @@ function lib_core_preprocess_node__news_post(&$variables) {
   $author = $fname . ' ' . $lname;
   $variables['author'] = $lname ? $author : 'Admin';
 
+  $stickied = $node->isSticky();
+  $variables['stickied'] = $stickied;
 }
 
 /**

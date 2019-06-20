@@ -26,6 +26,7 @@ permissions:
   - 'override news_post authored on option'
   - 'override news_post promote to front page option'
   - 'override news_post published option'
+  - 'override news_post sticky option'
   - 'revert news_post revisions'
   - 'view news_post revisions'
   - 'view own unpublished content'

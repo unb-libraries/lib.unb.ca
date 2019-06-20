@@ -266,8 +266,25 @@ dl.two-cols {
     width: .8rem
   }
 }
-.news-metadata:before {
-  content: '\f783';
+.news-metadata {
+  padding-right: 1.5rem;
+  position: relative;
+  &:before {
+    content: '\f783';
+  }
+
+  .badge {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .badge-stickied {
+    background: $nav-red;
+    border-radius: 10rem;
+    color: $white;
+    padding: .3rem .55rem;
+    vertical-align: text-top;
+  }
 }
 .field--name-field-categories:before {
   content: '\f02c';
