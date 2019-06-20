@@ -1,0 +1,7 @@
+lib_core.add_news:
+  route_name: 'node.add'
+  route_parameters:
+    node_type: 'news_post'
+  title: 'Add news post'
+  appears_on:
+    - view.news_content.page_overview

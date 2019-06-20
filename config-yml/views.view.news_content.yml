@@ -554,7 +554,7 @@ display:
       display_extenders: {  }
     display_plugin: page
     display_title: Page
-    id: page_1
+    id: page_overview
     position: 1
     cache_metadata:
       contexts:
