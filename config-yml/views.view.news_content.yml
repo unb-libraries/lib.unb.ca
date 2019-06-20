@@ -23,7 +23,7 @@ display:
       access:
         type: perm
         options:
-          perm: 'access content overview'
+          perm: 'access news overview'
       cache:
         type: tag
       query:
