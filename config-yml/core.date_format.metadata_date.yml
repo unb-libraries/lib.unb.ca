@@ -1,0 +1,8 @@
+uuid: ff353744-80e9-49f2-b650-f9670c5b24cb
+langcode: en
+status: true
+dependencies: {  }
+id: metadata_date
+label: 'Metadata Date'
+locked: false
+pattern: 'l, F jS, Y \a\t H:i A'
