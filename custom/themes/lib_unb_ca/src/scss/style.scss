@@ -250,7 +250,7 @@ dl.two-cols {
 .attribution,
 .field--name-field-categories {
   color: $gray-600;
-  display: flex;
+  @include css3-value-prefix(display, box);
   font-size: .9rem;
   line-height: 1.15rem;
 
@@ -259,7 +259,7 @@ dl.two-cols {
     margin-right: .65rem;
   }
   &:before {
-    display: flex;
+    display: inherit;
     font-family: "Font Awesome 5 Free";
     font-size: .8rem;
     font-weight: 900;
