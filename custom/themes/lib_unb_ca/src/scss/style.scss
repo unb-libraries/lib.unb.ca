@@ -250,18 +250,20 @@ dl.two-cols {
 .attribution,
 .field--name-field-categories {
   color: $gray-600;
+  display: flex;
   font-size: .9rem;
+  line-height: 1.15rem;
 
   .field__item {
     display: inline-block;
-    margin-right: .5rem;
+    margin-right: .65rem;
   }
   &:before {
-    display: inline-block;
+    display: flex;
     font-family: "Font Awesome 5 Free";
     font-size: .8rem;
     font-weight: 900;
-    margin-right: .25rem;
+    margin-right: .45rem;
     vertical-align: top;
     width: .8rem
   }
