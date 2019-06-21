@@ -273,8 +273,12 @@ dl.two-cols {
   padding-right: 1.5rem;
   position: relative;
 
-  .attribution:before {
-    content: '\f783';
+  .attribution {
+    margin-right: 1rem;
+
+    &:before {
+      content: '\f783';
+    }
   }
 
   .badge {
