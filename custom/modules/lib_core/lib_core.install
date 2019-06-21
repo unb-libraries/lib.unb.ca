@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Contains install and update functions for lib_core.
+ */
+
+use Drupal\lib_core\TaxonomyHelper;
+
+/**
+ * Implements hook_install().
+ */
+function lib_core_install() {
+  module_set_weight('lib_core', 2);
+  TaxonomyHelper::addDefaultCategoriesTerms();
+}
