@@ -1,0 +1,45 @@
+langcode: en
+status: true
+dependencies: {  }
+mode: default
+terms:
+  -
+    name: Announcement
+  -
+    name: Article & Research Databases
+  -
+    name: Books that Inspire
+  -
+    name: Borrowable Things
+  -
+    name: Collections
+  -
+    name: e-Books
+  -
+    name: e-Resources
+  -
+    name: Events
+  -
+    name: Facilities
+  -
+    name: General
+  -
+    name: Graduate Students
+  -
+    name: Greetings
+  -
+    name: Hours and Closures
+  -
+    name: Instruction
+  -
+    name: Journals & Newspapers
+  -
+    name: Physical Spaces
+  -
+    name: Pre-July 2008 News
+  -
+    name: Reference Materials
+  -
+    name: Services
+  -
+    name: Survey
