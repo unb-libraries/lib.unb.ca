@@ -6,6 +6,7 @@ dependencies:
     - field.field.user.user.field_display_on_staff_directory
     - field.field.user.user.field_first_name
     - field.field.user.user.field_last_name
+    - field.field.user.user.field_library_department_head
     - field.field.user.user.field_on_leave
     - field.field.user.user.field_phone_number
     - field.field.user.user.field_position_title
@@ -50,6 +51,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_library_department_head:
+    weight: 31
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_on_leave:
     weight: 10

@@ -1,14 +1,13 @@
 uuid: 8c72de6b-717f-44a0-905e-90739e0a991c
 langcode: en
 status: true
-name: Categories
-vid: categories
-description: 'Use to group <em>News posts</em> about similar topics into categories.'
-weight: 0
-
 dependencies:
   module:
     - taxonomy
   enforced:
     module:
       - lib_core
+name: Categories
+vid: categories
+description: 'Use to group <em>News posts</em> about similar topics into categories.'
+weight: 0

@@ -1,0 +1,20 @@
+uuid: eb6b43d9-2e6c-46d6-b083-08506d4fe3f5
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+    - user
+id: user.field_library_department_head
+field_name: field_library_department_head
+entity_type: user
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

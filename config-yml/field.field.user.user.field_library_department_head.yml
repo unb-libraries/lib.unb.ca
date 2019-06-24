@@ -1,0 +1,30 @@
+uuid: 6c624723-deb2-4a9f-8e2e-c2c371d328f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_library_department_head
+    - taxonomy.vocabulary.library_departments
+  module:
+    - user
+id: user.user.field_library_department_head
+field_name: field_library_department_head
+entity_type: user
+bundle: user
+label: 'Library Department (Department Head)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      library_departments: library_departments
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: categories
+field_type: entity_reference
