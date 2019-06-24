@@ -5,8 +5,8 @@ admin-overrides:
       css/admin-overrides.css: {}
   js:
     js/admin-overrides.js: {}
-    dependencies:
-      - core/jquery
+  dependencies:
+    - core/jquery
 
 bootstrap-cdn:
   version: VERSION
@@ -21,6 +21,7 @@ ckeditor_stylesheets:
       css/color-button.css: {}
 
 lib-chosen:
+  version: VERSION
   css:
     theme:
       //cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css: { type: external, minified: true }
@@ -30,23 +31,24 @@ lib-chosen:
     js/lib-chosen.js: {}
 
 quicklinks:
-  version: VERISON
+  version: VERSION
   css:
     theme:
       css/quicklinks.css: {}
 
 table-row-check:
+  version: VERSION
   css:
     theme:
       css/table-row-check.css: {}
   js:
     js/table-row-check.js: {}
-    dependencies:
-      - core/jquery
+  dependencies:
+    - core/jquery
 
 unblibtabs:
-  version: VERISON
+  version: VERSION
   js:
     js/unblibtabs.js: {}
-    dependencies:
-      - core/jquery
+  dependencies:
+    - core/jquery
