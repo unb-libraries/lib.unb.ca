@@ -1,0 +1,77 @@
+uuid: a0948ffb-29d0-4ed7-b04b-64fda9cb274d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.library_departments.field_anchor
+    - field.field.taxonomy_term.library_departments.field_department_email
+    - field.field.taxonomy_term.library_departments.field_department_fax
+    - field.field.taxonomy_term.library_departments.field_department_location
+    - field.field.taxonomy_term.library_departments.field_department_phone
+    - field.field.taxonomy_term.library_departments.field_department_website
+    - taxonomy.vocabulary.library_departments
+  module:
+    - link
+    - telephone
+id: taxonomy_term.library_departments.default
+targetEntityType: taxonomy_term
+bundle: library_departments
+mode: default
+content:
+  field_anchor:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_department_email:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_department_fax:
+    weight: 5
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_department_location:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_department_phone:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_department_website:
+    weight: 7
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  path: true

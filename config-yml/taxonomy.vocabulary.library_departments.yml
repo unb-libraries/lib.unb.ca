@@ -1,0 +1,8 @@
+uuid: a22056a3-2c25-4dd7-bad5-55cd7204da2b
+langcode: en
+status: true
+dependencies: {  }
+name: 'Library Departments'
+vid: library_departments
+description: 'Use to group Library Staff by <em>Department</em>.'
+weight: 0

@@ -1,0 +1,19 @@
+uuid: 544d1010-d663-4482-a7e0-0a3c22769fdf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_department_email
+    - taxonomy.vocabulary.library_departments
+id: taxonomy_term.library_departments.field_department_email
+field_name: field_department_email
+entity_type: taxonomy_term
+bundle: library_departments
+label: Email
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

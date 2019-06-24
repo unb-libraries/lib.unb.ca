@@ -1,0 +1,21 @@
+uuid: 152a6e1c-0589-42fb-8e2b-c11d3ca5ab93
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_department_fax
+    - taxonomy.vocabulary.library_departments
+  module:
+    - telephone
+id: taxonomy_term.library_departments.field_department_fax
+field_name: field_department_fax
+entity_type: taxonomy_term
+bundle: library_departments
+label: Fax
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone
