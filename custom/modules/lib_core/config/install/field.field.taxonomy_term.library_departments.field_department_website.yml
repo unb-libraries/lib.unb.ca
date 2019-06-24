@@ -1,0 +1,23 @@
+uuid: 69fa6a4e-8405-435a-b3b8-d872d356f5dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_department_website
+    - taxonomy.vocabulary.library_departments
+  module:
+    - link
+id: taxonomy_term.library_departments.field_department_website
+field_name: field_department_website
+entity_type: taxonomy_term
+bundle: library_departments
+label: Website
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

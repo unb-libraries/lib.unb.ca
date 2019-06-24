@@ -4,5 +4,7 @@ package: UNB Libraries
 type: module
 core: 8.x
 dependencies:
+  - link
   - taxonomy
+  - telephone
   - unb_libraries_askus

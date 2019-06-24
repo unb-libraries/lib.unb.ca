@@ -1,0 +1,19 @@
+uuid: 7d9c6542-c3de-4862-8a05-5dbe53f5de25
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_anchor
+    - taxonomy.vocabulary.library_departments
+id: taxonomy_term.library_departments.field_anchor
+field_name: field_anchor
+entity_type: taxonomy_term
+bundle: library_departments
+label: Anchor
+description: 'Enter the target name for the term''s bookmark anchor <b>without</b> the <code>#</code> character.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

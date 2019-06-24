@@ -1,0 +1,165 @@
+langcode: en
+status: true
+dependencies: {  }
+mode: default
+terms:
+  -
+    name: Access Services (Circulation & Document Delivery)
+    anchor: circ
+    location: First Floor, Harriet Irving Library
+    phone: (506) 453-4756
+    fax: (506) 453-4596
+    email: circhi@unb.ca
+    website:
+  -
+    name: Acquisitions
+    anchor: acquis
+    location: Lady Beaverbrook Gym
+    phone: (506) 453-4753
+    fax:
+    email:
+    website:
+  -
+    name: Administration
+    anchor: admin
+    location: First Floor, Harriet Irving Library
+    phone: (506) 453-4740
+    fax:
+    email:  library@unb.ca
+    website:
+  -
+    name: Archives
+    anchor: archives
+    location: Fifth Floor, Harriet Irving Library
+    phone: (506) 453-4748
+    fax:
+    email: archives@unb.ca
+    website: http://www.lib.unb.ca/archives
+  -
+    name: Cataloguing
+    anchor: catalogue
+    location: Lady Beaverbrook Gym
+    phone: (506) 453-4750
+    fax:
+    email:
+    website:
+  -
+    name: Centre for Digital Scholarship
+    anchor: cds
+    location: Fifth Floor, Harriet Irving Library
+    phone: (506) 447-3453
+    fax:
+    email: digitalscholar@unb.ca
+    website: https://digitalscholarship.lib.unb.ca
+  -
+    name: Children's Literature
+    anchor: children
+    location:
+    phone: (506) 453-4756
+    fax:
+    email:
+    website: http://www.lib.unb.ca/collections/clc
+  -
+    name: Circulation (see Access Services)
+    anchor: circ
+    location:
+    phone: (506) 453-4756
+    fax:
+    email:
+    website: https://lib.unb.ca/about/staff.php#circ
+  -
+    name: Collections Development
+    anchor: colldev
+    location: Harriet Irving Library
+    phone: (506) 453-4760
+    fax:
+    email:
+    website: http://www.lib.unb.ca/collections
+  -
+    name: Document Delivery (see Access Services)
+    anchor: docdel
+    location:
+    phone: (506) 453-4743
+    fax: (506) 453-4596
+    email: docdel@unb.ca
+    website: https://lib.unb.ca/about/staff.php#circ
+  -
+    name:  Engineering & Computer Science Library
+    anchor: englib
+    location: Head Hall
+    phone: (506) 453-4747
+    fax:
+    email: englib@unb.ca
+    website: http://www.lib.unb.ca/about/engineering.php
+  -
+    name: Government Documents, Data and Maps
+    anchor: gddam
+    location: First Floor, Harriet Irving Library
+    phone: (506) 453-4752
+    fax:
+    email: govdocs@unb.ca
+    website: http://www.lib.unb.ca/gddm/govdocs
+  -
+    name: Hans W. Klohn Commons
+    anchor: hwk
+    location: Hans W. Klohn Commons, Saint John Campus
+    phone: (506) 648-5710
+    fax: (506) 648-5701
+    email: hwkcommons@unb.ca
+    website: http://www.lib.unb.ca/about/saintjohn.php
+  -
+    name: Instruction Facilities
+    anchor: learning
+    location:
+    phone:
+    fax:
+    email:
+    website:
+  -
+    name: Law Library
+    anchor: lawlib
+    location:
+    phone:
+    fax:
+    email:
+    website:
+  -
+    name: Mail Room
+    anchor: mailroom
+    location:
+    phone:
+    fax:
+    email:
+    website:
+  -
+    name: Microforms
+    anchor: microforms
+    location:
+    phone:
+    fax:
+    email:
+    website:
+  -
+    name:  Reference
+    anchor: reference
+    location:
+    phone:
+    fax:
+    email:
+    website:
+  -
+    name: Science & Forestry Library
+    anchor: scilib
+    location:
+    phone:
+    fax:
+    email:
+    website:
+  -
+    name: Systems
+    anchor: systems
+    location:
+    phone:
+    fax:
+    email:
+    website:

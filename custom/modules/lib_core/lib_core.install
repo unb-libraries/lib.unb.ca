@@ -13,4 +13,5 @@ use Drupal\lib_core\TaxonomyHelper;
 function lib_core_install() {
   module_set_weight('lib_core', 2);
   TaxonomyHelper::addDefaultCategoriesTerms();
+  TaxonomyHelper::addDefaultDepartmentsTerms();
 }

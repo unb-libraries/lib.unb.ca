@@ -1,0 +1,21 @@
+uuid: f175d8d9-791c-47b3-ab27-3dc609d5c107
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_department_phone
+    - taxonomy.vocabulary.library_departments
+  module:
+    - telephone
+id: taxonomy_term.library_departments.field_department_phone
+field_name: field_department_phone
+entity_type: taxonomy_term
+bundle: library_departments
+label: Phone
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

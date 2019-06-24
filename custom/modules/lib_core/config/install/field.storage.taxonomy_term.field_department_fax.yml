@@ -1,0 +1,19 @@
+uuid: 30fe2463-9c5e-4297-8e83-dd7933352e53
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+    - telephone
+id: taxonomy_term.field_department_fax
+field_name: field_department_fax
+entity_type: taxonomy_term
+type: telephone
+settings: {  }
+module: telephone
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

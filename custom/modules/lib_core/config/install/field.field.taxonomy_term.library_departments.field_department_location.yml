@@ -1,0 +1,19 @@
+uuid: cfcf7572-6535-4741-890a-c227f4dd2748
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_department_location
+    - taxonomy.vocabulary.library_departments
+id: taxonomy_term.library_departments.field_department_location
+field_name: field_department_location
+entity_type: taxonomy_term
+bundle: library_departments
+label: Location
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
