@@ -62,7 +62,7 @@ display:
         options:
           grouping: {  }
           row_class: ''
-          default_row_class: false
+          default_row_class: true
           override: true
           sticky: false
           caption: ''
@@ -128,7 +128,7 @@ display:
               empty_column: false
               responsive: ''
             mail:
-              sortable: false
+              sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
@@ -748,6 +748,7 @@ display:
       arguments: {  }
       display_extenders: {  }
       css_class: ''
+      use_ajax: true
     cache_metadata:
       max-age: -1
       contexts:
