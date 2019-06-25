@@ -85,7 +85,7 @@ bootstrap_barrio_google_fonts: ''
 bootstrap_barrio_icons: ''
 bootstrap_barrio_system_messages: ''
 bootstrap_barrio_table_style: ''
-bootstrap_barrio_table_hover: 0
+bootstrap_barrio_table_hover: 1
 bootstrap_barrio_table_head: ''
 banner_images: {  }
 show_top_header_login: 0

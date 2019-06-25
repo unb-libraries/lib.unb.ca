@@ -16,6 +16,7 @@ function lib_unb_ca_form_system_theme_settings_alter(&$form, FormStateInterface 
   $form['scroll_spy']['#access'] = FALSE;
   $form['fonts']['#access'] = FALSE;
   $form['layout']['sidebar_first']['#access'] = FALSE;
+
 }
 
 /**
@@ -24,4 +25,15 @@ function lib_unb_ca_form_system_theme_settings_alter(&$form, FormStateInterface 
 function lib_unb_ca_preprocess_page(&$variables) {
   // Set flag for Library > Home > mobile QuickLinks menu button.
   $variables['is_library'] = TRUE;
+
+}
+
+/**
+ * Implements template_preprocess_views_view_table()
+ */
+function lib_unb_ca_preprocess_views_view_table(&$variables) {
+  $variables['table_class'] = theme_get_setting('bootstrap_barrio_table_style');
+  $variables['hover'] = theme_get_setting('bootstrap_barrio_table_hover');
+  $variables['thead_class'] = theme_get_setting('bootstrap_barrio_table_head');
+
 }
