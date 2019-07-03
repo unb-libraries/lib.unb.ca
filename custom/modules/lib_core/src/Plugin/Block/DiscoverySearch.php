@@ -506,7 +506,7 @@ class DiscoverySearch extends BlockBase {
         <div class="form-group">
           <div class="form-row font-weight-bold ml-1">
             <div class="custom-control custom-radio custom-control-inline">
-              <input checked="checked" class="custom-control-input" name="searchtype" type="radio" value="every_word">
+              <input checked="checked" class="custom-control-input" id="searchtype_every_refmat" name="searchtype" type="radio" value="every_word">
               <label class="custom-control-label" for="searchtype_every_refmat">
                 Word(s) in title
               </label>
