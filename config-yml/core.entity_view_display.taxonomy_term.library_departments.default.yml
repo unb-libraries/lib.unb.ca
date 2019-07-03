@@ -11,67 +11,44 @@ dependencies:
     - field.field.taxonomy_term.library_departments.field_department_website
     - taxonomy.vocabulary.library_departments
   module:
-    - link
-    - text
+    - telephone
 id: taxonomy_term.library_departments.default
 targetEntityType: taxonomy_term
 bundle: library_departments
 mode: default
 content:
-  description:
-    label: hidden
-    type: text_default
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_anchor:
-    weight: 1
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_department_email:
-    weight: 5
-    label: above
+    weight: 3
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    type: email_mailto
     region: content
   field_department_fax:
-    weight: 4
-    label: above
-    settings: {  }
+    weight: 2
+    label: inline
+    settings:
+      title: ''
     third_party_settings: {  }
-    type: basic_string
+    type: telephone_link
     region: content
   field_department_location:
-    weight: 2
-    label: above
+    weight: 0
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
   field_department_phone:
-    weight: 3
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: basic_string
-    region: content
-  field_department_website:
-    weight: 6
-    label: above
+    weight: 1
+    label: inline
     settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
+      title: ''
     third_party_settings: {  }
-    type: link
+    type: telephone_link
     region: content
-hidden: {  }
+hidden:
+  description: true
+  field_anchor: true
+  field_department_website: true

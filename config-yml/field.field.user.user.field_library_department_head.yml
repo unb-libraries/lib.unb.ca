@@ -12,7 +12,7 @@ field_name: field_library_department_head
 entity_type: user
 bundle: user
 label: 'Library Department (Department Head)'
-description: ''
+description: 'Select the department(s) this user is the <b>head</b> of.'
 required: false
 translatable: false
 default_value: {  }
