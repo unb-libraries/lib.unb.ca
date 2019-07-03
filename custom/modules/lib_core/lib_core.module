@@ -64,8 +64,8 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 function lib_core_preprocess_node__news_post(&$variables) {
   $node = $variables['node'];
 
-  $node_changed = $node->getChangedTime();
-  $formatted_date = \Drupal::service('date.formatter')->format($node_changed, 'metadata_date');
+  $node_authoredon = $node->getCreatedTime();
+  $formatted_date = \Drupal::service('date.formatter')->format($node_authoredon, 'metadata_date');
   $variables['formatted_date'] = $formatted_date;
 
   $fname = $node
