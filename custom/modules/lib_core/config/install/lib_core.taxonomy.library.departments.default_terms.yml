@@ -114,15 +114,15 @@ terms:
     phone:
     fax:
     email:
-    website:
+    website: http://www.lib.unb.ca/about/facilities
   -
     name: Law Library
     anchor: lawlib
-    location:
-    phone:
-    fax:
-    email:
-    website:
+    location: Ludlow Hall
+    phone: (506) 453-4734
+    fax: (506) 451-6948
+    email: lawlib@unb.ca
+    website: http://law.unb.ca/library
   -
     name: Mail Room
     anchor: mailroom
@@ -134,32 +134,32 @@ terms:
   -
     name: Microforms
     anchor: microforms
-    location:
-    phone:
+    location: Basement, Harriet Irving Library
+    phone: (506) 453-4834
     fax:
-    email:
-    website:
+    email: mic@unb.ca
+    website: http://www.lib.unb.ca/microforms
   -
     name:  Reference
     anchor: reference
-    location:
-    phone:
+    location: First Floor, Harriet Irving Library
+    phone: (506) 453-3546
     fax:
-    email:
-    website:
+    email: hilref@unb.ca
+    website: http://www.lib.unb.ca/research/hilreference.html
   -
     name: Science & Forestry Library
     anchor: scilib
-    location:
-    phone:
+    location: IUC Complex
+    phone: (506) 453-4601
     fax:
-    email:
-    website:
+    email: scilib@unb.ca
+    website: //dev-lib.unb.ca/about/science-forestry-library
   -
     name: Systems
     anchor: systems
-    location:
-    phone:
+    location: Harriet Irving Library
+    phone: (506) 447-3159
     fax:
     email:
-    website:
+    website: http://www.lib.unb.ca/help/technical.php
