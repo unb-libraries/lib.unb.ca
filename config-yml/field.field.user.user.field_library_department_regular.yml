@@ -1,0 +1,30 @@
+uuid: 57500e45-2d83-4a0f-a561-d9e82c2e7a4c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_library_department_regular
+    - taxonomy.vocabulary.library_departments
+  module:
+    - user
+id: user.user.field_library_department_regular
+field_name: field_library_department_regular
+entity_type: user
+bundle: user
+label: 'Library Department (Regular Member)'
+description: 'Select the departments this user is a regular member of.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      library_departments: library_departments
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
