@@ -251,7 +251,7 @@ display:
         options:
           grouping: {  }
           row_class: ''
-          default_row_class: true
+          default_row_class: false
           type: ul
           wrapper_class: ''
           class: item-list
@@ -440,7 +440,7 @@ display:
         options:
           grouping: {  }
           row_class: ''
-          default_row_class: true
+          default_row_class: false
           type: ul
           wrapper_class: ''
           class: item-list
@@ -900,7 +900,7 @@ display:
           row_class: ''
           default_row_class: false
           type: ul
-          wrapper_class: item-list
+          wrapper_class: ''
           class: ''
       row:
         type: fields
@@ -1659,7 +1659,7 @@ display:
       style:
         type: default
         options:
-          row_class: 'container mb-5 news-teaser'
+          row_class: ''
           default_row_class: false
           uses_fields: false
       defaults:
@@ -1842,7 +1842,7 @@ display:
     display_options:
       display_extenders: {  }
       display_description: ''
-      title: 'Monthly Archives'
+      title: 'News Archives'
       defaults:
         title: false
         arguments: false
@@ -1851,6 +1851,8 @@ display:
         pager: false
         fields: false
         sorts: false
+        css_class: false
+        empty: false
       arguments:
         created_year_month:
           id: created_year_month
@@ -1859,13 +1861,13 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          default_action: ignore
+          default_action: summary
           exception:
             value: all
             title_enable: true
             title: All
           title_enable: true
-          title: 'Monthly Archives: {{ arguments.created_year_month }}'
+          title: 'News Archives for {{ arguments.created_year_month }}'
           default_argument_type: fixed
           default_argument_options:
             argument: ''
@@ -1876,7 +1878,7 @@ display:
             items_per_page: 25
             override: false
           summary:
-            sort_order: asc
+            sort_order: desc
             number_of_records: 0
             format: default_summary
           specify_validation: true
@@ -1888,18 +1890,11 @@ display:
           plugin_id: date_year_month
       path: news/archive
       style:
-        type: html_list
+        type: default
         options:
-          grouping:
-            -
-              field: created_1
-              rendered: true
-              rendered_strip: false
-          row_class: mb-2
+          row_class: ''
           default_row_class: false
-          type: ul
-          wrapper_class: 'item-list mb-4'
-          class: ''
+          uses_fields: false
       row:
         type: 'entity:node'
         options:
@@ -1908,7 +1903,7 @@ display:
       pager:
         type: mini
         options:
-          items_per_page: 10
+          items_per_page: 24
           offset: 0
           id: 0
           total_pages: null
@@ -1928,39 +1923,54 @@ display:
           id: title
           table: node_field_data
           field: title
-          entity_type: node
-          entity_field: title
-          label: ''
-          alter:
-            alter_text: false
-            make_link: false
-            absolute: false
-            trim: false
-            word_boundary: false
-            ellipsis: false
-            strip_tags: false
-            html: false
-          hide_empty: false
-          empty_zero: false
-          settings:
-            link_to_entity: true
-          plugin_id: field
           relationship: none
           group_type: group
           admin_label: ''
+          label: ''
           exclude: false
-          element_type: ''
-          element_class: ''
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: h2
+          element_class: news-title
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
+          hide_empty: false
+          empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
           type: string
+          settings:
+            link_to_entity: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -1971,6 +1981,9 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+          entity_type: node
+          entity_field: title
+          plugin_id: field
         created_1:
           id: created_1
           table: node_field_data
@@ -2207,7 +2220,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: div
-          element_class: 'text-muted font-italic'
+          element_class: 'attribution mb-2 mb-md-1'
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
@@ -2219,22 +2232,23 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
-      sorts:
-        created:
-          id: created
-          table: node_field_data
-          field: created
+      sorts: {  }
+      css_class: library-news
+      enabled: true
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
           relationship: none
           group_type: group
           admin_label: ''
-          order: DESC
-          exposed: false
-          expose:
-            label: ''
-          granularity: second
-          entity_type: node
-          entity_field: created
-          plugin_id: date
+          empty: true
+          tokenize: false
+          content:
+            value: "<div class=\"card\">\r\n  <div class=\"card-body\">\r\n    <span class=\"fas fa-exclamation-circle\"></span>\r\n    Sorry, no monthly news archives were found.\r\n  </div>\r\n</div>"
+            format: library_page_html
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:
