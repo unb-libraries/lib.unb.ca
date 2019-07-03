@@ -1,4 +1,4 @@
-uuid: 7cbd0274-1da5-475d-abbb-e9cd128683d7
+uuid: b8fba78c-86a1-4558-8259-05bc48448aa9
 langcode: en
 status: true
 dependencies:
@@ -10,6 +10,7 @@ dependencies:
     - field.storage.user.field_position_title
     - field.storage.user.field_room_number
   module:
+    - contact
     - telephone
     - user
 id: alphabetical_staff_directory
@@ -53,9 +54,8 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
-        type: some
+        type: none
         options:
-          items_per_page: 10
           offset: 0
       style:
         type: table
@@ -76,7 +76,8 @@ display:
             field_phone_number: field_phone_number
             field_room_number: field_room_number
             uid: uid
-            mail: mail
+            name: name
+            contact: contact
           info:
             field_on_leave:
               sortable: false
@@ -127,8 +128,15 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-            mail:
-              sortable: true
+            name:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            contact:
+              sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
@@ -590,20 +598,20 @@ display:
           entity_type: user
           entity_field: uid
           plugin_id: field
-        mail:
-          id: mail
+        name:
+          id: name
           table: users_field_data
-          field: mail
+          field: name
           relationship: none
           group_type: group
           admin_label: ''
-          label: Email
-          exclude: false
+          label: ''
+          exclude: true
           alter:
-            alter_text: true
-            text: "{{ mail }}\r\n<i class=\"fas fa-envelope\"></i>"
-            make_link: true
-            path: '/user/{{ uid }}/contact'
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
             absolute: false
             external: false
             replace_spaces: false
@@ -630,7 +638,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -639,8 +647,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: basic_string
-          settings: {  }
+          type: user_name
+          settings:
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -652,8 +661,59 @@ display:
           separator: ', '
           field_api_classes: false
           entity_type: user
-          entity_field: mail
+          entity_field: name
           plugin_id: field
+        contact:
+          id: contact
+          table: users
+          field: contact
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Contact
+          exclude: false
+          alter:
+            alter_text: true
+            text: "{{ name }}\r\n<i class=\"fas fa-envelope\"></i>"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          text: contact
+          entity_type: user
+          plugin_id: contact_link
       filters:
         status:
           value: '1'
@@ -743,7 +803,20 @@ display:
       title: 'Alphabetical Staff Directory'
       header: {  }
       footer: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<div class=\"card\">\r\n  <div class=\"card-body callout callout-warning\">\r\n    <span class=\"fas fa-exclamation-circle\"></span>\r\n    Sorry, no staff members were found.\r\n  </div>\r\n</div>"
+            format: library_page_html
+          plugin_id: text
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
@@ -766,11 +839,12 @@ display:
   page_1:
     display_plugin: page
     id: page_1
-    display_title: Page
+    display_title: Alphabetical
     position: 1
     display_options:
       display_extenders: {  }
       path: about/alphabetical-staff-directory
+      display_description: ''
     cache_metadata:
       max-age: -1
       contexts:
