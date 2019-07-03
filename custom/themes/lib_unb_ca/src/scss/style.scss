@@ -4,6 +4,18 @@
 /* Import Sass files */
 @import 'import';
 
+/* OVERRIDES */
+/* Nav affix anchor offset */
+:target:before {
+  content: "\00a0";
+  display: block;
+  height: 156px;
+  margin-top: -156px;
+}
+caption {
+  caption-side: top;
+  color: $black;
+}
 h1 {
   font-size: 2rem;
 }
@@ -12,33 +24,13 @@ h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
+header h2 {
+  border-bottom: 1px solid $gray-light;
+  margin-bottom: .5rem;
+  padding-bottom:.25rem;
+}
 h3 {
   font-size: 1.1rem;
-}
-
-/* UTILITY CLASSES */
-dl.two-cols {
-  display: grid;
-  grid-column-gap: 1rem;
-  grid-row-gap: 1.5rem;
-  grid-template-columns: 1fr 2fr;
-}
-.text-red {
-  color: $red;
-}
-/* END UTILITY */
-
-/* OVERRIDES */
-caption {
-  caption-side: top;
-  color: $black;
-}
-/* Nav affix anchor offset */
-:target:before {
-  content: "\00a0";
-  display: block;
-  height: 156px;
-  margin-top: -156px;
 }
 /* Drupal alert messages */
 .alert-dismissible .close {
@@ -58,8 +50,25 @@ caption {
   max-width: 100%;
   height: auto
 }
-
+/* Separate views list items */
+.view-content article {
+  margin-bottom: 3rem
+}
 /* END OVERRIDES */
+
+/* UTILITY CLASSES */
+dl.two-cols {
+  display: grid;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1.5rem;
+  grid-template-columns: 1fr 2fr;
+}
+.text-red {
+  color: $red;
+}
+/* END UTILITY */
+
+
 
 /* Discovery/e-Resources Search */
 .tabs-theme-dark {
@@ -180,6 +189,7 @@ caption {
       }
     }
     &:before {
+      color: $gray-dark;
       content: '\f1ea';
       font-family: "Font Awesome 5 Free";
       font-weight: 900;
@@ -208,11 +218,6 @@ caption {
 
 /* Library news listing page */
 .library-news {
-  .news-title {
-    border-bottom: 1px solid $gray-light;
-    margin-bottom: .5rem;
-    padding-bottom:.25rem;
-  }
   span.page-link {
     color: $gray-dark;
     &:hover {
@@ -246,8 +251,8 @@ caption {
     text-align: right;
 
     &:before {
-      color: $nav-red;
-      content: '\f0fe';
+      color: $gray-dark;
+      content: '\f022';
       font-family: "Font Awesome 5 Free";
       font-weight: 900;
       margin-right: .25rem;
@@ -266,11 +271,9 @@ caption {
   color: $gray-600;
   @include css3-value-prefix(display, box);
   font-size: .9rem;
-  line-height: 1.2rem;
 
   .list-inline-item:not(:last-child) {
-    margin-bottom: .25rem;
-    margin-right: .75rem;
+    margin-bottom: .2rem;
   }
 
   &:before {
