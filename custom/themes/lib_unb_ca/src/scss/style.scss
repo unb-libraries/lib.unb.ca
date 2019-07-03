@@ -26,6 +26,10 @@ dl.two-cols {
 /* END UTILITY */
 
 /* OVERRIDES */
+caption {
+  caption-side: top;
+  color: $black;
+}
 /* Nav affix anchor offset */
 :target:before {
   content: "\00a0";
@@ -254,10 +258,10 @@ dl.two-cols {
   font-size: .9rem;
   line-height: 1.15rem;
 
-  .field__item {
-    display: inline-block;
-    margin-right: .65rem;
+  .list-inline-item:not(:last-child) {
+    margin-right: .75rem;
   }
+
   &:before {
     display: inherit;
     font-family: "Font Awesome 5 Free";
