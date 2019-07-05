@@ -81,15 +81,15 @@ class DiscoverySearch extends BlockBase {
         </ul>
         <div class="d-flex flex-wrap p-lg-4">
           <div class="flex-grow-1 tab-content">
-            <div id="pane-reserves" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-reserves">
-              <div class="card-header p-0" role="tab" id="heading-reserves">
+            <div aria-labelledby="tab-reserves" class="card tab-pane fade show active" id="pane-reserves" role="tabpanel">
+              <div class="card-header p-0" id="heading-reserves">
                 <h3 class="m-0">
-                  <a class="nav-link mx-1 p-2" data-toggle="collapse" href="#collapse-reserves" aria-expanded="true" aria-controls="collapse-reserves">
+                  <a aria-controls="collapse-reserves" aria-expanded="true" class="nav-link mx-1 p-2" data-toggle="collapse" href="#collapse-reserves" role="button">
                     Reserves
                   </a>
                 </h3>
               </div>
-              <div id="collapse-reserves" class="collapse show" data-parent="#content" role="tabpanel" aria-labelledby="heading-reserves">
+              <div class="collapse show" data-parent="#content" id="collapse-reserves">
                 <div class="card-body">';
                   $html .= $this->getReservesForm();
                   $html .=
@@ -97,15 +97,15 @@ class DiscoverySearch extends BlockBase {
               </div>
             </div>
 
-            <div id="pane-catalogue" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-catalogue">
-              <div class="card-header p-0" role="tab" id="heading-catalogue">
+            <div aria-labelledby="tab-catalogue" class="card tab-pane fade" id="pane-catalogue" role="tabpanel">
+              <div class="card-header p-0" id="heading-catalogue">
                 <h3 class="m-0">
-                  <a class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-catalogue" aria-expanded="false" aria-controls="collapse-catalogue">
+                  <a aria-controls="collapse-catalogue" aria-expanded="false" class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-catalogue" role="button">
                     Catalogue
                   </a>
                 </h3>
               </div>
-              <div id="collapse-catalogue" class="collapse" data-parent="#content" role="tabpanel" aria-labelledby="heading-catalogue">
+              <div class="collapse" data-parent="#content" id="collapse-catalogue">
                 <div class="card-body">';
                   $html .= $this->getCatalogueForm();
                   $html .=
@@ -113,15 +113,15 @@ class DiscoverySearch extends BlockBase {
               </div>
             </div>
 
-            <div id="pane-databases" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-databases">
-              <div class="card-header p-0" role="tab" id="heading-databases">
+            <div aria-labelledby="tab-databases" class="card tab-pane fade" id="pane-databases" role="tabpanel">
+              <div class="card-header p-0" id="heading-databases">
                 <h3 class="m-0">
-                  <a class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-databases" aria-expanded="false" aria-controls="collapse-databases">
+                  <a aria-controls="collapse-databases" aria-expanded="false" class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-databases" role="button">
                     <span class="d-none d-sm-inline">Article</span> Databases
                   </a>
                 </h3>
               </div>
-              <div id="collapse-databases" class="collapse" role="tabpanel" data-parent="#content" aria-labelledby="heading-databases">
+              <div class="collapse" data-parent="#content" id="collapse-databases">
                 <div class="card-body">';
                   $html .= $this->getDatabasesForm();
                   $html .=
@@ -129,15 +129,15 @@ class DiscoverySearch extends BlockBase {
               </div>
             </div>
             
-            <div id="pane-journals" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-journals">
-              <div class="card-header p-0" role="tab" id="heading-journals">
+            <div aria-labelledby="tab-journals" class="card tab-pane fade" id="pane-journals" role="tabpanel">
+              <div class="card-header p-0" id="heading-journals">
                 <h3 class="m-0">
-                  <a class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-journals" aria-expanded="false" aria-controls="collapse-journals">
+                  <a aria-controls="collapse-journals" aria-expanded="false" class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-journals" role="button">
                     Journals<span class="d-none d-sm-inline"> &amp; Newspapers</span>
                   </a>
                 </h3>
               </div>
-                <div id="collapse-journals" class="collapse" role="tabpanel" data-parent="#content" aria-labelledby="heading-journals">
+                <div class="collapse" data-parent="#content" id="collapse-journals">
                   <div class="card-body">';
                     $html .= $this->getJournalsForm();
                     $html .=
@@ -145,15 +145,15 @@ class DiscoverySearch extends BlockBase {
                 </div>
             </div>
 
-            <div id="pane-encyclopedias" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-encyclopedias">
-              <div class="card-header p-0" role="tab" id="heading-encyclopedias">
+            <div aria-labelledby="tab-encyclopedias" class="card tab-pane fade" id="pane-encyclopedias" role="tabpanel">
+              <div class="card-header p-0" id="heading-encyclopedias">
                 <h3 class="m-0">
-                  <a class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-encyclopedias" aria-expanded="false" aria-controls="collapse-encyclopedias">
+                  <a aria-controls="collapse-encyclopedias" aria-expanded="false" class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-encyclopedias" role="button">
                     e-Encyclopedias<span class="d-none d-sm-inline">, etc.</span>
                   </a>
                 </h3>
               </div>
-                <div id="collapse-encyclopedias" class="collapse" role="tabpanel" data-parent="#content" aria-labelledby="heading-encyclopedias">
+                <div class="collapse" data-parent="#content" id="collapse-encyclopedias">
                   <div class="card-body">';
                     $html .= $this->getEncyclopediasForm();
                     $html .=
@@ -161,15 +161,15 @@ class DiscoverySearch extends BlockBase {
                 </div>
             </div>
 
-            <div id="pane-ebooks" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-ebooks">
-              <div class="card-header p-0" role="tab" id="heading-ebooks">
+            <div aria-labelledby="tab-ebooks" class="card tab-pane fade" id="pane-ebooks" role="tabpanel">
+              <div class="card-header p-0" id="heading-ebooks">
                 <h3 class="m-0">
-                  <a class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-ebooks" aria-expanded="false" aria-controls="collapse-ebooks">
+                  <a aria-controls="collapse-ebooks" aria-expanded="false" class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-ebooks" role="button">
                     e-Books
                   </a>
                 </h3>
               </div>
-              <div id="collapse-ebooks" class="collapse" role="tabpanel" data-parent="#content" aria-labelledby="heading-ebooks">
+              <div class="collapse" data-parent="#content" id="collapse-ebooks">
                 <div class="card-body">';
                   $html .= $this->getEbooksForm();
                   $html .=
@@ -177,15 +177,15 @@ class DiscoverySearch extends BlockBase {
               </div>
             </div>
 
-            <div id="pane-videos" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-videos">
-              <div class="card-header p-0" role="tab" id="heading-videos">
+            <div aria-labelledby="tab-videos" class="card tab-pane fade" id="pane-videos" role="tabpanel">
+              <div class="card-header p-0" id="heading-videos">
                 <h3 class="m-0">
-                  <a class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-videos" aria-expanded="false" aria-controls="collapse-videos">
+                  <a aria-controls="collapse-videos" aria-expanded="false" class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-videos" role=""button">
                     Videos
                   </a>
                 </h3>
               </div>
-              <div id="collapse-videos" class="collapse" role="tabpanel" data-parent="#content" aria-labelledby="heading-videos">
+              <div class="collapse" data-parent="#content" id="collapse-videos">
                 <div class="card-body">';
                   $html .= $this->getVideosForm();
                   $html .=
