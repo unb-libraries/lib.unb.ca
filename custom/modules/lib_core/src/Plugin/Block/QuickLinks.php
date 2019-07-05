@@ -26,7 +26,6 @@ class QuickLinks extends BlockBase {
         '#wrapper_attributes' => [
           'class' => [
             'list-inline-item',
-            'mb-5',
           ],
         ],
         '#children' => Link::fromTextAndUrl(
@@ -71,6 +70,7 @@ class QuickLinks extends BlockBase {
         '#wrapper_attributes' => [
           'class' => [
             'list-inline-item',
+            'mb-5',
           ],
         ],
         '#children' => Link::fromTextAndUrl(
