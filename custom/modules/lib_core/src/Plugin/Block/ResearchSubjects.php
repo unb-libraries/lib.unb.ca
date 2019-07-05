@@ -27,10 +27,9 @@ class ResearchSubjects extends BlockBase {
     $html = '<h2>Research by Subject</h2>';
     $html .= '<div class="d-flex flex-wrap">';
     $last_list_item_html =
-      '<li class="list-unstyled mt-2">
-        <a href="//guides.lib.unb.ca/research-guides">
-          <span class="fa-plus-circle fas"></span>&nbsp;All Subject and Course Guides
-        </a>
+      '<li class="list-unstyled more-link mt-2">
+        <span class="fa-plus-square fas"></span>&nbsp;<a
+        href="//guides.lib.unb.ca/research-guides">All Subject and Course Guides</a>
       </li>
       </ul>';
 
@@ -59,7 +58,8 @@ class ResearchSubjects extends BlockBase {
     $html .= '</div>';
 
     $render_array['wrapper'] = [
-      '#type' => 'container',
+      '#type' => 'html_tag',
+      '#tag' => 'section',
       '#attributes' => [
         'id' => [
           'research-subjects',
