@@ -180,7 +180,7 @@ class DiscoverySearch extends BlockBase {
             <div aria-labelledby="tab-videos" class="card tab-pane fade" id="pane-videos" role="tabpanel">
               <div class="card-header p-0" id="heading-videos">
                 <h3 class="m-0">
-                  <a aria-controls="collapse-videos" aria-expanded="false" class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-videos" role=""button">
+                  <a aria-controls="collapse-videos" aria-expanded="false" class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-videos" role="button">
                     Videos
                   </a>
                 </h3>
