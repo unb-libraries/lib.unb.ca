@@ -230,7 +230,9 @@ class DiscoverySearch extends BlockBase {
               </div>
             </div>
             <div class="col-md-4 mb-2">
-              <label class="sr-only" for="semester">Course Semester</label>
+              <label class="sr-only" for="semester">
+                Course Semester
+              </label>
               <select class="form-control" id="semester" name="semester">
                 <option value="">All semesters</option>
                 <option value="ON">Ongoing </option>
@@ -295,11 +297,11 @@ class DiscoverySearch extends BlockBase {
                 </div>
                 <input class="form-control" id="queryString_WCD" name="queryString" placeholder="Enter search terms" type="search">
               </div>
+            </div>
+            <div class="col-md-4 mb-2">
               <label class="sr-only" for="searchIndex_WCD">
                 Search index
               </label>
-            </div>
-             <div class="col-md-4 mb-2">
               <select class="form-control" id="searchIndex_WCD" name="searchIndex">
                 <option value="kw">keyword</option>
                 <option value="ti">title</option>
