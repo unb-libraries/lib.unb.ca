@@ -41,6 +41,7 @@ class DiscoverySearch extends BlockBase {
 
     $html =
       '<div id="discovery-search" class="tabs-theme-dark">
+        <h2 class="sr-only">Search</h2>
         <ul id="tabs" class="flex-fill nav nav-tabs justify-content-center" role="tablist">
           <li class="nav-item">
             <a id="tab-reserves" href="#pane-reserves" class="nav-link active" data-toggle="tab" role="tab">
@@ -253,7 +254,7 @@ class DiscoverySearch extends BlockBase {
       </form>
       <div class="p-2">
         <a href="/reserves/index.php?h=1">
-          <i class="fas fa-user-lock"></i>
+          <i class="fas fa-sign-in-alt"></i>
           Login to My UNB Reserves
         </a>
       </div>';
