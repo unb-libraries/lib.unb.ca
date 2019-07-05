@@ -35,7 +35,7 @@
     border: 1px solid #aaa;
     border-radius: 4px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-    margin: 0 auto;
+    margin: 0 .2rem;
 }
 #lh3-online a {
     cursor: text;
@@ -59,10 +59,10 @@
     padding: 0;
 }
 .askus-footer a {
-    padding: .25em 0;
+    margin: auto .25rem;
+    padding: .25rem;
 }
 .askus-footer a:hover {
-    border: none;
     color: #007fa3;
     text-decoration: none;
 }
@@ -73,7 +73,7 @@
     white-space: nowrap;
 }
 .askus-footer a span:hover {
-    border-bottom: 1px dotted #ccc;
+    box-shadow: 0 1px 1px -1px;
     color: #900;
 }
 .requires-js {
