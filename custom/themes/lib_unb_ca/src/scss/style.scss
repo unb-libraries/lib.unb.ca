@@ -32,6 +32,20 @@ header h2 {
 h3 {
   font-size: 1.1rem;
 }
+/* Main content hover effect */
+article a:not([class]),
+section a:not([class]),
+aside a:not([class]) {
+  padding-bottom: 1px;
+}
+article a:not([class]):hover,
+section a:not([class]):hover,
+aside a:not([class]):hover {
+  @include css3-prefix(box-shadow, 0 1px 1px -1px)
+}
+.more-link a {
+  color: $red;
+}
 /* Drupal alert messages */
 .alert-dismissible .close {
   background: rgba(128,128,128,.1);
@@ -181,13 +195,6 @@ dl.two-cols {
 /* Front page recent block */
 .library-news-recent-teasers {
   .more-link {
-    a {
-      border-bottom: 1px dotted transparent;
-      color: $red;
-      &:hover {
-        border-bottom: 1px dotted $gray-light;
-      }
-    }
     &:before {
       color: $gray-dark;
       content: '\f1ea';
@@ -252,7 +259,7 @@ dl.two-cols {
 
     &:before {
       color: $gray-dark;
-      content: '\f022';
+      content: '\f0fe';
       font-family: "Font Awesome 5 Free";
       font-weight: 900;
       margin-right: .25rem;
