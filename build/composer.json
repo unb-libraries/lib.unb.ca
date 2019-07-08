@@ -140,6 +140,18 @@
                 "type": "drupal-library",
                 "version": "1.8.7"
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "unb-libraries/calendar_hours",
+                "version": "dev-8.x-1.x",
+                "type": "drupal-module",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/unb-libraries/calendar_hours/archive/8.x-1.x.zip"
+                }
+            }
         }
     ],
     "require": {
@@ -180,6 +192,7 @@
         "drupal/search_api_solr": "2.6",
         "drupal/token": "1.5",
         "harvesthq/chosen": "~1.8",
+        "unb-libraries/calendar_hours": "dev-8.x-1.x",
         "unb-libraries/drupal-builder": "^8.0.0",
         "unb-libraries/unb_lib_theme": "dev-8.x-bootstrap-4.x"
     },
