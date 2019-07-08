@@ -191,6 +191,7 @@
         "drupal/search_api_autocomplete": "1.2",
         "drupal/search_api_solr": "2.6",
         "drupal/token": "1.5",
+        "drupal/webform": "5.3-rc3",
         "harvesthq/chosen": "~1.8",
         "unb-libraries/calendar_hours": "dev-8.x-1.x",
         "unb-libraries/drupal-builder": "^8.0.0",
