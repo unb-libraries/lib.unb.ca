@@ -12,16 +12,16 @@ id: purchase_suggestion
 title: 'Purchase Suggestion'
 description: ''
 category: ''
-elements: "markup:\n  '#type': webform_markup\n  '#markup': |\n    <p>We welcome suggestions from UNB &amp; STU faculty, staff, students and extramural borrowers for materials you would like us to consider purchasing for our collection.</p>\n    \n    <p>Please complete the form below with as much information as you have available. Thank you for your interest.</p>\n    \npersonal_information:\n  '#type': fieldset\n  '#title': 'Personal Information'\n  '#format_attributes':\n    class:\n      - 'alert alert-info'\n  name:\n    '#type': textfield\n    '#title': Name\n    '#placeholder': 'First and last name'\n    '#prepopulate': true\n    '#required': true\n  department:\n    '#type': textfield\n    '#title': Department\n    '#placeholder': 'If applicable'\n    '#prepopulate': true\n  status:\n    '#type': radios\n    '#title': Status\n    '#options':\n      status_faculty: Faculty\n      status_staff: Staff\n      status_student: Student\n    '#options_display': side_by_side\n    '#required': true\n    '#wrapper_type': form_element\n  campus:\n    '#type': radios\n    '#title': Campus\n    '#options':\n      campus_UNBF: Fredericton\n      campus_UNBSJ: 'Saint John'\n    '#options_display': side_by_side\n    '#required': true\n    '#wrapper_type': form_element\n  email:\n    '#type': email\n    '#title': Email\n    '#placeholder': example@unb.ca\n    '#required': true\n  phone_number:\n    '#type': tel\n    '#title': 'Phone Number'\n    '#placeholder': 506-555-1212\n    '#required': true\nitem_information:\n  '#type': fieldset\n  '#title': 'Item Information'\n  '#description': 'Complete this section as accurately as possible. Your request may NOT be processed if there is insufficient information.'\n  '#help': 'Complete this section as accurately as possible. Your request may NOT be processed if there is insufficient information.'\n  title:\n    '#type': textfield\n    '#title': Title\n  author_s_or_editor_s_:\n    '#type': textfield\n    '#title': 'Author(s) or Editor(s)'\n    '#placeholder': optional\n  series_or_conference_title:\n    '#type': textfield\n    '#title': 'Series or Conference Title'\n    '#placeholder': optional\n  publisher_studio:\n    '#type': textfield\n    '#title': Publisher/Studio\n    '#placeholder': optional\n  place_of_publication:\n    '#type': textfield\n    '#title': 'Place of Publication'\n    '#placeholder': optional\n  year:\n    '#type': datelist\n    '#title': Year\n    '#date_part_order':\n      - year\n    '#date_year_range': '-50:+1'\n    '#date_year_range_reverse': true\n  isbn:\n    '#type': textfield\n    '#title': ISBN\n    '#maxlength': '13'\n    '#placeholder': optional\n  edition:\n    '#type': textfield\n    '#title': Edition\n    '#placeholder': optional\n  type:\n    '#type': radios\n    '#title': Type\n    '#options':\n      type_Fiction: Fiction\n      type_Non-fiction: Non-Fiction\n    '#options_display': side_by_side\n  other_information:\n    '#type': textarea\n    '#title': 'Other Information'"
+elements: "markup:\n  '#type': webform_markup\n  '#markup': |\n    <p>We welcome suggestions from UNB &amp; STU faculty, staff, students and extramural borrowers for materials you would like us to consider purchasing for our collection.</p>\n    \n    <p>Please complete the form below with as much information as you have available. Thank you for your interest.</p>\n    \npersonal_information:\n  '#type': fieldset\n  '#title': 'Personal Information'\n  '#format_attributes':\n    class:\n      - 'alert alert-info'\n  name:\n    '#type': textfield\n    '#title': Name\n    '#placeholder': 'First and last name'\n    '#prepopulate': true\n    '#required': true\n  department:\n    '#type': textfield\n    '#title': Department\n    '#placeholder': 'If applicable'\n    '#prepopulate': true\n  status:\n    '#type': radios\n    '#title': Status\n    '#options':\n      status_faculty: Faculty\n      status_staff: Staff\n      status_student: Student\n    '#options_display': side_by_side\n    '#required': true\n    '#wrapper_type': form_element\n  campus:\n    '#type': radios\n    '#title': Campus\n    '#options':\n      campus_UNBF: Fredericton\n      campus_UNBSJ: 'Saint John'\n    '#options_display': side_by_side\n    '#required': true\n    '#wrapper_type': form_element\n  email:\n    '#type': email\n    '#title': Email\n    '#placeholder': example@unb.ca\n    '#required': true\n  phone_number:\n    '#type': tel\n    '#title': 'Phone Number'\n    '#placeholder': 506-555-1212\n    '#required': true\nitem_information:\n  '#type': fieldset\n  '#title': 'Item Information'\n  '#description': 'Complete this section as accurately as possible. Your request may NOT be processed if there is insufficient information.'\n  '#help': 'Complete this section as accurately as possible. Your request may NOT be processed if there is insufficient information.'\n  subject_area:\n    '#type': webform_select_other\n    '#title': 'Subject Area'\n    '#options':\n      Anthropology|ecmoore@unb.ca: Anthropology\n      Biology|t.zaraiskaya@unb.ca: Biology\n      'Biomedical Engineering|saran.croos@unb.ca': 'Biomedical Engineering'\n      'Chemical Engineering|saran.croos@unb.ca': 'Chemical Engineering'\n      Chemistry|t.zaraiskaya@unb.ca: Chemistry\n      'Civil Engineering|saran.croos@unb.ca': 'Civil Engineering'\n      'Classics & Ancient History|ecmoore@unb.ca': 'Classics & Ancient History'\n      'Computer Science|saran.croos@unb.ca': 'Computer Science'\n      'Culture & Language Studies|mbragdon@unb.ca': 'Culture & Language Studies'\n      Criminology|jlt@unb.ca: Criminology\n      Economics|lwells@unb.ca: Economics\n      Education|mbragdon@unb.ca: Education\n      'Electrical & Computer Engineering|saran.croos@unb.ca': 'Electrical & Computer Engineering'\n      'Engineering Library Reference Collection|saran.croos@unb.ca': 'Engineering Library Reference Collection'\n      English|ecmoore@unb.ca: English\n      'Forest Engineering|saran.croos@unb.ca': 'Forest Engineering'\n      'Forestry & Environmental Management|t.zaraiskaya@unb.ca': 'Forestry & Environmental Management'\n      French|jlt@unb.ca: French\n      'Geodesy and Geomatics Engineering|saran.croos@unb.ca': 'Geodesy and Geomatics Engineering'\n      'Geological Engineering|saran.croos@unb.ca': 'Geological Engineering'\n      Geology|t.zaraiskaya@unb.ca: Geology\n      Gerontology|r.witherspoon@unb.ca: Gerontology\n      'Harriet Irving Library Reference Collection|jlt@unb.ca': 'Harriet Irving Library Reference Collection'\n      'Health Sciences|r.whitherspoon@unb.ca': 'Health Sciences'\n      History|jsmyth@unb.ca: History\n      Interdisciplinary|jlt@unb.ca: Interdisciplinary\n      Journalism|bcull@unb.ca: Journalism\n      'Kinesiology & Recreation|r.witherspoon@unb.ca': 'Kinesiology & Recreation'\n      Mathematics|t.zaraiskaya@unb.ca: Mathematics\n      'Mathematics & Statistics|t.zaraiskaya@unb.ca': 'Mathematics & Statistics'\n      'Mechanical Engineering|saran.croos@unb.ca': 'Mechanical Engineering'\n      'Native Studies|mbragdon@unb.ca': 'Native Studies'\n      Nursing|r.witherspoon@unb.ca: Nursing\n      Philosophy|bcull@unb.ca: Philosophy\n      Physics|t.zaraiskaya@unb.ca: Physics\n      'Political Science|jsmyth@unb.ca': 'Political Science'\n      Psychology|r.whitherspoon@unb.ca: Psychology\n      'Religious Studies|jsmyth@unb.ca': 'Religious Studies'\n      'Renaissance College|jsmyth@unb.ca': 'Renaissance College'\n      'Romance Languages|jlt@unb.ca': 'Romance Languages'\n      'Science and Technology|saran.croos@unb.ca': 'Science and Technology'\n      'Science Library Reference Collection|t.zaraiskaya@unb.ca': 'Science Library Reference Collection'\n      'Social Work|bcull@unb.ca': 'Social Work'\n      Sociology|bcull@unb.ca: Sociology\n      'Womens Studies|sfisher@unb.ca': 'Womens Studies'\n    '#required': true\n  title:\n    '#type': textfield\n    '#title': Title\n    '#required': true\n  author_s_or_editor_s_:\n    '#type': textfield\n    '#title': 'Author(s) or Editor(s)'\n    '#placeholder': optional\n  series_or_conference_title:\n    '#type': textfield\n    '#title': 'Series or Conference Title'\n    '#placeholder': optional\n  publisher_studio:\n    '#type': textfield\n    '#title': Publisher/Studio\n    '#placeholder': optional\n  place_of_publication:\n    '#type': textfield\n    '#title': 'Place of Publication'\n    '#placeholder': optional\n  year:\n    '#type': datelist\n    '#title': Year\n    '#date_part_order':\n      - year\n    '#date_year_range': '-50:+1'\n    '#date_year_range_reverse': true\n  isbn:\n    '#type': textfield\n    '#title': ISBN\n    '#maxlength': '13'\n    '#placeholder': optional\n  edition:\n    '#type': textfield\n    '#title': Edition\n    '#placeholder': optional\n  type:\n    '#type': radios\n    '#title': Type\n    '#options':\n      type_Fiction: Fiction\n      type_Non-fiction: Non-Fiction\n    '#options_display': side_by_side\n  other_information:\n    '#type': textarea\n    '#title': 'Other Information'\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': 'Submit Purchase Suggestion'\n  '#submit__attributes':\n    class:\n      - btn-dark\n  '#reset__label': Cancel\n  '#reset__attributes':\n    class:\n      - btn-warning"
 css: ''
 javascript: ''
 settings:
   ajax: false
-  ajax_scroll_top: form
+  ajax_scroll_top: ''
   page: true
-  page_submit_path: ''
+  page_submit_path: /requests/purchase-suggestions
   page_confirm_path: ''
-  form_title: both
+  form_title: source_entity_webform
   form_submit_once: false
   form_exception_message: ''
   form_open_message: ''
@@ -31,19 +31,19 @@ settings:
   form_confidential_message: ''
   form_remote_addr: true
   form_convert_anonymous: false
-  form_prepopulate: false
+  form_prepopulate: true
   form_prepopulate_source_entity: false
   form_prepopulate_source_entity_required: false
   form_prepopulate_source_entity_type: ''
-  form_reset: false
+  form_reset: true
   form_disable_autocomplete: false
   form_novalidate: false
   form_disable_inline_errors: false
-  form_required: false
+  form_required: true
   form_unsaved: false
   form_disable_back: false
   form_submit_back: false
-  form_autofocus: false
+  form_autofocus: true
   form_details_toggle: false
   form_access_denied: default
   form_access_denied_title: ''
@@ -122,6 +122,13 @@ settings:
   results_disabled: false
   results_disabled_ignore: false
   token_update: false
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page_admin_theme: false
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_update: false
 access:
   create:
     roles:
