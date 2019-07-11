@@ -1,0 +1,65 @@
+id: lib_unb_ca_users
+label: UNB Libraries User Import
+migration_group: UNBLIB
+
+migration_tags:
+  - CSV
+
+source:
+  plugin: csv
+  path: '/app/html/modules/custom/lib_unb_ca_users/data/csv/lib_unb_ca_users.csv'
+  header_row_count: 1
+  keys:
+    - unb_id
+  column_names:
+    0:
+      unb_id: UNB ID
+    1:
+      first_name: First Name
+    2:
+      last_name: Last Name
+    3:
+      department_head: Departments User is Head
+    4:
+      departments: Departments User is Member
+    5:
+      position_title: Position Title
+    6:
+      email: User EMail
+    7:
+      enabled: Account Enabled?
+    8:
+      desk_stats_location: Desk stats location
+    9:
+      created: User Created
+
+process:
+  name: unb_id
+  field_first_name: first_name
+  field_last_name: last_name
+  field_position_title: position_title
+  status: enabled
+  created: created
+  mail: email
+  field_library_department_regular:
+    -
+      plugin: explode
+      source: departments
+      delimiter: '|'
+    -
+      plugin: entity_lookup
+      value_key: name
+      bundle_key: vid
+      bundle: library_departments
+      entity_type: taxonomy_term
+      ignore_case: true
+
+destination:
+  plugin: entity:user
+
+dependencies:
+  module:
+    - lib_unb_ca_users
+  enforced:
+    module:
+      - lib_unb_ca_users
