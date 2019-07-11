@@ -14,6 +14,12 @@ bootstrap-cdn:
     base:
       //stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css: { type: external, minified: true }
 
+chosen-bootstrap:
+  version: VERSION
+  css:
+    theme:
+      css/chosen-bootstrap.css: {}
+
 ckeditor_stylesheets:
   version: VERSION
   css:
