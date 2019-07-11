@@ -1,3 +1,6 @@
+.chosen-container {
+    min-width: 6rem!important;
+}
 .chosen-container-single .chosen-single {
     border: none;
     background: inherit;
