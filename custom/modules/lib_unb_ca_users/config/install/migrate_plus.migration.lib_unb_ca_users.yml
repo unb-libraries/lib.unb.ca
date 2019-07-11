@@ -51,22 +51,12 @@ process:
   mail: email
   field_library_department_regular:
     -
-      plugin: skip_on_empty
-      method: process
-      source: departments
-    -
-      plugin: explode
-      delimiter: '|'
-    -
-      plugin: entity_lookup
-      value_key: name
-      bundle_key: vid
-      bundle: library_departments
-      entity_type: taxonomy_term
-      ignore_case: true
+      plugin: add_lib_user_departments
+      source:
+        - department_head
+        - departments
   field_display_on_staff_directory: display_staff_dir
   field_on_leave: on_leave
-
 
 destination:
   plugin: entity:user
