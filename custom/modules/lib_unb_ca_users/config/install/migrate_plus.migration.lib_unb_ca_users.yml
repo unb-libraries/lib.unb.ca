@@ -32,6 +32,14 @@ source:
       desk_stats_location: Desk stats location
     9:
       created: User Created
+    10:
+      on_leave: User On Leave
+    11:
+      room_no: Room Number
+    12:
+      display_staff_dir: Display User on Staff Dir
+    13:
+      phone_no: Staff Phone Number
 
 process:
   name: unb_id
@@ -43,8 +51,11 @@ process:
   mail: email
   field_library_department_regular:
     -
-      plugin: explode
+      plugin: skip_on_empty
+      method: process
       source: departments
+    -
+      plugin: explode
       delimiter: '|'
     -
       plugin: entity_lookup
@@ -53,6 +64,9 @@ process:
       bundle: library_departments
       entity_type: taxonomy_term
       ignore_case: true
+  field_display_on_staff_directory: display_staff_dir
+  field_on_leave: on_leave
+
 
 destination:
   plugin: entity:user

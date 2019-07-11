@@ -1,341 +1,347 @@
-unb_id,first_name,last_name,department_head,department,title,email,enabled,desk_stats_location,created
-aprajapa,Arti,Prajapati,,Access Services (Circulation & Document Delivery),student assistant,arti.suresh@unb.ca,1,,1559309659,0
-hdressle,Harrison David,Dressler,,Microforms,Student Assistant,Harrison.Dressler@unb.ca,1,,1558441108,0
-f20r0,Patrick,Brennan,,Hans W. Klohn Commons,Library Assistant,Patrick.Brennan@unb.ca,1,,1557336359,0
-vpena,Victoria Cristina,Pena Villarroel,,Science & Forestry Library,student assistant,vpena@unb.ca,0,,1550775715,0
-bgoodine,Bethany,Goodine,,Science & Forestry Library,student assistant,bethany.goodine@unb.ca,0,,1549371919,0
-pschilf,Patrick,Schilf,,Systems,Web Developer,Patrick.Schilf@unb.ca,1,,1547475382,0
-jpalk,Jenny,Palk,,Hans W. Klohn Commons,Administrative Coordinator,jenny.palk@unb.ca,1,,1546866008,0
-h1wto,Caitlin,Christie,,Access Services (Circulation & Document Delivery),Library Assistant,Caitlin.Christie@unb.ca,0,,1544451159,0
-hharrity,Harley,Harrity,,Engineering & Computer Science Library,student assistant,Harley.Harrity@unb.ca,0,,1542294662,0
-clewis6,Candice,Lewis,,Hans W. Klohn Commons,Lib Assistant Even Weekend Supervisor,Candice.Lewis@unb.ca,1,,1540223482,0
-arobich9,Annie,Robichaud,,Archives,student assistant,Annie.Robichaud@unb.ca,0,,1539362818,0
-gmaccull,Glenn,MacCulloch,,Law Library,Evening/Weekend Library Assistant,glenn.macculloch@unb.ca,1,,1539262999,0
-nwilson7,Norah,Wilson,,Law Library,Evening/Weekend Library Assistant,Norah.Wilson@unb.ca,1,,1539262842,0
-mrock,Marshall,Rock,,Science & Forestry Library,Student Assistant,Marshall.Rock@unb.ca,0,,1539194113,0
-skelly9,Sebastian,Kelly,,Archives,student assistant,s.kelly9@unb.ca,0,,1538132664,0
-ldavis2,Lauren Catherine,Davis,,Archives,Student Assistant,Lauren.Davis@unb.ca,0,,1538071421,0
-dkeimel,Derek,Keimel,,Engineering & Computer Science Library,"Library Assistant, Part Time",D.Keimel@unb.ca,1,,1537881575,0
-gjackso1,Grace,Jackson,,Science & Forestry Library,student assistant,Grace.Jackson@unb.ca,0,,1537276859,0
-bbrenton,Bethany,Brenton,,Access Services (Circulation & Document Delivery),student assistant,bethany.brenton@unb.ca,0,,1537276619,0
-u5og8,A.,Suliman,,Reference,Reference Student Assistant,A.Suliman@unb.ca,0,,1537276315,0
-untaganz,Uwera Nina,Ntaganzwa,,Centre for Digital Scholarship,student assistant,nuwera.nina@unb.ca,0,,1536765694,0
-cdahr,Cameron,Dahr,,Engineering & Computer Science Library,student assistant,Cameron.Dahr@unb.ca,0,,1536605265,0
-epearso1,Erin,Pearson,,Engineering & Computer Science Library,student assistant,Erin.Pearson@unb.ca,0,,1536605227,0
-kchippet,Kellie Dianne,Chippett,,Science & Forestry Library,student assistant,Kellie.Chippett@unb.ca,0,,1536346938,0
-ebateman,Elizabeth,Bateman,,Science & Forestry Library,student assistant,liz.bateman@unb.ca,0,,1536346412,0
-igoguen,Isabelle Sarah-Melissa,Goguen,,Microforms,student assistant,Isabelle.Goguen@unb.ca,0,,1536344496,0
-ojoshi,Ojaswi,Joshi,,Access Services (Circulation & Document Delivery),student assistant,joshi.ojaswi0@unb.ca,0,,1536343364,0
-vbeek,Veronica,Beek,,Access Services (Circulation & Document Delivery),student assistant,Veronica.Beek17@unb.ca,0,,1536343215,0
-pechever,Paola,Echeverria Mole,,Access Services (Circulation & Document Delivery),student assistant,paola.echeverria@unb.ca,0,,1536343104,0
-ncormie2,Nicole S.,Taerum,,Reference,Reference Student Assistant,ncormie2@unb.ca,0,,1536085218,0
-sarmstr4,Sally,Armstrong,,Reference,Entrepreneurship Librarian,sally.armstrong@unb.ca,1,,1536072066,0
-hpreston,Hannah,Preston,,Access Services (Circulation & Document Delivery),,Hannah.Preston@unb.ca,0,,1524832848,0
-ovisser,Oriana,Visser,,Microforms,student assistant,oriana.visser@unb.ca,0,,1524832747,0
-mdavoudi,Mahtab,Davoudi,,Centre for Digital Scholarship,student assistant,mdavoudi@unb.ca,0,,1524831956,0
-kbullerw,Kylie,Bullerwell,,Archives,student assistant,Kylie.Bullerwell@unb.ca,0,,1524831750,0
-tzaraisk,Tatiana,Zaraiskaya,,Reference|Science & Forestry Library,STEM Librarian,T.Zaraiskaya@unb.ca,1,,1522173175,0
-n8337,S. Nicole,Lyons-Macfarlane,,Law Library,Technical Services Library Assistant,Nicole.Lyons-MacFarlane@unb.ca,1,,1515070229,0
-u83a9,Alex,Goudreau,,Hans W. Klohn Commons,Science and Health Sciences Librarian,Alex.Goudreau@unb.ca,1,,1511876908,0
-rsalahed,Rabab,Salaheddine,,Science & Forestry Library,student assistant,rabab.bsd@unb.ca,0,,1510765036,0
-h9u23,Tony,Tomarchio,,Administration,student assistant,Tony.Tomarchio@unb.ca,0,,1508176521,0
-mcosman1,Meghan,Cosman,,Engineering & Computer Science Library,Student Assistant - Engineering Library,Meghan.Cosman@unb.ca,0,,1506537669,0
-vkavanau,Victoria T,Kavanaugh,,Engineering & Computer Science Library,Student Assistant - Engineering Library,Victoria.Kavanaugh@unb.ca,0,,1506537521,0
-omcinnis,Owen,McInnis,,Engineering & Computer Science Library,Student Assistant - Engineering Library,Owen.McInnis@unb.ca,0,,1506537413,0
-atit,Abraham,Tit,,Engineering & Computer Science Library,Student Assistant - Engineering Library,Tough.1@unb.ca,0,,1506537295,0
-nreid3,Natalie,Reid,,Engineering & Computer Science Library,student assistant,Natalie.Reid@unb.ca,0,,1506537112,0
-bfergus2,Beth A,Ferguson,,Access Services (Circulation & Document Delivery),"Library Assistant, Part-Time",Beth.Ferguson@unb.ca,1,,1505398745,0
-mmootoos,Alexandra,Mootoosamy,,Access Services (Circulation & Document Delivery),Library Assistant,alexandra.mootoosamy@unb.ca,1,,1505313491,0
-csmith20,Carley,Smith,,Centre for Digital Scholarship,Student Assistant - Digital Scholarship,csmith20@unb.ca,0,,1505133477,0
-ahards,Adrian,Hards,,Reference,,adrian.hards@unb.ca,0,,1505132180,0
-gannear,Grace,Annear,,Reference,Research Help Desk Student Assistant,gannear@unb.ca,0,,1504875978,0
-sforsyt1,Sass,Bergen,,Archives,Library Assistant,S.Forsyth@unb.ca,1,,1504796389,0
-mbell2,MacKenzie J,Bell,,Centre for Digital Scholarship,student assistant,mackenzie.bell@unb.ca,0,,1503685303,0
-eorr,Emily,Orr,,Access Services (Circulation & Document Delivery),student assistant,Emily.Orr@unb.ca,0,,1503682961,0
-jrobich4,Jason,Robichaud,,,,Jason.Robichaud@unb.ca,0,,1503682832,0
-plaurent,Prevail,Laurent,,,,prevail.laurent@unb.ca,0,,1503682313,0
-sshresth,Srijain Man,Shrestha,,,,srijain.shrestha@unb.ca,0,,1503682226,0
-jtang2,James,Tang,,Science & Forestry Library,student assistant,James.Tang@unb.ca,0,,1503682110,0
-ssathees,Soumya,Satheesan,,Science & Forestry Library,student assistant,Soumya.Satheesan@unb.ca,0,,1503681884,0
-rforbes,Rachel,Forbes,,,,rachel.forbes@unb.ca,0,,1503679534,0
-acooke1,Alicia Irene,Cooke,,Archives,student assistant,Alicia.Cooke@unb.ca,0,,1495721083,0
-djewett3,Danielle,Jewett,,Centre for Digital Scholarship,,Danielle.J@unb.ca,0,,1495720765,0
-bfullart,Brianne R,Fullarton,,,Student assistant,b.fullarton@unb.ca,0,,1495720005,0
-a248p,Courtney Lynn,Boudreau,,Hans W. Klohn Commons,DMNB Librarian,c.l.boudreau@unb.ca,1,,1493987427,0
-h18a,Kris,Stewart,,Engineering & Computer Science Library,"Library Assistant, Part-Time",KrisJ.Stewart@unb.ca,0,,1490876513,0
-snurse,Shauntelle A,Nurse,,Science & Forestry Library,"Library Assistant, Part-Time",nurse.shauntelle@unb.ca,1,,1488999512,0
-sbuck,Susan,Buck,,Access Services (Circulation & Document Delivery),Student assistant,Susan.Buck@unb.ca,0,,1486581282,0
-jdoucet14,Janelle,Doucet,,Engineering & Computer Science Library,Student Assistant,jdoucet14@unb.ca,0,,1486132216,0
-bwindsor,Briar,Windsor,,Engineering & Computer Science Library,Student Assistant - Engineering Library,Briar.Windsor@unb.ca,0,,1484845222,0
-mbrimico,MacKenzie,Brimicombe,,Centre for Digital Scholarship,Student Assistant - Digital Scholarship,MacKenzie.Brimicombe@unb.ca,0,,1484332564,0
-dbountal,Dimitra,Bountalas,,Engineering & Computer Science Library,student assistant,dimitra.litsa@unb.ca,0,,1482167217,0
-jbail,Jeannie,Bail,,Administration,Director of Learning and Research Services,j.bail@unb.ca,1,,1481040977,0
-tcousine,Tommy,Cousineau,,Engineering & Computer Science Library,student assistant,Tommy.Cousineau@unb.ca,0,,1477486830,0
-j7v0q,Lizi,Feng,,Engineering & Computer Science Library,student assistant,j7v0q@unb.ca,0,,1476970174,0
-mdohert3,Megan Shay,Doherty,,Centre for Digital Scholarship|Engineering & Computer Science Library,student assistant,m.s.d@unb.ca,0,,1476464392,0
-zjackson,Zoe Jackson,Jackson,,Microforms,student assistant,zoe.jackson@unb.ca,0,,1475849803,0
-q4890,Perry Everett,Dykens,,Archives,student assistant - Archives,perry.dykens@unb.ca,0,,1475849744,0
-bdawson,Benjamin Jeremy,Dawson,,Archives,student assistant,dawsonb.39@unb.ca,0,,1475849655,0
-clee5,Christopher W J,Lee,,Science & Forestry Library,student assistant - Science Library,christopher.lee@unb.ca,0,,1475849509,0
-o06sa,Alison,Parsons,,Administration|Reference,Research Help Desk Student Assistant,alison.parsons@unb.ca,0,,1475064189,0
-r14l6,Kira,Della Valle,,Hans W. Klohn Commons,Library Ass't Evening Wknd Supervisor,kira.dv@unb.ca,1,,1474654959,0
-l61dg,Jamie,Shaddick,,Hans W. Klohn Commons,Library Assistant,Jamie.Shaddick@unb.ca,1,,1474654543,0
-nmashtal,Nikol,Mashtalyar,,Engineering & Computer Science Library,student assistant,Nikol.Mashtalyar@unb.ca,0,,1474380103,0
-aani,Alexander,Ani,,Reference,Research Help Desk Student Assistant,aani@unb.ca,0,,1474052632,0
-mstewar9,Matthew,Stewart,,Engineering & Computer Science Library,Library Assistant,MatthewJ.Stewart@unb.ca,1,,1473961678,0
-m3og2,Ashlee,Saunders,,Access Services (Circulation & Document Delivery),student assistant,m3og2@unb.ca,0,,1472562463,0
-cmclaug3,Cody,McLaughlin,,Access Services (Circulation & Document Delivery),,Cody.McLaughlin@unb.ca,0,,1472562348,0
-tstewar9,Thea,Stewart,,Access Services (Circulation & Document Delivery),student assistant,Thea.Stewart@unb.ca,0,,1472562292,0
-arhindre,Adam,Rhindress,,Engineering & Computer Science Library,,hlshq@stu.ca,0,,1472562065,0
-cxu2,Congrong (Diana),Xu,,Engineering & Computer Science Library,student assistant,Congrong.Xu@unb.ca,0,,1472561991,0
-mheidman,Michael,Heidman,,Cataloguing,,Michael.Heidman@unb.ca,0,,1472561835,0
-ylo,Yin-Chi (Cindy),Lo,,Science & Forestry Library,,cindy.lo@unb.ca,0,,1472561762,0
-aeldeso1,Ahmed,Eldesoky,,Science & Forestry Library,student assistant,ahmed.eldesoky@unb.ca,0,,1472561625,0
-rcolling,Ruth,Collings,,Science & Forestry Library,Librarian,ruth.collings@unb.ca,0,,1467999049,0
-cvillami,Camilo,Villamizar,,Systems,Web Developer,camilo.v@unb.ca,1,,1466511401,0
-ntanner,Nikki,Tanner,,Law Library,Reference/Instruction LIbrarian,Nikki.Tanner@unb.ca,1,,1466449021,0
-ltaylor4,Lilian,Taylor,,Microforms,,lilian.taylor@unb.ca,0,,1466448849,0
-pollockl,Lisa,Pollock,,Administration,Senior Office Administrator,pollockl@unb.ca,1,,1466432821,0
-b0isk,Bill,Glencross,,Centre for Digital Scholarship,Digitization Assistant,William.Glencross@unb.ca,0,,1466428489,0
-mmacpher,Mark D.,MacPherson,,Mail Room,Library Facilities Coordinator,mmacpher@unb.ca,1,,1465834931,0
-clovelac,Christine,Lovelace,,Archives,Academic Archivist,Christine.Lovelace@unb.ca,1,,1462193128,0
-sparis,Shakyna,Paris,,Engineering & Computer Science Library,,s.paris@unb.ca,0,,1453838024,0
-mruccolo,Marisa,Ruccolo,,Hans W. Klohn Commons,Librarian,m.ruccolo@unb.ca,0,,1451933271,0
-bvinhdoy,Bo,Vinh-Doyle,,Law Library,Library Assistant,Bolpar.VinhDoyle@unb.ca,0,,1449602715,0
-efava,Erica,Fava,,Law Library,"Library Assistant, Part-Time",erica.fava@unb.ca,0,,1448303091,0
-plosier1,Patrick,Losier,,Administration|Reference,,Patrick.Losier@unb.ca,0,,1447079557,0
-t6vlz,Seong Hyeok,Park,,Engineering & Computer Science Library,,Seong.Park@unb.ca,0,,1447079407,0
-rbenzenh,Rachel,Benzenhoefer,,Cataloguing,Library Assistant,rbenzenh@unb.ca,1,,1445604418,0
-rjacksha,Rebekah,Jackshaw,,Administration,,rebekah.jackshaw99@unb.ca,0,,1444913878,0
-ecochran,Elena,Cochrane,,Centre for Digital Scholarship,Student assistant,Elena.Cochrane@unb.ca,0,,1444913827,0
-oodunsi,Oluwafunmilola,Odunsi,,Centre for Digital Scholarship,,funmilola.odunsi@unb.ca,0,,1444913757,0
-b0892,Sara,Serrano,,Access Services (Circulation & Document Delivery),"Library Assistant, Part Time",Sara.Serrano@unb.ca,0,,1443035300,0
-blangmai,Bethany,Langmaid,,Centre for Digital Scholarship,Student Assistant,Bethany.Langmaid@unb.ca,0,,1443035178,0
-ndominix,Nicole,Dominix,,Access Services (Circulation & Document Delivery),"Library Assistant, Part-Time",n.dominix@unb.ca,0,,1442257088,0
-b2xq4,Gina,Ouellet,,Science & Forestry Library,,Gina.O@unb.ca,0,,1442256141,0
-x9gkk,Sydney,McAdam,,Science & Forestry Library,,Sydney.McAdam@unb.ca,0,,1442256093,0
-mmazerol,Megan,Mazerolle,,Science & Forestry Library,,megan.mazerolle@unb.ca,0,,1442256043,0
-kcripps,Katherine,Cripps,,Science & Forestry Library,,Katherine.Cripps@unb.ca,0,,1442255848,0
-vanupind,Vaishnavi,Anupindi,,Science & Forestry Library,Student Assistant,vaishnavi.anupindi@unb.ca,0,,1442255792,0
-madamcyz,Mallory,Adamczyk,,Science & Forestry Library,,madamczy@unb.ca,0,,1442255748,0
-pzhang1,Ping,Zhang,,Engineering & Computer Science Library,,Ping.Zhang@unb.ca,0,,1442255674,0
-ewindsor,Elladee,Windsor,,Engineering & Computer Science Library,,Elladee.Windsor@unb.ca,0,,1442255625,0
-ychung,Elise yoojin,Chung,,Engineering & Computer Science Library,student assistant,elisechung.mp@unb.ca,0,,1442255565,0
-cjackso5,Cora Lynn,Jackson,,Centre for Digital Scholarship,student assistant,ra.jackso_5@unb.ca,0,,1441826521,0
-v07oy,Matthew,Douglass,,,,m.douglass@unb.ca,0,,1441726520,0
-j0765,Amanda,Lloyd,,Archives,,Amanda.Lloyd@unb.ca,0,,1432918140,0
-j5p27,Janice,Stockall,,Law Library,Library Assistant,Janice.Stockall@unb.ca,1,,1432660547,0
-adaley2,Amanda,Daley,,Centre for Digital Scholarship,,Amanda.Daley@unb.ca,0,,1432557898,0
-ztingley,Zachary,Tingley,,Microforms,,ztingley@unb.ca,0,,1432557804,0
-kmacdon3,Katherine,MacDonald,,Centre for Digital Scholarship,,Katherine.G.MacDonald@unb.ca,0,,1432557645,0
-scarlson,Siobhan M,Carlson,,Centre for Digital Scholarship,,S.Carlson@unb.ca,0,,1432557527,0
-f8l46,Joseph,Burton,,,,joseph.cb@unb.ca,0,,1432557440,0
-w34ie,Chris,Balcom,,,,Christopher.Balcom@unb.ca,0,,1432320142,0
-x75a8,Philip,Taber,,Hans W. Klohn Commons,Librarian,philip.taber@unb.ca,1,,1429638047,0
-llevert,Laurelle,LeVert,Hans W. Klohn Commons,,,laurelle.levert@unb.ca,0,,1428688221,0
-davidm,David,Matthews,,Hans W. Klohn Commons,"Acquisitions, Doc Del & Circulation",davidm@unb.ca,1,,1424202861,0
-allena,Amanda,Allen,,Hans W. Klohn Commons,Commons Assistant,allena@unb.ca,0,,1424202786,0
-kallaby,Kathy,Allaby,,Hans W. Klohn Commons,Library Assistant Reserves/Copyright,kallaby@unb.ca,0,,1424202717,0
-kmotty,Krista,Motty Peters,,Access Services (Circulation & Document Delivery),"Library Assistant, Part Time",krista.peters@unb.ca,0,,1424202546,0
-n2um3,Kristian,Brown,,Hans W. Klohn Commons,Librarian,Kristian.Brown@unb.ca,0,,1423686394,0
-ababinea,Annabelle,Babineau,,"Government Documents, Data and Maps",,Annabelle.Babineau@unb.ca,0,,1422544020,0
-x24wa,Meghan,Miller,,Centre for Digital Scholarship,,meghan.miller@unb.ca,0,,1422543514,0
-i680u,Nikita,Smith,,Archives,,Nikita.Smith@UNB.ca,0,,1422543403,0
-dnicoll,Dylan,Nicoll,,Engineering & Computer Science Library,,Dylan.Nicoll@unb.ca,0,,1422543212,0
-gmiller2,Gillian Suzanne,Miller,,,,Gillian.Miller1@unb.ca,0,,1422543113,0
-k3y7,Jeremy,McDermott,,Systems,Web Developer,Jeremy.McDermott@unb.ca,1,,1422543008,0
-d9671,Jennifer,Hogan,,,,j.hogan@unb.ca,0,,1422542784,0
-jhinton1,Jessica,Hinton,,Access Services (Circulation & Document Delivery),,Jessica.Hinton@unb.ca,0,,1422542617,0
-rcyr3,Raquel,Cyr,,Access Services (Circulation & Document Delivery),,Raquel.Cyr@unb.ca,0,,1422542524,0
-q67h,Margaret,Crawford,,Archives,Archives Assistant,q67h@unb.ca,0,,1422542431,0
-abosse,Angela,Bosse,,Archives,,Angela.Bosse@unb.ca,0,,1422542304,0
-syousuf,Shahla,Yousuf,,,,shahla.yusuf@unb.ca,0,,1415993223,0
-myitayew,Michael,Yitayew,,Science & Forestry Library,,Michael.Yitayew@unb.ca,0,,1415993124,0
-jwhite4,Jaime,White,,Centre for Digital Scholarship,,Jaime.White@unb.ca,0,,1415993062,0
-gwatts1,Gregory Shawn,Watts,,Microforms,,Gregory.Watts@unb.ca,0,Microforms,1415992967,0
-swalmark,Sofia,Walmark,,,,sofia.walmark@unb.ca,0,,1415992906,0
-awainrig,Amelia,Wainright,,Centre for Digital Scholarship,student assistant,Amy.Wainright@unb.ca,0,,1415992847,0
-ptruong,Phuong,Truong,,Engineering & Computer Science Library,,ptruong@unb.ca,0,,1415992767,0
-d55ux,Laurie,Temgoua Nguimfack,,Centre for Digital Scholarship,,d55ux@unb.ca,0,,1415992367,0
-b40a3,Caitlin,Sowers,,,,b40a3@unb.ca,0,,1415992246,0
-v4e93,Jessica,Seguin,,,,Jessica.Seguin@UNB.ca,0,,1415991958,0
-mroussy,Megan,Roussy,,,,Megan.Roussy@unb.ca,0,,1415991524,0
-l4t0l,Miriam,Richer,,Centre for Digital Scholarship,,l4tol@unb.ca,0,,1415991471,0
-c53q5,Natasha,Quiring,,,,natasha.quiring@unb.ca,0,,1415991386,0
-rprangle,Rebecca,Prangley,,Centre for Digital Scholarship,student assistant,r.prangley@unb.ca,0,,1415991331,0
-eschaap,J. Elisabeth,Schaap,,Engineering & Computer Science Library,Library Assistant,eschaap@unb.ca,0,,1415991243,0
-cparsons,Cassandra,Parsons,,Science & Forestry Library,Student Assistant,cassandra.parsons@unb.ca,0,,1415990618,0
-r6t12,Nicole,Nickerson,,,,nick.nm@unb.ca,0,,1415990354,0
-jnason,Jessica,Nason,,,,Jessica.Nason@unb.ca,0,,1415990221,0
-kjones7,Kimberly,Vose Jones,,Reference,Library Assistant,K.VoseJones@unb.ca,1,,1415990115,0
-v718m,Patricia (Trish),Goguen,,Centre for Digital Scholarship,Imaging Centre Assistant,trish.goguen@unb.ca,1,,1415989995,0
-kderzawe,Kimberly,Derzawetz,,Cataloguing,Library Assistant,Kimberly.Derzawetz@unb.ca,0,,1415989919,0
-d5622,Emily,Brennan,,Reference,"Library Assistant, Part-Time",Emily.Brennan@unb.ca,1,,1415989712,0
-t98b4,Mark,Cameron,,Engineering & Computer Science Library,"Library Assistant, Part Time",Mark.Cameron1@unb.ca,0,,1415989638,0
-rboudre1,Rhonda,Boudreau,,Access Services (Circulation & Document Delivery),"Library Assistant, Part Time",Rhonda.Boudreau@unb.ca,1,,1415989454,0
-robertab,Roberta,Barnet,,Engineering & Computer Science Library,"Library Assistant, Part Time",Roberta.Barnet@unb.ca,1,,1415989032,0
-s0824,Jeremy,Murray,,Administration,Student Assistant,jeremy.murray@unb.ca,0,,1414783141,0
-jmofford,Jayanna,Mofford,,Access Services (Circulation & Document Delivery),Library Assistant,Jayanna.Mofford1@unb.ca,1,,1414783065,0
-u4ati,Alexander,Martin,,Engineering & Computer Science Library,,alexm.294@unb.ca,0,,1414783025,0
-mmalcolm,Madeline,Saunders,,Science & Forestry Library,,Madeline.Malcolm@unb.ca,0,,1414782980,0
-gmagill,Graeme,Magill,,,,Graeme.Magill@unb.ca,0,,1414782922,0
-mmacdon7,Melissa,MacDonald,,,,Melissa.MacDonald11@unb.ca,0,,1414782886,0
-cmacdon9,Clarence,MacDonald,,,,Clarence.MacDonald@unb.ca,0,,1414782855,0
-llew,Lilian Zhi Ling,Lew,,,,Lilian.Lew@unb.ca,0,,1414782802,0
-d5u1s,Mahsa,Kiani,,,,Mahsa.Kiani@unb.ca,0,,1414782770,0
-akhurshi,Amna,Khurshid,,Access Services (Circulation & Document Delivery),,Amna.Khurshid@unb.ca,0,,1414782723,0
-wkhan,Waleed,Khan,,Engineering & Computer Science Library,,wkhan@unb.ca,0,,1414782682,0
-gjones2,Geoffrey,Jones,,,,Geoffrey.Jones@unb.ca,0,,1414782642,0
-eharnish,Emily,Harnish,,Access Services (Circulation & Document Delivery),,Emily.Harnish@unb.ca,0,,1414782588,0
-efrankli,Emily,Franklin,,Science & Forestry Library,,E.Franklin73@unb.ca,0,,1414782534,0
-afox,Alexandra,Fox,,Microforms,Student Assistant,a.fox@unb.ca,0,,1414782498,0
-j1sv9,Jennifer Elizabeth Sarah,Estey,,,,Jen.Estey@UNB.ca,0,,1414782443,0
-h0vuu,Kristy,Edwards,,,Assistive Technology Assistant,kris.edwards@unb.ca,0,,1414782399,0
-mduffin,MacKenzie,Duffin,,Access Services (Circulation & Document Delivery),,mackenzie.duffin@unb.ca,0,,1414782333,0
-v6119,Delia,Delice,,,,delia.delice@unb.ca,0,,1414782289,0
-dcorrive,Danielle,Corriveau,,,,Danielle.Corriveau@unb.ca,0,,1414782219,0
-o2o40,Sun-Woo,Chung,,,,sam.jung@unb.ca,0,,1414782168,0
-s7u17,Kaitlin,Armour,,Access Services (Circulation & Document Delivery),,Kaitlin.Armour@unb.ca,0,,1414781998,0
-xchen8,Xi,Chen,,,,Xi.Chen87@unb.ca,0,,1414781901,0
-kbonner2,Kathryn,Bonner,,Science & Forestry Library,,Kathryn.Bonner@unb.ca,0,,1414781821,0
-r2crr,Andrew,Balcom,,Centre for Digital Scholarship,,andrew.balcom@unb.ca,0,,1414781767,0
-abakshi,Anmol,Bakshi,,Engineering & Computer Science Library,,a.bakshi@unb.ca,0,,1414781711,0
-e3a0j,Yumi,Araki,,Engineering & Computer Science Library,,yumi.araki@unb.ca,0,,1414781342,0
-ballen2,Brianne,Allen,,,,brianne.allen@unb.ca,0,,1414781252,0
-l5p6b,Alyssa,Allen Gerwing,,Collections Development,,am.allen@unb.ca,0,,1414780695,0
-jphinney,Jackie,Phinney,,Hans W. Klohn Commons,Librarian,J.phinney@unb.ca,1,,1414600310,0
-cslupsky,Charene,Slupsky,,,Library Assistant,cslupsky@unb.ca,1,,1413555477,0
-j333f,Brian,Cassidy,,Systems,Senior Technical Programmer,brian.cassidy@unb.ca,1,,1410284082,0
-admin,Administrator,,,,,admin@example.com,1,,1410195960,0
-d2it,Rob,Glencross,,Centre for Digital Scholarship,Digital Publishing Assistant,rob.glencross@unb.ca,1,,1409752341,0
-corscad,Laura,Corscadden,,Administration,Librarian Intern,Laura.Corscadden@unb.ca,0,,1406902669,0
-lbelyea,Leah,Belyea,,Systems,,leah.belyea@unb.ca,0,,1404309119,0
-rwithers,Richelle L,Witherspoon,,Reference,Librarian,r.witherspoon@unb.ca,1,,1391709938,0
-d5jii,Jenna,Granger,,Hans W. Klohn Commons,Library Services Desk Manager,jenna.granger@unb.ca,1,,1384961378,0
-kauld,Karen,Auld,,,"Library Assistant, Part Time",Karen.Auld@unb.ca,0,,1384791577,0
-e99hc,Amanda,Duffie,Acquisitions,,Manager of Technical Services,Amanda.Duffie@unb.ca,1,,1382549539,0
-bbenedic,Beverly,Benedict,,Science & Forestry Library,Library Assistant,Beverly.Benedict@unb.ca,1,,1381505677,0
-g2dow,,,,,,g2dow@unb.ca,0,,1381494255,0
-shendrik,Shawn,Hendrix,,,,Shawn.Hendrikx@unb.ca,0,,1381491333,0
-sujones,Susan S.,Jones,,Law Library,Technical Services Librarian,susan.jones@unb.ca,1,,1373654960,0
-atome,Amanda,Tome,,,Archivist,amanda.tome@unb.ca,0,,1366740746,0
-asliwka,Agnieszka,Sliwka,,Reference,Library Assistant,asliwka@unb.ca,1,,1366392338,0
-u4sd0,Ali,Mani,,,,mani.ali@unb.ca,0,,1366128336,0
-scroos,Saran,Croos,,Engineering & Computer Science Library,Librarian,saran.croos@unb.ca,1,,1362069590,0
-mtiozzo,Mario,Tiozzo,,Administration,"Director, Planning and Analysis",mtiozzo@unb.ca,1,,1360270087,0
-abuckley,,Buckley,,,,abuckley@unb.ca,0,,1349980354,0
-mforster,Margaret,Forster,,Law Library,Technical Services Library Assistant,mforster@unb.ca,0,,1348762917,0
-jsmyth,Joanne,Smyth,"Government Documents, Data and Maps|Microforms|Reference",,"Dept Head, Librarian",jsmyth@unb.ca,1,,1291322878,0
-mas,Merle,Steeves,Cataloguing,,"Dept Head, Librarian",mas@unb.ca,1,,1291322878,0
-jteskey,John D.,Teskey,,,"Director, Libraries (Fredericton)",jteskey@unb.ca,0,,1291322878,0
-jlt,Jocelyne,Thompson,Collections Development,,Director of Collection Services,jlt@unb.ca,1,,1291322878,0
-ntoner,Neil,Toner,,Engineering & Computer Science Library,Library Assistant,ntoner@unb.ca,1,,1291322878,0
-hweldon,,,,,,hweldon@unb.ca,0,,1291322878,0
-barbw,Barb,Wheeler,,Cataloguing,"Dept. Head, Librarian",barbw@unb.ca,0,,1291322878,0
-mwhitney,Mary-Kathryn,Whitney,,Cataloguing,Library Assistant,mwhitney@unb.ca,1,,1291322878,0
-jsanford,Jacob,Sanford,,Systems,Infrastructure/Solutions (ETC) Architect,jsanford@unb.ca,1,,1291322877,0
-dawns,Dawn,Saunders,,,Library Assistant,dawns@unb.ca,0,,1291322877,0
-jmacdon1,,,,,,jmacdon1@unb.ca,1,,1291322877,0
-rshannon,R. Scott,Shannon,,Cataloguing,eResources Administrator,rshannon@unb.ca,1,,1291322877,0
-psimmons,Patricia,Simmons,,Reference,Library Assistant,psimmons@unb.ca,1,,1291322877,0
-asimpson,Alana L.,Simpson,,Access Services (Circulation & Document Delivery),Library Assistant,asimpson@unb.ca,1,,1291322877,0
-sloan,Stephen,Sloan,Engineering & Computer Science Library|Science & Forestry Library,,"Dept. Head, Librarian",sloan@unb.ca,0,,1291322877,0
-lsmith1,,,,,,lsmith1@unb.ca,0,,1291322877,0
-psmith,Pamela,Smith,,Science & Forestry Library,Library Assistant,psmith@unb.ca,1,,1291322877,0
-emunn,Elizabeth,Munn,,Acquisitions,Library Assistant,emunn@unb.ca,1,,1291322876,0
-mnason,Michael,Nason,,Centre for Digital Scholarship,Librarian,mnason@unb.ca,1,,1291322876,0
-neilson,John,Neilson,,,,neilson@unb.ca,0,,1291322876,0
-tnoel,Teri,Noel,Access Services (Circulation & Document Delivery),,Manager,tnoel@unb.ca,0,,1291322876,0
-koreilly,Krista,O'Reilly,,,,koreilly@unb.ca,0,,1291322876,0
-credekop,Cory,Redekop,,,,credekop@unb.ca,0,,1291322876,0
-erichard,Eric,Richard,,,Library Assistant,erichard@unb.ca,0,,1291322876,0
-ser,Stephen,Rosenfeld,,,,ser@unb.ca,0,,1291322876,0
-lroulsto,Linda,Roulston,,Collections Development,Librarian,Linda.Roulston@unb.ca,1,,1291322876,0
-juliar,Julia,Roy,,Collections Development,"Library Assistant, Donations",juliar@unb.ca,1,,1291322876,0
-amcclusk,Ann,,,,formerly in Circ,amcclusk@unb.ca,0,,1291322875,0
-nmclaugh,Nancy,McLaughlin,,Access Services (Circulation & Document Delivery),Library Assistant,nmclaugh@unb.ca,1,,1291322875,0
-moe,Doreen,McLellan-Savoie,,Cataloguing,Library Assistant,D.McLellan-Savoie@unb.ca,1,,1291322875,0
-mmeade,Mike,Meade,,Centre for Digital Scholarship,"Manager, Digital Imaging",mmeade@unb.ca,1,,1291322875,0
-gmerritt,Greg,,,,Former in Law Library,gmerritt@unb.ca,0,,1291322875,0
-hmets,Howie,Mets,,,Library Assistant,hmets@unb.ca,0,,1291322875,0
-ecmoore,Erik,Moore,Centre for Digital Scholarship,,Dept Head Librarian,ecmoore@unb.ca,1,,1291322875,0
-mortimer,Paul,Mortimer,,Hans W. Klohn Commons,Circulation,mortimer@unb.ca,1,,1291322875,0
-jmoss,Janet M.,Moss,,,Head Law Librarian,jmoss@unb.ca,0,,1291322875,0
-lmacknig,Lynn,MacKnight,,Access Services (Circulation & Document Delivery),Library Assistant,lmacknig@unb.ca,1,,1291322874,0
-jmaclean,Judy,MacLean,,Science & Forestry Library,Librarian,jmaclean@unb.ca,0,,1291322874,0
-jmacphee,John,MacPhee,,Mail Room,Library Maintenance Worker,jmacphee@unb.ca,0,,1291322874,0
-gmalek,,,,,Former in Reference,gmalek@unb.ca,0,,1291322874,0
-mmallale,Marty,Mallaley,,,Faculty of Business Secretary,mmallale@unb.ca,0,,1291322874,0
-smalone,Susan,Malone,,Science & Forestry Library,Library Assistant,smalone@unb.ca,0,,1291322874,0
-lmarino,,,,,,lmarino@unb.ca,0,,1291322874,0
-emartin,E. Grace,Martin,,Access Services (Circulation & Document Delivery),Library Assistant,emartin@unb.ca,1,,1291322874,0
-emaynard,,,,,,emaynard@unb.ca,0,,1291322874,0
-pjohnson,Patti Auld,Johnson,,Archives,Library Assistant,pjohnson@unb.ca,1,,1291322873,0
-sjones,Susan B.,Jones,,,Library Assistant,sjones@unb.ca,0,,1291322873,0
-kkeiller,Karen,Keiller,Hans W. Klohn Commons,,Director,kkeiller@unb.ca,0,,1291322873,0
-jkerr,James,Kerr,,Centre for Digital Scholarship,Electronic Journals Co-ordinator,jkerr@unb.ca,1,,1291322873,0
-cleblanc,Craig,Leblanc,,Systems,Systems Analyst,cleblanc@unb.ca,1,,1291322873,0
-vleiter,Virginia,Leiter,,Access Services (Circulation & Document Delivery),Library Assistant,vleiter@unb.ca,1,,1291322873,0
-macdonal,Corinne,MacDonald,,Hans W. Klohn Commons,,macdonal@unb.ca,0,,1291322873,0
-jmacinto,James,MacIntosh,,"Government Documents, Data and Maps",Library Assistant,jmacinto@unb.ca,1,,1291322873,0
-lgrandy,Leah,Grandy,,Microforms,Library Assistant,lgrandy@unb.ca,1,,1291322872,0
-mgray,Margaret,Gray,,Hans W. Klohn Commons,Acquisitions & Document Delivery,mgray@unb.ca,0,,1291322872,0
-phale,Patsy,Hale,,Archives,Library Assistant,phale@unb.ca,0,,1291322872,0
-hanratty,Siobhan,Hanratty,,"Government Documents, Data and Maps",Librarian,hanratty@unb.ca,1,,1291322872,0
-lhansen,Linda,Hansen,,Hans W. Klohn Commons,Librarian,lhansen@unb.ca,0,,1291322872,0
-ehenders,Ellen,Henderson,,Access Services (Circulation & Document Delivery),"Library Assistant, Part Time",ehenders@unb.ca,0,,1291322872,0
-mhenders,Mary Lou,McGeehan,,,,mhenders@unb.ca,0,,1291322872,0
-yhouse,Yolande,House,,,,yhouse@unb.ca,0,,1291322872,0
-mjenkins,Mary C.,Jenkins,,,,mjenkins@unb.ca,0,,1291322872,0
-tinad,Tina,Clarke,,"Government Documents, Data and Maps",Library Assistant,tinad@unb.ca,1,,1291322871,0
-deves,Deborah,Eves,,Hans W. Klohn Commons,Reference Assistant,deves@unb.ca,0,,1291322871,0
-aextell,Angela,Extell,,Hans W. Klohn Commons,Cataloguing/Reference,aextell@unb.ca,1,,1291322871,0
-gfinney,Gail,Finney,,Cataloguing,Library Assistant,gfinney@unb.ca,1,,1291322871,0
-sfisher,Susan,Fisher,,Children's Literature|Reference,"Curator, Children's Literature",sfisher@unb.ca,1,,1291322871,0
-jdfraser,Janet,Fraser,,,"Librarian Head, Bib./Coll. Services",jdfraser@unb.ca,0,,1291322871,0
-dfurey,Darren,Furey,,,Former Law Librarian,dfurey@unb.ca,0,,1291322871,0
-kgadd,Kathleen,Gadd,,,Former Librarian UNBSJ,kgadd@unb.ca,0,,1291322871,0
-gagnon,Yolande,Gagnon,,,Senior Library Assist (Serials/Circ),gagnon@unb.ca,0,,1291322871,0
-fgiberso,Frances,Giberson,,,Librarian,fgiberso@unb.ca,0,,1291322871,0
-legere,Gail,Correia,,Hans W. Klohn Commons,"Manager, Acquisitions/Doc. Del., Serials",legere@unb.ca,0,,1291322870,0
-cacotter,Catherine,Cotter,Law Library,,Head Law Librarian,cacotter@unb.ca,1,,1291322870,0
-bcull,Barry W.,Cull,,Science & Forestry Library,Information Services Librarian,bcull@unb.ca,1,,1291322870,0
-davec,David,Cunningham,,,Senior Technical Analyst,davec@unb.ca,0,,1291322870,0
-monicac,Monica,Fitzpatrick,,Administration,Graphic Designer,monicac@unb.ca,1,,1291322870,0
-adaley,Andrew,Daley,,Administration,"Assistive Technologist, Coordinator",adaley@unb.ca,1,,1291322870,0
-ndickins,Nancy,Dickinson,,Law Library,Administrative Secretary,Nancy.Dickinson@unb.ca,1,,1291322870,0
-jjd,Joshua,Dickison,,Administration,Copyright Officer,jjd@unb.ca,1,,1291322870,0
-jdiduch,Jane,Diduch,,Access Services (Circulation & Document Delivery),Library Assistant,jdiduch@unb.ca,0,,1291322870,0
-hdoherty,Heather,Doherty,,Law Library,Library Asst (Circulation/Serials Management),hdoherty@unb.ca,1,,1291322870,0
-natalied,Natalie,Smith,,,,natalied@unb.ca,0,,1291322870,0
-lbiggar,Laura,Biggar Goss,,Reference,"Library Assistant, Part Time",lbiggar@unb.ca,0,,1291322869,0
-kblack,Karen,Black,,Access Services (Circulation & Document Delivery),"Library Assistant, Part Time",kblack@unb.ca,1,,1291322869,0
-pblack1,Patricia,Black,,,,pblack1@unb.ca,0,,1291322869,0
-mbragdon,Marc,Bragdon,,Reference,Reference Librarian,mbragdon@unb.ca,1,,1291322869,0
-abridges,Ann,Bridges,,Access Services (Circulation & Document Delivery),Library Assistant,abridges@unb.ca,1,,1291322869,0
-cbrown,Cheryle,Brown,,Acquisitions,Library Assistant,cbrown@unb.ca,1,,1291322869,0
-dbudaker,Diane,Budaker,,,,dbudaker@unb.ca,0,,1291322869,0
-dbuhay,Diane,Buhay,,Hans W. Klohn Commons,Librarian,dbuhay@unb.ca,0,,1291322869,0
-chart,Mary,Charters,,,Retired Librarian,chart@unb.ca,0,,1291322869,0
-gsallen,Geoffrey,Allen,,,former ETC,gsallen@unb.ca,0,,1291322868,0
-sallen,Susan,Allen,,Acquisitions,Library Assistant,sallen@unb.ca,1,,1291322868,0
-lbanks,Lynn,Banks,,Access Services (Circulation & Document Delivery),Library Assistant,lbanks@unb.ca,1,,1291322868,0
-lbateman,Lorraine,Bateman,,,,lbateman@unb.ca,0,,1291322868,0
-kirvineb,Kathryn,Irvine-Bray,,,Library Assistant,kirvineb@unb.ca,0,,1286201328,0
-lisaauld,Lisa,Auld,,Engineering & Computer Science Library,Library Assistant,lisaauld@unb.ca,1,,1281056709,0
-kdoucet,Kris,Doucet,,Hans W. Klohn Commons,Admin Coordinator,kdoucet@unb.ca,0,,1276015993,0
-higginsc,Cora,Higgins,,Hans W. Klohn Commons,"Manager, Circulation",higginsc@unb.ca,0,,1276015920,0
-lelievre,Steve,Lelievre,,,Retired Librarian,lelievre@unb.ca,0,,1275913617,0
-holyoke,Francesca,Holyoke,Archives,,"Dept Head, Librarian",holyoke@unb.ca,0,,1275507772,0
-esmith2,Ethel,Smith,,,,esmith2@unb.ca,0,,1275507640,0
-sgunasee,Sarah,Gunaseelan,,Science & Forestry Library,"Library Assistant, Part Time",sgunasee@unb.ca,1,,1275507614,0
-aco,Alison,Renaud,,,,aco@unb.ca,0,,1275507584,0
-cjack,Christine,Jack,Microforms,,Manager,cjack@unb.ca,1,,1275507531,0
-amclaugh,Alicia,McLaughlin,Access Services (Circulation & Document Delivery),Instruction Facilities,Acting Manager,amclaugh@unb.ca,1,,1275507490,0
-suoliver,Susan,Oliver,,Administration,Senior Administrative & Communications Officer,suoliver@unb.ca,1,,1275507460,0
-lbalcom,Lesley,Balcom,Administration,,Dean of Libraries,lbalcom@unb.ca,1,,1275507412,0
-drross,David,Ross,Hans W. Klohn Commons,,"Saint John Campus Library Head, Librarian",drross@unb.ca,1,,1275507328,0
-lwells,Leanne,Wells,,Reference,Information Services Librarian,lwells@unb.ca,1,,1275506889,0
-jmackenz,James,MacKenzie,Archives,Administration,Acting Head of Archives and Special Collections/Director of Scholarly Technologies,jmackenz@unb.ca,1,,1275506755,0
-pls,Lyn,Saunders,,,Administrative Assistant,pls@unb.ca,0,,1270557129,0
-jcarter1,Jeff,Carter,Systems,,"Manager, Systems Group",jeff.carter@unb.ca,1,,1270149711,0
+unb_id,first_name,last_name,department_head,department,title,email,enabled,desk_stats_location,created,on_leave,room_number,display_staff_dir, phone_no
+aprajapa,Arti,Prajapati,,Access Services (Circulation & Document Delivery),student assistant,arti.suresh@unb.ca,1,,1559309659,0,,0,
+hdressle,Harrison David,Dressler,,Microforms,Student Assistant,Harrison.Dressler@unb.ca,1,,1558441108,0,,0,
+f20r0,Patrick,Brennan,,Hans W. Klohn Commons,Library Assistant,Patrick.Brennan@unb.ca,1,,1557336359,0,Hans W. Klohn Commons 114,1,1 506 648 5709
+vpena,Victoria Cristina,Pena Villarroel,,Science & Forestry Library,student assistant,vpena@unb.ca,0,,1550775715,0,,0,
+bgoodine,Bethany,Goodine,,Science & Forestry Library,student assistant,bethany.goodine@unb.ca,0,,1549371919,0,,0,
+pschilf,Patrick,Schilf,,Systems,Web Developer,Patrick.Schilf@unb.ca,1,,1547475382,0,,1,452-6133
+jpalk,Jenny,Palk,,Hans W. Klohn Commons,Administrative Coordinator,jenny.palk@unb.ca,1,,1546866008,0,Hans W. Klohn Commons 111,1,648-5700
+h1wto,Caitlin,Christie,,Access Services (Circulation & Document Delivery),Library Assistant,Caitlin.Christie@unb.ca,0,,1544451159,0,,1,453-4555
+hharrity,Harley,Harrity,,Engineering & Computer Science Library,student assistant,Harley.Harrity@unb.ca,0,,1542294662,0,,0,
+clewis6,Candice,Lewis,,Hans W. Klohn Commons,Lib Assistant Even Weekend Supervisor,Candice.Lewis@unb.ca,1,,1540223482,0,Hans W. Klohn Commons 114 C-4,1,1 506 638 2451
+arobich9,Annie,Robichaud,,Archives,student assistant,Annie.Robichaud@unb.ca,0,,1539362818,0,,0,
+gmaccull,Glenn,MacCulloch,,Law Library,Evening/Weekend Library Assistant,glenn.macculloch@unb.ca,1,,1539262999,0,Ludlow Hall 111,1,1 506 453 4734
+nwilson7,Norah,Wilson,,Law Library,Evening/Weekend Library Assistant,Norah.Wilson@unb.ca,1,,1539262842,0,Ludlow Hall 111,1,1 506 453 4734
+mrock,Marshall,Rock,,Science & Forestry Library,Student Assistant,Marshall.Rock@unb.ca,0,,1539194113,0,,0,
+skelly9,Sebastian,Kelly,,Archives,student assistant,s.kelly9@unb.ca,0,,1538132664,0,,0,
+ldavis2,Lauren Catherine,Davis,,Archives,Student Assistant,Lauren.Davis@unb.ca,0,,1538071421,0,,0,
+dkeimel,Derek,Keimel,,Engineering & Computer Science Library,"Library Assistant, Part Time",D.Keimel@unb.ca,1,,1537881575,0,,1,453 4747
+gjackso1,Grace,Jackson,,Science & Forestry Library,student assistant,Grace.Jackson@unb.ca,0,,1537276859,0,,0,
+bbrenton,Bethany,Brenton,,Access Services (Circulation & Document Delivery),student assistant,bethany.brenton@unb.ca,0,,1537276619,0,,0,
+u5og8,A.,Suliman,,Reference,Reference Student Assistant,A.Suliman@unb.ca,0,,1537276315,0,,0,
+untaganz,Uwera Nina,Ntaganzwa,,Centre for Digital Scholarship,student assistant,nuwera.nina@unb.ca,0,,1536765694,0,,0,
+cdahr,Cameron,Dahr,,Engineering & Computer Science Library,student assistant,Cameron.Dahr@unb.ca,0,,1536605265,0,,0,
+epearso1,Erin,Pearson,,Engineering & Computer Science Library,student assistant,Erin.Pearson@unb.ca,0,,1536605227,0,,0,
+kchippet,Kellie Dianne,Chippett,,Science & Forestry Library,student assistant,Kellie.Chippett@unb.ca,0,,1536346938,0,,0,
+ebateman,Elizabeth,Bateman,,Science & Forestry Library,student assistant,liz.bateman@unb.ca,0,,1536346412,0,,0,
+igoguen,Isabelle Sarah-Melissa,Goguen,,Microforms,student assistant,Isabelle.Goguen@unb.ca,0,,1536344496,0,,0,
+ojoshi,Ojaswi,Joshi,,Access Services (Circulation & Document Delivery),student assistant,joshi.ojaswi0@unb.ca,0,,1536343364,0,,0,
+vbeek,Veronica,Beek,,Access Services (Circulation & Document Delivery),student assistant,Veronica.Beek17@unb.ca,0,,1536343215,0,,0,
+pechever,Paola,Echeverria Mole,,Access Services (Circulation & Document Delivery),student assistant,paola.echeverria@unb.ca,0,,1536343104,0,,0,
+ncormie2,Nicole S.,Taerum,,Reference,Reference Student Assistant,ncormie2@unb.ca,0,,1536085218,0,,0,
+sarmstr4,Sally,Armstrong,,Reference,Entrepreneurship Librarian,sally.armstrong@unb.ca,1,,1536072066,0,Harriet Irving Library,1,447-3017
+hpreston,Hannah,Preston,,Access Services (Circulation & Document Delivery),,Hannah.Preston@unb.ca,0,,1524832848,0,,0,
+ovisser,Oriana,Visser,,Microforms,student assistant,oriana.visser@unb.ca,0,,1524832747,0,,0,
+mdavoudi,Mahtab,Davoudi,,Centre for Digital Scholarship,student assistant,mdavoudi@unb.ca,0,,1524831956,0,,0,
+kbullerw,Kylie,Bullerwell,,Archives,student assistant,Kylie.Bullerwell@unb.ca,0,,1524831750,0,,0,
+tzaraisk,Tatiana,Zaraiskaya,,Reference|Science & Forestry Library,STEM Librarian,T.Zaraiskaya@unb.ca,1,,1522173175,0,Harriet Irving Library 316A,1,453-4814
+n8337,S. Nicole,Lyons-Macfarlane,,Law Library,Technical Services Library Assistant,Nicole.Lyons-MacFarlane@unb.ca,1,,1515070229,0,Ludlow Hall 111,1,1 506 458 7978
+u83a9,Alex,Goudreau,,Hans W. Klohn Commons,Science and Health Sciences Librarian,Alex.Goudreau@unb.ca,1,,1511876908,0,Hans W. Klohn Commons 117,1,648-5551
+rsalahed,Rabab,Salaheddine,,Science & Forestry Library,student assistant,rabab.bsd@unb.ca,0,,1510765036,0,,0,
+h9u23,Tony,Tomarchio,,Administration,student assistant,Tony.Tomarchio@unb.ca,0,,1508176521,0,,0,
+mcosman1,Meghan,Cosman,,Engineering & Computer Science Library,Student Assistant - Engineering Library,Meghan.Cosman@unb.ca,0,,1506537669,0,,0,
+vkavanau,Victoria T,Kavanaugh,,Engineering & Computer Science Library,Student Assistant - Engineering Library,Victoria.Kavanaugh@unb.ca,0,,1506537521,0,,0,
+omcinnis,Owen,McInnis,,Engineering & Computer Science Library,Student Assistant - Engineering Library,Owen.McInnis@unb.ca,0,,1506537413,0,,0,
+atit,Abraham,Tit,,Engineering & Computer Science Library,Student Assistant - Engineering Library,Tough.1@unb.ca,0,,1506537295,0,,0,
+nreid3,Natalie,Reid,,Engineering & Computer Science Library,student assistant,Natalie.Reid@unb.ca,0,,1506537112,0,,0,
+bfergus2,Beth A,Ferguson,,Access Services (Circulation & Document Delivery),"Library Assistant, Part-Time",Beth.Ferguson@unb.ca,1,,1505398745,1,,1,453-4555
+mmootoos,Alexandra,Mootoosamy,,Access Services (Circulation & Document Delivery),Library Assistant,alexandra.mootoosamy@unb.ca,1,,1505313491,0,,1,453-4555
+csmith20,Carley,Smith,,Centre for Digital Scholarship,Student Assistant - Digital Scholarship,csmith20@unb.ca,0,,1505133477,0,,0,
+ahards,Adrian,Hards,,Reference,,adrian.hards@unb.ca,0,,1505132180,0,,0,
+gannear,Grace,Annear,,Reference,Research Help Desk Student Assistant,gannear@unb.ca,0,,1504875978,0,,0,
+sforsyt1,Sass,Bergen,,Archives,Library Assistant,S.Forsyth@unb.ca,1,,1504796389,0,Harriet Irving Library 504,1,1 506 458 7050
+mbell2,MacKenzie J,Bell,,Centre for Digital Scholarship,student assistant,mackenzie.bell@unb.ca,0,,1503685303,0,,0,
+eorr,Emily,Orr,,Access Services (Circulation & Document Delivery),student assistant,Emily.Orr@unb.ca,0,,1503682961,0,,0,
+jrobich4,Jason,Robichaud,,,,Jason.Robichaud@unb.ca,0,,1503682832,0,,0,
+plaurent,Prevail,Laurent,,,,prevail.laurent@unb.ca,0,,1503682313,0,,0,
+sshresth,Srijain Man,Shrestha,,,,srijain.shrestha@unb.ca,0,,1503682226,0,,0,
+jtang2,James,Tang,,Science & Forestry Library,student assistant,James.Tang@unb.ca,0,,1503682110,0,,0,
+ssathees,Soumya,Satheesan,,Science & Forestry Library,student assistant,Soumya.Satheesan@unb.ca,0,,1503681884,0,,0,
+rforbes,Rachel,Forbes,,,,rachel.forbes@unb.ca,0,,1503679534,0,,0,
+acooke1,Alicia Irene,Cooke,,Archives,student assistant,Alicia.Cooke@unb.ca,0,,1495721083,0,,0,
+djewett3,Danielle,Jewett,,Centre for Digital Scholarship,,Danielle.J@unb.ca,0,,1495720765,0,,0,
+bfullart,Brianne R,Fullarton,,,Student assistant,b.fullarton@unb.ca,0,,1495720005,0,,0,
+a248p,Courtney Lynn,Boudreau,,Hans W. Klohn Commons,DMNB Librarian,c.l.boudreau@unb.ca,1,,1493987427,0,,0,
+h18a,Kris,Stewart,,Engineering & Computer Science Library,"Library Assistant, Part-Time",KrisJ.Stewart@unb.ca,0,,1490876513,0,,1,453-4747
+snurse,Shauntelle A,Nurse,,Science & Forestry Library,"Library Assistant, Part-Time",nurse.shauntelle@unb.ca,1,,1488999512,0,I.U.C. Science Library,1,453-4601
+sbuck,Susan,Buck,,Access Services (Circulation & Document Delivery),Student assistant,Susan.Buck@unb.ca,0,,1486581282,0,,0,
+jdoucet14,Janelle,Doucet,,Engineering & Computer Science Library,Student Assistant,jdoucet14@unb.ca,0,,1486132216,0,,0,
+bwindsor,Briar,Windsor,,Engineering & Computer Science Library,Student Assistant - Engineering Library,Briar.Windsor@unb.ca,0,,1484845222,0,,0,
+mbrimico,MacKenzie,Brimicombe,,Centre for Digital Scholarship,Student Assistant - Digital Scholarship,MacKenzie.Brimicombe@unb.ca,0,,1484332564,0,,0,
+dbountal,Dimitra,Bountalas,,Engineering & Computer Science Library,student assistant,dimitra.litsa@unb.ca,0,,1482167217,0,,0,
+jbail,Jeannie,Bail,,Administration,Director of Learning and Research Services,j.bail@unb.ca,1,,1481040977,0,Harriet Irving Library 120,1,458-7212
+tcousine,Tommy,Cousineau,,Engineering & Computer Science Library,student assistant,Tommy.Cousineau@unb.ca,0,,1477486830,0,,0,
+j7v0q,Lizi,Feng,,Engineering & Computer Science Library,student assistant,j7v0q@unb.ca,0,,1476970174,0,,0,
+mdohert3,Megan Shay,Doherty,,Centre for Digital Scholarship|Engineering & Computer Science Library,student assistant,m.s.d@unb.ca,0,,1476464392,0,,0,
+zjackson,Zoe Jackson,Jackson,,Microforms,student assistant,zoe.jackson@unb.ca,0,,1475849803,0,,0,
+q4890,Perry Everett,Dykens,,Archives,student assistant - Archives,perry.dykens@unb.ca,0,,1475849744,0,,0,
+bdawson,Benjamin Jeremy,Dawson,,Archives,student assistant,dawsonb.39@unb.ca,0,,1475849655,0,,0,
+clee5,Christopher W J,Lee,,Science & Forestry Library,student assistant - Science Library,christopher.lee@unb.ca,0,,1475849509,0,,0,
+o06sa,Alison,Parsons,,Administration|Reference,Research Help Desk Student Assistant,alison.parsons@unb.ca,0,,1475064189,0,,0,
+r14l6,Kira,Della Valle,,Hans W. Klohn Commons,Library Ass't Evening Wknd Supervisor,kira.dv@unb.ca,1,,1474654959,0,Hans W. Klohn Commons 114 C-4,1,1 506 638 2459
+l61dg,Jamie,Shaddick,,Hans W. Klohn Commons,Library Assistant,Jamie.Shaddick@unb.ca,1,,1474654543,0,Hans W. Klohn Commons 123 C-2,1,1 506 648 5706
+nmashtal,Nikol,Mashtalyar,,Engineering & Computer Science Library,student assistant,Nikol.Mashtalyar@unb.ca,0,,1474380103,0,,0,
+aani,Alexander,Ani,,Reference,Research Help Desk Student Assistant,aani@unb.ca,0,,1474052632,0,,0,
+mstewar9,Matthew,Stewart,,Engineering & Computer Science Library,Library Assistant,MatthewJ.Stewart@unb.ca,1,,1473961678,0,Head Hall C-15,1,453-5124
+m3og2,Ashlee,Saunders,,Access Services (Circulation & Document Delivery),student assistant,m3og2@unb.ca,0,,1472562463,0,,0,
+cmclaug3,Cody,McLaughlin,,Access Services (Circulation & Document Delivery),,Cody.McLaughlin@unb.ca,0,,1472562348,0,,0,
+tstewar9,Thea,Stewart,,Access Services (Circulation & Document Delivery),student assistant,Thea.Stewart@unb.ca,0,,1472562292,0,,0,
+arhindre,Adam,Rhindress,,Engineering & Computer Science Library,,hlshq@stu.ca,0,,1472562065,0,,0,
+cxu2,Congrong (Diana),Xu,,Engineering & Computer Science Library,student assistant,Congrong.Xu@unb.ca,0,,1472561991,0,,0,
+mheidman,Michael,Heidman,,Cataloguing,,Michael.Heidman@unb.ca,0,,1472561835,0,,0,
+ylo,Yin-Chi (Cindy),Lo,,Science & Forestry Library,,cindy.lo@unb.ca,0,,1472561762,0,,0,
+aeldeso1,Ahmed,Eldesoky,,Science & Forestry Library,student assistant,ahmed.eldesoky@unb.ca,0,,1472561625,0,,0,
+deskstats-access,,,,,,phony+desk-stats@unb.ca,1,,1469535388,0,,0,
+rcolling,Ruth,Collings,,Science & Forestry Library,Librarian,ruth.collings@unb.ca,0,,1467999049,0,1.01E+00,1,453-4814
+cvillami,Camilo,Villamizar,,Systems,Web Developer,camilo.v@unb.ca,1,,1466511401,0,Harriet Irving Library 515B,1,506 447 3177
+ntanner,Nikki,Tanner,,Law Library,Reference/Instruction LIbrarian,Nikki.Tanner@unb.ca,1,,1466449021,0,Ludlow Hall 121,1,1 506 447 3266
+ltaylor4,Lilian,Taylor,,Microforms,,lilian.taylor@unb.ca,0,,1466448849,0,,0,
+pollockl,Lisa,Pollock,,Administration,Senior Office Administrator,pollockl@unb.ca,1,,1466432821,0,Harriet Irving Library 118,1,458-7582
+b0isk,Bill,Glencross,,Centre for Digital Scholarship,Digitization Assistant,William.Glencross@unb.ca,0,,1466428489,0,519,1,1 506 453 4808
+mmacpher,Mark D.,MacPherson,,Mail Room,Library Facilities Coordinator,mmacpher@unb.ca,1,,1465834931,0,Harriet Irving Library,1,1 506 453 4543
+clovelac,Christine,Lovelace,,Archives,Academic Archivist,Christine.Lovelace@unb.ca,1,,1462193128,0,Harriet Irving Library 502,1,1 506 447 3263
+sparis,Shakyna,Paris,,Engineering & Computer Science Library,,s.paris@unb.ca,0,,1453838024,0,,0,
+mruccolo,Marisa,Ruccolo,,Hans W. Klohn Commons,Librarian,m.ruccolo@unb.ca,0,,1451933271,0,207,0,1 506 648 5996
+bvinhdoy,Bo,Vinh-Doyle,,Law Library,Library Assistant,Bolpar.VinhDoyle@unb.ca,0,,1449602715,0,111,0,1 506 453 4734
+efava,Erica,Fava,,Law Library,"Library Assistant, Part-Time",erica.fava@unb.ca,0,,1448303091,0,,1,453-4734
+plosier1,Patrick,Losier,,Administration|Reference,,Patrick.Losier@unb.ca,0,,1447079557,0,,0,
+t6vlz,Seong Hyeok,Park,,Engineering & Computer Science Library,,Seong.Park@unb.ca,0,,1447079407,0,,0,
+rbenzenh,Rachel,Benzenhoefer,,Cataloguing,Library Assistant,rbenzenh@unb.ca,1,,1445604418,0,Lady Beaverbrook Gym A-117A,1,506 458 7072
+rjacksha,Rebekah,Jackshaw,,Administration,,rebekah.jackshaw99@unb.ca,0,,1444913878,0,,0,
+ecochran,Elena,Cochrane,,Centre for Digital Scholarship,Student assistant,Elena.Cochrane@unb.ca,0,,1444913827,0,,0,
+oodunsi,Oluwafunmilola,Odunsi,,Centre for Digital Scholarship,,funmilola.odunsi@unb.ca,0,,1444913757,0,,0,
+b0892,Sara,Serrano,,Access Services (Circulation & Document Delivery),"Library Assistant, Part Time",Sara.Serrano@unb.ca,0,,1443035300,0,113,1,1 506 453 4555
+blangmai,Bethany,Langmaid,,Centre for Digital Scholarship,Student Assistant,Bethany.Langmaid@unb.ca,0,,1443035178,0,,0,
+ndominix,Nicole,Dominix,,Access Services (Circulation & Document Delivery),"Library Assistant, Part-Time",n.dominix@unb.ca,0,,1442257088,0,,0,506 453 4555
+b2xq4,Gina,Ouellet,,Science & Forestry Library,,Gina.O@unb.ca,0,,1442256141,0,,0,
+x9gkk,Sydney,McAdam,,Science & Forestry Library,,Sydney.McAdam@unb.ca,0,,1442256093,0,,0,
+mmazerol,Megan,Mazerolle,,Science & Forestry Library,,megan.mazerolle@unb.ca,0,,1442256043,0,,0,
+kcripps,Katherine,Cripps,,Science & Forestry Library,,Katherine.Cripps@unb.ca,0,,1442255848,0,,0,
+vanupind,Vaishnavi,Anupindi,,Science & Forestry Library,Student Assistant,vaishnavi.anupindi@unb.ca,0,,1442255792,0,,0,
+madamcyz,Mallory,Adamczyk,,Science & Forestry Library,,madamczy@unb.ca,0,,1442255748,0,,0,
+pzhang1,Ping,Zhang,,Engineering & Computer Science Library,,Ping.Zhang@unb.ca,0,,1442255674,0,,0,
+ewindsor,Elladee,Windsor,,Engineering & Computer Science Library,,Elladee.Windsor@unb.ca,0,,1442255625,0,,0,
+ychung,Elise yoojin,Chung,,Engineering & Computer Science Library,student assistant,elisechung.mp@unb.ca,0,,1442255565,0,,0,
+cjackso5,Cora Lynn,Jackson,,Centre for Digital Scholarship,student assistant,ra.jackso_5@unb.ca,0,,1441826521,0,,0,
+v07oy,Matthew,Douglass,,,,m.douglass@unb.ca,0,,1441726520,0,Lady Beaverbrook Gym C-203,0,
+deskstats-hwk,,,,,,libweb+deskstats-hwk@unb.ca,1,,1441201560,0,,0,
+deskstats-archives,,,,,,libweb+deskstats-archives@unb.ca,1,,1439837558,0,,0,
+deskstats-sci,,,,,,libweb+deskstats-sci@unb.ca,1,,1439401872,0,,0,
+deskstats-eng,,,,,,libweb+deskstats-eng@unb.ca,1,,1439398454,0,,0,
+j0765,Amanda,Lloyd,,Archives,,Amanda.Lloyd@unb.ca,0,,1432918140,0,,0,
+j5p27,Janice,Stockall,,Law Library,Library Assistant,Janice.Stockall@unb.ca,1,,1432660547,0,Ludlow Hall 111,1,1 506 458 7979
+adaley2,Amanda,Daley,,Centre for Digital Scholarship,,Amanda.Daley@unb.ca,0,,1432557898,0,,0,
+ztingley,Zachary,Tingley,,Microforms,,ztingley@unb.ca,0,,1432557804,0,,0,
+kmacdon3,Katherine,MacDonald,,Centre for Digital Scholarship,,Katherine.G.MacDonald@unb.ca,0,,1432557645,0,,0,
+scarlson,Siobhan M,Carlson,,Centre for Digital Scholarship,,S.Carlson@unb.ca,0,,1432557527,0,,0,
+f8l46,Joseph,Burton,,,,joseph.cb@unb.ca,0,,1432557440,0,,0,
+w34ie,Chris,Balcom,,,,Christopher.Balcom@unb.ca,0,,1432320142,0,,0,
+x75a8,Philip,Taber,,Hans W. Klohn Commons,Librarian,philip.taber@unb.ca,1,,1429638047,0,Hans W. Klohn Commons 210,1,648-5863
+llevert,Laurelle,LeVert,Hans W. Klohn Commons,,,laurelle.levert@unb.ca,0,,1428688221,0,Philip W. Oland Hall 118,0,1 506 648 5591
+mrrobot,,,,,,libsystems@unb.ca,1,,1426598107,0,,0,
+davidm,David,Matthews,,Hans W. Klohn Commons,"Acquisitions, Doc Del & Circulation",davidm@unb.ca,1,,1424202861,0,Hans W. Klohn Commons 110,1,1 506 648 5705
+allena,Amanda,Allen,,Hans W. Klohn Commons,Commons Assistant,allena@unb.ca,0,,1424202786,0,Hans W. Klohn Commons 114 C3,1,1 506 636 0530
+kallaby,Kathy,Allaby,,Hans W. Klohn Commons,Library Assistant Reserves/Copyright,kallaby@unb.ca,0,,1424202717,0,,1,1 506 648 5706
+kmotty,Krista,Motty Peters,,Access Services (Circulation & Document Delivery),"Library Assistant, Part Time",krista.peters@unb.ca,0,,1424202546,0,,0,
+n2um3,Kristian,Brown,,Hans W. Klohn Commons,Librarian,Kristian.Brown@unb.ca,0,,1423686394,0,,0,
+ababinea,Annabelle,Babineau,,"Government Documents, Data and Maps",,Annabelle.Babineau@unb.ca,0,,1422544020,0,,0,
+x24wa,Meghan,Miller,,Centre for Digital Scholarship,,meghan.miller@unb.ca,0,,1422543514,0,,0,
+i680u,Nikita,Smith,,Archives,,Nikita.Smith@UNB.ca,0,,1422543403,0,,0,
+dnicoll,Dylan,Nicoll,,Engineering & Computer Science Library,,Dylan.Nicoll@unb.ca,0,,1422543212,0,,0,
+gmiller2,Gillian Suzanne,Miller,,,,Gillian.Miller1@unb.ca,0,,1422543113,0,,,
+k3y7,Jeremy,McDermott,,Systems,Web Developer,Jeremy.McDermott@unb.ca,1,,1422543008,0,Harriet Irving Library 515A,1,1 506 443 3914
+d9671,Jennifer,Hogan,,,,j.hogan@unb.ca,0,,1422542784,0,,,
+jhinton1,Jessica,Hinton,,Access Services (Circulation & Document Delivery),,Jessica.Hinton@unb.ca,0,,1422542617,0,,0,
+rcyr3,Raquel,Cyr,,Access Services (Circulation & Document Delivery),,Raquel.Cyr@unb.ca,0,,1422542524,0,,0,
+q67h,Margaret,Crawford,,Archives,Archives Assistant,q67h@unb.ca,0,,1422542431,0,,0,
+abosse,Angela,Bosse,,Archives,,Angela.Bosse@unb.ca,0,,1422542304,0,,0,
+syousuf,Shahla,Yousuf,,,,shahla.yusuf@unb.ca,0,,1415993223,0,,,
+myitayew,Michael,Yitayew,,Science & Forestry Library,,Michael.Yitayew@unb.ca,0,,1415993124,0,,0,
+jwhite4,Jaime,White,,Centre for Digital Scholarship,,Jaime.White@unb.ca,0,,1415993062,0,,0,
+gwatts1,Gregory Shawn,Watts,,Microforms,,Gregory.Watts@unb.ca,0,Microforms,1415992967,0,,0,
+swalmark,Sofia,Walmark,,,,sofia.walmark@unb.ca,0,,1415992906,0,,,
+awainrig,Amelia,Wainright,,Centre for Digital Scholarship,student assistant,Amy.Wainright@unb.ca,0,,1415992847,0,,0,
+ptruong,Phuong,Truong,,Engineering & Computer Science Library,,ptruong@unb.ca,0,,1415992767,0,,0,
+d55ux,Laurie,Temgoua Nguimfack,,Centre for Digital Scholarship,,d55ux@unb.ca,0,,1415992367,0,,0,
+b40a3,Caitlin,Sowers,,,,b40a3@unb.ca,0,,1415992246,0,,,
+v4e93,Jessica,Seguin,,,,Jessica.Seguin@UNB.ca,0,,1415991958,0,,,
+mroussy,Megan,Roussy,,,,Megan.Roussy@unb.ca,0,,1415991524,0,,,
+l4t0l,Miriam,Richer,,Centre for Digital Scholarship,,l4tol@unb.ca,0,,1415991471,0,,0,
+c53q5,Natasha,Quiring,,,,natasha.quiring@unb.ca,0,,1415991386,0,,,
+rprangle,Rebecca,Prangley,,Centre for Digital Scholarship,student assistant,r.prangley@unb.ca,0,,1415991331,0,,0,
+eschaap,J. Elisabeth,Schaap,,Engineering & Computer Science Library,Library Assistant,eschaap@unb.ca,0,,1415991243,0,,0,1 506 453 5124
+cparsons,Cassandra,Parsons,,Science & Forestry Library,Student Assistant,cassandra.parsons@unb.ca,0,,1415990618,0,,0,5062927389
+r6t12,Nicole,Nickerson,,,,nick.nm@unb.ca,0,,1415990354,0,,,
+jnason,Jessica,Nason,,,,Jessica.Nason@unb.ca,0,,1415990221,0,,,
+kjones7,Kimberly,Vose Jones,,Reference,Library Assistant,K.VoseJones@unb.ca,1,,1415990115,0,Harriet Irving Library,1,1 506 452 6064
+v718m,Patricia (Trish),Goguen,,Centre for Digital Scholarship,Imaging Centre Assistant,trish.goguen@unb.ca,1,,1415989995,0,Harriet Irving Library 517B,1,506 447 3119
+kderzawe,Kimberly,Derzawetz,,Cataloguing,Library Assistant,Kimberly.Derzawetz@unb.ca,0,,1415989919,0,210,1,1 506 452 7212
+d5622,Emily,Brennan,,Reference,"Library Assistant, Part-Time",Emily.Brennan@unb.ca,1,,1415989712,0,Harriet Irving Library,1,1 506 447 3546
+t98b4,Mark,Cameron,,Engineering & Computer Science Library,"Library Assistant, Part Time",Mark.Cameron1@unb.ca,0,,1415989638,0,C15,0,1 506 453 4747
+rboudre1,Rhonda,Boudreau,,Access Services (Circulation & Document Delivery),"Library Assistant, Part Time",Rhonda.Boudreau@unb.ca,1,,1415989454,0,Harriet Irving Library,1,1 506 453 4555
+robertab,Roberta,Barnet,,Engineering & Computer Science Library,"Library Assistant, Part Time",Roberta.Barnet@unb.ca,1,,1415989032,0,Head Hall C15,1,1 506 453 4747
+s0824,Jeremy,Murray,,Administration,Student Assistant,jeremy.murray@unb.ca,0,,1414783141,0,,0,
+jmofford,Jayanna,Mofford,,Access Services (Circulation & Document Delivery),Library Assistant,Jayanna.Mofford1@unb.ca,1,,1414783065,0,,1,453-4555
+u4ati,Alexander,Martin,,Engineering & Computer Science Library,,alexm.294@unb.ca,0,,1414783025,0,,0,
+mmalcolm,Madeline,Saunders,,Science & Forestry Library,,Madeline.Malcolm@unb.ca,0,,1414782980,0,,0,
+gmagill,Graeme,Magill,,,,Graeme.Magill@unb.ca,0,,1414782922,0,,,
+mmacdon7,Melissa,MacDonald,,,,Melissa.MacDonald11@unb.ca,0,,1414782886,0,,0,
+cmacdon9,Clarence,MacDonald,,,,Clarence.MacDonald@unb.ca,0,,1414782855,0,,0,
+llew,Lilian Zhi Ling,Lew,,,,Lilian.Lew@unb.ca,0,,1414782802,0,,,
+d5u1s,Mahsa,Kiani,,,,Mahsa.Kiani@unb.ca,0,,1414782770,0,,,
+akhurshi,Amna,Khurshid,,Access Services (Circulation & Document Delivery),,Amna.Khurshid@unb.ca,0,,1414782723,0,,0,
+wkhan,Waleed,Khan,,Engineering & Computer Science Library,,wkhan@unb.ca,0,,1414782682,0,,0,
+gjones2,Geoffrey,Jones,,,,Geoffrey.Jones@unb.ca,0,,1414782642,0,,,
+eharnish,Emily,Harnish,,Access Services (Circulation & Document Delivery),,Emily.Harnish@unb.ca,0,,1414782588,0,,0,
+efrankli,Emily,Franklin,,Science & Forestry Library,,E.Franklin73@unb.ca,0,,1414782534,0,,0,
+afox,Alexandra,Fox,,Microforms,Student Assistant,a.fox@unb.ca,0,,1414782498,0,,1,506 453 4834
+j1sv9,Jennifer Elizabeth Sarah,Estey,,,,Jen.Estey@UNB.ca,0,,1414782443,0,,0,
+h0vuu,Kristy,Edwards,,,Assistive Technology Assistant,kris.edwards@unb.ca,0,,1414782399,0,,0,
+mduffin,MacKenzie,Duffin,,Access Services (Circulation & Document Delivery),,mackenzie.duffin@unb.ca,0,,1414782333,0,,0,
+v6119,Delia,Delice,,,,delia.delice@unb.ca,0,,1414782289,0,,0,
+dcorrive,Danielle,Corriveau,,,,Danielle.Corriveau@unb.ca,0,,1414782219,0,,0,
+o2o40,Sun-Woo,Chung,,,,sam.jung@unb.ca,0,,1414782168,0,,,
+s7u17,Kaitlin,Armour,,Access Services (Circulation & Document Delivery),,Kaitlin.Armour@unb.ca,0,,1414781998,0,,0,
+xchen8,Xi,Chen,,,,Xi.Chen87@unb.ca,0,,1414781901,0,,,
+kbonner2,Kathryn,Bonner,,Science & Forestry Library,,Kathryn.Bonner@unb.ca,0,,1414781821,0,,0,
+r2crr,Andrew,Balcom,,Centre for Digital Scholarship,,andrew.balcom@unb.ca,0,,1414781767,0,,0,
+abakshi,Anmol,Bakshi,,Engineering & Computer Science Library,,a.bakshi@unb.ca,0,,1414781711,0,,0,
+e3a0j,Yumi,Araki,,Engineering & Computer Science Library,,yumi.araki@unb.ca,0,,1414781342,0,,0,
+ballen2,Brianne,Allen,,,,brianne.allen@unb.ca,0,,1414781252,0,,,
+l5p6b,Alyssa,Allen Gerwing,,Collections Development,,am.allen@unb.ca,0,,1414780695,0,,0,
+jphinney,Jackie,Phinney,,Hans W. Klohn Commons,Librarian,J.phinney@unb.ca,1,,1414600310,0,,0,
+cslupsky,Charene,Slupsky,,,Library Assistant,cslupsky@unb.ca,1,,1413555477,0,Moncton Nursing 134,0,1 506 856 3035
+j333f,Brian,Cassidy,,Systems,Senior Technical Programmer,brian.cassidy@unb.ca,1,,1410284082,0,Harriet Irving Library 515A,1,1 506 476 9688
+admin,Administrator,,,,,admin@example.com,1,,1410195960,0,,0,
+d2it,Rob,Glencross,,Centre for Digital Scholarship,Digital Publishing Assistant,rob.glencross@unb.ca,1,,1409752341,0,Harriet Irving Library 518B,1,1 506 447 3309
+corscad,Laura,Corscadden,,Administration,Librarian Intern,Laura.Corscadden@unb.ca,0,,1406902669,0,317A,0,1 506 458 7054
+lbelyea,Leah,Belyea,,Systems,,leah.belyea@unb.ca,0,,1404309119,0,,0,1 506 447 3177
+rwithers,Richelle L,Witherspoon,,Reference,Librarian,r.witherspoon@unb.ca,1,,1391709938,0,Harriet Irving Library,1,1 506 453 4602
+d5jii,Jenna,Granger,,Hans W. Klohn Commons,Library Services Desk Manager,jenna.granger@unb.ca,1,,1384961378,0,Hans W. Klohn Commons 111,1,1 506 648 5703
+kauld,Karen,Auld,,,"Library Assistant, Part Time",Karen.Auld@unb.ca,0,,1384791577,0,,1,1 506 453 4601
+e99hc,Amanda,Duffie,Acquisitions,,Manager of Technical Services,Amanda.Duffie@unb.ca,1,,1382549539,0,Lady Beaverbrook Gym C-105,1,1 506 453 3529
+bbenedic,Beverly,Benedict,,Science & Forestry Library,Library Assistant,Beverly.Benedict@unb.ca,1,,1381505677,0,I.U.C. Science Library,1,1 506 458 7060
+g2dow,,,,,,g2dow@unb.ca,0,,1381494255,0,,,
+shendrik,Shawn,Hendrix,,,,Shawn.Hendrikx@unb.ca,0,,1381491333,0,,0,
+sujones,Susan S.,Jones,,Law Library,Technical Services Librarian,susan.jones@unb.ca,1,,1373654960,0,Ludlow Hall 115,1,1 506 447 3267
+atome,Amanda,Tome,,,Archivist,amanda.tome@unb.ca,0,,1366740746,0,506A,0,1 506 447 3263
+asliwka,Agnieszka,Sliwka,,Reference,Library Assistant,asliwka@unb.ca,1,,1366392338,0,Harriet Irving Library,1,1 506 453 5017
+u4sd0,Ali,Mani,,,,mani.ali@unb.ca,0,,1366128336,0,,0,
+scroos,Saran,Croos,,Engineering & Computer Science Library,Librarian,saran.croos@unb.ca,1,,1362069590,0,Head Hall,1,1 506 458 7959
+mtiozzo,Mario,Tiozzo,,Administration,"Director, Planning and Analysis",mtiozzo@unb.ca,1,,1360270087,0,Harriet Irving Library 118,1,1 506 458 7960
+abuckley,,Buckley,,,,abuckley@unb.ca,0,,1349980354,0,,0,
+mforster,Margaret,Forster,,Law Library,Technical Services Library Assistant,mforster@unb.ca,0,,1348762917,0,,1,1 506 458 7978
+jsmyth,Joanne,Smyth,"Government Documents, Data and Maps|Microforms|Reference",,"Dept Head, Librarian",jsmyth@unb.ca,1,,1291322878,0,Harriet Irving Library 514-L,1,1 506 453 3516
+mas,Merle,Steeves,Cataloguing,,"Dept Head, Librarian",mas@unb.ca,1,,1291322878,0,Lady Beaverbrook Gym C-103,1,1 506 453 5043
+jteskey,John D.,Teskey,,,"Director, Libraries (Fredericton)",jteskey@unb.ca,0,,1291322878,0,,0,
+jlt,Jocelyne,Thompson,Collections Development,,Director of Collection Services,jlt@unb.ca,1,,1291322878,0,Harriet Irving Library 311E,1,1 506 458 7053
+ntoner,Neil,Toner,,Engineering & Computer Science Library,Library Assistant,ntoner@unb.ca,1,,1291322878,0,Head Hall (New) Rm. C15,1,1 506 452 6040
+hweldon,,,,,,hweldon@unb.ca,0,,1291322878,0,,0,
+barbw,Barb,Wheeler,,Cataloguing,"Dept. Head, Librarian",barbw@unb.ca,0,,1291322878,0,,0,1 506 458 7412
+mwhitney,Mary-Kathryn,Whitney,,Cataloguing,Library Assistant,mwhitney@unb.ca,1,,1291322878,0,Lady Beaverbrook Gym C-102,1,1 506 453 4750
+jsanford,Jacob,Sanford,,Systems,Infrastructure/Solutions (ETC) Architect,jsanford@unb.ca,1,,1291322877,0,Harriet Irving Library 515BA,1,1 506 476 3329
+dawns,Dawn,Saunders,,,Library Assistant,dawns@unb.ca,0,,1291322877,0,,0,1 506 458 7212
+jmacdon1,,,,,,jmacdon1@unb.ca,1,,1291322877,0,,0,
+rshannon,R. Scott,Shannon,,Cataloguing,eResources Administrator,rshannon@unb.ca,1,,1291322877,0,Lady Beaverbrook Gym C-102A,1,1 506 447 3472
+psimmons,Patricia,Simmons,,Reference,Library Assistant,psimmons@unb.ca,1,,1291322877,1,Harriet Irving Library 115,1,1 506 453 3546
+asimpson,Alana L.,Simpson,,Access Services (Circulation & Document Delivery),Library Assistant,asimpson@unb.ca,1,,1291322877,0,Harriet Irving Library Rm 117,1,1 506 458 7055
+sloan,Stephen,Sloan,Engineering & Computer Science Library|Science & Forestry Library,,"Dept. Head, Librarian",sloan@unb.ca,0,,1291322877,0,,0,1 506 453 4814
+lsmith1,,,,,,lsmith1@unb.ca,0,,1291322877,0,,0,
+psmith,Pamela,Smith,,Science & Forestry Library,Library Assistant,psmith@unb.ca,1,,1291322877,0,I.U.C. Science Library,1,1 506 453 4601
+emunn,Elizabeth,Munn,,Acquisitions,Library Assistant,emunn@unb.ca,1,,1291322876,0,Lady Beaverbrook Gym A-117B,1,1 506 458 7066
+mnason,Michael,Nason,,Centre for Digital Scholarship,Librarian,mnason@unb.ca,1,,1291322876,0,Harriet Irving Library 518C,1,1 506 452 6325
+neilson,John,Neilson,,,,neilson@unb.ca,0,,1291322876,0,,0,
+tnoel,Teri,Noel,Access Services (Circulation & Document Delivery),,Manager,tnoel@unb.ca,0,,1291322876,0,Harriet Irving Library 120,0,1 506 451 6825
+koreilly,Krista,O'Reilly,,,,koreilly@unb.ca,0,,1291322876,0,Alumni Memorial Building 26,0,1 506 453 4734
+credekop,Cory,Redekop,,,,credekop@unb.ca,0,,1291322876,0,,0,
+erichard,Eric,Richard,,,Library Assistant,erichard@unb.ca,0,,1291322876,0,,0,1 506 458 7060
+ser,Stephen,Rosenfeld,,,,ser@unb.ca,0,,1291322876,0,,0,
+lroulsto,Linda,Roulston,,Collections Development,Librarian,Linda.Roulston@unb.ca,1,,1291322876,0,Harriet Irving Library 208,1,1 506 451 6879
+juliar,Julia,Roy,,Collections Development,"Library Assistant, Donations",juliar@unb.ca,1,,1291322876,0,Harriet Irving Library Rm 316,1,1 506 453 4760
+amcclusk,Ann,,,,formerly in Circ,amcclusk@unb.ca,0,,1291322875,0,,0,
+nmclaugh,Nancy,McLaughlin,,Access Services (Circulation & Document Delivery),Library Assistant,nmclaugh@unb.ca,1,,1291322875,0,Harriet Irving Library 113,1,1 506 453 4555
+moe,Doreen,McLellan-Savoie,,Cataloguing,Library Assistant,D.McLellan-Savoie@unb.ca,1,,1291322875,0,Lady Beaverbrook Gym C-102,1,1 506 458 7068
+mmeade,Mike,Meade,,Centre for Digital Scholarship,"Manager, Digital Imaging",mmeade@unb.ca,1,,1291322875,0,Harriet Irving Library 518AA,1,1 506 453 4808
+gmerritt,Greg,,,,Former in Law Library,gmerritt@unb.ca,0,,1291322875,0,,0,
+hmets,Howie,Mets,,,Library Assistant,hmets@unb.ca,0,,1291322875,0,Harriet Irving Library 014A,0,
+ecmoore,Erik,Moore,Centre for Digital Scholarship,,Dept Head Librarian,ecmoore@unb.ca,1,,1291322875,0,Harriet Irving Library 518E,1,1 506 452 6202
+mortimer,Paul,Mortimer,,Hans W. Klohn Commons,Circulation,mortimer@unb.ca,1,,1291322875,0,Hans W. Klohn Commons 123 C-1,1,1 506 648 5711
+jmoss,Janet M.,Moss,,,Head Law Librarian,jmoss@unb.ca,0,,1291322875,0,,0,1 506 447 3266
+lmacknig,Lynn,MacKnight,,Access Services (Circulation & Document Delivery),Library Assistant,lmacknig@unb.ca,1,,1291322874,0,Harriet Irving Library 113,1,1 506 453 4555
+jmaclean,Judy,MacLean,,Science & Forestry Library,Librarian,jmaclean@unb.ca,0,,1291322874,0,Harriet Irving Library 317A,1,1 506 453 3541
+jmacphee,John,MacPhee,,Mail Room,Library Maintenance Worker,jmacphee@unb.ca,0,,1291322874,0,Harriet Irving Library,0,506 453 4543
+gmalek,,,,,Former in Reference,gmalek@unb.ca,0,,1291322874,0,,0,
+mmallale,Marty,Mallaley,,,Faculty of Business Secretary,mmallale@unb.ca,0,,1291322874,0,,0,1 506 648 5570
+smalone,Susan,Malone,,Science & Forestry Library,Library Assistant,smalone@unb.ca,0,,1291322874,0,I.U.C. Science Library,0,1 506 458 7759
+lmarino,,,,,,lmarino@unb.ca,0,,1291322874,0,,0,
+emartin,E. Grace,Martin,,Access Services (Circulation & Document Delivery),Library Assistant,emartin@unb.ca,1,,1291322874,0,Harriet Irving Library 110,1,1 506 453 4729
+emaynard,,,,,,emaynard@unb.ca,0,,1291322874,0,,0,
+pjohnson,Patti Auld,Johnson,,Archives,Library Assistant,pjohnson@unb.ca,1,,1291322873,0,Harriet Irving Library 502,1,1 506 458 7524
+sjones,Susan B.,Jones,,,Library Assistant,sjones@unb.ca,0,,1291322873,0,,0,
+kkeiller,Karen,Keiller,Hans W. Klohn Commons,,Director,kkeiller@unb.ca,0,,1291322873,0,113,1,1 506 648 5704
+jkerr,James,Kerr,,Centre for Digital Scholarship,Electronic Journals Co-ordinator,jkerr@unb.ca,1,,1291322873,0,Harriet Irving Library 518D,1,1 506 447 3453
+cleblanc,Craig,Leblanc,,Systems,Systems Analyst,cleblanc@unb.ca,1,,1291322873,0,Harriet Irving Library Rm. 08,1,1 506 447 3159
+vleiter,Virginia,Leiter,,Access Services (Circulation & Document Delivery),Library Assistant,vleiter@unb.ca,1,,1291322873,0,Harriet Irving Library 121,1,1 506 447 3380
+macdonal,Corinne,MacDonald,,Hans W. Klohn Commons,,macdonal@unb.ca,0,,1291322873,0,Hans W. Klohn Commons 114 C-5,0,
+jmacinto,James,MacIntosh,,"Government Documents, Data and Maps",Library Assistant,jmacinto@unb.ca,1,,1291322873,0,Harriet Irving Library 116,1,1 506 453 4591
+lgrandy,Leah,Grandy,,Microforms,Library Assistant,lgrandy@unb.ca,1,,1291322872,0,Harriet Irving Library 115,1,506 453 4834
+mgray,Margaret,Gray,,Hans W. Klohn Commons,Acquisitions & Document Delivery,mgray@unb.ca,0,,1291322872,0,Hans W. Klohn Commons 114 C-1,1,1 506 648 5709
+phale,Patsy,Hale,,Archives,Library Assistant,phale@unb.ca,0,,1291322872,0,Harriet Irving Library 504,0,1 506 458 7050
+hanratty,Siobhan,Hanratty,,"Government Documents, Data and Maps",Librarian,hanratty@unb.ca,1,,1291322872,0,Harriet Irving Library 205A,1,1 506 451 6803
+lhansen,Linda,Hansen,,Hans W. Klohn Commons,Librarian,lhansen@unb.ca,0,,1291322872,1,Hans W. Klohn Commons 210,1,1 506 648 5788
+ehenders,Ellen,Henderson,,Access Services (Circulation & Document Delivery),"Library Assistant, Part Time",ehenders@unb.ca,0,,1291322872,0,113,0,1 506 453 4555
+mhenders,Mary Lou,McGeehan,,,,mhenders@unb.ca,0,,1291322872,0,,0,
+yhouse,Yolande,House,,,,yhouse@unb.ca,0,,1291322872,0,,0,
+mjenkins,Mary C.,Jenkins,,,,mjenkins@unb.ca,0,,1291322872,0,,0,
+tinad,Tina,Clarke,,"Government Documents, Data and Maps",Library Assistant,tinad@unb.ca,1,,1291322871,0,Harriet Irving Library 116,1,1 506 453 4752
+deves,Deborah,Eves,,Hans W. Klohn Commons,Reference Assistant,deves@unb.ca,0,,1291322871,0,,0,1 506 343 2973
+aextell,Angela,Extell,,Hans W. Klohn Commons,Cataloguing/Reference,aextell@unb.ca,1,,1291322871,0,Hans W. Klohn Commons 208,1,1 506 648 5957
+gfinney,Gail,Finney,,Cataloguing,Library Assistant,gfinney@unb.ca,1,,1291322871,0,Lady Beaverbrook Gym A-116,1,1 506 447 3220
+sfisher,Susan,Fisher,,Children's Literature|Reference,"Curator, Children's Literature",sfisher@unb.ca,1,,1291322871,0,Harriet Irving Library 414,1,1 506 452 6044
+jdfraser,Janet,Fraser,,,"Librarian Head, Bib./Coll. Services",jdfraser@unb.ca,0,,1291322871,0,,0,
+dfurey,Darren,Furey,,,Former Law Librarian,dfurey@unb.ca,0,,1291322871,0,,0,
+kgadd,Kathleen,Gadd,,,Former Librarian UNBSJ,kgadd@unb.ca,0,,1291322871,0,,0,
+gagnon,Yolande,Gagnon,,,Senior Library Assist (Serials/Circ),gagnon@unb.ca,0,,1291322871,0,,0,1 506 458 7979
+fgiberso,Frances,Giberson,,,Librarian,fgiberso@unb.ca,0,,1291322871,0,,0,1 506 453 4602
+legere,Gail,Correia,,Hans W. Klohn Commons,"Manager, Acquisitions/Doc. Del., Serials",legere@unb.ca,0,,1291322870,0,,0,1 506 648 5705
+cacotter,Catherine,Cotter,Law Library,,Head Law Librarian,cacotter@unb.ca,1,,1291322870,0,Ludlow Hall 118,1,1 506 447 3265
+bcull,Barry W.,Cull,,Science & Forestry Library,Information Services Librarian,bcull@unb.ca,1,,1291322870,0,I.U.C. Science Library,1,1 506 458 7057
+davec,David,Cunningham,,,Senior Technical Analyst,davec@unb.ca,0,,1291322870,0,Harriet Irving Library,0,1 506 447 3017
+monicac,Monica,Fitzpatrick,,Administration,Graphic Designer,monicac@unb.ca,1,,1291322870,0,Harriet Irving Library 119,1,1 506 458 7957
+adaley,Andrew,Daley,,Administration,"Assistive Technologist, Coordinator",adaley@unb.ca,1,,1291322870,1,Harriet Irving Library 303A,1,1 506 447 3377
+ndickins,Nancy,Dickinson,,Law Library,Administrative Secretary,Nancy.Dickinson@unb.ca,1,,1291322870,0,Ludlow Hall 117,1,1 506 458 7986
+jjd,Joshua,Dickison,,Administration,Copyright Officer,jjd@unb.ca,1,,1291322870,0,Harriet Irving Library 511-E,1,1 506 447 3378
+jdiduch,Jane,Diduch,,Access Services (Circulation & Document Delivery),Library Assistant,jdiduch@unb.ca,0,,1291322870,0,,1,1 506 458 7063
+hdoherty,Heather,Doherty,,Law Library,Library Asst (Circulation/Serials Management),hdoherty@unb.ca,1,,1291322870,0,Ludlow Hall Rm. 116,1,1 506 458 7982
+natalied,Natalie,Smith,,,,natalied@unb.ca,0,,1291322870,0,210,0,
+lbiggar,Laura,Biggar Goss,,Reference,"Library Assistant, Part Time",lbiggar@unb.ca,0,,1291322869,0,,0,1 506 453 3546
+kblack,Karen,Black,,Access Services (Circulation & Document Delivery),"Library Assistant, Part Time",kblack@unb.ca,1,,1291322869,0,Harriet Irving Library 113,1,1 506 453 4555
+pblack1,Patricia,Black,,,,pblack1@unb.ca,0,,1291322869,0,K.C.Irving Hall 330,0,
+mbragdon,Marc,Bragdon,,Reference,Reference Librarian,mbragdon@unb.ca,1,,1291322869,0,Harriet Irving Library 518F,1,1 506 458 7741
+abridges,Ann,Bridges,,Access Services (Circulation & Document Delivery),Library Assistant,abridges@unb.ca,1,,1291322869,0,Harriet Irving Library Rm 117,1,1 506 453 4743
+cbrown,Cheryle,Brown,,Acquisitions,Library Assistant,cbrown@unb.ca,1,,1291322869,0,Lady Beaverbrook Gym C-104,1,1 506 453 4753
+dbudaker,Diane,Budaker,,,,dbudaker@unb.ca,0,,1291322869,0,,0,
+dbuhay,Diane,Buhay,,Hans W. Klohn Commons,Librarian,dbuhay@unb.ca,0,,1291322869,0,,1,1 506 648 5712
+chart,Mary,Charters,,,Retired Librarian,chart@unb.ca,0,,1291322869,0,,0,
+gsallen,Geoffrey,Allen,,,former ETC,gsallen@unb.ca,0,,1291322868,0,,0,
+sallen,Susan,Allen,,Acquisitions,Library Assistant,sallen@unb.ca,1,,1291322868,0,Lady Beaverbrook Gym A-116,1,1 506 458 7064
+lbanks,Lynn,Banks,,Access Services (Circulation & Document Delivery),Library Assistant,lbanks@unb.ca,1,,1291322868,0,Harriet Irving Library 110,1,1 506 452 6015
+lbateman,Lorraine,Bateman,,,,lbateman@unb.ca,0,,1291322868,0,,0,
+kirvineb,Kathryn,Irvine-Bray,,,Library Assistant,kirvineb@unb.ca,0,,1286201328,0,,0,
+lisaauld,Lisa,Auld,,Engineering & Computer Science Library,Library Assistant,lisaauld@unb.ca,1,,1281056709,0,Head Hall (New) Rm. C18A,1,1 506 452 6041
+kdoucet,Kris,Doucet,,Hans W. Klohn Commons,Admin Coordinator,kdoucet@unb.ca,0,,1276015993,0,Hazen Hall 308,0,1 506 648 5700
+higginsc,Cora,Higgins,,Hans W. Klohn Commons,"Manager, Circulation",higginsc@unb.ca,0,,1276015920,0,,0,1 506 648 5703
+lelievre,Steve,Lelievre,,,Retired Librarian,lelievre@unb.ca,0,,1275913617,0,,0,
+holyoke,Francesca,Holyoke,Archives,,"Dept Head, Librarian",holyoke@unb.ca,0,,1275507772,0,Harriet Irving Library 503,0,1 506 453 4965
+esmith2,Ethel,Smith,,,,esmith2@unb.ca,0,,1275507640,0,309,0,
+sgunasee,Sarah,Gunaseelan,,Science & Forestry Library,"Library Assistant, Part Time",sgunasee@unb.ca,1,,1275507614,0,I.U.C. Science Library,1,1 506 453 4601
+aco,Alison,Renaud,,,,aco@unb.ca,0,,1275507584,0,,0,
+cjack,Christine,Jack,Microforms,,Manager,cjack@unb.ca,1,,1275507531,0,Harriet Irving Library 309,1,1 506 453 5098
+amclaugh,Alicia,McLaughlin,Access Services (Circulation & Document Delivery),Instruction Facilities,Acting Manager,amclaugh@unb.ca,1,,1275507490,0,Harriet Irving Library 119,1,1 506 453 4749
+suoliver,Susan,Oliver,,Administration,Senior Administrative & Communications Officer,suoliver@unb.ca,1,,1275507460,0,Harriet Irving Library 121,1,1 506 452 6103
+lbalcom,Lesley,Balcom,Administration,,Dean of Libraries,lbalcom@unb.ca,1,,1275507412,0,Harriet Irving Library 119,1,1 506 458 7056
+drross,David,Ross,Hans W. Klohn Commons,,"Saint John Campus Library Head, Librarian",drross@unb.ca,1,,1275507328,0,Hans W. Klohn Commons 113,1,1 506 648 5832
+lwells,Leanne,Wells,,Reference,Information Services Librarian,lwells@unb.ca,1,,1275506889,0,Head Hall C34-A,1,1 506 447 3075
+jmackenz,James,MacKenzie,Archives,Administration,Acting Head of Archives and Special Collections/Director of Scholarly Technologies,jmackenz@unb.ca,1,,1275506755,0,Harriet Irving Library 311C,1,1 506 259 2774
+pls,Lyn,Saunders,,,Administrative Assistant,pls@unb.ca,0,,1270557129,0,,0,
+jcarter1,Jeff,Carter,Systems,,"Manager, Systems Group",jeff.carter@unb.ca,1,,1270149711,0,Harriet Irving Library 517C,1,1 506 259 1545
