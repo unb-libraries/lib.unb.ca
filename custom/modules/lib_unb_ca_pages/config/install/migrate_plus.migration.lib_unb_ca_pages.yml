@@ -35,7 +35,7 @@ source:
                 arguments:
                   - 'body'
                   - []
-                  - [ 'dev.lib.unb.ca' ]
+                  - [ 'lib.unb.ca' ]
         dom_operations:
           -
             operation: modifier
