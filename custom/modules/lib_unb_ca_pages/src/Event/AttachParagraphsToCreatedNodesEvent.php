@@ -124,12 +124,14 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
 
     // No path entry?
     if (empty($cur_path_term)) {
+
       throw new AuditException(
         $this->migration,
         t(
-          'The path @path does not have a corresponding path taxonomy term',
+          'The path [@path] from [@url] does not have a corresponding path taxonomy term',
           [
             '@path' => $path,
+            '@url' => $url,
           ]
         )
       );
