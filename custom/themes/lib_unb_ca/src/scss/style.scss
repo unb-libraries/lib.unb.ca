@@ -341,3 +341,33 @@ dl.two-cols {
   }
 }
 /* END Breadcrumbs */
+
+/* Staff and Departments View */
+caption {
+ */
+  .field__item:not(:empty) {
+    &:before {
+      color: $gray-600;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      margin-right: .25rem;
+    }
+  }
+  .field-telephone:not(:empty) {
+    &:before {
+      content: '\f3cd';
+    }
+  }
+
+  .field-email:not(:empty) {
+    &:before {
+      content: '\f0e0';
+    }
+  }
+
+  .field-fax:not(:empty) {
+    &:before {
+      content: '\f1ac';
+    }
+  }
+}

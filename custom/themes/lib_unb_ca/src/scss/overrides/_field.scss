@@ -8,5 +8,9 @@
   display: flex;
 }
 .field--label-inline .field__label {
-  margin-right: .75rem;
+  margin-right: .5rem;
+
+  &:after {
+    content: ':'
+  }
 }
