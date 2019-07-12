@@ -57,6 +57,8 @@ process:
         - departments
   field_display_on_staff_directory: display_staff_dir
   field_on_leave: on_leave
+  field_room_number: room_no
+  field_phone_number: phone_no
 
 destination:
   plugin: entity:user
