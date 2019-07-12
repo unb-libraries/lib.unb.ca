@@ -71,6 +71,8 @@ class AttachParagraphsToCreatedNewsItemsEvent implements EventSubscriberInterfac
    * @param \Drupal\migrate\Event\MigratePostRowSaveEvent $event
    *   The event triggered.
    *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
   public function onPostRowSave(MigratePostRowSaveEvent $event) {
@@ -113,7 +115,51 @@ class AttachParagraphsToCreatedNewsItemsEvent implements EventSubscriberInterfac
     $this->currentParagraph->save();
     $this->currentNode->set('field_page_content', [$this->currentParagraph]);
     $this->setPostMetadata();
+    $this->setPostAuthor();
     $this->currentNode->save();
+  }
+
+  /**
+   * Determine the UID of the post author.
+   *
+   * @return int
+   *   The user id of the desired post author.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  private function getPostAuthorUid() {
+    $author = $this->getPostAuthor();
+
+    // Preserve these authors, the rest go to monicac.
+    $authors = [
+      'Lesley Balcom' => 'lbalcom',
+      'Sue Oliver' => 'suoliver',
+    ];
+
+    if (!empty($authors[$author])) {
+      $author_id = $authors[$author];
+    }
+    else {
+      $author_id = 'monicac';
+    }
+
+    // Cache the UID values so we are not loading user objects each item.
+    $uid = \Drupal::state()->get("lib_news_cur_uid_{$author_id})");
+    if (empty($uid)) {
+      $users = \Drupal::entityTypeManager()->getStorage('user')
+        ->loadByProperties(['name' => $author_id]);
+      $user = reset($users);
+      if ($user) {
+        $uid = $user->id();
+      }
+      else {
+        $uid = 1;
+      }
+      \Drupal::state()->set("lib_news_cur_uid_{$author_id})", $uid);
+    }
+
+    return $uid;
   }
 
   /**
@@ -166,7 +212,7 @@ class AttachParagraphsToCreatedNewsItemsEvent implements EventSubscriberInterfac
    * Set the news item's created time.
    */
   private function setPostAuthor() {
-    // @TODO : Map people to names.
+    $this->currentNode->setOwnerId($this->getPostAuthorUid());
   }
 
   /**
@@ -247,7 +293,7 @@ class AttachParagraphsToCreatedNewsItemsEvent implements EventSubscriberInterfac
   private function getPostAuthor() {
     $matches = $this->currentByline;
     if (!empty($matches[6])) {
-      return $matches[6];
+      return trim($matches[6]);
     }
     return NULL;
   }
