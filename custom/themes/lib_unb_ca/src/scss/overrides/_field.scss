@@ -1,3 +1,6 @@
 .field__items > .field__item:not(last-child) {
   margin-right: .75rem;
 }
+.field--type-entity-reference {
+  margin: 0;
+}
