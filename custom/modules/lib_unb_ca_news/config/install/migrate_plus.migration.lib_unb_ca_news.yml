@@ -110,7 +110,10 @@ process:
   type:
     plugin: default_value
     default_value: news_post
-  title: title
+  title:
+    plugin: default_value
+    default_value: UNB Libraries News
+    source: title
 
 destination:
   plugin: entity:node

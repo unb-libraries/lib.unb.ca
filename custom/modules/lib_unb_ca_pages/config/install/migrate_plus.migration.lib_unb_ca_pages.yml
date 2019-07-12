@@ -156,7 +156,10 @@ process:
   type:
     plugin: default_value
     default_value: library_page
-  title: title
+  title:
+    plugin: default_value
+    default_value: UNB Libraries
+    source: title
 
 destination:
   plugin: entity:node
