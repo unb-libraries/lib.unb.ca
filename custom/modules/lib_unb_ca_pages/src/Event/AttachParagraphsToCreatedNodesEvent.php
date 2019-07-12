@@ -16,7 +16,7 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  */
 class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
 
-  const BASE_URI = 'http://dev.lib.unb.ca';
+  const BASE_URI = 'https://lib.unb.ca';
   const MIGRATION_ID = 'lib_unb_pages';
   const PATH_TAXONOMY_VID = 'unb_libraries_page_paths';
 
@@ -272,6 +272,8 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
   private function getManualPathAliases() {
     return [
       self::BASE_URI . '/about/index.php' => '/about',
+      // This is for the blank 'front' page.
+      'https://systems.lib.unb.ca/blank.html' => '/unb-libraries',
     ];
   }
 
