@@ -1,0 +1,29 @@
+uuid: 190ac563-5f62-454e-aa26-58a595098eda
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.departement_membership.field_is_department_head
+    - field.field.paragraph.departement_membership.field_library_department
+    - paragraphs.paragraphs_type.departement_membership
+id: paragraph.departement_membership.default
+targetEntityType: paragraph
+bundle: departement_membership
+mode: default
+content:
+  field_is_department_head:
+    weight: 1
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_library_department:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true

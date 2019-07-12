@@ -1,0 +1,9 @@
+uuid: b65a6ed5-0aaa-4f06-ab18-535ac8ccbef4
+langcode: en
+status: true
+dependencies: {  }
+id: departement_membership
+label: Membership
+icon_uuid: null
+description: 'Used to group a library department taxonomy term with a department head boolean value.'
+behavior_plugins: {  }

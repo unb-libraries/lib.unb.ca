@@ -1,19 +1,19 @@
-uuid: 166e7bb3-4b1a-48ef-87c5-505b3e1130fd
+uuid: 0e01a506-4b6a-4904-a686-38cabdfd3fb3
 langcode: en
 status: true
 dependencies:
   module:
+    - paragraphs
     - taxonomy
-    - user
-id: user.field_library_department_regular
-field_name: field_library_department_regular
-entity_type: user
+id: paragraph.field_library_department
+field_name: field_library_department
+entity_type: paragraph
 type: entity_reference
 settings:
   target_type: taxonomy_term
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

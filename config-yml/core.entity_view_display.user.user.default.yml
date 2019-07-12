@@ -3,16 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_department_memberships
     - field.field.user.user.field_display_on_staff_directory
     - field.field.user.user.field_first_name
     - field.field.user.user.field_last_name
-    - field.field.user.user.field_library_department_head
-    - field.field.user.user.field_library_department_regular
     - field.field.user.user.field_on_leave
     - field.field.user.user.field_phone_number
     - field.field.user.user.field_position_title
     - field.field.user.user.field_room_number
   module:
+    - entity_reference_revisions
     - telephone
     - user
 id: user.user.default
@@ -20,8 +20,17 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
+  field_department_memberships:
+    type: entity_reference_revisions_entity_view
+    weight: 7
+    label: inline
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
   field_display_on_staff_directory:
-    weight: 8
+    weight: 6
     label: inline
     settings:
       format: default
@@ -46,24 +55,8 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_library_department_head:
-    weight: 7
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_library_department_regular:
-    weight: 6
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   field_on_leave:
-    weight: 9
+    weight: 8
     label: inline
     settings:
       format: yes-no

@@ -1,0 +1,46 @@
+uuid: 883ad19f-faa5-4f5b-af7d-8085d5a281bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_department_memberships
+    - paragraphs.paragraphs_type.departement_membership
+  module:
+    - entity_reference_revisions
+    - user
+id: user.user.field_department_memberships
+field_name: field_department_memberships
+entity_type: user
+bundle: user
+label: 'Library Department Memberships'
+description: "<i class=\"fas fa-info-circle\"></i>\r\nAdd a membership for each department this user is a member of."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      departement_membership: departement_membership
+    target_bundles_drag_drop:
+      departement_membership:
+        enabled: true
+        weight: -13
+      body_section:
+        weight: -12
+        enabled: false
+      body_sidebar_section:
+        weight: -11
+        enabled: false
+      custom_block_section:
+        weight: -10
+        enabled: false
+      equal_columns_section:
+        weight: -9
+        enabled: false
+      fullwidth_body_section:
+        weight: -8
+        enabled: false
+field_type: entity_reference_revisions

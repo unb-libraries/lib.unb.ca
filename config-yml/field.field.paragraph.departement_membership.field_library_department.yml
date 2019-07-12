@@ -1,20 +1,19 @@
-uuid: 57500e45-2d83-4a0f-a561-d9e82c2e7a4c
+uuid: 2c4e868c-178d-49a3-a318-1a1c374af53c
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.user.field_library_department_regular
+    - field.storage.paragraph.field_library_department
+    - paragraphs.paragraphs_type.departement_membership
     - taxonomy.vocabulary.library_departments
-  module:
-    - user
-id: user.user.field_library_department_regular
-field_name: field_library_department_regular
-entity_type: user
-bundle: user
-label: 'Library Department (Regular Member)'
-description: 'Select the departments this user is a regular member of.'
+id: paragraph.departement_membership.field_library_department
+field_name: field_library_department
+entity_type: paragraph
+bundle: departement_membership
+label: 'Library Department'
+description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

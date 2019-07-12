@@ -1,0 +1,23 @@
+uuid: 8b5f8dc9-3683-4fbb-b2e5-2b3fe7855777
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_is_department_head
+    - paragraphs.paragraphs_type.departement_membership
+id: paragraph.departement_membership.field_is_department_head
+field_name: field_is_department_head
+entity_type: paragraph
+bundle: departement_membership
+label: 'Is a head of this department'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
