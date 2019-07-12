@@ -506,7 +506,7 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: "<div class=\"ml-3\">\r\n<div class=\"field-location\">{{ field_department_location }}</div>\r\n<div class=\"field__items field--label-inline\">\r\n  <div class=\"field__item field-telephone\">{{ field_department_phone }}</div>\r\n  <div class=\"field__item field-fax\">{{ field_department_fax }}</div>\r\n  <div class=\"field__item field-email\">{{ field_department_email }}</div>\r\n</div>\r\n</div>"
+            text: "<div class=\"metadata ml-3\">\r\n<div class=\"field-location\">{{ field_department_location }}</div>\r\n<div class=\"field__items field--label-inline\">\r\n  <div class=\"field__item field-telephone\">{{ field_department_phone }}</div>\r\n  <div class=\"field__item field-fax\">{{ field_department_fax }}</div>\r\n  <div class=\"field__item field-email\">{{ field_department_email }}</div>\r\n</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -1324,6 +1324,7 @@ display:
           plugin_id: standard
       arguments: {  }
       display_extenders: {  }
+      css_class: staff-departments
     cache_metadata:
       max-age: -1
       contexts:
