@@ -4,3 +4,9 @@
 .field--type-entity-reference {
   margin: 0;
 }
+.field--label-inline {
+  display: flex;
+}
+.field--label-inline .field__label {
+  margin-right: .75rem;
+}
