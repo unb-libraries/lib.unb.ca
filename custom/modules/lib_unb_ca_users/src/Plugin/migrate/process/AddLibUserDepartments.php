@@ -2,10 +2,10 @@
 
 namespace Drupal\lib_unb_ca_users\Plugin\migrate\process;
 
-use Drupal\migrate\MigrateException;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
+use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\taxonomy\Entity\Term;
 
 /**
@@ -28,6 +28,7 @@ use Drupal\taxonomy\Entity\Term;
 class AddLibUserDepartments extends ProcessPluginBase {
 
   const DEPARTMENT_DELIMITER = '|';
+  const DEPARTMENT_PARAGRAPH_TYPE = 'departement_membership';
   const DEPARTMENT_VID = 'library_departments';
 
   /**
@@ -44,6 +45,7 @@ class AddLibUserDepartments extends ProcessPluginBase {
     $head_departments = $value[0];
     $member_departments = $value[1];
 
+    $this->curDepartments = [];
     $this->addDepartment($head_departments, TRUE);
     $this->addDepartment($member_departments, FALSE);
 
@@ -57,12 +59,20 @@ class AddLibUserDepartments extends ProcessPluginBase {
    *   The names of the departments, multiple separated by DEPARTMENT_DELIMITER.
    * @param bool $is_head
    *   TRUE if the user is the head of all departments in list, FALSE otherwise.
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
    */
   private function addDepartment($departments, $is_head = FALSE) {
     foreach (explode(self::DEPARTMENT_DELIMITER, $departments) as $department) {
       $term = $this->getCreateDepartmentTerm($department);
       if (!empty($term) && is_object($term)) {
-        $this->curDepartments[] = $term->id();
+        $this->curDepartments[] = $this->createParagraph(
+          self::DEPARTMENT_PARAGRAPH_TYPE,
+          [
+            'field_is_department_head' => $is_head,
+            'field_library_department' => $term->id(),
+          ]
+        );
       }
     }
   }
@@ -119,6 +129,27 @@ class AddLibUserDepartments extends ProcessPluginBase {
       }
     }
     return FALSE;
+  }
+
+  /**
+   * Create a new Paragraph.
+   *
+   * @param string $type
+   *   Type of Paragraph.
+   * @param array $values
+   *   Associative array of values to be added to Paragraph.
+   *
+   * @return \Drupal\paragraphs\Entity\Paragraph
+   *   The created Paragraph.
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   */
+  public function createParagraph($type, array $values) {
+    $paragraph = Paragraph::create(['type' => $type]);
+    foreach ($values as $field_name => $value) {
+      $paragraph->set($field_name, $value);
+    }
+    $paragraph->save();
+    return $paragraph;
   }
 
 }

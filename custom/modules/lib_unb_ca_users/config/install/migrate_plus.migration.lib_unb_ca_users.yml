@@ -49,7 +49,7 @@ process:
   status: enabled
   created: created
   mail: email
-  field_library_department_regular:
+  field_department_memberships:
     -
       plugin: add_lib_user_departments
       source:
