@@ -85,6 +85,8 @@ class AddLibUserDepartments extends ProcessPluginBase {
    *
    * @return \Drupal\taxonomy\Entity\Term
    *   The first Term entity that matches the name, NULL otherwise.
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
    */
   private function getCreateDepartmentTerm($name) {
     $category_id = NULL;
@@ -141,6 +143,7 @@ class AddLibUserDepartments extends ProcessPluginBase {
    *
    * @return \Drupal\paragraphs\Entity\Paragraph
    *   The created Paragraph.
+   *
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
   public function createParagraph($type, array $values) {
