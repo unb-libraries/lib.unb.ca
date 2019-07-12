@@ -110,7 +110,13 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     $url = trim($this->currentRow->getSourceProperty('url'));
     $file_parts = pathinfo($url);
     $uri_dir = $file_parts['dirname'];
-    $path = str_replace(self::BASE_URI, '', $uri_dir);
+
+    if ($uri_dir == self::BASE_URI) {
+      $path = '/';
+    }
+    else {
+      $path = str_replace(self::BASE_URI, '', $uri_dir);
+    }
 
     // Add the relationship.
     NodeTaxonomyPathRelationship::addNodePathRelationshipFromPath($this->currentNode, self::PATH_TAXONOMY_VID, $path);
