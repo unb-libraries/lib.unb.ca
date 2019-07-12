@@ -55,17 +55,16 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
-          reset_button: false
-          reset_button_label: Reset
+          submit_button: Go
+          reset_button: true
+          reset_button_label: Clear
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
-        type: some
+        type: none
         options:
-          items_per_page: 10
           offset: 0
       style:
         type: table
@@ -438,10 +437,10 @@ display:
           label: Website
           exclude: true
           alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
+            alter_text: true
+            text: 'Visit department website'
+            make_link: true
+            path: '{{ field_department_website__uri }}'
             absolute: false
             external: false
             replace_spaces: false
@@ -506,7 +505,7 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: "<div class=\"metadata ml-3\">\r\n<div class=\"field-location\">{{ field_department_location }}</div>\r\n<div class=\"field__items field--label-inline\">\r\n  <div class=\"field__item field-telephone\">{{ field_department_phone }}</div>\r\n  <div class=\"field__item field-fax\">{{ field_department_fax }}</div>\r\n  <div class=\"field__item field-email\">{{ field_department_email }}</div>\r\n</div>\r\n</div>"
+            text: "<div class=\"metadata ml-3\">\r\n<div class=\"field-location\">{{ field_department_location }}</div>\r\n<div class=\"field__items field--label-inline\">\r\n  <div class=\"field__item field-telephone\">{{ field_department_phone }}</div>\r\n  <div class=\"field__item field-fax\">{{ field_department_fax }}</div>\r\n  <div class=\"field__item field-email\">{{ field_department_email }}</div>\r\n  <div class=\"field__item field-website\">{{ field_department_website }}</div>\r\n</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -659,7 +658,7 @@ display:
           type: boolean
           settings:
             format: custom
-            format_custom_true: ' (Department Head)'
+            format_custom_true: '<span class="badge badge-secondary">Department Head</span>'
             format_custom_false: ''
           group_column: value
           group_columns: {  }
@@ -872,7 +871,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<b>{{ field_last_name }}, {{ field_first_name }}</b>{{ field_is_department_head }}<br />\r\n<span class=\"ml-3\">{{ field_position_title }}</span>\r\n"
+            text: "<b>{{ field_last_name }}, {{ field_first_name }}</b>\r\n{{ field_is_department_head }}<br />\r\n<span class=\"ml-3\">{{ field_position_title }}</span>\r\n"
             make_link: true
             path: ''
             absolute: false
@@ -1095,8 +1094,8 @@ display:
           label: ''
           exclude: true
           alter:
-            alter_text: true
-            text: "{{ name }}\r\n<i class=\"fas fa-envelope\"></i>"
+            alter_text: false
+            text: ''
             make_link: false
             path: ''
             absolute: false
@@ -1128,7 +1127,7 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -1193,7 +1192,7 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -1250,6 +1249,128 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: string
+        field_display_on_staff_directory_value:
+          id: field_display_on_staff_directory_value
+          table: user__field_display_on_staff_directory
+          field: field_display_on_staff_directory_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+        delta:
+          id: delta
+          table: user__field_department_memberships
+          field: delta
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: 'not empty'
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: numeric
+        combine:
+          id: combine
+          table: views
+          field: combine
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: combine_op
+            label: 'Filter by staff member, position or location'
+            description: ''
+            use_operator: false
+            operator: combine_op
+            identifier: combine
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              library_news_author: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          fields:
+            field_last_name: field_last_name
+            field_first_name: field_first_name
+            field_position_title: field_position_title
+            field_room_number: field_room_number
+          plugin_id: combine
       sorts:
         field_library_department_target_id:
           id: field_library_department_target_id
@@ -1302,7 +1423,20 @@ display:
       title: 'Staff and Departments'
       header: {  }
       footer: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<div class=\"card\">\r\n  <div class=\"card-body callout callout-warning\">\r\n    <span class=\"fas fa-exclamation-circle\"></span>\r\n    Sorry, no staff members matched your filter criteria.\r\n  </div>\r\n</div>"
+            format: library_page_html
+          plugin_id: text
       relationships:
         field_department_memberships:
           id: field_department_memberships
@@ -1325,11 +1459,13 @@ display:
       arguments: {  }
       display_extenders: {  }
       css_class: staff-departments
+      use_ajax: true
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - user.permissions
       tags:
         - 'config:field.storage.paragraph.field_is_department_head'
@@ -1357,6 +1493,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - user.permissions
       tags:
         - 'config:field.storage.paragraph.field_is_department_head'
