@@ -82,8 +82,6 @@ dl.two-cols {
 }
 /* END UTILITY */
 
-
-
 /* Discovery/e-Resources Search */
 .tabs-theme-dark {
   flex-wrap: wrap;
@@ -350,19 +348,13 @@ dl.two-cols {
     caption {
       font-size: 1rem;
 
-      .field__item:not(:empty),
-      .field-location {
+      .field-location,
+      .field__item:not(:empty) {
         &:before {
-          color: $gray-600;
+          color: $gray-700;
           font-family: "Font Awesome 5 Free";
           font-weight: 900;
           margin-right: .25rem;
-        }
-      }
-
-      .field-telephone:not(:empty) {
-        &:before {
-          content: '\f3cd';
         }
       }
 
@@ -385,12 +377,27 @@ dl.two-cols {
         }
       }
 
+      .field-telephone:not(:empty) {
+        &:before {
+          content: '\f3cd';
+        }
+      }
+      .field-website:not(:empty) {
+        &:before {
+          content: '\f360';
+        }
+      }
       .metadata {
         font-size: .9rem;
       }
     }
 
     tbody {
+      tr {
+        &:hover {
+          background: blanchedalmond;
+        }
+      }
       td {
         font-size: .9rem;
         width: 25%;
@@ -401,8 +408,22 @@ dl.two-cols {
 
         &:last-child {
           width: 15%;
+
+          a {
+            &:before {
+              content: '\f086';
+              font-family: "Font Awesome 5 Free";
+              font-weight: 900;
+              margin-right: .25rem;
+            }
+          }
+        }
+
+        .badge {
+          font-size: .85rem;
         }
       }
     }
   }
 }
+/* END Staff and Departments View */
