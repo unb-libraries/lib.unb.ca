@@ -876,7 +876,7 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
-      css_class: 'staff-departments theme-dark-form'
+      css_class: 'staff-departments theme-dark'
       use_ajax: true
     cache_metadata:
       max-age: -1
