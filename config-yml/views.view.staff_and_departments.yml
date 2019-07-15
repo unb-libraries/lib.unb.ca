@@ -658,7 +658,7 @@ display:
           type: boolean
           settings:
             format: custom
-            format_custom_true: '<span class="badge badge-secondary">Department Head</span>'
+            format_custom_true: '<i class="fas fa-star head"></i>'
             format_custom_false: ''
           group_column: value
           group_columns: {  }
@@ -871,7 +871,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<b>{{ field_last_name }}, {{ field_first_name }}</b>\r\n{{ field_is_department_head }}<br />\r\n<span class=\"ml-3\">{{ field_position_title }}</span>\r\n"
+            text: "<b>{{ field_last_name }}, {{ field_first_name }}</b>\r\n{{ field_is_department_head }}<br />\r\n<div class=\"ml-3\">{{ field_position_title }}</div>\r\n"
             make_link: true
             path: ''
             absolute: false
@@ -1327,50 +1327,6 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: numeric
-        combine:
-          id: combine
-          table: views
-          field: combine
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: contains
-          value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: combine_op
-            label: 'Filter by staff member, position or location'
-            description: ''
-            use_operator: false
-            operator: combine_op
-            identifier: combine
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              library_news_author: '0'
-            placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          fields:
-            field_last_name: field_last_name
-            field_first_name: field_first_name
-            field_position_title: field_position_title
-            field_room_number: field_room_number
-          plugin_id: combine
       sorts:
         field_library_department_target_id:
           id: field_library_department_target_id
@@ -1421,7 +1377,20 @@ display:
             label: ''
           plugin_id: standard
       title: 'Staff and Departments'
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: "<div class=\"mt-3\">\r\n<a class=\"btn btn-warning\" href=\"/about/alphabetical-staff-directory\">\r\n  <span class=\"fas fa-user-friends\"></span> View staff directory alphabetically\r\n</a>\r\n</div>\r\n\r\n<div class=\"alert alert-dismissible alert-info fade legend show\" role=\"alert\">\r\n  <span class=\"fas fa-star head text-red\"></span> Department Head</span>\r\n  <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\r\n    <span aria-hidden=\"true\">&times;</span>\r\n  </button>\r\n</div>\r\n\r\n"
+            format: full_html
+          plugin_id: text
       footer: {  }
       empty:
         area:
@@ -1465,7 +1434,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - user.permissions
       tags:
         - 'config:field.storage.paragraph.field_is_department_head'
@@ -1487,13 +1455,12 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: about/staff-and-departments-view
+      path: about/staff-and-departments
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - user.permissions
       tags:
         - 'config:field.storage.paragraph.field_is_department_head'
