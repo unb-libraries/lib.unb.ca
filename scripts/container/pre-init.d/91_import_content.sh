@@ -3,7 +3,7 @@
 if [[ "$IMPORT_INITIAL_CONTENT" == "TRUE" ]]; then
   cd /app/html
   # Install prerequisite modules for import.
-  composer require drupal/migrate_plus drupal/migration_tools drupal/migrate_tools querypath/querypath drupal/migrate_source_csv
+  composer require drupal/migrate_plus drupal/migration_tools drupal/migrate_tools querypath/querypath drupal/migrate_source_csv:2.2
 
   # Ensure we query the proper host for content
   echo "131.202.38.2    lib.unb.ca" >> /etc/hosts
