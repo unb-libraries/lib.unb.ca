@@ -77,94 +77,22 @@ dl.two-cols {
   grid-row-gap: 1.5rem;
   grid-template-columns: 1fr 2fr;
 }
+.text-yellow {
+   color: #ffc107;
+ }
+.text-dark {
+  color: $font-dark;
+}
 .text-red {
   color: $red;
 }
 /* END UTILITY */
 
 /* Discovery/e-Resources Search */
-.tabs-theme-dark {
-  flex-wrap: wrap;
-}
-.tabs-theme-dark .nav-tabs {
-  border-bottom: none;
-}
-.tabs-theme-dark .nav-tabs .nav-item {
-  margin-bottom: 0;
-  z-index: 9;
-}
-.tabs-theme-dark .nav-link {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-.tabs-theme-dark .nav-tabs .nav-link:focus,
-.tabs-theme-dark .nav-tabs .nav-link:hover {
-  border-color: transparent;
-}
-.tabs-theme-dark .nav-tabs .nav-link.active {
-  border-color: $yellow;
-}
-.tabs-theme-dark .nav-tabs .nav-item a:not(.active):focus,
-.tabs-theme-dark .nav-tabs .nav-item a:not(.active):hover {
-  background-color: $gray-444;
-}
-.tabs-theme-dark .card-header h3 {
-  font-size: 1.2em;
-}
-.tabs-theme-dark .card-body p,
-.tabs-theme-dark .card-body .form-check-label {
-  line-height: 1rem;
-}
-.tabs-theme-dark .card-body .divider {
-  border-top: 1px solid $yellow;
-  margin: 1rem 0;
-  max-width: 16rem;
-}
-.tabs-theme-dark .btn-primary {
-  color: $white;
-  background-color: #363636;
-  @include horizontal-gradient(#444, #222);
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-}
-.tabs-theme-dark .btn-primary:focus,
-.tabs-theme-dark .btn-primary:hover {
-  color: $yellow;
-}
-@media(max-width: 991px) {
-  .tabs-theme-dark {
-    border: none;
-  }
-  .tabs-theme-dark #tabs {
-    display: none;
-  }
-  .tab-content > .tab-pane {
-    display: block !important;
-    // Override fade '0' opacity.
-    @include opacity(1);
-  }
-}
-@media(min-width: 992px) {
-  .card {
-    border: none;
-  }
-  .card .collapse{
-    display: block;
-  }
-  .card .card-header {
-    display: none;
-  }
-  .nav-tabs {
-    display: flex;
-  }
-  .tabs-theme-dark {
-    border: 1px solid $gray-dark;
-    min-height: 300px;
-  }
-}
 @media (min-width: 992px) and (max-width: 1200px) {
-  #discovery-search .card-body {
-    max-width: 538px;
-  }
+    #discovery-search .card-body {
+        max-width: 538px;
+    }
 }
 /* END Discovery/eResources Search */
 
