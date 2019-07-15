@@ -46,9 +46,9 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
-          reset_button: false
-          reset_button_label: Reset
+          submit_button: Go
+          reset_button: true
+          reset_button_label: Clear
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
@@ -674,7 +674,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "{{ name }}\r\n<i class=\"fas fa-envelope\"></i>"
+            text: '{{ name }}'
             make_link: false
             path: ''
             absolute: false
@@ -799,9 +799,65 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: boolean
+        combine:
+          id: combine
+          table: views
+          field: combine
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: combine_op
+            label: 'Filter by name / position / department / location:'
+            description: ''
+            use_operator: false
+            operator: combine_op
+            identifier: combine
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              library_news_author: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          fields:
+            field_first_name: field_first_name
+            field_position_title: field_position_title
+            field_room_number: field_room_number
+          plugin_id: combine
       sorts: {  }
       title: 'Alphabetical Staff Directory'
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: "<div class=\"my-3\">\r\n<a class=\"btn btn-warning\" href=\"/about/staff-and-departments\">\r\n  <span class=\"fas fa-user-friends\"></span> View staff directory by department\r\n</a>\r\n</div>"
+            format: full_html
+          plugin_id: text
       footer: {  }
       empty:
         area:
@@ -814,19 +870,20 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<div class=\"card\">\r\n  <div class=\"card-body callout callout-warning\">\r\n    <span class=\"fas fa-exclamation-circle\"></span>\r\n    Sorry, no staff members were found.\r\n  </div>\r\n</div>"
+            value: "<div class=\"card border-secondary mb-3\">\r\n  <div class=\"card-header\">\r\n    <span class=\"fas fa-exclamation-circle\"></span>\r\n    Sorry, no staff members were found.\r\n  </div>\r\n  <div class=\"card-body text-secondary\">\r\n     <p class=\"card-text\">Please try another search filter.</p>\r\n  </div>\r\n</div>"
             format: library_page_html
           plugin_id: text
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
-      css_class: ''
+      css_class: 'staff-departments theme-dark-form'
       use_ajax: true
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - user.permissions
       tags:
@@ -850,6 +907,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - user.permissions
       tags:
