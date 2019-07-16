@@ -266,6 +266,8 @@ dl.two-cols {
 
 /* Breadcrumbs */
 .breadcrumb {
+  font-size: 1rem;
+
   a[href="/"] {
     display: inline-block;
     position: relative;
@@ -275,6 +277,7 @@ dl.two-cols {
     &:after {
       font-family: "Font Awesome 5 Free";
       content: "\f015";
+      font-size: .85rem;
       font-weight: 900;
       height: 100%;
       position: absolute;
