@@ -1301,8 +1301,8 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<div class=\"card\">\r\n  <div class=\"card-body\">\r\n    <span class=\"fas fa-exclamation-circle\"></span>\r\n    No news posts are currently featured.\r\n  </div>\r\n</div>"
-            format: library_page_html
+            value: "<div class=\"card border-secondary mb-3\">\r\n  <div class=\"card-header\">\r\n    <span class=\"fas fa-exclamation-circle\"></span>\r\n    No news posts are currently featured.\r\n  </div>\r\n  <div class=\"card-body text-secondary\">\r\n     <p class=\"card-text text-left\">Please check back later.</p>\r\n  </div>\r\n</div>"
+            format: full_html
           plugin_id: text
     cache_metadata:
       max-age: 0
@@ -1703,8 +1703,8 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<div class=\"card\">\r\n  <div class=\"card-body\">\r\n    <span class=\"fas fa-exclamation-circle\"></span>\r\n    Sorry, no news posts are currently published.\r\n  </div>\r\n</div>"
-            format: library_page_html
+            value: "<div class=\"card border-secondary mb-3\">\r\n  <div class=\"card-header\">\r\n    <span class=\"fas fa-exclamation-circle\"></span>\r\n    No news posts are currently published.\r\n  </div>\r\n  <div class=\"card-body text-secondary\">\r\n     <p class=\"card-text text-left\">Please check back later.</p>\r\n  </div>\r\n</div>"
+            format: full_html
           plugin_id: text
     cache_metadata:
       max-age: -1
@@ -1888,7 +1888,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<div class=\"card\">\r\n  <div class=\"card-body callout callout-warning\">\r\n    <span class=\"fas fa-exclamation-circle\"></span>\r\n    Sorry, no news posts were found.\r\n  </div>\r\n</div>"
+            value: "<div class=\"card border-secondary mb-3\">\r\n  <div class=\"card-header\">\r\n    <span class=\"fas fa-exclamation-circle\"></span>\r\n    Sorry, no news posts are featured.\r\n  </div>\r\n  <div class=\"card-body text-secondary\">\r\n     <p class=\"card-text\">Please check back later.</p>\r\n  </div>\r\n</div>"
             format: library_page_html
           plugin_id: text
       css_class: library-news
