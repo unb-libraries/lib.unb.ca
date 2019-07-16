@@ -43,6 +43,22 @@ section a:not([class]):hover,
 aside a:not([class]):hover {
   @include css3-prefix(box-shadow, 0 1px 1px -1px)
 }
+/* Table header sort icon */
+thead {
+  th[scope="col"] {
+    a {
+      &:before {
+        content: '\f362';
+        display: inline-block;
+        font-family: "Font Awesome 5 Free";
+        font-size: .8rem;
+        font-weight: 900;
+        margin-right: .25rem;
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
 .more-link a {
   color: $red;
 }
@@ -250,11 +266,12 @@ dl.two-cols {
 
 /* Breadcrumbs */
 .breadcrumb {
-  li:first-of-type a {
+  a[href="/"] {
     display: inline-block;
     position: relative;
     right: 9999px;
     width: 1rem;
+
     &:after {
       font-family: "Font Awesome 5 Free";
       content: "\f015";
@@ -273,6 +290,11 @@ dl.two-cols {
   .legend {
     font-size: .9rem;
   }
+
+  label {
+    margin-bottom: 0;
+  }
+
   table {
     margin-bottom: 2rem;
 
