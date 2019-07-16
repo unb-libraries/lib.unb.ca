@@ -1289,7 +1289,7 @@ display:
       display_description: ''
       allow:
         items_per_page: false
-      css_class: 'news-featured float-right'
+      css_class: 'mt-1 news-featured float-right'
       empty:
         area:
           id: area
