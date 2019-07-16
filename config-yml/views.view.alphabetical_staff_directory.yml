@@ -478,7 +478,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Room Number'
+          label: Location
           exclude: false
           alter:
             alter_text: false
@@ -870,7 +870,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<div class=\"card border-secondary mb-3\">\r\n  <div class=\"card-header\">\r\n    <span class=\"fas fa-exclamation-circle\"></span>\r\n    Sorry, no staff members were found.\r\n  </div>\r\n  <div class=\"card-body text-secondary\">\r\n     <p class=\"card-text\">Please try another search filter.</p>\r\n  </div>\r\n</div>"
+            value: "<div class=\"card border-secondary mb-3\">\r\n  <div class=\"card-header text-light\">\r\n    <span class=\"fas fa-exclamation-circle\"></span>\r\n    Sorry, no staff members were found.\r\n  </div>\r\n  <div class=\"card-body text-secondary\">\r\n     <p class=\"card-text\">Please try another search filter.</p>\r\n  </div>\r\n</div>"
             format: library_page_html
           plugin_id: text
       relationships: {  }
