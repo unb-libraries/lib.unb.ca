@@ -1,2 +1,2 @@
-base_url: 'https://dev-intranet.lib.unb.ca/api/hours/'
+base_url: 'https://intranet.lib.unb.ca/api/hours/'
 refresh_interval: '900000'
