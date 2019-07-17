@@ -98,7 +98,7 @@ class AttachParagraphsToCreatedNewsItemsEvent implements EventSubscriberInterfac
    */
   private function addContentNewsItem() {
     $this->currentParagraph = Paragraph::create([
-      'type' => 'fullwidth_body_section',
+      'type' => 'body_section',
       'field_body' => [
         'value' => $this->currentRow->getSourceProperty('body'),
         'format' => 'library_page_html',
