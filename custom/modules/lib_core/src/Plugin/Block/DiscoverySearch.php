@@ -45,12 +45,12 @@ class DiscoverySearch extends BlockBase {
           <h2 class="sr-only">Search</h2>
           <ul id="tabs" class="flex-fill nav nav-tabs justify-content-center" role="tablist">
             <li class="nav-item">
-              <a id="tab-reserves" href="#pane-reserves" class="nav-link active" data-toggle="tab" role="tab">
+              <a id="tab-reserves" href="#pane-reserves" class="nav-link" data-toggle="tab" role="tab">
                 Reserves
               </a>
             </li>
             <li class="nav-item">
-              <a id="tab-catalogue" href="#pane-catalogue" class="nav-link" data-toggle="tab" role="tab">
+              <a id="tab-catalogue" href="#pane-catalogue" class="nav-link active" data-toggle="tab" role="tab">
                 Catalogue
               </a>
             </li>
@@ -82,10 +82,10 @@ class DiscoverySearch extends BlockBase {
           </ul>
           <div class="d-flex flex-wrap p-lg-4">
             <div class="flex-grow-1 tab-content">
-              <div aria-labelledby="tab-reserves" class="card tab-pane fade show active" id="pane-reserves" role="tabpanel">
+              <div aria-labelledby="tab-reserves" class="card tab-pane fade show" id="pane-reserves" role="tabpanel">
                 <div class="card-header p-0" id="heading-reserves">
                   <h3 class="m-0">
-                    <a aria-controls="collapse-reserves" aria-expanded="true" class="nav-link mx-1 p-2" data-toggle="collapse" href="#collapse-reserves" role="button">
+                    <a aria-controls="collapse-reserves" aria-expanded="false" class="nav-link mx-1 p-2" data-toggle="collapse" href="#collapse-reserves" role="button">
                       Reserves
                     </a>
                   </h3>
@@ -98,10 +98,10 @@ class DiscoverySearch extends BlockBase {
                 </div>
               </div>
   
-              <div aria-labelledby="tab-catalogue" class="card tab-pane fade" id="pane-catalogue" role="tabpanel">
+              <div aria-labelledby="tab-catalogue" class="card tab-pane fade active" id="pane-catalogue" role="tabpanel">
                 <div class="card-header p-0" id="heading-catalogue">
                   <h3 class="m-0">
-                    <a aria-controls="collapse-catalogue" aria-expanded="false" class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-catalogue" role="button">
+                    <a aria-controls="collapse-catalogue" aria-expanded="true" class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-catalogue" role="button">
                       Catalogue
                     </a>
                   </h3>
