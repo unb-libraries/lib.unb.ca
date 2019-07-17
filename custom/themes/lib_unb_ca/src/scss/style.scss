@@ -35,6 +35,7 @@ h3 {
 /* Main content hover effect */
 article a:not([class]),
 section a:not([class]),
+section thead th a,
 aside a:not([class]) {
   padding-bottom: 1px;
 }
