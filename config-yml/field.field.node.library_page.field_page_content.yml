@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_page_content
     - node.type.library_page
     - paragraphs.paragraphs_type.body_section
+    - paragraphs.paragraphs_type.departement_membership
   module:
     - entity_reference_revisions
 id: node.library_page.field_page_content
@@ -24,6 +25,7 @@ settings:
     negate: 1
     target_bundles:
       body_section: body_section
+      departement_membership: departement_membership
     target_bundles_drag_drop:
       body_section:
         enabled: true
@@ -40,7 +42,7 @@ settings:
       custom_block_section:
         weight: -7
         enabled: false
-      library_department_memberships:
-        weight: 12
-        enabled: false
+      departement_membership:
+        enabled: true
+        weight: 10
 field_type: entity_reference_revisions
