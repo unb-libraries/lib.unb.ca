@@ -1,0 +1,25 @@
+uuid: 867f57e4-d442-47c8-8af2-ae45ba558f6a
+langcode: en
+status: true
+dependencies: {  }
+id: library_page_author
+label: 'Library Page Author'
+weight: 3
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access in-place editing'
+  - 'access media overview'
+  - 'access media_entity_browser entity browser pages'
+  - 'access toolbar'
+  - 'create image media'
+  - 'create library_page content'
+  - 'delete any library_page content'
+  - 'delete own image media'
+  - 'edit any image media'
+  - 'edit any library_page content'
+  - 'edit own file media'
+  - 'revert library_page revisions'
+  - 'view library_page revisions'
+  - 'view own unpublished content'
+  - 'view the administration theme'
