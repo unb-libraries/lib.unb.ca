@@ -145,9 +145,9 @@ class SimpleGroup extends ContentEntityBase implements SimpleGroupInterface {
   /**
    * {@inheritdoc}
    */
-  public function getGroups() {
-    $this->set('status', $published ? TRUE : FALSE);
-    return $this;
+  public static function getUserGroups($user) {
+    $groups = $user->get('simple_groups')->referencedEntities();
+    return $groups;
   }
 
   /**

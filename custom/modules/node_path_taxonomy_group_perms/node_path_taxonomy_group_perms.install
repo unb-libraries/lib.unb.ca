@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Contains node_path_taxonomy_group_perms.install.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function node_path_taxonomy_group_perms_install() {
+  // Ensure we are heavier than the node_path_taxonomy for form hooks.
+  module_set_weight('node_path_taxonomy_group_perms', 3);
+
+  // Flush caches to override form hooks.
+  drupal_flush_all_caches();
+}

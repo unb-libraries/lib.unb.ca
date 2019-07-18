@@ -2,18 +2,19 @@
 
 /**
  * @file
- * Contains group_path_permissions.module.
+ * Contains node_path_taxonomy_group_perms.module.
  */
 
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\node\NodeInterface;
+use Drupal\node_path_taxonomy\Entity\NodeTaxonomyPath;
 use Drupal\node_path_taxonomy\Entity\NodeTaxonomyPathRelationship;
 use Drupal\node_path_taxonomy_group_perms\GroupPathPermissions;
-
-const SIMPLE_GROUP_PATH_PERMS_TAXONOMY_VID = 'simple_group_paths';
+use Drupal\user\Entity\User;
 
 /**
  * Implements hook_help().
@@ -101,21 +102,51 @@ function node_path_taxonomy_group_perms_node_access(NodeInterface $node, $op, $a
   $type = $node->bundle();
   $access = AccessResult::neutral();
 
-  // Only operate on types that have active relationship taxonomies.
+  // Only interfere with types that have active relationship taxonomies.
   $active_node_types = NodeTaxonomyPathRelationship::getConfiguredNodeTypes();
   if (in_array($type, $active_node_types)) {
-    switch ($op) {
-      case 'view':
-        return $access;
-
-      default:
-        // All others : create, delete, update.
-        $access = AccessResult::allowedIf(
-          GroupPathPermissions::userHasGroupNodeEditPermission($account, $node, $op)
-        )->cachePerUser()->addCacheableDependency($node);
-        break;
-    }
+    $access = AccessResult::allowedIf(
+      GroupPathPermissions::userHasGroupNodePermission($account, $node, $op)
+    )
+      ->cachePerUser()
+      ->addCacheableDependency($node);
   }
 
   return $access;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function node_path_taxonomy_group_perms_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (NodeTaxonomyPathRelationship::getRelationshipSetFromFormState($form_state)) {
+    $node = $form_state->getFormObject()->getEntity();
+    $node_type = $node->bundle();
+    if ($form_id == "node_{$node_type}_form" || $form_id == "node_{$node_type}_edit_form") {
+      $uid = Drupal::currentUser()->id();
+      if ($uid != 1) {
+        $user = User::load($uid);
+        $path_permission_terms = GroupPathPermissions::getUserPathPermissions($user, $node_type);
+        if (!empty($path_permission_terms)) {
+          $options = [];
+          foreach ($path_permission_terms as $path_permission_term) {
+            $options[$path_permission_term->id()] = NodeTaxonomyPath::getTermPathValue($path_permission_term);
+          }
+          $form['node_path']['publication_path']['#options'] = $options;
+          $form['#validate'][] = [
+            'Drupal\node_path_taxonomy_group_perms\GroupPathPermissions',
+            'validateNodeForm',
+          ];
+        }
+        else {
+          // User has access to edit node in drupal permissions but no paths.
+          $form['node_path']['publication_path']['#options'] = [];
+          $form['#disabled'] = TRUE;
+          \Drupal::messenger()->addError(
+            t('Error : You do not have access to any publication paths.')
+          );
+        }
+      }
+    }
+  }
 }

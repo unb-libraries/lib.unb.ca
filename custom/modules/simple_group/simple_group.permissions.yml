@@ -6,6 +6,9 @@ administer simple group entities:
   description: 'Allow to access the administration form to configure Simple group entities.'
   restrict access: true
 
+assign users to simple groups:
+  title: 'Assign Users to Simple Groups'
+
 delete simple group entities:
   title: 'Delete Simple group entities'
 
@@ -17,6 +20,3 @@ view published simple group entities:
 
 view unpublished simple group entities:
   title: 'View unpublished Simple group entities'
-
-assign users to simple groups:
-  title: 'Assign Users to Simple Groups'
