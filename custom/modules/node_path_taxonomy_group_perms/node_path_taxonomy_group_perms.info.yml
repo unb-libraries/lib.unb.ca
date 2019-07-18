@@ -1,0 +1,8 @@
+name: 'Node Path Taxonomy Group Permissions'
+type: module
+description: 'Node Path Taxonomy Group Permission'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - simple_group:simple_group
+  - node_path_taxonomy:node_path_taxonomy

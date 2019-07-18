@@ -1,0 +1,6 @@
+node_path_taxonomy_group_perms.node_path_taxonomy_group_perms_settings_form:
+  title: 'Node Path Taxonomy Group Associations'
+  route_name: node_path_taxonomy_group_perms.node_path_taxonomy_group_perms_settings_form
+  description: 'Set group associations to node path taxonomies'
+  parent: system.admin_config_system
+  weight: 99

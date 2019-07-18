@@ -1,0 +1,121 @@
+<?php
+
+/**
+ * @file
+ * Contains group_path_permissions.module.
+ */
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\node\NodeInterface;
+use Drupal\node_path_taxonomy\Entity\NodeTaxonomyPathRelationship;
+use Drupal\node_path_taxonomy_group_perms\GroupPathPermissions;
+
+const SIMPLE_GROUP_PATH_PERMS_TAXONOMY_VID = 'simple_group_paths';
+
+/**
+ * Implements hook_help().
+ */
+function node_path_taxonomy_group_perms_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the group_path_permissions module.
+    case 'help.page.node_path_taxonomy_group_perms':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Simple Group Path Permissions') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_entity_base_field_info().
+ */
+function node_path_taxonomy_group_perms_entity_base_field_info(EntityTypeInterface $entity_type) {
+  $fields = [];
+  $entity_type = $entity_type->id();
+
+  switch ($entity_type) {
+
+    case 'simple_group':
+
+      $active_node_types = NodeTaxonomyPathRelationship::getConfiguredNodeTypes();
+      $path_taxonomies = [];
+      foreach ($active_node_types as $active_node_type) {
+        $relationship_vid = NodeTaxonomyPathRelationship::loadByNodeType($active_node_type);
+        $path_taxonomies[$relationship_vid] = $relationship_vid;
+      }
+
+      $fields['perm_content_paths'] = BaseFieldDefinition::create('entity_reference')
+        ->setLabel(t('Content Creation Permissions'))
+        ->setDescription(t('Choose the paths users within this group should be allowed to create/edit.'))
+        ->setSettings(
+          [
+            'target_type' => 'taxonomy_term',
+            'handler' => 'default:taxonomy_term',
+            'handler_settings' => [
+              'target_bundles' => $path_taxonomies,
+            ],
+          ]
+        )
+        ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED)
+        ->setRequired(FALSE)
+        ->setRevisionable(FALSE)
+        ->setDisplayOptions(
+          'view',
+          [
+            'label' => 'above',
+            'weight' => 0,
+          ]
+        )
+        ->setDisplayOptions(
+          'form',
+          [
+            'type' => 'options_select',
+            'weight' => 0,
+          ]
+        )
+        ->setDisplayConfigurable('form', TRUE);
+
+      if (empty($path_taxonomies)) {
+        \Drupal::messenger()->addError(
+          t('A path taxonomy has not been assigned for this node type.')
+        );
+        $fields['perm_content_paths']['#disabled'] = TRUE;
+      }
+
+      break;
+
+  }
+
+  return $fields;
+}
+
+/**
+ * Implements hook_node_access().
+ */
+function node_path_taxonomy_group_perms_node_access(NodeInterface $node, $op, $account) {
+  $type = $node->bundle();
+  $access = AccessResult::neutral();
+
+  // Only operate on types that have active relationship taxonomies.
+  $active_node_types = NodeTaxonomyPathRelationship::getConfiguredNodeTypes();
+  if (in_array($type, $active_node_types)) {
+    switch ($op) {
+      case 'view':
+        return $access;
+
+      default:
+        // All others : create, delete, update.
+        $access = AccessResult::allowedIf(
+          GroupPathPermissions::userHasGroupNodeEditPermission($account, $node, $op)
+        )->cachePerUser()->addCacheableDependency($node);
+        break;
+    }
+  }
+
+  return $access;
+}

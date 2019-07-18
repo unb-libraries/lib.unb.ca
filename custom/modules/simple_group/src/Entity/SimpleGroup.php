@@ -145,6 +145,14 @@ class SimpleGroup extends ContentEntityBase implements SimpleGroupInterface {
   /**
    * {@inheritdoc}
    */
+  public function getGroups() {
+    $this->set('status', $published ? TRUE : FALSE);
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
