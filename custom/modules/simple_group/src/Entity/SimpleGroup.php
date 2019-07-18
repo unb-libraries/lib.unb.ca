@@ -44,11 +44,11 @@ use Drupal\user\UserInterface;
  *     "status" = "status",
  *   },
  *   links = {
- *     "canonical" = "/simple_group/simple_group/{simple_group}",
- *     "add-form" = "/simple_group/simple_group/add",
- *     "edit-form" = "/simple_group/simple_group/{simple_group}/edit",
- *     "delete-form" = "/simple_group/simple_group/{simple_group}/delete",
- *     "collection" = "/simple_group/simple_group",
+ *     "canonical" = "/admin/people/simple_groups/{simple_group}",
+ *     "add-form" = "/admin/people/simple_groups/add",
+ *     "edit-form" = "/admin/people/simple_groups/{simple_group}/edit",
+ *     "delete-form" = "/admin/people/simple_groups/{simple_group}/delete",
+ *     "collection" = "/admin/people/simple_groups/simple_group",
  *   },
  *   field_ui_base_route = "simple_group.settings"
  * )
