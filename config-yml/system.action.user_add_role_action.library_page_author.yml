@@ -1,0 +1,14 @@
+uuid: 8a7c1dbe-6013-412f-a3dd-0939b29a0803
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.library_page_author
+  module:
+    - user
+id: user_add_role_action.library_page_author
+label: 'Add the Library Page Author role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: library_page_author

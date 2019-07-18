@@ -1,0 +1,14 @@
+uuid: 1b85cf63-1811-43ac-8110-3afa63882819
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.library_page_author
+  module:
+    - user
+id: user_remove_role_action.library_page_author
+label: 'Remove the Library Page Author role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: library_page_author
