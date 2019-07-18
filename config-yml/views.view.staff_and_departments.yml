@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.paragraph.field_is_department_head
     - field.storage.paragraph.field_library_department
+    - field.storage.taxonomy_term.field_anchor
     - field.storage.taxonomy_term.field_department_email
     - field.storage.taxonomy_term.field_department_fax
     - field.storage.taxonomy_term.field_department_location
@@ -176,6 +177,69 @@ display:
       row:
         type: fields
       fields:
+        field_anchor:
+          id: field_anchor
+          table: taxonomy_term__field_anchor
+          field: field_anchor
+          relationship: field_library_department
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         field_department_location:
           id: field_department_location
           table: taxonomy_term__field_department_location
@@ -505,7 +569,7 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: "<div class=\"metadata ml-3\">\r\n<div class=\"field-location\">{{ field_department_location }}</div>\r\n<div class=\"field__items field--label-inline\">\r\n  <div class=\"field__item field-telephone\">{{ field_department_phone }}</div>\r\n  <div class=\"field__item field-fax\">{{ field_department_fax }}</div>\r\n  <div class=\"field__item field-email\">{{ field_department_email }}</div>\r\n  <div class=\"field__item field-website\">{{ field_department_website }}</div>\r\n</div>\r\n</div>"
+            text: "<div class=\"metadata ml-3\">\r\n  <div class=\"field-location\">{{ field_department_location }}</div>\r\n  <div class=\"field__items field--label-inline\">\r\n    <div class=\"field__item field-telephone\">{{ field_department_phone }}</div>\r\n    <div class=\"field__item field-fax\">{{ field_department_fax }}</div>\r\n    <div class=\"field__item field-email\">{{ field_department_email }}</div>\r\n    <div class=\"field__item field-website\">{{ field_department_website }}</div>\r\n  </div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -554,7 +618,7 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: "<strong>{{ field_library_department }}</strong>\r\n{{ nothing_2 }}"
+            text: "<div id=\"{{ field_anchor }}\">{{ field_library_department }}</div>\r\n{{ nothing_2 }}"
             make_link: false
             path: ''
             absolute: false
@@ -1438,6 +1502,7 @@ display:
       tags:
         - 'config:field.storage.paragraph.field_is_department_head'
         - 'config:field.storage.paragraph.field_library_department'
+        - 'config:field.storage.taxonomy_term.field_anchor'
         - 'config:field.storage.taxonomy_term.field_department_email'
         - 'config:field.storage.taxonomy_term.field_department_fax'
         - 'config:field.storage.taxonomy_term.field_department_location'
@@ -1465,6 +1530,7 @@ display:
       tags:
         - 'config:field.storage.paragraph.field_is_department_head'
         - 'config:field.storage.paragraph.field_library_department'
+        - 'config:field.storage.taxonomy_term.field_anchor'
         - 'config:field.storage.taxonomy_term.field_department_email'
         - 'config:field.storage.taxonomy_term.field_department_fax'
         - 'config:field.storage.taxonomy_term.field_department_location'
