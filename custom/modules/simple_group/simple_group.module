@@ -63,3 +63,15 @@ function simple_group_entity_base_field_info(EntityTypeInterface $entity_type) {
     return $fields;
   }
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function simple_group_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id === 'user_form') {
+    $user = \Drupal::currentUser();
+    if (!$user->hasPermission('assign users to simple groups')) {
+      hide($form['simple_groups']);
+    }
+  }
+}

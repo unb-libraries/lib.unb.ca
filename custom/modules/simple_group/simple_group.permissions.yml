@@ -17,3 +17,6 @@ view published simple group entities:
 
 view unpublished simple group entities:
   title: 'View unpublished Simple group entities'
+
+assign users to simple groups:
+  title: 'Assign Users to Simple Groups'
