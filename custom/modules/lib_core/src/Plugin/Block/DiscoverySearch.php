@@ -98,7 +98,7 @@ class DiscoverySearch extends BlockBase {
                 </div>
               </div>
   
-              <div aria-labelledby="tab-catalogue" class="card tab-pane fade active" id="pane-catalogue" role="tabpanel">
+              <div aria-labelledby="tab-catalogue" class="card tab-pane fade active show" id="pane-catalogue" role="tabpanel">
                 <div class="card-header p-0" id="heading-catalogue">
                   <h3 class="m-0">
                     <a aria-controls="collapse-catalogue" aria-expanded="true" class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-catalogue" role="button">
