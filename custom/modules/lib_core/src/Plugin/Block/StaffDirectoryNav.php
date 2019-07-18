@@ -10,6 +10,7 @@ use Drupal\Core\Block\BlockBase;
  * @Block(
  *  id = "staff_directory_nav",
  *  admin_label = @Translation("Staff and Departments Sidebar Navigation"),
+ *   category = @Translation("UNB Libraries"),
  * )
  */
 class StaffDirectoryNav extends BlockBase {
