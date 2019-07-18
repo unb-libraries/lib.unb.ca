@@ -29,13 +29,14 @@
 })(jQuery, Drupal);
 
 var lh3CheckPresence = function () {
-    var url = "https://ca.libraryh3lp.com/presence/jid/askus/chat.ca.libraryh3lp.com/js";
-    var script = document.createElement("script");
+    let url = "https://ca.libraryh3lp.com/presence/jid/askus/chat.ca.libraryh3lp.com/js";
+    let script = document.createElement("script");
     script.src = url + "?cb=lh3UpdatePresence";
     document.getElementsByTagName("head")[0].appendChild(script);
 };
 var lh3UpdatePresence = function () {
-    var resource = jabber_resources[0];
+    let resource = jabber_resources[0];
+
     if (resource.show === "available" || resource.show === "chat") {
         jQuery("#lh3-online").show();
         jQuery("#lh3-away").hide();
@@ -45,6 +46,7 @@ var lh3UpdatePresence = function () {
         jQuery("#lh3-online").hide();
         jQuery("#lh3-away").hide();
         jQuery("#lh3-busy").hide();
+        jQuery("#lh3-offline div[data-ch-id='hil_help']").html(getOfflineNote());
         jQuery("#lh3-offline").show();
     } else if (resource.show === "away") {
         jQuery("#lh3-online").hide();
@@ -58,4 +60,30 @@ var lh3UpdatePresence = function () {
         jQuery("#lh3-offline").hide();
     }
     jQuery(".requires-js").slideDown(250);
+};
+
+var getOfflineNote = function () {
+    let note = "Ask Us is currently <strong>offline</strong>";
+    let currentlyOpen = '', reopensData = '';
+
+    let askUs = Drupal.calendarHours.models["hil_help"];
+    if (typeof askUs !== 'undefined') {
+        currentlyOpen = askUs.isOpenNow();
+        reopensData = askUs.getReopensAt();
+    }
+
+    if (!currentlyOpen && reopensData) {
+        // Re-open details available.
+        let tomorrow = moment().add(1, "days").format("Y-MM-DD");
+        let opensAt = moment(reopensData);
+        let opensAtDate = opensAt.format("Y-MM-DD");
+        if (opensAtDate < tomorrow) {
+            note += ". Reopens at " + opensAt.format("hh:mm");
+        } else if (opensAtDate > tomorrow) {
+            note += ". Reopens on " + opensAt.format("dddd, hh:mm");
+        } else {
+            note += ". Reopens tomorrow at " + opensAt.format("hh:mm");
+        }
+    }
+    return note + ".";
 };

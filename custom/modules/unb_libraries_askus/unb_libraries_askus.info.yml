@@ -3,3 +3,5 @@ type: module
 description: 'UNB Libraries chat feature powered by LibraryH3lp.'
 core: 8.x
 package: 'UNB Libraries'
+dependencies:
+  - calendar_hours_client

@@ -124,12 +124,10 @@ function _unb_libraries_askus_get_widget($type) {
             $html .= '<a href="' . $askus_src . '">Type here to CHAT.</a>';
         }
         $html .=
-      '</div >
+      '</div>
       <div id="lh3-offline" style="display:none;">
-        Ask Us is currently <strong>offline</strong>.<br />';
-        $html .= _unb_libraries_askus_get_offline_note();
-      $html .=
-      '</div >
+        <div class="ch-nd" data-ch-id="hil_help"></div>
+      </div >
       <div id="lh3-away" style="display:none;">
         Ask Us is currently busy serving other patrons.
       </div >

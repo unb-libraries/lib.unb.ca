@@ -7,3 +7,4 @@ askus:
   dependencies:
     - core/jquery
     - core/drupal
+    - calendar_hours_client/calendar-hours
