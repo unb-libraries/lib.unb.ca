@@ -1,0 +1,26 @@
+uuid: b5433e83-3745-47f1-8a72-6c2384c86b5e
+langcode: en
+status: true
+dependencies:
+  module:
+    - lib_core
+    - system
+  theme:
+    - lib_unb_ca
+id: staffanddepartmentssidebarnavigation
+theme: lib_unb_ca
+region: sidebar_second
+weight: 0
+provider: null
+plugin: staff_directory_nav
+settings:
+  id: staff_directory_nav
+  label: 'Staff and Departments Sidebar Navigation'
+  provider: lib_core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /about/staff-and-departments
+    negate: false
+    context_mapping: {  }
