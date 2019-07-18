@@ -85,12 +85,12 @@ class DiscoverySearch extends BlockBase {
               <div aria-labelledby="tab-reserves" class="card tab-pane fade show" id="pane-reserves" role="tabpanel">
                 <div class="card-header p-0" id="heading-reserves">
                   <h3 class="m-0">
-                    <a aria-controls="collapse-reserves" aria-expanded="false" class="nav-link mx-1 p-2" data-toggle="collapse" href="#collapse-reserves" role="button">
+                    <a aria-controls="collapse-reserves" aria-expanded="false" class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-reserves" role="button">
                       Reserves
                     </a>
                   </h3>
                 </div>
-                <div class="collapse show" data-parent="#content" id="collapse-reserves">
+                <div class="collapse" data-parent="#content" id="collapse-reserves">
                   <div class="card-body">';
                     $html .= $this->getReservesForm();
                     $html .=
@@ -101,12 +101,12 @@ class DiscoverySearch extends BlockBase {
               <div aria-labelledby="tab-catalogue" class="card tab-pane fade active show" id="pane-catalogue" role="tabpanel">
                 <div class="card-header p-0" id="heading-catalogue">
                   <h3 class="m-0">
-                    <a aria-controls="collapse-catalogue" aria-expanded="true" class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-catalogue" role="button">
+                    <a aria-controls="collapse-catalogue" aria-expanded="true" class="nav-link mx-1 p-2" data-toggle="collapse" href="#collapse-catalogue" role="button">
                       Catalogue
                     </a>
                   </h3>
                 </div>
-                <div class="collapse" data-parent="#content" id="collapse-catalogue">
+                <div class="collapse show" data-parent="#content" id="collapse-catalogue">
                   <div class="card-body">';
                     $html .= $this->getCatalogueForm();
                     $html .=
