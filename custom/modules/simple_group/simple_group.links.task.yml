@@ -21,8 +21,7 @@ entity.simple_group.delete_form:
   weight: 10
 
 simple_group.admin_groups:
-  title: Simple Groups
+  title: User Groups
   route_name: entity.simple_group.collection
   base_route: entity.user.collection
   weight: 100
-
