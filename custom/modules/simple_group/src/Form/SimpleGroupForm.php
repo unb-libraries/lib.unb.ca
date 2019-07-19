@@ -44,7 +44,7 @@ class SimpleGroupForm extends ContentEntityForm {
           '%label' => $entity->label(),
         ]));
     }
-    $form_state->setRedirect('entity.simple_group.canonical', ['simple_group' => $entity->id()]);
+    $form_state->setRedirect('entity.simple_group.collection');
   }
 
 }
