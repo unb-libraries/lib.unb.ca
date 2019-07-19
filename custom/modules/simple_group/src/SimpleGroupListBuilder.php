@@ -17,8 +17,7 @@ class SimpleGroupListBuilder extends EntityListBuilder {
    * {@inheritdoc}
    */
   public function buildHeader() {
-    $header['id'] = $this->t('Simple group ID');
-    $header['name'] = $this->t('Name');
+    $header['name'] = $this->t('Group Name');
     return $header + parent::buildHeader();
   }
 
@@ -27,7 +26,6 @@ class SimpleGroupListBuilder extends EntityListBuilder {
    */
   public function buildRow(EntityInterface $entity) {
     /* @var $entity \Drupal\simple_group\Entity\SimpleGroup */
-    $row['id'] = $entity->id();
     $row['name'] = Link::createFromRoute(
       $entity->label(),
       'entity.simple_group.edit_form',
