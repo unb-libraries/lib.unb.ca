@@ -147,6 +147,13 @@ class SimpleGroup extends ContentEntityBase implements SimpleGroupInterface {
    */
   public static function getUserGroups($user) {
     $groups = $user->get('simple_groups')->referencedEntities();
+
+    foreach ($groups as $group_idx => $group) {
+      if (!$group->isPublished()) {
+        unset($groups[$group_idx]);
+      }
+    }
+
     return $groups;
   }
 
