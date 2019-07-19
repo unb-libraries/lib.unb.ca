@@ -1,8 +1,8 @@
 name: 'Node Paths from Taxonomy Tree'
 type: module
-description: 'Node path from taxonomy tree'
+description: 'Build node path aliases from a taxonomy tree'
 core: 8.x
-package: 'Custom'
+package: 'Node Path Taxonomy'
 dependencies:
   - drupal:node
   - drupal:pathauto

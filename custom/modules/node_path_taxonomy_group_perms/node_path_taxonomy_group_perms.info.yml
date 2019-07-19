@@ -1,8 +1,8 @@
 name: 'Node Path Taxonomy Group Permissions'
 type: module
-description: 'Node Path Taxonomy Group Permission'
+description: 'Assign users in simple groups permissions to edit nodes based on their path.'
 core: 8.x
-package: 'Custom'
+package: 'Node Path Taxonomy'
 dependencies:
   - simple_group:simple_group
   - node_path_taxonomy:node_path_taxonomy
