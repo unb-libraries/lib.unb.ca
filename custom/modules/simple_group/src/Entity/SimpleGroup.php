@@ -16,7 +16,7 @@ use Drupal\user\UserInterface;
  *
  * @ContentEntityType(
  *   id = "simple_group",
- *   label = @Translation("Simple group"),
+ *   label = @Translation("Group"),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "list_builder" = "Drupal\simple_group\SimpleGroupListBuilder",

@@ -25,7 +25,6 @@ class NodeTaxonomyPathRelationshipListBuilder extends ConfigEntityListBuilder {
   public function buildRow(EntityInterface $entity) {
     $row['node_type'] = $entity->getNodeType();
     $row['vid'] = $entity->getVid();
-    // You probably want a few more properties here...
     return $row + parent::buildRow($entity);
   }
 
@@ -34,16 +33,11 @@ class NodeTaxonomyPathRelationshipListBuilder extends ConfigEntityListBuilder {
    */
   public function render() {
     $build = parent::render();
-
     $markup_block = [];
-    $markup_block['title'] = [
-      '#markup' => '<h2>Lorem ipsum dolor sit amet</h2>',
-    ];
     $markup_block['description'] = [
       '#markup' => '<p>By associating a node type with a path alias taxonomy, you provide the user with a selectable list of base paths to use for each node\'s path alias.</p>',
     ];
     array_unshift($build, $markup_block);
-
     return $build;
   }
 
