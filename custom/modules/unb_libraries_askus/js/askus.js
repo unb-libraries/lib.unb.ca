@@ -42,12 +42,6 @@ var lh3UpdatePresence = function () {
         jQuery("#lh3-away").hide();
         jQuery("#lh3-busy").hide();
         jQuery("#lh3-offline").hide();
-    } else if (resource.show === "unavailable" || resource.show==="xa") {
-        jQuery("#lh3-online").hide();
-        jQuery("#lh3-away").hide();
-        jQuery("#lh3-busy").hide();
-        jQuery("#lh3-offline div[data-ch-id='hil_help']").html(getOfflineNote());
-        jQuery("#lh3-offline").show();
     } else if (resource.show === "away") {
         jQuery("#lh3-online").hide();
         jQuery("#lh3-away").show();
@@ -58,6 +52,13 @@ var lh3UpdatePresence = function () {
         jQuery("#lh3-away").hide();
         jQuery("#lh3-busy").show();
         jQuery("#lh3-offline").hide();
+    } else {
+        // resource.show is 'unavailable', 'xa' or unknown.
+        jQuery("#lh3-online").hide();
+        jQuery("#lh3-away").hide();
+        jQuery("#lh3-busy").hide();
+        jQuery("#lh3-offline div[data-ch-id='hil_help']").html(getOfflineNote());
+        jQuery("#lh3-offline").show();
     }
     jQuery(".requires-js").slideDown(250);
 };
