@@ -67,8 +67,8 @@ var getOfflineNote = function () {
     let note = "Ask Us is currently <strong>offline</strong>";
     let currentlyOpen = '', reopensData = '';
 
-    let askUs = Drupal.calendarHours.models["hil_help"];
-    if (typeof askUs !== 'undefined') {
+    let askUs = Drupal.calendarHours.collection.get("hil_help");
+    if (typeof askUs != 'undefined') {
         currentlyOpen = askUs.isOpenNow();
         reopensData = askUs.getReopensAt();
     }
