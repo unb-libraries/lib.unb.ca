@@ -1,0 +1,23 @@
+/* Fix Webform nested custom-control class */
+.custom-control {
+  label.custom-control {
+    position: relative;
+    display: inline-block;
+    padding-left: 0;
+    vertical-align: top;
+  }
+}
+
+fieldset .form-group {
+  label {
+    margin-bottom: 0;
+  }
+}
+
+/* Emulate Bootstrap 4 custom-control-inline w/ Webform > Options display > Side by side */
+.webform-options-display-side-by-side {
+  div.custom-control {
+    display: inline-flex;
+    margin-right: 1rem;
+  }
+}
