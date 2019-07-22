@@ -169,9 +169,9 @@ dl.two-cols {
 /* Library news listing page */
 .library-news {
   span.page-link {
+    background: inherit;
     color: $gray-dark;
     &:hover {
-      background: inherit;
       cursor: default;
     }
   }
