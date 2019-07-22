@@ -1,6 +1,6 @@
 uuid: 79f28e22-6866-4db0-9b07-0ab6757e658c
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - node.type.news_post
@@ -525,6 +525,17 @@ display:
           1: AND
       display_extenders: {  }
       use_ajax: true
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          content: "<header>\r\n  <div class=\"color-success\">\r\n    <hr />\r\n    <h2>Displaying @start - @end of @total</h2>\r\n    <hr />\r\n  </div>\r\n</header>"
+          plugin_id: result
     display_plugin: default
     display_title: Master
     id: default
