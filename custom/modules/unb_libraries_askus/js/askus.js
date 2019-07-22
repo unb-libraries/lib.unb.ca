@@ -57,14 +57,14 @@ var lh3UpdatePresence = function () {
         jQuery("#lh3-online").hide();
         jQuery("#lh3-away").hide();
         jQuery("#lh3-busy").hide();
-        jQuery("#lh3-offline div[data-ch-id='hil_help']").html(getOfflineNote());
+        jQuery("#lh3-offline div[data-ch-id='hil_help']").text(getOfflineNote());
         jQuery("#lh3-offline").show();
     }
     jQuery(".requires-js").slideDown(250);
 };
 
 var getOfflineNote = function () {
-    let note = "Ask Us is currently <strong>offline</strong>";
+    let note = "Ask Us is currently offline";
     let currentlyOpen = '', reopensData = '';
 
     let askUs = Drupal.calendarHours.collection.get("hil_help");
