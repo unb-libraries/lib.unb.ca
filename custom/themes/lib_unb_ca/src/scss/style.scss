@@ -94,15 +94,18 @@ dl.two-cols {
   grid-row-gap: 1.5rem;
   grid-template-columns: 1fr 2fr;
 }
-.text-yellow {
-   color: #ffc107;
- }
 .text-dark {
   color: $font-dark;
 }
 .text-red {
   color: $red;
 }
+.text-muted-wcag {
+  color: $text-muted-wcag;
+}
+.text-yellow {
+   color: #ffc107;
+ }
 /* END UTILITY */
 
 /* Discovery/e-Resources Search */
