@@ -29,7 +29,7 @@ class ResearchSubjects extends BlockBase {
     $last_list_item_html =
       '<li class="list-unstyled more-link mt-2">
         <span class="fa-plus-square fas"></span>&nbsp;<a
-        href="//guides.lib.unb.ca/research-guides">All Subject and Course Guides</a>
+        href="//guides.lib.unb.ca/research-guides">All Research Guides</a>
       </li>
       </ul>';
 
