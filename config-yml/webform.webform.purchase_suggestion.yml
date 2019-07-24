@@ -37,7 +37,7 @@ settings:
   form_prepopulate_source_entity_type: ''
   form_reset: true
   form_disable_autocomplete: false
-  form_novalidate: false
+  form_novalidate: true
   form_disable_inline_errors: false
   form_required: false
   form_unsaved: true
@@ -72,8 +72,18 @@ settings:
   autofill: true
   autofill_message: ''
   autofill_excluded_elements:
-    campus: campus
-  wizard_progress_bar: true
+    subject_area: subject_area
+    title: title
+    author_s_or_editor_s_: author_s_or_editor_s_
+    series_or_conference_title: series_or_conference_title
+    publisher_studio: publisher_studio
+    place_of_publication: place_of_publication
+    year: year
+    isbn: isbn
+    edition: edition
+    type: type
+    other_information: other_information
+  wizard_progress_bar: false
   wizard_progress_pages: false
   wizard_progress_percentage: false
   wizard_progress_link: false
