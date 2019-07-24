@@ -169,6 +169,11 @@ function node_path_taxonomy_group_perms_views_query_alter(ViewExecutable $view, 
   $controlled_types = NodeTaxonomyPathRelationship::getConfiguredNodeTypes();
   $user_perms = GroupPathPermissions::getCurrentUserEditPermissionsNids();
 
+  // Make sure user gets no nodes if no permissions.
+  if (empty($user_perms)) {
+    $user_perms = [-1];
+  }
+
   $group = $query->setWhereGroup($type = 'OR');
   $query->addWhere($group, 'type', $controlled_types, 'NOT IN');
   $query->addWhere($group, 'nid', $user_perms, 'IN');
