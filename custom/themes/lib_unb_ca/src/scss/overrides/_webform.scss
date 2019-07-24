@@ -25,6 +25,30 @@
     }
   }
 
+  select.error {
+    color: $nav-red;
+    border-color: $nav-red;
+    background-image: url(/core/misc/icons/ee0000/ex.svg);
+    background-repeat: no-repeat;
+    background-position: 98.5%;
+    background-size: .85rem;
+    padding-right: 2%;
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+    }
+
+    option {
+        color: initial;
+    }
+  }
+
+  .radio .error {
+    & + label {
+      color: $nav-red;
+    }
+  }
+
   .webform-options-display-side-by-side {
     /* Emulate Bootstrap 4 custom-control-inline w/ Webform > Options display > Side by side */
     div.custom-control {
