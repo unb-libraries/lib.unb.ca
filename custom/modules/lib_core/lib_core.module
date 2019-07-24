@@ -6,6 +6,10 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\node_path_taxonomy\Entity\NodeTaxonomyPathRelationship;
+use Drupal\node_path_taxonomy_group_perms\GroupPathPermissions;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views\ViewExecutable;
 
 /**
  * Implements hook_editor_js_settings_alter().
@@ -418,4 +422,21 @@ function _lib_core_get_database_titles() {
   ];
 
   return $titles;
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function lib_core_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  if ($view->id() != 'content') {
+    return;
+  }
+
+  $user = Drupal::currentUser();
+  if (!$user->hasPermission('edit any library_page content')) {
+    $query->addWhere(1, 'type', 'library_page', '!=');
+  }
+  if (!$user->hasPermission('edit any news_post content')) {
+    $query->addWhere(1, 'type', 'news_post', '!=');
+  }
 }
