@@ -16,8 +16,8 @@ elements: "'#attributes':\n  class:\n    - 'theme-dark bg-light'\nmarkup:\n  '#t
 css: bg-light
 javascript: ''
 settings:
-  ajax: false
-  ajax_scroll_top: ''
+  ajax: true
+  ajax_scroll_top: page
   page: true
   page_submit_path: requests/purchase-suggestion
   page_confirm_path: ''
@@ -133,8 +133,8 @@ settings:
   results_disabled_ignore: false
   token_update: false
   ajax_progress_type: ''
-  ajax_effect: ''
-  ajax_speed: null
+  ajax_effect: fade
+  ajax_speed: 500
   page_admin_theme: false
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
