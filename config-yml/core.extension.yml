@@ -61,6 +61,7 @@ module:
   redis: 0
   scroll_to_top: 0
   search: 0
+  simple_group: 0
   system: 0
   taxonomy: 0
   telephone: 0
@@ -77,6 +78,8 @@ module:
   menu_link_content: 1
   pathauto: 1
   webform_bootstrap: 1
+  node_path_taxonomy: 2
+  node_path_taxonomy_group_perms: 3
   views: 10
   paragraphs: 11
   libweb: 1000
