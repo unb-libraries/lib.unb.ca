@@ -106,4 +106,23 @@ class GroupPathPermissions {
     }
   }
 
+  /**
+   * Get all nids a user has permission to edit based on group permissions.
+   */
+  public static function getCurrentUserEditPermissionsNids() {
+    $nids = [];
+    $uid = \Drupal::currentUser()->id();
+    $user = User::load($uid);
+
+    // User path content permissions.
+    $controlled_types = NodeTaxonomyPathRelationship::getConfiguredNodeTypes();
+    foreach ($controlled_types as $controlled_type) {
+      $permission_terms = GroupPathPermissions::getUserPathPermissions($user, $controlled_type);
+      $user_page_nids = NodeTaxonomyPath::getNidsByPathTerms($permission_terms);
+      $nids = array_merge($nids, $user_page_nids);
+    }
+
+    return $nids;
+  }
+
 }
