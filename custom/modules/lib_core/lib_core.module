@@ -97,7 +97,7 @@ function _lib_core_get_guide_categories() {
   $categories = [
     'anthropology' => 'Anthropology',
     'biology' => 'Biology',
-    'business' => 'Business Administration',
+    'business' => 'Business & Management',
     'chemistry' => 'Chemistry',
     'classics' => 'Classics and Ancient History',
     'computerscience' => 'Computer Science',
