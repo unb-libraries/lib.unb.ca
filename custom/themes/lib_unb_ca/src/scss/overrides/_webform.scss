@@ -81,3 +81,29 @@
     }
   }
 }
+
+form.theme-dark {
+  .alert-success {
+    padding: 0;
+
+    p {
+      padding: .5rem;
+
+     &.h5 {
+        background: #155724;
+        color: $white;
+        font-weight: bold;
+        padding: .75rem;
+      }
+    }
+    &.alert-dismissible {
+      padding-right: 3.5rem;
+
+      .close {
+         background: rgba(21, 87,36, 0.1);
+      }
+    }
+  }
+
+
+}
