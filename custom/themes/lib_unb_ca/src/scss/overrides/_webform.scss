@@ -14,25 +14,35 @@
   display: block;
   padding: 20px 25px 0px;
 
-  fieldset {
-    & > label {
-      color: $gray-700;
-      font-weight: bold;
-      margin-bottom: 0;
-    }
+  fieldset.webform-type-fieldset {
+    margin-bottom: 1.5rem;
+
     fieldset {
-      margin-bottom: 1.5rem;
+      fieldset {
+        margin-bottom: .5rem;
+      }
+
+      label {
+        color: $gray-700;
+        font-weight: bold;
+        margin-bottom: 0;
+
+        small {
+          vertical-align: text-bottom;
+        }
+      }
+    }
+  }
+
+  fieldset.has-error {
+    .invalid-feedback {
+      display: block;
     }
   }
 
   select.error {
     color: $nav-red;
     border-color: $nav-red;
-    background-image: url(/core/misc/icons/ee0000/ex.svg);
-    background-repeat: no-repeat;
-    background-position: 98.5%;
-    background-size: .85rem;
-    padding-right: 2%;
 
     &:focus {
       box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
@@ -42,7 +52,6 @@
         color: initial;
     }
   }
-
   .radio .error {
     & + label {
       color: $nav-red;
