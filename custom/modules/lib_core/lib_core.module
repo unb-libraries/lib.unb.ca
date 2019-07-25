@@ -6,8 +6,6 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\node_path_taxonomy\Entity\NodeTaxonomyPathRelationship;
-use Drupal\node_path_taxonomy_group_perms\GroupPathPermissions;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\ViewExecutable;
 
