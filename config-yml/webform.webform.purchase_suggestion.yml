@@ -348,14 +348,14 @@ handlers:
       from_options: {  }
       from_name: _default
       subject: 'Purchase Suggestion'
-      body: _default
+      body: "<p>The following Purchase Request was submitted on <b>{{ webform_token('[webform_submission:created]', webform_submission) }}</b> by <b>{{ webform_token('[webform_submission:user]', webform_submission) }}</b>.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img alt=\"UNB Libraries\" src=\"https://dev-lib.unb.ca/themes/contrib/unb_lib_theme/img/unb-libraries-red-black.png\" />\r\n</div>"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: false
       html: true
       attachments: false
-      twig: false
+      twig: true
       debug: false
       reply_to: ''
       return_path: ''
