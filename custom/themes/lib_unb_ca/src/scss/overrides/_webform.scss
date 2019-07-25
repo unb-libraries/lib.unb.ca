@@ -64,6 +64,10 @@
     }
   }
 
+  .form-control.is-invalid {
+    background-image: none;
+  }
+
   .webform-options-display-side-by-side {
     /* Emulate Bootstrap 4 custom-control-inline w/ Webform > Options display > Side by side */
     div.custom-control {
