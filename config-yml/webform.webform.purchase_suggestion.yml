@@ -70,7 +70,7 @@ settings:
   previous_submission_message: ''
   previous_submissions_message: ''
   autofill: true
-  autofill_message: ''
+  autofill_message: 'The <strong>Personal Information</strong> section has been autofilled using your previous submission data.'
   autofill_excluded_elements:
     subject_area: subject_area
     title: title
@@ -163,7 +163,8 @@ access:
     users: {  }
     permissions: {  }
   view_own:
-    roles: {  }
+    roles:
+      - authenticated
     users: {  }
     permissions: {  }
   update_own:
