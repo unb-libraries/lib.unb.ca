@@ -107,7 +107,7 @@ settings:
   draft_loaded_message: ''
   confirmation_type: message
   confirmation_title: ''
-  confirmation_message: "<h2><i class=\"fas fa-check-square\"></i> Purchase Suggestion Successfully Submitted</h2>\r\n\r\n<p>We appreciate receiving your purchase suggestion for library materials. Suggestions are reviewed by a librarian and evaluated for purchase. Evaluations are based upon our library&#39;s collection development policy and budgetary constraints.</p>\r\n\r\n<p>Please note that there is no guarantee for purchase. Material orders can take some time to arrive before making their way into our catalogue. If your need is urgent, you may wish to consider <a href=\"/requests/docdel/\">filling out a Document Delivery Request form</a>.</p>\r\n\r\n<p>Thank you for your interest in our collection at UNB Libraries.</p>"
+  confirmation_message: "<p class=\"h5\"><i class=\"fas fa-check\"></i> Purchase Suggestion Successfully Submitted</p>\r\n\r\n<p>We appreciate receiving your purchase suggestion for library materials. Suggestions are reviewed by a librarian and evaluated for purchase. Evaluations are based upon our library&#39;s collection development policy and budgetary constraints.</p>\r\n\r\n<p>Please note that there is no guarantee for purchase. Material orders can take some time to arrive before making their way into our catalogue. If your need is urgent, you may wish to consider <a href=\"/requests/docdel/\">filling out a Document Delivery Request form</a>.</p>\r\n\r\n<p>Thank you for your interest in our collection at UNB Libraries.</p>"
   confirmation_url: ''
   confirmation_attributes: {  }
   confirmation_back: true
