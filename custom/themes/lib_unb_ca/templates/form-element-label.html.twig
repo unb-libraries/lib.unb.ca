@@ -24,7 +24,7 @@
     <label{{ attributes.addClass(classes) }}>
         {{ title }}
         {% if required and title_display != 'invisible' %}
-            <span class="font-weight-light text-red">(required)</span>
+            <small class="font-weight-light text-red">(required)</small>
         {% endif %}
     </label>
 {% endif %}
