@@ -93,6 +93,17 @@
 }
 
 form.theme-dark {
+  .alert-danger {
+    .list-comma-list {
+      li {
+        display: inline-block;
+
+        &:not(:last-child):after {
+          content: ',';
+        }
+      }
+    }
+  }
   .alert-success {
     padding: 0;
 
