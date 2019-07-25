@@ -84,7 +84,7 @@ function node_path_taxonomy_group_perms_entity_base_field_info(EntityTypeInterfa
         ->setDisplayConfigurable('form', TRUE);
 
       if (empty($path_taxonomies)) {
-        \Drupal::messenger()->addError(
+        \Drupal::messenger()->addWarning(
           t('A path taxonomy has not been assigned for this node type.')
         );
         $fields['perm_content_paths']['#disabled'] = TRUE;
