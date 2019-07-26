@@ -618,7 +618,7 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: "<div id=\"{{ field_anchor }}\">{{ field_library_department }}</div>\r\n{{ nothing_2 }}"
+            text: "<a id=\"{{ field_anchor }}\"></a>\r\n{{ field_library_department }}\r\n{{ nothing_2 }}"
             make_link: false
             path: ''
             absolute: false
