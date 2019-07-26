@@ -94,12 +94,20 @@
 
 form.theme-dark {
   .alert-danger {
-    .list-comma-list {
-      li {
-        display: inline-block;
+    /* Inline form error fix+style */
+    .wrapper-list-comma-list {
+      display: inline-block;
 
-        &:not(:last-child):after {
-          content: ',';
+      ul {
+        margin: 0;
+
+        li {
+          display: inline-block;
+          padding: 0;
+
+          &:not(:last-child):after {
+            content: ',';
+          }
         }
       }
     }
