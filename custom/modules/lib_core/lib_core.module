@@ -55,6 +55,11 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
       $form['promote']['widget']['value']['#title'] = t('Set as rotating front page feature');
       break;
 
+    case 'webform_submission_purchase_suggestion_add_form':
+      $form['#attached']['library'][] = 'lib_core/lib-chosen';
+      $form['#attached']['library'][] = 'lib_core/chosen-bootstrap';
+      break;
+
     default:
       break;
   }
