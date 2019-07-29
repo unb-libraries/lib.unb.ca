@@ -3,64 +3,67 @@ status: true
 mode: default
 default_paths:
   collections:
-    - clc
-    - loyalist
+    clc:
+      portolan:
+    loyalist:
   microforms:
+    newsdb:
   copyright:
   eresources:
   proxy:
   texts:
-    - marston
-    - reserves
-    - theatre-restore
-    - acadiensis
-    - theatre
-    - special-collections
-    - wmwriters
-    - nb-history
+    marston:
+    reserves:
+    theatre-restore:
+    acadiensis:
+    theatre:
+    special-collections:
+    wmwriters:
+    nb-history:
   rdm:
   archives:
-    - educrev
-    - sports
-    - kells
-    - sbdb
-    - database
-    - gallery
-    - finding
-    - edu
-    - hathaway
-    - erdb
-    - bennett
-    - unb-composites
-    - pephotos
-    - schoolbook
+    educrev:
+    sports:
+    kells:
+    sbdb:
+    database:
+    gallery:
+    finding:
+    edu:
+    hathaway:
+    erdb:
+    bennett:
+    unb-composites:
+    pephotos:
+    schoolbook:
   openaccess:
   catalogues:
   disted:
   about:
-    - facilities
-    - loc_call
-    - policies
-    - bio
+    facilities:
+    loc_call:
+    policies:
+    bio:
   help:
   research:
-    - success
-    - video
+    success:
+    video:
   data:
-    - library-hours
+    library-hours:
   gddm:
-    - maps
-    - govdocs
+    maps:
+    govdocs:
   refworks:
   requests:
-    - docdel
+    docdel:
   reserves:
   faculty:
   225:
   winslow:
   services:
-    - rooms
+    rooms:
   worldcat:
+  zotero:
 
 dependencies:
   enforced:

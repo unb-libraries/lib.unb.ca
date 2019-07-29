@@ -96,29 +96,39 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
    */
   public static function createFromArray($vid, array $terms) {
     $root_tid = self::getRootElement($vid);
+    self::createPathElements($vid, $root_tid, $terms);
+  }
 
-    foreach ($terms as $parent_path => $sub_paths) {
-      $parent_term = Term::create(
-        [
-          'parent' => [$root_tid],
-          'name' => $parent_path,
-          'vid' => $vid,
-        ]
-      );
-      $parent_term->save();
-      if (!empty($sub_paths)) {
-        foreach ($sub_paths as $sub_path) {
-          Term::create(
-            [
-              'parent' => [$parent_term->id()],
-              'name' => $sub_path,
-              'vid' => $vid,
-            ]
-          )->save();
+  /**
+   * {@inheritdoc}
+   */
+  private static function createPathElements($vid, $parent_tid, $values) {
+    if (is_array($values)) {
+      foreach ($values as $element => $sub_elements) {
+        $parent = self::createElement($parent_tid, $element, $vid);
+        if (!empty($sub_elements)) {
+          self::createPathElements($vid, $parent->id(), $sub_elements);
         }
       }
-      unset($parent_term);
     }
+    else {
+      self::createElement($parent_tid, $values, $vid);
+    }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  private static function createElement($parent_tid, $name, $vid) {
+    $term = Term::create(
+      [
+        'parent' => [$parent_tid],
+        'name' => $name,
+        'vid' => $vid,
+      ]
+    );
+    $term->save();
+    return $term;
   }
 
   /**
