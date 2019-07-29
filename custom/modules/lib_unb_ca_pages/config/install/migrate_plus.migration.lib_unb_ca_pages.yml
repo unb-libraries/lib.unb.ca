@@ -61,6 +61,26 @@ source:
               method: pluckSelector
               arguments:
                 - '#main h1'
+
+        has_sidebar:
+          obtainer: ObtainHTML
+          jobs:
+            - job: addSearch
+              method: findSelector
+              arguments:
+                - '#main #sidebar'
+                - 1
+                - html
+        has_non_sidebar:
+          obtainer: ObtainHTML
+          jobs:
+            - job: addSearch
+              method: findSelector
+              arguments:
+                - '#main div.col-md-8'
+                - 1
+                - html
+
         chatwidget_sidebar:
           obtainer: ObtainHTML
           jobs:
@@ -142,6 +162,12 @@ source:
         -
           operation: get_field
           field: chatwidget_offline_sidebar
+        -
+          operation: get_field
+          field: has_sidebar
+        -
+          operation: get_field
+          field: has_non_sidebar
         -
           operation: get_field
           field: sidebar

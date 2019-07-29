@@ -172,8 +172,8 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    */
   private function pageHasSidebar() {
     return (
-      !empty($this->currentRow->getSourceProperty('non_sidebar'))
-      && !empty($this->currentRow->getSourceProperty('sidebar'))
+      !empty($this->currentRow->getSourceProperty('has_non_sidebar'))
+      && !empty($this->currentRow->getSourceProperty('has_sidebar'))
     );
   }
 
