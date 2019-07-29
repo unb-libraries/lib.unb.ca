@@ -103,6 +103,15 @@ source:
                 - 1
                 - innerHtml
 
+        sidebar_hours:
+          obtainer: ObtainArray
+          jobs:
+            - job: addSearch
+              method: arrayPluckSelector
+              arguments:
+                - '#main #sidebar .hoursBlock'
+                - innerHtml
+
         sidebar:
           obtainer: ObtainHTML
           jobs:
@@ -113,6 +122,7 @@ source:
                 - '#main #sidebar'
                 - 1
                 - innerHtml
+
         non_sidebar:
           obtainer: ObtainHTML
           jobs:
@@ -123,6 +133,7 @@ source:
                 - '#main div.col-md-8'
                 - 1
                 - innerHtml
+
         body:
           obtainer: ObtainBody
           jobs:
@@ -156,6 +167,9 @@ source:
         -
           operation: get_field
           field: title
+        -
+          operation: get_field
+          field: sidebar_hours
         -
           operation: get_field
           field: chatwidget_sidebar

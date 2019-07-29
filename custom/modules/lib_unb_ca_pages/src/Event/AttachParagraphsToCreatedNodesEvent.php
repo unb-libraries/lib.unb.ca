@@ -188,6 +188,11 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     if ($this->sidebarHasChatWidget()) {
       $sidebar_paragraphs[] = $this->getChatWidgetParagraph();
     }
+    if ($this->sidebarHasHours()) {
+      foreach ($this->getHoursBlockParagraphs() as $hours_paragraph) {
+        $sidebar_paragraphs[] = $hours_paragraph;
+      }
+    }
     $sidebar_paragraphs[] = $this->getSidebarContentParagraph();
     $main_paragraphs[] = $this->getNonSidebarContentParagraph();
     $this->currentParagraph = Paragraph::create([
@@ -225,6 +230,50 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     ]);
     $paragraph->save();
     return $paragraph;
+  }
+
+  /**
+   * Determine if the imported row sidebar had a chat widget.
+   *
+   * @return bool
+   *   TRUE if the content had a chat widget in the sidebar. FALSE otherwise.
+   */
+  private function sidebarHasHours() {
+    return !empty($this->currentRow->getSourceProperty('sidebar_hours'));
+  }
+
+  /**
+   * Get the paragraph entity that contains hours block(s).
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   *
+   * @return \Drupal\Core\Entity\EntityInterface|\Drupal\paragraphs\Entity\Paragraph[]
+   *   The paragraph containing the hours block(s).
+   */
+  private function getHoursBlockParagraphs() {
+    $hours_blocks = $this->currentRow->getSourceProperty('sidebar_hours');
+    if (!is_array($hours_blocks)) {
+      $hours_blocks = [$hours_blocks];
+    }
+
+    $paragraphs = [];
+    foreach ($hours_blocks as $hours_block) {
+      $paragraph = Paragraph::create([
+        'type' => 'custom_block_section',
+        'field_selected_block' => 'sidebar_hours_block',
+      ]);
+
+      $block_value = $paragraph->get('field_selected_block')->first()->getValue();
+      $block_value['settings']['label'] = 'Hours';
+      $block_value['settings']['body'] = $hours_block;
+
+      $paragraph->get('field_selected_block')->first()->setValue($block_value);
+      $paragraph->save();
+
+      $paragraphs[] = $paragraph;
+    }
+
+    return $paragraphs;
   }
 
   /**
