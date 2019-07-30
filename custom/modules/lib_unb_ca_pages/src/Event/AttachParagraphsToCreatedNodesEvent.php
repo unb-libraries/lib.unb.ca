@@ -346,13 +346,14 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
   private function getManualPathAliases() {
     return [
       self::BASE_URI . '/about/index.php' => '/about',
-      'https://lib.unb.ca/collections/index.php' => '/collections',
-      'https://lib.unb.ca/about/hours.php' => '/about/hours',
-      'https://lib.unb.ca/microforms/index.php' => '/microforms',
+      self::BASE_URI . '/about/hours.php' => '/about/hours',
+      self::BASE_URI . '/collections/index.php' => '/collections',
+      self::BASE_URI . '/microforms/index.php' => '/microforms',
+      self::BASE_URI . '/requests/docdel/extramural.php' => '/services/docdel/document-delivery-community-alumni-borrowers',
+      self::BASE_URI . '/requests/docdel/policy-fees.php' => '/services/docdel/document-delivery-policies-fees',
+
       // This is for the blank 'front' page.
       'https://systems.lib.unb.ca/blank.html' => '/unb-libraries',
-      'https://lib.unb.ca/requests/docdel/extramural.php' => '/services/docdel/document-delivery-community-alumni-borrowers',
-      'https://lib.unb.ca/requests/docdel/policy-fees.php' => '/services/docdel/document-delivery-policies-fees',
     ];
   }
 
