@@ -63,12 +63,35 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     case 'webform_submission_contact_add_form':
       $recipient = explode("@unb.ca", $form['elements']['recipient']['#default_value']);
       $username = $recipient[0];
+
       if ($user = user_load_by_name($username)) {
-        $form['elements']['contact_message']['#message_message']['#markup'] =
-          "<i class=\"fas fa-info-circle\"></i> " .
-          "Please complete the following webform to send email to <b>" .
-          $user->get('field_first_name')->getString() . " " .
-          $user->get('field_last_name')->getString() . "</b>.";
+        $success_msg =
+          '<div class="d-flex">' .
+            '<div class="pr-1"><i class="fas fa-info-circle"></i></div>' .
+            '<div class="align-self-start">Please complete the following webform to send email to <b>' .
+              $user->get('field_first_name')->getString() . ' ' .
+              $user->get('field_last_name')->getString() . '</b>. ' .
+              'You may also <a href="mailto:' . $username .
+              '@unb.ca?subject=Patron Webform Query">use your own email program</a>, if configured.
+            </div>' .
+          '</div>';
+      }
+      elseif ($department = _lib_core_contactable_department($username)) {
+        $success_msg =
+          '<div class="d-flex">' .
+            '<div class="pr-1"><i class="fas fa-info-circle"></i></div>' .
+            '<div class="align-self-start">Please complete the following webform to send email to <b>' .
+              $department . '</b>. You may also <a href="mailto:' . $username .
+              '@unb.ca?subject=Patron Webform Query">use your own email program</a>, if configured.
+            </div>
+          </div>';
+      }
+      else {
+        $success_msg = FALSE;
+      }
+
+      if ($success_msg) {
+        $form['elements']['contact_message']['#message_message']['#markup'] = $success_msg;
       }
       else {
         $form['actions']['submit']['#attributes']['disabled'] = 'disabled';
@@ -443,6 +466,36 @@ function _lib_core_get_database_titles() {
   ];
 
   return $titles;
+}
+
+/**
+ * Get UNB Libraries department label, given an email mailbox.
+ *
+ * @param string $mailbox
+ *   A email mailbox string identifying a UNB Libraries Department without a Drupal user account.
+ *
+ * @return string
+ *   The name of the UNB Libraries department.
+ */
+function _lib_core_contactable_department($mailbox) {
+  // Contact webform may send messages to the following mailboxes.
+  $departments = [
+    'archives' => 'Archives',
+    'circhi' => 'Access Services',
+    'digitalscholar' => 'Centre for Digital Scholarship',
+    'docdel' => 'Document Delivery',
+    'englib' => 'Engineering & Computer Science',
+    'hilref' => 'Reference',
+    'library' => 'Staff',
+    'libweb' => 'Website Administrator',
+    'govdocs' => 'Government Documents, Data and Maps',
+    'hwkcommons' => 'Hans W. Klohn Commons',
+    'lawlib' => 'Law Library',
+    'mic' => 'Microforms',
+    'scilib' => 'Science & Forestry',
+  ];
+
+  return $departments[$mailbox];
 }
 
 /**
