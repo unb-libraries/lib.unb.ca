@@ -96,8 +96,12 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
       else {
         $form['actions']['submit']['#attributes']['disabled'] = 'disabled';
         $form['elements']['contact_message']['#message_message']['#markup'] =
-          "<i class=\"fas fa-exclamation-triangle\"></i> " .
-          "Sorry, <b>$username</b> is not a valid UNB Libraries recipient - your message <b>will not</b> be sent.";
+          '<div class="d-flex">
+            <div class="pr-1"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="align-self-start">Sorry, <b>' .
+              $username . '</b> is not a valid UNB Libraries recipient. Messaging is <b>disabled</b>.
+            </div>
+           </div>';
       }
       break;
 
@@ -495,7 +499,7 @@ function _lib_core_contactable_department($mailbox) {
     'scilib' => 'Science & Forestry',
   ];
 
-  return $departments[$mailbox];
+  return array_key_exists($mailbox, $departments) ? $departments[$mailbox] : NULL;
 }
 
 /**

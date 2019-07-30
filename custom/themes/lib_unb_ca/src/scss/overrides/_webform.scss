@@ -21,6 +21,12 @@
       margin-bottom: 0;
     }
   }
+
+  .is-disabled {
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
   fieldset.webform-type-fieldset {
     margin-bottom: 1.5rem;
 
