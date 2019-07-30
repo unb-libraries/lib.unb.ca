@@ -9,12 +9,12 @@ use Drupal\Core\Form\FormStateInterface;
  * Allows to place static text as a block.
  *
  * @Block(
- *   id = "sidebar_hours_block",
- *   admin_label = @Translation("Hours"),
+ *   id = "sidebar_term_hours_block",
+ *   admin_label = @Translation("Hours (Term)"),
  *   category = @Translation("UNB Libraries"),
  * )
  */
-class SidebarHours extends BlockBase {
+class SidebarHoursTerm extends BlockBase {
 
   /**
    * {@inheritdoc}

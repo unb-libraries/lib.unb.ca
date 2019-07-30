@@ -188,10 +188,13 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     if ($this->sidebarHasChatWidget()) {
       $sidebar_paragraphs[] = $this->getChatWidgetParagraph();
     }
-    if ($this->sidebarHasHours()) {
-      foreach ($this->getHoursBlockParagraphs() as $hours_paragraph) {
+    if ($this->sidebarHasTermHours()) {
+      foreach ($this->getTermHoursBlockParagraphs() as $hours_paragraph) {
         $sidebar_paragraphs[] = $hours_paragraph;
       }
+    }
+    if ($this->sidebarHasUpcomingHours()) {
+      $sidebar_paragraphs[] = $this->getUpcomingHoursBlockParagraph();
     }
     $sidebar_paragraphs[] = $this->getSidebarContentParagraph();
     $main_paragraphs[] = $this->getNonSidebarContentParagraph();
@@ -233,13 +236,23 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
   }
 
   /**
-   * Determine if the imported row sidebar had a chat widget.
+   * Determine if the imported row sidebar contained hours for the term.
    *
    * @return bool
    *   TRUE if the content had a chat widget in the sidebar. FALSE otherwise.
    */
-  private function sidebarHasHours() {
-    return !empty($this->currentRow->getSourceProperty('sidebar_hours'));
+  private function sidebarHasTermHours() {
+    return !empty($this->currentRow->getSourceProperty('sidebar_hours_term'));
+  }
+
+  /**
+   * Determine if the imported row sidebar contained hours for the next 7 days.
+   *
+   * @return bool
+   *   TRUE if the content had a chat widget in the sidebar. FALSE otherwise.
+   */
+  private function sidebarHasUpcomingHours() {
+    return !empty($this->currentRow->getSourceProperty('sidebar_hours_upcoming'));
   }
 
   /**
@@ -250,8 +263,8 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    * @return \Drupal\Core\Entity\EntityInterface|\Drupal\paragraphs\Entity\Paragraph[]
    *   The paragraph containing the hours block(s).
    */
-  private function getHoursBlockParagraphs() {
-    $hours_blocks = $this->currentRow->getSourceProperty('sidebar_hours');
+  private function getTermHoursBlockParagraphs() {
+    $hours_blocks = $this->currentRow->getSourceProperty('sidebar_hours_term');
     if (!is_array($hours_blocks)) {
       $hours_blocks = [$hours_blocks];
     }
@@ -260,7 +273,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     foreach ($hours_blocks as $hours_block) {
       $paragraph = Paragraph::create([
         'type' => 'custom_block_section',
-        'field_selected_block' => 'sidebar_hours_block',
+        'field_selected_block' => 'sidebar_term_hours_block',
       ]);
 
       $block_value = $paragraph->get('field_selected_block')->first()->getValue();
@@ -274,6 +287,23 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     }
 
     return $paragraphs;
+  }
+
+  /**
+   * Get the paragraph entity that contains hours block(s).
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   *
+   * @return \Drupal\Core\Entity\EntityInterface|\Drupal\paragraphs\Entity\Paragraph
+   *   The paragraph containing the hours block.
+   */
+  private function getUpcomingHoursBlockParagraph() {
+    $paragraph = Paragraph::create([
+      'type' => 'custom_block_section',
+      'field_selected_block' => 'sidebar_upcoming_hours_block',
+    ]);
+    $paragraph->save();
+    return $paragraph;
   }
 
   /**
