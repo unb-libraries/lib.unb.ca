@@ -103,7 +103,7 @@ source:
                 - 1
                 - innerHtml
 
-        sidebar_hours:
+        sidebar_hours_term:
           obtainer: ObtainArray
           jobs:
             - job: addSearch
@@ -111,6 +111,14 @@ source:
               arguments:
                 - '#main #sidebar .hoursBlock'
                 - innerHtml
+        sidebar_hours_upcoming:
+          obtainer: ObtainHtml
+          jobs:
+            - job: addSearch
+              method: pluckSelector
+              arguments:
+                - '#main #sidebar dl.hoursList'
+                - html
 
         sidebar:
           obtainer: ObtainHTML
@@ -169,7 +177,10 @@ source:
           field: title
         -
           operation: get_field
-          field: sidebar_hours
+          field: sidebar_hours_term
+        -
+          operation: get_field
+          field: sidebar_hours_upcoming
         -
           operation: get_field
           field: chatwidget_sidebar
