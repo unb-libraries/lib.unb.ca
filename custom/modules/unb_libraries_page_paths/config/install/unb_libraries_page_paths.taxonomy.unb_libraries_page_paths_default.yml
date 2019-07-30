@@ -64,6 +64,7 @@ default_paths:
     rooms:
   worldcat:
   zotero:
+  newbrunswickana:
 
 dependencies:
   enforced:
