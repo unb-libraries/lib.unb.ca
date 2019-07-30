@@ -14,6 +14,13 @@
   display: block;
   padding: 20px 25px 0px;
 
+  .form-group {
+    & > label {
+      color: $gray-700;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+  }
   fieldset.webform-type-fieldset {
     margin-bottom: 1.5rem;
 
@@ -23,10 +30,6 @@
       }
 
       label {
-        color: $gray-700;
-        font-weight: bold;
-        margin-bottom: 0;
-
         small {
           vertical-align: text-bottom;
         }
