@@ -62,6 +62,7 @@ default_paths:
   winslow:
   services:
     rooms:
+    docdel:
   worldcat:
   zotero:
   newbrunswickana:

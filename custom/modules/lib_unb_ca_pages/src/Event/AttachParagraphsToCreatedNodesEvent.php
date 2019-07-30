@@ -351,7 +351,8 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
       'https://lib.unb.ca/microforms/index.php' => '/microforms',
       // This is for the blank 'front' page.
       'https://systems.lib.unb.ca/blank.html' => '/unb-libraries',
-
+      'https://lib.unb.ca/requests/docdel/extramural.php' => '/services/docdel/document-delivery-community-alumni-borrowers',
+      'https://lib.unb.ca/requests/docdel/policy-fees.php' => '/services/docdel/document-delivery-policies-fees',
     ];
   }
 
