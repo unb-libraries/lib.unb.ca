@@ -10,6 +10,7 @@ weight: 1
 is_admin: false
 permissions:
   - 'access content'
+  - 'bypass honeypot protection'
   - 'use text format full_html'
   - 'use text format library_page_html'
   - 'view media'
