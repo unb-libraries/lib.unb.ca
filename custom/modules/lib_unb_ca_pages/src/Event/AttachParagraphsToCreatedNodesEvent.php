@@ -347,6 +347,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     return [
       self::BASE_URI . '/about/index.php' => '/about',
       'https://lib.unb.ca/collections/index.php' => '/collections',
+      'https://lib.unb.ca/about/hours.php' => '/about/hours',
       'https://lib.unb.ca/microforms/index.php' => '/microforms',
       // This is for the blank 'front' page.
       'https://systems.lib.unb.ca/blank.html' => '/unb-libraries',
