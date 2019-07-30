@@ -60,6 +60,24 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
       $form['#attached']['library'][] = 'lib_core/chosen-bootstrap';
       break;
 
+    case 'webform_submission_contact_add_form':
+      $recipient = explode("@unb.ca", $form['elements']['recipient']['#default_value']);
+      $username = $recipient[0];
+      if ($user = user_load_by_name($username)) {
+        $form['elements']['contact_message']['#message_message']['#markup'] =
+          "<i class=\"fas fa-info-circle\"></i> " .
+          "Please complete the following webform to send email to <b>" .
+          $user->get('field_first_name')->getString() . " " .
+          $user->get('field_last_name')->getString() . "</b>.";
+      }
+      else {
+        $form['actions']['submit']['#attributes']['disabled'] = 'disabled';
+        $form['elements']['contact_message']['#message_message']['#markup'] =
+          "<i class=\"fas fa-exclamation-triangle\"></i> " .
+          "Sorry, <b>$username</b> is not a valid UNB Libraries recipient - your message <b>will not</b> be sent.";
+      }
+      break;
+
     default:
       break;
   }
