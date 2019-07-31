@@ -193,7 +193,7 @@ handlers:
         - completed
       to_mail: '[webform_submission:values:recipient:raw]'
       to_options: {  }
-      cc_mail: '[webform_submission:values:subject:raw]'
+      cc_mail: ''
       cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
@@ -201,14 +201,14 @@ handlers:
       from_options: {  }
       from_name: '[webform_submission:values:name:raw]'
       subject: '[webform_submission:values:subject:raw]'
-      body: '[webform_submission:values:message:value]'
+      body: "<p>The following Purchase Request was submitted on <b>{{ webform_token('[webform_submission:created]', webform_submission) }}</b> by <b>{{ webform_token('[webform_submission:user]', webform_submission) }}</b>.</p>\r\n\r\n<p>\r\n<b>Name:</b><br />\r\n{{ webform_token('[webform_submission:values:name]', webform_submission) }}\r\n</p>\r\n\r\n<p>\r\n<b>Email:</b><br />\r\n{{ webform_token('[webform_submission:values:email]', webform_submission) }}\r\n</p>\r\n\r\n\r\n<p>\r\n<b>Subject:</b><br />\r\n{{ webform_token('[webform_submission:values:subject]', webform_submission) }}\r\n</p>\r\n\r\n\r\n<p>\r\n<b>Message:</b><br />\r\n{{ webform_token('[webform_submission:values:message]', webform_submission) }}\r\n</p>\r\n\r\n<div>\r\n<img alt=\"UNB Libraries\" src=\"https://dev-lib.unb.ca/themes/contrib/unb_lib_theme/img/unb-libraries-red-black.png\" />\r\n</div>"
       excluded_elements: {  }
       ignore_access: false
-      exclude_empty: true
-      exclude_empty_checkbox: false
+      exclude_empty: false
+      exclude_empty_checkbox: true
       html: true
       attachments: false
-      twig: false
+      twig: true
       theme_name: ''
       debug: false
       reply_to: ''
