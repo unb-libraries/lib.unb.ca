@@ -81,6 +81,12 @@
     background-image: none;
   }
 
+  .message-privacy {
+    font-size: .88rem;
+    margin-top: 2.5rem;
+    text-align: center;
+  }
+
   .webform-options-display-side-by-side {
     /* Emulate Bootstrap 4 custom-control-inline w/ Webform > Options display > Side by side */
     div.custom-control {
@@ -107,6 +113,12 @@
 
 form.theme-dark {
   .alert-danger {
+    &:before {
+      content: '\f06a';
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+    }
+
     /* Inline form error fix+style */
     .wrapper-list-comma-list {
       display: inline-block;
@@ -132,11 +144,17 @@ form.theme-dark {
     p {
       padding: .5rem;
 
-     &.h5 {
+      &.h6 {
         background: #155724;
+        border-top-left-radius: .25rem;
         color: $white;
         font-weight: bold;
-        padding: .75rem;
+        padding: .9rem .75rem;
+
+        .fas {
+          margin-top: -1px;
+          vertical-align: top;
+        }
       }
     }
     &.alert-dismissible {
