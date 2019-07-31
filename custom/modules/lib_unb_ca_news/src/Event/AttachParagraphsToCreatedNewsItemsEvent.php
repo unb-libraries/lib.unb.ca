@@ -97,10 +97,16 @@ class AttachParagraphsToCreatedNewsItemsEvent implements EventSubscriberInterfac
    * Create the body for a imported news item.
    */
   private function addContentNewsItem() {
+    $body = $this->currentRow->getSourceProperty('body');
+    if (empty(trim($body))) {
+      $url = $this->currentRow->getSourceProperty('url');
+      $body = "Content from $url failed.";
+    }
+
     $this->currentParagraph = Paragraph::create([
       'type' => 'body_section',
       'field_body' => [
-        'value' => $this->currentRow->getSourceProperty('body'),
+        'value' => $body,
         'format' => 'library_page_html',
       ],
     ]);
