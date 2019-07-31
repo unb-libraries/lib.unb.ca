@@ -14,10 +14,10 @@ uid: null
 template: false
 archive: false
 id: contact
-title: Contact
+title: 'Contact UNB Libraries Staff'
 description: 'Basic email contact webform.'
 category: ''
-elements: "'#attributes':\n  class:\n    - 'theme-dark bg-light'\nname:\n  '#title': 'Your Name'\n  '#type': textfield\n  '#required': true\n  '#default_value': '[current-user:display-name]'\nemail:\n  '#title': 'Your Email'\n  '#type': email\n  '#required': true\n  '#default_value': '[current-user:mail]'\nsubject:\n  '#type': textfield\n  '#title': Subject\n  '#required': true\n  '#default_value': 'Patron Webform Query'\n  '#test': 'Testing contact webform from [site:name]'\nmessage:\n  '#title': Message\n  '#type': textarea\n  '#required': true\n  '#test': 'Please ignore this email.'\nrecipient:\n  '#type': hidden\n  '#title': Recipient\n  '#default_value': libweb@unb.ca\n  '#prepopulate': true\n  '#pattern': '^[A-Za-z0-9._%+-]+@unb.ca$'\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': 'Send Your Message'\n  '#reset__label': Cancel"
+elements: "'#attributes':\n  class:\n    - 'theme-dark bg-light'\ncontact_message:\n  '#type': webform_message\n  '#admin_title': 'Alert Info (dismissable)'\n  '#message_type': info\n  '#message_message': '<p>Please complete the following webform to send email to circhi at</p>'\nname:\n  '#title': 'Your Name'\n  '#type': textfield\n  '#required': true\n  '#default_value': '[current-user:display-name]'\nemail:\n  '#title': 'Your Email'\n  '#type': email\n  '#required': true\n  '#default_value': '[current-user:mail]'\nsubject:\n  '#type': textfield\n  '#title': Subject\n  '#required': true\n  '#default_value': 'Patron Webform Query'\n  '#test': 'Testing contact webform from [site:name]'\nmessage:\n  '#title': Message\n  '#type': textarea\n  '#required': true\n  '#test': 'Please ignore this email.'\nrecipient:\n  '#type': hidden\n  '#title': Recipient\n  '#default_value': libweb@unb.ca\n  '#prepopulate': true\n  '#pattern': '^[A-Za-z0-9._%+-]+@unb.ca$'\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': 'Send Your Message'\n  '#reset__label': Cancel"
 css: ''
 javascript: ''
 settings:
@@ -31,7 +31,7 @@ settings:
   form_exception_message: ''
   form_open_message: ''
   form_close_message: ''
-  form_previous_submissions: true
+  form_previous_submissions: false
   form_confidential: false
   form_confidential_message: ''
   form_remote_addr: true
@@ -50,7 +50,7 @@ settings:
   form_submit_back: false
   form_autofocus: false
   form_details_toggle: false
-  form_access_denied: default
+  form_access_denied: message
   form_access_denied_title: ''
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
@@ -58,7 +58,9 @@ settings:
   submission_label: ''
   submission_log: false
   submission_views: {  }
-  submission_views_replace: {  }
+  submission_views_replace:
+    webform_routes: {  }
+    node_routes: {  }
   submission_user_columns: {  }
   submission_user_duplicate: false
   submission_access_denied: default
