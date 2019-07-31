@@ -19,7 +19,7 @@ settings:
   ajax: true
   ajax_scroll_top: form
   ajax_progress_type: fullscreen
-  ajax_effect: slide
+  ajax_effect: fade
   ajax_speed: 500
   page: true
   page_submit_path: ''
