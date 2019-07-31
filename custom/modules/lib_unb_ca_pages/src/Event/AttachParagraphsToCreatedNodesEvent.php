@@ -185,6 +185,9 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
   private function createContentWithSidebar() {
     $main_paragraphs = [];
     $sidebar_paragraphs = [];
+    if ($this->pageHasSidebarMenu()) {
+      $sidebar_paragraphs[] = $this->getSidebarMenuParagraph();
+    }
     if ($this->sidebarHasChatWidget()) {
       $sidebar_paragraphs[] = $this->getChatWidgetParagraph();
     }
@@ -203,6 +206,42 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
       'field_column_1' => $main_paragraphs,
       'field_column_2' => $sidebar_paragraphs,
     ]);
+  }
+
+  /**
+   * Determine if the imported row had a sidebar menu.
+   *
+   * @return bool
+   *   TRUE if the imported content had a sidebar menu. FALSE otherwise.
+   */
+  private function pageHasSidebarMenu() {
+    return !empty($this->currentRow->getSourceProperty('sidebar_menu'));
+  }
+
+  /**
+   * Get the paragraph entity that contains the sidebar menu.
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   *
+   * @return \Drupal\Core\Entity\EntityInterface|\Drupal\paragraphs\Entity\Paragraph
+   *   The paragraph containing the sidebar menu.
+   */
+  private function getSidebarMenuParagraph() {
+    $paragraph = Paragraph::create([
+      'type' => 'custom_block_section',
+      'field_selected_block' => 'link_list_block',
+    ]);
+
+    $block_value = $paragraph->get('field_selected_block')->first()->getValue();
+    foreach ($this->currentRow->getSourceProperty('sidebar_menu') as $link) {
+      $links[$link['href']] = $link['link_text'];
+    }
+    $block_value['settings']['links'] = $links;
+
+    $paragraph->get('field_selected_block')->first()->setValue($block_value);
+    $paragraph->save();
+
+    return $paragraph;
   }
 
   /**

@@ -6,7 +6,7 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Allows to place static text as a block.
+ * Allows to place term hours inside the sidebar.
  *
  * @Block(
  *   id = "sidebar_term_hours_block",

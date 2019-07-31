@@ -7,7 +7,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 
 /**
- * Allows to place static text as a block.
+ * Allows to place dynamic hours inside a sidebar.
  *
  * @Block(
  *   id = "sidebar_upcoming_hours_block",
