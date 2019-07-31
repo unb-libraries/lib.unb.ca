@@ -10,9 +10,9 @@ template: true
 archive: false
 id: unb_libraries_form
 title: 'UNB Libraries Form'
-description: ''
+description: 'UNB Libraries-branded base form with email handler, privacy statement, etc.'
 category: ''
-elements: "'#attributes':\n  class:\n    - theme-dark\nprivacy:\n  '#type': webform_markup\n  '#wrapper_attributes':\n    class:\n      - message-privacy\n  '#admin_title': 'Privacy Statement'\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#reset__label': Cancel"
+elements: "'#attributes':\n  class:\n    - theme-dark\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#reset__label': Cancel\nprivacy:\n  '#type': webform_markup\n  '#wrapper_attributes':\n    class:\n      - message-privacy\n  '#admin_title': 'Privacy Statement'\n  '#markup': '<div class=\"alert alert-secondary\" role=\"alert\"><strong>Privacy: </strong>UNB Libraries will only use the comments you send to improve our website and services. We are not storing any personal information.</div>'"
 css: ''
 javascript: ''
 settings:
