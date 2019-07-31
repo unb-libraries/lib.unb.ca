@@ -10,16 +10,16 @@ template: false
 archive: false
 id: your_comments_and_suggestions
 title: 'Your Comments and Suggestions'
-description: ''
+description: 'Simple comment form that can be sent anonymously and optionally directed to a specific UNB Library.'
 category: ''
-elements: "'#attributes':\n  class:\n    - theme-dark\nshare_your_thoughts:\n  '#type': textarea\n  '#title': 'Share Your Thoughts'\n  '#required': true\nlibrary:\n  '#type': radios\n  '#title': Library\n  '#options':\n    none: 'No specific library'\n    hil: 'Harriet Irving Library'\n    sfl: 'Science & Forestry Library'\n    ecsl: 'Engineering & Computer Science Library'\n    hwkc: 'Hans W. Klohn Commons (Saint John)'\n  '#required': true\n  '#default_value': none\n  '#wrapper_type': form_element\nemail:\n  '#type': email\n  '#title': Email\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': Send\n  '#reset__label': Cancel\nprivacy:\n  '#type': webform_markup\n  '#wrapper_attributes':\n    class:\n      - message-privacy\n  '#admin_title': 'Privacy Statement'\n  '#markup': '<div class=\"alert alert-secondary\" role=\"alert\"><strong>Privacy: </strong> UNB Libraries will only use the comments you send to improve our website and services. We are not storing any personal information.</div>'"
+elements: "'#attributes':\n  class:\n    - theme-dark\nshare_your_thoughts:\n  '#type': textarea\n  '#title': 'Share Your Thoughts'\n  '#required': true\nlibrary:\n  '#type': radios\n  '#title': Library\n  '#options':\n    none: 'No specific library'\n    hil: 'Harriet Irving Library'\n    sfl: 'Science & Forestry Library'\n    ecsl: 'Engineering & Computer Science Library'\n    hwkc: 'Hans W. Klohn Commons (Saint John)'\n  '#required': true\n  '#default_value': none\n  '#wrapper_type': form_element\nemail:\n  '#type': textfield\n  '#title': Email\n  '#placeholder': 'Necessary to receive a response.'\n  '#input_mask': '''alias'': ''email'''\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': Send\n  '#reset__label': Cancel\nprivacy:\n  '#type': webform_markup\n  '#wrapper_attributes':\n    class:\n      - message-privacy\n  '#admin_title': 'Privacy Statement'\n  '#markup': '<div class=\"alert alert-secondary\" role=\"alert\"><strong>Privacy: </strong> UNB Libraries will only use the comments you send to improve our website and services. We are not storing any personal information.</div>'"
 css: ''
 javascript: ''
 settings:
   ajax: true
   ajax_scroll_top: form
   ajax_progress_type: fullscreen
-  ajax_effect: slide
+  ajax_effect: fade
   ajax_speed: 500
   page: true
   page_submit_path: ''
@@ -102,7 +102,7 @@ settings:
   draft_pending_multiple_message: ''
   confirmation_type: message
   confirmation_title: ''
-  confirmation_message: "<p class=\"h6\"><i class=\"fas fa-clipboard-check\"></i> Successfully Submitted</p>\r\n\r\n<p>Thank you for your ssubmission. We appreciate your feedback..</p>"
+  confirmation_message: "<p class=\"h6\"><i class=\"fas fa-clipboard-check\"></i> Successfully Submitted</p>\r\n\r\n<p>Thank you for taking the time to submit your comments and suggestions to UNB Libraries.</p>"
   confirmation_url: ''
   confirmation_attributes: {  }
   confirmation_back: true
@@ -186,8 +186,23 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: _default
-      to_options: {  }
+      to_mail: '[webform_submission:values:library:raw]'
+      to_options:
+        -
+          value: none
+          text: j.bail@unb.ca
+        -
+          value: hil
+          text: j.bail@unb.ca
+        -
+          value: sfl
+          text: j.bail@unb.ca
+        -
+          value: ecsl
+          text: j.bail@unb.ca
+        -
+          value: hwkc
+          text: drross@unb.ca
       cc_mail: ''
       cc_options: {  }
       bcc_mail: ''
@@ -195,7 +210,7 @@ handlers:
       from_mail: _default
       from_options: {  }
       from_name: _default
-      subject: _default
+      subject: 'Comments from UNB Libraries website'
       body: "<p>The following form was submitted on <b>{{ webform_token('[webform_submission:created]', webform_submission) }}</b> by <b>{{ webform_token('[webform_submission:user]', webform_submission) }}</b>.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img alt=\"UNB Libraries\" src=\"https://dev-lib.unb.ca/themes/contrib/unb_lib_theme/img/unb-libraries-red-black.png\" />\r\n</div>\r\n\r\n\r\n"
       excluded_elements: {  }
       ignore_access: false
