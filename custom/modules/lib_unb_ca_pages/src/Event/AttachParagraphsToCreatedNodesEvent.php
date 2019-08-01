@@ -185,8 +185,11 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
   private function createContentWithSidebar() {
     $main_paragraphs = [];
     $sidebar_paragraphs = [];
-    if ($this->pageHasSidebarMenu()) {
-      $sidebar_paragraphs[] = $this->getSidebarMenuParagraph();
+    if ($this->pageHasUnorderedSidebarLinkList()) {
+      $sidebar_paragraphs[] = $this->getSidebarLinkListParagraph(FALSE);
+    }
+    if ($this->pageHasOrderedSidebarLinkList()) {
+      $sidebar_paragraphs[] = $this->getSidebarLinkListParagraph(TRUE);
     }
     if ($this->sidebarHasChatWidget()) {
       $sidebar_paragraphs[] = $this->getChatWidgetParagraph();
@@ -209,37 +212,52 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
   }
 
   /**
-   * Determine if the imported row had a sidebar menu.
+   * Determine if the imported row had an unordered list of links in its sidebar.
    *
    * @return bool
    *   TRUE if the imported content had a sidebar menu. FALSE otherwise.
    */
-  private function pageHasSidebarMenu() {
-    return !empty($this->currentRow->getSourceProperty('sidebar_link_list'));
+  private function pageHasUnorderedSidebarLinkList() {
+    return !empty($this->currentRow->getSourceProperty('sidebar_unordered_link_list'));
+  }
+
+  /**
+   * Determine if the imported row had an ordered list of links in its sidebar.
+   *
+   * @return bool
+   *   TRUE if the imported content had a sidebar menu. FALSE otherwise.
+   */
+  private function pageHasOrderedSidebarLinkList() {
+    return !empty($this->currentRow->getSourceProperty('sidebar_ordered_link_list'));
   }
 
   /**
    * Get the paragraph entity that contains the sidebar menu.
+   *
+   * @param bool $ordered
+   *   Whether to create an ordered or unordered link list inside the paragraph.
    *
    * @throws \Drupal\Core\Entity\EntityStorageException
    *
    * @return \Drupal\Core\Entity\EntityInterface|\Drupal\paragraphs\Entity\Paragraph
    *   The paragraph containing the sidebar menu.
    */
-  private function getSidebarMenuParagraph() {
+  private function getSidebarLinkListParagraph($ordered = FALSE) {
     $paragraph = Paragraph::create([
       'type' => 'custom_block_section',
       'field_selected_block' => 'link_list_block',
     ]);
 
     $links = [];
-    foreach ($this->currentRow->getSourceProperty('sidebar_link_list')['links'] as $link) {
+    $property = $ordered ? 'sidebar_ordered_link_list' : 'sidebar_unordered_link_list';
+    foreach ($this->currentRow->getSourceProperty($property)['list']['links'] as $link) {
       $links[$link['href']] = $link['link_text'];
     }
 
     $block_value = $paragraph->get('field_selected_block')->first()->getValue();
-    $block_value['settings']['label'] = $this->currentRow->getSourceProperty('sidebar_link_list')['title'];
+    $block_value['settings']['label'] = $this->currentRow->getSourceProperty($property)['title'];
     $block_value['settings']['links'] = $links;
+    $block_value['settings']['is_ordered'] = $ordered;
 
     $paragraph->get('field_selected_block')->first()->setValue($block_value);
     $paragraph->save();
