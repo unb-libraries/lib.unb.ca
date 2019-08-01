@@ -24,7 +24,7 @@ settings:
   ajax: true
   ajax_scroll_top: form
   page: true
-  page_submit_path: ''
+  page_submit_path: /contact-unb-libraries-staff
   page_confirm_path: ''
   form_title: source_entity_webform
   form_submit_once: false
