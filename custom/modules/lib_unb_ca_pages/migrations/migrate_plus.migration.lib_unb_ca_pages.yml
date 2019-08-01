@@ -11,7 +11,7 @@ source:
 
   # A URL that lists all pages to process.
   urls:
-    - 'https://systems.lib.unb.ca/lib-import-urls-p.html'
+    - 'https://systems.lib.unb.ca/lib-import-urls.html'
 
   ids:
     url:
@@ -120,13 +120,14 @@ source:
                 - '#main #sidebar dl.hoursList'
                 - html
 
-        sidebar_menu:
-          obtainer: ObtainLink
+        sidebar_link_list:
+          obtainer: Drupal\lib_unb_ca_pages\Obtainer\ObtainNamedLinkList
           jobs:
             - job: addSearch
-              method: pluckLinks
+              method: pluckTitleAndLinks
               arguments:
-                - '#main #sidebar #sidebarCLC'
+                - '#main #sidebar .link-list'
+                - 1
 
         sidebar:
           obtainer: ObtainHTML
@@ -191,12 +192,12 @@ source:
           field: sidebar_hours_upcoming
         -
           operation: get_field
-          field: sidebar_menu
+          field: sidebar_link_list
         -
           operation: modifier
           modifier: removeSelectorAll
           arguments:
-            - '#main #sidebar #sidebarCLC ul'
+            - '#main #sidebar .link-list'
         -
           operation: get_field
           field: chatwidget_sidebar

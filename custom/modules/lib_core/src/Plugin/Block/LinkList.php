@@ -10,8 +10,8 @@ use Drupal\Core\Url;
  *
  * @Block(
  *   id = "link_list_block",
- *   admin_label = @Translation("Static Links"),
- *   category = @Translation("Lists"),
+ *   admin_label = @Translation("Link List"),
+ *   category = @Translation("UNB Libraries"),
  * )
  */
 class LinkList extends BlockBase {

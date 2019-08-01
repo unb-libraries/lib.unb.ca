@@ -215,7 +215,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    *   TRUE if the imported content had a sidebar menu. FALSE otherwise.
    */
   private function pageHasSidebarMenu() {
-    return !empty($this->currentRow->getSourceProperty('sidebar_menu'));
+    return !empty($this->currentRow->getSourceProperty('sidebar_link_list'));
   }
 
   /**
@@ -232,10 +232,13 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
       'field_selected_block' => 'link_list_block',
     ]);
 
-    $block_value = $paragraph->get('field_selected_block')->first()->getValue();
-    foreach ($this->currentRow->getSourceProperty('sidebar_menu') as $link) {
+    $links = [];
+    foreach ($this->currentRow->getSourceProperty('sidebar_link_list')['links'] as $link) {
       $links[$link['href']] = $link['link_text'];
     }
+
+    $block_value = $paragraph->get('field_selected_block')->first()->getValue();
+    $block_value['settings']['label'] = $this->currentRow->getSourceProperty('sidebar_link_list')['title'];
     $block_value['settings']['links'] = $links;
 
     $paragraph->get('field_selected_block')->first()->setValue($block_value);
