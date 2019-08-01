@@ -65,7 +65,7 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
       $username = $recipient[0];
 
       if ($user = user_load_by_name($username)) {
-        $success_msg =
+        $alert_msg =
           '<div class="d-flex">' .
             '<div class="pr-1"><i class="fas fa-info-circle"></i></div>' .
             '<div class="align-self-start">Please complete the following webform to send email to <b>' .
@@ -77,23 +77,38 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
           '</div>';
       }
       elseif ($department = _lib_core_contactable_department($username)) {
-        $success_msg =
-          '<div class="d-flex">' .
-            '<div class="pr-1"><i class="fas fa-info-circle"></i></div>' .
-            '<div class="align-self-start">Please complete the following webform to send email to <b>' .
-              $department . '</b>. You may also <a href="mailto:' . $username .
-              '@unb.ca?subject=Patron Webform Query">use your own email program</a>, if configured.
-            </div>
+        $alert_msg =
+          '<div class="d-flex">
+            <div class="pr-1"><i class="fas fa-info-circle"></i></div>
+            <div class="align-self-start">';
+
+        // Custom alert for 'Web Feedback' form, aka Website Administrator (libweb).
+        $alert_msg .=
+          ($username == 'libweb')
+          ? 'Please let us know if you experience any difficulties in accessing our pages or find content which you
+             believe is inaccurate. General suggestions, questions, or comments about this website can be directed to
+             our <a href="/services/your-comments-and-suggestions">Suggestion Form</a>.'
+          : 'Please complete the following webform to send email to <b>' .
+            $department . '</b>. You may also <a href="mailto:' . $username .
+            '@unb.ca?subject=Patron Webform Query">use your own email program</a>, if configured.';
+        $alert_msg .=
+            '</div>
           </div>';
       }
       else {
-        $success_msg = FALSE;
+        $alert_msg = FALSE;
       }
 
-      if ($success_msg) {
-        $form['elements']['contact_message']['#message_message']['#markup'] = $success_msg;
+      if ($alert_msg) {
+        $form['elements']['contact_message']['#message_message']['#markup'] = $alert_msg;
+
+        // Change 'Email Us' fieldset label for 'Web Feedback' form.
+        if ($username == 'libweb') {
+          $form['elements']['email_us']['#title'] = 'Email our Website Administrator';
+        }
       }
       else {
+        // Somebody messed with form argument (or perhaps email id typo) - prevent submissions.
         $form['actions']['submit']['#attributes']['disabled'] = 'disabled';
         $form['elements']['contact_message']['#message_message']['#markup'] =
           '<div class="d-flex">
