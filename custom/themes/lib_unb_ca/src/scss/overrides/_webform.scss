@@ -22,8 +22,12 @@
     }
   }
 
-  .is-disabled {
+  .is-disabled,
+  .form-disabled input[type="submit"] {
+    text-decoration: line-through;
+
     &:hover {
+      color: $white;
       cursor: not-allowed;
     }
   }
