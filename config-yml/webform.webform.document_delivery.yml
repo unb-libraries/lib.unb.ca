@@ -1,0 +1,178 @@
+uuid: 4287b355-11e4-4fd2-8f01-2380db246f81
+langcode: en
+status: open
+dependencies: {  }
+open: null
+close: null
+weight: 0
+uid: 1
+template: false
+archive: false
+id: document_delivery
+title: 'Placing a Document Delivery Request'
+description: ''
+category: ''
+elements: "'#attributes':\n  class:\n    - 'theme-dark border-0'\ndocdel_introduction:\n  '#type': webform_markup\n  '#markup': 'Document Delivery and Interlibrary Loans supplement library resources held by UNB by obtaining material located at other libraries and organizations. UNB Libraries&#39; Document Delivery is part of the&nbsp;<a href=\"https://caul-cbua.ca/committee/document-delivery-group\">CAUL Document Delivery Group</a>, a resource sharing network among Atlantic Canadian universities.'\ndocdel_please_note:\n  '#type': processed_text\n  '#text': |\n    <dl>\n    \t<dt>Please note:</dt>\n    \t<dd>\n    \t<ul>\n    \t\t<li>Document Delivery services are in support of research for academic purposes only.</li>\n    \t\t<li>All Requests must be searched in&nbsp;<a href=\"https://unb.on.worldcat.org/\">UNB WorldCat</a>&nbsp;before being submitted.&nbsp;The Document Delivery Units ONLY obtain photocopies and loans of research materials not held in their campus libraries’ collections.</li>\n    \t\t<li>If your ID card has not been validated, please contact staff at your library’s Circulation Department, or at the Registrar's Office. The request form will not be accessible to you until the day following validation of your ID card.</li>\n    \t\t<li>Messaging is sent to&nbsp;<strong>UNB or STU email accounts ONLY</strong>.</li>\n    \t\t<li>Requests without a \"<strong>not useful after</strong>\" date may be dropped after 30 days.</li>\n    \t\t<li>Please verify that the pickup location is correct and change it to the correct location if necessary.</li>\n    \t\t<li>Once submitted, your request will generate a request number.&nbsp;<strong>If you DO NOT receive this number</strong>, please&nbsp;<a href=\"https://lib.unb.ca/requests/docdel/policy-fees.php#queries\">contact staff</a>&nbsp;at the Document Delivery Unit of your home library.</li>\n    \t\t<li><strong>UNB law students and faculty</strong>&nbsp;should ALWAYS use the&nbsp;<a href=\"http://www.unb.ca/fredericton/law/library/interlibrary-loan/\">UNB Law Library Interlibrary Loan / Document Delivery Request Form</a>&nbsp;for ALL requests.</li>\n    \t\t<li>For LAW-RELATED REQUESTS ONLY, UNBF and STU NON-law students and faculty should also use the&nbsp;<a href=\"http://www.unb.ca/fredericton/law/library/interlibrary-loan/\">UNB Law Library Interlibrary Loan / Document Delivery Request Form</a>.</li>\n    \t</ul>\n    \t</dd>\n    </dl>\n    \n  '#format': library_page_html\nsubmit_container:\n  '#type': container\n  '#attributes':\n    class:\n      - 'alert alert-danger'\n  agree_intro:\n    '#type': webform_markup\n    '#wrapper_attributes':\n      class:\n        - d-inline-flex\n    '#markup': 'Document Delivery services are generally free to all UNB/STU patrons. If there are charges, we will contact you before proceeding with your request.'\n  agree_container:\n    '#type': container\n    '#attributes':\n      class:\n        - ml-5\n    agree_checkbox:\n      '#type': checkbox\n      '#title': '<b>I have reviewed the <a href=\"/services/docdel\">Document Delivery Policies</a> prior to submitting my requests(s).</b>'\n      '#required': true\n    actions:\n      '#type': webform_actions\n      '#title': 'Submit button(s)'\n      '#states':\n        disabled:\n          ':input[name=\"agree_checkbox\"]':\n            unchecked: true\n      '#attributes':\n        class:\n          - 'mx-4 my-2'\n      '#submit__label': 'I agree'"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: ''
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_admin_theme: false
+  form_title: source_entity_webform
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: false
+  form_confidential: false
+  form_confidential_message: ''
+  form_remote_addr: true
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  submission_label: ''
+  submission_log: false
+  submission_views: {  }
+  submission_views_replace:
+    webform_routes: {  }
+    node_routes: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: false
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
