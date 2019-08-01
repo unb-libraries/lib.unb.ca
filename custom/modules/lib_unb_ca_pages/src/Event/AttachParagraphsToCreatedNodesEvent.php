@@ -420,6 +420,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
       self::BASE_URI . '/microforms/index.php' => '/microforms',
       self::BASE_URI . '/requests/docdel/extramural.php' => '/services/docdel/document-delivery-community-alumni-borrowers',
       self::BASE_URI . '/requests/docdel/policy-fees.php' => '/services/docdel/document-delivery-policies-fees',
+      self::BASE_URI . '/services/index.php' => '/services',
 
       // This is for the blank 'front' page.
       'https://systems.lib.unb.ca/blank.html' => '/unb-libraries',
