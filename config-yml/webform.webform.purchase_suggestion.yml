@@ -132,7 +132,7 @@ settings:
   results_disabled: false
   results_disabled_ignore: false
   token_update: false
-  ajax_progress_type: ''
+  ajax_progress_type: fullscreen
   ajax_effect: fade
   ajax_speed: 500
   page_admin_theme: false
