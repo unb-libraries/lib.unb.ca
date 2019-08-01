@@ -505,7 +505,7 @@ function _lib_core_contactable_department($mailbox) {
     'docdel' => 'Document Delivery',
     'englib' => 'Engineering & Computer Science',
     'hilref' => 'Reference',
-    'library' => 'Staff',
+    'library' => 'Administration',
     'libweb' => 'Website Administrator',
     'govdocs' => 'Government Documents, Data and Maps',
     'hwkcommons' => 'Hans W. Klohn Commons',
