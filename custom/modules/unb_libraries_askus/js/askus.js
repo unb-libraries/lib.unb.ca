@@ -67,10 +67,10 @@ var getOfflineNote = function () {
     let note = "Ask Us is currently offline";
     let currentlyOpen = '', reopensData = '';
 
-    let askUs = calendarHours.collection.get("hil_help");
-    if (typeof askUs != 'undefined') {
-        currentlyOpen = askUs.isOpenNow();
-        reopensData = askUs.getReopensAt();
+    let calendarRHD = calendarHours.collection.get("hil_help");
+    if (typeof calendarRHD != 'undefined') {
+        currentlyOpen = calendarRHD.isOpenNow();
+        reopensData = calendarRHD.getReopensAt();
     }
 
     if (!currentlyOpen && reopensData) {

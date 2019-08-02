@@ -1,6 +1,6 @@
 .chat-embedded,
 .chat-popup {
-    max-width: 360px;
+    max-width: 340px;
 }
 .chat-embedded > h2 {
     color: #900;
