@@ -103,6 +103,15 @@ source:
                 - 1
                 - innerHtml
 
+        sidebar_hours_upcoming:
+          obtainer: ObtainHtml
+          jobs:
+            - job: addSearch
+              method: pluckSelector
+              arguments:
+                - '#main #sidebar .hoursBlock-upcoming'
+                - html
+
         sidebar_hours_term:
           obtainer: ObtainArray
           jobs:
@@ -110,14 +119,6 @@ source:
               method: arrayPluckSelector
               arguments:
                 - '#main #sidebar .hoursBlock'
-                - innerHtml
-        sidebar_hours_upcoming:
-          obtainer: ObtainHtml
-          jobs:
-            - job: addSearch
-              method: pluckSelector
-              arguments:
-                - '#main #sidebar dl.hoursList'
                 - html
 
         sidebar_ordered_link_list:
@@ -193,10 +194,10 @@ source:
           field: title
         -
           operation: get_field
-          field: sidebar_hours_term
+          field: sidebar_hours_upcoming
         -
           operation: get_field
-          field: sidebar_hours_upcoming
+          field: sidebar_hours_term
         -
           operation: get_field
           field: sidebar_ordered_link_list
