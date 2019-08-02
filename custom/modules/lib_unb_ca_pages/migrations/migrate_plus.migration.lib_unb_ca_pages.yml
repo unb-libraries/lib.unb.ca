@@ -11,7 +11,7 @@ source:
 
   # A URL that lists all pages to process.
   urls:
-    - 'https://systems.lib.unb.ca/lib-import-urls-p.html'
+    - 'https://systems.lib.unb.ca/lib-import-urls.html'
 
   ids:
     url:

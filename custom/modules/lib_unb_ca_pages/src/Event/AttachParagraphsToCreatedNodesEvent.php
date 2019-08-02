@@ -251,13 +251,30 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     $links = [];
     $property = $ordered ? 'sidebar_ordered_link_list' : 'sidebar_unordered_link_list';
     foreach ($this->currentRow->getSourceProperty($property)['list']['links'] as $link) {
-      $links[$link['href']] = $link['link_text'];
+      $url = $link['href'];
+      $url_components = parse_url($url);
+      if (!isset($url_components['scheme']) || !isset($url_components['host'])) {
+        $source_url_components = parse_url($this->currentRow->getSourceIdValues()['url']);
+        if (substr($url, 0, 1) === '/') {
+          $url = $source_url_components['scheme'] . '://' . $source_url_components['host'] . $url_components['path'];
+        }
+        else {
+          $destination_path_components = explode('/', $source_url_components['path']);
+          array_pop($destination_path_components);
+          $destination_path_components[] = $url_components['path'];
+          $destination_path = implode('/', $destination_path_components);
+          $url = $source_url_components['scheme'] . '://' . $source_url_components['host'] . $destination_path;
+        }
+      }
+      $links[$url] = $link['link_text'];
     }
 
     $block_value = $paragraph->get('field_selected_block')->first()->getValue();
     $block_value['settings']['label'] = $this->currentRow->getSourceProperty($property)['title'];
     $block_value['settings']['links'] = $links;
     $block_value['settings']['is_ordered'] = $ordered;
+    $block_value['settings']['css_external'] = 'external';
+    $block_value['settings']['css_file'] = 'file';
 
     $paragraph->get('field_selected_block')->first()->setValue($block_value);
     $paragraph->save();
