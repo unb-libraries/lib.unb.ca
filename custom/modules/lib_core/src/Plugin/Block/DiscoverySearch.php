@@ -219,13 +219,18 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getReservesForm() {
     $form_reserves =
-      '<form action="//lib.unb.ca/core/action/process_reserves_search.php" id="searchReserves" method="get">
+      '<form action="//web.lib.unb.ca/core/action/process_reserves_search.php" id="searchReserves" method="get">
         <div class="form-group">
-          <div class="form-row mb-1 ml-1">
-            <label for="keywords"><b>Search by instructor, course name or course number:</b></label>
+          <div class="form-row font-weight-bold mb-2 ml-1">
+            <div class="mb-1">
+                Search by instructor, course name or course number:
+            </div>
           </div>
           <div class="form-row">
             <div class="col-md-6 mb-2">
+              <label class="sr-only" for="queryString_WCD">
+                Search for:
+              </label>
               <div class="input-group">
                 <div class="input-group-prepend">
                     <div class="input-group-text"><i class="fas fa-search"></i></div>
@@ -236,30 +241,18 @@ class DiscoverySearch extends BlockBase {
             <div class="col-md-4 mb-2">
               <label class="sr-only" for="semester">
                 Course Semester
-              </label>
-              <select class="form-control" id="semester" name="semester">
-                <option value="">All semesters</option>
-                <option value="ON">Ongoing </option>
-                <option value="2019SM" selected="selected">Summer 2019</option>
-                <option value="2019WI">Winter 2019</option>
-                <option value="2018FA">Fall 2018</option>
-                <option value="2018FY">Full Year 2018</option>
-                <option value="2018SM">Summer 2018</option>
-                <option value="2018WI">Winter 2018</option>
-                <option value="2017FY">Full Year 2017</option>
-                <option value="2017FA">Fall 2017</option>
-                <option value="2017SM">Summer 2017</option>
-                <option value="2017WI">Winter 2017</option>
-              </select>
-            </div>
+              </label>';
+              $form_reserves .= $this->getReservesSemesters();
+            $form_reserves .=
+            '</div>
             <div class="col-md-2 mb-2">
               <button class="btn btn-primary" id="searchReservesSubmit" type="submit">GO</button>
             </div>
           </div>
         </div>
       </form>
-      <div class="p-2">
-        <a href="/reserves/index.php?h=1">
+      <div class="px-2">
+        <a href="//web.lib.unb.ca/reserves/index.php?h=1">
           <i class="fas fa-sign-in-alt"></i>
           Login to My UNB Reserves
         </a>
@@ -370,7 +363,7 @@ class DiscoverySearch extends BlockBase {
                 <option value="su">subject</option>
               </select>
             </div>
-             <div class="col-md-2 mb-1">
+             <div class="col-md-2 mb-2">
               <button class="btn btn-primary" id="search_WCD" title="Search" type="submit">GO</button>
             </div>
           </div>
@@ -417,7 +410,7 @@ class DiscoverySearch extends BlockBase {
                 </span>
               </div>
               <select class="chosen-select form-control" name="category">
-                <option value="">Select a subject&hellip;</option>';
+                <option value="">Select a subject</option>';
                 foreach ($categories as $value => $label) {
                   $subject_form .=
                     '<option value="' .
