@@ -107,7 +107,7 @@ settings:
   draft_loaded_message: ''
   confirmation_type: message
   confirmation_title: ''
-  confirmation_message: "<p class=\"h6\"><i class=\"fas fa-clipboard-check\">&nbsp;</i>Purchase Suggestion Successfully Submitted</p>\r\n\r\n<p>We appreciate receiving your purchase suggestion for library materials. Suggestions are reviewed by a librarian and evaluated for purchase. Evaluations are based upon our library&#39;s collection development policy and budgetary constraints.</p>\r\n\r\n<p>Please note that there is no guarantee for purchase. Material orders can take some time to arrive before making their way into our catalogue. If your need is urgent, you may wish to consider <a href=\"/requests/docdel/\">filling out a Document Delivery Request form</a>.</p>\r\n\r\n<p>Thank you for your interest in our collection at UNB Libraries.</p>"
+  confirmation_message: "<p class=\"h6\"><em class=\"fa-clipboard-check fas\">&nbsp;</em>Purchase Suggestion Successful</p>\r\n\r\n<p>Thank you! <strong>Your submission has been processed.</strong> If you like, you may make an additional request.</p>"
   confirmation_url: ''
   confirmation_attributes: {  }
   confirmation_back: true
@@ -188,16 +188,87 @@ access:
     users: {  }
     permissions: {  }
 handlers:
-  email:
+  sj_email:
     id: email
-    label: 'Purchase Suggestion Handler'
-    handler_id: email
+    label: 'SJ Purchase Suggestion'
+    handler_id: sj_email
+    status: true
+    conditions:
+      enabled:
+        ':input[name="campus"]':
+          value: campus_UNBSJ
+    weight: -49
+    settings:
+      states:
+        - completed
+      to_mail: drross@unb.ca
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      subject: 'Purchase Suggestion'
+      body: "<p>The following Purchase Request was submitted on <b>{{ webform_token('[webform_submission:created]', webform_submission) }}</b> by <b>{{ webform_token('[webform_submission:user]', webform_submission) }}</b>.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img alt=\"UNB Libraries\" src=\"https://dev-lib.unb.ca/themes/contrib/unb_lib_theme/img/unb-libraries-red-black.png\" />\r\n</div>"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      html: true
+      attachments: false
+      twig: true
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      theme_name: ''
+  sender_confirmation_email:
+    id: email
+    label: 'Sender Confirmation Email'
+    handler_id: sender_confirmation_email
+    status: true
+    conditions: {  }
+    weight: -48
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:email:raw]'
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: '[webform_submission:values:email:raw]'
+      from_options: {  }
+      from_name: ''
+      subject: 'UNB Libraries submission confirmation'
+      body: "<p>We appreciate receiving your purchase suggestion for library materials. Suggestions are reviewed by a librarian and evaluated for purchase. Evaluations are based upon our library\\'s collection development policy and budgetary constraints.</p>\r\n\r\n<p>Please note that there is no guarantee for purchase.  Material orders can take some time to arrive before making their way into our catalogue.  If your need is urgent, you may wish to consider filling out a <a href=\"http://lib.unb.ca/requests/docdel\">Document Delivery Request form.</a></p>\r\n\r\n<p>Thank you for your interest in our collection at UNB Libraries.</p>\r\n\r\n<div>The following information was submitted through our Purchase Suggestion web form:\r\n<br/>\r\n[webform_submission:values]\r\n</div>\r\n"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      html: true
+      attachments: false
+      twig: true
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      theme_name: ''
+  fr_purchase_suggestion:
+    id: email
+    label: 'FR Purchase Suggestion'
+    handler_id: fr_purchase_suggestion
     status: true
     conditions:
       enabled:
         ':input[name="campus"]':
           value: campus_UNBFR
-    weight: 0
+    weight: -50
     settings:
       states:
         - completed
@@ -344,43 +415,6 @@ handlers:
         -
           value: _other_
           text: jlt@unb.ca
-      cc_mail: ''
-      cc_options: {  }
-      bcc_mail: ''
-      bcc_options: {  }
-      from_mail: _default
-      from_options: {  }
-      from_name: _default
-      subject: 'Purchase Suggestion'
-      body: "<p>The following Purchase Request was submitted on <b>{{ webform_token('[webform_submission:created]', webform_submission) }}</b> by <b>{{ webform_token('[webform_submission:user]', webform_submission) }}</b>.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img alt=\"UNB Libraries\" src=\"https://dev-lib.unb.ca/themes/contrib/unb_lib_theme/img/unb-libraries-red-black.png\" />\r\n</div>"
-      excluded_elements: {  }
-      ignore_access: false
-      exclude_empty: true
-      exclude_empty_checkbox: false
-      html: true
-      attachments: false
-      twig: true
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
-      theme_name: ''
-  sj_email:
-    id: email
-    label: 'SJ Purchase Suggestion Handler'
-    handler_id: sj_email
-    status: true
-    conditions:
-      enabled:
-        ':input[name="campus"]':
-          value: campus_UNBSJ
-    weight: 0
-    settings:
-      states:
-        - completed
-      to_mail: drross@unb.ca
-      to_options: {  }
       cc_mail: ''
       cc_options: {  }
       bcc_mail: ''
