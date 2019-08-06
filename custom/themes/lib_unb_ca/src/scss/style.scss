@@ -3,7 +3,8 @@
 
 /* OVERRIDES */
 /* Nav affix anchor offset */
-:target:before {
+a:target:before,
+h2:target:before {
   content: "\00a0";
   display: block;
   height: 156px;
