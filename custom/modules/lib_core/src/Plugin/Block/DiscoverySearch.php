@@ -3,6 +3,7 @@
 namespace Drupal\lib_core\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Component\Serialization\Json;
 
 /**
  * Provides the UNB Libraries Discovery Search Home Block.
@@ -265,6 +266,61 @@ class DiscoverySearch extends BlockBase {
       </div>';
 
     return $form_reserves;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function getReservesSemesters() {
+    // Set default empty option.
+    $options = [
+      '' => 'All semesters',
+    ];
+
+    try {
+      $response = \Drupal::httpClient()
+        ->get('//web.lib.unb.ca/reserves/index.php/semester', [
+            'headers' => [
+              'Accept' => 'application/vnd.api+json',
+            ],
+          ]
+        );
+      $json_string = (string) $response->getBody();
+      if (empty($json_string)) {
+        // Log empty response.
+        $msg = "Empty Reserves/Semester JSON response!";
+        \Drupal::logger('lib_core')->notice($msg);
+      }
+      else {
+        $json = Json::decode($json_string);
+        $options = [
+          '' => 'All semesters',
+        ];
+        foreach($json as $key => $value) {
+          $term_year = empty($value['year']) ? '' : ' ' . $value['year'];
+          $options[$key] = $value['termName'] . $term_year;
+        }
+      }
+    }
+    catch (RequestException $e) {
+      // Log response error.
+      $msg = "Reserves/Semester JSON response error: " . $e;
+      \Drupal::logger('lib_core')->error($msg);
+    }
+
+    $semesters = [
+      '#type' => 'select',
+      '#options' => $options,
+      '#attributes' => [
+        'class' => [
+          'form-control',
+        ],
+        'id' => 'semester',
+        'name' => 'semester',
+      ],
+    ];
+
+    return render($semesters);
   }
 
   /**
