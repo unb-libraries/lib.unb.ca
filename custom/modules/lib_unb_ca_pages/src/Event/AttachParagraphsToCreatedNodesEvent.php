@@ -340,7 +340,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     foreach ($hours_blocks as $hours_block) {
       $paragraph = Paragraph::create([
         'type' => 'custom_block_section',
-        'field_selected_block' => 'sidebar_term_hours_block',
+        'field_selected_block' => 'term_hours_block',
       ]);
 
       $block_value = $paragraph->get('field_selected_block')->first()->getValue();
@@ -367,7 +367,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
   private function getUpcomingHoursBlockParagraph() {
     $paragraph = Paragraph::create([
       'type' => 'custom_block_section',
-      'field_selected_block' => 'sidebar_upcoming_hours_block',
+      'field_selected_block' => 'upcoming_hours_block',
     ]);
     $paragraph->save();
     return $paragraph;

@@ -9,12 +9,12 @@ use Drupal\Core\Form\FormStateInterface;
  * Allows to place term hours inside the sidebar.
  *
  * @Block(
- *   id = "sidebar_term_hours_block",
+ *   id = "term_hours_block",
  *   admin_label = @Translation("Hours (Term)"),
  *   category = @Translation("UNB Libraries"),
  * )
  */
-class SidebarHoursTerm extends BlockBase {
+class TermHours extends BlockBase {
 
   /**
    * {@inheritdoc}

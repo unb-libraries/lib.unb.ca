@@ -10,12 +10,12 @@ use Drupal\Core\Url;
  * Allows to place dynamic hours inside a sidebar.
  *
  * @Block(
- *   id = "sidebar_upcoming_hours_block",
+ *   id = "upcoming_hours_block",
  *   admin_label = @Translation("Hours (Upcoming)"),
  *   category = @Translation("UNB Libraries"),
  * )
  */
-class SidebarUpcomingHours extends BlockBase {
+class UpcomingHours extends BlockBase {
 
   /**
    * {@inheritdoc}
@@ -46,11 +46,13 @@ class SidebarUpcomingHours extends BlockBase {
     ];
 
     foreach (range(0, $days - 1) as $number) {
+      $date_format = $number === 0 ? '[Current]' : 'dddd';
       $container['hours_table'][] = [
-        '#type' => 'container',
+        '#type' => 'html_tag',
+        '#tag' => 'tr',
         '#attributes' => [
           'data-ch-id' => $calendar_id,
-          'data-ch-format-date' => 'dddd',
+          'data-ch-format-date' => $date_format,
           'data-ch-format-time' => 'h:mm a',
           'data-ch-days' => $number,
         ],

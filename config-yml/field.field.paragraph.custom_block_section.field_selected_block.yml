@@ -20,8 +20,8 @@ default_value_callback: ''
 settings:
   plugin_ids:
     'views_block:content_recent-block_1': 'views_block:content_recent-block_1'
-    sidebar_term_hours_block: sidebar_term_hours_block
-    sidebar_upcoming_hours_block: sidebar_upcoming_hours_block
+    term_hours_block: term_hours_block
+    upcoming_hours_block: upcoming_hours_block
     link_list_block: link_list_block
     askus_embedded: askus_embedded
     askus_popup: askus_popup
