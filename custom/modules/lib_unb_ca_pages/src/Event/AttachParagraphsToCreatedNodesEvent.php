@@ -185,11 +185,10 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
   private function createContentWithSidebar() {
     $main_paragraphs = [];
     $sidebar_paragraphs = [];
-    if ($this->pageHasUnorderedSidebarLinkList()) {
-      $sidebar_paragraphs[] = $this->getSidebarLinkListParagraph(FALSE);
-    }
-    if ($this->pageHasOrderedSidebarLinkList()) {
-      $sidebar_paragraphs[] = $this->getSidebarLinkListParagraph(TRUE);
+    if ($this->pageHasSidebarLinkLists()) {
+      foreach ($this->getSidebarLinkListParagraphs() as $sidebar_paragraph) {
+        $sidebar_paragraphs[] = $sidebar_paragraph;
+      }
     }
     if ($this->sidebarHasChatWidget()) {
       $sidebar_paragraphs[] = $this->getChatWidgetParagraph();
@@ -212,74 +211,65 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
   }
 
   /**
-   * Determine if the imported row had an unordered list of links in its sidebar.
+   * Determine if the imported row had a list of links in its sidebar.
    *
    * @return bool
-   *   TRUE if the imported content had a sidebar menu. FALSE otherwise.
+   *   TRUE if the imported content had a list of links in its sidebar. FALSE otherwise.
    */
-  private function pageHasUnorderedSidebarLinkList() {
-    return !empty($this->currentRow->getSourceProperty('sidebar_unordered_link_list'));
-  }
-
-  /**
-   * Determine if the imported row had an ordered list of links in its sidebar.
-   *
-   * @return bool
-   *   TRUE if the imported content had a sidebar menu. FALSE otherwise.
-   */
-  private function pageHasOrderedSidebarLinkList() {
-    return !empty($this->currentRow->getSourceProperty('sidebar_ordered_link_list'));
+  private function pageHasSidebarLinkLists() {
+    return !empty($this->currentRow->getSourceProperty('sidebar_link_lists'));
   }
 
   /**
    * Get the paragraph entity that contains the sidebar menu.
    *
-   * @param bool $ordered
-   *   Whether to create an ordered or unordered link list inside the paragraph.
-   *
    * @throws \Drupal\Core\Entity\EntityStorageException
    *
-   * @return \Drupal\Core\Entity\EntityInterface|\Drupal\paragraphs\Entity\Paragraph
+   * @return \Drupal\Core\Entity\EntityInterface|\Drupal\paragraphs\Entity\Paragraph[]
    *   The paragraph containing the sidebar menu.
    */
-  private function getSidebarLinkListParagraph($ordered = FALSE) {
-    $paragraph = Paragraph::create([
-      'type' => 'custom_block_section',
-      'field_selected_block' => 'link_list_block',
-    ]);
+  private function getSidebarLinkListParagraphs() {
+    $paragraphs = [];
 
-    $links = [];
-    $property = $ordered ? 'sidebar_ordered_link_list' : 'sidebar_unordered_link_list';
-    foreach ($this->currentRow->getSourceProperty($property)['list']['links'] as $link) {
-      $url = $link['href'];
-      $url_components = parse_url($url);
-      if (!isset($url_components['scheme']) || !isset($url_components['host'])) {
-        $source_url_components = parse_url($this->currentRow->getSourceIdValues()['url']);
-        if (substr($url, 0, 1) === '/') {
-          $url = $source_url_components['scheme'] . '://' . $source_url_components['host'] . $url_components['path'];
+    foreach ($this->currentRow->getSourceProperty('sidebar_link_lists') as $sidebar_link_list) {
+      $paragraph = Paragraph::create([
+        'type' => 'custom_block_section',
+        'field_selected_block' => 'link_list_block',
+      ]);
+
+      $links = [];
+      foreach ($sidebar_link_list['links'] as $link) {
+        $url = $link['href'];
+        $url_components = parse_url($url);
+        if (!isset($url_components['scheme']) || !isset($url_components['host'])) {
+          $source_url_components = parse_url($this->currentRow->getSourceIdValues()['url']);
+          if (substr($url, 0, 1) === '/') {
+            $url = $source_url_components['scheme'] . '://' . $source_url_components['host'] . $url_components['path'];
+          }
+          else {
+            $destination_path_components = explode('/', $source_url_components['path']);
+            array_pop($destination_path_components);
+            $destination_path_components[] = $url_components['path'];
+            $destination_path = implode('/', $destination_path_components);
+            $url = $source_url_components['scheme'] . '://' . $source_url_components['host'] . $destination_path;
+          }
         }
-        else {
-          $destination_path_components = explode('/', $source_url_components['path']);
-          array_pop($destination_path_components);
-          $destination_path_components[] = $url_components['path'];
-          $destination_path = implode('/', $destination_path_components);
-          $url = $source_url_components['scheme'] . '://' . $source_url_components['host'] . $destination_path;
-        }
+        $links[$url] = $link['link_text'];
       }
-      $links[$url] = $link['link_text'];
+
+      $block_value = $paragraph->get('field_selected_block')->first()->getValue();
+      $block_value['settings']['label'] = $sidebar_link_list['title'];
+      $block_value['settings']['links'] = $links;
+      $block_value['settings']['is_ordered'] = $sidebar_link_list['ordered'];
+      $block_value['settings']['css_external'] = 'external';
+      $block_value['settings']['css_file'] = 'file';
+
+      $paragraph->get('field_selected_block')->first()->setValue($block_value);
+      $paragraph->save();
+      $paragraphs[] = $paragraph;
     }
 
-    $block_value = $paragraph->get('field_selected_block')->first()->getValue();
-    $block_value['settings']['label'] = $this->currentRow->getSourceProperty($property)['title'];
-    $block_value['settings']['links'] = $links;
-    $block_value['settings']['is_ordered'] = $ordered;
-    $block_value['settings']['css_external'] = 'external';
-    $block_value['settings']['css_file'] = 'file';
-
-    $paragraph->get('field_selected_block')->first()->setValue($block_value);
-    $paragraph->save();
-
-    return $paragraph;
+    return $paragraphs;
   }
 
   /**
