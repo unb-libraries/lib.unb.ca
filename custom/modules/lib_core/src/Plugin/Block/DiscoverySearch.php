@@ -545,7 +545,7 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getJournalsForm() {
     $form_journals =
-      '<form action="https://web.lib.unb.ca/eresources/index.php?sub=video/eresources/index.php" id="search_results_journals" method="get">
+      '<form action="https://web.lib.unb.ca/eresources/index.php" id="search_results_journals" method="get">
         <input id="sub" name="sub" type="hidden" value="journals">
         <div class="form-group mt-1">
           <div class="form-row font-weight-bold ml-1">
