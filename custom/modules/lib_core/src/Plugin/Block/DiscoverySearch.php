@@ -379,11 +379,11 @@ class DiscoverySearch extends BlockBase {
           Advanced Search
         </a>
         |
-        <a href="/about/loc_call/">
+        <a href="https://web.lib.unb.ca/eresources/index.php?sub=video/about/loc_call/">
           Locations Guide
         </a>
         |
-        <a href="/worldcat/FAQs.php" title="Using WorldCat Discovery">
+        <a href="https://web.lib.unb.ca/eresources/index.php?sub=video/worldcat/FAQs.php" title="Using WorldCat Discovery">
           <i class="fas fa-question-circle"></i>
           Help
         </a>
@@ -423,7 +423,7 @@ class DiscoverySearch extends BlockBase {
 
     $title_form =
       '<div class="divider"></div>
-      <form action="/eresources/index.php" id="title_results" method="get">
+      <form action="https://web.lib.unb.ca/eresources/index.php?sub=video/eresources/index.php" id="title_results" method="get">
         <div class="form-group">
           <div class="form-row font-weight-bold">
             <label class="ml-2" for="databaseID">
@@ -448,7 +448,7 @@ class DiscoverySearch extends BlockBase {
         </div>
       </form>
       <div class="p-2">
-        <a href="/eresources/index.php?sub=indexes">
+        <a href="https://web.lib.unb.ca/eresources/index.php?sub=video/eresources/index.php?sub=indexes">
           <i class="fas fa-search-plus"></i>
           More Search Options
         </a>
@@ -498,7 +498,7 @@ class DiscoverySearch extends BlockBase {
 
     try {
       $response = \Drupal::httpClient()
-        ->get('http://dev.lib.unb.ca/eresources/databases.php', [
+        ->get('http://web.lib.unb.ca/eresources/databases.php', [
             'headers' => [
               'Accept' => 'application/vnd.api+json',
             ],
@@ -545,7 +545,7 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getJournalsForm() {
     $form_journals =
-      '<form action="/eresources/index.php" id="search_results_journals" method="get">
+      '<form action="https://web.lib.unb.ca/eresources/index.php?sub=video/eresources/index.php" id="search_results_journals" method="get">
         <input id="sub" name="sub" type="hidden" value="journals">
         <div class="form-group mt-1">
           <div class="form-row font-weight-bold ml-1">
@@ -591,21 +591,21 @@ class DiscoverySearch extends BlockBase {
         </div>
       </form>
       <div class="p-2">
-          <a href="/eresources/index.php?sub=journals&amp;packages=Y">
+          <a href="https://web.lib.unb.ca/eresources/index.php?sub=video/eresources/index.php?sub=journals&amp;packages=Y">
             Journal Packages
           </a>
           |
-          <a href="/eresources/index.php?sub=journals&amp;browseNewsColl=Y&amp;limitResourceType=enewsColl">
+          <a href="https://web.lib.unb.ca/eresources/index.php?sub=video/eresources/index.php?sub=journals&amp;browseNewsColl=Y&amp;limitResourceType=enewsColl">
             Newspaper Packages
           </a>
           |
-          <a href="/eresources/newspapers.php" title="Guide to finding newspapers at UNB Libraries">
+          <a href="https://web.lib.unb.ca/eresources/index.php?sub=video/eresources/newspapers.php" title="Guide to finding newspapers at UNB Libraries">
             <i class="fas fa-question-circle"></i>
             Newspaper Guide
           </a>
       </div>
       <div class="px-2">
-        <a href="/eresources/index.php?sub=journals">
+        <a href="https://web.lib.unb.ca/eresources/index.php?sub=video/eresources/index.php?sub=journals">
           <i class="fas fa-search-plus"></i>
           More Search Options
         </a>
@@ -622,7 +622,7 @@ class DiscoverySearch extends BlockBase {
       '<p>
         <small>Search for Reference Materials by title:</small>
       </p>
-      <form action="/eresources/index.php" method="get" id="search_results_refmat">
+      <form action="https://web.lib.unb.ca/eresources/index.php" method="get" id="search_results_refmat">
         <input id="sub_refmat" name="sub" type="hidden" value="refmat">
         <div class="form-group">
           <div class="form-row font-weight-bold ml-1">
@@ -668,7 +668,7 @@ class DiscoverySearch extends BlockBase {
         </div>
         </form>
         <div class="p-2">
-          <a href="/eresources/refguide.php">
+          <a href="https://web.lib.unb.ca/eresources/refguide.php">
             <i class="fas fa-compass"></i>
             Reference Materials Guide
           </a>
@@ -678,7 +678,7 @@ class DiscoverySearch extends BlockBase {
           </a>
         </div>
         <div class="px-2">
-          <a href="/eresources/index.php?sub=refmat">
+          <a href="https://web.lib.unb.ca/eresources/index.php?sub=refmat">
             <i class="fas fa-search-plus" aria-hidden="true"></i>
             More Search Options
           </a>
@@ -695,7 +695,7 @@ class DiscoverySearch extends BlockBase {
       '<p>
         <small>Search our vast electronic book collections for titles suitable for your computer, tablet or eReader.</small>
       </p>
-      <form action="/eresources/index.php" id="search_results_ebooks" method="get">
+      <form action="https://web.lib.unb.ca/eresources/index.php" id="search_results_ebooks" method="get">
         <input id="sub_ebooks" name="sub" type="hidden" value="ebooks">
         <div class="form-group">
           <div class="form-row font-weight-bold ml-1">
@@ -741,7 +741,7 @@ class DiscoverySearch extends BlockBase {
         </div>
       </form>
       <div class="p-2">
-        <a href="/eresources/index.php?sub=ebooks">
+        <a href="https://web.lib.unb.ca/eresources/index.php?sub=ebooks">
           <i class="fas fa-th-list"></i>
           Browse e-Book Collections
         </a>
@@ -758,7 +758,7 @@ class DiscoverySearch extends BlockBase {
       '<p>
         <small>Search across our online video collections.</small>
       </p>
-      <form action="/eresources/index.php" id="search_results_video" method="get">
+      <form action="https://web.lib.unb.ca/eresources/index.php" id="search_results_video" method="get">
         <input id="sub_video" name="sub" type="hidden" value="video">
         <div class="form-group">
           <div class="form-row font-weight-bold ml-1">
@@ -809,7 +809,7 @@ class DiscoverySearch extends BlockBase {
           </div>
         </div>
         <div class="p-2">
-          <a href="//legacy.lib.unb.ca/eresources/index.php?sub=video">
+          <a href="https://web.lib.unb.ca/eresources/index.php?sub=video">
             <i class="fas fa-th-list"></i>
             Browse Video Collections
           </a>
