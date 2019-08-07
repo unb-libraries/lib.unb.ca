@@ -379,11 +379,11 @@ class DiscoverySearch extends BlockBase {
           Advanced Search
         </a>
         |
-        <a href="https://web.lib.unb.ca/eresources/index.php?sub=video/about/loc_call/">
+        <a href="https://web.lib.unb.ca/about/loc_call">
           Locations Guide
         </a>
         |
-        <a href="https://web.lib.unb.ca/eresources/index.php?sub=video/worldcat/FAQs.php" title="Using WorldCat Discovery">
+        <a href="https://web.lib.unb.ca/worldcat/FAQs.php" title="Using WorldCat Discovery">
           <i class="fas fa-question-circle"></i>
           Help
         </a>
@@ -448,7 +448,7 @@ class DiscoverySearch extends BlockBase {
         </div>
       </form>
       <div class="p-2">
-        <a href="https://web.lib.unb.ca/eresources/index.php?sub=video/eresources/index.php?sub=indexes">
+        <a href="https://web.lib.unb.ca/eresources/index.php?sub=indexes">
           <i class="fas fa-search-plus"></i>
           More Search Options
         </a>
@@ -591,21 +591,21 @@ class DiscoverySearch extends BlockBase {
         </div>
       </form>
       <div class="p-2">
-          <a href="https://web.lib.unb.ca/eresources/index.php?sub=video/eresources/index.php?sub=journals&amp;packages=Y">
+          <a href="https://web.lib.unb.ca/eresources/index.php?sub=journals&packages=Y">
             Journal Packages
           </a>
           |
-          <a href="https://web.lib.unb.ca/eresources/index.php?sub=video/eresources/index.php?sub=journals&amp;browseNewsColl=Y&amp;limitResourceType=enewsColl">
+          <a href="https://web.lib.unb.ca/eresources/index.php?sub=journals&browseNewsColl=Y&limitResourceType=enewsColl">
             Newspaper Packages
           </a>
           |
-          <a href="https://web.lib.unb.ca/eresources/index.php?sub=video/eresources/newspapers.php" title="Guide to finding newspapers at UNB Libraries">
+          <a href="https://web.lib.unb.ca/eresources/newspapers.php" title="Guide to finding newspapers at UNB Libraries">
             <i class="fas fa-question-circle"></i>
             Newspaper Guide
           </a>
       </div>
       <div class="px-2">
-        <a href="https://web.lib.unb.ca/eresources/index.php?sub=video/eresources/index.php?sub=journals">
+        <a href="https://web.lib.unb.ca/eresources/index.php?sub=journals">
           <i class="fas fa-search-plus"></i>
           More Search Options
         </a>
