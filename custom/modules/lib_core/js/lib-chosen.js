@@ -8,6 +8,8 @@
             });
             // Apply bootstrap 4 form-control class to chosen div.
             $(".chosen-container-single").addClass("form-control");
+            // Resolve duplicate Discovery Search selects.
+            $("select.chosen-select").hide();
         }
     }
 })(jQuery, Drupal);

@@ -33,3 +33,10 @@
 .input-group .chosen-container-single {
     width: auto!important;
 }
+.input-group-prepend + fieldset {
+    margin-bottom: 0;
+    width: 100%;
+}
+.input-group-prepend + fieldset  .chosen-container-single {
+    width: 100%!important;
+}
