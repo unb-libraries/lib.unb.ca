@@ -383,7 +383,7 @@ class DiscoverySearch extends BlockBase {
           Locations Guide
         </a>
         |
-        <a href="https://web.lib.unb.ca/worldcat/FAQs.php" title="Using WorldCat Discovery">
+        <a href="/worldcat/unb-worldcat-frequently-asked-questions" title="Using WorldCat Discovery">
           <i class="fas fa-question-circle"></i>
           Help
         </a>
