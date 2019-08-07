@@ -306,7 +306,8 @@ class DiscoverySearch extends BlockBase {
     $semesters = [
       '#type' => 'select',
       '#options' => $options,
-      '#value' => $default_value, // #default_value doesn't work.
+      // #default_value doesn't work.
+      '#value' => $default_value,
       '#attributes' => [
         'class' => [
           'chosen-select',
@@ -395,9 +396,6 @@ class DiscoverySearch extends BlockBase {
    * {@inheritdoc}
    */
   protected function getDatabasesForm() {
-    $categories = _lib_core_get_guide_categories();
-    $database_titles = _lib_core_get_database_titles();
-
     $subject_form =
       '<form id="category-select">
         <div class="form-group">
@@ -407,24 +405,15 @@ class DiscoverySearch extends BlockBase {
             </label>
           </div>
           <div class="form-row">
-            <div class="col-md-9 input-group mb-1">
+            <div class="col-md-10 input-group flex-nowrap mb-1">
               <div class="input-group-prepend">
                 <span class="input-group-text">
                   <i class="fas fa-list-ul"></i>
                 </span>
-              </div>
-              <select class="chosen-select form-control" name="category">
-                <option value="">Select a subject</option>';
-                foreach ($categories as $value => $label) {
-                  $subject_form .=
-                    '<option value="' .
-                    $value . '">' .
-                    $label .
-                    '</option>';
-                }
+              </div>';
+              $subject_form .= $this->getDatabasesSubjects();
               $subject_form .=
-              '</select>
-            </div>
+            '</div>
             <div class="col-md-2 mb-1">
                 <button class="btn btn-primary" type="submit">GO</button>
             </div>
@@ -442,24 +431,15 @@ class DiscoverySearch extends BlockBase {
             </label>
           </div>
           <div class="form-row">
-            <div class="col-md-10 input-group mb-1">
+            <div class="col-md-10 input-group flex-nowrap mb-1">
               <div class="input-group-prepend">
                 <span class="input-group-text">
                   <i class="fas fa-list-ul"></i>
                 </span>
-              </div>
-              <select class="chosen-select form-control" id="databaseID" name="id">
-                <option value="">Choose a database title</option>';
-                foreach ($database_titles as $value => $label) {
-                  $title_form .=
-                    '<option value="' .
-                    $value . '">' .
-                    $label .
-                    '</option>';
-                }
-              $title_form .=
-              '</select>
-            </div>
+              </div>';
+            $title_form .= $this->getDatabasesTitles();
+            $title_form .=
+            '</div>
             <div class="col-md-2 mb-1">
               <input type="hidden" name="sub" value="indexes">
               <button class="btn btn-primary" type="submit">GO</button>
@@ -476,6 +456,88 @@ class DiscoverySearch extends BlockBase {
 
     $form_databases = $subject_form . $title_form;
     return $form_databases;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function getDatabasesSubjects() {
+    // Set default empty option.
+    $options = [
+      '' => 'Select a subject',
+    ];
+
+    $categories = _lib_core_get_guide_categories();
+    foreach ($categories as $value => $label) {
+       $options[$value] = $label;
+    }
+
+    $subjects = [
+      '#type' => 'select',
+      '#options' => $options,
+      '#attributes' => [
+        'class' => [
+          'chosen-select',
+          'form-control',
+        ],
+        'name' => 'category',
+      ],
+    ];
+
+    return \Drupal::service('renderer')->render($subjects);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function getDatabasesTitles() {
+    // Set default empty option.
+    $options = [
+      '' => 'Choose a database title',
+    ];
+
+    try {
+      $response = \Drupal::httpClient()
+        ->get('http://dev.lib.unb.ca/eresources/databases.php', [
+            'headers' => [
+              'Accept' => 'application/vnd.api+json',
+            ],
+          ]
+        );
+      $json_string = (string) $response->getBody();
+      if (empty($json_string)) {
+        // Log empty response.
+        $msg = "Empty Databases/Titles JSON response!";
+        \Drupal::logger('lib_core')->notice($msg);
+      }
+      else {
+        $json = Json::decode($json_string);
+
+        foreach ($json['databases'] as $key => $value) {
+          $options[$value["value"]] = $value["name"];
+        }
+      }
+    }
+    catch (RequestException $e) {
+      // Log response error.
+      $msg = "Databases/Titles JSON response error: " . $e;
+      \Drupal::logger('lib_core')->error($msg);
+    }
+
+    $titles = [
+      '#type' => 'select',
+      '#options' => $options,
+      '#attributes' => [
+        'class' => [
+          'chosen-select',
+          'form-control',
+        ],
+        'id' => 'databaseID',
+        'name' => 'id',
+      ],
+    ];
+
+    return \Drupal::service('renderer')->render($titles);
   }
 
   /**
