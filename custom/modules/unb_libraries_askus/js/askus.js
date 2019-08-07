@@ -79,11 +79,11 @@ var getOfflineNote = function () {
         let opensAt = moment(reopensData);
         let opensAtDate = opensAt.format("Y-MM-DD");
         if (opensAtDate < tomorrow) {
-            note += ". Reopens at " + opensAt.format("hh:mm");
+            note += ". Reopens at " + opensAt.format("h:mmA");
         } else if (opensAtDate > tomorrow) {
-            note += ". Reopens on " + opensAt.format("dddd, hh:mm");
+            note += ". Reopens on " + opensAt.format("dddd, h:mmA");
         } else {
-            note += ". Reopens tomorrow at " + opensAt.format("hh:mm");
+            note += ". Reopens tomorrow at " + opensAt.format("h:mmA");
         }
     }
     return note + ".";

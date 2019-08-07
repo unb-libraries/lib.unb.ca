@@ -126,7 +126,7 @@ function _unb_libraries_askus_get_widget($type) {
         $html .=
       '</div>
       <div id="lh3-offline" style="display:none;">
-        <div class="ch-nd" data-ch-id="hil_help"></div>
+        <div class="ch-nd" data-ch-format-time="h:mmA" data-ch-id="hil_help"></div>
       </div >
       <div id="lh3-away" style="display:none;">
         Ask Us is currently busy serving other patrons.
