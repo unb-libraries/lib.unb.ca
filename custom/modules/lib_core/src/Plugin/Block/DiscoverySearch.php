@@ -269,6 +269,7 @@ class DiscoverySearch extends BlockBase {
     $options = [
       '' => 'All semesters',
     ];
+    $default_value = '';
 
     try {
       $response = \Drupal::httpClient()
@@ -286,12 +287,13 @@ class DiscoverySearch extends BlockBase {
       }
       else {
         $json = Json::decode($json_string);
-        $options = [
-          '' => 'All semesters',
-        ];
+
         foreach($json as $key => $value) {
           $term_year = empty($value['year']) ? '' : ' ' . $value['year'];
           $options[$key] = $value['termName'] . $term_year;
+          if ($value['isCurrent']) {
+              $default_value = $key;
+          }
         }
       }
     }
@@ -304,6 +306,7 @@ class DiscoverySearch extends BlockBase {
     $semesters = [
       '#type' => 'select',
       '#options' => $options,
+      '#value' => $default_value, // #default_value doesn't work.
       '#attributes' => [
         'class' => [
           'form-control',
