@@ -206,9 +206,9 @@ handlers:
       cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
-      from_mail: _default
+      from_mail: '[webform_submission:values:unb_stu_email:raw]'
       from_options: {  }
-      from_name: _default
+      from_name: '[webform_submission:values:name:raw]'
       subject: 'SOULS Retrieval Request'
       body: "<p>The following information was submitted through our <b>Material Retrieval Form</b> on {{ webform_token('[webform_submission:created]', webform_submission) }} by {{ webform_token('[webform_submission:user]', webform_submission) }}.</p>\r\n        \r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img alt=\"UNB Libraries\" src=\"https://dev-lib.unb.ca/themes/contrib/unb_lib_theme/img/unb-libraries-red-black.png\" />\r\n</div>"
       excluded_elements: {  }
