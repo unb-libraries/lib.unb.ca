@@ -198,11 +198,11 @@ handlers:
       cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
-      from_mail: _default
+      from_mail: '[webform_submission:values:unb_stu_email:raw]'
       from_options: {  }
-      from_name: _default
+      from_name: '[webform_submission:values:name:raw]'
       subject: 'Film Purchase Request'
-      body: "<p>The following form was submitted on <b>{{ webform_token('[webform_submission:created]', webform_submission) }}</b> by <b>{{ webform_token('[webform_submission:user]', webform_submission) }}</b>.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img alt=\"UNB Libraries\" src=\"https://dev-lib.unb.ca/themes/contrib/unb_lib_theme/img/unb-libraries-red-black.png\" />\r\n</div>\r\n\r\n\r\n"
+      body: "<p>The following information was submitted through our <b>Film Purchase Request</b> form by {{ webform_token('[webform_submission:user]', webform_submission) }} on {{ webform_token('[webform_submission:created]', webform_submission) }}.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img alt=\"UNB Libraries\" src=\"https://dev-lib.unb.ca/themes/contrib/unb_lib_theme/img/unb-libraries-red-black.png\" />\r\n</div>\r\n\r\n\r\n"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: false
