@@ -94,4 +94,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  simple_groups:
+    label: above
+    weight: 30
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
 hidden: {  }
