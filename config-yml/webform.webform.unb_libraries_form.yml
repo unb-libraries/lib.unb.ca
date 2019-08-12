@@ -210,3 +210,37 @@ handlers:
       sender_mail: ''
       sender_name: ''
       theme_name: ''
+  email_1:
+    id: email
+    label: 'Sender Confirmation Email'
+    handler_id: email_1
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: _default
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: unb-libraries-no-reply@unb.ca
+      from_options: {  }
+      from_name: _default
+      subject: _default
+      body: "<p>Submitted on {{ webform_token('[webform_submission:created]', webform_submission) }}</p>\r\n<p>Submitted by: {{ webform_token('[webform_submission:user]', webform_submission) }}</p>\r\n<p>Submitted values are:</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img alt=\"UNB Libraries\" src=\"https://dev-lib.unb.ca/themes/contrib/unb_lib_theme/img/unb-libraries-red-black.png\" />\r\n</div>\r\n"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      html: true
+      attachments: false
+      twig: true
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      theme_name: ''
