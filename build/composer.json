@@ -170,6 +170,7 @@
         "drupal/easy_breadcrumb": "1.12",
         "drupal/entity_browser": "2.2",
         "drupal/entity_embed": "1.0",
+        "drupal/entity_reference_revisions": "1.6",
         "drupal/externalauth": "1.1",
         "drupal/features": "3.7",
         "farbelous/fontawesome-iconpicker": "~1.3",
