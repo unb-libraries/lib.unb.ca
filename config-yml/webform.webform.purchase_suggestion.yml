@@ -207,11 +207,11 @@ handlers:
       cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
-      from_mail: _default
+      from_mail: '[webform_submission:values:email:raw]'
       from_options: {  }
-      from_name: _default
+      from_name: '[webform_submission:values:name:raw]'
       subject: 'Purchase Suggestion'
-      body: "<p>The following Purchase Request was submitted on <b>{{ webform_token('[webform_submission:created]', webform_submission) }}</b> by <b>{{ webform_token('[webform_submission:user]', webform_submission) }}</b>.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img alt=\"UNB Libraries\" src=\"https://dev-lib.unb.ca/themes/contrib/unb_lib_theme/img/unb-libraries-red-black.png\" />\r\n</div>"
+      body: "<p>The following information was submitted through our <b>Purchase Suggestion</b> form by <b>{{ webform_token('[webform_submission:user]', webform_submission) }}</b> on <b>{{ webform_token('[webform_submission:created]', webform_submission) }}</b>.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img alt=\"UNB Libraries\" src=\"https://dev-lib.unb.ca/themes/contrib/unb_lib_theme/img/unb-libraries-red-black.png\" />\r\n</div>"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
@@ -241,7 +241,7 @@ handlers:
       cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
-      from_mail: '[webform_submission:values:email:raw]'
+      from_mail: unb-libraries-no-reply@unb.ca
       from_options: {  }
       from_name: ''
       subject: 'UNB Libraries submission confirmation'
@@ -419,11 +419,11 @@ handlers:
       cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
-      from_mail: _default
+      from_mail: '[webform_submission:values:email:raw]'
       from_options: {  }
-      from_name: _default
+      from_name: '[webform_submission:values:name:raw]'
       subject: 'Purchase Suggestion'
-      body: "<p>The following Purchase Request was submitted on <b>{{ webform_token('[webform_submission:created]', webform_submission) }}</b> by <b>{{ webform_token('[webform_submission:user]', webform_submission) }}</b>.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img alt=\"UNB Libraries\" src=\"https://dev-lib.unb.ca/themes/contrib/unb_lib_theme/img/unb-libraries-red-black.png\" />\r\n</div>"
+      body: "<p>The following information was submitted through our <b>Purchase Suggestion</b> form by <b>{{ webform_token('[webform_submission:user]', webform_submission) }}</b> on <b>{{ webform_token('[webform_submission:created]', webform_submission) }}</b>.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img alt=\"UNB Libraries\" src=\"https://dev-lib.unb.ca/themes/contrib/unb_lib_theme/img/unb-libraries-red-black.png\" />\r\n</div>"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
