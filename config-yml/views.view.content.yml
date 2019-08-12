@@ -492,7 +492,7 @@ display:
         groups:
           1: AND
       display_extenders: {  }
-      use_ajax: true
+      use_ajax: false
       header:
         result:
           id: result
