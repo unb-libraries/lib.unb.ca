@@ -117,10 +117,11 @@
 
 form.theme-dark {
   .alert-danger {
-    &:before {
+    &:not(.no-icon):before {
       content: '\f06a';
       font-family: "Font Awesome 5 Free";
       font-weight: 900;
+      vertical-align: top;
     }
 
     /* Inline form error fix+style */
