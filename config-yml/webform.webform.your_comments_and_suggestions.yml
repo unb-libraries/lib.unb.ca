@@ -12,7 +12,7 @@ id: your_comments_and_suggestions
 title: 'Your Comments and Suggestions'
 description: 'Simple comment form that can be sent anonymously and optionally directed to a specific UNB Library.'
 category: ''
-elements: "'#attributes':\n  class:\n    - theme-dark\nshare_your_thoughts:\n  '#type': textarea\n  '#title': 'Share Your Thoughts'\n  '#required': true\nlibrary:\n  '#type': radios\n  '#title': Library\n  '#options':\n    none: 'No specific library'\n    hil: 'Harriet Irving Library'\n    sfl: 'Science & Forestry Library'\n    ecsl: 'Engineering & Computer Science Library'\n    hwkc: 'Hans W. Klohn Commons (Saint John)'\n  '#required': true\n  '#default_value': none\n  '#wrapper_type': form_element\nemail:\n  '#type': textfield\n  '#title': Email\n  '#placeholder': 'Necessary to receive a response.'\n  '#input_mask': '''alias'': ''email'''\n  '#pattern': '/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$/'\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#attributes':\n    class:\n      - webform-actions-center\n  '#submit__label': Send\n  '#reset__label': Cancel\nprivacy:\n  '#type': webform_markup\n  '#wrapper_attributes':\n    class:\n      - message-privacy\n  '#admin_title': 'Privacy Statement'\n  '#markup': '<div class=\"alert alert-secondary\" role=\"alert\"><strong>Privacy: </strong> UNB Libraries will only use the comments you send to improve our website and services. We are not storing any personal information.</div>'"
+elements: "'#attributes':\n  class:\n    - theme-dark\nshare_your_thoughts:\n  '#type': textarea\n  '#title': 'Share Your Thoughts'\n  '#required': true\nlibrary:\n  '#type': radios\n  '#title': Library\n  '#options':\n    none: 'No specific library'\n    hil: 'Harriet Irving Library'\n    sfl: 'Science & Forestry Library'\n    ecsl: 'Engineering & Computer Science Library'\n    hwkc: 'Hans W. Klohn Commons (Saint John)'\n  '#required': true\n  '#default_value': none\n  '#wrapper_type': form_element\nemail:\n  '#type': textfield\n  '#title': Email\n  '#placeholder': 'Necessary to receive a response.'\n  '#input_mask': '''alias'': ''email'''\n  '#pattern': '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$'\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#attributes':\n    class:\n      - webform-actions-center\n  '#submit__label': Send\n  '#reset__label': Cancel\nprivacy:\n  '#type': webform_markup\n  '#wrapper_attributes':\n    class:\n      - message-privacy\n  '#admin_title': 'Privacy Statement'\n  '#markup': '<div class=\"alert alert-secondary\" role=\"alert\"><strong>Privacy: </strong> UNB Libraries will only use the comments you send to improve our website and services. We are not storing any personal information.</div>'"
 css: ''
 javascript: ''
 settings:
@@ -181,8 +181,12 @@ handlers:
     label: Email
     handler_id: email
     status: true
-    conditions: {  }
-    weight: 0
+    conditions:
+      enabled:
+        ':input[name="email"]':
+          value:
+            pattern: '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$'
+    weight: -50
     settings:
       states:
         - completed
@@ -207,11 +211,101 @@ handlers:
       cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
-      from_mail: _default
+      from_mail: '[webform_submission:values:email:raw]'
+      from_options: {  }
+      from_name: ''
+      subject: 'Comments from UNB Libraries website'
+      body: "<p>The following information was submitted through our <b>Comments and Suggestions</b> form by {{ webform_token('[webform_submission:user]', webform_submission) }} on {{ webform_token('[webform_submission:created]', webform_submission) }}.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img alt=\"UNB Libraries\" src=\"https://dev-lib.unb.ca/themes/contrib/unb_lib_theme/img/unb-libraries-red-black.png\" />\r\n</div>\r\n\r\n\r\n"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: false
+      exclude_empty_checkbox: false
+      html: true
+      attachments: false
+      twig: true
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      theme_name: ''
+  email_1:
+    id: email
+    label: 'Confirmation Email'
+    handler_id: email_1
+    status: true
+    conditions:
+      enabled:
+        ':input[name="email"]':
+          value:
+            pattern: '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$'
+    weight: -48
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:email:raw]'
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: unb-libraries-no-reply@unb.ca
       from_options: {  }
       from_name: _default
       subject: 'Comments from UNB Libraries website'
-      body: "<p>The following form was submitted on <b>{{ webform_token('[webform_submission:created]', webform_submission) }}</b> by <b>{{ webform_token('[webform_submission:user]', webform_submission) }}</b>.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img alt=\"UNB Libraries\" src=\"https://dev-lib.unb.ca/themes/contrib/unb_lib_theme/img/unb-libraries-red-black.png\" />\r\n</div>\r\n\r\n\r\n"
+      body: "<p>Thank you for taking the time to submit your comments and suggestions to UNB Libraries.</p>\r\n\r\n<p>Submitted information:</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img alt=\"UNB Libraries\" src=\"https://dev-lib.unb.ca/themes/contrib/unb_lib_theme/img/unb-libraries-red-black.png\" />\r\n</div>"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      html: true
+      attachments: false
+      twig: true
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      theme_name: ''
+  email_2:
+    id: email
+    label: 'Email (Anonymous)'
+    handler_id: email_2
+    status: true
+    conditions:
+      enabled:
+        ':input[name="email"]':
+          empty: true
+    weight: -49
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:library:raw]'
+      to_options:
+        -
+          value: none
+          text: j.bail@unb.ca
+        -
+          value: hil
+          text: j.bail@unb.ca
+        -
+          value: sfl
+          text: j.bail@unb.ca
+        -
+          value: ecsl
+          text: j.bail@unb.ca
+        -
+          value: hwkc
+          text: drross@unb.ca
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: unb-libraries-no-reply@unb.ca
+      from_options: {  }
+      from_name: Anonymous
+      subject: 'Comments from UNB Libraries website'
+      body: "<p>The following information was submitted through our <b>Comments and Suggestions</b> form by {{ webform_token('[webform_submission:user]', webform_submission) }} on {{ webform_token('[webform_submission:created]', webform_submission) }}.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img alt=\"UNB Libraries\" src=\"https://dev-lib.unb.ca/themes/contrib/unb_lib_theme/img/unb-libraries-red-black.png\" />\r\n</div>\r\n\r\n\r\n"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: false
