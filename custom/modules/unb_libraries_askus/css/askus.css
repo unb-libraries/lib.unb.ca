@@ -9,9 +9,7 @@
     background: url(../img/AskUslogo2.png) no-repeat center center transparent;
     height: 52px;
 }
-#lh3-chat,
-.askus-footer {
-    font-size: .9rem;
+chat-popup,
     text-align: center;
 }
 #lh3-chat .focus-ring {
@@ -55,6 +53,7 @@
     padding-top: .5rem;
 }
 .askus-footer {
+    font-size: .9rem;
     margin: .75rem 0 0;
     padding: 0;
 }
@@ -78,4 +77,5 @@
 }
 .requires-js {
     display: none;
+    text-align: center;
 }
