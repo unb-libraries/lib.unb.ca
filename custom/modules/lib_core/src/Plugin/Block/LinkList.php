@@ -3,6 +3,7 @@
 namespace Drupal\lib_core\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 
 /**
@@ -33,7 +34,13 @@ class LinkList extends BlockBase {
 
     $links = isset($config['links']) ? $config['links'] : [];
     foreach ($links as $uri => $title) {
-      $url = Url::fromUri($uri);
+      try {
+        $url = Url::fromUri($uri);
+      }
+      catch (\InvalidArgumentException $e) {
+        continue;
+      }
+
       $li = [
         '#type' => 'html_tag',
         '#tag' => 'li',
@@ -85,6 +92,70 @@ class LinkList extends BlockBase {
     $file_name_chunks = explode('.', $url->getUri());
     $extension = end($file_name_chunks);
     return $extension === 'pdf';
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function blockForm($form, FormStateInterface $form_state) {
+    $form = parent::blockForm($form, $form_state);
+
+    $config = $this->getConfiguration();
+
+    $is_ordered = isset($config['is_ordered']) ? $config['is_ordered'] : 0;
+    $form['is_ordered'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Ordered list?'),
+      '#options' => [
+        0 => $this->t('No'),
+        1 => $this->t('Yes'),
+      ],
+      '#default_value' => (int) $is_ordered,
+    ];
+
+    $open_external_in_new_tab = isset($config['external_target_blank']) ? $config['external_target_blank'] : 1;
+    $form['external_target_blank'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Open external links in new tab?'),
+      '#options' => [
+        0 => $this->t('No'),
+        1 => $this->t('Yes'),
+      ],
+      '#default_value' => (int) $open_external_in_new_tab,
+    ];
+
+    $links = '';
+    if (isset($config['links'])) {
+      foreach ($config['links'] as $url => $title) {
+        $links .= $url . '|' . $title . "\n";
+      }
+    }
+    $form['links'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Links'),
+      '#description' => $this->t('Enter a list of links, one link per line, e.g. "https://lib.unb.ca|UNB Libraries"'),
+      '#rows' => 10,
+      '#default_value' => $links,
+    ];
+
+    return $form;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function blockSubmit($form, FormStateInterface $form_state) {
+    parent::blockSubmit($form, $form_state);
+
+    $this->configuration['is_ordered'] = (bool) $form_state->getValue('is_ordered');
+    $this->configuration['external_target_blank'] = (bool) $form_state->getValue('external_target_blank');
+
+    $links_form_value = trim($form_state->getValue('links'));
+    foreach (explode("\n", $links_form_value) as $row) {
+      $link = explode('|', $row);
+      $links[trim($link[0])] = trim($link[1]);
+    }
+    $this->configuration['links'] = isset($links) ? $links : [];
   }
 
 }
