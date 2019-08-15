@@ -1,0 +1,21 @@
+uuid: a37f3750-e155-4ba4-b60e-0b9a9b23887f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field__department_rep_phone
+    - taxonomy.vocabulary.faculties
+  module:
+    - telephone
+id: taxonomy_term.faculties.field__department_rep_phone
+field_name: field__department_rep_phone
+entity_type: taxonomy_term
+bundle: faculties
+label: '  Department Rep Phone'
+description: '<span class="muted">Format: 506-555-5555</span>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

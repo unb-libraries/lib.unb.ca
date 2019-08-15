@@ -1,0 +1,19 @@
+uuid: 843198c1-9053-4c07-8b38-97d4b7ce6ce1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_department_rep_name
+    - taxonomy.vocabulary.faculties
+id: taxonomy_term.faculties.field_department_rep_name
+field_name: field_department_rep_name
+entity_type: taxonomy_term
+bundle: faculties
+label: 'Department Rep Name'
+description: 'The Departmental Representative,  format: <code>J. Doe</code> '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

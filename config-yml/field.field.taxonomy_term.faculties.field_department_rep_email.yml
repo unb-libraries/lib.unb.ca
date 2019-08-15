@@ -1,0 +1,19 @@
+uuid: 68f08cd8-b3d7-4ce1-8fe8-a2204fec48ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_department_rep_email
+    - taxonomy.vocabulary.faculties
+id: taxonomy_term.faculties.field_department_rep_email
+field_name: field_department_rep_email
+entity_type: taxonomy_term
+bundle: faculties
+label: 'Department Rep Email ID'
+description: 'Please enter only the email <b>username</b> <i>(not the <b>@domain</b> part)</i>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

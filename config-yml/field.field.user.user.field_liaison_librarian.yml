@@ -1,0 +1,30 @@
+uuid: d3c86829-ccf5-4b09-aef5-9459b8daf6f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_liaison_librarian
+    - taxonomy.vocabulary.faculties
+  module:
+    - user
+id: user.user.field_liaison_librarian
+field_name: field_liaison_librarian
+entity_type: user
+bundle: user
+label: 'Liaison Librarian'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      faculties: faculties
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

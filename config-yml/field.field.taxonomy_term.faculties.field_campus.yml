@@ -1,0 +1,23 @@
+uuid: b1fcf290-4493-45c4-b450-5223d058182c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_campus
+    - taxonomy.vocabulary.faculties
+  module:
+    - options
+id: taxonomy_term.faculties.field_campus
+field_name: field_campus
+entity_type: taxonomy_term
+bundle: faculties
+label: Campus
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: UNBF
+default_value_callback: ''
+settings: {  }
+field_type: list_string
