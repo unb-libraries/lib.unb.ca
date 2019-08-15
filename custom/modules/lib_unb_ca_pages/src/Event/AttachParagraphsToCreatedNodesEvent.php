@@ -447,6 +447,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
       self::BASE_URI . '/collections/index.php' => '/faculty/collections',
       self::BASE_URI . '/collections/clc/index.php' => '/collections/clc',
       self::BASE_URI . '/faculty/index.php' => '/faculty',
+      self::BASE_URI . '/help/index.php' => '/help',
       self::BASE_URI . '/microforms/index.php' => '/microforms',
       self::BASE_URI . '/openaccess/index.php' => '/faculty/openaccess',
       self::BASE_URI . '/requests/docdel/extramural.php' => '/services/docdel/document-delivery-community-alumni-borrowers',
