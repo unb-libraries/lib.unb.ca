@@ -103,6 +103,20 @@ class LinkList extends BlockBase {
     $config = $this->getConfiguration();
 
     $is_ordered = isset($config['is_ordered']) ? $config['is_ordered'] : 0;
+    $links = '';
+    if (isset($config['links'])) {
+      foreach ($config['links'] as $url => $title) {
+        $links .= $url . '|' . $title . "\n";
+      }
+    }
+    $form['links'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Links'),
+      '#description' => $this->t('Enter a list of links, one link per line, e.g. "https://lib.unb.ca|UNB Libraries"'),
+      '#rows' => 10,
+      '#default_value' => $links,
+    ];
+
     $form['is_ordered'] = [
       '#type' => 'select',
       '#title' => $this->t('Ordered list?'),
@@ -124,18 +138,18 @@ class LinkList extends BlockBase {
       '#default_value' => (int) $open_external_in_new_tab,
     ];
 
-    $links = '';
-    if (isset($config['links'])) {
-      foreach ($config['links'] as $url => $title) {
-        $links .= $url . '|' . $title . "\n";
-      }
-    }
-    $form['links'] = [
-      '#type' => 'textarea',
-      '#title' => $this->t('Links'),
-      '#description' => $this->t('Enter a list of links, one link per line, e.g. "https://lib.unb.ca|UNB Libraries"'),
-      '#rows' => 10,
-      '#default_value' => $links,
+    $css_external_class = isset($config['css_external']) ? $config['css_external'] : 'external';
+    $form['css_external'] = [
+      '#type' => 'textfield',
+      '#title' => 'External Link CSS Class',
+      '#default_value' => $css_external_class,
+    ];
+
+    $css_file_class = isset($config['css_file']) ? $config['css_file'] : 'file';
+    $form['css_file'] = [
+      '#type' => 'textfield',
+      '#title' => 'PDF File Link CSS Class',
+      '#default_value' => $css_file_class,
     ];
 
     return $form;
@@ -147,15 +161,17 @@ class LinkList extends BlockBase {
   public function blockSubmit($form, FormStateInterface $form_state) {
     parent::blockSubmit($form, $form_state);
 
-    $this->configuration['is_ordered'] = (bool) $form_state->getValue('is_ordered');
-    $this->configuration['external_target_blank'] = (bool) $form_state->getValue('external_target_blank');
-
     $links_form_value = trim($form_state->getValue('links'));
     foreach (explode("\n", $links_form_value) as $row) {
       $link = explode('|', $row);
       $links[trim($link[0])] = trim($link[1]);
     }
+
     $this->configuration['links'] = isset($links) ? $links : [];
+    $this->configuration['is_ordered'] = (bool) $form_state->getValue('is_ordered');
+    $this->configuration['external_target_blank'] = (bool) $form_state->getValue('external_target_blank');
+    $this->configuration['css_external'] = $form_state->getValue('css_external');
+    $this->configuration['css_file'] = $form_state->getValue('css_file');
   }
 
 }
