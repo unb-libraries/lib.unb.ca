@@ -7,6 +7,7 @@ dependencies:
     - field.field.user.user.field_display_on_staff_directory
     - field.field.user.user.field_first_name
     - field.field.user.user.field_last_name
+    - field.field.user.user.field_liaison_librarian
     - field.field.user.user.field_on_leave
     - field.field.user.user.field_phone_number
     - field.field.user.user.field_position_title
@@ -55,8 +56,16 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_on_leave:
+  field_liaison_librarian:
     weight: 8
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_on_leave:
+    weight: 9
     label: inline
     settings:
       format: yes-no
@@ -96,7 +105,7 @@ content:
     third_party_settings: {  }
   simple_groups:
     label: above
-    weight: 30
+    weight: 10
     region: content
     settings:
       link: true

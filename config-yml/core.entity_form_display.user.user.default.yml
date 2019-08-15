@@ -7,6 +7,7 @@ dependencies:
     - field.field.user.user.field_display_on_staff_directory
     - field.field.user.user.field_first_name
     - field.field.user.user.field_last_name
+    - field.field.user.user.field_liaison_librarian
     - field.field.user.user.field_on_leave
     - field.field.user.user.field_phone_number
     - field.field.user.user.field_position_title
@@ -26,7 +27,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   contact:
-    weight: 8
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -43,7 +44,7 @@ content:
     third_party_settings: {  }
     region: content
   field_display_on_staff_directory:
-    weight: 9
+    weight: 10
     settings:
       display_label: true
     third_party_settings: {  }
@@ -65,8 +66,14 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_liaison_librarian:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_on_leave:
-    weight: 10
+    weight: 11
     settings:
       display_label: true
     third_party_settings: {  }
@@ -96,7 +103,7 @@ content:
     type: string_textfield
     region: content
   language:
-    weight: 11
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
