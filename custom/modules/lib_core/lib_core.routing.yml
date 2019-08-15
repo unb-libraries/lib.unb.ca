@@ -1,0 +1,9 @@
+lib_core.help_info:
+  path: '/help/info'
+  defaults:
+    _controller: '\Drupal\lib_core\Controller\HelpController::infoPage'
+    _title: 'Browser/Computer Information'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'

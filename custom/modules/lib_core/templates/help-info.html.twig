@@ -1,0 +1,35 @@
+<dl>
+  <dt>Operating System</dt>
+  <dd class="ml-4"><i class="fas fa-check text-success">&nbsp;</i> {{ info.os }}</dd>
+  <dt>Your User Agent</dt>
+  <dd class="ml-4"><i class="fas fa-check text-success">&nbsp;</i> {{ info.agent }}</dd>
+  <dt>Your IP</dt>
+  <dd class="ml-4"><i class="fas fa-check text-success">&nbsp;</i> {{ info.ip }}
+{% if info.ip == '131.202.38.4' %} <b>(via EZProxy)</b>
+{% elseif info.ip starts with '131.202.192' %} <b>(via VPN for Staff/Faculty)</b>
+{% elseif info.ip starts with '131.202.193' %} <b>(via VPN for Students)</b>
+{% endif %}
+  </dd>
+  <dt>Referring URL</dt>
+  <dd class="ml-4">
+{% if info.refer is empty %}<i class="fas fa-exclamation-triangle text-warning">&nbsp;</i> Either your browser is not properly passing headers or you have entered this URL manually. (<a href=/help/info>RETEST</a>)
+{% else %}<i class="fas fa-check text-success">&nbsp;</i> {{ info.refer }}
+{% endif %}
+  </dd>
+  <dt>JavaScript</dt>
+  <dd class="ml-4">
+    <script type="text/javascript" language="javascript">document.write('<i class="fas fa-check text-success">&nbsp;</i> Your browser supports JavaScript.')</script>
+    <noscript><i class="fas fa-exclamation-triangle text-warning">&nbsp;</i> Your browser either does not support JavaScript or it has been disabled.</noscript>
+  </dd>
+  <dt>Cookies</dt>
+  <dd class="ml-4">
+    <script type="text/javascript" language="javascript">
+      if (navigator.cookieEnabled) { document.write('<i class="fas fa-check text-success">&nbsp;</i> Your browser supports cookies.'); }
+      else { document.write('<i class="fas fa-times text-danger">&nbsp;</i> Cookies have not been enabled for your browser. (<a href="/help/info">RETEST</a>)'); }
+    </script>
+    <noscript><i class="fas fa-exclamation-triangle text-warning">&nbsp;</i> JavaScript is used to check this functionality.</noscript>
+  </dd>
+</dl>
+
+<h2>External Testing Site</h2>
+<p>You can also use the <a href="http://supportdetails.com" class="external">Support Details website</a>, an external website, and send your browser details directly to us.</p>
