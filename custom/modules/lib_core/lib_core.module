@@ -5,13 +5,13 @@
  * Contains lib_core.module.
  */
 
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\ViewExecutable;
 
 /**
  * Implements hook_theme().
- *
  */
 function lib_core_theme($existing, $type, $theme, $path) {
   return [
@@ -38,6 +38,31 @@ function lib_core_editor_js_settings_alter(array &$settings) {
 
   if (array_key_exists('library_page_html', $settings['editor']['formats'])) {
     $settings['editor']['formats']['library_page_html']['editorSettings'] += $extra_editor_settings;
+  }
+}
+
+/**
+ * Implements hook_entity_presave().
+ */
+function lib_core_entity_presave(EntityInterface $entity) {
+  switch ($entity->bundle()) {
+    case 'faculties':
+      $name = $entity->getName();
+      $selected_campus = $entity
+        ->get('field_campus')
+        ->getString();
+
+      $campus_options = array_keys(
+        $entity
+          ->get('field_campus')
+          ->getSetting('allowed_values')
+      );
+      // Strip any allowed, appended campus key from name field for display name.
+      $display_name = trim(str_replace($campus_options, "", $name));
+      $entity->set('field_display_name', $display_name);
+      // Append current selected campus key to term name.
+      $entity->setName($display_name . ' ' . $selected_campus);
+      break;
   }
 }
 
