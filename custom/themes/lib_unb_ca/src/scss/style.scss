@@ -39,8 +39,11 @@ aside a:not([class]) {
   padding-bottom: 1px;
 }
 article a:not([class]):hover,
+article a.external:hover,
 section a:not([class]):hover,
-aside a:not([class]):hover {
+section a.external:hover,
+aside a:not([class]):hover,
+aside a.external:hover {
   @include css3-prefix(box-shadow, 0 1px 1px -1px)
 }
 /* Table header sort icon */
