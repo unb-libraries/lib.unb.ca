@@ -125,6 +125,10 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    */
   private function addNodePathRelationship() {
     $url = trim($this->currentRow->getSourceProperty('url'));
+
+    // Global URL replaces.
+    $url = str_replace('gddm-new', 'gddm', $url);
+
     $file_parts = pathinfo($url);
     $uri_dir = $file_parts['dirname'];
 
