@@ -94,6 +94,30 @@ source:
 
       dom_operations:
         -
+          operation: modifier
+          modifier: changeClassName
+          arguments:
+            - 'pull-right'
+            - 'float-right'
+        -
+          operation: modifier
+          modifier: changeClassName
+          arguments:
+            - 'floatRt'
+            - 'float-right'
+        -
+          operation: modifier
+          modifier: changeClassName
+          arguments:
+            - 'pull-left'
+            - 'float-left'
+        -
+          operation: modifier
+          modifier: changeClassName
+          arguments:
+            - 'floatLf'
+            - 'float-left'
+        -
           operation: get_field
           field: title
         -
