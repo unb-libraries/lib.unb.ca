@@ -109,6 +109,12 @@ source:
           operation: modifier
           modifier: changeClassName
           arguments:
+            - 'alignright'
+            - 'float-right'
+        -
+          operation: modifier
+          modifier: changeClassName
+          arguments:
             - 'pull-left'
             - 'float-left'
         -
@@ -117,6 +123,18 @@ source:
           arguments:
             - 'floatLf'
             - 'float-left'
+        -
+          operation: modifier
+          modifier: changeClassName
+          arguments:
+            - 'alignleft'
+            - 'float-left'
+        -
+          operation: modifier
+          modifier: changeClassName
+          arguments:
+            - 'aligncenter'
+            - 'text-center'
         -
           operation: get_field
           field: title
