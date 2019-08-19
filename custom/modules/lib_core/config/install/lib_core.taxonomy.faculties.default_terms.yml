@@ -4,12 +4,6 @@ dependencies: {  }
 mode: default
 terms:
   -
-    name: (General)
-    campus: UNBSJ
-    rep_name:
-    rep_email:
-    rep_phone:
-  -
     name: Administration
     campus: UNBF
     rep_name: I. Shaikh
