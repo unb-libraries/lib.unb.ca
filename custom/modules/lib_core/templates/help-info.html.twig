@@ -15,6 +15,9 @@
         else if(ip.startsWith('131.202.193')) { ip += ' <b>(via VPN for Students)</b>'; }
         document.getElementById("ipInfo").innerHTML = '<i class="fas fa-check text-success">&nbsp;</i> ' + ip;
       };
+      oReq.onerror = function(e) {
+        document.getElementById("ipInfo").innerHTML = '<i class="fas fa-exclamation-triangle text-warning">&nbsp;</i> Unable to retrieve IP address information. Do you have an ad blocker enabled?';
+      };
       oReq.open("GET", "https://jsonip.com/");
       oReq.send();
     </script>
