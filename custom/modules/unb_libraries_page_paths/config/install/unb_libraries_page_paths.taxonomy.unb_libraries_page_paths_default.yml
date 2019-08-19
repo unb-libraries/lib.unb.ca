@@ -2,9 +2,9 @@ langcode: en
 status: true
 mode: default
 default_paths:
+  clc:
+    portolan:
   collections:
-    clc:
-      portolan:
     loyalist:
   microforms:
     newsdb:
@@ -51,8 +51,11 @@ default_paths:
   data:
     library-hours:
   gddm:
-    maps:
+    dnr:
     govdocs:
+    maps:
+    snb:
+    topos:
   refworks:
   requests:
     docdel:
