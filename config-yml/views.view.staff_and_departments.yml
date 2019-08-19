@@ -449,7 +449,7 @@ display:
             trim_whitespace: false
             alt: ''
             rel: ''
-            link_class: ''
+            link_class: email-icon
             prefix: ''
             suffix: ''
             target: ''
@@ -1168,7 +1168,7 @@ display:
             trim_whitespace: false
             alt: ''
             rel: ''
-            link_class: ''
+            link_class: email-icon
             prefix: ''
             suffix: ''
             target: ''
