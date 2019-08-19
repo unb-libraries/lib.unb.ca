@@ -4,11 +4,21 @@
   <dt>Your User Agent</dt>
   <dd class="ml-4"><i class="fas fa-check text-success">&nbsp;</i> {{ info.agent }}</dd>
   <dt>Your IP</dt>
-  <dd class="ml-4"><i class="fas fa-check text-success">&nbsp;</i> {{ info.ip }}
-{% if info.ip == '131.202.38.4' %} <b>(via EZProxy)</b>
-{% elseif info.ip starts with '131.202.192' %} <b>(via VPN for Staff/Faculty)</b>
-{% elseif info.ip starts with '131.202.193' %} <b>(via VPN for Students)</b>
-{% endif %}
+  <dd class="ml-4" id="ipInfo"><!-- {{ info.ip }} -->
+    <script type="text/javascript">
+      var oReq = new XMLHttpRequest();
+      oReq.responseType = 'json';
+      oReq.onload = function () {
+        var ip = oReq.response.ip;
+        if(ip == '131.202.38.4') { ip += ' <b>(via EZProxy)</b>'; }
+        else if(ip.startsWith('131.202.192')) { ip += ' <b>(via VPN for Staff/Faculty)</b>'; }
+        else if(ip.startsWith('131.202.193')) { ip += ' <b>(via VPN for Students)</b>'; }
+        document.getElementById("ipInfo").innerHTML = '<i class="fas fa-check text-success">&nbsp;</i> ' + ip;
+      };
+      oReq.open("GET", "https://jsonip.com/");
+      oReq.send();
+    </script>
+    <noscript><i class="fas fa-exclamation-triangle text-warning">&nbsp;</i> JavaScript is used to determine your IP address.</noscript>
   </dd>
   <dt>Referring URL</dt>
   <dd class="ml-4">
