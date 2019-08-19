@@ -237,7 +237,7 @@ class AttachParagraphsToCreatedNewsItemsEvent implements EventSubscriberInterfac
     $categories = [];
     $matches = $this->currentByline;
     if (!empty($matches[7])) {
-      preg_match_all("#<a.*>(.*)</a>#i", $matches[7], $link_matches);
+      preg_match_all("#<a.*?>(.*?)</a>#i", $matches[7], $link_matches);
       foreach ($link_matches[1] as $category) {
         $categories[] = $this->getCreateCategoryTerm($category);
       }
