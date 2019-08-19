@@ -114,9 +114,9 @@ terms:
   -
     name: Economics
     campus: UNBF
-    rep_name:
-    rep_email:
-    rep_phone: (506)
+    rep_name: E. Dalkir/C. Passaris
+    rep_email: edalkir@unb.ca;passaris
+    rep_phone: (506) 458-7392
   -
     name: Economics
     campus: UNBSJ
@@ -132,9 +132,9 @@ terms:
   -
     name: Education
     campus: UNBF
-    rep_name:
-    rep_email:
-    rep_phone: (506)
+    rep_name: R. Saul
+    rep_email: roger.saul
+    rep_phone: (506) 443-3903
   -
     name: Education
     campus: UNBSJ
@@ -149,9 +149,9 @@ terms:
   -
     name: Electrical & Computer Engineering
     campus: UNBF
-    rep_name:
-    rep_email:
-    rep_phone: (506)
+    rep_name: S. Saleh
+    rep_email: asaleh
+    rep_phone: (506) 453-4668
   -
     name: Engineering
     campus: UNBSJ
@@ -167,21 +167,15 @@ terms:
   -
     name: English
     campus: UNBF
-    rep_name:
-    rep_email:
-    rep_phone: (506)
+    rep_name: L. Crawford
+    rep_email: lcrawfor
+    rep_phone: (506) 447-3228
   -
     name: English
     campus: UNBSJ
     rep_name:
     rep_email:
     rep_phone:
-  -
-    name: Fine Arts
-    campus: UNBF
-    rep_name:
-    rep_email:
-    rep_phone: (506)
   -
     name: Fine Arts
     campus: STU
@@ -197,15 +191,15 @@ terms:
   -
     name: Forestry & Environmental Management
     campus: UNBF
-    rep_name:
-    rep_email:
-    rep_phone: (506)
+    rep_name: G. Forbes
+    rep_email: forbes
+    rep_phone: (506) 453-4929
   -
     name: French
     campus: UNBF
-    rep_name:
-    rep_email:
-    rep_phone: (506)
+    rep_name: A. Brown
+    rep_email: brwn
+    rep_phone: (506) 447-3232
   -
     name: Gender Studies
     campus: UNBSJ
@@ -215,9 +209,9 @@ terms:
   -
     name: Geodesy & Geomatics Engineering
     campus: UNBF
-    rep_name:
-    rep_email:
-    rep_phone: (506)
+    rep_name: R. Langley
+    rep_email: lang
+    rep_phone: (506) 453-5142
   -
     name: Geology
     campus: UNBSJ
@@ -251,9 +245,9 @@ terms:
   -
     name: History
     campus: UNBF
-    rep_name:
-    rep_email:
-    rep_phone: (506)
+    rep_name: E. Morton
+    rep_email: emorton
+    rep_phone: (506) 458-7419
   -
     name: History
     campus: UNBSJ
@@ -287,9 +281,9 @@ terms:
   -
     name: Kinesiology & Recreation
     campus: UNBF
-    rep_name:
-    rep_email:
-    rep_phone: (506)
+    rep_name: F. Mason
+    rep_email: fmason
+    rep_phone: (506) 453-5021
   -
     name: Languages
     campus: UNBSJ
@@ -305,15 +299,15 @@ terms:
   -
     name: Mathematics & Statistics
     campus: UNBF
-    rep_name:
-    rep_email:
-    rep_phone: (506)
+    rep_name: J. Picka
+    rep_email: jpicka
+    rep_phone: (506) 458-7361
   -
     name: Mechanical Engineering
     campus: UNBF
-    rep_name:
-    rep_email:
-    rep_phone: (506)
+    rep_name: Y. Losier
+    rep_email: yves.losier
+    rep_phone: (506) 447-3394
   -
     name: Native Studies
     campus: STU
@@ -323,9 +317,9 @@ terms:
   -
     name: Nursing
     campus: UNBF
-    rep_name:
-    rep_email:
-    rep_phone: (506)
+    rep_name: E. Read
+    rep_email: eread
+    rep_phone: (506) 451-6846
   -
     name: Nursing
     campus: UNBSJ
@@ -341,9 +335,9 @@ terms:
   -
     name: Philosophy
     campus: UNBF
-    rep_name:
-    rep_email:
-    rep_phone: (506)
+    rep_name: R. Weed
+    rep_email: mrweed
+    rep_phone: (506) 453-4737
   -
     name: Philosophy
     campus: UNBSJ
@@ -353,9 +347,9 @@ terms:
   -
     name: Physics
     campus: UNBF
-    rep_name:
-    rep_email:
-    rep_phone: (506)
+    rep_name: A. Hamza
+    rep_email: ahamza
+    rep_phone: (506) 458-7923
   -
     name: Physics
     campus: UNBSJ
@@ -371,9 +365,9 @@ terms:
   -
     name: Political Science
     campus: UNBF
-    rep_name:
-    rep_email:
-    rep_phone: (506)
+    rep_name: T. Workman
+    rep_email: wworkman
+    rep_phone: (506) 458-7305
   -
     name: Politics
     campus: UNBSJ
@@ -389,9 +383,9 @@ terms:
   -
     name: Psychology
     campus: UNBF
-    rep_name:
-    rep_email:
-    rep_phone: (506)
+    rep_name: M. Richards
+    rep_email: meghan.richards
+    rep_phone: (506) 452-6392
   -
     name: Psychology
     campus: UNBSJ
@@ -407,9 +401,9 @@ terms:
   -
     name: Renaissance College
     campus: UNBF
-    rep_name:
-    rep_email:
-    rep_phone: (506)
+    rep_name: M. Bachvarova
+    rep_email: mira.bachvarova
+    rep_phone: (506) 458-7019
   -
     name: Romance Languages
     campus: STU
@@ -443,9 +437,9 @@ terms:
   -
     name: Sociology
     campus: UNBF
-    rep_name:
-    rep_email:
-    rep_phone: (506)
+    rep_name: A. Reddick
+    rep_email: socio
+    rep_phone: (506) 453-4849
   -
     name: Sociology
     campus: UNBSJ
@@ -455,6 +449,6 @@ terms:
   -
     name: Women's Studies
     campus: UNBF
-    rep_name:
+    rep_name: TBD
     rep_email:
-    rep_phone: (506)
+    rep_phone:
