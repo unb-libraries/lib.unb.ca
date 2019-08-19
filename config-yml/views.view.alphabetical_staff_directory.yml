@@ -63,7 +63,7 @@ display:
           row_class: ''
           default_row_class: true
           override: true
-          sticky: false
+          sticky: true
           caption: ''
           summary: ''
           description: ''
@@ -76,7 +76,6 @@ display:
             field_room_number: field_room_number
             uid: uid
             name: name
-            contact: contact
           info:
             field_on_leave:
               sortable: false
@@ -128,14 +127,7 @@ display:
               empty_column: false
               responsive: ''
             name:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            contact:
-              sortable: false
+              sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
@@ -604,7 +596,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: ''
+          label: Contact
           exclude: false
           alter:
             alter_text: false
