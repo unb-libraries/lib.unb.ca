@@ -12,9 +12,9 @@ terms:
   -
     name: Anthropology
     campus: STU
-    rep_name: C. Dallos
-    rep_email: dallos
-    rep_phone: (506) 460-0385
+    rep_name:
+    rep_email:
+    rep_phone:
   -
     name: Anthropology
     campus: UNBF
@@ -30,9 +30,9 @@ terms:
   -
     name: Biology
     campus: UNBSJ
-    rep_name: A. Goudreau
-    rep_email: alex.goudreau
-    rep_phone: (506) 648-5551
+    rep_name:
+    rep_email:
+    rep_phone:
   -
     name: Business
     campus: UNBSJ
@@ -90,9 +90,9 @@ terms:
   -
     name: Criminology
     campus: STU
-    rep_name: D. Clarke
+    rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Culture & Language Studies
     campus: UNBF
@@ -108,9 +108,9 @@ terms:
   -
     name: Economics
     campus: STU
-    rep_name: E. Dalkir/C. Passaris
-    rep_email: edalkir@unb.ca;passaris
-    rep_phone: (506) 458-7392
+    rep_name:
+    rep_email:
+    rep_phone:
   -
     name: Economics
     campus: UNBF
@@ -122,19 +122,13 @@ terms:
     campus: UNBSJ
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Education
     campus: STU
     rep_name:
     rep_email:
-    rep_phone: (506)
-  -
-    name: Education
-    campus: UNBF
-    rep_name:
-    rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Education
     campus: UNBF
@@ -146,7 +140,12 @@ terms:
     campus: UNBSJ
     rep_name:
     rep_email:
-    rep_phone: (506)
+  -
+    name: Education
+    campus: STU
+    rep_name:
+    rep_email:
+    rep_phone:
   -
     name: Electrical & Computer Engineering
     campus: UNBF
@@ -158,13 +157,13 @@ terms:
     campus: UNBSJ
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: English
     campus: STU
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: English
     campus: UNBF
@@ -176,7 +175,7 @@ terms:
     campus: UNBSJ
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Fine Arts
     campus: UNBF
@@ -188,13 +187,13 @@ terms:
     campus: STU
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Fine Arts
     campus: UNBSJ
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Forestry & Environmental Management
     campus: UNBF
@@ -212,7 +211,7 @@ terms:
     campus: UNBSJ
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Geodesy & Geomatics Engineering
     campus: UNBF
@@ -224,31 +223,31 @@ terms:
     campus: UNBSJ
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Gerontology
     campus: STU
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: GRID (Great Ideas)
     campus: STU
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Health Sciences
     campus: UNBSJ
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: History
     campus: STU
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: History
     campus: UNBF
@@ -260,31 +259,31 @@ terms:
     campus: UNBSJ
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Hospitality and Tourism
     campus: UNBSJ
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Human Rights
     campus: STU
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Information & Communication Studies
     campus: UNBSJ
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Journalism
     campus: STU
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Kinesiology & Recreation
     campus: UNBF
@@ -296,13 +295,13 @@ terms:
     campus: UNBSJ
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Mathematical Sciences
     campus: UNBSJ
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Mathematics & Statistics
     campus: UNBF
@@ -320,7 +319,7 @@ terms:
     campus: STU
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Nursing
     campus: UNBF
@@ -332,13 +331,13 @@ terms:
     campus: UNBSJ
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Philosophy
     campus: STU
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Philosophy
     campus: UNBF
@@ -350,7 +349,7 @@ terms:
     campus: UNBSJ
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Physics
     campus: UNBF
@@ -362,13 +361,13 @@ terms:
     campus: UNBSJ
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Political Science
     campus: STU
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Political Science
     campus: UNBF
@@ -380,13 +379,13 @@ terms:
     campus: UNBSJ
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Psychology
     campus: STU
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Psychology
     campus: UNBF
@@ -398,13 +397,13 @@ terms:
     campus: UNBSJ
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Religious Studies
     campus: STU
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Renaissance College
     campus: UNBF
@@ -416,31 +415,31 @@ terms:
     campus: STU
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Science & Technology Studies
     campus: STU
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Science Fiction & Fantasy
     campus: UNBSJ
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Social Work
     campus: STU
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Sociology
     campus: STU
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Sociology
     campus: UNBF
@@ -452,7 +451,7 @@ terms:
     campus: UNBSJ
     rep_name:
     rep_email:
-    rep_phone: (506)
+    rep_phone:
   -
     name: Women's Studies
     campus: UNBF
