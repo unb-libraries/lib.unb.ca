@@ -45,4 +45,23 @@ class TaxonomyHelper {
     }
   }
 
+  /**
+   * Create the default taxonomy terms for university faculties/programs.
+   */
+  public static function addDefaultFacultiesTerms() {
+    $config = \Drupal::config('lib_core.taxonomy.faculties.default_terms');
+    $faculty_terms = $config->get('terms');
+    foreach ($faculty_terms as $term) {
+      Term::create([
+        'field_campus' => $term['campus'],
+        'field_department_rep_email' => $term['rep_email'],
+        'field_department_rep_name' => $term['rep_name'],
+        'field_department_rep_phone' => $term['rep_phone'],
+        'name' => $term['name'],
+        'vid' => 'faculties',
+      ])
+        ->save();
+    }
+  }
+
 }
