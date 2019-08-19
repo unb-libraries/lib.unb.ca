@@ -1,12 +1,12 @@
-uuid: 0d6fbbe1-a26a-4b7e-9014-5aafdc85fc94
+uuid: 42fc9d38-335c-4fd1-b1f0-f40414694ec3
 langcode: en
 status: true
 dependencies:
   module:
     - taxonomy
     - telephone
-id: taxonomy_term.field__department_rep_phone
-field_name: field__department_rep_phone
+id: taxonomy_term.field_department_rep_phone
+field_name: field_department_rep_phone
 entity_type: taxonomy_term
 type: telephone
 settings: {  }

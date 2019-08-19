@@ -11,44 +11,46 @@ dependencies:
     - taxonomy.vocabulary.faculties
   module:
     - options
+    - telephone
 id: taxonomy_term.faculties.default
 targetEntityType: taxonomy_term
 bundle: faculties
 mode: default
 content:
   field_campus:
-    weight: 1
+    weight: 0
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_department_rep_email:
-    weight: 4
-    label: hidden
+    weight: 2
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
   field_department_rep_name:
-    weight: 2
-    label: hidden
+    weight: 1
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
   field_department_rep_phone:
-    weight: 5
-    label: above
-    settings: {  }
+    weight: 3
+    label: inline
+    settings:
+      title: ''
     third_party_settings: {  }
-    type: basic_string
+    type: telephone_link
     region: content
   field_display_name:
     type: string
-    weight: 0
+    weight: 4
     region: content
     label: inline
     settings:
