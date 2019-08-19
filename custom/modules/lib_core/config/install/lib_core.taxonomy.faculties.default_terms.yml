@@ -1,0 +1,467 @@
+langcode: en
+status: true
+dependencies: {  }
+mode: default
+terms:
+  -
+    name: (General)
+    campus: UNBSJ
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Administration
+    campus: UNBF
+    rep_name: I. Shaikh
+    rep_email: ishaikh
+    rep_phone: (506) 458-7671
+  -
+    name: Anthropology
+    campus: STU
+    rep_name: C. Dallos
+    rep_email: dallos
+    rep_phone: (506) 460-0385
+  -
+    name: Anthropology
+    campus: UNBF
+    rep_name: A. Scott
+    rep_email: ascott11
+    rep_phone: (506) 458-7994
+  -
+    name:  Biology
+    campus: UNBF
+    rep_name: S. MacLellan
+    rep_email: srm
+    rep_phone: (506) 452-6289
+  -
+    name: Biology
+    campus: UNBSJ
+    rep_name: A. Goudreau
+    rep_email: alex.goudreau
+    rep_phone: (506) 648-5551
+  -
+    name: Business
+    campus: UNBSJ
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Chemical Engineering
+    campus: UNBF
+    rep_name: L. Romero-Zeron
+    rep_email: laurarz
+    rep_phone: (506) 447-3356
+  -
+    name: Chemistry
+    campus: UNBF
+    rep_name: N. Elbakali Kassimi
+    rep_email: nkassimi
+    rep_phone: (506) 262-2571
+  -
+    name: Chemistry
+    campus: UNBSJ
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Civil Engineering
+    campus: UNBF
+    rep_name: K. Arjomandi
+    rep_email: kaveh.arjomandi
+    rep_phone: (506) 452-6229
+  -
+    name: Classics & Ancient History
+    campus: UNBF
+    rep_name: M. Sears
+    rep_email: matthew.sears
+    rep_phone: (506) 458-7399
+  -
+    name: Classics
+    campus: UNBSJ
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Computer Science / Applied Statistics
+    campus: UNBSJ
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Computer Science
+    campus: UNBF
+    rep_name: P. Cook
+    rep_email: paul.cook
+    rep_phone: (506) 447-3466
+  -
+    name: Criminology
+    campus: STU
+    rep_name: D. Clarke
+    rep_email:
+    rep_phone:
+  -
+    name: Culture & Language Studies
+    campus: UNBF
+    rep_name: A. Guse
+    rep_email: aguse
+    rep_phone: (506) 458-7716
+  -
+    name: Earth Sciences
+    campus: UNBF
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Economics
+    campus: STU
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Economics
+    campus: UNBF
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Economics
+    campus: UNBSJ
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Education
+    campus: STU
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Education
+    campus: UNBF
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Education
+    campus: UNBF
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Education
+    campus: UNBSJ
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Electrical & Computer Engineering
+    campus: UNBF
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Engineering
+    campus: UNBSJ
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: English
+    campus: STU
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: English
+    campus: UNBF
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: English
+    campus: UNBSJ
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Fine Arts
+    campus: UNBF
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Fine Arts
+    campus: STU
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Fine Arts
+    campus: UNBSJ
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Forestry & Environmental Management
+    campus: UNBF
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: French
+    campus: UNBF
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Gender Studies
+    campus: UNBSJ
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Geodesy & Geomatics Engineering
+    campus: UNBF
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Geology
+    campus: UNBSJ
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Gerontology
+    campus: STU
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: GRID (Great Ideas)
+    campus: STU
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Health Sciences
+    campus: UNBSJ
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: History
+    campus: STU
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: History
+    campus: UNBF
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: History
+    campus: UNBSJ
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Hospitality and Tourism
+    campus: UNBSJ
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Human Rights
+    campus: STU
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Information & Communication Studies
+    campus: UNBSJ
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Journalism
+    campus: STU
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Kinesiology & Recreation
+    campus: UNBF
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Languages
+    campus: UNBSJ
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Mathematical Sciences
+    campus: UNBSJ
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Mathematics & Statistics
+    campus: UNBF
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Mechanical Engineering
+    campus: UNBF
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Native Studies
+    campus: STU
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Nursing
+    campus: UNBF
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Nursing
+    campus: UNBSJ
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Philosophy
+    campus: STU
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Philosophy
+    campus: UNBF
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Philosophy
+    campus: UNBSJ
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Physics
+    campus: UNBF
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Physics
+    campus: UNBSJ
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Political Science
+    campus: STU
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Political Science
+    campus: UNBF
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Politics
+    campus: UNBSJ
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Psychology
+    campus: STU
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Psychology
+    campus: UNBF
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Psychology
+    campus: UNBSJ
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Religious Studies
+    campus: STU
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Renaissance College
+    campus: UNBF
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Romance Languages
+    campus: STU
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Science & Technology Studies
+    campus: STU
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Science Fiction & Fantasy
+    campus: UNBSJ
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Social Work
+    campus: STU
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Sociology
+    campus: STU
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Sociology
+    campus: UNBF
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Sociology
+    campus: UNBSJ
+    rep_name:
+    rep_email:
+    rep_phone:
+  -
+    name: Women's Studies
+    campus: UNBF
+    rep_name:
+    rep_email:
+    rep_phone:
