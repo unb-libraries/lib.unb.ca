@@ -281,6 +281,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
   private function sidebarHasChatWidget() {
     return (
       !empty($this->currentRow->getSourceProperty('chatwidget_sidebar'))
+      || !empty($this->currentRow->getSourceProperty('chatwidget_popup_sidebar'))
       || !empty($this->currentRow->getSourceProperty('chatwidget_offline_sidebar'))
     );
   }
@@ -294,9 +295,16 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    *   The paragraph containing the chat widget.
    */
   private function getChatWidgetParagraph() {
+    if (!empty($this->currentRow->getSourceProperty('chatwidget_popup_sidebar'))) {
+      $block_type = 'askus_popup';
+    }
+    else {
+      $block_type = 'askus_embedded';
+    }
+
     $paragraph = Paragraph::create([
       'type' => 'custom_block_section',
-      'field_selected_block' => 'askus_embedded',
+      'field_selected_block' => $block_type,
     ]);
     $paragraph->save();
     return $paragraph;

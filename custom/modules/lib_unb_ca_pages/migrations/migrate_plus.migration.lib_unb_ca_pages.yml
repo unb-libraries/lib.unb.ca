@@ -92,6 +92,17 @@ source:
                 - 1
                 - innerHtml
 
+        chatwidget_popup_sidebar:
+          obtainer: ObtainHTML
+          jobs:
+            -
+              job: addSearch
+              method: pluckSelector
+              arguments:
+                - '#main #sidebar div.askUs'
+                - 1
+                - innerHtml
+
         chatwidget_offline_sidebar:
           obtainer: ObtainHTML
           jobs:
@@ -220,6 +231,9 @@ source:
         -
           operation: get_field
           field: chatwidget_sidebar
+        -
+          operation: get_field
+          field: chatwidget_popup_sidebar
         -
           operation: get_field
           field: chatwidget_offline_sidebar
