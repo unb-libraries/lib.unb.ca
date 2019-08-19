@@ -134,7 +134,7 @@ source:
           modifier: changeClassName
           arguments:
             - 'aligncenter'
-            - 'text-center'
+            - 'd-block mx-auto'
         -
           operation: get_field
           field: title
