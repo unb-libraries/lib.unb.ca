@@ -11,6 +11,16 @@ h2:target:before {
   margin-top: -156px;
   visibility: hidden;
 }
+a {
+  &.email-icon {
+    &:before {
+      content: '\f0e0';
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      margin-right: .25rem;
+    }
+  }
+}
 caption {
   caption-side: top;
   color: $black;
@@ -369,15 +379,6 @@ dl.two-cols {
 
         &:last-child {
           width: 15%;
-
-          a {
-            &:before {
-              content: '\f0e0';
-              font-family: "Font Awesome 5 Free";
-              font-weight: 900;
-              margin-right: .25rem;
-            }
-          }
         }
 
         .head {
