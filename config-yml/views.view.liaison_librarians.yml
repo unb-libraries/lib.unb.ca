@@ -514,7 +514,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: faculty/liaison-librarians-and-departmental-representatives/institution
+      path: faculty/liaison-librarians/institution
       filters:
         status:
           value: '1'
@@ -1225,7 +1225,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: faculty/liaison-librarians-and-departmental-representatives/institution/unbsj
+      path: faculty/liaison-librarians/institution/unbsj
       filters:
         status:
           value: '1'
@@ -1322,7 +1322,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: faculty/liaison-librarians-and-departmental-representatives/institution/stu
+      path: faculty/liaison-librarians/institution/stu
       filters:
         status:
           value: '1'
