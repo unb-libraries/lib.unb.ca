@@ -1,0 +1,59 @@
+uuid: 565ab333-a2a5-4a8b-9279-15b5a1ec7e43
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.faculties.field_campus
+    - field.field.taxonomy_term.faculties.field_department_rep_email
+    - field.field.taxonomy_term.faculties.field_department_rep_name
+    - field.field.taxonomy_term.faculties.field_department_rep_phone
+    - field.field.taxonomy_term.faculties.field_display_name
+    - taxonomy.vocabulary.faculties
+  module:
+    - telephone
+id: taxonomy_term.faculties.default
+targetEntityType: taxonomy_term
+bundle: faculties
+mode: default
+content:
+  field_campus:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_department_rep_email:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_department_rep_name:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_department_rep_phone:
+    weight: 5
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  field_display_name: true
+  path: true

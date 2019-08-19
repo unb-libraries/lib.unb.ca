@@ -1,0 +1,8 @@
+uuid: 19558992-ee79-469a-b640-a4f97cb424db
+langcode: en
+status: true
+dependencies: {  }
+name: 'Faculties (Programs)'
+vid: faculties
+description: 'Used to generate the <i>Liaison Librarians and Departmental Representatives</i> listing.'
+weight: 0

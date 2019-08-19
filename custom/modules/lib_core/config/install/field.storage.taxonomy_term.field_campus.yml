@@ -1,0 +1,30 @@
+uuid: bbffe475-c9e2-4fe9-9d0e-5c615401c69a
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - taxonomy
+id: taxonomy_term.field_campus
+field_name: field_campus
+entity_type: taxonomy_term
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: UNBF
+      label: 'UNB Fredericton'
+    -
+      value: UNBSJ
+      label: 'UNB Saint John'
+    -
+      value: STU
+      label: 'St. Thomas University'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
