@@ -1,0 +1,20 @@
+uuid: 1fab27a7-ead3-4c87-aab8-4e370aadca6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_email_id
+  module:
+    - user
+id: user.user.field_email_id
+field_name: field_email_id
+entity_type: user
+bundle: user
+label: 'Email ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
