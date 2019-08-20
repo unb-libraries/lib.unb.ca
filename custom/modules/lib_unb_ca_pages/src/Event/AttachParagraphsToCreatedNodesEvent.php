@@ -192,11 +192,6 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     if ($this->sidebarHasChatWidget()) {
       $sidebar_paragraphs[] = $this->getChatWidgetParagraph();
     }
-    if ($this->pageHasSidebarLinkLists()) {
-      foreach ($this->getSidebarLinkListParagraphs() as $sidebar_paragraph) {
-        $sidebar_paragraphs[] = $sidebar_paragraph;
-      }
-    }
     if ($this->sidebarHasTermHours()) {
       foreach ($this->getTermHoursBlockParagraphs() as $hours_paragraph) {
         $sidebar_paragraphs[] = $hours_paragraph;
@@ -204,6 +199,11 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     }
     if ($this->sidebarHasUpcomingHours()) {
       $sidebar_paragraphs[] = $this->getUpcomingHoursBlockParagraph();
+    }
+    if ($this->pageHasSidebarLinkLists()) {
+      foreach ($this->getSidebarLinkListParagraphs() as $sidebar_paragraph) {
+        $sidebar_paragraphs[] = $sidebar_paragraph;
+      }
     }
     $sidebar_paragraphs[] = $this->getSidebarContentParagraph();
     $main_paragraphs[] = $this->getNonSidebarContentParagraph();
@@ -235,40 +235,38 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
   private function getSidebarLinkListParagraphs() {
     $paragraphs = [];
 
-    foreach ($this->currentRow->getSourceProperty('sidebar_link_lists') as $sidebar_link_list) {
-      $paragraph = Paragraph::create([
-        'type' => 'custom_block_section',
-        'field_selected_block' => 'link_list_block',
-      ]);
+    for ($i = 0; $i < count($this->currentRow->getSourceProperty('sidebar_link_lists_titles')); $i++) {
+      $title = $this->currentRow->getSourceProperty('sidebar_link_lists_titles')[$i];
+      $body = $this->currentRow->getSourceProperty('sidebar_link_lists')[$i];
 
-      $links = [];
-      foreach ($sidebar_link_list['links'] as $link) {
-        $url = $link['href'];
-        $url_components = parse_url($url);
-        if (!isset($url_components['scheme']) || !isset($url_components['host'])) {
-          $source_url_components = parse_url($this->currentRow->getSourceIdValues()['url']);
-          if (substr($url, 0, 1) === '/') {
-            $url = $source_url_components['scheme'] . '://' . $source_url_components['host'] . $url_components['path'];
-          }
-          else {
-            $destination_path_components = explode('/', $source_url_components['path']);
-            array_pop($destination_path_components);
-            $destination_path_components[] = $url_components['path'];
-            $destination_path = implode('/', $destination_path_components);
-            $url = $source_url_components['scheme'] . '://' . $source_url_components['host'] . $destination_path;
-          }
-        }
-        $links[$url] = $link['link_text'];
+      $block_storage = \Drupal::entityTypeManager()->getStorage('block_content');
+      $block = array_values($block_storage->loadByProperties([
+        'type' => 'basic_block',
+        'body' => $body,
+      ]))[0];
+
+      if (!isset($block)) {
+        $block = $block_storage->create([
+          'info' => $title,
+          'body' => $body,
+          'type' => 'basic_block',
+        ]);
+
+        $paragraph_field_config = \Drupal::service('config.factory')->getEditable('field.field.paragraph.custom_block_section.field_selected_block');
+        $allowed_plugin_ids = $paragraph_field_config->get('settings.plugin_ids');
+        $allowed_plugin_id = 'block_content:' . $block->uuid();
+        $allowed_plugin_ids[$allowed_plugin_id] = $allowed_plugin_id;
+        $paragraph_field_config->set('settings.plugin_ids', $allowed_plugin_ids);
+
+        $paragraph_field_config->save();
+        $block->save();
       }
 
-      $block_value = $paragraph->get('field_selected_block')->first()->getValue();
-      $block_value['settings']['label'] = $sidebar_link_list['title'];
-      $block_value['settings']['links'] = $links;
-      $block_value['settings']['is_ordered'] = $sidebar_link_list['ordered'];
-      $block_value['settings']['css_external'] = 'external';
-      $block_value['settings']['css_file'] = 'file';
-
-      $paragraph->get('field_selected_block')->first()->setValue($block_value);
+      $block_plugin_id = 'block_content:' . $block->uuid();
+      $paragraph = Paragraph::create([
+        'type' => 'custom_block_section',
+        'field_selected_block' => $block_plugin_id,
+      ]);
       $paragraph->save();
       $paragraphs[] = $paragraph;
     }

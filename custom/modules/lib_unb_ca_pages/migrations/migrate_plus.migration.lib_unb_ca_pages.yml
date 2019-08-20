@@ -132,13 +132,25 @@ source:
                 - '#main #sidebar .hoursBlock'
                 - html
 
-        sidebar_link_lists:
-          obtainer: Drupal\lib_unb_ca_pages\Obtainer\ObtainNamedLinkList
+        sidebar_link_lists_titles:
+          obtainer: ObtainArray
           jobs:
             - job: addSearch
-              method: arrayPluckLinkLists
+              method: arrayPluckSelector
+              arguments:
+                - '#main #sidebar .link-list h1, #main #sidebar .link-list h2, #main #sidebar .link-list h3, #main #sidebar .link-list h4, #main #sidebar
+                .link-list h5, #main #sidebar
+                .link-list h6'
+                - innerHtml
+
+        sidebar_link_lists:
+          obtainer: ObtainArray
+          jobs:
+            - job: addSearch
+              method: arrayPluckSelector
               arguments:
                 - '#main #sidebar .link-list'
+                - innerHtml
 
         sidebar:
           obtainer: ObtainHTML
@@ -231,6 +243,9 @@ source:
         -
           operation: get_field
           field: sidebar_hours_term
+        -
+          operation: get_field
+          field: sidebar_link_lists_titles
         -
           operation: get_field
           field: sidebar_link_lists
