@@ -208,6 +208,12 @@ source:
           operation: modifier
           modifier: changeClassName
           arguments:
+            - 'floatRt-fade'
+            - 'float-right'
+        -
+          operation: modifier
+          modifier: changeClassName
+          arguments:
             - 'pull-left'
             - 'float-left'
         -
