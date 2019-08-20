@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.user.user.field_department_memberships
     - field.field.user.user.field_display_on_staff_directory
+    - field.field.user.user.field_email_id
     - field.field.user.user.field_first_name
     - field.field.user.user.field_last_name
     - field.field.user.user.field_liaison_librarian
@@ -111,4 +112,5 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-hidden: {  }
+hidden:
+  field_email_id: true
