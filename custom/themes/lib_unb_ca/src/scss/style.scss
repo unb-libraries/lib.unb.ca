@@ -331,12 +331,6 @@ dl.two-cols {
         }
       }
 
-      .field-email:not(:empty) {
-        &:before {
-          content: '\f0e0';
-        }
-      }
-
       .field-fax:not(:empty) {
         &:before {
           content: '\f1ac';
