@@ -189,13 +189,13 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
   private function createContentWithSidebar() {
     $main_paragraphs = [];
     $sidebar_paragraphs = [];
+    if ($this->sidebarHasChatWidget()) {
+      $sidebar_paragraphs[] = $this->getChatWidgetParagraph();
+    }
     if ($this->pageHasSidebarLinkLists()) {
       foreach ($this->getSidebarLinkListParagraphs() as $sidebar_paragraph) {
         $sidebar_paragraphs[] = $sidebar_paragraph;
       }
-    }
-    if ($this->sidebarHasChatWidget()) {
-      $sidebar_paragraphs[] = $this->getChatWidgetParagraph();
     }
     if ($this->sidebarHasTermHours()) {
       foreach ($this->getTermHoursBlockParagraphs() as $hours_paragraph) {
