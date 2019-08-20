@@ -251,14 +251,6 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
           'body' => $body,
           'type' => 'basic_block',
         ]);
-
-        $paragraph_field_config = \Drupal::service('config.factory')->getEditable('field.field.paragraph.custom_block_section.field_selected_block');
-        $allowed_plugin_ids = $paragraph_field_config->get('settings.plugin_ids');
-        $allowed_plugin_id = 'block_content:' . $block->uuid();
-        $allowed_plugin_ids[$allowed_plugin_id] = $allowed_plugin_id;
-        $paragraph_field_config->set('settings.plugin_ids', $allowed_plugin_ids);
-
-        $paragraph_field_config->save();
         $block->save();
       }
 
@@ -267,6 +259,11 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
         'type' => 'custom_block_section',
         'field_selected_block' => $block_plugin_id,
       ]);
+
+      $block_config = $paragraph->get('field_selected_block')->first()->getValue();
+      $block_config['settings']['label'] = $title;
+      $paragraph->get('field_selected_block')->first()->setValue($block_config);
+
       $paragraph->save();
       $paragraphs[] = $paragraph;
     }
@@ -379,6 +376,11 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
       'type' => 'custom_block_section',
       'field_selected_block' => 'upcoming_hours_block',
     ]);
+
+    $block_config = $paragraph->get('field_selected_block')->first()->getValue();
+    $block_config['settings']['label'] = 'Hours';
+    $paragraph->get('field_selected_block')->first()->setValue($block_config);
+
     $paragraph->save();
     return $paragraph;
   }
