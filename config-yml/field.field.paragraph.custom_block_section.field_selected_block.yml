@@ -18,12 +18,34 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  plugin_ids:
-    'views_block:content_recent-block_1': 'views_block:content_recent-block_1'
-    term_hours_block: term_hours_block
-    upcoming_hours_block: upcoming_hours_block
-    link_list_block: link_list_block
-    askus_embedded: askus_embedded
-    askus_popup: askus_popup
-    discovery_search_block: discovery_search_block
+  selection: categories
+  selection_settings:
+    categories:
+      Custom: Custom
+      'UNB Libraries': 'UNB Libraries'
+      Block: '0'
+      'Chaos Tools': '0'
+      'Contact message fields': '0'
+      Content: '0'
+      'Content fields': '0'
+      core: '0'
+      'Custom block fields': '0'
+      'Custom menu link fields': '0'
+      Devel: '0'
+      'File fields': '0'
+      Forms: '0'
+      'Group fields': '0'
+      Help: '0'
+      'Inline blocks': '0'
+      'Lists (Views)': '0'
+      'Media fields': '0'
+      Menus: '0'
+      'Node taxonomy path fields': '0'
+      'Paragraph fields': '0'
+      System: '0'
+      'Taxonomy term fields': '0'
+      User: '0'
+      'User fields': '0'
+      Webform: '0'
+      'Webform submission fields': '0'
 field_type: block_field
