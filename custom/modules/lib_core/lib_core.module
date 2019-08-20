@@ -274,17 +274,21 @@ function _lib_core_contactable_department($mailbox) {
   // Contact webform may send messages to the following mailboxes.
   $departments = [
     'archives' => 'Archives',
+    'askus' => 'Ask Us',
     'circhi' => 'Access Services',
+    'copyright' => 'Copyright',
     'digitalscholar' => 'Centre for Digital Scholarship',
     'docdel' => 'Document Delivery',
     'englib' => 'Engineering & Computer Science',
-    'hilref' => 'Reference',
-    'library' => 'Administration',
-    'libweb' => 'Website Administrator',
     'govdocs' => 'Government Documents, Data and Maps',
+    'hilref' => 'Reference',
     'hwkcommons' => 'Hans W. Klohn Commons',
     'lawlib' => 'Law Library',
+    'library' => 'Administration',
+    'libweb' => 'Website Administrator',
     'mic' => 'Microforms',
+    'refsj' => 'Saint John Reference',
+    'reserves' => 'Course Reserves',
     'scilib' => 'Science & Forestry',
   ];
 
