@@ -651,7 +651,7 @@ display:
       defaults:
         filters: false
         filter_groups: false
-        title: true
+        title: false
         fields: false
       filter_groups:
         operator: AND
@@ -1277,6 +1277,7 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
+      title: 'Liaison Librarians and Departmental Representatives'
     cache_metadata:
       max-age: -1
       contexts:
