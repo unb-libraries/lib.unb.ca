@@ -248,7 +248,10 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
       if (!isset($block)) {
         $block = $block_storage->create([
           'info' => $title,
-          'body' => $body,
+          'body' => [
+            'value' => $body,
+            'format' => 'library_page_html',
+          ],
           'type' => 'basic_block',
         ]);
         $block->save();
