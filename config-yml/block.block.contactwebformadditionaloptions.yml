@@ -4,7 +4,7 @@ status: true
 dependencies:
   module:
     - lib_core
-    - system
+    - webform
   theme:
     - lib_unb_ca
 id: contactwebformadditionaloptions
@@ -19,8 +19,10 @@ settings:
   provider: lib_core
   label_display: visible
 visibility:
-  request_path:
-    id: request_path
-    pages: /contact-unb-libraries-staff
+  webform:
+    id: webform
+    webforms:
+      contact: contact
     negate: false
-    context_mapping: {  }
+    context_mapping:
+      webform: '@webform.webform_route_context:webform'
