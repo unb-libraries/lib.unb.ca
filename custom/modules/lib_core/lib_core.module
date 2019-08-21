@@ -117,7 +117,7 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
     case 'webform_submission_contact_add_form':
       $recipient = explode("@unb.ca", $form['elements']['recipient']['#default_value']);
-      $username = $recipient[0];
+      $username = strtok($recipient[0], "@");
 
       if ($user = user_load_by_name($username)) {
         $alert_msg =
@@ -130,6 +130,12 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
               '@unb.ca?subject=Patron Webform Query">use your own email program</a>, if configured.
             </div>' .
           '</div>';
+
+        // Set recipient to user profile's Email address value.
+        $user_email = user_load_by_name($username)
+          ->get('mail')
+          ->getString();
+        $form['elements']['recipient']['#default_value'] = $user_email;
       }
       elseif ($department = _lib_core_contactable_department($username)) {
         $alert_msg =
@@ -149,6 +155,9 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
         $alert_msg .=
             '</div>
           </div>';
+
+        // Set recipient to department email_id@unb.ca.
+        $form['elements']['recipient']['#default_value'] = $username . "@unb.ca";
       }
       else {
         $alert_msg = FALSE;
