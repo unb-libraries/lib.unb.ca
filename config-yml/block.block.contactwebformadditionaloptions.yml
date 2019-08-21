@@ -1,4 +1,4 @@
-uuid: b5433e83-3745-47f1-8a72-6c2384c86b5e
+uuid: f4fc82d2-3f62-4635-9d30-75358ab157f7
 langcode: en
 status: true
 dependencies:
@@ -7,20 +7,20 @@ dependencies:
     - system
   theme:
     - lib_unb_ca
-id: staffanddepartmentssidebarnavigation
+id: contactwebformadditionaloptions
 theme: lib_unb_ca
 region: sidebar_second
-weight: -3
+weight: 0
 provider: null
-plugin: staff_directory_nav
+plugin: contact_webform_sidebar
 settings:
-  id: staff_directory_nav
-  label: 'Staff and Departments Sidebar Navigation'
+  id: contact_webform_sidebar
+  label: 'Additional Options'
   provider: lib_core
-  label_display: '0'
+  label_display: visible
 visibility:
   request_path:
     id: request_path
-    pages: /about/staff-and-departments
+    pages: /contact-unb-libraries-staff
     negate: false
     context_mapping: {  }
