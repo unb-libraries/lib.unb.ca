@@ -308,6 +308,11 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
       'type' => 'custom_block_section',
       'field_selected_block' => $block_type,
     ]);
+
+    $block_config = $paragraph->get('field_selected_block')->first()->getValue();
+    $block_config['settings']['label_display'] = 0;
+    $paragraph->get('field_selected_block')->first()->setValue($block_config);
+
     $paragraph->save();
     return $paragraph;
   }
