@@ -210,7 +210,7 @@ handlers:
       from_options: {  }
       from_name: '[webform_submission:values:name:raw]'
       subject: 'SOULS Retrieval Request'
-      body: "<p>The following information was submitted through our <b>Material Retrieval Form</b> on {{ webform_token('[webform_submission:created]', webform_submission) }} by {{ webform_token('[webform_submission:user]', webform_submission) }}.</p>\r\n        \r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img alt=\"UNB Libraries\" src=\"https://dev-lib.unb.ca/themes/contrib/unb_lib_theme/img/unb-libraries-red-black.png\" />\r\n</div>"
+      body: "<p>The following information was submitted through our <b>Material Retrieval Form</b> on {{ webform_token('[webform_submission:created]', webform_submission) }} by {{ webform_token('[webform_submission:user]', webform_submission) }}.</p>\r\n        \r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"//media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: false
@@ -244,7 +244,7 @@ handlers:
       from_options: {  }
       from_name: _default
       subject: 'SOULS Retrieval Request'
-      body: "<p>Your request for retrieval of library materials in the SOULS database has been successfully submitted to Access Services. Thank you for taking the time to submit the request. You will be notified by email if we require additional information.</p>\r\n\r\n<p>Items will be held for 3 days after retrieval at the Access Services Desk of the library that owns the material. You will be notified by telephone or e-mail when the item is available.</p>\r\n        \r\n<p>Submitted values:</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img alt=\"UNB Libraries\" src=\"https://dev-lib.unb.ca/themes/contrib/unb_lib_theme/img/unb-libraries-red-black.png\" />\r\n</div>\r\n"
+      body: "<p>Your request for retrieval of library materials in the SOULS database has been successfully submitted to Access Services. Thank you for taking the time to submit the request. You will be notified by email if we require additional information.</p>\r\n\r\n<p>Items will be held for 3 days after retrieval at the Access Services Desk of the library that owns the material. You will be notified by telephone or e-mail when the item is available.</p>\r\n        \r\n<p>Submitted values:</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"//media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true

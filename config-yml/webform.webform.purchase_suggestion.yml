@@ -211,7 +211,7 @@ handlers:
       from_options: {  }
       from_name: '[webform_submission:values:name:raw]'
       subject: 'Purchase Suggestion'
-      body: "<p>The following information was submitted through our <b>Purchase Suggestion</b> form by <b>{{ webform_token('[webform_submission:user]', webform_submission) }}</b> on <b>{{ webform_token('[webform_submission:created]', webform_submission) }}</b>.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img alt=\"UNB Libraries\" src=\"https://dev-lib.unb.ca/themes/contrib/unb_lib_theme/img/unb-libraries-red-black.png\" />\r\n</div>"
+      body: "<p>The following information was submitted through our <b>Purchase Suggestion</b> form by <b>{{ webform_token('[webform_submission:user]', webform_submission) }}</b> on <b>{{ webform_token('[webform_submission:created]', webform_submission) }}</b>.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"//media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
@@ -245,7 +245,7 @@ handlers:
       from_options: {  }
       from_name: ''
       subject: 'UNB Libraries submission confirmation'
-      body: "<p>We appreciate receiving your purchase suggestion for library materials. Suggestions are reviewed by a librarian and evaluated for purchase. Evaluations are based upon our library\\'s collection development policy and budgetary constraints.</p>\r\n\r\n<p>Please note that there is no guarantee for purchase.  Material orders can take some time to arrive before making their way into our catalogue.  If your need is urgent, you may wish to consider filling out a <a href=\"http://lib.unb.ca/requests/docdel\">Document Delivery Request form.</a></p>\r\n\r\n<p>Thank you for your interest in our collection at UNB Libraries.</p>\r\n\r\n<div>The following information was submitted through our Purchase Suggestion web form:\r\n<br/>\r\n[webform_submission:values]\r\n</div>\r\n"
+      body: "<p>We appreciate receiving your purchase suggestion for library materials. Suggestions are reviewed by a librarian and evaluated for purchase. Evaluations are based upon our library\\'s collection development policy and budgetary constraints.</p>\r\n\r\n<p>Please note that there is no guarantee for purchase.  Material orders can take some time to arrive before making their way into our catalogue.  If your need is urgent, you may wish to consider filling out a <a href=\"http://lib.unb.ca/requests/docdel\">Document Delivery Request form.</a></p>\r\n\r\n<p>Thank you for your interest in our collection at UNB Libraries.</p>\r\n\r\n<div>The following information was submitted through our Purchase Suggestion web form:\r\n<br/>\r\n[webform_submission:values]\r\n</div>\r\n\r\n<div>\r\n<img src=\"//media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
@@ -423,7 +423,7 @@ handlers:
       from_options: {  }
       from_name: '[webform_submission:values:name:raw]'
       subject: 'Purchase Suggestion'
-      body: "<p>The following information was submitted through our <b>Purchase Suggestion</b> form by <b>{{ webform_token('[webform_submission:user]', webform_submission) }}</b> on <b>{{ webform_token('[webform_submission:created]', webform_submission) }}</b>.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img alt=\"UNB Libraries\" src=\"https://dev-lib.unb.ca/themes/contrib/unb_lib_theme/img/unb-libraries-red-black.png\" />\r\n</div>"
+      body: "<p>The following information was submitted through our <b>Purchase Suggestion</b> form by <b>{{ webform_token('[webform_submission:user]', webform_submission) }}</b> on <b>{{ webform_token('[webform_submission:created]', webform_submission) }}</b>.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"//media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
