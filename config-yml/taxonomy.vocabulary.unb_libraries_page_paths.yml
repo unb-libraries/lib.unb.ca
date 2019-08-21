@@ -1,0 +1,13 @@
+uuid: 8a283eea-1d37-4957-9fc1-3783ba72c369
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - node_path_taxonomy
+_core:
+  default_config_hash: zAeULKdOyM2vGQLA5PJ3IHGh6Vjv4Kn4bzwDwfmH_EE
+name: 'UNB Libraries Page Paths'
+vid: unb_libraries_page_paths
+description: 'Page paths defined for UNB Libraries pages.'
+weight: 0

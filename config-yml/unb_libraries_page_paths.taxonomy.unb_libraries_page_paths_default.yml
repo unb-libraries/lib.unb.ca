@@ -1,0 +1,77 @@
+langcode: en
+status: true
+mode: default
+default_paths:
+  clc:
+    portolan: null
+  collections:
+    loyalist: null
+  microforms:
+    newsdb: null
+  copyright: null
+  eresources: null
+  proxy: null
+  texts:
+    marston: null
+    reserves: null
+    theatre-restore: null
+    acadiensis: null
+    theatre: null
+    special-collections: null
+    wmwriters: null
+    nb-history: null
+  rdm: null
+  archives:
+    educrev: null
+    sports: null
+    kells: null
+    sbdb: null
+    database: null
+    gallery: null
+    finding: null
+    edu: null
+    hathaway: null
+    erdb: null
+    bennett: null
+    unb-composites: null
+    pephotos: null
+    schoolbook: null
+  openaccess: null
+  catalogues: null
+  disted: null
+  about:
+    facilities: null
+    loc_call: null
+    policies: null
+    bio: null
+  help: null
+  research:
+    success: null
+    video: null
+  data:
+    library-hours: null
+  gddm:
+    dnr: null
+    govdocs: null
+    maps: null
+    snb: null
+    topos: null
+  refworks: null
+  requests:
+    docdel: null
+  reserves: null
+  faculty: null
+  225: null
+  winslow: null
+  services:
+    rooms: null
+    docdel: null
+  worldcat: null
+  zotero: null
+  newbrunswickana: null
+dependencies:
+  enforced:
+    module:
+      - unb_libraries_page_paths
+_core:
+  default_config_hash: U9O3gAPOBSGbS3_qUKARP6QYr_AoC_odcyUArr_bd4Q
