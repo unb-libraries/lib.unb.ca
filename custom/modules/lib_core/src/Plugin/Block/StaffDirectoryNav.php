@@ -33,7 +33,7 @@ class StaffDirectoryNav extends BlockBase {
           <li class="nav-item"><a class="nav-link" href="#colldev">Collections Development</a></li>
           <li class="nav-item"><a class="nav-link" href="#circ">Document Delivery (see Access Services)</a></li>
           <li class="nav-item"><a class="nav-link" href="#englib">Engineering &amp; Computer Science Library</a></li>
-          <li class="nav-item"><a class="nav-link" href="#gddam">Government Documents, Data and Maps</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gddm">Government Documents, Data and Maps</a></li>
           <li class="nav-item"><a class="nav-link" href="#learning">Instruction Facilities</a></li>
           <li class="nav-item"><a class="nav-link" href="#lawlib">Law Library</a></li>
           <li class="nav-item"><a class="nav-link" href="#mailroom">Mail Room</a></li>
