@@ -6,6 +6,7 @@ dependencies:
     - editor
     - entity_embed
     - linkit
+    - video_embed_wysiwyg
 name: 'Library Page HTML'
 format: library_page_html
 weight: -10
@@ -81,3 +82,9 @@ filters:
     weight: -43
     settings:
       title: true
+  video_embed_wysiwyg:
+    id: video_embed_wysiwyg
+    provider: video_embed_wysiwyg
+    status: true
+    weight: -45
+    settings: {  }
