@@ -2,6 +2,12 @@
 @import 'import';
 
 /* OVERRIDES */
+@media (min-width: 768px) {
+  // Reduce main content right padding to increase usable space.
+  main {
+    padding-right: .33rem !important;
+  }
+}
 /* Nav affix anchor offset */
 a:target:before,
 h2:target:before {
