@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * @file
+ * Contains lib_unb_ca_user_protect.module.
+ */
+
+use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Element;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function lib_unb_ca_user_protect_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the lib_unb_ca_user_protect module.
+    case 'help.page.lib_unb_ca_user_protect':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Prevent users from editing upstream LDAP fields') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_form_FORMID_alter().
+ */
+function lib_unb_ca_user_protect_form_user_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $user = \Drupal::currentUser();
+  if ($user->hasPermission('edit any user details')) {
+    foreach (Element::children($form) as $key) {
+      $form[$key]['#disabled'] = TRUE;
+    }
+  }
+}
+
+/**
+ * Implements hook_menu_local_tasks_alter().
+ */
+function lib_unb_ca_user_protect_menu_local_tasks_alter(&$data, $route_name, RefinableCacheableDependencyInterface &$cacheability) {
+  $applicable_routes = ['entity.user.canonical'];
+  if (in_array($route_name, $applicable_routes)) {
+    $user = \Drupal::currentUser();
+    if (!$user->hasPermission('edit any user details')) {
+      unset($data['tabs'][0]['entity.user.edit_form']);
+    }
+  }
+}

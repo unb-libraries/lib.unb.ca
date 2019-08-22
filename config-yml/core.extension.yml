@@ -45,6 +45,7 @@ module:
   ldap_servers: 0
   ldap_user: 0
   lib_core: 0
+  lib_unb_ca_user_protect: 0
   link: 0
   linkit: 0
   media: 0
