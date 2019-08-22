@@ -284,8 +284,8 @@ function _lib_core_contactable_department($mailbox) {
   $departments = [
     'archives' => 'Archives',
     'askus' => 'Ask Us',
-    'circbus' => 'Circulation',
-    'circhi' => 'Access Services',
+    'circbus' => 'Access Services',
+    'circhi' => 'Commons Service Desk',
     'copyright' => 'Copyright',
     'data.gis' => 'Data & GIS',
     'digitalscholar' => 'Centre for Digital Scholarship',
