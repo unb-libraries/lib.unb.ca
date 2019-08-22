@@ -7,8 +7,10 @@
 }
 @media (min-width: 768px) {
   // Reduce main content right padding to increase usable space.
-  main {
-    padding-right: .33rem !important;
+  .layout-sidebar-second {
+    main {
+      padding-right: .33rem !important;
+    }
   }
 }
 /* Nav affix anchor offset */
