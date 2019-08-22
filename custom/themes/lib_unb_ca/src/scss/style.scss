@@ -5,13 +5,12 @@
 #block-breadcrumbs {
   margin-bottom: 2rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   // Reduce main content right padding to increase usable space.
-  .layout-sidebar-second {
-    main {
+  .layout-sidebar-second main,
+  .layout__region--first {
       padding-right: .33rem !important;
     }
-  }
 }
 /* Nav affix anchor offset */
 a:target:before,
