@@ -1,6 +1,10 @@
 .field__items > .field__item:not(:empty) {
   margin-right: 1rem;
 }
+/* Fix multi-column layout */
+.layout--twocol-section .field__items > .field__item {
+  margin-right: 0;
+}
 .field--type-entity-reference {
   margin: 0;
 }
