@@ -12,7 +12,7 @@ bootstrap-cdn:
   version: VERSION
   css:
     base:
-      //stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css: { type: external, minified: true }
+      //stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js: { type: external, minified: true }
 
 chosen-bootstrap:
   version: VERSION
