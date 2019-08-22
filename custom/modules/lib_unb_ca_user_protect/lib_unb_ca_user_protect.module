@@ -31,7 +31,7 @@ function lib_unb_ca_user_protect_help($route_name, RouteMatchInterface $route_ma
  */
 function lib_unb_ca_user_protect_form_user_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $user = \Drupal::currentUser();
-  if ($user->hasPermission('edit any user details')) {
+  if (!$user->hasPermission('edit any user details')) {
     foreach (Element::children($form) as $key) {
       $form[$key]['#disabled'] = TRUE;
     }
