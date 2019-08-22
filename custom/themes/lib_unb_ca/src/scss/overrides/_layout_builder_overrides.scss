@@ -1,3 +1,7 @@
+/* Add 2-col layout > col2 left padding (align with banner hours text) */
+.field--name-field-page-content .layout--twocol-section.layout--twocol-section--67-33 > .layout__region--second {
+  padding-left: 1.25rem;
+}
 /* Normal size layout builder form buttons */
 .form-actions input.btn {
   width: inherit;
