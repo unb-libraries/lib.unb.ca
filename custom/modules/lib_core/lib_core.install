@@ -6,6 +6,7 @@
  */
 
 use Drupal\lib_core\TaxonomyHelper;
+use Drupal\node\Entity\Node;
 
 /**
  * Implements hook_install().
@@ -15,4 +16,32 @@ function lib_core_install() {
   TaxonomyHelper::addDefaultCategoriesTerms();
   TaxonomyHelper::addDefaultDepartmentsTerms();
   TaxonomyHelper::addDefaultFacultiesTerms();
+}
+
+/**
+ * LIB-107 Re-save all News articles to generate meta tags.
+ */
+function lib_core_update_8001() {
+  $news_nids = \Drupal::entityQuery('node')
+    ->condition('type', 'news_post')
+    ->execute();
+
+  $news_nodes = Node::loadMultiple($news_nids);
+  foreach ($news_nodes as $news_node) {
+    $news_node->save();
+  }
+}
+
+/**
+ * LIB-107 Re-save all Library Pages to generate meta tags.
+ */
+function lib_core_update_8002() {
+  $page_nids = \Drupal::entityQuery('node')
+    ->condition('type', 'library_page')
+    ->execute();
+
+  $page_nodes = Node::loadMultiple($page_nids);
+  foreach ($page_nodes as $page_node) {
+    $page_node->save();
+  }
 }
