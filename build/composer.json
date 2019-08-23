@@ -53,7 +53,7 @@
                 "Provide upload widget for media of media type file": "https://www.drupal.org/files/issues/2019-02-28/entity_browser-media-file-upload-2922885-15.patch"
             },
             "drupal/entity_reference_revisions": {
-                "V1.6 revisions fix": "https://www.drupal.org/files/issues/2019-06-27/3025709-30.patch"
+                "V1.6 revisions fix": "https://www.drupal.org/files/issues/2019-08-19/3025709-48.patch"
             }
         }
     },
