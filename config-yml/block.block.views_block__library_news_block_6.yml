@@ -1,0 +1,30 @@
+uuid: 6ffaf6c8-46ff-41e8-89b7-de4a3db78bcf
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.library_news
+  module:
+    - system
+    - views
+  theme:
+    - lib_unb_ca
+id: views_block__library_news_block_6
+theme: lib_unb_ca
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'views_block:library_news-block_6'
+settings:
+  id: 'views_block:library_news-block_6'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/news\r\n/news/*"
+    negate: false
+    context_mapping: {  }
