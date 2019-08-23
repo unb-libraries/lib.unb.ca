@@ -331,3 +331,30 @@ function lib_core_views_query_alter(ViewExecutable $view, QueryPluginBase $query
     $query->addWhere(1, 'type', 'news_post', '!=');
   }
 }
+
+/**
+ * Implements hook_page_attachments_alter().
+ *
+ * @see https://www.drupal.org/project/metatag/issues/2958193
+ */
+function lib_core_page_attachments_alter(array &$attachments) {
+  // Trim all meta tags to a max of 300 characters.
+  if (!empty($attachments['#attached']['html_head'])) {
+    // Adjust this as needed.
+    $max_length = 300;
+    foreach ($attachments['#attached']['html_head'] as &$tag) {
+      // Only process meta tags with a 'content' attribute, that way it will
+      // exclude LINK tags or meta tags which do not have a "content" value.
+      if (isset($tag[0]['#tag']) && $tag[0]['#tag'] == 'meta') {
+        if (isset($tag[0]['#attributes']['content'])) {
+          if (!is_string($tag[0]['#attributes']['content'])) {
+            $tag[0]['#attributes']['content'] = (string) $tag[0]['#attributes']['content'];
+          }
+          if (strlen($tag[0]['#attributes']['content']) > $max_length) {
+            $tag[0]['#attributes']['content'] = mb_strimwidth($tag[0]['#attributes']['content'], 0, $max_length, "...");
+          }
+        }
+      }
+    }
+  }
+}

@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.news_post.field_categories
     - field.field.node.news_post.field_featured_image
     - field.field.node.news_post.field_page_content
+    - field.field.node.news_post.field_unb_lib_page_content
     - node.type.news_post
   module:
     - entity_reference_revisions
@@ -39,4 +40,5 @@ content:
     region: content
 hidden:
   field_featured_image: true
+  field_unb_lib_page_content: true
   links: true

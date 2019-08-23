@@ -1,0 +1,19 @@
+uuid: a073e459-6869-41ec-8a84-8fe74e750a7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_unb_lib_page_content
+    - node.type.library_page
+id: node.library_page.field_unb_lib_page_content
+field_name: field_unb_lib_page_content
+entity_type: node
+bundle: library_page
+label: 'Textual Page Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

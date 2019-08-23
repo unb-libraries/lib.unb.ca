@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.news_post.field_categories
     - field.field.node.news_post.field_featured_image
     - field.field.node.news_post.field_page_content
+    - field.field.node.news_post.field_unb_lib_page_content
     - node.type.news_post
   module:
     - media_library
@@ -94,4 +95,5 @@ content:
       placeholder: ''
     region: content
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_unb_lib_page_content: true

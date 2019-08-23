@@ -39,12 +39,14 @@ module:
   image: 0
   inline_entity_form: 0
   inline_form_errors: 0
+  kint: 0
   layout_builder: 0
   layout_discovery: 0
   ldap_authentication: 0
   ldap_servers: 0
   ldap_user: 0
   lib_core: 0
+  lib_unb_ca_page_text_content: 0
   lib_unb_ca_user_protect: 0
   link: 0
   linkit: 0
@@ -52,6 +54,7 @@ module:
   media_entity_browser: 0
   media_library: 0
   menu_ui: 0
+  metatag: 0
   node: 0
   noreqnewpass: 0
   options: 0

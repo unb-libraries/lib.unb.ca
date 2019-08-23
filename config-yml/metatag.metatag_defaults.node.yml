@@ -1,0 +1,12 @@
+uuid: e19ea6ec-4bef-4ded-86fa-78178f130588
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: rpwvgyEURXLz_JjgMCrkS1rUv-0k3L79BpO-ReN7fDI
+id: node
+label: Content
+tags:
+  description: '[node:summary][node:field_unb_lib_page_content]'
+  canonical_url: '[node:url]'
+  title: '[node:title] | [site:name]'

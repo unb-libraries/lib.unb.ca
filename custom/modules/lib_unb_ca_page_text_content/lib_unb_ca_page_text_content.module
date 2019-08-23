@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains lib_unb_ca_page_text_content.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\lib_unb_ca_page_text_content\PageTextHelper;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_help().
+ */
+function lib_unb_ca_page_text_content_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the lib_unb_ca_page_text_content module.
+    case 'help.page.lib_unb_ca_page_text_content':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Extract textual content from UNB Libraries pages') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_node_presave().
+ */
+function lib_unb_ca_page_text_content_node_presave(NodeInterface $node) {
+  if ($node->bundle() == 'library_page' || $node->bundle() == 'news_post') {
+    $node->set('field_unb_lib_page_content', PageTextHelper::getPageTextualContent($node));
+  }
+}
