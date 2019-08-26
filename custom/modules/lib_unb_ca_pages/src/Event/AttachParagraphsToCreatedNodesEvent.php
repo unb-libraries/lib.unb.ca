@@ -159,7 +159,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     }
 
     // Add state value: used in node_path_taxonomy_pathauto_alias_alter().
-    \Drupal::state()->set(NodeTaxonomyPath::getOverrideAliasStateKey(), $cur_path_term->id());
+    \Drupal::state()->set(NodeTaxonomyPath::getPathTaxonomyTidStateKey(), $cur_path_term->id());
 
     // If the URL is in the manual override array, force it.
     $manual_aliases = $this->getManualPathAliases();

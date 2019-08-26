@@ -78,7 +78,7 @@ function lib_core_update_8003(&$sandbox) {
     $page_node = Node::load($nid);
     $term = NodeTaxonomyPath::getNodePathTerm($page_node);
     // Set the state hook for this node. Without this it will use default.
-    \Drupal::state()->set(NodeTaxonomyPath::getOverrideAliasStateKey(), $term->id());
+    \Drupal::state()->set(NodeTaxonomyPath::getPathTaxonomyTidStateKey(), $term->id());
     $page_node->save();
     unset($page_node);
   }

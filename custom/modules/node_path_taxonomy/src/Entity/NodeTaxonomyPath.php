@@ -295,17 +295,9 @@ class NodeTaxonomyPath extends ContentEntityBase implements NodeTaxonomyPathInte
   /**
    * {@inheritdoc}
    */
-  public static function getOverrideAliasStateKey() {
+  public static function getPathTaxonomyTidStateKey() {
     $user_id = \Drupal::currentUser()->id();
     return "node_taxonomy_path_{$user_id}";
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function getManualAliasStateKey() {
-    $user_id = \Drupal::currentUser()->id();
-    return "node_taxonomy_path_manual_{$user_id}";
   }
 
   /**

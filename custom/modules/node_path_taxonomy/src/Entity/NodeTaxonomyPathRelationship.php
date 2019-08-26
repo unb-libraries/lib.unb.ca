@@ -84,6 +84,14 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
   /**
    * {@inheritdoc}
    */
+  public static function setNodePathRelationship(NodeInterface $node, $path_tid) {
+    NodeTaxonomyPath::removeNodePaths($node);
+    self::addNodePathRelationship($node, $path_tid);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public static function addNodePathRelationshipFromPath(NodeInterface $node, $vid, $path) {
     $path_term = NodeTaxonomyPath::getPathTermFromPath($vid, $path);
     if (!empty($path_term)) {

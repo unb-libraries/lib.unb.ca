@@ -20,7 +20,7 @@ class NodeTaxonomyPathController {
    */
   public static function setPath(array &$form, FormStateInterface $form_state) {
     $path_tid = $form_state->getValue('publication_path');
-    \Drupal::state()->set(NodeTaxonomyPath::getOverrideAliasStateKey(), $path_tid);
+    \Drupal::state()->set(NodeTaxonomyPath::getPathTaxonomyTidStateKey(), $path_tid);
   }
 
 }

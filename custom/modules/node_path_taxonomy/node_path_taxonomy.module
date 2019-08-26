@@ -68,18 +68,31 @@ function node_path_taxonomy_pathauto_alias_alter(&$alias, array &$context) {
   }
   $node = $context['data']['node'];
   $node_type = $node->bundle();
-  $path_tid = \Drupal::state()->get(NodeTaxonomyPath::getOverrideAliasStateKey());
 
-  if (!empty($path_tid) && !empty(NodeTaxonomyPathRelationship::getPaths($node_type))) {
-    NodeTaxonomyPath::removeNodePaths($node);
-    NodeTaxonomyPathRelationship::addNodePathRelationship($node, $path_tid);
+  // Do we operate on this node type at all?
+  if (!empty(NodeTaxonomyPathRelationship::getPaths($node_type))) {
+    // Check if this came from a form submission.
+    $path_tid = \Drupal::state()->get(NodeTaxonomyPath::getPathTaxonomyTidStateKey());
+    \Drupal::state()->delete(NodeTaxonomyPath::getPathTaxonomyTidStateKey());
 
-    $manual_path_override = \Drupal::state()->get(NodeTaxonomyPath::getManualAliasStateKey());
-    if ($manual_path_override) {
-      $alias = $manual_path_override;
-      \Drupal::state()->delete(NodeTaxonomyPath::getManualAliasStateKey());
+    // If not a form submission, then load the existing TID from our storage.
+    if (empty($path_tid)) {
+      $path_term = NodeTaxonomyPath::getNodePathTerm($node);
+      if (!empty($path_term)) {
+        $path_tid = $path_term->id();
+      }
     }
-    else {
+
+    // Can't find a TID, this is likely a new node created in code. Ignore.
+    if (empty($path_tid)) {
+      return;
+    }
+
+    // Set up the new path TID in our storage.
+    NodeTaxonomyPathRelationship::setNodePathRelationship($node, $path_tid);
+
+    // Generate and set the path if we are asked to do so. Ignores manual.
+    if ($node->path->pathauto) {
       $clean_label = \Drupal::service('pathauto.alias_cleaner')->cleanString($node->label());
       $node_path = NodeTaxonomyPath::getNodePath($node);
       if ($node_path == '/') {
@@ -87,7 +100,6 @@ function node_path_taxonomy_pathauto_alias_alter(&$alias, array &$context) {
       }
       $alias = $node_path . "/$clean_label";
     }
-    \Drupal::state()->delete(NodeTaxonomyPath::getOverrideAliasStateKey());
   }
 }
 
