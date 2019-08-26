@@ -14,7 +14,9 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  */
 class AttachParagraphsToCreatedNewsItemsEvent implements EventSubscriberInterface {
 
+  const BASE_URI = 'https://lib.unb.ca';
   const MIGRATION_ID = 'lib_unb_ca_news';
+  const PATH_REWRITE_FILE = '/tmp/nginx_news_rewrites.txt;';
 
   /**
    * The current byline we are operating on.
@@ -176,6 +178,7 @@ class AttachParagraphsToCreatedNewsItemsEvent implements EventSubscriberInterfac
     $this->setCreatedTime();
     $this->setPostAuthor();
     $this->setPostCategories();
+    $this->writeOutNodeRedirect();
   }
 
   /**
@@ -302,6 +305,21 @@ class AttachParagraphsToCreatedNewsItemsEvent implements EventSubscriberInterfac
       return trim($matches[6]);
     }
     return NULL;
+  }
+
+  /**
+   * Write out the nginx formatted old/new redirect for this URL.
+   */
+  private function writeOutNodeRedirect() {
+    $old_url = trim($this->currentRow->getSourceProperty('url'));
+    $old_path = str_replace(self::BASE_URI, '', $old_url);
+
+    $aliasManager = \Drupal::service('path.alias_manager');
+    $new_path = $aliasManager->getAliasByPath('/node/' . $this->currentNode->id());
+
+    $padded_old_string = str_pad($old_path, 50, " ");
+    $rewrite_string = "$padded_old_string$new_path;" . PHP_EOL;
+    file_put_contents(self::PATH_REWRITE_FILE, $rewrite_string, FILE_APPEND | LOCK_EX);
   }
 
 }
