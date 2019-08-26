@@ -21,9 +21,9 @@
                 event.stopPropagation();
                 return false;
             });
-            // Presence check with 30s refresh.
+            // Presence check with 60s refresh.
             lh3CheckPresence();
-            setInterval(lh3CheckPresence, 50000);
+            setInterval(lh3CheckPresence, 60000);
         }
     };
 })(jQuery, Drupal);
@@ -57,7 +57,7 @@ var lh3UpdatePresence = function () {
         jQuery("#lh3-online").hide();
         jQuery("#lh3-away").hide();
         jQuery("#lh3-busy").hide();
-        jQuery("#lh3-offline div[data-ch-id='hil_help']").text(getOfflineNote());
+        jQuery("#lh3-offline").text(getOfflineNote());
         jQuery("#lh3-offline").show();
     }
     jQuery(".requires-js").slideDown(250);
