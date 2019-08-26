@@ -15,12 +15,16 @@ settings:
         -
           name: Formatting
           items:
+            - Undo
+            - Redo
             - Format
             - '-'
+            - RemoveFormat
             - Bold
             - Italic
-            - Blockquote
             - TextColor
+            - Blockquote
+            - HorizontalRule
         -
           name: Alignment
           items:
@@ -35,11 +39,11 @@ settings:
         -
           name: 'Lists and Tables'
           items:
+            - Table
             - BulletedList
             - NumberedList
             - Outdent
             - Indent
-            - Table
         -
           name: 'Media and Characters'
           items:
@@ -47,22 +51,12 @@ settings:
             - DrupalImage
             - video_embed
             - DrupalFontAwesome
-            - HorizontalRule
             - SpecialChar
-        -
-          name: Tools
-          items:
-            - CreateDiv
-            - ShowBlocks
-            - RemoveFormat
-            - '-'
-            - Language
         -
           name: Actions
           items:
-            - Undo
-            - Redo
             - '-'
+            - Maximize
             - Source
             - '-'
   plugins:
