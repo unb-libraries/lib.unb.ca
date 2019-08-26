@@ -99,3 +99,13 @@ form .field-multiple-table .field-multiple-drag,
     font-weight: 900;
     margin-right: .25rem;
 }
+/* Media Library */
+fieldset.media-library-widget:not(.fieldgroup) legend {
+    box-sizing: border-box;
+    margin-bottom: 1.5rem;
+    top: 1.25rem;
+    width: 100%;
+}
+fieldset.media-library-widget .fieldset-wrapper {
+    padding: 0 .5rem;
+}
