@@ -1,8 +1,19 @@
+/* Full col-width clickable, table sort header cells, sort icons to the right */
 thead a {
     display: block;
 
     span.tablesort {
         float: right;
+    }
+}
+.table {
+    &.col-50 {
+        tr {
+            & > td,
+            & > th {
+                width: 50% !important;
+            }
+        }
     }
 }
 .view-content tr {
