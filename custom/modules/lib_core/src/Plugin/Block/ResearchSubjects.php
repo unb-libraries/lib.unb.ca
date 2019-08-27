@@ -65,6 +65,7 @@ class ResearchSubjects extends BlockBase {
           'research-subjects',
         ],
         'class' => [
+          'mb-5',
           'mt-5',
           'p-0',
         ],
