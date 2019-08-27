@@ -70,18 +70,18 @@ function lib_core_entity_presave(EntityInterface $entity) {
  * Implements hook_user_presave().
  */
 function lib_core_user_presave($account) {
-   // Auto-populate hidden Email ID field for use by Staff Directory View.
-   $email = $account
-     ->get('mail')
-     ->getString();
+  // Auto-populate hidden Email ID field for use by Staff Directory View.
+  $email = $account
+    ->get('mail')
+    ->getString();
 
-   // Get lowercase version of email id.
-   $email_id = strtolower(strtok($email, "@"));
+  // Get lowercase version of email id.
+  $email_id = strtolower(strtok($email, "@"));
 
-   // Populate Email ID field.
-   if (!empty($email) && $account->hasField('field_email_id')) {
-     $account->set('field_email_id', $email_id);
-   }
+  // Populate Email ID field.
+  if (!empty($email) && $account->hasField('field_email_id')) {
+    $account->set('field_email_id', $email_id);
+  }
 }
 
 /**
