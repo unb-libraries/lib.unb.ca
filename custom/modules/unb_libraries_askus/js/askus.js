@@ -21,46 +21,57 @@
                 event.stopPropagation();
                 return false;
             });
-            // Presence check with 60s refresh.
-            lh3CheckPresence();
-            setInterval(lh3CheckPresence, 60000);
+            lh3UpdatePresence();
+
+            // Presence check - 60s polling.
+            setInterval(lh3UpdatePresence, 60000);
         }
     };
 })(jQuery, Drupal);
 
-var lh3CheckPresence = function () {
-    let url = "https://ca.libraryh3lp.com/presence/jid/askus/chat.ca.libraryh3lp.com/js";
-    let script = document.createElement("script");
-    script.src = url + "?cb=lh3UpdatePresence";
-    document.getElementsByTagName("head")[0].appendChild(script);
-};
 var lh3UpdatePresence = function () {
-    let resource = jabber_resources[0];
-
-    if (resource.show === "available" || resource.show === "chat") {
-        jQuery("#lh3-online").show();
-        jQuery("#lh3-away").hide();
-        jQuery("#lh3-busy").hide();
-        jQuery("#lh3-offline").hide();
-    } else if (resource.show === "away") {
-        jQuery("#lh3-online").hide();
-        jQuery("#lh3-away").show();
-        jQuery("#lh3-busy").hide();
-        jQuery("#lh3-offline").hide();
-    } else if (resource.show === "dnd") {
-        jQuery("#lh3-online").hide();
-        jQuery("#lh3-away").hide();
-        jQuery("#lh3-busy").show();
-        jQuery("#lh3-offline").hide();
-    } else {
-        // resource.show is 'unavailable', 'xa' or unknown.
-        jQuery("#lh3-online").hide();
-        jQuery("#lh3-away").hide();
-        jQuery("#lh3-busy").hide();
-        jQuery("#lh3-offline").text(getOfflineNote());
-        jQuery("#lh3-offline").show();
-    }
-    jQuery(".requires-js").slideDown(250);
+    jQuery.ajax ({
+        crossDomain: true,
+        dataType: "xml",
+        type: 'GET',
+        url: 'https://ca.libraryh3lp.com/presence/jid/askus/chat.ca.libraryh3lp.com/xml',
+        success: function(data) {
+            let resource = jQuery(data).find('resource:first');
+            let resourceShow = resource.attr('show');
+            if (resourceShow === "available" || resourceShow === "chat") {
+                jQuery("#lh3-online").show();
+                jQuery("#lh3-away").hide();
+                jQuery("#lh3-busy").hide();
+                jQuery("#lh3-offline").hide();
+            } else if (resourceShow === "away") {
+                jQuery("#lh3-online").hide();
+                jQuery("#lh3-away").show();
+                jQuery("#lh3-busy").hide();
+                jQuery("#lh3-offline").hide();
+            } else if (resourceShow === "dnd") {
+                jQuery("#lh3-online").hide();
+                jQuery("#lh3-away").hide();
+                jQuery("#lh3-busy").show();
+                jQuery("#lh3-offline").hide();
+            } else {
+                // resource show attribute is 'unavailable', 'xa' or unknown.
+                jQuery("#lh3-online").hide();
+                jQuery("#lh3-away").hide();
+                jQuery("#lh3-busy").hide();
+                jQuery("#lh3-offline .offline-msg").text(getOfflineNote());
+                jQuery("#lh3-offline").show();
+            }
+            jQuery(".requires-js").slideDown(250);
+        },
+        error: function() {
+            jQuery("#lh3-online").hide();
+            jQuery("#lh3-away").hide();
+            jQuery("#lh3-busy").hide();
+            jQuery("#lh3-offline .offline-msg").text("Ask Us is experiencing technical difficulties.");
+            jQuery("#lh3-offline").show();
+            jQuery('.requires-js').slideDown(250);
+        }
+    });
 };
 
 var getOfflineNote = function () {
