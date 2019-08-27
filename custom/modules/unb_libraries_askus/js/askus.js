@@ -21,7 +21,7 @@
                 event.stopPropagation();
                 return false;
             });
-            lh3UpdatePresence();
+            setTimeout(function() { lh3UpdatePresence(); }, 750);
 
             // Presence check - 60s polling.
             setInterval(lh3UpdatePresence, 60000);
