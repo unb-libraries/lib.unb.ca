@@ -11,9 +11,20 @@ thead a {
         tr {
             & > td,
             & > th {
-                width: 50% !important;
+                width: 50%!important;
             }
         }
+    }
+
+    & + h1 {
+        margin-top: 2.5rem;
+    }
+
+    & + h2,
+    & + h3,
+    & + h4,
+    & + h5 {
+        margin-top: 2rem;
     }
 
     tr {
