@@ -15,6 +15,18 @@ thead a {
             }
         }
     }
+
+    tr {
+        background: inherit;
+        border: none;
+
+        td,
+        th {
+            background: inherit;
+            border: none;
+            color: inherit;
+        }
+    }
 }
 .view-content tr {
     background: inherit;
