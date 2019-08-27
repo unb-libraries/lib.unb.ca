@@ -7,15 +7,6 @@ thead a {
     }
 }
 .table {
-    &.col-50 {
-        tr {
-            & > td,
-            & > th {
-                width: 50%!important;
-            }
-        }
-    }
-
     tr {
         background: inherit;
         border: none;

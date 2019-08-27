@@ -390,3 +390,28 @@ ul.field--name-field-categories:before {
   }
 }
 /* END Staff and Departments View */
+
+/* Utility classes */
+/* Used for consistent table 1st col widths */
+table {
+  &.col-50 {
+    tr {
+      & > td,
+      & > th {
+        width: 50% !important;
+      }
+    }
+  }
+}
+
+/* Custom "Hours" table style */
+.table-hours {
+  margin-left: 1.5rem !important;
+  max-width: 520px;
+
+  th {
+    font-weight: normal;
+    width: 50%;
+  }
+}
+/* END Utility classes */
