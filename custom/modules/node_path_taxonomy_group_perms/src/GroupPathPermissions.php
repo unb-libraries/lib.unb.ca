@@ -19,7 +19,7 @@ class GroupPathPermissions {
   /**
    * Create some default paths for simple group permissions.
    */
-  public static function userHasGroupNodePermission($user, $node, $op) {
+  public static function userGroupNodePermissionAccessResult($user, $node, $op) {
     $uid = $user->id();
     $user = User::load($uid);
 
@@ -30,18 +30,18 @@ class GroupPathPermissions {
 
       default:
         // All others : create, delete, update.
-        return self::userHasAccessToNode($user, $node);
+        return self::userNodeAccessResult($user, $node);
     }
   }
 
   /**
    * Determine if a user has access to edit a node configured for tax paths.
    */
-  public static function userhasAccessToNode($user, $node) {
+  public static function userNodeAccessResult($user, $node) {
     // If this is a new node, check user access to any path term associated.
     if ($node->isNew()) {
       $type = $node->bundle();
-      return self::userHasAnyAccessInType($user, $type);
+      return self::userAnyAccessInTypeResult($user, $type);
     }
 
     // Otherwise, check for specific path.
@@ -49,18 +49,21 @@ class GroupPathPermissions {
     $node_path = NodeTaxonomyPath::getNodePathTerm($node);
     foreach ($user_path_accesses as $user_path_access) {
       if ($node_path->id() == $user_path_access->id()) {
-        return TRUE;
+        return AccessResult::allowed();
       }
     }
 
-    return FALSE;
+    return AccessResult::forbidden();
   }
 
   /**
    * Determine if a user has access to create a node configured for tax paths.
    */
-  public static function userHasAnyAccessInType($user, $node_type) {
-    return (!empty(self::getUserPathPermissions($user, $node_type)));
+  public static function userAnyAccessInTypeResult($user, $node_type) {
+    if (!empty(self::getUserPathPermissions($user, $node_type))) {
+      return AccessResult::allowed();
+    }
+    return AccessResult::forbidden();
   }
 
   /**
