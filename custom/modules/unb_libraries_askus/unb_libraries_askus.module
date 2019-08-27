@@ -126,16 +126,13 @@ function _unb_libraries_askus_get_widget($type) {
         $html .=
       '</div>
       <div id="lh3-offline" style="display:none;">
-        <div class="ch-nd" data-ch-format-time="h:mma" data-ch-id="hil_help"></div>
+        <div class="ch-nd d-none" data-ch-format-time="h:mma" data-ch-id="hil_help"></div>
+        <div class="offline-msg"></div>
       </div >
-      <div id="lh3-away" style="display:none;">
-        Ask Us is currently busy serving other patrons.
-      </div >
-      <div id="lh3-busy" style="display:none;">
-        Ask Us is currently busy serving other patrons.
-      </div >
+      <div id="lh3-away" style="display:none;"></div>
+      <div id="lh3-busy" style="display:none;"></div>
     </div >
-    <div id="lh3-noscript" >
+    <div class="text-center" id="lh3-noscript">
       Ask Us chat requires JavaScript.
     </div >';
 
