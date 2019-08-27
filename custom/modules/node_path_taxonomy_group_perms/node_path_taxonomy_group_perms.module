@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Form\FormStateInterface;
@@ -175,4 +176,24 @@ function node_path_taxonomy_group_perms_views_query_alter(ViewExecutable $view, 
   $group = $query->setWhereGroup($type = 'OR');
   $query->addWhere($group, 'type', $controlled_types, 'NOT IN');
   $query->addWhere($group, 'nid', $user_perms, 'IN');
+}
+
+/**
+ * Implements hook_menu_local_tasks_alter().
+ */
+function node_path_taxonomy_group_perms_menu_local_tasks_alter(&$data, $route_name, RefinableCacheableDependencyInterface &$cacheability) {
+  // Hide revisions tab for users without permission to edit.
+  $applicable_routes = ['entity.node.canonical'];
+  if (in_array($route_name, $applicable_routes)) {
+    $user = \Drupal::currentUser();
+    $node = \Drupal::routeMatch()->getParameter('node');
+    $active_node_types = NodeTaxonomyPathRelationship::getConfiguredNodeTypes();
+    if (in_array($node->bundle(), $active_node_types)) {
+      if (!$node->access('update', $user)) {
+        if (!empty($data['tabs'][0]['entity.node.version_history'])) {
+          unset($data['tabs'][0]['entity.node.version_history']);
+        }
+      }
+    }
+  }
 }
