@@ -2,6 +2,12 @@
 @import 'import';
 
 /* OVERRIDES */
+dt:nth-of-type(n+1) {
+  margin-top: 1.25rem;
+}
+dd {
+  margin-left: 1.5rem;
+}
 #block-breadcrumbs {
   margin-bottom: 2rem;
 }
