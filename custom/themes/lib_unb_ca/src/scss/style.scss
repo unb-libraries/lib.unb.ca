@@ -375,7 +375,6 @@ ul.field--name-field-categories:before {
         }
       }
       td {
-        font-size: .9rem;
         width: 25%;
 
         &:first-child {
@@ -388,7 +387,6 @@ ul.field--name-field-categories:before {
 
         .head {
           color: $red;
-          font-size: .9rem;
         }
       }
     }
@@ -399,13 +397,17 @@ ul.field--name-field-categories:before {
 /* Utility classes */
 /* Used for consistent table 1st col widths */
 table {
-  &.col-50 {
+  .col-50 {
     tr {
       & > td,
       & > th {
         width: 50% !important;
       }
     }
+  }
+
+  .font-size-larger {
+    font-size: .95rem;
   }
 }
 
