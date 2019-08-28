@@ -340,10 +340,10 @@ function lib_core_views_query_alter(ViewExecutable $view, QueryPluginBase $query
  * @see https://www.drupal.org/project/metatag/issues/2958193
  */
 function lib_core_page_attachments_alter(array &$attachments) {
-  // Trim all meta tags to a max of 300 characters.
+  // Trim all meta tags to a max length.
   if (!empty($attachments['#attached']['html_head'])) {
     // Adjust this as needed.
-    $max_length = 300;
+    $max_length = 200;
     foreach ($attachments['#attached']['html_head'] as &$tag) {
       // Only process meta tags with a 'content' attribute, that way it will
       // exclude LINK tags or meta tags which do not have a "content" value.
