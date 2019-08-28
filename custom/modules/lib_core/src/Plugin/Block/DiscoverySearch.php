@@ -83,7 +83,7 @@ class DiscoverySearch extends BlockBase {
           </ul>
           <div class="d-flex flex-wrap p-lg-4">
             <div class="flex-grow-1 tab-content">
-              <div aria-labelledby="tab-reserves" class="card tab-pane fade show" id="pane-reserves" role="tabpanel">
+              <div aria-labelledby="tab-reserves" class="card tab-pane fade" id="pane-reserves" role="tabpanel">
                 <div class="card-header p-0" id="heading-reserves">
                   <h3 class="m-0">
                     <a aria-controls="collapse-reserves" aria-expanded="false" class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-reserves" role="button">
