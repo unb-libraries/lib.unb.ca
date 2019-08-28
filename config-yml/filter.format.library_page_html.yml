@@ -7,7 +7,7 @@ dependencies:
     - entity_embed
     - linkit
     - video_embed_wysiwyg
-name: 'Library Page HTML'
+name: 'UNB Libraries HTML'
 format: library_page_html
 weight: -10
 filters:
