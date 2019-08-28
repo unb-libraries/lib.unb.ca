@@ -61,7 +61,7 @@ display:
         type: table
         options:
           grouping: {  }
-          row_class: ''
+          row_class: font-size-larger
           default_row_class: true
           override: true
           sticky: true
@@ -75,7 +75,6 @@ display:
             field_position_title: field_position_title
             field_phone_number: field_phone_number
             field_room_number: field_room_number
-            uid: uid
             name: name
             field_email_id: field_email_id
           info:
@@ -116,13 +115,6 @@ display:
               responsive: ''
             field_room_number:
               sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            uid:
-              sortable: false
               default_sort_order: asc
               align: ''
               separator: ''

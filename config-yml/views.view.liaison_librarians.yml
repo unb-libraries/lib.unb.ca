@@ -65,7 +65,7 @@ display:
         type: table
         options:
           grouping: {  }
-          row_class: ''
+          row_class: font-size-larger
           default_row_class: true
           override: true
           sticky: true

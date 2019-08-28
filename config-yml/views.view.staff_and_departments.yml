@@ -75,7 +75,7 @@ display:
               field: field_library_department
               rendered: true
               rendered_strip: false
-          row_class: ''
+          row_class: font-size-larger
           default_row_class: true
           override: true
           sticky: false
