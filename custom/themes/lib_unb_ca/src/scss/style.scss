@@ -393,6 +393,16 @@ ul.field--name-field-categories:before {
         }
       }
     }
+
+    thead {
+      th {
+        color: $white;
+
+        a {
+          display: flex;
+        }
+      }
+    }
   }
 }
 /* END Staff and Departments View */
