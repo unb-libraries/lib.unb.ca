@@ -73,7 +73,7 @@ section a:not([class]):hover,
 section a.external:hover,
 aside a:not([class]):hover,
 aside a.external:hover {
-  @include css3-prefix(box-shadow, 0 1px 1px -1px)
+  @include css3-prefix(box-shadow, 0 2px 1px -2px)
 }
 /* Table header sort icon */
 thead {
