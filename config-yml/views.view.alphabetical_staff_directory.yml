@@ -756,7 +756,7 @@ display:
             description: ''
             use_operator: false
             operator: combine_op
-            identifier: combine
+            identifier: query
             required: false
             remember: false
             multiple: false
@@ -764,6 +764,7 @@ display:
               authenticated: authenticated
               anonymous: '0'
               library_news_author: '0'
+              library_page_author: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -779,6 +780,7 @@ display:
             group_items: {  }
           fields:
             field_first_name: field_first_name
+            field_last_name: field_last_name
             field_position_title: field_position_title
             field_room_number: field_room_number
           plugin_id: combine
