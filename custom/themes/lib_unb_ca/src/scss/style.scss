@@ -406,26 +406,25 @@ ul.field--name-field-categories:before {
   }
 }
 /* END Staff and Departments View */
+/** END OVERRIDES **/
 
-/* Utility classes */
-/* Used for consistent table 1st col widths */
-table {
-  .col-50 {
-    tr {
-      & > td,
-      & > th {
-        width: 50% !important;
-      }
-    }
+
+/** UTILITY CLASSES **/
+/* Custom List style */
+.list-items {
+  padding-left: 1rem;
+
+  &.list-indent {
+    margin-left: 1rem;
   }
-
-  .font-size-larger {
-    font-size: .95rem;
+  li {
+    margin-bottom: .5rem;
   }
 }
-
-.bullet-none {
-  list-style-type: none;
+.list-unstyled {
+  &.list-indent {
+    padding-left: 1rem;
+  }
 }
 
 /* Custom "Hours" table style */
@@ -438,4 +437,41 @@ table {
     width: 50%;
   }
 }
-/* END Utility classes */
+
+.text-dark {
+  color: $font-dark;
+}
+.text-muted-wcag {
+  color: $text-muted-wcag;
+}
+.text-red {
+  color: $red;
+}
+.text-yellow {
+  color: #ffc107;
+}
+
+dl.two-cols {
+  display: grid;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1.5rem;
+  grid-template-columns: 1fr 2fr;
+}
+
+table {
+  /* Consistent table 1st col widths */
+  .col-50 {
+    tr {
+      & > td,
+      & > th {
+        width: 50% !important;
+      }
+    }
+  }
+
+  /* Increase Barrio stock table font-size */
+  .font-size-larger {
+    font-size: .95rem;
+  }
+}
+/** END UTILITY **/
