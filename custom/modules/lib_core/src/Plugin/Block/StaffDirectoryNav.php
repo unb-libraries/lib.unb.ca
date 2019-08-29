@@ -21,30 +21,30 @@ class StaffDirectoryNav extends BlockBase {
   public function build() {
     $html = '
         <h2>Fredericton:</h2>
-        <ul class="nav flex-column">
-          <li class="nav-item"><a href="#circ">Access Services (Circulation &amp; Document Delivery)</a></li>
-          <li class="nav-item"><a href="#acquis">Acquisitions</a></li>
-          <li class="nav-item"><a href="#admin">Administration</a></li>
-          <li class="nav-item"><a href="#archives">Archives</a></li>
-          <li class="nav-item"><a href="#catalogue">Cataloguing</a></li>
-          <li class="nav-item"><a href="#cds">Centre for Digital Scholarship</a></li>
-          <li class="nav-item"><a href="#children">Children\'s Literature</a></li>
-          <li class="nav-item"><a href="#circ">Circulation (see Access Services)</a></li>
-          <li class="nav-item"><a href="#colldev">Collections Development</a></li>
-          <li class="nav-item"><a href="#circ">Document Delivery (see Access Services)</a></li>
-          <li class="nav-item"><a href="#englib">Engineering &amp; Computer Science Library</a></li>
-          <li class="nav-item"><a href="#gddm">Government Documents, Data and Maps</a></li>
-          <li class="nav-item"><a href="#learning">Instruction Facilities</a></li>
-          <li class="nav-item"><a href="#lawlib">Law Library</a></li>
-          <li class="nav-item"><a href="#mailroom">Mail Room</a></li>
-          <li class="nav-item"><a href="#microforms">Microforms</a></li>
-          <li class="nav-item"><a href="#reference">Reference</a></li>
-          <li class="nav-item"><a href="#scilib">Science &amp; Forestry Library</a></li>
-          <li class="nav-item"><a href="#systems">Systems</a></li>
+        <ul class="list-unstyled">
+          <li><a href="#circ">Access Services (Circulation &amp; Document Delivery)</a></li>
+          <li><a href="#acquis">Acquisitions</a></li>
+          <li><a href="#admin">Administration</a></li>
+          <li><a href="#archives">Archives</a></li>
+          <li><a href="#catalogue">Cataloguing</a></li>
+          <li><a href="#cds">Centre for Digital Scholarship</a></li>
+          <li><a href="#children">Children\'s Literature</a></li>
+          <li><a href="#circ">Circulation (see Access Services)</a></li>
+          <li><a href="#colldev">Collections Development</a></li>
+          <li><a href="#circ">Document Delivery (see Access Services)</a></li>
+          <li><a href="#englib">Engineering &amp; Computer Science Library</a></li>
+          <li><a href="#gddm">Government Documents, Data and Maps</a></li>
+          <li><a href="#learning">Instruction Facilities</a></li>
+          <li><a href="#lawlib">Law Library</a></li>
+          <li><a href="#mailroom">Mail Room</a></li>
+          <li><a href="#microforms">Microforms</a></li>
+          <li><a href="#reference">Reference</a></li>
+          <li><a href="#scilib">Science &amp; Forestry Library</a></li>
+          <li><a href="#systems">Systems</a></li>
         </ul>
         <h2 class="mt-4">Saint John:</h2>
-        <ul class="nav">
-          <li class="nav-item"><a href="#hwk">Hans W. Klohn Commons</a></li>
+        <ul class="list-unstyled">
+          <li><a href="#hwk">Hans W. Klohn Commons</a></li>
         </ul>
         <p>
           <a href="https://phonebook.unb.ca/"><i class="fas fa-book-open"></i> UNB Phone Book</a>
