@@ -41,7 +41,7 @@ class QuickLinks extends BlockBase {
         ],
         '#children' => Link::fromTextAndUrl(
           $this->t('Document Delivery'),
-          Url::fromUri('https://lib.unb.ca/requests/docdel')
+          Url::fromUri('https:lib.unb.ca/services/docdel')
         )->toString(),
       ],
       [
@@ -52,7 +52,7 @@ class QuickLinks extends BlockBase {
         ],
         '#children' => Link::fromTextAndUrl(
           $this->t('Group Study Rooms'),
-            Url::fromUri('https://lib.unb.ca/services/group_study.php')
+            Url::fromUri('https:lib.unb.ca/services/group-study-rooms')
         )->toString(),
       ],
       [
@@ -63,7 +63,7 @@ class QuickLinks extends BlockBase {
         ],
         '#children' => Link::fromTextAndUrl(
           $this->t('Floor Plans'),
-            Url::fromUri('https://lib.unb.ca/about/findus.php')
+            Url::fromUri('https:lib.unb.ca/about/find-us')
         )->toString(),
       ],
       [
