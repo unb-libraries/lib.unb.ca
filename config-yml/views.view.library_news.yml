@@ -78,7 +78,7 @@ display:
         type: default
         options:
           grouping: {  }
-          row_class: ''
+          row_class: news-featured
           default_row_class: false
       row:
         type: fields
@@ -255,7 +255,7 @@ display:
           default_row_class: false
           type: ul
           wrapper_class: ''
-          class: 'item-list pl-3'
+          class: list-items
       row:
         type: fields
         options:
@@ -398,7 +398,7 @@ display:
         operator: AND
         groups:
           1: AND
-      css_class: 'news news-recent'
+      css_class: 'library-news news-recent'
       fields:
         title:
           id: title
@@ -510,7 +510,7 @@ display:
           default_row_class: false
           type: ul
           wrapper_class: ''
-          class: 'item-list pl-3'
+          class: list-items
       row:
         type: fields
         options:
@@ -741,7 +741,7 @@ display:
           offset: 0
       allow:
         items_per_page: false
-      css_class: 'news news-categories'
+      css_class: news-categories
     cache_metadata:
       max-age: -1
       contexts:
@@ -959,7 +959,7 @@ display:
           offset: 0
       link_display: page_2
       link_url: news/date/
-      css_class: 'news news-archive text-muted'
+      css_class: 'news-archive text-muted'
       style:
         type: html_list
         options:
@@ -972,7 +972,7 @@ display:
       row:
         type: fields
         options:
-          default_field_elements: true
+          default_field_elements: false
           inline: {  }
           separator: ''
           hide_empty: false
@@ -1289,7 +1289,7 @@ display:
       display_description: ''
       allow:
         items_per_page: false
-      css_class: 'mt-1 news-featured float-right'
+      css_class: 'float-right library-news mt-1'
       empty:
         area:
           id: area
@@ -1343,7 +1343,7 @@ display:
         type: default
         options:
           grouping: {  }
-          row_class: 'mb-4 ml-2 news-metadata views-row'
+          row_class: 'mb-4 ml-2 news-metadata recent-teasers '
           default_row_class: false
       row:
         type: fields
@@ -1581,7 +1581,7 @@ display:
           plugin_id: date
       allow:
         items_per_page: false
-      css_class: 'library-news-recent-teasers ml-3'
+      css_class: 'library-news ml-3'
       title: 'Library News'
       use_more: true
       use_more_always: false
@@ -2447,7 +2447,7 @@ display:
           hide_alter_empty: false
           plugin_id: custom
       sorts: {  }
-      css_class: library-news
+      css_class: 'library-news news-archives'
       enabled: true
       empty:
         area:
