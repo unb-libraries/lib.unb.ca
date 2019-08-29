@@ -35,7 +35,7 @@ class DiscoverySearch extends BlockBase {
       // Store block render array in variable prior pass to render().
       $render_array = $plugin_block->build();
 
-      $askus_block = '<div class="d-none d-lg-flex flex-shrink-1 py-4">';
+      $askus_block = '<div class="d-none d-lg-block col-lg-4 p-4">';
       $askus_block .= render($render_array);
       $askus_block .= '</div>';
     }
@@ -82,7 +82,7 @@ class DiscoverySearch extends BlockBase {
             </li>
           </ul>
           <div class="d-flex flex-wrap p-lg-4">
-            <div class="flex-grow-1 tab-content">
+            <div class="col-lg-8 tab-content">
               <div aria-labelledby="tab-reserves" class="card tab-pane fade" id="pane-reserves" role="tabpanel">
                 <div class="card-header p-0" id="heading-reserves">
                   <h3 class="m-0">
