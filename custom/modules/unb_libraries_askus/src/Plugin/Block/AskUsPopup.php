@@ -22,7 +22,7 @@ class AskUsPopup extends BlockBase {
     $chat_header = '<h2><span class="sr-only">Ask Us Chat</span></h2>';
     $chat_widget = _unb_libraries_askus_get_widget('popup');
     $chat_footer =
-      '<p class="askus-footer">
+      '<p class="askus-footer text-center">
         <a class="askus-help" href="/help/ask-us"><span class="sr-only">Ask by:</span>
           <span><i class="fas fa-envelope"></i> Email</span>
           <span><i class="fas fa-sms"></i> Text</span>
