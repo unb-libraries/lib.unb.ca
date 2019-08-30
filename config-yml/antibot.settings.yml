@@ -1,0 +1,9 @@
+form_ids:
+  - webform_submission_contact_add_form
+  - webform_submission_film_purchase_request_add_form
+  - webform_submission_material_retrieval_add_form
+  - webform_submission_purchase_suggestion_add_form
+  - webform_submission_your_comments_and_suggestions_add_form
+show_form_ids: 0
+_core:
+  default_config_hash: f8-7hVX66ftHnUweoB4XDVx8q1hEr4PiqFvPvFB6yRc
