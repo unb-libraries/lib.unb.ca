@@ -180,7 +180,7 @@
         "drupal/block_class": "1.0",
         "drupal/block_field": "1.x-dev#1e8b4379768fd60395d72e0e2a6d385ca4420f8c",
         "drupal/bootstrap_barrio": "4.22",
-        "drupal/chosen": "2.7",
+        "drupal/chosen": "2.8",
         "drupal/ckeditor_div_manager": "1.0",
         "drupal/colorbutton": "1.1",
         "drupal/config_update": "1.5",
