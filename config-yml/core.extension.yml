@@ -1,5 +1,6 @@
 module:
   allowed_formats: 0
+  antibot: 0
   big_pipe: 0
   block: 0
   block_content: 0
