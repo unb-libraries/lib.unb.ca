@@ -61,7 +61,7 @@ var lh3UpdatePresence = function () {
                 jQuery("#lh3-offline .offline-msg").text(getOfflineNote());
                 jQuery("#lh3-offline").show();
             }
-            jQuery(".requires-js").slideDown(250);
+            jQuery(".requires-js").slideDown(150);
         },
         error: function() {
             jQuery("#lh3-online").hide();
@@ -69,7 +69,7 @@ var lh3UpdatePresence = function () {
             jQuery("#lh3-busy").hide();
             jQuery("#lh3-offline .offline-msg").text("Ask Us is experiencing technical difficulties.");
             jQuery("#lh3-offline").show();
-            jQuery('.requires-js').slideDown(250);
+            jQuery('.requires-js').slideDown(150);
         }
     });
 };

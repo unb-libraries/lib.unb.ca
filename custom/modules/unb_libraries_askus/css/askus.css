@@ -5,9 +5,6 @@
     background: url(../img/AskUslogo2.png) no-repeat center center transparent;
     height: 52px;
 }
-chat-popup,
-    text-align: center;
-}
 #lh3-chat .focus-ring {
     border-color: #80bdff;
     border-radius: .25rem;
@@ -32,6 +29,7 @@ chat-popup,
     margin: 0 .2rem;
 }
 #lh3-online a {
+    color: #666;
     cursor: text;
     display: block;
     padding-top: 1rem;

@@ -46,6 +46,7 @@ class AskUsPopup extends BlockBase {
         ],
         'class' => [
           'chat-popup',
+          'text-center',
         ],
       ],
     ];
