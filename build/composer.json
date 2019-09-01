@@ -196,6 +196,7 @@
         "drupal/fontawesome": "2.14",
         "drupal/fontawesome_iconpicker": "1.0-beta1",
         "drupal/google_analytics": "2.4",
+        "drupal/health_check": "1.1",
         "drupal/honeypot": "1.29",
         "drupal/inline_entity_form": "1.0-rc1",
         "drupal/ldap": "3.0-beta7",
