@@ -20,10 +20,10 @@ class SearchIGOs extends BlockBase {
    */
   public function build() {
     $html = '
-      <form action="https://www.google.com/cse" class="alert alert-info mb-5 p-4 theme-dark" id="searchbox_006748068166572874491:55ez0c3j3ey">
+      <form action="https://www.google.com/cse" class="alert alert-info mb-4 pt-4 theme-dark" id="searchbox_006748068166572874491:55ez0c3j3ey">
         <div class="form-row">
           <input name="cx" type="hidden" value="006748068166572874491:55ez0c3j3ey">
-          <div class="col-10">
+          <div class="col-md-10 form-group">
             <label class="sr-only" for="q">Google Custom Government Document Search</label>
             <input class="form-control" name="q" type="text">
           </div>
