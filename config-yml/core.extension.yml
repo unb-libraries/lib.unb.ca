@@ -68,6 +68,7 @@ module:
   path: 0
   quickedit: 0
   rdf: 0
+  redirect: 0
   redis: 0
   scroll_to_top: 0
   search: 0
