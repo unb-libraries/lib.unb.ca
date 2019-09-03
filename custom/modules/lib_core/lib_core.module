@@ -309,9 +309,11 @@ function _lib_core_contactable_department($mailbox) {
     'libweb' => 'Website Administrator',
     'maproom' => 'Map Room',
     'mic' => 'Microforms/Microfilming Services',
+    'rdm' => 'Research Data Management',
     'refsj' => 'Saint John Reference',
     'reserves' => 'Course Reserves',
     'scilib' => 'Science & Forestry',
+    'worldcat' => 'WorldCat Support',
   ];
 
   return array_key_exists($mailbox, $departments) ? $departments[$mailbox] : NULL;
