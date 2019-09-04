@@ -159,12 +159,12 @@
         {
             "type": "package",
             "package": {
-                "name": "unblibraries/font-awesome",
-                "version": "5.10.1",
+                "name": "unb-libraries/font_awesome",
+                "version": "5.10.2",
                 "type": "drupal-library",
                 "dist": {
                     "type": "zip",
-                    "url": "https://github.com/FortAwesome/Font-Awesome/archive/5.10.1.zip"
+                    "url": "https://github.com/FortAwesome/Font-Awesome/archive/5.10.2.zip"
                 },
                 "extra": {
                     "installer-name": "fontawesome"
@@ -221,7 +221,7 @@
         "html2text/html2text": "4.2.1",
         "unb-libraries/calendar_hours": "dev-8.x-1.x",
         "unb-libraries/drupal-builder": "^8.0.0",
-        "unblibraries/font-awesome": "~5.10",
+        "unb-libraries/font_awesome": "~5.10",
         "unb-libraries/unb_lib_theme": "dev-8.x-bootstrap-4.x"
     },
     "require-dev": {
