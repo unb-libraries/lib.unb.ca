@@ -1,0 +1,38 @@
+uuid: 49cb8f4a-3bcb-42b4-82a2-99e4baf6f860
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_slide_image
+    - paragraphs.paragraphs_type.slide
+  module:
+    - image
+id: paragraph.slide.field_slide_image
+field_name: field_slide_image
+entity_type: paragraph
+bundle: slide
+label: 'Slide image'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: slide
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: 304x210
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: false
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image
