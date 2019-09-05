@@ -147,6 +147,66 @@
         {
             "type": "package",
             "package": {
+                "name": "jquery/cycle",
+                "version": "3.0.3",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery.cycle"
+                },
+                "dist": {
+                    "url": "https://github.com/malsup/cycle/archive/3.0.3.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "jquery/hover_intent",
+                "version": "1.10.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery.hoverIntent"
+                },
+                "dist": {
+                    "url": "https://github.com/briancherne/jquery-hoverIntent/archive/v1.10.0.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "jquery/json2",
+                "version": "dev-master",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "json2"
+                },
+                "dist": {
+                    "url": "https://github.com/douglascrockford/JSON-js/archive/master.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "jquery/pause",
+                "version": "dev-master",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery.pause"
+                },
+                "dist": {
+                    "url": "https://github.com/tobia/Pause/archive/master.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
                 "name": "unb-libraries/calendar_hours",
                 "version": "dev-8.x-1.x",
                 "type": "drupal-module",
@@ -216,9 +276,14 @@
         "drupal/search_api_solr": "2.6",
         "drupal/token": "1.5",
         "drupal/video_embed_field": "2.2",
+        "drupal/views_slideshow": "4.6",
         "drupal/webform": "5.3",
         "harvesthq/chosen": "~1.8",
         "html2text/html2text": "4.2.1",
+        "jquery/cycle": "3.0.3",
+        "jquery/hover_intent": "1.10.0",
+        "jquery/json2": "dev-master",
+        "jquery/pause": "dev-master",
         "unb-libraries/calendar_hours": "dev-8.x-1.x",
         "unb-libraries/drupal-builder": "^8.0.0",
         "unb-libraries/font_awesome": "~5.10",
