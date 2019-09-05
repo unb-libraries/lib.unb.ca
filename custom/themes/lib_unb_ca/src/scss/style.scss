@@ -405,6 +405,11 @@ ul.field--name-field-categories:before {
 
 /** UTILITY CLASSES **/
 /* Custom List style */
+.list-compact {
+  li {
+    margin-bottom: .25rem;
+  }
+}
 .list-items {
   padding-left: 1rem;
 
