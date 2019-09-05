@@ -1,14 +1,18 @@
 /* Undo Bootstrap Barrio table overrides */
 table {
-    tr td,
-    tr th {
+    tr {
         background: inherit;
-        border-color: inherit;
-        border-style: inherit;
-        border-width: inherit;
-        color: inherit;
-        font-size: 1rem;
-        padding: inherit;
+
+        td,
+        th {
+            background: inherit;
+            border-color: inherit;
+            border-style: inherit;
+            border-width: inherit;
+            color: inherit;
+            font-size: 1rem;
+            padding: inherit;
+        }
     }
 }
 
