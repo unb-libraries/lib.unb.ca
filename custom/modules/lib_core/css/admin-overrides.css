@@ -109,3 +109,44 @@ fieldset.media-library-widget:not(.fieldgroup) legend {
 fieldset.media-library-widget .fieldset-wrapper {
     padding: 0 .5rem;
 }
+
+/* Improve table element Preview */
+/* Undo Paragraph td padding override */
+.js .field--widget-entity-reference-paragraphs .table td {
+    padding: .75rem;
+}
+/* Fix Paragraphs Preview thead hover */
+tbody thead tr:hover {
+    background: inherit;
+}
+
+/* Undo Bootstrap Barrio table overrides */
+table tr td,
+table tr th {
+    background: inherit;
+    border-color: inherit;
+    border-style: inherit;
+    border-width: inherit;
+    color: inherit;
+    font-size: 1rem;
+    padding: .75rem;
+}
+
+/* Slightly lighten stock BS4 stripe bg color */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(128, 128, 128, 0.05);
+}
+/* Restore BS4 hover effect on striped rows */
+.table-hover tbody tr:hover
+.table-hover tbody tr:hover {
+    color: #212529;
+    background-color: rgba(0, 0, 0, 0.075);
+}
+
+/* Full col-width clickable, table sort header cells w/ sort icons to the right */
+thead a {
+    display: block;
+
+span.tablesort {
+    float: right;
+}
