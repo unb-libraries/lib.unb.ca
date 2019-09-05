@@ -233,6 +233,12 @@ thead {
       cursor: default;
     }
   }
+
+  @media (max-width: 1200px) {
+    nav {
+      margin-bottom: 3rem;
+    }
+  }
 }
 /* Library new post metadata */
 .attribution,
