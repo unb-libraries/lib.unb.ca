@@ -1,3 +1,7 @@
+/* Fix label/checkbox inline */
+.checkbox label {
+  display: inline-block;
+}
 /* Match column 2 layout's field bottom whitespace with sidebar block  */
 .field--name-field-column-2 .field__item {
   margin-bottom: 2.5rem;
@@ -10,15 +14,21 @@
 .form-actions input.btn {
   width: inherit;
 }
-/* Fix label/checkbox inline */
-.checkbox label {
-  display: inline-block;
+.layout--twocol-section {
+  border-top: 1px solid $gray-200;
+  padding: 2.5rem 0;
 }
+
 /* Begin col stack at larger resolution */
 @media (max-width: 991px) {
-  .field--name-field-page-content .layout--twocol-section.layout--twocol-section--67-33 > .layout__region--first,
-  .field--name-field-page-content .layout--twocol-section.layout--twocol-section--67-33 > .layout__region--second {
-    flex: auto;
+  .layout__region--first {
+    margin-bottom: 2.5rem;
+  }
+
+  .layout--twocol-section.layout--twocol-section--67-33 > .layout__region--first,
+  .layout--twocol-section.layout--twocol-section--67-33 > .layout__region--second {
+    flex: 1 100%;
     margin-right: 0;
+    overflow: hidden;
   }
 }

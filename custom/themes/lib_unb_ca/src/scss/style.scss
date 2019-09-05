@@ -179,8 +179,6 @@ thead {
 /* Library News */
 /* Post listing page */
 .library-news {
-  margin-bottom: 3rem;
-
   /* Library news listing page */
   .library-news {
     span.page-link {
@@ -205,7 +203,6 @@ thead {
 
   /* Featured image */
   .news-featured {
-    text-align: right;
     a img {
       @include opacity(1);
       @include css3-prefix(transition, opacity .3s, transform .3s);
@@ -319,6 +316,7 @@ ul.field--name-field-categories:before {
 .more-link a {
   color: $red;
 }
+
 /* Staff and Departments View */
 .staff-departments {
   .legend {
@@ -413,6 +411,7 @@ ul.field--name-field-categories:before {
   &.list-indent {
     margin-left: 1rem;
   }
+
   li {
     margin-bottom: .5rem;
   }
