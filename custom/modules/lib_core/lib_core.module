@@ -116,6 +116,15 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
       $form['settings']['autoplay']['#access'] = FALSE;
       break;
 
+    case 'views_exposed_form':
+      if (isset($form['type']['#options']['carousel'])) {
+        if (\Drupal::currentUser()->id() != 1) {
+          // Only show 'Carousel' exposed form filter for root user.
+          unset($form['type']['#options']['carousel']);
+        }
+      };
+      break;
+
     case 'webform_submission_purchase_suggestion_add_form':
       $form['#attached']['library'][] = 'lib_core/lib-chosen';
       $form['#attached']['library'][] = 'lib_core/chosen-bootstrap';
