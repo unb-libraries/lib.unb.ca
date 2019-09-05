@@ -1,0 +1,17 @@
+uuid: 25c27651-69cf-441e-8ea6-13715b1c83f9
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Carousel
+type: carousel
+description: 'Use Carousel pages to create cycling Slideshows.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

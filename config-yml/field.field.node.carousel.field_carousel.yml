@@ -1,0 +1,52 @@
+uuid: 3234e010-c5c6-4063-8abf-b3dd00a2c67b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_carousel
+    - node.type.carousel
+    - paragraphs.paragraphs_type.slide
+  module:
+    - entity_reference_revisions
+id: node.carousel.field_carousel
+field_name: field_carousel
+entity_type: node
+bundle: carousel
+label: Carousel
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      slide: slide
+    target_bundles_drag_drop:
+      carousel:
+        weight: 8
+        enabled: false
+      slide:
+        enabled: true
+        weight: 9
+      body_section:
+        weight: 9
+        enabled: false
+      body_sidebar_section:
+        weight: 10
+        enabled: false
+      custom_block_section:
+        weight: 11
+        enabled: false
+      departement_membership:
+        weight: 12
+        enabled: false
+      equal_columns_section:
+        weight: 13
+        enabled: false
+      fullwidth_body_section:
+        weight: 14
+        enabled: false
+field_type: entity_reference_revisions
