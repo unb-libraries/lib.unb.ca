@@ -1,0 +1,22 @@
+uuid: c0870507-00a5-493d-9a47-17c0699a96b9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: carousel_node_viewable_by_admin_only_
+label: 'Carousel (node viewable by admin-only)'
+type: 'canonical_entities:node'
+pattern: '/admin/[node:title]'
+selection_criteria:
+  f652a51a-8165-471a-a206-62d904b4e2be:
+    id: node_type
+    bundles:
+      carousel: carousel
+    negate: false
+    context_mapping:
+      node: node
+    uuid: f652a51a-8165-471a-a206-62d904b4e2be
+selection_logic: and
+weight: -5
+relationships: {  }
