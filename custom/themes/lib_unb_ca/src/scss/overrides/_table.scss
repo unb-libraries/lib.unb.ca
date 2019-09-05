@@ -22,6 +22,11 @@ table {
     background-color: blanchedalmond;
 }
 
+/* Views > Format: Table no class field workaround (Advanced > Other > CSS Class)*/
+div.table-bordered {
+    border: 0;
+}
+
 /* Full col-width clickable, table sort header cells w/ sort icons to the right */
 thead a {
     display: block;
