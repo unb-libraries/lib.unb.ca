@@ -78,7 +78,7 @@ display:
         type: default
         options:
           grouping: {  }
-          row_class: news-featured
+          row_class: ''
           default_row_class: false
       row:
         type: fields
@@ -1289,7 +1289,7 @@ display:
       display_description: ''
       allow:
         items_per_page: false
-      css_class: 'float-right library-news mt-1'
+      css_class: 'float-lg-right mt-1 news-featured'
       empty:
         area:
           id: area
@@ -1733,6 +1733,7 @@ display:
         fields: false
         sorts: false
         empty: false
+        css_class: false
       fields:
         title:
           id: title
@@ -1851,6 +1852,7 @@ display:
       display_description: ''
       sorts: {  }
       empty: {  }
+      css_class: news-twitter
     cache_metadata:
       max-age: -1
       contexts:
