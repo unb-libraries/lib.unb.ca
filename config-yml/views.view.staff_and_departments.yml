@@ -75,7 +75,7 @@ display:
               field: field_library_department
               rendered: true
               rendered_strip: false
-          row_class: font-size-larger
+          row_class: ''
           default_row_class: true
           override: true
           sticky: false
@@ -83,7 +83,13 @@ display:
           summary: ''
           description: ''
           columns:
+            field_anchor: field_anchor
             field_department_location: field_department_location
+            field_department_phone: field_department_phone
+            field_department_fax: field_department_fax
+            field_department_email: field_department_email
+            field_department_website: field_department_website
+            nothing_2: nothing_2
             field_library_department: field_library_department
             field_is_department_head: field_is_department_head
             field_last_name: field_last_name
@@ -94,8 +100,49 @@ display:
             field_room_number: field_room_number
             nothing_1: nothing_1
             name: name
+            field_email_id: field_email_id
           info:
+            field_anchor:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
             field_department_location:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_department_phone:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_department_fax:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_department_email:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_department_website:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            nothing_2:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -166,6 +213,13 @@ display:
               empty_column: false
               responsive: ''
             name:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_email_id:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -1503,7 +1557,7 @@ display:
           plugin_id: standard
       arguments: {  }
       display_extenders: {  }
-      css_class: staff-departments
+      css_class: 'staff-departments table-striped'
       use_ajax: true
     cache_metadata:
       max-age: -1

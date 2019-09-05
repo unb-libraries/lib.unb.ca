@@ -61,7 +61,7 @@ display:
         type: table
         options:
           grouping: {  }
-          row_class: font-size-larger
+          row_class: ''
           default_row_class: true
           override: true
           sticky: true
@@ -818,7 +818,7 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
-      css_class: 'staff-departments theme-dark'
+      css_class: 'staff-departments table-striped'
       use_ajax: true
     cache_metadata:
       max-age: -1

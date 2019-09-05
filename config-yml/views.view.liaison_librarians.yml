@@ -65,7 +65,7 @@ display:
         type: table
         options:
           grouping: {  }
-          row_class: font-size-larger
+          row_class: ''
           default_row_class: true
           override: true
           sticky: true
@@ -82,6 +82,7 @@ display:
             field_last_name: field_last_name
             field_phone_number: field_phone_number
             name_1: name_1
+            field_email_id: field_email_id
             nothing: nothing
           info:
             field_display_name:
@@ -141,6 +142,13 @@ display:
               empty_column: false
               responsive: ''
             name_1:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_email_id:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -570,6 +578,7 @@ display:
       display_extenders: {  }
       title: 'Liaison Librarians'
       use_ajax: false
+      css_class: 'liaisons table-striped'
     cache_metadata:
       max-age: -1
       contexts:
