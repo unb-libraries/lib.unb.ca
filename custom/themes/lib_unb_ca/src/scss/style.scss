@@ -168,6 +168,7 @@ thead {
   content: "\f15b";
 }
 /* End Media files */
+
 /* Reduce main content right padding to increase usable space */
 @media (min-width: 992px) {
   .layout-sidebar-second main,
@@ -372,11 +373,6 @@ ul.field--name-field-categories:before {
     }
 
     tbody {
-      tr {
-        &:hover {
-          background: blanchedalmond;
-        }
-      }
       td {
         width: 25%;
 
@@ -431,6 +427,13 @@ ul.field--name-field-categories:before {
 .table-hours {
   margin-left: 1.5rem !important;
   max-width: 520px;
+
+  tbody {
+    td,
+    th {
+      font-size: .86rem;
+    }
+  }
 
   th {
     font-weight: normal;
