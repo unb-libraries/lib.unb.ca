@@ -1,24 +1,32 @@
-/* Full col-width clickable, table sort header cells, sort icons to the right */
+/* Undo Bootstrap Barrio table overrides */
+table {
+    tr td,
+    tr th {
+        background: inherit;
+        border-color: inherit;
+        border-style: inherit;
+        border-width: inherit;
+        color: inherit;
+        font-size: 1rem;
+        padding: inherit;
+    }
+}
+
+/* Slightly lighten stock BS4 stripe bg color */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(128, 128, 128, 0.05);
+}
+/* Override stock BS4 hover effect */
+.table-hover tbody tr:hover {
+    color: $black;
+    background-color: blanchedalmond;
+}
+
+/* Full col-width clickable, table sort header cells w/ sort icons to the right */
 thead a {
     display: block;
 
     span.tablesort {
         float: right;
     }
-}
-.table {
-    tr {
-        background: inherit;
-        border: none;
-
-        td,
-        th {
-            background: inherit;
-            border: none;
-            color: inherit;
-        }
-    }
-}
-.view-content tr {
-    background: inherit;
 }
