@@ -1,0 +1,14 @@
+uuid: fa3741bd-c49a-41d3-9772-715f1da61dfe
+langcode: en
+status: true
+dependencies: {  }
+id: data_administrator
+label: 'Data Administrator'
+weight: 4
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access toolbar'
+  - 'administer users'
+  - 'edit any user details'
+  - 'view the administration theme'

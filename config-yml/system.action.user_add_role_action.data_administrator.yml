@@ -1,0 +1,14 @@
+uuid: 92611c7a-b8c9-4f0f-9586-3644b34d35e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.data_administrator
+  module:
+    - user
+id: user_add_role_action.data_administrator
+label: 'Add the Data Administrator role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: data_administrator
