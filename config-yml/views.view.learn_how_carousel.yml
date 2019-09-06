@@ -6,15 +6,11 @@ dependencies:
     - field.storage.paragraph.field_slide_image
     - field.storage.paragraph.field_url
     - node.type.carousel
-    - taxonomy.vocabulary.slideshow_tag
-  content:
-    - 'taxonomy_term:slideshow_tag:7c254069-58c9-400b-84a9-d033ad17fb5c'
   module:
     - image
     - link
     - node
     - paragraphs
-    - taxonomy
     - user
     - views_slideshow
 id: learn_how_carousel
@@ -222,16 +218,15 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: bundle
-        field_tag_target_id:
-          id: field_tag_target_id
-          table: node__field_tag
-          field: field_tag_target_id
+        title:
+          id: title
+          table: node_field_data
+          field: title
           relationship: none
           group_type: group
           admin_label: ''
-          operator: or
-          value:
-            189: 189
+          operator: starts
+          value: 'Learn How'
           group: 1
           exposed: false
           expose:
@@ -246,7 +241,7 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            reduce: false
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -259,13 +254,9 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          reduce_duplicates: false
-          type: select
-          limit: true
-          vid: slideshow_tag
-          hierarchy: false
-          error_message: true
-          plugin_id: taxonomy_index_tid
+          entity_type: node
+          entity_field: title
+          plugin_id: string
       sorts: {  }
       title: 'Learn How Carousel'
       header: {  }
@@ -288,7 +279,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -526,7 +516,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -647,7 +636,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
