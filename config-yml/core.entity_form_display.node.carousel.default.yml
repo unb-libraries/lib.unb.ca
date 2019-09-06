@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.carousel.field_carousel
-    - field.field.node.carousel.field_tag
     - node.type.carousel
   module:
     - paragraphs
@@ -31,15 +30,6 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
-    region: content
-  field_tag:
-    weight: 123
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
     region: content
   path:
     type: path

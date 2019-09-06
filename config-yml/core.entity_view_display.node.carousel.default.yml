@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.carousel.field_carousel
-    - field.field.node.carousel.field_tag
     - node.type.carousel
   module:
     - entity_reference_revisions
@@ -22,14 +21,6 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    region: content
-  field_tag:
-    weight: 2
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
     region: content
   links:
     weight: 1

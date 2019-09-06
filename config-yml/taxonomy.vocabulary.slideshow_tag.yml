@@ -1,8 +1,0 @@
-uuid: 7cdedc76-33ba-495c-9a50-12511e8f618b
-langcode: en
-status: true
-dependencies: {  }
-name: 'Slideshow Tag'
-vid: slideshow_tag
-description: 'Used to connect a <em>Carousel</em> node with a Views Slideshow.'
-weight: 0
