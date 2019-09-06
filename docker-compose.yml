@@ -47,8 +47,6 @@ services:
       - lib.unb.ca
     ports:
       - "3100:80"
-    environment:
-      - IMPORT_INITIAL_CONTENT=TRUE
     env_file:
       - ./env/drupal.env
     volumes:
