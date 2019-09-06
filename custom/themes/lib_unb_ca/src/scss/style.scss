@@ -511,6 +511,10 @@ ul.field--name-field-categories:before {
   margin-left: 1.5rem !important;
   max-width: 520px;
 
+  caption {
+    margin-left: -1.5rem;
+  }
+
   th {
     font-weight: normal;
     width: 50%;
