@@ -146,7 +146,7 @@ table tr th {
 /* Full col-width clickable, table sort header cells w/ sort icons to the right */
 thead a {
     display: block;
-
+}
 span.tablesort {
     float: right;
 }
