@@ -1005,6 +1005,18 @@ display:
         groups:
           1: AND
       display_extenders: {  }
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: 'Vocabulary Action Links'
+          empty: false
+          tokenize: false
+          content: "<ul class=\"action-links\">\r\n  <li>\r\n    <a class=\"button button--primary button--small\" href=\"/admin/structure/taxonomy/manage/faculties/overview\"><i class=\"fas fa-pencil-alt\">&nbsp;</i>Manage faculty terms</a>\r\n  </li>\r\n  <li>\r\n    <a class=\"button button--primary button--small\" href=\"/admin/structure/taxonomy/manage/library_departments/overview\"><i class=\"fas fa-pencil-alt\">&nbsp;</i>Manage library department terms</a>\r\n  </li>\r\n</ul>"
+          plugin_id: text_custom
     cache_metadata:
       contexts:
         - 'languages:language_content'
