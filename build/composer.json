@@ -267,7 +267,7 @@
         "drupal/override_node_options": "2.4",
         "drupal/panelbutton": "1.2",
         "drupal/pathauto": "1.4",
-        "drupal/paragraphs": "1.8",
+        "drupal/paragraphs": "1.9",
         "drupal/redirect": "1.4",
         "drupal/redis": "1.1",
         "drupal/scroll_back_to_top": "1.0-rc1",
