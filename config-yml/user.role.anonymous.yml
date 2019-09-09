@@ -13,3 +13,4 @@ permissions:
   - 'access user contact forms'
   - 'access user profiles'
   - 'view media'
+  - 'view own webform submission'
