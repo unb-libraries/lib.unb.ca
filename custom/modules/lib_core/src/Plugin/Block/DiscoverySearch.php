@@ -273,7 +273,7 @@ class DiscoverySearch extends BlockBase {
 
     try {
       $response = \Drupal::httpClient()
-        ->get('//web.lib.unb.ca/reserves/index.php/semester', [
+        ->get('https://web.lib.unb.ca/reserves/index.php/semester', [
             'headers' => [
               'Accept' => 'application/vnd.api+json',
             ],
@@ -498,7 +498,7 @@ class DiscoverySearch extends BlockBase {
 
     try {
       $response = \Drupal::httpClient()
-        ->get('http://web.lib.unb.ca/eresources/databases.php', [
+        ->get('https://web.lib.unb.ca/eresources/databases.php', [
             'headers' => [
               'Accept' => 'application/vnd.api+json',
             ],
