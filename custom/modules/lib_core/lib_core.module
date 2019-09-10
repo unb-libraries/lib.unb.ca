@@ -67,24 +67,6 @@ function lib_core_entity_presave(EntityInterface $entity) {
 }
 
 /**
- * Implements hook_user_presave().
- */
-function lib_core_user_presave($account) {
-  // Auto-populate hidden Email ID field for use by Staff Directory View.
-  $email = $account
-    ->get('mail')
-    ->getString();
-
-  // Get lowercase version of email id.
-  $email_id = strtolower(strtok($email, "@"));
-
-  // Populate Email ID field.
-  if (!empty($email) && $account->hasField('field_email_id')) {
-    $account->set('field_email_id', $email_id);
-  }
-}
-
-/**
  * Implements hook_form_alter().
  */
 function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
@@ -227,6 +209,24 @@ function lib_core_preprocess_node__news_post(&$variables) {
 
   $stickied = $node->isSticky();
   $variables['stickied'] = $stickied;
+}
+
+/**
+ * Implements hook_user_presave().
+ */
+function lib_core_user_presave($account) {
+  // Auto-populate hidden Email ID field for use by Staff Directory View.
+  $email = $account
+    ->get('mail')
+    ->getString();
+
+  // Get lowercase version of email id.
+  $email_id = strtolower(strtok($email, "@"));
+
+  // Populate Email ID field.
+  if (!empty($email) && $account->hasField('field_email_id')) {
+    $account->set('field_email_id', $email_id);
+  }
 }
 
 /**
