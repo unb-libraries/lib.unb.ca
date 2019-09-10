@@ -35,6 +35,23 @@ function lib_unb_ca_user_protect_form_user_form_alter(&$form, FormStateInterface
     foreach (Element::children($form) as $key) {
       $form[$key]['#disabled'] = TRUE;
     }
+  } elseif(\Drupal::currentUser()->id() != 1) {
+    // Exclude super user from exclusions.
+    foreach (Element::children($form) as $key) {
+       switch ($key) {
+         case 'account':
+           // Disable account fields except Blocked/Active.
+           $form[$key]['mail']['#disabled'] = TRUE;
+           $form[$key]['name']['#disabled'] = TRUE;
+           $form[$key]['pass']['#disabled'] = TRUE;
+           break;
+
+         case 'actions':
+           // Disable Cancel account link.
+           $form[$key]['delete']['#disabled'] = TRUE;
+           break;
+       }
+    }
   }
 }
 
