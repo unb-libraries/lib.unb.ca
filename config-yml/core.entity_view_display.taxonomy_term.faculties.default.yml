@@ -48,13 +48,6 @@ content:
     third_party_settings: {  }
     type: telephone_link
     region: content
-  field_display_name:
-    type: string
-    weight: 4
-    region: content
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
 hidden:
   description: true
+  field_display_name: true

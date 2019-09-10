@@ -32,7 +32,7 @@ content:
     third_party_settings: {  }
     region: content
   field_display_on_staff_directory:
-    weight: 6
+    weight: 9
     label: inline
     settings:
       format: default
@@ -42,7 +42,7 @@ content:
     type: boolean
     region: content
   field_first_name:
-    weight: 1
+    weight: 0
     label: inline
     settings:
       link_to_entity: false
@@ -50,7 +50,7 @@ content:
     type: string
     region: content
   field_last_name:
-    weight: 2
+    weight: 1
     label: inline
     settings:
       link_to_entity: false
@@ -66,7 +66,7 @@ content:
     type: entity_reference_label
     region: content
   field_on_leave:
-    weight: 9
+    weight: 10
     label: inline
     settings:
       format: yes-no
@@ -76,7 +76,7 @@ content:
     type: boolean
     region: content
   field_phone_number:
-    weight: 4
+    weight: 3
     label: inline
     settings:
       title: ''
@@ -84,7 +84,7 @@ content:
     type: telephone_link
     region: content
   field_position_title:
-    weight: 3
+    weight: 2
     label: inline
     settings:
       link_to_entity: false
@@ -92,7 +92,7 @@ content:
     type: string
     region: content
   field_room_number:
-    weight: 5
+    weight: 4
     label: inline
     settings:
       link_to_entity: false
@@ -100,13 +100,13 @@ content:
     type: string
     region: content
   member_for:
-    weight: 0
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   simple_groups:
     label: above
-    weight: 10
+    weight: 6
     region: content
     settings:
       link: true
