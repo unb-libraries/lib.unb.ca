@@ -40,7 +40,12 @@ function lib_unb_ca_user_protect_form_user_form_alter(&$form, FormStateInterface
     foreach (Element::children($form) as $key) {
        switch ($key) {
          case 'account':
-           // Disable account fields except Blocked/Active.
+           if ($form_state->getFormObject()->getOperation() != 'register') {
+             // Disable username + password fields on Edit (but not Add) form.
+             $form[$key]['name']['#disabled'] = TRUE;
+             $form[$key]['pass']['#disabled'] = TRUE;
+           }
+           // Disable selected account fields.
            $form[$key]['mail']['#disabled'] = TRUE;
            $form[$key]['name']['#disabled'] = TRUE;
            $form[$key]['pass']['#disabled'] = TRUE;
