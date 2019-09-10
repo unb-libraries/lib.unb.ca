@@ -35,27 +35,33 @@ function lib_unb_ca_user_protect_form_user_form_alter(&$form, FormStateInterface
     foreach (Element::children($form) as $key) {
       $form[$key]['#disabled'] = TRUE;
     }
-  } elseif(\Drupal::currentUser()->id() != 1) {
+  }
+  elseif (\Drupal::currentUser()->id() != 1) {
     // Exclude super user from exclusions.
     foreach (Element::children($form) as $key) {
-       switch ($key) {
-         case 'account':
-           if ($form_state->getFormObject()->getOperation() != 'register') {
-             // Disable username + password fields on Edit (but not Add) form.
-             $form[$key]['name']['#disabled'] = TRUE;
-             $form[$key]['pass']['#disabled'] = TRUE;
-           }
-           // Disable selected account fields.
-           $form[$key]['mail']['#disabled'] = TRUE;
-           $form[$key]['name']['#disabled'] = TRUE;
-           $form[$key]['pass']['#disabled'] = TRUE;
-           break;
+      switch ($key) {
+        case 'account':
+          if ($form_state->getFormObject()->getOperation() != 'register') {
+            // Disable username + password fields on Edit (but not Add) form.
+            $form[$key]['name']['#disabled'] = TRUE;
+            $form[$key]['pass']['#disabled'] = TRUE;
+          }
+          // Disable selected account fields.
+          $form[$key]['mail']['#disabled'] = TRUE;
+          $form[$key]['notify']['#disabled'] = TRUE;
+          break;
 
-         case 'actions':
-           // Disable Cancel account link.
-           $form[$key]['delete']['#disabled'] = TRUE;
-           break;
-       }
+        case 'actions':
+          // Disable Cancel account link.
+          $form[$key]['delete']['#disabled'] = TRUE;
+          break;
+
+        case 'ldap_user_fields':
+        case 'simple_groups':
+          // Disable LDAP Options + Groups fields.
+          $form[$key]['#disabled'] = TRUE;
+          break;
+      }
     }
   }
 }
