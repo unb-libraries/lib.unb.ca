@@ -16,7 +16,7 @@ In your local development environment, several 'one time' dependency installatio
 * [docker-compose](https://docs.docker.com/compose/): Installation steps [are located here](https://docs.docker.com/compose/install/).
 
 ### Step 2: Deploy
-With all dependencies installed, you are ready to deploy the application locally and and begin development. To do so:
+With all dependencies installed, you are ready to deploy the application locally and and begin development:
 
 ```
 composer install --prefer-dist
