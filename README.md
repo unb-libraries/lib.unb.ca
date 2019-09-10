@@ -20,8 +20,10 @@ With all dependencies installed, you are ready to deploy the application locally
 
 ```
 composer install --prefer-dist
-vendor/bin/dockworker start-over
+vendor/bin/dockworker deploy
 ```
+
+And that's it! The application will build, and deploy in your local environment.
 
 If you work with unb-libraries applications often, you may also consider [installing a dockworker alias](https://gist.github.com/JacobSanford/1448fece856be371060d0f16ccb1b194), which avoids referencing vendor/bin for each dockworker command.
 
