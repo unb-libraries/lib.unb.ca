@@ -19,7 +19,7 @@ In your local development environment, several 'one time' dependency installatio
 With all dependencies installed, you are ready to deploy the application locally and and begin development:
 
 ```
-composer install --prefer-dist
+composer install
 vendor/bin/dockworker deploy
 ```
 
