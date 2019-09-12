@@ -64,8 +64,8 @@ display:
           id: 0
           total_pages: null
           tags:
-            previous: '‹‹ Older posts'
-            next: 'Newer posts ››'
+            previous: '‹‹ Newer posts'
+            next: 'Older posts ››'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
