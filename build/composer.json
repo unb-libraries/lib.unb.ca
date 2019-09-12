@@ -268,7 +268,7 @@
         "drupal/pathauto": "1.4",
         "drupal/paragraphs": "1.9",
         "drupal/redirect": "1.4",
-        "drupal/redis": "1.1",
+        "drupal/redis": "1.2",
         "drupal/scroll_back_to_top": "1.0-rc1",
         "drupal/search_api": "1.12",
         "drupal/search_api_autocomplete": "1.2",
