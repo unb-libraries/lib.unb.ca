@@ -41,4 +41,5 @@ content:
 hidden:
   field_featured_image: true
   field_unb_lib_page_content: true
+  langcode: true
   links: true

@@ -12,6 +12,16 @@ services:
     networks:
       - lib.unb.ca
 
+  drupal-solr-lib-unb-ca:
+    image: unblibraries/solr-drupal:8.x-3.x
+    expose:
+      - "8983"
+    networks:
+      - lib.unb.ca
+    entrypoint:
+      - docker-entrypoint-multiple.sh
+      - pages.lib.unb.ca:/solr-conf
+
   drupal-redis-lib-unb-ca:
     image: redis:5-alpine
     restart: always

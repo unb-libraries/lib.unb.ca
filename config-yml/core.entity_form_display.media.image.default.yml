@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.media.image.field_media_image
+    - field.field.media.image.field_mime_type
     - image.style.thumbnail
     - media.type.image
   module:
@@ -28,6 +29,13 @@ content:
     type: image_image
     weight: 0
     region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
   path:
     type: path
     weight: 30

@@ -21,3 +21,4 @@ content:
 hidden:
   field_carousel: true
   field_tag: true
+  langcode: true

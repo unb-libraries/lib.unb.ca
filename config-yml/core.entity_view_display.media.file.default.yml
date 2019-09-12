@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.media.file.field_media_file
+    - field.field.media.file.field_mime_type
     - media.type.file
   module:
     - file
@@ -22,6 +23,7 @@ content:
 hidden:
   created: true
   field_mime_type: true
+  langcode: true
   name: true
   thumbnail: true
   uid: true

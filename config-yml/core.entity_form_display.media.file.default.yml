@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.media.file.field_media_file
+    - field.field.media.file.field_mime_type
     - media.type.file
   module:
     - file
@@ -26,6 +27,13 @@ content:
     type: file_generic
     weight: 0
     region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
   path:
     type: path
     weight: 30

@@ -123,4 +123,5 @@ content:
 hidden:
   contact: true
   field_email_id: true
+  langcode: true
   language: true

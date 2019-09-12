@@ -51,3 +51,4 @@ content:
 hidden:
   description: true
   field_display_name: true
+  langcode: true

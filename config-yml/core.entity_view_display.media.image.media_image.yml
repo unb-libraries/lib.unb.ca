@@ -26,6 +26,7 @@ content:
 hidden:
   created: true
   field_mime_type: true
+  langcode: true
   name: true
   thumbnail: true
   uid: true
