@@ -58,6 +58,7 @@ dependencies:
   - fontawesome
   - fontawesome_iconpicker
   - inline_entity_form
+  - language
   - layout_builder
   - layout_discovery
   - ldap_authentication
