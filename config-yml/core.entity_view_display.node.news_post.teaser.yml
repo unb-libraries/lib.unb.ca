@@ -39,3 +39,4 @@ hidden:
   field_unb_lib_page_content: true
   langcode: true
   links: true
+  search_api_excerpt: true

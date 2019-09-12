@@ -16,7 +16,7 @@ backend_config:
   connector_config:
     scheme: http
     host: drupal-solr-lib-unb-ca
-    port: '8983'
+    port: 8983
     path: /solr
     core: pages.lib.unb.ca
     timeout: 5
@@ -33,3 +33,6 @@ backend_config:
   server_prefix: ''
   domain: generic
   site_hash: false
+  optimize: false
+  disabled_field_types: {  }
+  rows: 10

@@ -115,3 +115,4 @@ content:
 hidden:
   field_email_id: true
   langcode: true
+  search_api_excerpt: true
