@@ -28,7 +28,7 @@ class PermittedUseTool extends BlockBase {
 		    </div>
 		    <div class="form-row mx-2">
           <div class="form-group mb-0">
-            <label class="font-weight-bold mx-1 my-0 py-2" for="resource_title">Resource Name</label>
+            <label class="font-weight-bold mx-1 my-0 py-2" for="title">Resource Name</label>
           </div>
           <div class="col-lg-5 form-group">
             <input class="form-control" id="title" name="resource_title" placeholder="enter database or journal name" type="text">
