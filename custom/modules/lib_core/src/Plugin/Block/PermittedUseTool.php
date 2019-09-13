@@ -20,7 +20,7 @@ class PermittedUseTool extends BlockBase {
    */
   public function build() {
     $html = '
-      <form action="//web.lib.unb.ca/eresources/index.php" class="alert alert-warning mx-4 my-2 theme-dark" method="get" _lpchecked="1">
+      <form action="//web.lib.unb.ca/eresources/index.php" class="alert alert-warning mx-4 my-2 theme-dark" method="get">
         <div class="form-row mb-2">
           <input id="sub" name="sub" type="hidden" value="all">
 		      <input name="searchtype" type="hidden" value="every_word">
