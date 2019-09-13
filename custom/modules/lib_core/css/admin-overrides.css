@@ -198,3 +198,9 @@ input:focus:not(.focus-ring) {
     outline: 0;
     transition-duration: .25s;
 }
+
+/* Edit form: cap body height on drag icon click to facilitate reordering */
+tr.drag td div {
+    max-height: 200px;
+    overflow: hidden;
+}
