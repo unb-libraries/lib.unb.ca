@@ -320,7 +320,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"alert alert-light border\">\r\n<div class=\"d-flex flex-row\">\r\n<div class=\"mr-1\"><i class=\"fas fa-exclamation-circle\"></i></div>\r\n<div>This search interface <strong>DOES NOT</strong> search our catalogue, electronic databases or other online\r\nresources; it will only search for local web pages. To find resources, consult <a href=\"https://unb.on.worldcat.org\"><span class=\"alert-link\">our catalogue,\r\nUNB WorldCat</span></a> or the <a href=\"//web.lib.unb.ca/eresources\"><span class=\"alert-link\">e-Resources section</span></a> of our website.</div>\r\n</div>\r\n</div>"
+            text: "<div class=\"alert alert-light border\">\r\n<div class=\"d-flex flex-row\">\r\n<div class=\"mr-1\"><i class=\"fas fa-exclamation-circle\"></i></div>\r\n<div>This search interface <strong>DOES NOT</strong> search our catalogue, electronic databases or other online\r\nresources; it will only search for local web pages. To find resources, consult <a href=\"https://unb.on.worldcat.org\">our catalogue,\r\nUNB WorldCat</a> or the <a href=\"//web.lib.unb.ca/eresources\">e-Resources section</a> of our website.</div>\r\n</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -594,7 +594,7 @@ display:
               library_news_author: '0'
               library_page_author: '0'
               data_administrator: '0'
-            placeholder: 'enter one of more search terms'
+            placeholder: 'Search UNB Libraries'
           is_grouped: false
           group_info:
             label: ''
