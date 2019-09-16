@@ -1,21 +1,19 @@
-uuid: a6c72011-2175-4cfb-998e-c3eb61a542da
+uuid: baee0f2e-78cf-4841-a413-b18151315d2b
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
-    - node.type.library_page
+    - search_api.index.pages_lib_unb_ca
   module:
-    - node
-    - search
+    - search_api
     - user
 id: search_our_webpages
-label: 'Search our Webpages (core)'
+label: 'Search Our Webpages'
 module: views
 description: ''
 tag: ''
-base_table: node_field_data
-base_field: nid
+base_table: search_api_index_pages_lib_unb_ca
+base_field: search_api_id
 core: 8.x
 display:
   default:
@@ -34,11 +32,9 @@ display:
       query:
         type: views_query
         options:
-          disable_sql_rewrite: false
-          distinct: false
-          replica: false
-          query_comment: ''
-          query_tags: {  }
+          bypass_access: false
+          skip_access: false
+          preserve_facet_query_args: false
       exposed_form:
         type: input_required
         options:
@@ -71,53 +67,66 @@ display:
             offset_label: Offset
       style:
         type: default
-        options:
-          row_class: table-hover
-          default_row_class: true
-          uses_fields: false
       row:
-        type: 'entity:node'
+        type: fields
         options:
-          relationship: none
-          view_mode: teaser
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
       fields:
         title:
           id: title
-          table: node_field_data
+          table: search_api_datasource_pages_lib_unb_ca_entity_node
           field: title
-          entity_type: node
-          entity_field: title
-          label: ''
-          alter:
-            alter_text: false
-            make_link: false
-            absolute: false
-            trim: false
-            word_boundary: false
-            ellipsis: false
-            strip_tags: false
-            html: false
-          hide_empty: false
-          empty_zero: false
-          settings:
-            link_to_entity: true
-          plugin_id: field
           relationship: none
           group_type: group
           admin_label: ''
+          label: ''
           exclude: false
-          element_type: ''
-          element_class: ''
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: h2
+          element_class: 'mb-1 mt-5'
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
+          hide_empty: false
+          empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
           type: string
+          settings:
+            link_to_entity: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -128,46 +137,88 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-      filters:
-        status:
-          value: '1'
-          table: node_field_data
-          field: status
-          plugin_id: boolean
+          field_rendering: true
+          fallback_handler: search_api
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
           entity_type: node
-          entity_field: status
-          id: status
-          expose:
-            operator: ''
-          group: 1
-        type:
-          id: type
-          table: node_field_data
-          field: type
-          value:
-            library_page: library_page
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
-        keys:
-          id: keys
-          table: node_search_index
-          field: keys
+          plugin_id: search_api_field
+        search_api_excerpt:
+          id: search_api_excerpt
+          table: search_api_index_pages_lib_unb_ca
+          field: search_api_excerpt
           relationship: none
           group_type: group
           admin_label: ''
-          operator: optional
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: text-muted
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: 'No excerpt available.'
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          link_to_item: false
+          use_highlighting: false
+          multi_type: separator
+          multi_separator: ', '
+          plugin_id: search_api
+      filters:
+        search_api_fulltext:
+          id: search_api_fulltext
+          table: search_api_index_pages_lib_unb_ca
+          field: search_api_fulltext
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
           value: ''
           group: 1
           exposed: true
           expose:
-            operator_id: keys_op
+            operator_id: search_api_fulltext_op
             label: ''
             description: ''
             use_operator: false
-            operator: keys_op
+            operator: search_api_fulltext_op
             identifier: query
-            required: false
+            required: true
             remember: false
             multiple: false
             remember_roles:
@@ -176,6 +227,7 @@ display:
               library_news_author: '0'
               library_page_author: '0'
               data_administrator: '0'
+            placeholder: 'enter one of more search terms'
           is_grouped: false
           group_info:
             label: ''
@@ -188,51 +240,15 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: search_keywords
-        title:
-          id: title
-          table: node_field_data
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '!='
-          value: 'UNB Libraries'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: node
-          entity_field: title
-          plugin_id: string
+          parse_mode: terms
+          min_length: 1
+          fields: {  }
+          plugin_id: search_api_fulltext
       sorts:
-        score:
-          id: score
-          table: node_search_index
-          field: score
+        search_api_relevance:
+          id: search_api_relevance
+          table: search_api_index_pages_lib_unb_ca
+          field: search_api_relevance
           relationship: none
           group_type: group
           admin_label: ''
@@ -240,9 +256,19 @@ display:
           exposed: false
           expose:
             label: ''
-          plugin_id: search_score
+          plugin_id: search_api
       title: 'Search our Webpages'
-      header: {  }
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          content: "<div class=\"alert alert-success d-flex flex-row\">\r\n  <div class=\"mr-2\"><i class=\"fas fa-search\"></i></div>\r\n  <div>Showing <b>@start - @end</b> of <b>@total</b> results.</div>\r\n</div>"
+          plugin_id: result
       footer: {  }
       empty:
         area_text_custom:
@@ -253,14 +279,13 @@ display:
           group_type: group
           admin_label: ''
           empty: true
-          tokenize: true
-          content: "<div class=\"d-flex flex-row h5\">\r\n<div class=\"mr-1\"><i class=\"fas fa-exclamation-circle text-red\"></i></div>\r\n<div><p>Sorry, we couldn’t find any matches for your search in our webpages. Please modify your search query and try again.</p></div>\r\n</div>"
+          tokenize: false
+          content: "<div class=\"alert alert-danger d-flex flex-row\">\r\n<div class=\"mr-2\"><i class=\"fas fa-book-dead\"></i></div>\r\n<div>Sorry, we couldn’t find any matches for your search in our webpages. Please modify your search query and try again.</div>\r\n</div>"
           plugin_id: text_custom
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
       css_class: 'search-webpages theme-dark'
-      use_ajax: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -268,72 +293,21 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - 'user.node_grants:view'
         - user.permissions
       tags: {  }
   attachment_1:
     display_plugin: attachment
     id: attachment_1
-    display_title: Attachment
+    display_title: 'Disclaimer Attachment'
     position: 2
     display_options:
       display_extenders: {  }
-      filters:
-        status:
-          value: '1'
-          table: node_field_data
-          field: status
-          plugin_id: boolean
-          entity_type: node
-          entity_field: status
-          id: status
-          expose:
-            operator: ''
-          group: 1
-        type:
-          id: type
-          table: node_field_data
-          field: type
-          value:
-            library_page: library_page
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
-      defaults:
-        filters: false
-        filter_groups: false
-        sorts: false
-        empty: false
-        style: false
-        row: false
-        fields: false
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
       sorts: {  }
-      pager:
-        type: some
-        options:
-          items_per_page: 1
-          offset: 0
-      empty: {  }
-      displays:
-        page_1: page_1
-      inherit_arguments: false
-      style:
-        type: default
-        options:
-          row_class: table-hover
-          default_row_class: true
-          uses_fields: false
-      row:
-        type: fields
-        options:
-          default_field_elements: false
-          inline: {  }
-          separator: ''
-          hide_empty: false
+      defaults:
+        sorts: false
+        fields: false
+        empty: false
+        header: false
       fields:
         nothing:
           id: nothing
@@ -378,17 +352,28 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: false
+          element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
+      pager:
+        type: some
+        options:
+          items_per_page: 1
+          offset: 0
+      empty: {  }
+      header: {  }
+      displays:
+        page_1: page_1
+      inherit_arguments: false
+      display_description: ''
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_interface'
-        - 'user.node_grants:view'
+        - url
         - user.permissions
       tags: {  }
   page_1:
@@ -398,33 +383,274 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: search-core
-      header:
-        result:
-          id: result
-          table: views
-          field: result
+      path: search-api
+      fields:
+        title:
+          id: title
+          table: search_api_datasource_pages_lib_unb_ca_entity_node
+          field: title
           relationship: none
           group_type: group
           admin_label: ''
-          empty: false
-          content: "<div class=\"alert alert-success d-flex flex-row\">\r\n  <div class=\"mr-2\"><i class=\"fas fa-search\"></i></div>\r\n  <div>Showing <b>@start - @end</b> of <b>@total</b> results.</div>\r\n</div>"
-          plugin_id: result
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: h2
+          element_class: 'mb-1 mt-5'
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+          entity_type: node
+          plugin_id: search_api_field
+        rendered_item:
+          id: rendered_item
+          table: search_api_index_pages_lib_unb_ca
+          field: rendered_item
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Page content'
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 350
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: true
+            trim: true
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          link_to_item: false
+          use_highlighting: true
+          multi_type: separator
+          multi_separator: ', '
+          plugin_id: search_api
+        search_api_excerpt:
+          id: search_api_excerpt
+          table: search_api_index_pages_lib_unb_ca
+          field: search_api_excerpt
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: '{{ rendered_item }}'
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          link_to_item: false
+          use_highlighting: false
+          multi_type: separator
+          multi_separator: ', '
+          plugin_id: search_api
       defaults:
-        header: false
-        empty: false
-      empty:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
+        fields: false
+        filters: false
+        filter_groups: false
+      filters:
+        search_api_fulltext:
+          id: search_api_fulltext
+          table: search_api_index_pages_lib_unb_ca
+          field: search_api_fulltext
           relationship: none
           group_type: group
           admin_label: ''
-          empty: true
-          tokenize: true
-          content: "<div class=\"alert alert-danger d-flex flex-row\">\r\n<div class=\"mr-2\"><i class=\"fas fa-book-dead\"></i></div>\r\n<div>Sorry, we couldn’t find any matches for your search in our webpages. Please modify your search query and try again.</div>\r\n</div>"
-          plugin_id: text_custom
+          operator: or
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: search_api_fulltext_op
+            label: ''
+            description: ''
+            use_operator: false
+            operator: search_api_fulltext_op
+            identifier: query
+            required: true
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              library_news_author: '0'
+              library_page_author: '0'
+              data_administrator: '0'
+            placeholder: 'enter one of more search terms'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          parse_mode: terms
+          min_length: 1
+          fields: {  }
+          plugin_id: search_api_fulltext
+        status:
+          id: status
+          table: search_api_index_pages_lib_unb_ca
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_boolean
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
@@ -432,6 +658,5 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - 'user.node_grants:view'
         - user.permissions
       tags: {  }
