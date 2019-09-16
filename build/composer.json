@@ -206,18 +206,6 @@
         {
             "type": "package",
             "package": {
-                "name": "unb-libraries/calendar_hours",
-                "version": "dev-8.x-1.x",
-                "type": "drupal-module",
-                "dist": {
-                    "type": "zip",
-                    "url": "https://github.com/unb-libraries/calendar_hours/archive/8.x-1.x.zip"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
                 "name": "unb-libraries/font_awesome",
                 "version": "5.10.2",
                 "type": "drupal-library",
