@@ -1,8 +1,14 @@
-uuid: eeeae02d-c563-4f23-8753-0c6040ba0724
+uuid: 6afeb4dd-fef2-4413-b89d-096d2da80d1d
 langcode: en
 status: true
 dependencies:
   config:
+    - search_api_solr.solr_field_type.text_edge_und_7_0_0
+    - search_api_solr.solr_field_type.text_edgestring_und_6_0_0
+    - search_api_solr.solr_field_type.text_en_7_0_0
+    - search_api_solr.solr_field_type.text_ngram_und_7_0_0
+    - search_api_solr.solr_field_type.text_ngramstring_und_6_0_0
+    - search_api_solr.solr_field_type.text_phonetic_en_7_0_0
     - search_api_solr.solr_field_type.text_phonetic_und_7_0_0
     - search_api_solr.solr_field_type.text_und_7_0_0
   module:
@@ -17,7 +23,7 @@ backend_config:
     scheme: http
     host: drupal-solr-lib-unb-ca
     port: 8983
-    path: /solr
+    path: /
     core: pages.lib.unb.ca
     timeout: 5
     index_timeout: 5
@@ -27,12 +33,13 @@ backend_config:
     solr_version: ''
     http_method: AUTO
     jmx: false
+    solr_install_dir: ../../..
+  disabled_field_types: {  }
+  rows: 10
   retrieve_data: false
   highlight_data: false
   skip_schema_check: false
   server_prefix: ''
   domain: generic
-  site_hash: false
   optimize: false
-  disabled_field_types: {  }
-  rows: 10
+  site_hash: false
