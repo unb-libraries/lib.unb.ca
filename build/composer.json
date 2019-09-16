@@ -257,7 +257,7 @@
         "drupal/google_analytics": "2.4",
         "drupal/health_check": "1.1",
         "drupal/honeypot": "1.29",
-        "drupal/inline_entity_form": "1.0-rc1",
+        "drupal/inline_entity_form": "1.0-rc2",
         "drupal/ldap": "3.0-beta7",
         "drupal/linkit": "5.0-beta9",
         "drupal/media_entity_browser": "2.0-alpha2",
