@@ -1,4 +1,5 @@
 module:
+  alert_scheduler_client: 0
   allowed_formats: 0
   antibot: 0
   big_pipe: 0

@@ -284,6 +284,7 @@
         "jquery/json2": "dev-master",
         "jquery/pause": "dev-master",
         "unb-libraries/calendar_hours": "dev-8.x-1.x",
+        "unb-libraries/alert_scheduler": "dev-8.x-1.x",
         "unb-libraries/drupal-builder": "^8.0.0",
         "unb-libraries/font_awesome": "~5.10",
         "unb-libraries/unb_lib_theme": "dev-8.x-bootstrap-4.x"
