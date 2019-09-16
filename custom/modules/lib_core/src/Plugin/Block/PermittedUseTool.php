@@ -20,7 +20,7 @@ class PermittedUseTool extends BlockBase {
    */
   public function build() {
     $html = '
-      <form action="//web.lib.unb.ca/eresources/index.php" class="alert alert-warning mx-4 my-2 theme-dark" method="get">
+      <form action="//web.lib.unb.ca/eresources/index.php" class="alert alert-warning my-3 theme-dark" method="get">
         <div class="form-row mb-2">
           <input id="sub" name="sub" type="hidden" value="all">
 		      <input name="searchtype" type="hidden" value="every_word">
@@ -32,10 +32,10 @@ class PermittedUseTool extends BlockBase {
           </div>
           <div class="col-lg-5 form-group">
             <input class="form-control" id="title" name="resource_title" placeholder="enter database or journal name" type="text">
-            <p class="mt-2">
-              <i aria-hidden="true" class="fas fa-gavel fa-flip-horizontal"></i>
-              <a href="//web.lib.unb.ca/eresources/permitteduse.php">Understanding the permitted use tool</a>
-            </p>
+            <div class="d-flex flex-row mt-2">
+              <div class="mr-2"><i aria-hidden="true" class="fas fa-gavel fa-flip-horizontal"></i></div>
+              <div><a href="//web.lib.unb.ca/eresources/permitteduse.php">Understanding the permitted use tool</a></div>
+            </div>
           </div>
           <div class="col form-group">
             <input class="btn btn-primary" type="submit" value="Check Permitted Use">
