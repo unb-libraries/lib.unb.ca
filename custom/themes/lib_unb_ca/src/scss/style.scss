@@ -568,3 +568,34 @@ table {
   }
 }
 /** END UTILITY **/
+
+/** Search Webpages **/
+.search-webpages {
+  .alert-primary {
+    a {
+      .alert-link {
+        @include css3-prefix(transition, color .3s);
+      }
+      &:hover {
+        .alert-link {
+          color: inherit;
+        }
+      }
+    }
+  }
+
+  .view-filters {
+    margin: 3rem 6rem;
+  }
+
+  form {
+    .form-group {
+      margin-bottom: 0;
+    }
+
+    input[name=query] {
+      width: 24rem;
+      max-width: 100%;
+    }
+  }
+}
