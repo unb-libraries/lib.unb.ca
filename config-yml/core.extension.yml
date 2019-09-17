@@ -74,7 +74,6 @@ module:
   redirect: 0
   redis: 0
   scroll_to_top: 0
-  search: 0
   search_api: 0
   search_api_solr: 0
   simple_group: 0
