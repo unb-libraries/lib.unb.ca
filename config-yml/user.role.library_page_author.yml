@@ -20,6 +20,7 @@ permissions:
   - 'edit any image media'
   - 'edit any library_page content'
   - 'edit own file media'
+  - 'override library_page published option'
   - 'revert library_page revisions'
   - 'view library_page revisions'
   - 'view own unpublished content'
