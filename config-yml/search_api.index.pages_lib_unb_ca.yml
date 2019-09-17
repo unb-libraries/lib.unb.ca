@@ -89,6 +89,14 @@ field_settings:
     dependencies:
       module:
         - node
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - node
   uid:
     label: uid
     datasource_id: 'entity:node'
