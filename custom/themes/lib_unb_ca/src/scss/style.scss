@@ -94,6 +94,7 @@ thead {
 .aggregation {
   margin-left: .25rem;
 }
+
 /* Drupal alert messages */
 .alert-dismissible {
   .close {
@@ -101,6 +102,24 @@ thead {
     @include opacity(.8);
   }
 }
+
+/* BS4 alerts */
+.alert-primary {
+  a {
+    .alert-link {
+      @include css3-prefix(transition, all .3s);
+      border-bottom: 1px dotted #004085;
+      padding-bottom: 1px;
+    }
+    &:hover {
+      .alert-link {
+        border-color: transparent;
+        color: inherit;
+      }
+    }
+  }
+}
+
 /* Embedded Media Image - centered */
 .align-center {
   text-align: center;
@@ -181,6 +200,21 @@ thead {
     padding-right: .33rem !important;
   }
 }
+
+/* Pagination */
+ul.pagination {
+  justify-content: center !important;
+  margin-top: 1.5rem;
+}
+.page-item > span.page-link {
+  color: inherit;
+  cursor: default;
+  &:hover {
+    background: inherit;
+  }
+}
+/* END Pagination */
+
 /* Library News */
 /* Post listing page */
 .library-news {
@@ -566,31 +600,56 @@ table {
 
 /** Search Webpages **/
 .search-webpages {
-  .alert-primary {
-    a {
-      .alert-link {
-        @include css3-prefix(transition, color .3s);
-      }
-      &:hover {
-        .alert-link {
-          color: inherit;
-        }
-      }
-    }
-  }
-
-  .view-filters {
-    margin: 3rem 6rem;
-  }
-
   form {
+    margin: 3rem 2.5rem;
+
     .form-group {
-      margin-bottom: 0;
+      margin-bottom: .5rem;
     }
 
-    input[name=query] {
-      width: 24rem;
-      max-width: 100%;
+    .form-select {
+      /* Match stock form-text margin top */
+      margin-top: 0.25rem;
+    }
+
+    .js-form-item-query {
+      /* Emulate BS4 input-group-prepend with FA search */
+      margin-left: 2.5rem;
+
+      &:before {
+        background-color: #e9ecef;
+        border: 1px solid #ced4da;
+        border-bottom-left-radius: .25rem;
+        border-top-left-radius: .25rem;
+        color: #495057;
+        content: '\f002';
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        /* Match form margin */
+        left: 2.5rem;
+        margin-top: .25rem;
+        padding: 0.375rem 0.75rem;
+        position: absolute;
+        white-space: nowrap;
+        z-index: -1;
+      }
+
+      input {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+      }
+    }
+
+    label {
+      /* Emulate BS4 sr-only: label accessibility */
+      border: 0;
+      clip: rect(0, 0, 0, 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
     }
   }
 }
