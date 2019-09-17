@@ -5,6 +5,7 @@ dependencies:
   config:
     - search_api.index.pages_lib_unb_ca
   module:
+    - better_exposed_filters
     - search_api
     - user
 id: search_our_webpages
@@ -55,8 +56,8 @@ display:
           id: 0
           total_pages: null
           tags:
-            previous: ‹‹
-            next: ››
+            previous: '‹‹ Previous'
+            next: 'Next ››'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -210,7 +211,7 @@ display:
           operator: or
           value: ''
           group: 1
-          exposed: true
+          exposed: false
           expose:
             operator_id: search_api_fulltext_op
             label: ''
@@ -291,7 +292,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - url.query_args
         - user.permissions
       tags: {  }
@@ -308,6 +308,11 @@ display:
         fields: false
         empty: false
         header: false
+        exposed_form: false
+        filters: false
+        filter_groups: false
+        style: false
+        row: false
       fields:
         nothing:
           id: nothing
@@ -315,12 +320,12 @@ display:
           field: nothing
           relationship: none
           group_type: group
-          admin_label: ''
+          admin_label: 'Disclaimer Text'
           label: ''
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"alert alert-light border\">\r\n<div class=\"d-flex flex-row\">\r\n<div class=\"mr-1\"><i class=\"fas fa-exclamation-circle\"></i></div>\r\n<div>This search interface <strong>DOES NOT</strong> search our catalogue, electronic databases or other online\r\nresources; it will only search for local web pages. To find resources, consult <a href=\"https://unb.on.worldcat.org\">our catalogue,\r\nUNB WorldCat</a> or the <a href=\"//web.lib.unb.ca/eresources\">e-Resources section</a> of our website.</div>\r\n</div>\r\n</div>"
+            text: "<div class=\"alert alert-light border\">\r\n<div class=\"d-flex flex-row\">\r\n<div class=\"mr-2\"><span class=\"fas fa-bell\"></span></div>\r\n<p class=\"mb-0\">This search interface <strong>DOES NOT</strong> search our catalogue, electronic databases or other online\r\nresources; it will only search for local web pages. To find resources, consult <a href=\"https://unb.on.worldcat.org\">our catalogue,\r\nUNB WorldCat</a> or the <a href=\"//web.lib.unb.ca/eresources\">e-Resources section</a> of our website.</p>\r\n</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -363,17 +368,52 @@ display:
         options:
           items_per_page: 1
           offset: 0
-      empty: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content: "<div class=\"alert alert-warning border\">\r\n<div class=\"d-flex flex-row\">\r\n<div class=\"mr-2\"><span class=\"fas fa-bell\"></span></div>\r\n<p class=\"mb-0\">This search interface <strong>DOES NOT</strong> search our catalogue, electronic databases or other online\r\nresources; it will only search for local web pages. To find resources, consult <a href=\"https://unb.on.worldcat.org\">our catalogue,\r\nUNB WorldCat</a> or the <a href=\"//web.lib.unb.ca/eresources\">e-Resources section</a> of our website.</p>\r\n</div>\r\n</div>"
+          plugin_id: text_custom
       header: {  }
       displays:
         page_1: page_1
       inherit_arguments: false
       display_description: ''
+      exposed_form:
+        type: basic
+        options:
+          submit_button: GO
+          reset_button: true
+          reset_button_label: Clear
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: false
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      filters: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      style:
+        type: default
+        options: {  }
+      row:
+        type: fields
+        options:
+          default_field_elements: false
+          inline: {  }
+          separator: ''
+          hide_empty: false
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_interface'
-        - url
         - user.permissions
       tags: {  }
   page_1:
@@ -383,7 +423,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: search-api
+      path: search
       fields:
         title:
           id: title
@@ -553,7 +593,7 @@ display:
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: false
-          empty: '{{ rendered_item }}'
+          empty: '&hellip;&nbsp;{{ rendered_item }}'
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
@@ -566,6 +606,10 @@ display:
         fields: false
         filters: false
         filter_groups: false
+        exposed_form: false
+        title: false
+        header: false
+        empty: false
       filters:
         search_api_fulltext:
           id: search_api_fulltext
@@ -580,7 +624,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: ''
+            label: 'Search UNB Libraries'
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -594,7 +638,7 @@ display:
               library_news_author: '0'
               library_page_author: '0'
               data_administrator: '0'
-            placeholder: 'Search UNB Libraries'
+            placeholder: 'Enter search terms'
           is_grouped: false
           group_info:
             label: ''
@@ -611,6 +655,50 @@ display:
           min_length: 1
           fields: {  }
           plugin_id: search_api_fulltext
+        type:
+          id: type
+          table: search_api_index_pages_lib_unb_ca
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            all: all
+            library_page: library_page
+          group: 1
+          exposed: true
+          expose:
+            operator_id: type_op
+            label: 'filter options'
+            description: ''
+            use_operator: false
+            operator: type_op
+            identifier: type
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              library_news_author: '0'
+              library_page_author: '0'
+              data_administrator: '0'
+            reduce: true
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          plugin_id: search_api_options
         status:
           id: status
           table: search_api_index_pages_lib_unb_ca
@@ -651,6 +739,65 @@ display:
         operator: AND
         groups:
           1: AND
+      exposed_form:
+        type: bef
+        options:
+          submit_button: GO
+          reset_button: true
+          reset_button_label: Clear
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: false
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          input_required: true
+          text_input_required: "<div class=\"alert alert-primary d-flex flex-row\">\r\n  <div class=\"mr-2\"><span class=\"fas fa-info-circle\"></span></div>\r\n  <p class=\"mb-0\">Alternatively, you can look through the <a href=\"/sitemap\"><span class=\"alert-link\">A to Z Index for UNB Libraries</span></a>.</p>\r\n</div>"
+          bef:
+            general:
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              autosubmit: false
+              autosubmit_exclude_textfield: false
+              autosubmit_hide: false
+            search_api_fulltext:
+              bef_format: default
+              more_options:
+                is_secondary: false
+                placeholder_text: ''
+                rewrite:
+                  filter_rewrite_values: ''
+            type:
+              bef_format: default
+              more_options:
+                bef_select_all_none: false
+                bef_collapsible: false
+                is_secondary: false
+                rewrite:
+                  filter_rewrite_values: "- Any -|search all pages\r\nLibrary page|omit library news"
+          text_input_required_format: library_page_html
+      title: 'Search our Webpages'
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          content: "<div class=\"alert alert-success d-flex flex-row\">\r\n  <div class=\"mr-2\"><i class=\"fas fa-check-circle\"></i></div>\r\n  <p class=\"mb-0\">Showing <b>@start - @end</b> of <b>@total</b> results.</p>\r\n</div>"
+          plugin_id: result
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content: "<div class=\"alert alert-danger d-flex flex-row\">\r\n<div class=\"mr-2\"><i class=\"fas fa-exclamation-circle\"></i></div>\r\n<p class=\"mb-0\">We're sorry, we found no results that match your search in our webpages. Please modify your query and try again.</p>\r\n</div>\r\n\r\n<div><a class=\"btn btn-dark\" href=\"/help/ask-us\">Need help? Ask Us!</a></div>\r\n"
+          plugin_id: text_custom
     cache_metadata:
       max-age: -1
       contexts:
