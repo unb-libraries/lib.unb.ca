@@ -614,7 +614,8 @@ table {
 
     .js-form-item-query {
       /* Emulate BS4 input-group-prepend with FA search */
-      margin-left: 2.5rem;
+      padding-left: 45px;
+      position: relative;
 
       &:before {
         background-color: #e9ecef;
@@ -626,7 +627,8 @@ table {
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
         /* Match form margin */
-        left: 2.5rem;
+        left: 0;
+        margin-left: 5px;
         margin-top: .25rem;
         padding: 0.375rem 0.75rem;
         position: absolute;
@@ -650,6 +652,11 @@ table {
       padding: 0;
       position: absolute;
       width: 1px;
+    }
+  }
+  @media (max-width: 414px) {
+    form {
+      margin: 3rem 1rem;
     }
   }
 }
