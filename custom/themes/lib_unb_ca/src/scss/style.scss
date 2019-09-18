@@ -642,23 +642,13 @@ ul.field--name-field-categories:before {
     margin-bottom: .25rem;
   }
 }
-.list-items {
-  padding-left: 1rem;
-
-  &.list-indent {
-    margin-left: 1rem;
-  }
-
-  li {
-    margin-bottom: .5rem;
-  }
+.list-no-indent {
+  padding-inline-start: 1.1rem;
 }
-ol.list-unbulleted,
-ul.list-unbulleted {
-  padding-inline-start: 1.5rem;
-}
-.list-unbulleted {
+ol.list-no-bullets,
+ul.list-no-bullets {
   list-style-type: none;
+  padding-inline-start: 1.5rem;
 }
 
 /* Custom "Hours" table style */
