@@ -18,7 +18,11 @@
   border-top: 1px solid $gray-200;
   padding: 2.5rem 0;
 }
-
+.layout--twocol-section--67-33 .layout__region--second {
+  h3 {
+    margin-top: 1.75rem;
+  }
+}
 /* Begin col stack at larger resolution */
 @media (max-width: 991px) {
   .layout__region--first {
