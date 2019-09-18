@@ -282,6 +282,12 @@ ul.pagination {
     @include opacity(.9);
     @include css3-prefix(transform, scale(1.01));
   }
+
+  @media (min-width: 991px) and (max-width: 1200px) {
+    img {
+      padding-left: 1rem;
+    }
+  }
 }
 /* Library new post metadata */
 .attribution,
