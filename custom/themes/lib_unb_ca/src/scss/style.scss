@@ -36,7 +36,7 @@ section a:not([class]):hover,
 section a.external:hover,
 aside a:not([class]):hover,
 aside a.external:hover {
-  @include css3-prefix(box-shadow, 0 2px 1px -2px)
+  @include css3-prefix(box-shadow, 0 2px 1px -2px);
 }
 
 caption {
@@ -245,19 +245,6 @@ ul.pagination {
     }
   }
 
-  /* Featured image */
-  .news-featured {
-    a img {
-      @include opacity(1);
-      @include css3-prefix(transition, opacity .3s, transform .3s);
-      @include css3-prefix(transform, scale(1));
-    }
-    a:hover img {
-      @include opacity(.7);
-      @include css3-prefix(transform, scale(.98));
-    }
-  }
-
   /* Front page teasers */
   .recent-teasers {
     .views-row h3 {
@@ -282,6 +269,18 @@ ul.pagination {
     nav {
       margin-bottom: 3rem;
     }
+  }
+}
+/* Featured image */
+.news-featured {
+  a img {
+    @include opacity(1);
+    @include css3-prefix(transition, opacity .4s, transform .4s);
+    @include css3-prefix(transform, scale(1));
+  }
+  a:hover img {
+    @include opacity(.9);
+    @include css3-prefix(transform, scale(1.01));
   }
 }
 /* Library new post metadata */
@@ -542,6 +541,19 @@ ul.field--name-field-categories:before {
 /* END Staff and Departments View */
 
 /* Views Slideshow */
+.views_slideshow_cycle_teaser_section {
+  a img {
+    @include opacity(1);
+    @include css3-prefix(transition, opacity .4s, transform .4s);
+    @include css3-prefix(transform, scale(1));
+  }
+  a:hover {
+    img {
+      @include opacity(.9);
+      @include css3-prefix(transform, scale(1.01));
+    }
+  }
+}
 .views-slideshow-controls-bottom {
   font-size: 0.9rem;
   margin-top: .75rem;
@@ -613,6 +625,7 @@ ul.field--name-field-categories:before {
     }
   }
 }
+/* END Views Slideshow */
 /** END OVERRIDES **/
 
 
