@@ -653,6 +653,13 @@ ul.field--name-field-categories:before {
     margin-bottom: .5rem;
   }
 }
+ol.list-unbulleted,
+ul.list-unbulleted {
+  padding-inline-start: 1.5rem;
+}
+.list-unbulleted {
+  list-style-type: none;
+}
 .list-unstyled {
   &.list-indent {
     padding-left: 1rem;
