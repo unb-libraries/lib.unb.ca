@@ -1,0 +1,25 @@
+uuid: cfb331eb-e0c1-416a-9497-e45041d981c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.pages_lib_unb_ca
+    - views.view.search_our_webpages
+  module:
+    - views
+    - search_api_autocomplete
+id: search_our_webpages
+label: 'Search Our Webpages'
+index_id: pages_lib_unb_ca
+suggester_settings:
+  live_results:
+    fields: {  }
+    view_modes: {  }
+suggester_weights: {  }
+suggester_limits: {  }
+search_settings:
+  'views:search_our_webpages':
+    displays:
+      default: true
+      selected: {  }
+options: {  }
