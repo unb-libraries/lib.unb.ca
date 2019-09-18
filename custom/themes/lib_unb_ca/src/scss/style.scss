@@ -95,6 +95,10 @@ thead {
   margin-left: .25rem;
 }
 
+.more-link a {
+  color: $red;
+}
+
 /* Drupal alert messages */
 .alert-dismissible {
   .close {
@@ -129,6 +133,7 @@ thead {
     margin-bottom: .5rem;
   }
 }
+
 
 /* CONTEXT sensitive */
 /* Scale content images to parent block element */
@@ -358,9 +363,99 @@ ul.field--name-field-categories:before {
   }
 }
 /* END Library News */
-.more-link a {
-  color: $red;
+
+/** Search Webpages **/
+.search-webpages {
+  form {
+    margin: 3rem 2.5rem;
+
+    .form-group {
+      margin-bottom: .5rem;
+    }
+
+    .form-select {
+      /* Match stock form-text margin top */
+      margin-top: 0.25rem;
+    }
+
+    .js-form-item-query {
+      /* Emulate BS4 input-group-prepend with FA search */
+      padding-left: 45px;
+      position: relative;
+
+      &:before {
+        background-color: #e9ecef;
+        border: 1px solid #ced4da;
+        border-bottom-left-radius: .25rem;
+        border-top-left-radius: .25rem;
+        color: #495057;
+        content: '\f002';
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        /* Match form margin */
+        left: 0;
+        margin-left: 5px;
+        margin-top: .25rem;
+        padding: 0.375rem 0.75rem;
+        position: absolute;
+        white-space: nowrap;
+        z-index: -1;
+      }
+
+      input {
+        border-bottom-left-ra43dius: 0;
+        border-top-left-radius: 0;
+      }
+    }
+
+    label {
+      /* Emulate BS4 sr-only: label accessibility */
+      border: 0;
+      clip: rect(0, 0, 0, 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+  }
+
+  @media (max-width: 414px) {
+    form {
+      margin: 3rem 1rem;
+    }
+  }
 }
+
+/* Remove autocomplete li hover */
+.search-api-autocomplete-search .ui-menu-item:hover {
+  background: inherit;
+}
+
+/* Borrow BS4 widget styles */
+.ui-autocomplete {
+  &.ui-widget.ui-widget-content {
+    border-color: #ced4da;
+  }
+
+  background: #f8f9fa;
+  border-radius: .25rem;
+  padding: .25rem .5rem;
+
+  /* Inject 'Suggested' text at top of autocomplete list */
+  li:first-child:before {
+    color: #004085;
+    border-bottom: 1px solid #ced4da;
+    content: 'Suggested matches';
+    display: block;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    padding: .25rem;
+  }
+}
+/** END Search Webpages **/
 
 /* Staff and Departments View */
 .staff-departments {
@@ -597,66 +692,3 @@ table {
   }
 }
 /** END UTILITY **/
-
-/** Search Webpages **/
-.search-webpages {
-  form {
-    margin: 3rem 2.5rem;
-
-    .form-group {
-      margin-bottom: .5rem;
-    }
-
-    .form-select {
-      /* Match stock form-text margin top */
-      margin-top: 0.25rem;
-    }
-
-    .js-form-item-query {
-      /* Emulate BS4 input-group-prepend with FA search */
-      padding-left: 45px;
-      position: relative;
-
-      &:before {
-        background-color: #e9ecef;
-        border: 1px solid #ced4da;
-        border-bottom-left-radius: .25rem;
-        border-top-left-radius: .25rem;
-        color: #495057;
-        content: '\f002';
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        /* Match form margin */
-        left: 0;
-        margin-left: 5px;
-        margin-top: .25rem;
-        padding: 0.375rem 0.75rem;
-        position: absolute;
-        white-space: nowrap;
-        z-index: -1;
-      }
-
-      input {
-        border-bottom-left-radius: 0;
-        border-top-left-radius: 0;
-      }
-    }
-
-    label {
-      /* Emulate BS4 sr-only: label accessibility */
-      border: 0;
-      clip: rect(0, 0, 0, 0);
-      height: 1px;
-      margin: -1px;
-      overflow: hidden;
-      padding: 0;
-      position: absolute;
-      width: 1px;
-    }
-  }
-  @media (max-width: 414px) {
-    form {
-      margin: 3rem 1rem;
-    }
-  }
-}
