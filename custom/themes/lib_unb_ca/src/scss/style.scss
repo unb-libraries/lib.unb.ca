@@ -273,12 +273,10 @@ ul.pagination {
 .news-featured {
   a img {
     @include opacity(1);
-    @include css3-prefix(transition, opacity .4s, transform .4s);
-    @include css3-prefix(transform, scale(1));
+    @include css3-prefix(transition, opacity .8s);
   }
   a:hover img {
-    @include opacity(.9);
-    @include css3-prefix(transform, scale(1.01));
+    @include opacity(.75);
   }
 
   @media (min-width: 991px) and (max-width: 1200px) {
@@ -548,13 +546,11 @@ ul.field--name-field-categories:before {
 .views_slideshow_cycle_teaser_section {
   a img {
     @include opacity(1);
-    @include css3-prefix(transition, opacity .4s, transform .4s);
-    @include css3-prefix(transform, scale(1));
+    @include css3-prefix(transition, opacity .8s);
   }
   a:hover {
     img {
-      @include opacity(.9);
-      @include css3-prefix(transform, scale(1.01));
+      @include opacity(.75);
     }
   }
 }
