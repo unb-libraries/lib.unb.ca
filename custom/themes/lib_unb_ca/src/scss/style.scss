@@ -196,14 +196,6 @@ thead {
 }
 /* End Media files */
 
-/* Reduce main content right padding to increase usable space */
-@media (min-width: 992px) {
-  .layout-sidebar-second main,
-  .layout__region--first {
-    padding-right: .33rem !important;
-  }
-}
-
 /* Pagination */
 ul.pagination {
   justify-content: center !important;

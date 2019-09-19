@@ -6,10 +6,6 @@
 .field--name-field-column-2 .field__item {
   margin-bottom: 2.5rem;
 }
-/* Add 2-col layout > col2 left padding (align with banner hours text) */
-.field--name-field-page-content .layout--twocol-section.layout--twocol-section--67-33 > .layout__region--second {
-  padding-left: 1rem;
-}
 /* Normal size layout builder form buttons */
 .form-actions input.btn {
   width: inherit;
@@ -18,9 +14,34 @@
   border-top: 1px solid $gray-200;
   padding: 2.5rem 0;
 }
-.layout--twocol-section--67-33 .layout__region--second {
-  h3 {
-    margin-top: 1.75rem;
+.layout--twocol-section--67-33 {
+  .layout__region--second {
+    h3 {
+      margin-top: 1.75rem;
+    }
+  }
+  @media (min-width: 992px) {
+    .layout__region--first {
+      padding-right: .5rem;
+    }
+    .layout__region--second {
+      padding-left: 1.25rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    .layout__region--first {
+      padding-right: .75rem;
+    }
+  }
+}
+.layout--twocol-section--50-50 {
+  @media (min-width: 992px) {
+    .layout__region--first {
+      padding-right: 1rem;
+    }
+    .layout__region--second {
+      padding-left: 1rem;
+    }
   }
 }
 /* Begin col stack at larger resolution */
