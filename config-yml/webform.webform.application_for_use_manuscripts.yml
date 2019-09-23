@@ -192,9 +192,9 @@ handlers:
       cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
-      from_mail: _default
+      from_mail: '[webform_submission:values:email:raw]'
       from_options: {  }
-      from_name: _default
+      from_name: '[webform_submission:values:name:raw]'
       subject: 'Application for Use of Manuscripts'
       body: "<p>The following information was submitted through our <b>Application for Use of Manuscripts</b> form by <b>{{ webform_token('[webform_submission:user]', webform_submission) }}</b> on <b>{{ webform_token('[webform_submission:created]', webform_submission) }}</b>.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n\r\n\r\n"
       excluded_elements: {  }
