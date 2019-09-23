@@ -31,6 +31,16 @@
       cursor: not-allowed;
     }
   }
+
+  .webform-type-fieldset {
+    & > legend {
+      border-bottom: 2px solid $navbar-dark;
+      color: $gray-700;
+      font-weight: bold;
+      margin-bottom: 1.5rem
+    }
+  }
+
   fieldset.webform-type-fieldset {
     margin-bottom: 1.5rem;
 
@@ -101,17 +111,6 @@
 
   .webform-element--title-inline > label {
     padding-right: 0;
-  }
-
-  .webform-type-fieldset {
-    margin-bottom: 1.5rem;
-
-    & > legend {
-      border-bottom: 1px solid #e5e5e5;
-      color: $gray-700;
-      font-weight: bold;
-      margin-bottom: 1.5rem
-    }
   }
 }
 
