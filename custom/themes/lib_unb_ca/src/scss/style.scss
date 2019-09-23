@@ -203,6 +203,8 @@ ul.pagination {
 }
 .page-item {
   a.page-link {
+    color: $link-color;
+
     &:focus,
     &:hover {
       color: $red;
