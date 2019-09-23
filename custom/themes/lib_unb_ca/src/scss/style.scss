@@ -635,6 +635,10 @@ ul.field--name-field-categories:before {
 
 /** UTILITY CLASSES **/
 /* Custom List style */
+.bg-red {
+  background: $red;
+}
+
 .list-compact {
   li {
     margin-bottom: .25rem;
