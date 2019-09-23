@@ -201,11 +201,21 @@ ul.pagination {
   justify-content: center !important;
   margin-top: 1.5rem;
 }
-.page-item > span.page-link {
-  color: inherit;
-  cursor: default;
-  &:hover {
-    background: inherit;
+.page-item {
+  a.page-link {
+    &:focus,
+    &:hover {
+      color: $red;
+    }
+  }
+
+  span.page-link {
+    color: $black;
+    cursor: default;
+
+    &:hover {
+      background: inherit;
+    }
   }
 }
 /* END Pagination */
