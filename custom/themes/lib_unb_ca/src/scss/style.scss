@@ -636,8 +636,9 @@ ul.field--name-field-categories:before {
 /** UTILITY CLASSES **/
 /* Custom List style */
 .bg-red,
-.list-group-item.disabled.bg-red {
+.list-group-item.active.bg-red {
   background: $red;
+  border-color: $red;
 }
 
 .list-compact {
