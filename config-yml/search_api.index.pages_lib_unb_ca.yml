@@ -6,6 +6,7 @@ dependencies:
     - search_api_solr
     - node
     - search_api
+    - search_api_exclude
   config:
     - search_api.server.drupal_solr_lib_unb_ca
     - core.entity_view_mode.node.full
@@ -132,6 +133,7 @@ processor_settings:
     suffix: '</strong>'
     weights:
       postprocess_query: 0
+  node_exclude: {  }
   rendered_item: {  }
   solr_date_range:
     weights:
