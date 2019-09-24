@@ -123,6 +123,7 @@ processor_settings:
   content_access:
     weights:
       preprocess_query: -30
+  entity_status: {  }
   highlight:
     highlight: always
     highlight_partial: true
