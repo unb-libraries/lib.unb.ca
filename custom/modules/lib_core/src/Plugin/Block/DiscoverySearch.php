@@ -379,7 +379,7 @@ class DiscoverySearch extends BlockBase {
           Advanced Search
         </a>
         |
-        <a href="https://web.lib.unb.ca/about/loc_call">
+        <a href="https://lib.unb.ca/about/loc_call">
           Locations Guide
         </a>
         |
