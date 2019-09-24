@@ -752,7 +752,7 @@ display:
           exposed: true
           expose:
             operator_id: combine_op
-            label: 'Filter by name / position / location:'
+            label: 'Filter by name, position or location:'
             description: ''
             use_operator: false
             operator: combine_op
@@ -765,6 +765,7 @@ display:
               anonymous: '0'
               library_news_author: '0'
               library_page_author: '0'
+              data_administrator: '0'
             placeholder: ''
           is_grouped: false
           group_info:
