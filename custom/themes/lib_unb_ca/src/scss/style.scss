@@ -427,6 +427,30 @@ ul.field--name-field-categories:before {
     }
   }
 
+  /* Emulate BS4 input-group-lg */
+  &.input-group-lg {
+    input,
+    select {
+      font-size: 1.25rem;
+      line-height: initial;
+      padding-left: .75rem;
+      padding-right: .75rem;
+    }
+
+    .js-form-item-query {
+      &:before {
+        font-size: 1.25rem;
+        margin-left: -0.4rem;
+        padding: .38rem 1rem;
+      }
+
+      input {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+      }
+    }
+  }
+
   @media (max-width: 414px) {
     form {
       margin: 3rem 1rem;
