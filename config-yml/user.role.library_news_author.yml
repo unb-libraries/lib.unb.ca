@@ -25,6 +25,7 @@ permissions:
   - 'edit any news_post content'
   - 'edit own file media'
   - 'edit terms in categories'
+  - 'enter news_post revision log entry'
   - 'override news_post authored on option'
   - 'override news_post promote to front page option'
   - 'override news_post published option'
