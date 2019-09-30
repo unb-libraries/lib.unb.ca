@@ -216,9 +216,8 @@ display:
       style:
         type: default
         options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: true
+          row_class: mb-5
+          default_row_class: false
           uses_fields: false
       row:
         type: 'entity:node'
