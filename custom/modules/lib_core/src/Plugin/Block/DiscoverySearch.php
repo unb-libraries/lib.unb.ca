@@ -619,9 +619,7 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getEncyclopediasForm() {
     $form_encyclopedias =
-      '<p>
-        <small>Search for Reference Materials by title:</small>
-      </p>
+      '<p>Search for Reference Materials by title:</p>
       <form action="https://web.lib.unb.ca/eresources/index.php" method="get" id="search_results_refmat">
         <input id="sub_refmat" name="sub" type="hidden" value="refmat">
         <div class="form-group">
@@ -692,9 +690,7 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getEbooksForm() {
     $form_ebooks =
-      '<p>
-        <small>Search our vast electronic book collections for titles suitable for your computer, tablet or eReader.</small>
-      </p>
+      '<p>Search our vast electronic book collections for titles suitable for your computer, tablet or eReader.</p>
       <form action="https://web.lib.unb.ca/eresources/index.php" id="search_results_ebooks" method="get">
         <input id="sub_ebooks" name="sub" type="hidden" value="ebooks">
         <div class="form-group">
@@ -755,9 +751,7 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getVideosForm() {
     $form_videos =
-      '<p>
-        <small>Search across our online video collections.</small>
-      </p>
+      '<p>Search across our online video collections.</p>
       <form action="https://web.lib.unb.ca/eresources/index.php" id="search_results_video" method="get">
         <input id="sub_video" name="sub" type="hidden" value="video">
         <div class="form-group">
