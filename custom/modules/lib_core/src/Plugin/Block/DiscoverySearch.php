@@ -219,13 +219,9 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getReservesForm() {
     $form_reserves =
-      '<form action="//web.lib.unb.ca/core/action/process_reserves_search.php" id="searchReserves" method="get">
+      '<p class="mb-4">Search by instructor, course name or course number.</p>
+      <form action="//web.lib.unb.ca/core/action/process_reserves_search.php" id="searchReserves" method="get">
         <div class="form-group">
-          <div class="form-row font-weight-bold mb-2 ml-1">
-            <div class="mb-1">
-                Search by instructor, course name or course number:
-            </div>
-          </div>
           <div class="form-row">
             <div class="col-md-6 mb-2">
               <label class="sr-only" for="queryString_WCD">
@@ -332,15 +328,13 @@ class DiscoverySearch extends BlockBase {
             <div class="mb-1 mr-3">
               Search UNB WorldCat:
             </div>
-            <div>
-              <div class="custom-control custom-radio custom-control-inline">
-                <input checked="checked" class="custom-control-input" id="scope_UNBLibraries_WCD" name="scope" type="radio" value="wz:66413">
-                <label class="custom-control-label" for="scope_UNBLibraries_WCD">UNB Libraries</label>
-              </div>
-              <div class="custom-control custom-radio custom-control-inline">
-                <input class="custom-control-input" id="scope_worldwide_WCD" name="scope" type="radio" value="">
-                <label class="custom-control-label" for="scope_worldwide_WCD">Libraries Worldwide</label>
-              </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input checked="checked" class="custom-control-input" id="scope_UNBLibraries_WCD" name="scope" type="radio" value="wz:66413">
+              <label class="custom-control-label" for="scope_UNBLibraries_WCD">UNB Libraries</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input class="custom-control-input" id="scope_worldwide_WCD" name="scope" type="radio" value="">
+              <label class="custom-control-label" for="scope_worldwide_WCD">Libraries Worldwide</label>
             </div>
           </div>
           <div class="form-row">
@@ -619,7 +613,7 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getEncyclopediasForm() {
     $form_encyclopedias =
-      '<p>Search for Reference Materials by title:</p>
+      '<p class="mb-4">Search for Reference Materials by title.</p>
       <form action="https://web.lib.unb.ca/eresources/index.php" method="get" id="search_results_refmat">
         <input id="sub_refmat" name="sub" type="hidden" value="refmat">
         <div class="form-group">
@@ -690,7 +684,7 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getEbooksForm() {
     $form_ebooks =
-      '<p>Search our vast electronic book collections for titles suitable for your computer, tablet or eReader.</p>
+      '<p class="mb-4">Search our vast electronic book collections for titles suitable for your computer, tablet or eReader.</p>
       <form action="https://web.lib.unb.ca/eresources/index.php" id="search_results_ebooks" method="get">
         <input id="sub_ebooks" name="sub" type="hidden" value="ebooks">
         <div class="form-group">
@@ -751,7 +745,7 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getVideosForm() {
     $form_videos =
-      '<p>Search across our online video collections.</p>
+      '<p class="mb-4">Search across our online video collections.</p>
       <form action="https://web.lib.unb.ca/eresources/index.php" id="search_results_video" method="get">
         <input id="sub_video" name="sub" type="hidden" value="video">
         <div class="form-group">
