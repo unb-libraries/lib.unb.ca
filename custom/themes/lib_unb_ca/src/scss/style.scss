@@ -671,13 +671,30 @@ ul.field--name-field-categories:before {
     margin-bottom: .25rem;
   }
 }
-.list-no-indent {
-  padding-inline-start: 1.1rem;
+li.list-group-item {
+  a {
+    display: block;
+
+    &:hover {
+      box-shadow: none;
+      text-decoration: underline;
+    }
+  }
+}
+.list-group-item-active {
+  border-left: .26em solid $red;
+
+  a {
+    color: $red;
+  }
 }
 ol.list-no-bullets,
 ul.list-no-bullets {
   list-style-type: none;
   padding-inline-start: 1.5rem;
+}
+.list-no-indent {
+  padding-inline-start: 1.1rem;
 }
 
 /* Custom "Hours" table style */
