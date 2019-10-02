@@ -8,7 +8,7 @@ dependencies:
 _core:
   default_config_hash: eQ9aeNMJhpII0KPnOnS9JWMGgHLrMrmY3yDBuwswS4I
 name: video_embed_wysiwyg_preview
-label: 'Video Embed Wysiwyg: Thumbnail Preview'
+label: 'Scale height 270px'
 effects:
   ba339f97-d07b-476d-9058-6c86c78329a1:
     uuid: ba339f97-d07b-476d-9058-6c86c78329a1

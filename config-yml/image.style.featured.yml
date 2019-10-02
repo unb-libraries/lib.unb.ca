@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 name: featured
-label: 'Featured (346w)'
+label: 'Scale width 346px (News Feature)'
 effects:
   3d0a01d0-cc45-4005-900d-76adda136d1b:
     uuid: 3d0a01d0-cc45-4005-900d-76adda136d1b

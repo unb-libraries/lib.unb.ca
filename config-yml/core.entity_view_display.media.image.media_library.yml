@@ -6,7 +6,7 @@ dependencies:
     - core.entity_view_mode.media.media_library
     - field.field.media.image.field_media_image
     - field.field.media.image.field_mime_type
-    - image.style.medium
+    - image.style.media_library
     - media.type.image
   module:
     - image
@@ -23,7 +23,7 @@ content:
     region: content
     label: hidden
     settings:
-      image_style: medium
+      image_style: media_library
       image_link: ''
     third_party_settings: {  }
 hidden:
