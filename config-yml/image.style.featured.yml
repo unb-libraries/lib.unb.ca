@@ -3,13 +3,13 @@ langcode: en
 status: true
 dependencies: {  }
 name: featured
-label: 'Scale width 346px (News Feature)'
+label: 'Scale width 345px'
 effects:
   3d0a01d0-cc45-4005-900d-76adda136d1b:
     uuid: 3d0a01d0-cc45-4005-900d-76adda136d1b
     id: image_scale
     weight: 1
     data:
-      width: 346
+      width: 345
       height: null
       upscale: true
