@@ -34,8 +34,10 @@ article a:not([class]):hover,
 article a.external:hover,
 section a:not([class]):hover,
 section a.external:hover,
+section a.file:hover,
 aside a:not([class]):hover,
-aside a.external:hover {
+aside a.external:hover,
+aside a.file:hover {
   @include css3-prefix(box-shadow, 0 2px 1px -2px);
 }
 
@@ -176,24 +178,45 @@ thead {
 }
 /* END Breadcrumbs */
 
-/* Media files */
-.file {
-  background: none;
-  font-family: "Font Awesome 5 Free";
-  padding-left: 0;
-}
-.file--application-pdf:before {
-  color: $red;
-  content: "\f1c1";
-}
-.file--mime-application-msword:before,
-.file--x-office-document:before {
-  color: #2b5999;
-  content: "\f1c2";
-}
-.file--mime-text-plain:before {
-  color: $gray-dark;
-  content: "\f15b";
+/* Media files/attachments */
+a:not(.file-no-icon).file {
+  &:after {
+    /* Default file icon/color */
+    background: none;
+    color: $gray-dark;
+    content: "\f15b";
+    font-family: "Font Awesome 5 Free";
+    margin-left: .25rem
+  }
+
+  &[href$=".doc"]:after,
+  &[href$=".docx"]:after {
+    color: #2b5999;
+    content: "\f1c2";
+  }
+
+  &[href$=".pdf"]:after {
+    color: #e20a0a;
+    content: "\f1c1";
+  }
+
+  &[href$=".ppt"]:after,
+  &[href$=".pptx"]:after {
+    color: #e86900;
+    content: "\f1c4";
+  }
+
+  &[href$=".csv"]:after,
+  &[href$=".xls"]:after,
+  &[href$=".xlsx"]:after {
+    color: #206f43;
+    content: "\f1c3";
+  }
+
+  &[href$=".zip"]:after {
+    color: #eabf0d;
+    content: "\f1c6";
+  }
 }
 /* End Media files */
 
@@ -686,6 +709,7 @@ li.list-group-item {
 
   a {
     color: $red;
+    padding-left: .15rem;
   }
 }
 ol.list-no-bullets,
