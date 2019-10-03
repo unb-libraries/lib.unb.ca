@@ -43,17 +43,6 @@ widgets:
     weight: -8
     label: 'Upload image'
     id: media_image_upload
-  206a3c1f-77bc-4ca1-ac99-906aa3f82c97:
-    settings:
-      extensions: 'txt pdf docx doc'
-      media_type: file
-      upload_location: 'public://media/documents'
-      multiple: false
-      submit_text: 'Insert selected'
-    uuid: 206a3c1f-77bc-4ca1-ac99-906aa3f82c97
-    weight: -7
-    label: 'Upload document'
-    id: media_upload
   92ec8a25-06b1-4134-a6b5-8f686fc3f3e0:
     settings:
       view: assets_library
