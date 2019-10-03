@@ -41,6 +41,7 @@ class UpcomingHours extends BlockBase {
         '#type' => 'link',
         '#title' => $this->t('Complete Hours'),
         '#url' => Url::fromUri($hours_page_url),
+        '#prefix' => '<span class="fas fa-clock">&nbsp;</span>',
       ],
       '#attached' => [
         'library' => [
