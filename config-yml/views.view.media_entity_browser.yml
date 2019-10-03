@@ -1,9 +1,10 @@
 uuid: 44aa2957-d8a1-4fca-81fc-45fed7fea882
-langcode: und
+langcode: en
 status: true
 dependencies:
   config:
     - image.style.media_entity_browser_thumbnail
+    - media.type.image
   module:
     - entity_browser
     - image
@@ -12,7 +13,7 @@ dependencies:
 _core:
   default_config_hash: _ouvvjB-2mzyW_my2WhKPWGHdsWUYdHSagahvxOcYHk
 id: media_entity_browser
-label: 'Media Browser'
+label: 'Media Grid Browser'
 module: views
 description: ''
 tag: ''
@@ -44,7 +45,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Filter
           reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -54,7 +55,7 @@ display:
       pager:
         type: mini
         options:
-          items_per_page: 12
+          items_per_page: 8
           offset: 0
           id: 0
           total_pages: null
@@ -83,6 +84,56 @@ display:
           hide_empty: false
           default_field_elements: true
       fields:
+        entity_browser_select:
+          id: entity_browser_select
+          table: media
+          field: entity_browser_select
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          entity_type: media
+          plugin_id: entity_browser_select
         thumbnail__target_id:
           id: thumbnail__target_id
           table: media_field_revision
@@ -279,11 +330,11 @@ display:
           entity_type: media
           entity_field: media
           plugin_id: field
-        entity_browser_select:
-          id: entity_browser_select
-          table: media
-          field: entity_browser_select
-          relationship: none
+        name_1:
+          id: name_1
+          table: users_field_data
+          field: name
+          relationship: uid
           group_type: group
           admin_label: ''
           label: ''
@@ -327,55 +378,67 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          entity_type: media
-          plugin_id: entity_browser_select
+          click_sort_column: value
+          type: user_name
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: user
+          entity_field: name
+          plugin_id: field
       filters:
-        status:
-          id: status
+        name:
+          id: name
           table: media_field_data
-          field: status
+          field: name
           relationship: none
           group_type: group
           admin_label: ''
-          operator: '='
-          value: '0'
+          operator: contains
+          value: ''
           group: 1
           exposed: true
           expose:
-            operator_id: ''
-            label: 'True'
-            description: null
+            operator_id: name_op
+            label: Filename
+            description: 'Partial match is supported'
             use_operator: false
-            operator: status_op
-            identifier: status
-            required: true
+            operator: name_op
+            identifier: name
+            required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
-          is_grouped: true
+              anonymous: '0'
+              library_news_author: '0'
+              library_page_author: '0'
+              data_administrator: '0'
+            placeholder: ''
+          is_grouped: false
           group_info:
-            label: 'Publishing status'
+            label: ''
             description: ''
-            identifier: status
+            identifier: ''
             optional: true
             widget: select
             multiple: false
             remember: false
             default_group: All
             default_group_multiple: {  }
-            group_items:
-              1:
-                title: Published
-                operator: '='
-                value: '1'
-              2:
-                title: Unpublished
-                operator: '='
-                value: '0'
+            group_items: {  }
           entity_type: media
-          entity_field: status
-          plugin_id: boolean
+          entity_field: name
+          plugin_id: string
         bundle:
           id: bundle
           table: media_field_data
@@ -384,9 +447,10 @@ display:
           group_type: group
           admin_label: ''
           operator: in
-          value: {  }
+          value:
+            image: image
           group: 1
-          exposed: true
+          exposed: false
           expose:
             operator_id: bundle_op
             label: Provider
@@ -416,45 +480,6 @@ display:
           entity_type: media
           entity_field: bundle
           plugin_id: bundle
-        name:
-          id: name
-          table: media_field_data
-          field: name
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: contains
-          value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: name_op
-            label: 'Media name'
-            description: ''
-            use_operator: false
-            operator: name_op
-            identifier: name
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: media
-          entity_field: name
-          plugin_id: string
         langcode:
           id: langcode
           table: media_field_data
@@ -463,9 +488,15 @@ display:
           group_type: group
           admin_label: ''
           operator: in
-          value: {  }
+          value:
+            all: all
+            '***LANGUAGE_site_default***': '***LANGUAGE_site_default***'
+            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
+            en: en
+            und: und
+            zxx: zxx
           group: 1
-          exposed: true
+          exposed: false
           expose:
             operator_id: langcode_op
             label: Language
@@ -495,11 +526,75 @@ display:
           entity_type: media
           entity_field: langcode
           plugin_id: language
+        uid:
+          id: uid
+          table: users_field_data
+          field: uid
+          relationship: uid
+          group_type: group
+          admin_label: ''
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: uid_op
+            label: 'Author id'
+            description: 'Suggestions will appear as you type'
+            use_operator: false
+            operator: uid_op
+            identifier: uid
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              library_news_author: '0'
+              library_page_author: '0'
+              data_administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: user
+          entity_field: uid
+          plugin_id: user_name
       sorts: {  }
-      header: {  }
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          content: '<div class="breadcrumb description">Displaying @start - @end of @total images</div>'
+          plugin_id: result
       footer: {  }
       empty: {  }
-      relationships: {  }
+      relationships:
+        uid:
+          id: uid
+          table: media_field_data
+          field: uid
+          relationship: none
+          group_type: group
+          admin_label: User
+          required: false
+          entity_type: media
+          entity_field: uid
+          plugin_id: standard
       arguments: {  }
       display_extenders: {  }
       filter_groups:

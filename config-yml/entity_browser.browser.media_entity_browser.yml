@@ -26,7 +26,7 @@ widgets:
     settings:
       view: media_entity_browser
       view_display: entity_browser_1
-      submit_text: 'Insert selected'
+      submit_text: 'Continue with selection'
       auto_select: false
     uuid: 6586703a-6976-4124-8a49-cbb07ceaa3b1
     weight: -10
@@ -38,16 +38,16 @@ widgets:
       media_type: image
       upload_location: 'public://media/images'
       multiple: 0
-      submit_text: 'Insert selected'
+      submit_text: 'Upload and continue'
     uuid: f7565be6-6607-469c-bbb1-48186792ad37
     weight: -8
-    label: 'Upload image'
+    label: 'Add new image'
     id: media_image_upload
   92ec8a25-06b1-4134-a6b5-8f686fc3f3e0:
     settings:
       view: assets_library
       view_display: entity_browser_1
-      submit_text: 'Insert selected'
+      submit_text: 'Continue with selection'
       auto_select: false
     uuid: 92ec8a25-06b1-4134-a6b5-8f686fc3f3e0
     weight: -9
