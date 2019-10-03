@@ -29,9 +29,13 @@ class UpcomingHours extends BlockBase {
     $hours_page_url = isset($config['hours_page_url']) ? $config['hours_page_url'] : $base_url . '/about/hours';
 
     $container = [
-      '#type' => 'container',
       'hours_table' => [
         '#type' => 'table',
+        '#attributes' => [
+          'class' => [
+            'table-sm',
+          ],
+        ],
       ],
       'hours_page_url' => [
         '#type' => 'link',
