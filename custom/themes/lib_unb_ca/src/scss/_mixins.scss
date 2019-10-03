@@ -1,0 +1,8 @@
+@mixin file-icon($content: '\f15b', $color: #373f44) {
+  background: none;
+  color: $color;
+  content: $content;
+  font-family: "Font Awesome 5 Free";
+  font-size: 1rem;
+  margin-left: .25rem
+}

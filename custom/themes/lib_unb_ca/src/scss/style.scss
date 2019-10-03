@@ -179,44 +179,34 @@ thead {
 /* END Breadcrumbs */
 
 /* Media files/attachments */
-a:not(.file-no-icon).file {
-  &:after {
-    /* Default file icon/color */
-    background: none;
-    color: $gray-dark;
-    content: "\f15b";
-    font-family: "Font Awesome 5 Free";
-    font-size: 1rem;
-    margin-left: .25rem
-  }
-
+a:not(.file-no-icon) {
   &[href$=".doc"]:after,
   &[href$=".docx"]:after {
-    color: #2b5999;
-    content: "\f1c2";
+    @include file-icon("\f1c2", #2b5999);
   }
 
   &[href$=".pdf"]:after {
-    color: #e20a0a;
-    content: "\f1c1";
+    @include file-icon("\f1c1", #e20a0a);
   }
 
   &[href$=".ppt"]:after,
   &[href$=".pptx"]:after {
-    color: #e86900;
-    content: "\f1c4";
+    @include file-icon("\f1c4", #e86900);
+  }
+
+  &[href$=".rtf"]:after,
+  &[href$=".txt"]:after {
+    @include file-icon();
   }
 
   &[href$=".csv"]:after,
   &[href$=".xls"]:after,
   &[href$=".xlsx"]:after {
-    color: #206f43;
-    content: "\f1c3";
+    @include file-icon("\f1c3", #206f43);
   }
 
   &[href$=".zip"]:after {
-    color: #eabf0d;
-    content: "\f1c6";
+    @include file-icon("\f1c6", #eabf0d);
   }
 }
 /* End Media files */
