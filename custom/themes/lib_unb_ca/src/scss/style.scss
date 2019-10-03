@@ -186,7 +186,7 @@ a:not(.file-no-icon) {
   }
 
   &[href$=".pdf"]:after {
-    @include file-icon("\f1c1", #c50809);
+    @include file-icon("\f1c1", #a40607);
   }
 
   &[href$=".ppt"]:after,
