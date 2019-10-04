@@ -15,30 +15,28 @@ h2:target:before {
 a {
   &.email-icon {
     &:before {
-      content: '\f0e0';
-      font-family: "Font Awesome 5 Free";
-      font-weight: 900;
-      margin-right: .25rem;
+      @include link-icon('\f0e0','',right);
     }
   }
 }
 
-/* Main content hover effect */
-article a:not([class]),
-section a:not([class]),
-section thead th a,
-aside a:not([class]) {
+/* Link hover effect (not in button/nav/toolbar contexts) */
+a:not(.link-no-hover):not([data-drupal-link-system-path]):not(.btn):not(.button):not(.chosen-single):not(.nav-link):not(.toolbar-item) {
   padding-bottom: 1px;
+
+  &:hover {
+    @include css3-prefix(box-shadow, 0px 2px 1px -1px rgba(153, 0, 0, .2));
+  }
 }
-article a:not([class]):hover,
-article a.external:hover,
-section a:not([class]):hover,
-section a.external:hover,
-section a.file:hover,
-aside a:not([class]):hover,
-aside a.external:hover,
-aside a.file:hover {
-  @include css3-prefix(box-shadow, 0 2px 1px -2px);
+/* Override hover on featured news */
+.news-featured a:hover {
+  box-shadow: none !important;
+}
+/* Dark-theme sort column link override */
+.thead-dark {
+  a:hover {
+    @include css3-prefix(box-shadow, 0px 2px 1px -1px rgba(255, 193, 7, .3) !important);
+  }
 }
 
 caption {
