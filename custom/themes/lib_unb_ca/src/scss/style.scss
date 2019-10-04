@@ -21,8 +21,7 @@ a {
 }
 
 /* Link hover effect (not in button/nav/toolbar contexts) */
-a:not(.link-no-hover):not(.btn):not(.button):not(.chosen-single):not(.dropdown-item),
-a:not([data-drupal-link-system-path]):not(.nav-link):not(.toolbar-item) {
+a:not(.link-no-hover):not(.btn):not(.button):not(.chosen-single):not(.dropdown-item):not([data-drupal-link-system-path]):not(.nav-link):not(.toolbar-item) {
   padding-bottom: 1px;
 
   &:hover {
