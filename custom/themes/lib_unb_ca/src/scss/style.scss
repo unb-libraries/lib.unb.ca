@@ -695,6 +695,26 @@ a:not(.link-no-icon)[data-toggle="collapse"] {
   border-color: $red;
 }
 
+.card-collapse {
+  background-color: $gray-100;
+  margin-bottom: 1rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+
+  a {
+    color: #005C75;
+    &:hover {
+      color: $red;
+    }
+  }
+
+  ul {
+    margin-bottom: 0;
+  }
+}
+
 .list-compact {
   li {
     margin-bottom: .25rem;
