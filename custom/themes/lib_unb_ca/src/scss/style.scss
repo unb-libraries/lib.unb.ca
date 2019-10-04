@@ -673,6 +673,21 @@ ul.field--name-field-categories:before {
 
 
 /** UTILITY CLASSES **/
+/* Aria-expanded link toggle icons */
+a:not(.link-no-icon)[data-toggle="collapse"] {
+  &[aria-expanded="false"] {
+    &:before {
+      @include link-icon('\f13a','',right);
+    }
+  }
+
+  &[aria-expanded="true"] {
+    &:before {
+      @include link-icon('\f139','',right);
+    }
+  }
+}
+
 /* Custom List style */
 .bg-red,
 .list-group-item.active.bg-red {
