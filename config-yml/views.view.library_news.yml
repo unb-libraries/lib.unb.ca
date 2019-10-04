@@ -1811,7 +1811,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<a href=\"https://twitter.com/UNBLibraries\">\r\n<img src=\"/themes/custom/lib_unb_ca/img/twitter-bg.gif\" alt=\"Twitter: Do you follow us?\">\r\n</a>"
+            text: "<a class=\"link-no-hover\" href=\"https://twitter.com/UNBLibraries\">\r\n<img src=\"/themes/custom/lib_unb_ca/img/twitter-bg.gif\" alt=\"Twitter: Do you follow us?\">\r\n</a>"
             make_link: false
             path: ''
             absolute: false
