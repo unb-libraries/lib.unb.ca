@@ -21,18 +21,20 @@ a {
 }
 
 /* Link hover effect (not in button/nav/toolbar contexts) */
-a:not(.link-no-hover):not([data-drupal-link-system-path]):not(.btn):not(.button):not(.chosen-single):not(.dropdown-item):not(.nav-link):not(.toolbar-item) {
+a:not(.link-no-hover):not(.btn):not(.button):not(.chosen-single):not(.dropdown-item):not([data-drupal-link-system-path]):not(.nav-link):not(.toolbar-item) {
   padding-bottom: 1px;
 
   &:hover {
     @include css3-prefix(box-shadow, 0px 2px 1px -1px rgba(153, 0, 0, .2));
   }
 }
-/* Override hover on featured news */
+/* Link hover exceptions */
+#back-top a:hover {
+  box-shadow: none;
+}
 .news-featured a:hover {
   box-shadow: none !important;
 }
-/* Dark-theme sort column link override */
 .thead-dark {
   a:hover {
     @include css3-prefix(box-shadow, 0px 2px 1px -1px rgba(255, 193, 7, .3) !important);
