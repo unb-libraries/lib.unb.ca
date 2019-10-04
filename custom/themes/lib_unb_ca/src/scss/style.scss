@@ -179,34 +179,34 @@ thead {
 /* END Breadcrumbs */
 
 /* Media files/attachments */
-a:not(.file-no-icon) {
+a:not(.link-no-icon) {
   &[href$=".doc"]:after,
   &[href$=".docx"]:after {
-    @include file-icon("\f1c2", #2b5999);
+    @include link-icon("\f1c2", #2b5999);
   }
 
   &[href$=".pdf"]:after {
-    @include file-icon("\f1c1", #a40607);
+    @include link-icon("\f1c1", #a40607);
   }
 
   &[href$=".ppt"]:after,
   &[href$=".pptx"]:after {
-    @include file-icon("\f1c4", #e86900);
+    @include link-icon("\f1c4", #e86900);
   }
 
   &[href$=".rtf"]:after,
   &[href$=".txt"]:after {
-    @include file-icon();
+    @include link-icon("\f15b", #373f44);
   }
 
   &[href$=".csv"]:after,
   &[href$=".xls"]:after,
   &[href$=".xlsx"]:after {
-    @include file-icon("\f1c3", #206f43);
+    @include link-icon("\f1c3", #206f43);
   }
 
   &[href$=".zip"]:after {
-    @include file-icon("\f1c6", #eabf0d);
+    @include link-icon("\f1c6", #eabf0d);
   }
 }
 /* End Media files */
