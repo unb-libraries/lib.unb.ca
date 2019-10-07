@@ -121,7 +121,7 @@ function _unb_libraries_askus_get_widget($type) {
             break;
 
           default:
-            $html .= '<a href="' . $askus_src . '">Type here to CHAT.</a>';
+            $html .= '<a class="link-no-hover" href="' . $askus_src . '">Type here to CHAT.</a>';
         }
         $html .=
       '</div>
