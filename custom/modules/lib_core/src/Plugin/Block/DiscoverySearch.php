@@ -4,6 +4,7 @@ namespace Drupal\lib_core\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Component\Serialization\Json;
+use GuzzleHttp\Exception\GuzzleException;
 
 /**
  * Provides the UNB Libraries Discovery Search Home Block.
@@ -276,24 +277,24 @@ class DiscoverySearch extends BlockBase {
           ]
         );
       $json_string = (string) $response->getBody();
-      if (empty($json_string)) {
+      $json = Json::decode($json_string);
+
+      if (empty($json_string) || empty($json)) {
         // Log empty response.
         $msg = "Empty Reserves/Semester JSON response!";
         \Drupal::logger('lib_core')->notice($msg);
       }
       else {
-        $json = Json::decode($json_string);
-
         foreach ($json as $key => $value) {
           $term_year = empty($value['year']) ? '' : ' ' . $value['year'];
           $options[$key] = $value['termName'] . $term_year;
           if ($value['isCurrent']) {
-              $default_value = $key;
+            $default_value = $key;
           }
         }
       }
     }
-    catch (RequestException $e) {
+    catch (GuzzleException $e) {
       // Log response error.
       $msg = "Reserves/Semester JSON response error: " . $e;
       \Drupal::logger('lib_core')->error($msg);
@@ -499,20 +500,20 @@ class DiscoverySearch extends BlockBase {
           ]
         );
       $json_string = (string) $response->getBody();
-      if (empty($json_string)) {
+      $json = Json::decode($json_string);
+
+      if (empty($json_string) || empty($json)) {
         // Log empty response.
         $msg = "Empty Databases/Titles JSON response!";
         \Drupal::logger('lib_core')->notice($msg);
       }
       else {
-        $json = Json::decode($json_string);
-
         foreach ($json['databases'] as $key => $value) {
           $options[$value["value"]] = $value["name"];
         }
       }
     }
-    catch (RequestException $e) {
+    catch (GuzzleException $e) {
       // Log response error.
       $msg = "Databases/Titles JSON response error: " . $e;
       \Drupal::logger('lib_core')->error($msg);
