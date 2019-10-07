@@ -20,15 +20,17 @@ a {
   }
 }
 
-/* Link hover effect (not in button/nav/toolbar contexts) */
-a:not(.link-no-hover):not(.btn):not(.button):not(.chosen-single):not(.dropdown-item):not([data-drupal-link-system-path]):not(.nav-link):not(.toolbar-item) {
-  padding-bottom: 1px;
+/* Link hover effect (not in button/chosen/nav contexts) */
+#main {
+  a:not(.link-no-hover):not(.btn):not(.button):not(.chosen-single):not(.dropdown-item):not(.nav-link) {
+    padding-bottom: 1px;
 
-  &:hover {
-    @include css3-prefix(box-shadow, 0px 2px 1px -1px rgba(153, 0, 0, .2));
+    &:hover {
+      @include css3-prefix(box-shadow, 0px 2px 1px -1px rgba(153, 0, 0, .2));
+    }
   }
 }
-/* Link hover exceptions */
+/* Link hover exceptions: back-to-top/featured news/dark table header */
 #back-top a:hover {
   box-shadow: none;
 }
