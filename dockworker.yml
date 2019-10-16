@@ -1,11 +1,20 @@
 dockworker:
-  instance:
-    project_prefix: LIB
+  version: '3.0'
+  application:
     name: lib.unb.ca
-    upstream_image:
+    deployment:
+      repository: dockercloud
+      image:
+        name: unblibraries/lib.unb.ca
+      environments:
+        - dev
+        - prod
+    github:
+      repo: lib.unb.ca
+      owner: unb-libraries
+    project_prefix: LIB
+    upstream_images:
       - mailhog/mailhog
       - mysql:5.7
       - redis:5-alpine
       - unblibraries/drupal:8.x-1.x
-  options:
-  version: 1.0

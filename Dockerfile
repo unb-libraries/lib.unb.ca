@@ -1,4 +1,4 @@
-FROM unblibraries/drupal:8.x-1.x
+FROM unblibraries/dockworker-drupal:latest
 MAINTAINER UNB Libraries <libsupport@unb.ca>
 
 LABEL name="lib.unb.ca"
@@ -9,8 +9,7 @@ ENV DRUPAL_SITE_ID libweb
 ENV DRUPAL_SITE_URI lib.unb.ca
 ENV DRUPAL_SITE_UUID 87d22fc3-a2d0-4543-aab8-6ed800691b7b
 
-# Deploy upstream scripts, and then override with any local.
-RUN curl -sSL https://raw.githubusercontent.com/unb-libraries/CargoDock/drupal-8.x-1.x/container/deploy.sh | sh
+# Override upstream scripts with local.
 COPY ./scripts/container /scripts
 
 # Add additional OS packages.

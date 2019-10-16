@@ -14,11 +14,11 @@
   },
   "require-dev": {
     "twbs/bootstrap": "~4.3.1",
-    "unb-libraries/dockworker-drupal": "^2.1.0"
+    "unb-libraries/dockworker-drupal": "~3"
   },
   "scripts": {
     "post-update-cmd": [
-      "vendor/bin/dockworker git:setup-hooks"
+      "vendor/bin/dockworker dockworker:git:setup-hooks"
     ]
   }
 }
