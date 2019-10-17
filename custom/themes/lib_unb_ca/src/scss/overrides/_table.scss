@@ -1,5 +1,7 @@
 /* Undo Bootstrap Barrio table overrides */
 table {
+    margin-top: inherit;
+
     tr {
         background: inherit;
         border-color: inherit;
