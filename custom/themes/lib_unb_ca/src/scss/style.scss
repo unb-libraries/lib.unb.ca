@@ -100,6 +100,17 @@ thead {
   margin-left: .25rem;
 }
 
+.layout__region--second {
+  .chat-embedded,
+  .block-upcoming-hours-block {
+    h2 {
+      color: inherit;
+      font-size: 1.1rem;
+      margin-bottom: .5rem;
+    }
+  }
+}
+
 .more-link a {
   color: $red;
 }
