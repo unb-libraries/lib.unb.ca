@@ -14,6 +14,7 @@ dependencies:
     - field.storage.user.field_email_id
     - field.storage.user.field_first_name
     - field.storage.user.field_last_name
+    - field.storage.user.field_on_leave
     - field.storage.user.field_phone_number
     - field.storage.user.field_position_title
     - field.storage.user.field_room_number
@@ -915,6 +916,71 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_on_leave:
+          id: field_on_leave
+          table: user__field_on_leave
+          field: field_on_leave
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'On Leave'
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: boolean
+          settings:
+            format: custom
+            format_custom_true: '<span class="ml-1 text-muted">(On Leave)</span>'
+            format_custom_false: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         field_position_title:
           id: field_position_title
           table: user__field_position_title
@@ -989,7 +1055,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<b>{{ field_last_name }}, {{ field_first_name }}</b>\r\n{{ field_is_department_head }}<br />\r\n<div class=\"ml-3\">{{ field_position_title }}</div>\r\n"
+            text: "<b>{{ field_last_name }}, {{ field_first_name }}</b>{{ field_on_leave }}\r\n{{ field_is_department_head }}<br />\r\n<div class=\"ml-3\">{{ field_position_title }}</div>\r\n"
             make_link: true
             path: ''
             absolute: false
@@ -1577,6 +1643,7 @@ display:
         - 'config:field.storage.user.field_email_id'
         - 'config:field.storage.user.field_first_name'
         - 'config:field.storage.user.field_last_name'
+        - 'config:field.storage.user.field_on_leave'
         - 'config:field.storage.user.field_phone_number'
         - 'config:field.storage.user.field_position_title'
         - 'config:field.storage.user.field_room_number'
@@ -1606,6 +1673,7 @@ display:
         - 'config:field.storage.user.field_email_id'
         - 'config:field.storage.user.field_first_name'
         - 'config:field.storage.user.field_last_name'
+        - 'config:field.storage.user.field_on_leave'
         - 'config:field.storage.user.field_phone_number'
         - 'config:field.storage.user.field_position_title'
         - 'config:field.storage.user.field_room_number'
