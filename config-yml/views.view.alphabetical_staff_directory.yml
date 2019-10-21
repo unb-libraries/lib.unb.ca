@@ -156,8 +156,8 @@ display:
           label: ''
           exclude: true
           alter:
-            alter_text: true
-            text: "<span class=\"text-muted\">\r\n  ({{ field_on_leave }})\r\n</span>"
+            alter_text: false
+            text: ''
             make_link: false
             path: ''
             absolute: false
@@ -198,7 +198,7 @@ display:
           type: boolean
           settings:
             format: custom
-            format_custom_true: 'On Leave'
+            format_custom_true: '<span class="ml-1 text-muted">(On Leave)</span>'
             format_custom_false: ''
           group_column: value
           group_columns: {  }
