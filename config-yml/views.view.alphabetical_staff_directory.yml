@@ -985,12 +985,12 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: '0'
+          element_type: ''
           element_class: ''
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: '0'
+          element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: false
           empty: ''
@@ -1048,12 +1048,12 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: '0'
+          element_type: ''
           element_class: ''
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: '0'
+          element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: false
           empty: ''
@@ -1280,11 +1280,7 @@ display:
       style:
         type: default
         options:
-          grouping:
-            -
-              field: field_department_memberships
-              rendered: true
-              rendered_strip: false
+          grouping: {  }
           row_class: mb-2
           default_row_class: false
       row:
