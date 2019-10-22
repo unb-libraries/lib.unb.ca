@@ -1305,7 +1305,7 @@ display:
           inline:
             field_first_name: field_first_name
             field_last_name: field_last_name
-          separator: ''
+          separator: ' '
           hide_empty: false
       access:
         type: none
