@@ -19,7 +19,16 @@ a {
     }
   }
 }
-
+.align-left {
+  img {
+    margin-right: .5rem;
+  }
+}
+.align-right {
+  img {
+    margin-left: .5rem;
+  }
+}
 /* Link hover effect (not in button/chosen/nav contexts) */
 #main {
   a:not(.link-no-hover):not(.btn):not(.button):not(.chosen-single):not(.dropdown-item):not(.nav-link):not(.page-link) {
