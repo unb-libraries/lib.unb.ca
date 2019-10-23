@@ -9,6 +9,7 @@ dockworker:
       environments:
         - dev
         - prod
+    finish_marker: '99_z_notify_user_URI'
     github:
       repo: lib.unb.ca
       owner: unb-libraries
