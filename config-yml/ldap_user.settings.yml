@@ -16,7 +16,7 @@ orphanedAccountCheckInterval: always
 userConflictResolve: resolve
 manualAccountConflict: conflict_show_option
 acctCreation: user_settings_for_ldap
-disableAdminPasswordField: false
+disableAdminPasswordField: true
 ldapUserSyncMappings:
   drupal:
     field-field_first_name:
