@@ -1,10 +1,6 @@
 FROM unblibraries/dockworker-drupal:latest
 MAINTAINER UNB Libraries <libsupport@unb.ca>
 
-LABEL name="lib.unb.ca"
-LABEL vcs-ref=""
-LABEL vcs-url="https://github.com/unb-libraries/lib.unb.ca"
-
 ENV DRUPAL_SITE_ID libweb
 ENV DRUPAL_SITE_URI lib.unb.ca
 ENV DRUPAL_SITE_UUID 87d22fc3-a2d0-4543-aab8-6ed800691b7b
@@ -40,3 +36,19 @@ COPY ./custom/modules ${TMP_DRUPAL_BUILD_DIR}/custom_modules
 ENV DEPLOY_ENV prod
 ENV DRUPAL_DEPLOY_CONFIGURATION TRUE
 ENV DRUPAL_CONFIGURATION_EXPORT_SKIP devel
+
+# Metadata
+ARG BUILD_DATE
+ARG VCS_REF
+ARG VERSION
+LABEL com.microscaling.docker.dockerfile="/Dockerfile" \
+      com.microscaling.license="MIT" \
+      org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.description="lib.unb.ca is the core web application at UNB Libraries." \
+      org.label-schema.name="lib.unb.ca" \
+      org.label-schema.schema-version="1.0" \
+      org.label-schema.url="https://lib.unb.ca" \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.vcs-url="https://github.com/unb-libraries/lib.unb.ca" \
+      org.label-schema.vendor="UNB Libraries" \
+      org.label-schema.version=$VERSION
