@@ -41,7 +41,9 @@ ENV DRUPAL_CONFIGURATION_EXPORT_SKIP devel
 ARG BUILD_DATE
 ARG VCS_REF
 ARG VERSION
-LABEL com.microscaling.docker.dockerfile="/Dockerfile" \
+
+LABEL ca.unb.lib.generator="drupal8" \
+      com.microscaling.docker.dockerfile="/Dockerfile" \
       com.microscaling.license="MIT" \
       org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.description="lib.unb.ca is the core web application at UNB Libraries." \
@@ -50,5 +52,5 @@ LABEL com.microscaling.docker.dockerfile="/Dockerfile" \
       org.label-schema.url="https://lib.unb.ca" \
       org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.vcs-url="https://github.com/unb-libraries/lib.unb.ca" \
-      org.label-schema.vendor="UNB Libraries" \
+      org.label-schema.vendor="University of New Brunswick Libraries" \
       org.label-schema.version=$VERSION
