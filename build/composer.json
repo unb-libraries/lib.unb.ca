@@ -70,7 +70,7 @@
                 "type": "drupal-library",
                 "dist": {
                     "type": "zip",
-                    "url": "https://download.ckeditor.com/colorbutton/releases/colorbutton_4.13.0.zip"
+                    "url": "https://github.com/unb-libraries/upstream-library-mirror/raw/master/colorbutton/colorbutton_4.13.0.zip"
                 }
             }
         },
@@ -82,7 +82,7 @@
                 "type": "drupal-library",
                 "dist": {
                     "type": "zip",
-                    "url": "https://download.ckeditor.com/div/releases/div_4.13.0.zip"
+                    "url": "https://github.com/unb-libraries/upstream-library-mirror/raw/master/div/div_4.13.0.zip"
                 },
                 "extra": {
                     "installer-name": "ckeditor/plugins/div"
@@ -97,7 +97,7 @@
                 "type": "drupal-library",
                 "dist": {
                     "type": "zip",
-                    "url": "https://download.ckeditor.com/panelbutton/releases/panelbutton_4.13.0.zip"
+                    "url": "https://github.com/unb-libraries/upstream-library-mirror/raw/master/panelbutton/panelbutton_4.13.0.zip"
                 }
             }
         },
