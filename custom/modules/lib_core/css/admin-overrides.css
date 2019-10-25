@@ -1,3 +1,8 @@
+/* Override Preview Seven > elements.css > list margin */
+.field ol,
+.field ul {
+    margin: inherit;
+}
 /* Hide form field text format help text */
 .filter-wrapper {
     display: none;
@@ -137,7 +142,6 @@ table tr th {
     background-color: rgba(128, 128, 128, 0.05);
 }
 /* Restore BS4 hover effect on striped rows */
-.table-hover tbody tr:hover
 .table-hover tbody tr:hover {
     color: #212529;
     background-color: rgba(0, 0, 0, 0.075);
