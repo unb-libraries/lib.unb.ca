@@ -74,7 +74,7 @@ class HelpController extends ControllerBase {
       '#info' => [
         'os' => $os,
         'agent' => $_SERVER["HTTP_USER_AGENT"],
-        'ip' => \Drupal::request()->getClientIp(),
+        'ip' => empty($_SERVER["HTTP_X_REAL_IP"]) ? \Drupal::request()->getClientIp() : $_SERVER["HTTP_X_REAL_IP"],
         'refer' => empty($_SERVER["HTTP_REFERER"]) ? '' : $_SERVER["HTTP_REFERER"],
       ],
     ];
