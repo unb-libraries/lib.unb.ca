@@ -1,4 +1,4 @@
-![lib.unb.ca screenshot](screenshot.png "lib.unb.ca screenshot")
+![lib.unb.ca screenshot](https://github.com/unb-libraries/lib.unb.ca/raw/prod/screenshot.png "lib.unb.ca screenshot")
 # [lib.unb.ca](https://lib.unb.ca) : Instance Repository
 [![Build Status](https://travis-ci.com/unb-libraries/lib.unb.ca.svg?branch=prod)](https://travis-ci.com/unb-libraries/lib.unb.ca) [![GitHub license](https://img.shields.io/github/license/unb-libraries/lib.unb.ca)](https://github.com/unb-libraries/lib.unb.ca/blob/dev/LICENSE) ![GitHub repo size](https://img.shields.io/github/repo-size/unb-libraries/lib.unb.ca)
 
