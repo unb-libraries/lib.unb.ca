@@ -41,7 +41,6 @@ ENV DRUPAL_CONFIGURATION_EXPORT_SKIP devel
 ARG BUILD_DATE
 ARG VCS_REF
 ARG VERSION
-
 LABEL ca.unb.lib.generator="drupal8" \
       com.microscaling.docker.dockerfile="/Dockerfile" \
       com.microscaling.license="MIT" \
