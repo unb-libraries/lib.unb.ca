@@ -87,7 +87,7 @@ class DiscoverySearch extends BlockBase {
               <div aria-labelledby="tab-reserves" class="card tab-pane fade" id="pane-reserves" role="tabpanel">
                 <div class="card-header p-0" id="heading-reserves">
                   <h3 class="m-0">
-                    <a aria-controls="collapse-reserves" aria-expanded="false" class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-reserves" role="button">
+                    <a aria-controls="collapse-reserves" aria-expanded="false" class="link-no-icon nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-reserves" role="button">
                       Reserves
                     </a>
                   </h3>
@@ -103,7 +103,7 @@ class DiscoverySearch extends BlockBase {
               <div aria-labelledby="tab-catalogue" class="card tab-pane fade active show" id="pane-catalogue" role="tabpanel">
                 <div class="card-header p-0" id="heading-catalogue">
                   <h3 class="m-0">
-                    <a aria-controls="collapse-catalogue" aria-expanded="true" class="nav-link mx-1 p-2" data-toggle="collapse" href="#collapse-catalogue" role="button">
+                    <a aria-controls="collapse-catalogue" aria-expanded="true" class="link-no-icon nav-link mx-1 p-2" data-toggle="collapse" href="#collapse-catalogue" role="button">
                       Catalogue
                     </a>
                   </h3>
@@ -119,7 +119,7 @@ class DiscoverySearch extends BlockBase {
               <div aria-labelledby="tab-databases" class="card tab-pane fade" id="pane-databases" role="tabpanel">
                 <div class="card-header p-0" id="heading-databases">
                   <h3 class="m-0">
-                    <a aria-controls="collapse-databases" aria-expanded="false" class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-databases" role="button">
+                    <a aria-controls="collapse-databases" aria-expanded="false" class="link-no-icon nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-databases" role="button">
                       <span class="d-none d-sm-inline">Article</span> Databases
                     </a>
                   </h3>
@@ -135,7 +135,7 @@ class DiscoverySearch extends BlockBase {
               <div aria-labelledby="tab-journals" class="card tab-pane fade" id="pane-journals" role="tabpanel">
                 <div class="card-header p-0" id="heading-journals">
                   <h3 class="m-0">
-                    <a aria-controls="collapse-journals" aria-expanded="false" class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-journals" role="button">
+                    <a aria-controls="collapse-journals" aria-expanded="false" class="link-no-icon nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-journals" role="button">
                       Journals<span class="d-none d-sm-inline"> &amp; Newspapers</span>
                     </a>
                   </h3>
@@ -151,7 +151,7 @@ class DiscoverySearch extends BlockBase {
               <div aria-labelledby="tab-encyclopedias" class="card tab-pane fade" id="pane-encyclopedias" role="tabpanel">
                 <div class="card-header p-0" id="heading-encyclopedias">
                   <h3 class="m-0">
-                    <a aria-controls="collapse-encyclopedias" aria-expanded="false" class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-encyclopedias" role="button">
+                    <a aria-controls="collapse-encyclopedias" aria-expanded="false" class="link-no-icon nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-encyclopedias" role="button">
                       e-Encyclopedias<span class="d-none d-sm-inline">, etc.</span>
                     </a>
                   </h3>
@@ -167,7 +167,7 @@ class DiscoverySearch extends BlockBase {
               <div aria-labelledby="tab-ebooks" class="card tab-pane fade" id="pane-ebooks" role="tabpanel">
                 <div class="card-header p-0" id="heading-ebooks">
                   <h3 class="m-0">
-                    <a aria-controls="collapse-ebooks" aria-expanded="false" class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-ebooks" role="button">
+                    <a aria-controls="collapse-ebooks" aria-expanded="false" class="link-no-icon nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-ebooks" role="button">
                       e-Books
                     </a>
                   </h3>
@@ -183,7 +183,7 @@ class DiscoverySearch extends BlockBase {
               <div aria-labelledby="tab-videos" class="card tab-pane fade" id="pane-videos" role="tabpanel">
                 <div class="card-header p-0" id="heading-videos">
                   <h3 class="m-0">
-                    <a aria-controls="collapse-videos" aria-expanded="false" class="nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-videos" role="button">
+                    <a aria-controls="collapse-videos" aria-expanded="false" class="link-no-icon nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-videos" role="button">
                       Videos
                     </a>
                   </h3>
