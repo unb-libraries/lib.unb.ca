@@ -210,6 +210,7 @@ handlers:
       sender_mail: ''
       sender_name: ''
       theme_name: ''
+      parameters: {  }
   email_1:
     id: email
     label: 'Sender Confirmation Email'
@@ -244,3 +245,4 @@ handlers:
       sender_mail: ''
       sender_name: ''
       theme_name: ''
+      parameters: {  }

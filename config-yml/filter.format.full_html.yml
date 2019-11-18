@@ -51,6 +51,12 @@ filters:
     status: true
     weight: -47
     settings: {  }
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
+    status: false
+    weight: -44
+    settings: {  }
   filter_url:
     id: filter_url
     provider: filter
@@ -69,12 +75,6 @@ filters:
     provider: filter
     status: false
     weight: -43
-    settings: {  }
-  filter_html_escape:
-    id: filter_html_escape
-    provider: filter
-    status: false
-    weight: -44
     settings: {  }
   linkit:
     id: linkit
