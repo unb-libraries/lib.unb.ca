@@ -4,8 +4,7 @@
 /** OVERRIDES **/
 /* ELEMENTS */
 /* Nav affix anchor offset */
-a:target:before,
-h2:target:before {
+*[id]:target:before {
   content: "\00a0";
   display: block;
   height: 156px;
