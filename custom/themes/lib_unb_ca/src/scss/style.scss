@@ -777,6 +777,13 @@ li.list-group-item {
     padding-left: .15rem;
   }
 }
+/* Barrio item-list wrapper unordered list override */
+ul {
+  &.list-bullets {
+    list-style-type: inherit;
+    padding-left: 2.3rem;
+  }
+}
 ol,
 ul {
   &.list-no-bullets {
