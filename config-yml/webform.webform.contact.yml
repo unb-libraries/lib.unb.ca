@@ -244,7 +244,7 @@ handlers:
       from_options: {  }
       from_name: _default
       subject: 'UNB Libraries submission confirmation'
-      body: "<p>Your comments and/or suggestions have been successfully been submitted to UNB Libraries staff.</p>\r\n\r\n<p>Submitted information:</p>\r\n\r\n<p>\r\n<b>Name:</b><br />\r\n{{ webform_token('[webform_submission:values:name]', webform_submission) }}\r\n</p>\r\n\r\n<p>\r\n<b>Email:</b><br />\r\n{{ webform_token('[webform_submission:values:email]', webform_submission) }}\r\n</p>\r\n\r\n\r\n<p>\r\n<b>Subject:</b><br />\r\n{{ webform_token('[webform_submission:values:subject]', webform_submission) }}\r\n</p>\r\n\r\n\r\n<p>\r\n<b>Message:</b><br />\r\n{{ webform_token('[webform_submission:values:message]', webform_submission) }}\r\n</p>\r\n\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
+      body: "<p>Your comments and/or suggestions have been successfully submitted to UNB Libraries staff.</p>\r\n\r\n<p>Submitted information:</p>\r\n\r\n<p>\r\n<b>Name:</b><br />\r\n{{ webform_token('[webform_submission:values:name]', webform_submission) }}\r\n</p>\r\n\r\n<p>\r\n<b>Email:</b><br />\r\n{{ webform_token('[webform_submission:values:email]', webform_submission) }}\r\n</p>\r\n\r\n\r\n<p>\r\n<b>Subject:</b><br />\r\n{{ webform_token('[webform_submission:values:subject]', webform_submission) }}\r\n</p>\r\n\r\n\r\n<p>\r\n<b>Message:</b><br />\r\n{{ webform_token('[webform_submission:values:message]', webform_submission) }}\r\n</p>\r\n\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
