@@ -1,13 +1,8 @@
-uuid: 3b74652c-0368-475c-949c-629082026cea
 langcode: en
 status: open
 dependencies:
   module:
     - honeypot
-third_party_settings:
-  honeypot:
-    honeypot: true
-    time_restriction: true
 open: null
 close: null
 weight: 0
@@ -100,6 +95,7 @@ settings:
   wizard_progress_pages: false
   wizard_progress_percentage: false
   wizard_progress_link: false
+  wizard_progress_states: false
   wizard_start_label: ''
   wizard_preview_link: false
   wizard_confirmation: false
@@ -147,8 +143,8 @@ settings:
   purge_days: null
   results_disabled: false
   results_disabled_ignore: false
+  token_view: false
   token_update: false
-  wizard_progress_states: false
 access:
   create:
     roles:
@@ -267,3 +263,8 @@ handlers:
       sender_name: ''
       theme_name: ''
       parameters: {  }
+uuid: 3b74652c-0368-475c-949c-629082026cea
+third_party_settings:
+  honeypot:
+    honeypot: true
+    time_restriction: true
