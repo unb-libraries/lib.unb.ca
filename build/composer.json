@@ -242,7 +242,7 @@
         "drupal/noreqnewpass": "1.1",
         "drupal/override_node_options": "2.4",
         "drupal/panelbutton": "1.2",
-        "drupal/pathauto": "1.5",
+        "drupal/pathauto": "1.6",
         "drupal/paragraphs": "1.10",
         "drupal/redirect": "1.4",
         "drupal/redis": "1.2",
