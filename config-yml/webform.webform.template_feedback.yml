@@ -1,9 +1,12 @@
+uuid: 87419121-c031-486d-a73b-00f39732010d
 langcode: en
 status: closed
 dependencies:
   enforced:
     module:
       - webform_templates
+_core:
+  default_config_hash: 00_8Q6rSy0QN3NC6evx9ov1hB5KCyMqZykHpMZWiS88
 open: null
 close: null
 weight: 0
@@ -263,6 +266,3 @@ handlers:
       sender_mail: ''
       sender_name: ''
       parameters: {  }
-uuid: 87419121-c031-486d-a73b-00f39732010d
-_core:
-  default_config_hash: 00_8Q6rSy0QN3NC6evx9ov1hB5KCyMqZykHpMZWiS88

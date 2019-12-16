@@ -1,8 +1,13 @@
+uuid: 039431f5-53fb-4221-b040-b8828cc21f8b
 langcode: en
 status: open
 dependencies:
   module:
     - honeypot
+third_party_settings:
+  honeypot:
+    honeypot: true
+    time_restriction: true
 open: null
 close: null
 weight: 0
@@ -443,8 +448,3 @@ handlers:
       sender_name: ''
       theme_name: ''
       parameters: {  }
-uuid: 039431f5-53fb-4221-b040-b8828cc21f8b
-third_party_settings:
-  honeypot:
-    honeypot: true
-    time_restriction: true
