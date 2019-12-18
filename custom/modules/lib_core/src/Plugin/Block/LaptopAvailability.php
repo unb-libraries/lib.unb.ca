@@ -70,9 +70,8 @@ class LaptopAvailability extends BlockBase {
    *   List of locations and laptop availability.
    */
   private function getLaptopAvailability() {
-    $key = 'OCLC_API_WSKEY';
-    $secret = 'OCLC_API_SECRET';
-    $wskey = new WSKey($key, $secret);
+    include '/app/html/sites/all/settings/settings.oclc-api.inc';
+    $wskey = new WSKey($oclcApiWskey, $oclcApiSecret);
 
     $inst = '133054';
     $ocn = '807200481';
