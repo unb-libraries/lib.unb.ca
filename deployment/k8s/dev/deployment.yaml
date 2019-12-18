@@ -87,6 +87,18 @@ spec:
             -
               name: PHP_FPM_ERROR_LOG
               value: "/var/log/nginx/error.log"
+            -
+              name: OCLC_API_WSKEY
+              valueFrom:
+                secretKeyRef:
+                  name: oclc-wskey
+                  key: wskey
+            -
+              name: OCLC_API_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: oclc-wskey
+                  key: secret
           image: "||DEPLOYMENTIMAGE||"
           imagePullPolicy: Always
           ports:
