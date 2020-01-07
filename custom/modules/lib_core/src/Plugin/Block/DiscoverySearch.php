@@ -232,7 +232,7 @@ class DiscoverySearch extends BlockBase {
                 <div class="input-group-prepend">
                     <div class="input-group-text"><i class="fas fa-search"></i></div>
                 </div>
-                <input class="form-control" id="keywords" name="keywords" placeholder="Enter keywords" type="search" value="">
+                <input class="form-control" id="keywords" name="keywords" placeholder="Enter keywords" type="search" value="" required>
               </div>
             </div>
             <div class="col-md-4 mb-2">
@@ -576,7 +576,7 @@ class DiscoverySearch extends BlockBase {
                     <i class="fas fa-search"></i>
                   </div>
                 </div>
-                <input class="form-control" id="title_journal" name="title" placeholder="Search for journal and newspaper titles" type="search">
+                <input class="form-control" id="title_journal" name="title" placeholder="Search for journal and newspaper titles" type="search" required>
               </div>
             </div>
             <div class="col-md-2 mb-2">
@@ -651,7 +651,7 @@ class DiscoverySearch extends BlockBase {
                     <i class="fas fa-search"></i>
                   </div>
                 </div>
-                <input class="form-control" id="title_refmat" name="title" placeholder="Search for encyclopedias, dictionaries, etc." type="search" value="">
+                <input class="form-control" id="title_refmat" name="title" placeholder="Search for encyclopedias, dictionaries, etc." type="search" value="" required>
               </div>
             </div>
             <div class="col-md-2 mb-2">
@@ -722,7 +722,7 @@ class DiscoverySearch extends BlockBase {
                     <i class="fas fa-search"></i>
                   </div>
                 </div>
-                <input class="form-control" id="title_ebooks" name="title" placeholder="Enter search terms" type="search" value="">
+                <input class="form-control" id="title_ebooks" name="title" placeholder="Enter search terms" type="search" value="" required>
               </div>
             </div>
             <div class="col-md-2 mb-2">
@@ -789,7 +789,7 @@ class DiscoverySearch extends BlockBase {
                       <i class="fas fa-search"></i>
                     </div>
                 </div>
-                <input class="form-control" name="title" id="title_video" placeholder="Enter search terms" type="search" value="">
+                <input class="form-control" name="title" id="title_video" placeholder="Enter search terms" type="search" value="" required>
               </div>
             </div>
             <div class="col-md-2 mb-2">
