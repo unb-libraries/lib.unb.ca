@@ -8,6 +8,9 @@
                 return false;
             }
 
+            // https://stackoverflow.com/questions/11232310/how-can-i-use-jquery-validation-with-the-chosen-plugin.
+            $.validator.setDefaults({ ignore: ":hidden:not(.chosen-select)" });
+
             // Invoke chosen() on main content select tags with options.
             // See: https://harvesthq.github.io/chosen/options.html.
             $("select.chosen-select").chosen({
