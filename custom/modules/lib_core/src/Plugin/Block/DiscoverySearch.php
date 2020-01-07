@@ -469,6 +469,7 @@ class DiscoverySearch extends BlockBase {
 
     $subjects = [
       '#type' => 'select',
+      '#required' => 'TRUE',
       '#options' => $options,
       '#attributes' => [
         'class' => [
@@ -521,6 +522,7 @@ class DiscoverySearch extends BlockBase {
 
     $titles = [
       '#type' => 'select',
+      '#required' => 'TRUE',
       '#options' => $options,
       '#attributes' => [
         'class' => [
