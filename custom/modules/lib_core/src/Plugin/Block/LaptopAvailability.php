@@ -30,7 +30,7 @@ class LaptopAvailability extends BlockBase {
     'HIL-MISC' => 'Harriet Irving Library (Fredericton) - 2 hour loan',
     'ENG-MISC' => 'Engineering Library (Fredericton) - 2 hour loan',
     'SCI-MISC1D' => 'Science Library (Fredericton) - 1 day loan',
-    'SCI-MISC' => 'Science Library (Fredericton) - 2 hour loan',
+    'SCI-MISC:' => 'Science Library (Fredericton) - 2 hour loan',
     'LAWRESERVE' => 'Law Library (Fredericton) - 6 hour loan',
     'HWK-MISC1D1H' => 'Saint John Library (Saint John) - 1 day loan',
   ];
