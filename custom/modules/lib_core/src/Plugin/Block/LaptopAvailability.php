@@ -57,6 +57,7 @@ class LaptopAvailability extends BlockBase {
       '#attributes' => [
         'class' => ['list-bullets'],
       ],
+      '#cache' => ['max-age' => 0],
       '#items' => $availability,
     ];
 
@@ -129,14 +130,6 @@ class LaptopAvailability extends BlockBase {
     catch (RequestException $error) {
       return ['Unable to get laptop availability at this time.'];
     }
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getCacheMaxAge() {
-    // Disable caching for this block.
-    return 0;
   }
 
 }
