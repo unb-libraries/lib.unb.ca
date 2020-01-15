@@ -1,0 +1,7 @@
+oclc_service_alert_status.settings.client:
+  path: '/admin/config/services/oclc_service_alert_status/client'
+  defaults:
+    _form: 'Drupal\oclc_service_alert_status_client\Form\OCLCServiceAlertStatusClientSettingsForm'
+    _title: 'OCLC Service Alert Status: Client Settings'
+  requirements:
+    _permission: 'administer oclc service alert status'

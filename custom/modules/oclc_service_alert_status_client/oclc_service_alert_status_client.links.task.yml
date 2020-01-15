@@ -1,0 +1,4 @@
+oclc_service_alert_status.settings.client:
+  route_name: oclc_service_alert_status.settings.client
+  title: 'Settings'
+  base_route: oclc_service_alert_status.settings.client

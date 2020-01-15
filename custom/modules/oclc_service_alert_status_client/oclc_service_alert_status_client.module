@@ -1,0 +1,57 @@
+<?php
+
+/**
+ * @file
+ * Contains oclc_service_alert_status_client.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+const OCLC_SERVICE_ALERT_STATUS__SETTINGS_CLIENT = 'oclc_service_alert_status_client.settings';
+
+/**
+ * Implements hook_help().
+ */
+function oclc_service_alert_status_client_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the oclc_service_alert_status_client module.
+    case 'help.page.oclc_service_alert_status_client':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Displays OCLC service alert status messages.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+
+function oclc_service_alert_status_client_preprocess_page(&$variables) {
+  if (\Drupal::service('path.matcher')->isFrontPage()) {
+    $variables['#attached']['library'][] = 'oclc_service_alert_status_client/oclc_status';
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function oclc_service_alert_status_client_preprocess_html(&$variables) {
+  $base_url = \Drupal::config(OCLC_SERVICE_ALERT_STATUS__SETTINGS_CLIENT)->get('base_url');
+  if (empty($base_url)) {
+    $base_url = '/oclc-service-alert/status/';
+  }
+  $variables['#attached']['drupalSettings']['oclcAlertStatus']['baseUrl'] = $base_url;
+
+  $refresh_interval = \Drupal::config(OCLC_SERVICE_ALERT_STATUS__SETTINGS_CLIENT)->get('refresh_interval');
+  if (empty($refresh_interval)) {
+    $refresh_interval = 60000;
+  }
+  $variables['#attached']['drupalSettings']['oclcAlertStatus']['refreshInterval'] = $refresh_interval;
+
+  $message = \Drupal::config(OCLC_SERVICE_ALERT_STATUS__SETTINGS_CLIENT)->get('message');
+  if (empty($message)) {
+    $message = 'We are currently experiencing issues with access to some online resources.';
+  }
+  $variables['#attached']['drupalSettings']['oclcAlertStatus']['message'] = $message;
+}

@@ -1,0 +1,11 @@
+oclc_status:
+  version: 1.x
+  js:
+    js/oclc_status.drupal.behavior.js: {}
+    js/models/OCLCStatusModel.js: {}
+    js/templates/OCLCStatusTemplate.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/backbone
+    - core/jquery

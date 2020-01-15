@@ -1,0 +1,3 @@
+base_url: 'https://intranet.lib.unb.ca/oclc-service-alert/status'
+refresh_interval: 60000
+message: 'We are currently experiencing issues with access to some online resources.'

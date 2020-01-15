@@ -1,0 +1,3 @@
+administer oclc service alert status:
+  title: 'Administer OCLC service alert status'
+  description: 'Allow to change OCLC service alert status settings.'

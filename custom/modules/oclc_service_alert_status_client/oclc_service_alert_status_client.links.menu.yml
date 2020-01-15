@@ -1,0 +1,5 @@
+oclc_service_alert_status.settings:
+  title: 'OCLC Service Alert Status'
+  parent: system.admin_config_services
+  route_name: oclc_service_alert_status.settings.client
+  description: 'Configure OCLC service alert status settings.'

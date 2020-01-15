@@ -67,6 +67,7 @@ module:
   metatag_open_graph: 0
   node: 0
   noreqnewpass: 0
+  oclc_service_alert_status_client: 0
   options: 0
   override_node_options: 0
   page_cache: 0
