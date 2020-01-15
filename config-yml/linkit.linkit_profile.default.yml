@@ -16,8 +16,9 @@ matchers:
     weight: 0
     settings:
       metadata: 'by [node:author] | [node:created:medium]'
-      bundles: {  }
+      bundles:
+        library_page: library_page
       group_by_bundle: false
       include_unpublished: false
       substitution_type: canonical
-      limit: 100
+      limit: 50
