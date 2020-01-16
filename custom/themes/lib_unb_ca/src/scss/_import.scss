@@ -3,6 +3,7 @@
 @import '../../../../../vendor/unb-libraries/unb_lib_theme/src/scss/style.scss';
 @import 'variables';
 @import 'mixins';
+@import 'overrides/chosen_bootstrap';
 @import 'overrides/field';
 @import 'overrides/layout_builder_overrides';
 @import 'overrides/scroll_to_top_overrides';

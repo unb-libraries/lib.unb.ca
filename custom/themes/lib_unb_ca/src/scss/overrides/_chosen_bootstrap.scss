@@ -1,0 +1,21 @@
+.chosen-container-single {
+   &.form-control {
+    padding: 0;
+    height: auto;
+  }
+
+  .chosen-single {
+    border: none;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+  }
+}
+
+.chosen-container-active {
+  &.chosen-with-drop {
+    .chosen-single {
+      border: none;
+      box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
