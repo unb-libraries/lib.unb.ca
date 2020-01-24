@@ -99,7 +99,7 @@ class LaptopAvailability extends BlockBase {
       foreach ($holdings->holding as $holding) {
         $result = preg_match("/($re)/", (string) $holding->shelvingLocation, $matches);
         if (!$result) {
-          $location = $holding->shelvingLocation;
+          $location = (string)$holding->shelvingLocation;
         }
         else {
           $location = $matches[1];
