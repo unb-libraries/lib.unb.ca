@@ -100,10 +100,10 @@ class LaptopAvailability extends BlockBase {
       foreach ($holdings->holding as $holding) {
         $result = preg_match("/($re)/", (string) $holding->shelvingLocation, $matches);
         if (!$result) {
-          $location = (string)$holding->shelvingLocation;
+          $location = (string) $holding->shelvingLocation;
         }
         else {
-          $location = $matches[1];
+          $location = $locationMap[$matches[1]];
         }
         if (empty($locations[$location])) {
           $locations[$location] = ['avail' => 0, 'total' => 0, 'next' => ''];
@@ -123,9 +123,9 @@ class LaptopAvailability extends BlockBase {
       }
 
       $availability = [];
+      ksort($locations);
       foreach ($locations as $location => $info) {
-        $name = array_key_exists($location, $locationMap) ? $locationMap[$location] : $location;
-        $status = "<strong>${name}:</strong> " . $info['avail'] . ' of ' . $info['total'] . ' available ';
+        $status = "<strong>${location}:</strong> " . $info['avail'] . ' of ' . $info['total'] . ' available ';
         if ($info['avail'] == 0) {
           $status .= '(next available ' . date('Y-m-d h:i A', strtotime($info['next'])) . ')';
         }
