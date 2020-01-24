@@ -26,6 +26,7 @@ class LaptopAvailability extends BlockBase {
    */
   private $locationMap = [
     'HILRESERVE: Reserve Collection 1' => 'Harriet Irving Library (Fredericton) - 1 day loan',
+    'HILRESERVE: Reserve Collection 3' => 'Harriet Irving Library (Fredericton) - 3 day loan',
     'HILRESERVE: Reserve Collection 7' => 'Harriet Irving Library (Fredericton) - 7 day loan',
     'HIL-MISC' => 'Harriet Irving Library (Fredericton) - 2 hour loan',
     'ENG-MISC' => 'Engineering Library (Fredericton) - 2 hour loan',
