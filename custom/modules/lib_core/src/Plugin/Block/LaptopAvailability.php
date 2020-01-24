@@ -97,8 +97,13 @@ class LaptopAvailability extends BlockBase {
       $locations = [];
 
       foreach ($holdings->holding as $holding) {
-        preg_match("/($re)/", (string) $holding->shelvingLocation, $matches);
-        $location = $matches[1];
+        $result = preg_match("/($re)/", (string) $holding->shelvingLocation, $matches);
+        if (!$result) {
+          $location = $holding->shelvingLocation;
+        }
+        else {
+          $location = $matches[1];
+        }
         if (empty($locations[$location])) {
           $locations[$location] = ['avail' => 0, 'total' => 0, 'next' => ''];
         }
