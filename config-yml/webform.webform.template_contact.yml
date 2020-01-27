@@ -1,12 +1,9 @@
-uuid: ce595156-5574-4237-b58d-a38cf41ac936
 langcode: en
 status: closed
 dependencies:
   enforced:
     module:
       - webform_templates
-_core:
-  default_config_hash: tmZf8rN0VJB9XXtJ2-AadaHu9wdo4vHrEr9fMaoA9Bw
 open: null
 close: null
 weight: 0
@@ -206,15 +203,16 @@ handlers:
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: false
+      exclude_attachments: false
       html: true
       attachments: false
       twig: false
-      theme_name: ''
       debug: false
       reply_to: ''
       return_path: ''
       sender_mail: ''
       sender_name: ''
+      theme_name: ''
       parameters: {  }
   email_notification:
     id: email
@@ -241,13 +239,18 @@ handlers:
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: false
+      exclude_attachments: false
       html: true
       attachments: false
       twig: false
-      theme_name: ''
       debug: false
       reply_to: ''
       return_path: ''
       sender_mail: ''
       sender_name: ''
+      theme_name: ''
       parameters: {  }
+variants: {  }
+uuid: ce595156-5574-4237-b58d-a38cf41ac936
+_core:
+  default_config_hash: tmZf8rN0VJB9XXtJ2-AadaHu9wdo4vHrEr9fMaoA9Bw

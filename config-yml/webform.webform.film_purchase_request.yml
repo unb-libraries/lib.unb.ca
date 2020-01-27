@@ -1,13 +1,8 @@
-uuid: b0f1c61e-c608-48f6-a057-e60387f7f562
 langcode: en
 status: open
 dependencies:
   module:
     - honeypot
-third_party_settings:
-  honeypot:
-    honeypot: true
-    time_restriction: true
 open: null
 close: null
 weight: 0
@@ -215,6 +210,7 @@ handlers:
       ignore_access: false
       exclude_empty: false
       exclude_empty_checkbox: false
+      exclude_attachments: false
       html: true
       attachments: false
       twig: true
@@ -250,6 +246,7 @@ handlers:
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: false
+      exclude_attachments: false
       html: true
       attachments: false
       twig: true
@@ -260,3 +257,9 @@ handlers:
       sender_name: ''
       theme_name: ''
       parameters: {  }
+variants: {  }
+uuid: b0f1c61e-c608-48f6-a057-e60387f7f562
+third_party_settings:
+  honeypot:
+    honeypot: true
+    time_restriction: true

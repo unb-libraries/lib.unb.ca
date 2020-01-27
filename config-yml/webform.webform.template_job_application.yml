@@ -1,12 +1,9 @@
-uuid: 769cbcda-44f5-4863-b5d6-79023ea1d081
 langcode: en
 status: closed
 dependencies:
   enforced:
     module:
       - webform_templates
-_core:
-  default_config_hash: B0keV52pt9c_sG950fxivA1Dkh8Ol_7dM6DHRBE1bVo
 open: null
 close: null
 weight: 0
@@ -206,13 +203,18 @@ handlers:
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: false
+      exclude_attachments: false
       html: true
       attachments: false
       twig: false
-      theme_name: ''
       debug: false
       reply_to: ''
       return_path: ''
       sender_mail: ''
       sender_name: ''
+      theme_name: ''
       parameters: {  }
+variants: {  }
+uuid: 769cbcda-44f5-4863-b5d6-79023ea1d081
+_core:
+  default_config_hash: B0keV52pt9c_sG950fxivA1Dkh8Ol_7dM6DHRBE1bVo
