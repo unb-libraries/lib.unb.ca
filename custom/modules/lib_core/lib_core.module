@@ -113,8 +113,13 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
       break;
 
     case 'webform_submission_contact_add_form':
-      $recipient = explode("@unb.ca", $form['elements']['recipient']['#default_value']);
-      $username = strtok($recipient[0], "@");
+      // Move Recipient | Default value from hidden form input (Webform 8.x-5.7+).
+      if (!isset($form['elements']['recipient']['#default_value'])) {
+        $username = "libweb";
+      } else {
+        $recipient = explode("@unb.ca", $form['elements']['recipient']['#default_value']);
+        $username = strtok($recipient[0], "@");
+      }
 
       if ($user = user_load_by_name($username)) {
         $alert_msg =
