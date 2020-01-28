@@ -41,6 +41,9 @@
 #lh3-online a:hover {
     color: #666;
 }
+#lh3-chat.col-auto {
+    padding: 0;
+}
 .askus-note-busy,
 .askus-note-offline {
     margin: 0;
