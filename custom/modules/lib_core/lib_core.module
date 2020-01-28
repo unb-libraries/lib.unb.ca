@@ -121,6 +121,11 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
         $username = strtok($recipient[0], "@");
       }
 
+      // Set default value for subject if not prepopulated (Webform 8.x-5.7+).
+      if (!isset($form['elements']['email_us']['subject']['#default_value'])) {
+        $form['elements']['email_us']['subject']['#value'] = 'Patron Web Query';
+      }
+
       if ($user = user_load_by_name($username)) {
         $alert_msg =
           '<div class="d-flex">' .
