@@ -264,7 +264,7 @@ function _lib_core_get_guide_categories() {
     'kinesiology' => 'Kinesiology',
     'law' => 'Law',
     'math' => 'Mathematics',
-    'media' => 'Media Arts and Culture',
+    'media' => 'Media Arts and Cultures',
     // 'miscellaneous' => 'Miscellaneous',
     'music' => 'Music',
     'nativestudies' => 'Native Studies',
