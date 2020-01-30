@@ -6,6 +6,7 @@ dependencies:
     - editor
     - entity_embed
     - linkit
+    - media
     - video_embed_wysiwyg
 name: 'UNB Libraries HTML'
 format: library_page_html
@@ -88,3 +89,12 @@ filters:
     status: true
     weight: -45
     settings: {  }
+  media_embed:
+    id: media_embed
+    provider: media
+    status: false
+    weight: 100
+    settings:
+      default_view_mode: default
+      allowed_media_types: {  }
+      allowed_view_modes: {  }
