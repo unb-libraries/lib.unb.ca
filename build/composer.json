@@ -201,6 +201,21 @@
             }
         },
         {
+            "type": "package",
+            "package": {
+                "name": "w8tcha/CKEditor-CodeMirror-Plugin",
+                "version": "1.17.12",
+                "type": "drupal-library",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/w8tcha/CKEditor-CodeMirror-Plugin/archive/v1.17.12.zip"
+                },
+                "extra": {
+                    "installer-name": "ckeditor_codemirror"
+                }
+            }
+        },
+        {
             "type": "git",
             "url": "https://github.com/OCLC-Developer-Network/oclc-auth-php.git"
         }
@@ -217,6 +232,7 @@
         "drupal/bootstrap_barrio": "4.22",
         "drupal/cache_control_override": "1.0-alpha1",
         "drupal/chosen": "2.9",
+        "drupal/ckeditor_codemirror": "2.2",
         "drupal/ckeditor_div_manager": "1.0",
         "drupal/colorbutton": "1.1",
         "drupal/config_update": "1.5",
@@ -268,7 +284,8 @@
         "unb-libraries/alert_scheduler": "dev-8.x-1.x",
         "unb-libraries/drupal-builder": "^8.0.0",
         "unb-libraries/font_awesome": "~5.12",
-        "unb-libraries/unb_lib_theme": "dev-8.x-bootstrap-4.x"
+        "unb-libraries/unb_lib_theme": "dev-8.x-bootstrap-4.x",
+        "w8tcha/CKEditor-CodeMirror-Plugin": "^1.17.12"
     },
     "require-dev": {
         "unb-libraries/drupal-development-libraries": "^8.0.0"
