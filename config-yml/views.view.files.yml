@@ -1140,7 +1140,7 @@ display:
           group_type: sum
           admin_label: ''
           label: 'Used in'
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
