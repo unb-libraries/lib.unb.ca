@@ -10,7 +10,7 @@ tags:
   description: 'University of New Brunswick Libraries serving the UNB Fredericton, UNB Saint John and St. Thomas University research and academic communities.'
   canonical_url: 'https://lib.unb.ca'
   title: 'University of New Brunswick Libraries'
-  og_image: //media.lib.unb.ca/core/img-rwd/apple-mobile-144px.png
+  og_image: https://media.lib.unb.ca/core/img-rwd/apple-mobile-144px.png
   og_description: 'University of New Brunswick Libraries serving the UNB Fredericton, UNB Saint John and St. Thomas University research and academic communities.'
   og_url: 'https://lib.unb.ca'
   og_title: 'University of New Brunswick Libraries'
