@@ -80,7 +80,7 @@ settings:
       enable: true
       startupMode: wysiwyg
       mode: application/x-httpd-php
-      theme: isotope
+      theme: tomorrow-night-bright
       options:
         lineNumbers: true
         lineWrapping: true
