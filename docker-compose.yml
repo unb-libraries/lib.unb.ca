@@ -56,7 +56,7 @@ services:
     networks:
       - lib.unb.ca
     ports:
-      - "3100:80"
+      - "3101:80"
     env_file:
       - ./env/drupal.env
     volumes:
