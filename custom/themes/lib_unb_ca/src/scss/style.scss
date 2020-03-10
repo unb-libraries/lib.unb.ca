@@ -82,6 +82,22 @@ header h2 {
   margin-bottom: .5rem;
   padding-bottom:.25rem;
 }
+
+/* Automatically apply heading level 2 top margin */
+.field__items {
+  h2 {
+    margin-top: 2.5rem;
+  }
+
+  /* Exclude 1st h2 of each layout region if it's 1st element of paragraph field */
+  & .field__item:first-child .paragraph > .field > .block,
+  & .field__items > .field__item:first-child .field__item:first-child {
+    & > h2:first-child {
+      margin-top: inherit;
+    }
+  }
+}
+
 h3,
 .h3 {
   font-size: 1.3rem;
