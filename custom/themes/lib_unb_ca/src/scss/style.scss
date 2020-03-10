@@ -126,6 +126,12 @@ thead {
   margin-left: .25rem;
 }
 
+/* Override Barrio's 'col-auto' container horizontal padding */
+.col-auto {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .layout__region--second {
   .chat-embedded,
   .block-upcoming-hours-block {
