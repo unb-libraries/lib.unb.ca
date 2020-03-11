@@ -384,7 +384,7 @@ display:
             trim_whitespace: false
             alt: ''
             rel: ''
-            link_class: no-underline
+            link_class: 'learn-how no-underline'
             prefix: ''
             suffix: ''
             target: ''

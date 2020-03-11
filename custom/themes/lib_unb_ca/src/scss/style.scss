@@ -657,6 +657,10 @@ ul.field--name-field-categories:before {
       @include opacity(.75);
     }
   }
+
+  .learn-how {
+    color: $text-dark-cyan;
+  }
 }
 .views-slideshow-controls-bottom {
   font-size: 0.9rem;
