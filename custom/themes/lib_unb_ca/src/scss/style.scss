@@ -58,7 +58,7 @@ caption {
 dd {
   margin-left: 1.5rem;
 }
-dt:nth-of-type(n+1) {
+dt:not(:first-of-type) {
   margin-top: 1.25rem;
 }
 
