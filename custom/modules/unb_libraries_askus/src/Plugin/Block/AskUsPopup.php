@@ -27,7 +27,7 @@ class AskUsPopup extends BlockBase {
           <span><i class="fas fa-envelope"></i> Email</span>
           <span><i class="fas fa-sms"></i> Text</span>
           <span><i class="fas fa-phone-alt"></i> Phone</span>
-          <span><i class="fas fa-user-alt"></i> In-Person</span>
+          <span class="d-none"><i class="fas fa-user-alt"></i> In-Person</span>-->
         </a>
       </p>';
 
