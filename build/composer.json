@@ -42,9 +42,6 @@
             ]
         },
         "patches": {
-            "drupal/bootstrap_barrio": {
-                "Fix Layout Builder": "https://www.drupal.org/files/issues/2018-06-01/2976934-3.patch"
-            },
             "drupal/entity_browser": {
                 "Provide upload widget for media of media type file": "https://www.drupal.org/files/issues/2019-02-28/entity_browser-media-file-upload-2922885-15.patch"
             }
