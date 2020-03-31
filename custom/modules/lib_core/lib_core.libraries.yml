@@ -26,6 +26,12 @@ ckeditor_stylesheets:
     theme:
       css/color-button.css: {}
 
+discoverysearch:
+  version: VERSION
+  css:
+    theme:
+      css/discovery-search.css: {}
+
 lib-chosen:
   version: VERSION
   css:

@@ -1,0 +1,24 @@
+#pane-databases .form-row > .input-group {
+    height: calc(1.5em + 0.75rem + 2px);
+}
+.input-group-prepend + fieldset {
+    position: relative;
+}
+.chosen-container-single,
+.chosen-master {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.input-group .chosen-container-single {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.form-group .chosen-master {
+    border: none;
+}
+.form-group a.chosen-single {
+    height: calc(1.5em + 0.75rem);
+}

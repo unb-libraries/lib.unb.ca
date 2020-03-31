@@ -210,6 +210,7 @@ class DiscoverySearch extends BlockBase {
           'lib_core/unblibtabs',
           'lib_core/lib-chosen',
           'lib_core/chosen-bootstrap',
+          'lib_core/discoverysearch',
         ],
       ],
     ];
