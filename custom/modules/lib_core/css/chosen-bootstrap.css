@@ -40,3 +40,9 @@
 .input-group-prepend + fieldset  .chosen-container-single {
     width: 100% !important;
 }
+.chosen-container-single .chosen-single div b {
+    background-position: 2px .5rem;
+}
+.chosen-container-active.chosen-with-drop .chosen-single div b {
+    background-position: -16px .5rem;
+}
