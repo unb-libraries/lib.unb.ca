@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_is_department_head
-    - field.storage.paragraph.field_library_department
     - field.storage.taxonomy_term.field_anchor
     - field.storage.taxonomy_term.field_department_email
     - field.storage.taxonomy_term.field_department_fax
@@ -72,12 +71,12 @@ display:
         options:
           grouping:
             -
-              field: field_library_department
+              field: name_1
               rendered: true
               rendered_strip: false
           row_class: ''
           default_row_class: true
-          override: true
+          override: false
           sticky: false
           caption: ''
           summary: ''
@@ -90,10 +89,11 @@ display:
             field_department_email: field_department_email
             field_department_website: field_department_website
             nothing_2: nothing_2
-            field_library_department: field_library_department
+            name_1: name_1
             field_is_department_head: field_is_department_head
             field_last_name: field_last_name
             field_first_name: field_first_name
+            field_on_leave: field_on_leave
             field_position_title: field_position_title
             nothing: nothing
             field_phone_number: field_phone_number
@@ -149,7 +149,7 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-            field_library_department:
+            name_1:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -171,6 +171,13 @@ display:
               empty_column: false
               responsive: ''
             field_first_name:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_on_leave:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -661,18 +668,18 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
-        field_library_department:
-          id: field_library_department
-          table: paragraph__field_library_department
-          field: field_library_department
-          relationship: field_department_memberships
+        name_1:
+          id: name_1
+          table: taxonomy_term_field_data
+          field: name
+          relationship: field_library_department
           group_type: group
-          admin_label: ''
+          admin_label: 'Library Department: Tax. Name'
           label: ''
           exclude: true
           alter:
             alter_text: true
-            text: "<a id=\"{{ field_anchor }}\"></a>\r\n{{ field_library_department }}\r\n{{ nothing_2 }}"
+            text: "<a id=\"{{ field_anchor }}\"></a>\r\n{{ name_1 }}\r\n{{ nothing_2 }}"
             make_link: false
             path: ''
             absolute: false
@@ -704,16 +711,16 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
+          click_sort_column: value
+          type: string
           settings:
-            link: false
-          group_column: target_id
+            link_to_entity: false
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -723,7 +730,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
+          convert_spaces: false
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
         field_is_department_head:
           id: field_is_department_head
           table: paragraph__field_is_department_head
@@ -1531,17 +1541,19 @@ display:
             group_items: {  }
           plugin_id: numeric
       sorts:
-        field_library_department_target_id:
-          id: field_library_department_target_id
-          table: paragraph__field_library_department
-          field: field_library_department_target_id
-          relationship: field_department_memberships
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: field_library_department
           group_type: group
           admin_label: ''
           order: ASC
           exposed: false
           expose:
             label: ''
+          entity_type: taxonomy_term
+          entity_field: name
           plugin_id: standard
         field_is_department_head_value:
           id: field_is_department_head_value
@@ -1640,7 +1652,6 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.paragraph.field_is_department_head'
-        - 'config:field.storage.paragraph.field_library_department'
         - 'config:field.storage.taxonomy_term.field_anchor'
         - 'config:field.storage.taxonomy_term.field_department_email'
         - 'config:field.storage.taxonomy_term.field_department_fax'
@@ -1670,7 +1681,6 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.paragraph.field_is_department_head'
-        - 'config:field.storage.paragraph.field_library_department'
         - 'config:field.storage.taxonomy_term.field_anchor'
         - 'config:field.storage.taxonomy_term.field_department_email'
         - 'config:field.storage.taxonomy_term.field_department_fax'
