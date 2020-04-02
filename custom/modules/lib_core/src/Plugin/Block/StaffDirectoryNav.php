@@ -39,6 +39,7 @@ class StaffDirectoryNav extends BlockBase {
           <li><a href="#mailroom">Mail Room</a></li>
           <li><a href="#microforms">Microforms</a></li>
           <li><a href="#reference">Reference</a></li>
+          <li><a href="#researchcommons">Research Commons</a></li>
           <li><a href="#scilib">Science &amp; Forestry Library</a></li>
           <li><a href="#systems">Systems</a></li>
         </ul>
