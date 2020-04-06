@@ -229,7 +229,7 @@
         "drupal/bootstrap_barrio": "4.24",
         "drupal/cache_control_override": "1.0-alpha1",
         "drupal/chosen": "2.9",
-        "drupal/ckeditor_codemirror": "2.2",
+        "drupal/ckeditor_codemirror": "2.3",
         "drupal/ckeditor_div_manager": "1.0",
         "drupal/colorbutton": "1.1",
         "drupal/config_update": "1.5",
