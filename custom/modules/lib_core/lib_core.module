@@ -274,7 +274,7 @@ function _lib_core_get_guide_categories() {
     'journalism' => 'Journalism & Communications',
     'kinesiology' => 'Kinesiology',
     'law' => 'Law',
-    'math' => 'Mathematics',
+    'math' => 'Mathematics and Statistics',
     'media' => 'Media Arts and Cultures',
     // 'miscellaneous' => 'Miscellaneous',
     'music' => 'Music',
