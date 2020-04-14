@@ -10,13 +10,12 @@
 .form-actions input.btn {
   width: inherit;
 }
-.layout__region--content {
-  .paragraph {
-    .field__item {
-      margin-bottom: 2.5rem;
-    }
-  }
+
+.layout__region--content .paragraph .field__item,
+.node__content .layout {
+    margin-bottom: 2.5rem;
 }
+
 .layout--twocol-section--67-33 {
   @media (min-width: 992px) {
     .layout__region--first {
