@@ -269,7 +269,7 @@
         "drupal/search_api_solr": "3.9",
         "drupal/token": "1.6",
         "drupal/video_embed_field": "2.3",
-        "drupal/views_slideshow": "4.6",
+        "drupal/views_slideshow": "4.7",
         "drupal/webform": "5.9",
         "harvesthq/chosen": "~1.8",
         "html2text/html2text": "4.2.1",
