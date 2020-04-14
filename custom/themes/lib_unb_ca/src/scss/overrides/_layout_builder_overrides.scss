@@ -12,7 +12,7 @@
 }
 
 .layout__region--content .paragraph .field__item,
-.node__content .layout {
+.node__content .layout:not(:last-child) {
     margin-bottom: 2.5rem;
 }
 
