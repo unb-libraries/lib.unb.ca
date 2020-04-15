@@ -35,7 +35,7 @@ class StaffDirectoryNav extends BlockBase {
           <li><a href="#englib">Engineering &amp; Computer Science Library</a></li>
           <li><a href="#gddm">Government Documents, Data and Maps</a></li>
           <li><a href="#learning">Instruction Facilities</a></li>
-          <li><a href="#lawlib">Law Library</a></li>
+          <li><a href="//www.unb.ca/fredericton/law/library/about/directory.html">Law Library</a></li>
           <li><a href="#mailroom">Mail Room</a></li>
           <li><a href="#microforms">Microforms</a></li>
           <li><a href="#reference">Reference</a></li>
