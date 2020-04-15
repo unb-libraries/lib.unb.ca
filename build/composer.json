@@ -186,11 +186,11 @@
             "type": "package",
             "package": {
                 "name": "unb-libraries/font_awesome",
-                "version": "5.12.0",
+                "version": "5.13.0",
                 "type": "drupal-library",
                 "dist": {
                     "type": "zip",
-                    "url": "https://github.com/FortAwesome/Font-Awesome/archive/5.12.0.zip"
+                    "url": "https://github.com/FortAwesome/Font-Awesome/archive/5.13.0.zip"
                 },
                 "extra": {
                     "installer-name": "fontawesome"
@@ -281,7 +281,7 @@
         "unb-libraries/calendar_hours": "dev-8.x-1.x",
         "unb-libraries/alert_scheduler": "dev-8.x-1.x",
         "unb-libraries/drupal-builder": "^8.0.0",
-        "unb-libraries/font_awesome": "~5.12",
+        "unb-libraries/font_awesome": "~5.13",
         "unb-libraries/unb_lib_theme": "dev-8.x-bootstrap-4.x",
         "w8tcha/CKEditor-CodeMirror-Plugin": "^1.17.12"
     },
