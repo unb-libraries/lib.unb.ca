@@ -42,6 +42,9 @@
             ]
         },
         "patches": {
+            "drupal/bootstrap_barrio": {
+                "Barrio/Layout Builder fix": "https://www.drupal.org/files/issues/2019-10-04/bootstrap_barrio-disable_default_layouts-2976934-38.patch"
+            },
             "drupal/entity_browser": {
                 "Provide upload widget for media of media type file": "https://www.drupal.org/files/issues/2019-02-28/entity_browser-media-file-upload-2922885-15.patch"
             }
