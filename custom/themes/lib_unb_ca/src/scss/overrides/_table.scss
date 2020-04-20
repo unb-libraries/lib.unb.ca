@@ -1,26 +1,3 @@
-/* Undo Bootstrap Barrio table overrides */
-table {
-    margin-top: inherit;
-
-    tr {
-        background: inherit;
-        border-color: inherit;
-        border-style: inherit;
-        border-width: inherit;
-
-        td,
-        th {
-            background: inherit;
-            border-color: inherit;
-            border-style: inherit;
-            border-width: inherit;
-            color: inherit;
-            font-size: 1rem;
-            padding: inherit;
-        }
-    }
-}
-
 /* Slightly lighten stock BS4 stripe bg color */
 .table-striped tbody tr:nth-of-type(odd) {
     background-color: rgba(128, 128, 128, 0.05);

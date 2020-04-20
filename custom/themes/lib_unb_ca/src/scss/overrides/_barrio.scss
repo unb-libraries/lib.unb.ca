@@ -1,0 +1,40 @@
+/* Bootstrap Barrio fixes */
+/* Alerts */
+.alert-success::before,
+.alert-warning::before,
+.alert-danger::before {
+  background-position: 0 0.1rem;
+  -webkit-background-size: 1rem 1rem;
+  background-size: 1rem 1rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Undo 'col-auto' container horizontal padding */
+.col-auto {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Tables */
+table {
+  margin-top: inherit;
+
+  tr {
+    background: inherit;
+    border-color: inherit;
+    border-style: inherit;
+    border-width: inherit;
+
+    td,
+    th {
+      background: inherit;
+      border-color: inherit;
+      border-style: inherit;
+      border-width: inherit;
+      color: inherit;
+      font-size: 1rem;
+      padding: inherit;
+    }
+  }
+}

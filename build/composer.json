@@ -203,7 +203,7 @@
         {
             "type": "package",
             "package": {
-                "name": "w8tcha/CKEditor-CodeMirror-Plugin",
+                "name": "w8tcha/ckeditor-codemirror-plugin",
                 "version": "1.17.12",
                 "type": "drupal-library",
                 "dist": {
@@ -286,7 +286,7 @@
         "unb-libraries/drupal-builder": "^8.0.0",
         "unb-libraries/font_awesome": "~5.13",
         "unb-libraries/unb_lib_theme": "dev-8.x-bootstrap-4.x",
-        "w8tcha/CKEditor-CodeMirror-Plugin": "^1.17.12"
+        "w8tcha/ckeditor-codemirror-plugin": "^1.17.12"
     },
     "require-dev": {
         "unb-libraries/drupal-development-libraries": "^8.0.0"
