@@ -3,11 +3,7 @@
 .alert-success::before,
 .alert-warning::before,
 .alert-danger::before {
-  background-position: 0 0.1rem;
-  -webkit-background-size: 1rem 1rem;
-  background-size: 1rem 1rem;
-  width: 1rem;
-  height: 1rem;
+  display: none;
 }
 
 /* Undo 'col-auto' container horizontal padding */
