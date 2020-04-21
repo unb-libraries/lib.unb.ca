@@ -310,7 +310,6 @@ function _lib_core_contactable_department($mailbox) {
   $departments = [
     'archives' => 'Archives and Special Collections',
     'askus' => 'Ask Us',
-    'circbus' => 'Access Services/Circulation',
     'circhi' => 'Commons Service Desk',
     'copyright' => 'Copyright',
     'data.gis' => 'Data & GIS',
