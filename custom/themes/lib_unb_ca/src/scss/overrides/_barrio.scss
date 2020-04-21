@@ -1,11 +1,4 @@
 /* Bootstrap Barrio fixes */
-/* Alerts */
-.alert-success::before,
-.alert-warning::before,
-.alert-danger::before {
-  display: none;
-}
-
 /* Undo 'col-auto' container horizontal padding */
 .col-auto {
   padding-left: 0;
