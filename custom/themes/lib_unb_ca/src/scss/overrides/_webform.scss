@@ -1,13 +1,3 @@
-/* Fix Webform nested custom-control class */
-.custom-control {
-  label.custom-control {
-    position: relative;
-    display: inline-block;
-    padding-left: 0;
-    vertical-align: top;
-  }
-}
-
 .webform-submission-form {
   border: 1px solid #cdcdcd;
   @include css3-prefix(border-radius, 6px);
