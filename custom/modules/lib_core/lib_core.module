@@ -356,6 +356,17 @@ function lib_core_views_query_alter(ViewExecutable $view, QueryPluginBase $query
 }
 
 /**
+ * Implements hook_page_attachments().
+ */
+function lib_core_page_attachments(array &$attachments) {
+  if (!\Drupal::currentUser()->hasPermission('access toolbar')) {
+    return;
+  }
+
+  $attachments['#attached']['library'][] = 'lib_core/toolbar-overrides';
+}
+
+/**
  * Implements hook_page_attachments_alter().
  *
  * @see https://www.drupal.org/project/metatag/issues/2958193

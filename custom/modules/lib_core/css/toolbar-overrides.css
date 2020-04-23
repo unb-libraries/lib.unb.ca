@@ -1,0 +1,8 @@
+.toolbar .toolbar-tray .menu-item a:focus {
+  background-color: #e0e0d8;
+}
+#toolbar-bar .toolbar-tray a.is-active {
+  color: #767676;
+  cursor: default;
+  text-decoration: none;
+}
