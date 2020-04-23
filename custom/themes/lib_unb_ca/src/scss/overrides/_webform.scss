@@ -57,7 +57,8 @@
     }
   }
 
-  fieldset.has-error {
+  fieldset.has-error,
+  div.custom-control {
     .invalid-feedback {
       display: block;
 
