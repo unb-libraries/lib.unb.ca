@@ -1,0 +1,10 @@
+uuid: dc6ea1cd-6e7b-4970-adef-45f146c23826
+langcode: en
+status: true
+dependencies: {  }
+id: equal_width_3_columns_section
+label: 'Equal Width 3 Columns Section (33%/34%/33%)'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

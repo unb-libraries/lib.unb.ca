@@ -1,0 +1,55 @@
+uuid: 02794e12-f5ca-4acc-9d4a-1f768003fc98
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.equal_width_3_columns_section.field_column_1
+    - field.field.paragraph.equal_width_3_columns_section.field_column_2
+    - field.field.paragraph.equal_width_3_columns_section.field_column_3
+    - paragraphs.paragraphs_type.equal_width_3_columns_section
+  module:
+    - paragraphs
+id: paragraph.equal_width_3_columns_section.default
+targetEntityType: paragraph
+bundle: equal_width_3_columns_section
+mode: default
+content:
+  field_column_1:
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
+  field_column_2:
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
+  field_column_3:
+    type: entity_reference_paragraphs
+    weight: 2
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true
