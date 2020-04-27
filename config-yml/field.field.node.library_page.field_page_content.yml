@@ -7,6 +7,7 @@ dependencies:
     - node.type.library_page
     - paragraphs.paragraphs_type.body_section
     - paragraphs.paragraphs_type.departement_membership
+    - paragraphs.paragraphs_type.slide
   module:
     - entity_reference_revisions
 id: node.library_page.field_page_content
@@ -26,6 +27,7 @@ settings:
     target_bundles:
       body_section: body_section
       departement_membership: departement_membership
+      slide: slide
     target_bundles_drag_drop:
       body_section:
         enabled: true
@@ -49,6 +51,6 @@ settings:
         enabled: true
         weight: -11
       slide:
+        enabled: true
         weight: -10
-        enabled: false
 field_type: entity_reference_revisions
