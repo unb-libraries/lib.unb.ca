@@ -7,3 +7,12 @@ lib_core.help_info:
     _permission: 'access content'
   options:
     no_cache: 'TRUE'
+lib_core.proxy_login:
+  path: '/proxy'
+  defaults:
+    _controller: '\Drupal\lib_core\Controller\ProxyLoginController::proxyLoginPage'
+    _title: 'Special Authentication'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'

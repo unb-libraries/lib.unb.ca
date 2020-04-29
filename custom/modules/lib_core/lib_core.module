@@ -18,6 +18,9 @@ function lib_core_theme($existing, $type, $theme, $path) {
     'help_info' => [
       'variables' => ['info' => NULL],
     ],
+    'proxy_login' => [
+      'variables' => ['url' => NULL],
+    ],
   ];
 }
 
