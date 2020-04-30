@@ -1,43 +1,62 @@
-    <form name="proxy" action="https://proxy.hil.unb.ca/login?" method="post" class="form-horizontal valid-bs3">
-{% if url %}
-      <input type="hidden" name="url" value="{{ url }}" />
-{% endif %}
-      <fieldset>
-      <legend>UNB Libraries Special Authentication</legend>
-      <dl>
-        <dt><strong>NOTE:</strong></dt>
-        <dd>
-          <p>This method of authentication is ONLY supported if you have been provided <strong>special credentials</strong> for the proxy server. <a href="https://login.proxy.hil.unb.ca/login">UNB and STU members MUST use the standard login page</a>.</p>
-          <p>Special accounts are intentionally <strong>periodically expired</strong>.</p>
-          <p>Following successful login here you will be redirected to the UNB Libraries homepage. Any proxied resources or links you follow after this point will be routed through our proxy server.</p>
-        </dd>
-      </dl>
+<form name="proxy" action="https://proxy.hil.unb.ca/login?" method="post" class="border bg-light p-4">
+  {% if url %}
+    <input type="hidden" name="url" value="{{ url }}" />
+  {% endif %}
 
-  <div class="form-group">
-    <label for="user" class="col-sm-2 control-label">Login ID</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="user" name="user" placeholder="Non-UNB logins ONLY" aria-required="true">
+  <dl class="mb-5">
+    <dt>NOTE:</dt>
+    <dd>This method of authentication is ONLY supported if you have been provided <strong>special credentials</strong>
+      for the proxy server.<br>
+      <i class="fas fa-sign-in-alt text-red"></i>
+      <a href="https://login.proxy.hil.unb.ca/login">UNB and STU members MUST use the standard login page</a>.</p>
+    <dd>Special accounts are intentionally <strong>periodically expired</strong>.</dd>
+    <dd>Following successful login here you will be redirected to the UNB Libraries homepage.
+      Any proxied resources or links you follow after this point will be routed through our proxy server.</dd>
+  </dl>
+
+  <fieldset class="mx-2">
+    <legend class="sr-only">Log in to your account</legend>
+    <div class="form-row mb-4">
+      <label for="user" class="col-form-label col-12 col-md-3 col-lg-2 text-left text-md-right">Login ID
+        <small class="align-middle"><i class="fas fa-asterisk fa-xs text-danger"></i></small></label>
+      <div class="col-12 col-md-9 col-lg-10 input-group">
+        <div class="input-group-prepend d-md-none">
+          <span class="input-group-text"><i class="fas fa-user"></i></span>
+        </div>
+        <input type="text" class="form-control required" id="user" name="user" placeholder="Non-UNB logins ONLY"
+          aria-required="true" required>
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label for="pass" class="col-sm-2 control-label">Password</label>
-    <div class="col-sm-10">
-      <input type="password" class="form-control" id="pass" name="pass" aria-required="true">
+    <div class="form-row mb-4">
+      <label for="pass" class="col-form-label col-12 col-md-3 col-lg-2 text-left text-md-right">Password
+        <small class="align-middle"><i class="fas fa-asterisk fa-xs text-danger"></i></small></label>
+      <div class="col-12 col-md-9 col-lg-10 input-group">
+        <div class="input-group-prepend d-md-none">
+          <span class="input-group-text"><i class="fas fa-lock"></i></span>
+        </div>
+        <input type="password" class="form-control required" id="pass" name="pass"
+          aria-required="true" required>
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-inverse">Login</button>
+    <div class="form-row">
+      <div class="col-12 col-md-9 offset-md-3 offset-lg-2">
+        <button type="submit" class="btn bg-dark text-white px-4">Log in</button>
+      </div>
     </div>
-  </div>
+  </fieldset>
+</form>
 
-      </fieldset>
-    </form>
+<div class="mt-5">
+  <dl>
+    <dt>Login Problems:</dt>
+    <dd>Please direct questions or authentication problems to
+      <i class="fas fa-envelope text-secondary"></i>
+      <a href="mailto:brian.cassidy@unb.ca?subject=Special%20Proxy%20Login%20Issues">Brian Cassidy</a>
+      | <i class="fas fa-mobile-alt text-secondary"></i> <a href="tel:+15064769688">(506) 476-9688</a>.</dd>
 
-    <dl>
-      <dt>Login Problems:</dt>
-      <dd><span>Please direct questions or authentication problems to <a href="mailto:brian.cassidy@unb.ca?subject=Special%20Proxy%20Login%20Issues">Brian Cassidy</a> | (506) 476-9688.</span></dd>
-      <dt>Copyright Restrictions</dt>
-      <dd>Resources are licensed to the University of New Brunswick for academic purposes ONLY. The content may not be reproduced, retransmitted, disseminated, sold, distributed, published, broadcast or circulated.  Remote access restricted to members of the University of New Brunswick/St. Thomas University community.</dd>
-    </dl>
-
+    <dt>Copyright Restrictions:</dt>
+    <dd>Resources are licensed to the University of New Brunswick for academic purposes ONLY. The content may not be
+      reproduced, retransmitted, disseminated, sold, distributed, published, broadcast or circulated.
+      Remote access restricted to members of the University of New Brunswick/St. Thomas University community.</dd>
+  </dl>
+</div>
