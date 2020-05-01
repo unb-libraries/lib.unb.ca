@@ -324,7 +324,7 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getCatalogueForm() {
     $form_catalogue =
-      '<form accept-charset="UTF-8" action="https://web.lib.unb.ca/core/inc-2015/UNB-WorldCat-Discovery-search.php" id="home_WCD" method="post" name="wcfw">
+      '<form accept-charset="UTF-8" action="/worldcat-search-helper" id="home_WCD" method="post" name="wcfw">
         <div class="form-group">
           <div class="form-row font-weight-bold mb-2 ml-1">
             <div class="mb-1 mr-3">
