@@ -87,6 +87,10 @@ form .field-multiple-table .field-multiple-drag,
     position: relative;
     text-transform: uppercase;
 }
+/* Vertically separate column sections when adding new paragraph entities */
+.ajax-new-content .field--widget-entity-reference-paragraphs {
+    margin-bottom: 1rem;
+}
 /* Visible AJAX throbber */
 .paragraphs-subform .dropbutton-multiple .dropbutton-action .ajax-progress {
     display: inline-block;
@@ -207,4 +211,14 @@ input:focus:not(.focus-ring) {
 tr.drag td div {
     max-height: 200px;
     overflow: hidden;
+}
+/* Paragraph entity's chosen selection dropdown */
+.chosen-container {
+    border:1px solid #ced4da;
+}
+.chosen-container-single .chosen-single div b {
+    background-position: 2px .5rem;
+}
+.chosen-container-active.chosen-with-drop .chosen-single div b {
+    background-position: -16px .5rem;
 }
