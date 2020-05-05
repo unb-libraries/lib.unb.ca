@@ -21,7 +21,7 @@ class WorldCatSearchController extends ControllerBase {
       return;
     }
 
-    $keys = ['queryString', 'scope', 'format', 'dblist'];
+    $keys = ['queryString', 'scope', 'format', 'databaseList'];
     $index = str_replace("&quot;", '"', stripslashes($_POST['searchIndex']));
     $q = [];
 
