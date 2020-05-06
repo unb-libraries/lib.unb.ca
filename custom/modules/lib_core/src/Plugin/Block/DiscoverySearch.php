@@ -222,7 +222,7 @@ class DiscoverySearch extends BlockBase {
   protected function getReservesForm() {
     $form_reserves =
       '<p class="mb-4">Search by instructor, course name or course number.</p>
-      <form action="//web.lib.unb.ca/core/action/process_reserves_search.php" id="searchReserves" method="get">
+      <form action="//web.lib.unb.ca/reserves/index.php/quickSearch" id="searchReserves" method="post">
         <div class="form-group">
           <div class="form-row">
             <div class="col-md-6 mb-2">
