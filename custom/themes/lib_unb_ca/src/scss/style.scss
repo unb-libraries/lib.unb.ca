@@ -357,7 +357,7 @@ ul.field--name-field-categories:before {
     top: 0;
   }
   .badge-stickied {
-    color: $nav-red;
+    color: $unb-red;
     font-size: 95%;
     vertical-align: text-top;
   }
@@ -384,7 +384,7 @@ ul.field--name-field-categories:before {
     }
 
     a {
-      color: $nav-red;
+      color: $unb-red;
     }
   }
 }
@@ -787,7 +787,7 @@ ul {
 }
 
 .text-dark {
-  color: $font-dark;
+  color: $dark;
 }
 .text-muted-wcag {
   color: $text-muted-wcag;

@@ -61,8 +61,8 @@
   }
 
   select.error {
-    color: $nav-red;
-    border-color: $nav-red;
+    color: $unb-red;
+    border-color: $unb-red;
 
     &:focus {
       box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
@@ -74,7 +74,7 @@
   }
   .radio .error {
     & + label {
-      color: $nav-red;
+      color: $unb-red;
     }
   }
 
