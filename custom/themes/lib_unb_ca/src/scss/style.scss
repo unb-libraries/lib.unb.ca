@@ -36,6 +36,10 @@ img.float-right,
     &:hover {
       @include css3-prefix(box-shadow, 0px 2px 1px -1px rgba(153, 0, 0, .2));
     }
+
+    &.text-white:hover {
+      @include css3-prefix(box-shadow, 0px 2px 1px -1px rgba(255, 255, 255, .4));
+    }
   }
 }
 /* Link hover exceptions: back-to-top/featured news/dark table header */
