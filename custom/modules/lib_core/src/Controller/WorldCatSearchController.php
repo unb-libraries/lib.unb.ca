@@ -43,8 +43,7 @@ class WorldCatSearchController extends ControllerBase {
     // QUERY SYNTAX
     // https://unb.on.worldcat.org/search?scope=wz%3A66413&queryString=monkeys
     $url = "https://unb.on.worldcat.org/search?" . http_build_query($q);
-    $response = new RedirectResponse($url);
-    $response->send();
+    return new RedirectResponse($url);
   }
 
 }
