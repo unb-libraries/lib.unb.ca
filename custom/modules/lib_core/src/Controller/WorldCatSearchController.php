@@ -4,7 +4,7 @@ namespace Drupal\lib_core\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\Core\Routing\TrustedRedirectResponse;
 
 /**
  * Provides route responses for the lib_core module.
@@ -43,7 +43,7 @@ class WorldCatSearchController extends ControllerBase {
     // QUERY SYNTAX
     // https://unb.on.worldcat.org/search?scope=wz%3A66413&queryString=monkeys
     $url = "https://unb.on.worldcat.org/search?" . http_build_query($q);
-    return new RedirectResponse($url);
+    return new TrustedRedirectResponse($url);
   }
 
 }
