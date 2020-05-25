@@ -63,11 +63,11 @@
             "type": "package",
             "package": {
                 "name": "ckeditor/colorbutton",
-                "version": "4.13.0",
+                "version": "4.14.0",
                 "type": "drupal-library",
                 "dist": {
                     "type": "zip",
-                    "url": "https://github.com/unb-libraries/upstream-library-mirror/raw/master/colorbutton/colorbutton_4.13.0.zip"
+                    "url": "https://github.com/unb-libraries/upstream-library-mirror/raw/master/colorbutton/colorbutton_4.14.0.zip"
                 }
             }
         },
@@ -75,11 +75,11 @@
             "type": "package",
             "package": {
                 "name": "ckeditor/div",
-                "version": "4.13.0",
+                "version": "4.14.0",
                 "type": "drupal-library",
                 "dist": {
                     "type": "zip",
-                    "url": "https://github.com/unb-libraries/upstream-library-mirror/raw/master/div/div_4.13.0.zip"
+                    "url": "https://github.com/unb-libraries/upstream-library-mirror/raw/master/div/div_4.14.0.zip"
                 },
                 "extra": {
                     "installer-name": "ckeditor/plugins/div"
@@ -90,11 +90,11 @@
             "type": "package",
             "package": {
                 "name": "ckeditor/panelbutton",
-                "version": "4.13.0",
+                "version": "4.14.0",
                 "type": "drupal-library",
                 "dist": {
                     "type": "zip",
-                    "url": "https://github.com/unb-libraries/upstream-library-mirror/raw/master/panelbutton/panelbutton_4.13.0.zip"
+                    "url": "https://github.com/unb-libraries/upstream-library-mirror/raw/master/panelbutton/panelbutton_4.14.0.zip"
                 }
             }
         },
