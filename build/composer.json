@@ -263,7 +263,7 @@
         "drupal/override_node_options": "2.4",
         "drupal/panelbutton": "1.2",
         "drupal/pathauto": "1.8",
-        "drupal/paragraphs": "1.11",
+        "drupal/paragraphs": "1.12",
         "drupal/redirect": "1.6",
         "drupal/redis": "1.4",
         "drupal/scroll_back_to_top": "1.0-rc1",
