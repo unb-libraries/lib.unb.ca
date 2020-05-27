@@ -13,7 +13,9 @@ services:
       - lib.unb.ca
 
   drupal-solr-lib-unb-ca:
-    image: unblibraries/solr-drupal:8.x-3.x
+    image: unblibraries/solr-drupal:8.x-4.x
+    env_file:
+      - ./env/solr.env
     expose:
       - "8983"
     networks:
