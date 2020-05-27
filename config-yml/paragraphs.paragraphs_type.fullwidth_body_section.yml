@@ -5,5 +5,6 @@ dependencies: {  }
 id: fullwidth_body_section
 label: 'Full-Width Body Section'
 icon_uuid: null
+icon_default: null
 description: ''
 behavior_plugins: {  }
