@@ -49,7 +49,7 @@ third_party_settings:
       collection: ''
       timezone: ''
 id: pages_lib_unb_ca
-name: pages-lib-unb.ca
+name: pages.lib.unb.ca
 description: ''
 read_only: false
 field_settings:
