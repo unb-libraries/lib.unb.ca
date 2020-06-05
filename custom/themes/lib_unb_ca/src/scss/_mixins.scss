@@ -1,12 +1,1 @@
-@mixin link-icon($content, $color: inherit, $margin: 'left') {
-  background: none;
-  color: $color;
-  content: $content;
-  font-family: "Font Awesome 5 Free";
-  font-size: 1rem;
-  @if $margin == left {
-    margin-left: .25rem;
-  } @else {
-    margin-right: .25rem;
-  }
-}
+/* Custom mixins */
