@@ -14,7 +14,7 @@
 a {
   &.email-icon {
     &:before {
-      @include link-icon('\f0e0','',right);
+      @include link-fa-icon('\f0e0', right);
     }
   }
 }
@@ -192,31 +192,31 @@ thead {
 a:not(.link-no-icon) {
   &[href$=".doc"]:after,
   &[href$=".docx"]:after {
-    @include link-icon("\f1c2", #2b5999);
+    @include link-fa-icon("\f1c2", left, '', #2b5999);
   }
 
   &[href$=".pdf"]:after {
-    @include link-icon("\f1c1", #a40607);
+    @include link-fa-icon("\f1c1", left, '', #a40607);
   }
 
   &[href$=".ppt"]:after,
   &[href$=".pptx"]:after {
-    @include link-icon("\f1c4", #e86900);
+    @include link-fa-icon("\f1c4", left, '', #e86900);
   }
 
   &[href$=".rtf"]:after,
   &[href$=".txt"]:after {
-    @include link-icon("\f15b", #373f44);
+    @include link-fa-icon("\f15b", left, '', #373f44);
   }
 
   &[href$=".csv"]:after,
   &[href$=".xls"]:after,
   &[href$=".xlsx"]:after {
-    @include link-icon("\f1c3", #206f43);
+    @include link-fa-icon("\f1c3", left, '', #206f43);
   }
 
   &[href$=".zip"]:after {
-    @include link-icon("\f1c6", #eabf0d);
+    @include link-fa-icon("\f1c6", left, '', #eabf0d);
   }
 }
 /* End Media files */
@@ -691,13 +691,13 @@ ul.field--name-field-categories:before {
 a:not(.link-no-icon)[data-toggle="collapse"] {
   &[aria-expanded="false"] {
     &:before {
-      @include link-icon('\f13a','',right);
+      @include link-fa-icon('\f13a', right);
     }
   }
 
   &[aria-expanded="true"] {
     &:before {
-      @include link-icon('\f139','',right);
+      @include link-fa-icon('\f139', right);
     }
   }
 }
