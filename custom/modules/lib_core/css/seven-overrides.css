@@ -7,10 +7,21 @@
 .filter-wrapper {
     display: none;
 }
+.form-wrapper {
+    margin: 1.5rem 0;
+}
+.form-wrapper .form-wrapper {
+    margin: 0;
+}
 form div.description,
 form .form-item .description {
     color: #856404;
     font-family: monospace;
+    font-size: .9rem;
+}
+/* Hide show row weights link */
+.tabledrag-toggle-weight-wrapper {
+    display: none;
 }
 /* Lower tabledrag icon position */
 form .field-multiple-table .field-multiple-drag,
@@ -22,7 +33,16 @@ form .field-multiple-table .field-multiple-drag,
     width: 1.35rem;
     height: 1.35rem;
 }
+.field--type-entity-reference table tr td,
+.field--type-entity-reference table tr th,
+.field--type-entity-reference-revisions table tr td,
+.field--type-entity-reference-revisions table tr th {
+    font-size: inherit;
+}
 /* Improve paragraphs dropdown widget layout */
+.js .dropbutton-wrapper .dropbutton-widget .dropbutton-action input:focus {
+    text-decoration: none;
+}
 .js td .dropbutton-wrapper {
     min-height: 1rem;
 }
@@ -31,11 +51,6 @@ form .field-multiple-table .field-multiple-drag,
     background: none;
     box-shadow: none;
     color: #900;
-}
-
-/* Add whitespace between Paragraph dropbuttons & Preview */
-.js .paragraph-type-top {
-    margin-bottom: .33rem;
 }
 
 /* Style for Library page Content type Help text */
@@ -64,7 +79,6 @@ form .field-multiple-table .field-multiple-drag,
 .paragraph-type-title {
     color: #333;
     font-weight: bold;
-    line-height: 2rem;
     flex-grow: 1!important;
     text-transform: uppercase;
 }
@@ -107,6 +121,18 @@ form .field-multiple-table .field-multiple-drag,
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
     margin-right: .25rem;
+}
+.form-item label,
+#field-page-content-add-more-wrapper strong {
+    text-transform: uppercase;
+}
+.field--type-entity-reference thead > tr,
+.field--type-entity-reference-revisions thead > tr {
+    border-bottom: none;
+}
+.field--type-entity-reference th,
+.field--type-entity-reference-revisions th {
+    padding: 0;
 }
 /* Media Library */
 fieldset.media-library-widget:not(.fieldgroup) legend {
@@ -219,9 +245,6 @@ tr.drag td div {
 .chosen-container {
     border: none;
 }
-.chosen-container-single .chosen-single div b {
-    background-position: 2px .25rem;
-}
-.chosen-container-active.chosen-with-drop .chosen-single div b {
-    background-position: -18px .25rem;
+.draggable .label {
+    color: #856404;
 }
