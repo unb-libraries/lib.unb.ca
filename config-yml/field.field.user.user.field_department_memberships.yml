@@ -25,9 +25,6 @@ settings:
     target_bundles:
       departement_membership: departement_membership
     target_bundles_drag_drop:
-      departement_membership:
-        enabled: true
-        weight: -13
       body_section:
         weight: -12
         enabled: false
@@ -37,6 +34,9 @@ settings:
       custom_block_section:
         weight: -10
         enabled: false
+      departement_membership:
+        enabled: true
+        weight: -13
       equal_columns_section:
         weight: -9
         enabled: false
