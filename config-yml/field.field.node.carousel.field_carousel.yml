@@ -25,17 +25,14 @@ settings:
     target_bundles:
       slide: slide
     target_bundles_drag_drop:
-      carousel:
-        weight: 8
-        enabled: false
-      slide:
-        enabled: true
-        weight: 9
       body_section:
         weight: 9
         enabled: false
       body_sidebar_section:
         weight: 10
+        enabled: false
+      carousel:
+        weight: 8
         enabled: false
       custom_block_section:
         weight: 11
@@ -49,4 +46,7 @@ settings:
       fullwidth_body_section:
         weight: 14
         enabled: false
+      slide:
+        enabled: true
+        weight: 9
 field_type: entity_reference_revisions
