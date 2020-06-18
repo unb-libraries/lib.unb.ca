@@ -82,16 +82,12 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     case 'node_library_page_form':
     case 'node_library_page_edit_form':
       // Attach CSS libraries for Library page content type form enhancements.
-      $form['#attached']['library'][] = 'lib_unb_ca/global-styling';
-      $form['#attached']['library'][] = 'lib_core/ckeditor_stylesheets';
-      $form['#attached']['library'][] = 'lib_core/admin-overrides';
+      $form['#attached']['library'][] = 'lib_core/seven-overrides';
       break;
 
     case 'node_news_post_form':
     case 'node_news_post_edit_form':
-      $form['#attached']['library'][] = 'lib_unb_ca/global-styling';
-      $form['#attached']['library'][] = 'lib_core/ckeditor_stylesheets';
-      $form['#attached']['library'][] = 'lib_core/admin-overrides';
+      $form['#attached']['library'][] = 'lib_core/seven-overrides';
 
       $form['promote']['widget']['value']['#title'] = t('Set as rotating front page feature');
       break;
