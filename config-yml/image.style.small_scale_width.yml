@@ -1,0 +1,15 @@
+uuid: 9f88b242-a27a-44c5-9ab5-f45bf3d8a17e
+langcode: en
+status: true
+dependencies: {  }
+name: small_scale_width
+label: 'Small (Scale width 220)'
+effects:
+  b371b0f2-89e1-4257-acb1-7dba9e1a26ec:
+    uuid: b371b0f2-89e1-4257-acb1-7dba9e1a26ec
+    id: image_scale
+    weight: 1
+    data:
+      width: 240
+      height: null
+      upscale: true
