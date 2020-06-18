@@ -237,8 +237,9 @@ input:focus:not(.focus-ring) {
 }
 
 /* Edit form: cap body height on drag icon click to facilitate reordering */
-tr.drag td div {
-    max-height: 200px;
+tr.drag td > div {
+    box-shadow: 0 0 0 0.2rem rgba(255,0,0,0.25);
+    max-height: 150px;
     overflow: hidden;
 }
 /* Paragraph entity's chosen selection dropdown */
@@ -250,4 +251,9 @@ tr.drag td div {
 }
 .draggable .label {
     color: #856404;
+}
+.draggable > td > a + .warning {
+    color: #e09600;
+    font-size: larger;
+    padding: 0 .63rem;
 }
