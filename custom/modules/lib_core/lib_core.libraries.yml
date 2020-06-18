@@ -1,30 +1,14 @@
-admin-overrides:
+seven-overrides:
   version: VERSION
   css:
     theme:
-      css/admin-overrides.css: {}
-  js:
-    js/admin-overrides.js: {}
-  dependencies:
-    - core/jquery
-
-bootstrap-cdn:
-  version: VERSION
-  css:
-    base:
-      //stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js: { type: external, minified: true }
+      css/seven-overrides.css: {}
 
 chosen-bootstrap:
   version: VERSION
   css:
     theme:
       css/chosen-bootstrap.css: {}
-
-ckeditor_stylesheets:
-  version: VERSION
-  css:
-    theme:
-      css/color-button.css: {}
 
 discoverysearch:
   version: VERSION
@@ -36,9 +20,9 @@ lib-chosen:
   version: VERSION
   css:
     theme:
-      //cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css: { type: external, minified: true }
+      css/chosen.min.css: { minified: true }
   js:
-    //cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js: { type: external, minified: true }
+    js/chosen.jquery.min.js: { minified: true }
     js/lib-chosen.js: {}
 
 quicklinks:
