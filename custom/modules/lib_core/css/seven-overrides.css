@@ -40,6 +40,9 @@ form .field-multiple-table .field-multiple-drag,
     font-size: inherit;
 }
 /* Improve paragraphs dropdown widget layout */
+.paragraphs-subform > div > div {
+    margin-bottom: 1rem;
+}
 .js .dropbutton-wrapper .dropbutton-widget .dropbutton-action input:focus {
     text-decoration: none;
 }
