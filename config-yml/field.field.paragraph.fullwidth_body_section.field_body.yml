@@ -11,15 +11,15 @@ dependencies:
 third_party_settings:
   allowed_formats:
     library_page_html: library_page_html
-    full_html: '0'
     basic_html: '0'
+    full_html: '0'
     restricted_html: '0'
     plain_text: '0'
 id: paragraph.fullwidth_body_section.field_body
 field_name: field_body
 entity_type: paragraph
 bundle: fullwidth_body_section
-label: Body
+label: Content
 description: ''
 required: false
 translatable: true

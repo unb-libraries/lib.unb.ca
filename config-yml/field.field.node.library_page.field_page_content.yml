@@ -14,7 +14,7 @@ id: node.library_page.field_page_content
 field_name: field_page_content
 entity_type: node
 bundle: library_page
-label: 'Page content'
+label: 'Page Sections'
 description: "<p class=\"library-page-help\">\r\n<i class=\"fas fa-info-circle\"></i>\r\nAdd page content using the button options below.</p>"
 required: false
 translatable: false
