@@ -1,0 +1,10 @@
+uuid: 0b06d629-b564-4bdb-b8cd-8b06a597947d
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.scale0_image_thumbnail
+label: 'Thumbnail (scale: 120px width)'
+targetEntityType: media
+cache: true

@@ -1,0 +1,10 @@
+uuid: caa9cb27-9934-4393-85a3-e1da2b2a291c
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.scale1_image_small
+label: 'Small (scale: 240px width)'
+targetEntityType: media
+cache: true

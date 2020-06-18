@@ -1,0 +1,10 @@
+uuid: 62a89a68-e61f-4360-b7ec-0afb79b473a3
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.scale3_image_large
+label: 'Large (scale: 480px width)'
+targetEntityType: media
+cache: true

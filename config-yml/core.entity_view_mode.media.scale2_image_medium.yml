@@ -1,0 +1,10 @@
+uuid: 98529710-e063-48c8-8756-eb921f933e00
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.scale2_image_medium
+label: 'Medium (scale: 360px width)'
+targetEntityType: media
+cache: true
