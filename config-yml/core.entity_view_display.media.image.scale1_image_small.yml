@@ -1,27 +1,33 @@
-uuid: 7cd75b1c-b5aa-4dd4-8231-29f74e79087b
+uuid: 14cabba3-ef1f-4c50-a4b4-a8be0d2d204b
 langcode: en
-status: false
+status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.media_image
+    - core.entity_view_mode.media.scale1_image_small
     - field.field.media.image.field_media_image
     - field.field.media.image.field_mime_type
+    - image.style.small_scale_width
     - media.type.image
   module:
     - image
-id: media.image.media_image
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: media.image.scale1_image_small
 targetEntityType: media
 bundle: image
-mode: media_image
+mode: scale1_image_small
 content:
   field_media_image:
-    weight: 0
-    label: hidden
+    label: visually_hidden
     settings:
-      image_style: ''
-      image_link: ''
+      image_style: small_scale_width
+      image_link: file
     third_party_settings: {  }
     type: image
+    weight: 1
     region: content
 hidden:
   created: true
