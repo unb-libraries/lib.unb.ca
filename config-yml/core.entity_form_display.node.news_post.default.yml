@@ -45,7 +45,7 @@ content:
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: preview
+      edit_mode: open
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: body_section
@@ -106,8 +106,8 @@ content:
     third_party_settings: {  }
   url_redirects:
     weight: 50
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   field_unb_lib_page_content: true

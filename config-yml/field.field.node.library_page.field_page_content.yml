@@ -32,17 +32,8 @@ settings:
       body_section:
         enabled: true
         weight: -17
-      fullwidth_body_section:
-        weight: -16
-        enabled: false
       body_sidebar_section:
         weight: -15
-        enabled: false
-      equal_columns_section:
-        weight: -14
-        enabled: false
-      equal_width_3_columns_section:
-        weight: -13
         enabled: false
       custom_block_section:
         weight: -12
@@ -50,6 +41,15 @@ settings:
       departement_membership:
         enabled: true
         weight: -11
+      equal_columns_section:
+        weight: -14
+        enabled: false
+      equal_width_3_columns_section:
+        weight: -13
+        enabled: false
+      fullwidth_body_section:
+        weight: -16
+        enabled: false
       slide:
         enabled: true
         weight: -10
