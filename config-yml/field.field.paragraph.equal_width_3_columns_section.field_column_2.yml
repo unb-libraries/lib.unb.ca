@@ -27,9 +27,6 @@ settings:
       body_section: body_section
       custom_block_section: custom_block_section
     target_bundles_drag_drop:
-      equal_width_3_columns_section:
-        weight: 9
-        enabled: false
       body_section:
         enabled: true
         weight: 10
@@ -44,6 +41,9 @@ settings:
         enabled: false
       equal_columns_section:
         weight: 14
+        enabled: false
+      equal_width_3_columns_section:
+        weight: 9
         enabled: false
       fullwidth_body_section:
         weight: 15
