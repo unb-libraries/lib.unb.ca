@@ -216,9 +216,12 @@ tr.drag td div {
 .chosen-container {
     border:1px solid #ced4da;
 }
+.chosen-container {
+    border: none;
+}
 .chosen-container-single .chosen-single div b {
-    background-position: 2px .5rem;
+    background-position: 2px .25rem;
 }
 .chosen-container-active.chosen-with-drop .chosen-single div b {
-    background-position: -16px .5rem;
+    background-position: -18px .25rem;
 }
