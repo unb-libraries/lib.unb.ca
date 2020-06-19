@@ -242,6 +242,9 @@ tr.drag td > div {
     max-height: 150px;
     overflow: hidden;
 }
+tr.drag td > div td > div {
+    box-shadow: none;
+}
 /* Paragraph entity's chosen selection dropdown */
 .chosen-container {
     border:1px solid #ced4da;
