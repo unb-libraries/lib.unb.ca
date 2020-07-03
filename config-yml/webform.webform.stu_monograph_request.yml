@@ -31,7 +31,7 @@ settings:
   ajax_effect: fade
   ajax_speed: 500
   page: true
-  page_submit_path: ''
+  page_submit_path: /stu-monograph-request
   page_confirm_path: ''
   page_theme_name: ''
   form_title: source_entity_webform
