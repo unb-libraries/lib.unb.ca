@@ -129,7 +129,7 @@ settings:
   draft_pending_multiple_message: ''
   confirmation_type: message
   confirmation_title: ''
-  confirmation_message: "<p class=\"h6\"><em class=\"fa-clipboard-check fas\">&nbsp;</em>Film Purchase Request Successfully Submitted</p>\r\n\r\n<p class=\"pb-0\">Requests will be reviewed based on criteria that stress balance within the existing collection and the availability/affordability of public performance rights.</p>\r\n\r\n<p>We will notify you with an update on the status of your request(s). Material orders can take some time to arrive before making their way into our catalogue. If your need is urgent, you may wish to consider filling out a <a href=\"/services/docdel/\">Document Delivery Request form</a>.</p>"
+  confirmation_message: "<p class=\"h6\"><em class=\"fa-clipboard-check fas\">&nbsp;</em>UNB Libraries Monograph Request Successfully Submitted</p>\r\n\r\n<p>We will notify you with an update on the status of your requests.</p>"
   confirmation_url: ''
   confirmation_attributes: {  }
   confirmation_back: true
@@ -214,17 +214,17 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: libweb@unb.ca
+      to_mail: jsmyth@unb.ca
       to_options: {  }
       cc_mail: ''
       cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
-      from_mail: '[webform_submission:values:unb_stu_email:raw]'
+      from_mail: '[webform_submission:values:email:raw]'
       from_options: {  }
-      from_name: '[webform_submission:values:name:raw]'
+      from_name: '[webform_submission:values:your_name:raw]'
       subject: 'St. Thomas University: UNB Libraries Monograph Request '
-      body: "<p>The following information was submitted through our <b>Film Purchase Request</b> form by {{ webform_token('[webform_submission:user]', webform_submission) }} on {{ webform_token('[webform_submission:created]', webform_submission) }}.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
+      body: "<p>The following information was submitted through our <b>UNB Libraries Monograph Request</b> form by {{ webform_token('[webform_submission:user]', webform_submission) }} on {{ webform_token('[webform_submission:created]', webform_submission) }}.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: false
@@ -250,7 +250,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: '[webform_submission:values:unb_stu_email:raw]'
+      to_mail: '[webform_submission:values:email:raw]'
       to_options: {  }
       cc_mail: ''
       cc_options: {  }
@@ -258,9 +258,9 @@ handlers:
       bcc_options: {  }
       from_mail: unb-libraries-no-reply@unb.ca
       from_options: {  }
-      from_name: _default
+      from_name: ' [site:name]'
       subject: 'St. Thomas University: UNB Libraries Monograph Request '
-      body: "<p>UNB Libraries have received the following purchase request from you. If this was not sent by you, please contact <a href=\"mailto:jsmyth@unb.ca\">Joanne Smyth <jsmyth@unb.ca></a> immediately.</p>\r\n\r\n<p>Submitted information:</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
+      body: "<p>UNB Libraries have received the following purchase request from you. If this was not sent by you, please contact <a href=\"mailto:jsmyth@unb.ca\">Joanne Smyth</a> (jsmyth@unb.ca) immediately.</p>\r\n\r\n<p>Submitted information:</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
