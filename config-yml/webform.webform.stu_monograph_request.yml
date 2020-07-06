@@ -214,7 +214,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: jsmyth@unb.ca
+      to_mail: stuacq-req@unb.ca
       to_options: {  }
       cc_mail: ''
       cc_options: {  }
