@@ -159,7 +159,9 @@ settings:
   token_update: false
 access:
   create:
-    roles: {  }
+    roles:
+      - anonymous
+      - authenticated
     users: {  }
     permissions: {  }
   view_any:
