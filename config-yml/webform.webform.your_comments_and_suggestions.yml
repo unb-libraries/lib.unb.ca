@@ -1,8 +1,13 @@
+uuid: 56d2b608-df81-4033-a640-c18b301339bc
 langcode: en
 status: open
 dependencies:
   module:
     - honeypot
+third_party_settings:
+  honeypot:
+    honeypot: true
+    time_restriction: true
 open: null
 close: null
 weight: 0
@@ -341,8 +346,3 @@ handlers:
       theme_name: ''
       parameters: {  }
 variants: {  }
-uuid: 56d2b608-df81-4033-a640-c18b301339bc
-third_party_settings:
-  honeypot:
-    honeypot: true
-    time_restriction: true

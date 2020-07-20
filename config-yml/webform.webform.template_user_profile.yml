@@ -1,9 +1,12 @@
+uuid: c41a7b3b-1dfe-4ab6-acc4-ae61bb14fe0b
 langcode: en
 status: closed
 dependencies:
   enforced:
     module:
       - webform_templates
+_core:
+  default_config_hash: dCFfXM937Z3A1luTWKc9pBCXHkzlc3YakJL6CZUZKD8
 open: null
 close: null
 weight: 0
@@ -227,6 +230,3 @@ handlers:
       theme_name: ''
       parameters: {  }
 variants: {  }
-uuid: c41a7b3b-1dfe-4ab6-acc4-ae61bb14fe0b
-_core:
-  default_config_hash: dCFfXM937Z3A1luTWKc9pBCXHkzlc3YakJL6CZUZKD8

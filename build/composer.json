@@ -42,9 +42,6 @@
             ]
         },
         "patches": {
-            "drupal/bootstrap_barrio": {
-                "Barrio/Layout Builder fix": "https://www.drupal.org/files/issues/2019-10-04/bootstrap_barrio-disable_default_layouts-2976934-38.patch"
-            },
             "drupal/entity_browser": {
                 "Provide upload widget for media of media type file": "https://www.drupal.org/files/issues/2019-02-28/entity_browser-media-file-upload-2922885-15.patch"
             }
@@ -230,7 +227,7 @@
         "drupal/better_exposed_filters": "4.0-beta2",
         "drupal/block_class": "1.0",
         "drupal/block_field": "1.x-dev#1e8b4379768fd60395d72e0e2a6d385ca4420f8c",
-        "drupal/bootstrap_barrio": "4.32",
+        "drupal/bootstrap_barrio": "5.0.1",
         "drupal/cache_control_override": "1.0-alpha1",
         "drupal/chosen": "2.9",
         "drupal/ckeditor_codemirror": "2.3",
