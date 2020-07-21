@@ -83,6 +83,12 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     case 'node_library_page_edit_form':
       // Attach CSS libraries for Library page content type form enhancements.
       $form['#attached']['library'][] = 'lib_core/seven-overrides';
+
+      // Remove 'Change to: Private revision' save option on *new* library page form.
+      if ($form_id === 'node_library_page_form' &&
+      isset($form['moderation_state']['widget'][0]['state']['#options']['work_in_progress'])) {
+        unset ($form['moderation_state']['widget'][0]['state']['#options']['work_in_progress']);
+      }
       break;
 
     case 'node_news_post_form':
