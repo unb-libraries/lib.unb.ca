@@ -1,0 +1,12 @@
+.entity-moderation-form {
+  .form-item-current {
+    color: $red;
+
+    label {
+      color: $black;
+      &:after {
+        content: "is";
+      }
+    }
+  }
+}
