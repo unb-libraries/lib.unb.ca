@@ -10,6 +10,8 @@ use Drupal\Core\Form\FormStateInterface;
  */
 class OCLCServiceAlertStatusClientSettingsForm extends ConfigFormBase {
 
+  const OCLC_SERVICE_ALERT_STATUS__SETTINGS_CLIENT = 'oclc_service_alert_status_client.settings';
+
   /**
    * {@inheritdoc}
    */
@@ -22,7 +24,7 @@ class OCLCServiceAlertStatusClientSettingsForm extends ConfigFormBase {
    */
   public function getEditableConfigNames() {
     return [
-      OCLC_SERVICE_ALERT_STATUS__SETTINGS_CLIENT,
+      self::OCLC_SERVICE_ALERT_STATUS__SETTINGS_CLIENT,
     ];
   }
 
@@ -30,14 +32,14 @@ class OCLCServiceAlertStatusClientSettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $config = $this->config(OCLC_SERVICE_ALERT_STATUS__SETTINGS_CLIENT);
+    $config = $this->config(self::OCLC_SERVICE_ALERT_STATUS__SETTINGS_CLIENT);
 
     $base_url = $config->get('base_url');
     $default_base_url = '/oclc-service-alert/status/';
     $form['base_url'] = [
       '#type' => 'textfield',
       '#title' => 'Request URL',
-      '#description' => t('URL from which request the oclc service status.'),
+      '#description' => $this->t('URL from which request the oclc service status.'),
       '#default_value' => isset($base_url) ? $base_url : $default_base_url,
     ];
 
@@ -46,7 +48,7 @@ class OCLCServiceAlertStatusClientSettingsForm extends ConfigFormBase {
     $form['refresh_interval'] = [
       '#type' => 'number',
       '#title' => 'Refresh Interval',
-      '#description' => t('Time interval between refreshes (in seconds).'),
+      '#description' => $this->t('Time interval between refreshes (in seconds).'),
       '#default_value' => isset($refresh_interval) ? $refresh_interval / 1000 : $default_refresh_interval,
     ];
 
@@ -55,7 +57,7 @@ class OCLCServiceAlertStatusClientSettingsForm extends ConfigFormBase {
     $form['message'] = [
       '#type' => 'textarea',
       '#title' => 'Message',
-      '#description' => t('Message to be displayed.'),
+      '#description' => $this->t('Message to be displayed.'),
       '#default_value' => isset($message) ? $message : $default_message,
     ];
 
