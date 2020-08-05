@@ -22,12 +22,13 @@ class WorldCatSearchController extends ControllerBase {
     }
 
     $keys = ['queryString', 'scope', 'format', 'databaseList'];
-    $index = str_replace("&quot;", '"', stripslashes($_POST['searchIndex']));
+    $index = str_replace("&quot;", '"', stripslashes($request->request->get('searchIndex')));
     $q = [];
 
     foreach ($keys as $key) {
-      if (!empty($_POST[$key]) || $key == 'scope') {
-        $q[$key] = str_replace("&quot;", '"', stripslashes($_POST[$key]));
+      $value = $request->request->get($key);
+      if (!empty($value) || $key == 'scope') {
+        $q[$key] = str_replace("&quot;", '"', stripslashes($value));
 
         if ($key == 'queryString' && $index != 'kw') {
           if ($index == 'tj') {
