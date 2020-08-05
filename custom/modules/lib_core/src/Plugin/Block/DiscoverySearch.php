@@ -94,9 +94,8 @@ class DiscoverySearch extends BlockBase {
                 </div>
                 <div class="collapse" data-parent="#content" id="collapse-reserves">
                   <div class="card-body">';
-                    $html .= $this->getReservesForm();
-                    $html .=
-                  '</div>
+    $html .= $this->getReservesForm();
+    $html .= '</div>
                 </div>
               </div>
   
@@ -110,9 +109,8 @@ class DiscoverySearch extends BlockBase {
                 </div>
                 <div class="collapse show" data-parent="#content" id="collapse-catalogue">
                   <div class="card-body">';
-                    $html .= $this->getCatalogueForm();
-                    $html .=
-                  '</div>
+    $html .= $this->getCatalogueForm();
+    $html .= '</div>
                 </div>
               </div>
   
@@ -126,9 +124,8 @@ class DiscoverySearch extends BlockBase {
                 </div>
                 <div class="collapse" data-parent="#content" id="collapse-databases">
                   <div class="card-body">';
-                    $html .= $this->getDatabasesForm();
-                    $html .=
-                  '</div>
+    $html .= $this->getDatabasesForm();
+    $html .= '</div>
                 </div>
               </div>
               
@@ -142,9 +139,8 @@ class DiscoverySearch extends BlockBase {
                 </div>
                   <div class="collapse" data-parent="#content" id="collapse-journals">
                     <div class="card-body">';
-                      $html .= $this->getJournalsForm();
-                      $html .=
-                    '</div>
+    $html .= $this->getJournalsForm();
+    $html .= '</div>
                   </div>
               </div>
   
@@ -158,9 +154,8 @@ class DiscoverySearch extends BlockBase {
                 </div>
                   <div class="collapse" data-parent="#content" id="collapse-encyclopedias">
                     <div class="card-body">';
-                      $html .= $this->getEncyclopediasForm();
-                      $html .=
-                    '</div>
+    $html .= $this->getEncyclopediasForm();
+    $html .= '</div>
                   </div>
               </div>
   
@@ -174,9 +169,8 @@ class DiscoverySearch extends BlockBase {
                 </div>
                 <div class="collapse" data-parent="#content" id="collapse-ebooks">
                   <div class="card-body">';
-                    $html .= $this->getEbooksForm();
-                    $html .=
-                  '</div>
+    $html .= $this->getEbooksForm();
+    $html .= '</div>
                 </div>
               </div>
   
@@ -190,15 +184,13 @@ class DiscoverySearch extends BlockBase {
                 </div>
                 <div class="collapse" data-parent="#content" id="collapse-videos">
                   <div class="card-body">';
-                    $html .= $this->getVideosForm();
-                    $html .=
-                  '</div>
+    $html .= $this->getVideosForm();
+    $html .= '</div>
                 </div>
               </div>
             </div>';
-            $html .= $askus_block;
-            $html .=
-          '</div>
+    $html .= $askus_block;
+    $html .= '</div>
         </div>
       </div>
     </div>';
@@ -240,9 +232,8 @@ class DiscoverySearch extends BlockBase {
               <label class="sr-only" for="semester">
                 Course Semester
               </label>';
-              $form_reserves .= $this->getReservesSemesters();
-            $form_reserves .=
-            '</div>
+    $form_reserves .= $this->getReservesSemesters();
+    $form_reserves .= '</div>
             <div class="col-md-2 mb-2">
               <button class="btn btn-primary" id="searchReservesSubmit" type="submit">GO</button>
             </div>
@@ -272,11 +263,10 @@ class DiscoverySearch extends BlockBase {
     try {
       $response = \Drupal::httpClient()
         ->get('https://web.lib.unb.ca/reserves/index.php/semester', [
-            'headers' => [
-              'Accept' => 'application/vnd.api+json',
-            ],
-          ]
-        );
+          'headers' => [
+            'Accept' => 'application/vnd.api+json',
+          ],
+        ]);
       $json_string = (string) $response->getBody();
       $json = Json::decode($json_string);
 
@@ -407,9 +397,8 @@ class DiscoverySearch extends BlockBase {
                   <i class="fas fa-list-ul"></i>
                 </span>
               </div>';
-              $subject_form .= $this->getDatabasesSubjects();
-              $subject_form .=
-            '</div>
+    $subject_form .= $this->getDatabasesSubjects();
+    $subject_form .= '</div>
             <div class="col-md-2 mb-1">
                 <button class="btn btn-primary" type="submit">GO</button>
             </div>
@@ -433,9 +422,8 @@ class DiscoverySearch extends BlockBase {
                   <i class="fas fa-list-ul"></i>
                 </span>
               </div>';
-            $title_form .= $this->getDatabasesTitles();
-            $title_form .=
-            '</div>
+    $title_form .= $this->getDatabasesTitles();
+    $title_form .= '</div>
             <div class="col-md-2 mb-1">
               <input type="hidden" name="sub" value="indexes">
               <button class="btn btn-primary" type="submit">GO</button>
@@ -465,7 +453,7 @@ class DiscoverySearch extends BlockBase {
 
     $categories = _lib_core_get_guide_categories();
     foreach ($categories as $value => $label) {
-       $options[$value] = $label;
+      $options[$value] = $label;
     }
 
     $subjects = [
@@ -496,11 +484,10 @@ class DiscoverySearch extends BlockBase {
     try {
       $response = \Drupal::httpClient()
         ->get('https://web.lib.unb.ca/eresources/databases.php', [
-            'headers' => [
-              'Accept' => 'application/vnd.api+json',
-            ],
-          ]
-        );
+          'headers' => [
+            'Accept' => 'application/vnd.api+json',
+          ],
+        ]);
       $json_string = (string) $response->getBody();
       $json = Json::decode($json_string);
 
