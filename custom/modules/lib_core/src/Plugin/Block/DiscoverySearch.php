@@ -497,7 +497,7 @@ class DiscoverySearch extends BlockBase {
         \Drupal::logger('lib_core')->notice($msg);
       }
       else {
-        foreach ($json['databases'] as $key => $value) {
+        foreach ($json['databases'] as $value) {
           $options[$value["value"]] = $value["name"];
         }
       }
