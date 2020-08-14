@@ -1,0 +1,285 @@
+uuid: d5490d4f-aeff-48f1-99f7-8b5e273ddf7e
+langcode: en
+status: open
+dependencies:
+  module:
+    - honeypot
+third_party_settings:
+  honeypot:
+    honeypot: true
+    time_restriction: true
+open: null
+close: null
+weight: 0
+uid: 1
+template: false
+archive: false
+id: recalls
+title: Recalls
+description: 'OCLC WMS Recalls form'
+category: ''
+elements: "'#attributes':\n  class:\n    - 'bg-light theme-dark'\npersonal_information:\n  '#type': fieldset\n  '#title': 'Personal Information'\n  name:\n    '#type': textfield\n    '#title': Name\n    '#placeholder': 'First and last name'\n    '#prepopulate': true\n    '#required': true\n  unb_stu_email:\n    '#type': textfield\n    '#title': 'UNB/STU Email'\n    '#prepopulate': true\n    '#input_mask': '''alias'': ''email'''\n    '#required': true\n    '#pattern': '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$'\n  phone_number:\n    '#type': tel\n    '#title': 'Phone Number'\n    '#description': 'Only a <code>10-digit phone number</code> is accepted.'\n    '#minlength': 10\n    '#maxlength': 10\n    '#placeholder': '5064545555'\n    '#prepopulate': true\nbibliographic_information:\n  '#type': fieldset\n  '#title': 'Bibliographic Information'\n  note:\n    '#type': webform_markup\n    '#markup': |\n      <p class=\"text-red\">\n      Complete this section as accurately as possible. Your request may NOT be processed if there is insufficient information.</p>\n      \n  title:\n    '#type': textfield\n    '#title': Title\n    '#required': true\n  author:\n    '#type': textfield\n    '#title': Author\n  call_number:\n    '#type': textfield\n    '#title': 'Call Number'\n    '#required': true\n  shelving_location:\n    '#type': webform_select_other\n    '#title': 'Shelving Location'\n    '#options':\n      ENG-STOR: ENG-STOR\n      ENG-STORA: ENG-STORA\n      ENG-SENRPT: ENG-SENRPT\n      HIL-GOV: HIL-GOV\n      HIL-GOVCD: HIL-GOVCD\n      HIL-CIRDSK: HIL-CIRDSK\n      HIL-MIC: HIL-MIC\n      HIL-STOR: HIL-STOR\n      HIL-SPECAR: HIL-SPECAR\n      HIL-STORA: HIL-STORA\n      HIL-STORG: HIL-STORG\n      HIL-STORN: HIL-STORN\n      HIL-STOROS: HIL-STOROS\n      HWK-STOR: HWK-STOR\n      HWK-STORPE: HWK-STORPE\n      HWK-STORRF: HWK-STORRF\n      HWK-STORR2: HWK-STORR2\n      LAW-INPRO: LAW-INPRO\n      LAW-STOR: LAW-STOR\n      SCI-FORF: SCI-FORF\n      SCI-STORAV: SCI-STORAV\n      SCI-THS: SCI-THS\n      STORAGE: STORAGE\n    '#empty_option': '- Please select one -'\n    '#other__option_label': 'Other …'\n    '#other__placeholder': 'Enter a custom shelving location'\n    '#required': true\n    '#wrapper_type': form_element\n    '#attributes':\n      class:\n        - chosen-select\n  comments_notes:\n    '#type': textarea\n    '#title': Comments/Notes\n    '#placeholder': 'Any additional information you can provide us'\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#attributes':\n    class:\n      - webform-actions-center\n  '#submit__label': 'Submit Request'\n  '#reset__label': Cancel\nprivacy:\n  '#type': webform_markup\n  '#wrapper_attributes':\n    class:\n      - message-privacy\n  '#admin_title': 'Privacy Statement'\n  '#markup': '<div class=\"alert alert-info\" role=\"alert\"><strong>Privacy: </strong>UNB Libraries will only use the comments you send to improve our website and services. We are not storing any personal information.</div>'"
+css: ''
+javascript: ''
+settings:
+  ajax: true
+  ajax_scroll_top: form
+  ajax_progress_type: fullscreen
+  ajax_effect: fade
+  ajax_speed: 500
+  page: true
+  page_submit_path: /services/recalls
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: source_entity_webform
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: false
+  form_confidential: false
+  form_confidential_message: ''
+  form_remote_addr: true
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: true
+  form_disable_autocomplete: false
+  form_novalidate: true
+  form_disable_inline_errors: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_log: false
+  submission_views: {  }
+  submission_views_replace:
+    webform_routes: {  }
+    node_routes: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_excluded_elements:
+    title: title
+    author: author
+    journal_volume: journal_volume
+    journal_issue: journal_issue
+    call_number: call_number
+    shelving_location: shelving_location
+    comments_notes: comments_notes
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  previous_submission_message: ''
+  previous_submissions_message: '<em class="fa-info-circle fas">&nbsp;</em>The <strong>Personal Information</strong> section has been prefilled using your previous submission data.'
+  autofill: true
+  autofill_message: 'The <strong>Personal Information</strong> section has been prefilled using your previous submission data.'
+  autofill_excluded_elements:
+    title: title
+    author: author
+    journal_volume: journal_volume
+    journal_issue: journal_issue
+    call_number: call_number
+    shelving_location: shelving_location
+    comments_notes: comments_notes
+  wizard_progress_bar: false
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_auto_forward: true
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: false
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: message
+  confirmation_title: ''
+  confirmation_message: "<p class=\"h6\"><em class=\"fa-clipboard-check fas\">&nbsp;</em>Material Retrieval Request Submitted</p>\r\n\r\n<p>Your request for Material Retrieval has been successfully submitted to our Circulation Department using our webform. Thank you for taking the time to fill it in. You will be notified by email if we require additional information.</p>\r\n\r\n<p>Items will be held for 3 days after retrieval at the Circulation Desk of the library that owns the material. You will be notified by e-mail when the item is available.</p>"
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  email:
+    id: email
+    label: 'Email Access Services'
+    handler_id: email
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: circhi@unb.ca
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: '[webform_submission:values:unb_stu_email:raw]'
+      from_options: {  }
+      from_name: '[webform_submission:values:name:raw]'
+      subject: 'SOULS Retrieval Request'
+      body: "<p>The following information was submitted through our <b>Material Retrieval Form</b> on {{ webform_token('[webform_submission:created]', webform_submission) }} by {{ webform_token('[webform_submission:user]', webform_submission) }}.</p>\r\n        \r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: false
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      theme_name: ''
+      parameters: {  }
+  email_1:
+    id: email
+    label: 'Confirmation Email'
+    handler_id: email_1
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:unb_stu_email:raw]'
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: unb-libraries-no-reply@unb.ca
+      from_options: {  }
+      from_name: _default
+      subject: 'SOULS Retrieval Request'
+      body: "<p>Your request for retrieval of library materials in the SOULS database has been successfully submitted to Access Services. Thank you for taking the time to submit the request. You will be notified by email if we require additional information.</p>\r\n\r\n<p>Items will be held for 3 days after retrieval at the Access Services Desk of the library that owns the material. You will be notified by telephone or e-mail when the item is available.</p>\r\n        \r\n<p>Submitted values:</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      theme_name: ''
+      parameters: {  }
+variants: {  }
