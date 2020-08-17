@@ -71,21 +71,6 @@
         {
             "type": "package",
             "package": {
-                "name": "ckeditor/div",
-                "version": "4.14.0",
-                "type": "drupal-library",
-                "dist": {
-                    "type": "zip",
-                    "url": "https://github.com/unb-libraries/upstream-library-mirror/raw/master/div/div_4.14.0.zip"
-                },
-                "extra": {
-                    "installer-name": "ckeditor/plugins/div"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
                 "name": "ckeditor/panelbutton",
                 "version": "4.14.1",
                 "type": "drupal-library",
@@ -219,7 +204,6 @@
     ],
     "require": {
         "ckeditor/colorbutton": "~4.14",
-        "ckeditor/div": "~4.11",
         "ckeditor/panelbutton": "~4.14",
         "drupal/admin_toolbar": "2.3",
         "drupal/allowed_formats": "1.3",
@@ -231,7 +215,6 @@
         "drupal/cache_control_override": "1.0-alpha1",
         "drupal/chosen": "2.10",
         "drupal/ckeditor_codemirror": "2.3",
-        "drupal/ckeditor_div_manager": "1.0",
         "drupal/colorbutton": "1.2",
         "drupal/config_update": "1.5",
         "drupal/core": "8.9.3",

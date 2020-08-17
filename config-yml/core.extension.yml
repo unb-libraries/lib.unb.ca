@@ -15,7 +15,6 @@ module:
   chosen_lib: 0
   ckeditor: 0
   ckeditor_codemirror: 0
-  ckeditor_div_manager: 0
   color: 0
   colorbutton: 0
   comment: 0
