@@ -213,7 +213,7 @@
         "drupal/block_field": "1.x-dev#1e8b4379768fd60395d72e0e2a6d385ca4420f8c",
         "drupal/bootstrap_barrio": "5.0.1",
         "drupal/cache_control_override": "1.0-alpha1",
-        "drupal/chosen": "2.10",
+        "drupal/chosen": "3.0.0",
         "drupal/ckeditor_codemirror": "2.3",
         "drupal/colorbutton": "1.2",
         "drupal/config_update": "1.5",
