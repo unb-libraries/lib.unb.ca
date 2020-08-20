@@ -249,7 +249,7 @@ function lib_core_user_presave($account) {
  * Port get_guide_categories() from core/inc-2015/guide_categories.php.
  *
  * @return array
- *   The array of Research Subjects.
+ *   Associative array of Research Subjects where key = URL, value = label.
  */
 function _lib_core_get_guide_categories() {
   $categories = [
@@ -284,7 +284,7 @@ function _lib_core_get_guide_categories() {
     // 'miscellaneous' => 'Miscellaneous',
     'music' => 'Music',
     'nativestudies' => 'Native Studies',
-    'nursing' => 'Nursing & Health Sciences',
+    'nursing' => 'Nursing & Health',
     'philosophy' => 'Philosophy',
     'physics' => 'Physics',
     'politicalscience' => 'Political Science',
