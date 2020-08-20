@@ -31,7 +31,7 @@ If you work with unb-libraries applications often, you may also consider [instal
 Run ```vendor/bin/dockworker``` to list available dockworker commands for this application.
 
 ## Author / Contributors
-This application was created at [![UNB Libraries](https://github.com/unb-libraries/assets/raw/master/unblibbadge.png "UNB Libraries")](https://lib.unb.ca/) by the following people:
+This application was created at [![UNB Libraries](https://github.com/unb-libraries/assets/raw/master/unblibbadge.png "UNB Libraries")](https://lib.unb.ca/) by the following humans:
 
 [//]: contributors
 
