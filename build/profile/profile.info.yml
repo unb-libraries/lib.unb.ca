@@ -46,7 +46,6 @@ dependencies:
   - block_field
   - chosen
   - chosen_lib
-  - ckeditor_div_manager
   - colorbutton
   - ctools
   - embed
