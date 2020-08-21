@@ -7,7 +7,7 @@ ENV DRUPAL_SITE_URI lib.unb.ca
 ENV DRUPAL_SITE_UUID 87d22fc3-a2d0-4543-aab8-6ed800691b7b
 
 # Build application.
-COPY ./build /build
+COPY ./build/ /build/
 RUN ${RSYNC_MOVE} /build/scripts/container/ /scripts/ && \
   /scripts/addOsPackages.sh && \
   /scripts/initOpenLdap.sh && \
