@@ -3,7 +3,7 @@
 [//]: badges
 [![Build Status](https://travis-ci.com/unb-libraries/lib.unb.ca.svg?branch=prod)](https://travis-ci.com/unb-libraries/lib.unb.ca)
 [![GitHub license](https://img.shields.io/github/license/unb-libraries/lib.unb.ca)](https://github.com/unb-libraries/lib.unb.ca/blob/prod/LICENSE)
-![GitHub repo size](https://img.shields.io/github/languages/code-size/unb-libraries/lib.unb.ca)
+![GitHub repo size](https://img.shields.io/github/languages/code-size/unb-libraries/lib.unb.ca?label=lean%20repo%20size)
 [![Docker image size](https://img.shields.io/docker/image-size/unblibraries/lib.unb.ca/prod?label=docker%20image%20size)](https://hub.docker.com/repository/docker/unblibraries/lib.unb.ca)
 
 [//]: badges
