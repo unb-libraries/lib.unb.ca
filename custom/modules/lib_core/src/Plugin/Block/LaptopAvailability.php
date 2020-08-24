@@ -3,10 +3,9 @@
 namespace Drupal\lib_core\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use OCLC\Auth\WSKey;
-use OCLC\User;
+use League\OAuth2\Client\OptionProvider\HttpBasicAuthOptionProvider;
+use League\OAuth2\Client\Provider\GenericProvider;
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\RequestException;
 
 /**
  * Provides the UNB Libraries Laptop Availability Block.
@@ -73,22 +72,27 @@ class LaptopAvailability extends BlockBase {
    *   List of locations and laptop availability.
    */
   private function getLaptopAvailability() {
+    $oclcApiWskey = '';
+    $oclcApiSecret = '';
     include '/app/html/sites/all/settings/settings.oclc-api.inc';
-    $wskey = new WSKey($oclcApiWskey, $oclcApiSecret);
-
+    $authOpts = [
+      'clientId'                => $oclcApiWskey,
+      'clientSecret'            => $oclcApiSecret,
+      'urlAuthorize'            => 'https://oauth.oclc.org/auth',
+      'urlAccessToken'          => 'https://oauth.oclc.org/token',
+      'urlResourceOwnerDetails' => '',
+    ];
+    $basicAuth = new HttpBasicAuthOptionProvider();
+    $provider = new GenericProvider($authOpts, ['optionProvider' => $basicAuth]);
     $inst = '133054';
     $ocn = '807200481';
-    $url = "https://worldcat.org/circ/availability/sru/service?x-registryId={$inst}&query=no:ocm{$ocn}";
-
-    $user = new User($inst, '1f918243-4dc6-4d54-a44a-4600117310c0', 'urn:oclc:wms:da');
-    $options = ['user' => $user];
-
-    $authorizationHeader = $wskey->getHMACSignature('GET', $url, $options);
-
-    $client = new Client();
-    $headers = ['Authorization' => $authorizationHeader];
 
     try {
+      $accessToken = $provider->getAccessToken('client_credentials', ['scope' => "WMS_Availability context:{$inst}"]);
+      $headers = ['Authorization' => "Bearer " . $accessToken->getToken()];
+      $url = "https://worldcat.org/circ/availability/sru/service?x-registryId={$inst}&query=no:ocm{$ocn}";
+
+      $client = new Client();
       $response = $client->request('GET', $url, ['headers' => $headers]);
       $xml = new \SimpleXMLElement((string) $response->getBody());
       $holdings = $xml->records->record->recordData->opacRecord->holdings;
@@ -134,7 +138,7 @@ class LaptopAvailability extends BlockBase {
 
       return $availability;
     }
-    catch (RequestException $error) {
+    catch (Throwable $error) {
       return ['Unable to get laptop availability at this time.'];
     }
   }

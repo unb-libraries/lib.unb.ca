@@ -196,10 +196,6 @@
                     "installer-name": "ckeditor_codemirror"
                 }
             }
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/OCLC-Developer-Network/oclc-auth-php.git"
         }
     ],
     "require": {
@@ -261,7 +257,7 @@
         "jquery/hover_intent": "1.10.0",
         "jquery/json2": "dev-master",
         "jquery/pause": "dev-master",
-        "oclc/auth": ">=3.0",
+        "league/oauth2-client" : "^2.4",
         "unb-libraries/calendar_hours": "dev-8.x-1.x",
         "unb-libraries/alert_scheduler": "dev-8.x-1.x",
         "unb-libraries/drupal-builder": "^8.0.0",
