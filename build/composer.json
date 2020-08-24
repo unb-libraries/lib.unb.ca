@@ -261,7 +261,7 @@
         "jquery/hover_intent": "1.10.0",
         "jquery/json2": "dev-master",
         "jquery/pause": "dev-master",
-        "OCLC/Auth": ">=3.0",
+        "oclc/auth": ">=3.0",
         "unb-libraries/calendar_hours": "dev-8.x-1.x",
         "unb-libraries/alert_scheduler": "dev-8.x-1.x",
         "unb-libraries/drupal-builder": "^8.0.0",
