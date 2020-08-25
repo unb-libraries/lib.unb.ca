@@ -1,0 +1,31 @@
+uuid: 65e49ea8-73e8-4417-bdcb-902b295b0d9d
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic_block:c013603c-bf77-434d-9d81-a5400de8a21e'
+  module:
+    - block_content
+    - system
+  theme:
+    - lib_unb_ca
+id: whattoexpectforthefall2020
+theme: lib_unb_ca
+region: content
+weight: -2
+provider: null
+plugin: 'block_content:c013603c-bf77-434d-9d81-a5400de8a21e'
+settings:
+  id: 'block_content:c013603c-bf77-434d-9d81-a5400de8a21e'
+  label: 'What to expect for the Fall 2020'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
