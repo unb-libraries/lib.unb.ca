@@ -28,8 +28,16 @@ img.float-right,
   margin-left: .5rem;
 }
 figure {
-  &.align-left,
+  &.align-left {
+    margin-right: 1rem;
+
+    img {
+      margin: 0;
+    }
+  }
   &.align-right {
+    margin-left: 1rem;
+
     img {
       margin: 0;
     }
