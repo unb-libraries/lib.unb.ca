@@ -8,9 +8,6 @@
 // Specify install profile.
 $settings['install_profile'] = 'minimal';
 
-// Patron DB.
-require_once dirname(__FILE__) . "/settings.patrondb.inc";
-
 // Redis.
 $settings['cache_prefix']['default'] = 'libweb_';
 $conf['chq_redis_cache_enabled'] = TRUE;
