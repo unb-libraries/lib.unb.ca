@@ -27,6 +27,22 @@ img.float-right,
 .align-right img {
   margin-left: .5rem;
 }
+figure {
+  &.align-left,
+  &.align-right {
+    img {
+      margin: 0;
+    }
+  }
+
+  figcaption {
+    color: $text-muted-wcag;
+    font-size: 90%;
+    line-height: 1rem;
+    margin-top: .5rem;
+  }
+}
+
 
 /* Link hover effect (not in button/chosen/nav contexts) */
 #main {
