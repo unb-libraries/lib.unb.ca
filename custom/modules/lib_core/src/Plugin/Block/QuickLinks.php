@@ -77,7 +77,7 @@ class QuickLinks extends BlockBase {
             Url::fromUri('https://guides.lib.unb.ca/guide/206')
         )->toString(),
       ],
-      [
+      /*[
         '#wrapper_attributes' => [
           'class' => [
             'list-inline-item',
@@ -87,7 +87,7 @@ class QuickLinks extends BlockBase {
           $this->t('Borrow Tech & Tools'),
             Url::fromUri('https://lib.unb.ca/services/borrow-tech-tools')
         )->toString(),
-      ],
+      ],*/
     ];
 
     $attachments = [
