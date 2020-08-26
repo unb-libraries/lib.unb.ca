@@ -1,4 +1,5 @@
 module:
+  address: 0
   admin_toolbar: 0
   alert_scheduler_client: 0
   allowed_formats: 0

@@ -189,8 +189,7 @@ ui:
 libraries:
   excluded_libraries:
     - jquery.chosen
-    - jquery.icheck
-    - jquery.toggles
+    - jquery.select2
 requirements:
   cdn: true
   bootstrap: true
