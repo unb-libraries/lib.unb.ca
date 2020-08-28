@@ -108,6 +108,7 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
         if (\Drupal::currentUser()->id() != 1) {
           // Only show 'Carousel' exposed form filter for root user.
           unset($form['type']['#options']['carousel']);
+          unset($form['type']['#options']['booking_space']);
         }
       };
       break;
