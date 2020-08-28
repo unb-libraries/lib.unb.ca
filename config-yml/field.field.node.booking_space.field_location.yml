@@ -1,0 +1,29 @@
+uuid: 22c84460-479d-4734-b6fa-14272b983f28
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location
+    - node.type.booking_space
+    - taxonomy.vocabulary.bookings
+id: node.booking_space.field_location
+field_name: field_location
+entity_type: node
+bundle: booking_space
+label: Location
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      bookings: bookings
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

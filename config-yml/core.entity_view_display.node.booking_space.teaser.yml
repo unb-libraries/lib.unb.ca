@@ -1,0 +1,28 @@
+uuid: 891143bc-9cc8-42e6-a4d1-01fe11272115
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.booking_space.field_booking_space_link
+    - field.field.node.booking_space.field_booking_space_photo
+    - field.field.node.booking_space.field_location
+    - node.type.booking_space
+  module:
+    - user
+id: node.booking_space.teaser
+targetEntityType: node
+bundle: booking_space
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_booking_space_link: true
+  field_booking_space_photo: true
+  field_location: true
+  langcode: true
+  search_api_excerpt: true

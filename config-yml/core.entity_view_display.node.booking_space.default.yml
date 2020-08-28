@@ -1,0 +1,127 @@
+uuid: 225681ea-8fbd-47b1-bf65-39a9c4e0a045
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.booking_space.field_booking_space_link
+    - field.field.node.booking_space.field_booking_space_photo
+    - field.field.node.booking_space.field_location
+    - node.type.booking_space
+  module:
+    - layout_builder
+    - link
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          02b8dbb3-92d4-4304-9b2c-455476006a72:
+            uuid: 02b8dbb3-92d4-4304-9b2c-455476006a72
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:booking_space:links'
+            additional: {  }
+            weight: 0
+          84a15547-924c-4138-9b6b-243229c3d90d:
+            uuid: 84a15547-924c-4138-9b6b-243229c3d90d
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:booking_space:field_booking_space_link'
+              formatter:
+                label: above
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: ''
+                  target: ''
+                third_party_settings: {  }
+                type: link
+            additional: {  }
+            weight: 1
+          5ff35edc-ad15-4f00-80af-fdf53a433641:
+            uuid: 5ff35edc-ad15-4f00-80af-fdf53a433641
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:booking_space:field_location'
+              formatter:
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            additional: {  }
+            weight: 2
+          15c6cf5d-136d-4301-89b9-f7df67eead7e:
+            uuid: 15c6cf5d-136d-4301-89b9-f7df67eead7e
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:booking_space:field_booking_space_photo'
+              formatter:
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            additional: {  }
+            weight: 3
+        third_party_settings: {  }
+id: node.booking_space.default
+targetEntityType: node
+bundle: booking_space
+mode: default
+content:
+  field_booking_space_link:
+    weight: 101
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_booking_space_photo:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_location:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

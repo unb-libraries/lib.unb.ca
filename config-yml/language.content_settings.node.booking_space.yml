@@ -1,0 +1,11 @@
+uuid: a88ae26e-69aa-4f29-bcf8-02bd8d6c4633
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.booking_space
+id: node.booking_space
+target_entity_type_id: node
+target_bundle: booking_space
+default_langcode: site_default
+language_alterable: false
