@@ -1,0 +1,30 @@
+uuid: 3f69302b-efb6-4ac3-881e-0601c5c12106
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.bookings
+id: taxonomy_term.bookings.default
+targetEntityType: taxonomy_term
+bundle: bookings
+mode: default
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 3
+    region: content
+    third_party_settings: {  }
+hidden:
+  description: true
+  langcode: true
+  path: true

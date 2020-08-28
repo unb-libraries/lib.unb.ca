@@ -1,0 +1,11 @@
+uuid: 17fbc094-2d7e-4d88-9dd7-0849bc355a91
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.bookings
+id: taxonomy_term.bookings
+target_entity_type_id: taxonomy_term
+target_bundle: bookings
+default_langcode: site_default
+language_alterable: false

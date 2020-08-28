@@ -1,0 +1,8 @@
+uuid: 71e3acf7-51bb-4e02-bf14-eb1a6d9ff2a8
+langcode: en
+status: true
+dependencies: {  }
+name: 'Booking Locations'
+vid: bookings
+description: 'Use <em>Booking Locations</em> to create bookable <em>location</em> and <em>floor (zone)</em> terms.'
+weight: 0
