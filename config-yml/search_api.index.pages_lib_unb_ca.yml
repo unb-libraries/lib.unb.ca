@@ -113,6 +113,7 @@ datasource_settings:
     bundles:
       default: true
       selected:
+        - booking_space
         - carousel
     languages:
       default: true
@@ -148,6 +149,7 @@ processor_settings:
     weights:
       preprocess_index: -15
       preprocess_query: -15
+  language_with_fallback: {  }
   node_exclude: {  }
   rendered_item: {  }
   solr_date_range:
