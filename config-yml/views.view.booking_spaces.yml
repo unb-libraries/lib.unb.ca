@@ -91,7 +91,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<small><span class="fas fa-edit"></span>{{ edit_node }} </small>'
+            text: '<div class="border px-1 text-center"><small><span class="fas fa-edit"></span>{{ edit_node }} </small></div>'
             make_link: false
             path: ''
             absolute: false
