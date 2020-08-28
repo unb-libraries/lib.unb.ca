@@ -1,0 +1,22 @@
+uuid: f5f09231-9add-42f0-96f2-a01461e1e81f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: booking_space_content
+label: 'Booking Space Content'
+type: 'canonical_entities:node'
+pattern: '/admin/booking-spaces/[node:title]'
+selection_criteria:
+  cb571114-bcbc-4210-8369-3911234f5e78:
+    id: node_type
+    bundles:
+      booking_space: booking_space
+    negate: false
+    context_mapping:
+      node: node
+    uuid: cb571114-bcbc-4210-8369-3911234f5e78
+selection_logic: and
+weight: -5
+relationships: {  }
