@@ -622,6 +622,17 @@ ul.field--name-field-categories:before {
 /* Seating Zones View */
 .booking-spaces {
   a {
+    &.border {
+      &:focus,
+      &:hover {
+        border-color: $link-hover-color !important;
+
+        & + figcaption {
+          color: $link-hover-color;
+        }
+      }
+    }
+
     &:focus,
     &:hover {
       div.border {
@@ -639,6 +650,7 @@ ul.field--name-field-categories:before {
   figcaption {
     display: table-caption;
     caption-side: bottom;
+    @include css3-prefix(transition, all .2s ease-in-out);
   }
 }
 /* END Seating Zone View */
