@@ -326,7 +326,7 @@ ul.pagination {
 .news-featured {
   a img {
     @include opacity(1);
-    @include css3-prefix(transition, opacity .8s);
+    @include css3-prefix(transition, opacity .3s);
   }
   a:hover img {
     @include opacity(.75);
@@ -618,6 +618,30 @@ ul.field--name-field-categories:before {
   }
 }
 /* END Staff and Departments View */
+
+/* Seating Zones View */
+.booking-spaces {
+  a {
+    &:focus,
+    &:hover {
+      div.border {
+        border-color: $link-hover-color !important;
+      }
+
+      figcaption {
+        color: $link-hover-color;
+      }
+    }
+  }
+  figure {
+    display: table;
+  }
+  figcaption {
+    display: table-caption;
+    caption-side: bottom;
+  }
+}
+/* END Seating Zone View */
 
 /* Views Slideshow */
 .views_slideshow_cycle_teaser_section {
