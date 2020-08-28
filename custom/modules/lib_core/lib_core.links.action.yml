@@ -1,0 +1,11 @@
+lib_core.add_booking:
+  title: 'Add booking space'
+  route_name: 'node.add'
+  route_parameters:
+    node_type: 'booking_space'
+  options:
+    attributes:
+      class:
+        - btn-action-add
+  appears_on:
+    - view.booking_spaces.page_1
