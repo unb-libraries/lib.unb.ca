@@ -6,7 +6,7 @@ dependencies:
     - field.storage.node.field_booking_space_link
     - field.storage.node.field_booking_space_photo
     - field.storage.node.field_location
-    - image.style.thumbnail
+    - image.style.thumbnail_scale_width
     - node.type.booking_space
     - taxonomy.vocabulary.bookings
   module:
@@ -67,7 +67,7 @@ display:
               field: field_location
               rendered: true
               rendered_strip: false
-          row_class: mr-5
+          row_class: mr-4
           default_row_class: false
           type: ul
           wrapper_class: 'booking-spaces mt-4'
@@ -316,7 +316,7 @@ display:
           click_sort_column: target_id
           type: media_thumbnail
           settings:
-            image_style: thumbnail
+            image_style: thumbnail_scale_width
             image_link: ''
           group_column: target_id
           group_columns: {  }
