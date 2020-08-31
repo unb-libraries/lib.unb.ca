@@ -3,13 +3,13 @@ langcode: en
 status: true
 dependencies: {  }
 name: thumbnail_scale_width
-label: 'Thumbnail (Scale width 120)'
+label: 'Thumbnail (133x100)'
 effects:
-  4b8f55b0-7eb3-4a07-95a1-fd56066f2431:
-    uuid: 4b8f55b0-7eb3-4a07-95a1-fd56066f2431
-    id: image_scale
-    weight: 1
+  940eada3-0568-4073-aabb-64350004d4fe:
+    uuid: 940eada3-0568-4073-aabb-64350004d4fe
+    id: image_scale_and_crop
+    weight: 2
     data:
-      width: 120
-      height: null
-      upscale: true
+      width: 133
+      height: 100
+      anchor: center-center
