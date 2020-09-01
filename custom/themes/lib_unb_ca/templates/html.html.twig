@@ -35,18 +35,18 @@
 <!DOCTYPE html>
 <html{{ html_attributes }}>
   <head>
+    <head-placeholder token="{{ placeholder_token|raw }}">
+    <meta class="swiftype" name="domain-identifier" data-type="integer" content="2" />
     {# Begin generated favicon code (https://realfavicongenerator.net) #}
     <link rel="apple-touch-icon" sizes="180x180" href="/themes/custom/lib_unb_ca/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/themes/custom/lib_unb_ca/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/themes/custom/lib_unb_ca/favicon-16x16.png">
     <link rel="manifest" href="/themes/custom/lib_unb_ca/site.webmanifest">
     <link rel="mask-icon" href="/themes/custom/lib_unb_ca/safari-pinned-tab.svg" color="#900000">
-    <meta class="swiftype" name="domain-identifier" data-type="integer" content="2" />
     <meta name="msapplication-config" content="/themes/custom/lib_unb_ca/browserconfig.xml">
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="theme-color" content="#ffffff">
     {# End favicon code #}
-    <head-placeholder token="{{ placeholder_token|raw }}">
     <title>{{ head_title|safe_join(' | ') }}</title>
     <css-placeholder token="{{ placeholder_token|raw }}">
     <js-placeholder token="{{ placeholder_token|raw }}">
