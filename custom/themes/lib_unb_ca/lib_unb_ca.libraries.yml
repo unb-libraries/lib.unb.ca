@@ -6,4 +6,4 @@ global-styling:
     - core/jquery
   css:
     theme:
-      dist/css/style.css: {}
+      dist/css/style.css: { minified: true }
