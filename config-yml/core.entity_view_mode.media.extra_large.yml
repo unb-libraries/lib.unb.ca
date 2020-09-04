@@ -1,0 +1,10 @@
+uuid: f3c134e0-e8bc-481c-b4ce-82485ddc756c
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.extra_large
+label: 'Extra Large (scale 767px width)'
+targetEntityType: media
+cache: true
