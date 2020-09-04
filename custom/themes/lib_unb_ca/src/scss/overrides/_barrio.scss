@@ -27,3 +27,10 @@ table {
     }
   }
 }
+
+/* Drupal Media Image */
+@media (min-width: 560px) {
+  .node .field--name-field-media-image.field--type-image {
+    float: none;
+  }
+}
