@@ -1,0 +1,15 @@
+uuid: 07220ff6-7f66-4459-9fbe-9ffd2d4ceb20
+langcode: en
+status: true
+dependencies: {  }
+name: extra_large
+label: 'Extra Large (Scale 767px)'
+effects:
+  863663aa-ee3b-493a-a837-d9e9eec9401f:
+    uuid: 863663aa-ee3b-493a-a837-d9e9eec9401f
+    id: image_scale
+    weight: 1
+    data:
+      width: 767
+      height: null
+      upscale: false
