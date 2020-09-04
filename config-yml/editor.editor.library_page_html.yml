@@ -58,6 +58,7 @@ settings:
             - assets
             - DrupalFile
             - video_embed
+            - DrupalMediaLibrary
             - DrupalFontAwesome
             - SpecialChar
         -
