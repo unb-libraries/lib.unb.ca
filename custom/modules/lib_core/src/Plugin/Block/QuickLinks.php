@@ -44,7 +44,7 @@ class QuickLinks extends BlockBase {
           Url::fromUri('https://lib.unb.ca/services/docdel')
         )->toString(),
       ],
-      [
+      /*[
         '#wrapper_attributes' => [
           'class' => [
             'list-inline-item',
@@ -54,7 +54,7 @@ class QuickLinks extends BlockBase {
           $this->t('Group Study Rooms'),
             Url::fromUri('https://lib.unb.ca/services/group-study-rooms')
         )->toString(),
-      ],
+      ],*/
       [
         '#wrapper_attributes' => [
           'class' => [
