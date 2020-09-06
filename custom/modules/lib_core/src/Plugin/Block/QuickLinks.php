@@ -4,6 +4,7 @@ namespace Drupal\lib_core\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Link;
+use Drupal\Core\Render\Markup;
 use Drupal\Core\Url;
 
 /**
@@ -95,8 +96,16 @@ class QuickLinks extends BlockBase {
           ],
         ],
         '#children' => Link::fromTextAndUrl(
-          $this->t('Book a Room'),
-          Url::fromUri('https://lib.unb.ca/services/bookings')
+          Markup::create('<span class="fas fa-calendar-check mr-1"></span>' . $this->t('Book a Seat')),
+          Url::fromUri('https://lib.unb.ca/services/bookings', [
+            'attributes' => [
+              'class' => [
+                'btn',
+                'btn-secondary',
+                'text-white',
+              ],
+            ],
+          ])
         )->toString(),
       ],
     ];
