@@ -102,6 +102,7 @@ class QuickLinks extends BlockBase {
               'class' => [
                 'btn',
                 'btn-secondary',
+                'btn-sm',
                 'text-white',
               ],
             ],
