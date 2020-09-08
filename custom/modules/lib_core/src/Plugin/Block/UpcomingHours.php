@@ -33,6 +33,7 @@ class UpcomingHours extends BlockBase {
         '#type' => 'table',
         '#attributes' => [
           'class' => [
+            'table-hours-listings',
             'table-sm',
           ],
         ],
