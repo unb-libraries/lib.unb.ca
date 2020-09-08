@@ -850,7 +850,11 @@ ul {
     width: 50%;
   }
 }
-
+.table-hours-listings {
+  ul {
+    margin-bottom: 0;
+  }
+}
 .text-dark {
   color: $dark;
 }
