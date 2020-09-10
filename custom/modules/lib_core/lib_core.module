@@ -4,11 +4,18 @@
  * @file
  * Contains lib_core.module.
  */
+require 'vendor/autoload.php';
 
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\HtmlCommand;
+use Drupal\Core\Ajax\InvokeCommand;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\ViewExecutable;
+use League\OAuth2\Client\OptionProvider\HttpBasicAuthOptionProvider;
+use League\OAuth2\Client\Provider\GenericProvider;
+use GuzzleHttp\Client;
 
 /**
  * Implements hook_theme().
@@ -115,7 +122,7 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
     case 'webform_submission_purchase_suggestion_add_form':
     case 'webform_submission_material_retrieval_add_form':
-      $form['#attached']['library'][] = 'lib_core/lib-chosen';
+      //$form['#attached']['library'][] = 'lib_core/lib-chosen';
       $form['#attached']['library'][] = 'lib_core/chosen-bootstrap';
       break;
 
@@ -198,8 +205,50 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
       }
       break;
 
+    case 'webform_submission_recalls_add_form':
+      $form['#attached']['library'][] = 'lib_core/chosen-bootstrap';
+      //dump($form['elements']['personal_information']['barcode']);
+      //$form['elements']['personal_information']['barcode']['#description']['#suffix'] = '<span class="barcode-validation"></span>';
+      $form['elements']['personal_information']['barcode']['#ajax'] = [
+        'callback' => '_lib_core_validate_user',
+        'disable-refocus' => TRUE,
+        'event' => 'blur',
+        'progress' => [
+          'type' => 'throbber',
+          'message' => t('Validating barcode'),
+        ],
+      ];
+      break;
+
     default:
       break;
+  }
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ *
+ * @see https://www.drupal.org/project/metatag/issues/2958193
+ */
+function lib_core_page_attachments_alter(array &$attachments) {
+  // Trim all meta tags to a max length.
+  if (!empty($attachments['#attached']['html_head'])) {
+    // Adjust this as needed.
+    $max_length = 200;
+    foreach ($attachments['#attached']['html_head'] as &$tag) {
+      // Only process meta tags with a 'content' attribute, that way it will
+      // exclude LINK tags or meta tags which do not have a "content" value.
+      if (isset($tag[0]['#tag']) && $tag[0]['#tag'] == 'meta') {
+        if (isset($tag[0]['#attributes']['content'])) {
+          if (!is_string($tag[0]['#attributes']['content'])) {
+            $tag[0]['#attributes']['content'] = (string) $tag[0]['#attributes']['content'];
+          }
+          if (strlen($tag[0]['#attributes']['content']) > $max_length) {
+            $tag[0]['#attributes']['content'] = mb_strimwidth($tag[0]['#attributes']['content'], 0, $max_length, "...");
+          }
+        }
+      }
+    }
   }
 }
 
@@ -243,6 +292,23 @@ function lib_core_user_presave($account) {
   // Populate Email ID field.
   if (!empty($email) && $account->hasField('field_email_id')) {
     $account->set('field_email_id', $email_id);
+  }
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function lib_core_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  if ($view->id() != 'content') {
+    return;
+  }
+
+  $user = Drupal::currentUser();
+  if (!$user->hasPermission('edit any library_page content')) {
+    $query->addWhere(1, 'type', 'library_page', '!=');
+  }
+  if (!$user->hasPermission('edit any news_post content')) {
+    $query->addWhere(1, 'type', 'news_post', '!=');
   }
 }
 
@@ -345,23 +411,6 @@ function _lib_core_contactable_department($mailbox) {
 }
 
 /**
- * Implements hook_views_query_alter().
- */
-function lib_core_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
-  if ($view->id() != 'content') {
-    return;
-  }
-
-  $user = Drupal::currentUser();
-  if (!$user->hasPermission('edit any library_page content')) {
-    $query->addWhere(1, 'type', 'library_page', '!=');
-  }
-  if (!$user->hasPermission('edit any news_post content')) {
-    $query->addWhere(1, 'type', 'news_post', '!=');
-  }
-}
-
-/**
  * Implements hook_page_attachments().
  */
 function lib_core_page_attachments(array &$attachments) {
@@ -373,28 +422,63 @@ function lib_core_page_attachments(array &$attachments) {
 }
 
 /**
- * Implements hook_page_attachments_alter().
+ * Validate a UNB/STU user, given their barcode number.
  *
- * @see https://www.drupal.org/project/metatag/issues/2958193
  */
-function lib_core_page_attachments_alter(array &$attachments) {
-  // Trim all meta tags to a max length.
-  if (!empty($attachments['#attached']['html_head'])) {
-    // Adjust this as needed.
-    $max_length = 200;
-    foreach ($attachments['#attached']['html_head'] as &$tag) {
-      // Only process meta tags with a 'content' attribute, that way it will
-      // exclude LINK tags or meta tags which do not have a "content" value.
-      if (isset($tag[0]['#tag']) && $tag[0]['#tag'] == 'meta') {
-        if (isset($tag[0]['#attributes']['content'])) {
-          if (!is_string($tag[0]['#attributes']['content'])) {
-            $tag[0]['#attributes']['content'] = (string) $tag[0]['#attributes']['content'];
-          }
-          if (strlen($tag[0]['#attributes']['content']) > $max_length) {
-            $tag[0]['#attributes']['content'] = mb_strimwidth($tag[0]['#attributes']['content'], 0, $max_length, "...");
-          }
-        }
+function _lib_core_validate_user(&$form, FormStateInterface &$form_state) {
+  $ajax_response = new AjaxResponse();
+  $barcode = $form_state->getValue('barcode');
+  $biblio_disabled = true;
+  $text = '';
+
+  if (isset($barcode) && !empty($barcode)) {
+    $oclcApiIDMWskey = '';
+    $oclcApiIDMSecret = '';
+    include '/app/html/sites/all/settings/settings.oclc-api.inc';
+
+    $authOpts = [
+      'clientId' => $oclcApiIDMWskey,
+      'clientSecret' => $oclcApiIDMSecret,
+      'urlAuthorize' => 'https://oauth.oclc.org/auth',
+      'urlAccessToken' => 'https://oauth.oclc.org/token',
+      'urlResourceOwnerDetails' => '',
+    ];
+    $basicAuth = new HttpBasicAuthOptionProvider();
+    $provider = new GenericProvider($authOpts, ['optionProvider' => $basicAuth]);
+    $inst = '133054';
+    try {
+      $accessToken = $provider->getAccessToken('client_credentials', ['scope' => "SCIM"]);
+      $headers = [
+        'Authorization' => 'Bearer ' . $accessToken->getToken(),
+        'Content-Type' => 'application/scim+json',
+      ];
+      $url = "https://{$inst}.share.worldcat.org/idaas/scim/v2/Users/.search";
+      $query = '{
+      "schemas": ["urn:ietf:params:scim:api:messages:2.0:SearchRequest"],
+      "filter": "External_ID eq \"' . $barcode . '\""
+    }';
+      $client = new Client();
+      $response = $client->request('POST', $url, ['headers' => $headers, 'body' => $query]);
+      $body = json_decode($response->getBody(TRUE));
+      if ($body->totalResults == 0) {
+        $text = '<span class="text-danger has-error"><span class="fas fa-exclamation-circle mr-1"></span>Unable to validate user at this time.</span>';
       }
+      $allowedCat = ['FACSTAFF-STU', 'FACSTAFF-UNB', 'GRAD-UNB', 'UG-STU', 'UG-UNB', 'UG-UNB-DMNB', 'UG-UNB-LAW'];
+      $circInfo = $body->Resources[0]->{'urn:mace:oclc.org:eidm:schema:persona:wmscircpatroninfo:20180101'}->circulationInfo;
+
+      if (!$circInfo->isCircBlocked && in_array($circInfo->borrowerCategory, $allowedCat)) {
+        $biblio_disabled = false;
+        $text = '<span class="text-success valid"><span class="fas fa-check-circle mr-1"></span>User validated.</span>';
+      } else {
+        $text = '<span class="text-danger invalid"><span class="fas fa-exclamation-circle mr-1"></span>User not validated.</span>';
+      }
+    } catch (Throwable $error) {
+      $text = '<span class="text-danger has-error"><span class="fas fa-exclamation-circle mr-1"></span>Unable to validate user at this time.</span>';
     }
+
   }
+
+  $ajax_response->addCommand(new HtmlCommand('.webform-element-description', $text));
+  $ajax_response->addCommand(new InvokeCommand('#edit-bibliographic-information', 'attr', array('disabled', $biblio_disabled)));
+  return $ajax_response;
 }
