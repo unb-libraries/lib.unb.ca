@@ -429,7 +429,7 @@ function _lib_core_validate_user(&$form, FormStateInterface &$form_state) {
   $ajax_response = new AjaxResponse();
   $barcode = $form_state->getValue('barcode');
   $biblio_disabled = true;
-  $text = '';
+  $text = 'Please enter a barcode to validate.';
 
   if (isset($barcode) && !empty($barcode)) {
     $oclcApiIDMWskey = '';
