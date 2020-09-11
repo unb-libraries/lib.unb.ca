@@ -474,6 +474,7 @@ function _lib_core_validate_user(&$form, FormStateInterface &$form_state) {
       }
     } catch (Throwable $error) {
       $text = '<span class="text-danger has-error"><span class="fas fa-exclamation-circle mr-1"></span>Unable to validate user at this time.</span>';
+      \Drupal::logger('lib_core')->error($error);
     }
 
   }
