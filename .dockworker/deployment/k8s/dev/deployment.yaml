@@ -93,6 +93,18 @@ spec:
               name: PHP_FPM_ERROR_LOG
               value: "/var/log/nginx/error.log"
             -
+              name: OCLC_API_IDM_WSKEY
+              valueFrom:
+                secretKeyRef:
+                  name: oclc-idm-wskey
+                  key: wskey
+            -
+              name: OCLC_API_IDM_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: oclc-idm-wskey
+                  key: secret
+            -
               name: OCLC_API_WSKEY
               valueFrom:
                 secretKeyRef:
