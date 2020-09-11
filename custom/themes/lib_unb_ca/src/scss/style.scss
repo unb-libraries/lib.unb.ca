@@ -136,6 +136,18 @@ thead {
   color: $red;
 }
 
+/* AJAX Throbber */
+.ajax-progress-throbber {
+  padding: 1px;
+
+  .throbber {
+    padding: 4px 8px 0;
+  }
+  .message {
+    color: $red;
+    padding: 0;
+  }
+}
 /* Drupal alert messages */
 .alert-dismissible {
   .close {
