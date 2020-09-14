@@ -429,6 +429,7 @@ function _lib_core_validate_user(&$form, FormStateInterface &$form_state) {
   $ajax_response = new AjaxResponse();
   $barcode = $form_state->getValue('barcode');
   $biblio_disabled = true;
+  $email = NULL;
   $text = 'Please enter a barcode to validate.';
 
   if (isset($barcode) && !empty($barcode)) {
@@ -469,6 +470,11 @@ function _lib_core_validate_user(&$form, FormStateInterface &$form_state) {
       if (!$circInfo->isCircBlocked && in_array($circInfo->borrowerCategory, $allowedCat)) {
         $biblio_disabled = false;
         $text = '<span class="text-success valid"><span class="fas fa-check-circle mr-1"></span>User validated.</span>';
+        foreach($body->Resources[0]->emails as $email) {
+          if ($email->primary) {
+            $email = $email->value;
+          }
+        }
       } else {
         $text = '<span class="text-danger invalid"><span class="fas fa-exclamation-circle mr-1"></span>User not validated.</span>';
       }
@@ -479,7 +485,8 @@ function _lib_core_validate_user(&$form, FormStateInterface &$form_state) {
 
   }
 
-  $ajax_response->addCommand(new HtmlCommand('.webform-element-description', $text));
+  $ajax_response->addCommand(new HtmlCommand('.form-item-barcode .webform-element-description', $text));
+  $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-unb-stu-email"]', 'val', array($email)));
   $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-bibliographic-information"]', 'attr', array('disabled', $biblio_disabled)));
   return $ajax_response;
 }
