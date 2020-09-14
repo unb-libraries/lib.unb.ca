@@ -480,6 +480,6 @@ function _lib_core_validate_user(&$form, FormStateInterface &$form_state) {
   }
 
   $ajax_response->addCommand(new HtmlCommand('.webform-element-description', $text));
-  $ajax_response->addCommand(new InvokeCommand('#edit-bibliographic-information', 'attr', array('disabled', $biblio_disabled)));
+  $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-bibliographic-information"]', 'attr', array('disabled', $biblio_disabled)));
   return $ajax_response;
 }
