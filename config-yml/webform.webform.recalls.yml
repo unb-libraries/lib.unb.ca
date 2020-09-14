@@ -68,9 +68,7 @@ settings:
   submission_label: ''
   submission_log: false
   submission_views: {  }
-  submission_views_replace:
-    webform_routes: {  }
-    node_routes: {  }
+  submission_views_replace: {  }
   submission_user_columns: {  }
   submission_user_duplicate: false
   submission_access_denied: default
@@ -79,25 +77,18 @@ settings:
   submission_access_denied_attributes: {  }
   submission_exception_message: ''
   submission_locked_message: ''
-  submission_excluded_elements:
-    title: title
-    author: author
-    journal_volume: journal_volume
-    journal_issue: journal_issue
-    call_number: call_number
-    shelving_location: shelving_location
-    comments_notes: comments_notes
-  submission_exclude_empty: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: true
   submission_exclude_empty_checkbox: false
   previous_submission_message: ''
   previous_submissions_message: '<em class="fa-info-circle fas">&nbsp;</em>The <strong>Personal Information</strong> section has been prefilled using your previous submission data.'
   autofill: true
   autofill_message: 'The <strong>Personal Information</strong> section has been prefilled using your previous submission data.'
   autofill_excluded_elements:
+    oclc_number: oclc_number
     title: title
     author: author
-    journal_volume: journal_volume
-    journal_issue: journal_issue
+    volume: volume
     call_number: call_number
     shelving_location: shelving_location
     comments_notes: comments_notes
