@@ -212,11 +212,11 @@ access:
 handlers:
   email:
     id: email
-    label: 'Email Access Services'
+    label: 'UNB Libraries Recall (default)'
     handler_id: email
     status: true
     conditions: {  }
-    weight: 0
+    weight: -50
     settings:
       states:
         - completed
@@ -229,8 +229,8 @@ handlers:
       from_mail: '[webform_submission:values:unb_stu_email:raw]'
       from_options: {  }
       from_name: '[webform_submission:values:name:raw]'
-      subject: 'SOULS Retrieval Request'
-      body: "<p>The following information was submitted through our <b>Material Retrieval Form</b> on {{ webform_token('[webform_submission:created]', webform_submission) }} by {{ webform_token('[webform_submission:user]', webform_submission) }}.</p>\r\n        \r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
+      subject: 'Recalls Request'
+      body: "<p>The following information was submitted through our <b>Recalls Form</b> on {{ webform_token('[webform_submission:created]', webform_submission) }} by {{ webform_token('[webform_submission:user]', webform_submission) }}.</p>\r\n        \r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: false
@@ -246,13 +246,53 @@ handlers:
       sender_name: ''
       theme_name: ''
       parameters: {  }
-  email_1:
+  unb_libraries_recall_hwk:
     id: email
-    label: 'Confirmation Email'
-    handler_id: email_1
+    label: 'UNB Libraries Recall (hwk)'
+    handler_id: unb_libraries_recall_hwk
+    status: true
+    conditions:
+      enabled:
+        ':input[name="shelving_location"]':
+          value:
+            pattern: ^(HWK)
+    weight: -49
+    settings:
+      states:
+        - completed
+      to_mail: hwkcommons@unb.ca
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: '[webform_submission:values:unb_stu_email:raw]'
+      from_options: {  }
+      from_name: '[webform_submission:values:name:raw]'
+      subject: 'Recalls Request'
+      body: "<p>The following information was submitted through our <b>Recalls Form</b> on {{ webform_token('[webform_submission:created]', webform_submission) }} by {{ webform_token('[webform_submission:user]', webform_submission) }}.</p>\r\n        \r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      theme_name: ''
+      parameters: {  }
+  sender_confirmation_email:
+    id: email
+    label: 'Sender Confirmation Email'
+    handler_id: sender_confirmation_email
     status: true
     conditions: {  }
-    weight: 0
+    weight: -47
     settings:
       states:
         - completed
@@ -265,8 +305,49 @@ handlers:
       from_mail: unb-libraries-no-reply@unb.ca
       from_options: {  }
       from_name: _default
-      subject: 'SOULS Retrieval Request'
-      body: "<p>Your request for retrieval of library materials in the SOULS database has been successfully submitted to Access Services. Thank you for taking the time to submit the request. You will be notified by email if we require additional information.</p>\r\n\r\n<p>Items will be held for 3 days after retrieval at the Access Services Desk of the library that owns the material. You will be notified by telephone or e-mail when the item is available.</p>\r\n        \r\n<p>Submitted values:</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
+      subject: 'Recalls Request'
+      body: _default
+      excluded_elements:
+        unb_stu_email: unb_stu_email
+      ignore_access: false
+      exclude_empty: false
+      exclude_empty_checkbox: true
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      theme_name: ''
+      parameters: {  }
+  unb_libraries_recall_law:
+    id: email
+    label: 'UNB Libraries Recall (law)'
+    handler_id: unb_libraries_recall_law
+    status: true
+    conditions:
+      enabled:
+        ':input[name="shelving_location"]':
+          value:
+            pattern: ^(LAW)
+    weight: -48
+    settings:
+      states:
+        - completed
+      to_mail: lawres@unb.ca
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: '[webform_submission:values:unb_stu_email:raw]'
+      from_options: {  }
+      from_name: '[webform_submission:values:name:raw]'
+      subject: 'Recalls Request'
+      body: "<p>The following information was submitted through our <b>Recalls Form</b> on {{ webform_token('[webform_submission:created]', webform_submission) }} by {{ webform_token('[webform_submission:user]', webform_submission) }}.</p>\r\n        \r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
