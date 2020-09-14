@@ -226,10 +226,11 @@ handlers:
       from_name: '[webform_submission:values:name:raw]'
       subject: 'Recalls Request'
       body: "<p>The following information was submitted through our <b>Recalls Form</b> on {{ webform_token('[webform_submission:created]', webform_submission) }} by {{ webform_token('[webform_submission:user]', webform_submission) }}.</p>\r\n        \r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
-      excluded_elements: {  }
+      excluded_elements:
+        privacy: privacy
       ignore_access: false
-      exclude_empty: false
-      exclude_empty_checkbox: false
+      exclude_empty: true
+      exclude_empty_checkbox: true
       exclude_attachments: false
       html: true
       attachments: false
@@ -266,7 +267,8 @@ handlers:
       from_name: '[webform_submission:values:name:raw]'
       subject: 'Recalls Request'
       body: "<p>The following information was submitted through our <b>Recalls Form</b> on {{ webform_token('[webform_submission:created]', webform_submission) }} by {{ webform_token('[webform_submission:user]', webform_submission) }}.</p>\r\n        \r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
-      excluded_elements: {  }
+      excluded_elements:
+        privacy: privacy
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: false
@@ -287,7 +289,7 @@ handlers:
     handler_id: sender_confirmation_email
     status: true
     conditions: {  }
-    weight: -47
+    weight: -46
     settings:
       states:
         - completed
@@ -301,16 +303,16 @@ handlers:
       from_options: {  }
       from_name: _default
       subject: 'Recalls Request'
-      body: _default
+      body: "<p>UNB Libraries have received the following recalls request from you. If this was not sent by you, please contact <a href=\"mailto:mas@unb.ca\">Merle Steeves</a> (mas@unb.ca) immediately.</p>\r\n\r\n<p>Submitted information:</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>"
       excluded_elements:
-        unb_stu_email: unb_stu_email
+        privacy: privacy
       ignore_access: false
-      exclude_empty: false
+      exclude_empty: true
       exclude_empty_checkbox: true
       exclude_attachments: false
       html: true
       attachments: false
-      twig: false
+      twig: true
       debug: false
       reply_to: ''
       return_path: ''
@@ -343,10 +345,52 @@ handlers:
       from_name: '[webform_submission:values:name:raw]'
       subject: 'Recalls Request'
       body: "<p>The following information was submitted through our <b>Recalls Form</b> on {{ webform_token('[webform_submission:created]', webform_submission) }} by {{ webform_token('[webform_submission:user]', webform_submission) }}.</p>\r\n        \r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
-      excluded_elements: {  }
+      excluded_elements:
+        privacy: privacy
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      theme_name: ''
+      parameters: {  }
+  unb_libraries_recall_hwk_:
+    id: email
+    label: 'UNB Libraries Recall (test)'
+    handler_id: unb_libraries_recall_hwk_
+    status: true
+    conditions:
+      enabled:
+        ':input[name="shelving_location"]':
+          value:
+            pattern: ^(MERLE)
+    weight: -47
+    settings:
+      states:
+        - completed
+      to_mail: mas@unb.ca
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: '[webform_submission:values:unb_stu_email:raw]'
+      from_options: {  }
+      from_name: '[webform_submission:values:name:raw]'
+      subject: 'Recalls Request'
+      body: "<p>The following information was submitted through our <b>Recalls Form</b> on {{ webform_token('[webform_submission:created]', webform_submission) }} by {{ webform_token('[webform_submission:user]', webform_submission) }}.</p>\r\n        \r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
+      excluded_elements:
+        privacy: privacy
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: true
       exclude_attachments: false
       html: true
       attachments: false
