@@ -1,0 +1,23 @@
+.choices[data-type*=select-one] .choices__inner {
+  background-color: #fff;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+  font-size: .95rem;
+  min-height: 38px;
+  padding: .5rem .75rem;
+
+  .choices__list--single {
+    padding: 0;
+  }
+}
+
+/* Webform Address > Required > Country field indication */
+.js-form-wrapper[required="required"] .form-item-mailing-address-country-code {
+  label {
+    &:after {
+      color: $red;
+      content: '(required)';
+      font-size: 80%
+    }
+  }
+}

@@ -1,6 +1,7 @@
 /* SCSS IMPORTS */
 /* If you wish to compile/extend Bootstrap then uncomment line below and disable subtheme CDN */
 @import '../../../../../vendor/unb-libraries/unb_lib_theme/src/scss/style.scss';
+@import 'overrides/webforms';
 @import 'variables';
 @import 'mixins';
 @import 'custom/color_button';
