@@ -475,6 +475,9 @@ function _lib_core_validate_user(&$form, FormStateInterface &$form_state) {
             $email = $email->value;
           }
         }
+        if (isset($body->Resources[0]->name)) {
+          $name = trim($body->Resources[0]->name->givenName . " " . $body->Resources[0]->name->familyName);
+        }
       } else {
         $text = '<span class="text-danger invalid"><span class="fas fa-exclamation-circle mr-1"></span>User not validated.</span>';
       }
@@ -486,6 +489,7 @@ function _lib_core_validate_user(&$form, FormStateInterface &$form_state) {
   }
 
   $ajax_response->addCommand(new HtmlCommand('.form-item-barcode .webform-element-description', $text));
+  $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-name"]', 'val', array($name)));
   $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-unb-stu-email"]', 'val', array($email)));
   $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-bibliographic-information"]', 'attr', array('disabled', $biblio_disabled)));
   return $ajax_response;
