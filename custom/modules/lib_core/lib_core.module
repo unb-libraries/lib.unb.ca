@@ -462,14 +462,14 @@ function _lib_core_validate_user(&$form, FormStateInterface &$form_state) {
       $response = $client->request('POST', $url, ['headers' => $headers, 'body' => $query]);
       $body = json_decode($response->getBody(TRUE));
       if ($body->totalResults == 0) {
-        $text = '<span class="text-danger has-error"><span class="fas fa-exclamation-circle mr-1"></span>Unable to validate user at this time.</span>';
+        $text = '<span class="text-danger has-error"><span class="fas fa-exclamation-circle mr-1"></span>Unable to validate user barcode at this time.</span>';
       }
       $allowedCat = ['FACSTAFF-STU', 'FACSTAFF-UNB', 'GRAD-UNB', 'UG-STU', 'UG-UNB', 'UG-UNB-DMNB', 'UG-UNB-LAW'];
       $circInfo = $body->Resources[0]->{'urn:mace:oclc.org:eidm:schema:persona:wmscircpatroninfo:20180101'}->circulationInfo;
 
       if (!$circInfo->isCircBlocked && in_array($circInfo->borrowerCategory, $allowedCat)) {
         $biblio_disabled = false;
-        $text = '<span class="text-success valid"><span class="fas fa-check-circle mr-1"></span>User validated.</span>';
+        $text = '<span class="text-success valid"><span class="fas fa-check-circle mr-1"></span>User barcode validated.</span>';
         foreach($body->Resources[0]->emails as $email) {
           if ($email->primary) {
             $email = $email->value;
@@ -479,10 +479,10 @@ function _lib_core_validate_user(&$form, FormStateInterface &$form_state) {
           $name = trim($body->Resources[0]->name->givenName . " " . $body->Resources[0]->name->familyName);
         }
       } else {
-        $text = '<span class="text-danger invalid"><span class="fas fa-exclamation-circle mr-1"></span>User not validated.</span>';
+        $text = '<span class="text-danger invalid"><span class="fas fa-exclamation-circle mr-1"></span>User barcode not validated.</span>';
       }
     } catch (Throwable $error) {
-      $text = '<span class="text-danger has-error"><span class="fas fa-exclamation-circle mr-1"></span>Unable to validate user at this time.</span>';
+      $text = '<span class="text-danger has-error"><span class="fas fa-exclamation-circle mr-1"></span>Unable to validate user barcode at this time.</span>';
       \Drupal::logger('lib_core')->error($error);
     }
 
