@@ -1,6 +1,6 @@
-minimum_single: 12
+minimum_single: 1
 minimum_multiple: 6
-disable_search_threshold: 0
+disable_search_threshold: 7
 minimum_width: 0
 use_relative_width: false
 jquery_selector: 'select:visible'
@@ -19,3 +19,4 @@ disabled_themes:
 chosen_include: 2
 _core:
   default_config_hash: YWbqKPHA3djohSgnBRKhK0NUjnO1dL1XmIo3yBw3oFo
+max_shown_results: null
