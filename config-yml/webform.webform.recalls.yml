@@ -201,47 +201,6 @@ access:
     users: {  }
     permissions: {  }
 handlers:
-  email:
-    id: email
-    label: 'UNB Libraries Recall (default)'
-    handler_id: email
-    status: true
-    conditions:
-      enabled:
-        ':input[name="shelving_location"]':
-          value:
-            '!pattern': ^(HWK|LAW|MERLE)
-    weight: -50
-    settings:
-      states:
-        - completed
-      to_mail: circhi@unb.ca
-      to_options: {  }
-      cc_mail: ''
-      cc_options: {  }
-      bcc_mail: ''
-      bcc_options: {  }
-      from_mail: '[webform_submission:values:unb_stu_email:raw]'
-      from_options: {  }
-      from_name: '[webform_submission:values:name:raw]'
-      subject: 'Recalls Request'
-      body: "<p>The following information was submitted through our <b>Recalls Form</b> on {{ webform_token('[webform_submission:created]', webform_submission) }} by {{ webform_token('[webform_submission:user]', webform_submission) }}.</p>\r\n        \r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
-      excluded_elements:
-        privacy: privacy
-      ignore_access: false
-      exclude_empty: true
-      exclude_empty_checkbox: true
-      exclude_attachments: false
-      html: true
-      attachments: false
-      twig: true
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
-      theme_name: ''
-      parameters: {  }
   unb_libraries_recall_hwk:
     id: email
     label: 'UNB Libraries Recall (hwk)'
@@ -252,7 +211,7 @@ handlers:
         ':input[name="shelving_location"]':
           value:
             pattern: ^(HWK)
-    weight: -49
+    weight: -48
     settings:
       states:
         - completed
@@ -283,43 +242,6 @@ handlers:
       sender_name: ''
       theme_name: ''
       parameters: {  }
-  sender_confirmation_email:
-    id: email
-    label: 'Sender Confirmation Email'
-    handler_id: sender_confirmation_email
-    status: true
-    conditions: {  }
-    weight: -46
-    settings:
-      states:
-        - completed
-      to_mail: '[webform_submission:values:unb_stu_email:raw]'
-      to_options: {  }
-      cc_mail: ''
-      cc_options: {  }
-      bcc_mail: ''
-      bcc_options: {  }
-      from_mail: unb-libraries-no-reply@unb.ca
-      from_options: {  }
-      from_name: _default
-      subject: 'Recalls Request'
-      body: "<p>UNB Libraries have received the following recall request from you. If this was not sent by you, please contact <a href=\"mailto:mas@unb.ca\">Merle Steeves</a> (mas@unb.ca) immediately.</p>\r\n\r\n<p>Submitted information:</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>"
-      excluded_elements:
-        privacy: privacy
-      ignore_access: false
-      exclude_empty: true
-      exclude_empty_checkbox: true
-      exclude_attachments: false
-      html: true
-      attachments: false
-      twig: true
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
-      theme_name: ''
-      parameters: {  }
   unb_libraries_recall_law:
     id: email
     label: 'UNB Libraries Recall (law)'
@@ -330,7 +252,7 @@ handlers:
         ':input[name="shelving_location"]':
           value:
             pattern: ^(LAW)
-    weight: -48
+    weight: -47
     settings:
       states:
         - completed
@@ -371,11 +293,175 @@ handlers:
         ':input[name="shelving_location"]':
           value:
             pattern: ^(MERLE)
-    weight: -47
+    weight: -46
     settings:
       states:
         - completed
       to_mail: mas@unb.ca
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: '[webform_submission:values:unb_stu_email:raw]'
+      from_options: {  }
+      from_name: '[webform_submission:values:name:raw]'
+      subject: 'Recalls Request'
+      body: "<p>The following information was submitted through our <b>Recalls Form</b> on {{ webform_token('[webform_submission:created]', webform_submission) }} by {{ webform_token('[webform_submission:user]', webform_submission) }}.</p>\r\n        \r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
+      excluded_elements:
+        privacy: privacy
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: true
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      theme_name: ''
+      parameters: {  }
+  sender_confirmation_email_circhi:
+    id: email
+    label: 'Sender Confirmation Email (circhi)'
+    handler_id: sender_confirmation_email_circhi
+    status: true
+    conditions:
+      enabled:
+        ':input[name="shelving_location"]':
+          value:
+            '!pattern': ^(HWK|LAW|MERLE)
+    weight: -45
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:unb_stu_email:raw]'
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: unb-libraries-no-reply@unb.ca
+      from_options: {  }
+      from_name: _default
+      subject: 'Recalls Request'
+      body: "<p>UNB Libraries has received the following recall request. If this was not sent by you, please contact <a href=\"mailto:circhi@unb.ca\">circhi@unb.ca</a> immediately.</p>\r\n\r\n<p>Submitted information:</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>"
+      excluded_elements:
+        privacy: privacy
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: true
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      theme_name: ''
+      parameters: {  }
+  sender_confirmation_email_hwk:
+    id: email
+    label: 'Sender Confirmation Email (hwk)'
+    handler_id: sender_confirmation_email_hwk
+    status: true
+    conditions:
+      enabled:
+        ':input[name="shelving_location"]':
+          value:
+            pattern: ^(HWK)
+    weight: -44
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:unb_stu_email:raw]'
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: unb-libraries-no-reply@unb.ca
+      from_options: {  }
+      from_name: _default
+      subject: 'Recalls Request'
+      body: "<p>UNB Libraries has received the following recall request. If this was not sent by you, please contact <a href=\"mailto:hwkcommons@unb.ca\">hwkcommons@unb.ca</a> immediately.</p>\r\n\r\n<p>Submitted information:</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>"
+      excluded_elements:
+        privacy: privacy
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: true
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      theme_name: ''
+      parameters: {  }
+  sender_confirmation_email_lawres:
+    id: email
+    label: 'Sender Confirmation Email (lawres)'
+    handler_id: sender_confirmation_email_lawres
+    status: true
+    conditions:
+      enabled:
+        ':input[name="shelving_location"]':
+          value:
+            pattern: ^(LAW)
+    weight: -43
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:unb_stu_email:raw]'
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: unb-libraries-no-reply@unb.ca
+      from_options: {  }
+      from_name: _default
+      subject: 'Recalls Request'
+      body: "<p>UNB Libraries has received the following recall request. If this was not sent by you, please contact <a href=\"mailto:lawres@unb.ca\">lawres@unb.ca</a> immediately.</p>\r\n\r\n<p>Submitted information:</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>"
+      excluded_elements:
+        privacy: privacy
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: true
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      theme_name: ''
+      parameters: {  }
+  unb_libraries_recall_circhi:
+    id: email
+    label: 'UNB Libraries Recall (circhi)'
+    handler_id: unb_libraries_recall_circhi
+    status: true
+    conditions:
+      enabled:
+        ':input[name="shelving_location"]':
+          value:
+            '!pattern': ^(HWK|LAW|MERLE)
+    weight: -50
+    settings:
+      states:
+        - completed
+      to_mail: circhi@unb.ca
       to_options: {  }
       cc_mail: ''
       cc_options: {  }
