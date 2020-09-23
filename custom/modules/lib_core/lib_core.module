@@ -216,6 +216,7 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
           'message' => t('Validating barcode'),
         ],
       ];
+      $form['#validate'][] = '_lib_core_recalls_validate_handler';
       break;
 
     default:
@@ -543,4 +544,27 @@ function _lib_core_validate_barcode($barcode) {
   }
 
   return $validation_response;
+}
+
+/**
+ * Custom Publication Form Daterange validation.
+ *
+ * @param array $form
+ *   The Recalls form array.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The object containing the current state of the Recalls form.
+ */
+function _lib_core_recalls_validate_handler(array &$form, FormStateInterface $form_state) {
+  $barcode_submission = $form_state->getValue('barcode');
+  $validation_response = _lib_core_validate_barcode($barcode_submission);
+
+  switch ($validation_response['status']) {
+    case 'invalid':
+      $form_state->setErrorByName(
+        'barcode',
+        t("Barcode <em>" . $barcode_submission . "</em> was not valid.")
+      );
+      break;
+  }
+
 }
