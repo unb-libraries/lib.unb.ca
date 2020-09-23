@@ -207,10 +207,8 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
     case 'webform_submission_recalls_add_form':
       $form['#attached']['library'][] = 'lib_core/chosen-bootstrap';
-      //dump($form['elements']['personal_information']['barcode']);
-      //$form['elements']['personal_information']['barcode']['#description']['#suffix'] = '<span class="barcode-validation"></span>';
       $form['elements']['personal_information']['barcode']['#ajax'] = [
-        'callback' => '_lib_core_validate_user',
+        'callback' => '_lib_core_recall_barcode_validate_handler',
         'disable-refocus' => TRUE,
         'event' => 'blur',
         'progress' => [
@@ -313,6 +311,59 @@ function lib_core_views_query_alter(ViewExecutable $view, QueryPluginBase $query
 }
 
 /**
+ * Implements hook_page_attachments().
+ */
+function lib_core_page_attachments(array &$attachments) {
+  if (!\Drupal::currentUser()->hasPermission('access toolbar')) {
+    return;
+  }
+
+  $attachments['#attached']['library'][] = 'lib_core/toolbar-overrides';
+}
+
+/**
+ * Get UNB Libraries department label, given an email mailbox.
+ *
+ * @param string $mailbox
+ *   A email mailbox string identifying a UNB Libraries Department without a Drupal user account.
+ *
+ * @return string
+ *   The name of the UNB Libraries department.
+ */
+function _lib_core_contactable_department($mailbox) {
+  // Contact webform may send messages to the following mailboxes.
+  $departments = [
+    'archives' => 'Archives and Special Collections',
+    'askus' => 'Ask Us',
+    'circhi' => 'Commons Service Desk',
+    'copyright' => 'Copyright',
+    'data.gis' => 'Data & GIS',
+    'digitalscholar' => 'Centre for Digital Scholarship',
+    'docdel' => 'Document Delivery Unit',
+    'englib' => 'Engineering & Computer Science',
+    'govdocs' => 'Government Documents, Data and Maps',
+    'hilif' => 'Instruction Facilities',
+    'hilref' => 'Reference',
+    'hwkacq' => 'HWK Acquisitions',
+    'hwkcommons' => 'Hans W. Klohn Commons',
+    'hwkcreserves' => 'HWK Reserves',
+    'lawlib' => 'Law Library',
+    'lib' => 'UNB Libraries Administration',
+    'library' => 'UNB Libraries Administration',
+    'libweb' => 'Website Administrator',
+    'maproom' => 'Map Room',
+    'mic' => 'Microforms/Microfilming Services',
+    'rdm' => 'Research Data Management',
+    'refsj' => 'Saint John Reference',
+    'reserves' => 'Course Reserves',
+    'scilib' => 'Science & Forestry',
+    'worldcat' => 'WorldCat Support',
+  ];
+
+  return array_key_exists($mailbox, $departments) ? $departments[$mailbox] : NULL;
+}
+
+/**
  * Port get_guide_categories() from core/inc-2015/guide_categories.php.
  *
  * @return array
@@ -369,68 +420,67 @@ function _lib_core_get_guide_categories() {
 }
 
 /**
- * Get UNB Libraries department label, given an email mailbox.
+ * Custom Recall Form validation.
  *
- * @param string $mailbox
- *   A email mailbox string identifying a UNB Libraries Department without a Drupal user account.
- *
- * @return string
- *   The name of the UNB Libraries department.
+ * @param array $form
+ *   The publication form array.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The object containing the current state of the Recalls form.
+ * @return \Drupal\Core\Ajax\AjaxResponse $ajax_response
+ *   Ajax response, based on barcode validation.
  */
-function _lib_core_contactable_department($mailbox) {
-  // Contact webform may send messages to the following mailboxes.
-  $departments = [
-    'archives' => 'Archives and Special Collections',
-    'askus' => 'Ask Us',
-    'circhi' => 'Commons Service Desk',
-    'copyright' => 'Copyright',
-    'data.gis' => 'Data & GIS',
-    'digitalscholar' => 'Centre for Digital Scholarship',
-    'docdel' => 'Document Delivery Unit',
-    'englib' => 'Engineering & Computer Science',
-    'govdocs' => 'Government Documents, Data and Maps',
-    'hilif' => 'Instruction Facilities',
-    'hilref' => 'Reference',
-    'hwkacq' => 'HWK Acquisitions',
-    'hwkcommons' => 'Hans W. Klohn Commons',
-    'hwkcreserves' => 'HWK Reserves',
-    'lawlib' => 'Law Library',
-    'lib' => 'UNB Libraries Administration',
-    'library' => 'UNB Libraries Administration',
-    'libweb' => 'Website Administrator',
-    'maproom' => 'Map Room',
-    'mic' => 'Microforms/Microfilming Services',
-    'rdm' => 'Research Data Management',
-    'refsj' => 'Saint John Reference',
-    'reserves' => 'Course Reserves',
-    'scilib' => 'Science & Forestry',
-    'worldcat' => 'WorldCat Support',
-  ];
+function _lib_core_recall_barcode_validate_handler(array &$form, FormStateInterface $form_state) {
+  $ajax_response = new AjaxResponse();
+  $biblio_disabled = true;
 
-  return array_key_exists($mailbox, $departments) ? $departments[$mailbox] : NULL;
-}
+  $name = $form_state->getValue('name');
+  $email = $form_state->getValue('unb_stu_email');
+  $barcode = $form_state->getValue('barcode');
 
-/**
- * Implements hook_page_attachments().
- */
-function lib_core_page_attachments(array &$attachments) {
-  if (!\Drupal::currentUser()->hasPermission('access toolbar')) {
-    return;
+  // Parse validation response - generate barcode description text, name & email values, toggle biblio fieldset.
+  $validation_response = _lib_core_validate_barcode($barcode);
+  switch ($validation_response['status']) {
+    case 'valid':
+      $biblio_disabled = false;
+      $text = '<span class="text-success valid">
+               <span class="fas fa-check-circle mr-1"></span>User barcode validated.</span>';
+      $name = $validation_response['name'];
+      $email = $validation_response['email'];
+      break;
+    case 'invalid':
+      $text = '<span class="text-danger invalid"><span class="fas fa-exclamation-circle mr-1"></span>
+               User barcode not validated. Only current students, faculty, and staff may recall an item</span>';
+      break;
+    case 'error':
+      $text = '<span class="text-danger has-error"><span class="fas fa-exclamation-circle mr-1"></span>
+               Unable to validate user barcode at this time.</span>';
+      break;
+    default:
+      $text = 'Please enter a barcode to validate.';
   }
 
-  $attachments['#attached']['library'][] = 'lib_core/toolbar-overrides';
+  $ajax_response->addCommand(new HtmlCommand('.form-item-barcode .webform-element-description', $text));
+  $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-name"]', 'val', array($name)));
+  $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-unb-stu-email"]', 'val', array($email)));
+  $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-bibliographic-information"]', 'attr', array('disabled', $biblio_disabled)));
+  return $ajax_response;
 }
 
 /**
  * Validate a UNB/STU user, given their barcode number.
  *
+ * @param string $barcode
+ * The UNB/STU user barcode.
+ *
+ * @return array $validation_response
+ *   The validation response array, including barcode validation status and if valid, user name and email.
  */
-function _lib_core_validate_user(&$form, FormStateInterface &$form_state) {
-  $ajax_response = new AjaxResponse();
-  $barcode = $form_state->getValue('barcode');
-  $biblio_disabled = true;
-  $email = NULL;
-  $text = 'Please enter a barcode to validate.';
+function _lib_core_validate_barcode($barcode) {
+  $validation_response = [
+    'status' => null,
+    'name' => null,
+    'email' => null,
+  ];
 
   if (isset($barcode) && !empty($barcode)) {
     $oclcApiIDMWskey = '';
@@ -455,42 +505,36 @@ function _lib_core_validate_user(&$form, FormStateInterface &$form_state) {
       ];
       $url = "https://{$inst}.share.worldcat.org/idaas/scim/v2/Users/.search";
       $query = '{
-      "schemas": ["urn:ietf:params:scim:api:messages:2.0:SearchRequest"],
-      "filter": "External_ID eq \"' . $barcode . '\""
-    }';
+        "schemas": ["urn:ietf:params:scim:api:messages:2.0:SearchRequest"],
+        "filter": "External_ID eq \"' . $barcode . '\""
+      }';
       $client = new Client();
       $response = $client->request('POST', $url, ['headers' => $headers, 'body' => $query]);
       $body = json_decode($response->getBody(TRUE));
       if ($body->totalResults == 0) {
-        $text = '<span class="text-danger has-error"><span class="fas fa-exclamation-circle mr-1"></span>Unable to validate user barcode at this time.</span>';
+        $validation_response['status'] = 'error';
       }
       $allowedCat = ['FACSTAFF-STU', 'FACSTAFF-UNB', 'GRAD-UNB', 'UG-STU', 'UG-UNB', 'UG-UNB-DMNB', 'UG-UNB-LAW'];
       $circInfo = $body->Resources[0]->{'urn:mace:oclc.org:eidm:schema:persona:wmscircpatroninfo:20180101'}->circulationInfo;
 
       if (!$circInfo->isCircBlocked && in_array($circInfo->borrowerCategory, $allowedCat)) {
-        $biblio_disabled = false;
-        $text = '<span class="text-success valid"><span class="fas fa-check-circle mr-1"></span>User barcode validated.</span>';
-        foreach($body->Resources[0]->emails as $email) {
+        $validation_response['status'] = 'valid';
+        foreach ($body->Resources[0]->emails as $email) {
           if ($email->primary) {
-            $email = $email->value;
+            $validation_response['email'] = $email->value;
           }
         }
         if (isset($body->Resources[0]->name)) {
-          $name = trim($body->Resources[0]->name->givenName . " " . $body->Resources[0]->name->familyName);
+          $validation_response['name'] = trim($body->Resources[0]->name->givenName . " " . $body->Resources[0]->name->familyName);
         }
       } else {
-        $text = '<span class="text-danger invalid"><span class="fas fa-exclamation-circle mr-1"></span>User barcode not validated.</span>';
+        $validation_response['status'] = 'invalid';
       }
     } catch (Throwable $error) {
-      $text = '<span class="text-danger has-error"><span class="fas fa-exclamation-circle mr-1"></span>Unable to validate user barcode at this time.</span>';
+      $validation_response['status'] = 'error';
       \Drupal::logger('lib_core')->error($error);
     }
-
   }
 
-  $ajax_response->addCommand(new HtmlCommand('.form-item-barcode .webform-element-description', $text));
-  $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-name"]', 'val', array($name)));
-  $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-unb-stu-email"]', 'val', array($email)));
-  $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-bibliographic-information"]', 'attr', array('disabled', $biblio_disabled)));
-  return $ajax_response;
+  return $validation_response;
 }
