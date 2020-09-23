@@ -463,6 +463,12 @@ function _lib_core_recall_barcode_validate_handler(array &$form, FormStateInterf
   $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-name"]', 'val', array($name)));
   $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-unb-stu-email"]', 'val', array($email)));
   $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-bibliographic-information"]', 'attr', array('disabled', $biblio_disabled)));
+  $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-actions-submit"]', 'attr', array('disabled', $biblio_disabled)));
+  if ($biblio_disabled) {
+    $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-actions-submit"]', 'addClass', array('is-disabled')));
+  } else {
+    $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-actions-submit"]', 'removeClass', array('is-disabled')));
+  }
   return $ajax_response;
 }
 
