@@ -5,29 +5,6 @@
   padding-right: 0;
 }
 
-/* Tables */
-table {
-  margin-top: inherit;
-
-  tr {
-    background: inherit;
-    border-color: inherit;
-    border-style: inherit;
-    border-width: inherit;
-
-    td,
-    th {
-      background: inherit;
-      border-color: inherit;
-      border-style: inherit;
-      border-width: inherit;
-      color: inherit;
-      font-size: 1rem;
-      padding: inherit;
-    }
-  }
-}
-
 /* Drupal Media Image */
 @media (min-width: 560px) {
   .node .field--name-field-media-image.field--type-image {
