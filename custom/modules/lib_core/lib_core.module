@@ -454,7 +454,18 @@ function _lib_core_recall_barcode_validate_handler(array &$form, FormStateInterf
                Unable to validate user barcode at this time</span>';
       break;
     default:
-      $text = 'Enter your barcode number (found on your UCard)';
+      $text = 'Enter your barcode number <em>(the small number found below your picture on your <a data-target="#ucardModal" data-toggle="modal" href="#"> <em class="fa-id-card fas ml-1">&nbsp;</em><strong>UCard</strong>)</a></em>
+        <div aria-hidden="true" aria-labelledby="ucardModalLabel" class="modal fade theme-dark" id="ucardModal" role="dialog" tabindex="-1">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="h5 text-black" id="ucardModalLabel">Sample UCard</h1>
+                <a aria-label="Close" class="btn close" data-dismiss="modal" href="#"><span aria-hidden="true">&times;</span></a>
+              </div>
+              <div class="modal-body mx-auto"><a data-target="#ucardModal" data-toggle="modal" href="#"><img alt="Sample UCard" src="/themes/custom/lib_unb_ca/img//ucard-sample.png" /></a></div>
+            </div>
+          </div>
+        </div>';
   }
   $name = $validation_response['name'];
   $email = $validation_response['email'];
