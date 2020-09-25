@@ -21,10 +21,80 @@
     }
   }
 }
-.choices {
-  &.is-focused {
-    border-color: #80bdff;
-    border-radius: .25rem;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+
+.form-actions {
+  .webform-button--next,
+  .webform-button--previous {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: $white;
+
+    &:focus,
+    &:hover {
+      background-color: #5a6268;
+      border-color: #545b62;
+      box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);
+      color: $white;
+    }
+  }
+
+  .webform-button--submit {
+    background-color: $black;
+    border-color: rgba(0, 0, 0, 0.5);
+    color: $white;
+
+    &:focus,
+    &:hover {
+      color: $yellow;
+      border-color: rgba(0, 0, 0, 0.8);
+      box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+form.theme-dark>.webform-elements>.form-group>fieldset>legend {
+  border-bottom: 2px solid #1B2125;
+  color: #495057;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.webform-progress-tracker {
+  &.progress-tracker {
+    margin: .33rem 10%;
+  }
+  .progress-marker {
+    font-size: 80%;
+    padding: .25rem;
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+  .progress-step {
+    &.is-active,
+    &.is-active:hover {
+      .progress-marker {
+        background-color: $unb-red;
+      }
+
+      .progress-text {
+        color: $black;
+      }
+    }
+
+    &.is-complete,
+    &.is-complete:hover {
+      .progress-marker {
+        background-color: #777;
+      }
+
+      .progress-text {
+        color: $text-muted-wcag;
+      }
+    }
+
+    .progress-text {
+      font-size: 90%;
+    }
   }
 }
