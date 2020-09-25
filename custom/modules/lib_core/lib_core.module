@@ -207,13 +207,12 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
     case 'webform_submission_recalls_add_form':
       $form['#attached']['library'][] = 'lib_core/chosen-bootstrap';
-      $form['elements']['personal_information']['barcode']['#ajax'] = [
+      $form['elements']['step_1']['personal_information']['barcode']['#ajax'] = [
         'callback' => '_lib_core_recall_barcode_validate_handler',
         'disable-refocus' => TRUE,
         'event' => 'blur',
         'progress' => [
-          'type' => 'throbber',
-          'message' => t('Validating barcode'),
+          'type' => 'fullscreen',
         ],
       ];
       $form['#validate'][] = '_lib_core_recalls_validate_handler';
@@ -445,8 +444,6 @@ function _lib_core_recall_barcode_validate_handler(array &$form, FormStateInterf
       $biblio_disabled = false;
       $text = '<span class="text-success valid">
                <span class="fas fa-check-circle mr-1"></span>User barcode validated.</span>';
-      $name = $validation_response['name'];
-      $email = $validation_response['email'];
       break;
     case 'invalid':
       $text = '<span class="text-danger invalid"><span class="fas fa-exclamation-circle mr-1"></span>
