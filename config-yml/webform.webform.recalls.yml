@@ -361,7 +361,7 @@ handlers:
       from_options: {  }
       from_name: _default
       subject: 'Recalls Request'
-      body: "<p>UNB Libraries has received the following recall request. If this was not sent by you, please contact <a href=\"mailto:circhi@unb.ca\">circhi@unb.ca</a> immediately.</p>\r\n\r\n<p>Submitted information:</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>"
+      body: "<p>UNB Libraries has received the following recall request. If this was not sent by you, please contact <a href=\"mailto:circhi@unb.ca\">circhi@unb.ca</a> immediately.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>"
       excluded_elements:
         top_markup: top_markup
         privacy_statement_step1: privacy_statement_step1
@@ -405,7 +405,7 @@ handlers:
       from_options: {  }
       from_name: _default
       subject: 'Recalls Request'
-      body: "<p>UNB Libraries has received the following recall request. If this was not sent by you, please contact <a href=\"mailto:hwkcommons@unb.ca\">hwkcommons@unb.ca</a> immediately.</p>\r\n\r\n<p>Submitted information:</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>"
+      body: "<p>UNB Libraries has received the following recall request. If this was not sent by you, please contact <a href=\"mailto:hwkcommons@unb.ca\">hwkcommons@unb.ca</a> immediately.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>"
       excluded_elements:
         top_markup: top_markup
         privacy_statement_step1: privacy_statement_step1
@@ -449,7 +449,7 @@ handlers:
       from_options: {  }
       from_name: _default
       subject: 'Recalls Request'
-      body: "<p>UNB Libraries has received the following recall request. If this was not sent by you, please contact <a href=\"mailto:lawres@unb.ca\">lawres@unb.ca</a> immediately.</p>\r\n\r\n<p>Submitted information:</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>"
+      body: "<p>UNB Libraries has received the following recall request. If this was not sent by you, please contact <a href=\"mailto:lawres@unb.ca\">lawres@unb.ca</a> immediately.</p>\r\n\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>"
       excluded_elements:
         top_markup: top_markup
         privacy_statement_step1: privacy_statement_step1
@@ -537,7 +537,7 @@ handlers:
       from_options: {  }
       from_name: _default
       subject: 'Recalls Request'
-      body: "<p>UNB Libraries has received the following recall request. If this was not sent by you, please contact <a href=\"mailto:hwkcommons@unb.ca\">hwkcommons@unb.ca</a> immediately.</p>\r\n\r\n<p>Submitted information:</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>"
+      body: "<p>UNB Libraries has received the following recall request. If this was not sent by you, please contact <a href=\"mailto:hwkcommons@unb.ca\">hwkcommons@unb.ca</a> immediately.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>"
       excluded_elements:
         top_markup: top_markup
         privacy_statement_step1: privacy_statement_step1
