@@ -33,7 +33,6 @@
     &:hover {
       background-color: #5a6268;
       border-color: #545b62;
-      box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);
       color: $white;
     }
   }
@@ -47,7 +46,6 @@
     &:hover {
       color: $yellow;
       border-color: rgba(0, 0, 0, 0.8);
-      box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.2);
     }
   }
 }
