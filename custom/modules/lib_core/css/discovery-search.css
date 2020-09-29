@@ -22,3 +22,7 @@
 .form-group a.chosen-single {
     height: calc(1.5em + 0.75rem);
 }
+.custom-legend {
+    font-size: 1rem;
+    width: auto;
+}

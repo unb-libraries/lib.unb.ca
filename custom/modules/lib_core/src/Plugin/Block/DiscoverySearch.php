@@ -218,7 +218,7 @@ class DiscoverySearch extends BlockBase {
         <div class="form-group">
           <div class="form-row">
             <div class="col-md-6 mb-2">
-              <label class="sr-only" for="queryString_WCD">
+              <label class="sr-only" for="keywords">
                 Search for:
               </label>
               <div class="input-group">
@@ -316,19 +316,21 @@ class DiscoverySearch extends BlockBase {
     $form_catalogue =
       '<form accept-charset="UTF-8" action="/worldcat-search-helper" id="home_WCD" method="post" name="wcfw">
         <div class="form-group">
-          <div class="form-row font-weight-bold mb-2 ml-1">
-            <div class="mb-1 mr-3">
-              Search UNB WorldCat:
+          <fieldset>
+            <div class="form-row mb-2 ml-1">
+              <legend class="custom-legend mb-1 mr-3">
+                Search UNB WorldCat:
+              </legend>
+              <div class="custom-control custom-radio custom-control-inline font-weight-bold">
+                <input checked="checked" class="custom-control-input" id="scope_UNBLibraries_WCD" name="scope" type="radio" value="wz:66413">
+                <label class="custom-control-label" for="scope_UNBLibraries_WCD"><span class="sr-only">Search </span>UNB Libraries</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline font-weight-bold">
+                <input class="custom-control-input" id="scope_worldwide_WCD" name="scope" type="radio" value="">
+                <label class="custom-control-label" for="scope_worldwide_WCD"><span class="sr-only">Search </span>Libraries Worldwide</label>
+              </div>
             </div>
-            <div class="custom-control custom-radio custom-control-inline">
-              <input checked="checked" class="custom-control-input" id="scope_UNBLibraries_WCD" name="scope" type="radio" value="wz:66413">
-              <label class="custom-control-label" for="scope_UNBLibraries_WCD">UNB Libraries</label>
-            </div>
-            <div class="custom-control custom-radio custom-control-inline">
-              <input class="custom-control-input" id="scope_worldwide_WCD" name="scope" type="radio" value="">
-              <label class="custom-control-label" for="scope_worldwide_WCD">Libraries Worldwide</label>
-            </div>
-          </div>
+          </fieldset>
           <div class="form-row">
             <div class="col-md-6 mb-2">
               <label class="sr-only" for="queryString_WCD">
@@ -534,24 +536,27 @@ class DiscoverySearch extends BlockBase {
         <input id="sub" name="sub" type="hidden" value="journals">
         <div class="form-group mt-1">
           <div class="form-row font-weight-bold ml-1">
-            <div class="custom-control custom-radio custom-control-inline">
-              <input checked="checked" class="custom-control-input" id="searchtype_every_journal" name="searchtype" type="radio" value="every_word">
-              <label class="custom-control-label" for="searchtype_every_journal">
-                Word(s) in title
-              </label>
-            </div>
-            <div class="custom-control custom-radio custom-control-inline">
-              <input class="custom-control-input" name="searchtype" id="searchtype_browse_journal" type="radio" value="browse">
-              <label class="custom-control-label" for="searchtype_browse_journal">
-                Starts with
-              </label>
-            </div>
-            <div class="custom-control custom-radio custom-control-inline">
-              <input class="custom-control-input" name="searchtype" id="searchtype_exact_journal" type="radio" value="exact">
-              <label class="custom-control-label" for="searchtype_exact_journal">
-                Exact
-              </label>
-            </div>
+          <fieldset>
+              <legend class="sr-only">Search options</legend>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input checked="checked" class="custom-control-input" id="searchtype_every_journal" name="searchtype" type="radio" value="every_word">
+                <label class="custom-control-label" for="searchtype_every_journal">
+                  Word(s) in title
+                </label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input class="custom-control-input" name="searchtype" id="searchtype_browse_journal" type="radio" value="browse">
+                <label class="custom-control-label" for="searchtype_browse_journal">
+                  Starts with
+                </label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input class="custom-control-input" name="searchtype" id="searchtype_exact_journal" type="radio" value="exact">
+                <label class="custom-control-label" for="searchtype_exact_journal">
+                  </span>Exact
+                </label>
+              </div>
+            </fieldset>
           </div>
         </div>
         <div class="form-group">
@@ -604,30 +609,32 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getEncyclopediasForm() {
     $form_encyclopedias =
-      '<p class="mb-4">Search for Reference Materials by title.</p>
-      <form action="https://web.lib.unb.ca/eresources/index.php" method="get" id="search_results_refmat">
+      '<form action="https://web.lib.unb.ca/eresources/index.php" method="get" id="search_results_refmat">
         <input id="sub_refmat" name="sub" type="hidden" value="refmat">
         <div class="form-group">
-          <div class="form-row font-weight-bold ml-1">
-            <div class="custom-control custom-radio custom-control-inline">
-              <input checked="checked" class="custom-control-input" id="searchtype_every_refmat" name="searchtype" type="radio" value="every_word">
-              <label class="custom-control-label" for="searchtype_every_refmat">
-                Word(s) in title
-              </label>
+          <fieldset>
+          <legend class="custom-legend mb-4">Search for Reference Materials by title<span class="sr-only"> using 1 of the following options</span>.</legend>
+            <div class="form-row font-weight-bold ml-1">
+              <div class="custom-control custom-radio custom-control-inline">
+                <input checked="checked" class="custom-control-input" id="searchtype_every_refmat" name="searchtype" type="radio" value="every_word">
+                <label class="custom-control-label" for="searchtype_every_refmat">
+                  Word(s) in title
+                </label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input class="custom-control-input" id="searchtype_browse_refmat" name="searchtype" type="radio" value="browse">
+                <label class="custom-control-label" for="searchtype_browse_refmat">
+                  Starts with
+                </label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input class="custom-control-input" id="searchtype_exact_refmat" name="searchtype" type="radio" value="exact">
+                <label class="custom-control-label" for="searchtype_exact_refmat">
+                  Exact
+                </label>
+              </div>
             </div>
-            <div class="custom-control custom-radio custom-control-inline">
-              <input class="custom-control-input" id="searchtype_browse_refmat" name="searchtype" type="radio" value="browse">
-              <label class="custom-control-label" for="searchtype_browse_refmat">
-                Starts with
-              </label>
-            </div>
-            <div class="custom-control custom-radio custom-control-inline">
-              <input class="custom-control-input" id="searchtype_exact_refmat" name="searchtype" type="radio" value="exact">
-              <label class="custom-control-label" for="searchtype_exact_refmat">
-                Exact
-              </label>
-            </div>
-          </div>
+          </fieldset>
         </div>
         <div class="form-group">
           <div class="form-row">
@@ -675,30 +682,33 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getEbooksForm() {
     $form_ebooks =
-      '<p class="mb-4">Search our vast electronic book collections for titles suitable for your computer, tablet or eReader.</p>
-      <form action="https://web.lib.unb.ca/eresources/index.php" id="search_results_ebooks" method="get">
+      '<form action="https://web.lib.unb.ca/eresources/index.php" id="search_results_ebooks" method="get">
         <input id="sub_ebooks" name="sub" type="hidden" value="ebooks">
         <div class="form-group">
-          <div class="form-row font-weight-bold ml-1">
-            <div class="custom-control custom-radio custom-control-inline">
-              <input checked="checked" class="custom-control-input" id="searchtype_every_ebooks" name="searchtype" type="radio" value="every_word">
-              <label class="custom-control-label" for="searchtype_every_ebooks">
-                Word(s) in title
-              </label>
+          <fieldset>
+            <legend class="custom-legend mb-4">Search our vast electronic book collections for titles suitable for your computer,
+                tablet or eReader<span class="sr-only"> using 1 of the following options</span>.</legend>
+            <div class="form-row font-weight-bold ml-1">
+              <div class="custom-control custom-radio custom-control-inline">
+                <input checked="checked" class="custom-control-input" id="searchtype_every_ebooks" name="searchtype" type="radio" value="every_word">
+                <label class="custom-control-label" for="searchtype_every_ebooks">
+                  Word(s) in title
+                </label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input class="custom-control-input" id="searchtype_exact_ebooks" name="searchtype" type="radio" value="exact">
+                <label class="custom-control-label" for="searchtype_exact_ebooks">
+                  Exact title
+                </label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input class="custom-control-input" id="searchtype_keyword_ebooks" name="searchtype" type="radio" value="keyword">
+                <label class="custom-control-label" for="searchtype_keyword_ebooks">
+                  Keyword search (title, author, publisher&hellip;)
+                </label>
+              </div>
             </div>
-            <div class="custom-control custom-radio custom-control-inline">
-              <input class="custom-control-input" id="searchtype_exact_ebooks" name="searchtype" type="radio" value="exact">
-              <label class="custom-control-label" for="searchtype_exact_ebooks">
-                Exact title
-              </label>
-            </div>
-            <div class="custom-control custom-radio custom-control-inline">
-              <input class="custom-control-input" id="searchtype_keyword_ebooks" name="searchtype" type="radio" value="keyword">
-              <label class="custom-control-label" for="searchtype_keyword_ebooks">
-                Keyword search (title, author, publisher&hellip;)
-              </label>
-            </div>
-          </div>
+          </fieldset>
         </div>
         <div class="form-group">
           <div class="form-row">
@@ -736,36 +746,39 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getVideosForm() {
     $form_videos =
-      '<p class="mb-4">Search across our online video collections.</p>
-      <form action="https://web.lib.unb.ca/eresources/index.php" id="search_results_video" method="get">
+      '<form action="https://web.lib.unb.ca/eresources/index.php" id="search_results_video" method="get">
         <input id="sub_video" name="sub" type="hidden" value="video">
         <div class="form-group">
-          <div class="form-row font-weight-bold ml-1">
-            <div class="custom-control custom-radio custom-control-inline">
-              <input checked="checked" class="custom-control-input" id="searchtype_every_video" name="searchtype" type="radio" value="every_word">
-              <label class="custom-control-label" for="searchtype_every_video">
-                Word(s) in title
-              </label>
+          <fieldset>
+          <legend class="custom-legend mb-4">Search across our online video
+            collections<span class="sr-only">using 1 of the following options</span>.</legend>
+            <div class="form-row font-weight-bold ml-1">
+              <div class="custom-control custom-radio custom-control-inline">
+                <input checked="checked" class="custom-control-input" id="searchtype_every_video" name="searchtype" type="radio" value="every_word">
+                <label class="custom-control-label" for="searchtype_every_video">
+                  Word(s) in title
+                </label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input class="custom-control-input" id="searchtype_browse_video" name="searchtype" type="radio" value="browse">
+                <label class="custom-control-label" for="searchtype_browse_video">
+                  Title starts with
+                </label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input class="custom-control-input" id="searchtype_exact_video" name="searchtype" type="radio" value="exact">
+                <label class="custom-control-label" for="searchtype_exact_video">
+                  Exact title
+                </label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input class="custom-control-input" id="searchtype_keyword_video" name="searchtype" type="radio" value="keyword">
+                <label class="custom-control-label" for="searchtype_keyword_video">
+                  Keyword search
+                </label>
+              </div>
             </div>
-            <div class="custom-control custom-radio custom-control-inline">
-              <input class="custom-control-input" id="searchtype_browse_video" name="searchtype" type="radio" value="browse">
-              <label class="custom-control-label" for="searchtype_browse_video">
-                Title starts with
-              </label>
-            </div>
-            <div class="custom-control custom-radio custom-control-inline">
-              <input class="custom-control-input" id="searchtype_exact_video" name="searchtype" type="radio" value="exact">
-              <label class="custom-control-label" for="searchtype_exact_video">
-                Exact title
-              </label>
-            </div>
-            <div class="custom-control custom-radio custom-control-inline">
-              <input class="custom-control-input" id="searchtype_keyword_video" name="searchtype" type="radio" value="keyword">
-              <label class="custom-control-label" for="searchtype_keyword_video">
-                Keyword search
-              </label>
-            </div>
-          </div>
+          </fieldset>
          </div>
          <div class="form-group">
           <div class="form-row">
