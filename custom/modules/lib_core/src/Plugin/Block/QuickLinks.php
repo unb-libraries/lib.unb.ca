@@ -45,6 +45,17 @@ class QuickLinks extends BlockBase {
           Url::fromUri('https://lib.unb.ca/services/docdel')
         )->toString(),
       ],
+      [
+        '#wrapper_attributes' => [
+          'class' => [
+            'list-inline-item',
+          ],
+        ],
+        '#children' => Link::fromTextAndUrl(
+          $this->t('Recalls'),
+          Url::fromUri('https://lib.unb.ca/services/recalls')
+        )->toString(),
+      ],
       /*[
         '#wrapper_attributes' => [
           'class' => [
