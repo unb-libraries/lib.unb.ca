@@ -52,7 +52,7 @@ class QuickLinks extends BlockBase {
           ],
         ],
         '#children' => Link::fromTextAndUrl(
-          $this->t('Recalls'),
+          Markup::create('<span class="fas fa-undo-alt fa-sm mr-1"></span>' . $this->t('Recalls')),
           Url::fromUri('https://lib.unb.ca/services/recalls')
         )->toString(),
       ],
