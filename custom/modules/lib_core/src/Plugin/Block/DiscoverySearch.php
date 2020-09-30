@@ -388,7 +388,7 @@ class DiscoverySearch extends BlockBase {
       '<form id="category-select">
         <div class="form-group">
           <div class="form-row font-weight-bold">
-            <label class="ml-2" for="category">
+            <label class="ml-2" for="database-subjects">
               Browse databases by subject
             </label>
           </div>
@@ -467,6 +467,7 @@ class DiscoverySearch extends BlockBase {
           'chosen-select',
           'form-control',
         ],
+        'id' => 'database-subjects',
         'name' => 'category',
       ],
     ];
