@@ -2,3 +2,7 @@
     margin: 0;
     font-size: smaller;
 }
+.cke_editable img {
+    max-width: 100%;
+    height: auto;
+}
