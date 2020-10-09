@@ -26,3 +26,10 @@
     font-size: 1rem;
     width: auto;
 }
+.input-group-prepend + .form-type-select {
+    position: relative;
+    width: 100%;
+}
+.input-group .form-type-select .chosen-container-single {
+    width: 100%!important;
+}
