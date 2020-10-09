@@ -652,13 +652,46 @@ ul.field--name-field-categories:before {
       }
     }
   }
+
   figure {
     display: table;
-  }
-  figcaption {
-    display: table-caption;
-    caption-side: bottom;
-    @include css3-prefix(transition, all .2s ease-in-out);
+
+    &.caption-drupal-media {
+      a {
+        .field--name-field-media-image {
+          background-color: #f8f9fa;
+          margin: 0;
+
+          img {
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            margin: 0;
+            max-width: 182px;
+            padding: 0.25rem;
+            @include css3-prefix(transition, all .3s ease-in-out);
+          }
+        }
+
+        &:focus,
+        &:hover {
+          box-shadow: none !important;
+
+          & img {
+            border-color: $link-hover-color;
+          }
+
+          & + figcaption {
+            color: $link-hover-color;
+          }
+        }
+      }
+    }
+
+    figcaption {
+      display: table-caption;
+      caption-side: bottom;
+      @include css3-prefix(transition, all .3s ease-in-out);
+    }
   }
 }
 /* END Seating Zone View */
