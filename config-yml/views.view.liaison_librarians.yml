@@ -563,7 +563,19 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
-      sorts: {  }
+      sorts:
+        field_display_name_value:
+          id: field_display_name_value
+          table: taxonomy_term__field_display_name
+          field: field_display_name_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: standard
       header: {  }
       footer: {  }
       empty: {  }
