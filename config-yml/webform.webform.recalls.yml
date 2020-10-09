@@ -208,6 +208,7 @@ handlers:
   unb_libraries_recall_hwk:
     id: email
     label: 'UNB Libraries Recall (hwk)'
+    notes: ''
     handler_id: unb_libraries_recall_hwk
     status: true
     conditions:
@@ -252,6 +253,7 @@ handlers:
   unb_libraries_recall_law:
     id: email
     label: 'UNB Libraries Recall (law)'
+    notes: ''
     handler_id: unb_libraries_recall_law
     status: true
     conditions:
@@ -296,6 +298,7 @@ handlers:
   sender_confirmation_email_circhi:
     id: email
     label: 'Sender Confirmation Email (circhi)'
+    notes: ''
     handler_id: sender_confirmation_email_circhi
     status: true
     conditions:
@@ -340,6 +343,7 @@ handlers:
   sender_confirmation_email_hwk:
     id: email
     label: 'Sender Confirmation Email (hwk)'
+    notes: ''
     handler_id: sender_confirmation_email_hwk
     status: true
     conditions:
@@ -384,6 +388,7 @@ handlers:
   sender_confirmation_email_lawres:
     id: email
     label: 'Sender Confirmation Email (lawres)'
+    notes: ''
     handler_id: sender_confirmation_email_lawres
     status: true
     conditions:
@@ -428,6 +433,7 @@ handlers:
   unb_libraries_recall_circhi:
     id: email
     label: 'UNB Libraries Recall (circhi)'
+    notes: ''
     handler_id: unb_libraries_recall_circhi
     status: true
     conditions:

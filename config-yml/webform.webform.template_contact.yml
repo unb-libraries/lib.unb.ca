@@ -5,6 +5,8 @@ dependencies:
   enforced:
     module:
       - webform_templates
+_core:
+  default_config_hash: tmZf8rN0VJB9XXtJ2-AadaHu9wdo4vHrEr9fMaoA9Bw
 open: null
 close: null
 weight: 0
@@ -198,6 +200,7 @@ handlers:
   email_confirmation:
     id: email
     label: 'Email confirmation'
+    notes: ''
     handler_id: email_confirmation
     status: true
     conditions: {  }
@@ -234,6 +237,7 @@ handlers:
   email_notification:
     id: email
     label: 'Email notification'
+    notes: ''
     handler_id: email_notification
     status: true
     conditions: {  }
@@ -268,5 +272,3 @@ handlers:
       theme_name: ''
       parameters: {  }
 variants: {  }
-_core:
-  default_config_hash: tmZf8rN0VJB9XXtJ2-AadaHu9wdo4vHrEr9fMaoA9Bw

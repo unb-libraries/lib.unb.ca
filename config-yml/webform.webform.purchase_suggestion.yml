@@ -215,6 +215,7 @@ handlers:
   sj_email:
     id: email
     label: 'SJ Purchase Suggestion'
+    notes: ''
     handler_id: sj_email
     status: true
     conditions:
@@ -254,6 +255,7 @@ handlers:
   sender_confirmation_email:
     id: email
     label: 'Sender Confirmation Email'
+    notes: ''
     handler_id: sender_confirmation_email
     status: true
     conditions: {  }
@@ -290,6 +292,7 @@ handlers:
   fr_purchase_suggestion:
     id: email
     label: 'FR Purchase Suggestion'
+    notes: ''
     handler_id: fr_purchase_suggestion
     status: true
     conditions:

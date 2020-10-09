@@ -217,6 +217,7 @@ handlers:
   email:
     id: email
     label: 'Email Access Services'
+    notes: ''
     handler_id: email
     status: true
     conditions: {  }
@@ -253,6 +254,7 @@ handlers:
   email_1:
     id: email
     label: 'Confirmation Email'
+    notes: ''
     handler_id: email_1
     status: true
     conditions: {  }
