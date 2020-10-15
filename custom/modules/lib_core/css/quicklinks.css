@@ -13,7 +13,7 @@
 }
 @media (min-width: 992px) {
     /* Force visible on large display */
-    #quicklinks-wrapper:not(.show) {
+    #quicklinks-wrapper.collapse:not(.show) {
         display: flex!important;
     }
     #quicklinks-wrapper ul.list-inline li a {
