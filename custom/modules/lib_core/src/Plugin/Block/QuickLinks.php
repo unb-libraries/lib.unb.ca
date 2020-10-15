@@ -96,19 +96,18 @@ class QuickLinks extends BlockBase {
       '#attributes' => [
         'class' => [
           'ml-auto',
-          'mr-auto',
-          'mr-lg-0',
         ],
+        'id' => 'book-btn',
       ],
       '#children' => Link::fromTextAndUrl(
-        Markup::create('<span class="fas fa-calendar-check mr-1"></span>' . t('Book a Seat')),
+        Markup::create('<span class="fas fa-calendar-check mr-1"></span>' . $this->t('Book a Seat')),
         Url::fromUri('https://lib.unb.ca/services/bookings', [
           'attributes' => [
             'class' => [
               'btn',
               'btn-dark',
               'text-nowrap',
-             ],
+            ],
           ],
         ])
       )->toString(),
@@ -130,7 +129,7 @@ class QuickLinks extends BlockBase {
         '#attributes' => [
           'class' => [
             'd-md-inline-block',
-          ]
+          ],
         ],
         '#theme' => 'item_list',
         '#list_type' => 'ul',
