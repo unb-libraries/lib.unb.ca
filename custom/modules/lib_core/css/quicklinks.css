@@ -1,15 +1,36 @@
 #quicklinks-wrapper h3 {
     font-size: 1rem;
+    line-height: 1.5;
 }
 #quicklinks-wrapper ul.list-inline li {
-    padding-top: 0;
+    padding: 0 .33rem .5rem 0;
 }
-#quicklinks-wrapper ul.list-inline li:not(:last-child) {
-    border-right: 1px solid #888;
+#quicklinks-wrapper ul.list-inline li a {
+    margin-right: .33rem;
+}
+.quicklinks .collapse:not(.show) {
+    display: none!important;
 }
 @media (min-width: 992px) {
     /* Force visible on large display */
     #quicklinks-wrapper:not(.show) {
-        display: block;
+        display: flex!important;
+    }
+    #quicklinks-wrapper ul.list-inline li a {
+        margin-right: .5rem;
+    }
+}
+@media (min-width: 768px) {
+    #quicklinks-wrapper ul li:not(:last-child):after {
+        /*border-right: 1px solid #888;*/
+        content: '\2022'
+    }
+    #quicklinks-wrapper ul li {
+        display: inline-block;
+    }
+}
+@media (max-width: 767px) {
+    #quicklinks-wrapper h3 {
+        display: block!important;
     }
 }
