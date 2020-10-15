@@ -23,7 +23,7 @@
 @media (min-width: 768px) {
     #quicklinks-wrapper ul li:not(:last-child):after {
         /*border-right: 1px solid #888;*/
-        content: '\2022'
+        content: '/';
     }
     #quicklinks-wrapper ul li {
         display: inline-block;
