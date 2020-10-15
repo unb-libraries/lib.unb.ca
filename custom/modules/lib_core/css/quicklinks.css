@@ -8,7 +8,7 @@
 #quicklinks-wrapper ul.list-inline li a {
     margin-right: .33rem;
 }
-.quicklinks .collapse:not(.show) {
+#quicklinks .collapse:not(.show) {
     display: none!important;
 }
 @media (min-width: 992px) {
