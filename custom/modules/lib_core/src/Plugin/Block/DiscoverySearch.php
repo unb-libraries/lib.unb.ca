@@ -231,7 +231,12 @@ class DiscoverySearch extends BlockBase {
             <div class="col-md-5 input-group flex-nowrap mb-2">
               <label class="sr-only" for="semester">
                 Course Semester
-              </label>';
+              </label>
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-calendar"></i>
+                </span>
+              </div>';
     $form_reserves .= $this->getReservesSemesters();
     $form_reserves .= '</div>
             <div class="col-md-2 mb-2">
@@ -343,10 +348,15 @@ class DiscoverySearch extends BlockBase {
                 <input class="form-control" id="queryString_WCD" name="queryString" placeholder="Enter search terms" type="search" required>
               </div>
             </div>
-            <div class="col-md-4 mb-2">
+            <div class="col-md-5 mb-2 input-group flex-nowrap">
               <label class="sr-only" for="searchIndex_WCD">
                 Search index
               </label>
+               <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-server"></i>
+                </span>
+              </div>
               <select class="form-control" id="searchIndex_WCD" name="searchIndex">
                 <option value="kw">keyword</option>
                 <option value="ti">title</option>
@@ -393,10 +403,10 @@ class DiscoverySearch extends BlockBase {
             </label>
           </div>
           <div class="form-row">
-            <div class="col-md-10 input-group flex-nowrap mb-1">
+            <div class="col-md-10 input-group flex-nowrap mb-2">
               <div class="input-group-prepend">
                 <span class="input-group-text">
-                  <i class="fas fa-list-ul"></i>
+                  <i class="fas fa-database"></i>
                 </span>
               </div>';
     $subject_form .= $this->getDatabasesSubjects();
@@ -418,10 +428,10 @@ class DiscoverySearch extends BlockBase {
             </label>
           </div>
           <div class="form-row">
-            <div class="col-md-10 input-group flex-nowrap mb-1">
+            <div class="col-md-10 input-group flex-nowrap mb-2">
               <div class="input-group-prepend">
                 <span class="input-group-text">
-                  <i class="fas fa-list-ul"></i>
+                  <i class="fas fa-database"></i>
                 </span>
               </div>';
     $title_form .= $this->getDatabasesTitles();
