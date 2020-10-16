@@ -326,11 +326,11 @@ class DiscoverySearch extends BlockBase {
               <legend class="custom-legend mb-1 mr-3">
                 Search UNB WorldCat:
               </legend>
-              <div class="custom-control custom-radio custom-control-inline font-weight-bold">
+              <div class="custom-control custom-radio custom-control-inline mb-2 mb-lg-0 font-weight-bold">
                 <input checked="checked" class="custom-control-input" id="scope_UNBLibraries_WCD" name="scope" type="radio" value="wz:66413">
                 <label class="custom-control-label" for="scope_UNBLibraries_WCD"><span class="sr-only">Search </span>UNB Libraries</label>
               </div>
-              <div class="custom-control custom-radio custom-control-inline font-weight-bold">
+              <div class="custom-control custom-radio custom-control-inline mb-2 mb-lg-0 font-weight-bold">
                 <input class="custom-control-input" id="scope_worldwide_WCD" name="scope" type="radio" value="">
                 <label class="custom-control-label" for="scope_worldwide_WCD"><span class="sr-only">Search </span>Libraries Worldwide</label>
               </div>
@@ -549,19 +549,19 @@ class DiscoverySearch extends BlockBase {
           <div class="form-row font-weight-bold ml-1">
           <fieldset>
               <legend class="sr-only">Search options</legend>
-              <div class="custom-control custom-radio custom-control-inline">
+              <div class="custom-control custom-radio custom-control-inline mb-2 mb-lg-0">
                 <input checked="checked" class="custom-control-input" id="searchtype_every_journal" name="searchtype" type="radio" value="every_word">
                 <label class="custom-control-label" for="searchtype_every_journal">
                   Word(s) in title
                 </label>
               </div>
-              <div class="custom-control custom-radio custom-control-inline">
+              <div class="custom-control custom-radio custom-control-inline mb-2 mb-lg-0">
                 <input class="custom-control-input" name="searchtype" id="searchtype_browse_journal" type="radio" value="browse">
                 <label class="custom-control-label" for="searchtype_browse_journal">
                   Starts with
                 </label>
               </div>
-              <div class="custom-control custom-radio custom-control-inline">
+              <div class="custom-control custom-radio custom-control-inline mb-2 mb-lg-0">
                 <input class="custom-control-input" name="searchtype" id="searchtype_exact_journal" type="radio" value="exact">
                 <label class="custom-control-label" for="searchtype_exact_journal">
                   </span>Exact
@@ -626,19 +626,19 @@ class DiscoverySearch extends BlockBase {
           <fieldset>
           <legend class="custom-legend mb-4">Search for Reference Materials by title<span class="sr-only"> using 1 of the following options</span>.</legend>
             <div class="form-row font-weight-bold ml-1">
-              <div class="custom-control custom-radio custom-control-inline">
+              <div class="custom-control custom-radio custom-control-inline mb-2 mb-lg-0">
                 <input checked="checked" class="custom-control-input" id="searchtype_every_refmat" name="searchtype" type="radio" value="every_word">
                 <label class="custom-control-label" for="searchtype_every_refmat">
                   Word(s) in title
                 </label>
               </div>
-              <div class="custom-control custom-radio custom-control-inline">
+              <div class="custom-control custom-radio custom-control-inline mb-2 mb-lg-0">
                 <input class="custom-control-input" id="searchtype_browse_refmat" name="searchtype" type="radio" value="browse">
                 <label class="custom-control-label" for="searchtype_browse_refmat">
                   Starts with
                 </label>
               </div>
-              <div class="custom-control custom-radio custom-control-inline">
+              <div class="custom-control custom-radio custom-control-inline mb-2 mb-lg-0">
                 <input class="custom-control-input" id="searchtype_exact_refmat" name="searchtype" type="radio" value="exact">
                 <label class="custom-control-label" for="searchtype_exact_refmat">
                   Exact
@@ -700,19 +700,19 @@ class DiscoverySearch extends BlockBase {
             <legend class="custom-legend mb-4">Search our vast electronic book collections for titles suitable for your computer,
                 tablet or eReader<span class="sr-only"> using 1 of the following options</span>.</legend>
             <div class="form-row font-weight-bold ml-1">
-              <div class="custom-control custom-radio custom-control-inline">
+              <div class="custom-control custom-radio custom-control-inline mb-2 mb-lg-0">
                 <input checked="checked" class="custom-control-input" id="searchtype_every_ebooks" name="searchtype" type="radio" value="every_word">
                 <label class="custom-control-label" for="searchtype_every_ebooks">
                   Word(s) in title
                 </label>
               </div>
-              <div class="custom-control custom-radio custom-control-inline">
+              <div class="custom-control custom-radio custom-control-inline mb-2 mb-lg-0">
                 <input class="custom-control-input" id="searchtype_exact_ebooks" name="searchtype" type="radio" value="exact">
                 <label class="custom-control-label" for="searchtype_exact_ebooks">
                   Exact title
                 </label>
               </div>
-              <div class="custom-control custom-radio custom-control-inline">
+              <div class="custom-control custom-radio custom-control-inline mb-2 mb-lg-0">
                 <input class="custom-control-input" id="searchtype_keyword_ebooks" name="searchtype" type="radio" value="keyword">
                 <label class="custom-control-label" for="searchtype_keyword_ebooks">
                   Keyword search (title, author, publisher&hellip;)
@@ -764,25 +764,25 @@ class DiscoverySearch extends BlockBase {
           <legend class="custom-legend mb-4">Search across our online video
             collections<span class="sr-only">using 1 of the following options</span>.</legend>
             <div class="form-row font-weight-bold ml-1">
-              <div class="custom-control custom-radio custom-control-inline">
+              <div class="custom-control custom-radio custom-control-inline mb-2 mb-lg-0">
                 <input checked="checked" class="custom-control-input" id="searchtype_every_video" name="searchtype" type="radio" value="every_word">
                 <label class="custom-control-label" for="searchtype_every_video">
                   Word(s) in title
                 </label>
               </div>
-              <div class="custom-control custom-radio custom-control-inline">
+              <div class="custom-control custom-radio custom-control-inline mb-2 mb-lg-0">
                 <input class="custom-control-input" id="searchtype_browse_video" name="searchtype" type="radio" value="browse">
                 <label class="custom-control-label" for="searchtype_browse_video">
                   Title starts with
                 </label>
               </div>
-              <div class="custom-control custom-radio custom-control-inline">
+              <div class="custom-control custom-radio custom-control-inline mb-2 mb-lg-0">
                 <input class="custom-control-input" id="searchtype_exact_video" name="searchtype" type="radio" value="exact">
                 <label class="custom-control-label" for="searchtype_exact_video">
                   Exact title
                 </label>
               </div>
-              <div class="custom-control custom-radio custom-control-inline">
+              <div class="custom-control custom-radio custom-control-inline mb-2 mb-lg-0">
                 <input class="custom-control-input" id="searchtype_keyword_video" name="searchtype" type="radio" value="keyword">
                 <label class="custom-control-label" for="searchtype_keyword_video">
                   Keyword search
