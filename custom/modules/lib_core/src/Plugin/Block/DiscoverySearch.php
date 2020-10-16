@@ -217,7 +217,7 @@ class DiscoverySearch extends BlockBase {
       <form action="//web.lib.unb.ca/reserves/index.php/quickSearch" id="searchReserves" method="post">
         <div class="form-group">
           <div class="form-row">
-            <div class="col-md-6 mb-2">
+            <div class="col-md-5 mb-2">
               <label class="sr-only" for="keywords">
                 Search for:
               </label>
@@ -228,7 +228,7 @@ class DiscoverySearch extends BlockBase {
                 <input class="form-control" id="keywords" name="keywords" placeholder="Enter keywords" type="search" value="" required>
               </div>
             </div>
-            <div class="col-md-4 mb-2">
+            <div class="col-md-5 input-group flex-nowrap mb-2">
               <label class="sr-only" for="semester">
                 Course Semester
               </label>';
@@ -332,7 +332,7 @@ class DiscoverySearch extends BlockBase {
             </div>
           </fieldset>
           <div class="form-row">
-            <div class="col-md-6 mb-2">
+            <div class="col-md-5 mb-2">
               <label class="sr-only" for="queryString_WCD">
                 Search for:
               </label>
@@ -565,7 +565,7 @@ class DiscoverySearch extends BlockBase {
             <label class="sr-only" for="title_journal">
               Title
             </label>
-            <div class="col-md-9 mb-2">
+            <div class="col-md-10 mb-2">
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
@@ -642,7 +642,7 @@ class DiscoverySearch extends BlockBase {
             <label class="sr-only" for="title_refmat">
               Title
             </label>
-            <div class="col-md-9 mb-2">
+            <div class="col-md-10 mb-2">
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
@@ -716,7 +716,7 @@ class DiscoverySearch extends BlockBase {
             <label class="sr-only" for="title_ebooks">
               Title
             </label>
-            <div class="col-md-9 mb-2">
+            <div class="col-md-10 mb-2">
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
