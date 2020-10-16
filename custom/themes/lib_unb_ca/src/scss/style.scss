@@ -431,7 +431,7 @@ ul.field--name-field-categories:before {
     margin: 3rem 2.5rem;
 
     .form-group {
-      margin-bottom: .5rem;
+      margin-bottom: .75rem;
     }
 
     .form-select {
@@ -454,10 +454,9 @@ ul.field--name-field-categories:before {
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
         /* Match form margin */
-        left: 0;
-        margin-left: 5px;
-        margin-top: .25rem;
-        padding: 0.375rem 0.75rem;
+        left: .25rem;
+        top: .25rem;
+        padding: 0.56rem 0.75rem;
         position: absolute;
         white-space: nowrap;
         z-index: -1;
@@ -492,12 +491,32 @@ ul.field--name-field-categories:before {
       padding-left: .75rem;
       padding-right: .75rem;
     }
+    .form-select {
+      font-size: 1.25rem;
+      line-height: initial;
 
-    .js-form-item-query {
+      &.chosen-container {
+        width: 100%!important;
+
+        .chosen-single {
+          span {
+            margin-top: 3px;
+          }
+
+          div b {
+            background-position: 2px .5rem;
+          }
+        }
+      }
+      &.chosen-with-drop .chosen-single div b {
+        background-position: -16px .5rem;
+      }
+    }
+    #edit-query {
       &:before {
         font-size: 1.25rem;
         margin-left: -0.4rem;
-        padding: .38rem 1rem;
+        padding: .5rem 1rem;
       }
 
       input {
