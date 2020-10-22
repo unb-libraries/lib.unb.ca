@@ -209,7 +209,7 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     case 'webform_submission_recalls_add_form':
       $form['#attached']['library'][] = 'lib_core/chosen-bootstrap';
       $form['elements']['step_1']['personal_information']['barcode']['#ajax'] = [
-        'callback' => '_lib_core_recall_barcode_validate_handler',
+        'callback' => '_lib_core_recall_barcode_ajax_handler',
         'disable-refocus' => TRUE,
         'event' => 'blur',
         'progress' => [
@@ -439,7 +439,7 @@ function _lib_core_get_guide_categories() {
  * @return \Drupal\Core\Ajax\AjaxResponse $ajax_response
  *   Ajax response, based on barcode validation.
  */
-function _lib_core_recall_barcode_validate_handler(array &$form, FormStateInterface $form_state) {
+function _lib_core_recall_barcode_ajax_handler(array &$form, FormStateInterface $form_state) {
   $ajax_response = new AjaxResponse();
   $biblio_disabled = true;
 
@@ -468,7 +468,7 @@ function _lib_core_recall_barcode_validate_handler(array &$form, FormStateInterf
       $name = $email = null;
       break;
     default:
-      $text = 'Enter your barcode number <em>(the small number found below your picture on your <a data-target="#ucardModal" data-toggle="modal" href="#"> <em class="fa-id-card fas ml-1">&nbsp;</em><strong>UCard</strong>)</a></em>
+      $text = 'Enter your barcode number to have the system autofill personal information fields <em>(use the small number found below your picture on your <a data-target="#ucardModal" data-toggle="modal" href="#"> <em class="fa-id-card fas ml-1">&nbsp;</em><strong>UCard</strong>)</a></em>
         <div aria-hidden="true" aria-labelledby="ucardModalLabel" class="modal fade theme-dark" id="ucardModal" role="dialog" tabindex="-1">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -500,11 +500,7 @@ function _lib_core_recall_barcode_validate_handler(array &$form, FormStateInterf
  *   The validation response array, including barcode validation status and if valid, user name and email.
  */
 function _lib_core_validate_barcode($barcode) {
-  $validation_response = [
-    'status' => null,
-    'name' => null,
-    'email' => null,
-  ];
+  $validation_response = null;
 
   if (isset($barcode) && !empty($barcode)) {
     $oclcApiIDMWskey = '';
@@ -521,6 +517,7 @@ function _lib_core_validate_barcode($barcode) {
     $basicAuth = new HttpBasicAuthOptionProvider();
     $provider = new GenericProvider($authOpts, ['optionProvider' => $basicAuth]);
     $inst = '133054';
+
     try {
       $accessToken = $provider->getAccessToken('client_credentials', ['scope' => "SCIM"]);
       $headers = [
