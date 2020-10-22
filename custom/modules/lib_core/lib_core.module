@@ -16,6 +16,7 @@ use Drupal\views\ViewExecutable;
 use League\OAuth2\Client\OptionProvider\HttpBasicAuthOptionProvider;
 use League\OAuth2\Client\Provider\GenericProvider;
 use GuzzleHttp\Client;
+use Scriptotek\Marc\Record;
 
 /**
  * Implements hook_theme().
@@ -215,6 +216,15 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
           'type' => 'fullscreen',
         ],
       ];
+      $form['elements']['step_2']['bibliographic_information']['oclc_number']['#ajax'] = [
+        'callback' => '_lib_core_recall_ocn_ajax_handler',
+        'disable-refocus' => TRUE,
+        'event' => 'blur',
+        'progress' => [
+          'type' => 'fullscreen',
+        ],
+      ];
+
       $form['#validate'][] = '_lib_core_recalls_validate_handler';
       break;
 
@@ -543,6 +553,118 @@ function _lib_core_validate_barcode($barcode) {
         }
       } else {
         $validation_response['status'] = 'invalid';
+      }
+    } catch (Throwable $error) {
+      $validation_response['status'] = 'error';
+      \Drupal::logger('lib_core')->error($error);
+    }
+  }
+
+  return $validation_response;
+}
+
+/**
+ * Custom Recall Form validation.
+ *
+ * @param array $form
+ *   The publication form array.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The object containing the current state of the Recalls form.
+ * @return \Drupal\Core\Ajax\AjaxResponse $ajax_response
+ *   Ajax response, based on barcode validation.
+ */
+function _lib_core_recall_ocn_ajax_handler(array &$form, FormStateInterface $form_state) {
+  $ajax_response = new AjaxResponse();
+  $ocn = $form_state->getValue('oclc_number');
+
+  // Parse validation response - generate barcode description text, name & email values, toggle biblio fieldset.
+  $response = _lib_core_validate_ocn($ocn);
+  switch ($response['status']) {
+    case 'valid':
+      $text = '<span class="text-success valid">
+               <span class="fas fa-check-circle mr-1"></span>OCN number found</span>';
+      $title = $response['title'];
+      $author = $response['author'];
+      $volume = $response['volume'];
+      $call = $response['call'];
+      break;
+    case 'invalid':
+      $text = '<i class="fas fa-check mr-1"></i>OCN Not Found';
+      $title = $author = $volume = $call = null;
+      break;
+    case 'error':
+      $text = '<span class="text-danger has-error"><span class="fas fa-exclamation-circle mr-1"></span>
+               Unable to validate oclc number at this time</span>';
+      $title = $author = $volume = $call = null;
+      break;
+    default:
+      $text = 'Enter an OCLC Control Number to have the system autofill bibliographic information fields';
+  }
+
+  $ajax_response->addCommand(new HtmlCommand('.form-item-oclc-number .webform-element-description', $text));
+  $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-title"]', 'val', array($title)));
+  $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-author"]', 'val', array($author)));
+  $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-volume"]', 'val', array($volume)));
+  //$ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-call-number"]', 'val', array($call)));
+
+  return $ajax_response;
+}
+
+/**
+ * Retrieve bibliographic info, given a valid OCLC number.
+ *
+ * @param string $ocn
+ * The OCLC number.
+ *
+ * @return array $validation_response
+ *   The validation response array, including oclc # validation status and if valid, biblio info.
+ */
+function _lib_core_validate_ocn($ocn) {
+  $validation_response = null;
+
+  if (isset($ocn) && !empty(trim($ocn))) {
+    $oclcApiWskey = '';
+    $oclcApiSecret = '';
+    include '/app/html/sites/all/settings/settings.oclc-api.inc';
+
+    $authOpts = [
+      'clientId' => $oclcApiWskey,
+      'clientSecret' => $oclcApiSecret,
+      'urlAuthorize' => 'https://oauth.oclc.org/auth',
+      'urlAccessToken' => 'https://oauth.oclc.org/token',
+      'urlResourceOwnerDetails' => '',
+    ];
+    $basicAuth = new HttpBasicAuthOptionProvider();
+    $provider = new GenericProvider($authOpts, ['optionProvider' => $basicAuth]);
+    $inst = '133054';
+
+    try {
+      $accessToken = $provider->getAccessToken('client_credentials', ['scope' => "WMS_Availability context:{$inst}"]);
+      $headers = ['Authorization' => "Bearer " . $accessToken->getToken()];
+      $url = "https://worldcat.org/circ/availability/sru/service?x-registryId={$inst}&query=no:ocm{$ocn}";
+
+      $client = new Client();
+      $response = $client->request('GET', $url, ['headers' => $headers]);
+
+      $xml = new \SimpleXMLElement((string)$response->getBody());
+      if ($xml->numberOfRecords == 0) {
+        $validation_response['status'] = 'invalid';
+      } else {
+        $opacRec = $xml->records->record->recordData->opacRecord;
+        $record = Record::fromSimpleXMLElement($opacRec->bibliographicRecord->record);
+        $validation_response = [
+          'status' => 'valid',
+          'title' => (string)$record->getTitle(),
+          'author' => implode(', ', $record->getCreators()),
+          'volume' => $record->query('490$v')->text(),
+          'call' => '',
+        ];
+
+        foreach ($opacRec->holdings->holding as $holding) {
+          // $location = (explode(':', (string)$holding->shelvingLocation, 2))[0];
+          $validation_response['call'] .= (string)$holding->callNumber . ', ';
+        }
+        $validation_response['call'] = substr($validation_response['call'], 0, -2);
       }
     } catch (Throwable $error) {
       $validation_response['status'] = 'error';

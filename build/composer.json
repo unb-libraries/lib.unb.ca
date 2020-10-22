@@ -259,6 +259,7 @@
         "jquery/json2": "dev-master",
         "jquery/pause": "dev-master",
         "league/oauth2-client": "^2.4",
+        "scriptotek/marc": "^2.1",
         "unb-libraries/calendar_hours": "dev-8.x-1.x",
         "unb-libraries/alert_scheduler": "dev-8.x-1.x",
         "unb-libraries/drupal-builder": "^8.0.0",
