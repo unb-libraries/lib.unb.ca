@@ -586,7 +586,8 @@ function _lib_core_recall_ocn_ajax_handler(array &$form, FormStateInterface $for
       $call = $response['call'];
       break;
     case 'invalid':
-      $text = '<i class="fas fa-times-circle mr-1"></i>OCLC number invalid';
+      $text = '<span class="text-danger invalid"><span class="fas fa-times-circle mr-1"></span>
+               OCLC number invalid';
       $title = $author = $volume = $call = null;
       break;
     case 'error':
