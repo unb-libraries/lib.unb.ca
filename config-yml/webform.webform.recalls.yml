@@ -7,7 +7,6 @@ dependencies:
 third_party_settings:
   honeypot:
     honeypot: true
-    time_restriction: true
 open: null
 close: null
 weight: 0
