@@ -458,7 +458,7 @@ function _lib_core_recall_barcode_ajax_handler(array &$form, FormStateInterface 
       $name = $validation_response['name'];
       break;
     case 'invalid':
-      $text = '<span class="text-danger invalid"><span class="fas fa-exclamation-circle mr-1"></span>
+      $text = '<span class="text-danger invalid"><span class="fas fa-times-circle mr-1"></span>
                User barcode not validated - only current students, faculty, and staff may recall an item</span>';
       $name = $email = null;
       break;
@@ -579,19 +579,19 @@ function _lib_core_recall_ocn_ajax_handler(array &$form, FormStateInterface $for
   switch ($response['status']) {
     case 'valid':
       $text = '<span class="text-success valid">
-               <span class="fas fa-check-circle mr-1"></span>OCN number found</span>';
+               <span class="fas fa-check-circle mr-1"></span>OCLC number valid</span>';
       $title = $response['title'];
       $author = $response['author'];
       $volume = $response['volume'];
       $call = $response['call'];
       break;
     case 'invalid':
-      $text = '<i class="fas fa-check mr-1"></i>OCN Not Found';
+      $text = '<i class="fas fa-times-circle mr-1"></i>OCLC number invalid';
       $title = $author = $volume = $call = null;
       break;
     case 'error':
       $text = '<span class="text-danger has-error"><span class="fas fa-exclamation-circle mr-1"></span>
-               Unable to validate oclc number at this time</span>';
+               Unable to validate OCLC number at this time</span>';
       $title = $author = $volume = $call = null;
       break;
     default:
