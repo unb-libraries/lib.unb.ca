@@ -603,7 +603,7 @@ function _lib_core_recall_ocn_ajax_handler(array &$form, FormStateInterface $for
   $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-title"]', 'val', array($title)));
   $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-author"]', 'val', array($author)));
   $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-volume"]', 'val', array($volume)));
-  //$ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-call-number"]', 'val', array($call)));
+  $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-call-number"]', 'val', array($call)));
 
   return $ajax_response;
 }
@@ -659,10 +659,13 @@ function _lib_core_validate_ocn($ocn) {
         ];
 
         foreach ($opacRec->holdings->holding as $holding) {
-          // $location = (explode(':', (string)$holding->shelvingLocation, 2))[0];
-          $validation_response['call'] .= (string)$holding->callNumber . ', ';
+          $location = (explode(':', (string)$holding->shelvingLocation, 2))[0];
+          $call['items'][] = ['location' => $location, 'callNum' => (string)$holding->callNumber];
         }
-        $validation_response['call'] = substr($validation_response['call'], 0, -2);
+        if (count($call['items']) == 1) {
+          $validation_response['call'] = $call['items'][0]['callNum'];
+        }
+
       }
     } catch (Throwable $error) {
       $validation_response['status'] = 'error';
