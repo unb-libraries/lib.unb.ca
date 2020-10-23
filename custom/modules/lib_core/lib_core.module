@@ -584,16 +584,17 @@ function _lib_core_recall_ocn_ajax_handler(array &$form, FormStateInterface $for
       $author = $response['author'];
       $volume = $response['volume'];
       $call = $response['call'];
+      $shelving = $response['shelving'];
       break;
     case 'invalid':
       $text = '<span class="text-danger invalid"><span class="fas fa-times-circle mr-1"></span>
                OCLC number invalid';
-      $title = $author = $volume = $call = null;
+      $title = $author = $volume = $call = $shelving = null;
       break;
     case 'error':
       $text = '<span class="text-danger has-error"><span class="fas fa-exclamation-circle mr-1"></span>
                Unable to validate OCLC number at this time</span>';
-      $title = $author = $volume = $call = null;
+      $title = $author = $volume = $call = $shelving = null;
       break;
     default:
       $text = 'Enter an OCLC Control Number to have the system autofill bibliographic information fields';
@@ -604,6 +605,9 @@ function _lib_core_recall_ocn_ajax_handler(array &$form, FormStateInterface $for
   $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-author"]', 'val', array($author)));
   $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-volume"]', 'val', array($volume)));
   $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-call-number"]', 'val', array($call)));
+  // Trigger chosen single select selection.
+  $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-shelving-location"]', 'val', array($shelving)));
+  $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-shelving-location"]', 'trigger', ['chosen:updated']));
 
   return $ajax_response;
 }
@@ -656,6 +660,7 @@ function _lib_core_validate_ocn($ocn) {
           'author' => implode(', ', $record->getCreators()),
           'volume' => $record->query('490$v')->text(),
           'call' => '',
+          'shelving' => '',
         ];
 
         foreach ($opacRec->holdings->holding as $holding) {
@@ -664,8 +669,8 @@ function _lib_core_validate_ocn($ocn) {
         }
         if (count($call['items']) == 1) {
           $validation_response['call'] = $call['items'][0]['callNum'];
+          $validation_response['shelving'] = $call['items'][0]['location'];
         }
-
       }
     } catch (Throwable $error) {
       $validation_response['status'] = 'error';
