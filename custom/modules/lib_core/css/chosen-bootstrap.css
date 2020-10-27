@@ -46,3 +46,14 @@
 .chosen-container-active.chosen-with-drop .chosen-single div b {
     background-position: -16px .5rem;
 }
+
+/* Webform > Select other field + Chosen override */
+.webform-select-other .chosen-container-single {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
