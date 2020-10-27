@@ -210,7 +210,7 @@
         "drupal/block_field": "1.0-rc1",
         "drupal/bootstrap_barrio": "5.1.4",
         "drupal/cache_control_override": "1.0-alpha2",
-        "drupal/chosen": "3.0.0",
+        "drupal/chosen": "3.0.1",
         "drupal/ckeditor_codemirror": "2.3",
         "drupal/colorbutton": "1.2",
         "drupal/config_update": "1.5",
