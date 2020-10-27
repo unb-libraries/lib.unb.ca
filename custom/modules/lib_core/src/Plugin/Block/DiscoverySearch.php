@@ -460,7 +460,7 @@ class DiscoverySearch extends BlockBase {
   protected function getDatabasesSubjects() {
     // Set default empty option.
     $options = [
-      '' => 'Select a subject',
+      '' => '- Please choose an option -',
     ];
 
     $categories = _lib_core_get_guide_categories();
@@ -491,7 +491,7 @@ class DiscoverySearch extends BlockBase {
   protected function getDatabasesTitles() {
     // Set default empty option.
     $options = [
-      '' => 'Choose a database title',
+      '' => '- Please choose an option -',
     ];
 
     try {
