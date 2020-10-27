@@ -208,7 +208,7 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     case 'webform_submission_recalls_add_form':
       $form['#attached']['library'][] = 'lib_core/chosen-bootstrap';
       $form['elements']['step_1']['personal_information']['barcode']['#ajax'] = [
-        'callback' => '_lib_core_recall_barcode_ajax_handler',
+        'callback' => '_lib_core_recalls_barcode_ajax_handler',
         'disable-refocus' => TRUE,
         'event' => 'blur',
         'progress' => [
@@ -216,7 +216,7 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
         ],
       ];
       $form['elements']['step_2']['bibliographic_information']['oclc_number']['#ajax'] = [
-        'callback' => '_lib_core_recall_ocn_ajax_handler',
+        'callback' => '_lib_core_recalls_ocn_ajax_handler',
         'disable-refocus' => TRUE,
         'event' => 'blur',
         'progress' => [
@@ -438,7 +438,7 @@ function _lib_core_get_guide_categories() {
  * @return \Drupal\Core\Ajax\AjaxResponse $ajax_response
  *   Ajax response, based on barcode validation.
  */
-function _lib_core_recall_barcode_ajax_handler(array &$form, FormStateInterface $form_state) {
+function _lib_core_recalls_barcode_ajax_handler(array &$form, FormStateInterface $form_state) {
   $ajax_response = new AjaxResponse();
   $biblio_disabled = true;
 
@@ -447,7 +447,7 @@ function _lib_core_recall_barcode_ajax_handler(array &$form, FormStateInterface 
   $barcode = $form_state->getValue('barcode');
 
   // Parse validation response - generate barcode description text, name & email values, toggle biblio fieldset.
-  $validation_response = _lib_core_validate_barcode($barcode);
+  $validation_response = _lib_core_validate_recalls_barcode($barcode);
   switch ($validation_response['status']) {
     case 'valid':
       $biblio_disabled = false;
@@ -490,6 +490,59 @@ function _lib_core_recall_barcode_ajax_handler(array &$form, FormStateInterface 
 }
 
 /**
+ * Custom Recall Form validation.
+ *
+ * @param array $form
+ *   The publication form array.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The object containing the current state of the Recalls form.
+ * @return \Drupal\Core\Ajax\AjaxResponse $ajax_response
+ *   Ajax response, based on barcode validation.
+ */
+function _lib_core_recalls_ocn_ajax_handler(array &$form, FormStateInterface $form_state) {
+  $ajax_response = new AjaxResponse();
+  $ocn = $form_state->getValue('oclc_number');
+
+  // Parse validation response - generate barcode description text, name & email values, toggle biblio fieldset.
+  $response = _lib_core_validate_recalls_ocn($ocn);
+  switch ($response['status']) {
+    case 'valid':
+      $text = '<span class="text-success valid">
+               <span class="fas fa-check-circle mr-1"></span>OCLC number found</span>';
+      $title = $response['title'];
+      $author = $response['author'];
+      $volume = $response['volume'];
+      $call = $response['call'];
+      $shelving = $response['shelving'];
+      break;
+    case 'invalid':
+      $text = '<span class="text-danger invalid"><span class="fas fa-times-circle mr-1"></span>
+               OCLC number not found';
+      $title = $author = $volume = $call = $shelving = null;
+      break;
+    case 'error':
+      $text = '<span class="text-danger has-error"><span class="fas fa-exclamation-circle mr-1"></span>
+               Unable to validate OCLC number at this time</span>';
+      $title = $author = $volume = $call = $shelving = null;
+      break;
+    default:
+      $text = 'Enter an OCLC Control Number to have the system autofill bibliographic information fields';
+  }
+
+  $ajax_response->addCommand(new HtmlCommand('.form-item-oclc-number .webform-element-description', $text));
+  $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-title"]', 'val', array($title)));
+  $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-author"]', 'val', array($author)));
+  $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-volume"]', 'val', array($volume)));
+  $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-call-number"]', 'val', array($call)));
+  // Trigger chosen single select selection.
+  if (($shelving)) {
+    $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-shelving-location"]', 'val', array($shelving)));
+    $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-shelving-location"]', 'trigger', ['chosen:updated']));
+  }
+  return $ajax_response;
+}
+
+/**
  * Validate a UNB/STU user, given their barcode number.
  *
  * @param string $barcode
@@ -498,7 +551,7 @@ function _lib_core_recall_barcode_ajax_handler(array &$form, FormStateInterface 
  * @return array $validation_response
  *   The validation response array, including barcode validation status and if valid, user name and email.
  */
-function _lib_core_validate_barcode($barcode) {
+function _lib_core_validate_recalls_barcode($barcode) {
   $validation_response = null;
 
   if (isset($barcode) && !empty($barcode)) {
@@ -560,58 +613,6 @@ function _lib_core_validate_barcode($barcode) {
 }
 
 /**
- * Custom Recall Form validation.
- *
- * @param array $form
- *   The publication form array.
- * @param \Drupal\Core\Form\FormStateInterface $form_state
- *   The object containing the current state of the Recalls form.
- * @return \Drupal\Core\Ajax\AjaxResponse $ajax_response
- *   Ajax response, based on barcode validation.
- */
-function _lib_core_recall_ocn_ajax_handler(array &$form, FormStateInterface $form_state) {
-  $ajax_response = new AjaxResponse();
-  $ocn = $form_state->getValue('oclc_number');
-
-  // Parse validation response - generate barcode description text, name & email values, toggle biblio fieldset.
-  $response = _lib_core_validate_ocn($ocn);
-  switch ($response['status']) {
-    case 'valid':
-      $text = '<span class="text-success valid">
-               <span class="fas fa-check-circle mr-1"></span>OCLC number found</span>';
-      $title = $response['title'];
-      $author = $response['author'];
-      $volume = $response['volume'];
-      $call = $response['call'];
-      $shelving = $response['shelving'];
-      break;
-    case 'invalid':
-      $text = '<span class="text-danger invalid"><span class="fas fa-times-circle mr-1"></span>
-               OCLC number not found';
-      $title = $author = $volume = $call = $shelving = null;
-      break;
-    case 'error':
-      $text = '<span class="text-danger has-error"><span class="fas fa-exclamation-circle mr-1"></span>
-               Unable to validate OCLC number at this time</span>';
-      $title = $author = $volume = $call = $shelving = null;
-      break;
-    default:
-      $text = 'Enter an OCLC Control Number to have the system autofill bibliographic information fields';
-  }
-
-  $ajax_response->addCommand(new HtmlCommand('.form-item-oclc-number .webform-element-description', $text));
-  $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-title"]', 'val', array($title)));
-  $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-author"]', 'val', array($author)));
-  $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-volume"]', 'val', array($volume)));
-  $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-call-number"]', 'val', array($call)));
-  // Trigger chosen single select selection.
-  $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-shelving-location"]', 'val', array($shelving)));
-  $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-shelving-location"]', 'trigger', ['chosen:updated']));
-
-  return $ajax_response;
-}
-
-/**
  * Retrieve bibliographic info, given a valid OCLC number.
  *
  * @param string $ocn
@@ -620,7 +621,7 @@ function _lib_core_recall_ocn_ajax_handler(array &$form, FormStateInterface $for
  * @return array $validation_response
  *   The validation response array, including oclc # validation status and if valid, biblio info.
  */
-function _lib_core_validate_ocn($ocn) {
+function _lib_core_validate_recalls_ocn($ocn) {
   $validation_response = null;
 
   if (isset($ocn) && !empty(trim($ocn))) {
@@ -680,6 +681,55 @@ function _lib_core_validate_ocn($ocn) {
   return $validation_response;
 }
 
+function _lib_core_validate_recalls_shelving($shelving_option) {
+  $eligible_recall_shelving_options = [
+    'ENG-NONPRNT' => 'ENG-NONPRNT: Electronic media and other non-paper materials (Ask at Service Desk)',
+    'ENG-SENRPT' => 'ENG-SENRPT: Senior Report Collection',
+    'ENG-SPEC' => 'ENG-SPEC: Special Collection',
+    'ENG-STACKS' => 'ENG-STACKS: Main Collection',
+    'ENG-STOR' => 'ENG-STOR: Storage (Ask at Service Desk)',
+    'ENG-STORA' => 'ENG-STORA: Storage (Ask at Service Desk)',
+    'ENG-THS' => 'ENG-THS: Theses',
+    'ENG-WIE' => 'ENG-WIE: Women in Engineering (WiE) Collection',
+    'HWK-BEAT' => 'HWK-BEAT: Beat Generation Collection',
+    'HWK-FOLIO' => 'HWK-FOLIO: Folio Shelves',
+    'HWK-SFF' => 'HWK-SFF: Science Fiction & Fantasy Collection (Ask Staff)',
+    'HWK-SFFA' => 'HWK-SFFA: Science Fiction & Fantasy Authors Collection',
+    'HWK-SFWA' => 'HWK-SFWA: Science Fiction Writers of America Collection',
+    'HWK-SFWA2' => 'HWK-SFWA: SFWA Collection (Ask Staff)',
+    'HWK-STACKS' => 'HWK-STACKS: Main Collection',
+    'HWK-STCAN' => 'HWK-STCAN: Statistics Canada Collection',
+    'HWK-STOR' => 'HWK-STOR: Storage (Ask Staff)',
+    'HIL-BBKRM' => 'HIL-BBKRM: Beaverbrook Room, 4th Floor',
+    'HIL-CIRCDSK' => 'HIL-CIRCDSK: CD/DVD Materials (Ask at Service Desk), 1st Floor',
+    'HIL-DBLOS' => 'HIL-DBLOS: Double Oversize, 4th Floor',
+    'HIL-EASY' => 'HIL-EASY: Easy Books',
+    'HIL-GOV' => 'HIL-GOV: Government Documents, Basement (Ask at Desk)',
+    'HIL-GOVCD' => 'HIL-GOVCD: Government Documents CD-ROM, Basement (Ask at Desk)',
+    'HIL-GOVCD2' => 'HIL-GOVCD: Government Documents CD-ROM, Basement (Ask at Desk) (Video)',
+    'HIL-GOVOS' => 'HIL-GOVOS: Government Documents Oversize, Basement (Ask at Desk) ',
+    'HIL-JUV' => 'HIL-JUV: Juvenile Books, Dewey and Fiction, 4th Floor',
+    'HIL-JUVOS' => 'HIL-JUVOS: Juvenile Books Oversize, Dewey, Fiction and Easy, 4th Floor',
+    'HIL-MAP' => 'HIL-MAP: Map Area (Ask at Desk)',
+    'HIL-MAPBK' => 'HIL-MAPBK: Map Area Books, Basement',
+    'HIL-MAPCD' => 'HIL-MAPCD: Map CD-ROM (Ask at Desk)',
+    'HIL-MAPOS' => 'HIL-MAPOS: Map Area Oversize (Ask at Desk)',
+    'HIL-OS' => 'HIL-OS: Oversize',
+    'HIL-STACKS' => 'HIL-STACKS: Main Collection',
+    'HIL-STORA' => 'HIL-STORA: Storage (Ask at Service Desk)',
+    'HIL-THS' => 'HIL-THS: Education Theses, 4th Floor',
+    'STORAGE' => 'STORAGE: Storage Facility',
+    'LAW-STACKS' => 'LAW-STACKS: Main Collections',
+    'LAW-STOR' => 'LAW-STOR: Storage (Ask at Circulation Desk)',
+    'SCI-FORF' => 'SCI-FORF: Forestry Files',
+    'SCI-OS' => 'SCI-OS: Oversize',
+    'SCI-STACKS' => 'SCI-STACKS: Main Collection',
+    'SCI-STOR' => 'SCI-STOR: Self-Serve Storage',
+  ];
+
+  return array_key_exists($shelving_option, $eligible_recall_shelving_options);
+}
+
 /**
  * Custom Publication Form Daterange validation.
  *
@@ -690,7 +740,7 @@ function _lib_core_validate_ocn($ocn) {
  */
 function _lib_core_recalls_validate_handler(array &$form, FormStateInterface $form_state) {
   $barcode_submission = $form_state->getValue('barcode');
-  $validation_response = _lib_core_validate_barcode($barcode_submission);
+  $validation_response = _lib_core_validate_recalls_barcode($barcode_submission);
 
   switch ($validation_response['status']) {
     case 'invalid':
