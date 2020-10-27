@@ -188,7 +188,7 @@ ui:
   contribute_disabled: false
 libraries:
   excluded_libraries:
-    - jquery.chosen
+    - choices
     - jquery.select2
 requirements:
   cdn: true
