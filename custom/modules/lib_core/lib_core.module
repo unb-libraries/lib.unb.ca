@@ -508,7 +508,8 @@ function _lib_core_recalls_ocn_ajax_handler(array &$form, FormStateInterface $fo
   switch ($response['status']) {
     case 'valid':
       $text = '<span class="text-success valid">
-               <span class="fas fa-check-circle mr-1"></span>OCLC number found and the item is eligible for recall</span>';
+               <span class="fas fa-check-circle mr-1"></span>OCLC number <code>' . $ocn .
+              '</code> is eligible for recall</span>';
       $title = $response['title'];
       $author = $response['author'];
       $volume = $response['volume'];
@@ -517,19 +518,20 @@ function _lib_core_recalls_ocn_ajax_handler(array &$form, FormStateInterface $fo
       break;
     case 'ineligible':
       $text = '<span class="text-danger invalid">
-               <span class="fas fa-times-circle mr-1"></span>OCLC number found but this item is ineligible for recall</span>';
+               <span class="fas fa-times-circle mr-1"></span>OCLC number <code>' . $ocn .
+              '</code> is ineligible for recall</span>';
       $title = $response['title'];
       $author = $response['author'];
       $volume = $response['volume'];
       $call = $response['call'];
       break;
     case 'invalid':
-      $text = '<span class="text-danger invalid"><span class="fas fa-times-circle mr-1"></span>
-               OCLC number not found';
+      $text = '<span class="text-danger invalid"><span class="fas fa-times-circle"></span>
+               OCLC number <code>' . $ocn . '</code> was not found';
       $title = $author = $volume = $call = $shelving = null;
       break;
     case 'error':
-      $text = '<span class="text-danger has-error"><span class="fas fa-exclamation-circle mr-1"></span>
+      $text = '<span class="text-danger has-error"><span class="fas fa-exclamation-circle"></span>
                Unable to validate OCLC number at this time</span>';
       $title = $author = $volume = $call = $shelving = null;
       break;
@@ -543,8 +545,11 @@ function _lib_core_recalls_ocn_ajax_handler(array &$form, FormStateInterface $fo
   $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-volume"]', 'val', array($volume)));
   $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-call-number"]', 'val', array($call)));
   // Trigger chosen single select selection.
-  if (($shelving)) {
+  if ($shelving) {
     $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-shelving-location"]', 'val', array($shelving)));
+    $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-shelving-location"]', 'trigger', ['chosen:updated']));
+  } else {
+    $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-shelving-location"] option', 'prop', array('selected', false)));
     $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-shelving-location"]', 'trigger', ['chosen:updated']));
   }
   return $ajax_response;
@@ -662,26 +667,31 @@ function _lib_core_validate_recalls_ocn($ocn) {
       } else {
         $opacRec = $xml->records->record->recordData->opacRecord;
         $record = Record::fromSimpleXMLElement($opacRec->bibliographicRecord->record);
-        $validation_response = [
-          'status' => 'valid',
-          'title' => (string)$record->getTitle(),
-          'author' => implode(', ', $record->getCreators()),
-          'volume' => $record->query('490$v')->text(),
-          'call' => '',
-          'shelving' => '',
-        ];
 
-        foreach ($opacRec->holdings->holding as $holding) {
-          $location = (explode(':', (string)$holding->shelvingLocation, 2))[0];
-          $call['items'][] = ['location' => $location, 'callNum' => (string)$holding->callNumber];
-        }
-        if (count($call['items']) == 1) {
-          $validation_response['call'] = $call['items'][0]['callNum'];
-          if (_lib_core_validate_recalls_shelving($call['items'][0]['location'])) {
-            $validation_response['shelving'] = $call['items'][0]['location'];
-          } else {
-            $validation_response['status'] = 'ineligible';
+        if (!empty($opacRec->holdings)) {
+          $validation_response = [
+            'status' => 'valid',
+            'title' => (string)$record->getTitle(),
+            'author' => implode(', ', $record->getCreators()),
+            'volume' => $record->query('490$v')->text(),
+            'call' => '',
+            'shelving' => '',
+          ];
+
+          foreach ($opacRec->holdings->holding as $holding) {
+            $location = (explode(':', (string)$holding->shelvingLocation, 2))[0];
+            $call['items'][] = ['location' => $location, 'callNum' => (string)$holding->callNumber];
           }
+          if (count($call['items']) == 1) {
+            $validation_response['call'] = $call['items'][0]['callNum'];
+            if (_lib_core_validate_recalls_shelving($call['items'][0]['location'])) {
+              $validation_response['shelving'] = $call['items'][0]['location'];
+            } else {
+              $validation_response['status'] = 'ineligible';
+            }
+          }
+        } else {
+          $validation_response['status'] = 'ineligible';
         }
       }
     } catch (Throwable $error) {
@@ -753,7 +763,6 @@ function _lib_core_validate_recalls_shelving($shelving_option) {
 function _lib_core_recalls_validate_handler(array &$form, FormStateInterface $form_state) {
   $barcode_submission = $form_state->getValue('barcode');
   $validation_response = _lib_core_validate_recalls_barcode($barcode_submission);
-
   switch ($validation_response['status']) {
     case 'invalid':
       $form_state->setErrorByName(
@@ -763,4 +772,20 @@ function _lib_core_recalls_validate_handler(array &$form, FormStateInterface $fo
       break;
   }
 
+  $ocn_submission = $form_state->getValue('oclc_number');
+  $validation_response = _lib_core_validate_recalls_ocn($ocn_submission);
+  switch ($validation_response['status']) {
+    case 'ineligible':
+      $form_state->setErrorByName(
+        'oclc_number',
+        t("OCLC number <code>{$ocn_submission}</code> is ineligible for recall")
+      );
+      break;
+    case 'invalid':
+      $form_state->setErrorByName(
+        'oclc_number',
+        t("OCLC number <code>{$ocn_submission}</code> was not found")
+      );
+      break;
+  }
 }
