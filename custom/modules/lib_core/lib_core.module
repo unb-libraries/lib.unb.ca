@@ -508,12 +508,20 @@ function _lib_core_recalls_ocn_ajax_handler(array &$form, FormStateInterface $fo
   switch ($response['status']) {
     case 'valid':
       $text = '<span class="text-success valid">
-               <span class="fas fa-check-circle mr-1"></span>OCLC number found</span>';
+               <span class="fas fa-check-circle mr-1"></span>OCLC number found and the item is eligible for recall</span>';
       $title = $response['title'];
       $author = $response['author'];
       $volume = $response['volume'];
       $call = $response['call'];
       $shelving = $response['shelving'];
+      break;
+    case 'ineligible':
+      $text = '<span class="text-danger invalid">
+               <span class="fas fa-times-circle mr-1"></span>OCLC number found but this item is ineligible for recall</span>';
+      $title = $response['title'];
+      $author = $response['author'];
+      $volume = $response['volume'];
+      $call = $response['call'];
       break;
     case 'invalid':
       $text = '<span class="text-danger invalid"><span class="fas fa-times-circle mr-1"></span>
@@ -669,7 +677,11 @@ function _lib_core_validate_recalls_ocn($ocn) {
         }
         if (count($call['items']) == 1) {
           $validation_response['call'] = $call['items'][0]['callNum'];
-          $validation_response['shelving'] = $call['items'][0]['location'];
+          if (_lib_core_validate_recalls_shelving($call['items'][0]['location'])) {
+            $validation_response['shelving'] = $call['items'][0]['location'];
+          } else {
+            $validation_response['status'] = 'ineligible';
+          }
         }
       }
     } catch (Throwable $error) {
