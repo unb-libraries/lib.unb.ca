@@ -508,8 +508,8 @@ function _lib_core_recalls_ocn_ajax_handler(array &$form, FormStateInterface $fo
   switch ($response['status']) {
     case 'valid':
       $text = '<span class="text-success valid">
-               <span class="fas fa-check-circle mr-1"></span>OCLC number <code>' . $ocn .
-              '</code> is eligible for recall</span>';
+               <span class="fas fa-check-circle mr-1"></span>OCLC number <samp class="text-secondary">' . $ocn .
+              '</samp> is eligible for recall</span>';
       $title = $response['title'];
       $author = $response['author'];
       $volume = $response['volume'];
@@ -518,8 +518,8 @@ function _lib_core_recalls_ocn_ajax_handler(array &$form, FormStateInterface $fo
       break;
     case 'ineligible':
       $text = '<span class="text-danger invalid">
-               <span class="fas fa-times-circle mr-1"></span>OCLC number <code>' . $ocn .
-              '</code> is ineligible for recall</span>';
+               <span class="fas fa-times-circle mr-1"></span>OCLC number <samp class="text-secondary">' . $ocn .
+              '</samp> is ineligible for recall</span>';
       $title = $response['title'];
       $author = $response['author'];
       $volume = $response['volume'];
@@ -527,7 +527,7 @@ function _lib_core_recalls_ocn_ajax_handler(array &$form, FormStateInterface $fo
       break;
     case 'invalid':
       $text = '<span class="text-danger invalid"><span class="fas fa-times-circle"></span>
-               OCLC number <code>' . $ocn . '</code> was not found';
+               OCLC number <samp class="text-secondary">' . $ocn . '</samp> was not found';
       $title = $author = $volume = $call = $shelving = null;
       break;
     case 'error':
@@ -767,7 +767,7 @@ function _lib_core_recalls_validate_handler(array &$form, FormStateInterface $fo
     case 'invalid':
       $form_state->setErrorByName(
         'barcode',
-        t("Barcode <em>" . $barcode_submission . "</em> was not valid.")
+        t('Barcode <samp class="text-secondary">' . $barcode_submission . '</samp> was not valid.')
       );
       break;
   }
@@ -778,13 +778,13 @@ function _lib_core_recalls_validate_handler(array &$form, FormStateInterface $fo
     case 'ineligible':
       $form_state->setErrorByName(
         'oclc_number',
-        t("OCLC number <code>{$ocn_submission}</code> is ineligible for recall")
+        t("OCLC number <samp class=\"text-secondary\">{$ocn_submission}</samp> is ineligible for recall")
       );
       break;
     case 'invalid':
       $form_state->setErrorByName(
         'oclc_number',
-        t("OCLC number <code>{$ocn_submission}</code> was not found")
+        t("OCLC number <samp class=\text-secondary\">{$ocn_submission}</samp> was not found")
       );
       break;
   }
