@@ -682,10 +682,12 @@ function _lib_core_validate_recalls_ocn($ocn) {
             $location = (explode(':', (string)$holding->shelvingLocation, 2))[0];
             $call['items'][] = ['location' => $location, 'callNum' => (string)$holding->callNumber];
           }
-          if (count($call['items']) == 1) {
-            $validation_response['call'] = $call['items'][0]['callNum'];
-            if (_lib_core_validate_recalls_shelving($call['items'][0]['location'])) {
-              $validation_response['shelving'] = $call['items'][0]['location'];
+          foreach ($call['items'] as $item) {
+            if (_lib_core_validate_recalls_shelving($item['location'])) {
+              $validation_response['call'] = $item['callNum'];
+              $validation_response['shelving'] = $item['location'];
+              $validation_response['status'] = 'valid';
+              break;
             } else {
               $validation_response['status'] = 'ineligible';
             }
