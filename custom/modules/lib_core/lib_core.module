@@ -525,6 +525,15 @@ function _lib_core_recalls_ocn_ajax_handler(array &$form, FormStateInterface $fo
       $volume = $response['volume'];
       $call = $response['call'];
       break;
+    case 'unavailable':
+      $text = '<span class="text-danger invalid">
+               <span class="fas fa-times-circle mr-1"></span>OCLC number <samp class="text-secondary">' . $ocn .
+        '</samp> is not held by UNB Libraries</span>';
+      $title = $response['title'];
+      $author = $response['author'];
+      $volume = $response['volume'];
+      $call = $response['call'];
+      break;
     case 'invalid':
       $text = '<span class="text-danger invalid"><span class="fas fa-times-circle"></span>
                OCLC number <samp class="text-secondary">' . $ocn . '</samp> was not found';
@@ -668,16 +677,16 @@ function _lib_core_validate_recalls_ocn($ocn) {
         $opacRec = $xml->records->record->recordData->opacRecord;
         $record = Record::fromSimpleXMLElement($opacRec->bibliographicRecord->record);
 
-        if (!empty($opacRec->holdings)) {
-          $validation_response = [
-            'status' => 'valid',
-            'title' => (string)$record->getTitle(),
-            'author' => implode(', ', $record->getCreators()),
-            'volume' => $record->query('490$v')->text(),
-            'call' => '',
-            'shelving' => '',
-          ];
+        $validation_response = [
+          'status' => 'valid',
+          'title' => (string)$record->getTitle(),
+          'author' => implode(', ', $record->getCreators()),
+          'volume' => $record->query('490$v')->text(),
+          'call' => '',
+          'shelving' => '',
+        ];
 
+        if (!empty($opacRec->holdings)) {
           foreach ($opacRec->holdings->holding as $holding) {
             $location = (explode(':', (string)$holding->shelvingLocation, 2))[0];
             $call['items'][] = ['location' => $location, 'callNum' => (string)$holding->callNumber];
@@ -693,7 +702,7 @@ function _lib_core_validate_recalls_ocn($ocn) {
             }
           }
         } else {
-          $validation_response['status'] = 'ineligible';
+          $validation_response['status'] = 'unavailable';
         }
       }
     } catch (Throwable $error) {
