@@ -764,7 +764,7 @@ function _lib_core_validate_recalls_shelving($shelving_option) {
 }
 
 /**
- * Custom Publication Form Daterange validation.
+ * Custom Recalls multi-step form field validation.
  *
  * @param array $form
  *   The Recalls form array.
@@ -772,37 +772,60 @@ function _lib_core_validate_recalls_shelving($shelving_option) {
  *   The object containing the current state of the Recalls form.
  */
 function _lib_core_recalls_validate_handler(array &$form, FormStateInterface $form_state) {
-  $barcode_submission = $form_state->getValue('barcode');
-  $validation_response = _lib_core_validate_recalls_barcode($barcode_submission);
-  switch ($validation_response['status']) {
-    case 'invalid':
-      $form_state->setErrorByName(
-        'barcode',
-        t('Barcode <samp class="text-secondary">' . $barcode_submission . '</samp> was not valid.')
-      );
-      break;
-  }
+  $storage = $form_state->getStorage();
+  $current_step = $storage['current_page'];
 
-  $ocn_submission = $form_state->getValue('oclc_number');
-  $validation_response = _lib_core_validate_recalls_ocn($ocn_submission);
-  switch ($validation_response['status']) {
-    case 'ineligible':
-      $form_state->setErrorByName(
-        'oclc_number',
-        t("OCLC number <samp class=\"text-secondary\">{$ocn_submission}</samp> is ineligible for recall")
-      );
+  switch ($current_step) {
+    case 'step_1':
+      $barcode_submission = $form_state->getValue('barcode');
+      $validation_response = _lib_core_validate_recalls_barcode($barcode_submission);
+
+      switch ($validation_response['status']) {
+        case 'invalid':
+          $form_state->setErrorByName(
+            'barcode',
+            t("Barcode <samp class=\"text-secondary\">{$barcode_submission}</samp> was not found")
+          );
+          break;
+
+        default:
+          // Proceed to "Step Two" wizard page.
+      }
       break;
-    case 'unavailable':
-      $form_state->setErrorByName(
-        'oclc_number',
-        t("OCLC number <samp class=\"text-secondary\">{$ocn_submission}</samp> is not held by UNB Libraries")
-      );
+
+    case 'step_2':
+      $ocn_submission = $form_state->getValue('oclc_number');
+      $validation_response = _lib_core_validate_recalls_ocn($ocn_submission);
+
+      switch ($validation_response['status']) {
+        case 'ineligible':
+          $form_state->setErrorByName(
+            'oclc_number',
+            t("OCLC number <samp class=\"text-secondary\">{$ocn_submission}</samp> is ineligible for recall")
+          );
+          break;
+
+        case 'invalid':
+          $form_state->setErrorByName(
+            'oclc_number',
+            t("OCLC number <samp class=\"text-secondary\">{$ocn_submission}</samp> was not found")
+          );
+          break;
+
+        case 'unavailable':
+          $form_state->setErrorByName(
+            'oclc_number',
+            t("OCLC number <samp class=\"text-secondary\">{$ocn_submission}</samp> is not held by UNB Libraries")
+          );
+          break;
+
+        default:
+          // Proceed to "Step One" wizard page or submit form.
+      }
       break;
-    case 'invalid':
-      $form_state->setErrorByName(
-        'oclc_number',
-        t("OCLC number <samp class=\"text-secondary\">{$ocn_submission}</samp> was not found")
-      );
-      break;
+
+    default:
+      // Unrecognized step.
+      \Drupal::logger('lib_core')->error("Webform | Recalls | Unexpected wizard page step:$current_step.");
   }
 }
