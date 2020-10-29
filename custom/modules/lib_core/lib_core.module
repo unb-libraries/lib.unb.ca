@@ -792,6 +792,12 @@ function _lib_core_recalls_validate_handler(array &$form, FormStateInterface $fo
         t("OCLC number <samp class=\"text-secondary\">{$ocn_submission}</samp> is ineligible for recall")
       );
       break;
+    case 'unavailable':
+      $form_state->setErrorByName(
+        'oclc_number',
+        t("OCLC number <samp class=\"text-secondary\">{$ocn_submission}</samp> is not held by UNB Libraries")
+      );
+      break;
     case 'invalid':
       $form_state->setErrorByName(
         'oclc_number',
