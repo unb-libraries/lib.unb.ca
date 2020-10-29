@@ -524,6 +524,7 @@ function _lib_core_recalls_ocn_ajax_handler(array &$form, FormStateInterface $fo
       $author = $response['author'];
       $volume = $response['volume'];
       $call = $response['call'];
+      $shelving = null;
       break;
     case 'unavailable':
       $text = '<span class="text-danger invalid">
@@ -533,6 +534,7 @@ function _lib_core_recalls_ocn_ajax_handler(array &$form, FormStateInterface $fo
       $author = $response['author'];
       $volume = $response['volume'];
       $call = $response['call'];
+      $shelving = null;
       break;
     case 'invalid':
       $text = '<span class="text-danger invalid"><span class="fas fa-times-circle"></span>
@@ -546,6 +548,7 @@ function _lib_core_recalls_ocn_ajax_handler(array &$form, FormStateInterface $fo
       break;
     default:
       $text = 'Enter an OCLC Control Number to have the system autofill bibliographic, call number and location fields';
+      $title = $author = $volume = $call = $shelving = null;
   }
 
   $ajax_response->addCommand(new HtmlCommand('.form-item-oclc-number .webform-element-description', $text));
@@ -608,22 +611,23 @@ function _lib_core_validate_recalls_barcode($barcode) {
       $body = json_decode($response->getBody(TRUE));
       if ($body->totalResults == 0) {
         $validation_response['status'] = 'error';
-      }
-      $allowedCat = ['FACSTAFF-STU', 'FACSTAFF-UNB', 'GRAD-UNB', 'UG-STU', 'UG-UNB', 'UG-UNB-DMNB', 'UG-UNB-LAW'];
-      $circInfo = $body->Resources[0]->{'urn:mace:oclc.org:eidm:schema:persona:wmscircpatroninfo:20180101'}->circulationInfo;
-
-      if (!$circInfo->isCircBlocked && in_array($circInfo->borrowerCategory, $allowedCat)) {
-        $validation_response['status'] = 'valid';
-        foreach ($body->Resources[0]->emails as $email) {
-          if ($email->primary) {
-            $validation_response['email'] = $email->value;
-          }
-        }
-        if (isset($body->Resources[0]->name)) {
-          $validation_response['name'] = trim($body->Resources[0]->name->givenName . " " . $body->Resources[0]->name->familyName);
-        }
       } else {
-        $validation_response['status'] = 'invalid';
+        $allowedCat = ['FACSTAFF-STU', 'FACSTAFF-UNB', 'GRAD-UNB', 'UG-STU', 'UG-UNB', 'UG-UNB-DMNB', 'UG-UNB-LAW'];
+        $circInfo = $body->Resources[0]->{'urn:mace:oclc.org:eidm:schema:persona:wmscircpatroninfo:20180101'}->circulationInfo;
+
+        if (!$circInfo->isCircBlocked && in_array($circInfo->borrowerCategory, $allowedCat)) {
+          $validation_response['status'] = 'valid';
+          foreach ($body->Resources[0]->emails as $email) {
+            if ($email->primary) {
+              $validation_response['email'] = $email->value;
+            }
+          }
+          if (isset($body->Resources[0]->name)) {
+            $validation_response['name'] = trim($body->Resources[0]->name->givenName . " " . $body->Resources[0]->name->familyName);
+          }
+        } else {
+          $validation_response['status'] = 'invalid';
+        }
       }
     } catch (Throwable $error) {
       $validation_response['status'] = 'error';
