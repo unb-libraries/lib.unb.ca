@@ -801,7 +801,7 @@ function _lib_core_recalls_validate_handler(array &$form, FormStateInterface $fo
     case 'invalid':
       $form_state->setErrorByName(
         'oclc_number',
-        t("OCLC number <samp class=\text-secondary\">{$ocn_submission}</samp> was not found")
+        t("OCLC number <samp class=\"text-secondary\">{$ocn_submission}</samp> was not found")
       );
       break;
   }
