@@ -452,13 +452,13 @@ function _lib_core_recalls_barcode_ajax_handler(array &$form, FormStateInterface
     case 'valid':
       $biblio_disabled = false;
       $text = '<span class="text-success valid">
-               <span class="fas fa-check-circle mr-1"></span>User barcode validated</span>';
+               <span class="fas fa-check-circle mr-1"></span>User barcode found</span>';
       $email = $validation_response['email'];
       $name = $validation_response['name'];
       break;
     case 'invalid':
       $text = '<span class="text-danger invalid"><span class="fas fa-times-circle mr-1"></span>
-               User barcode not validated - only current students, faculty, and staff may recall an item</span>';
+               User barcode not found - only current students, faculty, and staff may recall an item</span>';
       $name = $email = null;
       break;
     case 'error':
