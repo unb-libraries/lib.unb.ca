@@ -24,6 +24,8 @@ lib-chosen:
   js:
     js/chosen.jquery.min.js: { minified: true }
     js/lib-chosen.js: {}
+  dependencies:
+    - core/jquery
 
 quicklinks:
   version: VERSION
@@ -40,11 +42,13 @@ table-row-check:
     js/table-row-check.js: {}
   dependencies:
     - core/jquery
+
 toolbar-overrides:
   version: VERSION
   css:
     theme:
       css/toolbar-overrides.css: {}
+
 unblibtabs:
   version: VERSION
   js:
