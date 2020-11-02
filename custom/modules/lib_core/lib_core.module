@@ -785,51 +785,17 @@ function _lib_core_validate_recalls_ocn($ocn) {
   return $validation_response;
 }
 
+/**
+ * Determine given Shelving Location's recall eligibility.
+ *
+ * @param string $shelving_option
+ * The Shelving Location value.
+ *
+ * @return boolean
+ *   The result of the Shelving Location recall eligibility: true if eligible, false otherwise.
+ */
 function _lib_core_validate_recalls_shelving($shelving_option) {
-  $eligible_recall_shelving_options = [
-    'ENG-NONPRNT' => 'ENG-NONPRNT: Electronic media and other non-paper materials (Ask at Service Desk)',
-    'ENG-SENRPT' => 'ENG-SENRPT: Senior Report Collection',
-    'ENG-SPEC' => 'ENG-SPEC: Special Collection',
-    'ENG-STACKS' => 'ENG-STACKS: Main Collection',
-    'ENG-STOR' => 'ENG-STOR: Storage (Ask at Service Desk)',
-    'ENG-STORA' => 'ENG-STORA: Storage (Ask at Service Desk)',
-    'ENG-THS' => 'ENG-THS: Theses',
-    'ENG-WIE' => 'ENG-WIE: Women in Engineering (WiE) Collection',
-    'HWK-BEAT' => 'HWK-BEAT: Beat Generation Collection',
-    'HWK-FOLIO' => 'HWK-FOLIO: Folio Shelves',
-    'HWK-SFF' => 'HWK-SFF: Science Fiction & Fantasy Collection (Ask Staff)',
-    'HWK-SFFA' => 'HWK-SFFA: Science Fiction & Fantasy Authors Collection',
-    'HWK-SFWA' => 'HWK-SFWA: Science Fiction Writers of America Collection',
-    'HWK-SFWA2' => 'HWK-SFWA: SFWA Collection (Ask Staff)',
-    'HWK-STACKS' => 'HWK-STACKS: Main Collection',
-    'HWK-STCAN' => 'HWK-STCAN: Statistics Canada Collection',
-    'HWK-STOR' => 'HWK-STOR: Storage (Ask Staff)',
-    'HIL-BBKRM' => 'HIL-BBKRM: Beaverbrook Room, 4th Floor',
-    'HIL-CIRCDSK' => 'HIL-CIRCDSK: CD/DVD Materials (Ask at Service Desk), 1st Floor',
-    'HIL-DBLOS' => 'HIL-DBLOS: Double Oversize, 4th Floor',
-    'HIL-EASY' => 'HIL-EASY: Easy Books',
-    'HIL-GOV' => 'HIL-GOV: Government Documents, Basement (Ask at Desk)',
-    'HIL-GOVCD' => 'HIL-GOVCD: Government Documents CD-ROM, Basement (Ask at Desk)',
-    'HIL-GOVCD2' => 'HIL-GOVCD: Government Documents CD-ROM, Basement (Ask at Desk) (Video)',
-    'HIL-GOVOS' => 'HIL-GOVOS: Government Documents Oversize, Basement (Ask at Desk) ',
-    'HIL-JUV' => 'HIL-JUV: Juvenile Books, Dewey and Fiction, 4th Floor',
-    'HIL-JUVOS' => 'HIL-JUVOS: Juvenile Books Oversize, Dewey, Fiction and Easy, 4th Floor',
-    'HIL-MAP' => 'HIL-MAP: Map Area (Ask at Desk)',
-    'HIL-MAPBK' => 'HIL-MAPBK: Map Area Books, Basement',
-    'HIL-MAPCD' => 'HIL-MAPCD: Map CD-ROM (Ask at Desk)',
-    'HIL-MAPOS' => 'HIL-MAPOS: Map Area Oversize (Ask at Desk)',
-    'HIL-OS' => 'HIL-OS: Oversize',
-    'HIL-STACKS' => 'HIL-STACKS: Main Collection',
-    'HIL-STORA' => 'HIL-STORA: Storage (Ask at Service Desk)',
-    'HIL-THS' => 'HIL-THS: Education Theses, 4th Floor',
-    'STORAGE' => 'STORAGE: Storage Facility',
-    'LAW-STACKS' => 'LAW-STACKS: Main Collections',
-    'LAW-STOR' => 'LAW-STOR: Storage (Ask at Circulation Desk)',
-    'SCI-FORF' => 'SCI-FORF: Forestry Files',
-    'SCI-OS' => 'SCI-OS: Oversize',
-    'SCI-STACKS' => 'SCI-STACKS: Main Collection',
-    'SCI-STOR' => 'SCI-STOR: Self-Serve Storage',
-  ];
+  $eligible_recall_shelving_options = _lib_core_recalls_get_shelving_options();
 
   return array_key_exists($shelving_option, $eligible_recall_shelving_options);
 }
