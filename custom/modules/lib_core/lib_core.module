@@ -4,7 +4,6 @@
  * @file
  * Contains lib_core.module.
  */
-require 'vendor/autoload.php';
 
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\HtmlCommand;
