@@ -570,6 +570,19 @@ function _lib_core_recalls_ocn_ajax_handler(array &$form, FormStateInterface $fo
 /**
  * Validate a UNB/STU user, given their barcode number.
  *
+ * @param string $ocn
+ *  A user-entered OCLC number or shared record URL.
+ *
+ * @return string
+ *  The formatted OCLC number.
+ */
+function _lib_core_recalls_ocn_formatter($ocn) {
+  return trim(end(explode('/', $ocn)));
+}
+
+/**
+ * Validate a UNB/STU user, given their barcode number.
+ *
  * @param string $barcode
  * The UNB/STU user barcode.
  *
