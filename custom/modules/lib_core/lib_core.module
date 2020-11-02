@@ -611,8 +611,8 @@ function _lib_core_recalls_ocn_ajax_handler(array &$form, FormStateInterface $fo
   $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-volume"]', 'val', array($volume)));
   $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-call-number"]', 'val', array($call)));
   // Trigger chosen single select selection.
-  if ($shelving) {
-    $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-shelving-location"]', 'val', array($shelving)));
+  if ($shelving['selected']) {
+    $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-shelving-location"]', 'val', array($shelving['selected'])));
     $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-shelving-location"]', 'trigger', ['chosen:updated']));
   } else {
     $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-shelving-location"] option', 'prop', array('selected', false)));
@@ -754,7 +754,7 @@ function _lib_core_validate_recalls_ocn($ocn) {
           'author' => implode(', ', $record->getCreators()),
           'volume' => $record->query('490$v')->text(),
           'call' => '',
-          'shelving' => '',
+          'shelving' => [],
         ];
 
         if (!empty($opacRec->holdings)) {
@@ -765,7 +765,8 @@ function _lib_core_validate_recalls_ocn($ocn) {
           foreach ($call['items'] as $item) {
             if (_lib_core_validate_recalls_shelving($item['location'])) {
               $validation_response['call'] = $item['callNum'];
-              $validation_response['shelving'] = $item['location'];
+              $validation_response['shelving']['selected'] = $item['location'];
+              $validation_response['shelving']['eligible'][] = $item['location'];
               $validation_response['status'] = 'valid';
               break;
             } else {
