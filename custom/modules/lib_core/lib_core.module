@@ -579,7 +579,7 @@ function _lib_core_recalls_ocn_ajax_handler(array &$form, FormStateInterface $fo
       $author = $response['author'];
       $volume = $response['volume'];
       $call = $response['call'];
-      $shelving = null;
+      $shelving = [];
       break;
 
     case 'unavailable':
@@ -590,24 +590,27 @@ function _lib_core_recalls_ocn_ajax_handler(array &$form, FormStateInterface $fo
       $author = $response['author'];
       $volume = $response['volume'];
       $call = $response['call'];
-      $shelving = null;
+      $shelving = [];
       break;
 
     case 'invalid':
       $text = '<span class="text-danger invalid"><span class="fas fa-times-circle"></span>
                OCLC number <samp class="text-secondary">' . $ocn . '</samp> was not found';
-      $title = $author = $volume = $call = $shelving = null;
+      $title = $author = $volume = $call = null;
+      $shelving = [];
       break;
 
     case 'error':
       $text = '<span class="text-danger has-error"><span class="fas fa-exclamation-circle"></span>
                Unable to validate OCLC number at this time</span>';
-      $title = $author = $volume = $call = $shelving = null;
+      $title = $author = $volume = $call = null;
+      $shelving = [];
       break;
 
     default:
       $text = 'Enter an OCLC Control Number to have the system autofill bibliographic, call number and location fields';
-      $title = $author = $volume = $call = $shelving = null;
+      $title = $author = $volume = $call = null;
+      $shelving = [];
   }
 
   $ajax_response->addCommand(new HtmlCommand('.form-item-oclc-number .webform-element-description', $text));
