@@ -866,28 +866,6 @@ li.list-group-item {
     padding-left: .15rem;
   }
 }
-/* Barrio item-list wrapper unordered list override */
-ul {
-  &.list-bullets {
-    list-style-type: inherit;
-    padding-left: 2.5rem;
-  }
-}
-ol,
-ul {
-  &.list-no-bullets {
-    list-style-type: none;
-    padding-inline-start: 1.5rem;
-
-    &.list-no-indent {
-      padding-inline-start: 0;
-    }
-  }
-
-  &.list-no-indent {
-    padding-inline-start: 1.5rem;
-  }
-}
 
 /* Custom "Hours" table style */
 .table-hours {
