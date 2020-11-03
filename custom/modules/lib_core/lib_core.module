@@ -570,6 +570,7 @@ function _lib_core_recalls_ocn_ajax_handler(array &$form, FormStateInterface $fo
       $call = $response['call'];
       $shelving = $response['shelving'];
       break;
+
     case 'ineligible':
       $text = '<span class="text-danger invalid">
                <span class="fas fa-times-circle mr-1"></span>OCLC number <samp class="text-secondary">' . $ocn .
@@ -580,6 +581,7 @@ function _lib_core_recalls_ocn_ajax_handler(array &$form, FormStateInterface $fo
       $call = $response['call'];
       $shelving = null;
       break;
+
     case 'unavailable':
       $text = '<span class="text-danger invalid">
                <span class="fas fa-times-circle mr-1"></span>OCLC number <samp class="text-secondary">' . $ocn .
@@ -590,16 +592,19 @@ function _lib_core_recalls_ocn_ajax_handler(array &$form, FormStateInterface $fo
       $call = $response['call'];
       $shelving = null;
       break;
+
     case 'invalid':
       $text = '<span class="text-danger invalid"><span class="fas fa-times-circle"></span>
                OCLC number <samp class="text-secondary">' . $ocn . '</samp> was not found';
       $title = $author = $volume = $call = $shelving = null;
       break;
+
     case 'error':
       $text = '<span class="text-danger has-error"><span class="fas fa-exclamation-circle"></span>
                Unable to validate OCLC number at this time</span>';
       $title = $author = $volume = $call = $shelving = null;
       break;
+
     default:
       $text = 'Enter an OCLC Control Number to have the system autofill bibliographic, call number and location fields';
       $title = $author = $volume = $call = $shelving = null;
@@ -610,14 +615,39 @@ function _lib_core_recalls_ocn_ajax_handler(array &$form, FormStateInterface $fo
   $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-author"]', 'val', array($author)));
   $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-volume"]', 'val', array($volume)));
   $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-call-number"]', 'val', array($call)));
+  if (count($shelving['holdings']) > 1) {
+    $sl_text = '<span class="text-info"><span class="fas fa-info-circle"></span>
+                      Multiple shelving locations available</span>';
+  } else {
+    $sl_text = 'Only Shelving Locations eligible for recall are listed -
+                      <code>other items cannot be recalled</code>';
+  }
+  $ajax_response->addCommand(new HtmlCommand('.form-item-shelving-location .webform-element-description', $sl_text));
+
   // Trigger chosen single select selection.
+  $shelving_options = _lib_core_recalls_get_shelving_options();
   if ($shelving['selected']) {
     $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-shelving-location"]', 'val', array($shelving['selected'])));
-    $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-shelving-location"]', 'trigger', ['chosen:updated']));
+
+    foreach($shelving_options as $key => $value) {
+      if (!in_array($key, $shelving['holdings'])) {
+        $disable_option_selector = '[data-drupal-selector="edit-shelving-location"] option[value="' . $key . '"]';
+        $ajax_response->addCommand(new InvokeCommand($disable_option_selector, 'prop', array('disabled', true)));
+      } else {
+        $enable_option_selector = '[data-drupal-selector="edit-shelving-location"] option[value="' . $key . '"]';
+        $ajax_response->addCommand(new InvokeCommand($enable_option_selector, 'prop', array('disabled', false)));
+      }
+    }
   } else {
+    // Clear selected and disabled option attributes.
     $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-shelving-location"] option', 'prop', array('selected', false)));
-    $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-shelving-location"]', 'trigger', ['chosen:updated']));
+    foreach($shelving_options as $key => $value) {
+      $enable_option_selector = '[data-drupal-selector="edit-shelving-location"] option[value="' . $key . '"]';
+      $ajax_response->addCommand(new InvokeCommand($enable_option_selector, 'prop', array('disabled', false)));
+    }
   }
+  $ajax_response->addCommand(new InvokeCommand('[data-drupal-selector="edit-shelving-location"]', 'trigger', ['chosen:updated']));
+
   return $ajax_response;
 }
 
@@ -766,9 +796,8 @@ function _lib_core_validate_recalls_ocn($ocn) {
             if (_lib_core_validate_recalls_shelving($item['location'])) {
               $validation_response['call'] = $item['callNum'];
               $validation_response['shelving']['selected'] = $item['location'];
-              $validation_response['shelving']['eligible'][] = $item['location'];
+              $validation_response['shelving']['holdings'][] = $item['location'];
               $validation_response['status'] = 'valid';
-              break;
             } else {
               $validation_response['status'] = 'ineligible';
             }
