@@ -661,7 +661,9 @@ function _lib_core_recalls_ocn_ajax_handler(array &$form, FormStateInterface $fo
  *  The formatted OCLC number.
  */
 function _lib_core_recalls_ocn_formatter($ocn) {
-  return trim(end(explode('/', $ocn)));
+  $format_ocn = explode('/', $ocn);
+
+  return trim(end($format_ocn));
 }
 
 /**
