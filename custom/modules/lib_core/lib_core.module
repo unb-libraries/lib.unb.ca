@@ -16,6 +16,8 @@ use League\OAuth2\Client\OptionProvider\HttpBasicAuthOptionProvider;
 use League\OAuth2\Client\Provider\GenericProvider;
 use GuzzleHttp\Client;
 use Scriptotek\Marc\Record;
+use Scriptotek\Marc\Fields\Person;
+use Scriptotek\Marc\Fields\Title;
 
 /**
  * Implements hook_theme().
@@ -782,11 +784,19 @@ function _lib_core_validate_recalls_ocn($ocn) {
       } else {
         $opacRec = $xml->records->record->recordData->opacRecord;
         $record = Record::fromSimpleXMLElement($opacRec->bibliographicRecord->record);
+        try {
+          $title = (string)Title::get($record);
+          $author = implode(', ', Person::get($record));
+        }
+        catch(Throwable $error) {
+          $title = $author = null;
+          \Drupal::logger('lib_core')->error($error);
+        }
 
         $validation_response = [
           'status' => 'valid',
-          'title' => (string)$record->getTitle(),
-          'author' => implode(', ', $record->getCreators()),
+          'title' => $title,
+          'author' => $author,
           'volume' => $record->query('490$v')->text(),
           'call' => '',
           'shelving' => [],
