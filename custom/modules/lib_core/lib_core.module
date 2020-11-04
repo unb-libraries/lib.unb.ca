@@ -807,7 +807,8 @@ function _lib_core_validate_recalls_ocn($ocn) {
             $location = (explode(':', (string)$holding->shelvingLocation, 2))[0];
             $call['items'][] = ['location' => $location, 'callNum' => (string)$holding->callNumber];
           }
-          foreach ($call['items'] as $item) {
+          arsort($call['items']);
+          foreach($call['items'] as $item) {
             if (_lib_core_validate_recalls_shelving($item['location'])) {
               $validation_response['call'] = $item['callNum'];
               $validation_response['shelving']['selected'] = $item['location'];
