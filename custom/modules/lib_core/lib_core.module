@@ -801,10 +801,9 @@ function _lib_core_validate_recalls_ocn($ocn) {
             if (_lib_core_validate_recalls_shelving($item['location'])) {
               $validation_response['call'] = $item['callNum'];
               $validation_response['shelving']['selected'] = $item['location'];
-              $validation_response['shelving']['holdings'][] = $item['location'];
-              $validation_response['status'] = 'valid';
-            } else {
-              $validation_response['status'] = 'ineligible';
+              if (!in_array($item['location'], $validation_response['shelving']['holdings'])) {
+                $validation_response['shelving']['holdings'][] = $item['location'];
+              }
             }
           }
         } else {
