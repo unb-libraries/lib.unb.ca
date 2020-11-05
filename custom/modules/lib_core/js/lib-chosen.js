@@ -14,10 +14,9 @@
                 display_disabled_options: false,
                 width: "100%",
             });
-
             // Apply bootstrap 4 form-control class to chosen div.
             $(".chosen-container-single").addClass("form-control");
-            // Resolve duplicate Discovery Search selects.
+            // Resolve original select missing display:none inline style issue.
             $("select.custom-chosen-select").addClass("d-none");
         }
     }
