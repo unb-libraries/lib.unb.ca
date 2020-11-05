@@ -3,11 +3,11 @@ minimum_multiple: 6
 disable_search_threshold: 7
 minimum_width: 0
 use_relative_width: false
-jquery_selector: 'select:visible'
+jquery_selector: 'select:not(.custom-chosen-select):visible'
 search_contains: false
 disable_search: false
 allow_single_deselect: false
-placeholder_text_multiple: 'Choose some options'
+placeholder_text_multiple: '- Please choose 1 or more options -'
 placeholder_text_single: '- Please choose an option -'
 no_results_text: 'No results match'
 disabled_themes:

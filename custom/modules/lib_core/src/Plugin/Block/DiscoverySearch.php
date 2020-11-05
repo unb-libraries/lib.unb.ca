@@ -303,7 +303,7 @@ class DiscoverySearch extends BlockBase {
       '#value' => $default_value,
       '#attributes' => [
         'class' => [
-          'chosen-select',
+          'custom-chosen-select',
           'form-control',
         ],
         'id' => 'semester',
@@ -474,7 +474,7 @@ class DiscoverySearch extends BlockBase {
       '#options' => $options,
       '#attributes' => [
         'class' => [
-          'chosen-select',
+          'custom-chosen-select',
           'form-control',
         ],
         'id' => 'database-subjects',
@@ -527,7 +527,7 @@ class DiscoverySearch extends BlockBase {
       '#options' => $options,
       '#attributes' => [
         'class' => [
-          'chosen-select',
+          'custom-chosen-select',
           'form-control',
         ],
         'id' => 'databaseID',

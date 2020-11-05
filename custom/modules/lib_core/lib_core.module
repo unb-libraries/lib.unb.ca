@@ -207,6 +207,7 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
       break;
 
     case 'webform_submission_recalls_add_form':
+      $form['#attached']['library'][] = 'lib_core/lib-chosen';
       $form['#attached']['library'][] = 'lib_core/chosen-bootstrap';
       $form['elements']['step_1']['personal_information']['barcode']['#ajax'] = [
         'callback' => '_lib_core_recalls_barcode_ajax_handler',
