@@ -806,6 +806,11 @@ function _lib_core_validate_recalls_ocn($ocn) {
               }
             }
           }
+          if ($validation_response['shelving']['selected'] == null) {
+            $validation_response['status'] = 'ineligible';
+          } else {
+            $validation_response['status'] = 'valid';
+          }
         } else {
           $validation_response['status'] = 'unavailable';
         }
