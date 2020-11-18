@@ -700,7 +700,7 @@ function _lib_core_validate_recalls_barcode($barcode) {
       $response = $client->request('POST', $url, ['headers' => $headers, 'body' => $query]);
       $body = json_decode($response->getBody(TRUE));
       if ($body->totalResults == 0) {
-        $validation_response['status'] = 'error';
+        $validation_response['status'] = 'invalid';
       } else {
         $allowedCat = ['FACSTAFF-STU', 'FACSTAFF-UNB', 'GRAD-UNB', 'UG-STU', 'UG-UNB', 'UG-UNB-DMNB', 'UG-UNB-LAW'];
         $circInfo = $body->Resources[0]->{'urn:mace:oclc.org:eidm:schema:persona:wmscircpatroninfo:20180101'}->circulationInfo;
