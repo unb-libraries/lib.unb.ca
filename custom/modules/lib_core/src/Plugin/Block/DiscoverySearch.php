@@ -43,7 +43,7 @@ class DiscoverySearch extends BlockBase {
 
     $html =
       '<div class="mt-5 theme-dark">
-        <div id="discovery-search" class="tabs-accordian">
+        <div id="discovery-search" class="tabs-accordion">
           <h2 class="sr-only">Search</h2>
           <ul id="tabs" class="flex-fill nav nav-tabs justify-content-center" role="tablist">
             <li class="nav-item">
