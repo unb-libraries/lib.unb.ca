@@ -83,7 +83,7 @@ class DiscoverySearch extends BlockBase {
             </li>
           </ul>
           <div class="d-flex flex-wrap p-lg-4">
-            <div class="col-lg-8 tab-content">
+            <div class="col-lg-8 px-0 tab-content">
               <div aria-labelledby="tab-reserves" class="card tab-pane fade" id="pane-reserves" role="tabpanel">
                 <div class="card-header p-0" id="heading-reserves">
                   <h3 class="m-0">
