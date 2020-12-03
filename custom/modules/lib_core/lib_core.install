@@ -57,7 +57,7 @@ function lib_core_update_8003(&$sandbox) {
 
   // Set up the batch.
   if (!isset($sandbox['max'])) {
-    $count_query = db_select('node', 'n')
+    $count_query = \Drupal::database()->select('node', 'n')
       ->condition('n.type', $types, 'IN');
     $count_query->addExpression('COUNT(n.nid)', 'count');
     $sandbox['max'] = $count_query->execute()->fetchField();
@@ -65,7 +65,7 @@ function lib_core_update_8003(&$sandbox) {
   }
 
   $limit = 25;
-  $nids = db_select('node', 'n')
+  $nids = \Drupal::database()->select('node', 'n')
     ->condition('n.type', $types, 'IN')
     ->fields('n', ['nid'])
     ->orderBy('n.nid')
