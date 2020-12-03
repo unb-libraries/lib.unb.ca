@@ -43,13 +43,13 @@ class PathTaxonomyGroupAssociationForm extends ContentEntityForm {
 
     switch ($status) {
       case SAVED_NEW:
-        drupal_set_message($this->t('Created the %label Path taxonomy group association.', [
+        $this->messenger()->addMessage($this->t('Created the %label Path taxonomy group association.', [
           '%label' => $entity->label(),
         ]));
         break;
 
       default:
-        drupal_set_message($this->t('Saved the %label Path taxonomy group association.', [
+        $this->messenger()->addMessage($this->t('Saved the %label Path taxonomy group association.', [
           '%label' => $entity->label(),
         ]));
     }
