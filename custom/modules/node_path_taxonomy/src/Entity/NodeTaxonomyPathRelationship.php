@@ -75,7 +75,7 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
       'nid' => $node->id(),
       'tid' => $path_tid,
     ];
-    $node_taxonomy_path = \Drupal::entityManager()
+    $node_taxonomy_path = \Drupal::entityTypeManager()
       ->getStorage('node_taxonomy_path')
       ->create($data);
     $node_taxonomy_path->save();
@@ -169,7 +169,7 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
     if (!empty($vid)) {
       $properties['vid'] = $vid;
     }
-    $terms = \Drupal::entityManager()->getStorage('taxonomy_term')->loadByProperties($properties);
+    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties($properties);
     $term = reset($terms);
     return !empty($term) ? $term->id() : 0;
   }

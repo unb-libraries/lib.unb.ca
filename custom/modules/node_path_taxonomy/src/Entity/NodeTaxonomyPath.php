@@ -237,7 +237,7 @@ class NodeTaxonomyPath extends ContentEntityBase implements NodeTaxonomyPathInte
         'vid' => $vid,
         'parent' => [$parent_tid],
       ];
-      $terms = \Drupal::entityManager()->getStorage('taxonomy_term')->loadByProperties($properties);
+      $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties($properties);
 
       if (empty($terms)) {
         return NULL;
@@ -266,7 +266,7 @@ class NodeTaxonomyPath extends ContentEntityBase implements NodeTaxonomyPathInte
       'name' => NodeTaxonomyPathRelationship::TAXONOMY_ROOT_ELEMENT,
       'vid' => $vid,
     ];
-    $terms = \Drupal::entityManager()->getStorage('taxonomy_term')->loadByProperties($properties);
+    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties($properties);
     $term = reset($terms);
 
     return !empty($term) ? $term->id() : NULL;
