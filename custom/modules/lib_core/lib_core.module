@@ -365,7 +365,7 @@ function _lib_core_contactable_department($mailbox) {
     'libweb' => 'Website Administrator',
     'maproom' => 'Map Room',
     'mic' => 'Microforms/Microfilming Services',
-    'rdm.services' => 'Research Data Management',
+    'rdm.services' => 'Research Data Management Services',
     'refsj' => 'Saint John Reference',
     'reserves' => 'Course Reserves',
     'scilib' => 'Science & Forestry',
