@@ -83,13 +83,13 @@ class DiscoverySearch extends BlockBase {
             </li>
           </ul>
           <div class="d-flex flex-wrap p-lg-4">
-            <div class="col-lg-8 px-0 tab-content">
+            <div class="col-lg-8 px-0 tab-content header-icons">
               <div aria-labelledby="tab-reserves" class="card tab-pane fade" id="pane-reserves" role="tabpanel">
                 <div class="card-header p-0" id="heading-reserves">
                   <h3 class="m-0">
-                    <a aria-controls="collapse-reserves" aria-expanded="false" class="link-no-icon nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-reserves" role="button">
-                      Reserves
-                    </a>
+                    <button class="btn btn-dark btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse-reserves" aria-expanded="false" aria-controls="collapse-reserves">
+                        Reserves
+                    </button>
                   </h3>
                 </div>
                 <div class="collapse" data-parent="#content" id="collapse-reserves">
@@ -102,9 +102,9 @@ class DiscoverySearch extends BlockBase {
               <div aria-labelledby="tab-catalogue" class="card tab-pane fade active show" id="pane-catalogue" role="tabpanel">
                 <div class="card-header p-0" id="heading-catalogue">
                   <h3 class="m-0">
-                    <a aria-controls="collapse-catalogue" aria-expanded="true" class="link-no-icon nav-link mx-1 p-2" data-toggle="collapse" href="#collapse-catalogue" role="button">
-                      Catalogue
-                    </a>
+                    <button class="btn btn-dark btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse-catalogue" aria-expanded="true" aria-controls="collapse-catalogue">
+                        Catalogue
+                    </button>
                   </h3>
                 </div>
                 <div class="collapse show" data-parent="#content" id="collapse-catalogue">
@@ -117,9 +117,9 @@ class DiscoverySearch extends BlockBase {
               <div aria-labelledby="tab-databases" class="card tab-pane fade" id="pane-databases" role="tabpanel">
                 <div class="card-header p-0" id="heading-databases">
                   <h3 class="m-0">
-                    <a aria-controls="collapse-databases" aria-expanded="false" class="link-no-icon nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-databases" role="button">
+                    <button class="btn btn-dark btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse-databases" aria-expanded="false" aria-controls="collapse-databases">
                       <span class="d-none d-sm-inline">Article</span> Databases
-                    </a>
+                    </button>
                   </h3>
                 </div>
                 <div class="collapse" data-parent="#content" id="collapse-databases">
@@ -132,9 +132,9 @@ class DiscoverySearch extends BlockBase {
               <div aria-labelledby="tab-journals" class="card tab-pane fade" id="pane-journals" role="tabpanel">
                 <div class="card-header p-0" id="heading-journals">
                   <h3 class="m-0">
-                    <a aria-controls="collapse-journals" aria-expanded="false" class="link-no-icon nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-journals" role="button">
+                    <button class="btn btn-dark btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse-journals" aria-expanded="false" aria-controls="collapse-journals">
                       Journals<span class="d-none d-sm-inline"> &amp; Newspapers</span>
-                    </a>
+                    </button>
                   </h3>
                 </div>
                   <div class="collapse" data-parent="#content" id="collapse-journals">
@@ -147,9 +147,9 @@ class DiscoverySearch extends BlockBase {
               <div aria-labelledby="tab-encyclopedias" class="card tab-pane fade" id="pane-encyclopedias" role="tabpanel">
                 <div class="card-header p-0" id="heading-encyclopedias">
                   <h3 class="m-0">
-                    <a aria-controls="collapse-encyclopedias" aria-expanded="false" class="link-no-icon nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-encyclopedias" role="button">
+                    <button class="btn btn-dark btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse-encyclopedias" aria-expanded="false" aria-controls="collapse-encyclopedias">
                       e-Encyclopedias<span class="d-none d-sm-inline">, etc.</span>
-                    </a>
+                    </button>
                   </h3>
                 </div>
                   <div class="collapse" data-parent="#content" id="collapse-encyclopedias">
@@ -162,9 +162,9 @@ class DiscoverySearch extends BlockBase {
               <div aria-labelledby="tab-ebooks" class="card tab-pane fade" id="pane-ebooks" role="tabpanel">
                 <div class="card-header p-0" id="heading-ebooks">
                   <h3 class="m-0">
-                    <a aria-controls="collapse-ebooks" aria-expanded="false" class="link-no-icon nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-ebooks" role="button">
+                    <button class="btn btn-dark btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse-ebooks" aria-expanded="false" aria-controls="collapse-ebooks">
                       e-Books
-                    </a>
+                    </button>
                   </h3>
                 </div>
                 <div class="collapse" data-parent="#content" id="collapse-ebooks">
@@ -177,9 +177,9 @@ class DiscoverySearch extends BlockBase {
               <div aria-labelledby="tab-videos" class="card tab-pane fade" id="pane-videos" role="tabpanel">
                 <div class="card-header p-0" id="heading-videos">
                   <h3 class="m-0">
-                    <a aria-controls="collapse-videos" aria-expanded="false" class="link-no-icon nav-link mx-1 p-2 collapsed" data-toggle="collapse" href="#collapse-videos" role="button">
+                    <button class="btn btn-dark btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse-videos" aria-expanded="false" aria-controls="collapse-videos">
                       Videos
-                    </a>
+                    </button>
                   </h3>
                 </div>
                 <div class="collapse" data-parent="#content" id="collapse-videos">
