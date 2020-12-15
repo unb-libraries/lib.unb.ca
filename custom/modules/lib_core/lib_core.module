@@ -146,9 +146,9 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
         $alert_msg =
           '<div class="d-flex">' .
             '<div class="pr-1"><i class="fas fa-info-circle"></i></div>' .
-            '<div class="align-self-start">Please complete the following webform to send email to <b>' .
+            '<div class="align-self-start">Please complete the following webform to send email to <strong>' .
               $user->get('field_first_name')->getString() . ' ' .
-              $user->get('field_last_name')->getString() . '</b>. ' .
+              $user->get('field_last_name')->getString() . '</strong>. ' .
               'You may also <a href="mailto:' . $username .
               '@unb.ca?subject=Patron Webform Query">use your own email program</a>, if configured.
             </div>' .
@@ -172,8 +172,8 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
           ? 'Please let us know if you experience any difficulties in accessing our pages or find content which you
              believe is inaccurate. General suggestions, questions, or comments about this website can be directed to
              our <a href="/services/your-comments-and-suggestions">Suggestion Form</a>.'
-          : 'Please complete the following webform to send email to <b>' .
-            $department . '</b>. You may also <a href="mailto:' . $username .
+          : 'Please complete the following webform to send email to <strong>' .
+            $department . '</strong>. You may also <a href="mailto:' . $username .
             '@unb.ca?subject=Patron Webform Query">use your own email program</a>, if configured.';
         $alert_msg .=
             '</div>
@@ -200,8 +200,8 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
         $form['elements']['contact_message']['#message_message']['#markup'] =
           '<div class="d-flex">
             <div class="pr-1"><i class="fas fa-exclamation-triangle"></i></div>
-            <div class="align-self-start">Sorry, <b>' .
-              $username . '</b> is not a valid UNB Libraries recipient. Messaging is <b>disabled</b>.
+            <div class="align-self-start">Sorry, <strong>' .
+              $username . '</strong> is not a valid UNB Libraries recipient. Messaging is <strong>disabled</strong>.
             </div>
            </div>';
       }
