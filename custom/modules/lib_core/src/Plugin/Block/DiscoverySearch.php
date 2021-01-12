@@ -148,7 +148,7 @@ class DiscoverySearch extends BlockBase {
                 <div class="card-header p-0" id="heading-encyclopedias">
                   <h3 class="m-0">
                     <button class="btn btn-dark btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse-encyclopedias" aria-expanded="false" aria-controls="collapse-encyclopedias">
-                      e-Encyclopedias<span class="d-none d-sm-inline">, etc.</span>
+                      e-Reference<span class="d-none d-sm-inline"> Materials</span>
                     </button>
                   </h3>
                 </div>
