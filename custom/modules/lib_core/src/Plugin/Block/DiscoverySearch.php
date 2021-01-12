@@ -68,7 +68,7 @@ class DiscoverySearch extends BlockBase {
             </li>
             <li class="nav-item">
               <a id="tab-encyclopedias" href="#pane-encyclopedias" class="nav-link" data-toggle="tab" role="tab">
-                e-Encyclopedias<span class="d-none d-xl-inline">, etc.</span>
+                e-Reference<span class="d-none d-xl-inline"> Materials</span>
               </a>
             </li>
             <li class="nav-item">
