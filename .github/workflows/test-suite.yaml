@@ -10,18 +10,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: guix77/phpcs-drupal-action@v1.0.0
-
-  yaml-lint:
-    name: YAML Standards
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
       -
-        name: Lint YAML
-        uses: ibiqlik/action-yamllint@v1
+        name: Install PHP
+        uses: shivammathur/setup-php@v2
         with:
-          file_or_dir: ./custom/.
+          php-version: 7.3
+          coverage: none
+          tools: composer:v2
+      -
+        name: Install dockworker
+        run: composer install --prefer-dist --no-progress --no-suggest
+      -
+        name: Check PHP Coding Standards
+        run: vendor/bin/dockworker validate:drupal:custom:php
 
   drupal-9-readiness:
     name: Drupal 9 Readiness
@@ -29,79 +30,62 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       -
+        name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.3
+          coverage: none
+          tools: composer:v2
+      -
+        name: Install dockworker
+        run: composer install --prefer-dist --no-progress --no-suggest
+      -
         name: Check Custom Code D9 Readiness
-        run: docker run --rm -v /home/runner/work/lib.unb.ca/lib.unb.ca/custom:/drupal/web/modules/custom jacobsanford/drupal-check /drupal/web/modules/custom --no-progress
+        run: vendor/bin/dockworker validate:drupal:9-upgrade
 
-  build-application:
-    name: Build Application
+  build-image:
+    name: Build Image
     runs-on: ubuntu-latest
     steps:
-      - uses: FranzDiebold/github-env-vars-action@v1.2.0
+      - uses: FranzDiebold/github-env-vars-action@v2.1.0
       - uses: actions/checkout@v2
       -
         name: Get current time
         uses: gerred/actions/current-time@master
         id: current-time
       -
-        name: Set up Docker Buildx
-        uses: crazy-max/ghaction-docker-buildx@v3
-      -
-        name: Cache Docker Layers
-        uses: actions/cache@v2
-        id: cache
-        with:
-          path: /tmp/.buildx-cache
-          key: ${{ runner.os }}-buildx-${{ env.GITHUB_REPOSITORY_NAME_SLUG}}-${{ env.GITHUB_REF_NAME }}-${{ github.sha }}
-          restore-keys: |
-            ${{ runner.os }}-buildx-${{ env.GITHUB_REPOSITORY_NAME_SLUG}}-${{ env.GITHUB_REF_NAME }}-${{ github.sha }}
-            ${{ runner.os }}-buildx-${{ env.GITHUB_REPOSITORY_NAME_SLUG}}-${{ env.GITHUB_REF_NAME }}-
-            ${{ runner.os }}-buildx-${{ env.GITHUB_REPOSITORY_NAME_SLUG}}-
-            ${{ runner.os }}-buildx-
-      -
         name: Build Docker Image
         env:
           TIMESTAMP: "${{ steps.current-time.outputs.time }}"
         run: |
-          docker buildx build \
-            --load \
-            --cache-from "type=local,src=/tmp/.buildx-cache" \
-            --cache-to "type=local,dest=/tmp/.buildx-cache" \
+          docker build \
             --build-arg BUILD_DATE=$TIMESTAMP \
-            --build-arg VCS_REF=$GITHUB_REF_NAME \
-            --build-arg VERSION=$GITHUB_SHA_SHORT \
-            --tag "unblibraries/$GITHUB_REPOSITORY_NAME:$GITHUB_SHA_SHORT" \
+            --build-arg VCS_REF=$CI_REF_NAME \
+            --build-arg VERSION=$CI_SHA_SHORT \
+            --tag "ghcr.io/$CI_REPOSITORY_OWNER/$CI_REPOSITORY_NAME:$CI_SHA_SHORT" \
             .
       -
-        name: Login to DockerHub
-        run: echo "$DOCKERHUB_PASS" | docker login --username "$DOCKERHUB_USER" --password-stdin
+        name: Login to GHCR
+        run: echo $GH_CONTAINER_REGISTRY_TOKEN | docker login ghcr.io -u $GH_CONTAINER_REGISTRY_USER --password-stdin
         env:
-          DOCKERHUB_USER: ${{secrets.DOCKERHUB_USER}}
-          DOCKERHUB_PASS: ${{secrets.DOCKERHUB_PASS}}
+          GH_CONTAINER_REGISTRY_TOKEN: ${{secrets.GH_CONTAINER_REGISTRY_TOKEN}}
+          GH_CONTAINER_REGISTRY_USER: ${{secrets.GH_CONTAINER_REGISTRY_USER}}
       -
-        name: Push Image to DockerHub
-        run: docker push "unblibraries/$GITHUB_REPOSITORY_NAME:$GITHUB_SHA_SHORT"
+        name: Push Image to GHCR
+        run: docker push "ghcr.io/$CI_REPOSITORY_OWNER/$CI_REPOSITORY_NAME:$CI_SHA_SHORT"
 
   update-docker-compose:
     name: Update Docker Compose
     runs-on: ubuntu-latest
     steps:
-      - uses: FranzDiebold/github-env-vars-action@v1.2.0
+      - uses: FranzDiebold/github-env-vars-action@v2.1.0
       - uses: actions/checkout@v2
       -
         name: Remove build section from docker-compose
-        run: docker run --rm --env "GITHUB_REPOSITORY_NAME=$GITHUB_REPOSITORY_NAME" -v "${PWD}":/workdir mikefarah/yq yq delete --inplace docker-compose.yml "services[$GITHUB_REPOSITORY_NAME].build"
+        run: docker run --rm --env "CI_REPOSITORY_NAME=$CI_REPOSITORY_NAME" -v "${PWD}":/workdir mikefarah/yq:3.3.4 yq delete --inplace docker-compose.yml "services[$CI_REPOSITORY_NAME].build"
       -
         name: Add new image section with built image
-        run: docker run --rm --env "GITHUB_REPOSITORY_NAME=$GITHUB_REPOSITORY_NAME" -v "${PWD}":/workdir mikefarah/yq yq write --inplace docker-compose.yml "services[$GITHUB_REPOSITORY_NAME].image" "unblibraries/$GITHUB_REPOSITORY_NAME:$GITHUB_SHA_SHORT"
-      -
-        name: Add content import to mysql startup script
-        run: docker run --rm -v "${PWD}":/workdir mikefarah/yq yq write --inplace docker-compose.yml "services.drupal-mysql-lib-unb-ca.volumes[+]" "/tmp/db.sql:/docker-entrypoint-initdb.d/db.sql"
-      -
-        name: Remove generic Drupal volume from docker-compose
-        run: docker run --rm --env "GITHUB_REPOSITORY_NAME=$GITHUB_REPOSITORY_NAME" -v "${PWD}":/workdir mikefarah/yq yq delete --inplace docker-compose.yml "services[$GITHUB_REPOSITORY_NAME].volumes(.==/app/html/sites/default)"
-      -
-        name: Add content to Drupal files dir
-        run: docker run --rm --env "GITHUB_REPOSITORY_NAME=$GITHUB_REPOSITORY_NAME" -v "${PWD}":/workdir mikefarah/yq yq write --inplace docker-compose.yml "services[$GITHUB_REPOSITORY_NAME].volumes[+]" "/tmp/default:/app/html/sites/default"
+        run: docker run --rm --env "CI_REPOSITORY_NAME=$CI_REPOSITORY_NAME" -v "${PWD}":/workdir mikefarah/yq:3.3.4 yq write --inplace docker-compose.yml "services[$CI_REPOSITORY_NAME].image" "ghcr.io/$CI_REPOSITORY_OWNER/$CI_REPOSITORY_NAME:$CI_SHA_SHORT"
       -
         name: Upload docker-compose.yml
         uses: actions/upload-artifact@v2
@@ -109,19 +93,20 @@ jobs:
           name: docker-compose
           path: ./docker-compose.yml
 
-  start-application:
+  start-install-application:
     name: Start-Up Application
     runs-on: ubuntu-latest
-    needs: [build-application, update-docker-compose]
+    needs: [build-image, update-docker-compose]
     steps:
-      - uses: FranzDiebold/github-env-vars-action@v1.2.0
+      - uses: FranzDiebold/github-env-vars-action@v2.1.0
       - uses: actions/checkout@v2
       -
         name: Install PHP
-        uses: shivammathur/setup-php@v1
+        uses: shivammathur/setup-php@v2
         with:
           php-version: 7.3
           coverage: none
+          tools: composer:v2
       -
         name: Set Composer Cache Directory
         id: composer-set-cache-dir
@@ -145,53 +130,44 @@ jobs:
         with:
           name: docker-compose
       -
-        name: Login to DockerHub
-        run: echo "$DOCKERHUB_PASS" | docker login --username "$DOCKERHUB_USER" --password-stdin
+        name: Login to GHCR
+        run: echo $GH_CONTAINER_REGISTRY_TOKEN | docker login ghcr.io -u $GH_CONTAINER_REGISTRY_USER --password-stdin
         env:
-          DOCKERHUB_USER: ${{secrets.DOCKERHUB_USER}}
-          DOCKERHUB_PASS: ${{secrets.DOCKERHUB_PASS}}
+          GH_CONTAINER_REGISTRY_TOKEN: ${{secrets.GH_CONTAINER_REGISTRY_TOKEN}}
+          GH_CONTAINER_REGISTRY_USER: ${{secrets.GH_CONTAINER_REGISTRY_USER}}
       -
         name: Pull Required Docker Images
         run: docker-compose pull --parallel --quiet
       -
-        name: Install prestissimo
-        run: composer global require hirak/prestissimo --prefer-dist --no-progress --no-suggest
-      -
         name: Install dockworker
         run: composer install --prefer-dist --no-progress --no-suggest
-      -
-        name: Decrypt database
-        run: gpg --quiet --batch --yes --decrypt --passphrase="$CONTENT_DECRYPTION_KEY" --output /tmp/db.sql.gz ./data/content/db.sql.gz.gpg
-        env:
-          CONTENT_DECRYPTION_KEY: ${{ secrets.CONTENT_DECRYPTION_KEY }}
-      -
-        name: Decrypt files
-        run: gpg --quiet --batch --yes --decrypt --passphrase="$CONTENT_DECRYPTION_KEY" --output /tmp/files.tar.gz ./data/content/files.tar.gz.gpg
-        env:
-          CONTENT_DECRYPTION_KEY: ${{ secrets.CONTENT_DECRYPTION_KEY }}
-      -
-        name: Extract database
-        run: rm -rf /tmp/db.sql && gunzip /tmp/db.sql.gz
-      -
-        name: Extract files
-        run: rm -rf /tmp/default && tar xvzpf /tmp/files.tar.gz -C /tmp
       -
         name: Start container and check logs for errors
         run: vendor/bin/dockworker local:start --no-tail-logs --only-start --force-recreate
+      -
+        name: Export installed settings.php
+        run: docker cp --archive $CI_REPOSITORY_NAME:/app/html/sites/default/settings.php /tmp/settings.php
+      -
+        name: Upload Drupal Settings
+        uses: actions/upload-artifact@v2
+        with:
+          name: drupal-settings-file
+          path: /tmp/settings.php
 
-  behat:
+  behat-tests:
     name: Behat Tests
     runs-on: ubuntu-latest
-    needs: [build-application, update-docker-compose]
+    needs: [start-install-application, update-docker-compose]
     steps:
-      - uses: FranzDiebold/github-env-vars-action@v1.2.0
+      - uses: FranzDiebold/github-env-vars-action@v2.1.0
       - uses: actions/checkout@v2
       -
         name: Install PHP
-        uses: shivammathur/setup-php@v1
+        uses: shivammathur/setup-php@v2
         with:
           php-version: 7.3
           coverage: none
+          tools: composer:v2
       -
         name: Set Composer Cache Directory
         id: composer-set-cache-dir
@@ -210,22 +186,20 @@ jobs:
             ${{ runner.os }}-composer-dockworker-
             ${{ runner.os }}-composer-
       -
-        name: Login to DockerHub
-        run: echo "$DOCKERHUB_PASS" | docker login --username "$DOCKERHUB_USER" --password-stdin
-        env:
-          DOCKERHUB_USER: ${{secrets.DOCKERHUB_USER}}
-          DOCKERHUB_PASS: ${{secrets.DOCKERHUB_PASS}}
-      -
-        name: Download docker-compose
+        name: Download docker-compose.yml from artifact server
         uses: actions/download-artifact@v2
         with:
           name: docker-compose
+          path: ./
+      -
+        name: Login to GHCR
+        run: echo $GH_CONTAINER_REGISTRY_TOKEN | docker login ghcr.io -u $GH_CONTAINER_REGISTRY_USER --password-stdin
+        env:
+          GH_CONTAINER_REGISTRY_TOKEN: ${{secrets.GH_CONTAINER_REGISTRY_TOKEN}}
+          GH_CONTAINER_REGISTRY_USER: ${{secrets.GH_CONTAINER_REGISTRY_USER}}
       -
         name: Pull Required Docker Images
         run: docker-compose pull --parallel --quiet
-      -
-        name: Install prestissimo
-        run: composer global require hirak/prestissimo --prefer-dist --no-progress --no-suggest
       -
         name: Install dockworker
         run: composer install --prefer-dist --no-progress --no-suggest
@@ -246,125 +220,71 @@ jobs:
         name: Extract files
         run: rm -rf /tmp/default && tar xvzpf /tmp/files.tar.gz -C /tmp
       -
+        name: Download installed drupal settings.php
+        uses: actions/download-artifact@v2
+        with:
+          name: drupal-settings-file
+          path: /tmp/app/html/sites/default/
+      -
+        name: Remove generic Drupal volume from docker-compose
+        run: docker run --rm --env "GITHUB_REPOSITORY_NAME=$CI_REPOSITORY_NAME" -v "${PWD}":/workdir mikefarah/yq:3.3.4 yq delete --inplace docker-compose.yml "services[$CI_REPOSITORY_NAME].volumes(.==/app/html/sites/default)"
+      -
+        name: Add content to Drupal files dir
+        run: docker run --rm --env "GITHUB_REPOSITORY_NAME=$CI_REPOSITORY_NAME" -v "${PWD}":/workdir mikefarah/yq:3.3.4 yq write --inplace docker-compose.yml "services[$CI_REPOSITORY_NAME].volumes[+]" "/tmp/app/html/sites/default:/app/html/sites/default"
+      -
+        name: Add content import to mysql startup script
+        run: docker run --rm -v "${PWD}":/workdir mikefarah/yq:3.3.4 yq write --inplace docker-compose.yml "services.drupal-mysql-lib-unb-ca.volumes[+]" "/tmp/db.sql:/docker-entrypoint-initdb.d/db.sql"
+      -
         name: Start container and check logs
         run: vendor/bin/dockworker local:start --no-tail-logs --only-start --force-recreate
+      -
+        name: Dump logs
+        run: docker-compose logs
       -
         name: Run behat tests
         run: vendor/bin/dockworker tests:behat
 
-  phpunit:
-    name: PHPUnit Tests
-    runs-on: ubuntu-latest
-    needs: [build-application, update-docker-compose]
-    steps:
-      - uses: FranzDiebold/github-env-vars-action@v1.2.0
-      - uses: actions/checkout@v2
-      -
-        name: Install PHP
-        uses: shivammathur/setup-php@v1
-        with:
-          php-version: 7.3
-          coverage: none
-      -
-        name: Set Composer Cache Directory
-        id: composer-set-cache-dir
-        run: |
-          echo "::set-output name=dir::$(composer config cache-files-dir)"
-      -
-        name: Cache Composer Cache Dir
-        uses: actions/cache@v2
-        id: composercachecache
-        with:
-          path: ${{ steps.composer-set-cache-dir.outputs.dir }}
-          key: ${{ runner.os }}-composer-dockworker-drupal-${{ hashFiles('**/composer.json') }}
-          restore-keys: |
-            ${{ runner.os }}-composer-dockworker-drupal-${{ hashFiles('**/composer.json') }}
-            ${{ runner.os }}-composer-dockworker-drupal-
-            ${{ runner.os }}-composer-dockworker-
-            ${{ runner.os }}-composer-
-      -
-        name: Login to DockerHub
-        run: echo "$DOCKERHUB_PASS" | docker login --username "$DOCKERHUB_USER" --password-stdin
-        env:
-          DOCKERHUB_USER: ${{secrets.DOCKERHUB_USER}}
-          DOCKERHUB_PASS: ${{secrets.DOCKERHUB_PASS}}
-      -
-        name: Download docker-compose
-        uses: actions/download-artifact@v2
-        with:
-          name: docker-compose
-      -
-        name: Pull Required Docker Images
-        run: docker-compose pull --parallel --quiet
-      -
-        name: Install prestissimo
-        run: composer global require hirak/prestissimo --prefer-dist --no-progress --no-suggest
-      -
-        name: Install dockworker
-        run: composer install --prefer-dist --no-progress --no-suggest
-      -
-        name: Decrypt database
-        run: gpg --quiet --batch --yes --decrypt --passphrase="$CONTENT_DECRYPTION_KEY" --output /tmp/db.sql.gz ./data/content/db.sql.gz.gpg
-        env:
-          CONTENT_DECRYPTION_KEY: ${{ secrets.CONTENT_DECRYPTION_KEY }}
-      -
-        name: Decrypt files
-        run: gpg --quiet --batch --yes --decrypt --passphrase="$CONTENT_DECRYPTION_KEY" --output /tmp/files.tar.gz ./data/content/files.tar.gz.gpg
-        env:
-          CONTENT_DECRYPTION_KEY: ${{ secrets.CONTENT_DECRYPTION_KEY }}
-      -
-        name: Extract database
-        run: rm -rf /tmp/db.sql && gunzip /tmp/db.sql.gz
-      -
-        name: Extract files
-        run: rm -rf /tmp/default && tar xvzpf /tmp/files.tar.gz -C /tmp
-      -
-        name: Start container and check logs
-        run: vendor/bin/dockworker local:start --no-tail-logs --only-start --force-recreate
-      -
-        name: Run PHPUnit tests
-        run: vendor/bin/dockworker tests:phpunit
-
   push-branch-tag-image-repository:
     name: Push Branch Tag to Repository
     runs-on: ubuntu-latest
-    needs: [phpcs-drupal, yaml-lint, drupal-9-readiness, start-application, behat, phpunit]
+    needs: [behat-tests]
     if:
       contains('
       refs/heads/dev
       refs/heads/prod
       ', github.ref)
     steps:
-      - uses: FranzDiebold/github-env-vars-action@v1.2.0
+      - uses: FranzDiebold/github-env-vars-action@v2.1.0
       -
-        name: Login to DockerHub
-        run: echo "$DOCKERHUB_PASS" | docker login --username "$DOCKERHUB_USER" --password-stdin
+        name: Login to GHCR
+        run: echo $GH_CONTAINER_REGISTRY_TOKEN | docker login ghcr.io -u $GH_CONTAINER_REGISTRY_USER --password-stdin
         env:
-          DOCKERHUB_USER: ${{secrets.DOCKERHUB_USER}}
-          DOCKERHUB_PASS: ${{secrets.DOCKERHUB_PASS}}
+          GH_CONTAINER_REGISTRY_TOKEN: ${{secrets.GH_CONTAINER_REGISTRY_TOKEN}}
+          GH_CONTAINER_REGISTRY_USER: ${{secrets.GH_CONTAINER_REGISTRY_USER}}
       -
         name: Pull Hash Tagged Image
-        run: docker pull "unblibraries/$GITHUB_REPOSITORY_NAME:$GITHUB_SHA_SHORT"
+        run: docker pull "ghcr.io/$CI_REPOSITORY_OWNER/$CI_REPOSITORY_NAME:$CI_SHA_SHORT"
       -
-        name: Tag Image With Branch
-        run: docker image tag "unblibraries/$GITHUB_REPOSITORY_NAME:$GITHUB_SHA_SHORT" "unblibraries/$GITHUB_REPOSITORY_NAME:$GITHUB_REF_NAME"
+        name: Update Branch Tag
+        run: docker image tag "ghcr.io/$CI_REPOSITORY_OWNER/$CI_REPOSITORY_NAME:$CI_SHA_SHORT" "ghcr.io/$CI_REPOSITORY_OWNER/$CI_REPOSITORY_NAME:$CI_REF_NAME"
       -
         name: Push Branch Tag
-        run: docker push "unblibraries/$GITHUB_REPOSITORY_NAME:$GITHUB_REF_NAME"
+        run: docker push "ghcr.io/$CI_REPOSITORY_OWNER/$CI_REPOSITORY_NAME:$CI_REF_NAME"
 
   deploy-live:
     name: Deploy Image to Cluster
     runs-on: ubuntu-latest
     needs: [push-branch-tag-image-repository]
     steps:
-      - uses: FranzDiebold/github-env-vars-action@v1.2.0
+      - uses: FranzDiebold/github-env-vars-action@v2.1.0
       - uses: actions/checkout@v2
       -
         name: Install PHP
-        uses: shivammathur/setup-php@v1
+        uses: shivammathur/setup-php@v2
         with:
           php-version: 7.3
           coverage: none
+          tools: composer:v2
       - uses: azure/setup-kubectl@v1
         with:
           version: '1.18.0'
@@ -392,11 +312,27 @@ jobs:
             ${{ runner.os }}-composer-dockworker-
             ${{ runner.os }}-composer-
       -
-        name: Install prestissimo
-        run: composer global require hirak/prestissimo --prefer-dist --no-progress --no-suggest
-      -
         name: Install dockworker
         run: composer install --prefer-dist --no-progress --no-suggest
       -
         name: Deploy, check deployment logs for errors
-        run: dockworker image:deploy $GITHUB_REF_NAME --use-tag $GITHUB_SHA_SHORT
+        run: dockworker image:deploy $CI_REF_NAME --use-tag $CI_SHA_SHORT
+        env:
+          GH_CONTAINER_REGISTRY_TOKEN: ${{secrets.GH_CONTAINER_REGISTRY_TOKEN}}
+          GH_CONTAINER_REGISTRY_USER: ${{secrets.GH_CONTAINER_REGISTRY_USER}}
+
+  newrelic-marker:
+    name: Set Newrelic Marker
+    runs-on: ubuntu-latest
+    needs: [deploy-live]
+    steps:
+      - name: Create New Relic deployment marker
+        uses: newrelic/deployment-marker-action@v1
+        with:
+          accountId: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
+          apiKey: ${{ secrets.NEW_RELIC_API_KEY }}
+          applicationId: ${{ secrets.NEW_RELIC_APPLICATION_ID }}
+          revision: "${{ github.ref }}-${{ github.sha }}"
+          changelog: "See https://github.com/${{ github.repository }}/commit/${{ github.sha }}"
+          description: "Automated Deployment via Github Actions"
+          user: "${{ github.actor }}"
