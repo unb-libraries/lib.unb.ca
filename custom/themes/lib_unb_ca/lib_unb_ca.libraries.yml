@@ -7,3 +7,9 @@ global-styling:
   css:
     theme:
       dist/css/style.css: { minified: true }
+
+admin-styling:
+  version: VERSION
+  css:
+    theme:
+      dist/css/admin-style.css: { minified: true }
