@@ -1,9 +1,3 @@
-seven-overrides:
-  version: VERSION
-  css:
-    theme:
-      css/seven-overrides.css: {}
-
 chosen-bootstrap:
   version: VERSION
   css:
