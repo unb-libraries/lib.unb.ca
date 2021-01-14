@@ -354,5 +354,5 @@ jobs:
           applicationId: ${{ env.nr_application_id }}
           revision: "${{ github.sha }}"
           changelog: "https://github.com/${{ github.repository }}/commit/${{ github.sha }}"
-          description: "[${{ github.ref }}] ${{ github.event.head_commit.message }}"
+          description: "${{ github.event.head_commit.message }}"
           user: "${{ github.actor }}"
