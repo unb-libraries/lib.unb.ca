@@ -54,6 +54,19 @@ jobs:
         uses: gerred/actions/current-time@master
         id: current-time
       -
+        name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.3
+          coverage: none
+          tools: composer:v2
+      -
+        name: Install dockworker
+        run: composer install --prefer-dist --no-progress --no-suggest
+      -
+        name: Build Themes
+        run: vendor/bin/dockworker theme:build-all
+      -
         name: Build Docker Image
         env:
           TIMESTAMP: "${{ steps.current-time.outputs.time }}"
