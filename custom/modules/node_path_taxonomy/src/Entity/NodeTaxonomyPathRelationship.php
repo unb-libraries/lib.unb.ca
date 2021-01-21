@@ -262,7 +262,8 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
         $options[$term->id()] = $path_value;
       }
     }
-    \Drupal::moduleHandler()->invokeAll('node_path_taxonomy_alter_paths', [$node_type, $options]);
+    \Drupal::moduleHandler()
+      ->invokeAll('node_path_taxonomy_alter_paths', [$node_type, $options]);
 
     return $options;
   }
