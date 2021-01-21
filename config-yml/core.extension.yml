@@ -62,6 +62,7 @@ module:
   lib_unb_ca_user_protect: 0
   link: 0
   linkit: 0
+  login_destination: 0
   media: 0
   media_entity_browser: 0
   media_library: 0
