@@ -1,0 +1,16 @@
+uuid: a532870e-34ca-4373-b101-4b84ea4966ea
+langcode: en
+status: true
+dependencies: {  }
+name: front_page_redirect
+label: 'Front page redirect'
+triggers:
+  login: login
+  one-time-login: one-time-login
+roles: {  }
+pages_type: 0
+pages: ''
+language: ''
+enabled: true
+destination_path: 'internal:/'
+weight: 0
