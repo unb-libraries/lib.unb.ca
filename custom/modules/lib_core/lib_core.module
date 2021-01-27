@@ -138,8 +138,8 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
       }
 
       // Set default value for subject if not prepopulated (Webform 8.x-5.7+).
-      if (!isset($form['elements']['email_us']['subject']['#default_value'])) {
-        $form['elements']['email_us']['subject']['#value'] = 'Patron Web Query';
+      if (!isset($form['elements']['container']['email_us']['subject']['#default_value'])) {
+        $form['elements']['container']['email_us']['subject']['#value'] = 'Patron Web Query';
       }
 
       if ($user = user_load_by_name($username)) {
@@ -191,7 +191,7 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
         // Change 'Email Us' fieldset label for 'Web Feedback' form.
         if ($username == 'libweb') {
-          $form['elements']['email_us']['#title'] = 'Email our Website Administrator';
+          $form['elements']['container']['email_us']['#title'] = 'Email our Website Administrator';
         }
       }
       else {
