@@ -1,10 +1,29 @@
-name: lib.unb.ca Test Suite
+name: lib.unb.ca
 
 on:
   push:
   pull_request:
 
 jobs:
+  slack-start:
+    name: Notify Slack of Testing Start
+    runs-on: ubuntu-latest
+    steps:
+      - uses: 8398a7/action-slack@v3
+        with:
+          status: custom
+          fields: workflow,commit,repo,author,action,message
+          custom_payload: |
+            {
+              attachments: [{
+                color: 'good',
+                text: `${process.env.AS_REPO}\nBuild Started (${process.env.AS_ACTION})\n${process.env.AS_MESSAGE}\n${process.env.AS_COMMIT} by ${process.env.AS_AUTHOR}`,
+              }]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        if: always()
+
   set-deployment-image-tag:
     name: Set deployment image tag
     runs-on: ubuntu-latest
@@ -418,3 +437,23 @@ jobs:
           changelog: "https://github.com/${{ github.repository }}/commit/${{ github.sha }}"
           description: "${{ github.event.head_commit.message }}"
           user: "${{ github.actor }}"
+
+  slack-results:
+    name: Notify Slack of Build Results
+    runs-on: ubuntu-latest
+    needs: [deploy-live]
+    steps:
+      - uses: 8398a7/action-slack@v3
+        with:
+          status: custom
+          fields: workflow,job,commit,repo,ref,author,took,action,message
+          custom_payload: |
+            {
+              attachments: [{
+                color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',
+                text: `${process.env.AS_REPO}\nBuild/Deploy ${{ job.status }} in ${process.env.AS_TOOK}\n${process.env.AS_ACTION}\n${process.env.AS_MESSAGE}\n${process.env.AS_COMMIT} by ${process.env.AS_AUTHOR}`,
+              }]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        if: always()
