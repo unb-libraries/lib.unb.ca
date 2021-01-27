@@ -23,7 +23,7 @@ id: contact
 title: 'Contact UNB Libraries Staff'
 description: 'Basic email contact webform.'
 category: ''
-elements: "'#attributes':\n  class:\n    - 'bg-light theme-dark'\nrecipient:\n  '#type': hidden\n  '#title': Recipient\n  '#prepopulate': true\ncontact_message:\n  '#type': webform_message\n  '#admin_title': 'Alert Info (dismissable)'\n  '#message_type': info\n  '#message_message': '<p>Note: This text is overrode by lib_core &gt; hook_form_alter</p>'\nemail_us:\n  '#type': fieldset\n  '#title': 'Email Us'\n  required:\n    '#type': webform_markup\n    '#markup': '<p class=\"text-red\">All fields are required. It may be necessary to contact you with follow-up questions.'\n  name:\n    '#title': 'Your Name'\n    '#type': textfield\n    '#required': true\n    '#default_value': '[current-user:display-name]'\n  email:\n    '#type': email\n    '#title': 'Your Email'\n    '#required': true\n    '#pattern': '^(\\D)+(\\w)*((\\.(\\w)+)?)+@(\\D)+(\\w)*((\\.(\\D)+(\\w)*)+)?(\\.)[a-z]{2,}$'\n    '#default_value': '[current-user:mail]'\n  subject:\n    '#type': textfield\n    '#title': Subject\n    '#prepopulate': true\n    '#required': true\n    '#test': 'Testing contact webform from [site:name]'\n  message:\n    '#title': Message\n    '#type': textarea\n    '#required': true\n    '#test': 'Please ignore this email.'\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#attributes':\n    class:\n      - webform-actions-center\n  '#submit__label': 'Send Your Message'\n  '#reset__label': Cancel\nprivacy:\n  '#type': webform_markup\n  '#wrapper_attributes':\n    class:\n      - message-privacy\n  '#admin_title': 'Privacy Statement'\n  '#markup': '<div class=\"alert alert-info\" role=\"alert\"><strong>Privacy: </strong> UNB Libraries will only use the comments you send to improve our website and services. We are not storing any personal information.</div>'"
+elements: "recipient:\n  '#type': hidden\n  '#title': Recipient\n  '#prepopulate': true\ncontact_message:\n  '#type': webform_message\n  '#admin_title': 'Alert Info (dismissable)'\n  '#message_type': info\n  '#message_message': '<p>Note: This text is overrode by lib_core &gt; hook_form_alter</p>'\ncontainer:\n  '#type': container\n  '#attributes':\n    class:\n      - theme-dark\n  email_us:\n    '#type': fieldset\n    '#title': 'Email Us'\n    required:\n      '#type': webform_markup\n      '#markup': '<p class=\"text-red\">All fields are required. It may be necessary to contact you with follow-up questions.'\n    name:\n      '#title': 'Your Name'\n      '#type': textfield\n      '#required': true\n      '#default_value': '[current-user:display-name]'\n    email:\n      '#type': email\n      '#title': 'Your Email'\n      '#required': true\n      '#pattern': '^(\\D)+(\\w)*((\\.(\\w)+)?)+@(\\D)+(\\w)*((\\.(\\D)+(\\w)*)+)?(\\.)[a-z]{2,}$'\n      '#default_value': '[current-user:mail]'\n    subject:\n      '#type': textfield\n      '#title': Subject\n      '#prepopulate': true\n      '#required': true\n      '#test': 'Testing contact webform from [site:name]'\n    message:\n      '#title': Message\n      '#type': textarea\n      '#required': true\n      '#test': 'Please ignore this email.'\n  actions:\n    '#type': webform_actions\n    '#title': 'Submit button(s)'\n    '#attributes':\n      class:\n        - webform-actions-center\n    '#submit__label': 'Send Your Message'\n    '#reset__label': Cancel\nprivacy:\n  '#type': webform_markup\n  '#wrapper_attributes':\n    class:\n      - message-privacy\n  '#admin_title': 'Privacy Statement'\n  '#markup': '<div class=\"alert alert-info\" role=\"alert\"><strong>Privacy: </strong> UNB Libraries will only use the comments you send to improve our website and services. We are not storing any personal information.</div>'"
 css: ''
 javascript: ''
 settings:
@@ -108,7 +108,7 @@ settings:
   wizard_track: ''
   wizard_prev_button_label: ''
   wizard_next_button_label: ''
-  wizard_toggle: false
+  wizard_toggle: true
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
   preview: 0
@@ -157,6 +157,7 @@ settings:
   token_view: false
   token_update: false
   serial_disabled: false
+  token_delete: false
 access:
   create:
     roles:
