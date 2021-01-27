@@ -210,7 +210,7 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     case 'webform_submission_recalls_add_form':
       $form['#attached']['library'][] = 'lib_core/lib-chosen';
       $form['#attached']['library'][] = 'lib_core/chosen-bootstrap';
-      $form['elements']['step_1']['personal_information']['barcode']['#ajax'] = [
+      $form['elements']['step_1']['container_step1']['personal_information']['barcode']['#ajax'] = [
         'callback' => '_lib_core_recalls_barcode_ajax_handler',
         'disable-refocus' => TRUE,
         'event' => 'blur',
@@ -218,7 +218,7 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
           'type' => 'fullscreen',
         ],
       ];
-      $form['elements']['step_2']['bibliographic_information']['oclc_number']['#ajax'] = [
+      $form['elements']['step_2']['container_step2']['bibliographic_information']['oclc_number']['#ajax'] = [
         'callback' => '_lib_core_recalls_ocn_ajax_handler',
         'disable-refocus' => TRUE,
         'event' => 'blur',
