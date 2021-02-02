@@ -374,7 +374,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<figure class=\"mb-0 no-gutters row\">\r\n<div class=\"col-12 col-md-5\">{{ field_slide_image }}</div>\r\n<figcaption class=\"col-12 col-md-7 my-auto p-2 p-md-3\">\r\n<p class=\"h4\">Learn About</p>\r\n<p class=\"h3 text-red\">{{ field_url__title }}</p>\r\n</figcaption>\r\n</figure>"
+            text: "<figure class=\"mb-0 no-gutters row\">\r\n<div class=\"col-12 col-md-6\">{{ field_slide_image }}</div>\r\n<figcaption class=\"col-12 col-md-6 my-auto p-2 p-md-3\">\r\n<p class=\"h4\">Learn About</p>\r\n<p class=\"h3 text-red\">{{ field_url__title }}</p>\r\n</figcaption>\r\n</figure>"
             make_link: true
             path: '{{ field_url__uri }}'
             absolute: false
@@ -635,7 +635,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: false
-          content: "<p class=\"mb-0 ml-3\">\r\n<i class=\"fas fa-life-ring\">&nbsp;</i>\r\n<a href=\"/research\">More Research Help</a>\r\n</p>"
+          content: "<p class=\"mb-0 ml-lg-3 mt-2\">\r\n<i class=\"fas fa-life-ring mr-1\"></i><a href=\"/research\">More Research Help</a>\r\n</p>"
           plugin_id: text_custom
     cache_metadata:
       max-age: -1
