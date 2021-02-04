@@ -812,7 +812,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<div class=\"alert alert-danger d-flex flex-row\">\r\n<div class=\"mr-2\"><i class=\"fas fa-exclamation-circle\"></i></div>\r\n<p class=\"mb-0\">We're sorry, we found no results that match your search in our webpages. Please modify your query and try again.</p>\r\n</div>\r\n\r\n<div><a class=\"btn btn-dark\" href=\"/help/ask-us\">Need help? Ask Us!</a></div>\r\n"
+          content: "<div class=\"alert alert-danger d-flex flex-row\">\r\n<div class=\"mr-2\"><i class=\"fas fa-exclamation-circle\"></i></div>\r\n<p class=\"mb-0\">We're sorry, we found no results that match your search in our webpages. Please modify your query and try again.</p>\r\n</div>\r\n\r\n<div><a class=\"btn btn-light border\" href=\"/help/ask-us\"><span class=\"fas fa-question-circle mr-1 text-secondary\"></span>Need help? Ask Us!</a></div>\r\n"
           plugin_id: text_custom
       css_class: 'search-webpages theme-dark input-group-lg'
     cache_metadata:
