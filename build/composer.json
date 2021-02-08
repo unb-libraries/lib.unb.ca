@@ -245,7 +245,7 @@
         "drupal/redirect": "1.6",
         "drupal/redis": "1.5",
         "drupal/scroll_back_to_top": "1.0-rc1",
-        "drupal/search_api": "1.18",
+        "drupal/search_api": "1.19",
         "drupal/search_api_autocomplete": "1.4",
         "drupal/search_api_exclude": "1.0-alpha1",
         "drupal/search_api_solr": "4.1.10",
