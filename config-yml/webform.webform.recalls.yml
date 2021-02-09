@@ -1,12 +1,7 @@
 uuid: d5490d4f-aeff-48f1-99f7-8b5e273ddf7e
 langcode: en
 status: open
-dependencies:
-  module:
-    - antibot
-third_party_settings:
-  antibot:
-    antibot: true
+dependencies: {  }
 open: null
 close: null
 weight: 0
