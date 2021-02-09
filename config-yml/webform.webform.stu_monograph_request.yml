@@ -4,11 +4,7 @@ status: open
 dependencies:
   module:
     - antibot
-    - honeypot
 third_party_settings:
-  honeypot:
-    honeypot: true
-    time_restriction: true
   antibot:
     antibot: true
 open: null

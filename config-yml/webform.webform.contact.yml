@@ -6,11 +6,10 @@ dependencies:
     module:
       - webform
   module:
-    - honeypot
+    - antibot
 third_party_settings:
-  honeypot:
-    honeypot: true
-    time_restriction: true
+  antibot:
+    antibot: true
 _core:
   default_config_hash: Db1CJM6FchEqqeVz5YJThCK0WB599y4NjQ4GkPcGF5g
 open: null
