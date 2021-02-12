@@ -28,6 +28,9 @@ class WorldCatSearchController extends ControllerBase {
     foreach ($keys as $key) {
       $value = $request->request->get($key);
       if (!empty($value) || $key == 'scope') {
+        if($key == 'format' && strpos($value, '::') !== false) {
+          $key = 'subformat';
+        }
         $q[$key] = str_replace("&quot;", '"', stripslashes($value));
 
         if ($key == 'queryString' && $index != 'kw') {
