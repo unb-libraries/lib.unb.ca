@@ -5,6 +5,10 @@ dependencies:
   config:
     - field.storage.user.field_first_name
     - field.storage.user.field_last_name
+    - node.type.booking_space
+    - node.type.carousel
+    - node.type.library_page
+    - node.type.news_post
   module:
     - node
     - user
@@ -13,7 +17,7 @@ _core:
 id: content
 label: Content
 module: node
-description: 'Find and manage content.'
+description: 'Find and manage page content, eg. Library Page, News Post.'
 tag: default
 base_table: node_field_data
 base_field: nid
@@ -23,7 +27,7 @@ display:
       access:
         type: perm
         options:
-          perm: 'access mycontent overview'
+          perm: 'access content overview'
       cache:
         type: tag
       query:
@@ -1090,7 +1094,9 @@ display:
           group_type: group
           admin_label: ''
           operator: in
-          value: {  }
+          value:
+            library_page: library_page
+            news_post: news_post
           group: 1
           exposed: true
           expose:
@@ -1099,6 +1105,8 @@ display:
             description: ''
             use_operator: false
             operator: type_op
+            operator_limit_selection: false
+            operator_list: {  }
             identifier: type
             required: false
             remember: false
@@ -1108,9 +1116,8 @@ display:
               anonymous: '0'
               library_news_author: '0'
               library_page_author: '0'
-            reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
+              data_administrator: '0'
+            reduce: true
           is_grouped: false
           group_info:
             label: ''
@@ -1126,15 +1133,62 @@ display:
           plugin_id: bundle
           entity_type: node
           entity_field: type
+        type_1:
+          id: type_1
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: 'not in'
+          value:
+            booking_space: booking_space
+            carousel: carousel
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
       sorts: {  }
-      title: 'Library Content'
+      title: 'Manage Library Content'
       empty:
         area_text_custom:
           id: area_text_custom
           table: views
           field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
           empty: true
-          content: 'No content available.'
+          tokenize: false
+          content: "Sorry, found no content that you're allowed to manage.\r\n"
           plugin_id: text_custom
       arguments: {  }
       relationships:
@@ -1161,7 +1215,7 @@ display:
           group_type: group
           admin_label: ''
           empty: false
-          content: "<header>\r\n  <div class=\"color-success\">\r\n    <hr />\r\n    <h2>Displaying @start - @end of @total</h2>\r\n    <hr />\r\n  </div>\r\n</header>"
+          content: "<header>\r\n  <div class=\"color-success\">\r\n    <hr>\r\n    <h2>Displaying @start - @end of @total</h2>\r\n    <hr>\r\n  </div>\r\n  <p><b>Note:</b> If you need to edit additional content please submit a <a href=\"https://staff.lib.unb.ca/trouble-tickets\"><b>Trouble Ticket</b></a> (select topic <i>Library Website</i>) requesting access.</p>\r\n</header>"
           plugin_id: result
     display_plugin: default
     display_title: Master
