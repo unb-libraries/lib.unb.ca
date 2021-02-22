@@ -413,7 +413,7 @@ function _lib_core_get_guide_categories() {
     'media' => 'Media Arts and Cultures',
     // 'miscellaneous' => 'Miscellaneous',
     'music' => 'Music',
-    'nativestudies' => 'Indigenous Studies',
+    'indigenous' => 'Indigenous Studies',
     'nursing' => 'Nursing & Health',
     'philosophy' => 'Philosophy',
     'physics' => 'Physics',
