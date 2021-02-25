@@ -1,7 +1,7 @@
 sids:
   unb_libraries_ldap: unb_libraries_ldap
 authenticationMode: 1
-loginUIUsernameTxt: 'Enter your UNB login ID'
+loginUIUsernameTxt: 'Enter ONLY your login ID. Do NOT include "@unb.ca"'
 loginUIPasswordTxt: ''
 ldapUserHelpLinkUrl: ''
 ldapUserHelpLinkText: ''
