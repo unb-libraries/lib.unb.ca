@@ -8,3 +8,15 @@ fieldset {
     }
   }
 }
+
+.user-login-form {
+  .form-item-name {
+    small.description {
+      &::before {
+        @include link-fa-icon('\f06a', 'left', '', $unb-red);
+      }
+
+      font-weight: bold;
+    }
+  }
+}
