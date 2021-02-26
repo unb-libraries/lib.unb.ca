@@ -414,6 +414,9 @@ jobs:
         env:
           GH_CONTAINER_REGISTRY_TOKEN: ${{secrets.GH_CONTAINER_REGISTRY_TOKEN}}
           GH_CONTAINER_REGISTRY_USER: ${{secrets.GH_CONTAINER_REGISTRY_USER}}
+      -
+        name: Write out deployment logs
+        run: vendor/bin/dockworker deployment:logs $CI_REF_NAME
 
   newrelic-marker:
     name: Set Newrelic Marker
