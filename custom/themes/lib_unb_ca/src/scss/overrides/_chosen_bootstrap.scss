@@ -1,7 +1,8 @@
 .chosen-container-single {
    &.form-control {
-    padding: 0;
-    height: auto;
+     padding: 0;
+     height: auto;
+     min-width: 140px;
   }
 
   .chosen-single {
