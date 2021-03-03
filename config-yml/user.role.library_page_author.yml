@@ -26,6 +26,7 @@ permissions:
   - 'use default_page_workflow transition private_revision'
   - 'use default_page_workflow transition publish'
   - 'use default_page_workflow transition unpublish'
+  - 'view any unpublished content'
   - 'view latest version'
   - 'view library_page revisions'
   - 'view own unpublished content'
