@@ -43,6 +43,7 @@ type_settings:
       label: Publish
       from:
         - published
+        - unpublished
         - work_in_progress
       to: published
       weight: -2
