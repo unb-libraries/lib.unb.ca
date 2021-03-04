@@ -13,3 +13,4 @@ use_light_file: false
 use_brands_file: true
 external_svg_integrity: ''
 use_duotone_file: false
+load_assets: true
