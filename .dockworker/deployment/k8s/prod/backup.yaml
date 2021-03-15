@@ -37,7 +37,7 @@ spec:
                   value: "3306"
                 -
                   name: MYSQL_DATABASE
-                  value: pmportal_db
+                  value: libweb_db
                 -
                   name: MYSQL_USER_NAME
                   value: root
@@ -103,7 +103,7 @@ spec:
                   value: "3306"
                 -
                   name: MYSQL_DATABASE
-                  value: pmportal_db
+                  value: libweb_db
                 -
                   name: MYSQL_USER_NAME
                   value: root
@@ -172,7 +172,7 @@ spec:
                   value: "3306"
                 -
                   name: MYSQL_DATABASE
-                  value: pmportal_db
+                  value: libweb_db
                 -
                   name: MYSQL_USER_NAME
                   value: root
@@ -244,7 +244,7 @@ spec:
                   value: "3306"
                 -
                   name: MYSQL_DATABASE
-                  value: pmportal_db
+                  value: libweb_db
                 -
                   name: MYSQL_USER_NAME
                   value: root
