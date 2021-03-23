@@ -49,12 +49,27 @@ third_party_settings:
                 third_party_settings: {  }
             additional: {  }
             weight: 1
+          daaa49c7-4280-436a-9b2c-984312aeb420:
+            uuid: daaa49c7-4280-436a-9b2c-984312aeb420
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:library_page:content_moderation_control'
+            additional: {  }
+            weight: 2
         third_party_settings: {  }
 id: node.library_page.default
 targetEntityType: node
 bundle: library_page
 mode: default
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_page_content:
     type: entity_reference_revisions_entity_view
     weight: 102
