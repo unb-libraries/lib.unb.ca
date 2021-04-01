@@ -1,16 +1,16 @@
-uuid: b1b790d8-958d-4bc6-add4-6cea4fbbd3ad
+uuid: 96090188-4be9-4e90-8155-dfef4414df74
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - lib_core
     - system
   theme:
     - lib_unb_ca
-id: unblibrariesdiscoverysearch
+id: unblibrariesdiscoverysearch_2
 theme: lib_unb_ca
-region: content
-weight: -4
+region: header
+weight: 0
 provider: null
 plugin: discovery_search_block
 settings:
