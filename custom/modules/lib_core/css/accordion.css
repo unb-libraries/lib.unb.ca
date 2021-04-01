@@ -1,0 +1,107 @@
+.Accordion {
+  margin: 0;
+  padding: 0;
+}
+.Accordion input.form-control,
+.Accordion select.form-control,
+.Accordion button.btn-primary {
+  border: 2px #000 solid;
+}
+.Accordion .form-control:focus,
+.Accordion .form-group button[type="submit"]:focus,
+.Accordion .custom-control-input:focus ~ .custom-control-label::before {
+  box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 60%);
+}
+
+.Accordion-trigger {
+  background-color: inherit;
+  color: #fff;
+  display: block;
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0;
+  position: relative;
+  text-align: left;
+  width: 100%;
+  outline: none;
+}
+
+button {
+  border-style: none;
+  border-bottom-style: outset;
+  border-bottom-color: transparent;
+}
+
+button[aria-expanded="true"] {
+  border-bottom-color: #ffc107;
+}
+button[aria-expanded="true"]:hover {
+  cursor: default;
+}
+button[aria-expanded="false"]:focus {
+  outline: 1px dotted #ffc107;
+}
+button[aria-expanded="false"]:hover,
+button[aria-expanded="false"]:focus {
+  color: #ffc107;
+}
+.Accordion button::-moz-focus-inner {
+  border: 0;
+}
+
+.Accordion-title {
+  display: block;
+  pointer-events: none;
+  border: transparent 2px solid;
+  border-radius: 5px;
+  padding: 0.25em;
+  outline: none;
+}
+
+.Accordion-panel {
+  margin: 0;
+  padding: 1em 1.5em;
+}
+
+/* For Edge bug https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4806035/ */
+.Accordion-panel[hidden] {
+  display: none;
+}
+.Accordion .card {
+  background-color: initial;
+  border-radius: 0;
+}
+/* Discover Search */
+#discovery-search {
+  background-color: rgb(80  80  80 / 82%);
+}
+#discovery-search .card-header {
+  border-bottom: none;
+}
+.focus-ring:focus {
+  outline: 1px dotted #fff;
+}
+.bg-askus {
+  background-color: rgb(255  193  7 / 82%);
+}
+#ask-us h2 {
+  font-size: 3rem;
+}
+#ask-us-help a {
+  border: 1px solid transparent;
+}
+#ask-us-help a span {
+  color: #000;
+}
+#ask-us-help a span:focus,
+#ask-us-help a span:hover {
+  color: #990000;
+}
+@media (min-width: 992px){
+  #discovery-search {
+    width: 77%;
+  }
+  #ask-us {
+    width: 26%;
+  }
+}
