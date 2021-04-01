@@ -9,6 +9,11 @@ discoverysearch:
   css:
     theme:
       css/discovery-search.css: {}
+      css/accordion.css: {}
+  js:
+    js/accordion.js: {}
+  dependencies:
+    - core/jquery
 
 lib-chosen:
   version: VERSION

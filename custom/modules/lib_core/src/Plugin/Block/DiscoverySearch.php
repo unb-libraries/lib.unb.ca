@@ -42,158 +42,74 @@ class DiscoverySearch extends BlockBase {
     }
 
     $html =
-      '<div class="mt-5 theme-dark">
-        <div id="discovery-search" class="tabs-accordion">
+      '<div class="Accordion mt-0 mt-lg-5 theme-dark d-flex flex-column flex-lg-row">
+        <div id="discovery-search" class="flex-grow-1">
+        <div class="card">
           <h2 class="sr-only">Search</h2>
-          <ul id="tabs" class="flex-fill nav nav-tabs justify-content-center" role="tablist">
-            <li class="nav-item">
-              <a id="tab-reserves" href="#pane-reserves" class="nav-link" data-toggle="tab" role="tab">
-                Reserves
-              </a>
-            </li>
-            <li class="nav-item">
-              <a id="tab-catalogue" href="#pane-catalogue" class="nav-link active" data-toggle="tab" role="tab">
-                Catalogue
-              </a>
-            </li>
-            <li class="nav-item">
-              <a id="tab-databases" href="#pane-databases" class="nav-link" data-toggle="tab" role="tab">
-                 <span class="d-none d-xl-inline">Article</span> Databases
-              </a>
-            </li>
-            <li class="nav-item">
-              <a id="tab-journals" href="#pane-journals" class="nav-link" data-toggle="tab" role="tab">
-                Journals<span class="d-none d-xl-inline"> &amp; Newspapers</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a id="tab-encyclopedias" href="#pane-encyclopedias" class="nav-link" data-toggle="tab" role="tab">
-                e-Reference<span class="d-none d-xl-inline"> Materials</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a id="tab-ebooks" href="#pane-ebooks" class="nav-link" data-toggle="tab" role="tab">
-                e-Books
-              </a>
-            </li>
-            <li class="nav-item">
-              <a id="tab-videos" href="#pane-videos" class="nav-link" data-toggle="tab" role="tab">
-                Videos
-              </a>
-            </li>
-          </ul>
-          <div class="d-flex flex-wrap p-lg-4">
-            <div class="col-lg-8 px-0 tab-content header-icons">
-              <div aria-labelledby="tab-reserves" class="card tab-pane fade" id="pane-reserves" role="tabpanel">
-                <div class="card-header p-0" id="heading-reserves">
-                  <h3 class="m-0">
-                    <button class="btn btn-dark btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse-reserves" aria-expanded="false" aria-controls="collapse-reserves">
-                        Reserves
-                    </button>
-                  </h3>
-                </div>
-                <div class="collapse" data-parent="#content" id="collapse-reserves">
-                  <div class="card-body">';
-    $html .= $this->getReservesForm();
-    $html .= '</div>
-                </div>
-              </div>
-  
-              <div aria-labelledby="tab-catalogue" class="card tab-pane fade active show" id="pane-catalogue" role="tabpanel">
-                <div class="card-header p-0" id="heading-catalogue">
-                  <h3 class="m-0">
-                    <button class="btn btn-dark btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse-catalogue" aria-expanded="true" aria-controls="collapse-catalogue">
-                        Catalogue
-                    </button>
-                  </h3>
-                </div>
-                <div class="collapse show" data-parent="#content" id="collapse-catalogue">
-                  <div class="card-body">';
-    $html .= $this->getCatalogueForm();
-    $html .= '</div>
-                </div>
-              </div>
-  
-              <div aria-labelledby="tab-databases" class="card tab-pane fade" id="pane-databases" role="tabpanel">
-                <div class="card-header p-0" id="heading-databases">
-                  <h3 class="m-0">
-                    <button class="btn btn-dark btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse-databases" aria-expanded="false" aria-controls="collapse-databases">
-                      <span class="d-none d-sm-inline">Article</span> Databases
-                    </button>
-                  </h3>
-                </div>
-                <div class="collapse" data-parent="#content" id="collapse-databases">
-                  <div class="card-body">';
-    $html .= $this->getDatabasesForm();
-    $html .= '</div>
-                </div>
-              </div>
-              
-              <div aria-labelledby="tab-journals" class="card tab-pane fade" id="pane-journals" role="tabpanel">
-                <div class="card-header p-0" id="heading-journals">
-                  <h3 class="m-0">
-                    <button class="btn btn-dark btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse-journals" aria-expanded="false" aria-controls="collapse-journals">
-                      Journals<span class="d-none d-sm-inline"> &amp; Newspapers</span>
-                    </button>
-                  </h3>
-                </div>
-                  <div class="collapse" data-parent="#content" id="collapse-journals">
-                    <div class="card-body">';
-    $html .= $this->getJournalsForm();
-    $html .= '</div>
-                  </div>
-              </div>
-  
-              <div aria-labelledby="tab-encyclopedias" class="card tab-pane fade" id="pane-encyclopedias" role="tabpanel">
-                <div class="card-header p-0" id="heading-encyclopedias">
-                  <h3 class="m-0">
-                    <button class="btn btn-dark btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse-encyclopedias" aria-expanded="false" aria-controls="collapse-encyclopedias">
-                      e-Reference<span class="d-none d-sm-inline"> Materials</span>
-                    </button>
-                  </h3>
-                </div>
-                  <div class="collapse" data-parent="#content" id="collapse-encyclopedias">
-                    <div class="card-body">';
-    $html .= $this->getEncyclopediasForm();
-    $html .= '</div>
-                  </div>
-              </div>
-  
-              <div aria-labelledby="tab-ebooks" class="card tab-pane fade" id="pane-ebooks" role="tabpanel">
-                <div class="card-header p-0" id="heading-ebooks">
-                  <h3 class="m-0">
-                    <button class="btn btn-dark btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse-ebooks" aria-expanded="false" aria-controls="collapse-ebooks">
-                      e-Books
-                    </button>
-                  </h3>
-                </div>
-                <div class="collapse" data-parent="#content" id="collapse-ebooks">
-                  <div class="card-body">';
-    $html .= $this->getEbooksForm();
-    $html .= '</div>
-                </div>
-              </div>
-  
-              <div aria-labelledby="tab-videos" class="card tab-pane fade" id="pane-videos" role="tabpanel">
-                <div class="card-header p-0" id="heading-videos">
-                  <h3 class="m-0">
-                    <button class="btn btn-dark btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse-videos" aria-expanded="false" aria-controls="collapse-videos">
-                      Videos
-                    </button>
-                  </h3>
-                </div>
-                <div class="collapse" data-parent="#content" id="collapse-videos">
-                  <div class="card-body">';
-    $html .= $this->getVideosForm();
-    $html .= '</div>
-                </div>
-              </div>
-            </div>';
-    $html .= $askus_block;
-    $html .= '</div>
+          <div class="card-header px-0 pb-1">
+             <nav class="navbar navbar-expand-lg">
+                <!--<button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarNav" data-toggle="collapse" type="button"><span class="mr-1 navbar-toggler-icon"></span>Search Menu</button>
+                <div class="collapse navbar-collapse" id="navbarNav">-->
+                   <ul class="navbar-nav d-flex justify-content-around align-items-lg-end w-100">
+                      <li class="nav-item"><button aria-controls="searchPanel1" aria-expanded="true" class="Accordion-trigger p-2" id="searchBtn1">Catalogue</button></li>
+                      <li class="nav-item"><button aria-controls="searchPanel2" aria-expanded="false" class="Accordion-trigger p-2" id="searchBtn2" tabindex="-1">Reserves</button></li>
+                      <li class="nav-item"><button aria-controls="searchPanel3" aria-expanded="false" class="Accordion-trigger p-2" id="searchBtn3" tabindex="-1">Article Databases</button></li>
+                      <li class="nav-item"><button aria-controls="searchPanel4" aria-expanded="false" class="Accordion-trigger p-2" id="searchBtn4" tabindex="-1">Journals &amp; Newspapers</button></li>
+                      <li class="nav-item"><button aria-controls="searchPanel5" aria-expanded="false" class="Accordion-trigger p-2" id="searchBtn5" tabindex="-1">e-Reference Materials</button></li>
+                      <li class="nav-item"><button aria-controls="searchPanel6" aria-expanded="false" class="Accordion-trigger p-2 text-nowrap" id="searchBtn6" tabindex="-1">e-Books</button></li>
+                      <li class="nav-item"><button aria-controls="searchPanel7" aria-expanded="false" class="Accordion-trigger p-2" id="searchBtn7" tabindex="-1">Videos</button></li>
+                    </ul>
+                <!--</div>-->
+             </nav>
+          </div>
+          <div class="card-body p-0">
+             <div aria-labelledby="searchBtn1" class="Accordion-panel" id="searchPanel1" role="region">';
+                $html .= $this->getCatalogueForm();
+             $html .= '</div>
+             <div aria-labelledby="searchBtn2" class="Accordion-panel" id="searchPanel2" role="region" hidden="">';
+                $html .= $this->getReservesForm();
+             $html .= '</div>
+             <div aria-labelledby="searchBtn3" class="Accordion-panel" id="searchPanel3" role="region" hidden="">';
+                $html .= $this->getDatabasesForm();
+             $html .= '</div>
+             <div aria-labelledby="searchBtn4" class="Accordion-panel" id="searchPanel4" role="region" hidden="">';
+                $html .= $this->getJournalsForm();
+             $html .= '</div>
+             <div aria-labelledby="searchBtn5" class="Accordion-panel" id="searchPanel5" role="region" hidden="">';
+                $html .= $this->getEncyclopediasForm();
+             $html .= '</div>
+             <div aria-labelledby="searchBtn6" class="Accordion-panel" id="searchPanel6" role="region" hidden="">';
+                $html .= $this->getEbooksForm();
+             $html .= '</div>
+             <div aria-labelledby="searchBtn7" class="Accordion-panel" id="searchPanel7" role="region" hidden="">';
+                $html .= $this->getVideosForm();
+             $html .= '</div>
+          </div>
         </div>
-      </div>
-    </div>';
+        </div>
+        <div id="ask-us" class="d-none d-lg-block bg-askus p-2">
+           <div class="d-flex mt-3">
+            <div class="flex-grow-1"><h2 class="text-black border-bottom-0">Ask Us</h2></div>
+            <div><i class="fas fa-comments fa-3x"></i></div>
+           </div>
+           <form class="pt-2 pb-1">
+            <div class="form-group">
+              <label for="chat-askus" class="sr-only">Email address</label>
+              <input id="chat-askus" type="text" class="form-control" placeholder="Chat is open">
+              <p id="ask-us-help" class="mt-3 text-center">
+                <a href="#">
+                  <span>Phone,</span>    
+                  <span>Text,</span>  
+                  <span>Email,</span>  
+                  <span>In-Person</span>  
+                </a>
+              </p>
+            </div>
+           </form>
+</form>
+           
+        </div>
+      </div>';
 
     return [
       '#children' => $html,
@@ -213,43 +129,31 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getReservesForm() {
     $form_reserves =
-      '<legend class="custom-legend mb-4">Search by instructor, course name or course number.</legend>
-      <form action="//web.lib.unb.ca/reserves/index.php/quickSearch" id="searchReserves" method="post">
+      '<form action="//web.lib.unb.ca/reserves/index.php/quickSearch" id="searchReserves" method="post">
         <div class="form-group">
           <div class="form-row">
-            <div class="col-md-5 mb-2">
+            <div class="col-md-7 mb-2">
               <label class="sr-only" for="keywords">
                 Search for:
               </label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                    <div class="input-group-text"><i class="fas fa-search"></i></div>
-                </div>
-                <input class="form-control" id="keywords" name="keywords" placeholder="Enter keywords" type="search" value="" required>
+              <div class="input-group">              
+                <input class="form-control" id="keywords" name="keywords" placeholder="Search by instructor, course name, or course number" type="search" value="" required>
               </div>
             </div>
-            <div class="col-md-5 input-group flex-nowrap mb-2">
+            <div class="col-md-4 input-group flex-nowrap mb-2">
               <label class="sr-only" for="semester">
                 Course Semester
-              </label>
-              <div class="input-group-prepend">
-                <span class="input-group-text">
-                  <i class="fas fa-calendar"></i>
-                </span>
-              </div>';
+              </label>';
     $form_reserves .= $this->getReservesSemesters();
     $form_reserves .= '</div>
-            <div class="col-md-2 mb-2">
-              <button class="btn btn-primary" id="searchReservesSubmit" type="submit">GO</button>
+            <div class="col-md-1 mb-2">
+              <button class="btn btn-primary px-5 px-md-3" id="searchReservesSubmit" type="submit">GO</button>
             </div>
           </div>
         </div>
       </form>
       <div class="px-2">
-        <a href="//web.lib.unb.ca/reserves/index.php?h=1">
-          <i class="fas fa-sign-in-alt"></i>
-          Login to My UNB Reserves
-        </a>
+        <a href="//web.lib.unb.ca/reserves/index.php?h=1">Login to My UNB Reserves</a>
       </div>';
 
     return $form_reserves;
@@ -337,55 +241,46 @@ class DiscoverySearch extends BlockBase {
             </div>
           </fieldset>
           <div class="form-row">
-            <div class="col-md-5 mb-2">
+            <div class="col-md-7 mb-2">
               <label class="sr-only" for="queryString_WCD">
                 Search for:
               </label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                    <div class="input-group-text"><i class="fas fa-search"></i></div>
-                </div>
-                <input class="form-control" id="queryString_WCD" name="queryString" placeholder="Enter search terms" type="search" required>
+              <div class="form-group">
+                <input class="form-control" id="queryString_WCD" name="queryString" placeholder="Search books, articles, and more" type="search" required>
               </div>
             </div>
-            <div class="col-md-5 mb-2 input-group flex-nowrap">
+            <div class="col-md-4 mb-2 form-group flex-nowrap">
               <label class="sr-only" for="searchIndex_WCD">
                 Search index
               </label>
-               <div class="input-group-prepend">
-                <span class="input-group-text">
-                  <i class="fas fa-server"></i>
-                </span>
+              <div class="form-group">
+                <select class="custom-select form-control" id="searchIndex_WCD" name="searchIndex">
+                  <option value="kw">keyword</option>
+                  <option value="ti">title</option>
+                  <option value="au">author</option>
+                  <option value="nu">call number</option>
+                  <option value="tj">journal title</option>
+                  <option value="su">subject</option>
+                </select>
               </div>
-              <select class="form-control" id="searchIndex_WCD" name="searchIndex">
-                <option value="kw">keyword</option>
-                <option value="ti">title</option>
-                <option value="au">author</option>
-                <option value="nu">call number</option>
-                <option value="tj">journal title</option>
-                <option value="su">subject</option>
-              </select>
             </div>
-             <div class="col-md-2 mb-2">
-              <button class="btn btn-primary" id="search_WCD" title="Search" type="submit">GO</button>
+            <div class="col-md-1">
+              <button class="btn btn-primary px-5 px-md-3" id="search_WCD" title="Search" type="submit">GO</button>
             </div>
           </div>
         </div>
       </form>
-      <div class="p-2">
-        <a href="//unb.on.worldcat.org/advancedsearch">
-          Advanced Search
-        </a>
-        |
-        <a href="https://lib.unb.ca/about/loc_call">
-          Locations Guide
-        </a>
-        |
-        <a href="/worldcat/unb-worldcat-frequently-asked-questions" title="Using WorldCat Discovery">
-          <i class="fas fa-question-circle"></i>
-          Help
-        </a>
-      </div>';
+      <ul class="list inline m-0 p-0">
+        <li class="list-inline-item mr-3">
+            <a href="//unb.on.worldcat.org/advancedsearch">Advanced Search</a>
+        </li>    
+        <li class="list-inline-item mr-3">
+            <a href="https://lib.unb.ca/about/loc_call">What Am I Searching?</a>
+        </li>
+        <li class="list-inline-item">    
+            <a href="/worldcat/unb-worldcat-frequently-asked-questions" title="Using WorldCat Discovery">Help</a>
+        </li>
+      </ul>';
 
     return $form_catalogue;
   }
@@ -424,11 +319,11 @@ class DiscoverySearch extends BlockBase {
         <div class="form-group">
           <div class="form-row font-weight-bold">
             <label class="ml-2" for="databaseID">
-              <span class="text-red">OR</span>&nbsp;&nbsp;Browse for databases by title
+              Browse for databases by title
             </label>
           </div>
           <div class="form-row">
-            <div class="col-md-10 input-group flex-nowrap mb-2">
+            <div class="col-md-10 input-group input-group-lg flex-nowrap mb-2">
               <div class="input-group-prepend">
                 <span class="input-group-text">
                   <i class="fas fa-database"></i>
@@ -450,7 +345,7 @@ class DiscoverySearch extends BlockBase {
         </a>
       </div>';
 
-    $form_databases = $subject_form . $title_form;
+    $form_databases = $title_form;
     return $form_databases;
   }
 
