@@ -11,6 +11,10 @@
 #quicklinks .collapse:not(.show) {
     display: none!important;
 }
+#quicklinks .btn-dark:focus,
+#quicklinks .btn-dark:hover {
+    color: #ffc107;
+}
 @media (max-width: 991px) {
     #quicklinks .collapse:not(.show) + #book-btn {
         margin: auto !important;
