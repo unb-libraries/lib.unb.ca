@@ -121,7 +121,7 @@ settings:
   draft_pending_multiple_message: ''
   confirmation_type: message
   confirmation_title: ''
-  confirmation_message: "<p class=\"h6\">Successfully Submitted</p>\r\n\r\n<p>Thank you for your submission. We appreciate your feedback..</p>"
+  confirmation_message: "<p class=\"h6\">Successfully Submitted</p>\r\n\r\n<p>Thank you for your submission. We appreciate your feedback.</p>"
   confirmation_url: ''
   confirmation_attributes: {  }
   confirmation_back: true
