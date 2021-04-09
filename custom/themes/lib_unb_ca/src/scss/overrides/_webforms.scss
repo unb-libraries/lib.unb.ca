@@ -64,7 +64,45 @@ form.theme-dark>.webform-elements>.form-group>fieldset>legend {
   font-weight: bold;
   margin-bottom: 1.5rem;
 }
+/* Webform 6.x Progress Tracker */
+.webform-progress-tracker {
+  margin: 0.5rem 10%;
 
+  .progress-step {
+    .progress-marker {
+      &:before {
+        font-size: 85%;
+        padding: .25rem;
+      }
+    }
+
+    &.is-active,
+    &.is-active:hover {
+      .progress-marker {
+        &:before {
+          background-color: $unb-red;
+        }
+      }
+
+      .progress-text {
+        color: $black;
+      }
+    }
+
+    &.is-complete,
+    &.is-complete:hover {
+      .progress-text {
+        color: $text-muted-wcag;
+      }
+    }
+
+    .progress-text {
+      font-size: 90%;
+    }
+  }
+}
+
+/* Webform 5.x Progress Tracker
 .webform-progress-tracker {
   &.progress-tracker {
     margin: .33rem 10%;
@@ -104,3 +142,4 @@ form.theme-dark>.webform-elements>.form-group>fieldset>legend {
     }
   }
 }
+*/
