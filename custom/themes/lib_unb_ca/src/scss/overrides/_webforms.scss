@@ -1,3 +1,11 @@
+/* Visually identify required fields inside conditional fieldsets (not accessible - only decorative) */
+fieldset[data-drupal-states*='required'] legend .form-required:after {
+  content: "(required)";
+  color: $red;
+  font-size: smaller;
+  margin-left: .25rem;
+}
+
 .choices[data-type*=select-one] .choices__inner {
   background-color: #fff;
   border-top-left-radius: .25rem;
