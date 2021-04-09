@@ -3,14 +3,6 @@
 
 /** OVERRIDES **/
 /* ELEMENTS */
-/* Nav affix anchor offset */
-*:not([id^="pane"]):target:before {
-  content: "\00a0";
-  display: block;
-  height: 156px;
-  margin-top: -156px;
-  visibility: hidden;
-}
 a {
   &.email-icon {
     &:before {
