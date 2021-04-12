@@ -190,5 +190,79 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers: {  }
+handlers:
+  submission_email:
+    id: email
+    label: 'Submission Email'
+    notes: ''
+    handler_id: submission_email
+    status: true
+    conditions: {  }
+    weight: 2
+    settings:
+      states:
+        - completed
+      to_mail: mnason@unb.ca
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: '[webform_submission:values:email_address:raw]'
+      from_options: {  }
+      from_name: '[webform_submission:values:name:raw]'
+      subject: 'OA Publishing Support Request'
+      body: "<p>The following information was submitted through our <b>OA Publishing Support</b> form on {{ webform_token('[webform_submission:created]', webform_submission) }} by {{ webform_token('[webform_submission:user]', webform_submission) }}:</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      theme_name: ''
+      parameters: {  }
+  confirmation_email:
+    id: email
+    label: 'Confirmation Email'
+    notes: ''
+    handler_id: confirmation_email
+    status: true
+    conditions: {  }
+    weight: 3
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:email_address:raw]'
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: unb-libraries-no-reply@unb.ca
+      from_options: {  }
+      from_name: _default
+      subject: 'UNB Libraries Submission Confirmation'
+      body: "<p>UNB Libraries have received the following OA Publishing Support request from you. If this was not sent by you, please contact <a href=\"mailto:mnason@unb.ca\">Mike Nason</a> (mnason@unb.ca) immediately.</p>\r\n\r\n<p>Submitted information:</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      theme_name: ''
+      parameters: {  }
 variants: {  }
