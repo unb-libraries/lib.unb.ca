@@ -112,9 +112,9 @@ settings:
   draft_loaded_message: ''
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
-  confirmation_type: page
+  confirmation_type: message
   confirmation_title: ''
-  confirmation_message: ''
+  confirmation_message: "<h2 class=\"h3 border border-left-0 border-right-0 border-top-0 border-success pb-2 text-dark\">Successfully Submitted</h2>\r\n\r\n<p>Thank you for taking the time to submit your OA Publishing Request to UNB Libraries.</p>"
   confirmation_url: ''
   confirmation_attributes: {  }
   confirmation_back: true
