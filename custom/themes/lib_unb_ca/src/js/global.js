@@ -16,7 +16,7 @@
         }
     };
 
-    $(window).on('hashchange load', function() {
+    $(window).on('hashchange load reload', function() {
         adjustAnchor();
     });
 
