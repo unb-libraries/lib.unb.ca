@@ -3,22 +3,26 @@
  * Global lib_unb_ca JS functions.
  * https://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header/29853395#29853395.
  */
- (function($, window) {
-    var adjustAnchor = function() {
-        var $anchor = $(':target'), fixedElementHeight = 80;
+(function ($, Drupal) {
 
-        if ($anchor.length > 0) {
-            $('html, body')
-                .stop()
-                .animate({
-                    scrollTop: $anchor.offset().top - fixedElementHeight
-                }, 150);
-        }
-    };
+  'use strict';
 
-    $(window).on('hashchange load reload', function() {
-        adjustAnchor();
-    });
+  Drupal.behaviors.lib_theme = {
+      attach: function (context, settings) {
+          var adjustAnchor = function () {
+              var $anchor = $(':target'), fixedElementHeight = 80;
+              if ($anchor.length > 0) {
+                  $('html, body')
+                      .stop()
+                      .animate({
+                          scrollTop: $anchor.offset().top - fixedElementHeight
+                      }, 150);
+              }
+          };
 
- })(jQuery, window);
-
+          $(window).on('hashchange load pageshow', function () {
+              adjustAnchor();
+          });
+      }
+  };
+})(jQuery, Drupal);

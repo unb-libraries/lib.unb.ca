@@ -4,6 +4,7 @@ global-styling:
     dist/js/global.js: {}
   dependencies:
     - core/jquery
+    - unb_lib_theme/global-styling
   css:
     theme:
       dist/css/style.css: { minified: true }
