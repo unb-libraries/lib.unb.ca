@@ -1,7 +1,15 @@
 uuid: 8bd9db26-d376-4cf8-9fac-9041a914cf25
 langcode: en
 status: open
-dependencies: {  }
+dependencies:
+  module:
+    - antibot
+    - honeypot
+third_party_settings:
+  antibot:
+    antibot: true
+  honeypot:
+    honeypot: true
 open: null
 close: null
 weight: 0
@@ -146,8 +154,7 @@ settings:
   serial_disabled: false
 access:
   create:
-    roles:
-      - authenticated
+    roles: {  }
     users: {  }
     permissions: {  }
   view_any:
