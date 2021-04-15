@@ -14,6 +14,7 @@ use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\ViewExecutable;
 use League\OAuth2\Client\OptionProvider\HttpBasicAuthOptionProvider;
 use League\OAuth2\Client\Provider\GenericProvider;
+use League\OAuth2\Client\Token\AccessToken;
 use GuzzleHttp\Client;
 use Scriptotek\Marc\Record;
 use Scriptotek\Marc\Fields\Person;
@@ -671,23 +672,10 @@ function _lib_core_validate_recalls_barcode($barcode) {
   $validation_response = null;
 
   if (isset($barcode) && !empty($barcode)) {
-    $oclcApiIDMWskey = '';
-    $oclcApiIDMSecret = '';
-    include '/app/html/sites/all/settings/settings.oclc-api.inc';
-
-    $authOpts = [
-      'clientId' => $oclcApiIDMWskey,
-      'clientSecret' => $oclcApiIDMSecret,
-      'urlAuthorize' => 'https://oauth.oclc.org/auth',
-      'urlAccessToken' => 'https://oauth.oclc.org/token',
-      'urlResourceOwnerDetails' => '',
-    ];
-    $basicAuth = new HttpBasicAuthOptionProvider();
-    $provider = new GenericProvider($authOpts, ['optionProvider' => $basicAuth]);
     $inst = '133054';
 
     try {
-      $accessToken = $provider->getAccessToken('client_credentials', ['scope' => "SCIM"]);
+      $accessToken = _lib_core_get_oclc_oauth_token(["SCIM"]);
       $headers = [
         'Authorization' => 'Bearer ' . $accessToken->getToken(),
         'Content-Type' => 'application/scim+json',
@@ -742,23 +730,10 @@ function _lib_core_validate_recalls_ocn($ocn) {
   $validation_response = null;
 
   if (isset($ocn) && !empty(trim($ocn))) {
-    $oclcApiWskey = '';
-    $oclcApiSecret = '';
-    include '/app/html/sites/all/settings/settings.oclc-api.inc';
-
-    $authOpts = [
-      'clientId' => $oclcApiWskey,
-      'clientSecret' => $oclcApiSecret,
-      'urlAuthorize' => 'https://oauth.oclc.org/auth',
-      'urlAccessToken' => 'https://oauth.oclc.org/token',
-      'urlResourceOwnerDetails' => '',
-    ];
-    $basicAuth = new HttpBasicAuthOptionProvider();
-    $provider = new GenericProvider($authOpts, ['optionProvider' => $basicAuth]);
     $inst = '133054';
 
     try {
-      $accessToken = $provider->getAccessToken('client_credentials', ['scope' => "WMS_Availability context:{$inst}"]);
+      $accessToken = _lib_core_get_oclc_oauth_token(["WMS_Availability", "context:{$inst}"]);
       $headers = ['Authorization' => "Bearer " . $accessToken->getToken()];
       $url = "https://worldcat.org/circ/availability/sru/service?x-registryId={$inst}&query=no:ocm{$ocn}";
 
@@ -823,6 +798,53 @@ function _lib_core_validate_recalls_ocn($ocn) {
   }
 
   return $validation_response;
+}
+
+/**
+ * Pull token from cache or generate a new one.
+ *
+ * @param array $scopes
+ *   Requested API scopes
+ *
+ * @return League\OAuth2\Client\Token\AccessTokenInterface
+ *   An OAuth2 access token.
+ *
+ */
+function _lib_core_get_oclc_oauth_token(array $scopes) {
+  $key = 'oclc_token.' . implode('_', $scopes);
+
+  // Get cached token if possible, generate a new one if expired.
+  if ($cache = \Drupal::state()->get($key)) {
+    $token = new AccessToken(\json_decode($cache, JSON_OBJECT_AS_ARRAY));
+    if($token->getExpires() && !$token->hasExpired()) {
+      return $token;
+    }
+  }
+
+  $oclcApiWskey = '';
+  $oclcApiSecret = '';
+  include '/app/html/sites/all/settings/settings.oclc-api.inc';
+
+  $authOpts = [
+    'clientId' => $oclcApiWskey,
+    'clientSecret' => $oclcApiSecret,
+    'urlAuthorize' => 'https://oauth.oclc.org/auth',
+    'urlAccessToken' => 'https://oauth.oclc.org/token',
+    'urlResourceOwnerDetails' => '',
+  ];
+  $basicAuth = new HttpBasicAuthOptionProvider();
+  $provider = new GenericProvider($authOpts, ['optionProvider' => $basicAuth]);
+
+  $token = $provider->getAccessToken('client_credentials', ['scope' => implode(' ', $scopes)]);
+
+  \Drupal::state()->set($key, \json_encode([
+    'access_token' => $token->getToken(),
+    'refresh_token' => $token->getRefreshToken(),
+    'resource_owner_id' => $token->getResourceOwnerId(),
+    'expires' => $token->getExpires(),
+  ]));
+
+  return $token;
 }
 
 /**

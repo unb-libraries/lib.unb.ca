@@ -3,8 +3,6 @@
 namespace Drupal\lib_core\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use League\OAuth2\Client\OptionProvider\HttpBasicAuthOptionProvider;
-use League\OAuth2\Client\Provider\GenericProvider;
 use GuzzleHttp\Client;
 
 /**
@@ -72,23 +70,13 @@ class LaptopAvailability extends BlockBase {
    *   List of locations and laptop availability.
    */
   private function getLaptopAvailability() {
-    $oclcApiWskey = '';
-    $oclcApiSecret = '';
-    include '/app/html/sites/all/settings/settings.oclc-api.inc';
-    $authOpts = [
-      'clientId'                => $oclcApiWskey,
-      'clientSecret'            => $oclcApiSecret,
-      'urlAuthorize'            => 'https://oauth.oclc.org/auth',
-      'urlAccessToken'          => 'https://oauth.oclc.org/token',
-      'urlResourceOwnerDetails' => '',
-    ];
-    $basicAuth = new HttpBasicAuthOptionProvider();
-    $provider = new GenericProvider($authOpts, ['optionProvider' => $basicAuth]);
     $inst = '133054';
     $ocn = '807200481';
 
     try {
-      $accessToken = $provider->getAccessToken('client_credentials', ['scope' => "WMS_Availability context:{$inst}"]);
+      $accessToken = _lib_core_get_oclc_oauth_token(
+        ["WMS_Availability", "context:{$inst}"]
+      );
       $headers = ['Authorization' => "Bearer " . $accessToken->getToken()];
       $url = "https://worldcat.org/circ/availability/sru/service?x-registryId={$inst}&query=no:ocm{$ocn}";
 
