@@ -70,11 +70,19 @@ class LaptopAvailability extends BlockBase {
    *   List of locations and laptop availability.
    */
   private function getLaptopAvailability() {
+    $oclcApiWskey = '';
+    $oclcApiSecret = '';
+    include '/app/html/sites/all/settings/settings.oclc-api.inc';
+    $apiKey = [
+      'clientId' => $oclcApiWskey,
+      'clientSecret' => $oclcApiSecret,
+    ];
     $inst = '133054';
     $ocn = '807200481';
 
     try {
       $accessToken = _lib_core_get_oclc_oauth_token(
+        $apiKey,
         ["WMS_Availability", "context:{$inst}"]
       );
       $headers = ['Authorization' => "Bearer " . $accessToken->getToken()];

@@ -672,10 +672,17 @@ function _lib_core_validate_recalls_barcode($barcode) {
   $validation_response = null;
 
   if (isset($barcode) && !empty($barcode)) {
+    $oclcApiIDMWskey = '';
+    $oclcApiIDMSecret = '';
+    include '/app/html/sites/all/settings/settings.oclc-api.inc';
+    $apiKey = [
+      'clientId' => $oclcApiIDMWskey,
+      'clientSecret' => $oclcApiIDMSecret,
+    ];
     $inst = '133054';
 
     try {
-      $accessToken = _lib_core_get_oclc_oauth_token(["SCIM"]);
+      $accessToken = _lib_core_get_oclc_oauth_token($apiKey, ["SCIM"]);
       $headers = [
         'Authorization' => 'Bearer ' . $accessToken->getToken(),
         'Content-Type' => 'application/scim+json',
@@ -730,10 +737,17 @@ function _lib_core_validate_recalls_ocn($ocn) {
   $validation_response = null;
 
   if (isset($ocn) && !empty(trim($ocn))) {
+    $oclcApiWskey = '';
+    $oclcApiSecret = '';
+    include '/app/html/sites/all/settings/settings.oclc-api.inc';
+    $apiKey = [
+      'clientId' => $oclcApiWskey,
+      'clientSecret' => $oclcApiSecret,
+    ];
     $inst = '133054';
 
     try {
-      $accessToken = _lib_core_get_oclc_oauth_token(["WMS_Availability", "context:{$inst}"]);
+      $accessToken = _lib_core_get_oclc_oauth_token($apiKey, ["WMS_Availability", "context:{$inst}"]);
       $headers = ['Authorization' => "Bearer " . $accessToken->getToken()];
       $url = "https://worldcat.org/circ/availability/sru/service?x-registryId={$inst}&query=no:ocm{$ocn}";
 
@@ -803,6 +817,9 @@ function _lib_core_validate_recalls_ocn($ocn) {
 /**
  * Pull token from cache or generate a new one.
  *
+ * @param array $apiKey
+ *   API key opts
+ *
  * @param array $scopes
  *   Requested API scopes
  *
@@ -810,7 +827,7 @@ function _lib_core_validate_recalls_ocn($ocn) {
  *   An OAuth2 access token.
  *
  */
-function _lib_core_get_oclc_oauth_token(array $scopes) {
+function _lib_core_get_oclc_oauth_token(array $apiKey, array $scopes) {
   $key = 'oclc_token.' . implode('_', $scopes);
 
   // Get cached token if possible, generate a new one if expired.
@@ -821,17 +838,11 @@ function _lib_core_get_oclc_oauth_token(array $scopes) {
     }
   }
 
-  $oclcApiWskey = '';
-  $oclcApiSecret = '';
-  include '/app/html/sites/all/settings/settings.oclc-api.inc';
-
   $authOpts = [
-    'clientId' => $oclcApiWskey,
-    'clientSecret' => $oclcApiSecret,
     'urlAuthorize' => 'https://oauth.oclc.org/auth',
     'urlAccessToken' => 'https://oauth.oclc.org/token',
     'urlResourceOwnerDetails' => '',
-  ];
+  ] + $apiKey;
   $basicAuth = new HttpBasicAuthOptionProvider();
   $provider = new GenericProvider($authOpts, ['optionProvider' => $basicAuth]);
 
