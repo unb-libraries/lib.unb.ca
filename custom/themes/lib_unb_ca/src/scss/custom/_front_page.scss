@@ -18,7 +18,7 @@
     }
   }
   #navbar-main {
-    background-image: linear-gradient(180deg, rgb(27  33  37 / 95%), rgb(27  33  37 / 85%));
+    background-image: linear-gradient(180deg, rgb(27  33  37 / 95%), rgb(27  33  37 / 89%));
 
     #navbar {
       padding-bottom: 1px;
@@ -31,8 +31,14 @@
       color: $black;
     }
   }
+
+  .megamenu {
+    border-bottom: 2px solid rgb(27 33 37 / 89%);
+    border-radius: 0;
+  }
+
   #banner {
-    background-image: linear-gradient(180deg, rgb(27 33 37 / 85%), rgb(27  33  37 / 1%));
+    background-image: linear-gradient(180deg, rgb(27 33 37 / 89%), rgb(27  33  37 / 1%));
 
     table {
       border-collapse: initial;
@@ -42,7 +48,19 @@
   .megamenu {
     background: rgb(55 63 68 / 99%);
   }
+  @media (min-width: 992px) {
+     .megamenu {
+       display: initial;
+       opacity: 0;
+       transition: opacity .15s ease-in, visibility .15s ease-in;
+       visibility: hidden;
 
+       &.show {
+         opacity: 1;
+          visibility: visible;
+       }
+     }
+  }
   .navbar-nav li.show>a:first-child {
     background-image: none;
     background: rgb(255  255  255 / 90%);
@@ -81,17 +99,18 @@
 }
 
 #nav-btn {
-    background: rgb(216 46 59 / 60%);
+    background: rgb(216 46 59 / 50%);
 }
 /* OVERRIDE */
 .navbar-nav a {
-  transition: none;
-  transition: padding .15s ease-in;
+  @include css3-prefix(transition, all .15s ease-out)
 }
 /* OVERRIDE - to do: remove original affix */
 .affix {
+  background: none;
   transition: none;
 }
+
 #header .affix li.show>.nav-link,
 #header .affix .megamenu-li>.nav-link:focus,
 #header .affix .megamenu-li>.nav-link:hover,
