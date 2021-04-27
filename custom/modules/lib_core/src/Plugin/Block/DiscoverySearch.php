@@ -88,15 +88,15 @@ class DiscoverySearch extends BlockBase {
         </div>
         </div>
         <div id="ask-us" class="d-none d-lg-block bg-askus p-2">
-           <div class="d-flex mt-3">
-            <div class="flex-grow-1"><h2 class="text-black border-bottom-0">Ask Us</h2></div>
+          <div class="d-flex mt-3">
+            <div class="flex-grow-1"><h2 class="border-bottom-0 text-black">ASK US</h2></div>
             <div><i class="fas fa-comments fa-3x"></i></div>
-           </div>
-           <form class="pt-2 pb-1">
+          </div>
+          <form class="pt-2 pb-1">
             <div class="form-group">
               <label for="chat-askus" class="sr-only">Email address</label>
               <input id="chat-askus" type="text" class="form-control" placeholder="Chat is open">
-              <p id="ask-us-help" class="mt-3 text-center">
+              <p id="ask-us-help" class="mt-3">
                 <a href="#">
                   <span>Phone,</span>    
                   <span>Text,</span>  
@@ -105,9 +105,7 @@ class DiscoverySearch extends BlockBase {
                 </a>
               </p>
             </div>
-           </form>
-</form>
-           
+          </form>
         </div>
       </div>';
 

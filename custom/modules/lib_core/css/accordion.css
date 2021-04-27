@@ -73,7 +73,7 @@ button[aria-expanded="false"]:focus {
 }
 /* Discover Search */
 #discovery-search {
-  background-color: rgb(80  80  80 / 82%);
+  background-color: rgb(80  80  80 / 81%);
 }
 #discovery-search .card-header {
   border-bottom: none;
@@ -82,7 +82,7 @@ button[aria-expanded="false"]:focus {
   outline: 1px dotted #fff;
 }
 .bg-askus {
-  background-color: rgb(255  193  7 / 82%);
+  background-color: rgb(255  193  7 / 81%);
 }
 #ask-us h2 {
   font-size: 3rem;
