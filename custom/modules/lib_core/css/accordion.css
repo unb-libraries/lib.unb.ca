@@ -2,10 +2,20 @@
   margin: 0;
   padding: 0;
 }
-.Accordion input.form-control,
-.Accordion select.form-control,
+.Accordion .form-control,
 .Accordion button.btn-primary {
   border: 2px #000 solid;
+  border-radius: .5rem;
+}
+.Accordion .chosen-container-single.form-control {
+  height: calc(1.5em + 0.75rem + 2px);
+}
+.Accordion .chosen-container a {
+  height: 98%;
+}
+.Accordion .form-control.chosen-with-drop {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 .Accordion .form-control:focus,
 .Accordion .form-group button[type="submit"]:focus,
@@ -26,23 +36,28 @@
   outline: none;
 }
 
-button {
+.nav-item button,
+.nav-item .btn {
   border-style: none;
   border-bottom-style: outset;
   border-bottom-color: transparent;
+  transition: all .3s ease-in-out;
 }
 
-button[aria-expanded="true"] {
+.nav-item [aria-expanded="true"] {
   border-bottom-color: #ffc107;
+  color: #ffc107;
 }
-button[aria-expanded="true"]:hover {
+.nav-item [aria-expanded="true"]:hover {
   cursor: default;
 }
-button[aria-expanded="false"]:focus {
+.nav-item [aria-expanded="false"]:focus {
+  box-shadow: none;
   outline: 1px dotted #ffc107;
+  outline-offset: 0;
 }
-button[aria-expanded="false"]:hover,
-button[aria-expanded="false"]:focus {
+.nav-item [aria-expanded="false"]:hover,
+.nav-item [aria-expanded="false"]:focus {
   color: #ffc107;
 }
 .Accordion button::-moz-focus-inner {
@@ -69,11 +84,11 @@ button[aria-expanded="false"]:focus {
 }
 .Accordion .card {
   background-color: initial;
-  border-radius: 0;
+  border: 0;
 }
 /* Discover Search */
 #discovery-search {
-  background-color: rgb(80  80  80 / 81%);
+  background-color: rgb(80  80  80 / 82%);
 }
 #discovery-search .card-header {
   border-bottom: none;
@@ -82,7 +97,7 @@ button[aria-expanded="false"]:focus {
   outline: 1px dotted #fff;
 }
 .bg-askus {
-  background-color: rgb(255  193  7 / 81%);
+  background-color: rgb(255  193  7 / 82%);
 }
 #ask-us h2 {
   font-size: 3rem;
