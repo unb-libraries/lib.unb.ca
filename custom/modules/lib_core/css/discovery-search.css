@@ -1,35 +1,21 @@
-#pane-databases .form-row > .input-group {
-    height: calc(1.5em + 0.75rem + 2px);
-}
-.input-group-prepend + fieldset {
-    position: relative;
-}
 .chosen-container-single,
 .chosen-master {
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
-.input-group .chosen-container-single {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-}
-.form-group .chosen-master {
-    border: none;
-}
-.form-group a.chosen-single {
-    height: calc(1.5em + 0.75rem);
-}
-.custom-legend {
-    font-size: 1rem;
-    width: auto;
-}
-.input-group-prepend + .form-type-select {
-    position: relative;
-    width: 100%;
-}
-.input-group .form-type-select .chosen-container-single {
     width: 100%!important;
+}
+.chosen-container-single .chosen-drop {
+    background: #fff;
+    border: 2px solid #80bdff;
+    border-radius: .5rem;
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 60%);
+    margin: -2px;
+    top: 0;
+    width: calc(100% + 4px);
+}
+.Accordion .chosen-container-active.form-control {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 60%);
+}
+
+.chosen-with-drop a.chosen-single {
+    height:0;
 }
