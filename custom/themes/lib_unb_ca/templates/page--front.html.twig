@@ -76,100 +76,70 @@
 <header id="header" class="header-front" aria-label="Site header" style="background-image: url({{ banner_image }})">
     {{ attach_library('alert_scheduler_client/alerts') }}
     <div id="emergency-banner"><div class="container" data-alerts-container></div></div>
-    <div id="navbar-top" class="d-none d-lg-block py-2">
-        <div class="container">
-            <nav class="d-flex">
-                <ul class="nav">
-                    <li><a class="nav-link" href="https://unb.ca">UNB</a></li>
-                    <li><a class="nav-link" href="https://lib.unb.ca/help/ask-us">Ask Us</a></li>
-                    <li><a class="nav-link" href="https://lib.unb.ca/services/your-comments-and-suggestions">Feedback</a></li>
-                    <li><a class="nav-link" href="https://lib.unb.ca/search">Search</a></li>
-                </ul>
-                {% if show_top_header_login or show_top_header_logout %}
-                    <ul class="nav ml-auto">
-                        {% if logged_in and show_top_header_logout %}
-                            <li>{{ logout_link }}</li>
-                        {% elseif not logged_in and show_top_header_login %}
-                            <li>{{ login_link }}</li>
-                        {% endif %}
+    <div id="header-overlay">
+        <div id="navbar-top" class="d-none d-lg-block py-2">
+            <div class="container">
+                <nav class="d-flex">
+                    <ul class="nav">
+                        <li><a class="nav-link" href="https://unb.ca">UNB</a></li>
+                        <li><a class="nav-link" href="https://lib.unb.ca/help/ask-us">Ask Us</a></li>
+                        <li><a class="nav-link" href="https://lib.unb.ca/services/your-comments-and-suggestions">Feedback</a></li>
+                        <li><a class="nav-link" href="https://lib.unb.ca/search">Search</a></li>
                     </ul>
-                {% endif %}
+                    {% if show_top_header_login or show_top_header_logout %}
+                        <ul class="nav ml-auto">
+                            {% if logged_in and show_top_header_logout %}
+                                <li>{{ logout_link }}</li>
+                            {% elseif not logged_in and show_top_header_login %}
+                                <li>{{ login_link }}</li>
+                            {% endif %}
+                        </ul>
+                    {% endif %}
+                </nav>
+            </div>
+        </div>
+        <div class="container">
+            <nav id="navbar-main" class="navbar navbar-expand-lg p-0">
+                <div id="navbar-main-content" class="d-flex w-100">
+                    <div class="branding mr-lg-4">
+                        {% if (is_front and is_library) %}
+                        <h1 class="my-0 py-2">
+                            {% else %}
+                            <a class="py-2" href="https://lib.unb.ca">
+                                {% endif %}
+                                <div class="my-0 text-center text-lg-left">
+                                    <img alt="UNB Libraries" class="img-fluid unblib-logo" src="{{ unb_lib_theme_path }}/img/unb-libraries-red-white.png" />
+                                    <img alt="UNB Libraries" class="img-fluid unblib-logo-affix" src="{{ unb_lib_theme_path }}/img/unb-libraries-red-white.png" />
+                                </div>
+                            </{{ (is_front and is_library) ? 'h1' : 'a' }}>
+                    </div>
+                    <div id="nav-btn" class="d-flex d-lg-none mx-0 p-2 w-100">
+                        <ul class="container nav nav-pills justify-content-between">
+                            <li class="nav-item flex-fill text-center">
+                                <button id="btn-menu" class="btn btn-black" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">Menu</button>
+                            </li>
+                            <li class="nav-item flex-fill text-center">
+                                {% if (is_front and is_library) %}
+                                    <button id="btn-quicklinks" class="btn btn-black" type="button" data-toggle="collapse" data-target="#quicklinks-wrapper" aria-expanded="false" aria-controls="quicklinks-wrapper" aria-label="Toggle QuickLinks">QuickLinks</button>
+                                {% else %}
+                                    <button id="btn-hours" class="btn btn-black" aria-controls="banner" aria-expanded="false" data-target="#banner" data-toggle="collapse" aria-label="Toggle Hours">Hours <span class="fas fa-clock"></span></button>
+                                {% endif %}
+                            </li>
+                            <li class="nav-item flex-fill text-center">
+                                <a id="btn-askus" class="btn btn-black" href="https://lib.unb.ca/help/ask-us">AskUs <span class="fas fa-comments"></span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    {% include '@lib_unb_ca/includes/navbar.html.twig' %}
+                </div>
             </nav>
         </div>
+        {% if page.header %}
+            <div class="container py-5">
+                {{ page.header }}
+            </div>
+        {% endif %}
     </div>
-    <nav id="navbar-main" class="d-flex navbar navbar-expand-lg">
-        <div class="container">
-            <div class="branding mr-lg-4">
-                {% if (is_front and is_library) %}
-                <h1 class="my-0 py-2">
-                    {% else %}
-                    <a class="py-2" href="https://lib.unb.ca">
-                        {% endif %}
-                        <div class="my-0 text-center text-lg-left">
-                            <img alt="UNB Libraries" class="img-fluid unblib-logo" src="{{ unb_lib_theme_path }}/img/unb-libraries-red-white.png" />
-                            <img alt="UNB Libraries" class="img-fluid unblib-logo-affix" src="{{ unb_lib_theme_path }}/img/unb-libraries-red-white.png" />
-                        </div>
-                    </{{ (is_front and is_library) ? 'h1' : 'a' }}>
-            </div>
-            <div id="nav-btn" class="d-flex d-lg-none mx-0 p-2 w-100">
-                <ul class="container nav nav-pills justify-content-between">
-                    <li class="nav-item flex-fill text-center">
-                        <button id="btn-menu" class="btn btn-black" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">Menu</button>
-                    </li>
-                    <li class="nav-item flex-fill text-center">
-                        {% if (is_front and is_library) %}
-                            <button id="btn-quicklinks" class="btn btn-black" type="button" data-toggle="collapse" data-target="#quicklinks-wrapper" aria-expanded="false" aria-controls="quicklinks-wrapper" aria-label="Toggle QuickLinks">QuickLinks</button>
-                        {% else %}
-                            <button id="btn-hours" class="btn btn-black" aria-controls="banner" aria-expanded="false" data-target="#banner" data-toggle="collapse" aria-label="Toggle Hours">Hours <span class="fas fa-clock"></span></button>
-                        {% endif %}
-                    </li>
-                    <li class="nav-item flex-fill text-center">
-                        <a id="btn-askus" class="btn btn-black" href="https://lib.unb.ca/help/ask-us">AskUs <span class="fas fa-comments"></span></a>
-                    </li>
-                </ul>
-            </div>
-            {% include '@lib_unb_ca/includes/navbar.html.twig' %}
-        </div>
-    </nav>
-    {% if banner_image %}
-        <div {{ attributes.addClass(banner_classes) }} id="banner">
-           <div class="container">
-               {# {{ attach_library('calendar_hours_client/calendar-hours') }}
-                <div class="col-xs-12 col-md-6 col-lg-5 col-xl-4 offset-md-6 offset-lg-7 offset-xl-8" id="banner-hours">
-                    <table>
-                        <caption>
-                            <span class="sr-only">Library hours for</span><span class="current-date">{{ "now"|date("l, F j, Y") }}</span>
-                        </caption>
-                        <tr>
-                            <th scope="row"><a href="https://lib.unb.ca/about/harriet-irving-library">Harriet Irving</a></th>
-                            <td class="ch-nd ch-live ch-live-co ch-live-nsdo ch-live-am" data-ch-id="hil" data-ch-days="0"
-                                data-ch-format-time="h:mma" data-ch-format-date="dd">Unavailable</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><a href="https://lib.unb.ca/about/science-forestry-library">Science &amp; Forestry</a></th>
-                            <td class="ch-nd ch-live ch-live-co ch-live-nsdo ch-live-am" data-ch-id="sfl" data-ch-days="0"
-                                data-ch-format-time="h:mma" data-ch-format-date="dd">Unavailable</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><a href="https://lib.unb.ca/about/engineering-computer-science-library">Engineering &amp; CS</a></th>
-                            <td class="ch-nd ch-live ch-live-co ch-live-nsdo ch-live-am" data-ch-id="ecsl" data-ch-days="0"
-                                data-ch-format-time="h:mma" data-ch-format-date="dd">Unavailable</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><a href="https://lib.unb.ca/about/hans-w-klohn-commons">Saint John</a></th>
-                            <td class="ch-nd ch-live ch-live-co ch-live-nsdo ch-live-am" data-ch-id="hwkc" data-ch-days="0"
-                                data-ch-format-time="h:mma" data-ch-format-date="dd">Unavailable</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><a href="https://lib.unb.ca/about/hours"><i class="fas fa-clock" aria-hidden="true"></i>&nbsp;Complete Hours</a></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            #}
-            {{ page.header }}
-        </div>
-    {% endif %}
 </header>
 
 {% block content %}
