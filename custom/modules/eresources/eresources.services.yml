@@ -1,0 +1,6 @@
+services:
+  eresources.event_subscriber:
+    class: '\Drupal\eresources\EventSubscriber\EresourcesEventSubscriber'
+    arguments: ['@current_user']
+    tags:
+      - {name: event_subscriber}

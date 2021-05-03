@@ -1,0 +1,6 @@
+name: UNB Libraries eResources
+description: eResources features for the UNB Libraries website.
+package: UNB Libraries
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9
