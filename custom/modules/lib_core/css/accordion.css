@@ -51,7 +51,7 @@
 .nav-item [aria-expanded="true"]:hover {
   cursor: default;
 }
-.nav-item [aria-expanded="false"]:focus {
+.Accordion .nav-item [aria-expanded="false"]:focus {
   box-shadow: none;
   outline: 1px dotted #ffc107;
   outline-offset: 0;
@@ -93,7 +93,7 @@
 #discovery-search .card-header {
   border-bottom: none;
 }
-.focus-ring:focus {
+.Accordion .focus-ring:focus {
   outline: 1px dotted #fff;
 }
 .bg-askus {
