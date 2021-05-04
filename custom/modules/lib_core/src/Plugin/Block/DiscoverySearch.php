@@ -48,7 +48,8 @@ class DiscoverySearch extends BlockBase {
           <h2 class="sr-only">Search</h2>
           <div class="card-header px-0 pb-1">
             <nav class="navbar navbar-expand-lg">
-            <!--<div class="btn-group">
+            <!-- Navbar mobile collapsible menu - WIP
+            <div class="btn-group">
               <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
                   Select a search category
               </button>
@@ -62,17 +63,22 @@ class DiscoverySearch extends BlockBase {
                 <button aria-controls="searchPanel7" aria-expanded="false" class="dropdown-item Accordion-trigger p-2" id="dropdownBtn7" tabindex="-1">Videos</button></li>
               </div>
             </div>-->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>Search Menu
+            <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                Select a search category
             </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                    <ul class="navbar-nav d-flex justify-content-around align-items-lg-end w-100">
                       <li class="nav-item"><button aria-controls="searchPanel1" aria-expanded="true" class="Accordion-trigger p-2" id="searchBtn1">Catalogue</button></li>
                       <li class="nav-item"><button aria-controls="searchPanel2" aria-expanded="false" class="Accordion-trigger p-2" id="searchBtn2" tabindex="-1">Reserves</button></li>
                       <li class="nav-item"><button aria-controls="searchPanel3" aria-expanded="false" class="Accordion-trigger p-2" id="searchBtn3" tabindex="-1">Databases</button></li>
-                      <li class="nav-item"><button aria-controls="searchPanel4" aria-expanded="false" class="Accordion-trigger p-2 text-center" id="searchBtn4" tabindex="-1">Journals &amp; Newspapers</button></li>
+                      <li class="nav-item"><button aria-controls="searchPanel4" aria-expanded="false" class="Accordion-trigger p-2 text-left text-lg-center" id="searchBtn4" tabindex="-1">Journals &amp; Newspapers</button></li>
                       <li class="nav-item"><button aria-controls="searchPanel7" aria-expanded="false" class="Accordion-trigger p-2" id="searchBtn7" tabindex="-1">Videos</button></li>
-                      <li class="nav-item"><a aria-controls="searchPanel5" aria-expanded="false" class="btn Accordion-trigger p-2 text-nowrap" tabindex="-1" href="https://web.lib.unb.ca/eresources/refguide.php">More<i class="fas fa-external-link-alt fa-sm ml-1"></i></a></li>
+                      <li class="nav-item">
+                         <a aria-controls="searchPanel5" aria-expanded="false" class="btn Accordion-trigger p-2 text-left text-lg-center text-nowrap" tabindex="-1"
+                            href="https://web.lib.unb.ca/eresources/refguide.php"
+                            title="Guide to Finding Reference Materials (opens new page)">More<i class="fas fa-external-link-alt fa-xs fa-super ml-1"></i>
+                         </a>
+                      </li>
                     </ul>
                 </div>
              </nav>
