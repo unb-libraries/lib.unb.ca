@@ -22,22 +22,21 @@ class StaffDirectoryNav extends BlockBase {
     $html = '
         <h2>Fredericton:</h2>
         <ul class="list-unstyled">
-          <li><a href="#circ">Access Services (Circulation &amp; Document Delivery)</a></li>
           <li><a href="#acquis">Acquisitions</a></li>
-          <li><a href="#admin">Administration</a></li>
-          <li><a href="#archives">Archives</a></li>
+          <li><a href="#archives">Archives &amp; Special Collections</a></li>
           <li><a href="#catalogue">Cataloguing</a></li>
           <li><a href="#cds">Centre for Digital Scholarship</a></li>
           <li><a href="#children">Children\'s Literature</a></li>
-          <li><a href="#circ">Circulation (see Access Services)</a></li>
+          <li><a href="#circ">Circulation Services</a></li>
           <li><a href="#colldev">Collections Development</a></li>
-          <li><a href="#circ">Document Delivery (see Access Services)</a></li>
+          <li><a href="#copyright-digital-delivery">Copyright &amp; Digital Delivery</a></li>
           <li><a href="#englib">Engineering &amp; Computer Science Library</a></li>
           <li><a href="#gddm">Government Documents, Data and Maps</a></li>
           <li><a href="#learning">Instruction Facilities</a></li>
-          <li><a href="//www.unb.ca/fredericton/law/library/about/directory.html">Law Library</a></li>
+          <li><a href="#lawlib">Law Library</a></li>
           <li><a href="#mailroom">Mail Room</a></li>
           <li><a href="#microforms">Microforms</a></li>
+          <li><a href="#admin">Office of the Dean of Libraries</a></li>
           <li><a href="#reference">Reference</a></li>
           <li><a href="#researchcommons">Research Commons</a></li>
           <li><a href="#scilib">Science &amp; Forestry Library</a></li>
