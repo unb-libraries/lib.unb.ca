@@ -90,6 +90,18 @@ spec:
                   name: oclc-idm-wskey
                   key: secret
             -
+              name: OCLC_API_LMAN_WSKEY
+              valueFrom:
+                secretKeyRef:
+                  name: oclc-lman-wskey
+                  key: wskey
+            -
+              name: OCLC_API_LMAN_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: oclc-lman-wskey
+                  key: secret
+            -
               name: OCLC_API_WSKEY
               valueFrom:
                 secretKeyRef:

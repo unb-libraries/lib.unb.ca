@@ -18,6 +18,7 @@ RUN ${RSYNC_MOVE} /build/scripts/container/ /scripts/ && \
 COPY ./config-yml ${DRUPAL_CONFIGURATION_DIR}
 COPY ./custom/themes ${DRUPAL_ROOT}/themes/custom
 COPY ./custom/modules ${DRUPAL_ROOT}/modules/custom
+COPY ./keys /app/keys
 
 # Container metadata.
 LABEL ca.unb.lib.generator="drupal8" \

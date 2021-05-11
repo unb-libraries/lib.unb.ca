@@ -1,0 +1,10 @@
+{
+  "grantType": "client_credentials",
+  "authOptions": {
+    "urlAuthorize": "https://oauth.oclc.org/auth",
+    "urlAccessToken": "https://oauth.oclc.org/token",
+    "clientId": "OCLC_API_LMAN_WSKEY",
+    "clientSecret": "OCLC_API_LMAN_SECRET",
+    "urlResourceOwnerDetails": ""
+  }
+}

@@ -51,6 +51,7 @@ module:
   image: 0
   inline_entity_form: 0
   inline_form_errors: 0
+  key: 0
   language: 0
   layout_builder: 0
   layout_discovery: 0
@@ -72,6 +73,7 @@ module:
   node: 0
   node_edit_protection: 0
   noreqnewpass: 0
+  oclc_api: 0
   oclc_service_alert_status_client: 0
   options: 0
   override_node_options: 0
