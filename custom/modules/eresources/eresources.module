@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Contains eresources.module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function eresources_theme($existing, $type, $theme, $path) {
+  return [
+    'license' => [
+      'variables' => [
+        'license' => NULL,
+      ],
+    ],
+  ];
+}

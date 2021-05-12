@@ -4,3 +4,14 @@ services:
     arguments: ['@current_user']
     tags:
       - {name: event_subscriber}
+  oclc.api_key.lman:
+    class: Drupal\key\Entity\Key
+    factory: [ '@key.repository', getKey ]
+    arguments: [ oclc_lman_api ]
+    public: false
+  oclc_authorizer.wms_lman:
+    class: Drupal\oclc_api\Oclc\OclcV2Authorizer
+    arguments:
+      - '@oclc.api_key.lman'
+      - '@plugin.manager.oclc_api'
+      - ['wms_license_manager']

@@ -1,0 +1,70 @@
+{% macro status_icon(status) %}
+  {% if status is same as (true) %}
+<i class="fas fa-check text-success"></i>
+  {% elseif status is same as (false) %}
+<i class="fas fa-times text-danger"></i>
+  {% else %}
+<i class="fas fa-info-circle text-info"></i>
+  {% endif %}
+{% endmacro %}
+{% import _self as macros %}
+{% set permissions = license.getPermissions() %}
+{% set public = ['authorized-users', 'class-handouts', 'distribute-a-link', 'distribute-a-pdf', 'use-images', 'simultaneous-users'] %}
+<h2>Permitted Use of Licensed Content</h2>
+<div class="accordion header-icons" id="license-head">
+{% for key in public %}
+  <div class="card">
+    <div class="card-header" id="heading-{{ loop.index }}">
+      <h3 class="card-title">
+        <button aria-controls="collapse-{{ loop.index }}" aria-expanded="false" class="btn btn-light btn-block text-left" data-target="#collapse-{{ loop.index }}" data-toggle="collapse" type="button">
+        {{ macros.status_icon( permissions[key].status ) }}
+        {{ permissions[key].name }}
+        </button>
+      </h3>
+    </div>
+    <div class="card-body collapse" id="collapse-{{loop.index}}">
+      {% set note = license.getNote( permissions[key].note ) %}
+      {% if note is not empty %}{{ note | raw }}{% else %}{{ attribute(permissions[key], 'default-note') | raw }}{% endif %}
+   </div>
+  </div>
+{% endfor %}
+</div>
+<dl class="mt-3">
+  <dt>General Permissions and Restrictions</dt>
+  <dd>Resources are licensed to the University of New Brunswick for academic purposes ONLY. The content may not be reproduced, retransmitted, disseminated, sold, distributed, published, broadcast or circulated, except as permitted by license or by Fair Dealing provisions of the Canadian Copyright Act. See <a href="https://lib.unb.ca/copyright">Copyright @ UNB</a> for further details</dd>
+
+  <!--dt>Accessibility</dt>
+  <dd>For more information on electronic resources and accessibility, contact Library Accessibility Services at 447-3374 or <a href="mailto:libaccessibility@unb.ca">libaccessibility@unb.ca</a></dd-->
+
+  <dt>Questions?</dt>
+  <dd>Information on this page is intended to provide a brief guide to permitted uses for this licensed resource. For more information about specific uses not covered, please contact <a href="https://lib.unb.ca/contact-unb-libraries-staff?recipient=lroulsto">Linda Roulston</a>.</dd>
+</dl>
+
+<div class="accordion header-icons" id="staff-head">
+  <div class="card">
+    <div class="card-header" id="heading-staff">
+      <h3 class="card-title">
+        <button aria-controls="collapse-staff" aria-expanded="false" class="btn btn-light btn-block text-left" data-target="#collapse-staff" data-toggle="collapse" type="button">
+        Library Staff
+        </button>
+      </h3>
+    </div>
+    <div class="card-body collapse p-0" id="collapse-staff">
+      <ul class="list-group list-group-flush">
+{% set staff = ['off-campus','printed-course-packs', 'interlibrary-loan','distance-education', 'perpetual-access', 'alumni', 'walk-ins', 'copyright-and-sharing', 'legal'] %}
+{% for key in staff %}
+        <li class="list-group-item">
+          {{ macros.status_icon( permissions[key].status ) }}
+          {{ permissions[key].name }}
+          {% if permissions[key].note is not empty %}
+            {% set note = license.getNote( permissions[key].note ) %}
+            {% if note is not empty %}<p class="list-group-item-text ml-5 mb-0">{{ note | raw }}</p>{% endif %}
+          {% elseif attribute(permissions[key], 'default-note') is not empty %}
+          <p class="ml-5 mb-0 list-group-item-text">{{ attribute(permissions[key], 'default-note') | raw }}</p>
+          {% endif %}
+        </li>
+{% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>

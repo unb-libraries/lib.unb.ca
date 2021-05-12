@@ -1,0 +1,7 @@
+eresources.license.view:
+  path: '/eresources/license/{license_id}'
+  defaults:
+    _controller: '\Drupal\eresources\Controller\LicenseController::view'
+    _title_callback: '\Drupal\eresources\Controller\LicenseController::title'
+  requirements:
+    _permission: 'access content'
