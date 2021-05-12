@@ -1,0 +1,6 @@
+name: 'Portolan'
+type: module
+description: 'Provides the data structure for the Portolan bibliography.'
+core: 8.x
+package: 'Portolan'
+dependencies: { }

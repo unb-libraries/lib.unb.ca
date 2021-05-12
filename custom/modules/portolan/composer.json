@@ -1,0 +1,9 @@
+{
+  "name": "unb-libraries/portolan",
+  "type": "drupal-module",
+  "description": "Drupal module to provide the data structure for the Portolan bibliography.",
+  "keywords": ["Drupal"],
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "require": { }
+}
