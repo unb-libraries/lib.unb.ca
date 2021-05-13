@@ -3,6 +3,8 @@
 namespace Drupal\eresources\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Url;
+use Drupal\Core\Link;
 use Drupal\oclc_api\Oclc\OclcAuthorizationInterface;
 use Drupal\oclc_api\Plugin\oclc\OclcApiManagerInterface;
 use Drupal\oclc_api\Plugin\oclc\OclcPluginManagerTrait;
@@ -83,6 +85,59 @@ class LicenseController extends ControllerBase {
     catch (\Exception $error) {
       return NULL;
     }
+  }
+
+  /**
+   * Displays a list of licenses.
+   *
+   * @return array
+   *   A simple renderable array.
+   */
+  public function list() {
+    $perPage = 25;
+    $page = pager_find_page();
+    $start = $perPage * $page + 1;
+
+    $api = $this->oclcApi('wms_license_manager', ['authorization' => $this->oclcAuthorization()]);
+    $licensesData = $api->get('list', [
+      'itemsPerPage' => $perPage,
+      'startIndex' => $start,
+      'fetchDetails' => 'false',
+    ]);
+    $licenses = json_decode($licensesData);
+    $total = 0;
+    foreach ($licenses->extensions as $ext) {
+      if ($ext->name == 'os:totalResults') {
+        $total = $ext->children[0];
+        break;
+      }
+    }
+    pager_default_initialize($total, $perPage);
+
+    $results = [];
+    foreach ($licenses->entries as $license) {
+      $content = $license->content;
+      $link = Link::fromTextAndUrl($content->name, Url::fromRoute('eresources.license.view', ['license_id' => $content->id]));
+      $results[] = ['#markup' => $link->toString() . ' (' . $content->id . ')'];
+    }
+
+    return [
+      [
+        '#markup' => "<p>Showing licenses $start to " . ($start + count($results) - 1) . " of $total",
+      ],
+      [
+        '#theme' => 'item_list',
+        '#list_type' => 'ol',
+        '#attributes' => [
+          'start' => $start,
+        ],
+        '#title' => '',
+        '#items' => $results,
+      ],
+      [
+        '#type' => 'pager',
+      ],
+    ];
   }
 
   /**

@@ -1,3 +1,10 @@
+eresources.license.list:
+  path: '/eresources/licenses'
+  defaults:
+    _controller: '\Drupal\eresources\Controller\LicenseController::list'
+    _title: 'Current Licenses in WMS'
+  requirements:
+    _permission: 'access content'
 eresources.license.view:
   path: '/eresources/license/{license_id}'
   defaults:
