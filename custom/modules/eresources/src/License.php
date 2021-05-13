@@ -33,6 +33,9 @@ class License {
    */
   public function __construct($licenseData) {
     $this->licenseData = $licenseData;
+    if (property_exists($licenseData, 'content')) {
+      $this->licenseData = $licenseData->content;
+    }
     $this->notes = $this->getNotes();
     $this->methodsSupported = $this->getMethodsSupported();
   }
@@ -240,7 +243,7 @@ class License {
       // Some notes are contained in $term->notes.
       if ($term->notes) {
         $noteValues = [];
-        foreach ($term->notes->notes as $note) {
+        foreach ($term->notes->note as $note) {
           $noteValues[] = $note->note;
         }
         $notes[$key] = implode('<br>', $noteValues);
@@ -318,8 +321,8 @@ class License {
    */
   private function getTerm($termName) {
     $terms = [];
-    if (property_exists($this->licenseData, 'terms') && property_exists($this->licenseData->terms, 'terms')) {
-      foreach ($this->licenseData->terms->terms as $term) {
+    if (property_exists($this->licenseData, 'terms') && property_exists($this->licenseData->terms, 'term')) {
+      foreach ($this->licenseData->terms->term as $term) {
         $terms[] = $term;
         if (property_exists($term, 'type')) {
           if ($termName && $term->type == $termName) {
@@ -336,8 +339,8 @@ class License {
    */
   private function getCustomTerm($termName) {
     $terms = [];
-    if (property_exists($this->licenseData, 'terms') && property_exists($this->licenseData->terms, 'terms')) {
-      foreach ($this->licenseData->terms->terms as $term) {
+    if (property_exists($this->licenseData, 'terms') && property_exists($this->licenseData->terms, 'term')) {
+      foreach ($this->licenseData->terms->term as $term) {
         $terms[] = $term;
         if (property_exists($term, 'name')) {
           if ($termName && $term->name == $termName) {
@@ -368,8 +371,8 @@ class License {
       return NULL;
     }
     $subTerms = [];
-    if ($term->subTerms && property_exists($term->subTerms, 'subTerms')) {
-      foreach ($term->subTerms->subTerms as $subTerm) {
+    if ($term->subTerms && property_exists($term->subTerms, 'subTerm')) {
+      foreach ($term->subTerms->subTerm as $subTerm) {
         $subTerms[] = $subTerm;
         if ($subTermName && property_exists($subTerm, 'subTermName') && $subTerm->subTermName == $subTermName) {
           return $subTerm;
