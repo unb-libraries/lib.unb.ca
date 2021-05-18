@@ -4,6 +4,7 @@ namespace Drupal\portolan\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
 
 /**
  * Defines the "Portolan record" entity.
@@ -30,7 +31,12 @@ class PortolanRecord extends ContentEntityBase {
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
-    // @todo Install "title" field [string(2048)]
+    $fields['title'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Title'))
+      ->setRequired(TRUE)
+      ->setCardinality(1)
+      ->setSetting('max_length', 2048);
+
     // @todo Install "author" field [multi-value, string(255)]
     // @todo Install "publication" field [string(1024)]
     // @todo Install "abstract" field [string(2048)]
