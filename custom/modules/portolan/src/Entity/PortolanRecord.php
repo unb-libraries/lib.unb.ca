@@ -42,7 +42,12 @@ class PortolanRecord extends ContentEntityBase {
       ->setRequired(TRUE)
       ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED);
 
-    // @todo Install "publication" field [string(1024)]
+    $fields['publication'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Publication'))
+      ->setRequired(TRUE)
+      ->setCardinality(1)
+      ->setSetting('max_length', 1024);
+
     // @todo Install "abstract" field [string(2048)]
     // @todo Install "note" field [string(1024)]
     // @todo Install "age_range" field [string(255)]
