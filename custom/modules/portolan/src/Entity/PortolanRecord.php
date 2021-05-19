@@ -60,7 +60,11 @@ class PortolanRecord extends ContentEntityBase {
       ->setCardinality(1)
       ->setSetting('max_length', 1024);
 
-    // @todo Install "age_range" field [string(255)]
+    $fields['age_range'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Age range'))
+      ->setRequired(TRUE)
+      ->setCardinality(1);
+
     // @todo Install "jurisdiction" field [multi-value, string(255)]
     // @todo Install "geographic" field [multi-value, string(255)]
     // @todo Install "descriptors" field [multi-value, string(255)]
