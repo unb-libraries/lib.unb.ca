@@ -70,7 +70,11 @@ class PortolanRecord extends ContentEntityBase {
       ->setRequired(TRUE)
       ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED);
 
-    // @todo Install "geographic" field [multi-value, string(255)]
+    $fields['location'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Geographic location'))
+      ->setRequired(TRUE)
+      ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED);
+
     // @todo Install "descriptors" field [multi-value, string(255)]
     // @todo Install "call_num" field [string(255)]
     return $fields;
