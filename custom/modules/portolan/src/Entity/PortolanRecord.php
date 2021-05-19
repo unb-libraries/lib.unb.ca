@@ -65,7 +65,11 @@ class PortolanRecord extends ContentEntityBase {
       ->setRequired(TRUE)
       ->setCardinality(1);
 
-    // @todo Install "jurisdiction" field [multi-value, string(255)]
+    $fields['jurisdiction'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Jurisdiction'))
+      ->setRequired(TRUE)
+      ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED);
+
     // @todo Install "geographic" field [multi-value, string(255)]
     // @todo Install "descriptors" field [multi-value, string(255)]
     // @todo Install "call_num" field [string(255)]
