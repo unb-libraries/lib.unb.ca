@@ -54,37 +54,12 @@ class PortolanRecord extends ContentEntityBase {
       ->setCardinality(1)
       ->setSetting('max_length', 2048);
 
-    $fields['note'] = BaseFieldDefinition::create('text')
-      ->setLabel(t('Note'))
-      ->setRequired(FALSE)
-      ->setCardinality(1)
-      ->setSetting('max_length', 1024);
-
-    $fields['age_range'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Age range'))
-      ->setRequired(TRUE)
-      ->setCardinality(1);
-
-    $fields['jurisdiction'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Jurisdiction'))
-      ->setRequired(TRUE)
-      ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED);
-
-    $fields['location'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Geographic location'))
-      ->setRequired(TRUE)
-      ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED);
-
-    $fields['descriptor'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Descriptor(s)'))
-      ->setRequired(TRUE)
-      ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED);
-
-    $fields['call_number'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Call number'))
-      ->setRequired(TRUE)
-      ->setCardinality(1);
-
+    // @todo Install "note" field [string(1024)]
+    // @todo Install "age_range" field [string(255)]
+    // @todo Install "jurisdiction" field [multi-value, string(255)]
+    // @todo Install "geographic" field [multi-value, string(255)]
+    // @todo Install "descriptors" field [multi-value, string(255)]
+    // @todo Install "call_num" field [string(255)]
     return $fields;
   }
 
