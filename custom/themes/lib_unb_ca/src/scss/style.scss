@@ -903,4 +903,37 @@ table {
     font-size: .95rem;
   }
 }
+
+/* Bootstrap4 custom tile/cards utility */
+.card-tiles {
+  .card {
+    margin-bottom: 1rem;
+
+    &:not(:first-child) {
+      @media(min-width: 992px) {
+        margin-left: .5rem;
+      }
+    }
+
+    &:not(:last-child) {
+      @media(min-width: 992px) {
+        margin-right: .5rem;
+      }
+    }
+
+    a {
+      img {
+         @include css3-prefix(transition, all .25s ease-in-out);
+      }
+
+      &:focus,
+      &:hover {
+        img {
+          box-shadow: 0 .2rem .4rem $black;
+          filter: grayscale(100%);
+        }
+      }
+    }
+  }
+}
 /** END UTILITY **/
