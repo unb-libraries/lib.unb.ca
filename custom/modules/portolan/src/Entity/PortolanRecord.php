@@ -75,7 +75,11 @@ class PortolanRecord extends ContentEntityBase {
       ->setRequired(TRUE)
       ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED);
 
-    // @todo Install "descriptors" field [multi-value, string(255)]
+    $fields['descriptor'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Descriptor(s)'))
+      ->setRequired(TRUE)
+      ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED);
+
     // @todo Install "call_num" field [string(255)]
     return $fields;
   }
