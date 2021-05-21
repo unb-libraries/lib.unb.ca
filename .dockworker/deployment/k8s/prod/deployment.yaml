@@ -113,6 +113,12 @@ spec:
                 secretKeyRef:
                   name: oclc-wskey
                   key: secret
+            -
+              name: OCLC_API_KB
+              valueFrom:
+                secretKeyRef:
+                  name: oclc-kb
+                  key: wskey
           image: "||DEPLOYMENTIMAGE||"
           imagePullPolicy: Always
           ports:
