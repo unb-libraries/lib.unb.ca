@@ -67,7 +67,7 @@ class DiscoverySearch extends BlockBase {
                 Select a search category
             </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                   <ul class="navbar-nav d-flex justify-content-around align-items-lg-end w-100">
+                   <ul class="navbar-nav d-flex justify-content-between align-items-lg-end w-100">
                       <li class="nav-item"><button aria-controls="searchPanel1" aria-expanded="true" class="Accordion-trigger p-2" id="searchBtn1">Catalogue</button></li>
                       <li class="nav-item"><button aria-controls="searchPanel2" aria-expanded="false" class="Accordion-trigger p-2" id="searchBtn2" tabindex="-1">Reserves</button></li>
                       <li class="nav-item"><button aria-controls="searchPanel3" aria-expanded="false" class="Accordion-trigger p-2" id="searchBtn3" tabindex="-1">Databases</button></li>
@@ -262,13 +262,13 @@ class DiscoverySearch extends BlockBase {
           </div>
       </form>
       <ul class="list inline m-0 p-0">
-        <li class="list-inline-item mr-3">
+        <li class="list-inline-item mr-4 my-2 my-sm-1">
             <a href="//unb.on.worldcat.org/advancedsearch">Advanced Search</a>
         </li>    
-        <li class="list-inline-item mr-3">
+        <li class="list-inline-item mr-4 my-2 my-sm-1">
             <a href="https://lib.unb.ca/about/loc_call">What Am I Searching?</a>
         </li>
-        <li class="list-inline-item">    
+        <li class="list-inline-item mr-4 my-2 my-sm-1">
             <a href="/worldcat/unb-worldcat-frequently-asked-questions" title="Using WorldCat Discovery">Help</a>
         </li>
       </ul>';
@@ -413,12 +413,12 @@ class DiscoverySearch extends BlockBase {
         </div>
       </form>
       <ul class="list inline m-0 p-0">
-        <li class="list-inline-item mr-3">
+        <li class="list-inline-item mr-4 my-2 my-sm-1">
             <a href="https://web.lib.unb.ca/eresources/index.php?sub=journals">
                 More Search Options
             </a>
         </li>
-        <li class="list-inline-item mr-3">
+        <li class="list-inline-item mr-4 my-2 my-sm-1">
             <a href="https://web.lib.unb.ca/eresources/newspapers.php" title="Guide to finding newspapers at UNB Libraries">
                 Newspaper Guide
             </a>
