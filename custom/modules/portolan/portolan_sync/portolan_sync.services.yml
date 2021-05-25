@@ -1,0 +1,16 @@
+services:
+  portolan.oclc_importer:
+    class: Drupal\portolan_sync\Synchronization\OclcImporter
+
+  portolan.storage:
+    class: Drupal\Core\Entity\ContentEntityStorageInterface
+    factory: ['@entity_type.manager', 'getStorage']
+    arguments:
+      - portolan_record
+    public: false
+
+  portolan.oclc_synchronizer:
+    class: Drupal\portolan_sync\Synchronization\OclcSynchronizer
+    arguments:
+      - '@portolan.oclc_importer'
+      - '@portolan.storage'
