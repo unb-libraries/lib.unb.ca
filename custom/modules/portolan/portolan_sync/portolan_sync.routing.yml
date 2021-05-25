@@ -1,0 +1,7 @@
+portolan.sync:
+  path: /clc/portolan/sync
+  defaults:
+    _controller: Drupal\portolan_sync\Controller\SynchronizationController::sync
+    _title: "Sync Portolan data"
+  requirements:
+    _permission: "synchronize portolan_record entities"
