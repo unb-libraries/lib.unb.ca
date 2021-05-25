@@ -1,0 +1,20 @@
+{
+  "name": "unb-libraries/portolan-sync",
+  "description": "Synchronizes the local Portolan collection with data from OCLC.",
+  "type": "drupal-module",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Patrick Schlf",
+      "email": "patrick.schilf@unb.ca"
+    },
+    {
+      "name": "UNB Libraries",
+      "email": "libsystems@unb.ca"
+    }
+  ],
+  "require": {
+    "unb-libraries/portolan": "dev-dev"
+  }
+}

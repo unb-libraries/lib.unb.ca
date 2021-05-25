@@ -1,0 +1,6 @@
+name: 'Portolan Data Synchronisation'
+type: module
+description: 'Synchronises Portolan data with .'
+core: 8.x
+package: 'Portolan'
+dependencies: { }
