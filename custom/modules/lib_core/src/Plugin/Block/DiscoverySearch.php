@@ -42,41 +42,25 @@ class DiscoverySearch extends BlockBase {
     }
 
     $html =
-      '<div class="Accordion mt-0 mt-lg-5 theme-dark d-flex flex-column flex-lg-row">
+      '<div class="Accordion d-flex flex-column flex-lg-row mt-0 mt-lg-5 px-4 px-lg-0 theme-dark">
         <div id="discovery-search" class="flex-grow-1">
         <div class="card">
           <h2 class="sr-only">Search</h2>
           <div class="card-header px-0 pb-1">
-            <nav class="navbar navbar-expand-lg">
-            <!-- Navbar mobile collapsible menu - WIP
-            <div class="btn-group">
-              <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
-                  Select a search category
-              </button>
-              <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
-                <button aria-controls="searchPanel1" aria-expanded="true" class="dropdown-item Accordion-trigger p-2" id="dropdownBtn1">Catalogue</button></li>
-                <button aria-controls="searchPanel2" aria-expanded="false" class="dropdown-item Accordion-trigger p-2" id="dropdownBtn2" tabindex="-1">Reserves</button></li>
-                <button aria-controls="searchPanel3" aria-expanded="false" class="dropdown-item Accordion-trigger p-2" id="dropdownBtn3" tabindex="-1">Databases</button></li>
-                <button aria-controls="searchPanel4" aria-expanded="false" class="dropdown-item Accordion-trigger p-2 text-center" id="dropdownhBtn4" tabindex="-1">Journals &amp; Newspapers</button></li>
-                <button aria-controls="searchPanel5" aria-expanded="false" class="dropdown-item Accordion-trigger p-2 text-nowrap" id="dropdownBtn5" tabindex="-1">e-Reference</button></li>
-                <button aria-controls="searchPanel6" aria-expanded="false" class="dropdown-item Accordion-trigger p-2 text-nowrap" id="dropdownBtn6" tabindex="-1">e-Books</button></li>
-                <button aria-controls="searchPanel7" aria-expanded="false" class="dropdown-item Accordion-trigger p-2" id="dropdownBtn7" tabindex="-1">Videos</button></li>
-              </div>
-            </div>-->
-            <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <nav class="navbar navbar-expand-lg text-nowrap">
+            <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
                 Select a search category
             </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                   <ul class="navbar-nav d-flex justify-content-between align-items-lg-end w-100">
+                <div class="collapse show navbar-collapse" id="navbarNav">
+                   <ul class="navbar-nav d-flex align-items-lg-end justify-content-around w-100">
                       <li class="nav-item"><button aria-controls="searchPanel1" aria-expanded="true" class="Accordion-trigger p-2" id="searchBtn1">Catalogue</button></li>
                       <li class="nav-item"><button aria-controls="searchPanel2" aria-expanded="false" class="Accordion-trigger p-2" id="searchBtn2" tabindex="-1">Reserves</button></li>
                       <li class="nav-item"><button aria-controls="searchPanel3" aria-expanded="false" class="Accordion-trigger p-2" id="searchBtn3" tabindex="-1">Databases</button></li>
                       <li class="nav-item"><button aria-controls="searchPanel4" aria-expanded="false" class="Accordion-trigger p-2 text-left text-lg-center" id="searchBtn4" tabindex="-1">Journals &amp; Newspapers</button></li>
-                      <li class="nav-item"><button aria-controls="searchPanel7" aria-expanded="false" class="Accordion-trigger p-2" id="searchBtn7" tabindex="-1">Videos</button></li>
                       <li class="nav-item">
                          <a aria-controls="searchPanel5" aria-expanded="false" class="btn Accordion-trigger p-2 text-left text-lg-center text-nowrap" tabindex="-1"
                             href="https://web.lib.unb.ca/eresources/refguide.php"
-                            title="Guide to Finding Reference Materials (opens new page)">More<i class="fas fa-external-link-alt fa-xs fa-super ml-1"></i>
+                            title="Guide to Finding Reference Materials (opens new page)">More<i class="fas fa-external-link-alt fa-xs fa-text-top ml-1"></i>
                          </a>
                       </li>
                     </ul>
@@ -84,21 +68,18 @@ class DiscoverySearch extends BlockBase {
              </nav>
           </div>
           <div class="card-body p-0">
-             <div aria-labelledby="searchBtn1 dropdownBtn1" class="Accordion-panel" id="searchPanel1" role="region">';
-                $html .= $this->getCatalogueForm();
-             $html .= '</div>
-             <div aria-labelledby="searchBtn2 dropdownBtn2" class="Accordion-panel" id="searchPanel2" role="region" hidden="">';
-                $html .= $this->getReservesForm();
-             $html .= '</div>
-             <div aria-labelledby="searchBtn3 dropdownBtn3" class="Accordion-panel" id="searchPanel3" role="region" hidden="">';
-                $html .= $this->getDatabasesForm();
-             $html .= '</div>
-             <div aria-labelledby="searchBtn4 dropdownBtn4" class="Accordion-panel" id="searchPanel4" role="region" hidden="">';
-                $html .= $this->getJournalsForm();
-            $html .='</div>
-             <div aria-labelledby="searchBtn7 dropdownBtn7" class="Accordion-panel" id="searchPanel7" role="region" hidden="">';
-                $html .= $this->getVideosForm();
-             $html .= '</div>
+            <div aria-labelledby="searchBtn1 dropdownBtn1" class="Accordion-panel" id="searchPanel1" role="region">';
+              $html .= $this->getCatalogueForm();
+            $html .= '</div>
+            <div aria-labelledby="searchBtn2 dropdownBtn2" class="Accordion-panel" id="searchPanel2" role="region" hidden="">';
+              $html .= $this->getReservesForm();
+            $html .= '</div>
+            <div aria-labelledby="searchBtn3 dropdownBtn3" class="Accordion-panel" id="searchPanel3" role="region" hidden="">';
+              $html .= $this->getDatabasesForm();
+            $html .= '</div>
+            <div aria-labelledby="searchBtn4 dropdownBtn4" class="Accordion-panel" id="searchPanel4" role="region" hidden="">';
+              $html .= $this->getJournalsForm();
+            $html .= '</div>
           </div>
         </div>
         </div>
@@ -143,23 +124,23 @@ class DiscoverySearch extends BlockBase {
   protected function getReservesForm() {
     $form_reserves =
       '<form action="//web.lib.unb.ca/reserves/index.php/quickSearch" id="searchReserves" class="mb-2" method="post">
-         <div class="d-flex flex-column flex-lg-row">
-           <div class="flex-fill mb-2 mr-0 mr-lg-2">
-             <label class="sr-only" for="keywords">
-               Search for:
-             </label>
-             <input class="form-control" id="keywords" name="keywords" placeholder="Search by instructor, course name, or course number" type="search" value="" required>
-           </div>
-           <div class="flex-fill mb-2 mr-0 mr-lg-2">
-             <label class="sr-only" for="semester">
-               Course Semester
-             </label>';
-             $form_reserves .= $this->getReservesSemesters();
-           $form_reserves .= '</div>
-           <div class="mb-2">
-             <button class="btn btn-primary px-3" id="searchReservesSubmit" type="submit">GO</button>
-           </div>
-         </div>
+        <div class="d-flex flex-column flex-lg-row">
+          <div class="flex-fill mb-2 mr-0 mr-lg-2">
+            <label class="sr-only" for="keywords">
+              Search for:
+            </label>
+            <input class="form-control" id="keywords" name="keywords" placeholder="Search by instructor, course name, or course number" type="search" value="" required>
+          </div>
+          <div class="flex-fill mb-2 mr-0 mr-lg-2">
+            <label class="sr-only" for="semester">
+              Course Semester
+            </label>';
+            $form_reserves .= $this->getReservesSemesters();
+          $form_reserves .= '</div>
+          <div class="mb-2">
+            <button class="btn btn-primary px-3" id="searchReservesSubmit" type="submit">GO</button>
+          </div>
+        </div>
       </form>
       <div>
         <a href="//web.lib.unb.ca/reserves/index.php?h=1">Login to My UNB Reserves</a>
