@@ -142,9 +142,11 @@ class DiscoverySearch extends BlockBase {
           </div>
         </div>
       </form>
-      <div>
-        <a href="//web.lib.unb.ca/reserves/index.php?h=1">Login to My UNB Reserves</a>
-      </div>';
+      <ul class="list inline m-0 p-0">
+        <li class="list-inline-item mr-4 my-2 my-sm-1">
+          <a href="//web.lib.unb.ca/reserves/index.php?h=1">Login to My UNB Reserves</a>
+        </li>
+      </ul>';
 
     return $form_reserves;
   }
@@ -276,11 +278,13 @@ class DiscoverySearch extends BlockBase {
           </div>
         </div>
       </form>
-      <div>
-        <a href="https://web.lib.unb.ca/eresources/index.php?sub=indexes">
-          More Search Options
-        </a>
-      </div>';
+      <ul class="list inline m-0 p-0">
+        <li class="list-inline-item mr-4 my-2 my-sm-1">
+          <a href="https://web.lib.unb.ca/eresources/index.php?sub=indexes">
+            More Search Options
+          </a>
+        </li>
+      </ul>';
 
     $form_databases = $title_form;
     return $form_databases;
