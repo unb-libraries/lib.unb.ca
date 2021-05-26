@@ -6,7 +6,8 @@
 *   https://www.w3.org/TR/2019/NOTE-wai-aria-practices-1.1-20190814/examples/accordion/accordion.html
 *   Required allowed attributes:
 *   div: hidden, button: tabindex, nav: class
-*   ToDo: Support navbar toggle button
+*   Bootstrap4 collapsed navbar support added
+*   https://getbootstrap.com/docs/4.6/components/navbar/#nav
 */
 
 'use strict';
@@ -29,7 +30,7 @@ Array.prototype.slice.call(document.querySelectorAll('.Accordion')).forEach(func
         if (target.classList.contains('Accordion-trigger')) {
             // Check if the current toggle is expanded.
             var isExpanded = target.getAttribute('aria-expanded') == 'true';
-            var active = accordion.querySelector('[aria-expanded="true"]');
+            var active = accordion.querySelector('#navbarNav [aria-expanded="true"]');
 
             // without allowMultiple, close the open accordion
             if (!allowMultiple && active && active !== target) {
