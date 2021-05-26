@@ -2,20 +2,27 @@
   margin: 0;
   padding: 0;
 }
+.Accordion .navbar-toggler {
+    font-size: 1rem;
+    margin: .5rem 0;
+    padding: 0rem;
+}
+.Accordion .navbar-toggler[aria-expanded="false"]:after {
+    font-family: 'Font Awesome 5 Free';
+    font-size: smaller;
+    font-weight: bold;
+    content: '\f078';
+}
+.Accordion .navbar-toggler[aria-expanded="true"]:after {
+    font-family: 'Font Awesome 5 Free';
+    font-size: smaller;
+    font-weight: bold;
+    content: '\f077';
+}
 .Accordion .form-control,
 .Accordion button.btn-primary {
   border: 2px #000 solid;
   border-radius: .5rem;
-}
-.Accordion .chosen-container-single.form-control {
-  height: calc(1.5em + 0.75rem + 2px);
-}
-.Accordion .chosen-container a {
-  height: 98%;
-}
-.Accordion .form-control.chosen-with-drop {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
 }
 .Accordion .form-control:focus,
 .Accordion .form-group button[type="submit"]:focus,
@@ -36,19 +43,18 @@
   outline: none;
 }
 
-.nav-item button,
-.nav-item .btn {
+.Accordion .nav-item button,
+.Accordion .nav-item .btn {
   border-style: none;
   border-bottom-style: outset;
   border-bottom-color: transparent;
   transition: all .3s ease-in-out;
 }
-
-.nav-item [aria-expanded="true"] {
+.Accordion .nav-item [aria-expanded="true"] {
   border-bottom-color: #ffc107;
   color: #ffc107;
 }
-.nav-item [aria-expanded="true"]:hover {
+.Accordion .nav-item [aria-expanded="true"]:hover {
   cursor: default;
 }
 .Accordion .nav-item [aria-expanded="false"]:focus {
@@ -56,8 +62,8 @@
   outline: 1px dotted #ffc107;
   outline-offset: 0;
 }
-.nav-item [aria-expanded="false"]:hover,
-.nav-item [aria-expanded="false"]:focus {
+.Accordion .nav-item [aria-expanded="false"]:hover,
+.Accordion .nav-item [aria-expanded="false"]:focus {
   color: #ffc107;
 }
 .Accordion button::-moz-focus-inner {
@@ -75,48 +81,49 @@
 
 .Accordion-panel {
   margin: 0;
-  padding: 1em 1.5em;
+  padding: 1em;
 }
-
 /* For Edge bug https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4806035/ */
 .Accordion-panel[hidden] {
   display: none;
 }
+
 .Accordion .card {
   background-color: initial;
   border: 0;
 }
-/* Discover Search */
-#discovery-search {
-  background-color: rgb(80  80  80 / 82%);
-}
-#discovery-search .card-header {
-  border-bottom: none;
-}
 .Accordion .focus-ring:focus {
   outline: 1px dotted #fff;
 }
-.bg-askus {
-  background-color: rgb(255  193  7 / 82%);
+
+/* Chosen Tweaks */
+.Accordion .chosen-container a {
+  height: 98%;
 }
-#ask-us h2 {
-  font-size: 3rem;
+.Accordion .chosen-container-single,
+.Accordion .chosen-master {
+    width: 100%!important;
 }
-#ask-us-help a {
-  border: 1px solid transparent;
+.Accordion .chosen-container-single.form-control {
+  height: calc(1.5em + 0.75rem + 2px);
 }
-#ask-us-help a span {
-  color: #000;
+.Accordion .chosen-container-active.form-control {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 60%);
 }
-#ask-us-help a span:focus,
-#ask-us-help a span:hover {
-  color: #990000;
+.Accordion .chosen-container-single .chosen-drop {
+    background: #fff;
+    border: 2px solid #80bdff;
+    border-radius: .5rem;
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 60%);
+    margin: -2px;
+    top: 0;
+    width: calc(100% + 4px);
 }
-@media (min-width: 992px){
-  #discovery-search {
-    width: 77%;
-  }
-  #ask-us {
-    width: 26%;
-  }
+.Accordion .form-control.chosen-with-drop {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.Accordion .chosen-with-drop a.chosen-single {
+    height:0;
 }
