@@ -32,42 +32,38 @@
     }
 
     #navbar {
-      a {
-        box-shadow: none;
-        color: $white;
+      flex-basis: auto;
 
-        &:focus,
-        &:hover {
-          color: rgb(221 221 221);
-          cursor: default;
-        }
-      }
-
-      ul[role="menubar"] .show a[aria-haspopup="true"] {
-        background-color: rgb(52 58 64);
-
-        &:not(.focus-ring) {
-          @include css3-prefix(box-shadow, 0 3px 0 -1px rgb(52 58 64))
+      ul[role="menubar"] {
+        a[aria-haspopup="true"] {
+          color: $white;
         }
 
-        &:focus,
-        &:hover {
-          cursor: default;
+        .show a[aria-haspopup="true"] {
+          @media (min-width: 991px) {
+            background-color: rgb(52 58 64);
+          }
+
+          &:not(.focus-ring) {
+            @include css3-prefix(box-shadow, 0 3px 0 -1px rgb(52 58 64))
+          }
+
+          &:focus,
+          &:hover {
+            cursor: default;
+          }
         }
       }
     }
-
-   /* ul[role="menubar"] a[aria-haspopup="true"] {
-      color: $white;
-    }
-    ul[role="menubar"] .show a[aria-haspopup="true"] {
-      color: $black;
-    }*/
   }
 
   .megamenu {
-    border-top: 1px solid rgb(55 63 68 / 99%);
+    border: none;
     border-radius: 0;
+
+    .container {
+      background: rgb(55 63 68 / 99%);
+    }
   }
 
   #header-overlay {
@@ -80,26 +76,22 @@
       padding-bottom: 1rem;
     }
   }
-  .megamenu {
-    background: none;
-  }
-  .megamenu > .container {
-    background: rgb(55 63 68 / 99%);
-  }
 
   @media (min-width: 992px) {
-     .megamenu {
-       display: initial;
-       opacity: 0;
-       @include css3-prefix(transition, all .35s ease-in);
-       visibility: hidden;
+    .megamenu {
+      @include css3-prefix(transition, all .35s ease-in);
+      background: none;
+      display: initial;
+      opacity: 0;
+      visibility: hidden;
 
-       &.show {
-         opacity: 1;
-          visibility: visible;
-       }
-     }
+      &.show {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
   }
+
   #navbar-main:not(.affix) .navbar-nav li.show>a:first-child {
     color: $white;
     background: #343c41;
@@ -125,48 +117,66 @@
   .form-control:placeholder-shown {
     opacity: 1;
   }
-}
 
-/* Override "banner" search container */
-@media (max-width: 991px) {
-  header .container {
-    padding-left: 16px;
-    padding-right: 16px;
+  /* OVERRIDE */
+  .navbar-nav a {
+    @include css3-prefix(transition, all .15s ease-out)
   }
-  .branding {
-    width: 100%;
+
+  /* OVERRIDE - to do: remove original affix */
+  .affix {
+    /*background: none;*/
+    transition: none;
   }
-}
 
-#nav-btn {
-    background: rgb(216 46 59 / 50%);
-}
-/* OVERRIDE */
-.navbar-nav a {
-  @include css3-prefix(transition, all .15s ease-out)
-}
-/* OVERRIDE - to do: remove original affix */
-.affix {
-  /*background: none;*/
-  transition: none;
-}
-
-#header .affix li.show>.nav-link,
-#header .affix .megamenu-li>.nav-link:focus,
-#header .affix .megamenu-li>.nav-link:hover,
-.affix .branding a:focus, .affix .branding a:hover {
+  #header .affix li.show > .nav-link,
+  #header .affix .megamenu-li > .nav-link:focus,
+  #header .affix .megamenu-li > .nav-link:hover,
+  .affix .branding a:focus, .affix .branding a:hover {
     border-bottom-color: $white;
-}
-button[data-target="#navbar"][aria-expanded="false"]:after {
-  @include link-fa-icon('\f0c9', left);
-}
-button[data-target="#navbar"][aria-expanded="true"]:after {
-  @include link-fa-icon('\f00d', left);
-  margin-left: 0.44rem;
-}
-button[data-target="#quicklinks-wrapper"][aria-expanded="false"]:after {
-  @include link-fa-icon('\f011', left, '', $text-muted);
-}
-button[data-target="#quicklinks-wrapper"][aria-expanded="true"]:after {
-  @include link-fa-icon('\f011', left);
+  }
+
+  button[data-target="#navbar"][aria-expanded="false"]:after {
+    @include link-fa-icon('\f0c9', left);
+  }
+
+  button[data-target="#navbar"][aria-expanded="true"]:after {
+    @include link-fa-icon('\f00d', left);
+    margin-left: 0.44rem;
+  }
+
+  button[data-target="#quicklinks-wrapper"][aria-expanded="false"]:after {
+    @include link-fa-icon('\f011', left, '', $text-muted);
+  }
+
+  button[data-target="#quicklinks-wrapper"][aria-expanded="true"]:after {
+    @include link-fa-icon('\f011', left, '', $white);
+  }
+
+  @media (max-width: 991px) {
+    #navbar-main #navbar {
+      li.show>a:first-child {
+        background: rgb(55 63 68 / 30%);
+      }
+
+      div.dropdown-menu {
+        display: none;
+
+        &.show {
+          display: flex;
+
+          .container > div {
+            -webkit-animation: megamenu-expand 0.3s;
+            animation-duration: 0.35s;
+            animation-iteration-count: 1;
+            animation-name: megamenu-expand;
+
+            ul {
+              margin-bottom: .5em;
+            }
+          }
+        }
+      }
+    }
+  }
 }
