@@ -1,34 +1,52 @@
-.chosen-container-single,
-.chosen-master {
-    width: 100%!important;
+/* Search Forms */
+#discovery-search {
+  background-color: rgb(80  80  80 / 82%);
 }
-.chosen-container-single .chosen-drop {
-    background: #fff;
-    border: 2px solid #80bdff;
-    border-radius: .5rem;
-    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 60%);
-    margin: -2px;
-    top: 0;
-    width: calc(100% + 4px);
-}
-.Accordion .chosen-container-active.form-control {
-    border-color: #80bdff;
-    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 60%);
+#discovery-search .card-header {
+  border-bottom: none;
 }
 
-.chosen-with-drop a.chosen-single {
-    height:0;
-}
 .fa-super:before {
     vertical-align: super;
 }
-.navbar .navbar-toggler[aria-expanded="false"]:after {
-    font-family: 'Font Awesome 5 Free';
-    font-weight: bold;
-    content: '\f0d7';
+.fa-text-top:before {
+    vertical-align: text-top;
 }
-.navbar .navbar-toggler[aria-expanded="true"]:after {
-    font-family: 'Font Awesome 5 Free';
-    font-weight: bold;
-    content: '\f0d8';
+#discovery-search .card-header a:after{float:right;font-family:"Font Awesome 5 Free";font-weight:900}
+/* Ask Us */
+.bg-askus {
+  background-color: rgb(255  193  7 / 82%);
+}
+#ask-us h2 {
+  font-size: 3rem;
+}
+#ask-us-help a {
+  border: 1px solid transparent;
+}
+#ask-us-help a span {
+  color: #000;
+}
+#ask-us-help a span:focus,
+#ask-us-help a span:hover {
+  color: #990000;
+}
+
+/* Unset card header link ::after */
+@media(max-width: 991px) {
+  #discovery-search #navbarNav a:after {
+    content: '';
+    float: none;
+    font-family: inherit;
+    font-weight: inherit;
+  }
+}
+
+/* Breakpoint overrides */
+@media (min-width: 992px){
+  #discovery-search {
+    width: 77%;
+  }
+  #ask-us {
+    width: 26%;
+  }
 }
