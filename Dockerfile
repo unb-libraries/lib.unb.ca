@@ -1,7 +1,7 @@
 FROM ghcr.io/unb-libraries/drupal:8.x-3.x-unblib
 MAINTAINER UNB Libraries <libsupport@unb.ca>
 
-ENV ADDITIONAL_OS_PACKAGES postfix php7-ldap php7-xmlreader php7-zip php7-redis php7-pear
+ENV ADDITIONAL_OS_PACKAGES postfix php7-ldap php7-xmlreader php7-zip php7-redis php7-pear openssh-client
 ENV DRUPAL_SITE_ID libweb
 ENV DRUPAL_SITE_URI lib.unb.ca
 ENV DRUPAL_SITE_UUID 87d22fc3-a2d0-4543-aab8-6ed800691b7b
