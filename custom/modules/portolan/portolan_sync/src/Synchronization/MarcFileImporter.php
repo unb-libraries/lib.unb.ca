@@ -12,6 +12,33 @@ use Drupal\portolan\Entity\PortolanRecordInterface;
 class MarcFileImporter implements DataImporterInterface {
 
   /**
+   * The parser to extract Portolan relevant info.
+   *
+   * @var \Drupal\portolan_sync\Synchronization\ParserInterface
+   */
+  protected $parser;
+
+  /**
+   * Get the parser.
+   *
+   * @return \Drupal\portolan_sync\Synchronization\ParserInterface
+   *   A parser instance.
+   */
+  protected function parser() {
+    return $this->parser;
+  }
+
+  /**
+   * Construct a new MarcFileImporter instance.
+   *
+   * @param \Drupal\portolan_sync\Synchronization\ParserInterface $parser
+   *   A parser to extract Portolan relevant info.
+   */
+  public function __construct(ParserInterface $parser) {
+    $this->parser = $parser;
+  }
+
+  /**
    * {@inheritDoc}
    */
   public function import($max_count = self::UNLIMITED) {
@@ -21,7 +48,7 @@ class MarcFileImporter implements DataImporterInterface {
     $index = 0;
     $marc_records = new \File_MARC($marc_path);
     while (($max_count <= 0 || $index < $max_count) && $marc_record = $marc_records->next()) {
-      if (!empty($portolan_record = $this->parseRecord($marc_record))) {
+      if (!empty($portolan_record = $this->parser()->parse($marc_record))) {
         $oclc_id = $portolan_record[PortolanRecordInterface::FIELD_OCLC_ID];
         $portolan_records[$oclc_id] = $portolan_record;
         // @todo Download cover image
@@ -30,40 +57,6 @@ class MarcFileImporter implements DataImporterInterface {
     }
 
     return $portolan_records;
-  }
-
-  /**
-   * Parses the given MARC record.
-   *
-   * @param \File_MARC_Record $marc_record
-   *   A MARC record.
-   *
-   * @return array
-   *   An array of key => value.
-   */
-  protected function parseRecord(\File_MARC_Record $marc_record) {
-    return [
-      PortolanRecordInterface::FIELD_OCLC_ID => $this->parseOclcId($marc_record),
-    ];
-  }
-
-  /**
-   * Extract the OCLC ID from the given MARC record.
-   *
-   * @param \File_MARC_Record $marc_record
-   *   The MARC record.
-   *
-   * @return string
-   *   An OCLC ID.
-   */
-  protected function parseOclcId(\File_MARC_Record $marc_record) {
-    $oclc_id = '';
-    $fields = $marc_record->getFields('001');
-    foreach ($fields as $num) {
-      $num = $num->getData();
-      $oclc_id = preg_replace('/[^0-9]/', '', $num);
-    }
-    return $oclc_id;
   }
 
   /**

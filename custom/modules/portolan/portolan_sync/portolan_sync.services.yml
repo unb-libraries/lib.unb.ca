@@ -1,6 +1,11 @@
 services:
+  portolan.marc_parser:
+    class: Drupal\portolan_sync\Synchronization\PortolanMarcParser
+
   portolan.marc_file_importer:
     class: Drupal\portolan_sync\Synchronization\MarcFileImporter
+    arguments:
+      - '@portolan.marc_parser'
 
   portolan.storage:
     class: Drupal\Core\Entity\ContentEntityStorageInterface
