@@ -244,7 +244,19 @@ class PortolanMarcParser implements ParserInterface {
    *   An array of one or multiple descriptors.
    */
   protected function getDescriptor(\File_MARC_Record $marc_record) {
-    return [];
+    $descriptors = [];
+
+    foreach ($marc_record->getFields('690') as $subfields) {
+      foreach ($subfields->getSubfields() as $code => $value) {
+        if ($code == 'a') {
+          $descriptor = explode(';', $value->getData());
+          foreach ($descriptor as $d) {
+            $descriptors[] = rtrim($d, '.');
+          }
+        }
+      }
+    }
+    return $descriptors;
   }
 
   /**
