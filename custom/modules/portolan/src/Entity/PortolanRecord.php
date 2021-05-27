@@ -23,7 +23,7 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *   field_ui_base_route = "entity.portolan_record.settings",
  * )
  */
-class PortolanRecord extends ContentEntityBase {
+class PortolanRecord extends ContentEntityBase implements PortolanRecordInterface {
 
   /**
    * {@inheritDoc}
@@ -31,56 +31,56 @@ class PortolanRecord extends ContentEntityBase {
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
-    $fields['title'] = BaseFieldDefinition::create('string')
+    $fields[self::FIELD_TITLE] = BaseFieldDefinition::create('string')
       ->setLabel(t('Title'))
       ->setRequired(TRUE)
       ->setCardinality(1)
       ->setSetting('max_length', 2048);
 
-    $fields['author'] = BaseFieldDefinition::create('string')
+    $fields[self::FIELD_AUTHOR] = BaseFieldDefinition::create('string')
       ->setLabel(t('Author(s)'))
       ->setRequired(TRUE)
       ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED);
 
-    $fields['publication'] = BaseFieldDefinition::create('string')
+    $fields[self::FIELD_PUBLICATION] = BaseFieldDefinition::create('string')
       ->setLabel(t('Publication'))
       ->setRequired(TRUE)
       ->setCardinality(1)
       ->setSetting('max_length', 1024);
 
-    $fields['abstract'] = BaseFieldDefinition::create('text')
+    $fields[self::FIELD_ABSTRACT] = BaseFieldDefinition::create('text')
       ->setLabel(t('Abstract'))
       ->setRequired(TRUE)
       ->setCardinality(1)
       ->setSetting('max_length', 2048);
 
-    $fields['note'] = BaseFieldDefinition::create('text')
+    $fields[self::FIELD_NOTE] = BaseFieldDefinition::create('text')
       ->setLabel(t('Note'))
       ->setRequired(FALSE)
       ->setCardinality(1)
       ->setSetting('max_length', 1024);
 
-    $fields['age_range'] = BaseFieldDefinition::create('string')
+    $fields[self::FIELD_AGE_RANGE] = BaseFieldDefinition::create('string')
       ->setLabel(t('Age range'))
       ->setRequired(TRUE)
       ->setCardinality(1);
 
-    $fields['jurisdiction'] = BaseFieldDefinition::create('string')
+    $fields[self::FIELD_JURISDICTION] = BaseFieldDefinition::create('string')
       ->setLabel(t('Jurisdiction'))
       ->setRequired(TRUE)
       ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED);
 
-    $fields['location'] = BaseFieldDefinition::create('string')
+    $fields[self::FIELD_LOCATION] = BaseFieldDefinition::create('string')
       ->setLabel(t('Geographic location'))
       ->setRequired(TRUE)
       ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED);
 
-    $fields['descriptor'] = BaseFieldDefinition::create('string')
+    $fields[self::FIELD_DESCRIPTOR] = BaseFieldDefinition::create('string')
       ->setLabel(t('Descriptor(s)'))
       ->setRequired(TRUE)
       ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED);
 
-    $fields['call_number'] = BaseFieldDefinition::create('string')
+    $fields[self::FIELD_CALL_NUMBER] = BaseFieldDefinition::create('string')
       ->setLabel(t('Call number'))
       ->setRequired(TRUE)
       ->setCardinality(1);
