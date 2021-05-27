@@ -208,7 +208,7 @@
         "drupal/better_exposed_filters": "4.0-beta2",
         "drupal/block_class": "1.0",
         "drupal/block_field": "1.0-rc2",
-        "drupal/bootstrap_barrio": "5.1.4",
+        "drupal/bootstrap_barrio": "5.5.1",
         "drupal/cache_control_override": "1.0-alpha2",
         "drupal/chosen": "3.0.1",
         "drupal/ckeditor_codemirror": "2.3",
