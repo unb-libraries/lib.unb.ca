@@ -70,7 +70,17 @@ class PortolanMarcParser implements ParserInterface {
    *   A string.
    */
   protected function getTitle(\File_MARC_Record $marc_record) {
-    return '';
+    $title = '';
+
+    foreach ($marc_record->getFields('245') as $subfields) {
+      foreach ($subfields->getSubfields() as $code => $value) {
+        if ($code == 'a' || $code == 'b' || $code == 'n' || $code == 'p') {
+          $title .= " {$value->getData()}";
+        }
+      }
+    }
+
+    return trim($title, ' /');
   }
 
   /**
