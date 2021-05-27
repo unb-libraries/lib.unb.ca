@@ -139,7 +139,17 @@ class PortolanMarcParser implements ParserInterface {
    *   A (long) string.
    */
   protected function getAbstract(\File_MARC_Record $marc_record) {
-    return '';
+    $abstract = '';
+
+    foreach ($marc_record->getFields('590') as $subfields) {
+      foreach ($subfields->getSubfields() as $code => $value) {
+        $value = $value->getData();
+        if ($code == 'a' && strpos($value, 'OCLC Online Computer Library Center') !== 0) {
+          $abstract .= $value;
+        }
+      }
+    }
+    return $abstract;
   }
 
   /**
