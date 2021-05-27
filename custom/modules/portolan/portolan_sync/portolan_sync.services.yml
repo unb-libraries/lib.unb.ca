@@ -1,6 +1,6 @@
 services:
-  portolan.oclc_importer:
-    class: Drupal\portolan_sync\Synchronization\OclcImporter
+  portolan.marc_file_importer:
+    class: Drupal\portolan_sync\Synchronization\MarcFileImporter
 
   portolan.storage:
     class: Drupal\Core\Entity\ContentEntityStorageInterface
@@ -12,5 +12,5 @@ services:
   portolan.oclc_synchronizer:
     class: Drupal\portolan_sync\Synchronization\OclcSynchronizer
     arguments:
-      - '@portolan.oclc_importer'
+      - '@portolan.marc_file_importer'
       - '@portolan.storage'
