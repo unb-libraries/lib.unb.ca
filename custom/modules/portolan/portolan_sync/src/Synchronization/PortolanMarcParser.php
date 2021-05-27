@@ -93,7 +93,18 @@ class PortolanMarcParser implements ParserInterface {
    *   An array of one or multiple author names.
    */
   protected function getAuthor(\File_MARC_Record $marc_record) {
-    return [];
+    $authors = [];
+
+    foreach ($marc_record->getFields('100|700', TRUE) as $subfields) {
+      foreach ($subfields->getSubfields() as $code => $value) {
+        if ($code == 'a') {
+          $author = $value->getData();
+          $author = rtrim($author, ' ,.');
+          $authors[] = $author;
+        }
+      }
+    }
+    return array_unique($authors);
   }
 
   /**
