@@ -117,7 +117,16 @@ class PortolanMarcParser implements ParserInterface {
    *   A string.
    */
   protected function getPublication(\File_MARC_Record $marc_record) {
-    return '';
+    $publication = '';
+
+    foreach ($marc_record->getFields('260|264', TRUE) as $subfields) {
+      foreach ($subfields->getSubfields() as $code => $value) {
+        if ($code == 'a' || $code == 'b' || $code == 'c') {
+          $publication .= " {$value->getData()}";
+        }
+      }
+    }
+    return trim($publication, ' .');
   }
 
   /**
