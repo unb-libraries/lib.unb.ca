@@ -221,7 +221,17 @@ class PortolanMarcParser implements ParserInterface {
    *   An array of one or multiple location names.
    */
   protected function getLocation(\File_MARC_Record $marc_record) {
-    return [];
+    $locations = [];
+
+    foreach ($marc_record->getFields('691') as $subfields) {
+      foreach ($subfields->getSubfields() as $code => $value) {
+        if ($code == 'a') {
+          $location = $value->getdata();
+          $locations[] = rtrim($location, '.');
+        }
+      }
+    }
+    return $locations;
   }
 
   /**
