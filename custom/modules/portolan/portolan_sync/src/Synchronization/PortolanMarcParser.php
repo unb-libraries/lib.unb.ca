@@ -175,7 +175,16 @@ class PortolanMarcParser implements ParserInterface {
    *   A string indicating an age range, e.g. "8-12".
    */
   protected function getAgeRange(\File_MARC_Record $marc_record) {
-    return '';
+    $age_range = '';
+
+    foreach ($marc_record->getFields('594') as $subfields) {
+      foreach ($subfields->getSubfields() as $code => $value) {
+        if ($code == 'a') {
+          $age_range .= $value->getData();
+        }
+      }
+    }
+    return str_replace('Age Range: ', '', $age_range);
   }
 
   /**
