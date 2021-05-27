@@ -188,7 +188,18 @@ class PortolanMarcParser implements ParserInterface {
    *   An array of one or multiple jurisdiction names.
    */
   protected function getJurisdiction(\File_MARC_Record $marc_record) {
-    return [];
+    $jurisdictions = [];
+
+    foreach ($marc_record->getFields('593') as $subfields) {
+      foreach ($subfields->getSubfields() as $code => $value) {
+        if ($code == 'a') {
+          $jur = $value->getData();
+          $jur = str_replace('Jurisdiction: ', '', $jur);
+          $jurisdictions[] = rtrim($jur, '.');
+        }
+      }
+    }
+    return $jurisdictions;
   }
 
   /**
