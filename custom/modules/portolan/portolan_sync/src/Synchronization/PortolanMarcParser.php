@@ -162,7 +162,16 @@ class PortolanMarcParser implements ParserInterface {
    *   A string.
    */
   protected function getNote(\File_MARC_Record $marc_record) {
-    return '';
+    $note = '';
+
+    foreach ($marc_record->getFields('245') as $subfields) {
+      foreach ($subfields->getSubfields() as $code => $value) {
+        if ($code == 'c') {
+          $note = $value->getData();
+        }
+      }
+    }
+    return $note;
   }
 
   /**
