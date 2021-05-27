@@ -9,12 +9,17 @@ namespace Drupal\portolan_sync\Synchronization;
  */
 interface DataImporterInterface {
 
+  const UNLIMITED = -1;
+
   /**
    * Retrieve records from a source.
+   *
+   * @param int $max_records
+   *   The maximum number of records to import.
    *
    * @return array
    *   An array of records.
    */
-  public function import();
+  public function import(int $max_records = self::UNLIMITED);
 
 }

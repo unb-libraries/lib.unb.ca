@@ -9,6 +9,7 @@ namespace Drupal\portolan\Entity;
  */
 interface PortolanRecordInterface {
 
+  const FIELD_OCLC_ID = 'oclc_id';
   const FIELD_TITLE = 'title';
   const FIELD_AUTHOR = 'author';
   const FIELD_PUBLICATION = 'publication';
