@@ -19,15 +19,16 @@ class AskUsPopup extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    $chat_header = '<h2><span class="sr-only">Ask Us Chat</span></h2>';
+    $chat_header = '
+        <div class="d-flex mt-3">
+          <div class="flex-grow-1"><h2 class="border-bottom-0 text-black">ASK US</h2></div>
+          <div><i class="fas fa-comments fa-3x text-dark"></i></div>
+        </div>';
     $chat_widget = _unb_libraries_askus_get_widget('popup');
     $chat_footer =
-      '<p class="askus-footer text-center">
-        <a class="askus-help link-no-hover" href="/help/ask-us"><span class="sr-only">Ask by:</span>
-          <span><i class="fas fa-envelope"></i> Email</span>
-          <span><i class="fas fa-sms"></i> Text</span>
-          <span class="d-none"><i class="fas fa-phone-alt"></i> Phone</span>
-          <span class="d-none"><i class="fas fa-user-alt"></i> In-Person</span>
+      '<p class="askus-footer">
+        <a class="askus-help" href="/help/ask-us"><span class="sr-only">Ask by:</span>
+          Phone, Text, Email <span class="d-none">, In-Person</span>
         </a>
       </p>';
 
@@ -46,7 +47,6 @@ class AskUsPopup extends BlockBase {
         ],
         'class' => [
           'chat-popup',
-          'text-center',
         ],
       ],
     ];
