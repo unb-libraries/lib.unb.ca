@@ -11,6 +11,11 @@ interface DataSynchronizerInterface {
 
   /**
    * Synchronize the local with the external dataset.
+   *
+   * @return array
+   *   An array containing the following keys:
+   *   - synced: (int) number of synced records.
+   *   - skipped: (int) number of skipped records.
    */
   public function sync();
 

@@ -3,6 +3,9 @@
 namespace Drupal\portolan_sync\Synchronization;
 
 use Drupal\Core\Entity\ContentEntityStorageInterface;
+use Drupal\Core\Logger\LoggerChannelInterface;
+use Drupal\lib_core\Logger\LoggerChannelTrait;
+use Drupal\portolan\Entity\PortolanRecordInterface;
 
 /**
  * Synchronizes the local Portolan dataset with OCLC.
@@ -10,6 +13,8 @@ use Drupal\Core\Entity\ContentEntityStorageInterface;
  * @package Drupal\Synchronization
  */
 class OclcSynchronizer implements DataSynchronizerInterface {
+
+  use LoggerChannelTrait;
 
   protected const DELETE_CHUNK_SIZE = 500;
 
@@ -54,23 +59,36 @@ class OclcSynchronizer implements DataSynchronizerInterface {
    *   The data importer.
    * @param \Drupal\Core\Entity\ContentEntityStorageInterface $storage
    *   The entity storage.
+   * @param \Drupal\Core\Logger\LoggerChannelInterface|null $logger
+   *   (optional) A logger channel.
    */
-  public function __construct(DataImporterInterface $importer, ContentEntityStorageInterface $storage) {
+  public function __construct(DataImporterInterface $importer, ContentEntityStorageInterface $storage, LoggerChannelInterface $logger = NULL) {
     $this->importer = $importer;
     $this->storage = $storage;
+    $this->logger = $logger;
   }
 
   /**
    * {@inheritDoc}
    */
   public function sync() {
+    $imported_records = 0;
+    $skipped = 0;
+
     $this->clearStorage();
     $records = $this->importer()->import();
     foreach ($records as $record) {
-      $this->createPortolanRecord($record)
-        ->save();
+      if ($this->persist($record)) {
+        $imported_records++;
+      }
+      else {
+        $skipped++;
+      }
     }
-    return count($records);
+    return [
+      'synced' => $imported_records,
+      'skipped' => $skipped,
+    ];
   }
 
   /**
@@ -95,9 +113,20 @@ class OclcSynchronizer implements DataSynchronizerInterface {
    * @return \Drupal\Core\Entity\EntityInterface
    *   An entity instance.
    */
-  protected function createPortolanRecord(array $data) {
-    return $this->storage()
-      ->create($data);
+  protected function persist(array $data) {
+    try {
+      if ($portolan_entity = $this->storage()->create($data)) {
+        return $portolan_entity->save();
+      }
+      return FALSE;
+    }
+    catch (\Exception $e) {
+      $this->error("Record @oclc_id could not be imported: @error", [
+        '@oclc_id' => $data[PortolanRecordInterface::FIELD_OCLC_ID],
+        '@error' => $e->getMessage(),
+      ]);
+      return FALSE;
+    }
   }
 
 }

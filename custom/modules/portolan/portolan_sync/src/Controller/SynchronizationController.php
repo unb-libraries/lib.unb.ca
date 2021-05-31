@@ -60,10 +60,16 @@ class SynchronizationController extends ControllerBase {
    *   The number of synchronized records.
    */
   public function sync() {
-    $records_synced = $this->synchronizer()->sync();
+    $synchronization = $this->synchronizer()->sync();
     $this->messenger()->addStatus($this->t("@count records have been synchronized.", [
-      '@count' => $records_synced,
+      '@count' => $synchronization['synced'],
     ]));
+
+    if ($synchronization['skipped'] > 0) {
+      $this->messenger()->addWarning($this->t("@count records have been skipped. See logs for details.", [
+        '@count' => $synchronization['skipped'],
+      ]));
+    }
 
     return new RedirectResponse('/');
   }

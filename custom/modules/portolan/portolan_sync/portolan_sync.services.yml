@@ -14,8 +14,16 @@ services:
       - portolan_record
     public: false
 
+  logger.channel.portolan:
+    class: Drupal\Core\Logger\LoggerChannelInterface
+    parent: 'logger.channel_base'
+    arguments:
+      - portolan
+    public: false
+
   portolan.oclc_synchronizer:
     class: Drupal\portolan_sync\Synchronization\OclcSynchronizer
     arguments:
       - '@portolan.marc_file_importer'
       - '@portolan.storage'
+      - '@logger.channel.portolan'
