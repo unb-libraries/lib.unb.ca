@@ -17,6 +17,9 @@
 .bg-askus {
   background-color: rgb(255  193  7 / 82%);
 }
+#ask-us {
+  width: 29%;
+}
 #ask-us h2 {
   font-size: 3rem;
 }
@@ -41,12 +44,3 @@
   }
 }
 
-/* Breakpoint overrides */
-@media (min-width: 992px){
-  #discovery-search {
-    width: 77%;
-  }
-  #ask-us {
-    width: 26%;
-  }
-}
