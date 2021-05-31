@@ -31,6 +31,11 @@ class PortolanRecord extends ContentEntityBase implements PortolanRecordInterfac
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
+    $fields[self::FIELD_OCLC_ID] = BaseFieldDefinition::create('string')
+      ->setLabel(t('OCLC ID'))
+      ->setRequired(TRUE)
+      ->setCardinality(1);
+
     $fields[self::FIELD_TITLE] = BaseFieldDefinition::create('string')
       ->setLabel(t('Title'))
       ->setRequired(TRUE)
