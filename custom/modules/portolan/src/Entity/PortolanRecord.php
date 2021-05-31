@@ -57,7 +57,7 @@ class PortolanRecord extends ContentEntityBase implements PortolanRecordInterfac
       ->setLabel(t('Abstract'))
       ->setRequired(TRUE)
       ->setCardinality(1)
-      ->setSetting('max_length', 2048);
+      ->setSetting('max_length', 4096);
 
     $fields[self::FIELD_NOTE] = BaseFieldDefinition::create('text')
       ->setLabel(t('Note'))
