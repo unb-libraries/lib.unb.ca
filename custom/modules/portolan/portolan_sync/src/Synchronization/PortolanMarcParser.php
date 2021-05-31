@@ -305,7 +305,15 @@ class PortolanMarcParser implements ParserInterface {
    *   A string following the call number formatting standard.
    */
   protected function getCallNumber(\File_MARC_Record $marc_record) {
-    return '';
+    $call_number = '';
+    foreach ($marc_record->getFields('852') as $subfields) {
+      foreach ($subfields->getSubfields() as $code => $value) {
+        if ($code == 'c' || $code == 'h' || $code == 'i') {
+          $call_number .= " {$value->getData()}";
+        }
+      }
+    }
+    return trim($call_number);
   }
 
 }
