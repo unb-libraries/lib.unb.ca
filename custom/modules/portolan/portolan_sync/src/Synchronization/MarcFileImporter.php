@@ -82,6 +82,7 @@ class MarcFileImporter implements DataImporterInterface {
     $output = $result = NULL;
     exec("scp -q {$source} {$destination}", $output, $result);
 
+    $path = '';
     if ($result === 0) {
       if (is_dir($destination)) {
         $exploded_source = explode(DIRECTORY_SEPARATOR, $source);

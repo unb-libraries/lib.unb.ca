@@ -4,7 +4,6 @@ namespace Drupal\portolan_sync\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Routing\RedirectDestinationTrait;
-use Drupal\portolan_sync\DataImporterInterface;
 use Drupal\portolan_sync\Synchronization\DataSynchronizerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -61,7 +60,7 @@ class SynchronizationController extends ControllerBase {
    *   The number of synchronized records.
    */
   public function sync() {
-    $records_synced = 0;
+    $records_synced = $this->synchronizer()->sync();
     $this->messenger()->addStatus($this->t("@count records have been synchronized.", [
       '@count' => $records_synced,
     ]));

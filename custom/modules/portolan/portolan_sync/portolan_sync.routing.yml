@@ -3,5 +3,7 @@ portolan.sync:
   defaults:
     _controller: Drupal\portolan_sync\Controller\SynchronizationController::sync
     _title: "Sync Portolan data"
+  options:
+    no_cache: TRUE
   requirements:
     _permission: "synchronize portolan_record entities"
