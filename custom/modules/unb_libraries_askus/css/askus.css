@@ -45,13 +45,31 @@
     margin: 0;
     padding-top: .5rem;
 }
+.askus-header {
+    display: flex;
+    margin-bottom: .25rem;
+}
+.askus-header .askus-heading {
+    flex-grow: 1;
+}
+.askus-header h2 {
+    background: url(/modules/custom/unb_libraries_askus/img/AskUslogo2.png) no-repeat center center transparent;
+    height: 52px;
+    text-align: center;
+}
+.askus-header .askus-icon {
+    display: none;
+}
+.askus-header .askus-icon .fas:before {
+    font-size: 1.75rem;
+}
 .askus-footer {
     font-size: .9rem;
     margin: .75rem 0 0;
     padding: 0;
+    text-align: center;
 }
 .askus-footer a {
-    color: #000;
     margin: auto .25rem;
     padding: .25rem;
 }
