@@ -62,15 +62,26 @@ class OclcSynchronizer implements DataSynchronizerInterface {
    * {@inheritDoc}
    */
   public function sync() {
-    $synced_record_count = 0;
-    while ($records = $this->importer()->import()) {
-      $synced_record_count += count($records);
-      foreach ($records as $record) {
-        $this->createPortolanRecord($record)
-          ->save();
-      }
+    $this->clearStorage();
+    $records = $this->importer()->import(20);
+    foreach ($records as $record) {
+      $this->createPortolanRecord($record)
+        ->save();
     }
-    return $synced_record_count;
+    return count($records);
+  }
+
+  /**
+   * Remove all records from storage.
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   */
+  protected function clearStorage() {
+    $query = $this->storage()->getQuery()
+      ->pager(100);
+    while ($records = $this->storage()->loadMultiple($query->execute())) {
+      $this->storage()->delete($records);
+    }
   }
 
   /**
