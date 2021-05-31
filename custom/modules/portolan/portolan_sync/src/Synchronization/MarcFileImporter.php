@@ -50,9 +50,14 @@ class MarcFileImporter implements DataImporterInterface {
     while (($max_count <= 0 || $index < $max_count) && $marc_record = $marc_records->next()) {
       if (!empty($portolan_record = $this->parser()->parse($marc_record))) {
         $oclc_id = $portolan_record[PortolanRecordInterface::FIELD_OCLC_ID];
-        $portolan_records[$oclc_id] = $portolan_record;
+        if (!array_key_exists($oclc_id, $portolan_records)) {
+          $portolan_records[$oclc_id] = $portolan_record;
+          $index++;
+        }
+        else {
+          $portolan_records[$oclc_id] += $portolan_record;
+        }
         // @todo Download cover image
-        $index++;
       }
     }
 

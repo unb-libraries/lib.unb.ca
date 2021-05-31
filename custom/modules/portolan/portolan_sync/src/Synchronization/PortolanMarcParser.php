@@ -11,34 +11,59 @@ use Drupal\portolan\Entity\PortolanRecordInterface;
  */
 class PortolanMarcParser implements ParserInterface {
 
+  protected const REGULAR_RECORD_FIELD = '001';
+  protected const HOLDINGS_RECORD_FIELD = '004';
+
   /**
    * {@inheritDoc}
    */
   public function parse($data) {
-    return [
-      PortolanRecordInterface::FIELD_OCLC_ID => $this
-        ->getOclcId($data),
-      PortolanRecordInterface::FIELD_TITLE => $this
-        ->getTitle($data),
-      PortolanRecordInterface::FIELD_AUTHOR => $this
-        ->getAuthor($data),
-      PortolanRecordInterface::FIELD_PUBLICATION => $this
-        ->getPublication($data),
-      PortolanRecordInterface::FIELD_ABSTRACT => $this
-        ->getAbstract($data),
-      PortolanRecordInterface::FIELD_NOTE => $this
-        ->getNote($data),
-      PortolanRecordInterface::FIELD_AGE_RANGE => $this
-        ->getAgeRange($data),
-      PortolanRecordInterface::FIELD_JURISDICTION => $this
-        ->getJurisdiction($data),
-      PortolanRecordInterface::FIELD_LOCATION => $this
-        ->getLocation($data),
-      PortolanRecordInterface::FIELD_DESCRIPTOR => $this
-        ->getDescriptor($data),
-      PortolanRecordInterface::FIELD_CALL_NUMBER => $this
-        ->getCallNumber($data),
-    ];
+    if (!$this->isHoldingsRecord($data)) {
+      return [
+        PortolanRecordInterface::FIELD_OCLC_ID => $this
+          ->getOclcId($data),
+        PortolanRecordInterface::FIELD_TITLE => $this
+          ->getTitle($data),
+        PortolanRecordInterface::FIELD_AUTHOR => $this
+          ->getAuthor($data),
+        PortolanRecordInterface::FIELD_PUBLICATION => $this
+          ->getPublication($data),
+        PortolanRecordInterface::FIELD_ABSTRACT => $this
+          ->getAbstract($data),
+        PortolanRecordInterface::FIELD_NOTE => $this
+          ->getNote($data),
+        PortolanRecordInterface::FIELD_AGE_RANGE => $this
+          ->getAgeRange($data),
+        PortolanRecordInterface::FIELD_JURISDICTION => $this
+          ->getJurisdiction($data),
+        PortolanRecordInterface::FIELD_LOCATION => $this
+          ->getLocation($data),
+        PortolanRecordInterface::FIELD_DESCRIPTOR => $this
+          ->getDescriptor($data),
+      ];
+    }
+    else {
+      return [
+        PortolanRecordInterface::FIELD_OCLC_ID => $this
+          ->getOclcId($data, TRUE),
+        PortolanRecordInterface::FIELD_CALL_NUMBER => $this
+          ->getCallNumber($data),
+      ];
+    }
+
+  }
+
+  /**
+   * Whether the given record presents a "holdings" record.
+   *
+   * @param \File_MARC_Record $marc_record
+   *   A MARC record.
+   *
+   * @return bool
+   *   TRUE if a '004' field, indicating a holdings record, is present. FALSE otherwise.
+   */
+  protected function isHoldingsRecord(\File_MARC_Record $marc_record) {
+    return !empty($marc_record->getFields(self::HOLDINGS_RECORD_FIELD));
   }
 
   /**
@@ -46,13 +71,15 @@ class PortolanMarcParser implements ParserInterface {
    *
    * @param \File_MARC_Record $marc_record
    *   The MARC record to parse.
+   * @param bool $is_holding
+   *   (optional) Whether the given record is expected to be a "holdings" record. Defaults to FALSE.
    *
    * @return string
    *   A sequence of numbers.
    */
-  protected function getOclcId(\File_MARC_Record $marc_record) {
+  protected function getOclcId(\File_MARC_Record $marc_record, bool $is_holding = FALSE) {
     $oclcnum = '';
-    $fields = $marc_record->getFields('001');
+    $fields = $marc_record->getFields(!$is_holding ? self::REGULAR_RECORD_FIELD : self::HOLDINGS_RECORD_FIELD);
     foreach ($fields as $num) {
       $num = $num->getData();
       $oclcnum = preg_replace('/[^0-9]/', '', $num);
