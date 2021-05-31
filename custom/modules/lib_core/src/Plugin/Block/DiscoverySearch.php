@@ -35,10 +35,7 @@ class DiscoverySearch extends BlockBase {
     else {
       // Store block render array in variable prior pass to render().
       $render_array = $plugin_block->build();
-
-      $askus_block = '<div class="d-none d-lg-block col-lg-4 p-4">';
-      $askus_block .= render($render_array);
-      $askus_block .= '</div>';
+      $askus_block = render($render_array);
     }
 
     $html =
@@ -83,25 +80,9 @@ class DiscoverySearch extends BlockBase {
           </div>
         </div>
         </div>
-        <div id="ask-us" class="d-none d-lg-block bg-askus px-3 py-2">
-          <div class="d-flex mt-3">
-            <div class="flex-grow-1"><h2 class="border-bottom-0 text-black">ASK US</h2></div>
-            <div><i class="fas fa-comments fa-3x"></i></div>
-          </div>
-          <form class="pt-2 pb-1">
-            <div class="form-group">
-              <label for="chat-askus" class="sr-only">Email address</label>
-              <input id="chat-askus" type="text" class="form-control" placeholder="Chat is open">
-              <p id="ask-us-help" class="mt-3">
-                <a href="#">
-                  <span>Phone,</span>    
-                  <span>Text,</span>  
-                  <span>Email,</span>  
-                  <span>In-Person</span>  
-                </a>
-              </p>
-            </div>
-          </form>
+        <div id="ask-us" class="d-none d-lg-block bg-askus px-3 py-2">';
+          $html .= $askus_block;
+        $html .= '
         </div>
       </div>';
 
