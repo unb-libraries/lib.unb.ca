@@ -179,4 +179,43 @@
       }
     }
   }
+
+  /* Discovery Search / Ask Us */
+  .askus-header {
+    .askus-heading {
+      h2 {
+        background: none;
+        color: $black;
+        text-align: left;
+        text-transform: uppercase;
+
+        span.sr-only {
+          position: inherit;
+          width: auto;
+          height: auto;
+        }
+      }
+    }
+
+    .askus-icon {
+      display: block;
+
+      .fas:before {
+        font-size: 3em;
+      }
+    }
+  }
+
+  .askus-footer {
+    text-align: left;
+
+    a {
+      color: #000;
+
+      &:focus,
+      &:hover {
+        color: $link-hover-color;
+      }
+    }
+  }
 }

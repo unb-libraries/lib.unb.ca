@@ -80,7 +80,7 @@ class DiscoverySearch extends BlockBase {
           </div>
         </div>
         </div>
-        <div id="ask-us" class="d-none d-lg-block bg-askus px-3 py-2">';
+        <div id="ask-us" class="d-none d-lg-block bg-askus p-3">';
           $html .= $askus_block;
         $html .= '
         </div>
