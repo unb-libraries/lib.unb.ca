@@ -114,26 +114,34 @@ function _unb_libraries_askus_get_widget($type) {
   $askus_src = _unb_libraries_askus_get_src();
   $html =
     '<div class="requires-js" >
-      <div id = "lh3-online" style="display:none;" >';
+      <div id="lh3-online" class="status" style="display:none;" >';
         switch ($type) {
           case 'embedded':
             $html .= '<iframe src = "' . $askus_src . '"></iframe >';
             break;
 
           default:
-            $html .= '<a class="link-no-hover" href="' . $askus_src . '">Type here to CHAT.</a>';
+            $html .= '<a class="link-no-hover media" href="' . $askus_src . '">
+                <i class="fas fa-circle fa-sm mr-1 text-success"></i>CHAT is open.</a>';
         }
         $html .=
       '</div>
-      <div id="lh3-offline" style="display:none;">
+      <div id="lh3-offline" class="media status" style="display:none;">
+        <i class="fas fa-circle fa-sm mr-1 text-danger"></i>
+        <div class="media-body"><span class="offline-msg"></span></div>
+      </div>
+      <div id="lh3-away" class="media status" style="display:none;">
+        <i class="fas fa-circle fa-sm mr-1 text-warning"></i>
+        <div class="media-body">CHAT is away.</div>
+      </div>
+      <div id="lh3-busy" class="media status"  style="display:none;">
+        <i class="fas fa-circle fa-sm mr-1 text-warning"></i>
         <div class="ch-nd d-none" data-ch-format-time="h:mma" data-ch-id="hil_help"></div>
-        <div class="offline-msg"></div>
-      </div >
-      <div id="lh3-away" style="display:none;"></div>
-      <div id="lh3-busy" style="display:none;"></div>
-    </div >
-    <div class="text-center" id="lh3-noscript">
-      Ask Us chat requires JavaScript.
+        <div class="busy">CHAT is busy.</div>
+      </div>
+    </div>
+    <div class="status text-dark" id="lh3-noscript">
+      <i class="fas fa-info-circle mr-1"></i>CHAT requires JavaScript.
     </div >';
 
   return $html;
