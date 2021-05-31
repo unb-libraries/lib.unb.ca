@@ -11,6 +11,8 @@ use Drupal\Core\Entity\ContentEntityStorageInterface;
  */
 class OclcSynchronizer implements DataSynchronizerInterface {
 
+  protected const DELETE_CHUNK_SIZE = 500;
+
   /**
    * The data importer.
    *
@@ -63,7 +65,7 @@ class OclcSynchronizer implements DataSynchronizerInterface {
    */
   public function sync() {
     $this->clearStorage();
-    $records = $this->importer()->import(20);
+    $records = $this->importer()->import();
     foreach ($records as $record) {
       $this->createPortolanRecord($record)
         ->save();
@@ -78,7 +80,7 @@ class OclcSynchronizer implements DataSynchronizerInterface {
    */
   protected function clearStorage() {
     $query = $this->storage()->getQuery()
-      ->pager(100);
+      ->pager(self::DELETE_CHUNK_SIZE);
     while ($records = $this->storage()->loadMultiple($query->execute())) {
       $this->storage()->delete($records);
     }
