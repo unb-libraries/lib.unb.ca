@@ -7,9 +7,6 @@
 (function ($, Drupal) {
     Drupal.behaviors.AskUs = {
         attach: function (context, settings) {
-            // Show iff javascript is enabled.
-            $("#lh3-noscript").hide();
-
             // Pop-up chat window
             $("#lh3-online a").click(function(event) {
                 var url = $(this).attr("href");
@@ -38,21 +35,22 @@ var lh3UpdatePresence = function () {
         success: function(data) {
             let resource = jQuery(data).find('resource:first');
             let resourceShow = resource.attr('show');
+
             if (resourceShow === "available" || resourceShow === "chat") {
-                jQuery("#lh3-online").show();
                 jQuery("#lh3-away").hide();
                 jQuery("#lh3-busy").hide();
                 jQuery("#lh3-offline").hide();
+                jQuery("#lh3-online").show();
             } else if (resourceShow === "away") {
                 jQuery("#lh3-online").hide();
-                jQuery("#lh3-away").show();
                 jQuery("#lh3-busy").hide();
                 jQuery("#lh3-offline").hide();
+                jQuery("#lh3-away").show();
             } else if (resourceShow === "dnd") {
                 jQuery("#lh3-online").hide();
                 jQuery("#lh3-away").hide();
-                jQuery("#lh3-busy").show();
                 jQuery("#lh3-offline").hide();
+                jQuery("#lh3-busy").show();
             } else {
                 // resource show attribute is 'unavailable', 'xa' or unknown.
                 jQuery("#lh3-online").hide();
@@ -61,7 +59,9 @@ var lh3UpdatePresence = function () {
                 jQuery("#lh3-offline .offline-msg").text(getOfflineNote());
                 jQuery("#lh3-offline").show();
             }
-            jQuery(".requires-js").slideDown(150);
+            // Display toggle inside AJAX prevents screen flash.
+            jQuery("#lh3-noscript").hide();
+            jQuery(".requires-js").show();
         },
         error: function() {
             jQuery("#lh3-online").hide();
@@ -69,9 +69,12 @@ var lh3UpdatePresence = function () {
             jQuery("#lh3-busy").hide();
             jQuery("#lh3-offline .offline-msg").text("Ask Us is experiencing technical difficulties.");
             jQuery("#lh3-offline").show();
-            jQuery('.requires-js').slideDown(150);
+            // Display toggle inside AJAX prevents screen flash.
+            jQuery("#lh3-noscript").hide();
+            jQuery(".requires-js").show();
         }
     });
+
 };
 
 var getOfflineNote = function () {
