@@ -67,7 +67,7 @@ var lh3UpdatePresence = function () {
             jQuery("#lh3-online").hide();
             jQuery("#lh3-away").hide();
             jQuery("#lh3-busy").hide();
-            jQuery("#lh3-offline .offline-msg").text("Ask Us is experiencing technical difficulties.");
+            jQuery("#lh3-offline .offline-msg").text("CHAT is experiencing technical difficulties.");
             jQuery("#lh3-offline").show();
             // Display toggle inside AJAX prevents screen flash.
             jQuery("#lh3-noscript").hide();
@@ -78,7 +78,7 @@ var lh3UpdatePresence = function () {
 };
 
 var getOfflineNote = function () {
-    let note = "Ask Us is currently offline";
+    let note = "CHAT is closed";
     let currentlyOpen = '', reopensData = '';
 
     let calendarRHD = calendarHours.collection.get("hil_help");
@@ -93,11 +93,11 @@ var getOfflineNote = function () {
         let opensAt = moment(reopensData);
         let opensAtDate = opensAt.format("Y-MM-DD");
         if (opensAtDate < tomorrow) {
-            note += ". Chat service will re-open today at " + opensAt.format("h:mma");
+            note += ". Reopens today at " + opensAt.format("h:mma");
         } else if (opensAtDate > tomorrow) {
-            note += ". Chat service will re-open on " + opensAt.format("dddd, h:mma");
+            note += ". Reopens on " + opensAt.format("dddd, h:mma");
         } else {
-            note += ". Chat service will re-open tomorrow at " + opensAt.format("h:mma");
+            note += ". Reopens tomorrow at " + opensAt.format("h:mma");
         }
     }
     return note + ".";
