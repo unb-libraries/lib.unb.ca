@@ -14,6 +14,9 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *   label = @Translation("Portolan record"),
  *   label_plural = @Translation("Portolan records"),
  *   label_collection = @Translation("Portolan records"),
+ *   handlers = {
+ *     "views_data" = "Drupal\portolan\Entity\PortolanRecordViewsData",
+ *   },
  *   base_table = "portolan_record",
  *   admin_permission = "administer portolan_record entities",
  *   entity_keys = {
