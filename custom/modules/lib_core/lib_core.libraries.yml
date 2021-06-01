@@ -4,6 +4,12 @@ chosen-bootstrap:
     theme:
       css/chosen-bootstrap.css: {}
 
+library-lib-hours:
+  version: VERSION
+  css:
+    theme:
+      css/library-lib-hours.css: {}
+
 discoverysearch:
   version: VERSION
   css:
