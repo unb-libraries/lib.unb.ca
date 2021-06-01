@@ -22,7 +22,7 @@ services:
     public: false
 
   portolan.oclc_synchronizer:
-    class: Drupal\portolan_sync\Synchronization\OclcSynchronizer
+    class: Drupal\portolan_sync\Synchronization\FlushStorageSynchronizer
     arguments:
       - '@portolan.marc_file_importer'
       - '@portolan.storage'
