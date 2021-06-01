@@ -10,7 +10,7 @@ use Drupal\Core\Block\BlockBase;
  * @Block(
  *  id = "research_subjects",
  *  admin_label = @Translation("UNB Libraries Research Subjects"),
- *   category = @Translation("UNB Libraries"),
+ *  category = @Translation("UNB Libraries"),
  * )
  */
 class ResearchSubjects extends BlockBase {

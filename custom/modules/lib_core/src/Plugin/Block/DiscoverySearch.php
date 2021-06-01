@@ -57,7 +57,7 @@ class DiscoverySearch extends BlockBase {
                       <li class="nav-item">
                          <a aria-controls="searchPanel5" aria-expanded="false" class="btn Accordion-trigger p-2 text-left text-lg-center text-nowrap" tabindex="-1"
                             href="https://web.lib.unb.ca/eresources/refguide.php"
-                            title="Guide to Finding Reference Materials (opens new page)">More<i class="fas fa-external-link-alt fa-xs fa-text-top ml-1"></i>
+                            title="Guide to Finding Reference Materials (opens new page)">More<i class="fas fa-external-link-alt fa-xs fa-text-top ml-1" aria-hidden="true"></i>
                          </a>
                       </li>
                     </ul>
@@ -65,25 +65,14 @@ class DiscoverySearch extends BlockBase {
              </nav>
           </div>
           <div class="card-body p-0">
-            <div aria-labelledby="searchBtn1 dropdownBtn1" class="Accordion-panel" id="searchPanel1" role="region">';
-              $html .= $this->getCatalogueForm();
-            $html .= '</div>
-            <div aria-labelledby="searchBtn2 dropdownBtn2" class="Accordion-panel" id="searchPanel2" role="region" hidden="">';
-              $html .= $this->getReservesForm();
-            $html .= '</div>
-            <div aria-labelledby="searchBtn3 dropdownBtn3" class="Accordion-panel" id="searchPanel3" role="region" hidden="">';
-              $html .= $this->getDatabasesForm();
-            $html .= '</div>
-            <div aria-labelledby="searchBtn4 dropdownBtn4" class="Accordion-panel" id="searchPanel4" role="region" hidden="">';
-              $html .= $this->getJournalsForm();
-            $html .= '</div>
+            <div aria-labelledby="searchBtn1 dropdownBtn1" class="Accordion-panel" id="searchPanel1" role="region">' . $this->getCatalogueForm() . '</div>
+            <div aria-labelledby="searchBtn2 dropdownBtn2" class="Accordion-panel" id="searchPanel2" role="region" hidden="">' . $this->getReservesForm() . '</div>
+            <div aria-labelledby="searchBtn3 dropdownBtn3" class="Accordion-panel" id="searchPanel3" role="region" hidden="">' . $this->getDatabasesForm() . '</div>
+            <div aria-labelledby="searchBtn4 dropdownBtn4" class="Accordion-panel" id="searchPanel4" role="region" hidden="">' . $this->getJournalsForm() . '</div>
           </div>
         </div>
         </div>
-        <div id="ask-us" class="d-none d-lg-block bg-askus p-3">';
-          $html .= $askus_block;
-        $html .= '
-        </div>
+        <div id="ask-us" class="d-none d-lg-block bg-askus p-3">' . $askus_block . '</div>
       </div>';
 
     return [
@@ -115,9 +104,9 @@ class DiscoverySearch extends BlockBase {
           <div class="flex-fill mb-2 mr-0 mr-lg-2">
             <label class="sr-only" for="semester">
               Course Semester
-            </label>';
-            $form_reserves .= $this->getReservesSemesters();
-          $form_reserves .= '</div>
+            </label>' .
+            $this->getReservesSemesters() .
+         '</div>
           <div class="mb-2">
             <button class="btn btn-primary px-3" id="searchReservesSubmit" type="submit">GO</button>
           </div>
@@ -250,9 +239,9 @@ class DiscoverySearch extends BlockBase {
           <div class="flex-fill mb-2 mr-0 mr-lg-2">
             <label class="sr-only" for="databaseID">
               Browse for databases by title
-            </label>';
-            $title_form .= $this->getDatabasesTitles();
-          $title_form .= '</div>
+            </label>' .
+            $this->getDatabasesTitles() .
+          '</div>
           <div class="mb-2">
             <input type="hidden" name="sub" value="indexes">
             <button class="btn btn-primary px-3" type="submit">GO</button>
