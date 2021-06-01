@@ -215,12 +215,12 @@ class PortolanMarcParser implements ParserInterface {
 
     foreach ($marc_record->getFields('594') as $subfields) {
       foreach ($subfields->getSubfields() as $code => $value) {
-        if ($code == 'a') {
-          $age_range .= $value->getData();
+        if ($code == 'a' && preg_match('^Age Range: [0-9]+-[0-9]+^', ($age_range = $value->getData()))) {
+          $age_range = substr($age_range, 11);
         }
       }
     }
-    return str_replace('Age Range: ', '', $age_range);
+    return $age_range;
   }
 
   /**
