@@ -3,11 +3,11 @@
 namespace Drupal\portolan_sync\Synchronization;
 
 /**
- * Synchronizes imported data with existing storage.
+ * Synchronizes by flushing storage, then repopulating with imported data.
  *
  * @package Drupal\Synchronization
  */
-class OclcSynchronizer extends SynchronizerBase {
+class FlushStorageSynchronizer extends SynchronizerBase {
 
   protected const DELETE_CHUNK_SIZE = 500;
 
