@@ -197,7 +197,7 @@ class DiscoverySearch extends BlockBase {
   protected function getCatalogueForm() {
     $form_catalogue =
       '<form accept-charset="UTF-8" action="/worldcat-search-helper" id="home_WCD" class="mb-2" method="post" name="wcfw">
-          <input hidden="hidden" id="scope_UNBLibraries_WCD" name="scope" type="radio" value="wz:66413">
+          <input type="hidden" id="scope_UNBLibraries_WCD" name="scope" value="wz:66413">
           <div class="d-flex flex-column flex-lg-row">
             <div class="flex-fill mb-2 mr-0 mr-lg-2">
               <label class="sr-only" for="queryString_WCD">
