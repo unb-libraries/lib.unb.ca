@@ -50,22 +50,22 @@ class LibraryHoursToday extends BlockBase {
       </caption>
       <tbody>
         <tr>
-          <th scope="row"><a href="https://lib.unb.ca/about/harriet-irving-library">Harriet Irving</a></th>
+          <th scope="row"><a href="/about/harriet-irving-library">Harriet Irving</a></th>
           <td class="ch-nd ch-live ch-live-co ch-live-nsdo ch-live-am" data-ch-id="hil" data-ch-days="0"
               data-ch-format-time="h:mma" data-ch-format-date="dd">Unavailable</td>
         </tr>
         <tr>
-          <th scope="row"><a href="https://lib.unb.ca/about/science-forestry-library">Science &amp; Forestry</a></th>
+          <th scope="row"><a href="/about/science-forestry-library">Science &amp; Forestry</a></th>
           <td class="ch-nd ch-live ch-live-co ch-live-nsdo ch-live-am" data-ch-id="sfl" data-ch-days="0"
               data-ch-format-time="h:mma" data-ch-format-date="dd">Unavailable</td>
         </tr>
         <tr>
-          <th scope="row"><a href="https://lib.unb.ca/about/engineering-computer-science-library">Engineering &amp; CS</a></th>
+          <th scope="row"><a href="/about/engineering-computer-science-library">Engineering &amp; CS</a></th>
           <td class="ch-nd ch-live ch-live-co ch-live-nsdo ch-live-am" data-ch-id="ecsl" data-ch-days="0"
               data-ch-format-time="h:mma" data-ch-format-date="dd">Unavailable</td>
         </tr>
         <tr>
-          <th scope="row"><a href="https://lib.unb.ca/about/hans-w-klohn-commons">Saint John</a></th>
+          <th scope="row"><a href="/about/hans-w-klohn-commons">Saint John</a></th>
           <td class="ch-nd ch-live ch-live-co ch-live-nsdo ch-live-am" data-ch-id="hwkc" data-ch-days="0"
               data-ch-format-time="h:mma" data-ch-format-date="dd">Unavailable</td>
         </tr>
