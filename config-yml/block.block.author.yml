@@ -1,0 +1,29 @@
+uuid: c88af2ce-690a-4fbf-b9fc-552ce5cc880d
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.author
+  module:
+    - facets
+    - system
+  theme:
+    - lib_unb_ca
+id: author
+theme: lib_unb_ca
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'facet_block:author'
+settings:
+  id: 'facet_block:author'
+  label: Author
+  provider: facets
+  label_display: visible
+  block_id: author
+visibility:
+  request_path:
+    id: request_path
+    pages: /clc/portolan/search
+    negate: false
+    context_mapping: {  }

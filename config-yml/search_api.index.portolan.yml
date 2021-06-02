@@ -67,7 +67,7 @@ field_settings:
     label: Author(s)
     datasource_id: 'entity:portolan_record'
     property_path: author
-    type: text
+    type: string
     dependencies:
       module:
         - portolan

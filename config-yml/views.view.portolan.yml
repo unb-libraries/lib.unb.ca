@@ -61,74 +61,20 @@ display:
             previous: ‹‹
             next: ››
       style:
-        type: table
+        type: html_list
         options:
-          grouping: {  }
           row_class: ''
           default_row_class: true
-          override: true
-          sticky: false
-          caption: ''
-          summary: ''
-          description: ''
-          columns:
-            oclc_id: oclc_id
-            title: title
-            author: author
-            publication: publication
-            location: location
-            jurisdiction: jurisdiction
-            descriptor: descriptor
-          info:
-            oclc_id:
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            title:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            author:
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            publication:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            location:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            jurisdiction:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            descriptor:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-          default: title
-          empty_table: false
+          uses_fields: false
+          type: ul
+          wrapper_class: item-list
+          class: ''
       row:
-        type: fields
+        type: search_api
+        options:
+          view_modes:
+            'entity:portolan_record':
+              portolan_record: default
       fields:
         oclc_id:
           id: oclc_id
@@ -703,6 +649,10 @@ display:
     display_options:
       display_extenders: {  }
       path: clc/portolan/search
+      cache:
+        type: none
+      defaults:
+        cache: false
     cache_metadata:
       max-age: -1
       contexts:
