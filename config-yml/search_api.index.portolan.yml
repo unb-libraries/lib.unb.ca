@@ -1,0 +1,129 @@
+uuid: f55c106b-795b-46c9-8167-fdc876ba3524
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_solr
+    - portolan
+    - search_api
+  config:
+    - search_api.server.drupal_solr_lib_unb_ca
+third_party_settings:
+  search_api_solr:
+    finalize: false
+    commit_before_finalize: false
+    commit_after_finalize: false
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
+    highlighter:
+      maxAnalyzedChars: 51200
+      fragmenter: gap
+      regex:
+        slop: 0.5
+        pattern: blank
+        maxAnalyzedChars: 10000
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
+      highlight:
+        mergeContiguous: false
+        requireFieldMatch: false
+        snippets: 3
+        fragsize: 0
+    mlt:
+      mintf: 1
+      mindf: 1
+      maxdf: 0
+      maxdfpct: 0
+      minwl: 0
+      maxwl: 0
+      maxqt: 100
+      maxntp: 2000
+      boost: false
+      interestingTerms: none
+    term_modifiers:
+      slop: 3
+      fuzzy: 1
+    advanced:
+      index_prefix: ''
+      collection: ''
+      timezone: ''
+id: portolan
+name: Portolan
+description: ''
+read_only: false
+field_settings:
+  abstract:
+    label: Abstract
+    datasource_id: 'entity:portolan_record'
+    property_path: abstract
+    type: text
+    boost: !!float 5
+    dependencies:
+      module:
+        - portolan
+  author:
+    label: Author(s)
+    datasource_id: 'entity:portolan_record'
+    property_path: author
+    type: text
+    dependencies:
+      module:
+        - portolan
+  descriptor:
+    label: Descriptor(s)
+    datasource_id: 'entity:portolan_record'
+    property_path: descriptor
+    type: text
+    dependencies:
+      module:
+        - portolan
+  jurisdiction:
+    label: Jurisdiction
+    datasource_id: 'entity:portolan_record'
+    property_path: jurisdiction
+    type: text
+    dependencies:
+      module:
+        - portolan
+  location:
+    label: 'Geographic location'
+    datasource_id: 'entity:portolan_record'
+    property_path: location
+    type: text
+    dependencies:
+      module:
+        - portolan
+  publication:
+    label: Publication
+    datasource_id: 'entity:portolan_record'
+    property_path: publication
+    type: text
+    dependencies:
+      module:
+        - portolan
+  title:
+    label: Title
+    datasource_id: 'entity:portolan_record'
+    property_path: title
+    type: text
+    boost: !!float 8
+    dependencies:
+      module:
+        - portolan
+datasource_settings:
+  'entity:portolan_record': {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+  solr_date_range: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: drupal_solr_lib_unb_ca
