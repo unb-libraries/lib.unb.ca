@@ -1,16 +1,18 @@
-uuid: 89031d0e-d07e-4ece-ad95-53976c2b887c
+uuid: 5f3fe910-30e5-4bb8-a8e8-ee85d7c641f2
 langcode: en
 status: true
 dependencies:
+  config:
+    - search_api.index.portolan
   module:
-    - portolan
-id: portolan_search
+    - search_api
+id: portolan
 label: 'Portolan: Search'
 module: views
 description: ''
 tag: ''
-base_table: portolan_record
-base_field: oclc_id
+base_table: search_api_index_portolan
+base_field: search_api_id
 display:
   default:
     display_plugin: default
@@ -27,11 +29,9 @@ display:
       query:
         type: views_query
         options:
-          disable_sql_rewrite: false
-          distinct: false
-          replica: false
-          query_comment: ''
-          query_tags: {  }
+          bypass_access: false
+          skip_access: false
+          preserve_facet_query_args: false
       exposed_form:
         type: basic
         options:
@@ -72,10 +72,54 @@ display:
           summary: ''
           description: ''
           columns:
+            oclc_id: oclc_id
             title: title
+            author: author
+            publication: publication
+            location: location
+            jurisdiction: jurisdiction
+            descriptor: descriptor
           info:
+            oclc_id:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
             title:
               sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            author:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            publication:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            location:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            jurisdiction:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            descriptor:
+              sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
@@ -84,11 +128,11 @@ display:
           default: title
           empty_table: false
       row:
-        type: 'entity:portolan_record'
+        type: fields
       fields:
         oclc_id:
           id: oclc_id
-          table: portolan_record
+          table: search_api_datasource_portolan_entity_portolan_record
           field: oclc_id
           relationship: none
           group_type: group
@@ -101,7 +145,7 @@ display:
             make_link: true
             path: 'https://unb.on.worldcat.org/oclc/{{oclc_id}}'
             absolute: false
-            external: true
+            external: false
             replace_spaces: false
             path_case: none
             trim_whitespace: false
@@ -148,12 +192,18 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
           entity_type: portolan_record
-          entity_field: oclc_id
-          plugin_id: field
+          plugin_id: search_api_field
         title:
           id: title
-          table: portolan_record
+          table: search_api_index_portolan
           field: title
           relationship: none
           group_type: group
@@ -213,13 +263,18 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: null
-          entity_field: title
-          plugin_id: field
-        author_value:
-          id: author_value
-          table: portolan_record__author
-          field: author_value
+          field_rendering: true
+          fallback_handler: search_api
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+          plugin_id: search_api_field
+        author:
+          id: author
+          table: search_api_datasource_portolan_entity_portolan_record
+          field: author
           relationship: none
           group_type: group
           admin_label: ''
@@ -278,12 +333,18 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
           entity_type: portolan_record
-          entity_field: author
-          plugin_id: field
+          plugin_id: search_api_field
         publication:
           id: publication
-          table: portolan_record
+          table: search_api_index_portolan
           field: publication
           relationship: none
           group_type: group
@@ -343,13 +404,18 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: portolan_record
-          entity_field: publication
-          plugin_id: field
-        location_value:
-          id: location_value
-          table: portolan_record__location
-          field: location_value
+          field_rendering: true
+          fallback_handler: search_api
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+          plugin_id: search_api_field
+        location:
+          id: location
+          table: search_api_index_portolan
+          field: location
           relationship: none
           group_type: group
           admin_label: ''
@@ -408,12 +474,212 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: portolan_record
-          entity_field: location
-          plugin_id: field
-      filters: {  }
+          field_rendering: true
+          fallback_handler: search_api
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+          plugin_id: search_api_field
+        jurisdiction:
+          id: jurisdiction
+          table: search_api_index_portolan
+          field: jurisdiction
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Jurisdiction
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+          plugin_id: search_api_field
+        descriptor:
+          id: descriptor
+          table: search_api_index_portolan
+          field: descriptor
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Descriptor(s)
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+          plugin_id: search_api_field
+      filters:
+        search_api_fulltext:
+          id: search_api_fulltext
+          table: search_api_index_portolan
+          field: search_api_fulltext
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: and
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: search_api_fulltext_op
+            label: Keywords
+            description: 'Search by Title, Author, Jurisdiction, Publication, Geographic Location, or Summary'
+            use_operator: false
+            operator: search_api_fulltext_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: search_api_fulltext
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              library_news_author: '0'
+              library_page_author: '0'
+              data_administrator: '0'
+            placeholder: ''
+            expose_fields: false
+            searched_fields_id: search_api_fulltext_searched_fields
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          parse_mode: terms
+          min_length: null
+          fields:
+            - abstract
+            - author
+            - descriptor
+            - jurisdiction
+            - location
+            - publication
+            - title
+          plugin_id: search_api_fulltext
       sorts: {  }
-      title: 'The Portolan Bibliography: Atlantic Canadian Books for Children and Young Adults'
+      title: 'Portolan: Search'
       header: {  }
       footer: {  }
       empty: {  }
@@ -425,8 +691,10 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
-      tags: {  }
+      tags:
+        - 'config:search_api.index.portolan'
   page_1:
     display_plugin: page
     id: page_1
@@ -440,5 +708,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
-      tags: {  }
+      tags:
+        - 'config:search_api.index.portolan'
