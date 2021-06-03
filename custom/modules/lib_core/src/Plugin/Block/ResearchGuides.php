@@ -13,8 +13,7 @@ use Drupal\Core\Block\BlockBase;
  *  category = @Translation("UNB Libraries"),
  * )
  */
-class ResearchGuides extends BlockBase
-{
+class ResearchGuides extends BlockBase {
 
   /**
    * {@inheritdoc}
@@ -32,7 +31,7 @@ class ResearchGuides extends BlockBase
     ];
   }
 
-  /**s
+  /**
    * Gets the Research Guides form.
    *
    * @return string
@@ -42,7 +41,7 @@ class ResearchGuides extends BlockBase
     $categories = _lib_core_get_guide_categories();
     $options = '<option value="">* Please choose an option</option>';
     foreach ($categories as $value => $label) {
-      $options .= '<option value="' . $value .'">'. $label . '</option>';
+      $options .= '<option value="' . $value . '">' . $label . '</option>';
     }
 
     return '
@@ -74,4 +73,5 @@ class ResearchGuides extends BlockBase
       </div>
     ';
   }
+
 }
