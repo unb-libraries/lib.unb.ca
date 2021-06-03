@@ -1,3 +1,13 @@
+accessible-accordion:
+  version: VERSION
+  css:
+    theme:
+      css/accordion.css: {}
+  js:
+    js/accordion.js: {}
+  dependencies:
+    - core/jquery
+
 chosen-bootstrap:
   version: VERSION
   css:
@@ -10,14 +20,21 @@ library-lib-hours:
     theme:
       css/library-lib-hours.css: {}
 
+research-guides:
+  version: VERSION
+  css:
+    theme:
+      css/research-guides.css: {}
+  js:
+    js/guides-subject-select.js: {}
+  dependencies:
+    - core/jquery
+
 discoverysearch:
   version: VERSION
   css:
     theme:
       css/discovery-search.css: {}
-      css/accordion.css: {}
-  js:
-    js/accordion.js: {}
   dependencies:
     - core/jquery
 
@@ -53,10 +70,3 @@ toolbar-overrides:
   css:
     theme:
       css/toolbar-overrides.css: {}
-
-unblibtabs:
-  version: VERSION
-  js:
-    js/unblibtabs.js: {}
-  dependencies:
-    - core/jquery
