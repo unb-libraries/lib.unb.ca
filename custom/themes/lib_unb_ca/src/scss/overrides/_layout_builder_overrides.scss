@@ -31,7 +31,7 @@
     }
   }
 }
-.layout--twocol-section--50-50 {
+/*.layout--twocol-section--50-50 {
   @media (min-width: 992px) {
     .layout__region--first {
       padding-right: 1rem;
@@ -40,7 +40,7 @@
       padding-left: 1rem;
     }
   }
-}
+}*/
 /* Begin col stack at larger resolution */
 @media (max-width: 991px) {
   .layout--twocol-section.layout--twocol-section--67-33 > .layout__region--first,
