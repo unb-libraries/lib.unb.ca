@@ -1,26 +1,25 @@
-uuid: 4a8b6eda-4b8d-4e31-bd2e-b41d050249c7
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.geographic_location
+    - facets.facet.descriptor
   module:
     - facets
     - system
   theme:
     - lib_unb_ca
-id: geographiclocation
+id: descriptor
 theme: lib_unb_ca
 region: sidebar_second
-weight: -4
+weight: -2
 provider: null
-plugin: 'facet_block:geographic_location'
+plugin: 'facet_block:descriptor'
 settings:
-  id: 'facet_block:geographic_location'
-  label: 'Geographic location'
+  id: 'facet_block:descriptor'
+  label: Descriptor
   provider: facets
   label_display: visible
-  block_id: geographiclocation
+  block_id: descriptor
 visibility:
   request_path:
     id: request_path

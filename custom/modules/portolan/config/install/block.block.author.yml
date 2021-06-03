@@ -1,26 +1,25 @@
-uuid: e3dc404f-4580-4986-b680-70e8901ad140
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.jurisdiction
+    - facets.facet.author
   module:
     - facets
     - system
   theme:
     - lib_unb_ca
-id: jurisdiction
+id: author
 theme: lib_unb_ca
 region: sidebar_second
-weight: -3
+weight: -5
 provider: null
-plugin: 'facet_block:jurisdiction'
+plugin: 'facet_block:author'
 settings:
-  id: 'facet_block:jurisdiction'
-  label: Jurisdiction
+  id: 'facet_block:author'
+  label: Author
   provider: facets
   label_display: visible
-  block_id: jurisdiction
+  block_id: author
 visibility:
   request_path:
     id: request_path

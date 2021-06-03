@@ -1,26 +1,25 @@
-uuid: c88af2ce-690a-4fbf-b9fc-552ce5cc880d
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.author
+    - facets.facet.geographic_location
   module:
     - facets
     - system
   theme:
     - lib_unb_ca
-id: author
+id: geographiclocation
 theme: lib_unb_ca
 region: sidebar_second
-weight: -5
+weight: -4
 provider: null
-plugin: 'facet_block:author'
+plugin: 'facet_block:geographic_location'
 settings:
-  id: 'facet_block:author'
-  label: Author
+  id: 'facet_block:geographic_location'
+  label: 'Geographic location'
   provider: facets
   label_display: visible
-  block_id: author
+  block_id: geographiclocation
 visibility:
   request_path:
     id: request_path
