@@ -38,7 +38,7 @@ class QuickLinks extends BlockBase {
         ],
         '#children' => Link::fromTextAndUrl(
           $this->t('Document Delivery'),
-          Url::fromUri('https://lib.unb.ca/services/docdel')
+          Url::fromUri('base://services/docdel')
         )->toString(),
       ],
       [
@@ -46,8 +46,10 @@ class QuickLinks extends BlockBase {
           'class' => [],
         ],
         '#children' => Link::fromTextAndUrl(
-          Markup::create('<span class="fas fa-undo-alt fa-sm mr-1"></span>' . $this->t('Recalls')),
-          Url::fromUri('https://lib.unb.ca/services/recalls')
+          /* Markup::create('<span class="fas fa-undo-alt fa-sm mr-1"></span>' .
+          $this->t('Recalls')),*/
+          $this->t('Recalls'),
+          Url::fromUri('base://services/recalls')
         )->toString(),
       ],
       /*[
@@ -67,7 +69,7 @@ class QuickLinks extends BlockBase {
         ],
         '#children' => Link::fromTextAndUrl(
           $this->t('Floor Plans'),
-          Url::fromUri('https://lib.unb.ca/about/find-us')
+          Url::fromUri('base://about/find-us')
         )->toString(),
       ],
       [
@@ -101,7 +103,7 @@ class QuickLinks extends BlockBase {
       ],
       '#children' => Link::fromTextAndUrl(
         Markup::create('<span class="fas fa-calendar-check mr-1"></span>' . $this->t('Book a Study Space')),
-        Url::fromUri('https://lib.unb.ca/services/bookings', [
+        Url::fromUri('base://services/bookings', [
           'attributes' => [
             'class' => [
               'btn',
@@ -121,16 +123,11 @@ class QuickLinks extends BlockBase {
 
     $render_array_list = [
       '#type' => 'markup',
-      '#prefix' => '<div class="d-flex my-1" id="quicklinks">',
+      '#prefix' => '<div id="quicklinks" class="d-flex my-2">',
       '#suffix' => '</div>',
 
       'quicklinks_list' => [
-        '#title' => 'QuickLinks:',
-        '#attributes' => [
-          'class' => [
-            'd-md-inline-block',
-          ],
-        ],
+        '#title' => 'Quick Links:',
         '#theme' => 'item_list',
         '#list_type' => 'ul',
         '#context' => [
