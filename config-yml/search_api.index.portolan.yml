@@ -91,7 +91,7 @@ field_settings:
     label: 'Geographic location'
     datasource_id: 'entity:portolan_record'
     property_path: location
-    type: text
+    type: string
     dependencies:
       module:
         - portolan
