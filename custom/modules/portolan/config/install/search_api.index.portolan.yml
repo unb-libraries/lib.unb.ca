@@ -1,3 +1,4 @@
+uuid: f55c106b-795b-46c9-8167-fdc876ba3524
 langcode: en
 status: true
 dependencies:
@@ -149,9 +150,21 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
+  highlight:
+    highlight: always
+    highlight_partial: false
+    excerpt: true
+    excerpt_length: 256
+    exclude_fields: {  }
+    prefix: '<strong>'
+    suffix: '</strong>'
+    weights:
+      postprocess_query: 0
   language_with_fallback: {  }
   rendered_item: {  }
-  solr_date_range: {  }
+  solr_date_range:
+    weights:
+      preprocess_index: 0
 tracker_settings:
   default:
     indexing_order: fifo

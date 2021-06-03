@@ -19,4 +19,5 @@
  */
 function template_preprocess_portolan_record(array &$variables) {
   $variables['portolan_record'] = $variables['elements']['#portolan_record'];
+  $variables['search_api_excerpt'] = $variables['elements']['#search_api_excerpt'];
 }
