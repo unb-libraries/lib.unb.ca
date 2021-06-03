@@ -1,7 +1,3 @@
-.Accordion {
-  margin: 0;
-  padding: 0;
-}
 .Accordion .navbar-toggler {
     font-size: 1rem;
     margin: .5rem 0;
@@ -92,38 +88,6 @@
   background-color: initial;
   border: 0;
 }
-.Accordion .focus-ring:focus {
+.Accordion :not(.form-control).focus-ring:focus {
   outline: 1px dotted #fff;
-}
-
-/* Chosen Tweaks */
-.Accordion .chosen-container a {
-  height: 98%;
-}
-.Accordion .chosen-container-single,
-.Accordion .chosen-master {
-    width: 100%!important;
-}
-.Accordion .chosen-container-single.form-control {
-  height: calc(1.5em + 0.75rem + 2px);
-}
-.Accordion .chosen-container-active.form-control {
-    border-color: #80bdff;
-    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 60%);
-}
-.Accordion .chosen-container-single .chosen-drop {
-    background: #fff;
-    border: 2px solid #80bdff;
-    border-radius: .5rem;
-    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 60%);
-    margin: -2px;
-    top: 0;
-    width: calc(100% + 4px);
-}
-.Accordion .form-control.chosen-with-drop {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.Accordion .chosen-with-drop a.chosen-single {
-    height:0;
 }
