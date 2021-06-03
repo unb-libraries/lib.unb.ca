@@ -3,10 +3,11 @@
         attach: function(context, settings) {
             $('form#category-select').submit(function(e) {
                 e.preventDefault();
-                var cat = $(this).find('select').val();
+                let cat = $(this).find('select').val();
                 if (cat) {
-                    window.location = '//guides.lib.unb.ca/category/' + cat;
+                    window.location = 'https://guides.lib.unb.ca/category/' + cat;
                 }
+                e.reportValidity();
             });
         }
     }
