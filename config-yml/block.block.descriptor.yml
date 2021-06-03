@@ -1,26 +1,26 @@
-uuid: c88af2ce-690a-4fbf-b9fc-552ce5cc880d
+uuid: c7b358dd-f89c-4274-ba84-605774307205
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.author
+    - facets.facet.descriptor
   module:
     - facets
     - system
   theme:
     - lib_unb_ca
-id: author
+id: descriptor
 theme: lib_unb_ca
 region: sidebar_second
-weight: -5
+weight: -2
 provider: null
-plugin: 'facet_block:author'
+plugin: 'facet_block:descriptor'
 settings:
-  id: 'facet_block:author'
-  label: Author
+  id: 'facet_block:descriptor'
+  label: Descriptor
   provider: facets
   label_display: visible
-  block_id: author
+  block_id: descriptor
 visibility:
   request_path:
     id: request_path

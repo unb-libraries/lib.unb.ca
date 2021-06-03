@@ -12,7 +12,7 @@ dependencies:
 id: views_block__library_news_block_3
 theme: lib_unb_ca
 region: sidebar_second
-weight: -4
+weight: -8
 provider: null
 plugin: 'views_block:library_news-block_3'
 settings:
