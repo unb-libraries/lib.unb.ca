@@ -39,16 +39,16 @@ class DiscoverySearch extends BlockBase {
     }
 
     $html =
-      '<div class="Accordion d-flex flex-column flex-lg-row mt-0 mt-lg-5 px-4 px-lg-0 theme-dark">
+      '<div class="Accordion d-flex flex-column flex-lg-row px-4 px-lg-0 theme-dark">
         <div id="discovery-search" class="flex-grow-1">
         <div class="card">
           <h2 class="sr-only">Search</h2>
           <div class="card-header px-0 pb-1">
             <nav class="navbar navbar-expand-lg text-nowrap">
-            <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+            <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 Select a search category
             </button>
-                <div class="collapse show navbar-collapse" id="navbarNav">
+                <div class="collapse navbar-collapse" id="navbarNav">
                    <ul class="navbar-nav d-flex align-items-lg-end justify-content-around w-100">
                       <li class="nav-item"><button aria-controls="searchPanel1" aria-expanded="true" class="Accordion-trigger p-2" id="searchBtn1">Catalogue</button></li>
                       <li class="nav-item"><button aria-controls="searchPanel2" aria-expanded="false" class="Accordion-trigger p-2" id="searchBtn2" tabindex="-1">Reserves</button></li>
@@ -79,9 +79,9 @@ class DiscoverySearch extends BlockBase {
       '#children' => $html,
       '#attached' => [
         'library' => [
-          'lib_core/unblibtabs',
           'lib_core/lib-chosen',
           'lib_core/chosen-bootstrap',
+          'lib_core/accessible-accordion',
           'lib_core/discoverysearch',
         ],
       ],
@@ -93,7 +93,7 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getReservesForm() {
     $form_reserves =
-      '<form action="//web.lib.unb.ca/reserves/index.php/quickSearch" id="searchReserves" class="mb-2" method="post">
+      '<form action="//web.lib.unb.ca/reserves/index.php/quickSearch" id="searchReserves" class="chosen-compact mb-2" method="post">
         <div class="d-flex flex-column flex-lg-row">
           <div class="flex-fill mb-2 mr-0 mr-lg-2">
             <label class="sr-only" for="keywords">
@@ -108,7 +108,7 @@ class DiscoverySearch extends BlockBase {
             $this->getReservesSemesters() .
          '</div>
           <div class="mb-2">
-            <button class="btn btn-primary px-3" id="searchReservesSubmit" type="submit">GO</button>
+            <button class="btn btn-primary form-control px-3" id="searchReservesSubmit" type="submit">GO</button>
           </div>
         </div>
       </form>
@@ -185,7 +185,7 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getCatalogueForm() {
     $form_catalogue =
-      '<form accept-charset="UTF-8" action="/worldcat-search-helper" id="home_WCD" class="mb-2" method="post" name="wcfw">
+      '<form accept-charset="UTF-8" action="/worldcat-search-helper" id="home_WCD" class="chosen-compact mb-2" method="post" name="wcfw">
           <input type="hidden" id="scope_UNBLibraries_WCD" name="scope" value="wz:66413">
           <div class="d-flex flex-column flex-lg-row">
             <div class="flex-fill mb-2 mr-0 mr-lg-2">
@@ -210,7 +210,7 @@ class DiscoverySearch extends BlockBase {
               </fieldset>
             </div>
             <div class="mb-2">
-              <button class="btn btn-primary px-3" id="search_WCD" title="Search" type="submit">GO</button>
+              <button class="btn btn-primary form-control px-3" id="search_WCD" title="Search" type="submit">GO</button>
             </div>
           </div>
       </form>
@@ -234,7 +234,7 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getDatabasesForm() {
     $title_form =
-      '<form action="https://web.lib.unb.ca/eresources/index.php?sub=video/eresources/index.php" id="title_results" class="mb-2" method="get">
+      '<form action="https://web.lib.unb.ca/eresources/index.php?sub=video/eresources/index.php" id="title_results" class="chosen-compact mb-2" method="get">
         <div class="d-flex flex-column flex-lg-row">
           <div class="flex-fill mb-2 mr-0 mr-lg-2">
             <label class="sr-only" for="databaseID">
@@ -244,7 +244,7 @@ class DiscoverySearch extends BlockBase {
           '</div>
           <div class="mb-2">
             <input type="hidden" name="sub" value="indexes">
-            <button class="btn btn-primary px-3" type="submit">GO</button>
+            <button class="btn btn-primary form-control px-3" type="submit">GO</button>
           </div>
         </div>
       </form>
@@ -297,7 +297,7 @@ class DiscoverySearch extends BlockBase {
   protected function getDatabasesTitles() {
     // Set default empty option.
     $options = [
-      '' => '* Please select a database title option',
+      '' => '* Please choose a database title option',
     ];
 
     try {
@@ -363,7 +363,7 @@ class DiscoverySearch extends BlockBase {
             </fieldset>
           </div>
           <div class="mb-2">
-            <button class="btn btn-primary px-3" type="submit">GO</button>
+            <button class="btn btn-primary form-control px-3" type="submit">GO</button>
           </div>
         </div>
       </form>
@@ -431,7 +431,7 @@ class DiscoverySearch extends BlockBase {
               </div>
             </div>
             <div class="col-md-2 mb-2">
-              <button class="btn btn-primary" type="submit">GO</button>
+              <button class="btn btn-primary form-control px-3" type="submit">GO</button>
             </div>
           </div>
         </div>
@@ -505,7 +505,7 @@ class DiscoverySearch extends BlockBase {
               </div>
             </div>
             <div class="col-md-2 mb-2">
-              <button class="btn btn-primary" type="submit">GO</button>
+              <button class="btn btn-primary form-control px-3" type="submit">GO</button>
             </div>
           </div>
         </div>
@@ -575,7 +575,7 @@ class DiscoverySearch extends BlockBase {
               </div>
             </div>
             <div class="col-md-2 mb-2">
-              <button class="btn btn-primary" type="submit">GO</button>
+              <button class="btn btn-primary form-control px-3" type="submit">GO</button>
             </div>
           </div>
         </div>
