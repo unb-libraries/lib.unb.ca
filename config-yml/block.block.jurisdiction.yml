@@ -1,0 +1,29 @@
+uuid: e3dc404f-4580-4986-b680-70e8901ad140
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.jurisdiction
+  module:
+    - facets
+    - system
+  theme:
+    - lib_unb_ca
+id: jurisdiction
+theme: lib_unb_ca
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'facet_block:jurisdiction'
+settings:
+  id: 'facet_block:jurisdiction'
+  label: Jurisdiction
+  provider: facets
+  label_display: visible
+  block_id: jurisdiction
+visibility:
+  request_path:
+    id: request_path
+    pages: /clc/portolan/search
+    negate: false
+    context_mapping: {  }

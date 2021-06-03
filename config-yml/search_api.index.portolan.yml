@@ -83,7 +83,7 @@ field_settings:
     label: Jurisdiction
     datasource_id: 'entity:portolan_record'
     property_path: jurisdiction
-    type: text
+    type: string
     dependencies:
       module:
         - portolan
