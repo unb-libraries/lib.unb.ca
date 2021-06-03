@@ -1,3 +1,7 @@
+.table-lib-hours table {
+    min-width: 60%;
+    width: auto;
+}
 .table-lib-hours table caption {
     font-size: 1rem;
     font-weight: normal;
