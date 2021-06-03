@@ -22,6 +22,7 @@
     background: inherit;
     box-shadow: none;
     padding: 0;
+    transition: none;
 }
 .chosen-search .focus-ring,
 .chosen-container-active:not(.chosen-with-drop) {
@@ -56,4 +57,54 @@
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
+}
+
+/* Chosen Tweaks */
+.chosen-compact .chosen-container a {
+    height: 98%;
+}
+.chosen-compact .chosen-container-single.form-control {
+    height: calc(1.5em + 0.75rem + 2px);
+}
+/* Research Guides JS Validation Hack */
+.chosen-compact .input-group select.d-none {
+    display: block!important;
+    height: auto!important;
+    left: 7rem;
+    max-width: 0;
+    opacity: 0;
+}
+.chosen-compact .input-group .chosen-container-active.form-control {
+    border-radius: .25rem!important;
+}
+.chosen-compact .chosen-container-active.form-control {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 60%);
+}
+.chosen-compact .chosen-container-single .chosen-drop {
+    background: #fff;
+    border: 2px solid #80bdff;
+    border-radius: .5rem;
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 60%);
+    margin: -2px;
+    top: 0;
+    width: calc(100% + 4px);
+}
+.chosen-compact .form-control.chosen-with-drop {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.chosen-compact .chosen-with-drop a.chosen-single {
+    height:0;
+}
+.chosen-compact .chosen-container-single .chosen-single div b {
+    background: none;
+}
+.chosen-compact .chosen-container-single .chosen-single div b:before {
+    font-family: "Font Awesome 5 Free";
+    font-size: 90%;
+    font-weight: 900;
+    content: '\f0dc';
+    opacity: .7;
+    vertical-align: sub;
 }
