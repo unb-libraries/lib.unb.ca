@@ -13,7 +13,7 @@ url_alias: geographic_location
 weight: 0
 min_count: 1
 show_only_one_result: false
-field_identifier: location
+field_identifier: location_facet
 facet_source_id: 'search_api:views_page__portolan__page_1'
 widget:
   type: checkbox
