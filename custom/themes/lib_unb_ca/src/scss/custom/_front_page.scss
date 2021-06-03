@@ -2,7 +2,6 @@
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
-  background-attachment: fixed;
 
   #navbar-top {
     background-color: initial;
@@ -29,6 +28,10 @@
         border-left: 1px solid rgba(0 0 0 / 15%);
         border-right: 1px solid rgba(0 0 0 / 15%);
       }
+    }
+
+    .branding h1 {
+      min-width: auto;
     }
 
     #navbar {
@@ -62,7 +65,7 @@
     border-radius: 0;
 
     .container {
-      background: rgb(55 63 68 / 99%);
+      background: rgb(55 63 68);
     }
   }
 
@@ -70,6 +73,9 @@
     background-image: linear-gradient(180deg, rgb(27 33 37 / 89%), rgb(27  33  37 / 1%));
   }
 
+  #discovery-wrapper {
+    min-height: 55vh;
+  }
   #banner {
     table {
       border-collapse: initial;
@@ -132,7 +138,8 @@
   #header .affix li.show > .nav-link,
   #header .affix .megamenu-li > .nav-link:focus,
   #header .affix .megamenu-li > .nav-link:hover,
-  .affix .branding a:focus, .affix .branding a:hover {
+  .affix .branding a:focus,
+  .affix .branding a:hover {
     border-bottom-color: $white;
   }
 
