@@ -39,7 +39,7 @@ class ResearchGuides extends BlockBase {
    */
   protected function getResearchGuidesContainer() {
     $categories = _lib_core_get_guide_categories();
-    $options = '<option value="">* Please choose an option</option>';
+    $options = '<option value="">* Please choose a subject</option>';
     foreach ($categories as $value => $label) {
       $options .= '<option value="' . $value . '">' . $label . '</option>';
     }
