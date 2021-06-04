@@ -1,6 +1,6 @@
 uuid: 9215c1d6-f461-41da-a797-3a3c89d5cea6
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - lib_core
