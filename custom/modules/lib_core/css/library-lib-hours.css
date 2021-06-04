@@ -4,7 +4,7 @@
 }
 .table-lib-hours table caption {
     font-size: 1rem;
-    font-weight: normal;
+    font-weight: bold;
     padding-top: 0;
 }
 .table-lib-hours tfoot {

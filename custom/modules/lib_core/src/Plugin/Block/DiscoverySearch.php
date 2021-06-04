@@ -297,7 +297,7 @@ class DiscoverySearch extends BlockBase {
   protected function getDatabasesTitles() {
     // Set default empty option.
     $options = [
-      '' => '* Please choose a database title option',
+      '' => '* Please choose a database title',
     ];
 
     try {
