@@ -1,0 +1,20 @@
+uuid: 51b02260-92a0-48d9-a244-9c9c19ab1f78
+langcode: en
+status: true
+dependencies:
+  module:
+    - lib_core
+  theme:
+    - lib_unb_ca
+id: unblibrariesdiscoverysearchheader
+theme: lib_unb_ca
+region: header
+weight: -8
+provider: null
+plugin: discovery_search_block
+settings:
+  id: discovery_search_block
+  label: 'UNB Libraries Discovery Search (Header)'
+  provider: lib_core
+  label_display: '0'
+visibility: {  }
