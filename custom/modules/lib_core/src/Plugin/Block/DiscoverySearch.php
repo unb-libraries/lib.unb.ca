@@ -11,7 +11,7 @@ use GuzzleHttp\Exception\GuzzleException;
  *
  * @Block(
  *   id = "discovery_search_block",
- *   admin_label = @Translation("UNB Libraries Discovery Search"),
+ *   admin_label = @Translation("UNB Libraries Discovery Search (Header)"),
  *   category = @Translation("UNB Libraries"),
  * )
  */
