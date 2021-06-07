@@ -1,0 +1,15 @@
+uuid: 95fd142e-e6ef-4ab6-a126-d23c96a90913
+langcode: en
+status: true
+dependencies: {  }
+name: front_page_image
+label: 'Front page image'
+effects:
+  6397f613-3c98-4022-a33b-9f764d365732:
+    uuid: 6397f613-3c98-4022-a33b-9f764d365732
+    id: image_scale
+    weight: 1
+    data:
+      width: 658
+      height: null
+      upscale: false
