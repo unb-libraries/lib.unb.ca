@@ -227,3 +227,7 @@
     }
   }
 }
+
+.layout__region > div {
+  padding-bottom: $twocol-padding-size;
+}
