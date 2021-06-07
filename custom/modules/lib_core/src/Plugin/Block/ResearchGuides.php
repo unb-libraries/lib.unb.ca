@@ -9,7 +9,7 @@ use Drupal\Core\Block\BlockBase;
  *
  * @Block(
  *  id = "research_guides",
- *  admin_label = @Translation("UNB Libraries Research Guides"),
+ *  admin_label = @Translation("UNB Libraries Research Guides (Block)"),
  *  category = @Translation("UNB Libraries"),
  * )
  */
@@ -45,7 +45,7 @@ class ResearchGuides extends BlockBase {
     }
 
     return '
-      <div id="research-guides">
+      <div id="research-guides" class="front-page-border">
         <h3>Key Resources by Subject</h3>
         <form id="category-select" class="chosen-compact my-3">
           <div class="d-flex flex-column flex-lg-row">
