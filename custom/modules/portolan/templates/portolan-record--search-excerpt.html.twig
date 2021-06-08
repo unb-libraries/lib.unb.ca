@@ -1,0 +1,10 @@
+<div class="row mb-4">
+    <div class="col-sm-6 col-md-8 col-lg-9 col-xl-10">
+        <a href="/clc/portolan/records/{{ portolan_record.oclc_id.value }}"><h2 class="mb-1">{{ portolan_record.title.value }}</h2></a>
+        <div class="text-muted small">by {% for author in portolan_record.author %}<span class="portolan-author">{{ author.value }}</span>{% if not loop.last %}; {% endif %}{% endfor %}</div>
+        <div>{{ search_api_excerpt|raw }}</div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+        <div><img class="pull-right" src="//media.lib.unb.ca/eresources/portolan/57064666.jpg"></div>
+    </div>
+</div>
