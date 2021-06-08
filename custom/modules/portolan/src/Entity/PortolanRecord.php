@@ -16,12 +16,18 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *   label_collection = @Translation("Portolan records"),
  *   handlers = {
  *     "views_data" = "Drupal\portolan\Entity\PortolanRecordViewsData",
+ *     "route_provider" = {
+ *       "html" = "Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider"
+ *     }
  *   },
  *   base_table = "portolan_record",
  *   admin_permission = "administer portolan_record entities",
  *   entity_keys = {
  *     "id" = "oclc_id",
  *     "label" = "title",
+ *   },
+ *   links = {
+ *     "canonical" = "/clc/portolan/records/{portolan_record}"
  *   },
  *   field_ui_base_route = "entity.portolan_record.settings",
  * )
