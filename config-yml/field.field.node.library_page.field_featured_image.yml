@@ -1,0 +1,28 @@
+uuid: b92ec73b-8f95-4bd8-a55f-95343bba32d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured_image
+    - media.type.image
+    - node.type.library_page
+id: node.library_page.field_featured_image
+field_name: field_featured_image
+entity_type: node
+bundle: library_page
+label: 'Featured Image'
+description: 'The image to be used if the <i>Include in rotating featured content section</i> is enabled under <b>Promotion Options</b>.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference
