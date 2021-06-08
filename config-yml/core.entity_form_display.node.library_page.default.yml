@@ -3,11 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.library_page.field_featured_image
     - field.field.node.library_page.field_page_content
     - field.field.node.library_page.field_unb_lib_page_content
     - field.field.node.library_page.layout_builder__layout
     - node.type.library_page
+    - workflows.workflow.default_page_workflow
   module:
+    - content_moderation
+    - media_library
     - paragraphs
     - path
 id: node.library_page.default
@@ -17,10 +21,17 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_featured_image:
+    weight: 9
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
   field_page_content:
     type: entity_reference_paragraphs
     weight: 1
@@ -40,17 +51,30 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 8
+    settings: {  }
+    region: content
+    third_party_settings: {  }
   path:
     type: path
-    weight: 4
+    weight: 5
     region: content
     settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 10
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 5
+    weight: 6
     region: content
     third_party_settings: {  }
   title:
@@ -63,7 +87,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 3
     settings:
       match_operator: CONTAINS
       size: 60
@@ -72,12 +96,11 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   field_unb_lib_page_content: true
   layout_builder__layout: true
-  promote: true
   sticky: true
