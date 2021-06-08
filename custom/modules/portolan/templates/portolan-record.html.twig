@@ -1,2 +1,47 @@
-<div>Author: {% for author in portolan_record.author %}<span class="portolan-author">{{ author.value }}</span>{% if not loop.last %}; {% endif %}{% endfor %}</div>
-<div>{{ portolan_record.abstract.value }}</div>
+<div class="row">
+    <div class="col-md-12 mb-3"><a href="https://unb.on.worldcat.org/oclc/{{ portolan_record.oclc_id.value }}" target="_blank">View on WorldCat</a></div>
+    <div class="col-md-9">
+        <table>
+            <tr>
+                <td>Author(s):</td>
+                <td>
+                    {% for author in portolan_record.author %}
+                        <span>{{ author.value }}</span>{% if not loop.last %};{% endif %}
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr><td>Publication:</td><td>{{ portolan_record.publication.value }}</td></tr>
+            <tr><td>Age range:</td><td>{{ portolan_record.age_range.value }}</td></tr>
+            <tr>
+                <td>Geographical location(s):</td>
+                <td>
+                    {% for location in portolan_record.location %}
+                    <span>{{ location.value }}</span>{% if not loop.last %},{% endif %}
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <td>Jurisdiction(s):</td>
+                <td>
+                    {% for jurisdiction in portolan_record.jurisdiction %}
+                        <span>{{ jurisdiction.value }}</span>{% if not loop.last %},{% endif %}
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr><td>Call number:</td><td>{{ portolan_record.call_number.value }}</td></tr>
+            <tr>
+                <td>Descriptor(s):</td>
+                <td>
+                    {% for descriptor in portolan_record.descriptor %}
+                        <span>{{ descriptor.value }}</span>{% if not loop.last %},{% endif %}
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr><td>Note:</td><td>{{ portolan_record.note.value }}</td></tr>
+        </table>
+    </div>
+    <div class="col-md-3">
+        <img src="//media.lib.unb.ca/eresources/portolan/57064666.jpg">
+    </div>
+    <div class="col-md-12 mt-4">{{ portolan_record.abstract.value }}</div>
+</div>
