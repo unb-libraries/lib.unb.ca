@@ -99,6 +99,11 @@ class PortolanRecord extends ContentEntityBase implements PortolanRecordInterfac
       ->setRequired(TRUE)
       ->setCardinality(1);
 
+    $fields[self::FIELD_COVER_URI] = BaseFieldDefinition::create('uri')
+      ->setLabel(t('Cover URI'))
+      ->setRequired(FALSE)
+      ->setCardinality(1);
+
     return $fields;
   }
 

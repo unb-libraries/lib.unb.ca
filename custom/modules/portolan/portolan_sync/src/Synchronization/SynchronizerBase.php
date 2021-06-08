@@ -73,8 +73,25 @@ abstract class SynchronizerBase implements DataSynchronizerInterface {
    *   An array of records.
    */
   protected function import() {
-    return $this->importer()
-      ->import();
+    $records = $this->importer()->import();
+    foreach ($records as $oclc_id => &$record) {
+      $record[PortolanRecordInterface::FIELD_COVER_URI] = $this
+        ->getCoverUri($oclc_id);
+    }
+    return $records;
+  }
+
+  /**
+   * Retrieve a cover image URI for the given OCLC ID.
+   *
+   * @param string $oclc_id
+   *   An OCLC ID.
+   *
+   * @return string
+   *   An absolute URI.
+   */
+  protected function getCoverUri(string $oclc_id) {
+    return 'https://unb.on.worldcat.org/20210526120449/resources/images/default/coverart/book_printbook.jpg';
   }
 
   /**
