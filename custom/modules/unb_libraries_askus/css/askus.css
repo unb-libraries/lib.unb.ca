@@ -11,6 +11,9 @@
     box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
     outline: 0;
 }
+#lh3-chat .form-control {
+    height: auto;
+}
 .chat-embedded #lh3-online {
     border: 1px solid #aaa;
     box-shadow: none;
@@ -22,17 +25,8 @@
     padding: 0 1px;
     width: 100%;
 }
-.chat-popup .status {
-    background-color: #fff;
-    border: 1px solid #343a40;
-    border-radius: .5rem;
-    box-shadow: 1px 1px 3px rgb(0  0  0 / 30%);
-    margin: 0 .2rem;
-    padding: .55rem;
-}
-.chat-popup .status,
 .chat-popup .status a {
-    color: #666;
+    color: inherit;
 }
 .chat-popup .media i {
     padding-top: 2px;
