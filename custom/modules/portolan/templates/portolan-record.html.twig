@@ -41,7 +41,9 @@
         </table>
     </div>
     <div class="col-md-3">
-        <img src="//media.lib.unb.ca/eresources/portolan/57064666.jpg">
+        {% if portolan_record.cover_uri %}
+            <img src="{{ portolan_record.cover_uri.value }}">
+        {% endif %}
     </div>
     <div class="col-md-12 mt-4">{{ portolan_record.abstract.value }}</div>
 </div>
