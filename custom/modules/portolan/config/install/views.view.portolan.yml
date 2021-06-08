@@ -74,7 +74,7 @@ display:
         options:
           view_modes:
             'entity:portolan_record':
-              portolan_record: default
+              portolan_record: search_excerpt
       fields:
         abstract:
           id: abstract
