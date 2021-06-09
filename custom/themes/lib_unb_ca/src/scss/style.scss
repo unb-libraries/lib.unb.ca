@@ -805,6 +805,14 @@ a:not(.link-no-icon)[data-toggle="collapse"] {
   }
 }
 
+/* Font Awesome Icon Vertical Position */
+.fa-super:before {
+  vertical-align: super;
+}
+.fa-text-top:before {
+  vertical-align: text-top;
+}
+
 /* Custom List style */
 .bg-red,
 .list-group-item.active.bg-red {

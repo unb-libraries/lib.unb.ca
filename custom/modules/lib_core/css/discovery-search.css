@@ -1,16 +1,9 @@
-/* Search Forms */
+/* Discovery Search Forms */
 #discovery-search {
   background-color: rgb(80  80  80 / 82%);
 }
 #discovery-search .card-header {
   border-bottom: none;
-}
-
-.fa-super:before {
-    vertical-align: super;
-}
-.fa-text-top:before {
-    vertical-align: text-top;
 }
 
 /* Ask Us */
@@ -37,10 +30,11 @@
 }
 #ask-us  #lh3-chat .status a {
   background-color: #fff;
+  transition: all .2s ease-in-out;
 }
 #ask-us  #lh3-chat .status a:focus,
 #ask-us  #lh3-chat .status a:hover {
-  background-color: #f3f3f3;
+  background-color: #f0f0f0;
 }
 #ask-us  #lh3-chat a.focus-ring {
   border-radius: .5rem;
