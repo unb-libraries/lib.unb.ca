@@ -114,14 +114,14 @@ function _unb_libraries_askus_get_widget($type) {
   $askus_src = _unb_libraries_askus_get_src();
   $html =
     '<div class="requires-js" >
-      <div id="lh3-online" class="form-control status" style="display:none;" >';
+      <div id="lh3-online" class="status" style="display:none;" >';
         switch ($type) {
           case 'embedded':
             $html .= '<iframe src = "' . $askus_src . '"></iframe >';
             break;
 
           default:
-            $html .= '<a class="link-no-hover media" href="' . $askus_src . '">
+            $html .= '<a class="form-control media" href="' . $askus_src . '">
                 <i class="fas fa-circle fa-xs mr-1 mt-1 text-success"></i>CHAT is open.</a>';
         }
         $html .=

@@ -25,7 +25,6 @@ class DiscoverySearch extends BlockBase {
     $block_manager = \Drupal::service('plugin.manager.block');
     $config = [];
     $plugin_block = $block_manager->createInstance('askus_popup', $config);
-
     $access_result = $plugin_block->access(\Drupal::currentUser());
     // Return empty render array if user doesn't have access.
     // $access_result can be boolean or an AccessResult class.
