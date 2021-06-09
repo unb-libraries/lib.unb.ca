@@ -13,9 +13,12 @@ class WorldCatCoverImageParser implements ParserInterface {
    * {@inheritDoc}
    */
   public function parse($data) {
-    return [
-      'uri' => 'https://unb.on.worldcat.org/20210526120449/resources/images/default/coverart/book_printbook.jpg'
-    ];
+    preg_match('/\<img ng-src="([^"]+)"/', $data, $matches);
+    if ($matches !== FALSE) {
+      $cover_uri = 'http:' . str_replace('_70', '_140', $matches[1]);
+      return ['uri' => $cover_uri];
+    }
+    return FALSE;
   }
 
 }

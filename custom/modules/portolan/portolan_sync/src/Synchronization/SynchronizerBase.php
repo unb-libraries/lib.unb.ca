@@ -120,8 +120,9 @@ abstract class SynchronizerBase implements DataSynchronizerInterface {
   protected function import($max_records = DataImporterInterface::UNLIMITED) {
     $records = $this->importer()->import($max_records);
     foreach ($records as $oclc_id => &$record) {
-      $record[PortolanRecordInterface::FIELD_COVER_URI] = $this
-        ->getCoverUri($oclc_id);
+      if ($cover_uri = $this->getCoverUri($oclc_id)) {
+        $record[PortolanRecordInterface::FIELD_COVER_URI] = $cover_uri;
+      }
     }
     return $records;
   }
@@ -132,14 +133,21 @@ abstract class SynchronizerBase implements DataSynchronizerInterface {
    * @param string $oclc_id
    *   An OCLC ID.
    *
-   * @return string
+   * @return string|false
    *   An absolute URI.
    */
   protected function getCoverUri(string $oclc_id) {
     $html = $this->http()
-      ->get("https://unb.on.worldcat.org/oclc/{$oclc_id}");
-    return $this->coverImageParser()
+      ->get("https://unb.on.worldcat.org/oclc/{$oclc_id}")
+      ->getBody()
+      ->getContents();
+    $cover_uri = $this
+      ->coverImageParser()
       ->parse($html)['uri'];
+    if ($cover_uri) {
+      return $cover_uri;
+    }
+    return FALSE;
   }
 
   /**
