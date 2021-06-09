@@ -12,35 +12,57 @@
 .fa-text-top:before {
     vertical-align: text-top;
 }
-#discovery-search .card-header a:after{float:right;font-family:"Font Awesome 5 Free";font-weight:900}
+
 /* Ask Us */
-.bg-askus {
-  background-color: rgb(255  193  7 / 82%);
-}
 #ask-us {
+  background-color: rgb(255 193 7 / 82%);
   width: 29%;
 }
-#ask-us h2 {
-  font-size: 3rem;
-}
-#ask-us-help a {
-  border: 1px solid transparent;
-}
-#ask-us-help a span {
+#ask-us .askus-header h2 {
+  background: none;
   color: #000;
+  font-size: 2.5rem;
+  text-align: left;
 }
-#ask-us-help a span:focus,
-#ask-us-help a span:hover {
-  color: #990000;
+#ask-us .askus-header h2 span.sr-only {
+  position: inherit;
+  width: auto;
+  height: auto;
 }
-
-/* Unset card header link ::after */
-@media(max-width: 991px) {
-  #discovery-search #navbarNav a:after {
-    content: '';
-    float: none;
-    font-family: inherit;
-    font-weight: inherit;
-  }
+#ask-us .askus-header .askus-icon {
+  display: block;
 }
-
+#ask-us .askus-header .askus-icon .fas:before {
+  font-size: 2.5rem;
+}
+#ask-us  #lh3-chat .status a {
+  background-color: #fff;
+}
+#ask-us  #lh3-chat .status a:focus,
+#ask-us  #lh3-chat .status a:hover {
+  background-color: #f3f3f3;
+}
+#ask-us  #lh3-chat a.focus-ring {
+  border-radius: .5rem;
+}
+#ask-us .askus-footer {
+  margin-top: 1.75rem;
+  text-align: left;
+}
+#ask-us .askus-footer a {
+  border-bottom: 1px solid transparent;
+  color: #000;
+  margin-left: 0;
+}
+#ask-us .askus-footer a:focus {
+  background: inherit;
+  border-color: transparent;
+  box-shadow: none;
+  color: #900;
+  outline: 1px dotted #fff;
+}
+#ask-us .askus-footer a:hover {
+  background: inherit;
+  border-bottom: 1px solid #900;
+  color: #900;
+}
