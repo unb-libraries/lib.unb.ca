@@ -1485,7 +1485,7 @@ display:
           plugin_id: random
       header: {  }
       empty: {  }
-      block_description: 'Featured Collection Block'
+      block_description: 'Featured Library Page'
       style:
         type: default
         options:
