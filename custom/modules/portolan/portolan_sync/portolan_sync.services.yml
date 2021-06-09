@@ -7,6 +7,9 @@ services:
     arguments:
       - '@portolan.marc_parser'
 
+  portolan.world_cat_cover_image_parser:
+    class: Drupal\portolan_sync\Synchronization\WorldCatCoverImageParser
+
   portolan.storage:
     class: Drupal\Core\Entity\ContentEntityStorageInterface
     factory: ['@entity_type.manager', 'getStorage']
@@ -25,5 +28,7 @@ services:
     class: Drupal\portolan_sync\Synchronization\FlushStorageSynchronizer
     arguments:
       - '@portolan.marc_file_importer'
+      - '@portolan.world_cat_cover_image_parser'
+      - '@http_client'
       - '@portolan.storage'
       - '@logger.channel.portolan'

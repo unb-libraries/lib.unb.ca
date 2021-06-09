@@ -6,6 +6,7 @@ use Drupal\Core\Entity\ContentEntityStorageInterface;
 use Drupal\Core\Logger\LoggerChannelInterface;
 use Drupal\lib_core\Logger\LoggerChannelTrait;
 use Drupal\portolan\Entity\PortolanRecordInterface;
+use GuzzleHttp\ClientInterface;
 
 /**
  * Base class for synchronizer implementations.
@@ -31,6 +32,20 @@ abstract class SynchronizerBase implements DataSynchronizerInterface {
   protected $storage;
 
   /**
+   * The parser for cover images.
+   *
+   * @var \Drupal\portolan_sync\Synchronization\ParserInterface
+   */
+  protected $coverImageParser;
+
+  /**
+   * An HTTP client.
+   *
+   * @var \GuzzleHttp\ClientInterface
+   */
+  protected $http;
+
+  /**
    * Get the data importer.
    *
    * @return \Drupal\portolan_sync\DataImporterInterface
@@ -38,6 +53,26 @@ abstract class SynchronizerBase implements DataSynchronizerInterface {
    */
   protected function importer() {
     return $this->importer;
+  }
+
+  /**
+   * Get the cover image parser.
+   *
+   * @return \Drupal\portolan_sync\Synchronization\ParserInterface
+   *   A parser instance.
+   */
+  protected function coverImageParser() {
+    return $this->coverImageParser;
+  }
+
+  /**
+   * Get the HTTP client.
+   *
+   * @return \GuzzleHttp\ClientInterface
+   *   An HTTP client instance.
+   */
+  protected function http() {
+    return $this->http;
   }
 
   /**
@@ -55,13 +90,19 @@ abstract class SynchronizerBase implements DataSynchronizerInterface {
    *
    * @param \Drupal\portolan_sync\Synchronization\DataImporterInterface $importer
    *   The data importer.
+   * @param \Drupal\portolan_sync\Synchronization\ParserInterface $coverImageParser
+   *   The cover image parser.
+   * @param \GuzzleHttp\ClientInterface $http
+   *   The HTTP client.
    * @param \Drupal\Core\Entity\ContentEntityStorageInterface $storage
    *   The entity storage.
    * @param \Drupal\Core\Logger\LoggerChannelInterface|null $logger
    *   (optional) A logger channel.
    */
-  public function __construct(DataImporterInterface $importer, ContentEntityStorageInterface $storage, LoggerChannelInterface $logger = NULL) {
+  public function __construct(DataImporterInterface $importer, ParserInterface $coverImageParser, ClientInterface $http, ContentEntityStorageInterface $storage, LoggerChannelInterface $logger = NULL) {
     $this->importer = $importer;
+    $this->coverImageParser = $coverImageParser;
+    $this->http = $http;
     $this->storage = $storage;
     $this->logger = $logger;
   }
@@ -69,11 +110,15 @@ abstract class SynchronizerBase implements DataSynchronizerInterface {
   /**
    * Import data to synchronize with the storage.
    *
+   * @param int $max_records
+   *   (optional) The maximum number of records to import. Defaults to importing
+   *   all available records.
+   *
    * @return array
    *   An array of records.
    */
-  protected function import() {
-    $records = $this->importer()->import();
+  protected function import($max_records = DataImporterInterface::UNLIMITED) {
+    $records = $this->importer()->import($max_records);
     foreach ($records as $oclc_id => &$record) {
       $record[PortolanRecordInterface::FIELD_COVER_URI] = $this
         ->getCoverUri($oclc_id);
@@ -91,7 +136,10 @@ abstract class SynchronizerBase implements DataSynchronizerInterface {
    *   An absolute URI.
    */
   protected function getCoverUri(string $oclc_id) {
-    return 'https://unb.on.worldcat.org/20210526120449/resources/images/default/coverart/book_printbook.jpg';
+    $html = $this->http()
+      ->get("https://unb.on.worldcat.org/oclc/{$oclc_id}");
+    return $this->coverImageParser()
+      ->parse($html)['uri'];
   }
 
   /**
