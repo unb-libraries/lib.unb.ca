@@ -78,9 +78,7 @@ var lh3UpdatePresence = function () {
 };
 
 var getOfflineNote = function () {
-    let note = "CHAT is closed";
     let currentlyOpen = '', reopensData = '';
-
     let calendarRHD = calendarHours.collection.get("hil_help");
     if (typeof calendarRHD != 'undefined') {
         currentlyOpen = calendarRHD.isOpenNow();
@@ -93,11 +91,11 @@ var getOfflineNote = function () {
         let opensAt = moment(reopensData);
         let opensAtDate = opensAt.format("Y-MM-DD");
         if (opensAtDate < tomorrow) {
-            note += ". Reopens today at " + opensAt.format("h:mma");
+            let note = "Reopens today at " + opensAt.format("h:mma");
         } else if (opensAtDate > tomorrow) {
-            note += ". Reopens on " + opensAt.format("dddd, h:mma");
+            let note = "Reopens on " + opensAt.format("dddd, h:mma");
         } else {
-            note += ". Reopens tomorrow at " + opensAt.format("h:mma");
+            let note = "Reopens tomorrow at " + opensAt.format("h:mma");
         }
     }
     return note + ".";
