@@ -317,7 +317,7 @@ ul.pagination {
   }
 }
 /* Featured image */
-.news-featured {
+.front-page-border{
   a img {
     @include opacity(1);
     @include css3-prefix(transition, opacity .3s);
