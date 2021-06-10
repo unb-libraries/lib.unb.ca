@@ -1,5 +1,5 @@
 .table-lib-hours table {
-    min-width: 60%;
+    min-width: 80%;
     width: auto;
 }
 .table-lib-hours table caption {
@@ -7,10 +7,8 @@
     font-weight: bold;
     padding-top: 0;
 }
-.table-lib-hours tfoot {
-    display: table;
-    width: 100%;
-    margin-top: .5rem;
+.table-lib-hours tfoot td {
+    padding-top: .5rem;
 }
 .table-lib-hours table tr {
     padding-left: 0;
