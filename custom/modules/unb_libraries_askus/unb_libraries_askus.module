@@ -128,7 +128,7 @@ function _unb_libraries_askus_get_widget($type) {
       '</div>
       <div id="lh3-offline" class="form-control media status" style="display:none;">
         <i class="fas fa-circle fa-xs mr-1 mt-1 text-danger"></i>
-        <div class="media-body"><span class="offline-msg">CHAT is closed.</span></div>
+        <div class="media-body">CHAT is closed.<span class="offline-msg"></span></div>
       </div>
       <div id="lh3-away" class="form-control media status" style="display:none;">
         <i class="fas fa-circle fa-xs mr-1 mt-1 text-warning"></i>
