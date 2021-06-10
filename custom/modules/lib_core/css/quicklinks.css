@@ -4,7 +4,9 @@
     margin-bottom: .25rem;
 }
 #quicklinks-wrapper ul.list-inline li:not(:first-child) {
-    padding: 0 .5rem;
+    @media (min-width: 768px) {
+        padding: 0 .5rem;
+    }
 }
 #quicklinks-wrapper ul.list-inline li a {
     margin-right: .33rem;
