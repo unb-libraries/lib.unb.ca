@@ -189,14 +189,17 @@
   }
 }
 
-.layout__region > div {
+.layout--twocol-section .layout__region > div {
   padding-bottom: $twocol-padding-size;
 }
 
 .front-page-border {
   border: 1px solid $red;
-  @media (max-width: 991px) {
-    display: inline-block;
+
+  &.image-collapse {
+    @media (max-width: 991px) {
+      display: inline-block;
+    }
   }
 
   /* Borrow/override old Featured news image */
@@ -224,6 +227,23 @@
         font-family: inherit;
         margin: 0;
       }
+    }
+  }
+}
+.path-frontpage {
+  @media (min-width: 992px) {
+    main {
+      margin-bottom: -2.5rem;
+    }
+
+    .layout__region--first {
+      border-right: 1px solid #ddd;
+      padding-right: 2.5rem;
+      padding-bottom: 3rem;
+    }
+    .layout__region--second {
+      padding-left: 2.5rem;
+      padding-bottom: 3rem;
     }
   }
 }
