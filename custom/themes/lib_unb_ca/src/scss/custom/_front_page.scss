@@ -194,7 +194,26 @@
 }
 
 .front-page-border {
-  border: 2px solid rgb(153 0 0);
+  border: 1px solid $red;
+  @media (max-width: 991px) {
+    display: inline-block;
+  }
+
+  /* Borrow/override old Featured news image */
+  a img {
+    @include opacity(1);
+    @include css3-prefix(transition, opacity .3s);
+  }
+  a:hover img {
+    @include opacity(.75);
+  }
+}
+.news-feature {
+  @media (min-width: 991px) and (max-width: 1200px) {
+    img {
+      padding-left: 1rem;
+    }
+  }
 }
 
 .path-frontpage {
