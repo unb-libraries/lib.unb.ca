@@ -56,8 +56,6 @@
   color: #900;
   outline: 1px dotted #fff;
 }
-#ask-us .askus-footer a:hover {
-  background: inherit;
-  border-bottom: 1px solid rgb(153 0 0 / 25%);
-  color: #900;
+#ask-us .askus-footer span:not(.sr-only) {
+  margin: 0;
 }

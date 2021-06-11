@@ -28,7 +28,7 @@ class AskUsPopup extends BlockBase {
     $chat_footer =
       '<p class="askus-footer">
         <a class="askus-help" href="/help/ask-us"><span class="sr-only">Ask by:</span>
-          Phone, Text, Email, In-Person</span>
+          <span>Phone</span>, <span>Text</span>, <span>Email</span>, <span>In-Person</span>
         </a>
       </p>';
 
