@@ -22,7 +22,6 @@
       @include css3-prefix(transition, background-color .35s ease-in);
       border-left: 1px solid transparent;
       border-right: 1px solid transparent;
-      padding-bottom: 2px;
 
       &:hover {
         background-color: rgb(55 63 68 / 99%);
@@ -99,10 +98,11 @@
     }
   }
 
-  #navbar-main:not(.affix) .navbar-nav li.show>a:first-child {
+  #navbar-main:not(.affix) .navbar-nav li.show>button {
     color: $white;
     background: #343c41;
     background-image: none;
+    border-bottom-color: $header-hover-color;
   }
   .card {
     color: $white;
@@ -135,7 +135,6 @@
     /*background: none;*/
     transition: none;
   }
-
   #header .affix li.show > .nav-link,
   #header .affix .megamenu-li > .nav-link:focus,
   #header .affix .megamenu-li > .nav-link:hover,
@@ -143,7 +142,27 @@
   .affix .branding a:hover {
     border-bottom-color: $white;
   }
+  .megamenu-li button.nav-link {
+    background: none;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    color: $white;
+    height: 100%;
+    margin: 0;
 
+    text-align: left;
+    width: 100%;
+
+    span.text-nowrap {
+      &:after {
+        @media (min-width: 992px) {
+          content: '';
+          display: block;
+        }
+      }
+    }
+  }
   button[data-target="#navbar"][aria-expanded="false"]:after {
     @include link-fa-icon('\f0c9', left);
   }
@@ -163,8 +182,8 @@
 
   @media (max-width: 991px) {
     #navbar-main #navbar {
-      li.show>a:first-child {
-        background: rgb(55 63 68 / 30%);
+      li.show>button {
+        background: rgb(55 63 68 / 30%)!important;
       }
 
       div.dropdown-menu {
@@ -241,5 +260,9 @@
       padding-left: 2.5rem;
       padding-bottom: 3rem;
     }
+  }
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
