@@ -22,6 +22,7 @@
       @include css3-prefix(transition, background-color .35s ease-in);
       border-left: 1px solid transparent;
       border-right: 1px solid transparent;
+      padding-bottom: 1px;
 
       &:hover {
         background-color: rgb(55 63 68 / 99%);
@@ -104,6 +105,7 @@
     background-image: none;
     border-bottom-color: $header-hover-color;
   }
+
   .card {
     color: $white;
 
@@ -143,6 +145,7 @@
     border-bottom-color: $white;
   }
   .megamenu-li button.nav-link {
+    @include css3-prefix(transition, all .3s ease-in-out);
     background: none;
     border-top: none;
     border-right: none;
@@ -150,16 +153,28 @@
     color: $white;
     height: 100%;
     margin: 0;
-
     text-align: left;
     width: 100%;
 
+    &.focus-ring:focus {
+      outline: 1px dotted $white;
+    }
+    &:hover {
+      color: $navbar-dark-hover;
+    }
     span.text-nowrap {
       &:after {
         @media (min-width: 992px) {
           content: '';
           display: block;
         }
+      }
+    }
+  }
+  #navbar-main.affix {
+    .megamenu-li button.nav-link {
+      &:hover {
+        color: $gray-200;
       }
     }
   }
