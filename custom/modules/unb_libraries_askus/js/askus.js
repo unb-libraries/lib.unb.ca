@@ -78,6 +78,7 @@ var lh3UpdatePresence = function () {
 };
 
 var getOfflineNote = function () {
+    let note = '';
     let currentlyOpen = '', reopensData = '';
     let calendarRHD = calendarHours.collection.get("hil_help");
     if (typeof calendarRHD != 'undefined') {
@@ -91,12 +92,13 @@ var getOfflineNote = function () {
         let opensAt = moment(reopensData);
         let opensAtDate = opensAt.format("Y-MM-DD");
         if (opensAtDate < tomorrow) {
-            let note = "Reopens today at " + opensAt.format("h:mma");
+            note = " Reopens today at " + opensAt.format("h:mma");
         } else if (opensAtDate > tomorrow) {
-            let note = "Reopens on " + opensAt.format("dddd, h:mma");
+            note = " Reopens on " + opensAt.format("dddd, h:mma");
         } else {
-            let note = "Reopens tomorrow at " + opensAt.format("h:mma");
+            note = " Reopens tomorrow at " + opensAt.format("h:mma");
         }
+        return note + ".";
     }
-    return note + ".";
+    return;
 };
