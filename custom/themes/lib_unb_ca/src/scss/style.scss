@@ -6,12 +6,16 @@
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: 'ProximaNovaA-Thin', 'Century Gothic', AppleGothic, Arial, sans-serif;
-  text-shadow: 0 0 $red;
+  text-shadow: 0 0 $black;
 
   &.bold {
     font-family: 'ProximaNovaA-Bold', 'Century Gothic', AppleGothic, Arial, sans-serif;
   }
 }
+h2 {
+  text-shadow: 0 0 $red;
+}
+
 a {
   &.email-icon {
     &:before {
