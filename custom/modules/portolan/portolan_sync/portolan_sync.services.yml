@@ -10,6 +10,9 @@ services:
   portolan.local_file_transfer:
     class: Drupal\portolan_sync\Synchronization\LocalFileTransfer
 
+  portolan.remote_file_transfer:
+    class: Drupal\portolan_sync\Synchronization\RemoteFileTransfer
+
   portolan.marc_file_provider:
     class: Drupal\portolan_sync\Synchronization\MarcFileProvider
     arguments:
