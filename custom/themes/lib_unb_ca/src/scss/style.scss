@@ -407,7 +407,13 @@ ul.field--name-field-categories:before {
 /** Search Webpages **/
 .search-webpages {
   form {
-    margin: 3rem 2.5rem;
+    margin: 3rem;
+
+    .form-row {
+      & > fieldset {
+        flex: 1 1 auto;
+      }
+    }
 
     .form-group {
       margin-bottom: .75rem;
@@ -907,29 +913,29 @@ table {
 /* Bootstrap4 custom tile/cards utility */
 .card-tiles {
   .card {
-    margin-bottom: 1rem;
+    margin-bottom: .05rem;
 
     &:not(:first-child) {
       @media(min-width: 992px) {
-        margin-left: .5rem;
+        margin-left: .05rem;
       }
     }
 
     &:not(:last-child) {
       @media(min-width: 992px) {
-        margin-right: .5rem;
+        margin-right: .05rem;
       }
     }
 
     a {
       img {
-         @include css3-prefix(transition, all .25s ease-in-out);
+        @include css3-prefix(transition, all .25s ease-in-out);
       }
 
       &:focus,
       &:hover {
         img {
-          box-shadow: 0 .2rem .4rem $black;
+          box-shadow: 0 .1rem .2rem $black;
           filter: grayscale(100%);
         }
       }
