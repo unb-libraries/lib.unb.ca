@@ -41,13 +41,12 @@ class MarcFileImporter implements DataImporterInterface {
   /**
    * {@inheritDoc}
    */
-  public function import($max_count = self::UNLIMITED) {
+  public function import($source, $max_records = self::UNLIMITED) {
     $marc_path = $this->downloadMarcFile(__DIR__ . '/../../portolan.mrc', '/tmp');
     $portolan_records = [];
 
     $index = 0;
-    $marc_records = new \File_MARC($marc_path);
-    while (($max_count <= 0 || $index < $max_count) && $marc_record = $marc_records->next()) {
+    while (($max_records <= 0 || $index < $max_records) && $marc_record = $source->next()) {
       if (!empty($portolan_record = $this->parser()->parse($marc_record))) {
         $oclc_id = $portolan_record[PortolanRecordInterface::FIELD_OCLC_ID];
         if (!array_key_exists($oclc_id, $portolan_records)) {
