@@ -2,8 +2,6 @@
 
 namespace Drupal\portolan_sync\Synchronization;
 
-use Drupal\Core\FileTransfer\FileTransfer;
-
 /**
  * Transfers local files.
  *
