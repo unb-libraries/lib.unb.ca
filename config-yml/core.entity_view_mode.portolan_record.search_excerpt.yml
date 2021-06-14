@@ -1,0 +1,12 @@
+uuid: f94eceb4-6503-46ea-b619-cd6f9a94bb72
+langcode: en
+status: true
+dependencies:
+  module:
+    - portolan
+_core:
+  default_config_hash: WXRimdS4S4DmQZks53QxRzeZqqYc_Hw85bWGRG1aO54
+id: portolan_record.search_excerpt
+label: 'Search excerpt'
+targetEntityType: portolan_record
+cache: true

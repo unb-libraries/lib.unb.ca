@@ -1,0 +1,12 @@
+uuid: 43549e09-10dc-499c-98b6-5ed9e2a15c13
+langcode: en
+status: true
+dependencies:
+  module:
+    - portolan
+_core:
+  default_config_hash: 3fyMdu5auwekMxixGfLehz2_4QF9FXxUg3rLyg0kGrQ
+id: portolan_record.full
+label: 'Full record'
+targetEntityType: portolan_record
+cache: true

@@ -1,0 +1,31 @@
+uuid: fbaed7ce-e58a-4852-bb7c-635e3cdc0236
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.geographic_location
+  module:
+    - facets
+    - system
+  theme:
+    - lib_unb_ca
+_core:
+  default_config_hash: '-VjIDEcId1xnn_kywDYHZvg4mrP7NDeilQ2YAZqfH2w'
+id: geographiclocation
+theme: lib_unb_ca
+region: sidebar_second
+weight: -4
+provider: null
+plugin: 'facet_block:geographic_location'
+settings:
+  id: 'facet_block:geographic_location'
+  label: 'Geographic location'
+  provider: facets
+  label_display: visible
+  block_id: geographiclocation
+visibility:
+  request_path:
+    id: request_path
+    pages: /clc/portolan/search
+    negate: false
+    context_mapping: {  }

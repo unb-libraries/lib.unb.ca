@@ -1,0 +1,31 @@
+uuid: d9e19b5c-a68d-4abb-aa60-5c8efb286527
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.descriptor
+  module:
+    - facets
+    - system
+  theme:
+    - lib_unb_ca
+_core:
+  default_config_hash: kWLDLFP2wrV8PKKVV-Uux0bDhA9QQOf_h6PxccaNXIc
+id: descriptor
+theme: lib_unb_ca
+region: sidebar_second
+weight: -2
+provider: null
+plugin: 'facet_block:descriptor'
+settings:
+  id: 'facet_block:descriptor'
+  label: Descriptor
+  provider: facets
+  label_display: visible
+  block_id: descriptor
+visibility:
+  request_path:
+    id: request_path
+    pages: /clc/portolan/search
+    negate: false
+    context_mapping: {  }
