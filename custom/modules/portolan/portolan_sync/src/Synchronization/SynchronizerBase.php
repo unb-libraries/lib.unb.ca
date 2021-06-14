@@ -6,7 +6,6 @@ use Drupal\Core\Entity\ContentEntityStorageInterface;
 use Drupal\Core\Logger\LoggerChannelInterface;
 use Drupal\lib_core\Logger\LoggerChannelTrait;
 use Drupal\portolan\Entity\PortolanRecordInterface;
-use GuzzleHttp\ClientInterface;
 
 /**
  * Base class for synchronizer implementations.
@@ -119,35 +118,7 @@ abstract class SynchronizerBase implements DataSynchronizerInterface {
    */
   protected function import($max_records = DataImporterInterface::UNLIMITED) {
     $source = $this->provider()->getData();
-    $records = $this->importer()->import($source, $max_records);
-      if ($cover_uri = $this->getCoverUri($oclc_id)) {
-        $record[PortolanRecordInterface::FIELD_COVER_URI] = $cover_uri;
-      }
-    }
-    return $records;
-  }
-
-  /**
-   * Retrieve a cover image URI for the given OCLC ID.
-   *
-   * @param string $oclc_id
-   *   An OCLC ID.
-   *
-   * @return string|false
-   *   An absolute URI.
-   */
-  protected function getCoverUri(string $oclc_id) {
-    $html = $this->http()
-      ->get("https://unb.on.worldcat.org/oclc/{$oclc_id}")
-      ->getBody()
-      ->getContents();
-    $cover_uri = $this
-      ->coverImageParser()
-      ->parse($html)['uri'];
-    if ($cover_uri) {
-      return $cover_uri;
-    }
-    return FALSE;
+    return $this->importer()->import($source, $max_records);
   }
 
   /**
