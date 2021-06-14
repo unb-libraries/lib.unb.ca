@@ -7,6 +7,15 @@ services:
     arguments:
       - '@portolan.marc_parser'
 
+  portolan.local_file_transfer:
+    class: Drupal\portolan_sync\Synchronization\LocalFileTransfer
+
+  portolan.marc_file_provider:
+    class: Drupal\portolan_sync\Synchronization\MarcFileProvider
+    arguments:
+      - '@portolan.local_file_transfer'
+      - '/app/html/modules/custom/portolan/portolan_sync/portolan.mrc'
+
   portolan.world_cat_cover_image_parser:
     class: Drupal\portolan_sync\Synchronization\WorldCatCoverImageParser
 
@@ -28,7 +37,6 @@ services:
     class: Drupal\portolan_sync\Synchronization\FlushStorageSynchronizer
     arguments:
       - '@portolan.marc_file_importer'
-      - '@portolan.world_cat_cover_image_parser'
-      - '@http_client'
+      - '@portolan.marc_file_provider'
       - '@portolan.storage'
       - '@logger.channel.portolan'
