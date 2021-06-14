@@ -67,6 +67,12 @@
 
     .container {
       background: rgb(55 63 68);
+      border-bottom: 3px ridge $dark;
+    }
+    &.multi-row {
+      .container:first-child {
+        border-bottom-width: 1px;
+      }
     }
   }
 
