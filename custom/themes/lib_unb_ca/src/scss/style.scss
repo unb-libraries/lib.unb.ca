@@ -957,4 +957,9 @@ table {
     }
   }
 }
+.multi-row > .container div.w-100 > div {
+  @media (min-width: 992px) {
+    width: 25%
+  }
+}
 /** END UTILITY **/
