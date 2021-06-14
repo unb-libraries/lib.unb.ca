@@ -1,22 +1,22 @@
-uuid: 9bd6ba98-dace-44e6-b2e3-342b52371ddf
+uuid: 9d050b67-3fac-4958-8b67-e527c00577de
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.library_news
+    - views.view.library_news_v2
   module:
     - system
     - views
   theme:
     - lib_unb_ca
-id: views_block__library_news_block_3
+id: views_block__library_news_v2_block_2
 theme: lib_unb_ca
 region: sidebar_second
-weight: -8
+weight: -5
 provider: null
-plugin: 'views_block:library_news-block_3'
+plugin: 'views_block:library_news_v2-block_2'
 settings:
-  id: 'views_block:library_news-block_3'
+  id: 'views_block:library_news_v2-block_2'
   label: ''
   provider: views
   label_display: visible
