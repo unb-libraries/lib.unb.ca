@@ -1,5 +1,5 @@
 .table-lib-hours table {
-    min-width: 85%;
+    min-width: 90%;
     width: auto;
 }
 .table-lib-hours table caption {
@@ -12,10 +12,12 @@
 }
 .table-lib-hours table tr {
     padding-left: 0;
+    vertical-align: bottom;
 }
 .table-lib-hours table a {
     color: rgb(0 96 122);
     font-weight: normal;
+    white-space: nowrap;
 }
 .table-lib-hours table a:focus,
 .table-lib-hours table a:hover {
