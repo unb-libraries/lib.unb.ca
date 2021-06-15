@@ -1,0 +1,86 @@
+<ul class="list-group list-group-flush list-results">
+  {% set stripe = ['', 'bg-light'] %}
+  {% set row = 0 %}
+  {% set isbn = '' %}
+  {% set issn = '' %}
+  {% set eissn = '' %}
+  {% set content = '' %}
+  {% for entry in eresources %}
+    {% if attribute(entry, "kb:isbn") is not empty %}{% set isbn = attribute(entry, "kb:isbn") %}{% endif %}
+    {% if attribute(entry, "kb:issn") is not empty %}{% set issn = attribute(entry, "kb:issn") %}{% endif %}
+    {% if attribute(entry, "kb:eissn") is not empty %}{% set eissn = attribute(entry, "kb:eissn") %}{% endif %}
+    {# In order to group items by title/ocn, each item must be rendered, added to
+       the "content". Content is pushed out when the title changes or it's the
+       last item on the page.
+    #}
+    {% set chunk %}
+      {% set url = '' %}
+      {% for link in entry.links %}
+      {%   if link.rel == "via" %}
+      {%     set url = link.href %}
+      {%   endif %}
+      {% endfor %}
+      {% set extra = [] %}
+      {% if attribute(entry, 'kb:author') %}{% set author = attribute(entry, 'kb:author')|replace({'|': '; '}) %}{% set extra = extra|merge([author]) %}{% endif %}
+      {% if attribute(entry, 'kb:publisher') %}{% set extra = extra|merge([attribute(entry, 'kb:publisher')]) %}{% endif %}
+      {% if attribute(entry, 'kb:coverage') matches '/^(ebook|video)/' %}
+      {%   set extra = extra|merge([entry|eresources_coverage]) %}
+      {% endif %}
+    <li>
+      <div class="row">
+        <div class="col-12 col-lg-9">
+          <div><a class="d-inline" href="{{ url }}" target="_blank" onclick='javascript: _gaq.push(["_trackPageview", "/GA/{{ entry.title }}"]);'>
+            <span class="sr-only">{{ entry.title }} in </span> {{ attribute(entry, "kb:collection_name") }}
+          </a>
+          {% if extra %}
+          ({{ extra|join('; ') }})
+          {% endif %}
+          </div>
+          {% if attribute(entry, 'kb:coverage_enum') starts with 'print' %}
+            <div class="media ml-4 mb-2">
+              <span class="fas fa-book"></span>
+              <div class="media-body ml-1"><span class="coverage">{{ entry|eresources_coverage }}</span></div>
+            </div>
+          {% else %}
+            {% set permittedUse = entry|eresources_permitted_use %}
+            {% if permittedUse %}
+            <div class="media ml-4 mb-2">
+              <span class="fas fa-gavel"></span>
+              <div class="media-body ml-1">{{ permittedUse|raw }}</div>
+            </div>
+            {% endif %}
+          {% endif %}
+        </div>
+        <div class="col col-lg-3 oclcnum">
+        {% if attribute(entry, 'kb:oclcnum') is not empty %}WorldCat: <a class="d-inline" href="https://unb.on.worldcat.org/oclc/{{ attribute(entry, 'kb:oclcnum') }}">{{ attribute(entry, 'kb:oclcnum') }}</a>{% endif %}
+        </div>
+      </div>
+    </li>
+    {% endset %}
+    {% set content = content ~ chunk %}
+    {% set nextIndex = loop.index0 + 1 %}
+    {% if loop.last or (
+      entry.title|lower != eresources[nextIndex].title|lower and
+      attribute(entry, "kb:oclcnum") != attribute(eresources[nextIndex], "kb:oclcnum")
+    ) %}
+      <li class="list-group-item {{ cycle(stripe, row) }}">
+        <div class="row">
+          <div class="col-12 col-lg-9 title">{{ entry.title }}</div>
+          <div class="col-12 col-lg-3 oclcnum">
+            {% if isbn %}<div>ISBN: {{ isbn }}</div>{% endif %}
+            {% if issn %}<div>ISSN: {{ issn }}</div>{% endif %}
+            {% if eissn %}<div>eISSN: {{ eissn }}</div>{% endif %}
+          </div>
+        </div>
+        <ul>
+          {{ content|raw }}
+        </ul>
+      </li>
+      {% set isbn = '' %}
+      {% set issn = '' %}
+      {% set eissn = '' %}
+      {% set content = '' %}
+      {% set row = row + 1 %}
+    {% endif %}
+  {% endfor %}
+</ul>

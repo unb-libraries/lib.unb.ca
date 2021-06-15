@@ -4,6 +4,11 @@ services:
     arguments: ['@current_user']
     tags:
       - {name: event_subscriber}
+  eresources.twig_extension:
+    arguments: ['@renderer']
+    class: Drupal\eresources\TwigExtension
+    tags:
+      - {name: twig.extension}
   oclc.api_key.lman:
     class: Drupal\key\Entity\Key
     factory: [ '@key.repository', getKey ]
@@ -15,3 +20,13 @@ services:
       - '@oclc.api_key.lman'
       - '@plugin.manager.oclc_api'
       - ['wms_license_manager']
+  oclc.api_key.worldcat_knowledge_base:
+    class: Drupal\key\Entity\Key
+    factory: [ '@key.repository', getKey ]
+    arguments: [ oclc_knowledge_base ]
+    public: false
+  oclc_authorizer.worldcat_knowledge_base:
+    class: Drupal\oclc_api\Oclc\OclcV1Authorizer
+    arguments:
+      - '@oclc.api_key.worldcat_knowledge_base'
+      - '@plugin.manager.oclc_api'

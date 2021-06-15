@@ -1,0 +1,51 @@
+.list-results .list-group-item {
+  padding-left: 0;
+  padding-right: 0;
+}
+.list-results .list-group-item .title {
+  color: #000;
+  font-family: "ProximaNovaA-Semibold", "Century Gothic", AppleGothic, Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-top: 0;
+}
+.list-results .list-group-item .oclcnum {
+  font-size: 80%;
+  text-align: left;
+}
+@media (min-width: 992px) {
+  .list-results .list-group-item .oclcnum {
+    text-align: right;
+  }
+}
+.list-results .list-group-item .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.list-results .list-group-item ul {
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+}
+@media (max-width: 991px) {
+  .list-results .list-group-item li {
+    margin-bottom: 0.5rem;
+  }
+}
+.list-results .list-group-item li a {
+  display: inline;
+  font-style: italic;
+}
+.list-results .list-group-item li .col-12 {
+  padding-left: 0;
+}
+
+ul.list-bullets li.d-flex:before {
+  content: "•";
+  left: 2.5rem;
+  position: absolute;
+}
+
+.list-results .coverage {
+  font-weight: 600;
+}

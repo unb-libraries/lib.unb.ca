@@ -1,0 +1,5 @@
+eresources:
+  version: VERSION
+  css:
+    theme:
+      css/eresources.css: {}
