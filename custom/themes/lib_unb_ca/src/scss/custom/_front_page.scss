@@ -13,9 +13,6 @@
     a.nav-link {
       line-height: normal;
     }
-    a.nav-link[href$="//unb.ca"]::before {
-      content: none;
-    }
   }
   #navbar-main:not(.affix) {
     #navbar-main-content {
