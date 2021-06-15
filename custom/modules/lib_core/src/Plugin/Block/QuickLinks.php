@@ -93,12 +93,25 @@ class QuickLinks extends BlockBase {
         )->toString(),
       ],*/
     ];
-    $booking_btn = [
-      '#type' => 'container',
+    $covid_btn = [
       '#attributes' => [
-        'class' => [
-          'ml-auto',
-        ],
+        'id' => 'covid-btn',
+      ],
+      '#children' => Link::fromTextAndUrl(
+        Markup::create('<span class="fas fa-head-side-mask mr-1"></span>' . $this->t('Covid-19 FAQ')),
+        Url::fromUri('base://what-to-expect', [
+          'attributes' => [
+            'class' => [
+              'btn',
+              'btn-danger',
+              'text-nowrap',
+            ],
+          ],
+        ])
+      )->toString(),
+    ];
+    $booking_btn = [
+      '#attributes' => [
         'id' => 'book-btn',
       ],
       '#children' => Link::fromTextAndUrl(
@@ -143,7 +156,30 @@ class QuickLinks extends BlockBase {
         '#items' => $quicklinks,
         '#attached' => $attachments,
       ],
-      'quicklinks_book' => $booking_btn,
+      'quicklinks_buttons' => [
+        '#theme' => 'item_list',
+        '#list_type' => 'ul',
+        '#context' => [
+          'list_style' => 'inline',
+        ],
+        '#attributes' => [
+          'class' => [
+            'list-inline',
+          ],
+        ],
+        '#wrapper_attributes' => [
+          'class' => [
+            'ml-auto',
+            'mr-auto',
+            'mr-lg-0',
+          ],
+          'id' => ['quicklinks-buttons'],
+        ],
+        '#items' => [
+          'covid_button' => $covid_btn,
+          'book_button' => $booking_btn,
+        ],
+      ],
     ];
 
     return $render_array_list;
