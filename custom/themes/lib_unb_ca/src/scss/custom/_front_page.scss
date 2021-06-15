@@ -287,3 +287,29 @@
     padding-right: 0;
   }
 }
+.megamenu {
+  .fa-ul {
+    margin-left: 1em;
+
+    li {
+      margin-bottom: .5rem;
+
+      .fa-li {
+        color: $unb-red;
+        left: -1em;
+        opacity: .95;
+        width: .8rem;
+        font-size: 0.8rem;
+        margin-top: .1rem;
+        padding-right: .2rem;
+      }
+      a {
+        line-height: inherit;
+
+        &:before {
+          content: none;
+        }
+      }
+    }
+  }
+}
