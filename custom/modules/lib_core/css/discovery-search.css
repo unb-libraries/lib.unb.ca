@@ -5,6 +5,9 @@
 #discovery-search .card-header {
   border-bottom: none;
 }
+#discovery-wrapper #discovery-search .card-header a[aria-expanded="false"]:after {
+  content: none;
+}
 
 /* Ask Us */
 #ask-us {
