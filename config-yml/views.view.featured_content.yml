@@ -273,7 +273,14 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      block_description: 'Featured Content'
+      block_description: 'Featured Library Page'
+      cache:
+        type: none
+        options: {  }
+      defaults:
+        cache: false
+        title: false
+      title: 'Featured Collection'
     cache_metadata:
       max-age: 0
       contexts:
