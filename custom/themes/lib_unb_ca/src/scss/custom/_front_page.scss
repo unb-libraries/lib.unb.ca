@@ -103,7 +103,7 @@
   }
 
   #navbar-main:not(.affix) .navbar-nav li.show>button {
-    color: $white;
+    color: $navbar-dark-hover;
     background: #343c41;
     background-image: none;
     border-bottom-color: $header-hover-color;
@@ -137,7 +137,6 @@
 
   /* OVERRIDE - to do: remove original affix */
   .affix {
-    /*background: none;*/
     transition: none;
   }
   #header .affix li.show > .nav-link,
@@ -162,9 +161,11 @@
     &.focus-ring:focus {
       outline: 1px dotted $white;
     }
+
     &:hover {
-      color: $navbar-dark-hover;
+      color: $gray-200;
     }
+
     span.text-nowrap {
       &:after {
         @media (min-width: 992px) {
@@ -174,13 +175,7 @@
       }
     }
   }
-  #navbar-main.affix {
-    .megamenu-li button.nav-link {
-      &:hover {
-        color: $gray-200;
-      }
-    }
-  }
+
   button[data-target="#navbar"][aria-expanded="false"]:after {
     @include link-fa-icon('\f0c9', left);
   }
@@ -200,6 +195,28 @@
 
   @media (max-width: 991px) {
     #navbar-main #navbar {
+      button {
+        font-size: 1.3rem;
+
+        &:after {
+          float: right;
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+        }
+
+        &[aria-expanded="false"] {
+          &:after {
+            content: "\f078"
+          }
+        }
+
+        &[aria-expanded="true"] {
+          &:after {
+            content: "\f077"
+          }
+        }
+      }
+
       li.show>button {
         background: rgb(55 63 68 / 30%)!important;
       }
@@ -301,7 +318,7 @@
         padding-right: .2rem;
       }
       a {
-        line-height: 1.3rem;
+        line-height: 1.4rem;
 
         &:before {
           content: none;
