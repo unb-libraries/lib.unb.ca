@@ -42,13 +42,13 @@ class DiscoverySearch extends BlockBase {
         <div id="discovery-search" class="flex-grow-1">
         <div class="card">
           <h2 class="sr-only">Search</h2>
-          <div class="card-header px-0 pb-1">
+          <div class="card-header px-2 pb-1">
             <nav class="navbar navbar-expand-lg text-nowrap">
             <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 Select a search category
             </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                   <ul class="navbar-nav d-flex align-items-lg-end justify-content-around w-100">
+                   <ul class="navbar-nav d-flex align-items-lg-end justify-content-between w-100">
                       <li class="nav-item"><button aria-controls="searchPanel1" aria-expanded="true" class="Accordion-trigger p-2" id="searchBtn1">Catalogue</button></li>
                       <li class="nav-item"><button aria-controls="searchPanel2" aria-expanded="false" class="Accordion-trigger p-2" id="searchBtn2" tabindex="-1">Reserves</button></li>
                       <li class="nav-item"><button aria-controls="searchPanel3" aria-expanded="false" class="Accordion-trigger p-2" id="searchBtn3" tabindex="-1">Databases</button></li>
@@ -63,7 +63,7 @@ class DiscoverySearch extends BlockBase {
                 </div>
              </nav>
           </div>
-          <div class="card-body p-0">
+          <div class="card-body px-2 py-0">
             <div aria-labelledby="searchBtn1 dropdownBtn1" class="Accordion-panel" id="searchPanel1" role="region">' . $this->getCatalogueForm() . '</div>
             <div aria-labelledby="searchBtn2 dropdownBtn2" class="Accordion-panel" id="searchPanel2" role="region" hidden="">' . $this->getReservesForm() . '</div>
             <div aria-labelledby="searchBtn3 dropdownBtn3" class="Accordion-panel" id="searchPanel3" role="region" hidden="">' . $this->getDatabasesForm() . '</div>

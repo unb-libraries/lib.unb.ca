@@ -36,6 +36,7 @@ class AskUsEmbedded extends BlockBase {
         ],
         'class' => [
           'chat-embedded',
+          'px-2',
         ],
       ],
     ];
