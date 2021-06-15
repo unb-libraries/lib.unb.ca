@@ -50,30 +50,35 @@ class LibraryHoursToday extends BlockBase {
       </caption>
       <tbody>
         <tr>
-          <th scope="row"><a href="/about/harriet-irving-library">Harriet Irving</a></th>
-          <td class="ch-nd ch-live ch-live-co ch-live-nsdo ch-live-am" data-ch-id="hil" data-ch-days="0"
-              data-ch-format-time="h:mma" data-ch-format-date="dd">Unavailable</td>
+          <th scope="row"><a class="d-block link-no-hover" href="/about/harriet-irving-library">Harriet Irving</a></th>
+          <td class="ch-nd ch-live ch-live-co ch-live-nsdo ch-live-am" data-ch-id="hil"
+            data-ch-days="0" data-ch-format-time="h:mma" data-ch-format-date="dd">Unavailable</td>
         </tr>
         <tr>
-          <th scope="row"><a href="/about/science-forestry-library">Science &amp; Forestry</a></th>
-          <td class="ch-nd ch-live ch-live-co ch-live-nsdo ch-live-am" data-ch-id="sfl" data-ch-days="0"
-              data-ch-format-time="h:mma" data-ch-format-date="dd">Unavailable</td>
+          <th scope="row"><a class="d-block link-no-hover" href="/about/science-forestry-library">Science &amp; Forestry</a></th>
+          <td class="ch-nd ch-live ch-live-co ch-live-nsdo ch-live-am" data-ch-id="sfl"
+            data-ch-days="0" data-ch-format-time="h:mma" data-ch-format-date="dd">Unavailable</td>
         </tr>
         <tr>
-          <th scope="row"><a href="/about/engineering-computer-science-library">Engineering &amp; CS</a></th>
-          <td class="ch-nd ch-live ch-live-co ch-live-nsdo ch-live-am" data-ch-id="ecsl" data-ch-days="0"
-              data-ch-format-time="h:mma" data-ch-format-date="dd">Unavailable</td>
+          <th scope="row"><a class="d-block link-no-hover" href="/about/engineering-computer-science-library">Engineering &amp; CS</a></th>
+          <td class="ch-nd ch-live ch-live-co ch-live-nsdo ch-live-am" data-ch-id="ecsl"
+            data-ch-days="0" data-ch-format-time="h:mma" data-ch-format-date="dd">Unavailable</td>
         </tr>
         <tr>
-          <th scope="row"><a href="/about/hans-w-klohn-commons">Saint John</a></th>
-          <td class="ch-nd ch-live ch-live-co ch-live-nsdo ch-live-am" data-ch-id="hwkc" data-ch-days="0"
-              data-ch-format-time="h:mma" data-ch-format-date="dd">Unavailable</td>
+          <th scope="row"><a class="d-block link-no-hover" href="/about/hans-w-klohn-commons">Saint John</a></th>
+          <td class="ch-nd ch-live ch-live-co ch-live-nsdo ch-live-am" data-ch-id="hwkc"
+            data-ch-days="0" data-ch-format-time="h:mma" data-ch-format-date="dd">Unavailable</td>
+        </tr>
+        <tr>
+          <th scope="row"><a class="d-block link-no-hover" href="/about/hours/gerard-v-la-forest-law-library">Law</a></th>
+          <td class="ch-nd ch-live ch-live-co ch-live-nsdo ch-live-am" data-ch-id="law"
+            data-ch-days="0" data-ch-format-time="h:mma" data-ch-format-date="dd">Unavailable</td>
         </tr>
       </tbody>
       <tfoot>
         <tr>
-          <td colspan="2">
-            <a class="pt-3" href="/about/hours">
+          <td>
+            <a class="d-block link-no-hover mt-1 py-1" href="/about/hours">
                 Complete Hours<i class="fas fa-clock fa=sm ml-1" aria-hidden="true"></i>
             </a>
           </td>
