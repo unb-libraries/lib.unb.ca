@@ -5,6 +5,7 @@ namespace Drupal\portolan\Entity;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Session\AccountInterface;
 
 /**
  * Defines the "Portolan record" entity.
@@ -16,6 +17,7 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *   label_collection = @Translation("Portolan records"),
  *   handlers = {
  *     "views_data" = "Drupal\portolan\Entity\PortolanRecordViewsData",
+ *     "access" = "Drupal\portolan\Entity\Access\PortolanRecordAccessControlHandler",
  *     "route_provider" = {
  *       "html" = "Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider"
  *     }
