@@ -77,12 +77,11 @@ class LibraryHoursToday extends BlockBase {
       </tbody>
       <tfoot>
         <tr>
-          <td>
+          <td colspan="2">
             <a class="mt-1 py-1" href="/about/hours">
                 Complete Hours<i class="fas fa-clock fa=sm ml-1" aria-hidden="true"></i>
             </a>
           </td>
-          <td><span class="sr-only">empty</span></td>
         </tr>
       </tfoot>
     </table>';
