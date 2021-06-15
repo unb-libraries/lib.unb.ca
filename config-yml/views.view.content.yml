@@ -30,7 +30,7 @@ display:
       access:
         type: perm
         options:
-          perm: 'view media'
+          perm: 'access content overview'
       cache:
         type: tag
       query:
