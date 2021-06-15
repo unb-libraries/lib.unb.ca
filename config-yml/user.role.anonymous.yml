@@ -15,3 +15,4 @@ permissions:
   - 'use search_api_autocomplete for search_our_webpages'
   - 'view media'
   - 'view own webform submission'
+  - 'view portolan_record entities'
