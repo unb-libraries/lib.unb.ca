@@ -1543,6 +1543,7 @@ display:
         type: none
         options: {  }
       display_description: ''
+      enabled: false
     cache_metadata:
       max-age: 0
       contexts:
