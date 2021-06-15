@@ -82,6 +82,7 @@ class LibraryHoursToday extends BlockBase {
                 Complete Hours<i class="fas fa-clock fa=sm ml-1" aria-hidden="true"></i>
             </a>
           </td>
+          <td><span class="sr-only">empty</span></td>
         </tr>
       </tfoot>
     </table>';
