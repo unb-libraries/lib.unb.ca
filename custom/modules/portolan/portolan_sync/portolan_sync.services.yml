@@ -19,8 +19,13 @@ services:
       - '@portolan.local_file_transfer'
       - '/app/html/modules/custom/portolan/portolan_sync/portolan.mrc'
 
-  portolan.world_cat_cover_image_parser:
+  portolan.world_cat_cover_image_parser.v1:
     class: Drupal\portolan_sync\Synchronization\WorldCatCoverImageParser
+    arguments:
+      -
+        regex: '/\<img ng-src="([^"]+)"/'
+        width: 70
+        target_width: 140
 
   portolan.storage:
     class: Drupal\Core\Entity\ContentEntityStorageInterface
