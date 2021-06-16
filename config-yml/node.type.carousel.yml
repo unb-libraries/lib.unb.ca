@@ -4,13 +4,16 @@ status: true
 dependencies:
   module:
     - menu_ui
+    - search_api_exclude
 third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: Carousel
+  search_api_exclude:
+    enabled: 0
+name: Slideshow
 type: carousel
-description: 'Use Carousel pages to create cycling Slideshows.'
+description: 'Use <i>Slideshow pages</i> to create cycling Slideshows, eg. ''Videos & Tutorials'' block.'
 help: ''
 new_revision: false
 preview_mode: 0
