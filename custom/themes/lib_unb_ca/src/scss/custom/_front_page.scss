@@ -327,3 +327,33 @@
     }
   }
 }
+
+.site-footer>div {
+  a.nav-link {
+    &:hover {
+      background: $dark;
+    }
+  }
+
+  &:not(.footer-middle) a.nav-link {
+    &:after {
+      opacity: 0.9;
+    }
+  }
+
+  &.footer-top {
+    @include css3-prefix(transition, all .35s ease-in);
+  }
+
+  &.footer-middle {
+    a {
+      margin-left: 0;
+    }
+  }
+
+  &.footer-bottom a.nav-link {
+    &:hover {
+      background: #272B2F;
+    }
+  }
+}
