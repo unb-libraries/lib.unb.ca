@@ -1,0 +1,11 @@
+uuid: cee2b47b-90a8-4c53-99d3-b7b4c124f872
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.carousel
+id: node.carousel
+target_entity_type_id: node
+target_bundle: carousel
+default_langcode: site_default
+language_alterable: false
