@@ -274,6 +274,7 @@
 }
 
 .path-frontpage {
+  /* Library News Overrides */
   .library-news {
     .more-link {
       &:before {
@@ -283,8 +284,36 @@
       }
     }
   }
-}
-.path-frontpage {
+
+  /* Videos & Tutorials Overrides */
+  .views_slideshow_cycle_teaser_section {
+    border: none;
+  }
+
+  .videos-tutorials {
+    width: auto;
+
+    a {
+      display: block;
+
+      .caption {
+        @include css3-prefix(transition, opacity .3s ease-in-out);
+        background-image: linear-gradient(180deg, rgb(27 33 37 / 45%), rgb(27 33 37 / 100%));
+        color: $white;
+        position: absolute;
+        padding: .5rem;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+      }
+
+      &:hover .caption {
+        opacity: 1;
+      }
+    }
+  }
+
   @media (min-width: 992px) {
     .layout__region--first {
       border-right: 1px solid #ddd;
@@ -328,6 +357,7 @@
   }
 }
 
+/* Page template Footer Overrides */
 .site-footer>div {
   a.nav-link {
     &:hover {
@@ -357,3 +387,4 @@
     }
   }
 }
+
