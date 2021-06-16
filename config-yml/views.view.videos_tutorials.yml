@@ -688,7 +688,7 @@ display:
           row_class: ''
           default_row_class: false
           type: ul
-          wrapper_class: 'd-none d-lg-block'
+          wrapper_class: ''
           class: ''
       row:
         type: fields
