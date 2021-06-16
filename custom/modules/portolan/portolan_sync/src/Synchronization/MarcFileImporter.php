@@ -19,6 +19,13 @@ class MarcFileImporter implements DataImporterInterface {
   protected $parser;
 
   /**
+   * The importer for cover images.
+   *
+   * @var \Drupal\portolan_sync\Synchronization\DataImporterInterface
+   */
+  protected $coverImageImporter;
+
+  /**
    * Get the parser.
    *
    * @return \Drupal\portolan_sync\Synchronization\ParserInterface
@@ -29,13 +36,26 @@ class MarcFileImporter implements DataImporterInterface {
   }
 
   /**
+   * Get the cover image importer.
+   *
+   * @return \Drupal\portolan_sync\Synchronization\DataImporterInterface
+   *   An importer object.
+   */
+  protected function coverImageImporter() {
+    return $this->coverImageImporter;
+  }
+
+  /**
    * Construct a new MarcFileImporter instance.
    *
    * @param \Drupal\portolan_sync\Synchronization\ParserInterface $parser
    *   A parser to extract Portolan relevant info.
+   * @param \Drupal\portolan_sync\Synchronization\DataImporterInterface $cover_image_importer
+   *   An importer for cover images.
    */
-  public function __construct(ParserInterface $parser) {
+  public function __construct(ParserInterface $parser, DataImporterInterface $cover_image_importer) {
     $this->parser = $parser;
+    $this->coverImageImporter = $cover_image_importer;
   }
 
   /**
@@ -50,6 +70,9 @@ class MarcFileImporter implements DataImporterInterface {
         $oclc_id = $portolan_record[PortolanRecordInterface::FIELD_OCLC_ID];
         if (!array_key_exists($oclc_id, $portolan_records)) {
           $portolan_records[$oclc_id] = $portolan_record;
+          $portolan_records[$oclc_id][PortolanRecordInterface::FIELD_COVER_URI] = $this
+            ->coverImageImporter()
+            ->import($oclc_id);
           $index++;
         }
         else {

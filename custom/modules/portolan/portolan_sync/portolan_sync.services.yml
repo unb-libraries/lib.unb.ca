@@ -6,6 +6,7 @@ services:
     class: Drupal\portolan_sync\Synchronization\MarcFileImporter
     arguments:
       - '@portolan.marc_parser'
+      - '@portolan.world_cat_cover_image_importer.v1'
 
   portolan.local_file_transfer:
     class: Drupal\portolan_sync\Synchronization\LocalFileTransfer
@@ -26,6 +27,13 @@ services:
         regex: '/\<img ng-src="([^"]+)"/'
         width: 70
         target_width: 140
+
+  portolan.world_cat_cover_image_importer.v1:
+    class: Drupal\portolan_sync\Synchronization\WorldCatCoverImageImporter
+    arguments:
+      - 'https://unb.on.worldcat.org/oclc/'
+      - '@http_client'
+      - '@portolan.world_cat_cover_image_parser.v1'
 
   portolan.storage:
     class: Drupal\Core\Entity\ContentEntityStorageInterface
