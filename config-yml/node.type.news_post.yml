@@ -4,13 +4,16 @@ status: true
 dependencies:
   module:
     - menu_ui
+    - search_api_exclude
 third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
+  search_api_exclude:
+    enabled: 0
 name: 'News post'
 type: news_post
-description: 'Use <i>News posts</i> for content to be dispalyed in the front page''s ''Library News'' section.'
+description: 'Use <i>News post</i> for content to be dispalyed in the front page''s ''Library News'' section.'
 help: ''
 new_revision: true
 preview_mode: 0

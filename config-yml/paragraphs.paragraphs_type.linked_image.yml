@@ -1,9 +1,9 @@
-uuid: 80c64a8c-c246-42e8-a5a7-910baed5a078
+uuid: f617b1a6-cd95-46cb-84c4-416b773c09fc
 langcode: en
 status: true
 dependencies: {  }
-id: slide
-label: Slide
+id: linked_image
+label: 'Linked Image'
 icon_uuid: null
 icon_default: null
 description: ''
