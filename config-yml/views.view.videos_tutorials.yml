@@ -689,7 +689,7 @@ display:
           default_row_class: false
           type: ul
           wrapper_class: ''
-          class: ''
+          class: list-colcount-2
       row:
         type: fields
         options:
