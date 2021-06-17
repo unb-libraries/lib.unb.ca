@@ -1,11 +1,11 @@
-uuid: cee2b47b-90a8-4c53-99d3-b7b4c124f872
+uuid: 51c9e515-19ff-4fea-92e9-16e1776730ac
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.carousel
-id: node.carousel
+    - node.type.news_post
+id: node.news_post
 target_entity_type_id: node
-target_bundle: carousel
+target_bundle: news_post
 default_langcode: site_default
 language_alterable: false

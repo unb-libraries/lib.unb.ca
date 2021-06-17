@@ -1,27 +1,25 @@
-uuid: 7be79b1c-d6d3-4fc6-bf2e-2c6de5da1541
+uuid: ab6b3e78-b699-4161-80c6-695d4fc14825
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.slide.field_slide_image
-    - field.field.paragraph.slide.field_url
-    - image.style.thumbnail
-    - paragraphs.paragraphs_type.slide
+    - field.field.paragraph.linked_image.field_media_image
+    - field.field.paragraph.linked_image.field_url
+    - paragraphs.paragraphs_type.linked_image
   module:
-    - image
     - link
-id: paragraph.slide.default
+    - media_library
+id: paragraph.linked_image.default
 targetEntityType: paragraph
-bundle: slide
+bundle: linked_image
 mode: default
 content:
-  field_slide_image:
+  field_media_image:
+    type: media_library_widget
     weight: 1
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      media_types: {  }
     third_party_settings: {  }
-    type: image_image
     region: content
   field_url:
     weight: 0

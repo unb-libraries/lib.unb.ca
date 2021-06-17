@@ -1,4 +1,4 @@
-uuid: 8506b497-4dbf-4280-b759-87581a65c4d5
+uuid: ee53465a-4c71-4311-9d2b-3dd6c0e362a2
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     - field.storage.user.field_first_name
     - field.storage.user.field_last_name
     - node.type.booking_space
-    - node.type.carousel
+    - node.type.slideshow
     - node.type.library_page
     - node.type.news_post
   module:
@@ -17,7 +17,7 @@ _core:
 id: content_non_page
 label: 'Content (non-page)'
 module: node
-description: 'Find and manage specialized content, eg. Booking Spaces, Carousel.'
+description: 'Find and manage specialized content, eg. Booking Spaces, Slideshow.'
 tag: default
 base_table: node_field_data
 base_field: nid
@@ -1096,7 +1096,7 @@ display:
           operator: in
           value:
             booking_space: booking_space
-            carousel: carousel
+            slideshow: slideshow
           group: 1
           exposed: true
           expose:

@@ -1,30 +1,29 @@
-uuid: 82744632-c99f-4c88-8cbd-80413b80db60
+uuid: 6313a906-fc17-4bb9-afc8-ed9505398398
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.slide.field_slide_image
-    - field.field.paragraph.slide.field_url
-    - paragraphs.paragraphs_type.slide
+    - field.field.paragraph.linked_image.field_media_image
+    - field.field.paragraph.linked_image.field_url
+    - paragraphs.paragraphs_type.linked_image
   module:
-    - image
     - link
-id: paragraph.slide.default
+id: paragraph.linked_image.default
 targetEntityType: paragraph
-bundle: slide
+bundle: linked_image
 mode: default
 content:
-  field_slide_image:
-    weight: 0
+  field_media_image:
+    type: entity_reference_entity_view
+    weight: 1
     label: hidden
     settings:
-      image_style: ''
-      image_link: ''
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    type: image
     region: content
   field_url:
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       trim_length: 80

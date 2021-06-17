@@ -1,16 +1,16 @@
-uuid: 0e9d2833-2225-41fa-afe7-a3535e1d6241
+uuid: f2162cef-3227-4e90-b4ce-e4579fe422e5
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.carousel.field_carousel
-    - node.type.carousel
+    - field.field.node.slideshow.field_linked_images
+    - node.type.slideshow
   module:
     - user
-id: node.carousel.teaser
+id: node.slideshow.teaser
 targetEntityType: node
-bundle: carousel
+bundle: slideshow
 mode: teaser
 content:
   links:
@@ -19,7 +19,6 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
-  field_carousel: true
-  field_tag: true
+  field_linked_images: true
   langcode: true
   search_api_excerpt: true

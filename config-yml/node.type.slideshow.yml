@@ -1,4 +1,4 @@
-uuid: 25c27651-69cf-441e-8ea6-13715b1c83f9
+uuid: 8ef3f231-563a-4e1f-a5eb-2b19dd6d802e
 langcode: en
 status: true
 dependencies:
@@ -11,10 +11,10 @@ third_party_settings:
     parent: ''
   search_api_exclude:
     enabled: 0
-name: Slideshow
-type: carousel
-description: 'Use <i>Slideshow pages</i> to create cycling Slideshows, eg. ''Videos & Tutorials'' block.'
+name: 'Images page'
+type: slideshow
+description: 'Use <i>Images page</i> to create image collections for use in Slideshows, etc, eg. ''Videos & Tutorials'' block.'
 help: ''
 new_revision: false
 preview_mode: 0
-display_submitted: false
+display_submitted: true

@@ -1,20 +1,20 @@
-uuid: 3234e010-c5c6-4063-8abf-b3dd00a2c67b
+uuid: 2301f32c-ba97-45dd-91bd-186e96885ca3
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_carousel
-    - node.type.carousel
-    - paragraphs.paragraphs_type.slide
+    - field.storage.node.field_linked_images
+    - node.type.slideshow
+    - paragraphs.paragraphs_type.linked_image
   module:
     - entity_reference_revisions
-id: node.carousel.field_carousel
-field_name: field_carousel
+id: node.slideshow.field_linked_images
+field_name: field_linked_images
 entity_type: node
-bundle: carousel
-label: Carousel
+bundle: slideshow
+label: 'Linked images'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -23,30 +23,33 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      slide: slide
+      linked_image: linked_image
     target_bundles_drag_drop:
       body_section:
-        weight: 9
-        enabled: false
-      body_sidebar_section:
         weight: 10
         enabled: false
-      carousel:
-        weight: 8
-        enabled: false
-      custom_block_section:
+      body_sidebar_section:
         weight: 11
         enabled: false
-      departement_membership:
+      custom_block_section:
         weight: 12
         enabled: false
-      equal_columns_section:
+      departement_membership:
         weight: 13
         enabled: false
-      fullwidth_body_section:
+      equal_columns_section:
         weight: 14
         enabled: false
-      slide:
+      equal_width_3_columns_section:
+        weight: 15
+        enabled: false
+      fullwidth_body_section:
+        weight: 16
+        enabled: false
+      linked_image:
         enabled: true
-        weight: 9
+        weight: 17
+      slide:
+        weight: 18
+        enabled: false
 field_type: entity_reference_revisions
