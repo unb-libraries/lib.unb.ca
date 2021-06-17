@@ -1,16 +1,16 @@
-uuid: f2162cef-3227-4e90-b4ce-e4579fe422e5
+uuid: 7986b7aa-5c8a-4c8b-b1ff-eeb56e99b398
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.slideshow.field_linked_images
-    - node.type.slideshow
+    - field.field.node.images_page.field_linked_images
+    - node.type.images_page
   module:
     - user
-id: node.slideshow.teaser
+id: node.images_page.teaser
 targetEntityType: node
-bundle: slideshow
+bundle: images_page
 mode: teaser
 content:
   links:

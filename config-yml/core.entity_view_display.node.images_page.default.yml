@@ -1,29 +1,29 @@
-uuid: 8be41e46-7136-4cc5-98b2-20e9d052ed57
+uuid: 29857ac2-6d64-42cc-8e52-14fc76663a93
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.slideshow.field_linked_images
-    - node.type.slideshow
+    - field.field.node.images_page.field_linked_images
+    - node.type.images_page
   module:
     - entity_reference_revisions
     - user
-id: node.slideshow.default
+id: node.images_page.default
 targetEntityType: node
-bundle: slideshow
+bundle: images_page
 mode: default
 content:
   field_linked_images:
-    type: entity_reference_revisions_entity_view
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
     region: content
   links:
-    weight: 2
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }

@@ -1,17 +1,17 @@
-uuid: b9be309e-ef09-4ddf-ad73-273b01ca1f3d
+uuid: 10e7f258-3e59-46b0-906d-42475891ed70
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.slideshow.field_linked_images
-    - node.type.slideshow
+    - field.field.node.images_page.field_linked_images
+    - node.type.images_page
   module:
     - content_moderation
     - paragraphs
     - path
-id: node.slideshow.default
+id: node.images_page.default
 targetEntityType: node
-bundle: slideshow
+bundle: images_page
 mode: default
 content:
   created:
@@ -21,8 +21,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_linked_images:
-    type: entity_reference_paragraphs
-    weight: 122
+    weight: 121
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -31,6 +30,7 @@ content:
       form_display_mode: default
       default_paragraph_type: linked_image
     third_party_settings: {  }
+    type: entity_reference_paragraphs
     region: content
   langcode:
     type: language_select

@@ -1,21 +1,21 @@
-uuid: 2301f32c-ba97-45dd-91bd-186e96885ca3
+uuid: cc62e4e7-2bf4-4688-b337-d5d6b780ef3b
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_linked_images
-    - node.type.slideshow
+    - node.type.images_page
     - paragraphs.paragraphs_type.linked_image
   module:
     - entity_reference_revisions
-id: node.slideshow.field_linked_images
+id: node.images_page.field_linked_images
 field_name: field_linked_images
 entity_type: node
-bundle: slideshow
+bundle: images_page
 label: 'Linked images'
 description: ''
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -26,30 +26,27 @@ settings:
       linked_image: linked_image
     target_bundles_drag_drop:
       body_section:
-        weight: 10
+        weight: 9
         enabled: false
       body_sidebar_section:
-        weight: 11
+        weight: 10
         enabled: false
       custom_block_section:
-        weight: 12
+        weight: 11
         enabled: false
       departement_membership:
-        weight: 13
+        weight: 12
         enabled: false
       equal_columns_section:
-        weight: 14
+        weight: 13
         enabled: false
       equal_width_3_columns_section:
-        weight: 15
+        weight: 14
         enabled: false
       fullwidth_body_section:
-        weight: 16
+        weight: 15
         enabled: false
       linked_image:
         enabled: true
-        weight: 17
-      slide:
-        weight: 18
-        enabled: false
+        weight: 16
 field_type: entity_reference_revisions
