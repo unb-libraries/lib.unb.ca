@@ -237,13 +237,25 @@ class PortolanMarcParser implements ParserInterface {
 
     foreach ($marc_record->getFields('593') as $subfields) {
       foreach ($subfields->getSubfields() as $code => $value) {
-        if ($code == 'a' && preg_match('^Jurisdiction: .*^', ($jurisdiction = $value->getData()))) {
-          $jurisdiction = str_replace('Jurisdiction: ', '', $jurisdiction);
-          $jurisdictions[] = rtrim($jurisdiction, '.');
+        if ($code == 'a' && preg_match('^Jurisdiction: .*^', ($terms = $value->getData()))) {
+          $replace = [
+            'Jurisdiction: ' => '',
+            ',' => ';',
+            '&' => 'and',
+            '.' => '',
+          ];
+          $terms = str_replace(array_keys($replace), array_values($replace), $terms);
+          while (strpos($terms, '  ')) {
+            $terms = str_replace('  ', ' ', $terms);
+          }
+          foreach (explode(';', $terms) as $term) {
+            $jurisdictions[] = trim($term);
+          }
         }
       }
     }
-    return $jurisdictions;
+
+    return array_unique($jurisdictions);
   }
 
   /**
