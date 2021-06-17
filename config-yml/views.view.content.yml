@@ -1,4 +1,4 @@
-uuid: a3f71984-d818-4928-a4b6-dd567afd6863
+uuid: 04553c16-6f73-4663-9eee-c5639746a971
 langcode: en
 status: true
 dependencies:
@@ -8,7 +8,7 @@ dependencies:
     - field.storage.user.field_last_name
     - image.style.front_page_image
     - node.type.booking_space
-    - node.type.carousel
+    - node.type.slideshow
     - node.type.library_page
     - node.type.news_post
   module:
@@ -1146,7 +1146,7 @@ display:
           operator: 'not in'
           value:
             booking_space: booking_space
-            carousel: carousel
+            slideshow: slideshow
           group: 1
           exposed: true
           expose:
@@ -1460,7 +1460,7 @@ display:
           operator: 'not in'
           value:
             booking_space: booking_space
-            carousel: carousel
+            slideshow: slideshow
           group: 1
           exposed: false
           expose:

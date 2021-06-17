@@ -1,4 +1,4 @@
-uuid: fbf92341-1c70-476c-a1f4-78f19a494ace
+uuid: 1dfda9db-9380-49b0-8b38-74d2c54853bc
 langcode: en
 status: true
 dependencies:
@@ -6,8 +6,8 @@ dependencies:
     - entity_reference_revisions
     - node
     - paragraphs
-id: node.field_carousel
-field_name: field_carousel
+id: node.field_linked_images
+field_name: field_linked_images
 entity_type: node
 type: entity_reference_revisions
 settings:

@@ -1,21 +1,21 @@
-uuid: 8a512d87-1827-42a1-bc03-caeb821cd465
+uuid: 8be41e46-7136-4cc5-98b2-20e9d052ed57
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.carousel.field_carousel
-    - node.type.carousel
+    - field.field.node.slideshow.field_linked_images
+    - node.type.slideshow
   module:
     - entity_reference_revisions
     - user
-id: node.carousel.default
+id: node.slideshow.default
 targetEntityType: node
-bundle: carousel
+bundle: slideshow
 mode: default
 content:
-  field_carousel:
+  field_linked_images:
     type: entity_reference_revisions_entity_view
-    weight: 0
+    weight: 1
     label: hidden
     settings:
       view_mode: default
@@ -23,7 +23,7 @@ content:
     third_party_settings: {  }
     region: content
   links:
-    weight: 1
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }

@@ -1,16 +1,17 @@
-uuid: aeb0adfc-4cf2-4e2d-9548-ddcffbc4394a
+uuid: b9be309e-ef09-4ddf-ad73-273b01ca1f3d
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.carousel.field_carousel
-    - node.type.carousel
+    - field.field.node.slideshow.field_linked_images
+    - node.type.slideshow
   module:
+    - content_moderation
     - paragraphs
     - path
-id: node.carousel.default
+id: node.slideshow.default
 targetEntityType: node
-bundle: carousel
+bundle: slideshow
 mode: default
 content:
   created:
@@ -19,16 +20,16 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_carousel:
+  field_linked_images:
     type: entity_reference_paragraphs
     weight: 122
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: open
+      edit_mode: preview
       add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: linked_image
     third_party_settings: {  }
     region: content
   langcode:
@@ -37,6 +38,12 @@ content:
     region: content
     settings:
       include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
     third_party_settings: {  }
   path:
     type: path
@@ -85,7 +92,7 @@ content:
     third_party_settings: {  }
   url_redirects:
     weight: 50
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden: {  }
