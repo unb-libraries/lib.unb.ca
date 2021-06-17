@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: portolan_sync
+name: 'Portolan synchronization'
+worker_id: portolan_flush_sync
+params: {  }
+interval: 604800
+first_exec: 1624258800
