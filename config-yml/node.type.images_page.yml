@@ -1,4 +1,4 @@
-uuid: 8ef3f231-563a-4e1f-a5eb-2b19dd6d802e
+uuid: 99084d34-72de-4b60-89ef-3511435e5bb0
 langcode: en
 status: true
 dependencies:
@@ -12,7 +12,7 @@ third_party_settings:
   search_api_exclude:
     enabled: 0
 name: 'Images page'
-type: slideshow
+type: images_page
 description: 'Use <i>Images page</i> to create image collections for use in Slideshows, etc, eg. ''Videos & Tutorials'' block.'
 help: ''
 new_revision: false
