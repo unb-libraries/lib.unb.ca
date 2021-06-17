@@ -273,8 +273,10 @@ class PortolanMarcParser implements ParserInterface {
     foreach ($marc_record->getFields('691') as $subfields) {
       foreach ($subfields->getSubfields() as $code => $value) {
         if ($code == 'a') {
-          $location = $value->getdata();
-          $locations[] = rtrim($location, '.');
+          $terms = explode(';', $value->getdata());
+          foreach ($terms as $term) {
+            $locations[] = rtrim($term, '.');
+          }
         }
       }
     }
