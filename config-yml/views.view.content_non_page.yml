@@ -6,7 +6,7 @@ dependencies:
     - field.storage.user.field_first_name
     - field.storage.user.field_last_name
     - node.type.booking_space
-    - node.type.slideshow
+    - node.type.images_page
     - node.type.library_page
     - node.type.news_post
   module:
@@ -1096,7 +1096,7 @@ display:
           operator: in
           value:
             booking_space: booking_space
-            slideshow: slideshow
+            images_page: images_page
           group: 1
           exposed: true
           expose:

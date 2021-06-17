@@ -1,13 +1,13 @@
-uuid: ffc4b53d-2992-4b84-8b7e-902ea83837a9
+uuid: ecdbd289-f1da-41da-aacc-1d4d2f2baaf6
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.slideshow
-id: node.slideshow.promote
+    - node.type.images_page
+id: node.images_page.promote
 field_name: promote
 entity_type: node
-bundle: slideshow
+bundle: images_page
 label: 'Promoted to front page'
 description: ''
 required: false
