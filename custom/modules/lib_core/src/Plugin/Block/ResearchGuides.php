@@ -45,7 +45,7 @@ class ResearchGuides extends BlockBase {
     }
 
     return '
-      <div id="research-guides" class="front-page-border px-4">
+      <div id="research-guides" class="front-page-border p-4">
         <h3>Key Resources by Subject</h3>
         <form id="category-select" class="chosen-compact my-3">
           <div class="d-flex flex-column flex-lg-row">
