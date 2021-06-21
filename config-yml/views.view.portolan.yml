@@ -664,3 +664,27 @@ display:
         - url.query_args
       tags:
         - 'config:search_api.index.portolan'
+  simple_search_form:
+    display_plugin: page
+    id: simple_search_form
+    display_title: 'Simple Search'
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: clc/portolan/search
+      cache:
+        type: none
+      defaults:
+        cache: false
+      display_comment: 'Duplicate of page_1 which exports its search form as a block'
+      exposed_block: true
+      display_description: ''
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+      tags:
+        - 'config:search_api.index.portolan'

@@ -23,6 +23,7 @@ settings:
     categories:
       Custom: Custom
       'UNB Libraries': 'UNB Libraries'
+      Views: Views
       Block: '0'
       'Chaos Tools': '0'
       'Contact message fields': '0'
