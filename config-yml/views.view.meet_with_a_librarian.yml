@@ -551,7 +551,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<figure class=\"front-page-border link-hover-caption\">\r\n  {{ field_media_image }}\r\n  <figcaption>{{ field_url }}</figcaption>\r\n</figure>\r\n"
+            text: "<figure class=\"caption-overlay-bottom\">\r\n  {{ field_media_image }}\r\n  <figcaption class=\"caption-hover\">{{ field_url }}</figcaption>\r\n</figure>\r\n"
             make_link: true
             path: '{{ field_url_1 }}'
             absolute: false
@@ -608,12 +608,14 @@ display:
         fields: false
         pager: false
         footer: false
+        css_class: false
       pager:
         type: some
         options:
           items_per_page: 1
           offset: null
       footer: {  }
+      css_class: front-page-border
     cache_metadata:
       max-age: 0
       contexts:
