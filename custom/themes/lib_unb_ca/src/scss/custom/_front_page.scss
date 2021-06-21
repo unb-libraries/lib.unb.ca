@@ -349,6 +349,10 @@
 
   &.footer-top {
     @include css3-prefix(transition, all .35s ease-in);
+
+    ul {
+      margin-left: 0;
+    }
   }
 
   &.footer-middle {
@@ -363,4 +367,3 @@
     }
   }
 }
-
