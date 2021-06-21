@@ -3,17 +3,17 @@
     <div class="col-md-9">
         <table>
             <tr>
-                <td>Author(s):</td>
+                <th>Author(s):</th>
                 <td>
                     {% for author in portolan_record.author %}
                         <span>{{ author.value }}</span>{% if not loop.last %};{% endif %}
                     {% endfor %}
                 </td>
             </tr>
-            <tr><td>Publication:</td><td>{{ portolan_record.publication.value }}</td></tr>
-            <tr><td>Age range:</td><td>{{ portolan_record.age_range.value }}</td></tr>
+            <tr><th>Publication:</th><td>{{ portolan_record.publication.value }}</td></tr>
+            <tr><th>Age range:</th><td>{{ portolan_record.age_range.value }}</td></tr>
             <tr>
-                <td>Geographical location(s):</td>
+                <th>Geographical location(s):</th>
                 <td>
                     {% for location in portolan_record.location %}
                     <span>{{ location.value }}</span>{% if not loop.last %},{% endif %}
@@ -21,23 +21,23 @@
                 </td>
             </tr>
             <tr>
-                <td>Jurisdiction(s):</td>
+                <th>Jurisdiction(s):</th>
                 <td>
                     {% for jurisdiction in portolan_record.jurisdiction %}
                         <span>{{ jurisdiction.value }}</span>{% if not loop.last %},{% endif %}
                     {% endfor %}
                 </td>
             </tr>
-            <tr><td>Call number:</td><td>{{ portolan_record.call_number.value }}</td></tr>
+            <tr><th>Call number:</th><td>{{ portolan_record.call_number.value }}</td></tr>
             <tr>
-                <td>Descriptor(s):</td>
+                <th>Descriptor(s):</th>
                 <td>
                     {% for descriptor in portolan_record.descriptor %}
                         <span>{{ descriptor.value }}</span>{% if not loop.last %},{% endif %}
                     {% endfor %}
                 </td>
             </tr>
-            <tr><td>Note:</td><td>{{ portolan_record.note.value }}</td></tr>
+            <tr><th>Note:</th><td>{{ portolan_record.note.value }}</td></tr>
         </table>
     </div>
     <div class="col-md-3">
