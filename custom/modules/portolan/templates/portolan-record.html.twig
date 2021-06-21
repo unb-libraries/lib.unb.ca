@@ -1,6 +1,11 @@
 <div class="row">
     <div class="col-md-12 mb-3"><a class="btn btn-sm btn-dark" href="https://unb.on.worldcat.org/oclc/{{ portolan_record.oclc_id.value }}" target="_blank">View on WorldCat</a></div>
-    <div class="col-md-9">
+    <div class="col-md-3 order-md-9">
+        {% if portolan_record.cover_uri %}
+            <img src="{{ portolan_record.cover_uri.value }}">
+        {% endif %}
+    </div>
+    <div class="col-md-9 order-md-3">
         <table>
             <tr>
                 <th>Author(s):</th>
@@ -40,10 +45,5 @@
             <tr><th>Note:</th><td>{{ portolan_record.note.value }}</td></tr>
         </table>
     </div>
-    <div class="col-md-3">
-        {% if portolan_record.cover_uri %}
-            <img src="{{ portolan_record.cover_uri.value }}">
-        {% endif %}
-    </div>
-    <div class="col-md-12 mt-4">{{ portolan_record.abstract.value }}</div>
+    <div class="col-md-12 mt-4 order-md-12">{{ portolan_record.abstract.value }}</div>
 </div>
