@@ -59,7 +59,7 @@ display:
         type: default
         options:
           grouping: {  }
-          row_class: front-page-border
+          row_class: ''
           default_row_class: false
       row:
         type: fields
@@ -551,7 +551,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<figure class=\"link-hover-caption\">\r\n  {{ field_media_image }}\r\n  <figcaption>{{ field_url }}</figcaption>\r\n</figure>\r\n"
+            text: "<figure class=\"front-page-border link-hover-caption\">\r\n  {{ field_media_image }}\r\n  <figcaption>{{ field_url }}</figcaption>\r\n</figure>\r\n"
             make_link: true
             path: '{{ field_url_1 }}'
             absolute: false
