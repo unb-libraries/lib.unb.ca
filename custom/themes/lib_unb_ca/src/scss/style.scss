@@ -929,6 +929,7 @@ table {
 a {
   figure.caption-overlay-bottom {
     margin-bottom: 0;
+    position: relative;
 
     figcaption {
       @include css3-prefix(transition, all .3s ease-in-out);
