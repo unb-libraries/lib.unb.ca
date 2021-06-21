@@ -9,6 +9,7 @@ ENV DRUPAL_SITE_UUID 87d22fc3-a2d0-4543-aab8-6ed800691b7b
 # Build application.
 COPY ./build/ /build/
 RUN ${RSYNC_MOVE} /build/scripts/container/ /scripts/ && \
+  ${RSYNC_MOVE} /build/keys/ /app/keys/ && \
   /scripts/addOsPackages.sh && \
   /scripts/initOpenLdap.sh && \
   /scripts/installFileMarc.sh && \
@@ -19,7 +20,6 @@ RUN ${RSYNC_MOVE} /build/scripts/container/ /scripts/ && \
 COPY ./config-yml ${DRUPAL_CONFIGURATION_DIR}
 COPY ./custom/themes ${DRUPAL_ROOT}/themes/custom
 COPY ./custom/modules ${DRUPAL_ROOT}/modules/custom
-COPY ./keys /app/keys
 
 # Container metadata.
 LABEL ca.unb.lib.generator="drupal8" \
