@@ -78,7 +78,7 @@
 @media (min-width: 992px) {
   /* Reduce visual bleed of megemenu and discovery search */
   #navbar-main + #discovery-wrapper > .container {
-    @include css3-prefix(transition, opacity .35s ease-in);
+    transition: opacity .35s ease-in;
     opacity: 1;
   }
 
