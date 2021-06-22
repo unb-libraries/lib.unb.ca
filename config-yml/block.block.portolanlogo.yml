@@ -1,23 +1,23 @@
-uuid: 4b9bd2b1-ee7b-441f-a257-6405334c888a
+uuid: ad65b0fb-e359-458a-8266-e8e51b149b35
 langcode: en
-status: false
+status: true
 dependencies:
   content:
-    - 'block_content:basic_block:ead32b3c-3b69-44eb-b6a0-f7af31f092a2'
+    - 'block_content:basic_block:5e42b4ab-362d-4429-af4e-fb8d37ef205f'
   module:
     - block_content
     - system
   theme:
     - lib_unb_ca
-id: researchingremotelyalert
+id: portolanlogo
 theme: lib_unb_ca
 region: content
-weight: -1
+weight: -9
 provider: null
-plugin: 'block_content:ead32b3c-3b69-44eb-b6a0-f7af31f092a2'
+plugin: 'block_content:5e42b4ab-362d-4429-af4e-fb8d37ef205f'
 settings:
-  id: 'block_content:ead32b3c-3b69-44eb-b6a0-f7af31f092a2'
-  label: 'Researching Remotely Alert'
+  id: 'block_content:5e42b4ab-362d-4429-af4e-fb8d37ef205f'
+  label: 'Portolan logo'
   provider: block_content
   label_display: '0'
   status: true
@@ -26,6 +26,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: '<front>'
+    pages: "/clc/portolan\r\n/clc/portolan/*"
     negate: false
     context_mapping: {  }
