@@ -66,13 +66,12 @@
 .chosen-compact .chosen-container-single.form-control {
     height: calc(1.5em + 0.75rem + 2px);
 }
-/* Research Guides JS Validation Hack */
+/* Research Guides Input Group + Required Select JS Validation Fix */
 .chosen-compact .input-group select.d-none {
     display: block!important;
     height: auto!important;
-    left: 7rem;
-    max-width: 0;
     opacity: 0;
+    width: 100%;
 }
 .chosen-compact .input-group .chosen-container-active.form-control {
     border-radius: .25rem!important;
