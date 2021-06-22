@@ -13,7 +13,6 @@ class RemoteFileTransfer implements FileTransferInterface {
    * {@inheritDoc}
    */
   public function copy(string $from, string $to) {
-    $from = realpath($from);
     $to = rtrim($to, DIRECTORY_SEPARATOR);
     if (is_dir($to)) {
       $exploded_source = explode(DIRECTORY_SEPARATOR, $from);
