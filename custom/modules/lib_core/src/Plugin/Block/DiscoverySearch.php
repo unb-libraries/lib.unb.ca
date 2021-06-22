@@ -113,7 +113,9 @@ class DiscoverySearch extends BlockBase {
       </form>
       <ul class="list inline m-0 p-0">
         <li class="list-inline-item mr-4 my-2 my-sm-1">
-          <a href="//web.lib.unb.ca/reserves/index.php?h=1">Login to My UNB Reserves</a>
+          <a href="//web.lib.unb.ca/reserves/index.php?h=1"><i class="fas fa-sign-in-alt" aria-hidden="true"></i>
+            Login to My UNB Reserves
+          </a>
         </li>
       </ul>';
 
