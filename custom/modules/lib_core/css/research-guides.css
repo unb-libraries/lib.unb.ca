@@ -2,3 +2,7 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
+#database-subjects + .chosen-container-active .chosen-drop ul > li:first-child {
+    background: #6c757d;
+    color: #fff;
+}
