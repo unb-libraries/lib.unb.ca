@@ -80,17 +80,19 @@
 
 @media (min-width: 992px) {
   /* Reduce visual bleed of megemenu and discovery search */
+  #navbar-main.affix {
+    max-width: 100%;
+  }
   #navbar-main + #discovery-wrapper > .container {
     transition: opacity .35s ease-in;
     opacity: 1;
   }
 
-  #navbar-main:focus-within #navbar-main-content {
+  #navbar-main:not(.affix):focus-within #navbar-main-content {
     background-color: rgb(55 63 68 / 99%);
   }
-
   #navbar-main:focus-within + #discovery-wrapper > .container,
   #navbar-main:hover + #discovery-wrapper > .container {
-    opacity: .4;
+    opacity: .45;
   }
 }
