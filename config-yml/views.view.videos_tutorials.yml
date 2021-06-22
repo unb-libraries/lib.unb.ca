@@ -611,6 +611,7 @@ display:
       defaults:
         css_class: false
         fields: false
+        empty: false
       fields:
         field_url:
           id: field_url
@@ -811,6 +812,18 @@ display:
           field_api_classes: false
           plugin_id: field
       block_description: 'Videos & Tutorials: Slideshow'
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content: "<div class=\"alert-warning border border-dark p-3\" role=\"alert\">\r\n  <i class=\"fas fa-exclamation-circle\"></i>\r\n   Please add content to the <em>Videos & Tutorials</em> page.\r\n</div>"
+          plugin_id: text_custom
     cache_metadata:
       max-age: -1
       contexts:
