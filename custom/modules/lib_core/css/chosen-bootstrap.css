@@ -44,6 +44,10 @@
 .chosen-container-single .chosen-single div b {
     background-position: 2px .5rem;
 }
+.chosen-container-single.form-control .chosen-single {
+    border-radius: .5rem;
+    padding-top: .35rem;
+}
 .chosen-container-active.chosen-with-drop .chosen-single div b {
     background-position: -16px .5rem;
 }

@@ -8,6 +8,9 @@
 #discovery-wrapper #discovery-search .card-header a[aria-expanded="false"]:after {
   content: none;
 }
+#databaseID + .chosen-container-single .chosen-single span {
+  color: #888;
+}
 
 /* Ask Us */
 #ask-us {
