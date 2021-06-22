@@ -196,10 +196,6 @@
                     "installer-name": "ckeditor_codemirror"
                 }
             }
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/unb-libraries/task-ui"
         }
     ],
     "require": {
