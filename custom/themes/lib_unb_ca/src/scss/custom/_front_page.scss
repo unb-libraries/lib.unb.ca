@@ -20,11 +20,11 @@
       border-left: 1px solid transparent;
       border-right: 1px solid transparent;
       padding-bottom: 1px;
+    }
 
-      &:hover {
+    &:hover {
+      #navbar-main-content {
         background-color: rgb(55 63 68 / 99%);
-        border-left: 1px solid rgba(0 0 0 / 15%);
-        border-right: 1px solid rgba(0 0 0 / 15%);
       }
     }
 
@@ -366,4 +366,17 @@
       background: #272B2F;
     }
   }
+}
+
+/* Reduce visual bleed of megemenu and discovery search */
+#navbar-main + #discovery-wrapper > .container {
+  @include css3-prefix(transition, opacity .35s ease-in);
+  opacity: 1;
+}
+#navbar-main:focus-within #navbar-main-content {
+  background-color: rgb(55 63 68 / 99%);
+}
+#navbar-main:focus-within + #discovery-wrapper> .container,
+#navbar-main:hover + #discovery-wrapper> .container {
+  opacity: .5;
 }
