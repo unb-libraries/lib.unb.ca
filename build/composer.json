@@ -268,7 +268,7 @@
         "unb-libraries/drupal-builder": "^8.0.0",
         "unb-libraries/font_awesome": "~5.14",
         "unb-libraries/oclc_api": "dev-8.x-1.x",
-        "unb-libraries/task_ui": "dev-8.x-1.x",
+        "unb-libraries/task-ui": "dev-8.x-1.x",
         "unb-libraries/unb_lib_theme": "dev-8.x-bootstrap-4.x",
         "w8tcha/ckeditor-codemirror-plugin": "^1.17.12"
     },
