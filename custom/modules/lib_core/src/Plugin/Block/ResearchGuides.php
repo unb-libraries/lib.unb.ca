@@ -39,7 +39,7 @@ class ResearchGuides extends BlockBase {
    */
   protected function getResearchGuidesContainer() {
     $categories = _lib_core_get_guide_categories();
-    $options = '<option value="">* Please choose a subject</option>';
+    $options = '<option value="" aria-disabled="true">Please choose a subject...</option>';
     foreach ($categories as $value => $label) {
       $options .= '<option value="' . $value . '">' . $label . '</option>';
     }
@@ -56,7 +56,7 @@ class ResearchGuides extends BlockBase {
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><i class="fas fa-database"></i></span>
              </div>
-              <select id="database-subjects" class="custom-chosen-select form-control required" name="category" required>' .
+              <select id="database-subjects" class="custom-chosen-select form-control required" name="category" aria-required="true" required="required">' .
                 $options .
               '</select>
             </div>
