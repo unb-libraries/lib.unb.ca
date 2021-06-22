@@ -91,6 +91,6 @@
 
   #navbar-main:focus-within + #discovery-wrapper > .container,
   #navbar-main:hover + #discovery-wrapper > .container {
-    opacity: .5;
+    opacity: .4;
   }
 }
