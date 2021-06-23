@@ -17,7 +17,7 @@ services:
   portolan.marc_file_provider:
     class: Drupal\portolan_sync\Synchronization\MarcFileProvider
     arguments:
-      - '@portolan.local_file_transfer'
+      - '@portolan.remote_file_transfer'
       - 'wx_unbca@filex-r3.oclc.org:/xfer/metacoll/out/ongoing/updates/metacoll.UNBCA.updates.W{@date}*portolan.1.mrc'
 
   portolan.world_cat_cover_image_parser.v1:
