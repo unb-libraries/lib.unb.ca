@@ -22,7 +22,7 @@ class RemoteFileTransfer implements FileTransferInterface {
     }
 
     $output = $result = NULL;
-    exec("scp -q {$from} {$to}", $output, $result);
+    exec("scp -q -o StrictHostKeyChecking=no -i /app/keys/oclc-sftp.key {$from} {$to}", $output, $result);
     if ($result === 0) {
       return $to;
     }
