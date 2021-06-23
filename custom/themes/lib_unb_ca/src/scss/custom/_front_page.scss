@@ -249,6 +249,7 @@
 
 .front-page-border {
   border: 1px solid $secondary;
+  display: inline-block;
 
   &.image-collapse {
     @media (max-width: 991px) {
