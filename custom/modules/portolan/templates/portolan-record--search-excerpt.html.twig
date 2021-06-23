@@ -1,4 +1,4 @@
-<div class="row mb-4 mt-4">
+<div class="row pb-4 pt-4 border-bottom border-light">
     <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 order-first order-sm-last">
         <div>
             {% if portolan_record.cover_uri %}
@@ -7,7 +7,7 @@
         </div>
     </div>
     <div class="col-sm-6 col-md-8 col-lg-9 col-xl-10 order-last order-sm-first">
-        <a class="h3" href="/clc/portolan/records/{{ portolan_record.oclc_id.value }}">{{ portolan_record.title.value }}</a>
+        <a class="h4" href="/clc/portolan/records/{{ portolan_record.oclc_id.value }}">{{ portolan_record.title.value }}</a>
         <div class="text-muted small">by {% for author in portolan_record.author %}<span class="portolan-author">{{ author.value }}</span>{% if not loop.last %}; {% endif %}{% endfor %}</div>
         <div>{{ search_api_excerpt|raw }}</div>
     </div>
