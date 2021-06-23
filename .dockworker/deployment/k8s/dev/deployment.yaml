@@ -132,7 +132,6 @@ spec:
               name: oclc-sftp-key
               mountPath: "/app/keys/oclc-sftp.key"
               subPath: "oclc-sftp.key"
-              readOnly: true
       priorityClassName: dev-med-priority-services
       imagePullSecrets:
         -
@@ -147,6 +146,7 @@ spec:
           name: oclc-sftp-key
           secret:
             secretName: oclc-sftp-key
+            defaultMode: 0400
             items:
               - key: oclc-sftp.key
                 path: oclc-sftp.key
