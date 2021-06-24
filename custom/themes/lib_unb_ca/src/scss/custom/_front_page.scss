@@ -121,9 +121,6 @@
   }
 
   /* OVERRIDE - to do: remove original affix */
-  .affix {
-    transition: none;
-  }
   #header .affix li.show > .nav-link,
   #header .affix .megamenu-li > .nav-link:focus,
   #header .affix .megamenu-li > .nav-link:hover,
