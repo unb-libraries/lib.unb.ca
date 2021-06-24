@@ -584,7 +584,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: Keywords
+            label: 'Search Portolan'
             description: 'Search by Title, Author, Jurisdiction, Publication, Geographic Location, or Summary'
             use_operator: false
             operator: search_api_fulltext_op
