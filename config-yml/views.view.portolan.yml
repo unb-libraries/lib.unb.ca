@@ -48,17 +48,12 @@ display:
           text_input_required: 'Select any filter and click on Apply to see results'
           text_input_required_format: library_page_html
       pager:
-        type: full
+        type: mini
         options:
           items_per_page: 50
           offset: 0
           id: 0
           total_pages: null
-          tags:
-            previous: ‹‹
-            next: ››
-            first: '« First'
-            last: 'Last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -67,7 +62,9 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          quantity: 5
+          tags:
+            previous: ‹‹
+            next: ››
       style:
         type: html_list
         options:
@@ -631,17 +628,7 @@ display:
           plugin_id: search_api_fulltext
       sorts: {  }
       title: 'Portolan: Search'
-      header:
-        result:
-          id: result
-          table: views
-          field: result
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          content: 'Displaying @start - @end of @total'
-          plugin_id: result
+      header: {  }
       footer: {  }
       empty: {  }
       relationships: {  }

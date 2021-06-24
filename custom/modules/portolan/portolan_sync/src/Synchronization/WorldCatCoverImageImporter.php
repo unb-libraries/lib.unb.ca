@@ -82,9 +82,11 @@ class WorldCatCoverImageImporter implements DataImporterInterface {
    * {@inheritDoc}
    */
   public function import($source, int $max_records = self::UNLIMITED) {
-    $world_cat_html = $this->getHtml($source);
-    return $this->coverImageParser()
-      ->parse($world_cat_html);
+    if ($world_cat_html = $this->getHtml($source)) {
+      return $this->coverImageParser()
+        ->parse($world_cat_html);
+    }
+    return FALSE;
   }
 
   /**
@@ -97,10 +99,16 @@ class WorldCatCoverImageImporter implements DataImporterInterface {
    *   An HTML formatted string.
    */
   protected function getHtml(string $oclc_id) {
-    return $this->http()
-      ->get($this->getWorldCatRecordUrl() . $oclc_id)
-      ->getBody()
-      ->getContents();
+    try {
+      return $this->http()
+        ->get($this->getWorldCatRecordUrl() . $oclc_id)
+        ->getBody()
+        ->getContents();
+    }
+    catch (\Exception $e) {
+      return FALSE;
+    }
+
   }
 
 }
