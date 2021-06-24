@@ -58,21 +58,6 @@
     }
   }
 
-  .megamenu {
-    border: none;
-    border-radius: 0;
-
-    .container {
-      background: rgb(55 63 68);
-      border-bottom: 2px ridge $dark;
-    }
-    &.multi-row {
-      .container:first-child {
-        border-bottom-width: 1px;
-      }
-    }
-  }
-
   #header-overlay {
     background-image: linear-gradient(180deg, rgb(27 33 37 / 25%), rgb(27  33  37 / 0));
   }
