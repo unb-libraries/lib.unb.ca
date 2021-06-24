@@ -1,0 +1,23 @@
+.btn-primary {
+  background: linear-gradient(to right,#444 0%,#222 100%);
+  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+
+  &:hover {
+    color: #ffc107;
+  }
+}
+
+.form-row {
+
+  .form-actions {
+    align-self: center;
+  }
+}
+
+fieldset.form-type-textfield {
+
+  .description.text-muted {
+    color: #595959 !important;
+  }
+
+}

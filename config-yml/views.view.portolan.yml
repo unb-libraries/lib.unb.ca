@@ -38,7 +38,7 @@ display:
       exposed_form:
         type: input_required
         options:
-          submit_button: Search
+          submit_button: GO
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
