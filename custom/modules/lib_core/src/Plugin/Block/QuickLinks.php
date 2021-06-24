@@ -72,7 +72,7 @@ class QuickLinks extends BlockBase {
           Url::fromUri('base://about/find-us')
         )->toString(),
       ],
-      [
+      /*[
         '#wrapper_attributes' => [
           'class' => [],
         ],
@@ -81,7 +81,7 @@ class QuickLinks extends BlockBase {
           Url::fromUri('https://guides.lib.unb.ca/guide/206')
         )->toString(),
       ],
-      /*[
+      [
         '#wrapper_attributes' => [
           'class' => [
             'list-inline-item',
