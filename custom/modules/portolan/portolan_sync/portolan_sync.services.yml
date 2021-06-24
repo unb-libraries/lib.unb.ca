@@ -6,7 +6,7 @@ services:
     class: Drupal\portolan_sync\Synchronization\MarcFileImporter
     arguments:
       - '@portolan.marc_parser'
-      - '@portolan.world_cat_cover_image_importer.v1'
+      - '@portolan.world_cat_random_cover_image_importer'
 
   portolan.local_file_transfer:
     class: Drupal\portolan_sync\Synchronization\LocalFileTransfer
@@ -17,8 +17,8 @@ services:
   portolan.marc_file_provider:
     class: Drupal\portolan_sync\Synchronization\MarcFileProvider
     arguments:
-      - '@portolan.remote_file_transfer'
-      - 'wx_unbca@filex-r3.oclc.org:/xfer/metacoll/out/ongoing/updates/metacoll.UNBCA.updates.W{@date}*portolan.1.mrc'
+      - '@portolan.local_file_transfer'
+      - '/app/html/modules/custom/portolan/portolan_sync/portolan.mrc'
 
   portolan.world_cat_cover_image_parser.v1:
     class: Drupal\portolan_sync\Synchronization\WorldCatCoverImageParser
