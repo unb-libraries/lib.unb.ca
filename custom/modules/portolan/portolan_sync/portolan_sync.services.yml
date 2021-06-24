@@ -35,6 +35,9 @@ services:
       - '@http_client'
       - '@portolan.world_cat_cover_image_parser.v1'
 
+  portolan.world_cat_random_cover_image_importer:
+    class: Drupal\portolan_sync\Synchronization\WorldCatRandomCoverImageImporter
+
   portolan.storage:
     class: Drupal\Core\Entity\ContentEntityStorageInterface
     factory: ['@entity_type.manager', 'getStorage']
