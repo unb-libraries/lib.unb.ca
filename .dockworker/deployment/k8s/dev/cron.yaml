@@ -42,6 +42,10 @@ spec:
                 -
                   mountPath: /app/html/sites/default
                   name: drupal-persistent-storage
+                -
+                  name: oclc-sftp-key
+                  mountPath: "/app/keys/oclc-sftp.key"
+                  subPath: "oclc-sftp.key"
           priorityClassName: cron-priority-services
           imagePullSecrets:
             -
@@ -52,3 +56,11 @@ spec:
               name: drupal-persistent-storage
               persistentVolumeClaim:
                 claimName: lib-unb-ca
+            -
+              name: oclc-sftp-key
+              secret:
+                secretName: oclc-sftp-key
+                defaultMode: 0400
+                items:
+                  - key: oclc-sftp.key
+                    path: oclc-sftp.key
