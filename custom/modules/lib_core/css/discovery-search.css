@@ -1,4 +1,7 @@
 /* Discovery Search Forms */
+#discovery-wrapper {
+  min-height: 50vh;
+}
 #discovery-search {
   background-color: rgb(80  80  80 / 73%);
 }
