@@ -70,9 +70,12 @@ class MarcFileImporter implements DataImporterInterface {
         $oclc_id = $portolan_record[PortolanRecordInterface::FIELD_OCLC_ID];
         if (!array_key_exists($oclc_id, $portolan_records)) {
           $portolan_records[$oclc_id] = $portolan_record;
-          $portolan_records[$oclc_id][PortolanRecordInterface::FIELD_COVER_URI] = $this
+          $cover_uri = $this
             ->coverImageImporter()
             ->import($oclc_id);
+          if ($cover_uri) {
+            $portolan_records[$oclc_id][PortolanRecordInterface::FIELD_COVER_URI] = $cover_uri;
+          }
           $index++;
         }
         else {
