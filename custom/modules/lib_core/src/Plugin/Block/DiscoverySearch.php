@@ -56,7 +56,7 @@ class DiscoverySearch extends BlockBase {
                       <li class="nav-item">
                          <a aria-expanded="false" class="btn Accordion-trigger p-2 rounded-0 shadow-none text-left text-lg-center text-nowrap" tabindex="-1"
                             href="https://web.lib.unb.ca/eresources" id="searchBtn5"
-                            title="Guide to Finding Reference Materials (opens new page)"><i class="fas fa-plus-square fa-muted mr-1" aria-hidden="true"></i>More
+                            title="Guide to Finding Reference Materials (opens new page)">More<i class="fas fa-angle-double-right fa-sm fa-muted ml-1" aria-hidden="true"></i>
                          </a>
                       </li>
                     </ul>
