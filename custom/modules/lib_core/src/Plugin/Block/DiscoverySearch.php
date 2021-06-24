@@ -51,7 +51,7 @@ class DiscoverySearch extends BlockBase {
                    <ul class="navbar-nav d-flex align-items-lg-end justify-content-between w-100">
                       <li class="nav-item"><button aria-controls="searchPanel1" aria-expanded="true" class="Accordion-trigger p-2" id="searchBtn1">Catalogue</button></li>
                       <li class="nav-item"><button aria-controls="searchPanel2" aria-expanded="false" class="Accordion-trigger p-2" id="searchBtn2" tabindex="-1">Reserves</button></li>
-                      <li class="nav-item"><button aria-controls="searchPanel3" aria-expanded="false" class="Accordion-trigger p-2" id="searchBtn3" tabindex="-1">Databases</button></li>
+                      <li class="nav-item"><button aria-controls="searchPanel3" aria-expanded="false" class="Accordion-trigger p-2" id="searchBtn3" tabindex="-1">Article Databases</button></li>
                       <li class="nav-item"><button aria-controls="searchPanel4" aria-expanded="false" class="Accordion-trigger p-2 text-left text-lg-center" id="searchBtn4" tabindex="-1">Journals &amp; Newspapers</button></li>
                       <li class="nav-item">
                          <a aria-expanded="false" class="btn Accordion-trigger p-2 rounded-0 shadow-none text-left text-lg-center text-nowrap" tabindex="-1"
