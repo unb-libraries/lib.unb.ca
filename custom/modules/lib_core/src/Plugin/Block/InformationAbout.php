@@ -21,16 +21,16 @@ class InformationAbout extends BlockBase {
   public function build() {
     $html = '
       <ul class="list-colcount-2">
-        <li><a href="#">Library Spaces</a></li>
-        <li><a href="#">Citing Your Sources</a></li>
-        <li><a href="https://guides.lib.unb.ca/guide/206">Zotero</a></li>
         <li><a href="/copyright">Copyright</a></li>
-        <li><a href="/services/printing-scanning-photocopying">Printing, Scanning &amp; Photocopying</a></li>
-        <li><a href="/rdm">Research Data Management</a></li>
         <li><a href="/gddm/data">Data Services</a></li>
         <li><a href="/gddm/govdocs">Government Documents</a></li>
+        <li><a href="/about/policies">Library Policies</a></li>
+        <li><a href="#">Library Spaces</a></li>
         <li><a href="/gddm/maps">Maps &amp; GIS</a></li>
-        <li><a href="/cds/publishing-services">Digital Publishing Services</a></li>
+        <li><a href="https://guides.lib.unb.ca/guide/284">Open Access</a></li>
+        <li><a href="/rdm">Research Data Management</a></li>
+        <li><a href="/services/writing-help">Writing & Citation Help</a></li>
+        <li><a href="https://guides.lib.unb.ca/guide/206">Zotero</a></li>
       </ul>
     ';
 
