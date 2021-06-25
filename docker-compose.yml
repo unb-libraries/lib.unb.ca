@@ -42,7 +42,7 @@ services:
       - "1025"
       - "8025"
     ports:
-      - "4100:8025"
+      - "4101:8025"
     networks:
       - lib.unb.ca
 
