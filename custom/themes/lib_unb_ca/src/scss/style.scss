@@ -273,7 +273,6 @@ ul.pagination {
 /* END Pagination */
 
 /* Library News */
-/* Post listing page */
 .library-news {
   /* Library news listing page */
   .library-news {
@@ -286,14 +285,21 @@ ul.pagination {
     }
   }
 
-  .more-link {
-    &:before {
-      color: $gray-dark;
-      content: '\f1ea';
+  .more-link a {
+    color: $link-color;
+
+    &:focus,
+    &:hover {
+      color: $link-hover-color;
+    }
+
+    &:after {
+      content: '\f101';
       font-family: "Font Awesome 5 Free";
+      font-size: .875em;
       font-weight: 900;
-      margin-left: -1em;
-      margin-right: .25em;
+      margin-left: .25rem;
+      opacity: .7;
     }
   }
 

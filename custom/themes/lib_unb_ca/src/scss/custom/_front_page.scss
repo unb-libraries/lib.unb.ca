@@ -62,17 +62,6 @@
 }
 
 .path-frontpage {
-  /* Library News Overrides */
-  .library-news {
-    .more-link {
-      &:before {
-        content: '';
-        font-family: inherit;
-        margin: 0;
-      }
-    }
-  }
-
   @media (min-width: 992px) {
     .layout__region--first {
       border-right: 1px solid #ddd;
