@@ -588,7 +588,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: false
-          content: '<div class="more"><a href="/research">More Videos &amp; Tutorials</a></div>'
+          content: '<div class="more"><a href="/research">More Research Help<i class="fas fa-angle-double-right fa-sm fa-muted ml-1" aria-hidden="true"></i></a></div>'
           plugin_id: text_custom
     cache_metadata:
       max-age: -1
