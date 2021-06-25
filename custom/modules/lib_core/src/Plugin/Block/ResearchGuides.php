@@ -65,9 +65,9 @@ class ResearchGuides extends BlockBase {
             </div>
           </div>
         </form>
-        <div class="text-right">
+        <div class="text-left">
           <a href="https://guides.lib.unb.ca/research-guides">
-            All Research Guides<i class="fas fa-angle-double-right fa-sm fa-muted ml-1" aria-hidden="true"></i>
+            All Research Guides
           </a>
         </div>
       </div>
