@@ -13,7 +13,7 @@ field_name: field_page_content
 entity_type: node
 bundle: news_post
 label: 'Page content'
-description: ''
+description: '* Please enter a summary if your post <strong>begins with an image</strong>.'
 required: true
 translatable: true
 default_value: {  }
