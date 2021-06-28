@@ -21,11 +21,11 @@ entity_type: paragraph
 bundle: body_section
 label: Content
 description: ''
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  display_summary: false
+  display_summary: true
   required_summary: false
 field_type: text_with_summary
