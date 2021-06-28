@@ -7,6 +7,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.storage.node.field_featured_image
     - field.storage.node.field_page_content
+    - field.storage.paragraph.field_body
     - image.style.front_page_image
     - node.type.news_post
     - taxonomy.vocabulary.categories
@@ -14,7 +15,9 @@ dependencies:
     - entity_reference_revisions
     - media
     - node
+    - paragraphs
     - taxonomy
+    - text
     - user
 id: library_news_v2
 label: 'Library News v2'
@@ -1367,6 +1370,7 @@ display:
         filters: false
         filter_groups: false
         empty: false
+        relationships: false
       link_url: news
       style:
         type: default
@@ -1520,9 +1524,9 @@ display:
           field: field_page_content
           relationship: none
           group_type: group
-          admin_label: ''
+          admin_label: 'Summary Fallback'
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -1570,6 +1574,69 @@ display:
           group_columns: {  }
           group_rows: true
           delta_limit: 1
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_body:
+          id: field_body
+          table: paragraph__field_body
+          field: field_body
+          relationship: field_page_content
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: true
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: true
+            trim: false
+            preserve_tags: '<strong><em>'
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: '{{ field_page_content }}'
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: summary
+          type: text_summary_or_trimmed
+          settings:
+            trim_length: 420
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
           delta_offset: 0
           delta_reversed: false
           delta_first_last: false
@@ -1741,6 +1808,16 @@ display:
             value: "<div class=\"card border-secondary mb-3\">\r\n  <div class=\"card-header\">\r\n    <span class=\"fas fa-exclamation-circle\"></span>\r\n    No news posts are currently published.\r\n  </div>\r\n  <div class=\"card-body text-secondary\">\r\n     <p class=\"card-text text-left\">Please check back later.</p>\r\n  </div>\r\n</div>"
             format: full_html
           plugin_id: text
+      relationships:
+        field_page_content:
+          id: field_page_content
+          table: node__field_page_content
+          field: field_page_content
+          relationship: none
+          group_type: group
+          admin_label: 'field_page_content: Paragraph'
+          required: false
+          plugin_id: standard
     cache_metadata:
       max-age: -1
       contexts:
@@ -1750,6 +1827,7 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_page_content'
+        - 'config:field.storage.paragraph.field_body'
   block_6:
     display_plugin: block
     id: block_6
