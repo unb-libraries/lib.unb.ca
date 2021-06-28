@@ -1,0 +1,15 @@
+uuid: e1a857f6-db4f-4dda-8118-153f048ee084
+langcode: en
+status: true
+dependencies: {  }
+name: featured_news
+label: 'Featured News'
+effects:
+  d16e32ef-883e-48c4-a411-a96a452c5fb4:
+    uuid: d16e32ef-883e-48c4-a411-a96a452c5fb4
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 600
+      height: 260
+      anchor: center-center
