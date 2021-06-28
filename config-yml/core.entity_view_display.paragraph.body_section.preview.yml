@@ -21,9 +21,10 @@ content:
   field_body:
     weight: 0
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: 400
     third_party_settings: {  }
-    type: text_default
+    type: text_summary_or_trimmed
     region: content
 hidden:
   search_api_excerpt: true
