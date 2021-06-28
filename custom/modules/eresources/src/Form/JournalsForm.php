@@ -17,6 +17,17 @@ class JournalsForm extends KbFormBase implements KbFormInterface {
   /**
    * {@inheritDoc}
    */
+  public function getSearchOptions() {
+    return [
+      'title' => 'Word(s) in title',
+      'exact' => 'Exact title',
+      'browse' => 'Title starts with',
+    ];
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public function getSearchDescription() {
     return $this->t('Search for individual journals, newspapers and conference proceedings by title.');
   }
