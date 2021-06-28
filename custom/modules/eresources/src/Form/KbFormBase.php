@@ -147,12 +147,13 @@ class KbFormBase extends FormBase {
       else {
         $entries = $result->entries;
         $form['page'] = ['#markup' => "<p>Showing results {$start} to " . ($start + count($entries) - 1) . " of {$total} for search <b>\"{$query}\"</b>.</p>"];
+        pager_default_initialize($total, $perPage);
+        $form['top-pager'] = ['#type' => 'pager'];
         $form['results'] = [
           '#theme' => 'eresources',
           '#eresources' => $entries,
         ];
-        pager_default_initialize($total, $perPage);
-        $form['pager'] = ['#type' => 'pager'];
+        $form['bottom-pager'] = ['#type' => 'pager'];
         $form['#attached']['library'][] = 'eresources/eresources';
       }
     }
