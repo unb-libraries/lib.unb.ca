@@ -34,10 +34,19 @@ settings:
       custom_block_section:
         weight: 8
         enabled: false
+      departement_membership:
+        weight: 12
+        enabled: false
       equal_columns_section:
         weight: 9
         enabled: false
+      equal_width_3_columns_section:
+        weight: 14
+        enabled: false
       fullwidth_body_section:
         weight: 10
+        enabled: false
+      linked_image:
+        weight: 16
         enabled: false
 field_type: entity_reference_revisions
