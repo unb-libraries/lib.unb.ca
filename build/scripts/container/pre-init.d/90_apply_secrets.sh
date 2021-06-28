@@ -32,3 +32,6 @@ sed -i "s|OCLC_API_WSKEY|$OCLC_API_WSKEY|g" $SETTINGS_FILE
 sed -i "s|OCLC_API_SECRET|$OCLC_API_SECRET|g" $SETTINGS_FILE
 sed -i "s|OCLC_API_IDM_WSKEY|$OCLC_API_IDM_WSKEY|g" $SETTINGS_FILE
 sed -i "s|OCLC_API_IDM_SECRET|$OCLC_API_IDM_SECRET|g" $SETTINGS_FILE
+
+cp /app/keys/oclc-sftp.root.key /app/keys/oclc-sftp.key
+chown nginx /app/keys/oclc-sftp.key

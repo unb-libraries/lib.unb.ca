@@ -130,8 +130,8 @@ spec:
               name: drupal-persistent-storage
             -
               name: oclc-sftp-key
-              mountPath: "/app/keys/oclc-sftp.key"
-              subPath: "oclc-sftp.key"
+              mountPath: "/app/keys/oclc-sftp.root.key"
+              subPath: "oclc-sftp.root.key"
       priorityClassName: dev-med-priority-services
       imagePullSecrets:
         -
