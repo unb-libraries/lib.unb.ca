@@ -2,3 +2,6 @@
 .views_slideshow_slide {
     width: 100%!important;
 }
+.views-slideshow-controls-bottom .views-slideshow-pager-bullets li.active {
+    background: $red;
+}
