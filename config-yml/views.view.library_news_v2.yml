@@ -2643,14 +2643,14 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 420
+            max_length: null
             word_boundary: true
             ellipsis: true
             more_link: false
             more_link_text: ''
             more_link_path: ''
             strip_tags: true
-            trim: true
+            trim: false
             preserve_tags: '<strong><em>'
             html: true
           element_type: div
@@ -2706,16 +2706,16 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: null
+            max_length: 375
             word_boundary: true
             ellipsis: true
             more_link: false
             more_link_text: ''
             more_link_path: ''
             strip_tags: true
-            trim: false
+            trim: true
             preserve_tags: '<strong><em>'
-            html: false
+            html: true
           element_type: ''
           element_class: ''
           element_label_type: ''
@@ -2731,7 +2731,7 @@ display:
           click_sort_column: value
           type: text_summary_or_trimmed
           settings:
-            trim_length: 420
+            trim_length: 600
           group_column: value
           group_columns: {  }
           group_rows: true
