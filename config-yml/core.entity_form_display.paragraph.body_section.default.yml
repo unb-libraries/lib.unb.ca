@@ -18,7 +18,7 @@ content:
     settings:
       rows: 9
       placeholder: ''
-      summary_rows: 3
+      summary_rows: 2
       show_summary: true
     third_party_settings:
       allowed_formats:
