@@ -77,9 +77,6 @@ figure {
 #back-top a:hover {
   box-shadow: none;
 }
-.news-featured a:hover {
-  box-shadow: none !important;
-}
 .thead-dark {
   a:hover {
     @include css3-prefix(box-shadow, 0px 2px 1px -1px rgba(255, 193, 7, .3) !important);
