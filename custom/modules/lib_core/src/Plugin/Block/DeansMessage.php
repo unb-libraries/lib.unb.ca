@@ -45,7 +45,7 @@ class DeansMessage extends BlockBase {
         <figure class="caption-overlay-bottom">
             <img src="/modules/custom/lib_core/img/deans-message.png"
               alt="Welcome to UNB Libraries">
-            <figcaption>Covid-19 & Fall 2021</figcaption>  
+            <figcaption class="font-weight-bold">Covid-19 & Fall 2021</figcaption>
         </figure>
       </a>
     ';
