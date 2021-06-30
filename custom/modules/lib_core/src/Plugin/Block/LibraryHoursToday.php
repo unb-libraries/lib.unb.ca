@@ -44,7 +44,7 @@ class LibraryHoursToday extends BlockBase {
    */
   protected function getTodaysHours() {
     $todays_hours_html = '
-    <table>
+    <table class="m-0">
       <caption>
         <span class="sr-only">Library hours for</span>' . date("l, F j, Y") . '</span>
       </caption>
