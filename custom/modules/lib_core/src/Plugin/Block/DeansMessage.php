@@ -24,9 +24,8 @@ class DeansMessage extends BlockBase {
       '#tag' => 'div',
       '#attributes' => [
         'class' => [
-          'd-flex',
           'front-page-border',
-          'bg-secondary',
+          'bg-light',
         ],
       ],
       '#value' => $this->getValue(),
