@@ -576,7 +576,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: false
-          content: '<h3>Learn About</h3>'
+          content: '<h3 class="h4">Learn About</h3>'
           plugin_id: text_custom
       footer:
         area_text_custom:
