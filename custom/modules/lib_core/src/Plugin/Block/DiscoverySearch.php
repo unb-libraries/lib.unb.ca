@@ -43,7 +43,7 @@ class DiscoverySearch extends BlockBase {
         <div class="card">
           <h2 class="sr-only">Search</h2>
           <div class="card-header px-2 pb-1">
-            <nav class="navbar navbar-expand-lg text-nowrap">
+            <nav class="navbar navbar-expand-md text-nowrap">
             <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 Select a search category
             </button>
