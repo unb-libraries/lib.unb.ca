@@ -293,7 +293,7 @@ ul.pagination {
     &:after {
       content: '\f101';
       font-family: "Font Awesome 5 Free";
-      font-size: .875em;
+      font-size: .75em;
       font-weight: 900;
       margin-left: .25rem;
       opacity: .7;
@@ -710,7 +710,7 @@ ul.field--name-field-categories:before {
 .block-views-blockvideos-tutorials-random-slideshow-block {
   padding-bottom: 1.5rem!important;
 }
-/* @media(min-width: 1200px) {
+@media(min-width: 1200px) {
   .block-views-blockvideos-tutorials-random-slideshow-block {
     float: left;
     max-width: 49%;
@@ -718,9 +718,9 @@ ul.field--name-field-categories:before {
   .block-views-blockvideos-tutorials-links-block {
     float: right;
     margin-top: 2.5rem;
-    max-width: 49%;
+    max-width: 50%;
   }
-} */
+}
 /* END Videos & Tutorials View */
 /** END OVERRIDES **/
 
