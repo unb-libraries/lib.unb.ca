@@ -66,8 +66,8 @@ class KbFormBase extends FormBase {
   public function getSearchOptions() {
     return [
       'title' => 'Word(s) in title',
-      'exact' => 'Exact title',
       'browse' => 'Title starts with',
+      'exact' => 'Exact title',
       'keyword' => 'Keyword search (title, author, publisher...)',
     ];
   }

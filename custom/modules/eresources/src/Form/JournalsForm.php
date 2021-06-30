@@ -20,8 +20,8 @@ class JournalsForm extends KbFormBase implements KbFormInterface {
   public function getSearchOptions() {
     return [
       'title' => 'Word(s) in title',
-      'exact' => 'Exact title',
       'browse' => 'Title starts with',
+      'exact' => 'Exact title',
     ];
   }
 
