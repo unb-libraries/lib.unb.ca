@@ -625,7 +625,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: '<div class="mt-3"><a href="/">Find a specialist<i class="fas fa-angle-double-right fa-sm fa-muted ml-1"></i></a></div>'
+          content: '<div class="mt-3"><a href="/">Find a specialist<i class="fas fa-angle-double-right fa-xs fa-muted ml-1"></i></a></div>'
           plugin_id: text_custom
       css_class: ''
       empty:
