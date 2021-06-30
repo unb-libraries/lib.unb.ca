@@ -30,10 +30,6 @@
   }
 }
 
-.layout--twocol-section .layout__region > div {
-  padding-bottom: $twocol-padding-size;
-}
-
 .front-page-border {
   border: 1px solid $secondary;
   display: inline-block;
@@ -62,17 +58,32 @@
 }
 
 .path-frontpage {
-  @media (min-width: 992px) {
-    .layout__region--first {
-      border-right: 1px solid #ddd;
-      padding-right: 2.5rem;
-      padding-bottom: 3.5rem;
-    }
-    .layout__region--second {
-      padding-left: 2.5rem;
-      padding-bottom: 3.5rem;
+  .node__content {
+    .layout {
+      &:first-child {
+        margin-bottom: 0;
+        @media (max-width: 991px) {
+          flex-direction: column-reverse !important;
+        }
+      }
+
+      .layout__region > div {
+         padding-bottom: 3.5rem;
+      }
+
+      @media (min-width: 992px) {
+        .layout__region--first {
+          border-right: 1px solid #ddd;
+          padding-right: 2.5rem;
+        }
+
+        .layout__region--second {
+          padding-left: 2.5rem;
+        }
+      }
     }
   }
+
   .navbar-expand-lg .navbar-nav .nav-link {
     padding-left: 0;
     padding-right: 0;
