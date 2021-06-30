@@ -2243,7 +2243,7 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 3
+          items_per_page: 2
           offset: 0
       filters:
         status:
@@ -2737,7 +2737,7 @@ display:
             more_link_path: ''
             strip_tags: true
             trim: true
-            preserve_tags: '<strong><em>'
+            preserve_tags: '<strong><em><br>'
             html: true
           element_type: ''
           element_class: ''
@@ -2909,6 +2909,11 @@ display:
             advanced_options: '{}'
           widgets:
             top:
+              views_slideshow_controls:
+                enable: false
+                weight: '1'
+                hide_on_single_slide: '0'
+                type: views_slideshow_controls_text
               views_slideshow_slide_counter:
                 enable: false
                 weight: '1'
@@ -2918,18 +2923,20 @@ display:
                 weight: '1'
                 hide_on_single_slide: '0'
                 type: views_slideshow_pager_bullets
-                views_slideshow_pager_bullets:
-                  views_slideshow_pager_bullets_hover: 0
                 views_slideshow_pager_fields:
                   views_slideshow_pager_fields_fields:
+                    title: 0
+                    field_page_content: 0
                     field_featured_image: 0
                   views_slideshow_pager_fields_hover: 0
+                views_slideshow_pager_bullets:
+                  views_slideshow_pager_bullets_hover: 0
+            bottom:
               views_slideshow_controls:
                 enable: false
                 weight: '1'
                 hide_on_single_slide: '0'
                 type: views_slideshow_controls_text
-            bottom:
               views_slideshow_slide_counter:
                 enable: false
                 weight: '1'
@@ -2939,17 +2946,14 @@ display:
                 weight: '1'
                 hide_on_single_slide: '0'
                 type: views_slideshow_pager_bullets
-                views_slideshow_pager_bullets:
-                  views_slideshow_pager_bullets_hover: 0
                 views_slideshow_pager_fields:
                   views_slideshow_pager_fields_fields:
+                    title: 0
+                    field_page_content: 0
                     field_featured_image: 0
                   views_slideshow_pager_fields_hover: 0
-              views_slideshow_controls:
-                enable: false
-                weight: '1'
-                hide_on_single_slide: '0'
-                type: views_slideshow_controls_text
+                views_slideshow_pager_bullets:
+                  views_slideshow_pager_bullets_hover: 0
       row:
         type: fields
         options:
