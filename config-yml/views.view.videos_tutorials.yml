@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.paragraph.field_media_image
     - field.storage.paragraph.field_url
+    - image.style.videos_and_tutorials
     - node.type.images_page
   module:
     - link
@@ -578,18 +579,7 @@ display:
           tokenize: false
           content: '<h3 class="h4">Learn About</h3>'
           plugin_id: text_custom
-      footer:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          tokenize: false
-          content: '<div class="more"><a href="/research">More Research Help<i class="fas fa-angle-double-right fa-sm fa-muted ml-1" aria-hidden="true"></i></a></div>'
-          plugin_id: text_custom
+      footer: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -614,6 +604,7 @@ display:
         empty: false
         pager: false
         sorts: false
+        footer: false
       fields:
         field_url:
           id: field_url
@@ -800,7 +791,7 @@ display:
           click_sort_column: target_id
           type: media_thumbnail
           settings:
-            image_style: ''
+            image_style: videos_and_tutorials
             image_link: ''
           group_column: target_id
           group_columns: {  }
@@ -844,6 +835,18 @@ display:
           expose:
             label: ''
           plugin_id: random
+      footer:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content: '<div class="more mt-3"><a href="/research">More Research Help<i class="fas fa-angle-double-right fa-xs fa-muted ml-1" aria-hidden="true"></i></a></div>'
+          plugin_id: text_custom
     cache_metadata:
       max-age: 0
       contexts:
