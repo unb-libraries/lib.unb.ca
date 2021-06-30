@@ -707,7 +707,10 @@ ul.field--name-field-categories:before {
 /* END Seating Zone View */
 
 /* Videos & Tutorials View */
-@media(min-width: 1200px) {
+.block-views-blockvideos-tutorials-random-slideshow-block {
+  padding-bottom: 1.5rem!important;
+}
+/* @media(min-width: 1200px) {
   .block-views-blockvideos-tutorials-random-slideshow-block {
     float: left;
     max-width: 49%;
@@ -717,7 +720,7 @@ ul.field--name-field-categories:before {
     margin-top: 2.5rem;
     max-width: 49%;
   }
-}
+} */
 /* END Videos & Tutorials View */
 /** END OVERRIDES **/
 
