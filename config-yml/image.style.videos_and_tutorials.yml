@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 name: videos_and_tutorials
-label: 'Videos and tutorials (420x200px)'
+label: 'Videos and tutorials (420x240px)'
 effects:
   d1986366-7878-46d2-b2dd-07bb1af20f50:
     uuid: d1986366-7878-46d2-b2dd-07bb1af20f50
@@ -11,5 +11,5 @@ effects:
     weight: 1
     data:
       width: 420
-      height: 200
+      height: 240
       anchor: center-center
