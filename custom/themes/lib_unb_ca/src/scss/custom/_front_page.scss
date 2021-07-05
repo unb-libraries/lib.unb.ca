@@ -60,6 +60,19 @@
 }
 
 .path-frontpage {
+  #header {
+    .megamenu-li {
+      button.nav-link {
+        color: $white;
+
+        &:focus,
+        &:hover {
+          color: $gray-300;
+        }
+      }
+    }
+  }
+
   .node__content {
     .layout {
       &:first-child {
