@@ -54,8 +54,10 @@ class DiscoverySearch extends BlockBase {
                       <li class="nav-item"><button aria-controls="searchPanel3" aria-expanded="false" class="Accordion-trigger p-2" id="searchBtn3" tabindex="-1">Article Databases</button></li>
                       <li class="nav-item"><button aria-controls="searchPanel4" aria-expanded="false" class="Accordion-trigger p-2 text-left text-lg-center" id="searchBtn4" tabindex="-1">Journals &amp; Newspapers</button></li>
                       <li class="nav-item">
-                         <a aria-expanded="false" class="btn Accordion-trigger p-2 rounded-0 shadow-none text-left text-lg-center text-nowrap" tabindex="-1"
-                            href="https://web.lib.unb.ca/eresources" id="searchBtn5"
+                         <a class="btn Accordion-trigger p-2 rounded-0 shadow-none text-left text-lg-center text-nowrap"
+                            id="searchBtn5" aria-controls="searchPanel5" aria-expanded="false" tabindex="-1"
+                            href="https://web.lib.unb.ca/eresources"
+                            onclick="location.href=\'https://web.lib.unb.ca/eresources\';"
                             title="Guide to Finding Reference Materials (opens new page)">More<i class="fas fa-angle-double-right fa-sm fa-muted ml-1" aria-hidden="true"></i>
                          </a>
                       </li>
@@ -68,6 +70,9 @@ class DiscoverySearch extends BlockBase {
             <div aria-labelledby="searchBtn2 dropdownBtn2" class="Accordion-panel" id="searchPanel2" role="region" hidden="">' . $this->getReservesForm() . '</div>
             <div aria-labelledby="searchBtn3 dropdownBtn3" class="Accordion-panel" id="searchPanel3" role="region" hidden="">' . $this->getDatabasesForm() . '</div>
             <div aria-labelledby="searchBtn4 dropdownBtn4" class="Accordion-panel" id="searchPanel4" role="region" hidden="">' . $this->getJournalsForm() . '</div>
+            <div aria-labelledby="searchBtn5 dropdownBtn5" class="Accordion-panel" id="searchPanel5" role="region" hidden="">
+              <div class="d-flex justify-content-center pt-4"><span class="h4"><i class="fas fa-spinner fa-spin"></i> Directing you to e-Resources &hellip;</span></div>
+            </div>
           </div>
         </div>
         </div>
