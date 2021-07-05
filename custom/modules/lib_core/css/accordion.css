@@ -42,8 +42,9 @@
 .Accordion .nav-item button,
 .Accordion .nav-item .btn {
   border-style: none;
-  border-bottom-style: outset;
   border-bottom-color: transparent;
+  border-bottom-style: outset;
+  border-bottom-width: 2px;
   transition: all .3s ease-in-out;
 }
 .Accordion .nav-item [aria-expanded="true"] {
@@ -60,7 +61,8 @@
 }
 .Accordion .nav-item [aria-expanded="false"]:hover,
 .Accordion .nav-item [aria-expanded="false"]:focus {
-  color: #ffc107;
+  color: #dee2e6;
+  border-bottom: 2px outset #ffc107;
 }
 .Accordion button::-moz-focus-inner {
   border: 0;
