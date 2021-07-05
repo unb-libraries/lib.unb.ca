@@ -16,9 +16,11 @@
       color: $white;
       padding: 1px;
 
-      &:focus ,
-      &:hover {
-        color: $text-yellow;
+      &:not(.Accordion-trigger) {
+        &:focus,
+        &:hover {
+          color: $text-yellow;
+        }
       }
     }
   }
