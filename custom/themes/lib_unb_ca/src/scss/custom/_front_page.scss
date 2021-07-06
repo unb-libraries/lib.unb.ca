@@ -61,13 +61,17 @@
 
 .path-frontpage {
   #header {
-    .megamenu-li {
-      button.nav-link {
-        color: $white;
+    #navbar-main {
+      #navbar {
+        .megamenu-li {
+          button.nav-link {
+            color: $white;
 
-        &:focus,
-        &:hover {
-          color: $gray-300;
+            &:focus,
+            &:hover {
+              color: $gray-300;
+            }
+          }
         }
       }
     }
