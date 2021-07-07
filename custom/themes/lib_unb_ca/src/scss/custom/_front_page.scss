@@ -5,7 +5,7 @@
   background-size: cover;
 
   #header-overlay {
-    background-image: linear-gradient(180deg, rgb(27 33 37 / 25%), rgb(27  33  37 / 0));
+    /*background-image: linear-gradient(180deg, rgb(27 33 37 / 25%), rgb(27  33  37 / 0));*/
   }
 
   .card {
@@ -61,11 +61,17 @@
 
 .path-frontpage {
   #header {
+    #navbar-top {
+      background-image: linear-gradient(180deg, rgba(27 33 37 / 85%), rgba(27 33 37 / 50%));
+    }
+
     #navbar-main {
+      background-image: linear-gradient(180deg, rgba(27 33 37 / 50%), rgb(27  33  37 / 0%));
       #navbar {
         .megamenu-li {
           button.nav-link {
-            color: $white;
+            color: rgb(255 255 255 / 89%);
+            font-weight: bold;
 
             &:focus,
             &:hover {
@@ -108,4 +114,3 @@
     padding-right: 0;
   }
 }
-
