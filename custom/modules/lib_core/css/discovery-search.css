@@ -8,6 +8,9 @@
 #discovery-search .card-header {
   border-bottom: none;
 }
+#discovery-search .card-body {
+  min-height: 134px;
+}
 #discovery-wrapper #discovery-search .card-header a[aria-expanded="false"]:after {
   content: none;
 }
@@ -82,6 +85,7 @@ fieldset.form-type-select {
   opacity: 0;
   position: absolute;
   max-width: inherit;
+  width: 100%!important;
 }
 
 @media (min-width: 992px) {
