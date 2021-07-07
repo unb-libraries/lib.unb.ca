@@ -3,7 +3,7 @@
   min-height: 50vh;
 }
 #discovery-search {
-  background-color: rgb(80  80  80 / 73%);
+  background-color: rgb(80  80  80 / 82%);
 }
 #discovery-search .card-header {
   border-bottom: none;
@@ -20,7 +20,7 @@
 
 /* Ask Us */
 #ask-us {
-  background-color: rgb(255 193 7 / 73%);
+  background-color: rgb(255 193 7 / 76%);
   width: 29%;
 }
 #ask-us .askus-header h2 {
