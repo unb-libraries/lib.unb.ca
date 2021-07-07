@@ -80,7 +80,9 @@
         .megamenu-li {
           button.nav-link {
             color: rgb(255 255 255 / 89%);
-            font-weight: bold;
+            @media (min-width: 992px) {
+              font-weight: bold;
+            }
           }
 
           &:not(.show) {
