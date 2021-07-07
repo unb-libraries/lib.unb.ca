@@ -81,10 +81,14 @@
           button.nav-link {
             color: rgb(255 255 255 / 89%);
             font-weight: bold;
+          }
 
-            &:focus,
-            &:hover {
-              color: $gray-300;
+          &:not(.show) {
+            button.nav-link {
+              &:focus,
+              &:hover {
+                color: $gray-300;
+              }
             }
           }
         }
