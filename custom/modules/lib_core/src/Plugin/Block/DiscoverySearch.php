@@ -241,8 +241,8 @@ class DiscoverySearch extends BlockBase {
   protected function getDatabasesForm() {
     $title_form =
       '<form action="https://web.lib.unb.ca/eresources/index.php?sub=video/eresources/index.php" id="title_results" class="chosen-compact mb-2" method="get">
-        <div class="d-flex flex-column flex-lg-row">
-          <div class="flex-fill mb-2 mr-0 mr-lg-2">
+        <div class="d-flex flex-column flex-md-row">
+          <div class="flex-fill mb-2 mr-0 mr-md-2">
             <label class="sr-only" for="databaseID">
               Browse for databases by title
             </label>' .
@@ -362,8 +362,8 @@ class DiscoverySearch extends BlockBase {
         <input id="sub" name="sub" type="hidden" value="journals">
         <input id="searchtype_every_journal" name="searchtype" type="hidden" value="every_word">
 
-        <div class="d-flex flex-column flex-lg-row">
-          <div class="flex-fill mb-2 mr-0 mr-lg-2">        
+        <div class="d-flex flex-column flex-md-row">
+          <div class="flex-fill mb-2 mr-0 mr-md-2">
             <fieldset class="form-group">
             <label class="sr-only" for="title_journal">
               Search words in title
