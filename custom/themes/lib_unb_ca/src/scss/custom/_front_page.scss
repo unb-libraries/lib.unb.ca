@@ -69,6 +69,12 @@
       &:not(.affix) {
         background-image: linear-gradient(180deg, rgba(27 33 37 / 50%), rgb(27  33  37 / 0%));
       }
+      @media(max-width: 991px) {
+        background: #1b2125;
+        #nav-btn .btn {
+          border-color: $dark;
+        }
+      }
 
       #navbar {
         .megamenu-li {
