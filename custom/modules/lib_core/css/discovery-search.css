@@ -73,12 +73,15 @@
   background: #6c757d;
   color: #fff;
 }
+fieldset.form-type-select {
+  position: relative;
+}
 .chosen-compact select.d-none {
   display: inline-block!important;
   height: auto!important;
   opacity: 0;
   position: absolute;
-  max-width: 80%;
+  max-width: inherit;
 }
 
 @media (min-width: 992px) {
