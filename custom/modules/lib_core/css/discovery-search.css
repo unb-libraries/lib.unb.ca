@@ -91,7 +91,8 @@
     opacity: 1;
   }
 
-  #navbar-main:not(.affix):focus-within #navbar-main-content {
+  #navbar-main:not(.affix):focus-within #navbar-main-content,
+  #navbar-main:not(.affix) #navbar-main-content:hover {
     background-color: rgb(55 63 68 / 99%);
   }
   #navbar-main:focus-within + #discovery-wrapper > div,
