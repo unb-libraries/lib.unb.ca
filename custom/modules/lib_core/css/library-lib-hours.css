@@ -7,9 +7,6 @@
     font-weight: bold;
     padding-top: 0;
 }
-.table-lib-hours tfoot td {
-    padding-top: .5rem;
-}
 .table-lib-hours table tr {
     padding-left: 0;
     vertical-align: bottom;
