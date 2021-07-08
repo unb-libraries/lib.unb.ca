@@ -94,6 +94,9 @@ fieldset.form-type-select {
     transition: opacity .35s ease-in;
     opacity: 1;
   }
+  #navbar-main:not(.affix) #navbar-main-content {
+    transition: background-color .35s ease-in;
+  }
   #navbar-main:not(.affix):focus-within #navbar-main-content,
   #navbar-main:not(.affix) #navbar-main-content:hover {
     background-color: rgb(55 63 68 / 99%);
