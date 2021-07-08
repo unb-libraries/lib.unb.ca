@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.paragraph.field_media_image
     - field.storage.paragraph.field_url
+    - image.style.content_lg_breakpoint
     - node.type.images_page
   module:
     - link
@@ -13,7 +14,7 @@ dependencies:
     - paragraphs
     - user
 id: meet_with_a_librarian
-label: 'Meet With a Librarian'
+label: 'Meet With a Librarian (Ask Me About)'
 module: views
 description: ''
 tag: ''
@@ -31,8 +32,12 @@ display:
         options:
           perm: 'access content'
       cache:
-        type: none
-        options: {  }
+        type: time
+        options:
+          results_lifespan: 3600
+          results_lifespan_custom: 0
+          output_lifespan: 3600
+          output_lifespan_custom: 0
       query:
         type: views_query
         options:
@@ -370,7 +375,7 @@ display:
           table: views
           field: random
           plugin_id: random
-      title: 'Meet With a Librarian'
+      title: 'Ask me About'
       header: {  }
       footer: {  }
       empty: {  }
@@ -591,7 +596,7 @@ display:
           click_sort_column: target_id
           type: media_thumbnail
           settings:
-            image_style: ''
+            image_style: content_lg_breakpoint
             image_link: ''
           group_column: target_id
           group_columns: {  }
@@ -638,7 +643,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<div class=\"alert-warning border border-dark p-3\" role=\"alert\">\r\n  <i class=\"fas fa-exclamation-circle\"></i>\r\n   Please add content to the <em>Meet With a Librarian</em> page.\r\n</div>"
+          content: "<div class=\"alert-warning border border-dark p-3\" role=\"alert\">\r\n  <i class=\"fas fa-exclamation-circle\"></i>\r\n   Please add content to the <em>Meet With a Librarian (Ask Me About) </em> page.\r\n</div>"
           plugin_id: text_custom
     cache_metadata:
       max-age: 0
