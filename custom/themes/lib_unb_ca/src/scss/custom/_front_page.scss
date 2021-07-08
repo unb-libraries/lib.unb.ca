@@ -79,7 +79,7 @@
       #navbar {
         .megamenu-li {
           button.nav-link {
-            color: rgb(255 255 255 / 89%);
+            color: $white;
           }
 
           &:not(.show) {
