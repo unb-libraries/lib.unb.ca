@@ -1,0 +1,15 @@
+uuid: 453065c4-aa72-479d-bd00-37c6a2c56725
+langcode: en
+status: true
+dependencies: {  }
+name: content_lg_breakpoint
+label: 'Content Lg Breakpoint (690px)'
+effects:
+  b51b045b-0e9a-45a5-8e3f-801a0d62b456:
+    uuid: b51b045b-0e9a-45a5-8e3f-801a0d62b456
+    id: image_scale
+    weight: 1
+    data:
+      width: 690
+      height: null
+      upscale: false
