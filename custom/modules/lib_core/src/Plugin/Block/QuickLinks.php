@@ -159,11 +159,11 @@ class QuickLinks extends BlockBase {
       'quicklinks_buttons' => [
         '#theme' => 'item_list',
         '#list_type' => 'ul',
-        '#context' => [
-          'list_style' => 'inline',
-        ],
         '#attributes' => [
           'class' => [
+            'd-flex',
+            'flex-wrap',
+            'justify-content-center',
             'list-inline',
           ],
         ],
