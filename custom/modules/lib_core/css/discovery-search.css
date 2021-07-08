@@ -101,8 +101,7 @@ fieldset.form-type-select {
   #navbar-main:not(.affix) #navbar-main-content:hover {
     background-color: rgb(55 63 68 / 99%);
   }
-  #navbar-main:not(.affix):focus-within + #discovery-wrapper > div,
-  #navbar-main:not(.affix):hover + #discovery-wrapper > div {
+  #navbar-main:not(.affix):focus-within + #discovery-wrapper > div {
     opacity: .45;
   }
 }
