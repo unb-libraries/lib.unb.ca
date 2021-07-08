@@ -33,8 +33,12 @@ display:
         options:
           perm: 'access content'
       cache:
-        type: tag
-        options: {  }
+        type: time
+        options:
+          results_lifespan: 3600
+          results_lifespan_custom: 0
+          output_lifespan: 3600
+          output_lifespan_custom: 0
       query:
         type: views_query
         options:
@@ -845,7 +849,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: false
-          content: '<div class="more mt-3"><a href="/research">More Research Help<i class="fas fa-angle-double-right fa-xs fa-muted ml-1" aria-hidden="true"></i></a></div>'
+          content: '<div class="more mt-3"><a href="/research/video">More Research Help<i class="fas fa-angle-double-right fa-xs fa-muted ml-1" aria-hidden="true"></i></a></div>'
           plugin_id: text_custom
     cache_metadata:
       max-age: 0
