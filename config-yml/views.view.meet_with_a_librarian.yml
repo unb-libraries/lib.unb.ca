@@ -375,7 +375,7 @@ display:
           table: views
           field: random
           plugin_id: random
-      title: 'Ask me About'
+      title: 'Ask Me About'
       header: {  }
       footer: {  }
       empty: {  }
