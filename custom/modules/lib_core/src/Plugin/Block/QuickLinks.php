@@ -150,7 +150,6 @@ class QuickLinks extends BlockBase {
           'id' => 'quicklinks-wrapper',
           'class' => [
             'collapse',
-            'mr-2',
           ],
         ],
         '#items' => $quicklinks,
@@ -172,6 +171,8 @@ class QuickLinks extends BlockBase {
             'ml-auto',
             'mr-auto',
             'mr-lg-0',
+            'mt-2',
+            'mt-lg-0',
           ],
           'id' => ['quicklinks-buttons'],
         ],
