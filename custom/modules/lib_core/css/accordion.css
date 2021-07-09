@@ -87,7 +87,7 @@
 }
 
 .Accordion .card {
-  background-color: initial;
+  background-color: inherit;
   border: 0;
 }
 .Accordion :not(.form-control).focus-ring:focus {

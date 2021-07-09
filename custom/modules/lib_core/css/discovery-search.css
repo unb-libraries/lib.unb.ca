@@ -2,7 +2,8 @@
 #discovery-wrapper {
   min-height: 50vh;
 }
-#discovery-search {
+#discovery-search,
+.Accordion .nav-item button {
   background-color: #505050;
   background-color: rgb(80  80  80 / 82%);
 }
