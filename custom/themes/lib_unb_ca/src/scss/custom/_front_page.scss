@@ -62,13 +62,14 @@
 .path-frontpage {
   #header {
     #navbar-top {
-      background-image: linear-gradient(180deg, rgba(27 33 37 / 85%), rgba(27 33 37 / 50%));
+      background-image: linear-gradient(180deg, rgb(27 33 37 / 85%), rgb(27 33 37 / 50%));
     }
 
     #navbar-main {
       &:not(.affix) {
-        background-image: linear-gradient(180deg, rgba(27 33 37 / 50%), rgb(27  33  37 / 0%));
+        background-image: linear-gradient(180deg, rgb(27 33 37 / 50%), rgb(27  33  37 / 0%));
       }
+
       @media(max-width: 991px) {
         background: #1b2125;
         #nav-btn .btn {
