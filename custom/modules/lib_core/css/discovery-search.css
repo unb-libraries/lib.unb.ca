@@ -6,9 +6,6 @@
   background-color: #505050;
   background-color: rgb(80  80  80 / 72%);
 }
-#discovery-search .card-header {
-  border-bottom: none;
-}
 #discovery-search .card-body {
   min-height: 134px;
 }
