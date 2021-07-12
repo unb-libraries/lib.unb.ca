@@ -38,7 +38,7 @@ class DiscoverySearch extends BlockBase {
     }
 
     $html =
-      '<div class="Accordion d-flex flex-column flex-lg-row px-4 px-lg-0 theme-dark">
+      '<div class="Accordion d-flex flex-column flex-lg-row px-4 px-lg-0">
         <div id="discovery-search" class="flex-grow-1">
         <div class="card">
           <div class="card-header px-2 pb-0 pb-md-1">
@@ -66,7 +66,7 @@ class DiscoverySearch extends BlockBase {
               </div>
             </nav>
           </div>
-          <div class="card-body px-2 py-0">
+          <div class="card-body px-2 py-0 theme-dark">
             <div aria-labelledby="searchBtn1 dropdownBtn1" class="Accordion-panel" id="searchPanel1" role="region">' . $this->getCatalogueForm() . '</div>
             <div aria-labelledby="searchBtn2 dropdownBtn2" class="Accordion-panel" id="searchPanel2" role="region" hidden="">' . $this->getReservesForm() . '</div>
             <div aria-labelledby="searchBtn3 dropdownBtn3" class="Accordion-panel" id="searchPanel3" role="region" hidden="">' . $this->getDatabasesForm() . '</div>
