@@ -1,27 +1,27 @@
 .Accordion .card-header {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+  background-color: initial;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
 }
 .Accordion #category-label {
-    color: #ffc107;
+  color: #ffc107;
 }
 .Accordion .navbar-toggler {
-    font-size: 1rem;
-    margin: 0 0 .5rem 0;
-    padding: .5rem;
+  font-size: 1rem;
+  margin: 0 0 .5rem 0;
+  padding: .5rem;
 }
 .Accordion .navbar-toggler[aria-expanded="false"]:after {
-    font-family: 'Font Awesome 5 Free';
-    font-size: smaller;
-    font-weight: bold;
-    content: '\f078';
+  font-family: 'Font Awesome 5 Free';
+  font-size: smaller;
+  font-weight: bold;
+  content: '\f078';
 }
 .Accordion .navbar-toggler[aria-expanded="true"]:after {
-    font-family: 'Font Awesome 5 Free';
-    font-size: smaller;
-    font-weight: bold;
-    content: '\f077';
+  font-family: 'Font Awesome 5 Free';
+  font-size: smaller;
+  font-weight: bold;
+  content: '\f077';
 }
-
 .Accordion .form-control,
 .Accordion button.btn-primary {
   border: 2px #000 solid;
@@ -32,10 +32,12 @@
 .Accordion .custom-control-input:focus ~ .custom-control-label::before {
   box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 60%);
 }
-
+.Accordion .form-control:placeholder-shown {
+  opacity: 1;
+}
 .Accordion-trigger {
-  background: #505050;
-  background-color: inherit;
+  background-color: #505050;
+  background: initial;
   color: #fff;
   display: block;
   font-size: 1rem;
@@ -46,7 +48,6 @@
   width: 100%;
   outline: none;
 }
-
 .Accordion .nav-item button,
 .Accordion .nav-item .btn {
   border-style: none;
@@ -71,7 +72,6 @@
 .Accordion button::-moz-focus-inner {
   border: 0;
 }
-
 .Accordion-title {
   display: block;
   pointer-events: none;
@@ -80,7 +80,6 @@
   padding: 0.25em;
   outline: none;
 }
-
 .Accordion-panel {
   margin: 0;
   padding: 1em;
@@ -89,19 +88,28 @@
 .Accordion-panel[hidden] {
   display: none;
 }
-
 .Accordion .card {
   background: #505050;
   background-color: inherit;
   border: 0;
+  color: #fff;
+}
+.Accordion .card a:not(.chosen-single),
+.Accordion .card .custom-control-label {
+  color: #fff;
+  padding: 1px;
+}
+.Accordion .card a:not(.Accordion-trigger):focus,
+.Accordion .card a:not(.Accordion-trigger):hover {
+  color: #ffc107;
 }
 .Accordion :not(.form-control).focus-ring:focus {
   outline: 1px dotted #fff;
 }
 @media (max-width: 767px) {
-    .Accordion .navbar-collapse .nav-item [aria-expanded="true"] {
-        opacity: .4;
-    }
+  .Accordion .navbar-collapse .nav-item [aria-expanded="true"] {
+    opacity: .4;
+  }
 }
 @media (min-width: 768px) {
   .Accordion .nav-item [aria-expanded="true"] {
