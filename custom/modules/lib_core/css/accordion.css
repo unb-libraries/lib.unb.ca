@@ -4,7 +4,7 @@
 }
 .Accordion #category-label {
   color: #ffc107;
-  font-family: 'ProximaNovaA-Regular';
+  font-family: 'ProximaNovaA-Regular', 'Century Gothic', AppleGothic, Arial, sans-serif;
 }
 .Accordion .navbar-toggler {
   font-size: 1rem;
