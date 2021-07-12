@@ -12,12 +12,12 @@
     vertical-align: bottom;
 }
 .table-lib-hours table a {
-    color: rgb(0 96 122);
+    color: #00607a;
     font-weight: normal;
     white-space: nowrap;
 }
 .table-lib-hours table a:focus,
 .table-lib-hours table a:hover {
-    color: rgb(153 0 0);
+    color: #900;
     font-weight: normal;
 }
