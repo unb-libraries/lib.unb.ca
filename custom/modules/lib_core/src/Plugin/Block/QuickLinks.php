@@ -136,7 +136,7 @@ class QuickLinks extends BlockBase {
 
     $render_array_list = [
       '#type' => 'markup',
-      '#prefix' => '<div id="quicklinks" class="d-flex mt-2 mb-5">',
+      '#prefix' => '<div id="quicklinks" class="d-flex mt-2 mb-4 mb-lg-5">',
       '#suffix' => '</div>',
 
       'quicklinks_list' => [

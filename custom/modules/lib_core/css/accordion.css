@@ -4,6 +4,7 @@
 }
 .Accordion #category-label {
   color: #ffc107;
+  font-family: 'ProximaNovaA-Regular';
 }
 .Accordion .navbar-toggler {
   font-size: 1rem;
