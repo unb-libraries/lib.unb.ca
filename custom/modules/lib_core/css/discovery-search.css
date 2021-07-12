@@ -2,10 +2,9 @@
 #discovery-wrapper {
   min-height: 50vh;
 }
-#discovery-search,
-.Accordion .nav-item button {
+#discovery-search {
   background-color: #505050;
-  background-color: rgb(80  80  80 / 82%);
+  background-color: rgb(80  80  80 / 72%);
 }
 #discovery-search .card-header {
   border-bottom: none;
@@ -23,8 +22,8 @@
 /* Ask Us */
 #ask-us {
   background-color: #ffc14c;
-  background-color: rgb(255 193 7 / 76%);
-  width: 29%;
+  background-color: rgb(255 193 7 / 82%);
+  width: 30%;
 }
 #ask-us .askus-header h2 {
   background: none;
