@@ -1,7 +1,7 @@
 .Accordion .navbar-toggler {
     font-size: 1rem;
-    margin: .5rem 0;
-    padding: 0rem;
+    margin: 0 0 .5rem 0;
+    padding: .5rem;
 }
 .Accordion .navbar-toggler[aria-expanded="false"]:after {
     font-family: 'Font Awesome 5 Free';
@@ -15,6 +15,7 @@
     font-weight: bold;
     content: '\f077';
 }
+
 .Accordion .form-control,
 .Accordion button.btn-primary {
   border: 2px #000 solid;
@@ -46,10 +47,6 @@
   border-bottom-style: outset;
   border-bottom-width: 2px;
   transition: all .3s ease-in-out;
-}
-.Accordion .nav-item [aria-expanded="true"] {
-  border-bottom-color: #ffc107;
-  color: #ffc107;
 }
 .Accordion .nav-item [aria-expanded="true"]:hover {
   cursor: default;
@@ -87,9 +84,21 @@
 }
 
 .Accordion .card {
+  background: #505050;
   background-color: inherit;
   border: 0;
 }
 .Accordion :not(.form-control).focus-ring:focus {
   outline: 1px dotted #fff;
+}
+@media (max-width: 767px) {
+    .Accordion .navbar-collapse .nav-item [aria-expanded="true"] {
+        opacity: .4;
+    }
+}
+@media (min-width: 768px) {
+  .Accordion .nav-item [aria-expanded="true"] {
+    border-bottom-color: #ffc107;
+    color: #ffc107;
+  }
 }
