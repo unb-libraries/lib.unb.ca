@@ -2729,7 +2729,7 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 250
+            max_length: 242
             word_boundary: true
             ellipsis: true
             more_link: false
@@ -2766,18 +2766,18 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_featured_image:
-          id: field_featured_image
-          table: node__field_featured_image
-          field: field_featured_image
+        nid_1:
+          id: nid_1
+          table: node_field_data
+          field: nid
           relationship: none
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
-            alter_text: true
-            text: "<div class=\"d-flex flex-column front-page-border bg-light\">\r\n  <div class=\"flex-grow-1\">{{ field_featured_image }}</div>\r\n  <div class=\"p-3\">\r\n    <h3 class=\"h4>{{ title }}</h3>\r\n    {{ field_page_content }}\r\n  </div>\r\n</div>"
+            alter_text: false
+            text: ''
             make_link: false
             path: ''
             absolute: false
@@ -2809,6 +2809,70 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_unformatted
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: node
+          entity_field: nid
+          plugin_id: field
+        field_featured_image:
+          id: field_featured_image
+          table: node__field_featured_image
+          field: field_featured_image
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: "<div class=\"d-flex flex-column\">\r\n  <div class=\"flex-grow-1 shadow-sm\">{{ field_featured_image }}</div>\r\n  <div class=\"p-3\">\r\n    <h3 class=\"h4>{{ title }}</h3>\r\n    {{ field_page_content }}\r\n  </div>\r\n</div>"
+            make_link: true
+            path: '/node/{{ nid_1 }}'
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: link-no-hover
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: link-no-hover
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
           element_default_classes: false
           empty: ''
           hide_empty: false
@@ -2818,7 +2882,7 @@ display:
           type: media_thumbnail
           settings:
             image_style: featured_news
-            image_link: content
+            image_link: ''
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -2909,11 +2973,6 @@ display:
             advanced_options: '{}'
           widgets:
             top:
-              views_slideshow_controls:
-                enable: false
-                weight: '1'
-                hide_on_single_slide: '0'
-                type: views_slideshow_controls_text
               views_slideshow_slide_counter:
                 enable: false
                 weight: '1'
@@ -2923,20 +2982,21 @@ display:
                 weight: '1'
                 hide_on_single_slide: '0'
                 type: views_slideshow_pager_bullets
+                views_slideshow_pager_bullets:
+                  views_slideshow_pager_bullets_hover: 0
                 views_slideshow_pager_fields:
                   views_slideshow_pager_fields_fields:
                     title: 0
                     field_page_content: 0
+                    nid_1: 0
                     field_featured_image: 0
                   views_slideshow_pager_fields_hover: 0
-                views_slideshow_pager_bullets:
-                  views_slideshow_pager_bullets_hover: 0
-            bottom:
               views_slideshow_controls:
                 enable: false
                 weight: '1'
                 hide_on_single_slide: '0'
                 type: views_slideshow_controls_text
+            bottom:
               views_slideshow_slide_counter:
                 enable: false
                 weight: '1'
@@ -2946,14 +3006,20 @@ display:
                 weight: '1'
                 hide_on_single_slide: '0'
                 type: views_slideshow_pager_bullets
+                views_slideshow_pager_bullets:
+                  views_slideshow_pager_bullets_hover: 0
                 views_slideshow_pager_fields:
                   views_slideshow_pager_fields_fields:
                     title: 0
                     field_page_content: 0
+                    nid_1: 0
                     field_featured_image: 0
                   views_slideshow_pager_fields_hover: 0
-                views_slideshow_pager_bullets:
-                  views_slideshow_pager_bullets_hover: 0
+              views_slideshow_controls:
+                enable: false
+                weight: '1'
+                hide_on_single_slide: '0'
+                type: views_slideshow_controls_text
       row:
         type: fields
         options:
