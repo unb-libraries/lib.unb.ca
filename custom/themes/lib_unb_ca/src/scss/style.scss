@@ -330,7 +330,26 @@ ul.pagination {
   }
 }
 /* Featured image */
-.front-page-border{
+.news-featured {
+  .views_slideshow_main {
+    background-color: $light;
+    border: 1px solid $dark;
+  }
+  .views-slideshow-controls-bottom {
+    margin-top: .33rem;
+
+    @media(max-width: 981px) {
+      .widget_pager {
+        li {
+          margin-left: .66rem;
+          margin-right: .66rem;
+        }
+      }
+    }
+  }
+}
+.news-featured .views_slideshow_main,
+.front-page-border {
   a img {
     @include opacity(1);
     @include css3-prefix(transition, opacity .3s);
