@@ -3,33 +3,6 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-
-  #header-overlay {
-    /*background-image: linear-gradient(180deg, rgb(27 33 37 / 25%), rgb(27  33  37 / 0));*/
-  }
-
-  .card {
-    color: $white;
-
-    a:not(.chosen-single),
-    .custom-control-label {
-      color: $white;
-      padding: 1px;
-
-      &:not(.Accordion-trigger) {
-        &:focus,
-        &:hover {
-          color: $text-yellow;
-        }
-      }
-    }
-  }
-  .card-header {
-    background-color: inherit;
-  }
-  .form-control:placeholder-shown {
-    opacity: 1;
-  }
 }
 
 .front-page-border {
