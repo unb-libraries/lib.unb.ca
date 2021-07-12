@@ -20,6 +20,9 @@ Array.prototype.slice.call(document.querySelectorAll('.Accordion')).forEach(func
     var allowToggle = (allowMultiple) ? allowMultiple : accordion.hasAttribute('data-allow-toggle');
 
     // Create the array of toggle elements for the accordion group
+    var label = accordion.querySelector('#category-label');
+    var toggler = accordion.querySelector('button.navbar-toggler');
+    var navbar = accordion.querySelector('.navbar-collapse');
     var triggers = Array.prototype.slice.call(accordion.querySelectorAll('.Accordion-trigger'));
     var panels = Array.prototype.slice.call(accordion.querySelectorAll('.Accordion-panel'));
 
@@ -37,6 +40,7 @@ Array.prototype.slice.call(document.querySelectorAll('.Accordion')).forEach(func
                 // Set the expanded state on the triggering element
                 active.setAttribute('aria-expanded', 'false');
                 active.setAttribute('tabindex', '-1');
+
                 // Hide the accordion sections, using aria-controls to specify the desired section
                 document.getElementById(active.getAttribute('aria-controls')).setAttribute('hidden', '');
 
@@ -64,8 +68,13 @@ Array.prototype.slice.call(document.querySelectorAll('.Accordion')).forEach(func
                 // Hide the accordion sections, using aria-controls to specify the desired section
                 document.getElementById(target.getAttribute('aria-controls')).setAttribute('hidden', '');
             }
-
             event.preventDefault();
+
+            if (isVisible(toggler)) {
+                label.textContent = target.textContent;
+                toggler.click();
+                toggler.focus();
+            }
         }
     });
 
@@ -109,7 +118,6 @@ Array.prototype.slice.call(document.querySelectorAll('.Accordion')).forEach(func
                 event.preventDefault();
 
             }
-
         }
     });
 
@@ -117,11 +125,11 @@ Array.prototype.slice.call(document.querySelectorAll('.Accordion')).forEach(func
     accordion.querySelectorAll('.Accordion-trigger').forEach(function (trigger) {
 
         trigger.addEventListener('focus', function (event) {
-            accordion.classList.add('focus');
+            //accordion.classList.add('focus');
         });
 
         trigger.addEventListener('blur', function (event) {
-            accordion.classList.remove('focus');
+            //accordion.classList.remove('focus');
         });
 
     });
@@ -139,3 +147,7 @@ Array.prototype.slice.call(document.querySelectorAll('.Accordion')).forEach(func
     }
 
 });
+
+function isVisible(e) {
+    return !!( e.offsetWidth || e.offsetHeight || e.getClientRects().length );
+}
