@@ -42,7 +42,7 @@ class DeansMessage extends BlockBase {
     $html = '
       <a href="/what-to-expect">
         <figure class="caption-overlay-bottom">
-            <img src="/modules/custom/lib_core/img/deans-message.png"
+            <img src="/modules/custom/lib_core/img/lesley-balcomm-welcome-unb-libraries.png"
               alt="Welcome to UNB Libraries">
             <figcaption class="font-weight-bold">Covid-19 & Fall 2021</figcaption>
         </figure>
