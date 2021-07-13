@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 name: featured_news
-label: 'Featured News (690x200)'
+label: 'Featured News (895x220)'
 effects:
   d16e32ef-883e-48c4-a411-a96a452c5fb4:
     uuid: d16e32ef-883e-48c4-a411-a96a452c5fb4
@@ -11,5 +11,5 @@ effects:
     weight: 1
     data:
       width: 895
-      height: 200
+      height: 220
       anchor: center-center
