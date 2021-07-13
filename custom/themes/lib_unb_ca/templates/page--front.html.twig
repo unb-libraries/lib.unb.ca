@@ -175,18 +175,18 @@
     </div>
 {% endblock %}
 
-<footer class="site-footer mt-0 py-0 pt-lg-4">
-    <div class="footer-top container pt-2">
+<footer class="site-footer p-0">
+    <div class="footer-top container py-4">
         <div class="d-flex flex-wrap justify-content-between">
-            <div class="unb-logo">
+            <div class="unb-logo text-center">
                 <a class="d-none d-lg-block link-no-hover" href="//unb.ca">
                     <img class="img-fluid" src="{{ unb_lib_theme_path }}/img/unb-logo-primary-w.png" alt="University of New Brunswick: established in 1785">
                 </a><br/>
-                <a class="donate unb-logo" href="//donations.helpforcharities.com/unbdonation">
+                <a class="donate" href="//donations.helpforcharities.com/unbdonation">
                     <img class="img-fluid" src="{{ unb_lib_theme_path }}/img/donate.png" alt="Donate to UNB Libraries">
                 </a>
             </div>
-            <nav>
+            <nav class="my-2">
                 <h2>General</h2>
                 <ul class="clearfix nav" role="menu">
                     <li role="none"><a class="nav-link" href="https://lib.unb.ca/about/contact-us" role="menuitem">Contact Us</a></li>
@@ -196,17 +196,17 @@
                     <li role="none"><a class="nav-link" href="https://lib.unb.ca/about/policies" role="menuitem">Policies</a></li>
                 </ul>
             </nav>
-            <nav>
+            <nav class="my-2">
                 <h2>Libraries</h2>
                 <ul class="clearfix nav" role="menu">
                     <li role="none"><a class="nav-link" href="https://lib.unb.ca/about/harriet-irving-library" role="menuitem">Harriet Irving</a></li>
                     <li role="none"><a class="nav-link" href="https://lib.unb.ca/about/science-forestry-library" role="menuitem">Science &amp; Forestry</a></li>
                     <li role="none"><a class="nav-link" href="https://lib.unb.ca/about/engineering-computer-science-library" role="menuitem">Engineering &amp; Computer Science</a></li>
                     <li role="none"><a class="nav-link" href="https://lib.unb.ca/about/hans-w-klohn-commons" role="menuitem">Hans W. Klohn Commons</a></li>
-                    <li role="none"><a class="nav-link" href="https://www.unb.ca/fredericton/law/library" role="menuitem">Gerard V. La Forest Law</a></li>
+                    <li role="none"><a class="nav-link" href="https://unb.ca/fredericton/law/library" role="menuitem">Gerard V. La Forest Law</a></li>
                 </ul>
             </nav>
-            <nav>
+            <nav class="my-2">
                 <h2>Departments</h2>
                 <ul class="clearfix nav" role="menu">
                     <li role="none"><a class="nav-link" href="https://lib.unb.ca/archives" role="menuitem">Archives &amp; Special Collections</a></li>
@@ -219,39 +219,33 @@
         </div>
     </div>
 
-    <div class="footer-middle container pb-4 pt-0 pt-lg-4">
+    <div class="footer-middle container pb-3">
         <nav>
-            <h2>Join the conversation:</h2>
-            <ul class="nav pl-3">
-                <li class="pr-3"><a class="nav-link" href="https://www.facebook.com/UNBLibraries/">
-                    <i class="fab fa-facebook-f" aria-hidden="true">&nbsp;</i>Facebook</a></li>
-                <li class="pr-3"><a class="nav-link" href="https://twitter.com/UNBLibraries">
-                    <i class="fab fa-twitter" aria-hidden="true">&nbsp;</i>Twitter</a></li>
-                <li class="pr-3"><a class="nav-link" href="https://www.instagram.com/unblibraries">
-                    <i class="fab fa-instagram" aria-hidden="true">&nbsp;</i>Instagram</a></li>
+            <h2 class="mr-4">Join the conversation:</h2>
+            <ul class="nav">
+                <li><a class="nav-link" href="https://facebook.com/UNBLibraries/"><i class="fab fa-facebook-f mr-1" aria-hidden="true"></i>Facebook</a></li>
+                <li class="mx-4"><a class="nav-link" href="https://twitter.com/UNBLibraries"><i class="fab fa-twitter mr-1" aria-hidden="true"></i>Twitter</a></li>
+                <li><a class="nav-link" href="https://instagram.com/unblibraries"><i class="fab fa-instagram mr-1" aria-hidden="true"></i>Instagram</a></li>
             </ul>
         </nav>
     </div>
 
     <div class="footer-bottom py-2">
-        <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between">
+        <div class="container d-flex flex-column flex-lg-row justify-content-lg-between">
             <nav>
-                <ul class="list-inline mb-0 text-center text-lg-left">
-                    <li class="list-inline-item"><a class="nav-link" href="https://www.unb.ca/copyright">Copyright</a></li>
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item"><a class="nav-link" href="https://unb.ca/copyright">Copyright</a></li>
                     <li class="list-inline-item"><a class="nav-link" href="https://unb.ca/privacy/">Privacy</a></li>
                     <li class="list-inline-item"><a class="nav-link" href="https://lib.unb.ca/help/web-accessibility-statement">Accessibility</a></li>
                     <li class="list-inline-item"><a class="nav-link" href="https://lib.unb.ca/contact-unb-libraries-staff">Web Feedback</a></li>
                 </ul>
             </nav>
             <nav class="pt-3 pt-lg-0">
-                <ul class="list-inline mb-0 text-center text-lg-right">
+                <ul class="list-inline mb-0 text-lg-right">
                     <li class="list-inline-item"><a class="nav-link" href="https://unb.ca">UNB</a></li>
-                    <li class="list-inline-item"><a class="nav-link" href="https://lib.unb.ca/help/ask-us">
-                        <i class="fas fa-question-circle" aria-hidden="true">&nbsp;</i>Ask Us</a></li>
-                    <li class="list-inline-item"><a class="nav-link" href="https://lib.unb.ca/services/your-comments-and-suggestions">
-                        <i class="fas fa-comments" aria-hidden="true">&nbsp;</i>Feedback</a></li>
-                    <li class="list-inline-item"><a class="nav-link" href="https://lib.unb.ca/search">
-                        <i class="fas fa-search" aria-hidden="true">&nbsp;</i>Search</a></li>
+                    <li class="list-inline-item"><a class="nav-link" href="https://lib.unb.ca/help/ask-us"><i class="fas fa-question-circle mr-1" aria-hidden="true"></i>Ask Us</a></li>
+                    <li class="list-inline-item"><a class="nav-link" href="https://lib.unb.ca/services/your-comments-and-suggestions"><i class="fas fa-comments mr-1" aria-hidden="true"></i>Feedback</a></li>
+                    <li class="list-inline-item"><a class="nav-link" href="https://lib.unb.ca/search"><i class="fas fa-search mr-1" aria-hidden="true"></i>Search</a></li>
                 </ul>
             </nav>
         </div>
