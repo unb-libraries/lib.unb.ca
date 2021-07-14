@@ -48,11 +48,11 @@ class ResearchGuides extends BlockBase {
       <div id="research-guides" class="front-page-border p-4 w-100">
         <h3>Key Resources by Subject</h3>
         <form id="category-select" class="chosen-compact my-3">
-          <div class="d-flex flex-column flex-lg-row">
+          <div class="d-flex flex-column flex-md-row">
             <label class="sr-only" for="database-subjects">
                 Search research guides by subject
             </label>
-            <div class="input-group flex-fill mb-2 mr-0 mr-lg-2">
+            <div class="input-group flex-fill mb-2 mr-0 mr-md-2">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><i class="fas fa-database"></i></span>
              </div>
