@@ -6,6 +6,25 @@
   background-color: #505050;
   background-color: rgb(80  80  80 / 72%);
 }
+#discovery-search .card {
+  background: #505050;
+  background-color: inherit;
+  border: 0;
+  color: #fff;
+}
+#discovery-search .card a:not(.chosen-single),
+.Accordion .card .custom-control-label {
+  color: #fff;
+  padding: 1px;
+}
+#discovery-search .card a:not(.chosen-single):not(.Accordion-trigger):focus,
+#discovery-search .card a:not(.chosen-single):not(.Accordion-trigger):hover {
+  color: #ffc107;
+}
+#discovery-search .card-header {
+  background-color: initial;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+}
 #discovery-search .card-body {
   min-height: 134px;
 }
