@@ -25,6 +25,23 @@ a {
     }
   }
 }
+#block-mainpagecontent {
+  a {
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    @media screen and (max-width: 991px) {
+      text-decoration-color: $link-color;
+      text-decoration-color: rgb(0 96 122 / 25%);
+    }
+
+    &:hover {
+      box-shadow: none !important;
+      text-decoration: underline;
+      text-decoration-color: $link-hover-color;
+      text-decoration-color: rgb(144 0 0 / 80%);
+    }
+  }
+}
 /* Separate float image from adjacent content */
 .align-left img,
 img.float-left {
