@@ -1,7 +1,3 @@
-.Accordion .card-header {
-  background-color: initial;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
-}
 .Accordion #category-label {
   color: #ffc107;
   font-family: 'ProximaNovaA-Regular', 'Century Gothic', AppleGothic, Arial, sans-serif;
@@ -89,21 +85,7 @@
 .Accordion-panel[hidden] {
   display: none;
 }
-.Accordion .card {
-  background: #505050;
-  background-color: inherit;
-  border: 0;
-  color: #fff;
-}
-.Accordion .card a:not(.chosen-single),
-.Accordion .card .custom-control-label {
-  color: #fff;
-  padding: 1px;
-}
-.Accordion .card a:not(.Accordion-trigger):focus,
-.Accordion .card a:not(.Accordion-trigger):hover {
-  color: #ffc107;
-}
+
 .Accordion :not(.form-control).focus-ring:focus {
   outline: 1px dotted #fff;
 }
