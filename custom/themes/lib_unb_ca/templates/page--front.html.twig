@@ -104,18 +104,12 @@
             <div class="container">
                 <div id="navbar-main-content" class="d-flex flex-column flex-lg-row w-100">
                     <div class="align-self-center branding mr-lg-3">
-                        {% if (is_front and is_library) %}
-                        <h1 class="my-0 py-2">
-                            {% else %}
-                            <a class="py-2" href="https://lib.unb.ca">
-                                {% endif %}
-                                <div class="my-0 text-center text-lg-left">
-                                    <img alt="UNB Libraries" class="img-fluid unblib-logo" src="{{ unb_lib_theme_path }}/img/unb-libraries-red-white.png" />
-                                    <img alt="UNB Libraries" class="img-fluid unblib-logo-affix" src="{{ unb_lib_theme_path }}/img/unb-libraries-w.png" />
-                                </div>
-                            </{{ (is_front and is_library) ? 'h1' : 'a' }}>
+                        <h1 class="mb-0 text-center text-lg-left">
+                            <img alt="UNB Libraries" class="img-fluid unblib-logo" src="{{ unb_lib_theme_path }}/img/unb-libraries-red-white.png" />
+                            <img alt="UNB Libraries" class="img-fluid unblib-logo-affix" src="{{ unb_lib_theme_path }}/img/unb-libraries-w.png" />
+                        </h1>
                     </div>
-                    <div id="nav-btn" class="d-flex d-lg-none mx-0 w-100">
+                    <div id="nav-btn" class="d-flex d-lg-none mx-0">
                         <ul class="container nav nav-pills justify-content-between">
                             <li class="nav-item flex-fill my-2 text-center">
                                 <button id="btn-menu" class="btn btn-black" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">Menu</button>
