@@ -26,7 +26,7 @@ a {
   }
 }
 #block-mainpagecontent {
-  a {
+  a:not(.chosen-single) {
     text-decoration: underline;
     text-decoration-color: transparent;
 
@@ -43,6 +43,25 @@ a {
     }
   }
 }
+#discovery-search .list {
+  a {
+    text-decoration: underline;
+    text-decoration-color: transparent;
+
+    @media screen and (max-width: 767px) {
+      text-decoration-color: $white;
+      text-decoration-color: rgb(255 255 255 / 22%);
+    }
+
+    &:hover {
+      box-shadow: none !important;
+      text-decoration: underline;
+      text-decoration-color: $text-yellow;
+      text-decoration-color: rgb(255 193 7 / 52%);
+    }
+  }
+}
+
 /* Separate float image from adjacent content */
 .align-left img,
 img.float-left {
