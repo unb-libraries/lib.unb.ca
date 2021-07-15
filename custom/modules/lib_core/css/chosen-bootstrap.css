@@ -109,5 +109,5 @@
     font-weight: 900;
     content: '\f0dc';
     opacity: .7;
-    vertical-align: sub;
+    vertical-align: text-top;
 }
