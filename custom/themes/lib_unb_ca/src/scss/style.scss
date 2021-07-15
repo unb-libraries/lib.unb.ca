@@ -34,7 +34,9 @@ a {
       text-decoration-color: $link-color;
       text-decoration-color: rgb(0 96 122 / 22%);
     }
-
+    &:after {
+      text-decoration: none;
+    }
     &:hover {
       box-shadow: none !important;
       text-decoration: underline;
