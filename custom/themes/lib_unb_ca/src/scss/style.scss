@@ -32,14 +32,14 @@ a {
 
     @media screen and (max-width: 767px) {
       text-decoration-color: $link-color;
-      text-decoration-color: rgb(0 96 122 / 20%);
+      text-decoration-color: rgb(0 96 122 / 22%);
     }
 
     &:hover {
       box-shadow: none !important;
       text-decoration: underline;
       text-decoration-color: $link-hover-color;
-      text-decoration-color: rgb(144 0 0 / 50%);
+      text-decoration-color: rgb(144 0 0 / 52%);
     }
   }
 }
