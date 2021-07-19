@@ -11,6 +11,12 @@
     padding-left: 0;
     vertical-align: bottom;
 }
+.table-lib-hours table tr th {
+    padding-right: .5rem;
+}
+.table-lib-hours table tr td {
+    padding-right: 0;
+}
 .table-lib-hours table a {
     color: #00607a;
     font-weight: normal;
