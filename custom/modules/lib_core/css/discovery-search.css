@@ -4,11 +4,11 @@
 }
 #discovery-search {
   background-color: #505050;
-  background-color: rgb(80  80  80 / 72%);
+  background-color: rgb(80  80  80 / 85%);
 }
 #discovery-search .card {
   background: #505050;
-  background-color: inherit;
+  background-color: initial;
   border: 0;
   color: #fff;
 }
