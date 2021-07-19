@@ -637,7 +637,7 @@ display:
           group_type: group
           admin_label: ''
           empty: false
-          content: 'Displaying @start - @end of @total'
+          content: "<div class=\"alert alert-success fade-in\">\r\n    Displaying @start - @end of @total results\r\n</div>"
           plugin_id: result
       footer: {  }
       empty: {  }
