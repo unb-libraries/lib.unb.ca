@@ -2841,9 +2841,9 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"d-flex flex-column\">\r\n  <div class=\"flex-grow-1 shadow-sm\">{{ field_featured_image }}</div>\r\n  <div class=\"p-3\">\r\n    <h3 class=\"h4>{{ title }}</h3>\r\n    {{ field_page_content }}\r\n  </div>\r\n</div>"
-            make_link: true
-            path: '/node/{{ nid_1 }}'
+            text: "<div class=\"d-flex flex-column\">\r\n  <div class=\"flex-grow-1 shadow-sm\"><a href=\"/node/{{ nid_1 }}\">{{ field_featured_image }}</a></div>\r\n  <div class=\"p-3\">\r\n    <h3 class=\"h4\">{{ title }}</h3>\r\n    {{ field_page_content }}\r\n  </div>\r\n</div>"
+            make_link: false
+            path: ''
             absolute: false
             external: false
             replace_spaces: false
