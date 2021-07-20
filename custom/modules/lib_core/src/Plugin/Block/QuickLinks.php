@@ -28,7 +28,7 @@ class QuickLinks extends BlockBase {
           'class' => [],
         ],
         '#children' => Link::fromTextAndUrl(
-          $this->t('Renew Books'),
+          $this->t('Renew Books / My Account'),
           Url::fromUri('https://unb.on.worldcat.org/myaccount')
         )->toString(),
       ],
