@@ -1363,7 +1363,7 @@ display:
             trim_whitespace: false
             alt: ''
             rel: ''
-            link_class: email-icon
+            link_class: 'email-icon text-nowrap'
             prefix: ''
             suffix: ''
             target: ''
