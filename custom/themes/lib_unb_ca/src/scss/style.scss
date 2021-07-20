@@ -345,6 +345,11 @@ ul.pagination {
 }
 /* Featured image */
 .news-featured {
+  @media (min-width: 1200px) {
+    .views_slideshow_slide {
+      min-height: 324px;
+    }
+  }
   .views_slideshow_main {
     background-color: $light;
     border: 1px solid $dark;
