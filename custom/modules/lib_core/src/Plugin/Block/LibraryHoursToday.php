@@ -70,7 +70,7 @@ class LibraryHoursToday extends BlockBase {
             data-ch-days="0" data-ch-format-time="h:mma" data-ch-format-date="dd">Unavailable</td>
         </tr>
         <tr>
-          <th scope="row"><a class="pr-2" href="/about/hours/gerard-v-la-forest-law-library">Law</a></th>
+          <th scope="row"><a class="pr-4" href="/about/hours/gerard-v-la-forest-law-library">Law</a></th>
           <td class="ch-nd ch-live ch-live-co ch-live-nsdo ch-live-am" data-ch-id="law"
             data-ch-days="0" data-ch-format-time="h:mma" data-ch-format-date="dd">Unavailable</td>
         </tr>
