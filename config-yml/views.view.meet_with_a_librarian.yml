@@ -552,7 +552,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<figure class=\"caption-overlay-bottom\">\r\n  {{ field_media_image }}\r\n  <figcaption class=\"caption-hover\">{{ field_url }}</figcaption>\r\n</figure>\r\n"
+            text: "<figure class=\"figcaption-overlay\">\r\n  {{ field_media_image }}\r\n  <figcaption class=\"caption-bottom caption-hover\">{{ field_url }}</figcaption>\r\n</figure>\r\n"
             make_link: true
             path: '{{ field_url_1 }}'
             absolute: false

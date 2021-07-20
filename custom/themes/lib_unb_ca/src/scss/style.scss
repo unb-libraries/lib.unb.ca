@@ -393,6 +393,7 @@ ul.pagination {
     @include opacity(1);
     @include css3-prefix(transition, opacity .3s);
   }
+  a:focus img,
   a:hover img {
     @include opacity(.75);
   }
@@ -917,7 +918,7 @@ table {
 
 /* Image links with hover caption */
 a {
-  figure.caption-overlay-bottom {
+  figure.figcaption-overlay {
     margin-bottom: 0;
     position: relative;
 
@@ -925,18 +926,24 @@ a {
       @include css3-prefix(transition, all .3s ease-in-out);
       background-image: linear-gradient(180deg, rgb(27 33 37 / 60%), rgb(27 33 37 / 100%));
       color: $white;
-      position: absolute;
       padding: .75rem;
       width: 100%;
-      bottom: 0;
-      left: 0;
+
+      &.caption-bottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
 
       &.caption-hover {
         opacity: 0;
       }
     }
+  }
 
-    &:hover figcaption {
+  &:focus,
+  &:hover {
+    figure.figcaption-overlay figcaption {
       color: $navbar-dark-hover;
 
       &.caption-hover {

@@ -41,10 +41,10 @@ class DeansMessage extends BlockBase {
   protected function getValue() {
     $html = '
       <a href="/what-to-expect">
-        <figure class="caption-overlay-bottom">
+        <figure class="figcaption-overlay">
             <img src="/modules/custom/lib_core/img/lesley-balcomm-welcome-unb-libraries.png"
               alt="Welcome to UNB Libraries">
-            <figcaption class="font-weight-bold">Covid-19 & Fall 2021</figcaption>
+            <figcaption class="caption-bottom font-weight-bold">Covid-19 & Fall 2021</figcaption>
         </figure>
       </a>
     ';
