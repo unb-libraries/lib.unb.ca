@@ -28,6 +28,22 @@
 #discovery-search .card-body {
   min-height: 134px;
 }
+#discovery-search .list a {
+  text-decoration: underline;
+  text-decoration-color: transparent;
+}
+@media screen and (max-width: 767px) {
+  #discovery-search .list a {
+    text-decoration-color: #fff;
+    text-decoration-color: rgb(255 255 255 / 22%);
+  }
+}
+#discovery-search .list a:hover {
+   box-shadow: none !important;
+   text-decoration: underline;
+   text-decoration-color: #ffc107;
+   text-decoration-color: rgb(255 193 7 / 52%);
+}
 #discovery-wrapper #discovery-search .card-header a[aria-expanded="false"]:after {
   content: none;
 }
