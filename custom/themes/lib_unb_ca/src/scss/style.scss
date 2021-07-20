@@ -18,52 +18,6 @@ h3 {
   font-size: 1.25rem;
 }
 
-a {
-  &.email-icon {
-    &:before {
-      @include link-fa-icon('\f0e0', right);
-    }
-  }
-}
-#block-mainpagecontent {
-  a:not(.chosen-single) {
-    text-decoration: underline;
-    text-decoration-color: transparent;
-
-    @media screen and (max-width: 767px) {
-      text-decoration-color: $link-color;
-      text-decoration-color: rgb(0 96 122 / 22%);
-    }
-    &:after {
-      text-decoration: none;
-    }
-    &:hover {
-      box-shadow: none !important;
-      text-decoration: underline;
-      text-decoration-color: $link-hover-color;
-      text-decoration-color: rgb(144 0 0 / 52%);
-    }
-  }
-}
-#discovery-search .list {
-  a {
-    text-decoration: underline;
-    text-decoration-color: transparent;
-
-    @media screen and (max-width: 767px) {
-      text-decoration-color: $white;
-      text-decoration-color: rgb(255 255 255 / 22%);
-    }
-
-    &:hover {
-      box-shadow: none !important;
-      text-decoration: underline;
-      text-decoration-color: $text-yellow;
-      text-decoration-color: rgb(255 193 7 / 52%);
-    }
-  }
-}
-
 /* Separate float image from adjacent content */
 .align-left img,
 img.float-left {
@@ -101,14 +55,35 @@ figure {
 /* Link hover effect (not in button/chosen/nav contexts) */
 #main {
   a:not(.link-no-hover):not(.btn):not(.button):not(.chosen-single):not(.dropdown-item):not(.nav-link):not(.page-link) {
-    padding-bottom: 1px;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+
+    @media screen and (max-width: 767px) {
+      text-decoration-color: $link-color;
+      text-decoration-color: rgb(0 96 122 / 22%);
+    }
+
+    &:after,
+    &:before {
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    &.email-icon {
+      &:before {
+        @include link-fa-icon('\f0e0', right);
+      }
+    }
 
     &:hover {
-      @include css3-prefix(box-shadow, 0px 2px 1px -1px rgba(153, 0, 0, .2));
+      text-decoration: underline;
+      text-decoration-color: $link-hover-color;
+      text-decoration-color: rgb(144 0 0 / 52%);
     }
 
     &.text-white:hover {
-      @include css3-prefix(box-shadow, 0px 2px 1px -1px rgba(255, 255, 255, .4));
+      text-decoration-color: $white;
+      text-decoration-color: rgb(255 255 255 / 52%);
     }
   }
 }
