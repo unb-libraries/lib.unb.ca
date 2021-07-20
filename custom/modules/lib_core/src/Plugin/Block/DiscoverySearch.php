@@ -229,7 +229,7 @@ class DiscoverySearch extends BlockBase {
             <a href="/worldcat/unb-worldcat-frequently-asked-questions">What Am I Searching?</a>
         </li>
         <li class="list-inline-item mr-4 my-2 my-sm-1">
-            <a href="/about/loc_call">Locations Guide</a>
+            <a href="/about/loc_call">Catalogue Locations</a>
         </li>
       </ul>';
 
