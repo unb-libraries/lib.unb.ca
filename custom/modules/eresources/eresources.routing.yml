@@ -12,6 +12,13 @@ eresources.license.view:
     _title_callback: '\Drupal\eresources\Controller\LicenseController::title'
   requirements:
     _permission: 'access content'
+eresources.databases_form:
+  path: '/eresources/databases'
+  defaults:
+    _form: '\Drupal\eresources\Form\DatabasesForm'
+    _title: 'Article Database Search'
+  requirements:
+    _permission: 'access content'
 eresources.ebooks_form:
   path: '/eresources/ebooks'
   defaults:
@@ -24,6 +31,13 @@ eresources.journals_form:
   defaults:
     _form: '\Drupal\eresources\Form\JournalsForm'
     _title: 'Journals Search'
+  requirements:
+    _permission: 'access content'
+eresources.reference_form:
+  path: '/eresources/reference'
+  defaults:
+    _form: '\Drupal\eresources\Form\ReferenceForm'
+    _title: 'Reference Materials Search'
   requirements:
     _permission: 'access content'
 eresources.videos_form:
