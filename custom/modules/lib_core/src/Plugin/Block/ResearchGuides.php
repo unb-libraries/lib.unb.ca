@@ -56,7 +56,7 @@ class ResearchGuides extends BlockBase {
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><i class="fas fa-database"></i></span>
              </div>
-              <select id="database-subjects" class="custom-chosen-select form-control required" name="category" aria-required="true" required="required">' .
+              <select id="database-subjects" class="custom-chosen-select custom-select form-control required" name="category" aria-required="true" required="required">' .
                 $options .
               '</select>
             </div>
