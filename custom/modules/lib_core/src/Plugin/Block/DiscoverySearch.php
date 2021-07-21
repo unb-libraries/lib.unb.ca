@@ -206,7 +206,7 @@ class DiscoverySearch extends BlockBase {
                 Search index
               </label>
               <fieldset class="form-type-select form-group">
-                <select class="custom-chosen-select form-control" id="searchIndex_WCD" name="searchIndex">
+                <select class="custom-chosen-select custom-select form-control" id="searchIndex_WCD" name="searchIndex">
                   <option value="kw">keyword</option>
                   <option value="ti">title</option>
                   <option value="au">author</option>
