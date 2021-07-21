@@ -13,7 +13,8 @@ class LocalFileTransfer implements FileTransferInterface {
    * {@inheritDoc}
    */
   public function copy(string $from, string $to) {
-    file_put_contents($to, file_get_contents($from));
+    $output = $result = NULL;
+    exec("cp {$from} {$to}", $output, $result);
     return $to;
   }
 
