@@ -72,7 +72,7 @@ class DiscoverySearch extends BlockBase {
             <div aria-labelledby="searchBtn3 dropdownBtn3" class="Accordion-panel" id="searchPanel3" role="region" hidden="">' . $this->getDatabasesForm() . '</div>
             <div aria-labelledby="searchBtn4 dropdownBtn4" class="Accordion-panel" id="searchPanel4" role="region" hidden="">' . $this->getJournalsForm() . '</div>
             <div aria-labelledby="searchBtn5 dropdownBtn5" class="Accordion-panel" id="searchPanel5" role="region" hidden="">
-              <div class="d-flex justify-content-center pt-4"><i class="fas fa-circle-notch fa-lg fa-spin" aria-hidden="true"></i></div>
+              <div class="d-flex justify-content-center pt-4"><i class="fas fa-circle-notch fa-lg fa-spin text-warning" aria-hidden="true"></i></div>
             </div>
           </div>
         </div>

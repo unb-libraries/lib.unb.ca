@@ -346,7 +346,7 @@ ul.pagination {
 /* Featured image */
 .news-featured {
   @media (min-width: 1200px) {
-    .views_slideshow_slide {
+    #views_slideshow_cycle_teaser_section_library_news-featured_block {
       min-height: 324px;
     }
   }
