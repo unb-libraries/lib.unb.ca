@@ -3,7 +3,6 @@
 /scripts/pre-init.d/01_log_start_time.sh
 
 # Enable E-Mail
-/scripts/pre-init.d/19_configure_postfix.sh
 /scripts/pre-init.d/20_enable_postfix.sh
 
 # If they exist, remove references to newrelic.
