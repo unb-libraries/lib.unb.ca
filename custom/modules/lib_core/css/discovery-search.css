@@ -35,7 +35,7 @@
 @media screen and (max-width: 767px) {
   #discovery-search .list a {
     text-decoration-color: #fff;
-    text-decoration-color: rgb(255 255 255 / 22%);
+    text-decoration-color: rgb(255 255 255 / 25%);
   }
 }
 #discovery-search .list a:hover {
