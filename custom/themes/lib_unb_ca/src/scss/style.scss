@@ -345,11 +345,6 @@ ul.pagination {
 }
 /* Featured image */
 .news-featured {
-  @media (min-width: 1200px) {
-    #views_slideshow_cycle_teaser_section_library_news-featured_block {
-      min-height: 324px;
-    }
-  }
   .views_slideshow_main {
     background-color: $light;
     border: 1px solid $dark;
