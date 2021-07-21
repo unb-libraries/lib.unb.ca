@@ -36,6 +36,48 @@ spec:
                 -
                   name: MYSQL_PORT
                   value: "3306"
+                -
+                  name: OCLC_API_IDM_WSKEY
+                  valueFrom:
+                    secretKeyRef:
+                      name: oclc-idm-wskey
+                      key: wskey
+                -
+                  name: OCLC_API_IDM_SECRET
+                  valueFrom:
+                    secretKeyRef:
+                      name: oclc-idm-wskey
+                      key: secret
+                -
+                  name: OCLC_API_LMAN_WSKEY
+                  valueFrom:
+                    secretKeyRef:
+                      name: oclc-lman-wskey
+                      key: wskey
+                -
+                  name: OCLC_API_LMAN_SECRET
+                  valueFrom:
+                    secretKeyRef:
+                      name: oclc-lman-wskey
+                      key: secret
+                -
+                  name: OCLC_API_WSKEY
+                  valueFrom:
+                    secretKeyRef:
+                      name: oclc-wskey
+                      key: wskey
+                -
+                  name: OCLC_API_SECRET
+                  valueFrom:
+                    secretKeyRef:
+                      name: oclc-wskey
+                      key: secret
+                -
+                  name: OCLC_API_KB
+                  valueFrom:
+                    secretKeyRef:
+                      name: oclc-kb
+                      key: wskey
               image: "||DEPLOYMENTIMAGE||"
               imagePullPolicy: Always
               volumeMounts:
