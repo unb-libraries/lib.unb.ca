@@ -6,7 +6,7 @@ services:
     class: Drupal\portolan_sync\Synchronization\MarcFileImporter
     arguments:
       - '@portolan.marc_parser'
-      - '@portolan.world_cat_random_cover_image_importer'
+      - '@portolan.world_cat_cover_image_importer.v1'
 
   portolan.local_file_transfer:
     class: Drupal\portolan_sync\Synchronization\LocalFileTransfer
