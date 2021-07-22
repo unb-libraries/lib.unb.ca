@@ -20,6 +20,5 @@ interface PortolanRecordInterface {
   const FIELD_LOCATION = 'location';
   const FIELD_DESCRIPTOR = 'descriptor';
   const FIELD_CALL_NUMBER = 'call_number';
-  const FIELD_COVER_URI = 'cover_uri';
 
 }

@@ -1,9 +1,7 @@
 <div class="row">
     <div class="col-md-12 mb-3"><a class="btn btn-sm btn-dark" href="https://unb.on.worldcat.org/oclc/{{ portolan_record.oclc_id.value }}" target="_blank">View on WorldCat</a></div>
     <div class="col-md-3 order-md-9">
-        {% if portolan_record.cover_uri %}
-            <img src="{{ portolan_record.cover_uri.value }}">
-        {% endif %}
+        <img src="https://covers.openlibrary.org/b/oclc/{{ portolan_record.oclc_id.value }}-M.jpg">
     </div>
     <div class="col-md-9 order-md-3">
         <table>
