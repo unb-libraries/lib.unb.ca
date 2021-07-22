@@ -11,6 +11,17 @@
             $(window).on('hashchange pageshow', function() {
                 adjustAnchor();
             });
+
+            // Mobile Quicklinks button: scroll to Quicklinks section when toggled on.
+            $('#btn-quicklinks').click(function(e) {
+                e.preventDefault();
+                if (this.getAttribute('aria-expanded') === 'false') {
+                    let $target = $('#quicklinks');
+                    $('html, body').stop().animate({
+                        'scrollTop': $target.offset().top
+                    }, 800, 'swing');
+                }
+            });
         }
     };
 })(jQuery, Drupal);
