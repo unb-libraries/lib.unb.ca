@@ -1,5 +1,7 @@
 .header-front {
-  /*background-attachment: fixed;*/
+  @media (max-width: 767px) {
+    background-attachment: fixed;
+  }
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
