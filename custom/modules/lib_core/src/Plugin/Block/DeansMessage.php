@@ -39,6 +39,7 @@ class DeansMessage extends BlockBase {
    *   The html structure for library hours (table).
    */
   protected function getValue() {
+    // Note: image manually resized to match Content Lg Breakpoint image style.
     $html = '
       <a href="/what-to-expect">
         <figure class="figcaption-overlay">
