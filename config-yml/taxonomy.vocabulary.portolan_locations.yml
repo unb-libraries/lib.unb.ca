@@ -1,0 +1,8 @@
+uuid: 6e803e72-d806-4da5-88d4-bfc4ca3ba1d5
+langcode: en
+status: true
+dependencies: {  }
+name: 'Geographical Locations (Portolan)'
+vid: portolan_locations
+description: ''
+weight: 0

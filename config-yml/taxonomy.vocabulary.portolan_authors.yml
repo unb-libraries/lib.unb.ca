@@ -1,0 +1,8 @@
+uuid: c058ff41-a285-4139-8216-29fbc0fbe9a1
+langcode: en
+status: true
+dependencies: {  }
+name: 'Authors (Portolan)'
+vid: portolan_authors
+description: ''
+weight: 0

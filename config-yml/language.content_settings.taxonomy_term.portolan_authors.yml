@@ -1,0 +1,11 @@
+uuid: 5f59b73f-aa58-494c-b7bc-3e1acd8ba037
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.portolan_authors
+id: taxonomy_term.portolan_authors
+target_entity_type_id: taxonomy_term
+target_bundle: portolan_authors
+default_langcode: site_default
+language_alterable: false

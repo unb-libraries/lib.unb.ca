@@ -1,0 +1,11 @@
+uuid: 9656cf52-d683-474b-9f54-baf9422569fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.portolan_jurisdictions
+id: taxonomy_term.portolan_jurisdictions
+target_entity_type_id: taxonomy_term
+target_bundle: portolan_jurisdictions
+default_langcode: site_default
+language_alterable: false

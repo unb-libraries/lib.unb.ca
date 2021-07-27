@@ -1,0 +1,11 @@
+uuid: 47044e83-5d66-4f81-b73e-1219cc87b733
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.portolan_locations
+id: taxonomy_term.portolan_locations
+target_entity_type_id: taxonomy_term
+target_bundle: portolan_locations
+default_langcode: site_default
+language_alterable: false
