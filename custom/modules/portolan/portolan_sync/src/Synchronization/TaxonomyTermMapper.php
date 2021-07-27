@@ -48,6 +48,19 @@ class TaxonomyTermMapper implements TaxonomyTermMapperInterface {
   /**
    * {@inheritDoc}
    */
+  public function getTerms(string $vid, array $values) {
+    $terms = [];
+    foreach ($values as $value) {
+      if ($term = $this->getTerm($vid, $value)) {
+        $terms[] = $term;
+      }
+    }
+    return $terms;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public function getTerm(string $vid, string $value) {
     try {
       if (!$term = $this->loadByNameAndVocabulary($value, $vid)) {
