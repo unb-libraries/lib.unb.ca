@@ -9,7 +9,7 @@ use Drupal\taxonomy\TermStorageInterface;
  *
  * @package Drupal\portolan_sync\Synchronization
  */
-class TaxonomyTermMapper {
+class TaxonomyTermMapper implements TaxonomyTermMapperInterface {
 
   /**
    * The taxonomy term entity storage handler.
@@ -46,15 +46,7 @@ class TaxonomyTermMapper {
   }
 
   /**
-   * Map the given value to a taxonomy term of the given vocabulary ID.
-   *
-   * @param string $vid
-   *   A vocabulary ID string.
-   * @param string $value
-   *   A string.
-   *
-   * @return \Drupal\Core\Entity\EntityInterface|null
-   *   A taxonomy term entity. NULL if an error occurred.
+   * {@inheritDoc}
    */
   public function getTerm(string $vid, string $value) {
     try {
