@@ -7,6 +7,17 @@ services:
     arguments:
       - '@portolan.marc_parser'
 
+  portolan.taxonomy_term.storage:
+    class: Drupal\taxonomy\TermStorageInterface
+    factory: ['@entity_type.manager', 'getStorage']
+    arguments:
+      - 'taxonomy_term'
+
+  portolan.taxonomy_term.mapper:
+    class: Drupal\portolan_sync\Synchronization\TaxonomyTermMapper
+    arguments:
+      - '@portolan.taxonomy_term.storage'
+
   portolan.local_file_transfer:
     class: Drupal\portolan_sync\Synchronization\LocalFileTransfer
 
