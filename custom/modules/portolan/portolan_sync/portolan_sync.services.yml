@@ -6,6 +6,7 @@ services:
     class: Drupal\portolan_sync\Synchronization\MarcFileImporter
     arguments:
       - '@portolan.marc_parser'
+      - '@portolan.taxonomy_term.mapper'
 
   portolan.taxonomy_term.storage:
     class: Drupal\taxonomy\TermStorageInterface
