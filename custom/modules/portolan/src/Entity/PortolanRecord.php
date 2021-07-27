@@ -53,10 +53,18 @@ class PortolanRecord extends ContentEntityBase implements PortolanRecordInterfac
       ->setCardinality(1)
       ->setSetting('max_length', 2048);
 
-    $fields[self::FIELD_AUTHOR] = BaseFieldDefinition::create('string')
+    $fields[self::FIELD_AUTHOR] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Author(s)'))
       ->setRequired(TRUE)
-      ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED);
+      ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED)
+      ->setSettings([
+        'target_type' => 'taxonomy_term',
+        'handler_settings' => [
+          'target_bundles' => [
+            self::AUTHOR_VID => self::AUTHOR_VID,
+          ],
+        ],
+      ]);
 
     $fields[self::FIELD_PUBLICATION] = BaseFieldDefinition::create('string')
       ->setLabel(t('Publication'))
@@ -81,20 +89,44 @@ class PortolanRecord extends ContentEntityBase implements PortolanRecordInterfac
       ->setRequired(TRUE)
       ->setCardinality(1);
 
-    $fields[self::FIELD_JURISDICTION] = BaseFieldDefinition::create('string')
+    $fields[self::FIELD_JURISDICTION] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Jurisdiction'))
       ->setRequired(TRUE)
-      ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED);
+      ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED)
+      ->setSettings([
+        'target_type' => 'taxonomy_term',
+        'handler_settings' => [
+          'target_bundles' => [
+            self::JURISDICTION_VID => self::JURISDICTION_VID,
+          ],
+        ],
+      ]);
 
-    $fields[self::FIELD_LOCATION] = BaseFieldDefinition::create('string')
+    $fields[self::FIELD_LOCATION] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Geographic location'))
       ->setRequired(TRUE)
-      ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED);
+      ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED)
+      ->setSettings([
+        'target_type' => 'taxonomy_term',
+        'handler_settings' => [
+          'target_bundles' => [
+            self::LOCATION_VID => self::LOCATION_VID,
+          ],
+        ],
+      ]);
 
-    $fields[self::FIELD_DESCRIPTOR] = BaseFieldDefinition::create('string')
+    $fields[self::FIELD_DESCRIPTOR] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Descriptor(s)'))
       ->setRequired(TRUE)
-      ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED);
+      ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED)
+      ->setSettings([
+        'target_type' => 'taxonomy_term',
+        'handler_settings' => [
+          'target_bundles' => [
+            self::DESCRIPTOR_VID => self::DESCRIPTOR_VID,
+          ],
+        ],
+      ]);
 
     $fields[self::FIELD_CALL_NUMBER] = BaseFieldDefinition::create('string')
       ->setLabel(t('Call number'))

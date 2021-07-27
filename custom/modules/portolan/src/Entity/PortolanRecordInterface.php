@@ -21,4 +21,9 @@ interface PortolanRecordInterface {
   const FIELD_DESCRIPTOR = 'descriptor';
   const FIELD_CALL_NUMBER = 'call_number';
 
+  const AUTHOR_VID = 'portolan_authors';
+  const DESCRIPTOR_VID = 'portolan_descriptors';
+  const LOCATION_VID = 'portolan_locations';
+  const JURISDICTION_VID = 'portolan_jurisdictions';
+
 }
