@@ -12,7 +12,7 @@ _core:
 id: jurisdiction
 name: Jurisdiction
 url_alias: jurisdiction
-weight: 0
+weight: 1
 min_count: 1
 show_only_one_result: false
 field_identifier: jurisdiction_facet
