@@ -121,6 +121,7 @@ module:
   node_path_taxonomy_group_perms: 3
   views: 10
   paragraphs: 11
+  tvi: 15
   minimal: 1000
 theme:
   stable: 0
