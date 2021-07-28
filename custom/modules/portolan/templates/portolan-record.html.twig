@@ -27,7 +27,7 @@
                 <th>Jurisdiction(s):</th>
                 <td>
                     {% for jurisdiction in portolan_record.jurisdiction %}
-                        <span>{{ jurisdiction.entity.label }}</span>{% if not loop.last %},{% endif %}
+                        <a href="/clc/portolan/jurisdictions/{{ jurisdiction.entity.id }}">{{ jurisdiction.entity.label }}</a>{% if not loop.last %},{% endif %}
                     {% endfor %}
                 </td>
             </tr>
