@@ -1,7 +1,12 @@
 uuid: cca3cfbf-7d50-4eac-97e4-6bde131ed7f1
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  enforced:
+    module:
+      - portolan_sync
+_core:
+  default_config_hash: 7WYaxznH2eNxvbHytno550EBYAIeDpOcu4NwOY8Ugak
 id: portolan_sync
 name: 'Portolan synchronization'
 worker_id: portolan_flush_sync
