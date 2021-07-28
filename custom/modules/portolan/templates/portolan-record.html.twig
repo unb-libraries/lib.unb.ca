@@ -9,7 +9,7 @@
                 <th>Author(s):</th>
                 <td>
                     {% for author in portolan_record.author %}
-                        <span>{{ author.entity.label }}</span>{% if not loop.last %};{% endif %}
+                        <a href="/clc/portolan/authors/{{ author.entity.id }}">{{ author.entity.label }}</a>{% if not loop.last %};{% endif %}
                     {% endfor %}
                 </td>
             </tr>
