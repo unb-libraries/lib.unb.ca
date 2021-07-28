@@ -5,7 +5,7 @@ namespace Drupal\portolan\Entity;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
-use Drupal\Core\Session\AccountInterface;
+use Drupal\portolan\Field\TrimmedTitle;
 
 /**
  * Defines the "Portolan record" entity.
@@ -51,6 +51,14 @@ class PortolanRecord extends ContentEntityBase implements PortolanRecordInterfac
       ->setLabel(t('Title'))
       ->setRequired(TRUE)
       ->setCardinality(1)
+      ->setSetting('max_length', 2048);
+
+    $fields[self::FIELD_TITLE_TRIMMED] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Title (trimmed)'))
+      ->setDescription(t('Title which contains no leading stop words.'))
+      ->setCardinality(1)
+      ->setComputed(TRUE)
+      ->setClass(TrimmedTitle::class)
       ->setSetting('max_length', 2048);
 
     $fields[self::FIELD_AUTHOR] = BaseFieldDefinition::create('entity_reference')

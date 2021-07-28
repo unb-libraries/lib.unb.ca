@@ -11,6 +11,7 @@ interface PortolanRecordInterface {
 
   const FIELD_OCLC_ID = 'oclc_id';
   const FIELD_TITLE = 'title';
+  const FIELD_TITLE_TRIMMED = 'title_trimmed';
   const FIELD_AUTHOR = 'author';
   const FIELD_PUBLICATION = 'publication';
   const FIELD_ABSTRACT = 'abstract';
