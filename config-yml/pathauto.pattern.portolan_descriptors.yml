@@ -1,0 +1,23 @@
+uuid: dc15bc8a-fef6-4bd9-b95c-a4a4a85fd618
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: portolan_descriptors
+label: 'Portolan: Descriptors'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/clc/portolan/descriptors/[term:name]'
+selection_criteria:
+  bee4132c-a931-4bbc-9bd1-5478840bd199:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      portolan_descriptors: portolan_descriptors
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: bee4132c-a931-4bbc-9bd1-5478840bd199
+selection_logic: and
+weight: -5
+relationships: {  }

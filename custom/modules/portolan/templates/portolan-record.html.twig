@@ -9,7 +9,7 @@
                 <th>Author(s):</th>
                 <td>
                     {% for author in portolan_record.author %}
-                        <a href="/clc/portolan/authors/{{ author.entity.id }}">{{ author.entity.label }}</a>{% if not loop.last %};{% endif %}
+                        <a href="{{ url('entity.taxonomy_term.canonical', { 'taxonomy_term': author.entity.id }) }}">{{ author.entity.label }}</a>{% if not loop.last %};{% endif %}
                     {% endfor %}
                 </td>
             </tr>
@@ -19,7 +19,7 @@
                 <th>Geographical location(s):</th>
                 <td>
                     {% for location in portolan_record.location %}
-                    <a href="/clc/portolan/geographic-locations/{{ location.entity.id }}">{{ location.entity.label }}</a>{% if not loop.last %},{% endif %}
+                    <a href="{{ url('entity.taxonomy_term.canonical', { 'taxonomy_term': location.entity.id }) }}">{{ location.entity.label }}</a>{% if not loop.last %},{% endif %}
                     {% endfor %}
                 </td>
             </tr>
@@ -27,7 +27,7 @@
                 <th>Jurisdiction(s):</th>
                 <td>
                     {% for jurisdiction in portolan_record.jurisdiction %}
-                        <a href="/clc/portolan/jurisdictions/{{ jurisdiction.entity.id }}">{{ jurisdiction.entity.label }}</a>{% if not loop.last %},{% endif %}
+                        <a href="{{ url('entity.taxonomy_term.canonical', { 'taxonomy_term': jurisdiction.entity.id }) }}">{{ jurisdiction.entity.label }}</a>{% if not loop.last %},{% endif %}
                     {% endfor %}
                 </td>
             </tr>
@@ -36,7 +36,7 @@
                 <th>Descriptor(s):</th>
                 <td>
                     {% for descriptor in portolan_record.descriptor %}
-                        <a href="/clc/portolan/descriptors/{{ descriptor.entity.id }}">{{ descriptor.entity.label }}</a>{% if not loop.last %},{% endif %}
+                        <a href="{{ url('entity.taxonomy_term.canonical', { 'taxonomy_term': descriptor.entity.id }) }}">{{ descriptor.entity.label }}</a>{% if not loop.last %},{% endif %}
                     {% endfor %}
                 </td>
             </tr>

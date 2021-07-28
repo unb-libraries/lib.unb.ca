@@ -1,0 +1,23 @@
+uuid: c34afdb1-f13a-401d-992d-221a57c9fefe
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: portolan_geographic_locations
+label: 'Portolan: Geographic locations'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/clc/portolan/geographic-locations/[term:name]'
+selection_criteria:
+  a1109812-9c58-454d-a65e-135b585141ae:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      portolan_locations: portolan_locations
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: a1109812-9c58-454d-a65e-135b585141ae
+selection_logic: and
+weight: -5
+relationships: {  }

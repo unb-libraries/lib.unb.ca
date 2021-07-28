@@ -1,0 +1,23 @@
+uuid: 4857a851-c2a6-4ceb-ba74-551b473530a5
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: portolan_authors
+label: 'Portolan: Authors'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/clc/portolan/authors/[term:name]'
+selection_criteria:
+  28e32ab9-b921-4d78-bb9c-c269d03ce543:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      portolan_authors: portolan_authors
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 28e32ab9-b921-4d78-bb9c-c269d03ce543
+selection_logic: and
+weight: -5
+relationships: {  }
