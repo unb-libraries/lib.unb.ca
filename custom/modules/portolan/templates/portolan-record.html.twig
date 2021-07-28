@@ -19,7 +19,7 @@
                 <th>Geographical location(s):</th>
                 <td>
                     {% for location in portolan_record.location %}
-                    <span>{{ location.entity.label }}</span>{% if not loop.last %},{% endif %}
+                    <a href="/clc/portolan/geographic-locations/{{ location.entity.id }}">{{ location.entity.label }}</a>{% if not loop.last %},{% endif %}
                     {% endfor %}
                 </td>
             </tr>
