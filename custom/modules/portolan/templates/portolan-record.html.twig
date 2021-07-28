@@ -9,7 +9,7 @@
                 <th>Author(s):</th>
                 <td>
                     {% for author in portolan_record.author %}
-                        <span>{{ author.value }}</span>{% if not loop.last %};{% endif %}
+                        <span>{{ author.entity.label }}</span>{% if not loop.last %};{% endif %}
                     {% endfor %}
                 </td>
             </tr>
@@ -19,7 +19,7 @@
                 <th>Geographical location(s):</th>
                 <td>
                     {% for location in portolan_record.location %}
-                    <span>{{ location.value }}</span>{% if not loop.last %},{% endif %}
+                    <span>{{ location.entity.label }}</span>{% if not loop.last %},{% endif %}
                     {% endfor %}
                 </td>
             </tr>
@@ -27,7 +27,7 @@
                 <th>Jurisdiction(s):</th>
                 <td>
                     {% for jurisdiction in portolan_record.jurisdiction %}
-                        <span>{{ jurisdiction.value }}</span>{% if not loop.last %},{% endif %}
+                        <span>{{ jurisdiction.entity.label }}</span>{% if not loop.last %},{% endif %}
                     {% endfor %}
                 </td>
             </tr>
@@ -36,7 +36,7 @@
                 <th>Descriptor(s):</th>
                 <td>
                     {% for descriptor in portolan_record.descriptor %}
-                        <span>{{ descriptor.value }}</span>{% if not loop.last %},{% endif %}
+                        <span>{{ descriptor.entity.label }}</span>{% if not loop.last %},{% endif %}
                     {% endfor %}
                 </td>
             </tr>
