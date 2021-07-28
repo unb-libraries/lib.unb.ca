@@ -36,7 +36,7 @@
                 <th>Descriptor(s):</th>
                 <td>
                     {% for descriptor in portolan_record.descriptor %}
-                        <span>{{ descriptor.entity.label }}</span>{% if not loop.last %},{% endif %}
+                        <a href="/clc/portolan/descriptors/{{ descriptor.entity.id }}">{{ descriptor.entity.label }}</a>{% if not loop.last %},{% endif %}
                     {% endfor %}
                 </td>
             </tr>
