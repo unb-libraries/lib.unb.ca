@@ -9,7 +9,7 @@ dependencies:
 id: author
 name: Author
 url_alias: author
-weight: 0
+weight: -2
 min_count: 1
 show_only_one_result: false
 field_identifier: author_facet
@@ -39,13 +39,7 @@ processor_configs:
     weights:
       sort: 20
     settings:
-      sort: DESC
-  count_widget_order:
-    processor_id: count_widget_order
-    weights:
-      sort: 30
-    settings:
-      sort: DESC
+      sort: ASC
   display_value_widget_order:
     processor_id: display_value_widget_order
     weights:
@@ -56,6 +50,11 @@ processor_configs:
     processor_id: hide_1_result_facet
     weights:
       build: 50
+    settings: {  }
+  translate_entity:
+    processor_id: translate_entity
+    weights:
+      build: 5
     settings: {  }
   url_processor_handler:
     processor_id: url_processor_handler

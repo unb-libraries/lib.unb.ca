@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  enforced:
+    module:
+      - portolan_sync
 id: portolan_sync
 name: 'Portolan synchronization'
 worker_id: portolan_flush_sync

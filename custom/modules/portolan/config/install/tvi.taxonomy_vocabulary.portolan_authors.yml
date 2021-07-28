@@ -1,0 +1,9 @@
+enable_override: true
+view: portolan_authors
+view_display: page_1
+inherit_settings: true
+pass_arguments: false
+dependencies:
+  enforced:
+    config:
+      - taxonomy.vocabulary.portolan_authors

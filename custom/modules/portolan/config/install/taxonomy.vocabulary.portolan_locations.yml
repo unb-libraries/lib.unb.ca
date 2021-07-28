@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - portolan
+name: 'Geographical Locations (Portolan)'
+vid: portolan_locations
+description: ''
+weight: 0

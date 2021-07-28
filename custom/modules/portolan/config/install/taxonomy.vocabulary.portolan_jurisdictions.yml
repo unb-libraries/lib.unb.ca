@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - portolan
+name: 'Jurisdictions (Portolan)'
+vid: portolan_jurisdictions
+description: ''
+weight: 0

@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - portolan
+name: 'Descriptors (Portolan)'
+vid: portolan_descriptors
+description: ''
+weight: 0

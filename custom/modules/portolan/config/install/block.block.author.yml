@@ -11,7 +11,7 @@ dependencies:
 id: author
 theme: lib_unb_ca
 region: sidebar_second
-weight: -5
+weight: -6
 provider: null
 plugin: 'facet_block:author'
 settings:
