@@ -1,7 +1,10 @@
 uuid: 6e803e72-d806-4da5-88d4-bfc4ca3ba1d5
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  enforced:
+    module:
+      - portolan
 name: 'Geographical Locations (Portolan)'
 vid: portolan_locations
 description: ''

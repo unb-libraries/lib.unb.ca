@@ -1,7 +1,10 @@
 uuid: edf1da06-63a7-4888-9434-d7db9da42997
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  enforced:
+    module:
+      - portolan
 name: 'Descriptors (Portolan)'
 vid: portolan_descriptors
 description: ''

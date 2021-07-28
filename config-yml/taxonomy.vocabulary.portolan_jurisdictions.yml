@@ -1,7 +1,10 @@
 uuid: c04e4731-5c81-4868-93c4-c25057a48ab3
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  enforced:
+    module:
+      - portolan
 name: 'Jurisdictions (Portolan)'
 vid: portolan_jurisdictions
 description: ''
