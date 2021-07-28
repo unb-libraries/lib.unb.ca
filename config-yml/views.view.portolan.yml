@@ -629,7 +629,19 @@ display:
             - publication
             - title
           plugin_id: search_api_fulltext
-      sorts: {  }
+      sorts:
+        title_trimmed:
+          id: title_trimmed
+          table: search_api_index_portolan
+          field: title_trimmed
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: search_api
       title: 'Portolan: Search'
       header:
         result:

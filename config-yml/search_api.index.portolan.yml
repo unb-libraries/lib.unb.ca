@@ -148,6 +148,15 @@ field_settings:
     dependencies:
       module:
         - portolan
+  title_trimmed:
+    label: 'Title (trimmed)'
+    datasource_id: 'entity:portolan_record'
+    property_path: title_trimmed
+    type: text
+    boost: !!float 0
+    dependencies:
+      module:
+        - portolan
 datasource_settings:
   'entity:portolan_record': {  }
 processor_settings:
