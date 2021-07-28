@@ -1,0 +1,5 @@
+enable_override: true
+view: portolan_descriptors
+view_display: page_1
+inherit_settings: true
+pass_arguments: false
