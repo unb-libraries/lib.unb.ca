@@ -1,4 +1,3 @@
-uuid: f55c106b-795b-46c9-8167-fdc876ba3524
 langcode: en
 status: true
 dependencies:
@@ -68,7 +67,7 @@ field_settings:
     datasource_id: 'entity:portolan_record'
     property_path: author
     type: text
-    boost: !!float 2
+    boost: !!float 5
     dependencies:
       module:
         - portolan
@@ -85,6 +84,7 @@ field_settings:
     datasource_id: 'entity:portolan_record'
     property_path: descriptor
     type: text
+    boost: !!float 2
     dependencies:
       module:
         - portolan
@@ -142,6 +142,15 @@ field_settings:
     property_path: title
     type: text
     boost: !!float 8
+    dependencies:
+      module:
+        - portolan
+  title_trimmed:
+    label: 'Title (trimmed)'
+    datasource_id: 'entity:portolan_record'
+    property_path: title_trimmed
+    type: text
+    boost: !!float 0
     dependencies:
       module:
         - portolan

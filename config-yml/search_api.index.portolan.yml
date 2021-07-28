@@ -70,7 +70,7 @@ field_settings:
     datasource_id: 'entity:portolan_record'
     property_path: author
     type: text
-    boost: !!float 2
+    boost: !!float 5
     dependencies:
       module:
         - portolan
@@ -78,7 +78,7 @@ field_settings:
     label: 'Author (Facet)'
     datasource_id: 'entity:portolan_record'
     property_path: author
-    type: integer
+    type: string
     dependencies:
       module:
         - portolan
@@ -95,7 +95,7 @@ field_settings:
     label: 'Descriptor (Facet)'
     datasource_id: 'entity:portolan_record'
     property_path: descriptor
-    type: integer
+    type: string
     dependencies:
       module:
         - portolan
@@ -111,7 +111,7 @@ field_settings:
     label: 'Jurisdiction (Facet)'
     datasource_id: 'entity:portolan_record'
     property_path: jurisdiction
-    type: integer
+    type: string
     dependencies:
       module:
         - portolan
@@ -127,7 +127,7 @@ field_settings:
     label: 'Geographic location (Facet)'
     datasource_id: 'entity:portolan_record'
     property_path: location
-    type: integer
+    type: string
     dependencies:
       module:
         - portolan
