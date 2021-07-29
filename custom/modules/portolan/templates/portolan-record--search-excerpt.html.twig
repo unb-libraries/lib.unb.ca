@@ -6,7 +6,7 @@
     </div>
     <div class="col-sm-6 col-md-8 col-lg-9 col-xl-10 order-last order-sm-first">
         <a class="h4" href="/clc/portolan/records/{{ portolan_record.oclc_id.value }}">{{ portolan_record.title.value }}</a>
-        <div class="text-muted small">by {% for author in portolan_record.author %}<a class="portolan-author" href="{{ url('entity.taxonomy_term.canonical', { 'taxonomy_term': author.entity.id }) }}">{{ author.entity.label }}</a>{% if not loop.last %}; {% endif %}{% endfor %}</div>
+        <div class="text-muted">by {% for author in portolan_record.author %}<a class="portolan-author" href="{{ url('entity.taxonomy_term.canonical', { 'taxonomy_term': author.entity.id }) }}">{{ author.entity.label }}</a>{% if not loop.last %}; {% endif %}{% endfor %}</div>
         <div>{{ search_api_excerpt|raw }}</div>
     </div>
 </div>
