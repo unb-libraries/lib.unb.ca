@@ -12,6 +12,7 @@ module:
   breakpoint: 0
   cache_control_override: 0
   calendar_hours_client: 0
+  changed_fields: 0
   chosen: 0
   chosen_lib: 0
   ckeditor: 0
@@ -25,6 +26,7 @@ module:
   contextual: 0
   ctools: 0
   datetime: 0
+  datetime_plus: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
   editor: 0
@@ -62,6 +64,7 @@ module:
   lib_core: 0
   lib_unb_ca_page_text_content: 0
   lib_unb_ca_user_protect: 0
+  lib_unb_custom_entity: 0
   link: 0
   linkit: 0
   login_destination: 0
