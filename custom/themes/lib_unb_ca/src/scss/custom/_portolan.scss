@@ -27,3 +27,20 @@ fieldset.form-type-textfield {
   }
 
 }
+
+.page-item.active .page-link {
+  border-color: #00607a;
+  background-color: #00607a;
+}
+
+.page-item span.page-link:hover {
+  color: #00607a;
+}
+
+.page-link {
+  color: #00607a;
+
+  &:hover {
+    color: #900;
+  }
+}
