@@ -1,0 +1,105 @@
+<?php
+
+namespace Drupal\eresources\Entity;
+
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\lib_unb_custom_entity\Entity\ContentEntityInterface;
+use Drupal\lib_unb_custom_entity\Entity\ContentEntityBase;
+
+/**
+ * Defines an eResources Harvested Collection entity.
+ *
+ * @ContentEntityType(
+ *   id = "eresources_harvested_collection",
+ *   label = @Translation("eResources Harvested Collection"),
+ *   label_plural = @Translation("eResources Harvested Collections"),
+ *   label_collection = @Translation("eResources Harvested Collections"),
+ *   handlers = {
+ *     "form" = {
+ *       "default" = "Drupal\lib_unb_custom_entity\Form\ContentEntityForm",
+ *     },
+ *     "list_builder" = "Drupal\eresources\Entity\HarvestedCollectionListBuilder",
+ *     "route_provider" = {
+ *       "html" = "Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider",
+ *     },
+ *     "access" = "Drupal\lib_unb_custom_entity\Entity\EntityAccessControlHandler",
+ *   },
+ *   base_table = "eresources_harvested_collection",
+ *   admin_permission = "administer eresources_harvested_collection entities",
+ *   entity_keys = {
+ *     "id" = "id",
+ *     "label" = "name",
+ *   },
+ *   links = {
+ *     "canonical" = "/eresources/harvested_collection/{eresources_harvested_collection}",
+ *     "add-form" = "/eresources/harvested_collections/add",
+ *     "edit-form" = "/eresources/harvested_collections/{eresources_harvested_collection}/edit",
+ *     "delete-form" = "/eresources/harvested_collections/{eresources_harvested_collection}/delete",
+ *     "collection" = "/eresources/harvested_collections",
+ *   }
+ * )
+ */
+class HarvestedCollection extends ContentEntityBase implements ContentEntityInterface {
+
+  /**
+   * Tab options.
+   *
+   * @var array
+   */
+  public static $tabs = [
+    'databases' => 'Article Databases',
+    'reference' => 'Reference Materials',
+  ];
+
+  /**
+   * {@inheritDoc}
+   */
+  public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
+    $fields = parent::baseFieldDefinitions($entity_type);
+
+    $fields['oclc_id'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('OCLC ID'))
+      ->setRequired(TRUE)
+      ->setSettings(
+        [
+          'default_value' => '',
+          'max_length' => 255,
+        ]
+      )
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['name'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Name'))
+      ->setRequired(TRUE)
+      ->setSettings(
+        [
+          'default_value' => '',
+          'max_length' => 255,
+        ]
+      )
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['default_tab'] = BaseFieldDefinition::create('list_string')
+      ->setLabel(t('Default Tab'))
+      ->setRequired(TRUE)
+      ->setSettings([
+        'allowed_values' => self::$tabs,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_select',
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    return $fields;
+  }
+
+}
