@@ -172,7 +172,8 @@ processor_settings:
     highlight_partial: false
     excerpt: true
     excerpt_length: 256
-    exclude_fields: {  }
+    exclude_fields:
+      - title_trimmed
     prefix: '<strong>'
     suffix: '</strong>'
     weights:
