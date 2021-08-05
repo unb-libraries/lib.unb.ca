@@ -1,22 +1,23 @@
-#views-exposed-form-portolan-simple-search-form .form-row {
-  padding: 2rem;
-  background: #E9ECEF;
-  border-radius: 0.25rem;
-}
+#views-exposed-form-portolan-simple-search-form,
+#views-exposed-form-portolan-page-1 {
 
-.btn-primary {
-  background: linear-gradient(to right,#444 0%,#222 100%);
-  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+  .form-row {
+    padding: 2rem;
+    background: #E9ECEF;
+    border-radius: 0.25rem;
 
-  &:hover {
-    color: #ffc107;
-  }
-}
+    .btn-primary {
+      background: linear-gradient(to right,#444 0%,#222 100%);
+      border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
 
-.form-row {
+      &:hover {
+        color: #ffc107;
+      }
+    }
 
-  .form-actions {
-    align-self: center;
+    .form-actions {
+      align-self: center;
+    }
   }
 }
 
