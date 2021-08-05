@@ -223,9 +223,9 @@ handlers:
       bcc_options: {  }
       from_mail: _default
       from_options: {  }
-      from_name: 'Research Commons Facility Request Form'
-      subject: 'Research Commons Facility Request'
-      body: "<p><b>{{ webform_token('[webform_submission:user]', webform_submission) }}</b> submitted a HIL Research Commons Facility Request with the following details:</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n\r\n\r\n\r\n"
+      from_name: 'Research Commons Space Request Form'
+      subject: 'Research Commons Space Request'
+      body: "<p><b>{{ webform_token('[webform_submission:user]', webform_submission) }}</b> submitted a HIL Research Commons Space Request with the following details:</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n\r\n\r\n\r\n"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
@@ -260,9 +260,9 @@ handlers:
       bcc_options: {  }
       from_mail: _default
       from_options: {  }
-      from_name: 'Research Commons Facility Request Form'
-      subject: 'Your Research Commons Facility Request'
-      body: "<p>On {{ webform_token('[webform_submission:created]', webform_submission, [], options) }} you submitted a HIL Reserarch Commons Facility Request with the following details:</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n\r\n<p>Please note that this is <b>not</b> a confirmation of your booking.\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
+      from_name: 'Research Commons Space Request Form'
+      subject: 'Your Research Commons Space Request'
+      body: "<p>On {{ webform_token('[webform_submission:created]', webform_submission, [], options) }} you submitted a HIL Reserarch Commons Space Request with the following details:</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n\r\n<p>Please note that this is <b>not</b> a confirmation of your booking.\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
