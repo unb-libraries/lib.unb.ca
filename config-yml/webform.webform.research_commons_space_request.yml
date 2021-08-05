@@ -1,4 +1,4 @@
-uuid: 4fb59106-ca02-47e3-9271-b3ff97f43f3e
+uuid: 09d8f239-cbf3-428f-a663-371bc6b1fe68
 langcode: en
 status: open
 dependencies:
@@ -13,9 +13,9 @@ weight: 0
 uid: 1
 template: false
 archive: false
-id: hil_rc_facilities_request
-title: 'Research Commons Facilities Request'
-description: 'Form to request HIL Research Commons facilities.'
+id: research_commons_space_request
+title: 'Research Commons Space Request'
+description: 'Form to request HIL Research Commons spaces.'
 category: ''
 elements: "container:\n  '#type': container\n  '#attributes':\n    class:\n      - theme-dark\n  section_contact:\n    '#type': fieldset\n    '#title': 'Primary Contact Details'\n    name:\n      '#type': textfield\n      '#title': Name\n      '#description': 'Name of the primary contact.'\n      '#required': true\n    department:\n      '#type': textfield\n      '#title': 'UNB Department / UNB Affiliated Group'\n      '#description': 'UNB department or external group that the primary contact is affiliated with.'\n      '#required': true\n    email:\n      '#type': textfield\n      '#title': Email\n      '#description': 'Email address of the primary contact.'\n      '#input_mask': '''alias'': ''email'''\n      '#required': true\n      '#required_error': 'Please provide a valid email address.'\n      '#pattern': '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$'\n    phone:\n      '#type': textfield\n      '#title': Phone\n      '#description': 'Phone number of the primary contact.'\n      '#input_mask': '(999) 999-9999'\n      '#required': true\n      '#required_error': 'Please provide a phone number with area code'\n      '#pattern': '\\(\\d{3}\\)\\s\\d{3}[\\-]\\d{4}'\n  section_bookings:\n    '#type': fieldset\n    '#title': 'Bookings Details'\n    room:\n      '#type': checkboxes\n      '#title': Room\n      '#prepopulate': true\n      '#options':\n        321A: 'Seminar Room 321A'\n        321B: 'Seminar Room 321B'\n        303: 'Active Learning Lab'\n        INH: 'Innovation Hub'\n        320D: 'Data Visualization Lab'\n        EVS: 'Event Space'\n        DSH: 'Digital Scholarship Hub'\n        FLB: 'Fabrication Lab'\n        SSL: 'Silent Study Lounge'\n      '#required': true\n    event_title:\n      '#type': textfield\n      '#title': 'Event title'\n      '#required': true\n    date_time:\n      '#type': textarea\n      '#title': 'Date(s) and Time(s)'\n      '#description': 'Provide <strong>start and end date(s) and time(s)</strong> and if this is a reccurring event, e.g. &quot;August 4th, 2021 8am-12pm&quot; or &quot;Every 2nd Thursday from 8am-12pm&quot;'\n      '#rows': 3\n      '#required': true\n    attendance:\n      '#type': number\n      '#title': 'Number of Attendees'\n      '#description': 'Provide the expected number of attendees.'\n      '#required': true\n      '#min': 1\n    catering:\n      '#type': radios\n      '#title': 'Will foods and/or drinks be provided?'\n      '#options':\n        'Yes': 'Yes'\n        'No': 'No'\n      '#options_display': side_by_side\n      '#required': true\n    event_description:\n      '#type': textarea\n      '#title': 'Event description'\n      '#rows': 5\n      '#required': true\n    misc:\n      '#type': textarea\n      '#title': 'Additional notes or questions'\n      '#rows': 5\n  actions:\n    '#type': webform_actions\n    '#title': 'Submit button(s)'\n    '#attributes':\n      class:\n        - webform-actions-center\n    '#submit__label': Book\n    '#reset__label': Cancel"
 css: ''
