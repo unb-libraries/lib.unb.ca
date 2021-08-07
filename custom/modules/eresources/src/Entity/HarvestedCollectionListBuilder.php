@@ -3,7 +3,7 @@
 namespace Drupal\eresources\Entity;
 
 use Drupal\Core\Entity\EntityInterface;
-use Drupal\lib_unb_custom_entity\Entity\EntityListBuilder;
+use Drupal\Core\Entity\EntityListBuilder;
 use Drupal\eresources\Entity\HarvestedCollection;
 
 /**
