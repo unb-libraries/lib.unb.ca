@@ -100,7 +100,7 @@ class QuickLinks extends BlockBase {
         'id' => 'book-btn',
       ],
       '#children' => Link::fromTextAndUrl(
-        Markup::create('<span class="fas fa-calendar-check mr-1"></span>' . $this->t('Book a Seat')),
+        Markup::create('<span class="fas fa-calendar-check mr-1"></span>' . $this->t('Book a Study Space')),
         Url::fromUri('https://lib.unb.ca/services/bookings', [
           'attributes' => [
             'class' => [
