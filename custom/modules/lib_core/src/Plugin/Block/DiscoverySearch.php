@@ -226,7 +226,7 @@ class DiscoverySearch extends BlockBase {
             <a href="//unb.on.worldcat.org/advancedsearch">Advanced Search</a>
         </li>    
         <li class="list-inline-item mr-4 my-2 my-sm-1">
-            <a href="/worldcat/unb-worldcat-frequently-asked-questions">What Am I Searching?</a>
+            <a href="/worldcat/unb-worldcat-frequently-asked-questions">Tips for Searching</a>
         </li>
         <li class="list-inline-item mr-4 my-2 my-sm-1">
             <a href="/about/loc_call">Catalogue Locations</a>
