@@ -45,8 +45,8 @@ class WorldCatSearchController extends ControllerBase {
     }
 
     // QUERY SYNTAX
-    // https://unb.on.worldcat.org/search?scope=wz%3A66413&queryString=monkeys
-    $url = "https://unb.on.worldcat.org/search?" . http_build_query($q);
+    // https://unb.on.worldcat.org/v2/search?scope=wz%3A66413&queryString=monkeys
+    $url = "https://unb.on.worldcat.org/v2/search?" . http_build_query($q);
     return new TrustedRedirectResponse($url);
   }
 
