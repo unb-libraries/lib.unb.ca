@@ -46,8 +46,9 @@ class LibraryHoursToday extends BlockBase {
     $todays_hours_html = '
     <table class="m-0">
       <caption>
-        <span class="sr-only">Library hours for</span>' . date("l, F j, Y") . '</span>
-      </caption>
+        <span class="sr-only">Library hours for</span>' .
+        date("l, F j, Y") .
+      '</caption>
       <tbody>
         <tr>
           <th scope="row"><a href="/about/harriet-irving-library">Harriet Irving</a></th>
