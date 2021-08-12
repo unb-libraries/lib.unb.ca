@@ -121,19 +121,6 @@ Array.prototype.slice.call(document.querySelectorAll('.Accordion')).forEach(func
         }
     });
 
-    // These are used to style the accordion when one of the buttons has focus
-    accordion.querySelectorAll('.Accordion-trigger').forEach(function (trigger) {
-
-        trigger.addEventListener('focus', function (event) {
-            //accordion.classList.add('focus');
-        });
-
-        trigger.addEventListener('blur', function (event) {
-            //accordion.classList.remove('focus');
-        });
-
-    });
-
     // Minor setup: will set disabled state, via aria-disabled, to an
     // expanded/ active accordion which is not allowed to be toggled close
     if (!allowToggle) {
