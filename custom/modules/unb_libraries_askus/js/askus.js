@@ -35,7 +35,7 @@ var lh3UpdatePresence = function () {
         success: function(data) {
             let resource = jQuery(data).find('resource:first');
             let resourceShow = resource.attr('show');
-            console.log(resourceShow);
+
             if (resourceShow === "available" || resourceShow === "chat") {
                 jQuery("#lh3-away").hide();
                 jQuery("#lh3-busy").hide();
