@@ -1893,7 +1893,18 @@ display:
           plugin_id: custom
       display_description: ''
       sorts: {  }
-      empty: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content: "<a class=\"link-no-hover\" href=\"https://twitter.com/UNBLibraries\">\r\n<img src=\"/themes/custom/lib_unb_ca/img/twitter-bg.gif\" alt=\"Twitter: Do you follow us?\">\r\n</a>"
+          plugin_id: text_custom
       css_class: news-twitter
     cache_metadata:
       max-age: -1

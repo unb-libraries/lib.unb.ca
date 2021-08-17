@@ -16,7 +16,7 @@ dependencies:
     - paragraphs
     - user
 id: meet_with_a_librarian
-label: 'Meet With a Librarian (Ask Me About)'
+label: 'Meet With a Librarian (Ask Me About/Specialists)'
 module: views
 description: ''
 tag: ''
@@ -406,7 +406,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      block_description: 'Meet with a Librarian: Image'
+      block_description: 'Library Specialists Block'
       display_description: ''
       fields:
         field_url:
@@ -628,7 +628,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: '<div class="mt-3"><a href="https://guides.lib.unb.ca/specialists">All Specialists<i class="fas fa-angle-double-right fa-xs fa-muted ml-1"></i></a></div>'
+          content: '<div class="mt-3"><a href="https://guides.lib.unb.ca/specialists">See all Specialists<i class="fas fa-angle-double-right fa-xs fa-muted ml-1"></i></a></div>'
           plugin_id: text_custom
       css_class: ''
       empty:
