@@ -3,17 +3,16 @@
 
 /** OVERRIDES **/
 /* ELEMENTS */
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+h1, h2, .h1, .h2 {
   font-family: 'ProximaNovaA-Thin', 'Century Gothic', AppleGothic, Arial, sans-serif;
   -webkit-text-stroke: 0.45px;
   -webkit-text-stroke: 0.45px rgba(0, 0, 0, 0.1);
-
-  &.bold {
+}s
+h3, h4, h5, h6,
+.h3, .h4, .h5, .h6,
+.bold {
     font-family: 'ProximaNovaA-Bold', 'Century Gothic', AppleGothic, Arial, sans-serif;
-  }
 }
-
 h3 {
   font-size: 1.25rem;
 }
