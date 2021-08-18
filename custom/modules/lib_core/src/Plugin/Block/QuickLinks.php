@@ -111,9 +111,6 @@ class QuickLinks extends BlockBase {
       )->toString(),
     ];
     $booking_btn = [
-      '#attributes' => [
-        'id' => 'book-btn',
-      ],
       '#children' => Link::fromTextAndUrl(
         Markup::create('<span class="fas fa-calendar-check mr-1"></span>' . $this->t('Book a Study Space')),
         Url::fromUri('base://services/bookings', [
@@ -123,6 +120,7 @@ class QuickLinks extends BlockBase {
               'btn-dark',
               'text-nowrap',
             ],
+            'id' => 'book-btn',
           ],
         ])
       )->toString(),
