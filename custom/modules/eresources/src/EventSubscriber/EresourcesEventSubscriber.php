@@ -4,7 +4,7 @@ namespace Drupal\eresources\EventSubscriber;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\KernelEvents;
-use Symfony\Component\HttpKernel\Event\GetResponseEvent;
+use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Url;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -32,25 +32,37 @@ class EresourcesEventSubscriber implements EventSubscriberInterface {
    * {@inheritdoc}
    */
   public static function getSubscribedEvents() {
-    $events[KernelEvents::REQUEST][] = ['checkProxyIp'];
+    $events[KernelEvents::RESPONSE][] = ['checkProxyIpOnResponse'];
     return $events;
   }
 
   /**
    * Checks if user is coming from the proxy for protected pages.
    *
-   * @param \Symfony\Component\HttpKernel\Event\GetResponseEvent $event
+   * @param \Symfony\Component\HttpKernel\Event\FilterResponseEvent $event
    *   The event.
    */
-  public function checkProxyIp(GetResponseEvent $event) {
+  public function checkProxyIpOnResponse(FilterResponseEvent $event) {
+    // Don't bother proceeding on sub-requests.
+    if (!$event->isMasterRequest()) {
+      return;
+    }
+
     $request = $event->getRequest();
     $path = $request->getRequestUri();
-    $ip = $request->getClientIp();
-    if ($this->currentUser->isAnonymous()
-      && preg_match('/^\/eresources\/protected\//', $path)
-      && !preg_match('/^131\.202\.38./', $ip)) {
-      $url = Url::fromRoute('system.403');
-      $event->setResponse(new RedirectResponse($url->toString()));
+
+    // Eresources protected paths are only viewable by anonymous users
+    // if they access them via the proxy.
+    if (preg_match('/^\/eresources\/protected\//', $path)) {
+      $response = $event->getResponse();
+      $ip = empty($_SERVER["HTTP_X_REAL_IP"]) ? \Drupal::request()->getClientIp() : $_SERVER["HTTP_X_REAL_IP"];
+      if ($this->currentUser->isAnonymous() && !preg_match('/^131\.202\.38\./', $ip)) {
+        $url = Url::fromRoute('system.403');
+        $response = new RedirectResponse($url->toString());
+      }
+      $response->setMaxAge(0);
+      $event->setResponse($response);
+      \Drupal::service('page_cache_kill_switch')->trigger();
     }
   }
 
