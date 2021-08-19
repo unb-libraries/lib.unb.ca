@@ -3,8 +3,8 @@ name: 'UNB Libraries'
 mail: admin@example.com
 slogan: ''
 page:
-  403: /node/1156
-  404: /node/1156
+  403: /node/1364
+  404: /node/1364
   front: /node/69
 admin_compact_mode: false
 weight_select_max: 100
