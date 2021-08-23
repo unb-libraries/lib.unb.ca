@@ -77,24 +77,25 @@ class KbFormBase extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form_state->setMethod('GET');
+    $form_wrapper = $this->getKbFormId() . "_wrapper";
 
-    $form['#cache'] = [
+    $form["$form_wrapper"]['#cache'] = [
       'max-age' => 0,
     ];
-    $form['#action'] = Url::fromRoute('eresources.' . $this->getKbFormId() . '_form')->toString();
-    $form['#after_build'] = ['::afterBuild'];
+    // $form['#action'] = Url::fromRoute('eresources.' . $this->getKbFormId() . '_form')->toString();
+    $form["$form_wrapper"]['#after_build'] = ['::afterBuild'];
 
-    $form['info'] = [
+    $form["$form_wrapper"]['info'] = [
       '#markup' => '<p>' . $this->getSearchDescription() . '</p>',
     ];
 
-    $form['query'] = [
+    $form["$form_wrapper"]['query'] = [
       '#title' => $this->t('Query'),
       '#type' => 'textfield',
       '#required' => TRUE,
     ];
 
-    $form['type'] = [
+    $form["$form_wrapper"]['type'] = [
       '#title' => $this->t('Search Type'),
       '#type' => 'radios',
       '#required' => TRUE,
@@ -102,10 +103,29 @@ class KbFormBase extends FormBase {
       '#default_value' => 'title',
     ];
 
-    $form['submit_button'] = [
+    $form["$form_wrapper"]['actions'] = [
+      '#type' => 'actions',
+    ];
+
+    $form["$form_wrapper"]['actions']['submit_button'] = [
       '#type' => 'submit',
       '#value' => $this->t('Search'),
       '#name' => '',
+    ];
+
+    // The wrapper for search results.
+    $form["$form_wrapper"]['search_results'] = [
+      // Set the results to be below the form.
+      '#weight' => 100,
+      // The prefix/suffix are the div with the ID specified as the wrapper in
+      // the submit button's #ajax definition.
+      '#prefix' => '<div id="search_results_wrapper" class="mt-4">',
+      '#suffix' => '</div>',
+      // The #markup element forces rendering of the #prefix and #suffix.
+      // Without content, the wrappers are not rendered. Therefore, an empty
+      // string is declared, ensuring that the wrapper for the search results
+      // is present when the page is loaded.
+      '#markup' => '',
     ];
 
     $req = $this->getRequest()->query;
@@ -118,8 +138,7 @@ class KbFormBase extends FormBase {
       $form['query']['#value'] = $query;
       $form['type']['#default_value'] = $req->get('type');
 
-      $form['results_header'] = ['#markup' => '<h2 class="mt-3">Results</h2>'];
-
+      // $form['results_header'] = ['#markup' => '<h2 class="mt-3">Results</h2>'];
       $api = $this->oclcApi('worldcat_knowledge_base', ['authorization' => $this->oclcAuthorization()]);
       $search = ['title' => $query];
       switch ($req->get('type')) {
@@ -142,19 +161,19 @@ class KbFormBase extends FormBase {
       ]);
       $total = $result->{'os:totalResults'};
       if ($total == 0) {
-        $form['page'] = ['#markup' => "<p>Your search for <b>\"{$query}\"</b> returned no results.</p>"];
+        $form["$form_wrapper"]['search_results']['page'] = ['#markup' => "<div class='alert alert-info'>Your search for <b>\"{$query}\"</b> returned no results.</div>"];
       }
       else {
         $entries = $result->entries;
-        $form['page'] = ['#markup' => "<p>Showing results {$start} to " . ($start + count($entries) - 1) . " of {$total} for search <b>\"{$query}\"</b>.</p>"];
+        $form["$form_wrapper"]['search_results']['page'] = ['#markup' => "<div class='alert alert-info'>Showing results {$start} to " . ($start + count($entries) - 1) . " of {$total} for search <b>\"{$query}\"</b>.</div>"];
         pager_default_initialize($total, $perPage);
-        $form['top-pager'] = ['#type' => 'pager'];
-        $form['results'] = [
+        $form["$form_wrapper"]['search_results']['top-pager'] = ['#type' => 'pager'];
+        $form["$form_wrapper"]['search_results']['results'] = [
           '#theme' => 'eresources',
           '#eresources' => $entries,
         ];
-        $form['bottom-pager'] = ['#type' => 'pager'];
-        $form['#attached']['library'][] = 'eresources/eresources';
+        $form["$form_wrapper"]['search_results']['bottom-pager'] = ['#type' => 'pager'];
+        $form["$form_wrapper"]['#attached']['library'][] = 'eresources/eresources';
       }
     }
 
@@ -177,6 +196,7 @@ class KbFormBase extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
+    $form_state->setRebuild(TRUE);
   }
 
 }
