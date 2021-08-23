@@ -8,3 +8,4 @@ dependencies:
   - oclc_api
   - key
   - lib_unb_custom_entity
+  - lib_core
