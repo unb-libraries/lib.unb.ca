@@ -3,3 +3,7 @@ eresources:
   css:
     theme:
       css/eresources.css: {}
+  js:
+    js/navbar.js: {}
+  dependencies:
+    - core/jquery

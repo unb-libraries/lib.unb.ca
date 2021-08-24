@@ -59,6 +59,7 @@ class EresourcesDiscoverySearchBlock extends BlockBase {
       '#attached' => [
         'library' => [
           'lib_core/accessible-accordion',
+          'eresources/eresources',
         ],
       ],
     ];
