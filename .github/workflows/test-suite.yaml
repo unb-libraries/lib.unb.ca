@@ -352,6 +352,9 @@ jobs:
           kubeconfig: ${{ secrets.KUBE_CONFIG_DATA }}
         id: setcontext-kubectl
       -
+        name: Install dockworker
+        run: composer install --prefer-dist --no-progress --no-suggest
+      -
         name: Write out deployment logs
         run: vendor/bin/dockworker deployment:logs $CI_REF_NAME
 
