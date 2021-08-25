@@ -60,11 +60,11 @@
             "type": "package",
             "package": {
                 "name": "ckeditor/colorbutton",
-                "version": "4.14.1",
+                "version": "4.16.2",
                 "type": "drupal-library",
                 "dist": {
                     "type": "zip",
-                    "url": "https://github.com/unb-libraries/upstream-library-mirror/raw/master/colorbutton/colorbutton_4.14.1.zip"
+                    "url": "https://github.com/unb-libraries/upstream-library-mirror/raw/master/colorbutton/colorbutton_4.16.2.zip"
                 }
             }
         },
@@ -72,11 +72,11 @@
             "type": "package",
             "package": {
                 "name": "ckeditor/panelbutton",
-                "version": "4.14.1",
+                "version": "4.16.2",
                 "type": "drupal-library",
                 "dist": {
                     "type": "zip",
-                    "url": "https://github.com/unb-libraries/upstream-library-mirror/raw/master/panelbutton/panelbutton_4.14.1.zip"
+                    "url": "https://github.com/unb-libraries/upstream-library-mirror/raw/master/panelbutton/panelbutton_4.16.2.zip"
                 }
             }
         },
@@ -203,8 +203,8 @@
         }
     ],
     "require": {
-        "ckeditor/colorbutton": "~4.14",
-        "ckeditor/panelbutton": "~4.14",
+        "ckeditor/colorbutton": "~4.16",
+        "ckeditor/panelbutton": "~4.16",
         "drupal/admin_toolbar": "3.0.2",
         "drupal/address": "1.9",
         "drupal/allowed_formats": "1.3",
