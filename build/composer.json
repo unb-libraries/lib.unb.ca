@@ -260,7 +260,7 @@
         "drupal/tvi": "1.0-rc4",
         "drupal/video_embed_field": "2.4",
         "drupal/views_slideshow": "4.8",
-        "drupal/webform": "6.0.4",
+        "drupal/webform": "6.0.5",
         "harvesthq/chosen": "~1.8",
         "html2text/html2text": "4.2.1",
         "jquery/cycle": "3.0.3",
