@@ -11,7 +11,7 @@ field_name: field_location
 entity_type: node
 bundle: booking_space
 label: Location
-description: ''
+description: 'Select a <strong>floor</strong> location <i>(denoted by "-")</i> from within one of the <strong>building</strong> categories.'
 required: true
 translatable: false
 default_value: {  }
