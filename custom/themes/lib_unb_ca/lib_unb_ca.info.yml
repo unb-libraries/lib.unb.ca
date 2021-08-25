@@ -29,4 +29,4 @@ regions:
 
 ckeditor_stylesheets:
   - dist/css/style.css
-  - ckeditor_stylesheets/styles-dropdown.css
+  - ckeditor_stylesheets/overrides.css

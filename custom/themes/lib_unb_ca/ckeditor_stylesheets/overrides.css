@@ -6,3 +6,8 @@
     max-width: 100%;
     height: auto;
 }
+strong,
+.font-weight-bold {
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+}
