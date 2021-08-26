@@ -330,7 +330,7 @@ jobs:
     name: Live Deployment Logs
     runs-on: ubuntu-latest
     needs: [deploy-live]
-    if: always()
+    if: always() && (needs.deploy-live.result == 'success' || needs.deploy-live.result == 'failure')
     steps:
       - uses: FranzDiebold/github-env-vars-action@v2.1.0
       - uses: actions/checkout@v2
