@@ -325,6 +325,9 @@ jobs:
       -
         name: Check container startup logs for errors
         run: vendor/bin/dockworker deployment:logs:check $CI_REF_NAME
+      -
+        name: Write out deployment logs
+        run: vendor/bin/dockworker deployment:logs $CI_REF_NAME
 
   live-deploy-logs:
     name: Live Deployment Logs
@@ -380,8 +383,6 @@ jobs:
           changelog: "https://github.com/${{ github.repository }}/commit/${{ github.sha }}"
           description: "${{ github.event.head_commit.message }}"
           user: "${{ github.actor }}"
-
-
 
   slack-results:
     name: Notify Slack of Build Results
