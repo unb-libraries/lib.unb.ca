@@ -1591,7 +1591,7 @@ display:
           expose:
             label: ''
           plugin_id: standard
-      title: 'Staff and Departments'
+      title: 'Units and Departments'
       header:
         area:
           id: area
