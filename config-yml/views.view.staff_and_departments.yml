@@ -1603,7 +1603,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: "<div class=\"mt-3\">\r\n<a class=\"btn btn-warning\" href=\"/about/alphabetical-staff-directory\">\r\n  <span class=\"fas fa-user-friends\"></span> View staff directory alphabetically\r\n</a>\r\n</div>\r\n\r\n<div class=\"alert alert-dismissible alert-info fade legend show\" role=\"alert\">\r\n  <span class=\"fas fa-star head text-red\"></span> Department Head</span>\r\n  <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\r\n    <span aria-hidden=\"true\">&times;</span>\r\n  </button>\r\n</div>\r\n\r\n"
+            value: "<div class=\"mt-3\">\r\n<a class=\"btn btn-warning\" href=\"/about/alphabetical-staff-directory\">\r\n  <span class=\"fas fa-user-friends mr-1\"></span>Alphabetical Staff Directory</a>\r\n</div>\r\n\r\n<div class=\"alert alert-dismissible alert-info fade legend show\" role=\"alert\">\r\n  <span class=\"fas fa-star head text-red\"></span> Department Head</span>\r\n  <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\r\n    <span aria-hidden=\"true\">&times;</span>\r\n  </button>\r\n</div>\r\n\r\n"
             format: full_html
           plugin_id: text
       footer: {  }
