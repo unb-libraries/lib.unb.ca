@@ -25,7 +25,7 @@ class EresourcesDiscoverySearchBlock extends BlockBase {
         <div class="card border border-dark rounded-0">
           <div class="card-header bg-black px-2 pb-0 pb-md-1 rounded-0">
             <h2 class="sr-only">Search</h2>
-            <nav class="navbar navbar-expand-md text-nowrap">
+            <nav class="navbar navbar-expand-md text-nowrap w-75">
               <h3 id="category-label" class="d-block d-md-none h4 px-2 py-1">Article Databases</h3>
               <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 Switch search

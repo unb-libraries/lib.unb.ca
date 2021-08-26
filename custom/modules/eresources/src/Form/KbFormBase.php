@@ -196,7 +196,10 @@ class KbFormBase extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $form_state->setRebuild(TRUE);
+    /* Class Drupal\eresources\Form\KbFormBase contains 1 abstract method and
+     * must therefore be declared abstract or implement the remaining method
+     * Drupal\Core\Form\FormInterface::submitForm
+     */
   }
 
 }
