@@ -79,23 +79,23 @@ class KbFormBase extends FormBase {
     $form_state->setMethod('GET');
     $form_wrapper = $this->getKbFormId() . "_wrapper";
 
-    $form["$form_wrapper"]['#cache'] = [
+    $form[$form_wrapper]['#cache'] = [
       'max-age' => 0,
     ];
     // $form['#action'] = Url::fromRoute('eresources.' . $this->getKbFormId() . '_form')->toString();
-    $form["$form_wrapper"]['#after_build'] = ['::afterBuild'];
+    $form[$form_wrapper]['#after_build'] = ['::afterBuild'];
 
-    $form["$form_wrapper"]['info'] = [
+    $form[$form_wrapper]['info'] = [
       '#markup' => '<p>' . $this->getSearchDescription() . '</p>',
     ];
 
-    $form["$form_wrapper"]['query'] = [
+    $form[$form_wrapper]['query'] = [
       '#title' => $this->t('Query'),
       '#type' => 'textfield',
       '#required' => TRUE,
     ];
 
-    $form["$form_wrapper"]['type'] = [
+    $form[$form_wrapper]['type'] = [
       '#title' => $this->t('Search Type'),
       '#type' => 'radios',
       '#required' => TRUE,
@@ -103,18 +103,18 @@ class KbFormBase extends FormBase {
       '#default_value' => 'title',
     ];
 
-    $form["$form_wrapper"]['actions'] = [
+    $form[$form_wrapper]['actions'] = [
       '#type' => 'actions',
     ];
 
-    $form["$form_wrapper"]['actions']['submit_button'] = [
+    $form[$form_wrapper]['actions']['submit_button'] = [
       '#type' => 'submit',
       '#value' => $this->t('Search'),
       '#name' => '',
     ];
 
     // The wrapper for search results.
-    $form["$form_wrapper"]['search_results'] = [
+    $form[$form_wrapper]['search_results'] = [
       // Set the results to be below the form.
       '#weight' => 100,
       // The prefix/suffix are the div with the ID specified as the wrapper in
@@ -161,19 +161,19 @@ class KbFormBase extends FormBase {
       ]);
       $total = $result->{'os:totalResults'};
       if ($total == 0) {
-        $form["$form_wrapper"]['search_results']['page'] = ['#markup' => "<div class='alert alert-info'>Your search for <b>\"{$query}\"</b> returned no results.</div>"];
+        $form[$form_wrapper]['search_results']['page'] = ['#markup' => "<div class='alert alert-info'>Your search for <b>\"{$query}\"</b> returned no results.</div>"];
       }
       else {
         $entries = $result->entries;
-        $form["$form_wrapper"]['search_results']['page'] = ['#markup' => "<div class='alert alert-info'>Showing results {$start} to " . ($start + count($entries) - 1) . " of {$total} for search <b>\"{$query}\"</b>.</div>"];
+        $form[$form_wrapper]['search_results']['page'] = ['#markup' => "<div class='alert alert-info'>Showing results {$start} to " . ($start + count($entries) - 1) . " of {$total} for search <b>\"{$query}\"</b>.</div>"];
         pager_default_initialize($total, $perPage);
-        $form["$form_wrapper"]['search_results']['top-pager'] = ['#type' => 'pager'];
-        $form["$form_wrapper"]['search_results']['results'] = [
+        $form[$form_wrapper]['search_results']['top-pager'] = ['#type' => 'pager'];
+        $form[$form_wrapper]['search_results']['results'] = [
           '#theme' => 'eresources',
           '#eresources' => $entries,
         ];
-        $form["$form_wrapper"]['search_results']['bottom-pager'] = ['#type' => 'pager'];
-        $form["$form_wrapper"]['#attached']['library'][] = 'eresources/eresources';
+        $form[$form_wrapper]['search_results']['bottom-pager'] = ['#type' => 'pager'];
+        $form[$form_wrapper]['#attached']['library'][] = 'eresources/eresources';
       }
     }
 
