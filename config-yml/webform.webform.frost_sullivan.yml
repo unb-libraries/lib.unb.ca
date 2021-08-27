@@ -1,0 +1,195 @@
+uuid: 04db9e1b-f8ed-4c3a-9b89-da884e2a33fc
+langcode: en
+status: open
+dependencies: {  }
+open: null
+close: null
+weight: 0
+uid: 1
+template: false
+archive: false
+id: frost_sullivan
+title: 'Frost & Sullivan'
+description: 'Ported from&nbsp;https://web.lib.unb.ca/eresources/special/frost.php'
+category: ''
+elements: "frost_intro:\n  '#type': processed_text\n  '#text': |\n    <p>The Frost &amp; Sullivan database provides in-depth market research and industry reports in the following high-technology sectors:</p>\n    \n    <ul>\n    \t<li>Aerospace &amp; Defense</li>\n    \t<li>Automotive &amp; Transportation</li>\n    \t<li>Chemicals, Materials and Food</li>\n    \t<li>Electronics &amp; Security</li>\n    \t<li>Energy &amp; Power Systems</li>\n    \t<li>Environment &amp; Building Technologies</li>\n    \t<li>Healthcare</li>\n    \t<li>Industrial Automation &amp; Process Control</li>\n    \t<li>Information &amp; Communication Technologies</li>\n    \t<li>Measurement &amp; Instrumentation</li>\n    </ul>\n    \n  '#format': library_page_html\nfrost_restrictions:\n  '#type': processed_text\n  '#text': |\n    <h2>Restrictions on Use:</h2>\n    \n    <p>Our licensing agreement with Frost &amp; Sullivan limits access to current students, faculty and staff of the University of New Brunswick and St. Thomas University. As such, database login via our UNB Libraries proxy server is required.</p>\n    \n    <p>Information is for individual, non-commercial, educational and research purposes only. Users are not able to systematically download or retain substantial portions of information.&nbsp;<strong>NOTE:</strong>&nbsp;UNB Libraries does not subscribe to all Frost &amp; Sullivan content.</p>\n    \n    <dl class=\"ml-4\">\n    \t<dt>Students</dt>\n    \t<dd>Students can access, view and print information, but the database&nbsp;<strong>does not</strong> offer PDF downloading capabilities.</dd>\n    \t<dt>Faculty:</dt>\n    \t<dd>Faculty or staff requiring PDF downloading capabilities are required to contact Sally Armstrong (<a href=\"https://lib.unb.ca/contact-unb-libraries-staff?recipient=sarmstr4\">sally.armstrong@unb.ca</a> | 447-3017). Please include your university/departmental affiliation.</dd>\n    </dl>\n    \n  '#format': library_page_html\nfrost_agree_container:\n  '#type': container\n  '#attributes':\n    class:\n      - 'alert alert-danger mt-4 p-2'\n  i_agree_to_use_this_information_for_individual_educational_and_r:\n    '#type': checkbox\n    '#title': 'I agree to use this information for individual educational and research purposes only, and not for commercial purposes.'\n    '#required': true\n    '#required_error': 'Please check this box if you want to proceed'\n    '#wrapper_attributes':\n      class:\n        - m-3\n    '#attributes':\n      class:\n        - mb-3\n  actions:\n    '#type': webform_actions\n    '#title': 'Submit button(s)'\n    '#states':\n      disabled:\n        ':input[name=\"i_agree_to_use_this_information_for_individual_educational_and_r\"]':\n          unchecked: true\n    '#submit__label': 'Access Frost & Sullivan'\n    '#submit__attributes':\n      class:\n        - 'd-block ml-3 text-uppercase'"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: /eresources/frost
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_log: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: url
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: 'https://cds-frost-com.proxy.hil.unb.ca'
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
+variants: {  }
