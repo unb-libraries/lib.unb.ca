@@ -130,7 +130,7 @@ class KbFormBase extends FormBase {
 
     $req = $this->getRequest()->query;
     $query = $req->get('query');
-    if (!empty($query)) {
+    if (!empty($query) && $this->getFormId() == $req->get('form_id')) {
       $perPage = 50;
       $page = pager_find_page();
       $start = $perPage * $page + 1;
