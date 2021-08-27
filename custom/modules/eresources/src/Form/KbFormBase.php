@@ -135,8 +135,8 @@ class KbFormBase extends FormBase {
       $page = pager_find_page();
       $start = $perPage * $page + 1;
 
-      $form['query']['#value'] = $query;
-      $form['type']['#default_value'] = $req->get('type');
+      $form[$form_wrapper]['query']['#value'] = $query;
+      $form[$form_wrapper]['type']['#default_value'] = $req->get('type');
 
       // $form['results_header'] = ['#markup' => '<h2 class="mt-3">Results</h2>'];
       $api = $this->oclcApi('worldcat_knowledge_base', ['authorization' => $this->oclcAuthorization()]);
