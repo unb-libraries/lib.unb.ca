@@ -395,7 +395,7 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: 'Visit department website'
+            text: 'Visit website'
             make_link: true
             path: '{{ field_department_website__uri }}'
             absolute: false
