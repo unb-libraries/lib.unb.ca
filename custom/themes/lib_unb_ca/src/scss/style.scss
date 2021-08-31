@@ -576,6 +576,47 @@ ul.field--name-field-categories:before {
 /** END Search Webpages **/
 
 /* Staff and Departments View */
+.units-departments {
+  font-size: 90%;
+
+  h2 {
+    color: $dark;
+  }
+
+  .field__item:not(:empty) {
+    &:before {
+      color: $gray-700;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      margin-left: 1px;
+      margin-right: .25rem;
+    }
+  }
+
+  .field-telephone:not(:empty) {
+    &:before {
+      content: '\f3cd'
+    }
+  }
+
+  .field-email:not(:empty) {
+    &:before {
+      content: '\f0e0'
+    }
+  }
+
+  .field-fax:not(:empty) {
+    &:before {
+      content: '\f1ac';
+    }
+  }
+
+  .field-website:not(:empty) {
+    &:before {
+      content: '\f0c1';
+    }
+  }
+}
 .staff-departments {
   .legend {
     font-size: .9rem;
