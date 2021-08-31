@@ -1,6 +1,6 @@
 uuid: 19861a0b-1f4d-45da-ac28-d4069a56518e
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - field.storage.paragraph.field_is_department_head
