@@ -8,7 +8,7 @@
             var original = formId ? formId : '';
 
             // Add history on tab change.
-            $('#navbarNav button').on('click', function(e, triggered) {
+            $('#navbarNav button').once().click(function(e, triggered) {
                 if(triggered) {
                   return;
                 }

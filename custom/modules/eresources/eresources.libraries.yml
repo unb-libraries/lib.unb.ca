@@ -7,3 +7,6 @@ eresources:
     js/navbar.js: {}
   dependencies:
     - core/jquery
+    - core/drupalSettings
+    - core/jquery
+    - core/jquery.once
