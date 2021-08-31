@@ -1,0 +1,9 @@
+{
+  "name": "unb-libraries/records-management",
+  "type": "drupal-module",
+  "description": "Drupal module to administer UNB retention schedules.",
+  "keywords": ["Drupal"],
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "require": { }
+}
