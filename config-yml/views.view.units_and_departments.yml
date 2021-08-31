@@ -542,7 +542,18 @@ display:
           entity_field: name
           plugin_id: standard
       title: 'Units and Departments'
-      header: {  }
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content: "<div class=\"d-flex align-items-end flex-column\">\r\n   <a class=\"btn btn-secondary btn-sm\" href=\"/about/alphabetical-staff-directory\">\r\n  <span class=\"fas fa-user-friends mr-1\"></span>Alphabetical Staff Directory</a>\r\n</div>"
+          plugin_id: text_custom
       footer: {  }
       empty: {  }
       relationships: {  }
