@@ -50,8 +50,13 @@ class EresourcesDiscoverySearchBlock extends BlockBase {
     ';
 
     foreach ($forms as $form => $title) {
-      $current = preg_match("/$form/", $formId) ? 'true' : 'false';
-      $build .= '<li class="nav-item"><button href="?form_id=eresources_' . $form . '_form" aria-controls="' . $form . '" aria-expanded="' . $current . '" class="Accordion-trigger p-2" id="' . $form . 'Btn">' . $title . '</button></li>';
+      $expanded = 'false';
+      $tabindex = ' tabindex="-1"';
+      if (preg_match("/$form/", $formId)) {
+        $expanded = 'true';
+        $tabindex = '';
+      }
+      $build .= '<li class="nav-item"><button href="?form_id=eresources_' . $form . '_form" aria-controls="' . $form . '" aria-expanded="' . $expanded . '" class="Accordion-trigger p-2" id="' . $form . 'Btn"' . $tabindex . '>' . $title . '</button></li>';
     }
 
     $build .= '
