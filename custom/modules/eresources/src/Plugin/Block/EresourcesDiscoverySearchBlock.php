@@ -75,6 +75,7 @@ class EresourcesDiscoverySearchBlock extends BlockBase {
     foreach (self::$forms as $form => $title) {
       $hidden = preg_match("/$form/", $formId) ? '' : 'hidden';
       $formRender = $formBuilder->getForm('Drupal\eresources\Form\\' . ucfirst($form) . 'Form');
+      unset($formRender['form_build_id']);
       $build .= '<div aria-labelledby="' . $form . 'Btn" class="Accordion-panel" id="' . $form . '" role="region"' . $hidden . '>' . $renderer->render($formRender) . '</div>';
     }
 
