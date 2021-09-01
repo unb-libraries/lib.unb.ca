@@ -9,13 +9,22 @@ use Drupal\Core\Entity\ContentEntityInterface;
  */
 interface ClassificationInterface extends ContentEntityInterface {
 
+  const FIELD_CODE = 'code';
   const FIELD_DESCRIPTION = 'description';
+
+  /**
+   * Get the classification code.
+   *
+   * @return string
+   *   A two-letter string, e.g. "AD".
+   */
+  public function getCode();
 
   /**
    * Get the classification description.
    *
    * @return string
-   *   A string.
+   *   A (long) string.
    */
   public function getDescrition();
 
