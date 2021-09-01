@@ -119,7 +119,7 @@ class KbFormBase extends FormBase {
       '#weight' => 100,
       // The prefix/suffix are the div with the ID specified as the wrapper in
       // the submit button's #ajax definition.
-      '#prefix' => '<div id="search_results_wrapper" class="mt-4">',
+      '#prefix' => '<div id="search_results_wrapper" class="mt-4 mx-n4">',
       '#suffix' => '</div>',
       // The #markup element forces rendering of the #prefix and #suffix.
       // Without content, the wrappers are not rendered. Therefore, an empty
@@ -161,11 +161,11 @@ class KbFormBase extends FormBase {
       ]);
       $total = $result->{'os:totalResults'};
       if ($total == 0) {
-        $form[$form_wrapper]['search_results']['page'] = ['#markup' => "<div class='alert alert-info'>Your search for <b>\"{$query}\"</b> returned no results.</div>"];
+        $form[$form_wrapper]['search_results']['page'] = ['#markup' => "<div class='alert alert-info rounded-0'>Your search for <b>\"{$query}\"</b> returned no results.</div>"];
       }
       else {
         $entries = $result->entries;
-        $form[$form_wrapper]['search_results']['page'] = ['#markup' => "<div class='alert alert-info'>Showing results {$start} to " . ($start + count($entries) - 1) . " of {$total} for search <b>\"{$query}\"</b>.</div>"];
+        $form[$form_wrapper]['search_results']['page'] = ['#markup' => "<div class='alert alert-info rounded-0'>Showing results {$start} to " . ($start + count($entries) - 1) . " of {$total} for search <b>\"{$query}\"</b>.</div>"];
         pager_default_initialize($total, $perPage);
         $form[$form_wrapper]['search_results']['top-pager'] = ['#type' => 'pager'];
         $form[$form_wrapper]['search_results']['results'] = [
