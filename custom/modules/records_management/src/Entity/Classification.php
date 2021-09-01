@@ -64,7 +64,7 @@ class Classification extends ContentEntityBase implements ClassificationInterfac
    */
   public function getDescrition() {
     return $this->get(self::FIELD_DESCRIPTION)
-      ->value;
+      ->processed;
   }
 
   /**
