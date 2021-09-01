@@ -43,6 +43,14 @@ class Classification extends ContentEntityBase implements ClassificationInterfac
   /**
    * {@inheritDoc}
    */
+  public function getName() {
+    return $this->get(self::FIELD_NAME)
+      ->value;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public function getDescrition() {
     return $this->get(self::FIELD_DESCRIPTION)
       ->value;
@@ -59,6 +67,11 @@ class Classification extends ContentEntityBase implements ClassificationInterfac
       ->setCardinality(1)
       ->setRequired(TRUE)
       ->addConstraint('UniqueField');
+
+    $fields[self::FIELD_NAME] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Name'))
+      ->setCardinality(1)
+      ->setRequired(TRUE);
 
     $fields[self::FIELD_DESCRIPTION] = BaseFieldDefinition::create('text')
       ->setLabel(t('Description'))
