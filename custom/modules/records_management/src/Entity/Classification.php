@@ -18,7 +18,7 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *     "list_builder" = "Drupal\records_management\Entity\ClassificationListBuilder",
  *     "form" = {
  *       "default" = "Drupal\Core\Entity\ContentEntityForm",
- *       "delete" = "Drupal\Core\Entity\EntityDeleteForm",
+ *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
  *     },
  *     "route_provider" = {
  *       "html" = "Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider"
