@@ -15,6 +15,10 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *   label_plural = @Translation("Functional classifications"),
  *   label_collection = @Translation("Functional classifications"),
  *   handlers = {
+ *     "form" = {
+ *       "default" = "Drupal\Core\Entity\ContentEntityForm",
+ *       "delete" = "Drupal\Core\Entity\EntityDeleteForm",
+ *     },
  *     "route_provider" = {
  *       "html" = "Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider"
  *     }
@@ -28,6 +32,11 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *     "label" = "label",
  *     "uuid" = "uuid"
  *   },
+ *   links = {
+ *     "add-form" = "/records/classifications/add",
+ *     "edit-form" = "/records/classifications/{classification}/edit",
+ *     "delete-form" = "/records/classifications/{classification}/delete",
+ *   }
  * )
  */
 class Classification extends ContentEntityBase implements ClassificationInterface {
@@ -66,18 +75,27 @@ class Classification extends ContentEntityBase implements ClassificationInterfac
       ->setLabel(t('Code'))
       ->setCardinality(1)
       ->setRequired(TRUE)
-      ->addConstraint('UniqueField');
+      ->addConstraint('UniqueField')
+      ->setDisplayOptions('form', [
+        'weight' => 0,
+      ]);
 
     $fields[self::FIELD_NAME] = BaseFieldDefinition::create('string')
       ->setLabel(t('Name'))
       ->setCardinality(1)
-      ->setRequired(TRUE);
+      ->setRequired(TRUE)
+      ->setDisplayOptions('form', [
+        'weight' => 10,
+      ]);
 
-    $fields[self::FIELD_DESCRIPTION] = BaseFieldDefinition::create('text')
+    $fields[self::FIELD_DESCRIPTION] = BaseFieldDefinition::create('text_long')
       ->setLabel(t('Description'))
       ->setDescription(t('Overview and high level description.'))
       ->setCardinality(1)
-      ->setRequired(TRUE);
+      ->setRequired(TRUE)
+      ->setDisplayOptions('form', [
+        'weight' => 20,
+      ]);
 
     return $fields;
   }
