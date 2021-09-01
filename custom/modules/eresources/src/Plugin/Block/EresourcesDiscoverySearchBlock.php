@@ -16,6 +16,19 @@ use Drupal\Core\Block\BlockBase;
 class EresourcesDiscoverySearchBlock extends BlockBase {
 
   /**
+   * Forms for display.
+   *
+   * @var array
+   */
+  private static $forms = [
+    'databases' => 'Article Databases',
+    'journals' => 'Journals',
+    'reference' => 'e-Reference Materials',
+    'ebooks' => 'eBooks',
+    'videos' => 'Videos',
+  ];
+
+  /**
    * {@inheritdoc}
    */
   public function build() {
@@ -23,16 +36,8 @@ class EresourcesDiscoverySearchBlock extends BlockBase {
     $renderer = \Drupal::service('renderer');
     $formId = \Drupal::request()->get('form_id');
     if (empty($formId)) {
-      $formId = 'databases';
+      $formId = array_key_first(self::$forms);
     }
-
-    $forms = [
-      'databases' => 'Article Databases',
-      'journals' => 'Journals',
-      'reference' => 'e-Reference Materials',
-      'ebooks' => 'eBooks',
-      'videos' => 'Videos',
-    ];
 
     $build = '
      <div class="Accordion d-flex flex-column flex-lg-row">
@@ -49,7 +54,7 @@ class EresourcesDiscoverySearchBlock extends BlockBase {
                 <ul class="navbar-nav d-flex align-items-lg-end justify-content-between w-100">
     ';
 
-    foreach ($forms as $form => $title) {
+    foreach (self::$forms as $form => $title) {
       $expanded = 'false';
       $tabindex = ' tabindex="-1"';
       if (preg_match("/$form/", $formId)) {
@@ -67,7 +72,7 @@ class EresourcesDiscoverySearchBlock extends BlockBase {
           <div class="card-body bg-light px-2 py-0">
     ';
 
-    foreach ($forms as $form => $title) {
+    foreach (self::$forms as $form => $title) {
       $hidden = preg_match("/$form/", $formId) ? '' : 'hidden';
       $formRender = $formBuilder->getForm('Drupal\eresources\Form\\' . ucfirst($form) . 'Form');
       $build .= '<div aria-labelledby="' . $form . 'Btn" class="Accordion-panel" id="' . $form . '" role="region"' . $hidden . '>' . $renderer->render($formRender) . '</div>';
