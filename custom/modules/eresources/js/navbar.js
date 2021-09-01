@@ -25,18 +25,17 @@
             window.addEventListener("popstate", function(e) {
                 var newUrlParams = new URLSearchParams(window.location.search);
                 var newFormId = newUrlParams.get('form_id');
+                var selector = '#navbarNav button:first';
 
                 // TODO: Fix tab button highlight.
                 // Existing form ID.
                 if(newFormId) {
                   newFormId = newFormId.replace('eresources_', '');
                   newFormId = newFormId.replace('_form', '');
-                  $('button[aria-controls=' + newFormId + ']').trigger('click', [true]);
+                  selector = 'button[aria-controls=' + newFormId + ']';
                 }
-                // No form ID, trigger first tab.
-                else {
-                  $('#navbarNav button:first').trigger('click', [true]);
-                }
+
+                $(selector).trigger('click', [true]).focus();
             });
         }
     }
