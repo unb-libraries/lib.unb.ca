@@ -49,3 +49,7 @@ ul.list-bullets li.d-flex:before {
 .list-results .coverage {
   font-weight: 600;
 }
+
+#search_results_wrapper .pagination {
+  flex-wrap: wrap;
+}
