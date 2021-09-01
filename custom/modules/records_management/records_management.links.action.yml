@@ -1,0 +1,5 @@
+classification.add_form:
+  route_name: entity.classification.add_form
+  title: "Add classification"
+  appears_on:
+    - entity.classification.collection

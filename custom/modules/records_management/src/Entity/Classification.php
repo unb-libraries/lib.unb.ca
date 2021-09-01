@@ -15,6 +15,7 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *   label_plural = @Translation("Functional classifications"),
  *   label_collection = @Translation("Functional classifications"),
  *   handlers = {
+ *     "list_builder" = "Drupal\records_management\Entity\ClassificationListBuilder",
  *     "form" = {
  *       "default" = "Drupal\Core\Entity\ContentEntityForm",
  *       "delete" = "Drupal\Core\Entity\EntityDeleteForm",
@@ -29,13 +30,14 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *   entity_keys = {
  *     "id" = "id",
  *     "revision" = "rid",
- *     "label" = "label",
+ *     "label" = "name",
  *     "uuid" = "uuid"
  *   },
  *   links = {
  *     "add-form" = "/records/classifications/add",
  *     "edit-form" = "/records/classifications/{classification}/edit",
  *     "delete-form" = "/records/classifications/{classification}/delete",
+ *     "collection" = "/records/classifications",
  *   }
  * )
  */
