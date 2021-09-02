@@ -14,6 +14,11 @@ use Drupal\Core\Entity\EntityTypeInterface;
  *   label_plural = @Translation("Retention schedules"),
  *   label_collection = @Translation("Retention schedules"),
  *   handlers = {
+ *     "list_builder" = "Drupal\records_management\Entity\ScheduleListBuilder",
+ *     "form" = {
+ *       "default" = "Drupal\Core\Entity\ContentEntityForm",
+ *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"
+ *     },
  *     "route_provider" = {
  *       "html" = "Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider"
  *     }
@@ -24,7 +29,7 @@ use Drupal\Core\Entity\EntityTypeInterface;
  *   entity_keys = {
  *     "id" = "id",
  *     "revision" = "rid",
- *     "label" = "name",
+ *     "label" = "id",
  *     "uuid" = "uuid"
  *   },
  *   links = {
