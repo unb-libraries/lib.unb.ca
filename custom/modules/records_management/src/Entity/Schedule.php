@@ -4,6 +4,7 @@ namespace Drupal\records_management\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
 
 /**
  * The "Retention schedule" entity.
@@ -29,7 +30,7 @@ use Drupal\Core\Entity\EntityTypeInterface;
  *   entity_keys = {
  *     "id" = "id",
  *     "revision" = "rid",
- *     "label" = "id",
+ *     "label" = "name",
  *     "uuid" = "uuid"
  *   },
  *   links = {
@@ -45,10 +46,25 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
   /**
    * {@inheritDoc}
    */
+  public function getName() {
+    return $this->get(self::FIELD_NAME)
+      ->value;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
-    // @todo Install required "name" string field.
+    $fields[self::FIELD_NAME] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Record series name'))
+      ->setRequired(TRUE)
+      ->setCardinality(1)
+      ->setDisplayOptions('form', [
+        'weight' => 0,
+      ]);
+
     // @todo Install required "number" string field.
     // @todo Install required "classification" entity_reference (classification) field.
     // @todo Install required "oopr" string_list field. Allowed values to be defined.
