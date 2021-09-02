@@ -78,6 +78,14 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
   /**
    * {@inheritDoc}
    */
+  public function getPurpose() {
+    return $this->get(self::FIELD_PURPOSE)
+      ->processed;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
@@ -122,8 +130,15 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         'weight' => 30,
       ]);
 
-    // @todo Install required "purpose" text field.
     // @todo Install required "description" text field.
+    $fields[self::FIELD_PURPOSE] = BaseFieldDefinition::create('text_long')
+      ->setLabel(t('Purpose of Record'))
+      ->setRequired(TRUE)
+      ->setCardinality(1)
+      ->setDisplayOptions('form', [
+        'weight' => 40,
+      ]);
+
     // @todo Install multi-value (max: 2) required "retention_details" entity_reference (retention_details) field.
     // @todo Install optional "rationale" text field.
     // @todo Install required "vital" bool field.
