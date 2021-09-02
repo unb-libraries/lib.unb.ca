@@ -17,6 +17,7 @@ interface ScheduleInterface extends ContentEntityInterface {
   const FIELD_OOPR = 'oopr';
   const FIELD_PURPOSE = 'purpose';
   const FIELD_SUMMARY = 'summary';
+  const FIELD_RATIONALE = 'rationale';
 
   /**
    * Get the schedule name.
@@ -65,5 +66,13 @@ interface ScheduleInterface extends ContentEntityInterface {
    *   A string.
    */
   public function getSummary();
+
+  /**
+   * Get the retention rationale.
+   *
+   * @return string
+   *   A string.
+   */
+  public function getRetentionRationale();
 
 }

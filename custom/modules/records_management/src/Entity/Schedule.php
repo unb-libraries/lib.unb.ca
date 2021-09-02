@@ -94,6 +94,14 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
   /**
    * {@inheritDoc}
    */
+  public function getRetentionRationale() {
+    return $this->get(self::FIELD_RATIONALE)
+      ->processed;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
@@ -155,7 +163,14 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
       ]);
 
     // @todo Install multi-value (max: 2) required "retention_details" entity_reference (retention_details) field.
-    // @todo Install optional "rationale" text field.
+    $fields[self::FIELD_RATIONALE] = BaseFieldDefinition::create('text_long')
+      ->setLabel(t('Retention Rationale and Citation'))
+      ->setRequired(FALSE)
+      ->setCardinality(1)
+      ->setDisplayOptions('form', [
+        'weight' => 60,
+      ]);
+
     // @todo Install required "vital" bool field.
     // @todo Install required "personal" bool field.
     // @todo Install required "approved" date field.
