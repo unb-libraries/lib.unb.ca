@@ -12,6 +12,7 @@ use Drupal\Core\Entity\ContentEntityInterface;
 interface ScheduleInterface extends ContentEntityInterface {
 
   const FIELD_NAME = 'name';
+  const FIELD_NUMBER = 'number';
 
   /**
    * Get the schedule name.
@@ -20,5 +21,13 @@ interface ScheduleInterface extends ContentEntityInterface {
    *   A string, e.g. "Journal Entries".
    */
   public function getName();
+
+  /**
+   * Get the schedule number.
+   *
+   * @return string
+   *   A string, e.g. '1000' or '1000.01'.
+   */
+  public function getNumber();
 
 }

@@ -16,6 +16,7 @@ class ScheduleListBuilder extends EntityListBuilder {
   public function buildHeader() {
     return [
       'label' => $this->t('Label'),
+      'number' => $this->t('Number'),
     ] + parent::buildHeader();
   }
 
@@ -23,8 +24,12 @@ class ScheduleListBuilder extends EntityListBuilder {
    * {@inheritDoc}
    */
   public function buildRow(EntityInterface $entity) {
+    /** @var \Drupal\records_management\Entity\ScheduleInterface $schedule */
+    $schedule = $entity;
+
     return [
       'label' => $entity->label(),
+      'number' => $schedule->getNumber(),
     ] + parent::buildRow($entity);
   }
 

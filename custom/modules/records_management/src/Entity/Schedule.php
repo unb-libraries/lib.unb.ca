@@ -54,6 +54,14 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
   /**
    * {@inheritDoc}
    */
+  public function getNumber() {
+    return $this->get(self::FIELD_NUMBER)
+      ->value;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
@@ -65,8 +73,20 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         'weight' => 0,
       ]);
 
-    // @todo Install required "number" string field.
     // @todo Install required "classification" entity_reference (classification) field.
+    $fields[self::FIELD_NUMBER] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Record schedule number'))
+      ->setRequired(TRUE)
+      ->setCardinality(1)
+      ->addPropertyConstraints('value', [
+        'Regex' => [
+          'pattern' => '/^[1-9]{1}[0-9]{3}(\.((0[1-9])|[1-9][0-9]))?$/',
+        ],
+      ])
+      ->setDisplayOptions('form', [
+        'weight' => 10
+      ]);
+
     // @todo Install required "oopr" string_list field. Allowed values to be defined.
     // @todo Install required "purpose" text field.
     // @todo Install required "description" text field.
