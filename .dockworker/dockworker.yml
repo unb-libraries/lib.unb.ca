@@ -3,7 +3,9 @@ dockworker:
   application:
     name: lib.unb.ca
     finish_marker: '99_zz_notify_user_URI'
-    project_prefix: LIB
+    project_prefix:
+      - LIB
+      - RECORDS
     upstream_images:
       - ghcr.io/unb-libraries/drupal:8.x-3.x-unblib
     uuid: 3101
