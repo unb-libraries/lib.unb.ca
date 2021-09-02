@@ -70,6 +70,14 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
   /**
    * {@inheritDoc}
    */
+  public function getOfficeOfPrimaryResponsibility() {
+    return $this->get(self::FIELD_OOPR)
+      ->value;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
@@ -104,7 +112,16 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         'weight' => 20,
       ]);
 
-    // @todo Install required "oopr" string_list field. Allowed values to be defined.
+    $fields[self::FIELD_OOPR] = BaseFieldDefinition::create('list_string')
+      ->setLabel(t('Office of Primary Responsibility'))
+      ->setCardinality(1)
+      ->setSetting('allowed_values', [
+        'FS' => t('Financial Services'),
+      ])
+      ->setDisplayOptions('form', [
+        'weight' => 30,
+      ]);
+
     // @todo Install required "purpose" text field.
     // @todo Install required "description" text field.
     // @todo Install multi-value (max: 2) required "retention_details" entity_reference (retention_details) field.

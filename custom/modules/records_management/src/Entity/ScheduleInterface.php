@@ -14,6 +14,7 @@ interface ScheduleInterface extends ContentEntityInterface {
   const FIELD_NAME = 'name';
   const FIELD_NUMBER = 'number';
   const FIELD_CLASSIFICATION = 'classification';
+  const FIELD_OOPR = 'oopr';
 
   /**
    * Get the schedule name.
@@ -38,5 +39,13 @@ interface ScheduleInterface extends ContentEntityInterface {
    *   A classification entity.
    */
   public function getClassification();
+
+  /**
+   * Get the office of primary responsibility.
+   *
+   * @return string
+   *   A string, e.g. "Financial Services".
+   */
+  public function getOfficeOfPrimaryResponsibility();
 
 }
