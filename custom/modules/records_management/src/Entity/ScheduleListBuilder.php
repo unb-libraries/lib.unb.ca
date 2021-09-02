@@ -29,7 +29,7 @@ class ScheduleListBuilder extends EntityListBuilder {
 
     return [
       'label' => $entity->label(),
-      'number' => $schedule->getNumber(),
+      'number' => "{$schedule->getClassification()->getCode()}{$schedule->getNumber()}",
     ] + parent::buildRow($entity);
   }
 

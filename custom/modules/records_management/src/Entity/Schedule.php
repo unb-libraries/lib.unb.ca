@@ -62,6 +62,14 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
   /**
    * {@inheritDoc}
    */
+  public function getClassification() {
+    return $this->get(self::FIELD_CLASSIFICATION)
+      ->entity;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
@@ -73,7 +81,6 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         'weight' => 0,
       ]);
 
-    // @todo Install required "classification" entity_reference (classification) field.
     $fields[self::FIELD_NUMBER] = BaseFieldDefinition::create('string')
       ->setLabel(t('Record schedule number'))
       ->setRequired(TRUE)
@@ -85,6 +92,16 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
       ])
       ->setDisplayOptions('form', [
         'weight' => 10
+      ]);
+
+    $fields[self::FIELD_CLASSIFICATION] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Classification'))
+      ->setRequired(TRUE)
+      ->setCardinality(1)
+      ->setSetting('target_type', 'classification')
+      ->setDisplayOptions('form', [
+        'type' => 'options_select',
+        'weight' => 20,
       ]);
 
     // @todo Install required "oopr" string_list field. Allowed values to be defined.

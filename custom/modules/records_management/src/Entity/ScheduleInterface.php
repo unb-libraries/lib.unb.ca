@@ -13,6 +13,7 @@ interface ScheduleInterface extends ContentEntityInterface {
 
   const FIELD_NAME = 'name';
   const FIELD_NUMBER = 'number';
+  const FIELD_CLASSIFICATION = 'classification';
 
   /**
    * Get the schedule name.
@@ -29,5 +30,13 @@ interface ScheduleInterface extends ContentEntityInterface {
    *   A string, e.g. '1000' or '1000.01'.
    */
   public function getNumber();
+
+  /**
+   * Get the schedule classification.
+   *
+   * @return \Drupal\records_management\Entity\ClassificationInterface
+   *   A classification entity.
+   */
+  public function getClassification();
 
 }
