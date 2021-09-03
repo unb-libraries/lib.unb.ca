@@ -795,7 +795,7 @@ display:
             field_room_number: field_room_number
           plugin_id: combine
       sorts: {  }
-      title: 'Alphabetical Staff Directory'
+      title: 'Staff Directory'
       header:
         area:
           id: area
@@ -1344,7 +1344,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: about/alphabetical-staff-directory
+      path: about/staff-directory
       display_description: ''
       exposed_block: false
       fields:
