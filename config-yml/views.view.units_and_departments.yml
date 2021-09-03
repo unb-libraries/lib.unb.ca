@@ -552,7 +552,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<div class=\"d-flex align-items-end flex-column\">\r\n   <a class=\"btn btn-secondary btn-sm\" href=\"/about/alphabetical-staff-directory\">\r\n  <span class=\"fas fa-user-friends mr-1\"></span>Alphabetical Staff Directory</a>\r\n</div>"
+          content: "<div class=\"d-flex flex-row border-bottom pb-3 my-3\">\r\n   <a class=\"btn btn-secondary btn-sm mr-2\" href=\"/about/staff-directory\">\r\n   <span class=\"fas fa-user-friends mr-1\"></span>Staff Directory</a>\r\n\r\n   <a class=\"btn btn-info btn-sm\" href=\"https://guides.lib.unb.ca/connect\">\r\n   <span class=\"fas fa-info-circle mr-1\"></span>Get Specialized Help</a>\r\n\r\n\r\n</div>"
           plugin_id: text_custom
       footer: {  }
       empty: {  }
