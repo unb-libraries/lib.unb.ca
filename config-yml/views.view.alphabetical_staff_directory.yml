@@ -1870,7 +1870,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: "<div class=\"d-flex align-items-end flex-column mb-2\">\r\n<a class=\"btn btn-secondary btn-sm\" href=\"/about/units-and-departments\">\r\n  <span class=\"fas fa-university mr-1\"></span>Units and Departments\r\n</a>\r\n</div>"
+            value: "<div class=\"d-flex flex-row my-3\">\r\n<a class=\"btn btn-secondary btn-sm\" href=\"/about/units-and-departments\">\r\n  <span class=\"fas fa-university mr-1\"></span>Units and Departments\r\n</a>\r\n</div>"
             format: full_html
           plugin_id: text
     cache_metadata:
