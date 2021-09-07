@@ -102,6 +102,14 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
   /**
    * {@inheritDoc}
    */
+  public function isVital() {
+    return $this->get(self::FIELD_VITAL)
+      ->value;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
@@ -171,7 +179,19 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         'weight' => 60,
       ]);
 
-    // @todo Install required "vital" bool field.
+    $fields[self::FIELD_VITAL] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Vital record'))
+      ->setRequired(TRUE)
+      ->setCardinality(1)
+      ->setSettings([
+        'off_label' => t('No'),
+        'on_label' => t('Yes'),
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_buttons',
+        'weight' => 70,
+      ]);
+
     // @todo Install required "personal" bool field.
     // @todo Install required "approved" date field.
     // @todo Install required "last_revised" date field.

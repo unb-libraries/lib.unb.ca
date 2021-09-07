@@ -18,6 +18,7 @@ interface ScheduleInterface extends ContentEntityInterface {
   const FIELD_PURPOSE = 'purpose';
   const FIELD_SUMMARY = 'summary';
   const FIELD_RATIONALE = 'rationale';
+  const FIELD_VITAL = 'is_vital';
 
   /**
    * Get the schedule name.
@@ -74,5 +75,13 @@ interface ScheduleInterface extends ContentEntityInterface {
    *   A string.
    */
   public function getRetentionRationale();
+
+  /**
+   * Whether the record contains "vital" information.
+   *
+   * @return bool
+   *   TRUE if the record contains "vital" information. FALSE otherwise.
+   */
+  public function isVital();
 
 }
