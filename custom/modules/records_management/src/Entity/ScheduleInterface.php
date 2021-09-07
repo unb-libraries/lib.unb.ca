@@ -19,6 +19,7 @@ interface ScheduleInterface extends ContentEntityInterface {
   const FIELD_SUMMARY = 'summary';
   const FIELD_RATIONALE = 'rationale';
   const FIELD_VITAL = 'is_vital';
+  const FIELD_PERSONAL = 'personal';
 
   /**
    * Get the schedule name.
@@ -83,5 +84,13 @@ interface ScheduleInterface extends ContentEntityInterface {
    *   TRUE if the record contains "vital" information. FALSE otherwise.
    */
   public function isVital();
+
+  /**
+   * Whether the record contains personal information.
+   *
+   * @return bool
+   *   TRUE if the record contains personal information. FALSE otherwise.
+   */
+  public function isPersonal();
 
 }

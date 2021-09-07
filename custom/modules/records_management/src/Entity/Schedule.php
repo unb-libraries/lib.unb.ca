@@ -110,6 +110,14 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
   /**
    * {@inheritDoc}
    */
+  public function isPersonal() {
+    return $this->get(self::FIELD_PERSONAL)
+      ->value;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
@@ -192,7 +200,19 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         'weight' => 70,
       ]);
 
-    // @todo Install required "personal" bool field.
+    $fields[self::FIELD_PERSONAL] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Personal information'))
+      ->setRequired(TRUE)
+      ->setCardinality(1)
+      ->setSettings([
+        'off_label' => t('No'),
+        'on_label' => t('Yes'),
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_buttons',
+        'weight' => 80,
+      ]);
+
     // @todo Install required "approved" date field.
     // @todo Install required "last_revised" date field.
     return $fields;
