@@ -21,6 +21,7 @@ interface ScheduleInterface extends ContentEntityInterface {
   const FIELD_VITAL = 'is_vital';
   const FIELD_PERSONAL = 'personal';
   const FIELD_APPROVAL_DATE = 'approved';
+  const FIELD_REVISION_DATE = 'revised';
 
   /**
    * Get the schedule name.
@@ -101,5 +102,13 @@ interface ScheduleInterface extends ContentEntityInterface {
    *   A Drupal datetime object.
    */
   public function getApprovalDate();
+
+  /**
+   * Get the date of the most recent revision.
+   *
+   * @return \Drupal\Core\Datetime\DrupalDateTime
+   *   A Drupal datetime object.
+   */
+  public function getRevisionDate();
 
 }

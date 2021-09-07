@@ -126,6 +126,14 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
   /**
    * {@inheritDoc}
    */
+  public function getRevisionDate() {
+    return $this->get(self::FIELD_REVISION_DATE)
+      ->date;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
@@ -233,7 +241,18 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         'weight' => 90,
       ]);
 
-    // @todo Install required "last_revised" date field.
+    $fields[self::FIELD_REVISION_DATE] = BaseFieldDefinition::create('datetime_timezone')
+      ->setLabel(t('Revision date'))
+      ->setRequired(TRUE)
+      ->setCardinality(1)
+      ->setSettings([
+        'timezone' => 'system',
+        'datetime_type' => 'date',
+      ])
+      ->setDisplayOptions('form', [
+        'weight' => 100,
+      ]);
+
     return $fields;
   }
 
