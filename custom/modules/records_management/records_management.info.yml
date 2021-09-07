@@ -3,4 +3,5 @@ type: module
 description: 'Administer UNB retention schedules.'
 core: 8.x
 package: 'UNB'
-dependencies: { }
+dependencies:
+  - datetime_plus

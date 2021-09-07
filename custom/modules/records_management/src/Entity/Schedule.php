@@ -118,6 +118,14 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
   /**
    * {@inheritDoc}
    */
+  public function getApprovalDate() {
+    return $this->get(self::FIELD_APPROVAL_DATE)
+      ->date;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
@@ -213,7 +221,18 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         'weight' => 80,
       ]);
 
-    // @todo Install required "approved" date field.
+    $fields[self::FIELD_APPROVAL_DATE] = BaseFieldDefinition::create('datetime_timezone')
+      ->setLabel(t('Schedule creation date'))
+      ->setRequired(TRUE)
+      ->setCardinality(1)
+      ->setSettings([
+        'timezone' => 'system',
+        'datetime_type' => 'date',
+      ])
+      ->setDisplayOptions('form', [
+        'weight' => 90,
+      ]);
+
     // @todo Install required "last_revised" date field.
     return $fields;
   }

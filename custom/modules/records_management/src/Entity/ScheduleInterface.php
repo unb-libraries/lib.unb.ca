@@ -20,6 +20,7 @@ interface ScheduleInterface extends ContentEntityInterface {
   const FIELD_RATIONALE = 'rationale';
   const FIELD_VITAL = 'is_vital';
   const FIELD_PERSONAL = 'personal';
+  const FIELD_APPROVAL_DATE = 'approved';
 
   /**
    * Get the schedule name.
@@ -92,5 +93,13 @@ interface ScheduleInterface extends ContentEntityInterface {
    *   TRUE if the record contains personal information. FALSE otherwise.
    */
   public function isPersonal();
+
+  /**
+   * Get the date of initial approval.
+   *
+   * @return \Drupal\Core\Datetime\DrupalDateTime
+   *   A Drupal datetime object.
+   */
+  public function getApprovalDate();
 
 }
