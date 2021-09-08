@@ -16,7 +16,7 @@ dependencies:
     - telephone
     - user
 id: alphabetical_staff_directory
-label: 'Alphabetical Staff Directory'
+label: 'Staff Directory'
 module: views
 description: ''
 tag: ''
