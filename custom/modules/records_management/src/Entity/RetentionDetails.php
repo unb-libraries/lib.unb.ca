@@ -13,7 +13,13 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *   id = "retention_details",
  *   label = @Translation("Retention details"),
  *   label_plural = @Translation("Retention details"),
+ *   handlers = {
+ *     "form" = {
+ *       "default" = "Drupal\Core\Entity\ContentEntityForm",
+ *     }
+ *   },
  *   base_table = "retention_details",
+ *   admin_permission = "administer retention_details entities",
  *   entity_keys = {
  *     "id" = "id",
  *     "label" = "id",

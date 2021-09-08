@@ -94,6 +94,14 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
   /**
    * {@inheritDoc}
    */
+  public function getOoprDetails() {
+    return $this->get(self::FIELD_DETAILS_OOPR)
+      ->entity;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public function getRetentionRationale() {
     return $this->get(self::FIELD_RATIONALE)
       ->processed;
@@ -194,7 +202,16 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         'weight' => 50,
       ]);
 
-    // @todo Install multi-value (max: 2) required "retention_details" entity_reference (retention_details) field.
+    $fields[self::FIELD_DETAILS_OOPR] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Primary Office of Responsibility'))
+      ->setRequired(FALSE)
+      ->setCardinality(1)
+      ->setSetting('target_type', 'retention_details')
+      ->setDisplayOptions('form', [
+        'type' => 'inline_entity_form_simple',
+        'weight' => 55,
+      ]);
+
     $fields[self::FIELD_RATIONALE] = BaseFieldDefinition::create('text_long')
       ->setLabel(t('Retention Rationale and Citation'))
       ->setRequired(FALSE)
