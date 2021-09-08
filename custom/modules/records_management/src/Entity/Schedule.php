@@ -102,6 +102,14 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
   /**
    * {@inheritDoc}
    */
+  public function getOosrDetails() {
+    return $this->get(self::FIELD_DETAILS_OOSR)
+      ->entity;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public function getRetentionRationale() {
     return $this->get(self::FIELD_RATIONALE)
       ->processed;
@@ -210,6 +218,16 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
       ->setDisplayOptions('form', [
         'type' => 'inline_entity_form_simple',
         'weight' => 55,
+      ]);
+
+    $fields[self::FIELD_DETAILS_OOSR] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Secondary Office of Responsibility'))
+      ->setRequired(FALSE)
+      ->setCardinality(1)
+      ->setSetting('target_type', 'retention_details')
+      ->setDisplayOptions('form', [
+        'type' => 'inline_entity_form_simple',
+        'weight' => 56,
       ]);
 
     $fields[self::FIELD_RATIONALE] = BaseFieldDefinition::create('text_long')

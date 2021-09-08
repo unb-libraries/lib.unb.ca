@@ -18,6 +18,7 @@ interface ScheduleInterface extends ContentEntityInterface {
   const FIELD_PURPOSE = 'purpose';
   const FIELD_SUMMARY = 'summary';
   const FIELD_DETAILS_OOPR = 'details_oopr';
+  const FIELD_DETAILS_OOSR = 'details_oosr';
   const FIELD_RATIONALE = 'rationale';
   const FIELD_VITAL = 'is_vital';
   const FIELD_PERSONAL = 'personal';
@@ -79,6 +80,14 @@ interface ScheduleInterface extends ContentEntityInterface {
    *   A retention details entity.
    */
   public function getOoprDetails();
+
+  /**
+   * Get the Secondary Office of Responsibility's retention details.
+   *
+   * @return \Drupal\records_management\Entity\RetentionDetailsInterface
+   *   A retention details entity.
+   */
+  public function getOosrDetails();
 
   /**
    * Get the retention rationale.
