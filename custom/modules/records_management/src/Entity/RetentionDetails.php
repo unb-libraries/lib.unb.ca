@@ -56,6 +56,14 @@ class RetentionDetails extends ContentEntityBase implements RetentionDetailsInte
   /**
    * {@inheritDoc}
    */
+  public function getDisposition() {
+    return $this->get(self::FIELD_DISPOSITION)
+      ->value;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
@@ -84,6 +92,15 @@ class RetentionDetails extends ContentEntityBase implements RetentionDetailsInte
       ->setCardinality(1)
       ->setDisplayOptions('form', [
         'weight' => 20,
+      ]);
+
+    $fields[self::FIELD_DISPOSITION] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Disposition'))
+      ->setDescription(t('Method of disposal.'))
+      ->setRequired(TRUE)
+      ->setCardinality(1)
+      ->setDisplayOptions('form', [
+        'weight' => 30,
       ]);
 
     return $fields;

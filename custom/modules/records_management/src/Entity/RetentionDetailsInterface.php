@@ -12,6 +12,7 @@ interface RetentionDetailsInterface extends ContentEntityInterface {
   const FIELD_TRIGGER = 'trigger';
   const FIELD_DURATION_OFFICE = 'active';
   const FIELD_DURATION_STORAGE = 'semi_active';
+  const FIELD_DISPOSITION = 'disposition';
 
   /**
    * Get the event triggering the retention.
@@ -36,5 +37,13 @@ interface RetentionDetailsInterface extends ContentEntityInterface {
    *   A string.
    */
   public function getDurationStorage();
+
+  /**
+   * Get the method of disposal.
+   *
+   * @return string
+   *   A string, e.g. "SD" (= Secure Destruction).
+   */
+  public function getDisposition();
 
 }
