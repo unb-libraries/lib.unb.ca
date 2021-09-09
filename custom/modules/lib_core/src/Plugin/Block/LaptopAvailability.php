@@ -22,16 +22,42 @@ class LaptopAvailability extends BlockBase {
    * @var array
    */
   private $locationMap = [
-    'HILRESERVE: Reserve Collection 1' => 'Harriet Irving Library (Fredericton) - 1 day loan',
-    'HILRESERVE: Reserve Collection 3' => 'Harriet Irving Library (Fredericton) - 3 day loan',
-    'HILRESERVE: Reserve Collection 7' => 'Harriet Irving Library (Fredericton) - 7 day loan',
-    'HIL-MISC' => 'Harriet Irving Library (Fredericton) - 2 hour loan',
-    'ENG-MISC' => 'Engineering Library (Fredericton) - 2 hour loan',
-    'SCI-MISC1D' => 'Science Library (Fredericton) - 1 day loan',
-    'SCI-MISC: Miscellaneous 3 day loan' => 'Science Library (Fredericton) - 3 day loan',
-    'SCI-MISC: Miscellaneous 2 hour loan' => 'Science Library (Fredericton) - 2 hour loan',
-    'LAWRESERVE' => 'Law Library (Fredericton) - 6 hour loan',
-    'HWK-MISC1D1H' => 'Saint John Library (Saint John) - 1 day loan',
+    'HILRESERVE: Reserve Collection 1' => [
+      'Harriet Irving Library (Fredericton)',
+      '1 day loan',
+    ],
+    'HILRESERVE: Reserve Collection 3' => [
+      'Harriet Irving Library (Fredericton)',
+      '3 day loan',
+    ],
+    'HILRESERVE: Reserve Collection 7' => [
+      'Harriet Irving Library (Fredericton)',
+      '7 day loan',
+    ],
+    'HIL-MISC' => [
+      'Harriet Irving Library (Fredericton)',
+      '2 hour loan',
+    ],
+    'ENG-MISC' => [
+      'Engineering Library (Fredericton)',
+      '2 hour loan',
+    ],
+    'SCI-MISC1D' => [
+      'Science Library (Fredericton)',
+      '1 day loan',
+     ],
+    'SCI-MISC: Miscellaneous 3 day loan' => [
+      'Science Library (Fredericton)',
+      '3 day loan',
+    ],
+    'SCI-MISC: Miscellaneous 2 hour loan' => [
+      'Science Library (Fredericton)',
+      '2 hour loan',
+    ],
+    'HWK-MISC1D1H' => [
+      'Saint John Library (Saint John)',
+      '1 day loan',
+    ],
   ];
 
   /**
@@ -39,28 +65,19 @@ class LaptopAvailability extends BlockBase {
    */
   public function build() {
     $availability = $this->getLaptopAvailability();
-
-    $render_array_list = [
-      '#title' => 'Current Laptop Availability:',
-      '#theme' => 'item_list',
-      '#list_type' => 'ul',
-      '#wrapper_attributes' => [
-        'id' => 'laptop-availability-wrapper',
-        'class' => [
-          'alert',
-          'alert-success',
-          'mt-5',
-          'mb-5',
+    return [
+      ['#markup' => '<h3>Current Laptop Availability:</h3>'],
+      [
+        '#type' => 'table',
+        '#header' => ['Location', 'Loan Period', 'Availability'],
+        '#rows' => $availability,
+        '#empty' => 'Unable to get laptop availability at this time.',
+        '#attributes' => [
+          'class' => ['w-auto'],
         ],
+        '#cache' => ['max-age' => 0],
       ],
-      '#attributes' => [
-        'class' => ['list-bullets'],
-      ],
-      '#cache' => ['max-age' => 0],
-      '#items' => $availability,
     ];
-
-    return $render_array_list;
   }
 
   /**
@@ -100,11 +117,9 @@ class LaptopAvailability extends BlockBase {
       foreach ($holdings->holding as $holding) {
         $result = preg_match("/($re)/", (string) $holding->shelvingLocation, $matches);
         if (!$result) {
-          $location = (string) $holding->shelvingLocation;
+          continue;
         }
-        else {
-          $location = $locationMap[$matches[1]];
-        }
+        $location = $matches[1];
         if (empty($locations[$location])) {
           $locations[$location] = ['avail' => 0, 'total' => 0, 'next' => ''];
         }
@@ -125,17 +140,19 @@ class LaptopAvailability extends BlockBase {
       $availability = [];
       ksort($locations);
       foreach ($locations as $location => $info) {
-        $status = "<strong>${location}:</strong> " . $info['avail'] . ' of ' . $info['total'] . ' available ';
+        $row = $locationMap[$location];
+        $status = $info['avail'] . ' of ' . $info['total'] . ' available';
         if ($info['avail'] == 0) {
-          $status .= '(next available ' . date('Y-m-d h:i A', strtotime($info['next'])) . ')';
+          $status .= ' (next available ' . date('Y-m-d h:i A', strtotime($info['next'])) . ')';
         }
-        $availability[] = ['#markup' => $status];
+        $row[] = $status;
+        $availability[] = $row;
       }
 
       return $availability;
     }
     catch (Throwable $error) {
-      return ['Unable to get laptop availability at this time.'];
+      return NULL;
     }
   }
 
