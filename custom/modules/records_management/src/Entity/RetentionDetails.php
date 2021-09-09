@@ -70,7 +70,7 @@ class RetentionDetails extends ContentEntityBase implements RetentionDetailsInte
     $fields[self::FIELD_TRIGGER] = BaseFieldDefinition::create('string')
       ->setLabel(t('Retention trigger'))
       ->setDescription(t('Defined event in which retention begins.'))
-      ->setRequired(TRUE)
+      ->setRequired(FALSE)
       ->setCardinality(1)
       ->setDisplayOptions('form', [
         'weight' => 0,
@@ -79,7 +79,7 @@ class RetentionDetails extends ContentEntityBase implements RetentionDetailsInte
     $fields[self::FIELD_DURATION_OFFICE] = BaseFieldDefinition::create('string')
       ->setLabel(t('Active'))
       ->setDescription(t('Time spent in office filling space.'))
-      ->setRequired(TRUE)
+      ->setRequired(FALSE)
       ->setCardinality(1)
       ->setDisplayOptions('form', [
         'weight' => 10,
@@ -88,7 +88,7 @@ class RetentionDetails extends ContentEntityBase implements RetentionDetailsInte
     $fields[self::FIELD_DURATION_STORAGE] = BaseFieldDefinition::create('string')
       ->setLabel(t('Semi-active'))
       ->setDescription(t('Time spent in storage space.'))
-      ->setRequired(TRUE)
+      ->setRequired(FALSE)
       ->setCardinality(1)
       ->setDisplayOptions('form', [
         'weight' => 20,
@@ -97,7 +97,7 @@ class RetentionDetails extends ContentEntityBase implements RetentionDetailsInte
     $fields[self::FIELD_DISPOSITION] = BaseFieldDefinition::create('string')
       ->setLabel(t('Disposition'))
       ->setDescription(t('Method of disposal.'))
-      ->setRequired(TRUE)
+      ->setRequired(FALSE)
       ->setCardinality(1)
       ->setDisplayOptions('form', [
         'weight' => 30,

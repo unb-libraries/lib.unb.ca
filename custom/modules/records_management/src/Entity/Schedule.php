@@ -209,7 +209,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
 
     $fields[self::FIELD_DETAILS_OOPR] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Primary Office of Responsibility'))
-      ->setRequired(FALSE)
+      ->setRequired(TRUE)
       ->setCardinality(1)
       ->setSetting('target_type', 'retention_details')
       ->setDisplayOptions('form', [
