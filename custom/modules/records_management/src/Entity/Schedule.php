@@ -184,12 +184,9 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         'weight' => 20,
       ]);
 
-    $fields[self::FIELD_OOPR] = BaseFieldDefinition::create('list_string')
+    $fields[self::FIELD_OOPR] = BaseFieldDefinition::create('string')
       ->setLabel(t('Office of Primary Responsibility'))
       ->setCardinality(1)
-      ->setSetting('allowed_values', [
-        'FS' => t('Financial Services'),
-      ])
       ->setDisplayOptions('form', [
         'weight' => 30,
       ]);
