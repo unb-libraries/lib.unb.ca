@@ -17,7 +17,7 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *   handlers = {
  *     "list_builder" = "Drupal\records_management\Entity\ScheduleListBuilder",
  *     "form" = {
- *       "default" = "Drupal\Core\Entity\ContentEntityForm",
+ *       "default" = "Drupal\records_management\Form\ScheduleForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"
  *     },
  *     "route_provider" = {
