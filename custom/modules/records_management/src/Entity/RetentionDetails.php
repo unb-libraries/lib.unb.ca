@@ -48,6 +48,14 @@ class RetentionDetails extends ContentEntityBase implements RetentionDetailsInte
   /**
    * {@inheritDoc}
    */
+  public function getDurationStorage() {
+    return $this->get(self::FIELD_DURATION_STORAGE)
+      ->value;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
@@ -67,6 +75,15 @@ class RetentionDetails extends ContentEntityBase implements RetentionDetailsInte
       ->setCardinality(1)
       ->setDisplayOptions('form', [
         'weight' => 10,
+      ]);
+
+    $fields[self::FIELD_DURATION_STORAGE] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Semi-active'))
+      ->setDescription(t('Time spent in storage space.'))
+      ->setRequired(TRUE)
+      ->setCardinality(1)
+      ->setDisplayOptions('form', [
+        'weight' => 20,
       ]);
 
     return $fields;

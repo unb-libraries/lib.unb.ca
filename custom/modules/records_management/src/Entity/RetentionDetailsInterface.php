@@ -11,6 +11,7 @@ interface RetentionDetailsInterface extends ContentEntityInterface {
 
   const FIELD_TRIGGER = 'trigger';
   const FIELD_DURATION_OFFICE = 'active';
+  const FIELD_DURATION_STORAGE = 'semi_active';
 
   /**
    * Get the event triggering the retention.
@@ -27,5 +28,13 @@ interface RetentionDetailsInterface extends ContentEntityInterface {
    *   A string.
    */
   public function getDurationOffice();
+
+  /**
+   * Get the time spent in storage space.
+   *
+   * @return string
+   *   A string.
+   */
+  public function getDurationStorage();
 
 }
