@@ -40,15 +40,33 @@ class RetentionDetails extends ContentEntityBase implements RetentionDetailsInte
   /**
    * {@inheritDoc}
    */
+  public function getDurationOffice() {
+    return $this->get(self::FIELD_DURATION_OFFICE)
+      ->value;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
     $fields[self::FIELD_TRIGGER] = BaseFieldDefinition::create('string')
       ->setLabel(t('Retention trigger'))
+      ->setDescription(t('Defined event in which retention begins.'))
       ->setRequired(TRUE)
       ->setCardinality(1)
       ->setDisplayOptions('form', [
         'weight' => 0,
+      ]);
+
+    $fields[self::FIELD_DURATION_OFFICE] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Active'))
+      ->setDescription(t('Time spent in office filling space.'))
+      ->setRequired(TRUE)
+      ->setCardinality(1)
+      ->setDisplayOptions('form', [
+        'weight' => 10,
       ]);
 
     return $fields;
