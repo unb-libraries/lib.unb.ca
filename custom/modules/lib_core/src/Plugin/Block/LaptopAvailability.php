@@ -45,7 +45,7 @@ class LaptopAvailability extends BlockBase {
     'SCI-MISC1D' => [
       'Science Library (Fredericton)',
       '1 day loan',
-     ],
+    ],
     'SCI-MISC: Miscellaneous 3 day loan' => [
       'Science Library (Fredericton)',
       '3 day loan',
