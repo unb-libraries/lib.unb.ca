@@ -66,7 +66,7 @@ class LaptopAvailability extends BlockBase {
   public function build() {
     $availability = $this->getLaptopAvailability();
     return [
-      ['#markup' => '<h3>Current Laptop Availability:</h3>'],
+      ['#markup' => '<h2>Current Laptop Availability</h2>'],
       [
         '#type' => 'table',
         '#header' => ['Location', 'Loan Period', 'Availability'],
