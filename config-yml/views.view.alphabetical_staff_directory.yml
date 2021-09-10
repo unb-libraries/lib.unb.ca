@@ -49,7 +49,7 @@ display:
         options:
           submit_button: Go
           reset_button: true
-          reset_button_label: Clear
+          reset_button_label: 'Show Everyone'
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
