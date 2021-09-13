@@ -24,6 +24,7 @@ interface ScheduleInterface extends ContentEntityInterface {
   const FIELD_PERSONAL = 'personal';
   const FIELD_APPROVAL_DATE = 'approved';
   const FIELD_REVISION_DATE = 'revised';
+  const FIELD_NOTES = 'notes';
 
   /**
    * Get the schedule name.
@@ -128,5 +129,13 @@ interface ScheduleInterface extends ContentEntityInterface {
    *   A Drupal datetime object.
    */
   public function getRevisionDate();
+
+  /**
+   * Get any notes and/or additional information about the record.
+   *
+   * @return string
+   *   A string.
+   */
+  public function getNotes();
 
 }

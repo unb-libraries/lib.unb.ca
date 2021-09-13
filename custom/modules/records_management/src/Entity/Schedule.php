@@ -150,6 +150,14 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
   /**
    * {@inheritDoc}
    */
+  public function getNotes() {
+    return $this->get(self::FIELD_NOTES)
+      ->value;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
@@ -282,7 +290,15 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         'datetime_type' => 'date',
       ])
       ->setDisplayOptions('form', [
-        'weight' => 100,
+        'weight' => 95,
+      ]);
+
+    $fields[self::FIELD_NOTES] = BaseFieldDefinition::create('text_long')
+      ->setLabel(t('Notes / Additional Information'))
+      ->setRequired(FALSE)
+      ->setCardinality(1)
+      ->setDisplayOptions('form', [
+        'weight' => 98,
       ]);
 
     return $fields;
