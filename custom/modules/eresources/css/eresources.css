@@ -53,3 +53,20 @@ ul.list-bullets li.d-flex:before {
 #search_results_wrapper .pagination {
   flex-wrap: wrap;
 }
+
+@media (max-width: 575px) {
+  #edit-query-wrapper .form-actions {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1366px) {
+  #eresources-discovery-search nav.navbar {
+    max-width: 60%;
+  }
+}
+@media (min-width: 992px) {
+  #eresources-discovery-search nav.navbar {
+    max-width: 75%;
+  }
+}
