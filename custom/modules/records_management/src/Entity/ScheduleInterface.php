@@ -25,6 +25,7 @@ interface ScheduleInterface extends ContentEntityInterface {
   const FIELD_APPROVAL_DATE = 'approved';
   const FIELD_REVISION_DATE = 'revised';
   const FIELD_NOTES = 'notes';
+  const FIELD_FILE = 'file';
 
   /**
    * Get the schedule name.
@@ -137,5 +138,13 @@ interface ScheduleInterface extends ContentEntityInterface {
    *   A string.
    */
   public function getNotes();
+
+  /**
+   * Get the scanned original as a file.
+   *
+   * @return \Drupal\file\FileInterface
+   *   A file entity.
+   */
+  public function getScannedOriginal();
 
 }

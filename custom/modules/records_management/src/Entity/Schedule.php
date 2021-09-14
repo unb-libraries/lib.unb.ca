@@ -158,6 +158,14 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
   /**
    * {@inheritDoc}
    */
+  public function getScannedOriginal() {
+    return $this->get(self::FIELD_FILE)
+      ->entity;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
@@ -318,7 +326,22 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         ],
       ])
       ->setDisplayOptions('form', [
-        'weight' => 98,
+        'weight' => 96,
+      ]);
+
+    // @todo Set file upload location.
+    $fields[self::FIELD_FILE] = BaseFieldDefinition::create('file')
+      ->setLabel(t('Scanned original'))
+      ->setRequired(FALSE)
+      ->setSettings([
+        'file_extensions' => implode(' ', [
+          'pdf',
+          'docx',
+          'doc'
+        ]),
+      ])
+      ->setDisplayOptions('form', [
+        'weight' => 97,
       ]);
 
     return $fields;
