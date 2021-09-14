@@ -21,11 +21,6 @@
     color: #ffc107;
 }
 
-@media (min-width: 768px) {
-    #quicklinks-wrapper ul.list-inline li:not(:first-child) {
-        padding: 0 .5rem;
-    }
-}
 @media (min-width: 992px) {
     /* Force visible on large display */
     #quicklinks-wrapper.collapse:not(.show) {
