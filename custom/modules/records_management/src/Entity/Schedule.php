@@ -169,11 +169,13 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
-    $fields[self::FIELD_NAME] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Record series name'))
+    $fields[self::FIELD_CLASSIFICATION] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Classification'))
       ->setRequired(TRUE)
       ->setCardinality(1)
+      ->setSetting('target_type', 'classification')
       ->setDisplayOptions('form', [
+        'type' => 'options_select',
         'weight' => 0,
       ]);
 
@@ -187,16 +189,14 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         ],
       ])
       ->setDisplayOptions('form', [
-        'weight' => 10
+        'weight' => 10,
       ]);
 
-    $fields[self::FIELD_CLASSIFICATION] = BaseFieldDefinition::create('entity_reference')
-      ->setLabel(t('Classification'))
+    $fields[self::FIELD_NAME] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Record series name'))
       ->setRequired(TRUE)
       ->setCardinality(1)
-      ->setSetting('target_type', 'classification')
       ->setDisplayOptions('form', [
-        'type' => 'options_select',
         'weight' => 20,
       ]);
 
