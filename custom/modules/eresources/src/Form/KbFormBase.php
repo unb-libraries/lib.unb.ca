@@ -96,6 +96,11 @@ class KbFormBase extends FormBase {
       '#required' => TRUE,
       '#options' => $this->getSearchOptions(),
       '#default_value' => 'title',
+      '#attributes' => [
+        'class' => [
+          'custom-control-inline',
+        ],
+      ],
     ];
 
     $form[$form_wrapper]['actions'] = [
