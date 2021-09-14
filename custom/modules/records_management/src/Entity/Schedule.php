@@ -15,6 +15,7 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *   label_plural = @Translation("Retention schedules"),
  *   label_collection = @Translation("Retention schedules"),
  *   handlers = {
+ *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "list_builder" = "Drupal\records_management\Entity\ScheduleListBuilder",
  *     "form" = {
  *       "default" = "Drupal\records_management\Form\ScheduleForm",
@@ -34,6 +35,7 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *     "uuid" = "uuid"
  *   },
  *   links = {
+ *     "canonical" = "/records/schedules/{schedule}",
  *     "add-form" = "/records/schedules/add",
  *     "edit-form" = "/records/schedules/{schedule}/edit",
  *     "delete-form" = "/records/schedules/{schedule}/delete",
@@ -174,6 +176,9 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
       ->setRequired(TRUE)
       ->setCardinality(1)
       ->setSetting('target_type', 'classification')
+      ->setDisplayOptions('view', [
+        'weight' => 0,
+      ])
       ->setDisplayOptions('form', [
         'type' => 'options_select',
         'weight' => 0,
@@ -188,6 +193,9 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
           'pattern' => '/^[1-9]{1}[0-9]{3}(\.((0[1-9])|[1-9][0-9]))?$/',
         ],
       ])
+      ->setDisplayOptions('view', [
+        'weight' => 0,
+      ])
       ->setDisplayOptions('form', [
         'weight' => 10,
       ]);
@@ -196,6 +204,9 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
       ->setLabel(t('Record series name'))
       ->setRequired(TRUE)
       ->setCardinality(1)
+      ->setDisplayOptions('view', [
+        'weight' => 0,
+      ])
       ->setDisplayOptions('form', [
         'weight' => 20,
       ]);
@@ -203,6 +214,9 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
     $fields[self::FIELD_OOPR] = BaseFieldDefinition::create('string')
       ->setLabel(t('Office of Primary Responsibility'))
       ->setCardinality(1)
+      ->setDisplayOptions('view', [
+        'weight' => 0,
+      ])
       ->setDisplayOptions('form', [
         'weight' => 30,
       ]);
@@ -211,6 +225,9 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
       ->setLabel(t('Purpose of Record'))
       ->setRequired(TRUE)
       ->setCardinality(1)
+      ->setDisplayOptions('view', [
+        'weight' => 0,
+      ])
       ->setSettings([
         'allowed_formats' => [
           'basic_html',
@@ -224,6 +241,9 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
       ->setLabel(t('Description of Record (summary of content)'))
       ->setRequired(TRUE)
       ->setCardinality(1)
+      ->setDisplayOptions('view', [
+        'weight' => 0,
+      ])
       ->setSettings([
         'allowed_formats' => [
           'basic_html',
@@ -238,6 +258,9 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
       ->setRequired(TRUE)
       ->setCardinality(1)
       ->setSetting('target_type', 'retention_details')
+      ->setDisplayOptions('view', [
+        'weight' => 0,
+      ])
       ->setDisplayOptions('form', [
         'type' => 'inline_entity_form_simple',
         'weight' => 55,
@@ -248,6 +271,9 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
       ->setRequired(FALSE)
       ->setCardinality(1)
       ->setSetting('target_type', 'retention_details')
+      ->setDisplayOptions('view', [
+        'weight' => 0,
+      ])
       ->setDisplayOptions('form', [
         'type' => 'inline_entity_form_simple',
         'weight' => 56,
@@ -262,6 +288,9 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
           'basic_html',
         ],
       ])
+      ->setDisplayOptions('view', [
+        'weight' => 0,
+      ])
       ->setDisplayOptions('form', [
         'weight' => 60,
       ]);
@@ -273,6 +302,9 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
       ->setSettings([
         'off_label' => t('No'),
         'on_label' => t('Yes'),
+      ])
+      ->setDisplayOptions('view', [
+        'weight' => 0,
       ])
       ->setDisplayOptions('form', [
         'type' => 'options_buttons',
@@ -287,6 +319,9 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         'off_label' => t('No'),
         'on_label' => t('Yes'),
       ])
+      ->setDisplayOptions('view', [
+        'weight' => 0,
+      ])
       ->setDisplayOptions('form', [
         'type' => 'options_buttons',
         'weight' => 80,
@@ -300,6 +335,9 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         'timezone' => 'system',
         'datetime_type' => 'date',
       ])
+      ->setDisplayOptions('view', [
+        'weight' => 0,
+      ])
       ->setDisplayOptions('form', [
         'weight' => 90,
       ]);
@@ -311,6 +349,9 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
       ->setSettings([
         'timezone' => 'system',
         'datetime_type' => 'date',
+      ])
+      ->setDisplayOptions('view', [
+        'weight' => 0,
       ])
       ->setDisplayOptions('form', [
         'weight' => 95,
@@ -324,6 +365,9 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         'allowed_formats' => [
           'basic_html',
         ],
+      ])
+      ->setDisplayOptions('view', [
+        'weight' => 0,
       ])
       ->setDisplayOptions('form', [
         'weight' => 96,

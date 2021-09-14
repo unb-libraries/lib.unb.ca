@@ -28,7 +28,7 @@ class ScheduleListBuilder extends EntityListBuilder {
     $schedule = $entity;
 
     return [
-      'label' => $entity->label(),
+      'label' => Link::fromTextAndUrl($entity->label(), $schedule->toUrl()),
       'number' => "{$schedule->getClassification()->getCode()}{$schedule->getNumber()}",
     ] + parent::buildRow($entity);
   }
