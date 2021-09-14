@@ -89,14 +89,9 @@ class KbFormBase extends FormBase {
       '#markup' => '<p>' . $this->getSearchDescription() . '</p>',
     ];
 
-    $form[$form_wrapper]['query'] = [
-      '#title' => $this->t('Query'),
-      '#type' => 'textfield',
-      '#required' => TRUE,
-    ];
-
     $form[$form_wrapper]['type'] = [
       '#title' => $this->t('Search Type'),
+      '#title_display' => 'invisible',
       '#type' => 'radios',
       '#required' => TRUE,
       '#options' => $this->getSearchOptions(),
