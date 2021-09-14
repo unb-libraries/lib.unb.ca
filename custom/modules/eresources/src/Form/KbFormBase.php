@@ -103,11 +103,27 @@ class KbFormBase extends FormBase {
       ],
     ];
 
-    $form[$form_wrapper]['actions'] = [
+    $form[$form_wrapper]['query_wrapper'] = [
+      '#type' => 'container',
+      '#attributes' => [
+        'class' => [
+          'form-row',
+          'flex-sm-nowrap',
+        ],
+      ],
+    ];
+
+    $form[$form_wrapper]['query_wrapper']['query'] = [
+      '#title' => $this->t('Search'),
+      '#type' => 'textfield',
+      '#required' => TRUE,
+    ];
+
+    $form[$form_wrapper]['query_wrapper']['actions'] = [
       '#type' => 'actions',
     ];
 
-    $form[$form_wrapper]['actions']['submit_button'] = [
+    $form[$form_wrapper]['query_wrapper']['actions']['submit_button'] = [
       '#type' => 'submit',
       '#value' => $this->t('Search'),
       '#name' => '',
