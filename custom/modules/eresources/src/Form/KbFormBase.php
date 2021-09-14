@@ -125,7 +125,7 @@ class KbFormBase extends FormBase {
 
     $form[$form_wrapper]['query_wrapper']['actions']['submit_button'] = [
       '#type' => 'submit',
-      '#value' => $this->t('Search'),
+      '#value' => $this->t('GO'),
       '#name' => '',
     ];
 
