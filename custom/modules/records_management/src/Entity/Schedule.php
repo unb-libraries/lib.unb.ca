@@ -203,6 +203,11 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
       ->setLabel(t('Purpose of Record'))
       ->setRequired(TRUE)
       ->setCardinality(1)
+      ->setSettings([
+        'allowed_formats' => [
+          'basic_html',
+        ],
+      ])
       ->setDisplayOptions('form', [
         'weight' => 40,
       ]);
@@ -211,6 +216,11 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
       ->setLabel(t('Description of Record (summary of content)'))
       ->setRequired(TRUE)
       ->setCardinality(1)
+      ->setSettings([
+        'allowed_formats' => [
+          'basic_html',
+        ],
+      ])
       ->setDisplayOptions('form', [
         'weight' => 50,
       ]);
@@ -239,6 +249,11 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
       ->setLabel(t('Retention Rationale and Citation'))
       ->setRequired(FALSE)
       ->setCardinality(1)
+      ->setSettings([
+        'allowed_formats' => [
+          'basic_html',
+        ],
+      ])
       ->setDisplayOptions('form', [
         'weight' => 60,
       ]);
@@ -297,6 +312,11 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
       ->setLabel(t('Notes / Additional Information'))
       ->setRequired(FALSE)
       ->setCardinality(1)
+      ->setSettings([
+        'allowed_formats' => [
+          'basic_html',
+        ],
+      ])
       ->setDisplayOptions('form', [
         'weight' => 98,
       ]);
