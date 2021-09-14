@@ -80,7 +80,7 @@ class QuickLinks extends BlockBase {
           $this->t('Zotero'),
           Url::fromUri('https://guides.lib.unb.ca/guide/206')
         )->toString(),
-      ],
+      ],*/
       [
         '#wrapper_attributes' => [
           'class' => [
@@ -91,7 +91,7 @@ class QuickLinks extends BlockBase {
           $this->t('Borrow Tech & Tools'),
             Url::fromUri('base://services/tech-tools')
         )->toString(),
-      ],*/
+      ],
     ];
     $covid_btn = [
       '#attributes' => [
