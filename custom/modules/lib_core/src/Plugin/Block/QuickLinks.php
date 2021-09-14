@@ -89,7 +89,7 @@ class QuickLinks extends BlockBase {
         ],
         '#children' => Link::fromTextAndUrl(
           $this->t('Borrow Tech & Tools'),
-            Url::fromUri('https://lib.unb.ca/services/borrow-tech-tools')
+            Url::fromUri('base://services/tech-tools')
         )->toString(),
       ],*/
     ];
