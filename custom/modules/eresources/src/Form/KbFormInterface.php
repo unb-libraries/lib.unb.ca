@@ -10,6 +10,14 @@ namespace Drupal\eresources\Form;
 interface KbFormInterface {
 
   /**
+   * KB API content type to search against.
+   *
+   * @return string
+   *   KB API content type.
+   */
+  public function getKbContentType();
+
+  /**
    * KB Form ID.
    *
    * @return string
@@ -26,11 +34,11 @@ interface KbFormInterface {
   public function getSearchDescription();
 
   /**
-   * KB API content type to search against.
+   * Example search string.
    *
    * @return string
-   *   KB API content type.
+   *   Search placeholder text.
    */
-  public function getKbContentType();
+  public function getSearchPlaceholder();
 
 }

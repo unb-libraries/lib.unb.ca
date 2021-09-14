@@ -28,6 +28,13 @@ class ReferenceForm extends KbFormBase implements KbFormInterface {
   /**
    * {@inheritDoc}
    */
+  public function getSearchPlaceholder() {
+    return $this->t('Enter 1 or more search terms');
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public function getSearchDescription() {
     return $this->t('Search for reference materials, dictionaries, encyclopedias, handbooks, etc.');
   }

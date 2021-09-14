@@ -28,6 +28,13 @@ class DatabasesForm extends KbFormBase implements KbFormInterface {
   /**
    * {@inheritDoc}
    */
+  public function getSearchPlaceholder() {
+    return $this->t('Enter 1 or more search terms');
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public function getSearchDescription() {
     return $this->t('Use article databases to find articles, reviews, book chapters, etc.');
   }

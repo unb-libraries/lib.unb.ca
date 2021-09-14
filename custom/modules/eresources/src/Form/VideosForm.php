@@ -24,6 +24,13 @@ class VideosForm extends KbFormBase implements KbFormInterface {
   /**
    * {@inheritDoc}
    */
+  public function getSearchPlaceholder() {
+    return $this->t('Enter 1 or more search terms');
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public function getKbContentType() {
     return 'video,other';
   }

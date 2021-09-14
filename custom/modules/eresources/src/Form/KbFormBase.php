@@ -117,6 +117,9 @@ class KbFormBase extends FormBase {
       '#title' => $this->t('Search'),
       '#type' => 'textfield',
       '#required' => TRUE,
+      '#attributes' => [
+        'placeholder' => $this->getSearchPlaceholder(),
+      ],
     ];
 
     $form[$form_wrapper]['query_wrapper']['actions'] = [
