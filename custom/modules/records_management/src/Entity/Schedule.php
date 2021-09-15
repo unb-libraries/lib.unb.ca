@@ -22,8 +22,9 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"
  *     },
  *     "route_provider" = {
- *       "html" = "Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider"
- *     }
+ *       "html" = "Drupal\custom_entity\Entity\Routing\HtmlRouteProvider"
+ *     },
+ *     "access" = "Drupal\custom_entity\Entity\Access\EntityAccessControlHandler",
  *   },
  *   base_table = "schedule",
  *   revision_table = "schedule_revision",

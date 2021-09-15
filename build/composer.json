@@ -292,6 +292,7 @@
         "unb-libraries/calendar_hours": "dev-8.x-1.x",
         "unb-libraries/alert_scheduler": "dev-8.x-1.x",
         "unb-libraries/drupal-addon": "dev-8.x-1.x",
+        "unb-libraries/custom-entity": "dev-dev-9.x-1.x",
         "unb-libraries/drupal-builder": "^8.0.0",
         "unb-libraries/font_awesome": "~5.14",
         "unb-libraries/oclc_api": "dev-8.x-1.x",

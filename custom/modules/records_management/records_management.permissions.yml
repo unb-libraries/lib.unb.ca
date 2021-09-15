@@ -1,0 +1,56 @@
+# Classification entities
+administer classification entities:
+  title: "Administer retention classifications."
+
+list classification entities:
+  title: "List retention classifications."
+
+create classification entities:
+  title: "Create retention classification."
+
+view classification entities:
+  title: "View retention classifications."
+
+update classification entities:
+  title: "Edit retention classifications."
+
+delete classification entities:
+  title: "Delete retention classifications."
+
+# Schedule entities
+administer schedule entities:
+  title: "Administer retention schedules."
+
+list schedule entities:
+  title: "List retention schedules."
+
+create schedule entities:
+  title: "Create retention schedules."
+
+view schedule entities:
+  title: "View retention schedules."
+
+update schedule entities:
+  title: "Edit retention schedules."
+
+delete schedule entities:
+  title: "Delete retention schedules."
+
+# Retention details entities
+administer retention_details entities:
+  title: "Administer retention details."
+
+list retention_details entities:
+  title: "List retention details."
+
+create retention_details entities:
+  title: "Create retention details."
+
+view retention_details entities:
+  title: "View retention details."
+
+update retention_details entities:
+  title: "Edit retention details."
+
+delete retention_details entities:
+  title: "Delete retention details."
