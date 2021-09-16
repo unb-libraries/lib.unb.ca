@@ -255,7 +255,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         'weight' => 50,
       ]);
 
-    $fields[self::FIELD_DETAILS_OOPR] = BaseFieldDefinition::create('entity_reference')
+    $fields[self::FIELD_DETAILS_OOPR] = BaseFieldDefinition::create('entity_reference_revisions')
       ->setLabel(t('Primary Office of Responsibility'))
       ->setRequired(TRUE)
       ->setCardinality(1)
@@ -269,7 +269,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         'weight' => 55,
       ]);
 
-    $fields[self::FIELD_DETAILS_OOSR] = BaseFieldDefinition::create('entity_reference')
+    $fields[self::FIELD_DETAILS_OOSR] = BaseFieldDefinition::create('entity_reference_revisions')
       ->setLabel(t('Secondary Office of Responsibility'))
       ->setRequired(FALSE)
       ->setCardinality(1)

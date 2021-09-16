@@ -20,9 +20,11 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *     }
  *   },
  *   base_table = "retention_details",
+ *   revision_table = "retention_details_revision",
  *   admin_permission = "administer retention_details entities",
  *   entity_keys = {
  *     "id" = "id",
+ *     "revision" = "rid",
  *     "label" = "id",
  *     "uuid" = "uuid"
  *   }
@@ -72,6 +74,7 @@ class RetentionDetails extends ContentEntityBase implements RetentionDetailsInte
       ->setLabel(t('Retention trigger'))
       ->setDescription(t('Defined event in which retention begins.'))
       ->setRequired(FALSE)
+      ->setRevisionable(TRUE)
       ->setCardinality(1)
       ->setDisplayOptions('view', [
         'weight' => 0,
@@ -84,6 +87,7 @@ class RetentionDetails extends ContentEntityBase implements RetentionDetailsInte
       ->setLabel(t('Active'))
       ->setDescription(t('Time spent in office filling space.'))
       ->setRequired(FALSE)
+      ->setRevisionable(TRUE)
       ->setCardinality(1)
       ->setDisplayOptions('view', [
         'weight' => 10,
@@ -96,6 +100,7 @@ class RetentionDetails extends ContentEntityBase implements RetentionDetailsInte
       ->setLabel(t('Semi-active'))
       ->setDescription(t('Time spent in storage space.'))
       ->setRequired(FALSE)
+      ->setRevisionable(TRUE)
       ->setCardinality(1)
       ->setDisplayOptions('view', [
         'weight' => 20,
@@ -108,6 +113,7 @@ class RetentionDetails extends ContentEntityBase implements RetentionDetailsInte
       ->setLabel(t('Disposition'))
       ->setDescription(t('Method of disposal.'))
       ->setRequired(FALSE)
+      ->setRevisionable(TRUE)
       ->setCardinality(1)
       ->setDisplayOptions('view', [
         'weight' => 30,
