@@ -10,3 +10,9 @@ schedule.add_form:
   appears_on:
     - entity.schedule.collection
     - view.retention_schedules.page
+
+view.retention_schedules.admin:
+  route_name: view.retention_schedules.admin
+  title: "Admin"
+  appears_on:
+    - view.retention_schedules.page
