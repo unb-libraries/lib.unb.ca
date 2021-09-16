@@ -1,0 +1,147 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_solr
+    - records_management
+    - search_api
+  config:
+    - search_api.server.drupal_solr_lib_unb_ca
+third_party_settings:
+  search_api_solr:
+    finalize: false
+    commit_before_finalize: false
+    commit_after_finalize: false
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
+    highlighter:
+      maxAnalyzedChars: 51200
+      fragmenter: gap
+      regex:
+        slop: 0.5
+        pattern: blank
+        maxAnalyzedChars: 10000
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
+      highlight:
+        mergeContiguous: false
+        requireFieldMatch: false
+        snippets: 3
+        fragsize: 0
+    mlt:
+      mintf: 1
+      mindf: 1
+      maxdf: 0
+      maxdfpct: 0
+      minwl: 0
+      maxwl: 0
+      maxqt: 100
+      maxntp: 2000
+      boost: false
+      interestingTerms: none
+    term_modifiers:
+      slop: 3
+      fuzzy: 1
+    advanced:
+      index_prefix: ''
+      collection: ''
+      timezone: ''
+id: retention_schedules
+name: 'Retention schedules'
+description: ''
+read_only: false
+field_settings:
+  approved:
+    label: 'Schedule creation date'
+    datasource_id: 'entity:schedule'
+    property_path: approved
+    type: text
+    dependencies:
+      module:
+        - records_management
+  classification_code:
+    label: 'Classification Code'
+    datasource_id: 'entity:schedule'
+    property_path: 'classification:entity:code'
+    type: text
+    dependencies:
+      module:
+        - records_management
+  classification_name:
+    label: 'Classification Name'
+    datasource_id: 'entity:schedule'
+    property_path: 'classification:entity:name'
+    type: text
+    dependencies:
+      module:
+        - records_management
+  name:
+    label: 'Record series name'
+    datasource_id: 'entity:schedule'
+    property_path: name
+    type: text
+    boost: !!float 8
+    dependencies:
+      module:
+        - records_management
+  number:
+    label: 'Record schedule number'
+    datasource_id: 'entity:schedule'
+    property_path: number
+    type: text
+    boost: !!float 5
+    dependencies:
+      module:
+        - records_management
+  oopr:
+    label: 'Office of Primary Responsibility'
+    datasource_id: 'entity:schedule'
+    property_path: oopr
+    type: text
+    boost: !!float 5
+    dependencies:
+      module:
+        - records_management
+  purpose:
+    label: 'Purpose of Record'
+    datasource_id: 'entity:schedule'
+    property_path: purpose
+    type: text
+    boost: !!float 3
+    dependencies:
+      module:
+        - records_management
+  revised:
+    label: 'Revision date'
+    datasource_id: 'entity:schedule'
+    property_path: revised
+    type: text
+    dependencies:
+      module:
+        - records_management
+  summary:
+    label: 'Description of Record'
+    datasource_id: 'entity:schedule'
+    property_path: summary
+    type: text
+    boost: !!float 3
+    dependencies:
+      module:
+        - records_management
+datasource_settings:
+  'entity:schedule': {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+  solr_date_range: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: drupal_solr_lib_unb_ca

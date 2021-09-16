@@ -94,6 +94,7 @@ module:
   portolan_sync: 0
   quickedit: 0
   rdf: 0
+  records_management: 0
   redirect: 0
   redis: 0
   scroll_to_top: 0
