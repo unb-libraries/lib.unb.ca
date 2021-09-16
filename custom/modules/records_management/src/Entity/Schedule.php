@@ -393,4 +393,17 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
     return $fields;
   }
 
+  /**
+   * {@inheritDoc}
+   */
+  public function delete() {
+    if ($oopr_details = $this->getOoprDetails()) {
+      $oopr_details->delete();
+    }
+    if ($oosr_details = $this->getOosrDetails()) {
+      $oosr_details->delete();
+    }
+    parent::delete();
+  }
+
 }
