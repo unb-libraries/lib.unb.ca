@@ -17,6 +17,13 @@ class VideosForm extends KbFormBase implements KbFormInterface {
   /**
    * {@inheritDoc}
    */
+  public static function getTitle() {
+    return 'Videos';
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public function getSearchDescription() {
     return $this->t('Search across our video collections, including VHS/DVD titles.');
   }

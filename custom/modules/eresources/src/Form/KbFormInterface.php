@@ -26,6 +26,14 @@ interface KbFormInterface {
   public function getKbFormId();
 
   /**
+   * Form title for tabbed display.
+   *
+   * @return string
+   *   Form title.
+   */
+  public static function getTitle();
+
+  /**
    * Textual description of the search form.
    *
    * @return string

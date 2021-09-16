@@ -28,6 +28,13 @@ class ReferenceForm extends KbFormBase implements KbFormInterface {
   /**
    * {@inheritDoc}
    */
+  public static function getTitle() {
+    return 'e-Reference Materials';
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public function getSearchPlaceholder() {
     return $this->t('Enter 1 or more search terms');
   }
