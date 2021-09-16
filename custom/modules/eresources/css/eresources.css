@@ -55,7 +55,7 @@ ul.list-bullets li.d-flex:before {
 }
 
 @media (max-width: 575px) {
-  #edit-query-wrapper .form-actions {
+  .form-row div.form-actions {
     width: 100%;
   }
 }
