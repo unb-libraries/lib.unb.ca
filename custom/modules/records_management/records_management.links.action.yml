@@ -9,3 +9,4 @@ schedule.add_form:
   title: "Add schedule"
   appears_on:
     - entity.schedule.collection
+    - view.retention_schedules.page

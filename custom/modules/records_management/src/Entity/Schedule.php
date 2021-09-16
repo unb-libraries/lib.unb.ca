@@ -15,6 +15,7 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *   label_plural = @Translation("Retention schedules"),
  *   label_collection = @Translation("Retention schedules"),
  *   handlers = {
+ *     "views_data" = "Drupal\views\EntityViewsData",
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "list_builder" = "Drupal\records_management\Entity\ScheduleListBuilder",
  *     "form" = {
@@ -39,9 +40,9 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *     "canonical" = "/records/schedules/{schedule}",
  *     "add-form" = "/records/schedules/add",
  *     "edit-form" = "/records/schedules/{schedule}/edit",
- *     "delete-form" = "/records/schedules/{schedule}/delete",
- *     "collection" = "/records/schedules",
- *   }
+ *     "delete-form" = "/records/schedules/{schedule}/delete"
+ *   },
+ *   field_ui_base_route = "entity.schedule.settings",
  * )
  */
 class Schedule extends ContentEntityBase implements ScheduleInterface {
