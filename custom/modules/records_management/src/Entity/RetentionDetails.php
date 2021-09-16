@@ -14,6 +14,7 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *   label = @Translation("Retention details"),
  *   label_plural = @Translation("Retention details"),
  *   handlers = {
+ *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "form" = {
  *       "default" = "Drupal\Core\Entity\ContentEntityForm",
  *     }
@@ -72,6 +73,9 @@ class RetentionDetails extends ContentEntityBase implements RetentionDetailsInte
       ->setDescription(t('Defined event in which retention begins.'))
       ->setRequired(FALSE)
       ->setCardinality(1)
+      ->setDisplayOptions('view', [
+        'weight' => 0,
+      ])
       ->setDisplayOptions('form', [
         'weight' => 0,
       ]);
@@ -81,6 +85,9 @@ class RetentionDetails extends ContentEntityBase implements RetentionDetailsInte
       ->setDescription(t('Time spent in office filling space.'))
       ->setRequired(FALSE)
       ->setCardinality(1)
+      ->setDisplayOptions('view', [
+        'weight' => 10,
+      ])
       ->setDisplayOptions('form', [
         'weight' => 10,
       ]);
@@ -90,6 +97,9 @@ class RetentionDetails extends ContentEntityBase implements RetentionDetailsInte
       ->setDescription(t('Time spent in storage space.'))
       ->setRequired(FALSE)
       ->setCardinality(1)
+      ->setDisplayOptions('view', [
+        'weight' => 20,
+      ])
       ->setDisplayOptions('form', [
         'weight' => 20,
       ]);
@@ -99,6 +109,9 @@ class RetentionDetails extends ContentEntityBase implements RetentionDetailsInte
       ->setDescription(t('Method of disposal.'))
       ->setRequired(FALSE)
       ->setCardinality(1)
+      ->setDisplayOptions('view', [
+        'weight' => 30,
+      ])
       ->setDisplayOptions('form', [
         'weight' => 30,
       ]);

@@ -261,7 +261,8 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
       ->setCardinality(1)
       ->setSetting('target_type', 'retention_details')
       ->setDisplayOptions('view', [
-        'weight' => 0,
+        'type' => 'entity_reference_entity_view',
+        'weight' => 55,
       ])
       ->setDisplayOptions('form', [
         'type' => 'inline_entity_form_simple',
@@ -274,7 +275,8 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
       ->setCardinality(1)
       ->setSetting('target_type', 'retention_details')
       ->setDisplayOptions('view', [
-        'weight' => 0,
+        'type' => 'entity_reference_entity_view',
+        'weight' => 56,
       ])
       ->setDisplayOptions('form', [
         'type' => 'inline_entity_form_simple',
