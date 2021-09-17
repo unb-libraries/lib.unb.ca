@@ -181,34 +181,6 @@ thead {
 }
 
 /* CONTEXT sensitive */
-/* Breadcrumbs */
-.breadcrumb {
-  font-size: 1rem;
-
-  a[href="/"] {
-    display: inline-block;
-    position: relative;
-    right: 9999px;
-    width: 1rem;
-
-    &:after {
-      font-family: "Font Awesome 5 Free";
-      content: "\f015";
-      font-size: .85rem;
-      font-weight: 900;
-      height: 100%;
-      position: absolute;
-      right: -9999px;
-      top: 0;
-    }
-  }
-
-  li {
-    margin-bottom: 0;
-  }
-}
-/* END Breadcrumbs */
-
 /* Media files/attachments */
 a:not(.link-no-icon) {
   &[href$=".doc"]:after,
