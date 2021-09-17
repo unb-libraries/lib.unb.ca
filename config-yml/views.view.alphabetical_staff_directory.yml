@@ -955,6 +955,7 @@ display:
         row: false
         access: false
         cache: false
+        title: false
       filter_groups:
         operator: AND
         groups:
@@ -1326,6 +1327,7 @@ display:
       cache:
         type: tag
         options: {  }
+      title: ''
     cache_metadata:
       max-age: -1
       contexts:
