@@ -44,6 +44,9 @@ third_party_settings:
       maxntp: 2000
       boost: false
       interestingTerms: none
+    term_modifiers:
+      slop: 3
+      fuzzy: 1
     advanced:
       index_prefix: ''
       collection: ''
@@ -111,10 +114,10 @@ field_settings:
 datasource_settings:
   'entity:node':
     bundles:
-      default: true
+      default: false
       selected:
-        - booking_space
-        - carousel
+        - library_page
+        - news_post
     languages:
       default: true
       selected: {  }
