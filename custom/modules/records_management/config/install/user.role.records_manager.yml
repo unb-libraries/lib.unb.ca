@@ -13,6 +13,7 @@ permissions:
   - 'create schedule entities'
   - 'delete retention_details entities'
   - 'delete schedule entities'
+  - 'list classification entities'
   - 'list schedule entities'
   - 'update retention_details entities'
   - 'update schedule entities'

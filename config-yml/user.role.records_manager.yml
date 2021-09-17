@@ -1,7 +1,10 @@
 uuid: 70dfdf9c-e42b-47b2-808c-39e4137b92fb
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  enforced:
+    module:
+      - records_management
 id: records_manager
 label: 'Records Manager'
 weight: 5
@@ -11,6 +14,7 @@ permissions:
   - 'create schedule entities'
   - 'delete retention_details entities'
   - 'delete schedule entities'
+  - 'list classification entities'
   - 'list schedule entities'
   - 'update retention_details entities'
   - 'update schedule entities'
