@@ -789,7 +789,7 @@ display:
           group_type: group
           admin_label: Classification
           required: false
-          skip_access: false
+          skip_access: true
           entity_type: schedule
           plugin_id: search_api
       arguments: {  }
