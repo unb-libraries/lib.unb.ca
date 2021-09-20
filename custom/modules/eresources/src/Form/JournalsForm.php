@@ -29,14 +29,14 @@ class JournalsForm extends KbFormBase implements KbFormInterface {
    * {@inheritDoc}
    */
   public static function getTitle() {
-    return 'Journals';
+    return 'Journals & Newspapers';
   }
 
   /**
    * {@inheritDoc}
    */
   public function getSearchPlaceholder() {
-    return $this->t('Enter 1 or more search terms');
+    return $this->t('Search for journal and newspaper titles');
   }
 
   /**

@@ -25,14 +25,14 @@ class EbooksForm extends KbFormBase implements KbFormInterface {
    * {@inheritDoc}
    */
   public static function getTitle() {
-    return 'eBooks';
+    return 'e-Books';
   }
 
   /**
    * {@inheritDoc}
    */
   public function getSearchPlaceholder() {
-    return $this->t('Enter 1 or more search terms');
+    return $this->t('Search for e-book titles');
   }
 
   /**
