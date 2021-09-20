@@ -27,32 +27,32 @@
       {%   set extra = extra|merge([entry|eresources_coverage]) %}
       {% endif %}
     <li>
-      <div class="row">
-        <div class="col-12 col-lg-9">
-          <div><a class="d-inline" href="{{ url }}" target="_blank" onclick='javascript: _gaq.push(["_trackPageview", "/GA/{{ entry.title }}"]);'>
+      <div class="row mb-2">
+        <div class="col-12 col-lg-8">
+          <p class="mb-0"><a class="d-inline" href="{{ url }}" target="_blank" onclick='javascript: _gaq.push(["_trackPageview", "/GA/{{ entry.title }}"]);'>
             <span class="sr-only">{{ entry.title }} in </span> {{ attribute(entry, "kb:collection_name") }}
           </a>
           {% if extra %}
           ({{ extra|join('; ') }})
           {% endif %}
-          </div>
+          </p>
           {% if attribute(entry, 'kb:coverage_enum') starts with 'print' %}
-            <div class="media ml-4 mb-2">
-              <span class="fas fa-book"></span>
-              <div class="media-body ml-1"><span class="coverage">{{ entry|eresources_coverage }}</span></div>
+            <div class="media ml-3">
+              <span class="fas fa-book mr-1"></span>
+              <p class="media-body mb-0"><span class="coverage">{{ entry|eresources_coverage }}</span></p>
             </div>
           {% else %}
             {% set permittedUse = entry|eresources_permitted_use %}
             {% if permittedUse %}
-            <div class="media ml-4 mb-2">
-              <span class="fas fa-gavel"></span>
-              <div class="media-body ml-1">{{ permittedUse|raw }}</div>
+            <div class="media ml-3">
+              <span class="fas fa-gavel mr-1"></span>
+              <p class="media-body mb-0">{{ permittedUse|raw }}</p>
             </div>
             {% endif %}
           {% endif %}
         </div>
-        <div class="col col-lg-3 oclcnum">
-        {% if attribute(entry, 'kb:oclcnum') is not empty %}WorldCat: <a class="d-inline" href="https://unb.on.worldcat.org/oclc/{{ attribute(entry, 'kb:oclcnum') }}">{{ attribute(entry, 'kb:oclcnum') }}</a>{% endif %}
+        <div class="col col-lg-4 oclcnum">
+          {% if attribute(entry, 'kb:oclcnum') is not empty %}<p>WorldCat: <a href="https://unb.on.worldcat.org/oclc/{{ attribute(entry, 'kb:oclcnum') }}">{{ attribute(entry, 'kb:oclcnum') }}</a></p>{% endif %}
         </div>
       </div>
     </li>
@@ -65,11 +65,11 @@
     ) %}
       <li class="list-group-item {{ cycle(stripe, row) }}">
         <div class="row">
-          <div class="col-12 col-lg-9 title">{{ entry.title }}</div>
-          <div class="col-12 col-lg-3 oclcnum">
-            {% if isbn %}<div>ISBN: {{ isbn }}</div>{% endif %}
-            {% if issn %}<div>ISSN: {{ issn }}</div>{% endif %}
-            {% if eissn %}<div>eISSN: {{ eissn }}</div>{% endif %}
+          <div class="col-12 col-lg-8 title">{{ entry.title }}</div>
+          <div class="col-12 col-lg-4 mt-1 mt-lg-0 oclcnum">
+            {% if isbn %}<p>ISBN: {{ isbn }}</p>{% endif %}
+            {% if issn %}<p>ISSN: {{ issn }}</p>{% endif %}
+            {% if eissn %}<p>eISSN: {{ eissn }}</p>{% endif %}
           </div>
         </div>
         <ul>
