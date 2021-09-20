@@ -57,14 +57,14 @@ ul.list-bullets li.d-flex:before {
     text-align: right;
   }
 }
-
-@media (min-width: 1366px) {
-  #eresources-discovery-search nav.navbar {
-    max-width: 60%;
-  }
+.list-results .list-group-item .oclcnum p {
+  display: inline;
 }
-@media (min-width: 992px) {
-  #eresources-discovery-search nav.navbar {
-    max-width: 75%;
-  }
+.list-results .list-group-item .oclcnum p:nth-child(n+2):before {
+  color: #999;
+  content: '| ';
+  margin: 0 .2rem;
+}
+#search_results_wrapper .pagination {
+  flex-wrap: wrap;
 }
