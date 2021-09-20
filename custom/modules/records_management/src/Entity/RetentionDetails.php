@@ -17,7 +17,8 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "form" = {
  *       "default" = "Drupal\Core\Entity\ContentEntityForm",
- *     }
+ *     },
+ *     "access" = "Drupal\custom_entity\Entity\Access\EntityAccessControlHandler",
  *   },
  *   base_table = "retention_details",
  *   revision_table = "retention_details_revision",
