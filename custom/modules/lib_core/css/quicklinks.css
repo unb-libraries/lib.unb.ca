@@ -3,16 +3,6 @@
     line-height: 1.9;
     margin-bottom: .25rem;
 }
-#quicklinks-wrapper ul.list-inline li {
-    display: inline-block;
-}
-#quicklinks-wrapper ul.list-inline li:not(:last-child):after {
-    color: #999;
-    content: '|';
-}
-#quicklinks-wrapper ul.list-inline li a {
-    margin-right: .33rem;
-}
 #quicklinks .collapse:not(.show) {
     display: none!important;
 }
