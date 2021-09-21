@@ -16,9 +16,6 @@
     #quicklinks-wrapper.collapse:not(.show) {
         display: flex!important;
     }
-    #quicklinks-wrapper ul.list-inline li a {
-        margin-right: .75rem;
-    }
      #quicklinks-buttons li:last-child {
          padding-right: 0;
      }
