@@ -221,16 +221,16 @@ handlers:
       to_options:
         -
           value: none
-          text: j.bail@unb.ca
+          text: hanratty@unb.ca
         -
           value: hil
-          text: j.bail@unb.ca
+          text: hanratty@unb.ca
         -
           value: sfl
-          text: j.bail@unb.ca
+          text: hanratty@unb.ca
         -
           value: ecsl
-          text: j.bail@unb.ca
+          text: hanratty@unb.ca
         -
           value: hwkc
           text: drross@unb.ca
@@ -317,16 +317,16 @@ handlers:
       to_options:
         -
           value: none
-          text: j.bail@unb.ca
+          text: hanratty@unb.ca
         -
           value: hil
-          text: j.bail@unb.ca
+          text: hanratty@unb.ca
         -
           value: sfl
-          text: j.bail@unb.ca
+          text: hanratty@unb.ca
         -
           value: ecsl
-          text: j.bail@unb.ca
+          text: hanratty@unb.ca
         -
           value: hwkc
           text: drross@unb.ca
