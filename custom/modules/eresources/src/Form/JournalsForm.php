@@ -2,6 +2,8 @@
 
 namespace Drupal\eresources\Form;
 
+use Drupal\Core\Form\FormStateInterface;
+
 /**
  * KB Journals form.
  */
@@ -51,6 +53,23 @@ class JournalsForm extends KbFormBase implements KbFormInterface {
    */
   public function getKbContentType() {
     return 'fulltext,print';
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function buildForm(array $form, FormStateInterface $form_state) {
+    $form = parent::buildForm($form, $form_state);
+    $form['journals_wrapper']['links'] = [
+      '#markup' => '<div class="wrapper-list-inline item-list">
+<ul>
+  <li><a href="#">Journal Packages</a></li>
+  <li><a href="#">Newspaper Packages</a></li>
+  <li><a href="https://lib.unb.ca/eresources/newspaper-guide"><i class="fas fa-question-circle"></i> Newspaper Guide</a></li>
+</ul>
+</div>',
+    ];
+    return $form;
   }
 
 }
