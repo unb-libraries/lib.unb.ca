@@ -10,7 +10,7 @@ dependencies:
 id: unblibrariesresearchsubjects
 theme: lib_unb_ca
 region: content
-weight: -3
+weight: 0
 provider: null
 plugin: research_subjects
 settings:

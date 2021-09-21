@@ -1,23 +1,23 @@
-uuid: 45175d44-1084-429d-a5b8-3201e5574633
+uuid: 4d14f163-986d-469e-be4d-bc7080b8abcd
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic_block:3289eca8-3ad4-4d0e-94c3-da972437d93f'
+    - 'block_content:basic_block:48bf2941-921e-4d21-a2a8-906e2e8b41ea'
   module:
     - block_content
     - system
   theme:
     - lib_unb_ca
-id: portolanlogo
+id: bookingsheaderhil
 theme: lib_unb_ca
 region: content
-weight: -11
+weight: -7
 provider: null
-plugin: 'block_content:3289eca8-3ad4-4d0e-94c3-da972437d93f'
+plugin: 'block_content:48bf2941-921e-4d21-a2a8-906e2e8b41ea'
 settings:
-  id: 'block_content:3289eca8-3ad4-4d0e-94c3-da972437d93f'
-  label: 'Portolan logo'
+  id: 'block_content:48bf2941-921e-4d21-a2a8-906e2e8b41ea'
+  label: 'Bookings Header: HIL'
   provider: block_content
   label_display: '0'
   status: true
@@ -26,6 +26,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/clc/portolan\r\n/clc/portolan/*"
+    pages: /services/bookings/hil
     negate: false
     context_mapping: {  }

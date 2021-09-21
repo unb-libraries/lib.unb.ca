@@ -10,7 +10,7 @@ dependencies:
 id: unblibrariesquicklinks
 theme: lib_unb_ca
 region: content
-weight: -10
+weight: -12
 provider: null
 plugin: quicklinks_block
 settings:

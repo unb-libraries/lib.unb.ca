@@ -1,23 +1,23 @@
-uuid: 45175d44-1084-429d-a5b8-3201e5574633
+uuid: fe591a37-d59a-4e40-acd1-e2e6a5194f47
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic_block:3289eca8-3ad4-4d0e-94c3-da972437d93f'
+    - 'block_content:basic_block:88c6a719-aa08-4e44-b474-684635694bb8'
   module:
     - block_content
     - system
   theme:
     - lib_unb_ca
-id: portolanlogo
+id: bookingsheadersci
 theme: lib_unb_ca
 region: content
-weight: -11
+weight: -4
 provider: null
-plugin: 'block_content:3289eca8-3ad4-4d0e-94c3-da972437d93f'
+plugin: 'block_content:88c6a719-aa08-4e44-b474-684635694bb8'
 settings:
-  id: 'block_content:3289eca8-3ad4-4d0e-94c3-da972437d93f'
-  label: 'Portolan logo'
+  id: 'block_content:88c6a719-aa08-4e44-b474-684635694bb8'
+  label: 'Bookings Header: SCI'
   provider: block_content
   label_display: '0'
   status: true
@@ -26,6 +26,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/clc/portolan\r\n/clc/portolan/*"
+    pages: /services/bookings/sci
     negate: false
     context_mapping: {  }

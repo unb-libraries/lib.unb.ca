@@ -12,7 +12,7 @@ dependencies:
 id: researchingremotelyalert
 theme: lib_unb_ca
 region: content
-weight: -1
+weight: 1
 provider: null
 plugin: 'block_content:ead32b3c-3b69-44eb-b6a0-f7af31f092a2'
 settings:
