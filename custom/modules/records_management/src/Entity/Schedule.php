@@ -236,6 +236,12 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         ],
       ])
       ->setDisplayOptions('form', [
+        'third_party_settings' => [
+          'allowed_formats' => [
+            'hide_help' => TRUE,
+            'hide_guidelines' => TRUE,
+          ],
+        ],
         'weight' => 40,
       ]);
 
@@ -252,6 +258,12 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         ],
       ])
       ->setDisplayOptions('form', [
+        'third_party_settings' => [
+          'allowed_formats' => [
+            'hide_help' => TRUE,
+            'hide_guidelines' => TRUE,
+          ],
+        ],
         'weight' => 50,
       ]);
 
@@ -296,6 +308,12 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         'weight' => 0,
       ])
       ->setDisplayOptions('form', [
+        'third_party_settings' => [
+          'allowed_formats' => [
+            'hide_help' => TRUE,
+            'hide_guidelines' => TRUE,
+          ],
+        ],
         'weight' => 60,
       ]);
 
@@ -374,6 +392,12 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         'weight' => 0,
       ])
       ->setDisplayOptions('form', [
+        'third_party_settings' => [
+          'allowed_formats' => [
+            'hide_help' => TRUE,
+            'hide_guidelines' => TRUE,
+          ],
+        ],
         'weight' => 96,
       ]);
 
