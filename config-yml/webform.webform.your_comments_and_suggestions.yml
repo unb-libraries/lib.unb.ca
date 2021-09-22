@@ -221,16 +221,16 @@ handlers:
       to_options:
         -
           value: none
-          text: hanratty@unb.ca
+          text: pollockl@unb.ca
         -
           value: hil
-          text: hanratty@unb.ca
+          text: pollockl@unb.ca
         -
           value: sfl
-          text: hanratty@unb.ca
+          text: pollockl@unb.ca
         -
           value: ecsl
-          text: hanratty@unb.ca
+          text: pollockl@unb.ca
         -
           value: hwkc
           text: drross@unb.ca
@@ -317,16 +317,16 @@ handlers:
       to_options:
         -
           value: none
-          text: hanratty@unb.ca
+          text: pollockl@unb.ca
         -
           value: hil
-          text: hanratty@unb.ca
+          text: pollockl@unb.ca
         -
           value: sfl
-          text: hanratty@unb.ca
+          text: pollockl@unb.ca
         -
           value: ecsl
-          text: hanratty@unb.ca
+          text: pollockl@unb.ca
         -
           value: hwkc
           text: drross@unb.ca
