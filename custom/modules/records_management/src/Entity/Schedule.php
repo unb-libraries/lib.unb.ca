@@ -16,8 +16,7 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *   label_collection = @Translation("Retention schedules"),
  *   handlers = {
  *     "views_data" = "Drupal\views\EntityViewsData",
- *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
- *     "list_builder" = "Drupal\records_management\Entity\ScheduleListBuilder",
+ *     "view_builder" = "Drupal\custom_entity\Entity\EntityTableViewBuilder",
  *     "form" = {
  *       "default" = "Drupal\records_management\Form\ScheduleForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"
@@ -196,7 +195,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         ],
       ])
       ->setDisplayOptions('view', [
-        'weight' => 0,
+        'weight' => 10,
       ])
       ->setDisplayOptions('form', [
         'weight' => 10,
@@ -207,7 +206,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
       ->setRequired(TRUE)
       ->setCardinality(1)
       ->setDisplayOptions('view', [
-        'weight' => 0,
+        'weight' => 20,
       ])
       ->setDisplayOptions('form', [
         'weight' => 20,
@@ -217,7 +216,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
       ->setLabel(t('Office of Primary Responsibility'))
       ->setCardinality(1)
       ->setDisplayOptions('view', [
-        'weight' => 0,
+        'weight' => 30,
       ])
       ->setDisplayOptions('form', [
         'weight' => 30,
@@ -228,7 +227,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
       ->setRequired(TRUE)
       ->setCardinality(1)
       ->setDisplayOptions('view', [
-        'weight' => 0,
+        'weight' => 40,
       ])
       ->setSettings([
         'allowed_formats' => [
@@ -250,7 +249,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
       ->setRequired(TRUE)
       ->setCardinality(1)
       ->setDisplayOptions('view', [
-        'weight' => 0,
+        'weight' => 50,
       ])
       ->setSettings([
         'allowed_formats' => [
@@ -305,7 +304,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         ],
       ])
       ->setDisplayOptions('view', [
-        'weight' => 0,
+        'weight' => 60,
       ])
       ->setDisplayOptions('form', [
         'third_party_settings' => [
@@ -326,7 +325,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         'on_label' => t('Yes'),
       ])
       ->setDisplayOptions('view', [
-        'weight' => 0,
+        'weight' => 70,
       ])
       ->setDisplayOptions('form', [
         'type' => 'options_buttons',
@@ -342,7 +341,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         'on_label' => t('Yes'),
       ])
       ->setDisplayOptions('view', [
-        'weight' => 0,
+        'weight' => 80,
       ])
       ->setDisplayOptions('form', [
         'type' => 'options_buttons',
@@ -358,7 +357,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         'datetime_type' => 'date',
       ])
       ->setDisplayOptions('view', [
-        'weight' => 0,
+        'weight' => 90,
       ])
       ->setDisplayOptions('form', [
         'weight' => 90,
@@ -373,7 +372,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         'datetime_type' => 'date',
       ])
       ->setDisplayOptions('view', [
-        'weight' => 0,
+        'weight' => 95,
       ])
       ->setDisplayOptions('form', [
         'weight' => 95,
@@ -389,7 +388,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         ],
       ])
       ->setDisplayOptions('view', [
-        'weight' => 0,
+        'weight' => 96,
       ])
       ->setDisplayOptions('form', [
         'third_party_settings' => [
@@ -411,6 +410,9 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
           'docx',
           'doc'
         ]),
+      ])
+      ->setDisplayOptions('view', [
+        'weight' => 97,
       ])
       ->setDisplayOptions('form', [
         'weight' => 97,
