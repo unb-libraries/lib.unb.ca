@@ -231,7 +231,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
       ])
       ->setSettings([
         'allowed_formats' => [
-          'basic_html',
+          'no_media_html',
         ],
       ])
       ->setDisplayOptions('form', [
@@ -253,7 +253,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
       ])
       ->setSettings([
         'allowed_formats' => [
-          'basic_html',
+          'no_media_html',
         ],
       ])
       ->setDisplayOptions('form', [
@@ -300,7 +300,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
       ->setCardinality(1)
       ->setSettings([
         'allowed_formats' => [
-          'basic_html',
+          'no_media_html',
         ],
       ])
       ->setDisplayOptions('view', [
@@ -384,7 +384,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
       ->setCardinality(1)
       ->setSettings([
         'allowed_formats' => [
-          'basic_html',
+          'no_media_html',
         ],
       ])
       ->setDisplayOptions('view', [
