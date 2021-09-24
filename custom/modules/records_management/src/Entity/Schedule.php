@@ -176,7 +176,14 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
       ->setLabel(t('Classification'))
       ->setRequired(TRUE)
       ->setCardinality(1)
-      ->setSetting('target_type', 'classification')
+      ->setSettings([
+        'target_type' => 'taxonomy_term',
+        'handler_settings' => [
+          'target_bundles' => [
+            'retention_classification' => 'retention_classification',
+          ],
+        ],
+      ])
       ->setDisplayOptions('view', [
         'weight' => 0,
       ])

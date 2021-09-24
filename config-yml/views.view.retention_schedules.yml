@@ -3,12 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.taxonomy_term.field_code
     - search_api.index.retention_schedules
     - user.role.records_manager
   module:
     - datetime
-    - records_management
     - search_api
+    - taxonomy
     - user
 id: retention_schedules
 label: 'Retention Schedules'
@@ -218,14 +219,14 @@ display:
               - '@count'
           entity_type: schedule
           plugin_id: search_api_field
-        code:
-          id: code
-          table: search_api_entity_classification
-          field: code
-          relationship: classification
+        classification_code:
+          id: classification_code
+          table: search_api_index_retention_schedules
+          field: classification_code
+          relationship: none
           group_type: group
-          admin_label: Code
-          label: Classification
+          admin_label: ''
+          label: Code
           exclude: true
           alter:
             alter_text: false
@@ -287,7 +288,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: classification
           plugin_id: search_api_field
         number:
           id: number
@@ -300,7 +300,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ code }}{{ number__value }}'
+            text: '{{ classification_code }}{{ number__value }}'
             make_link: true
             path: '/records/schedules/{{ id }}'
             absolute: false
@@ -803,6 +803,7 @@ display:
         - url.query_args
         - user.roles
       tags:
+        - 'config:field.storage.taxonomy_term.field_code'
         - 'config:search_api.index.retention_schedules'
   admin:
     display_plugin: page
@@ -830,6 +831,7 @@ display:
         - url.query_args
         - user.roles
       tags:
+        - 'config:field.storage.taxonomy_term.field_code'
         - 'config:search_api.index.retention_schedules'
   page:
     display_plugin: page
@@ -930,14 +932,14 @@ display:
               - '@count'
           entity_type: schedule
           plugin_id: search_api_field
-        code:
-          id: code
-          table: search_api_entity_classification
-          field: code
-          relationship: classification
+        classification_code:
+          id: classification_code
+          table: search_api_index_retention_schedules
+          field: classification_code
+          relationship: none
           group_type: group
-          admin_label: Code
-          label: Classification
+          admin_label: ''
+          label: Code
           exclude: true
           alter:
             alter_text: false
@@ -999,7 +1001,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: classification
           plugin_id: search_api_field
         number:
           id: number
@@ -1012,7 +1013,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ code }}{{ number__value }}'
+            text: '{{ classification_code }}{{ number__value }}'
             make_link: true
             path: '/records/schedules/{{ id }}'
             absolute: false
@@ -1364,4 +1365,5 @@ display:
         - url.query_args
         - user.permissions
       tags:
+        - 'config:field.storage.taxonomy_term.field_code'
         - 'config:search_api.index.retention_schedules'
