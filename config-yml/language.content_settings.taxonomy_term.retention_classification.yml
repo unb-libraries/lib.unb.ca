@@ -1,0 +1,11 @@
+uuid: 26289883-c45a-4445-81ee-b1af60bab968
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.retention_classification
+id: taxonomy_term.retention_classification
+target_entity_type_id: taxonomy_term
+target_bundle: retention_classification
+default_langcode: site_default
+language_alterable: false

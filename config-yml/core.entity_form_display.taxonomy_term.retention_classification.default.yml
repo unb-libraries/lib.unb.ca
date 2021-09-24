@@ -1,0 +1,65 @@
+uuid: 0de744df-4cc9-4c1d-be2b-af4d4df941cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.retention_classification.field_code
+    - taxonomy.vocabulary.retention_classification
+  module:
+    - path
+    - text
+id: taxonomy_term.retention_classification.default
+targetEntityType: taxonomy_term
+bundle: retention_classification
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_code:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  langcode:
+    type: language_select
+    weight: 3
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 5
+    region: content
+    third_party_settings: {  }
+  tvi:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }
