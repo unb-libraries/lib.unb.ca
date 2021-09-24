@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.taxonomy_term.field_code
     - search_api.index.retention_schedules
+    - taxonomy.vocabulary.retention_classification
     - user.role.records_manager
   module:
     - datetime
@@ -693,6 +694,56 @@ display:
           hide_alter_empty: false
           plugin_id: custom
       filters:
+        classification:
+          id: classification
+          table: search_api_index_retention_schedules
+          field: classification
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: classification_op
+            label: Classification
+            description: ''
+            use_operator: false
+            operator: classification_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: classification
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              library_news_author: '0'
+              library_page_author: '0'
+              data_administrator: '0'
+              records_manager: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: retention_classification
+          hierarchy: false
+          error_message: true
+          plugin_id: search_api_term
         search_api_fulltext:
           id: search_api_fulltext
           table: search_api_index_retention_schedules
@@ -794,6 +845,10 @@ display:
           plugin_id: search_api
       arguments: {  }
       display_extenders: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
@@ -801,6 +856,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - user.roles
       tags:
         - 'config:field.storage.taxonomy_term.field_code'
@@ -829,6 +885,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - user.roles
       tags:
         - 'config:field.storage.taxonomy_term.field_code'
@@ -1363,6 +1420,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - user.permissions
       tags:
         - 'config:field.storage.taxonomy_term.field_code'
