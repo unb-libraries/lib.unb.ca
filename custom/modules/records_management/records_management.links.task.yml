@@ -1,0 +1,14 @@
+entity.schedule.canonical:
+  route_name: entity.schedule.canonical
+  base_route: entity.schedule.canonical
+  title: 'View'
+
+entity.schedule.edit_form:
+  route_name: entity.schedule.edit_form
+  base_route: entity.schedule.canonical
+  title: 'Edit'
+
+entity.schedule.delete_form:
+  route_name: entity.schedule.delete_form
+  base_route: entity.schedule.canonical
+  title: 'Delete'
