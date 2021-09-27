@@ -861,35 +861,6 @@ display:
       tags:
         - 'config:field.storage.taxonomy_term.field_code'
         - 'config:search_api.index.retention_schedules'
-  admin:
-    display_plugin: page
-    id: admin
-    display_title: Admin
-    position: 1
-    display_options:
-      display_extenders: {  }
-      path: records/schedules/admin
-      display_description: ''
-      access:
-        type: role
-        options:
-          role:
-            records_manager: records_manager
-      defaults:
-        access: false
-        fields: true
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - url.query_args
-        - user
-        - user.roles
-      tags:
-        - 'config:field.storage.taxonomy_term.field_code'
-        - 'config:search_api.index.retention_schedules'
   page:
     display_plugin: page
     id: page
