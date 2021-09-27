@@ -78,6 +78,8 @@ field_settings:
     property_path: 'classification:entity:field_code'
     type: text
     dependencies:
+      config:
+        - field.storage.taxonomy_term.field_code
       module:
         - records_management
         - taxonomy

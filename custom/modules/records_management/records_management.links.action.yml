@@ -1,8 +1,10 @@
 classification.add_form:
-  route_name: entity.classification.add_form
+  route_name: entity.taxonomy_term.add_form
+  route_parameters:
+    taxonomy_vocabulary: retention_classification
   title: "Add classification"
   appears_on:
-    - entity.classification.collection
+    - view.retention_classifications.page_1
 
 schedule.add_form:
   route_name: entity.schedule.add_form

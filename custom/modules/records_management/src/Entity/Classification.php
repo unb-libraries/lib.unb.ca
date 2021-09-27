@@ -15,7 +15,6 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *   label_plural = @Translation("Functional classifications"),
  *   label_collection = @Translation("Functional classifications"),
  *   handlers = {
- *     "list_builder" = "Drupal\records_management\Entity\ClassificationListBuilder",
  *     "form" = {
  *       "default" = "Drupal\Core\Entity\ContentEntityForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",

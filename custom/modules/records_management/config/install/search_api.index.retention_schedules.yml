@@ -83,7 +83,7 @@ field_settings:
         - records_management
         - taxonomy
   classification_name:
-    label: 'Classification » Taxonomy term » Name'
+    label: 'Classification Name'
     datasource_id: 'entity:schedule'
     property_path: 'classification:entity:name'
     type: text
