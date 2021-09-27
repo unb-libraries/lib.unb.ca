@@ -44,4 +44,17 @@ class HarvestedCollectionListBuilder extends EntityListBuilder {
     ];
   }
 
+  /**
+   * {@inheritDoc}
+   */
+  public function getOperations(EntityInterface $entity) {
+    $operations = parent::getOperations($entity);
+    $operations['synchronize-harvested-collection'] = [
+      'title' => $this->t('Synchronize'),
+      'weight' => 90,
+      'url' => $this->ensureDestination($entity->toUrl('synchronize')),
+    ];
+    return $operations;
+  }
+
 }

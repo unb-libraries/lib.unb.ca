@@ -12,3 +12,14 @@ eresources.license.view:
     _title_callback: '\Drupal\eresources\Controller\LicenseController::title'
   requirements:
     _permission: 'access content'
+entity.eresources_harvested_collection.synchronize:
+  path: '/eresources/harvested_collection/{eresources_harvested_collection}/sync'
+  defaults:
+    _title: 'Synchronize eResources Harvested Collection'
+    _controller: '\Drupal\eresources\Controller\HarvestedCollectionController::synchronize'
+  requirements:
+    _entity_create_access: 'eresources_harvested_collection'
+  options:
+    parameters:
+      eresources_harvested_collection:
+        type: entity:eresources_harvested_collection

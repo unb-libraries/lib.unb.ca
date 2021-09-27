@@ -18,6 +18,7 @@ use Drupal\lib_unb_custom_entity\Entity\ContentEntityBase;
  *   handlers = {
  *     "form" = {
  *       "default" = "Drupal\lib_unb_custom_entity\Form\ContentEntityForm",
+ *       "delete" = "Drupal\lib_unb_custom_entity\Form\ContentEntityConfirmForm",
  *     },
  *     "list_builder" = "Drupal\eresources\Entity\HarvestedCollectionListBuilder",
  *     "route_provider" = {
@@ -37,6 +38,7 @@ use Drupal\lib_unb_custom_entity\Entity\ContentEntityBase;
  *     "edit-form" = "/eresources/harvested_collections/{eresources_harvested_collection}/edit",
  *     "delete-form" = "/eresources/harvested_collections/{eresources_harvested_collection}/delete",
  *     "collection" = "/eresources/harvested_collections",
+ *     "synchronize" = "/eresources/harvested_collections/{eresources_harvested_collection}/sync",
  *   }
  * )
  */
@@ -51,6 +53,13 @@ class HarvestedCollection extends ContentEntityBase implements ContentEntityInte
     'databases' => 'Article Databases',
     'reference' => 'Reference Materials',
   ];
+
+  /**
+   * Gets the OCLC ID of the collection.
+   */
+  public function getOclcId() {
+    return $this->get('oclc_id')->value;
+  }
 
   /**
    * {@inheritDoc}
