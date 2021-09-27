@@ -364,6 +364,9 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         'datetime_type' => 'date',
       ])
       ->setDisplayOptions('view', [
+        'settings' => [
+          'format_type' => 'html_date',
+        ],
         'weight' => 90,
       ])
       ->setDisplayOptions('form', [
@@ -379,6 +382,9 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         'datetime_type' => 'date',
       ])
       ->setDisplayOptions('view', [
+        'settings' => [
+          'format_type' => 'html_date',
+        ],
         'weight' => 95,
       ])
       ->setDisplayOptions('form', [
