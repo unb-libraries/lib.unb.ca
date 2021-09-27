@@ -357,7 +357,33 @@ display:
             operator_list: {  }
       sorts: {  }
       title: 'Retention Classifications'
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>'
+            format: library_page_html
+          plugin_id: text
+        area_1:
+          id: area_1
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<p>For further information contact <a href=\"mailto:\r\nemilie.mcdonnell@unb.ca \" target=\"_blank\">Emilie McDonnell</a>.</p>"
+            format: library_page_html
+          plugin_id: text
       footer: {  }
       empty: {  }
       relationships: {  }
