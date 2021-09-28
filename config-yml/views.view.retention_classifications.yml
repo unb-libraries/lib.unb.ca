@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.taxonomy_term.field_code
     - taxonomy.vocabulary.retention_classification
+    - user.role.records_manager
     - views.view.retention_schedules
   module:
     - taxonomy
@@ -25,9 +26,10 @@ display:
     position: 0
     display_options:
       access:
-        type: perm
+        type: role
         options:
-          perm: 'access content'
+          role:
+            records_manager: records_manager
       cache:
         type: tag
         options: {  }
@@ -408,7 +410,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
-        - user.permissions
+        - user.roles
       tags:
         - 'config:field.storage.taxonomy_term.field_code'
   page_1:
@@ -425,6 +427,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
-        - user.permissions
+        - user.roles
       tags:
         - 'config:field.storage.taxonomy_term.field_code'
