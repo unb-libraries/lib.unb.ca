@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.taxonomy_term.field_code
     - taxonomy.vocabulary.retention_classification
+    - views.view.retention_schedules
   module:
     - taxonomy
     - text
@@ -385,6 +386,17 @@ display:
             value: "<p>For further information contact <a href=\"mailto:\r\nemilie.mcdonnell@unb.ca \" target=\"_blank\">Emilie McDonnell</a>.</p>"
             format: library_page_html
           plugin_id: text
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          view_to_insert: 'retention_schedules:simple_search_form'
+          inherit_arguments: false
+          plugin_id: view
       footer: {  }
       empty: {  }
       relationships: {  }
