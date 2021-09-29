@@ -129,6 +129,9 @@ spec:
               mountPath: /app/html/sites/default
               name: drupal-persistent-storage
             -
+              mountPath: /app/private_filesystem
+              name: drupal-private-storage
+            -
               name: oclc-sftp-key
               mountPath: "/app/keys/oclc-sftp.root.key"
               subPath: "oclc-sftp.root.key"

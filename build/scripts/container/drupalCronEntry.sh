@@ -16,6 +16,9 @@ rm -f /etc/php7/conf.d/newrelic.ini
 # Populate secrets.
 /scripts/pre-init.d/90_apply_secrets.sh
 
+# Set private filesystem
+/scripts/pre-init.d/80_set_private_filesystem.sh
+
 # Run cron.
 /scripts/drupalCron.sh
 

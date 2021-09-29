@@ -8,6 +8,9 @@
 // Specify install profile.
 $settings['install_profile'] = 'minimal';
 
+// Private file system.
+$settings['file_private_path'] = '/app/private_filesystem';
+
 // Redis.
 $settings['cache_prefix']['default'] = 'libweb_';
 $conf['chq_redis_cache_enabled'] = TRUE;
