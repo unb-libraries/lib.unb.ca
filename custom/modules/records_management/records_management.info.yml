@@ -6,3 +6,4 @@ package: 'UNB'
 dependencies:
   - datetime_plus
   - custom_entity
+  - custom_entity_ui

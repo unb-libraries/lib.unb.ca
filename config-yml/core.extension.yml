@@ -26,6 +26,7 @@ module:
   contextual: 0
   ctools: 0
   custom_entity: 0
+  custom_entity_ui: 0
   datetime: 0
   datetime_plus: 0
   dynamic_page_cache: 0

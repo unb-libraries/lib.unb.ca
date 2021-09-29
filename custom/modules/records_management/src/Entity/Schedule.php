@@ -413,24 +413,6 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
         'weight' => 96,
       ]);
 
-    // @todo Set file upload location.
-    $fields[self::FIELD_FILE] = BaseFieldDefinition::create('file')
-      ->setLabel(t('Scanned original'))
-      ->setRequired(FALSE)
-      ->setSettings([
-        'file_extensions' => implode(' ', [
-          'pdf',
-          'docx',
-          'doc'
-        ]),
-      ])
-      ->setDisplayOptions('view', [
-        'weight' => 97,
-      ])
-      ->setDisplayOptions('form', [
-        'weight' => 97,
-      ]);
-
     return $fields;
   }
 
