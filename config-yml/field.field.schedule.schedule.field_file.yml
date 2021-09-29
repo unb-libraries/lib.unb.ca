@@ -19,7 +19,7 @@ default_value: {  }
 default_value_callback: ''
 settings:
   file_directory: retention_schedules
-  file_extensions: 'pdf docx doc'
+  file_extensions: pdf
   max_filesize: ''
   description_field: false
   handler: 'default:file'
