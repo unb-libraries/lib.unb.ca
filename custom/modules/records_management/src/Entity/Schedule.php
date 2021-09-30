@@ -3,6 +3,7 @@
 namespace Drupal\records_management\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
+use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\custom_entity\Entity\EntityChangedTrait;
@@ -443,6 +444,16 @@ class Schedule extends ContentEntityBase implements ScheduleInterface, UserCreat
       ]);
 
     return $fields;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function save() {
+    if (!$this->isNew()) {
+      $this->setNewRevision(TRUE);
+    }
+    return parent::save();
   }
 
   /**
