@@ -22,8 +22,9 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"
  *     },
  *     "route_provider" = {
- *       "html" = "Drupal\custom_entity\Entity\Routing\HtmlRouteProvider"
+ *       "html" = "Drupal\records_management\Entity\Routing\ScheduleRouteProvider"
  *     },
+ *     "storage" = "Drupal\records_management\Entity\Storage\ScheduleStorage",
  *     "access" = "Drupal\custom_entity\Entity\Access\EntityAccessControlHandler",
  *   },
  *   base_table = "schedule",
@@ -39,7 +40,10 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *     "canonical" = "/records/schedules/{schedule}",
  *     "add-form" = "/records/schedules/add",
  *     "edit-form" = "/records/schedules/{schedule}/edit",
- *     "delete-form" = "/records/schedules/{schedule}/delete"
+ *     "delete-form" = "/records/schedules/{schedule}/delete",
+ *     "revisions" = "/records/schedules/{schedule}/revisions",
+ *     "revision" = "/records/schedules/{schedule}/revisions/{schedule_revision}",
+ *     "revision-restore-form" = "/records/schedules/{schedule}/revisions/{schedule_revision}/restore",
  *   },
  *   field_ui_base_route = "entity.schedule.settings",
  * )
