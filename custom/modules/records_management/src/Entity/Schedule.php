@@ -181,7 +181,6 @@ class Schedule extends ContentEntityBase implements ScheduleInterface, UserCreat
    * {@inheritDoc}
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
-    // @todo: Make all fields revisionable.
     $fields = parent::baseFieldDefinitions($entity_type);
 
     $fields[self::FIELD_CREATED] = static::getCreatedBaseFieldDefinition($entity_type);
@@ -193,6 +192,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface, UserCreat
       ->setLabel(t('Classification'))
       ->setRequired(TRUE)
       ->setCardinality(1)
+      ->setRevisionable(TRUE)
       ->setSettings([
         'target_type' => 'taxonomy_term',
         'handler_settings' => [
@@ -213,6 +213,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface, UserCreat
       ->setLabel(t('Record schedule number'))
       ->setRequired(TRUE)
       ->setCardinality(1)
+      ->setRevisionable(TRUE)
       ->addPropertyConstraints('value', [
         'Regex' => [
           'pattern' => '/^[1-9]{1}[0-9]{3}(\.((0[1-9])|[1-9][0-9]))?$/',
@@ -229,6 +230,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface, UserCreat
       ->setLabel(t('Record series name'))
       ->setRequired(TRUE)
       ->setCardinality(1)
+      ->setRevisionable(TRUE)
       ->setDisplayOptions('view', [
         'weight' => 20,
       ])
@@ -239,6 +241,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface, UserCreat
     $fields[self::FIELD_OOPR] = BaseFieldDefinition::create('string')
       ->setLabel(t('Office of Primary Responsibility'))
       ->setCardinality(1)
+      ->setRevisionable(TRUE)
       ->setDisplayOptions('view', [
         'weight' => 30,
       ])
@@ -250,6 +253,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface, UserCreat
       ->setLabel(t('Purpose of Record'))
       ->setRequired(TRUE)
       ->setCardinality(1)
+      ->setRevisionable(TRUE)
       ->setDisplayOptions('view', [
         'weight' => 40,
       ])
@@ -272,6 +276,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface, UserCreat
       ->setLabel(t('Description of Record (summary of content)'))
       ->setRequired(TRUE)
       ->setCardinality(1)
+      ->setRevisionable(TRUE)
       ->setDisplayOptions('view', [
         'weight' => 50,
       ])
@@ -294,6 +299,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface, UserCreat
       ->setLabel(t('Primary Office of Responsibility'))
       ->setRequired(TRUE)
       ->setCardinality(1)
+      ->setRevisionable(TRUE)
       ->setSetting('target_type', 'retention_details')
       ->setDisplayOptions('view', [
         'type' => 'entity_reference_entity_view',
@@ -308,6 +314,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface, UserCreat
       ->setLabel(t('Secondary Office of Responsibility'))
       ->setRequired(FALSE)
       ->setCardinality(1)
+      ->setRevisionable(TRUE)
       ->setSetting('target_type', 'retention_details')
       ->setDisplayOptions('view', [
         'type' => 'entity_reference_entity_view',
@@ -322,6 +329,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface, UserCreat
       ->setLabel(t('Retention Rationale and Citation'))
       ->setRequired(FALSE)
       ->setCardinality(1)
+      ->setRevisionable(TRUE)
       ->setSettings([
         'allowed_formats' => [
           'no_media_html',
@@ -344,6 +352,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface, UserCreat
       ->setLabel(t('Vital record'))
       ->setRequired(TRUE)
       ->setCardinality(1)
+      ->setRevisionable(TRUE)
       ->setSettings([
         'off_label' => t('No'),
         'on_label' => t('Yes'),
@@ -376,6 +385,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface, UserCreat
       ->setLabel(t('Schedule creation date'))
       ->setRequired(TRUE)
       ->setCardinality(1)
+      ->setRevisionable(TRUE)
       ->setSettings([
         'timezone' => 'system',
         'datetime_type' => 'date',
@@ -394,6 +404,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface, UserCreat
       ->setLabel(t('Revision date'))
       ->setRequired(FALSE)
       ->setCardinality(1)
+      ->setRevisionable(TRUE)
       ->setSettings([
         'timezone' => 'system',
         'datetime_type' => 'date',
@@ -412,6 +423,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface, UserCreat
       ->setLabel(t('Notes / Additional Information'))
       ->setRequired(FALSE)
       ->setCardinality(1)
+      ->setRevisionable(TRUE)
       ->setSettings([
         'allowed_formats' => [
           'no_media_html',
