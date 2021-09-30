@@ -5,6 +5,10 @@ namespace Drupal\records_management\Entity;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\custom_entity\Entity\EntityChangedTrait;
+use Drupal\custom_entity\Entity\EntityCreatedTrait;
+use Drupal\custom_entity\Entity\UserCreatedInterface;
+use Drupal\custom_entity\Entity\UserEditedInterface;
 
 /**
  * The "Retention schedule" entity.
@@ -48,7 +52,10 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *   field_ui_base_route = "entity.schedule.settings",
  * )
  */
-class Schedule extends ContentEntityBase implements ScheduleInterface {
+class Schedule extends ContentEntityBase implements ScheduleInterface, UserCreatedInterface, UserEditedInterface {
+
+  use EntityCreatedTrait;
+  use EntityChangedTrait;
 
   /**
    * {@inheritDoc}
@@ -174,7 +181,13 @@ class Schedule extends ContentEntityBase implements ScheduleInterface {
    * {@inheritDoc}
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
+    // @todo: Make all fields revisionable.
     $fields = parent::baseFieldDefinitions($entity_type);
+
+    $fields[self::FIELD_CREATED] = static::getCreatedBaseFieldDefinition($entity_type);
+    $fields[self::FIELD_CREATOR] = static::getCreatorBaseFieldDefinition($entity_type);
+    $fields[self::FIELD_EDITED] = static::getEditedBaseFieldDefinition($entity_type);
+    $fields[self::FIELD_EDITOR] = static::getEditorBaseFieldDefinition($entity_type);
 
     $fields[self::FIELD_CLASSIFICATION] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Classification'))
