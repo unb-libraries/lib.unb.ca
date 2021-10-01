@@ -359,7 +359,7 @@ display:
             operator_limit_selection: false
             operator_list: {  }
       sorts: {  }
-      title: 'Retention Classifications'
+      title: 'Records Management'
       header:
         area:
           id: area
@@ -419,7 +419,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: records/classifications
+      path: records
     cache_metadata:
       max-age: -1
       contexts:
