@@ -1,0 +1,26 @@
+uuid: 526bb3de-e4d2-4a86-a968-045a3a6d4e78
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.schedule.schedule.field_file
+  module:
+    - datetime
+    - file
+    - records_management
+    - text
+id: schedule.schedule.default
+targetEntityType: schedule
+bundle: schedule
+mode: default
+content:
+  field_file:
+    type: file_default
+    weight: 97
+    region: content
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,26 @@
+uuid: c450a8f1-d4fa-41b3-adf3-c19f869b3a93
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.schedule.schedule.field_file
+  module:
+    - allowed_formats
+    - datetime_plus
+    - file
+    - inline_entity_form
+    - records_management
+    - text
+id: schedule.schedule.default
+targetEntityType: schedule
+bundle: schedule
+mode: default
+content:
+  field_file:
+    type: file_generic
+    weight: 97
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+hidden: {  }
