@@ -14,7 +14,6 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *   label = @Translation("Retention details"),
  *   label_plural = @Translation("Retention details"),
  *   handlers = {
- *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "form" = {
  *       "default" = "Drupal\Core\Entity\ContentEntityForm",
  *     },
@@ -78,6 +77,7 @@ class RetentionDetails extends ContentEntityBase implements RetentionDetailsInte
       ->setRevisionable(TRUE)
       ->setCardinality(1)
       ->setDisplayOptions('view', [
+        'label' => 'inline',
         'weight' => 0,
       ])
       ->setDisplayOptions('form', [
@@ -91,6 +91,7 @@ class RetentionDetails extends ContentEntityBase implements RetentionDetailsInte
       ->setRevisionable(TRUE)
       ->setCardinality(1)
       ->setDisplayOptions('view', [
+        'label' => 'inline',
         'weight' => 10,
       ])
       ->setDisplayOptions('form', [
@@ -104,6 +105,7 @@ class RetentionDetails extends ContentEntityBase implements RetentionDetailsInte
       ->setRevisionable(TRUE)
       ->setCardinality(1)
       ->setDisplayOptions('view', [
+        'label' => 'inline',
         'weight' => 20,
       ])
       ->setDisplayOptions('form', [
@@ -117,6 +119,7 @@ class RetentionDetails extends ContentEntityBase implements RetentionDetailsInte
       ->setRevisionable(TRUE)
       ->setCardinality(1)
       ->setDisplayOptions('view', [
+        'label' => 'inline',
         'weight' => 30,
       ])
       ->setDisplayOptions('form', [
