@@ -151,8 +151,8 @@ display:
           alter:
             alter_text: false
             text: ''
-            make_link: true
-            path: '/records/schedules?classification={{ tid }}'
+            make_link: false
+            path: ''
             absolute: false
             external: false
             replace_spaces: false
@@ -214,8 +214,8 @@ display:
           alter:
             alter_text: false
             text: ''
-            make_link: false
-            path: ''
+            make_link: true
+            path: '/records/schedules?classification={{ tid }}'
             absolute: false
             external: false
             replace_spaces: false
