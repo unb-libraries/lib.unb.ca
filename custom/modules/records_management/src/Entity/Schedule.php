@@ -402,7 +402,7 @@ class Schedule extends ContentEntityBase implements ScheduleInterface, UserCreat
       ]);
 
     $fields[self::FIELD_REVISION_DATE] = BaseFieldDefinition::create('datetime_timezone')
-      ->setLabel(t('Revision date'))
+      ->setLabel(t('Last revision date'))
       ->setRequired(FALSE)
       ->setCardinality(1)
       ->setRevisionable(TRUE)

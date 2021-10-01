@@ -1319,7 +1319,7 @@ display:
           relationship: none
           group_type: group
           admin_label: 'Schedule revision date (indexed)'
-          label: 'Revised on'
+          label: 'Last revised on'
           exclude: false
           alter:
             alter_text: false
@@ -1859,7 +1859,7 @@ display:
           relationship: none
           group_type: group
           admin_label: 'Schedule revision date (indexed)'
-          label: 'Revised on'
+          label: 'Last revised on'
           exclude: false
           alter:
             alter_text: false
