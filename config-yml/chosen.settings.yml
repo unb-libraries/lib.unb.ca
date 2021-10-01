@@ -3,7 +3,7 @@ minimum_multiple: 6
 disable_search_threshold: 7
 minimum_width: 0
 use_relative_width: false
-jquery_selector: 'select:not(.custom-chosen-select):not(.custom-select):visible'
+jquery_selector: 'select:not(.custom-chosen-select):not(.custom-select):not(#edit-classification):visible'
 search_contains: false
 disable_search: false
 allow_single_deselect: false
