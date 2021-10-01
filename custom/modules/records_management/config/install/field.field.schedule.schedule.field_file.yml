@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.schedule.field_file
+  module:
+    - file
+    - records_management
+id: schedule.schedule.field_file
+field_name: field_file
+entity_type: schedule
+bundle: schedule
+label: 'Scanned Original'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: retention_schedules
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file
