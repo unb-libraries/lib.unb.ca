@@ -1,0 +1,18 @@
+system.admin.unblib.eresources:
+  title: eResources
+  description: 'UNB Libraries eResources.'
+  route_name: <front>
+  parent: system.admin.unblib
+  weight: 0
+system.admin.unblib.eresources.harvested_collection:
+  title: Harvested Collections
+  description: 'eResources Harvested Collections.'
+  route_name: entity.eresources_harvested_collection.collection
+  parent: system.admin.unblib.eresources
+  weight: 0
+system.admin.unblib.eresources.harvested_collection.add:
+  title: Add new collection
+  description: 'Add new harvested collection.'
+  route_name: entity.eresources_harvested_collection.add_form
+  parent: system.admin.unblib.eresources.harvested_collection
+  weight: -25
