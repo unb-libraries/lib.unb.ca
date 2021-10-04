@@ -1,8 +1,34 @@
+#toolbar-bar .toolbar-tray a.is-active {
+    cursor: default;
+    text-decoration: none;
+}
+#toolbar-bar .toolbar-tab > .toolbar-item:hover,
+#toolbar-bar .toolbar-tab > .toolbar-item:focus {
+    /* Improve top-level menu item contrast */
+    background-image: inherit;
+}
+.toolbar .toolbar-tray .menu-item a:focus {
+    /* Override Admin Toolbar light blue focus bg-color */
+    background-color: inherit;
+}
+.toolbar .custom-menu-icon:before {
+    /* Add custom menu item icon */
+    background-image: url(/modules/custom/lib_core/img/favicon-16x16.png);
+    background-repeat: no-repeat;
+    background-position: 100% 40%;
+}
+
+/* Toolbar Vertical Orientation */
+.toolbar-tray-vertical .custom-editor-menu {
+    /* Add space between long menu title text and toggle icon */
+    margin-right: .25rem;
+}
 .toolbar .toolbar-tray .menu-item a:focus {
   background-color: #e0e0d8;
 }
 #toolbar-bar .toolbar-tray a.is-active {
-  color: #767676;
+  background-color: #FFEDB8;
+  color: #363636;
   cursor: default;
   text-decoration: none;
 }
