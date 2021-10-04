@@ -115,7 +115,7 @@ settings:
   confirmation_type: url
   confirmation_title: ''
   confirmation_message: ''
-  confirmation_url: 'https://store-csagroup-org.proxy.hil.unb.ca/ondemand/s/'
+  confirmation_url: 'https://login.proxy.hil.unb.ca/login?url=https://store.csagroup.org/ondemand/s/'
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
