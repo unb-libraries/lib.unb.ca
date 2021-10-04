@@ -8,3 +8,27 @@ system.admin.unblib:
     attributes:
       class:
         - custom-menu-icon
+system.admin.content.add_content.library_page:
+  title: Add Library Page
+  description: 'Add a Library Page (i.e. basic page content).'
+  route_name:  node.add
+  route_parameters:
+    node_type: 'library_page'
+  parent: system.admin_content
+  weight: -20
+system.admin.content.add_content.news_post:
+  title: Add News Post
+  description: 'Add content for news section.'
+  route_name:  node.add
+  route_parameters:
+    node_type: 'news_post'
+  parent: system.admin_content
+  weight: -15
+system.admin.content.add_content.booking_space:
+  title: Add Booking Space
+  description: 'Add Booking Space content.'
+  route_name:  node.add
+  route_parameters:
+    node_type: 'booking_space'
+  parent: system.admin_content
+  weight: -10
