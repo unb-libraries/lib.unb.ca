@@ -1,0 +1,10 @@
+system.admin.unblib:
+  title: UNB Libraries
+  description: 'UNB Libraries applications.'
+  route_name: <front>
+  parent: system.admin
+  weight: -100
+  options:
+    attributes:
+      class:
+        - custom-menu-icon
