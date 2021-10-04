@@ -115,7 +115,7 @@ settings:
   confirmation_type: url
   confirmation_title: ''
   confirmation_message: ''
-  confirmation_url: 'https://cds-frost-com.proxy.hil.unb.ca'
+  confirmation_url: 'https://login.proxy.hil.unb.ca/login?url=https://cds.frost.com'
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
