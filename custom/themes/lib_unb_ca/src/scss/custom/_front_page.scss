@@ -21,6 +21,9 @@
   a img {
     @include opacity(1);
     @include css3-prefix(transition, opacity .3s);
+    /* Define broken image min dimensions */
+    min-height: 100px;
+    min-width: 250px;
   }
   a:hover img {
     @include opacity(.75);
