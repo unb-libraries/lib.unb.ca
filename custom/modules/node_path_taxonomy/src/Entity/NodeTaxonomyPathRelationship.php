@@ -33,6 +33,11 @@ use Drupal\Core\Entity\EntityStorageInterface;
  *     "label" = "node_type",
  *     "uuid" = "uuid"
  *   },
+ *   config_export = {
+ *      "id",
+ *      "node_type",
+ *      "vid",
+ *   },
  *   links = {
  *     "canonical" = "/admin/config/node_path_taxonomy/node_taxonomy_path_relationship/{node_taxonomy_path_relationship}",
  *     "add-form" = "/admin/config/node_path_taxonomy/node_taxonomy_path_relationship/add",
