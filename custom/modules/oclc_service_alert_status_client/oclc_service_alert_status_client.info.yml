@@ -2,4 +2,5 @@ name: 'OCLC Service Alert Status Client'
 type: module
 description: 'Displays OCLC service alert message.'
 core: 8.x
+core_version_requirement: ^8 || ^9
 package: 'Alerts'

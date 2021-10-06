@@ -2,6 +2,7 @@ name: 'Node Paths from Taxonomy Tree'
 type: module
 description: 'Build node path aliases from a taxonomy tree'
 core: 8.x
+core_version_requirement: ^8 || ^9
 package: 'Node Path Taxonomy'
 dependencies:
   - drupal:node

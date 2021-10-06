@@ -2,6 +2,7 @@ name: 'UNB Records Management'
 type: module
 description: 'Administer UNB retention schedules.'
 core: 8.x
+core_version_requirement: ^8 || ^9
 package: 'UNB'
 dependencies:
   - datetime_plus

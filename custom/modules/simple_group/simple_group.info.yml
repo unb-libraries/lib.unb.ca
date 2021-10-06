@@ -2,4 +2,5 @@ name: 'Simple Group'
 type: module
 description: 'Simple Group'
 core: 8.x
+core_version_requirement: ^8 || ^9
 package: 'Simple Group'
