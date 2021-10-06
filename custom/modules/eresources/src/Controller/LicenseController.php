@@ -95,7 +95,9 @@ class LicenseController extends ControllerBase {
    */
   public function list() {
     $perPage = 25;
-    $page = pager_find_page();
+    $pagerManager = \Drupal::service('pager.manager');
+    $pagerParameters = \Drupal::service('pager.parameters');
+    $page = $pagerParameters->findPage();
     $start = $perPage * $page + 1;
 
     $api = $this->oclcApi('wms_license_manager', ['authorization' => $this->oclcAuthorization()]);
@@ -112,7 +114,7 @@ class LicenseController extends ControllerBase {
         break;
       }
     }
-    pager_default_initialize($total, $perPage);
+    $pagerManager->createPager($total, $perPage);
 
     $results = [];
     foreach ($licenses->entries as $license) {

@@ -146,7 +146,9 @@ class KbFormBase extends FormBase {
     $query = $req->get('query');
     if (!empty($query) && $this->getFormId() == $req->get('form_id')) {
       $perPage = 50;
-      $page = pager_find_page();
+      $pagerManager = \Drupal::service('pager.manager');
+      $pagerParameters = \Drupal::service('pager.parameters');
+      $page = $pagerParameters->findPage();
       $start = $perPage * $page + 1;
 
       $form[$form_wrapper]['query_wrapper']['query']['#value'] = $query;
@@ -180,7 +182,7 @@ class KbFormBase extends FormBase {
       else {
         $entries = $result->entries;
         $form[$form_wrapper]['search_results']['page'] = ['#markup' => "<div class='alert alert-info rounded-0'>Showing results {$start} to " . ($start + count($entries) - 1) . " of {$total} for search <b>\"{$query}\"</b>.</div>"];
-        pager_default_initialize($total, $perPage);
+        $pagerManager->createPager($total, $perPage);
         $form[$form_wrapper]['search_results']['top-pager'] = ['#type' => 'pager'];
         $form[$form_wrapper]['search_results']['results'] = [
           '#theme' => 'eresources',
