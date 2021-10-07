@@ -274,6 +274,7 @@
         "drupal/jquery_ui_slider": "1.1",
         "drupal/jquery_ui_touch_punch": "1.0.0",
         "drupal/key": "1.14",
+        "drupal/ldap": "3.0-beta7",
         "drupal/linkit": "5.0-beta13",
         "drupal/login_destination": "2.0-beta1",
         "drupal/media_entity_browser": "2.0-alpha3",
