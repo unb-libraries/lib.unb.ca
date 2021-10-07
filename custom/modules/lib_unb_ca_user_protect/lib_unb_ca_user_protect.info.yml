@@ -1,6 +1,6 @@
 name: 'UNB Libraries User Protection'
 type: module
-description: 'Prevent users from editing upstream LDAP fields'
+description: 'Restricts user profile field editing to members of the Data Administrator role.'
 core: 8.x
 core_version_requirement: ^8 || ^9
 package: 'UNB Libraries'
