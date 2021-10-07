@@ -16,3 +16,4 @@ permissions:
   - 'view media'
   - 'view own webform submission'
   - 'view portolan_record entities'
+  - 'view sp metadata'

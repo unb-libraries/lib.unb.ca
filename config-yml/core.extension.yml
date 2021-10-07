@@ -67,12 +67,10 @@ module:
   language: 0
   layout_builder: 0
   layout_discovery: 0
-  ldap_authentication: 0
   ldap_servers: 0
   ldap_user: 0
   lib_core: 0
   lib_unb_ca_page_text_content: 0
-  lib_unb_ca_user_protect: 0
   lib_unb_custom_entity: 0
   link: 0
   linkit: 0
@@ -101,6 +99,7 @@ module:
   records_management: 0
   redirect: 0
   redis: 0
+  samlauth: 0
   search_api: 0
   search_api_autocomplete: 0
   search_api_exclude: 0
@@ -133,6 +132,7 @@ module:
   node_path_taxonomy_group_perms: 3
   views: 10
   paragraphs: 11
+  saml_features: 12
   tvi: 15
   minimal: 1000
 theme:
