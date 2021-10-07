@@ -1,0 +1,21 @@
+field_mappings:
+  -
+    attribute_name: givenName
+    field_name: field_first_name
+    link_user_order: null
+  -
+    attribute_name: sn
+    field_name: field_last_name
+    link_user_order: null
+  -
+    attribute_name: telephoneNumber
+    field_name: field_phone_number
+    link_user_order: null
+  -
+    attribute_name: l
+    field_name: field_room_number
+    link_user_order: null
+  -
+    attribute_name: title
+    field_name: field_position_title
+    link_user_order: null
