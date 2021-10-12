@@ -1,5 +1,5 @@
 dockworker:
-  version: '3.0'
+  version: '4'
   application:
     name: lib.unb.ca
     finish_marker: '99_zz_notify_user_URI'
@@ -7,12 +7,14 @@ dockworker:
       - LIB
       - RECORDS
     upstream_images:
-      - ghcr.io/unb-libraries/drupal:8.x-3.x-unblib
+      - ghcr.io/unb-libraries/drupal:9.x-1.x-unblib
     uuid: 3101
   deployment:
     environments:
       - dev
       - prod
+  drupal:
+    major: 9
   github:
     repo: lib.unb.ca
     owner: unb-libraries

@@ -20,3 +20,5 @@ require_once dirname(__FILE__) . "/settings.redis.inc";
 if (extension_loaded('newrelic')) {
   require_once dirname(__FILE__) . "/settings.newrelic.inc";
 }
+
+$settings['config_sync_directory'] = '../configuration';
