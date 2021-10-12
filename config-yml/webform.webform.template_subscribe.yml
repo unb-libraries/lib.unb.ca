@@ -17,7 +17,23 @@ id: template_subscribe
 title: Subscribe
 description: 'A subscribe to mailing list webform template.'
 category: ''
-elements: "first_name:\n  '#title': 'First Name'\n  '#type': textfield\n  '#required': true\nlast_name:\n  '#title': 'Last Name'\n  '#type': textfield\n  '#required': true\nemail:\n  '#title': Email\n  '#type': email\n  '#required': true\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': Subscribe\n"
+elements: |
+  first_name:
+    '#title': 'First Name'
+    '#type': textfield
+    '#required': true
+  last_name:
+    '#title': 'Last Name'
+    '#type': textfield
+    '#required': true
+  email:
+    '#title': Email
+    '#type': email
+    '#required': true
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit__label': Subscribe
 css: ''
 javascript: ''
 settings:

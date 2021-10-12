@@ -9,6 +9,7 @@ dependencies:
     - node.type.booking_space
   module:
     - layout_builder
+    - layout_discovery
     - link
     - user
 third_party_settings:
@@ -20,6 +21,7 @@ third_party_settings:
         layout_id: layout_onecol
         layout_settings:
           label: ''
+          context_mapping: {  }
         components:
           02b8dbb3-92d4-4304-9b2c-455476006a72:
             uuid: 02b8dbb3-92d4-4304-9b2c-455476006a72

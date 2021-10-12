@@ -12,7 +12,70 @@ id: frost_sullivan
 title: 'Frost & Sullivan'
 description: 'Ported from&nbsp;https://web.lib.unb.ca/eresources/special/frost.php'
 category: ''
-elements: "'#attributes':\n  class:\n    - mb-4\nfrost_intro:\n  '#type': processed_text\n  '#text': |\n    <p>The Frost &amp; Sullivan database provides in-depth market research and industry reports in the following high-technology sectors:</p>\n    \n    <ul>\n    \t<li>Aerospace &amp; Defense</li>\n    \t<li>Automotive &amp; Transportation</li>\n    \t<li>Chemicals, Materials and Food</li>\n    \t<li>Electronics &amp; Security</li>\n    \t<li>Energy &amp; Power Systems</li>\n    \t<li>Environment &amp; Building Technologies</li>\n    \t<li>Healthcare</li>\n    \t<li>Industrial Automation &amp; Process Control</li>\n    \t<li>Information &amp; Communication Technologies</li>\n    \t<li>Measurement &amp; Instrumentation</li>\n    </ul>\n    \n  '#format': library_page_html\nfrost_restrictions:\n  '#type': processed_text\n  '#text': |\n    <h2>Restrictions on Use:</h2>\n    \n    <p>Our licensing agreement with Frost &amp; Sullivan limits access to current students, faculty and staff of the University of New Brunswick and St. Thomas University. As such, database login via our UNB Libraries proxy server is required.</p>\n    \n    <p>Information is for individual, non-commercial, educational and research purposes only. Users are not able to systematically download or retain substantial portions of information.&nbsp;<strong>NOTE:</strong> UNB Libraries does not subscribe to all Frost &amp; Sullivan content.</p>\n    \n    <dl class=\"ml-4\">\n    \t<dt>Students</dt>\n    \t<dd>Students can access, view and print information, but the database <strong>does not</strong> offer PDF downloading capabilities.</dd>\n    \t<dt>Faculty:</dt>\n    \t<dd>Faculty or staff requiring PDF downloading capabilities are required to contact Jeannie Bail (<a href=\"/contact-unb-libraries-staff?recipient=jbail\">j.bail@unb.ca</a> | (506) 458-7212). Please include your university/departmental affiliation.</dd>\n    </dl>\n    \n  '#format': library_page_html\nfrost_agree_container:\n  '#type': container\n  '#attributes':\n    class:\n      - 'alert alert-danger mt-4 p-2'\n  i_agree_to_use_this_information_for_individual_educational_and_r:\n    '#type': checkbox\n    '#title': 'I agree to use this information for individual educational and research purposes only, and not for commercial purposes.'\n    '#required': true\n    '#required_error': 'Please check this box if you want to proceed'\n    '#wrapper_attributes':\n      class:\n        - m-3\n    '#attributes':\n      class:\n        - mb-3\n  actions:\n    '#type': webform_actions\n    '#title': 'Submit button(s)'\n    '#states':\n      disabled:\n        ':input[name=\"i_agree_to_use_this_information_for_individual_educational_and_r\"]':\n          unchecked: true\n    '#submit__label': 'Access Frost & Sullivan'"
+elements: |-
+  '#attributes':
+    class:
+      - mb-4
+  frost_intro:
+    '#type': processed_text
+    '#text': |
+      <p>The Frost &amp; Sullivan database provides in-depth market research and industry reports in the following high-technology sectors:</p>
+      
+      <ul>
+      	<li>Aerospace &amp; Defense</li>
+      	<li>Automotive &amp; Transportation</li>
+      	<li>Chemicals, Materials and Food</li>
+      	<li>Electronics &amp; Security</li>
+      	<li>Energy &amp; Power Systems</li>
+      	<li>Environment &amp; Building Technologies</li>
+      	<li>Healthcare</li>
+      	<li>Industrial Automation &amp; Process Control</li>
+      	<li>Information &amp; Communication Technologies</li>
+      	<li>Measurement &amp; Instrumentation</li>
+      </ul>
+      
+    '#format': library_page_html
+  frost_restrictions:
+    '#type': processed_text
+    '#text': |
+      <h2>Restrictions on Use:</h2>
+      
+      <p>Our licensing agreement with Frost &amp; Sullivan limits access to current students, faculty and staff of the University of New Brunswick and St. Thomas University. As such, database login via our UNB Libraries proxy server is required.</p>
+      
+      <p>Information is for individual, non-commercial, educational and research purposes only. Users are not able to systematically download or retain substantial portions of information.&nbsp;<strong>NOTE:</strong> UNB Libraries does not subscribe to all Frost &amp; Sullivan content.</p>
+      
+      <dl class="ml-4">
+      	<dt>Students</dt>
+      	<dd>Students can access, view and print information, but the database <strong>does not</strong> offer PDF downloading capabilities.</dd>
+      	<dt>Faculty:</dt>
+      	<dd>Faculty or staff requiring PDF downloading capabilities are required to contact Jeannie Bail (<a href="/contact-unb-libraries-staff?recipient=jbail">j.bail@unb.ca</a> | (506) 458-7212). Please include your university/departmental affiliation.</dd>
+      </dl>
+      
+    '#format': library_page_html
+  frost_agree_container:
+    '#type': container
+    '#attributes':
+      class:
+        - 'alert alert-danger mt-4 p-2'
+    i_agree_to_use_this_information_for_individual_educational_and_r:
+      '#type': checkbox
+      '#title': 'I agree to use this information for individual educational and research purposes only, and not for commercial purposes.'
+      '#required': true
+      '#required_error': 'Please check this box if you want to proceed'
+      '#wrapper_attributes':
+        class:
+          - m-3
+      '#attributes':
+        class:
+          - mb-3
+    actions:
+      '#type': webform_actions
+      '#title': 'Submit button(s)'
+      '#states':
+        disabled:
+          ':input[name="i_agree_to_use_this_information_for_individual_educational_and_r"]':
+            unchecked: true
+      '#submit__label': 'Access Frost & Sullivan'
 css: ''
 javascript: ''
 settings:

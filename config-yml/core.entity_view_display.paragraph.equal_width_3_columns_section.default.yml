@@ -20,6 +20,7 @@ third_party_settings:
         layout_settings:
           label: ''
           column_widths: 33-34-33
+          context_mapping: {  }
         components:
           ac3907d2-c04d-4f17-862d-01fbbf27c7e1:
             uuid: ac3907d2-c04d-4f17-862d-01fbbf27c7e1

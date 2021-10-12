@@ -20,7 +20,49 @@ id: your_comments_and_suggestions
 title: 'Your Comments and Suggestions'
 description: 'Simple comment form that can be sent anonymously and optionally directed to a specific UNB Library.'
 category: ''
-elements: "container:\n  '#type': container\n  '#attributes':\n    class:\n      - theme-dark\n  share_your_thoughts:\n    '#type': textarea\n    '#title': 'Share Your Thoughts'\n    '#required': true\n  library:\n    '#type': radios\n    '#title': Library\n    '#options':\n      none: 'No specific library'\n      hil: 'Harriet Irving Library'\n      sfl: 'Science & Forestry Library'\n      ecsl: 'Engineering & Computer Science Library'\n      hwkc: 'Hans W. Klohn Commons (Saint John)'\n    '#required': true\n    '#default_value': none\n    '#wrapper_type': form_element\n  email:\n    '#type': textfield\n    '#title': Email\n    '#placeholder': 'Necessary to receive a response.'\n    '#input_mask': '''alias'': ''email'''\n    '#pattern': '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$'\n  actions:\n    '#type': webform_actions\n    '#title': 'Submit button(s)'\n    '#attributes':\n      class:\n        - webform-actions-center\n    '#submit__label': 'Send Your Message'\n    '#reset__label': Cancel\nprivacy:\n  '#type': webform_markup\n  '#wrapper_attributes':\n    class:\n      - message-privacy\n  '#admin_title': 'Privacy Statement'\n  '#markup': '<div class=\"alert alert-info\" role=\"alert\"><strong>Privacy: </strong> UNB Libraries will only use the comments you send to improve our website and services. We are not storing any personal information.</div>'"
+elements: |-
+  container:
+    '#type': container
+    '#attributes':
+      class:
+        - theme-dark
+    share_your_thoughts:
+      '#type': textarea
+      '#title': 'Share Your Thoughts'
+      '#required': true
+    library:
+      '#type': radios
+      '#title': Library
+      '#options':
+        none: 'No specific library'
+        hil: 'Harriet Irving Library'
+        sfl: 'Science & Forestry Library'
+        ecsl: 'Engineering & Computer Science Library'
+        hwkc: 'Hans W. Klohn Commons (Saint John)'
+      '#required': true
+      '#default_value': none
+      '#wrapper_type': form_element
+    email:
+      '#type': textfield
+      '#title': Email
+      '#placeholder': 'Necessary to receive a response.'
+      '#input_mask': '''alias'': ''email'''
+      '#pattern': '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$'
+    actions:
+      '#type': webform_actions
+      '#title': 'Submit button(s)'
+      '#attributes':
+        class:
+          - webform-actions-center
+      '#submit__label': 'Send Your Message'
+      '#reset__label': Cancel
+  privacy:
+    '#type': webform_markup
+    '#wrapper_attributes':
+      class:
+        - message-privacy
+    '#admin_title': 'Privacy Statement'
+    '#markup': '<div class="alert alert-info" role="alert"><strong>Privacy: </strong> UNB Libraries will only use the comments you send to improve our website and services. We are not storing any personal information.</div>'
 css: ''
 javascript: ''
 settings:
