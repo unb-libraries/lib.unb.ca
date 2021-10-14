@@ -24,11 +24,17 @@
     margin-right: .25rem;
 }
 .toolbar .toolbar-tray .menu-item a:focus {
-  background-color: #e0e0d8;
+    background-color: #e0e0d8;
 }
 #toolbar-bar .toolbar-tray a.is-active {
-  background-color: #FFEDB8;
-  color: #363636;
-  cursor: default;
-  text-decoration: none;
+    background-color: #FFEDB8;
+    color: #363636;
+    cursor: default;
+    text-decoration: none;
+}
+
+/* Display concise admin toolbar on small width devices */
+.toolbar-vertical #toolbar-bar {
+    position: fixed;
+    top: 0;
 }
