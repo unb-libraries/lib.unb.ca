@@ -3,7 +3,11 @@
 namespace Drupal\lib_core\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use GuzzleHttp\Client;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\oclc_api\Oclc\OclcAuthorizationInterface;
+use Drupal\oclc_api\Plugin\oclc\OclcApiManagerInterface;
+use Drupal\oclc_api\Plugin\oclc\OclcPluginManagerTrait;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides the UNB Libraries Laptop Availability Block.
@@ -14,7 +18,14 @@ use GuzzleHttp\Client;
  *   category = @Translation("UNB Libraries"),
  * )
  */
-class LaptopAvailability extends BlockBase {
+class LaptopAvailability extends BlockBase implements ContainerFactoryPluginInterface {
+
+  /**
+   * OCN for laptop availability.
+   *
+   * @var string
+   */
+  private $ocn = '807200481';
 
   /**
    * Location key (for regex) and full name pairs.
@@ -60,6 +71,49 @@ class LaptopAvailability extends BlockBase {
     ],
   ];
 
+  use OclcPluginManagerTrait;
+
+  /**
+   * An OCLC authorizer.
+   *
+   * @var \Drupal\oclc_api\Oclc\OclcAuthorizationInterface
+   */
+  protected $oclcAuthorization;
+
+  /**
+   * Class constructor.
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, OclcApiManagerInterface $oclc_api_manager, OclcAuthorizationInterface $oclc_authorizer) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+    $this->oclcApiManager = $oclc_api_manager;
+    $this->oclcAuthorization = $oclc_authorizer;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    $oclc_api_manager = $container->get('plugin.manager.oclc_api');
+    $oclc_authorizer = $container->get('oclc_authorizer.wms_availability');
+    return new static(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      $oclc_api_manager,
+      $oclc_authorizer
+    );
+  }
+
+  /**
+   * Retrieve the OCLC authorizer.
+   *
+   * @return \Drupal\oclc_api\Oclc\OclcAuthorizationInterface
+   *   An oclc authorizer.
+   */
+  protected function oclcAuthorization() {
+    return $this->oclcAuthorization;
+  }
+
   /**
    * {@inheritdoc}
    */
@@ -87,27 +141,14 @@ class LaptopAvailability extends BlockBase {
    *   List of locations and laptop availability.
    */
   private function getLaptopAvailability() {
-    $oclcApiWskey = '';
-    $oclcApiSecret = '';
-    include '/app/html/sites/all/settings/settings.oclc-api.inc';
-    $apiKey = [
-      'clientId' => $oclcApiWskey,
-      'clientSecret' => $oclcApiSecret,
-    ];
-    $inst = '133054';
-    $ocn = '807200481';
-
     try {
-      $accessToken = _lib_core_get_oclc_oauth_token(
-        $apiKey,
-        ["WMS_Availability", "context:{$inst}"]
-      );
-      $headers = ['Authorization' => "Bearer " . $accessToken->getToken()];
-      $url = "https://worldcat.org/circ/availability/sru/service?x-registryId={$inst}&query=no:ocm{$ocn}";
+      $configuration = ['authorization' => $this->oclcAuthorization()];
+      $response = $this->oclcApi('wms_availability', $configuration)
+        ->get('read', [
+          'oclc_id' => $this->ocn,
+        ]);
 
-      $client = new Client();
-      $response = $client->request('GET', $url, ['headers' => $headers]);
-      $xml = new \SimpleXMLElement((string) $response->getBody());
+      $xml = new \SimpleXMLElement($response);
       $holdings = $xml->records->record->recordData->opacRecord->holdings;
 
       $locationMap = $this->locationMap;

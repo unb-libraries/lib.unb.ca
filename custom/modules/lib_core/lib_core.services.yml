@@ -1,0 +1,12 @@
+services:
+  oclc.api_key.laptop_availability:
+    class: Drupal\key\Entity\Key
+    factory: [ '@key.repository', getKey ]
+    arguments: [ oclc_api ]
+    public: false
+  oclc_authorizer.wms_availability:
+    class: Drupal\oclc_api\Oclc\OclcV2Authorizer
+    arguments:
+      - '@oclc.api_key.laptop_availability'
+      - '@plugin.manager.oclc_api'
+      - ['wms_availability']
