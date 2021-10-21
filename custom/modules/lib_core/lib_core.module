@@ -673,29 +673,19 @@ function _lib_core_validate_recalls_barcode($barcode) {
   $validation_response = null;
 
   if (isset($barcode) && !empty($barcode)) {
-    $oclcApiIDMWskey = '';
-    $oclcApiIDMSecret = '';
-    include '/app/html/sites/all/settings/settings.oclc-api.inc';
-    $apiKey = [
-      'clientId' => $oclcApiIDMWskey,
-      'clientSecret' => $oclcApiIDMSecret,
-    ];
-    $inst = '133054';
-
     try {
-      $accessToken = _lib_core_get_oclc_oauth_token($apiKey, ["SCIM"]);
-      $headers = [
-        'Authorization' => 'Bearer ' . $accessToken->getToken(),
-        'Content-Type' => 'application/scim+json',
-      ];
-      $url = "https://{$inst}.share.worldcat.org/idaas/scim/v2/Users/.search";
+      $oclc_api_manager = \Drupal::service('plugin.manager.oclc_api');
+      $oclc_authorizer = \Drupal::Service('oclc_authorizer.wms_idm');
+
       $query = '{
         "schemas": ["urn:ietf:params:scim:api:messages:2.0:SearchRequest"],
         "filter": "External_ID eq \"' . $barcode . '\""
       }';
-      $client = new Client();
-      $response = $client->request('POST', $url, ['headers' => $headers, 'body' => $query]);
-      $body = json_decode($response->getBody(TRUE));
+
+      $configuration = ['authorization' => $oclc_authorizer];
+      $response = $oclc_api_manager->createInstance('worldshare_identity_management', $configuration)
+        ->post('search', $query, []);
+      $body = json_decode($response);
       if ($body->totalResults == 0) {
         $validation_response['status'] = 'invalid';
       } else {
@@ -738,24 +728,15 @@ function _lib_core_validate_recalls_ocn($ocn) {
   $validation_response = null;
 
   if (isset($ocn) && !empty(trim($ocn))) {
-    $oclcApiWskey = '';
-    $oclcApiSecret = '';
-    include '/app/html/sites/all/settings/settings.oclc-api.inc';
-    $apiKey = [
-      'clientId' => $oclcApiWskey,
-      'clientSecret' => $oclcApiSecret,
-    ];
-    $inst = '133054';
-
     try {
-      $accessToken = _lib_core_get_oclc_oauth_token($apiKey, ["WMS_Availability", "context:{$inst}"]);
-      $headers = ['Authorization' => "Bearer " . $accessToken->getToken()];
-      $url = "https://worldcat.org/circ/availability/sru/service?x-registryId={$inst}&query=no:ocm{$ocn}";
+      $oclc_api_manager = \Drupal::service('plugin.manager.oclc_api');
+      $oclc_authorizer = \Drupal::Service('oclc_authorizer.wms_availability');
 
-      $client = new Client();
-      $response = $client->request('GET', $url, ['headers' => $headers]);
+      $configuration = ['authorization' => $oclc_authorizer];
+      $response = $oclc_api_manager->createInstance('wms_availability', $configuration)
+        ->get('read', ['oclc_id' => $ocn]);
+      $xml = new \SimpleXMLElement($response);
 
-      $xml = new \SimpleXMLElement((string)$response->getBody());
       if ($xml->numberOfRecords == 0) {
         $validation_response['status'] = 'invalid';
       } else {

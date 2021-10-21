@@ -10,3 +10,14 @@ services:
       - '@oclc.api_key.laptop_availability'
       - '@plugin.manager.oclc_api'
       - ['wms_availability']
+  oclc.api_key.recall_idm:
+    class: Drupal\key\Entity\Key
+    factory: [ '@key.repository', getKey ]
+    arguments: [ oclc_idm_api ]
+    public: false
+  oclc_authorizer.wms_idm:
+    class: Drupal\oclc_api\Oclc\OclcV2Authorizer
+    arguments:
+      - '@oclc.api_key.recall_idm'
+      - '@plugin.manager.oclc_api'
+      - ['worldshare_identity_management']
