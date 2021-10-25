@@ -316,6 +316,7 @@ display:
         filter_groups: false
         style: false
         row: false
+        cache: false
       fields:
         nothing:
           id: nothing
@@ -413,6 +414,9 @@ display:
           inline: {  }
           separator: ''
           hide_empty: false
+      cache:
+        type: none
+        options: {  }
     cache_metadata:
       max-age: -1
       contexts:
