@@ -98,7 +98,6 @@ module:
   records_management: 0
   redirect: 0
   redis: 0
-  saml_features: 0
   samlauth: 0
   samlauth_user_fields: 0
   search_api: 0
@@ -133,6 +132,7 @@ module:
   node_path_taxonomy_group_perms: 3
   views: 10
   paragraphs: 11
+  saml_features: 12
   tvi: 15
   minimal: 1000
 theme:
