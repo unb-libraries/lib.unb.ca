@@ -19,7 +19,6 @@ third_party_settings:
         layout_settings:
           label: ''
           column_widths: 67-33
-          context_mapping: {  }
         components:
           377808aa-f883-4e63-af55-978a48ad778b:
             uuid: 377808aa-f883-4e63-af55-978a48ad778b
