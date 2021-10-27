@@ -86,7 +86,7 @@ class RetentionDetails extends ContentEntityBase implements RetentionDetailsInte
 
     $fields[self::FIELD_DURATION_OFFICE] = BaseFieldDefinition::create('string')
       ->setLabel(t('Active'))
-      ->setDescription(t('Time spent in office filling space.'))
+      ->setDescription(t('Time spent in office filing space.'))
       ->setRequired(FALSE)
       ->setRevisionable(TRUE)
       ->setCardinality(1)
