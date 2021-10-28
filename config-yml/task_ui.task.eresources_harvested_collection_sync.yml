@@ -1,0 +1,10 @@
+uuid: 62e2fdf7-c0ee-4760-b715-6bac9f6101eb
+langcode: en
+status: true
+dependencies: {  }
+id: eresources_harvested_collection_sync
+name: 'eResources Harvested Collection Synchronization'
+worker_id: eresources_harvested_collection_sync
+params: null
+interval: 86400
+first_exec: 1630558800
