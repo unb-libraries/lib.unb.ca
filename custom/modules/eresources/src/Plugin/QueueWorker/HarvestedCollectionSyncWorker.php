@@ -57,19 +57,20 @@ class HarvestedCollectionSyncWorker extends TaskQueueWorkerBase {
    * {@inheritDoc}
    */
   public function run(QueueItem $item) {
-    $perPage = 50;
     $api = $this->oclcApi('worldcat_knowledge_base', ['authorization' => $this->oclcAuthorization]);
-    $collections = \Drupal::entityTypeManager()->getStorage('eresources_harvested_collection')->loadMultiple();
     $queue = \Drupal::queue('eresources_harvested_collection_page');
+    $perPage = 50;
+
+    $collections = \Drupal::entityTypeManager()->getStorage('eresources_harvested_collection')->loadMultiple();
     foreach ($collections as $collection) {
       $defaultParams = [
-        'collection_id' => $collection->getOclcId(),
+        'collection_uid' => $collection->getOclcId(),
         'content' => 'fulltext,print',
         'itemsPerPage' => $perPage,
       ];
 
       $result = $api->get('search-entries', $defaultParams + [
-        'startIndex' => 0,
+        'startIndex' => 1,
       ]);
 
       $total = $result->{'os:totalResults'};
