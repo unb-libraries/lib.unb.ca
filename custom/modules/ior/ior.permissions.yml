@@ -1,0 +1,18 @@
+# Classification entities
+administer contest entities:
+  title: "Administer IOR contests."
+
+list contest entities:
+  title: "List IOR contests."
+
+create contest entities:
+  title: "Create IOR contests."
+
+view contest entities:
+  title: "View IOR contests."
+
+update contest entities:
+  title: "Edit retention IOR contests"
+
+delete contest entities:
+  title: "Delete IOR contests."
