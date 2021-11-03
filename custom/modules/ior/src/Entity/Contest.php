@@ -3,6 +3,8 @@
 namespace Drupal\ior\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
 
 /**
  * The "Contest" entity.
@@ -29,7 +31,7 @@ use Drupal\Core\Entity\ContentEntityBase;
  *   entity_keys = {
  *     "id" = "id",
  *     "revision" = "rid",
- *     "label" = "id",
+ *     "label" = "title",
  *     "uuid" = "uuid"
  *   },
  *   links = {
@@ -45,5 +47,25 @@ use Drupal\Core\Entity\ContentEntityBase;
  * )
  */
 class Contest extends ContentEntityBase implements ContestInterface {
+
+  /**
+   * {@inheritDoc}
+   */
+  public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
+    $fields = parent::baseFieldDefinitions($entity_type);
+
+    $fields['title'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Title'))
+      ->setDescription(t('The contest title.'))
+      ->setCardinality(1)
+      ->setRequired(TRUE)
+      ->setRevisionable(TRUE)
+      ->setDisplayOptions('form', [
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    return $fields;
+  }
 
 }
