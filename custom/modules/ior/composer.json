@@ -1,0 +1,9 @@
+{
+  "name": "unb-libraries/ior",
+  "type": "drupal-module",
+  "description": "Drupal module to administer \"Images of Research\" contests at the University of New Brunswick.",
+  "keywords": ["Drupal"],
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "require": { }
+}
