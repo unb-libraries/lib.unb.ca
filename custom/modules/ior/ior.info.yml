@@ -8,3 +8,4 @@ dependencies:
   - custom_entity
   - custom_entity_ui
   - custom_entity_revisions
+  - datetime_plus

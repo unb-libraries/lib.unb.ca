@@ -5,6 +5,7 @@ namespace Drupal\ior\Entity;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\datetime\Plugin\Field\FieldType\DateTimeItem;
 
 /**
  * The "Contest" entity.
@@ -84,6 +85,34 @@ class Contest extends ContentEntityBase implements ContestInterface {
           ],
         ],
         'weight' => 10,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['date_start'] = BaseFieldDefinition::create('datetime_timezone')
+      ->setLabel(t('Submission open date'))
+      ->setCardinality(1)
+      ->setRequired(TRUE)
+      ->setRevisionable(TRUE)
+      ->setSettings([
+        'datetime_type' => DateTimeItem::DATETIME_TYPE_DATE,
+        'timezone' => 'system',
+      ])
+      ->setDisplayOptions('form', [
+        'weight' => 20,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['date_end'] = BaseFieldDefinition::create('datetime_timezone')
+      ->setLabel(t('Submission close date'))
+      ->setCardinality(1)
+      ->setRequired(TRUE)
+      ->setRevisionable(TRUE)
+      ->setSettings([
+        'datetime_type' => DateTimeItem::DATETIME_TYPE_DATE,
+        'timezone' => 'system',
+      ])
+      ->setDisplayOptions('form', [
+        'weight' => 30,
       ])
       ->setDisplayConfigurable('form', TRUE);
 
