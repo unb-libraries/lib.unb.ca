@@ -65,6 +65,28 @@ class Contest extends ContentEntityBase implements ContestInterface {
       ])
       ->setDisplayConfigurable('form', TRUE);
 
+    $fields['description'] = BaseFieldDefinition::create('text_long')
+      ->setLabel(t('Description'))
+      ->setDescription(t('The contest description.'))
+      ->setCardinality(1)
+      ->setRequired(FALSE)
+      ->setRevisionable(TRUE)
+      ->setSettings([
+        'allowed_formats' => [
+          'library_page_html',
+        ],
+      ])
+      ->setDisplayOptions('form', [
+        'third_party_settings' => [
+          'allowed_formats' => [
+            'hide_help' => TRUE,
+            'hide_guidelines' => TRUE,
+          ],
+        ],
+        'weight' => 10,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
     return $fields;
   }
 
