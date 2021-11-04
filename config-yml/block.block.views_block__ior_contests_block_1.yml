@@ -17,10 +17,10 @@ provider: null
 plugin: 'views_block:ior_contests-block_1'
 settings:
   id: 'views_block:ior_contests-block_1'
-  label: Contests
+  label: ''
   provider: views
   label_display: visible
-  views_label: Contests
+  views_label: ''
   items_per_page: none
 visibility:
   request_path:
