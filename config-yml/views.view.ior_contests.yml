@@ -2,6 +2,10 @@ uuid: 12d28aaa-5764-44de-b42a-5b440ddfbfe2
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.storage.contest.field_date_close
+    - field.storage.contest.field_date_open
+    - field.storage.contest.field_title
   module:
     - datetime
     - ior
@@ -66,10 +70,10 @@ display:
       row:
         type: fields
       fields:
-        title:
-          id: title
-          table: ior_contest
-          field: title
+        field_title:
+          id: field_title
+          table: contest__field_title
+          field: field_title
           relationship: none
           group_type: group
           admin_label: ''
@@ -128,17 +132,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: null
-          entity_field: title
           plugin_id: field
-        date_start:
-          id: date_start
-          table: ior_contest
-          field: date_start
+        field_date_open:
+          id: field_date_open
+          table: contest__field_date_open
+          field: field_date_open
           relationship: none
           group_type: group
           admin_label: ''
-          label: Open
+          label: Opens
           exclude: false
           alter:
             alter_text: false
@@ -194,17 +196,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: contest
-          entity_field: date_start
           plugin_id: field
-        date_end:
-          id: date_end
-          table: ior_contest
-          field: date_end
+        field_date_close:
+          id: field_date_close
+          table: contest__field_date_close
+          field: field_date_close
           relationship: none
           group_type: group
           admin_label: ''
-          label: Close
+          label: Closes
           exclude: false
           alter:
             alter_text: false
@@ -260,8 +260,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: contest
-          entity_field: date_end
           plugin_id: field
       filters: {  }
       sorts: {  }
@@ -284,7 +282,10 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
-      tags: {  }
+      tags:
+        - 'config:field.storage.contest.field_date_close'
+        - 'config:field.storage.contest.field_date_open'
+        - 'config:field.storage.contest.field_title'
   block_1:
     display_plugin: block
     id: block_1
@@ -304,7 +305,10 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-      tags: {  }
+      tags:
+        - 'config:field.storage.contest.field_date_close'
+        - 'config:field.storage.contest.field_date_open'
+        - 'config:field.storage.contest.field_title'
   page_1:
     display_plugin: page
     id: page_1
@@ -319,4 +323,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
-      tags: {  }
+      tags:
+        - 'config:field.storage.contest.field_date_close'
+        - 'config:field.storage.contest.field_date_open'
+        - 'config:field.storage.contest.field_title'
