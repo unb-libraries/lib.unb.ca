@@ -1,0 +1,10 @@
+<div>{{ contest.field_description.value|raw }}</div>
+<div>
+    {% if contest.isOpen %}
+        The contest is open. Submissions will be accepted until {{ contest.field_date_close.value }}.
+    {% elseif contest.isComingUp %}
+        The contest has not yet opened. Submissions will be accepted from {{ contest.field_date_open.value }} until {{ contest.field_date_close.value }}.
+    {% else %}
+        The contest is closed. Submissions were accepted from {{ contest.field_date_open.value }} until {{ contest.field_date_close.value }}.
+    {% endif %}
+</div>

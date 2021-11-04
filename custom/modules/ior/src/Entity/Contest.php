@@ -2,10 +2,8 @@
 
 namespace Drupal\ior\Entity;
 
+use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Entity\ContentEntityBase;
-use Drupal\Core\Entity\EntityTypeInterface;
-use Drupal\Core\Field\BaseFieldDefinition;
-use Drupal\datetime\Plugin\Field\FieldType\DateTimeItem;
 
 /**
  * The "Contest" entity.
@@ -17,7 +15,6 @@ use Drupal\datetime\Plugin\Field\FieldType\DateTimeItem;
  *   label_collection = @Translation("Contests"),
  *   handlers = {
  *     "views_data" = "Drupal\views\EntityViewsData",
- *     "view_builder" = "Drupal\custom_entity\Entity\EntityTableViewBuilder",
  *     "form" = {
  *       "default" = "Drupal\Core\Entity\ContentEntityForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"
@@ -48,5 +45,53 @@ use Drupal\datetime\Plugin\Field\FieldType\DateTimeItem;
  * )
  */
 class Contest extends ContentEntityBase implements ContestInterface {
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getTitle() {
+    return $this->get(static::FIELD_TITLE)
+      ->value;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getDescription() {
+    return $this->get(static::FIELD_DESCRIPTION)
+      ->processed;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getOpenDate() {
+    return $this->get(static::FIELD_DATE_OPEN)
+      ->date;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getCloseDate() {
+    return $this->get(static::FIELD_DATE_CLOSE)
+      ->date;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function isOpen() {
+    $now = new DrupalDateTime();
+    return $now >= $this->getOpenDate() && $now <= $this->getCloseDate();
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function isComingUp() {
+    $now = new DrupalDateTime();
+    return $now < $this->getOpenDate();
+  }
 
 }
