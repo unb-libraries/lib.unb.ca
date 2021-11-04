@@ -32,7 +32,7 @@ use Drupal\datetime\Plugin\Field\FieldType\DateTimeItem;
  *   entity_keys = {
  *     "id" = "id",
  *     "revision" = "rid",
- *     "label" = "title",
+ *     "label" = "field_title",
  *     "uuid" = "uuid"
  *   },
  *   links = {
@@ -48,75 +48,5 @@ use Drupal\datetime\Plugin\Field\FieldType\DateTimeItem;
  * )
  */
 class Contest extends ContentEntityBase implements ContestInterface {
-
-  /**
-   * {@inheritDoc}
-   */
-  public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
-    $fields = parent::baseFieldDefinitions($entity_type);
-
-    $fields['title'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Title'))
-      ->setDescription(t('The contest title.'))
-      ->setCardinality(1)
-      ->setRequired(TRUE)
-      ->setRevisionable(TRUE)
-      ->setDisplayOptions('form', [
-        'weight' => 0,
-      ])
-      ->setDisplayConfigurable('form', TRUE);
-
-    $fields['description'] = BaseFieldDefinition::create('text_long')
-      ->setLabel(t('Description'))
-      ->setDescription(t('The contest description.'))
-      ->setCardinality(1)
-      ->setRequired(FALSE)
-      ->setRevisionable(TRUE)
-      ->setSettings([
-        'allowed_formats' => [
-          'library_page_html',
-        ],
-      ])
-      ->setDisplayOptions('form', [
-        'third_party_settings' => [
-          'allowed_formats' => [
-            'hide_help' => TRUE,
-            'hide_guidelines' => TRUE,
-          ],
-        ],
-        'weight' => 10,
-      ])
-      ->setDisplayConfigurable('form', TRUE);
-
-    $fields['date_start'] = BaseFieldDefinition::create('datetime_timezone')
-      ->setLabel(t('Submission open date'))
-      ->setCardinality(1)
-      ->setRequired(TRUE)
-      ->setRevisionable(TRUE)
-      ->setSettings([
-        'datetime_type' => DateTimeItem::DATETIME_TYPE_DATE,
-        'timezone' => 'system',
-      ])
-      ->setDisplayOptions('form', [
-        'weight' => 20,
-      ])
-      ->setDisplayConfigurable('form', TRUE);
-
-    $fields['date_end'] = BaseFieldDefinition::create('datetime_timezone')
-      ->setLabel(t('Submission close date'))
-      ->setCardinality(1)
-      ->setRequired(TRUE)
-      ->setRevisionable(TRUE)
-      ->setSettings([
-        'datetime_type' => DateTimeItem::DATETIME_TYPE_DATE,
-        'timezone' => 'system',
-      ])
-      ->setDisplayOptions('form', [
-        'weight' => 30,
-      ])
-      ->setDisplayConfigurable('form', TRUE);
-
-    return $fields;
-  }
 
 }

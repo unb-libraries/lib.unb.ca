@@ -1,0 +1,24 @@
+uuid: 1c7e043d-ad1e-44da-b206-b6eb75c19ad7
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - field_permissions
+    - ior
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: contest.field_date_open
+field_name: field_date_open
+entity_type: contest
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

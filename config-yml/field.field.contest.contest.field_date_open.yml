@@ -1,0 +1,21 @@
+uuid: 079f3d44-c086-49d5-8de4-456bbc26d21e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.contest.field_date_open
+  module:
+    - datetime
+    - ior
+id: contest.contest.field_date_open
+field_name: field_date_open
+entity_type: contest
+bundle: contest
+label: 'Submission open date'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,20 @@
+uuid: 313492fa-91b1-42bd-ac09-72faa14b4ac4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.contest.field_title
+  module:
+    - ior
+id: contest.contest.field_title
+field_name: field_title
+entity_type: contest
+bundle: contest
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
