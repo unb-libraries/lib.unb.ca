@@ -20,7 +20,7 @@ use Drupal\Core\Entity\ContentEntityBase;
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"
  *     },
  *     "route_provider" = {
- *       "html" = "Drupal\custom_entity\Entity\Routing\HtmlRouteProvider"
+ *       "html" = "Drupal\ior\Entity\Routing\ContestHtmlRouteProvider"
  *     }
  *   },
  *   base_table = "ior_contest",
