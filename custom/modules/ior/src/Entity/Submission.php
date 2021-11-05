@@ -48,6 +48,44 @@ use Drupal\Core\Field\FieldStorageDefinitionInterface;
 class Submission extends ContentEntityBase implements SubmissionInterface {
 
   /**
+   * The contest.
+   *
+   * @var \Drupal\ior\Entity\ContestInterface
+   *   A contest entity.
+   */
+  protected $contest;
+
+  /**
+   * Get the contest.
+   *
+   * @return \Drupal\ior\Entity\ContestInterface
+   *   A contest entity.
+   */
+  public function getContest() {
+    if (!$this->contest && !$this->isNew()) {
+      /* @noinspection PhpUnhandledExceptionInspection */
+      $query = $this->entityTypeManager()
+        ->getStorage('contest')
+        ->getQuery()
+        ->condition('field_submissions', $this->id(), 'CONTAINS');
+
+      if (!empty($contests = $query->execute())) {
+        $this->contest = $contests[array_keys($contests)[0]];
+      }
+    }
+    return $this->contest;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  protected function urlRouteParameters($rel) {
+    $uri_route_parameters = parent::urlRouteParameters($rel);
+    $uri_route_parameters['contest'] = $this->getContest();
+    return $uri_route_parameters;
+  }
+
+  /**
    * Allowed values callback for "department" field.
    *
    * @param \Drupal\Core\Field\FieldStorageDefinitionInterface $definition

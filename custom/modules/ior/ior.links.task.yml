@@ -1,3 +1,4 @@
+# Contests
 entity.contest.canonical:
   route_name: entity.contest.canonical
   base_route: entity.contest.canonical
@@ -16,4 +17,26 @@ entity.contest.delete_form:
 entity.contest.revisions:
   route_name: entity.contest.revisions
   base_route: entity.contest.canonical
+  title: 'Revisions'
+
+
+# Submissions
+entity.ior_submission.canonical:
+  route_name: entity.ior_submission.canonical
+  base_route: entity.ior_submission.canonical
+  title: 'View'
+
+entity.ior_submission.edit_form:
+  route_name: entity.ior_submission.edit_form
+  base_route: entity.ior_submission.canonical
+  title: 'Edit'
+
+entity.ior_submission.delete_form:
+  route_name: entity.ior_submission.delete_form
+  base_route: entity.ior_submission.canonical
+  title: 'Delete'
+
+entity.ior_submission.revisions:
+  route_name: entity.ior_submission.revisions
+  base_route: entity.ior_submission.canonical
   title: 'Revisions'
