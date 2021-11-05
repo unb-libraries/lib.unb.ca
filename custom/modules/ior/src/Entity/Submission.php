@@ -21,7 +21,7 @@ use Drupal\Core\Field\FieldStorageDefinitionInterface;
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"
  *     },
  *     "route_provider" = {
- *       "html" = "Drupal\custom_entity\Entity\Routing\HtmlRouteProvider"
+ *       "html" = "Drupal\ior\Entity\Routing\SubmissionHtmlRouteProvider"
  *     }
  *   },
  *   base_table = "ior_submission",
