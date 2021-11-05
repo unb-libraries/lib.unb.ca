@@ -18,12 +18,12 @@ default_value: {  }
 default_value_callback: ''
 settings:
   file_directory: ior
-  file_extensions: 'jpeg png tiff'
+  file_extensions: 'jpeg jpg png tiff'
   max_filesize: '50 MB'
   max_resolution: 10800x7200
-  min_resolution: 4000x3000
-  alt_field: true
-  alt_field_required: true
+  min_resolution: 100x100
+  alt_field: false
+  alt_field_required: false
   title_field: false
   title_field_required: false
   default_image:
