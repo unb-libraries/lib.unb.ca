@@ -1,0 +1,27 @@
+uuid: 7122dd9d-7197-4e65-833c-80df5b749894
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.contest.field_submissions
+  module:
+    - ior
+id: contest.contest.field_submissions
+field_name: field_submissions
+entity_type: contest
+bundle: contest
+label: Submissions
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:ior_submission'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+field_type: entity_reference

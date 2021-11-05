@@ -13,6 +13,7 @@ interface ContestInterface extends ContentEntityInterface {
   const FIELD_DESCRIPTION = 'field_description';
   const FIELD_DATE_OPEN = 'field_date_open';
   const FIELD_DATE_CLOSE = 'field_date_close';
+  const FIELD_SUBMISSIONS = 'field_submissions';
 
   /**
    * Get the contest title.
@@ -62,5 +63,29 @@ interface ContestInterface extends ContentEntityInterface {
    *   TRUE if the current date is before the open date. FALSE otherwise.
    */
   public function isComingUp();
+
+  /**
+   * Get all submissions.
+   *
+   * @return \Drupal\ior\Entity\SubmissionInterface[]
+   *   An array of submission entities.
+   */
+  public function getSubmissions();
+
+  /**
+   * Add a submission.
+   *
+   * @param \Drupal\ior\Entity\SubmissionInterface $submission
+   *   A submission entity.
+   */
+  public function addSubmission(SubmissionInterface $submission);
+
+  /**
+   * Set all submissions.
+   *
+   * @param array $submissions
+   *   An array of submission entities.
+   */
+  public function setSubmissions(array $submissions);
 
 }
