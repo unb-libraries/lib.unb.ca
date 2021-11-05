@@ -17,7 +17,7 @@ use Drupal\Core\Field\FieldStorageDefinitionInterface;
  *   handlers = {
  *     "views_data" = "Drupal\views\EntityViewsData",
  *     "form" = {
- *       "default" = "Drupal\Core\Entity\ContentEntityForm",
+ *       "default" = "Drupal\ior\Form\SubmissionForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"
  *     },
  *     "route_provider" = {
