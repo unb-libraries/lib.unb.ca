@@ -82,15 +82,15 @@ class Submission extends ContentEntityBase implements SubmissionInterface {
         'FR-ART-PSY' => t('Psychology (Fredericton)'),
         'SJ-ART-PSY' => t('Psychology (Saint John)'),
         'SJ-ART-SSC' => t('Social Science'),
-        'FR-ART-SOC' => t('Sociology')
+        'FR-ART-SOC' => t('Sociology'),
       ],
       t('Business')->render() => [
-        'SJ-BUS-FAB' => t('Faculty of Business '),
+        'SJ-BUS-FAB' => t('Faculty of Business'),
         'FR-BUS-FAM' => t('Faculty of Management'),
       ],
       t('Computer Science')->render() => [
         'SJ-COM-COM' => t('Computer Science (Saint John)'),
-        'FR-COM-COM' => t('Faculty of Computer Science (Fredericton)')
+        'FR-COM-COM' => t('Faculty of Computer Science (Fredericton)'),
       ],
       t('Education')->render() => [
         'FR-EDU-EDU' => t('Faculty of Education'),
@@ -133,7 +133,7 @@ class Submission extends ContentEntityBase implements SubmissionInterface {
         'SJ-SCI-MAT' => t('Mathematics and Statistics (Saint John)'),
         'FR-SCI-PHY' => t('Physics (Fredericton)'),
         'BI-SCI-PHY' => t('Physics (bi-campus)'),
-      ]
+      ],
     ];
   }
 
