@@ -57,9 +57,10 @@ class HarvestedCollectionController extends ControllerBase {
     $api = $this->oclcApi('worldcat_knowledge_base', ['authorization' => $this->oclcAuthorization()]);
     $queue = \Drupal::queue('eresources_harvested_collection_page');
     $perPage = 50;
+    $oclcId = $eresources_harvested_collection->getOclcId();
 
     $defaultParams = [
-      'collection_uid' => $eresources_harvested_collection->getOclcId(),
+      'collection_uid' => $oclcId,
       'content' => 'fulltext,print',
       'itemsPerPage' => $perPage,
     ];
@@ -78,6 +79,9 @@ class HarvestedCollectionController extends ControllerBase {
         $index += $perPage;
       }
     }
+
+    $this->messenger()->addStatus("${total} item(s) from the \"${oclcId}\" collection queued for synchronization");
+    return $this->redirect('entity.eresources_harvested_collection.collection');
   }
 
 }
