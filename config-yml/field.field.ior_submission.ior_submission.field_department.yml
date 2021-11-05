@@ -11,7 +11,7 @@ id: ior_submission.ior_submission.field_department
 field_name: field_department
 entity_type: ior_submission
 bundle: ior_submission
-label: Department
+label: 'Department & Faculty'
 description: ''
 required: true
 translatable: false

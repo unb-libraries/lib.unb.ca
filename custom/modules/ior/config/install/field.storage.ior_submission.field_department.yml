@@ -14,7 +14,7 @@ entity_type: ior_submission
 type: list_string
 settings:
   allowed_values: {  }
-  allowed_values_function: ''
+  allowed_values_function: 'Drupal\ior\Entity\Submission::allowedDepartments'
 module: options
 locked: false
 cardinality: 1
