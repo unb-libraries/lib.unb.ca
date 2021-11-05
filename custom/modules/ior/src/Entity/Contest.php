@@ -19,6 +19,7 @@ use Drupal\Core\Entity\ContentEntityBase;
  *       "default" = "Drupal\Core\Entity\ContentEntityForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"
  *     },
+ *     "storage" = "Drupal\ior\Entity\Storage\ContestStorage",
  *     "route_provider" = {
  *       "html" = "Drupal\ior\Entity\Routing\ContestHtmlRouteProvider"
  *     }
