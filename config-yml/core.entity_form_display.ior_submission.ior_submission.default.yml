@@ -6,7 +6,6 @@ dependencies:
     - field.field.ior_submission.ior_submission.field_department
     - field.field.ior_submission.ior_submission.field_description
     - field.field.ior_submission.ior_submission.field_email
-    - field.field.ior_submission.ior_submission.field_faculty
     - field.field.ior_submission.ior_submission.field_first_name
     - field.field.ior_submission.ior_submission.field_image
     - field.field.ior_submission.ior_submission.field_last_name
@@ -46,12 +45,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: email_default
-    region: content
-  field_faculty:
-    weight: 4
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
     region: content
   field_first_name:
     weight: 0
