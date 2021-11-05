@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.ior_submission.field_faculty
+  module:
+    - ior
+    - options
+id: ior_submission.ior_submission.field_faculty
+field_name: field_faculty
+entity_type: ior_submission
+bundle: ior_submission
+label: Faculty
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

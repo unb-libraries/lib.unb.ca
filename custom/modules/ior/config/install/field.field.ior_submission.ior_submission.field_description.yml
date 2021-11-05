@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.ior_submission.field_description
+  module:
+    - allowed_formats
+    - ior
+    - text
+third_party_settings:
+  allowed_formats:
+    library_page_html: library_page_html
+    basic_html: '0'
+    full_html: '0'
+    restricted_html: '0'
+    plain_text: '0'
+    no_media_html: '0'
+id: ior_submission.ior_submission.field_description
+field_name: field_description
+entity_type: ior_submission
+bundle: ior_submission
+label: Description
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

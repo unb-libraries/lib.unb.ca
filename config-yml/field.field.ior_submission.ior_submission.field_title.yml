@@ -1,0 +1,20 @@
+uuid: 85d768c6-c1f9-471e-a8cd-518640d62d34
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.ior_submission.field_title
+  module:
+    - ior
+id: ior_submission.ior_submission.field_title
+field_name: field_title
+entity_type: ior_submission
+bundle: ior_submission
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

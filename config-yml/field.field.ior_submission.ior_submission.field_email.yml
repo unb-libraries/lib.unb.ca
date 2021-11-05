@@ -1,0 +1,20 @@
+uuid: 209b8e9e-c72a-4dea-a0e2-8802dff39b09
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.ior_submission.field_email
+  module:
+    - ior
+id: ior_submission.ior_submission.field_email
+field_name: field_email
+entity_type: ior_submission
+bundle: ior_submission
+label: 'UNB Email'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email
