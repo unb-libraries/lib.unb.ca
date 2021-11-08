@@ -1,4 +1,6 @@
-enabled_entity_types: {  }
+enabled_entity_types:
+  - ior_submission
+  - contest
 punctuation:
   double_quotes: 0
   quotes: 0

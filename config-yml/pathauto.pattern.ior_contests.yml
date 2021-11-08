@@ -1,0 +1,14 @@
+uuid: 0b33560e-8963-4cbe-992f-baa5fef82679
+langcode: en
+status: true
+dependencies:
+  module:
+    - ior
+id: ior_contests
+label: 'IOR Contests'
+type: 'canonical_entities:contest'
+pattern: '/researchcommons/ior/[contest:field_title]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }
