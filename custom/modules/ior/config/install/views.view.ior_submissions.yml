@@ -384,9 +384,30 @@ display:
           plugin_id: boolean
       sorts: {  }
       title: Submissions
-      header: {  }
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          content: 'Displaying @start - @end of @total submissions'
+          plugin_id: result
       footer: {  }
-      empty: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: true
+          content: 'No submissions have been published yet. Submissions will be published after the contest''s closing date.'
+          plugin_id: text_custom
       relationships:
         reverse__contest__field_submissions:
           id: reverse__contest__field_submissions
