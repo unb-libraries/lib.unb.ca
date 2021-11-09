@@ -78,7 +78,10 @@ class HarvestedCollectionSyncWorker extends TaskQueueWorkerBase {
         $queue->createQueue();
         $index = 1;
         while ($index <= $total) {
-          $params = $defaultParams + ['startIndex' => $index];
+          $params = $defaultParams + [
+            'startIndex' => $index,
+            '#collection_id' => $collection->id(),
+          ];
           $queue->createItem($params);
           $index += $perPage;
         }

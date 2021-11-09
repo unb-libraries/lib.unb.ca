@@ -62,6 +62,14 @@ class HarvestedCollection extends ContentEntityBase implements ContentEntityInte
   }
 
   /**
+   * Returns a count of entries in the collection.
+   */
+  public function getEntryCount() {
+    $query = \Drupal::entityQuery('eresources_record');
+    return $query->condition('collection_id', $this->id())->count()->execute();
+  }
+
+  /**
    * {@inheritDoc}
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {

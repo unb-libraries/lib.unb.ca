@@ -4,7 +4,6 @@ namespace Drupal\eresources\Entity;
 
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\lib_unb_custom_entity\Entity\EntityListBuilder;
-use Drupal\eresources\Entity\HarvestedCollection;
 
 /**
  * Defines a class to build a listing of harvested collection entities.
@@ -20,6 +19,7 @@ class HarvestedCollectionListBuilder extends EntityListBuilder {
       'oclc_id' => $this->t('OCLC ID'),
       'name' => $this->t('Name'),
       'default_tab' => $this->t('Default Tab'),
+      'entries' => $this->t('Entries'),
     ] + parent::buildHeader();
   }
 
@@ -32,6 +32,7 @@ class HarvestedCollectionListBuilder extends EntityListBuilder {
       'oclc_id' => $entity->get('oclc_id')->value,
       'name' => $entity->toLink(),
       'default_tab' => HarvestedCollection::$tabs[$entity->get('default_tab')->value],
+      'entries' => $entity->getEntryCount(),
     ] + parent::buildRow($entity);
   }
 

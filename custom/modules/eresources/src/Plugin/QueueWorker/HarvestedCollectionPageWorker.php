@@ -54,6 +54,11 @@ class HarvestedCollectionPageWorker extends QueueWorkerBase implements Container
    * {@inheritDoc}
    */
   public function processItem($data) {
+    $collection = $data['#collection_id'];
+    unset($data['#collection_id']);
+
+    $storage = \Drupal::entityTypeManager()->getStorage('eresources_record');
+
     $api = $this->oclcApi('worldcat_knowledge_base', ['authorization' => $this->oclcAuthorization]);
     $result = $api->get('search-entries', $data);
 
@@ -64,6 +69,33 @@ class HarvestedCollectionPageWorker extends QueueWorkerBase implements Container
         }
 
         // Add or update record.
+        $query = $storage->getQuery();
+        $ids = $query->condition('uid', $entry->{'kb:entry_uid'})->execute();
+        if (!empty($ids)) {
+          $id = reset($ids);
+          $entity = $storage->load($id);
+          $entity->set('collection_id', $collection);
+          $entity->set('title', $entry->title);
+        }
+        else {
+          $fields = [
+            'collection_id' => $collection,
+            'uid' => $entry->{'kb:entry_uid'},
+            'title' => $entry->title,
+            'access_information' => '',
+            'license_status' => '',
+            'kb_data_type' => '',
+          ];
+          foreach ($entry->links as $link) {
+            if ($link->rel == 'via') {
+              $fields['url'] = $link->href;
+              break;
+            }
+          }
+          $entity = $storage->create($fields);
+        }
+        $entity->save();
+
       }
     }
   }

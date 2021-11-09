@@ -74,7 +74,10 @@ class HarvestedCollectionController extends ControllerBase {
       $queue->createQueue();
       $index = 1;
       while ($index <= $total) {
-        $params = $defaultParams + ['startIndex' => $index];
+        $params = $defaultParams + [
+          'startIndex' => $index,
+          '#collection_id' => $eresources_harvested_collection->id(),
+        ];
         $queue->createItem($params);
         $index += $perPage;
       }
