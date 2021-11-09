@@ -3,6 +3,8 @@
 namespace Drupal\ior\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
+use Drupal\Core\Entity\EntityPublishedTrait;
+use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\FieldableEntityInterface;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 
@@ -31,7 +33,8 @@ use Drupal\Core\Field\FieldStorageDefinitionInterface;
  *     "id" = "id",
  *     "revision" = "rid",
  *     "label" = "id",
- *     "uuid" = "uuid"
+ *     "uuid" = "uuid",
+ *     "published" = "published",
  *   },
  *   links = {
  *     "canonical" = "/researchcommons/ior/{contest}/submissions/{ior_submission}",
@@ -47,6 +50,8 @@ use Drupal\Core\Field\FieldStorageDefinitionInterface;
  */
 class Submission extends ContentEntityBase implements SubmissionInterface {
 
+  use EntityPublishedTrait;
+
   /**
    * The contest.
    *
@@ -54,6 +59,15 @@ class Submission extends ContentEntityBase implements SubmissionInterface {
    *   A contest entity.
    */
   protected $contest;
+
+  /**
+   * {@inheritDoc}
+   */
+  protected function urlRouteParameters($rel) {
+    $uri_route_parameters = parent::urlRouteParameters($rel);
+    $uri_route_parameters['contest'] = $this->getContest();
+    return $uri_route_parameters;
+  }
 
   /**
    * Get the contest.
@@ -79,10 +93,14 @@ class Submission extends ContentEntityBase implements SubmissionInterface {
   /**
    * {@inheritDoc}
    */
-  protected function urlRouteParameters($rel) {
-    $uri_route_parameters = parent::urlRouteParameters($rel);
-    $uri_route_parameters['contest'] = $this->getContest();
-    return $uri_route_parameters;
+  public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
+    $fields = parent::baseFieldDefinitions($entity_type);
+
+    $fields += static::publishedBaseFieldDefinitions($entity_type);
+    $fields[$entity_type->getKey('published')]
+      ->setDefaultValue(FALSE);
+
+    return $fields;
   }
 
   /**
