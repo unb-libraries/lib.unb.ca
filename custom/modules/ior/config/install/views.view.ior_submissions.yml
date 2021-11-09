@@ -6,7 +6,7 @@ dependencies:
     - field.storage.ior_submission.field_image
     - field.storage.ior_submission.field_last_name
     - field.storage.ior_submission.field_title
-    - image.style.large
+    - image.style.large_scale_width
   module:
     - image
     - ior
@@ -77,8 +77,8 @@ display:
           automatic_width: true
           alignment: horizontal
           col_class_default: false
-          col_class_custom: ''
-          row_class_default: false
+          col_class_custom: 'views-col p-2'
+          row_class_default: true
           row_class_custom: ''
       row:
         type: fields
@@ -139,7 +139,7 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: large
+            image_style: large_scale_width
             image_link: content
           group_column: ''
           group_columns: {  }
