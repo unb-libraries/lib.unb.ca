@@ -13,6 +13,9 @@ function ior_theme($existing, $type, $theme, $path) {
     'contest' => [
       'render element' => 'elements',
     ],
+    'ior_submission' => [
+      'render element' => 'elements',
+    ],
   ];
 }
 
@@ -28,4 +31,26 @@ function ior_theme($existing, $type, $theme, $path) {
  */
 function template_preprocess_contest(array &$variables) {
   $variables['contest'] = $variables['elements']['#contest'];
+}
+
+/**
+ * Prepares variables for submission templates.
+ *
+ * Default template: ior-submission.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing the user information and any
+ *   - attributes: HTML attributes for the containing element.
+ */
+function template_preprocess_ior_submission(array &$variables) {
+  $variables['submission']['entity'] = $variables['elements']['#ior_submission'];
+  foreach (\Drupal\Core\Render\Element::children($variables['elements']) as $key) {
+    $variables['submission'][$key] = $variables['elements'][$key];
+    $variables['submission'][$key]['#label_display'] = 'hidden';
+  }
+
+  // This should be done in a template?
+  $variables['submission']['field_first_name']['#attributes']['class'][] = 'd-inline';
+  $variables['submission']['field_last_name']['#attributes']['class'][] = 'd-inline';
 }
