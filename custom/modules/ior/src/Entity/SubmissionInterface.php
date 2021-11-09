@@ -10,4 +10,14 @@ use Drupal\Core\Entity\EntityPublishedInterface;
  */
 interface SubmissionInterface extends ContentEntityInterface, EntityPublishedInterface {
 
+  const FIELD_TITLE = 'field_title';
+
+  /**
+   * Get the title.
+   *
+   * @return string
+   *   A string.
+   */
+  public function getTitle();
+
 }

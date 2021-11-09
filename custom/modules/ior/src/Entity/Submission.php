@@ -32,7 +32,6 @@ use Drupal\Core\Field\FieldStorageDefinitionInterface;
  *   entity_keys = {
  *     "id" = "id",
  *     "revision" = "rid",
- *     "label" = "id",
  *     "uuid" = "uuid",
  *     "published" = "published",
  *   },
@@ -59,6 +58,21 @@ class Submission extends ContentEntityBase implements SubmissionInterface {
    *   A contest entity.
    */
   protected $contest;
+
+  /**
+   * {@inheritDoc}
+   */
+  public function label() {
+    return $this->getTitle();
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getTitle() {
+    return $this->get(static::FIELD_TITLE)
+      ->value;
+  }
 
   /**
    * {@inheritDoc}
