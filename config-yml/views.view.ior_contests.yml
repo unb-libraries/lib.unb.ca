@@ -313,6 +313,7 @@ display:
         filters: false
         filter_groups: false
         sorts: false
+        empty: false
       title: 'Open for submission'
       display_description: ''
       filters:
@@ -411,6 +412,18 @@ display:
         groups:
           1: AND
       sorts: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content: 'Currently no open contests.'
+          plugin_id: text_custom
     cache_metadata:
       max-age: -1
       contexts:
@@ -435,6 +448,7 @@ display:
         use_more_always: false
         use_more_text: false
         sorts: false
+        empty: false
       use_more_always: true
       use_more_text: 'Show all'
       sorts:
@@ -476,6 +490,18 @@ display:
           expose:
             label: ''
           plugin_id: standard
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content: 'No contests have been created yet.'
+          plugin_id: text_custom
     cache_metadata:
       max-age: -1
       contexts:
