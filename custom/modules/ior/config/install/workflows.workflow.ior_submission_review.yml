@@ -1,0 +1,73 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - content_moderation
+    - ior
+id: ior_submission_review
+label: 'IOR Submission Review'
+type: content_moderation
+type_settings:
+  states:
+    accepted:
+      published: true
+      default_revision: true
+      label: Accepted
+      weight: -2
+    archived:
+      published: false
+      default_revision: false
+      label: Archived
+      weight: 1
+    draft:
+      published: false
+      default_revision: false
+      label: Submitted
+      weight: -3
+    published:
+      label: Published
+      published: true
+      default_revision: true
+      weight: 0
+    rejected:
+      published: false
+      default_revision: false
+      label: Rejected
+      weight: -1
+  transitions:
+    accept:
+      label: Accept
+      from:
+        - draft
+        - rejected
+      to: accepted
+      weight: -3
+    archive:
+      label: Archive
+      from:
+        - published
+      to: archived
+      weight: 1
+    edit:
+      label: Edit
+      from:
+        - accepted
+      to: accepted
+      weight: -1
+    publish:
+      label: Publish
+      from:
+        - accepted
+      to: published
+      weight: 0
+    reject:
+      label: Reject
+      from:
+        - accepted
+        - draft
+      to: rejected
+      weight: -2
+  entity_types:
+    ior_submission:
+      - ior_submission
+  default_moderation_state: draft

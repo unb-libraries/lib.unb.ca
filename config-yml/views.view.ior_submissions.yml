@@ -8,7 +8,9 @@ dependencies:
     - field.storage.ior_submission.field_last_name
     - field.storage.ior_submission.field_title
     - image.style.large_scale_width
+    - workflows.workflow.ior_submission_review
   module:
+    - content_moderation
     - image
     - ior
 id: ior_submissions
@@ -343,15 +345,17 @@ display:
           field_api_classes: false
           plugin_id: field
       filters:
-        published:
-          id: published
+        moderation_state:
+          id: moderation_state
           table: ior_submission
-          field: published
+          field: moderation_state
           relationship: none
           group_type: group
           admin_label: ''
-          operator: '='
-          value: '1'
+          operator: in
+          value:
+            ior_submission_review-accepted: ior_submission_review-accepted
+            ior_submission_review-published: ior_submission_review-published
           group: 1
           exposed: false
           expose:
@@ -368,6 +372,7 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+            reduce: false
           is_grouped: false
           group_info:
             label: ''
@@ -381,8 +386,7 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           entity_type: ior_submission
-          entity_field: published
-          plugin_id: boolean
+          plugin_id: moderation_state_filter
       sorts: {  }
       title: Submissions
       header:
@@ -433,6 +437,7 @@ display:
         - 'config:field.storage.ior_submission.field_image'
         - 'config:field.storage.ior_submission.field_last_name'
         - 'config:field.storage.ior_submission.field_title'
+        - 'config:workflow_list'
   page_1:
     display_plugin: page
     id: page_1
@@ -452,3 +457,4 @@ display:
         - 'config:field.storage.ior_submission.field_image'
         - 'config:field.storage.ior_submission.field_last_name'
         - 'config:field.storage.ior_submission.field_title'
+        - 'config:workflow_list'
