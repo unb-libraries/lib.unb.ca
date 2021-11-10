@@ -7,7 +7,7 @@ dependencies:
   module:
     - content_moderation
 id: default_page_workflow
-label: 'Default Page Workflow'
+label: 'Default Library Page Workflow'
 type: content_moderation
 type_settings:
   states:
