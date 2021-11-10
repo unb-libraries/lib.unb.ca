@@ -5,8 +5,6 @@ dependencies:
   enforced:
     module:
       - webform_templates
-_core:
-  default_config_hash: 00_8Q6rSy0QN3NC6evx9ov1hB5KCyMqZykHpMZWiS88
 open: null
 close: null
 weight: 0
@@ -84,6 +82,9 @@ settings:
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  form_method: ''
+  form_action: ''
+  form_attributes: {  }
   share: false
   share_node: false
   share_theme_name: ''
@@ -312,3 +313,5 @@ handlers:
       theme_name: ''
       parameters: {  }
 variants: {  }
+_core:
+  default_config_hash: 00_8Q6rSy0QN3NC6evx9ov1hB5KCyMqZykHpMZWiS88

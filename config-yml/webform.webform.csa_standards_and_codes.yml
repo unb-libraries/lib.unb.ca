@@ -13,36 +13,30 @@ title: 'CSA Standards and Codes'
 description: 'Port from https://web.lib.unb.ca/eresources/special/csa.php'
 category: ''
 elements: |-
-  '#attributes':
-    class:
-      - mb-4
   csa_off_campus:
     '#type': processed_text
     '#text': |
       <h2>Use and Restrictions on Use</h2>
-      
+
       <p>The User will be able to view the Documents at any time and each User is given the right to print selected pages of Documents for reference purposes only. The User may not permit any third party to view the Documents unless they have received CSA’s prior written consent. Nor may anyone make copies of any portion of any of the Documents in any form; (ii) modify or create derivative and/or competitive products based on any portion of the Documents; (iii) disclose any part of the Documents, (iv) circulate the Documents or any portion of the Documents in any manner, including by e-mail, even for teaching purposes.</p>
-      
+
       <p>The User expressly acknowledges that CSA may monitor their use of CSA’s Online access.</p>
-      
     '#format': library_page_html
   csa_ownership:
     '#type': processed_text
     '#text': |
       <h2>Off-Campus PDF access</h2>
-      
+
       <p>UNB Libraries moved to a new CSA platform at the beginning of 2020. With this change, CSA’s PDFs are now secured with a DRM protection which will not work with the usual off-campus login access provided by UNB Libraries. To enable PDF downloads, off-campus users are encouraged to try setting up <a href="/help/off-campus-access#vpn">VPN access</a>.</p>
-      
     '#format': library_page_html
   csa_restrictions:
     '#type': processed_text
     '#text': |
       <h2>Ownership</h2>
-      
+
       <p>The Documents and copies are and will remain CSA’s sole property. Nothing in this License allows any User the right of ownership to any of the Documents or any part thereof, including without limitation logos, names, commercial symbols and other support materials including technology. CSA has the right to update, remove or change the format, layout, content and any other aspect of any part of the Documents at any time without notice to the Users. The Users are entitled to receive any such updates, however it is the Users’ responsibility to access the site to determine whether any given Document has been updated or removed.</p>
-      
+
       <p>If you have questions or need assistance using the CSA Standards and Codes, please contact <a href="https://web.lib.unb.ca/libmail/contactform.php?email=scroos">Saran Croos, Engineering and Computer Science <span class="text-nowrap">Librarian<span class="fa-envelope fas ml-1"></span></span></a>, via email or 458-7959.</p>
-      
     '#format': library_page_html
   submit_container:
     '#type': container
@@ -108,6 +102,11 @@ settings:
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  form_method: ''
+  form_action: ''
+  form_attributes:
+    class:
+      - mb-4
   share: false
   share_node: false
   share_theme_name: ''

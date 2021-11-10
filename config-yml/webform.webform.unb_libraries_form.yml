@@ -13,9 +13,6 @@ title: 'UNB Libraries Form'
 description: 'UNB Libraries-branded base form with email handler, privacy statement, etc.'
 category: ''
 elements: |-
-  '#attributes':
-    class:
-      - theme-dark
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
@@ -68,6 +65,11 @@ settings:
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  form_method: ''
+  form_action: ''
+  form_attributes:
+    class:
+      - theme-dark
   share: false
   share_node: false
   share_theme_name: ''

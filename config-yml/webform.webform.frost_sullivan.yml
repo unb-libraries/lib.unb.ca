@@ -13,14 +13,11 @@ title: 'Frost & Sullivan'
 description: 'Ported from&nbsp;https://web.lib.unb.ca/eresources/special/frost.php'
 category: ''
 elements: |-
-  '#attributes':
-    class:
-      - mb-4
   frost_intro:
     '#type': processed_text
     '#text': |
       <p>The Frost &amp; Sullivan database provides in-depth market research and industry reports in the following high-technology sectors:</p>
-      
+
       <ul>
       	<li>Aerospace &amp; Defense</li>
       	<li>Automotive &amp; Transportation</li>
@@ -33,24 +30,22 @@ elements: |-
       	<li>Information &amp; Communication Technologies</li>
       	<li>Measurement &amp; Instrumentation</li>
       </ul>
-      
     '#format': library_page_html
   frost_restrictions:
     '#type': processed_text
     '#text': |
       <h2>Restrictions on Use:</h2>
-      
+
       <p>Our licensing agreement with Frost &amp; Sullivan limits access to current students, faculty and staff of the University of New Brunswick and St. Thomas University. As such, database login via our UNB Libraries proxy server is required.</p>
-      
+
       <p>Information is for individual, non-commercial, educational and research purposes only. Users are not able to systematically download or retain substantial portions of information.&nbsp;<strong>NOTE:</strong> UNB Libraries does not subscribe to all Frost &amp; Sullivan content.</p>
-      
+
       <dl class="ml-4">
       	<dt>Students</dt>
       	<dd>Students can access, view and print information, but the database <strong>does not</strong> offer PDF downloading capabilities.</dd>
       	<dt>Faculty:</dt>
       	<dd>Faculty or staff requiring PDF downloading capabilities are required to contact Jeannie Bail (<a href="/contact-unb-libraries-staff?recipient=jbail">j.bail@unb.ca</a> | (506) 458-7212). Please include your university/departmental affiliation.</dd>
       </dl>
-      
     '#format': library_page_html
   frost_agree_container:
     '#type': container
@@ -117,6 +112,11 @@ settings:
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  form_method: ''
+  form_action: ''
+  form_attributes:
+    class:
+      - mb-4
   share: false
   share_node: false
   share_theme_name: ''

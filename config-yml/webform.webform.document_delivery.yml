@@ -13,9 +13,6 @@ title: 'Placing a Document Delivery Request'
 description: ''
 category: ''
 elements: |-
-  '#attributes':
-    class:
-      - mb-4
   docdel_introduction:
     '#type': webform_markup
     '#markup': 'Document Delivery and Interlibrary Loans supplement library resources held by UNB by obtaining material located at other libraries and organizations. UNB Libraries&#39; Document Delivery is part of the&nbsp;<a href="https://caul-cbua.ca/committee/document-delivery-group">CAUL Document Delivery Group</a>, a resource sharing network among Atlantic Canadian universities.'
@@ -37,7 +34,6 @@ elements: |-
       	</ul>
       	</dd>
       </dl>
-      
     '#format': library_page_html
   submit_container:
     '#type': container
@@ -114,6 +110,11 @@ settings:
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  form_method: ''
+  form_action: ''
+  form_attributes:
+    class:
+      - mb-4
   share: false
   share_node: false
   share_theme_name: ''
