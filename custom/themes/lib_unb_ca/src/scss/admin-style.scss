@@ -2,3 +2,12 @@
 @import '../../../../../vendor/unb-libraries/unb_lib_theme/src/scss/admin-overrides-seven.scss';
 
 /* Custom administration theme overrides */
+.field--name-field-banner-image {
+  fieldset.media-library-widget:not(.fieldgroup) legend {
+    top: 1rem;
+  }
+
+  .media-library-selection .media-library-item--grid {
+    width: 100%;
+  }
+}
