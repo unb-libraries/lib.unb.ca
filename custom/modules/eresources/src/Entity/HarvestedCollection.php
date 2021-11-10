@@ -25,6 +25,7 @@ use Drupal\lib_unb_custom_entity\Entity\ContentEntityBase;
  *       "html" = "Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider",
  *     },
  *     "access" = "Drupal\lib_unb_custom_entity\Entity\EntityAccessControlHandler",
+ *     "storage" = "Drupal\eresources\Entity\Storage\HarvestedCollectionStorage",
  *   },
  *   base_table = "eresources_harvested_collection",
  *   admin_permission = "administer eresources_harvested_collection entities",
@@ -59,14 +60,6 @@ class HarvestedCollection extends ContentEntityBase implements ContentEntityInte
    */
   public function getOclcId() {
     return $this->get('oclc_id')->value;
-  }
-
-  /**
-   * Returns a count of entries in the collection.
-   */
-  public function getRecordCount() {
-    $query = \Drupal::entityQuery('eresources_record');
-    return $query->condition('collection_id', $this->id())->count()->execute();
   }
 
   /**
