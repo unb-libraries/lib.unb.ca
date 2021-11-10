@@ -1,0 +1,23 @@
+uuid: 775e7847-114b-47ba-bb01-e22d2769ec98
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_container_fluid
+    - node.type.library_page
+id: node.library_page.field_container_fluid
+field_name: field_container_fluid
+entity_type: node
+bundle: library_page
+label: 'Fluid section containers'
+description: 'Switches content region display to 100% width at all breakpoints instead of using the Bootstrap responsive breakpoint max-width values. Also enables custom banner image + content overrides for the header section.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
