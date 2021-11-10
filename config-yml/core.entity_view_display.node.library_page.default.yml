@@ -3,6 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.library_page.field_alt_layout_header
+    - field.field.node.library_page.field_banner_image
+    - field.field.node.library_page.field_container_fluid
     - field.field.node.library_page.field_featured_image
     - field.field.node.library_page.field_page_content
     - field.field.node.library_page.field_unb_lib_page_content
@@ -12,6 +15,7 @@ dependencies:
     - entity_reference_revisions
     - layout_builder
     - layout_discovery
+    - text
     - user
 third_party_settings:
   layout_builder:
@@ -70,6 +74,32 @@ content:
     weight: -20
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_alt_layout_header:
+    weight: 107
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_banner_image:
+    type: entity_reference_entity_view
+    weight: 106
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_container_fluid:
+    weight: 105
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_featured_image:
     weight: 104

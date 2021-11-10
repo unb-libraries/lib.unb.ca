@@ -4,6 +4,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.library_page.field_alt_layout_header
+    - field.field.node.library_page.field_banner_image
+    - field.field.node.library_page.field_container_fluid
     - field.field.node.library_page.field_featured_image
     - field.field.node.library_page.field_page_content
     - field.field.node.library_page.field_unb_lib_page_content
@@ -27,6 +30,9 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_alt_layout_header: true
+  field_banner_image: true
+  field_container_fluid: true
   field_featured_image: true
   field_page_content: true
   field_unb_lib_page_content: true

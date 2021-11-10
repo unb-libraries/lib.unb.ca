@@ -3,6 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.library_page.field_alt_layout_header
+    - field.field.node.library_page.field_banner_image
+    - field.field.node.library_page.field_container_fluid
     - field.field.node.library_page.field_featured_image
     - field.field.node.library_page.field_page_content
     - field.field.node.library_page.field_unb_lib_page_content
@@ -11,8 +14,31 @@ dependencies:
     - workflows.workflow.default_page_workflow
   module:
     - content_moderation
+    - field_group
+    - media_library
     - paragraphs
     - path
+    - text
+third_party_settings:
+  field_group:
+    group_alt_layout:
+      children:
+        - field_container_fluid
+        - field_banner_image
+        - field_alt_layout_header
+      parent_name: ''
+      weight: 9
+      format_type: details_sidebar
+      region: content
+      format_settings:
+        description: ''
+        weight: 0
+        required_fields: true
+        id: ''
+        classes: ''
+        show_empty_fields: false
+        open: false
+      label: 'Special Layout'
 id: node.library_page.default
 targetEntityType: node
 bundle: library_page
@@ -23,6 +49,28 @@ content:
     weight: 4
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_alt_layout_header:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_banner_image:
+    type: media_library_widget
+    weight: 1
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_container_fluid:
+    type: boolean_checkbox
+    weight: 0
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_page_content:
     type: entity_reference_paragraphs
