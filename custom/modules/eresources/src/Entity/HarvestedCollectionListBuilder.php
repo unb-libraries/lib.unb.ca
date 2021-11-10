@@ -19,7 +19,7 @@ class HarvestedCollectionListBuilder extends EntityListBuilder {
       'oclc_id' => $this->t('OCLC ID'),
       'name' => $this->t('Name'),
       'default_tab' => $this->t('Default Tab'),
-      'entries' => $this->t('Entries'),
+      'records' => $this->t('Records'),
     ] + parent::buildHeader();
   }
 
@@ -32,7 +32,7 @@ class HarvestedCollectionListBuilder extends EntityListBuilder {
       'oclc_id' => $entity->get('oclc_id')->value,
       'name' => $entity->toLink(),
       'default_tab' => HarvestedCollection::$tabs[$entity->get('default_tab')->value],
-      'entries' => $entity->getEntryCount(),
+      'records' => $entity->getRecordCount(),
     ] + parent::buildRow($entity);
   }
 
