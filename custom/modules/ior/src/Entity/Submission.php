@@ -17,7 +17,7 @@ use Drupal\Core\Field\FieldStorageDefinitionInterface;
  *   label_plural = @Translation("Submissions"),
  *   label_collection = @Translation("Submissions"),
  *   handlers = {
- *     "views_data" = "Drupal\views\EntityViewsData",
+ *     "views_data" = "Drupal\ior\Entity\SubmissionViewsData",
  *     "form" = {
  *       "default" = "Drupal\ior\Form\SubmissionForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"

@@ -10,7 +10,6 @@ dependencies:
     - image.style.large_scale_width
     - workflows.workflow.ior_submission_review
   module:
-    - content_moderation
     - image
     - ior
 id: ior_submissions
@@ -345,17 +344,15 @@ display:
           field_api_classes: false
           plugin_id: field
       filters:
-        moderation_state:
-          id: moderation_state
+        moderation_state_permission:
+          id: moderation_state_permission
           table: ior_submission
-          field: moderation_state
+          field: moderation_state_permission
           relationship: none
           group_type: group
           admin_label: ''
-          operator: in
-          value:
-            ior_submission_review-accepted: ior_submission_review-accepted
-            ior_submission_review-published: ior_submission_review-published
+          operator: 'not empty'
+          value: {  }
           group: 1
           exposed: false
           expose:
@@ -386,7 +383,7 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           entity_type: ior_submission
-          plugin_id: moderation_state_filter
+          plugin_id: moderation_state_permission_filter
       sorts: {  }
       title: Submissions
       header:
