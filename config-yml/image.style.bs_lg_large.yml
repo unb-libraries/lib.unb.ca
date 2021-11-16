@@ -1,0 +1,15 @@
+uuid: 36c836b8-c102-418d-80ea-a782111f98bc
+langcode: en
+status: true
+dependencies: {  }
+name: bs_lg_large
+label: 'BS LG (Large scale 992px)'
+effects:
+  c6dc18f6-c729-499d-b256-5ea4c1f0ec50:
+    uuid: c6dc18f6-c729-499d-b256-5ea4c1f0ec50
+    id: image_scale
+    weight: 1
+    data:
+      width: 992
+      height: null
+      upscale: false

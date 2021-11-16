@@ -1,0 +1,15 @@
+uuid: 5bd2939f-669b-44f9-b5dd-c8d7dcf7e3af
+langcode: en
+status: true
+dependencies: {  }
+name: bs_xl_extra_large
+label: 'BS XL (Extra large scale 1200px)'
+effects:
+  abb9acfa-89b0-4dce-925f-195f90a8dd50:
+    uuid: abb9acfa-89b0-4dce-925f-195f90a8dd50
+    id: image_scale
+    weight: 1
+    data:
+      width: 1200
+      height: null
+      upscale: false
