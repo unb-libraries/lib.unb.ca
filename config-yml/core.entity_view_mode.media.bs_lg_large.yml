@@ -1,0 +1,10 @@
+uuid: 9325755f-f04e-4843-9ab8-73ef44975a6a
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.bs_lg_large
+label: 'BS Large (scale: 992px width)'
+targetEntityType: media
+cache: true

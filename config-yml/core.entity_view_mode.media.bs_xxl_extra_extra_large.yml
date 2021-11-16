@@ -1,0 +1,10 @@
+uuid: 9d34bcfa-0dad-4032-8fc0-881f7fc5c83a
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.bs_xxl_extra_extra_large
+label: 'BS XXL (scale: 1400px full-width)'
+targetEntityType: media
+cache: true
