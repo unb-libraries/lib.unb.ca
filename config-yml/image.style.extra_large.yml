@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 name: extra_large
-label: 'Extra Large (Scale 767px)'
+label: 'BS MD (Medium scale 767px)'
 effects:
   863663aa-ee3b-493a-a837-d9e9eec9401f:
     uuid: 863663aa-ee3b-493a-a837-d9e9eec9401f
