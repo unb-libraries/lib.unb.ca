@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.bs_lg_large
+    - core.entity_view_mode.media.bs_xxl_extra_extra_large
     - core.entity_view_mode.media.extra_large
   module:
     - editor
@@ -69,7 +71,7 @@ filters:
     status: true
     weight: -50
     settings:
-      allowed_html: '<a href class id target title aria-controls aria-expanded aria-selected hreflang data-entity-substitution data-entity-type data-entity-uuid data-toggle role> <address class> <blockquote cite> <br> <button aria-controls aria-expanded aria-haspopup aria-label class data-dismiss data-reference data-target data-toggle id type> <caption class> <cite> <code> <div class data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date data-parent id role aria-labelledby> <dd class id> <dl class id> <drupal-entity alt class title data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button> <drupal-media data-align data-caption data-entity-type data-entity-uuid data-view-mode class> <dt class id> <em class> <h2 class id> <h3 class id> <h4 class id> <h5 class id> <h6 class id> <hr class> <img class src alt width height data-entity-type data-entity-uuid data-align data-caption> <li class id> <ol class id start type> <p class id> <span aria-hidden class data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date data-color > <strong> <sub> <sup> <table class id> <tbody class> <td class colspan data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date id rowspan> <tfoot> <th class colspan id rowspan scope> <thead class> <tr class data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date id> <ul class id type role>'
+      allowed_html: '<a href id target title aria-controls aria-expanded aria-selected hreflang data-entity-substitution data-entity-type data-entity-uuid data-toggle role class=""> <address class=""> <blockquote cite> <br> <button aria-controls aria-expanded aria-haspopup aria-label data-dismiss data-reference data-target data-toggle id type class=""> <caption class=""> <cite> <code> <div data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date data-parent id role aria-labelledby class=""> <dd id class=""> <dl id class=""> <dt id class=""> <em class=""> <h2 id class=""> <h3 id class=""> <h4 id class=""> <h5 id class=""> <h6 id class=""> <hr class=""> <img src alt width height data-entity-type data-entity-uuid data-align data-caption class=""> <li id class=""> <ol id start type class=""> <p id class=""> <span aria-hidden data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date data-color class=""> <strong> <sub> <sup> <table id class=""> <tbody class=""> <td colspan data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date id rowspan class=""> <tfoot> <th colspan id rowspan scope class=""> <thead class=""> <tr data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date id class=""> <ul id type role class=""> <drupal-media data-align data-caption data-entity-type data-entity-uuid data-view-mode alt title class=""> <drupal-entity alt title data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button data-langcode class="">'
       filter_html_help: true
       filter_html_nofollow: false
   filter_autop:
@@ -102,4 +104,6 @@ filters:
         image: image
       allowed_view_modes:
         default: default
+        bs_lg_large: bs_lg_large
+        bs_xxl_extra_extra_large: bs_xxl_extra_extra_large
         extra_large: extra_large
