@@ -125,8 +125,10 @@ class ModerationStatePermissionFilter extends ModerationStateFilter {
     foreach ($this->getValueOptions() as $states) {
       foreach ($states as $state => $state_label) {
         list($workflow_id, $state_id) = explode('-', $state);
-        $permission = "view {$state_id} {$this->getEntityType()} entities";
-        if ($this->currentUser()->hasPermission($permission)) {
+        if ($this->currentUser()->hasPermission("list {$this->getEntityType()} entities")) {
+          $permitted_states[$workflow_id][] = $state_id;
+        }
+        elseif ($this->currentUser()->hasPermission("list {$state_id} {$this->getEntityType()} entities")) {
           $permitted_states[$workflow_id][] = $state_id;
         }
       }
