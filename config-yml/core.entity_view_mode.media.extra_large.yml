@@ -5,6 +5,6 @@ dependencies:
   module:
     - media
 id: media.extra_large
-label: 'Extra Large (scale 767px width)'
+label: 'BS Medium (scale: 767px width)'
 targetEntityType: media
 cache: true
