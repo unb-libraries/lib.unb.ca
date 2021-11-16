@@ -15,7 +15,8 @@ RUN ${RSYNC_MOVE} /build/scripts/container/ /scripts/ && \
   /scripts/initOpenLdap.sh && \
   /scripts/installFileMarc.sh && \
   /scripts/setupStandardConf.sh && \
-  /scripts/build.sh
+  /scripts/build.sh && \
+  /scripts/linkDrupalCronEntryInitLib.sh
 
 # Deploy custom assets, configuration.
 COPY ./config-yml ${DRUPAL_CONFIGURATION_DIR}
