@@ -3,13 +3,13 @@ langcode: en
 status: true
 dependencies: {  }
 name: content_lg_breakpoint
-label: 'Content Lg Breakpoint (538px)'
+label: 'BS SM (Small scale 576px)'
 effects:
   b51b045b-0e9a-45a5-8e3f-801a0d62b456:
     uuid: b51b045b-0e9a-45a5-8e3f-801a0d62b456
     id: image_scale
     weight: 1
     data:
-      width: 538
+      width: 576
       height: null
       upscale: false
