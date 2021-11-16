@@ -18,7 +18,7 @@ type_settings:
       published: false
       default_revision: false
       label: Archived
-      weight: 1
+      weight: 2
     draft:
       published: false
       default_revision: false
@@ -28,6 +28,11 @@ type_settings:
       label: Published
       published: true
       default_revision: true
+      weight: 1
+    published_anonymised_:
+      published: false
+      default_revision: false
+      label: 'Published (Anonymised)'
       weight: 0
     rejected:
       published: false
@@ -47,9 +52,9 @@ type_settings:
       from:
         - published
       to: archived
-      weight: 1
+      weight: 2
     edit:
-      label: Edit
+      label: 'Edit (before publishing)'
       from:
         - accepted
       to: accepted
@@ -58,7 +63,17 @@ type_settings:
       label: Publish
       from:
         - accepted
+        - published
+        - published_anonymised_
       to: published
+      weight: 1
+    publish_anonymised:
+      label: 'Publish anonymised'
+      from:
+        - accepted
+        - draft
+        - published_anonymised_
+      to: published_anonymised_
       weight: 0
     reject:
       label: Reject
