@@ -11,7 +11,7 @@ field_name: field_banner_image
 entity_type: node
 bundle: library_page
 label: 'Full-width Header Image'
-description: "Recommended image dimensions: <b>1400x750px</b>.\r\n\r\n"
+description: "Recommended image dimensions: <b>1440x750px</b>.\r\n\r\n"
 required: false
 translatable: false
 default_value: {  }
