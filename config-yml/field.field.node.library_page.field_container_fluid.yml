@@ -9,8 +9,8 @@ id: node.library_page.field_container_fluid
 field_name: field_container_fluid
 entity_type: node
 bundle: library_page
-label: 'Fluid section containers'
-description: 'Switches content region display to 100% width at all breakpoints instead of using the Bootstrap responsive breakpoint max-width values. Also enables custom banner image + content overrides for the header section.'
+label: 'Full-width Content Containers'
+description: '<p>Switches content region display to <b>100% width at all breakpoints</b> instead of using the Bootstrap responsive breakpoint max-width values.</p>'
 required: false
 translatable: false
 default_value:

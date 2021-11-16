@@ -21,7 +21,7 @@ field_name: field_alt_layout_header
 entity_type: node
 bundle: library_page
 label: 'Header Content'
-description: ''
+description: '<p>If a <b>Full-width Header Image</b> has been added any <b>Header Content</b> entered will be displayed as an overlay in the centre of the image.</p>'
 required: false
 translatable: false
 default_value: {  }
