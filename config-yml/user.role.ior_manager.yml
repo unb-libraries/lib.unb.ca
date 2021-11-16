@@ -1,0 +1,21 @@
+uuid: bd6d0e14-a616-49bb-b858-da4b607ce35f
+langcode: en
+status: true
+dependencies: {  }
+id: ior_manager
+label: 'IOR Contest Manager'
+weight: 6
+is_admin: null
+permissions:
+  - 'create contest entities'
+  - 'list contest entities'
+  - 'list ior_submission entities'
+  - 'update contest entities'
+  - 'update ior_submission entities'
+  - 'use ior_submission_review transition archive'
+  - 'use ior_submission_review transition edit'
+  - 'use ior_submission_review transition publish'
+  - 'use ior_submission_review transition publish_anonymised'
+  - 'use ior_submission_review transition re_submit'
+  - 'view contest entities'
+  - 'view ior_submission entities'

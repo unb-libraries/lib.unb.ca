@@ -1,4 +1,4 @@
-# Classification entities
+# Contest entities
 administer contest entities:
   title: "Administer IOR contests."
 
@@ -12,7 +12,99 @@ view contest entities:
   title: "View IOR contests."
 
 update contest entities:
-  title: "Edit retention IOR contests"
+  title: "Edit IOR contests"
 
 delete contest entities:
   title: "Delete IOR contests."
+
+
+# Submission entities
+administer ior_submission entities:
+  title: "Administer IOR submissions."
+
+list ior_submission entities:
+  title: "List IOR submissions."
+
+list draft ior_submission entities:
+  title: "List submitted IOR submissions."
+
+list accepted ior_submission entities:
+  title: "List accepted IOR submissions."
+
+list rejected ior_submission entities:
+  title: "List rejected IOR submissions."
+
+list published_anonymised_ ior_submission entities:
+  title: "List published anonymised IOR submissions."
+
+list published ior_submission entities:
+  title: "List published IOR submissions."
+
+list archived ior_submission entities:
+  title: "List archived IOR submissions."
+
+create ior_submission entities:
+  title: "Create IOR submissions."
+
+view ior_submission entities:
+  title: "View IOR submissions."
+
+view draft ior_submission entities:
+  title: "View submitted IOR submissions."
+
+view accepted ior_submission entities:
+  title: "View accepted IOR submissions."
+
+view rejected ior_submission entities:
+  title: "View rejected IOR submissions."
+
+view published_anonymised_ ior_submission entities:
+  title: "View published anonymised IOR submissions."
+
+view published ior_submission entities:
+  title: "View published IOR submissions."
+
+view archived ior_submission entities:
+  title: "View archived IOR submissions."
+
+update ior_submission entities:
+  title: "Edit IOR submissions."
+
+update draft ior_submission entities:
+  title: "Edit submitted IOR submissions."
+
+update accepted ior_submission entities:
+  title: "Edit accepted IOR submissions."
+
+update rejected ior_submission entities:
+  title: "Edit rejected IOR submissions."
+
+update published_anonymised_ ior_submission entities:
+  title: "Edit published anonymised IOR submissions."
+
+update published ior_submission entities:
+  title: "Edit published IOR submissions."
+
+update archived ior_submission entities:
+  title: "Edit archived IOR submissions."
+
+delete ior_submission entities:
+  title: "Delete IOR submissions."
+
+delete draft ior_submission entities:
+  title: "Delete submitted IOR submissions."
+
+delete accepted ior_submission entities:
+  title: "Delete accepted IOR submissions."
+
+delete rejected ior_submission entities:
+  title: "Delete rejected IOR submissions."
+
+delete published_anonymised_ ior_submission entities:
+  title: "Delete published anonymised IOR submissions."
+
+delete published ior_submission entities:
+  title: "Delete published IOR submissions."
+
+delete archived ior_submission entities:
+  title: "Delete archived IOR submissions."

@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+id: ior_reviewer
+label: 'IOR Reviewer'
+weight: 7
+is_admin: null
+permissions:
+  - 'list ior_submission entities'
+  - 'update draft ior_submission entities'
+  - 'use ior_submission_review transition accept'
+  - 'use ior_submission_review transition reject'
+  - 'view contest entities'
+  - 'view ior_submission entities'
