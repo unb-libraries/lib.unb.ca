@@ -8,7 +8,7 @@
     {% set nav_btn_hours_toggle = false %}
     {% set banner_image = file_url(node.field_banner_image.entity.field_media_image.entity.fileuri) %}
     {% set image_width = node.field_banner_image.entity.field_media_image.0.height %}
-    <header id="header" class="header-fluid" aria-label="Site header" style="background-image: url({{ banner_image }});height:{{ image_width }}px">
+    <header id="header" class="header-fluid" aria-label="Site header" style="background-image: url({{ banner_image }});max-height:{{ image_width }}px">
 {% else %}
     {% set unblib_logo_style = 'red-black' %}
     {% set nav_btn_style = 'red' %}
@@ -69,7 +69,7 @@
         </div>
     </nav>
     {% if custom_header_class == 'header-fluid' %}
-        <div id="banner-image-overlay" class="d-flex align-items-center justify-content-center" style="height:{{ image_width - 153 }}px">
+        <div id="banner-image-overlay" class="d-flex align-items-center justify-content-center" style="height:{{ image_width - 135 }}px">
           {% if node.field_alt_layout_header is not empty %}
               {{ node.field_alt_layout_header.value|raw }}
           {% endif %}

@@ -1,8 +1,7 @@
-.header-fluid {
+ .header-fluid {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  overflow-y: hidden;
 
   #banner-image-overlay {
     overflow-y: auto;
@@ -10,16 +9,28 @@
 
   #navbar-top {
     background-color: initial;
-    background-image: linear-gradient(180deg, rgb(27 33 37 / 85%), rgb(27 33 37 / 50%));
+    background-image: linear-gradient(180deg, rgb(27 33 37 / 95%), rgb(27 33 37 / 90%));
   }
 
   #navbar-main {
     &:not(.affix) {
-      background-image: linear-gradient(180deg, rgb(27 33 37 / 50%), rgb(27  33  37 / 0%));
+      background-image: linear-gradient(180deg, rgb(27 33 37 / 90%), rgb(27  33  37 / 50%));
+
+      &:focus-within #navbar-main-content,
+      #navbar-main-content:hover {
+        @media(min-width: 992px) {
+          background-color: rgb(55 63 68 / 99%);
+        }
+      }
+
+      #navbar-main-content {
+        transition: background-color .35s ease-in;
+      }
     }
 
     @media(max-width: 991px) {
       background: #1b2125;
+
       #nav-btn .btn {
         border-color: $dark;
       }
@@ -43,12 +54,16 @@
     }
   }
 
+  #banner-image-overlay {
+    background-image: linear-gradient(180deg, rgb(27 33 37 / 50%), rgb(27  33  37 / 1%));
+  }
+
   @media (max-width: 767px) {
     background-attachment: fixed;
-    height: 50vh !important;
+    overflow-y: auto;
 
     #banner-image-overlay {
-      height: 39vh !important;
+      height: 50vh !important;
     }
   }
 }
