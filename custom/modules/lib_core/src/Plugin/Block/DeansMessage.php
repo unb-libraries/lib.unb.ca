@@ -39,7 +39,7 @@ class DeansMessage extends BlockBase {
     // Note: image manually resized to match Content Lg Breakpoint image style.
     $html = '
       <a href="/what-to-expect">
-        <figure class="figcaption-overlay">
+        <figure class="figcaption-overlay front-page-border">
             <img src="/modules/custom/lib_core/img/lesley-balcomm-welcome-unb-libraries.png"
               alt="Welcome to UNB Libraries">
             <figcaption class="caption-bottom font-weight-bold">Covid-19 & Fall 2021 - Updated October 5th</figcaption>
