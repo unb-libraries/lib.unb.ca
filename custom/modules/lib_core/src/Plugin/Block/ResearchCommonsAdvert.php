@@ -42,7 +42,7 @@ class ResearchCommonsAdvert extends BlockBase {
         <figure class="bg-light front-page-border mb-0">
             <img src="/modules/custom/lib_core/img/hil-research-commons.png"
               alt="Welcome to UNB Libraries">
-            <figcaption class="caption-bottom font-weight-bold m-4 mt-0">Introducing the new<div class="btn-link h4 mt-1">Harriet Irving Library Research Commons!</div></figcaption>
+            <figcaption class="caption-bottom m-4 mt-0">Introducing the new<div class="btn-link h4 mt-1">Harriet Irving Library Research Commons!</div></figcaption>
         </figure>
       </a>
     ';
