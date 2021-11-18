@@ -10,12 +10,12 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
-    library_page_html: library_page_html
+    no_media_html: no_media_html
+    library_page_html: '0'
     basic_html: '0'
     full_html: '0'
     restricted_html: '0'
     plain_text: '0'
-    no_media_html: '0'
 id: ior_submission.ior_submission.field_description
 field_name: field_description
 entity_type: ior_submission
