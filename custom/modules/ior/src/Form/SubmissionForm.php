@@ -35,15 +35,10 @@ class SubmissionForm extends ContentEntityForm {
   /**
    * {@inheritDoc}
    */
-  public function save(array $form, FormStateInterface $form_state) {
-    if ($saved = parent::save($form, $form_state)) {
-      $contest = $this->getContest();
-      /** @var \Drupal\ior\Entity\SubmissionInterface $submission */
-      $submission = $this->getEntity();
-      $contest->addSubmission($submission);
-      $contest->save();
-    }
-    return $saved;
+  public function buildEntity(array $form, FormStateInterface $form_state) {
+    $entity = parent::buildEntity($form, $form_state);
+    $entity->setContest($this->getContest());
+    return $entity;
   }
 
 }

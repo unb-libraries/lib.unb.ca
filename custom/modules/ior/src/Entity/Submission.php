@@ -4,9 +4,11 @@ namespace Drupal\ior\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityPublishedTrait;
+use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\FieldableEntityInterface;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
+use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
 
 /**
  * The "Submission" entity.
@@ -78,6 +80,16 @@ class Submission extends ContentEntityBase implements SubmissionInterface {
   /**
    * {@inheritDoc}
    */
+  public function __construct(array $values, $entity_type, $bundle = FALSE, $translations = []) {
+    parent::__construct($values, $entity_type, $bundle, $translations);
+    if (array_key_exists('contest', $values)) {
+      $this->contest = $values['contest'];
+    }
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   protected function urlRouteParameters($rel) {
     $uri_route_parameters = parent::urlRouteParameters($rel);
     $uri_route_parameters['contest'] = $this->getContest();
@@ -103,6 +115,13 @@ class Submission extends ContentEntityBase implements SubmissionInterface {
       }
     }
     return $this->contest;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function setContest(ContestInterface $contest) {
+    $this->contest = $contest;
   }
 
   /**
@@ -206,6 +225,27 @@ class Submission extends ContentEntityBase implements SubmissionInterface {
         'BI-SCI-PHY' => t('Physics (bi-campus)'),
       ],
     ];
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function preSave(EntityStorageInterface $storage) {
+    if (!$this->getContest()) {
+      throw new MissingMandatoryParametersException('Submissions must be assigned to a contest upon creation.');
+    }
+    parent::preSave($storage);
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function save() {
+    $return = parent::save();
+    $contest = $this->getContest();
+    $contest->addSubmission($this);
+    $contest->save();
+    return $return;
   }
 
 }

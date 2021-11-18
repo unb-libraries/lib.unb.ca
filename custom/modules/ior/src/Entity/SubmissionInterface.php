@@ -20,4 +20,12 @@ interface SubmissionInterface extends ContentEntityInterface, EntityPublishedInt
    */
   public function getTitle();
 
+  /**
+   * Set the contest.
+   *
+   * @param \Drupal\ior\Entity\ContestInterface $contest
+   *   A contest entity.
+   */
+  public function setContest(ContestInterface $contest);
+
 }
