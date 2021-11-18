@@ -24,6 +24,7 @@ use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
  *       "default" = "Drupal\ior\Form\SubmissionForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"
  *     },
+ *     "storage" = "Drupal\ior\Entity\Storage\SubmissionStorage",
  *     "route_provider" = {
  *       "html" = "Drupal\ior\Entity\Routing\SubmissionHtmlRouteProvider"
  *     },
@@ -92,28 +93,14 @@ class Submission extends ContentEntityBase implements SubmissionInterface {
    */
   protected function urlRouteParameters($rel) {
     $uri_route_parameters = parent::urlRouteParameters($rel);
-    $uri_route_parameters['contest'] = $this->getContest();
+    $uri_route_parameters['contest'] = $this->getContest()->id();
     return $uri_route_parameters;
   }
 
   /**
-   * Get the contest.
-   *
-   * @return \Drupal\ior\Entity\ContestInterface
-   *   A contest entity.
+   * {@inheritDoc}
    */
   public function getContest() {
-    if (!$this->contest && !$this->isNew()) {
-      /* @noinspection PhpUnhandledExceptionInspection */
-      $query = $this->entityTypeManager()
-        ->getStorage('contest')
-        ->getQuery()
-        ->condition('field_submissions', $this->id(), 'CONTAINS');
-
-      if (!empty($contests = $query->execute())) {
-        $this->contest = $contests[array_keys($contests)[0]];
-      }
-    }
     return $this->contest;
   }
 
