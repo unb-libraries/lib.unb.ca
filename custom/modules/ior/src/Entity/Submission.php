@@ -24,7 +24,8 @@ use Drupal\Core\Field\FieldStorageDefinitionInterface;
  *     },
  *     "route_provider" = {
  *       "html" = "Drupal\ior\Entity\Routing\SubmissionHtmlRouteProvider"
- *     }
+ *     },
+ *     "access" = "Drupal\custom_entity\Entity\Access\EntityAccessControlHandler"
  *   },
  *   base_table = "ior_submission",
  *   revision_table = "ior_submission_revision",
