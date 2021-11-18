@@ -12,6 +12,7 @@ permissions:
   - 'access content'
   - 'access user contact forms'
   - 'access user profiles'
+  - 'list contest entities'
   - 'list published ior_submission entities'
   - 'list published_anonymised_ ior_submission entities'
   - 'use search_api_autocomplete for search_our_webpages'

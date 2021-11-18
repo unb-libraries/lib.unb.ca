@@ -22,7 +22,8 @@ use Drupal\Core\Entity\ContentEntityBase;
  *     "storage" = "Drupal\ior\Entity\Storage\ContestStorage",
  *     "route_provider" = {
  *       "html" = "Drupal\ior\Entity\Routing\ContestHtmlRouteProvider"
- *     }
+ *     },
+ *     "access" = "Drupal\custom_entity\Entity\Access\EntityAccessControlHandler"
  *   },
  *   base_table = "ior_contest",
  *   revision_table = "ior_contest_revision",

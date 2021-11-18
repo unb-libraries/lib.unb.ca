@@ -6,6 +6,7 @@ label: 'IOR Reviewer'
 weight: 7
 is_admin: null
 permissions:
+  - 'list contest entities'
   - 'list ior_submission entities'
   - 'update draft ior_submission entities'
   - 'use ior_submission_review transition accept'
