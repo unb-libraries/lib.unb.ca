@@ -26,8 +26,16 @@
                     <li><a class="nav-link" href="https://lib.unb.ca/services/your-comments-and-suggestions"><i class="fas fa-comments" aria-hidden="true">&nbsp;</i>Feedback</a></li>
                     <li><a class="nav-link" href="https://lib.unb.ca/search"><i class="fas fa-search" aria-hidden="true">&nbsp;</i>Search</a></li>
                 </ul>
-                {% if show_top_header_login or show_top_header_logout %}
+                {% if show_top_header_login or show_top_header_logout or show_top_header_covid %}
                     <ul class="nav ml-auto">
+                        {% if show_top_header_covid %}
+                            <li>
+                                <a href="/what-to-expect" class="nav-link"><i class="fas fa-shield-virus text-unb-red fa-lg"></i>
+                                    Covid-19 FAQ
+                                </a>
+                            </li>
+                        {% endif %}
+
                         {% if logged_in and show_top_header_logout %}
                             <li>{{ logout_link }}</li>
                         {% elseif not logged_in and show_top_header_login %}
