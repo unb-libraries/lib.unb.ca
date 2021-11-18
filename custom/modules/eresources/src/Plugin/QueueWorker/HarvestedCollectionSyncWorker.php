@@ -65,7 +65,7 @@ class HarvestedCollectionSyncWorker extends TaskQueueWorkerBase {
     foreach ($collections as $collection) {
       $defaultParams = [
         'collection_uid' => $collection->getOclcId(),
-        'content' => 'fulltext,print',
+        'content' => 'fulltext,ebook',
         'itemsPerPage' => $perPage,
       ];
 
