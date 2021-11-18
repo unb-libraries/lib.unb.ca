@@ -47,19 +47,19 @@ type_settings:
         - draft
         - rejected
       to: accepted
-      weight: -4
+      weight: -3
     archive:
       label: Archive
       from:
         - published
       to: archived
-      weight: 2
+      weight: 3
     edit:
       label: 'Edit (before publishing)'
       from:
         - accepted
       to: accepted
-      weight: -1
+      weight: 0
     publish:
       label: Publish
       from:
@@ -67,7 +67,7 @@ type_settings:
         - published
         - published_anonymised_
       to: published
-      weight: 1
+      weight: 2
     publish_anonymised:
       label: 'Publish anonymised'
       from:
@@ -75,20 +75,26 @@ type_settings:
         - draft
         - published_anonymised_
       to: published_anonymised_
-      weight: 0
+      weight: 1
     re_submit:
       label: Re-submit
       from:
         - rejected
       to: draft
-      weight: -2
+      weight: -1
     reject:
       label: Reject
       from:
         - accepted
         - draft
       to: rejected
-      weight: -3
+      weight: -2
+    submit:
+      label: Submit
+      from:
+        - draft
+      to: draft
+      weight: -4
   entity_types:
     ior_submission:
       - ior_submission
