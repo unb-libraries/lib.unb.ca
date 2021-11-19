@@ -45,7 +45,7 @@ elements: |-
       '#wrapper_attributes':
         class:
           - d-inline
-      '#markup': '<em class="d-table-cell fa-exclamation-circle fas">&nbsp;</em><span class="d-table-cell">Document Delivery services are generally free to all UNB/STU patrons. If there are charges, we will contact you before proceeding with your request.</span>'
+      '#markup': '<em class="d-table-cell fa-exclamation-circle fas">&nbsp;</em><span class="d-table-cell">Document Delivery services are generally free to all UNB/STU patrons. If there are charges, we will contact you before proceeding with your request. <a href="/services/docdel/policies-and-fees">See Document Delivery Policies.</a></span>'
     agree_container:
       '#type': container
       '#attributes':
@@ -53,7 +53,7 @@ elements: |-
           - ml-5
       agree_checkbox:
         '#type': checkbox
-        '#title': '<b><span>I have reviewed the</span> <a href="/services/docdel/policies-and-fees">Document Delivery Policies</a> prior to submitting my requests(s).</b>'
+        '#title': '<b>I have reviewed the Document Delivery Policies prior to submitting my requests(s).</b>'
         '#required': true
       actions:
         '#type': webform_actions

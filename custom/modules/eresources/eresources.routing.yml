@@ -23,3 +23,19 @@ entity.eresources_harvested_collection.synchronize:
     parameters:
       eresources_harvested_collection:
         type: entity:eresources_harvested_collection
+eresources.newspaper-packages:
+  path: '/e-resources/newspaper-packages'
+  defaults:
+    _controller: '\Drupal\eresources\Controller\PackagesController::view'
+    type: 'NEWS'
+    _title: 'Newspaper Packages'
+  requirements:
+    _permission: 'access content'
+eresources.journal-packages:
+  path: '/e-resources/journal-packages'
+  defaults:
+    _controller: '\Drupal\eresources\Controller\PackagesController::view'
+    type: 'JOUR'
+    _title: 'Journal Packages'
+  requirements:
+    _permission: 'access content'
