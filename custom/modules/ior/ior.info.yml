@@ -6,7 +6,7 @@ core_version_requirement: ^8 || ^9
 package: 'UNB'
 dependencies:
   - content_moderation
-  - custom_entity
   - custom_entity_ui
   - custom_entity_revisions
+  - custom_entity_mail
   - datetime_plus

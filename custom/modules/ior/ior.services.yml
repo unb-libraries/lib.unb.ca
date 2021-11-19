@@ -1,0 +1,7 @@
+services:
+  contestant.mailer.entity_event_subscriber:
+    class: Drupal\ior\EventSubscriber\ContestantMailer
+    arguments: [ 'ior_submission' ]
+    parent: template_mailer.entity_event_subscriber
+    tags:
+      - { name: 'event_subscriber' }

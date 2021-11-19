@@ -6,8 +6,6 @@ use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityPublishedTrait;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
-use Drupal\Core\Entity\FieldableEntityInterface;
-use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
 
 /**
@@ -73,9 +71,66 @@ class Submission extends ContentEntityBase implements SubmissionInterface {
   /**
    * {@inheritDoc}
    */
+  public function getFirstName() {
+    return $this->get(self::FIELD_FIRST_NAME)
+      ->value;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getLastName() {
+    return $this->get(self::FIELD_LAST_NAME)
+      ->value;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getEmail() {
+    return $this->get(static::FIELD_EMAIL)
+      ->value;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getDepartment() {
+    $department_ids = array_merge(... array_values(static::allowedDepartments()));
+    $department_id = $this->get(self::FIELD_DEPARTMENT)
+      ->value;
+    return $department_ids[$department_id]
+      ->render();
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public function getTitle() {
     return $this->get(static::FIELD_TITLE)
       ->value;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getDescription() {
+    return $this->get(self::FIELD_DESCRIPTION)
+      ->processed;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getContest() {
+    return $this->contest;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function setContest(ContestInterface $contest) {
+    $this->contest = $contest;
   }
 
   /**
@@ -100,20 +155,6 @@ class Submission extends ContentEntityBase implements SubmissionInterface {
   /**
    * {@inheritDoc}
    */
-  public function getContest() {
-    return $this->contest;
-  }
-
-  /**
-   * {@inheritDoc}
-   */
-  public function setContest(ContestInterface $contest) {
-    $this->contest = $contest;
-  }
-
-  /**
-   * {@inheritDoc}
-   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
@@ -127,17 +168,10 @@ class Submission extends ContentEntityBase implements SubmissionInterface {
   /**
    * Allowed values callback for "department" field.
    *
-   * @param \Drupal\Core\Field\FieldStorageDefinitionInterface $definition
-   *   The field definition.
-   * @param \Drupal\Core\Entity\FieldableEntityInterface $entity
-   *   The entity.
-   * @param bool $cacheable
-   *   Whether the result should be cacheable.
-   *
    * @return array[]
    *   An array of VALUE => LABEL pairs.
    */
-  public static function allowedDepartments(FieldStorageDefinitionInterface $definition, FieldableEntityInterface $entity, bool $cacheable) {
+  public static function allowedDepartments() {
     return [
       t('Arts')->render() => [
         'FR-ART-ANT' => t('Anthropology'),
