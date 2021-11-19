@@ -6,6 +6,14 @@ dependencies:
     - filter.format.basic_html
   module:
     - ckeditor
+    - editor_file
+third_party_settings:
+  editor_file:
+    status: true
+    scheme: public
+    directory: inline-files
+    extensions: txt
+    max_size: ''
 format: basic_html
 editor: ckeditor
 settings:
@@ -37,13 +45,30 @@ settings:
           items:
             - Source
   plugins:
-    drupallink:
-      linkit_enabled: false
-      linkit_profile: ''
     language:
       language_list: un
     stylescombo:
       styles: ''
+    drupallink:
+      linkit_enabled: false
+      linkit_profile: ''
+    codemirror:
+      enable: false
+      startupMode: wysiwyg
+      mode: htmlmixed
+      theme: default
+      options:
+        lineNumbers: true
+        lineWrapping: true
+        matchBrackets: true
+        autoCloseTags: true
+        autoCloseBrackets: true
+        enableSearchTools: true
+        enableCodeFolding: true
+        enableCodeFormatting: true
+        autoFormatOnStart: true
+        autoFormatOnModeChange: true
+        autoFormatOnUncomment: true
     colorbutton:
       colors: ''
     video_embed:
