@@ -41,8 +41,12 @@ class ResearchCommonsAdvert extends BlockBase {
       <a href="/researchcommons">
         <figure class="bg-light front-page-border mb-0">
             <img src="/modules/custom/lib_core/img/hil-research-commons.png"
-              alt="Welcome to UNB Libraries">
-            <figcaption class="caption-bottom m-4 mt-0">Introducing the new<div class="btn-link h4 mt-1">Harriet Irving Library Research Commons!</div></figcaption>
+              alt="The Harriet Irving Library Research Commons has transformed the third floor of the
+                   Harriet Irving Library into a modern, interdisciplinary, research-driven learning environment
+                   to further innovation, scholarship, and research at UNB.">
+            <figcaption class="caption-bottom m-4 mt-0"><strong>Innovation - Collaboration - Impact</strong>
+                <div class="btn-link h4 mt-1">New spaces, technologies and expertise to advance your research at UNB Libraries</div>
+             </figcaption>
         </figure>
       </a>
     ';
