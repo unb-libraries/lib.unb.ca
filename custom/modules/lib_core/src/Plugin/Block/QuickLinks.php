@@ -93,17 +93,15 @@ class QuickLinks extends BlockBase {
         )->toString(),
       ],
     ];
-    $covid_btn = [
-      '#attributes' => [
-        'id' => 'covid-btn',
-      ],
+    $misc_btn = [
       '#children' => Link::fromTextAndUrl(
-        Markup::create('<span class="fas fa-head-side-mask mr-1"></span>' . $this->t('Covid-19 FAQ')),
-        Url::fromUri('base://what-to-expect', [
+        Markup::create('<span class="fas fa-star mr-1"></span>' . $this->t('HIL Research Commons')),
+        Url::fromUri('base://researchcommons', [
           'attributes' => [
+            'id' => 'misc-btn',
             'class' => [
               'btn',
-              'btn-danger',
+              'btn-irving',
               'text-nowrap',
             ],
           ],
@@ -175,7 +173,7 @@ class QuickLinks extends BlockBase {
           'id' => ['quicklinks-buttons'],
         ],
         '#items' => [
-          'covid_button' => $covid_btn,
+          'covid_button' => $misc_btn,
           'book_button' => $booking_btn,
         ],
       ],
