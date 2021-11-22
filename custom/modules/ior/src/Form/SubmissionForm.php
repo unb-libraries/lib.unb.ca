@@ -11,6 +11,19 @@ use Drupal\Core\Form\FormStateInterface;
 class SubmissionForm extends ContentEntityForm {
 
   /**
+   * Assign contest, if not already assigned.
+   */
+  protected function prepareEntity() {
+    parent::prepareEntity();
+    if (!$this->entity->getContest()) {
+      $contest = $this
+        ->getRouteMatch()
+        ->getParameter('contest');
+      $this->entity->setContest($contest);
+    }
+  }
+
+  /**
    * {@inheritDoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {

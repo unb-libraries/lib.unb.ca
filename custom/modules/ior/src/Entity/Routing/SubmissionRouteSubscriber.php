@@ -18,11 +18,6 @@ class SubmissionRouteSubscriber extends RouteSubscriberBase {
       $parameters = $route->getOption('parameters');
       if (is_array($parameters) && array_key_exists('ior_submission', $parameters)) {
         $parameters['ior_submission']['type'] = 'entity:contest:ior_submission';
-        if (!array_key_exists('contest', $parameters)) {
-          $parameters['contest'] = [
-            'type' => 'entity:contest',
-          ];
-        }
         $route->setOption('parameters', $parameters);
       }
     }
