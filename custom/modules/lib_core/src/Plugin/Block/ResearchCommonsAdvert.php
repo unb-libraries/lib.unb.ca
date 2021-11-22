@@ -45,7 +45,7 @@ class ResearchCommonsAdvert extends BlockBase {
                    Harriet Irving Library into a modern, interdisciplinary, research-driven learning environment
                    to further innovation, scholarship, and research at UNB.">
             <figcaption class="caption-bottom m-4 mt-0"><strong>Innovation - Collaboration - Impact</strong>
-                <div class="btn-link h4 mt-1">New spaces, technologies and expertise to advance your research at UNB Libraries</div>
+                <div class="btn-link h5 mt-2">New spaces, technologies and expertise to advance your research at UNB Libraries</div>
              </figcaption>
         </figure>
       </a>
