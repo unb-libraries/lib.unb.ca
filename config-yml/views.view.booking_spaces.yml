@@ -278,7 +278,7 @@ display:
             alter_text: true
             text: "<figure>\r\n<div class=\"btn btn-light border p-1\">{{ field_booking_space_photo }}</div>\r\n<figcaption>{{ title }}</figcaption>\r\n</figure>"
             make_link: true
-            path: '{{ field_booking_space_link }} '
+            path: '{{ field_booking_space_link }}'
             absolute: false
             external: false
             replace_spaces: false
