@@ -9,7 +9,7 @@ use Drupal\Core\Block\BlockBase;
  *
  * @Block(
  *   id = "research_commons_advert_block",
- *   admin_label = @Translation("Research Commons Advert"),
+ *   admin_label = @Translation("Harriet Irving Library Research Commons"),
  *   category = @Translation("UNB Libraries"),
  * )
  */
