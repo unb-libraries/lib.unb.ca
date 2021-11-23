@@ -6,15 +6,12 @@ use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Cache\MemoryCache\MemoryCacheInterface;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Entity\EntityFieldManagerInterface;
-use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\Sql\SqlContentEntityStorage;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\custom_entity_events\Entity\EntityEventDispatcherTrait;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
  * Storage handler for submission entities.
@@ -59,30 +56,10 @@ class SubmissionStorage extends SqlContentEntityStorage {
    *   The entity type bundle info.
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   The entity type manager.
-   * @param \Symfony\Component\EventDispatcher\EventDispatcherInterface $event_dispatcher
-   *   The event dispatcher.
    */
-  public function __construct(EntityTypeInterface $entity_type, Connection $database, EntityFieldManagerInterface $entity_field_manager, CacheBackendInterface $cache, LanguageManagerInterface $language_manager, MemoryCacheInterface $memory_cache, EntityTypeBundleInfoInterface $entity_type_bundle_info, EntityTypeManagerInterface $entity_type_manager, EventDispatcherInterface $event_dispatcher) {
+  public function __construct(EntityTypeInterface $entity_type, Connection $database, EntityFieldManagerInterface $entity_field_manager, CacheBackendInterface $cache, LanguageManagerInterface $language_manager, MemoryCacheInterface $memory_cache, EntityTypeBundleInfoInterface $entity_type_bundle_info, EntityTypeManagerInterface $entity_type_manager) {
     parent::__construct($entity_type, $database, $entity_field_manager, $cache, $language_manager, $memory_cache, $entity_type_bundle_info, $entity_type_manager);
-    $this->dispatcher = $event_dispatcher;
     $this->contestStorage = $entity_type_manager->getStorage('contest');
-  }
-
-  /**
-   * {@inheritDoc}
-   */
-  public static function createInstance(ContainerInterface $container, EntityTypeInterface $entity_type) {
-    return new static(
-      $entity_type,
-      $container->get('database'),
-      $container->get('entity_field.manager'),
-      $container->get('cache.entity'),
-      $container->get('language_manager'),
-      $container->get('entity.memory_cache'),
-      $container->get('entity_type.bundle.info'),
-      $container->get('entity_type.manager'),
-      $container->get('event_dispatcher')
-    );
   }
 
   /**
@@ -95,14 +72,6 @@ class SubmissionStorage extends SqlContentEntityStorage {
       $entity->setContest($contest);
     }
     return $entities;
-  }
-
-  /**
-   * {@inheritDoc}
-   */
-  protected function doPostSave(EntityInterface $entity, $update) {
-    parent::doPostSave($entity, $update);
-    $this->dispatchSave($entity, !$update);
   }
 
 }
