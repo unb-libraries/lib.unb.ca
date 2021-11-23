@@ -5,7 +5,7 @@ namespace Drupal\lib_core\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 
 /**
- * Provides a Dean's Message block.
+ * Provides a Research Commons feature block.
  *
  * @Block(
  *   id = "research_commons_advert_block",
@@ -32,10 +32,10 @@ class ResearchCommonsAdvert extends BlockBase {
   }
 
   /**
-   * Gets the Library Hours table structure.
+   * Gets the HTML to be included inside the Research Commons block wrapper.
    *
    * @return string
-   *   The html structure for library hours (table).
+   *   The HTML markup of the Research commons feature.
    */
   protected function getValue() {
     // Note: image manually resized to match Content Lg Breakpoint image style.
