@@ -96,11 +96,8 @@ class Submission extends ContentEntityBase implements SubmissionInterface {
    * {@inheritDoc}
    */
   public function getDepartment() {
-    $department_ids = array_merge(... array_values(static::allowedDepartments()));
-    $department_id = $this->get(self::FIELD_DEPARTMENT)
+    return $this->get(self::FIELD_DEPARTMENT)
       ->value;
-    return $department_ids[$department_id]
-      ->render();
   }
 
   /**
@@ -163,89 +160,6 @@ class Submission extends ContentEntityBase implements SubmissionInterface {
       ->setDefaultValue(FALSE);
 
     return $fields;
-  }
-
-  /**
-   * Allowed values callback for "department" field.
-   *
-   * @return array[]
-   *   An array of VALUE => LABEL pairs.
-   */
-  public static function allowedDepartments() {
-    return [
-      t('Arts')->render() => [
-        'FR-ART-ANT' => t('Anthropology'),
-        'FR-ART-CAH' => t('Classics and Ancient History'),
-        'FR-ART-CRW' => t('Creative Writing'),
-        'FR-ART-CMS' => t('Culture and Media Studies'),
-        'FR-ART-DRA' => t('Drama'),
-        'FR-ART-ECO' => t('Economics'),
-        'FR-ART-ENG' => t('English'),
-        'FR-ART-ART' => t('Faculty of Arts (Fredericton)'),
-        'SJ-ART-ART' => t('Faculty of Arts (Saint John)'),
-        'FR-ART-FRE' => t('French'),
-        'FR-ART-HIS' => t('History'),
-        'SJ-ART-HIP' => t('History & Politics'),
-        'SJ-ART-HUL' => t('Humanities & Languages'),
-        'FR-ART-IDS' => t('International Development Studies'),
-        'FR-ART-PHI' => t('Philosophy'),
-        'FR-ART-PSC' => t('Political Science'),
-        'FR-ART-PSY' => t('Psychology (Fredericton)'),
-        'SJ-ART-PSY' => t('Psychology (Saint John)'),
-        'SJ-ART-SSC' => t('Social Science'),
-        'FR-ART-SOC' => t('Sociology'),
-      ],
-      t('Business')->render() => [
-        'SJ-BUS-FAB' => t('Faculty of Business'),
-        'FR-BUS-FAM' => t('Faculty of Management'),
-      ],
-      t('Computer Science')->render() => [
-        'SJ-COM-COM' => t('Computer Science (Saint John)'),
-        'FR-COM-COM' => t('Faculty of Computer Science (Fredericton)'),
-      ],
-      t('Education')->render() => [
-        'FR-EDU-EDU' => t('Faculty of Education'),
-      ],
-      t('Engineering')->render() => [
-        'FR-ENG-CHE' => t('Chemical Engineering'),
-        'FR-ENG-CIV' => t('Civil Engineering'),
-        'FR-ENG-ECO' => t('Electrical and Computer Engineering'),
-        'SJ-ENG-ENG' => t('Engineering (Saint John)'),
-        'FR-ENG-ENG' => t('Faculty of Engineering (Fredericton)'),
-        'FR-ENG-GEO' => t('Geodesy and Geomatics Engineering'),
-        'FR-ENG-MEC' => t('Mechanical Engineering'),
-      ],
-      t('Forestry')->render() => [
-        'FR-FOR-FEM' => t('Faculty of Forestry & Environmental Management'),
-      ],
-      t('Kinesiology')->render() => [
-        'FR-KIN-KIN' => t('Faculty of Kinesiology'),
-      ],
-      t('Law')->render() => [
-        'FR-LAW-LAW' => t('Faculty of Law'),
-      ],
-      t('Leadership studies')->render() => [
-        'FR-LEA-REN' => t('Renaissance College'),
-      ],
-      t('Nursing')->render() => [
-        'FR-NUR-NUR' => t('Faculty of Nursing (Fredericton)'),
-        'MC-NUR-NUR' => t('Faculty of Nursing (Moncton)'),
-        'TO-NUR-HUM' => t('Humber College (Toronto)'),
-        'SJ-NUR-NHS' => t('Nursing and Health Sciences (Saint John)'),
-      ],
-      t('Science')->render() => [
-        'SJ-SCI-BIO' => t('Biological Sciences (Saint John)'),
-        'FR-SCI-BIO' => t('Biology (Fredericton)'),
-        'FR-SCI-CHE' => t('Chemistry'),
-        'FR-SCI-EAS' => t('Earth Sciences'),
-        'FR-SCI-SCI' => t('Faculty of Science (Fredericton)'),
-        'SJ-SCI-SCI' => t('Faculty of Science, Applied Science & Engineering (Saint John)'),
-        'FR-SCI-MAT' => t('Mathematics and Statistics (Fredericton)'),
-        'SJ-SCI-MAT' => t('Mathematics and Statistics (Saint John)'),
-        'FR-SCI-PHY' => t('Physics (Fredericton)'),
-        'BI-SCI-PHY' => t('Physics (bi-campus)'),
-      ],
-    ];
   }
 
   /**

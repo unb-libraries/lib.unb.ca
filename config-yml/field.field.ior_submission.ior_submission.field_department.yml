@@ -6,7 +6,6 @@ dependencies:
     - field.storage.ior_submission.field_department
   module:
     - ior
-    - options
 id: ior_submission.ior_submission.field_department
 field_name: field_department
 entity_type: ior_submission
@@ -18,4 +17,4 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: list_string
+field_type: string

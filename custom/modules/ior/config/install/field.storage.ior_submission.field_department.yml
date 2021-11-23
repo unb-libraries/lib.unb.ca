@@ -4,18 +4,18 @@ dependencies:
   module:
     - field_permissions
     - ior
-    - options
 third_party_settings:
   field_permissions:
     permission_type: public
 id: ior_submission.field_department
 field_name: field_department
 entity_type: ior_submission
-type: list_string
+type: string
 settings:
-  allowed_values: {  }
-  allowed_values_function: 'Drupal\ior\Entity\Submission::allowedDepartments'
-module: options
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

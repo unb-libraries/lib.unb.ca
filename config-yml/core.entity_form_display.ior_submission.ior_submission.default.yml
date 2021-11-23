@@ -25,9 +25,11 @@ mode: default
 content:
   field_department:
     weight: 3
-    settings: {  }
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: options_select
+    type: string_textfield
     region: content
   field_description:
     weight: 5

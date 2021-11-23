@@ -12,7 +12,6 @@ dependencies:
   module:
     - image
     - ior
-    - options
     - text
 id: ior_submission.ior_submission.default
 targetEntityType: ior_submission
@@ -27,9 +26,10 @@ content:
   field_department:
     weight: 4
     label: above
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    type: list_default
+    type: string
     region: content
   field_description:
     weight: 6
