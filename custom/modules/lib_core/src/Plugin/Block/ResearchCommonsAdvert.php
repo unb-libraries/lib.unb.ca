@@ -23,7 +23,9 @@ class ResearchCommonsAdvert extends BlockBase {
       '#type' => 'html_tag',
       '#tag' => 'div',
       '#attributes' => [
-        'class' => [],
+        'class' => [
+          'news-featured',
+        ],
       ],
       '#value' => $this->getValue(),
     ];
@@ -44,8 +46,9 @@ class ResearchCommonsAdvert extends BlockBase {
               alt="The Harriet Irving Library Research Commons has transformed the third floor of the
                    Harriet Irving Library into a modern, interdisciplinary, research-driven learning environment
                    to further innovation, scholarship, and research at UNB.">
-            <figcaption class="caption-bottom m-4 mt-0"><strong>Innovation - Collaboration - Impact</strong>
-                <div class="btn-link h5 mt-2">New spaces, technologies and expertise to advance your research at UNB Libraries</div>
+            <figcaption class="caption-bottom m-4 mt-0">
+                <p class="btn-link h3">Innovation - Collaboration - Impact</p>
+                <p class="h5">New spaces, technologies and expertise to advance your research at UNB Libraries</p>
              </figcaption>
         </figure>
       </a>
