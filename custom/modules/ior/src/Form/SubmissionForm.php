@@ -83,4 +83,47 @@ class SubmissionForm extends ContentEntityForm {
     return $actions;
   }
 
+  /**
+   * {@inheritDoc}
+   */
+  public function save(array $form, FormStateInterface $form_state) {
+    $return = parent::save($form, $form_state);
+    if ($return === SAVED_NEW) {
+      $this->created($form, $form_state);
+    }
+    else {
+      $this->updated($form, $form_state);
+    }
+    return $return;
+  }
+
+  /**
+   * Handle a successful entity create submission.
+   *
+   * @param array $form
+   *   An associative array containing the structure of the form.
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   The current state of the form.
+   */
+  protected function created(array $form, FormStateInterface $form_state) {
+    $contest = $this->getEntity()->getContest();
+    $form_state->setRedirectUrl($contest->toUrl());
+    $this->messenger()->addStatus($this->t('Thank your for your submission. A confirmation email has been sent to @email.', [
+      '@email' => $this->getEntity()->getEmail(),
+    ]));
+  }
+
+  /**
+   * Handle successful entity update submission.
+   *
+   * @param array $form
+   *   An associative array containing the structure of the form.
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   The current state of the form.
+   */
+  protected function updated(array $form, FormStateInterface $form_state) {
+    $form_state->setRedirectUrl($this->getEntity()->toUrl());
+    $this->messenger()->addStatus($this->t('The submission has been updated.'));
+  }
+
 }
