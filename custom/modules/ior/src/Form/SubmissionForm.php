@@ -74,4 +74,13 @@ class SubmissionForm extends ContentEntityForm {
     return "{$scheme_and_host}/researchcommons/ior";
   }
 
+  /**
+   * {@inheritDoc}
+   */
+  protected function actions(array $form, FormStateInterface $form_state) {
+    $actions = parent::actions($form, $form_state);
+    $actions['submit']['#value'] = $this->t('Submit');
+    return $actions;
+  }
+
 }
