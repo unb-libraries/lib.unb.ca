@@ -8,6 +8,8 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\oclc_api\Oclc\OclcAuthorizationInterface;
 use Drupal\oclc_api\Plugin\oclc\OclcApiManagerInterface;
 use Drupal\oclc_api\Plugin\oclc\OclcPluginManagerTrait;
+use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
 
 /**
  * HarvestedCollectionPageWorker synchronize entries from a KB collection page.
@@ -54,8 +56,13 @@ class HarvestedCollectionPageWorker extends QueueWorkerBase implements Container
    * {@inheritDoc}
    */
   public function processItem($data) {
-    $collection = $data['#collection_id'];
+    $collection_id = $data['#collection_id'];
     unset($data['#collection_id']);
+
+    $now = new DrupalDateTime();
+    $collection = \Drupal::entityTypeManager()->getStorage('eresources_harvested_collection')->load($collection_id);
+    $collection->set('last_sync', $now->format(DateTimeItemInterface::DATETIME_STORAGE_FORMAT));
+    $collection->save();
 
     $storage = \Drupal::entityTypeManager()->getStorage('eresources_record');
 
@@ -74,12 +81,12 @@ class HarvestedCollectionPageWorker extends QueueWorkerBase implements Container
         if (!empty($ids)) {
           $id = reset($ids);
           $entity = $storage->load($id);
-          $entity->set('collection_id', $collection);
+          $entity->set('collection_id', $collection_id);
           $entity->set('title', $entry->title);
         }
         else {
           $fields = [
-            'collection_id' => $collection,
+            'collection_id' => $collection_id,
             'uid' => $entry->{'kb:entry_uid'},
             'title' => $entry->title,
             'access_information' => '',

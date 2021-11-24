@@ -109,6 +109,14 @@ class HarvestedCollection extends ContentEntityBase implements ContentEntityInte
       ])
       ->setDisplayConfigurable('form', TRUE);
 
+    $fields['last_sync'] = BaseFieldDefinition::create('datetime')
+      ->setLabel(t('Last Sync'))
+      ->setRequired(FALSE)
+      ->setSettings([
+        'default_value' => '',
+        'datetime_type' => 'date',
+      ]);
+
     return $fields;
   }
 
