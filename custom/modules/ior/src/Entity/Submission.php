@@ -20,7 +20,7 @@ use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
  *     "views_data" = "Drupal\ior\Entity\SubmissionViewsData",
  *     "form" = {
  *       "default" = "Drupal\ior\Form\SubmissionForm",
- *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"
+ *       "delete" = "Drupal\ior\Form\SubmissionDeleteForm"
  *     },
  *     "storage" = "Drupal\ior\Entity\Storage\SubmissionStorage",
  *     "route_provider" = {
