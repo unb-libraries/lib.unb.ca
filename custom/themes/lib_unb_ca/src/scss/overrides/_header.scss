@@ -67,3 +67,15 @@
     }
   }
 }
+
+ /* Mobile tweaks re: Research Commons */
+@media (max-width: 576px) {
+  #banner-image-overlay {
+    .display-4 {
+      font-size: 1.75rem;
+    }
+    .h1 {
+      font-size: 1.5rem;
+    }
+  }
+}
