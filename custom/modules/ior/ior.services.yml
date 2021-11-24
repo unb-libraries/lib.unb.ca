@@ -17,3 +17,10 @@ services:
     parent: template_mailer.entity_event_subscriber
     tags:
       - { name: 'event_subscriber' }
+
+  entity.submission.field_subscriber:
+    class: Drupal\ior\FieldSubscriber\SubmissionFieldSubscriber
+    arguments:
+      - ior_submission
+    tags:
+      - { name: 'field_subscriber' }
