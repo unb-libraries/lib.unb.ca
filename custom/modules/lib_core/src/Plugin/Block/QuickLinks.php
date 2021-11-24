@@ -95,7 +95,7 @@ class QuickLinks extends BlockBase {
     ];
     $misc_btn = [
       '#children' => Link::fromTextAndUrl(
-        Markup::create('<span class="fas fa-star mr-1"></span>' . $this->t('HIL Research Commons')),
+        Markup::create('<span class="fas fa-star mr-1"></span>' . $this->t('Research Commons')),
         Url::fromUri('base://researchcommons', [
           'attributes' => [
             'id' => 'misc-btn',
