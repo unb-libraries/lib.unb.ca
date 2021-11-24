@@ -24,7 +24,7 @@
         font-size: 0.875rem;
     }
 }
-@media (max-width: 397px) {
+@media (max-width: 576px) {
     #quicklinks-buttons ul.list-inline li:not(:last-child) a {
         margin-bottom: .75rem;
     }
