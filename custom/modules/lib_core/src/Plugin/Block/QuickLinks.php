@@ -123,6 +123,22 @@ class QuickLinks extends BlockBase {
         ])
       )->toString(),
     ];
+    $covid_btn_mobile = [
+      '#children' => Link::fromTextAndUrl(
+        Markup::create('<span class="fas fa-shield-virus mr-1"></span>' . $this->t('Covid-89')),
+        Url::fromUri('base://what-to-expect', [
+          'attributes' => [
+            'class' => [
+              'btn',
+              'btn-unb-red',
+              'd-lg-none',
+              'text-nowrap',
+            ],
+            'id' => 'covid-btn-mobile',
+          ],
+        ])
+      )->toString(),
+    ];
 
     $attachments = [
       'library' => [
@@ -175,6 +191,7 @@ class QuickLinks extends BlockBase {
         '#items' => [
           'covid_button' => $misc_btn,
           'book_button' => $booking_btn,
+          'covid_button_mobile' => $covid_btn_mobile,
         ],
       ],
     ];
