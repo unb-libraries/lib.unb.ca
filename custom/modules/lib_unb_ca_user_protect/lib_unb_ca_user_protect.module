@@ -47,7 +47,9 @@ function lib_unb_ca_user_protect_form_user_form_alter(&$form, FormStateInterface
             $form[$key]['pass']['#disabled'] = TRUE;
           }
           // Disable selected account fields.
-          $form[$key]['mail']['#disabled'] = TRUE;
+          if (!$user->hasPermission('edit any user details')) {
+            $form[$key]['mail']['#disabled'] = TRUE;
+          }
           $form[$key]['notify']['#disabled'] = TRUE;
           break;
 
