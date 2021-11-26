@@ -383,7 +383,22 @@ display:
             group_items: {  }
           entity_type: ior_submission
           plugin_id: moderation_state_permission_filter
-      sorts: {  }
+      sorts:
+        created:
+          id: created
+          table: ior_submission
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+          entity_type: ior_submission
+          entity_field: created
+          plugin_id: date
       title: Submissions
       header:
         result:
