@@ -1,15 +1,14 @@
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-12">
         {{ submission.field_image }}
     </div>
-    <div class="col-md-6">
+    <div class="col-md-12">
+        <a class="h4" href="{{ submission.url }}">{{ submission.field_title }}</a>
         {% if submission.published %}
         <div class="submission-meta">
-            <h2>{{ submission.field_first_name }}{{ submission.field_last_name }}</h2>
+            <span>{{ submission.field_first_name }}{{ submission.field_last_name }}</span>
             <span class="subtitle">{{ submission.field_department }}</span>
         </div>
         {% endif %}
-        <div class="submission-description">{{ submission.field_description }}</div>
     </div>
-
 </div>

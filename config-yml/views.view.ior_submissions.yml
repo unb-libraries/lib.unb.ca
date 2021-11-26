@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.ior_submission.preview
     - field.storage.ior_submission.field_first_name
     - field.storage.ior_submission.field_image
     - field.storage.ior_submission.field_last_name
@@ -83,12 +84,10 @@ display:
           row_class_default: true
           row_class_custom: ''
       row:
-        type: fields
+        type: 'entity:ior_submission'
         options:
-          default_field_elements: true
-          inline: {  }
-          separator: ''
-          hide_empty: false
+          relationship: none
+          view_mode: preview
       fields:
         field_image:
           id: field_image

@@ -16,6 +16,9 @@ function ior_theme($existing, $type, $theme, $path) {
     'ior_submission' => [
       'render element' => 'elements',
     ],
+    'ior_submission__preview' => [
+      'render element' => 'elements',
+    ],
   ];
 }
 
@@ -53,4 +56,40 @@ function template_preprocess_ior_submission(array &$variables) {
   // This should be done in a template?
   $variables['submission']['field_first_name']['#attributes']['class'][] = 'd-inline';
   $variables['submission']['field_last_name']['#attributes']['class'][] = 'd-inline';
+}
+
+/**
+ * Prepares variables for submission templates.
+ *
+ * Default template: ior-submission.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing the user information and any
+ *   - attributes: HTML attributes for the containing element.
+ */
+function template_preprocess_ior_submission__preview(array &$variables) {
+  $variables['submission']['entity'] = $variables['elements']['#ior_submission'];
+  foreach (\Drupal\Core\Render\Element::children($variables['elements']) as $key) {
+    $variables['submission'][$key] = $variables['elements'][$key];
+    $variables['submission'][$key]['#label_display'] = 'hidden';
+  }
+
+  $variables['submission']['url'] = $variables['elements']['#ior_submission']
+    ->toUrl()
+    ->toString();
+
+  // This should be done in a template?
+  $variables['submission']['field_first_name']['#attributes']['class'][] = 'd-inline';
+  $variables['submission']['field_last_name']['#attributes']['class'][] = 'd-inline';
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function ior_theme_suggestions_ior_submission(array $variables) {
+  $suggestions = [];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+  $suggestions[] = 'ior_submission__' . $sanitized_view_mode;
+  return $suggestions;
 }
