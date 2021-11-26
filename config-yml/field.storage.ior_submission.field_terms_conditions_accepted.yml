@@ -1,0 +1,22 @@
+uuid: d0a1997f-1262-4f97-9281-375cdfd704c0
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - ior
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: ior_submission.field_terms_conditions_accepted
+field_name: field_terms_conditions_accepted
+entity_type: ior_submission
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -31,17 +31,9 @@ class SubmissionForm extends ContentEntityForm {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form = parent::buildForm($form, $form_state);
 
-    if ($this->getEntity()->isNew()) {
-      $form['agree_contest_rules'] = [
-        '#type' => 'checkbox',
-        '#title' => $this->t('I certify that I am the copyright owner of the submitted image and have the necessary rights, permissions, and/or licenses to submit the image to the competition according to the full @link_to_contest_rules.', [
-          '@link_to_contest_rules' => $this->buildContestRulesLink()->toString(),
-        ]),
-        '#required' => TRUE,
-        '#default_value' => FALSE,
-        '#weight' => 97,
-      ];
-    }
+    $form['field_terms_conditions_accepted']['widget']['value']['#title'] = $this->t('I certify that I am the copyright owner of the submitted image and have the necessary rights, permissions, and/or licenses to submit the image to the competition according to the full @link_to_contest_rules.', [
+      '@link_to_contest_rules' => $this->buildContestRulesLink()->toString(),
+    ]);
 
     return $form;
   }

@@ -9,6 +9,7 @@ dependencies:
     - field.field.ior_submission.ior_submission.field_first_name
     - field.field.ior_submission.ior_submission.field_image
     - field.field.ior_submission.ior_submission.field_last_name
+    - field.field.ior_submission.ior_submission.field_terms_conditions_accepted
     - field.field.ior_submission.ior_submission.field_title
     - image.style.thumbnail
     - workflows.workflow.ior_submission_review
@@ -73,6 +74,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_terms_conditions_accepted:
+    weight: 8
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   field_title:
     weight: 4

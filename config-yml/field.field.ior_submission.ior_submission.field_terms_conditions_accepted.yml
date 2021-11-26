@@ -1,0 +1,24 @@
+uuid: 2d0d1e90-bd6a-449f-9580-fa76e70737d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.ior_submission.field_terms_conditions_accepted
+  module:
+    - ior
+id: ior_submission.ior_submission.field_terms_conditions_accepted
+field_name: field_terms_conditions_accepted
+entity_type: ior_submission
+bundle: ior_submission
+label: 'Terms & Conditions accepted'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean
