@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.ior_submission.ior_submission.field_contest
     - field.field.ior_submission.ior_submission.field_department
     - field.field.ior_submission.ior_submission.field_description
     - field.field.ior_submission.ior_submission.field_email
@@ -97,4 +98,5 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_contest: true
   path: true

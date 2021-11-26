@@ -1,16 +1,4 @@
 services:
-  ior_submission.route_subscriber:
-    class: Drupal\ior\Entity\Routing\SubmissionRouteSubscriber
-    tags:
-      - { name: 'event_subscriber' }
-
-  paramconverter.entity.ior_submission:
-    class: Drupal\ior\ParamConverter\SubmissionParamConverter
-    arguments:
-      - '@entity_type.manager'
-    tags:
-      - { name: paramconverter }
-
   contestant.mailer.entity_event_subscriber:
     class: Drupal\ior\EventSubscriber\ContestantMailer
     arguments: [ 'ior_submission' ]

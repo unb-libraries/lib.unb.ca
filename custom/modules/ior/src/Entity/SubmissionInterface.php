@@ -18,6 +18,7 @@ interface SubmissionInterface extends ContentEntityInterface, EntityPublishedInt
   const FIELD_DEPARTMENT = 'field_department';
   const FIELD_TITLE = 'field_title';
   const FIELD_DESCRIPTION = 'field_description';
+  const FIELD_CONTEST = 'field_contest';
 
   /**
    * Get the contestant's first name.

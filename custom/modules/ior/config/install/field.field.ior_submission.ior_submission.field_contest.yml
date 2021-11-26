@@ -2,21 +2,21 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.contest.field_submissions
+    - field.storage.ior_submission.field_contest
   module:
     - ior
-id: contest.contest.field_submissions
-field_name: field_submissions
-entity_type: contest
-bundle: contest
-label: Submissions
+id: ior_submission.ior_submission.field_contest
+field_name: field_contest
+entity_type: ior_submission
+bundle: ior_submission
+label: Contest
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:ior_submission'
+  handler: 'default:contest'
   handler_settings:
     target_bundles: null
     sort:

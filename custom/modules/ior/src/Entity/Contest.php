@@ -96,31 +96,4 @@ class Contest extends ContentEntityBase implements ContestInterface {
     return $now < $this->getOpenDate();
   }
 
-  /**
-   * {@inheritDoc}
-   */
-  public function getSubmissions() {
-    $submissions = [];
-    foreach ($this->get(static::FIELD_SUBMISSIONS)->referencedEntities() as $submission) {
-      $submissions[$submission->id()] = $submission;
-    }
-    return $submissions;
-  }
-
-  /**
-   * {@inheritDoc}
-   */
-  public function addSubmission(SubmissionInterface $submission) {
-    $submissions = $this->getSubmissions();
-    $submissions[$submission->id()] = $submission;
-    $this->setSubmissions($submissions);
-  }
-
-  /**
-   * {@inheritDoc}
-   */
-  public function setSubmissions(array $submissions) {
-    $this->set(static::FIELD_SUBMISSIONS, $submissions);
-  }
-
 }

@@ -7,15 +7,15 @@ dependencies:
 third_party_settings:
   field_permissions:
     permission_type: public
-id: contest.field_submissions
-field_name: field_submissions
-entity_type: contest
+id: ior_submission.field_contest
+field_name: field_contest
+entity_type: ior_submission
 type: entity_reference
 settings:
-  target_type: ior_submission
+  target_type: contest
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

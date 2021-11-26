@@ -24,7 +24,6 @@ use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
  *       "default" = "Drupal\ior\Form\SubmissionForm",
  *       "delete" = "Drupal\ior\Form\SubmissionDeleteForm"
  *     },
- *     "storage" = "Drupal\ior\Entity\Storage\SubmissionStorage",
  *     "route_provider" = {
  *       "html" = "Drupal\ior\Entity\Routing\SubmissionHtmlRouteProvider"
  *     },
@@ -56,14 +55,6 @@ class Submission extends ContentEntityBase implements SubmissionInterface {
   use EntityPublishedTrait;
   use EntityCreatedTrait;
   use EntityChangedTrait;
-
-  /**
-   * The contest.
-   *
-   * @var \Drupal\ior\Entity\ContestInterface
-   *   A contest entity.
-   */
-  protected $contest;
 
   /**
    * {@inheritDoc}
@@ -124,24 +115,15 @@ class Submission extends ContentEntityBase implements SubmissionInterface {
    * {@inheritDoc}
    */
   public function getContest() {
-    return $this->contest;
+    return $this->get(self::FIELD_CONTEST)
+      ->entity;
   }
 
   /**
    * {@inheritDoc}
    */
   public function setContest(ContestInterface $contest) {
-    $this->contest = $contest;
-  }
-
-  /**
-   * {@inheritDoc}
-   */
-  public function __construct(array $values, $entity_type, $bundle = FALSE, $translations = []) {
-    parent::__construct($values, $entity_type, $bundle, $translations);
-    if (array_key_exists('contest', $values)) {
-      $this->contest = $values['contest'];
-    }
+    $this->set(self::FIELD_CONTEST, $contest);
   }
 
   /**
@@ -177,17 +159,6 @@ class Submission extends ContentEntityBase implements SubmissionInterface {
       throw new MissingMandatoryParametersException('Submissions must be assigned to a contest upon creation.');
     }
     parent::preSave($storage);
-  }
-
-  /**
-   * {@inheritDoc}
-   */
-  public function save() {
-    $return = parent::save();
-    $contest = $this->getContest();
-    $contest->addSubmission($this);
-    $contest->save();
-    return $return;
   }
 
 }

@@ -6,7 +6,6 @@ dependencies:
     - field.field.contest.contest.field_date_close
     - field.field.contest.contest.field_date_open
     - field.field.contest.contest.field_description
-    - field.field.contest.contest.field_submissions
     - field.field.contest.contest.field_title
   module:
     - allowed_formats
@@ -50,5 +49,4 @@ content:
     type: string_textfield
     region: content
 hidden:
-  field_submissions: true
   path: true
