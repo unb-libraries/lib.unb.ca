@@ -4,11 +4,13 @@ namespace Drupal\ior\Entity;
 
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityPublishedInterface;
+use Drupal\custom_entity\Entity\UserCreatedInterface;
+use Drupal\custom_entity\Entity\UserEditedInterface;
 
 /**
  * Interface for "submission" entities.
  */
-interface SubmissionInterface extends ContentEntityInterface, EntityPublishedInterface {
+interface SubmissionInterface extends ContentEntityInterface, EntityPublishedInterface, UserCreatedInterface, UserEditedInterface {
 
   const FIELD_FIRST_NAME = 'field_first_name';
   const FIELD_LAST_NAME = 'field_last_name';

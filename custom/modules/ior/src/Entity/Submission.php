@@ -6,6 +6,8 @@ use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityPublishedTrait;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\custom_entity\Entity\EntityChangedTrait;
+use Drupal\custom_entity\Entity\EntityCreatedTrait;
 use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
 
 /**
@@ -52,6 +54,8 @@ use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
 class Submission extends ContentEntityBase implements SubmissionInterface {
 
   use EntityPublishedTrait;
+  use EntityCreatedTrait;
+  use EntityChangedTrait;
 
   /**
    * The contest.
@@ -158,6 +162,9 @@ class Submission extends ContentEntityBase implements SubmissionInterface {
     $fields += static::publishedBaseFieldDefinitions($entity_type);
     $fields[$entity_type->getKey('published')]
       ->setDefaultValue(FALSE);
+
+    $fields[self::FIELD_CREATED] = static::getCreatedBaseFieldDefinition($entity_type);
+    $fields[self::FIELD_EDITED] = static::getEditedBaseFieldDefinition($entity_type);
 
     return $fields;
   }
