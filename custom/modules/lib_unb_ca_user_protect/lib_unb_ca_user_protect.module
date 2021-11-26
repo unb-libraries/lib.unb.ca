@@ -19,7 +19,7 @@ function lib_unb_ca_user_protect_help($route_name, RouteMatchInterface $route_ma
     case 'help.page.lib_unb_ca_user_protect':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Prevent users from editing upstream LDAP fields') . '</p>';
+      $output .= '<p>' . t('Prevent users from editing upstream field data') . '</p>';
       return $output;
 
     default:
@@ -56,9 +56,8 @@ function lib_unb_ca_user_protect_form_user_form_alter(&$form, FormStateInterface
           $form[$key]['delete']['#disabled'] = TRUE;
           break;
 
-        case 'ldap_user_fields':
         case 'simple_groups':
-          // Disable LDAP Options + Groups fields.
+          // Disable Groups fields.
           $form[$key]['#disabled'] = TRUE;
           break;
       }
