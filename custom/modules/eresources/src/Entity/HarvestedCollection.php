@@ -56,6 +56,23 @@ class HarvestedCollection extends ContentEntityBase implements ContentEntityInte
   ];
 
   /**
+   * Tab to KB data type LUT.
+   *
+   * @var array
+   */
+  private static $tabToKbDataType = [
+    'databases' => 'DATA',
+    'reference' => 'REF',
+  ];
+
+  /**
+   * Gets the KB data type of the collection.
+   */
+  public function getKbDataType() {
+    return self::$tabToKbDataType[$this->get('default_tab')->value];
+  }
+
+  /**
    * Gets the OCLC ID of the collection.
    */
   public function getOclcId() {

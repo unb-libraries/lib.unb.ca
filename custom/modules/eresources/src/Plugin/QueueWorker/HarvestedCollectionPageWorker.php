@@ -91,7 +91,7 @@ class HarvestedCollectionPageWorker extends QueueWorkerBase implements Container
             'title' => $entry->title,
             'access_information' => '',
             'license_status' => '',
-            'kb_data_type' => '',
+            'kb_data_type' => $collection->getKbDataType(),
           ];
           foreach ($entry->links as $link) {
             if ($link->rel == 'via') {
