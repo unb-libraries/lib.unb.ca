@@ -54,12 +54,6 @@ type_settings:
         - published
       to: archived
       weight: 3
-    edit:
-      label: 'Edit (before publishing)'
-      from:
-        - accepted
-      to: accepted
-      weight: 0
     publish:
       label: Publish
       from:
@@ -72,7 +66,6 @@ type_settings:
       label: 'Publish anonymised'
       from:
         - accepted
-        - draft
         - published_anonymised_
       to: published_anonymised_
       weight: 1
