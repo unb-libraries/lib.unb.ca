@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ior
+id: ior_submission.edit
+label: Edit
+targetEntityType: ior_submission
+cache: true

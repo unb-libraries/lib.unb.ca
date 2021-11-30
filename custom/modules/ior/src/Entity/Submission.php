@@ -22,6 +22,8 @@ use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
  *     "views_data" = "Drupal\ior\Entity\SubmissionViewsData",
  *     "form" = {
  *       "default" = "Drupal\ior\Form\SubmissionForm",
+ *       "edit" = "Drupal\Core\Entity\ContentEntityForm",
+ *       "review" = "Drupal\Core\Entity\ContentEntityForm",
  *       "delete" = "Drupal\ior\Form\SubmissionDeleteForm"
  *     },
  *     "route_provider" = {
@@ -42,6 +44,7 @@ use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
  *     "canonical" = "/researchcommons/ior/{contest}/submissions/{ior_submission}",
  *     "add-form" = "/researchcommons/ior/{contest}/submissions/add",
  *     "edit-form" = "/researchcommons/ior/{contest}/submissions/{ior_submission}/edit",
+ *     "review-form" = "/researchcommons/ior/{contest}/submissions/{ior_submission}/review",
  *     "delete-form" = "/researchcommons/ior/{contest}/submissions/{ior_submission}/delete",
  *     "revisions" = "/researchcommons/ior/{contest}/submissions/{ior_submission}/revisions",
  *     "revision" = "/researchcommons/ior/{contest}/submissions/{ior_submission}/revisions/{ior_submission_revision}",

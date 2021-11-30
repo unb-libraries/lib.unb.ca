@@ -27,13 +27,13 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_department:
+    type: string
     weight: 4
+    region: content
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
-    region: content
   field_description:
     weight: 6
     label: above
@@ -49,13 +49,13 @@ content:
     type: basic_string
     region: content
   field_first_name:
+    type: string
     weight: 1
+    region: content
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
-    region: content
   field_image:
     weight: 7
     label: above
@@ -66,23 +66,13 @@ content:
     type: image
     region: content
   field_last_name:
+    type: string
     weight: 2
+    region: content
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
-    region: content
-  field_terms_conditions_accepted:
-    weight: 8
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-    region: content
   field_title:
     weight: 5
     label: above
@@ -93,4 +83,5 @@ content:
     region: content
 hidden:
   field_contest: true
+  field_terms_conditions_accepted: true
   search_api_excerpt: true

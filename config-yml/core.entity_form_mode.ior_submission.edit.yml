@@ -1,0 +1,10 @@
+uuid: 8026677f-4c5c-4820-8d18-064d501709f3
+langcode: en
+status: true
+dependencies:
+  module:
+    - ior
+id: ior_submission.edit
+label: Edit
+targetEntityType: ior_submission
+cache: true

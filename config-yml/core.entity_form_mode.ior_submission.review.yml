@@ -1,0 +1,10 @@
+uuid: b6d2836f-e192-44f2-bc74-87daeebc89a3
+langcode: en
+status: true
+dependencies:
+  module:
+    - ior
+id: ior_submission.review
+label: Review
+targetEntityType: ior_submission
+cache: true
