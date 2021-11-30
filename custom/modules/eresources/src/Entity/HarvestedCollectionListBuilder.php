@@ -104,4 +104,15 @@ class HarvestedCollectionListBuilder extends EntityListBuilder {
     return $operations;
   }
 
+  /**
+   * {@inheritDoc}
+   */
+  public function render() {
+    $build = parent::render();
+    $build['table']['#attributes'] = [
+      'class' => ['admin-operations'],
+    ];
+    return $build;
+  }
+
 }
