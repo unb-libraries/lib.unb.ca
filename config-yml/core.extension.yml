@@ -17,6 +17,7 @@ module:
   chosen_lib: 0
   ckeditor: 0
   ckeditor_codemirror: 0
+  ckwordcount: 0
   color: 0
   colorbutton: 0
   comment: 0
@@ -87,6 +88,7 @@ module:
   node: 0
   node_edit_protection: 0
   noreqnewpass: 0
+  notification: 0
   oclc_api: 0
   oclc_service_alert_status_client: 0
   options: 0
