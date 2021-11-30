@@ -161,6 +161,11 @@ class Submission extends ContentEntityBase implements SubmissionInterface {
     if (!$this->getContest()) {
       throw new MissingMandatoryParametersException('Submissions must be assigned to a contest upon creation.');
     }
+
+    if ($this->isNew()) {
+      $this->set('moderation_state', 'draft');
+    }
+
     parent::preSave($storage);
   }
 

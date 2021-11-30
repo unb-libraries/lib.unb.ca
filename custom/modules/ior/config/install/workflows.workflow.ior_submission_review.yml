@@ -57,7 +57,6 @@ type_settings:
       label: Publish
       from:
         - accepted
-        - published
         - published_anonymised_
       to: published
       weight: 2
@@ -75,13 +74,6 @@ type_settings:
         - draft
       to: rejected
       weight: -2
-    submit:
-      label: Submit
-      from:
-        - draft
-        - rejected
-      to: draft
-      weight: -4
   entity_types:
     ior_submission:
       - ior_submission

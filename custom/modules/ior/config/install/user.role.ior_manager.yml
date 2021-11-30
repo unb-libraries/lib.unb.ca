@@ -18,7 +18,6 @@ permissions:
   - 'use ior_submission_review transition edit'
   - 'use ior_submission_review transition publish'
   - 'use ior_submission_review transition publish_anonymised'
-  - 'use ior_submission_review transition re_submit'
   - 'use ior_submission_review transition reject'
   - 'use text format no_media_html_ior_'
   - 'view contest entities'
