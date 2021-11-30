@@ -88,6 +88,27 @@ update published ior_submission entities:
 update archived ior_submission entities:
   title: "Edit archived IOR submissions."
 
+review ior_submission entities:
+  title: "Review IOR submissions."
+
+review draft ior_submission entities:
+  title: "Review submitted IOR submissions."
+
+review accepted ior_submission entities:
+  title: "Review accepted IOR submissions."
+
+review rejected ior_submission entities:
+  title: "Review rejected IOR submissions."
+
+review published_anonymised_ ior_submission entities:
+  title: "Review published anonymised IOR submissions."
+
+review published ior_submission entities:
+  title: "Review published IOR submissions."
+
+review archived ior_submission entities:
+  title: "Review archived IOR submissions."
+
 delete ior_submission entities:
   title: "Delete IOR submissions."
 

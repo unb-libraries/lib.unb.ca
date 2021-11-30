@@ -7,10 +7,11 @@ label: 'IOR Reviewer'
 weight: 7
 is_admin: null
 permissions:
+  - 'list accepted ior_submission entities'
   - 'list contest entities'
-  - 'list ior_submission entities'
-  - 'update draft ior_submission entities'
-  - 'use ior_submission_review transition accept'
-  - 'use ior_submission_review transition reject'
+  - 'list published ior_submission entities'
+  - 'list published_anonymised_ ior_submission entities'
+  - 'view accepted ior_submission entities'
   - 'view contest entities'
-  - 'view ior_submission entities'
+  - 'view published ior_submission entities'
+  - 'view published_anonymised_ ior_submission entities'
