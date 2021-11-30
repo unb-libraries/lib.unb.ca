@@ -313,7 +313,7 @@ display:
         filter_groups: false
         sorts: false
         empty: false
-      title: 'Open for submission'
+      title: Contests
       display_description: ''
       filters:
         field_date_close_value:
