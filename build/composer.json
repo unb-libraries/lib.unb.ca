@@ -41,11 +41,6 @@
                 "type:drupal-theme"
             ]
         },
-        "merge-plugin": {
-            "include": [
-                "/app/html/modules/contrib/ckwordcount/composer.libraries.json"
-            ]
-        },
         "patches": {
             "drupal/entity_browser": {
                 "Provide upload widget for media of media type file": "https://www.drupal.org/files/issues/2019-02-28/entity_browser-media-file-upload-2922885-15.patch"
@@ -236,8 +231,16 @@
             }
         },
         {
-            "type": "vcs",
-            "url": "https://github.com/unb-libraries/task-ui"
+            "type": "package",
+            "package": {
+                "name": "w8tcha/ckeditor-wordcount-plugin",
+                "version": "1.17.8",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/w8tcha/CKEditor-WordCount-Plugin/releases/download/v1.17.8/CKEditor-WordCount-Plugin.zip",
+                    "type": "zip"
+                }
+            }
         }
     ],
     "require": {
