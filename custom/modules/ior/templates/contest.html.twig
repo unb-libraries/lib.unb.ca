@@ -1,10 +1,16 @@
 <div>{{ contest.entity.field_description.value|raw }}</div>
 <div>
     {% if contest.is_open %}
-        <p>Submissions will be accepted until {{ contest.entity.field_date_close.value }}.</p>
+        <div>
+            <p>Submissions will be accepted until {{ contest.entity.field_date_close.value }}.</p>
+            <p>
+                {{ create_submission_button }}
+            </p>
+        </div>
+
     {% elseif contest.is_coming_up %}
         <p>The contest has not yet opened. Submissions will be accepted from {{ contest.entity.field_date_open.value }} until {{ contest.entity.field_date_close.value }}.</p>
     {% else %}
-        <p>The contest is closed. Submissions were accepted from {{ contest.entity.field_date_open.value }} until {{ contest.entity.field_date_close.value }}.</p>
+            <p>The contest is closed. Submissions were accepted from {{ contest.entity.field_date_open.value }} until {{ contest.entity.field_date_close.value }}.</p>
     {% endif %}
 </div>

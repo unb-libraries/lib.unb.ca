@@ -38,6 +38,20 @@ function template_preprocess_contest(array &$variables) {
   $variables['contest']['entity'] = $contest;
   $variables['contest']['is_open'] = $contest->isOpen();
   $variables['contest']['is_coming_up'] = $contest->isComingUp();
+
+  $variables['create_submission_button'] = [
+    '#type' => 'link',
+    '#title' => t('Submit an image'),
+    '#url' => \Drupal\Core\Url::fromRoute('entity.ior_submission.add_form', [
+      'contest' => $contest->id(),
+    ]),
+    '#attributes' => [
+      'class' => [
+        'btn',
+        'btn-primary',
+      ]
+    ]
+  ];
 }
 
 /**
