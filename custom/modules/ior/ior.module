@@ -33,7 +33,11 @@ function ior_theme($existing, $type, $theme, $path) {
  *   - attributes: HTML attributes for the containing element.
  */
 function template_preprocess_contest(array &$variables) {
-  $variables['contest'] = $variables['elements']['#contest'];
+  /** @var \Drupal\ior\Entity\ContestInterface $contest */
+  $contest = $variables['elements']['#contest'];
+  $variables['contest']['entity'] = $contest;
+  $variables['contest']['is_open'] = $contest->isOpen();
+  $variables['contest']['is_coming_up'] = $contest->isComingUp();
 }
 
 /**

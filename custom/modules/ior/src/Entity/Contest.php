@@ -69,7 +69,8 @@ class Contest extends ContentEntityBase implements ContestInterface {
    */
   public function getOpenDate() {
     return $this->get(static::FIELD_DATE_OPEN)
-      ->date;
+      ->date
+      ->setTime(0, 0, 0);
   }
 
   /**
@@ -77,7 +78,8 @@ class Contest extends ContentEntityBase implements ContestInterface {
    */
   public function getCloseDate() {
     return $this->get(static::FIELD_DATE_CLOSE)
-      ->date;
+      ->date
+      ->setTime(23, 59, 59);
   }
 
   /**
