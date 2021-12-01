@@ -73,6 +73,8 @@ function template_preprocess_ior_submission(array &$variables) {
     $variables['submission'][$key]['#label_display'] = 'hidden';
   }
 
+  $variables['submission']['published'] = $submission->isPublished();
+
   if (Drupal::currentUser()->hasPermission('download full_resolution images')) {
     $variables['submission']['image_link'] = [
       '#type' => 'link',
@@ -104,12 +106,15 @@ function template_preprocess_ior_submission(array &$variables) {
  *   - attributes: HTML attributes for the containing element.
  */
 function template_preprocess_ior_submission__preview(array &$variables) {
-  $variables['submission']['entity'] = $variables['elements']['#ior_submission'];
+  /** @var \Drupal\ior\Entity\SubmissionInterface $submission */
+  $submission = $variables['elements']['#ior_submission'];
+  $variables['submission']['entity'] = $submission;
   foreach (\Drupal\Core\Render\Element::children($variables['elements']) as $key) {
     $variables['submission'][$key] = $variables['elements'][$key];
     $variables['submission'][$key]['#label_display'] = 'hidden';
   }
 
+  $variables['submission']['published'] = $submission->isPublished();
   $variables['submission']['url'] = $variables['elements']['#ior_submission']
     ->toUrl()
     ->toString();
