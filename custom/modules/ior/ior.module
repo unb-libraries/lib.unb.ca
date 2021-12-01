@@ -65,10 +65,27 @@ function template_preprocess_contest(array &$variables) {
  *   - attributes: HTML attributes for the containing element.
  */
 function template_preprocess_ior_submission(array &$variables) {
-  $variables['submission']['entity'] = $variables['elements']['#ior_submission'];
+  /** @var \Drupal\ior\Entity\SubmissionInterface $submission */
+  $submission = $variables['elements']['#ior_submission'];
+  $variables['submission']['entity'] = $submission;
   foreach (\Drupal\Core\Render\Element::children($variables['elements']) as $key) {
     $variables['submission'][$key] = $variables['elements'][$key];
     $variables['submission'][$key]['#label_display'] = 'hidden';
+  }
+
+  if (Drupal::currentUser()->hasPermission('download full_resolution images')) {
+    $variables['submission']['image_link'] = [
+      '#type' => 'link',
+      '#title' => t('View full size'),
+      '#url' => \Drupal\Core\Url::fromUri($submission->getImageUrl()),
+      '#attributes' => [
+        'target' => '_blank',
+        'class' => [
+          'btn',
+          'btn-primary',
+        ],
+      ],
+    ];
   }
 
   // This should be done in a template?

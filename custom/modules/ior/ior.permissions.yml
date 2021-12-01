@@ -129,3 +129,6 @@ delete published ior_submission entities:
 
 delete archived ior_submission entities:
   title: "Delete archived IOR submissions."
+
+download full_resolution images:
+  title: "Download full-resolution images."

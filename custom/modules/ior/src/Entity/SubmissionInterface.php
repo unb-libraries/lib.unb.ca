@@ -18,6 +18,7 @@ interface SubmissionInterface extends ContentEntityInterface, EntityPublishedInt
   const FIELD_DEPARTMENT = 'field_department';
   const FIELD_TITLE = 'field_title';
   const FIELD_DESCRIPTION = 'field_description';
+  const FIELD_IMAGE = 'field_image';
   const FIELD_CONTEST = 'field_contest';
 
   /**
@@ -67,6 +68,14 @@ interface SubmissionInterface extends ContentEntityInterface, EntityPublishedInt
    *   A (long) string/text.
    */
   public function getDescription();
+
+  /**
+   * Get the image URI.
+   *
+   * @return string
+   *   A URL string.
+   */
+  public function getImageUrl();
 
   /**
    * Get the contest.

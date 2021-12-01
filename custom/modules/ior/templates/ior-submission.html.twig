@@ -1,6 +1,9 @@
 <div class="row">
     <div class="col-md-6">
         {{ submission.field_image }}
+        {%  if submission.image_link %}
+            <p>{{ submission.image_link }}</p>
+        {% endif %}
     </div>
     <div class="col-md-6">
         {% if submission.published %}

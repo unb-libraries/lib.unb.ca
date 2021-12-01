@@ -117,6 +117,18 @@ class Submission extends ContentEntityBase implements SubmissionInterface {
   /**
    * {@inheritDoc}
    */
+  public function getImageUrl() {
+    $image_uri = $this
+      ->get(self::FIELD_IMAGE)
+      ->entity
+      ->uri
+      ->value;
+    return file_create_url($image_uri);
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public function getContest() {
     return $this->get(self::FIELD_CONTEST)
       ->entity;
