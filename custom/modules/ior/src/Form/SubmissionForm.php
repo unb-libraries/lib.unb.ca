@@ -47,23 +47,10 @@ class SubmissionForm extends ContentEntityForm {
   protected function buildContestRulesLink() {
     return Link::fromTextAndUrl(
       $this->t('contest rules and conditions'),
-      Url::fromUri($this->getContestRulesUri(), [
-        'attributes' => [
-          'target' => '_blank',
-        ],
-      ])
+      $this->getEntity()
+        ->getContest()
+        ->toUrl(),
     );
-  }
-
-  /**
-   * Return the URI of the "Contest rules" page.
-   *
-   * @return string
-   *   A string.
-   */
-  protected function getContestRulesUri() {
-    $scheme_and_host = $this->getRequest()->getSchemeAndHttpHost();
-    return "{$scheme_and_host}/researchcommons/ior";
   }
 
   /**
