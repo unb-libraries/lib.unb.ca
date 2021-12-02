@@ -35,13 +35,13 @@ use Drupal\Core\Entity\ContentEntityBase;
  *     "uuid" = "uuid"
  *   },
  *   links = {
- *     "canonical" = "/researchcommons/ior/{contest}",
- *     "add-form" = "/researchcommons/ior/add",
- *     "edit-form" = "/researchcommons/ior/{contest}/edit",
- *     "delete-form" = "/researchcommons/ior/{contest}/delete",
- *     "revisions" = "/researchcommons/ior/{contest}/revisions",
- *     "revision" = "/researchcommons/ior/{contest}/revisions/{contest_revision}",
- *     "revision-restore-form" = "/records/{contest}/revisions/{contest_revision}/restore",
+ *     "canonical" = "/researchcommons/ior/contests/{contest}",
+ *     "add-form" = "/researchcommons/ior/contests/add",
+ *     "edit-form" = "/researchcommons/ior/contests/{contest}/edit",
+ *     "delete-form" = "/researchcommons/ior/contests/{contest}/delete",
+ *     "revisions" = "/researchcommons/ior/contests/{contest}/revisions",
+ *     "revision" = "/researchcommons/ior/contests/{contest}/revisions/{contest_revision}",
+ *     "revision-restore-form" = "/researchcommons/ior/contests/{contest}/revisions/{contest_revision}/restore",
  *   },
  *   field_ui_base_route = "entity.contest.settings",
  * )

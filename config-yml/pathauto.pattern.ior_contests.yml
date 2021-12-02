@@ -7,7 +7,7 @@ dependencies:
 id: ior_contests
 label: 'IOR Contests'
 type: 'canonical_entities:contest'
-pattern: '/researchcommons/ior/[contest:field_title]'
+pattern: '/researchcommons/ior/contests/[contest:field_title]'
 selection_criteria: {  }
 selection_logic: and
 weight: 0
