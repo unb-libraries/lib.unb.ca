@@ -19,7 +19,7 @@ default_value_callback: ''
 settings:
   file_directory: ior
   file_extensions: 'jpeg jpg png'
-  max_filesize: '50 MB'
+  max_filesize: '128 MB'
   max_resolution: ''
   min_resolution: ''
   alt_field: false
