@@ -87,9 +87,18 @@ class SubmissionForm extends ContentEntityForm {
   protected function created(array $form, FormStateInterface $form_state) {
     $contest = $this->getEntity()->getContest();
     $form_state->setRedirectUrl($contest->toUrl());
-    $this->messenger()->addStatus($this->t('Thank your for your submission. A confirmation email has been sent to @email.', [
-      '@email' => $this->getEntity()->getEmail(),
-    ]));
+    $this->messenger()->addStatus($this->t('
+      <p>Thank your for your submission. A confirmation email has been sent to @email.</p>
+      <p>This competition is a new collaboration of the @grad_link and the Harriet Irving Library Research Commons.</p>', [
+        '@email' => $this->getEntity()->getEmail(),
+        '@grad_link' => Link::fromTextAndUrl(
+          'School of Graduate Studies',
+          Url::fromUri('https://www.unb.ca/gradstudies/', [
+            'target' => '_blank',
+          ])
+        )->toString(),
+      ]
+    ));
   }
 
   /**
