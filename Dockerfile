@@ -13,7 +13,6 @@ RUN ${RSYNC_MOVE} /build/scripts/container/ /scripts/ && \
   ${RSYNC_MOVE} /build/keys/ /app/keys/ && \
   /scripts/addOsPackages.sh && \
   /scripts/initOpenLdap.sh && \
-  /scripts/installFileMarc.sh && \
   /scripts/setupStandardConf.sh && \
   /scripts/build.sh && \
   /scripts/linkDrupalCronEntryInitLib.sh

@@ -317,6 +317,7 @@
         "jquery/pause": "dev-master",
         "league/oauth2-client": "^2.4",
         "markgoodyear/scrollup": "dev-master",
+        "pear/file_marc": "^1.4",
         "scriptotek/marc": "^2.1",
         "unb-libraries/alert_scheduler": "dev-8.x-1.x",
         "unb-libraries/calendar_hours": "dev-9.x-1.x",
