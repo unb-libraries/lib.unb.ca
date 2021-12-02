@@ -11,17 +11,17 @@ field_name: field_image
 entity_type: ior_submission
 bundle: ior_submission
 label: Image
-description: ''
+description: 'Long edge of at least 3130px (26.5cm; 300dpi).'
 required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
   file_directory: ior
-  file_extensions: 'jpeg jpg png tiff'
+  file_extensions: 'jpeg jpg png'
   max_filesize: '50 MB'
-  max_resolution: 10800x7200
-  min_resolution: 100x100
+  max_resolution: ''
+  min_resolution: ''
   alt_field: false
   alt_field_required: false
   title_field: false
