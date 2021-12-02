@@ -1,16 +1,32 @@
-<div>{{ contest.entity.field_description.value|raw }}</div>
-<div>
-    {% if contest.is_open %}
-        <div>
-            <p>Submissions will be accepted until {{ contest.entity.field_date_close.value }}.</p>
-            <p>
-                {{ create_submission_button }}
-            </p>
+<div class="row">
+    <div class="col-md-12 col-lg-6 order-lg-2 col-xl-4 order-xl-2">
+        <div class="container overflow-hidden">
+            <div class="row gy-2">
+                <div class="col-6"><div class="p-1">Status: </div></div>
+                <div class="col-6"><div class="p-1">
+                        {%  if contest.is_open %}
+                            <span class="badge bg-success p-2">Open</span>
+                        {%  elseif contest.is_coming_up %}
+                            <span class="badge bg-warning p-2">Coming up</span>
+                        {% else %}
+                            <span class="badge bg-danger p-2">Closed</span>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-6"><div class="p-1">From: </div></div>
+                <div class="col-6"><div class="p-1">{{ contest.field_date_open }}</div></div>
+                <div class="col-6"><div class="p-1">Until: </div></div>
+                <div class="col-6"><div class="p-1">{{ contest.field_date_close }}</div></div>
+                {% if contest.is_open %}
+                    <div class="col-12"><div class="p-1 mx-auto"><a href="{{ contest.submit_url }}" class="d-block btn btn-primary">Submit an image</a></div></div>
+                {% endif %}
+                {% if not contest.is_coming_up %}
+                    <div class="col-12"><div class="p-1 mx-auto"><a href="{{ contest.submissions_url }}" class="d-block text-center">View submissions</a></div></div>
+                {% endif %}
+            </div>
         </div>
-
-    {% elseif contest.is_coming_up %}
-        <p>The contest has not yet opened. Submissions will be accepted from {{ contest.entity.field_date_open.value }} until {{ contest.entity.field_date_close.value }}.</p>
-    {% else %}
-            <p>The contest is closed. Submissions were accepted from {{ contest.entity.field_date_open.value }} until {{ contest.entity.field_date_close.value }}.</p>
-    {% endif %}
+    </div>
+    <div class="col-md-12 col-lg-6 order-lg-1 col-xl-8 order-xl-1">
+        {{ contest.field_description }}
+    </div>
 </div>

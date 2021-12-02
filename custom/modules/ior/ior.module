@@ -5,6 +5,8 @@
  * Contains ior.module.
  */
 
+use Drupal\Core\Url;
+
 /**
  * Implements hook_theme().
  */
@@ -36,22 +38,19 @@ function template_preprocess_contest(array &$variables) {
   /** @var \Drupal\ior\Entity\ContestInterface $contest */
   $contest = $variables['elements']['#contest'];
   $variables['contest']['entity'] = $contest;
+
+  foreach (\Drupal\Core\Render\Element::children($variables['elements']) as $key) {
+    $variables['contest'][$key] = $variables['elements'][$key];
+    $variables['contest'][$key]['#label_display'] = 'hidden';
+  }
   $variables['contest']['is_open'] = $contest->isOpen();
   $variables['contest']['is_coming_up'] = $contest->isComingUp();
-
-  $variables['create_submission_button'] = [
-    '#type' => 'link',
-    '#title' => t('Submit an image'),
-    '#url' => \Drupal\Core\Url::fromRoute('entity.ior_submission.add_form', [
-      'contest' => $contest->id(),
-    ]),
-    '#attributes' => [
-      'class' => [
-        'btn',
-        'btn-primary',
-      ]
-    ]
-  ];
+  $variables['contest']['submit_url'] = Url::fromRoute('entity.ior_submission.add_form', [
+    'contest' => $contest->id(),
+  ])->toString();
+  $variables['contest']['submissions_url'] = Url::fromRoute('view.ior_submissions.page_1', [
+    'contest' => $contest->id(),
+  ])->toString();
 }
 
 /**
