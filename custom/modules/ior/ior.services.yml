@@ -1,4 +1,10 @@
 services:
+  submission.form_controller:
+    class: Drupal\ior\Form\SubmissionFormController
+    arguments:
+      - '@controller.entity_form'
+      - '@current_route_match'
+
   contestant.mailer.entity_event_subscriber:
     class: Drupal\ior\EventSubscriber\ContestantMailer
     arguments: [ 'ior_submission' ]
