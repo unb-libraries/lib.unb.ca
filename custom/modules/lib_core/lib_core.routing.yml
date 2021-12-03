@@ -24,3 +24,12 @@ lib_core.woldcat_search_helper:
     _permission: 'access content'
   options:
     no_cache: 'TRUE'
+lib_core.archives_eloquent_redirect:
+  path: '/archives/gateway-updated'
+  defaults:
+    _controller: '\Drupal\lib_core\Controller\ArchivesController::eloquentRedirect'
+    _title: 'Gateway Archives Server Updated'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
