@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ior
+id: ior_submissions
+label: 'IOR Submissions'
+type: 'canonical_entities:ior_submission'
+pattern: '/researchcommons/ior/contests/[ior_submission:field_contest:entity:field_title]/submissions/[ior_submission:field_title]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }
