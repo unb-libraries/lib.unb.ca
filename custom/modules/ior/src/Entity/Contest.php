@@ -98,4 +98,13 @@ class Contest extends ContentEntityBase implements ContestInterface {
     return $now < $this->getOpenDate();
   }
 
+  /**
+   * {@inheritDoc}
+   */
+  public function delete() {
+    $this->entityTypeManager()
+      ->getStorage($this->getEntityTypeId())->deleteSubmissions($this->id());
+    parent::delete();
+  }
+
 }

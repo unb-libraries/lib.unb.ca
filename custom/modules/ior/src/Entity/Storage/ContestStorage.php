@@ -44,4 +44,12 @@ class ContestStorage extends SqlContentEntityStorage implements ContestStorageIn
       ->loadByContest($contest_id);
   }
 
+  /**
+   * {@inheritDoc}
+   */
+  public function deleteSubmissions($contest_id) {
+    return $this->submissionStorage()
+      ->delete($this->loadSubmissions($contest_id));
+  }
+
 }

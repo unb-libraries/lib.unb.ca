@@ -20,4 +20,12 @@ interface ContestStorageInterface extends ContentEntityStorageInterface {
    */
   public function loadSubmissions($contest_id);
 
+  /**
+   * Delete submission entities for the given contest ID.
+   *
+   * @param int|string $contest_id
+   *   The contest ID.
+   */
+  public function deleteSubmissions($contest_id);
+
 }
