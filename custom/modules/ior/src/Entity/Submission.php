@@ -29,6 +29,7 @@ use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
  *     "route_provider" = {
  *       "html" = "Drupal\ior\Entity\Routing\SubmissionHtmlRouteProvider"
  *     },
+ *     "storage" = "Drupal\ior\Entity\Storage\SubmissionStorage",
  *     "access" = "Drupal\ior\Entity\Access\SubmissionAccessControlHandler"
  *   },
  *   base_table = "ior_submission",
