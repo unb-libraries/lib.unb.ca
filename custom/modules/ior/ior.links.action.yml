@@ -1,0 +1,5 @@
+entity.contest.add_form:
+  route_name: entity.contest.add_form
+  title: "Create contest"
+  appears_on:
+    - view.ior_contests.page_1
