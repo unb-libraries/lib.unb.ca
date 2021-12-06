@@ -17,7 +17,7 @@ use Drupal\Core\Entity\ContentEntityBase;
  *     "views_data" = "Drupal\views\EntityViewsData",
  *     "form" = {
  *       "default" = "Drupal\Core\Entity\ContentEntityForm",
- *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"
+ *       "delete" = "Drupal\ior\Form\ContestDeleteForm"
  *     },
  *     "storage" = "Drupal\ior\Entity\Storage\ContestStorage",
  *     "route_provider" = {
@@ -96,6 +96,15 @@ class Contest extends ContentEntityBase implements ContestInterface {
   public function isComingUp() {
     $now = new DrupalDateTime();
     return $now < $this->getOpenDate();
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getSubmissions() {
+    return $this->entityTypeManager()
+      ->getStorage($this->getEntityTypeId())
+      ->loadSubmissions($this->id());
   }
 
   /**

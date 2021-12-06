@@ -63,4 +63,12 @@ interface ContestInterface extends ContentEntityInterface {
    */
   public function isComingUp();
 
+  /**
+   * Get all submissions this contest has received.
+   *
+   * @return \Drupal\ior\Entity\SubmissionInterface[]
+   *   An array of submission entities.
+   */
+  public function getSubmissions();
+
 }
