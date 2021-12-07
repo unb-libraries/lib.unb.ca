@@ -74,14 +74,6 @@
 #ask-us .askus-header .askus-icon .fas:before {
   font-size: 2.4rem;
 }
-#ask-us  #lh3-chat .status a {
-  background-color: #fff;
-  transition: all .2s ease-in-out;
-}
-#ask-us  #lh3-chat .status a:focus,
-#ask-us  #lh3-chat .status a:hover {
-  background-color: #f0f0f0;
-}
 #ask-us  #lh3-chat a.focus-ring {
   border-radius: .5rem;
 }
