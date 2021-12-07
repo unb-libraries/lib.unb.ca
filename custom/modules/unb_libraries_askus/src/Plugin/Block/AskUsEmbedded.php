@@ -42,19 +42,16 @@ class AskUsEmbedded extends BlockBase {
         ],
         'class' => [
           'chat-embedded',
-          'px-2',
         ],
       ],
-    ];
-    $render_array['wrapper']['header'] = [
-      '#type' => 'html_tag',
-      '#tag' => 'h2',
-      '#value' => $this
-        ->t('Instant Message'),
     ];
     $render_array['wrapper']['widget'] = [
       '#type' => 'inline_template',
       '#template' => $chat_widget,
+    ];
+    $render_array['wrapper']['footer'] = [
+      '#type' => 'markup',
+      '#markup' => $chat_footer,
     ];
 
     return $render_array;
