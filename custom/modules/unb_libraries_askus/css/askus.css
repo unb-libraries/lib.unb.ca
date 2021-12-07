@@ -15,6 +15,15 @@
     height: auto;
     line-height: 1.4;
 }
+#lh3-chat .status a {
+    background-color: #fff;
+    transition: background-color .2s ease-in-out;
+}
+#lh3-chat .status a:focus,
+#lh3-chat .status a:hover {
+    background-color: #f0f0f0;
+    text-decoration: none!important;
+}
 .chat-embedded #lh3-online {
     border: 1px solid #aaa;
     box-shadow: none;
