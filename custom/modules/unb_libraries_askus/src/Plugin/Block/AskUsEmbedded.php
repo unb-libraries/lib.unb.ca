@@ -20,6 +20,12 @@ class AskUsEmbedded extends BlockBase {
    */
   public function build() {
     $chat_widget = _unb_libraries_askus_get_widget('embedded');
+    $chat_footer =
+      '<p class="askus-footer">
+        <a class="askus-help link-no-hover" href="/help/ask-us"><span class="sr-only">Ask by:</span><span>Email</span>,
+          <span>Phone</span>, <span>Text</span>, <span>In-Person</span>
+        </a>
+      </p>';
 
     $render_array[] = [
       '#attached' => [

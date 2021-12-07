@@ -62,26 +62,20 @@
     font-size: .9rem;
     margin: .75rem 0 0;
     padding: 0;
-    text-align: center;
 }
-.askus-footer a {
-    margin: auto .25rem;
-}
-.askus-footer a:focus,
-.askus-footer a:hover {
-    color: #900;
-    text-decoration: none;
+#main .askus-footer a:focus,
+#main .askus-footer a:hover {
+    color: #00607a;
 }
 .askus-footer span:not(.sr-only) {
     margin-bottom: .5rem;
-    margin-left: 8px;
-    margin-right: 8px;
     transition: all .3s ease-in-out;
     white-space: nowrap;
 }
 .askus-footer a span:hover {
     box-shadow: 0 1px 1px -1px;
     color: #900;
+    text-decoration: none;
 }
 .requires-js {
     display: none;
