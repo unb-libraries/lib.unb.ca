@@ -93,7 +93,6 @@
 #ask-us .askus-footer a {
   border-bottom: 1px solid transparent;
   color: #000;
-  margin-left: 0;
 }
 #ask-us .askus-footer a:focus {
   background: inherit;
