@@ -1,0 +1,88 @@
+uuid: df57674d-58da-44d8-b893-9c5b939f9f46
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_solr
+    - eresources
+    - search_api
+  config:
+    - search_api.server.drupal_solr_lib_unb_ca
+third_party_settings:
+  search_api_solr:
+    finalize: false
+    commit_before_finalize: false
+    commit_after_finalize: false
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
+    highlighter:
+      maxAnalyzedChars: 51200
+      fragmenter: gap
+      regex:
+        slop: 0.5
+        pattern: blank
+        maxAnalyzedChars: 10000
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
+      highlight:
+        mergeContiguous: false
+        requireFieldMatch: false
+        snippets: 3
+        fragsize: 0
+    mlt:
+      mintf: 1
+      mindf: 1
+      maxdf: 0
+      maxdfpct: 0
+      minwl: 0
+      maxwl: 0
+      maxqt: 100
+      maxntp: 2000
+      boost: false
+      interestingTerms: none
+    term_modifiers:
+      slop: 3
+      fuzzy: 1
+    advanced:
+      index_prefix: ''
+      collection: ''
+      timezone: ''
+id: eresources
+name: eResources
+description: ''
+read_only: false
+field_settings:
+  kb_data_type:
+    label: 'KB Data Type'
+    datasource_id: 'entity:eresources_record'
+    property_path: kb_data_type
+    type: string
+    dependencies:
+      module:
+        - eresources
+  title:
+    label: Title
+    datasource_id: 'entity:eresources_record'
+    property_path: title
+    type: text
+    boost: !!float 2
+    dependencies:
+      module:
+        - eresources
+datasource_settings:
+  'entity:eresources_record': {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+  solr_date_range: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: drupal_solr_lib_unb_ca
