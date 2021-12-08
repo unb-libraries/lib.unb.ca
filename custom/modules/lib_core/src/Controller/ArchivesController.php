@@ -45,7 +45,7 @@ class ArchivesController extends ControllerBase {
    * Handle redirects from archives.lib, with an optional permalink ID.
    */
   public function eloquentRedirect(Request $request) {
-    $url = '#';
+    $url = 'https://7067.sydneyplus.com/archive/final/Portal.aspx';
 
     $id = $request->query->get('id');
     if (!empty($id)) {
@@ -60,8 +60,8 @@ class ArchivesController extends ControllerBase {
       '#markup' => '<div class="layout layout--twocol-section layout--twocol-section--67-33">
   <div class="layout__region layout__region--first">
     <p>The Gateway Archives server has been migrated to a new platform powered by ArchivEra.</p>
-    <p>Unfortunately, the vendor is not able to map URLs or permalinks to the new system. As a result, any bookmarks or links to specific resources, collections or searches will need to be recreated on the new platform.</p>
-    <p><strong>Please update your bookmarks</strong>.</p>
+    <p>Depending on the link you followed, the button below <strong>may</strong> take you to the original record. If not, it will take you to the homepage for the new platform. Any bookmarks or links to specific resources, collections or searches will need to be recreated on the new platform.</p>
+    <p><strong>Please update your bookmarks.</strong></p>
     <p>If you need assistance, please contact <a href="/contact-unb-libraries-staff?recipient=archives&amp;subject=Gateway%20Migration%20Question">archives@unb.ca</a>.</p>
     <p><a class="btn btn-danger" href="' . $url . '">Connect to the new Gateway server</a></p>
   </div>
