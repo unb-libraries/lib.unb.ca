@@ -6,6 +6,7 @@ dependencies:
     - field.field.contest.contest.field_date_open
     - field.field.contest.contest.field_description
     - field.field.contest.contest.field_title
+    - field.field.contest.contest.field_tor
   module:
     - datetime
     - ior
@@ -16,7 +17,7 @@ bundle: contest
 mode: default
 content:
   field_date_close:
-    weight: 3
+    weight: 4
     label: above
     settings:
       timezone_override: ''
@@ -25,7 +26,7 @@ content:
     type: datetime_default
     region: content
   field_date_open:
-    weight: 2
+    weight: 3
     label: above
     settings:
       timezone_override: ''
@@ -47,6 +48,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_tor:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
 hidden:
   field_submissions: true
