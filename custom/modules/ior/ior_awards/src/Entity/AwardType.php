@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\ior\Entity;
+namespace Drupal\ior_awards\Entity;
 
 use Drupal\Core\Config\Entity\ConfigEntityBase;
 
@@ -13,9 +13,9 @@ use Drupal\Core\Config\Entity\ConfigEntityBase;
  *   label_plural = @Translation("Award types"),
  *   label_collection = @Translation("Award types"),
  *   handlers = {
- *     "list_builder" = "Drupal\ior\Entity\AwardTypeListBuilder",
+ *     "list_builder" = "Drupal\ior_awards\Entity\AwardTypeListBuilder",
  *     "form" = {
- *       "default" = "Drupal\ior\Form\AwardTypeForm",
+ *       "default" = "Drupal\ior_awards\Form\AwardTypeForm",
  *       "delete" = "Drupal\Core\Entity\EntityDeleteForm",
  *     },
  *     "route_provider" = {

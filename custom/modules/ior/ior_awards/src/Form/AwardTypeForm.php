@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\ior\Form;
+namespace Drupal\ior_awards\Form;
 
 use Drupal\Core\Entity\EntityForm;
 use Drupal\Core\Form\FormStateInterface;

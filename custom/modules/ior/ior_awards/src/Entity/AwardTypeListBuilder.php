@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\ior\Entity;
+namespace Drupal\ior_awards\Entity;
 
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityListBuilder;

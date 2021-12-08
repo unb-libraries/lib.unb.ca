@@ -1,4 +1,4 @@
-ior.ior_award_type.*:
+ior_awards.ior_award_type.*:
   type: config_entity
   label: 'IOR Award type'
   mapping:
