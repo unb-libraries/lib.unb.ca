@@ -13,6 +13,7 @@ use Drupal\Core\Config\Entity\ConfigEntityBase;
  *   label_plural = @Translation("Award types"),
  *   label_collection = @Translation("Award types"),
  *   handlers = {
+ *     "list_builder" = "Drupal\ior\Entity\AwardTypeListBuilder",
  *     "form" = {
  *       "default" = "Drupal\ior\Form\AwardTypeForm",
  *       "delete" = "Drupal\Core\Entity\EntityDeleteForm",
@@ -38,6 +39,7 @@ use Drupal\Core\Config\Entity\ConfigEntityBase;
  *     "add-form" = "/researchcommons/ior/awards/add",
  *     "edit-form" = "/researchcommons/ior/awards/{ior_award_type}/edit",
  *     "delete-form" = "/researchcommons/ior/awards/{ior_award_type}/delete",
+ *     "collection" = "/researchcommons/ior/awards",
  *   }
  * )
  */
