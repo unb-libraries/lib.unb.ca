@@ -9,3 +9,4 @@ dependencies:
   - key
   - lib_unb_custom_entity
   - lib_core
+  - search_api_solr
