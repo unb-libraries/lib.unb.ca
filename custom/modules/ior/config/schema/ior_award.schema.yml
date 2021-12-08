@@ -1,0 +1,16 @@
+ior.ior_award_type.*:
+  type: config_entity
+  label: 'IOR Award type'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    quantity:
+      type: integer
+      label: 'Quantity'
+    weight:
+      type: integer
+      label: 'Weight'
