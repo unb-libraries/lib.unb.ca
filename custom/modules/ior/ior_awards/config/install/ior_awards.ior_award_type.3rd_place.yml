@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: 3rd_place
+label: '3rd place'
+quantity: 1
+weight: 20
