@@ -48,9 +48,23 @@ class ArchivesController extends ControllerBase {
     $url = 'https://7067.sydneyplus.com/archive/final/Portal.aspx';
 
     $id = $request->query->get('id');
-    if (0 && !empty($id)) {
+    if (!empty($id)) {
       $id = str_replace('KEY_', '', $id);
-      $url = "https://gencat.eloquent-systems.com/unb_permalink.html?key={$id}";
+      $length = strlen($id) + 1;
+      $search = "{$id},";
+      $uuid = NULL;
+
+      $fh = fopen(__DIR__ . '/../../data/eloquent-redirects.csv', 'r');
+      while (($line = fgets($fh)) !== FALSE) {
+        if (substr($line, 0, $length) == $search) {
+          $uuid = substr($line, $length, -1);
+        }
+      }
+      fclose($fh);
+
+      if (!empty($uuid)) {
+        $url = "https://7067.sydneyplus.com/archive/final/Portal/Default.aspx?component=bsearch&record={$uuid}";
+      }
     }
 
     $block = $this->blockContentStorage->load($this->blockId);
