@@ -18,7 +18,7 @@ use Drupal\Core\Entity\ContentEntityBase;
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"
  *     },
  *     "route_provider" = {
- *       "html" = "Drupal\custom_entity\Entity\Routing\HtmlRouteProvider"
+ *       "html" = "Drupal\ior_awards\Entity\Routing\AwardHtmlRouteProvider"
  *     },
  *     "access" = "Drupal\custom_entity\Entity\Access\EntityAccessControlHandler"
  *   },
