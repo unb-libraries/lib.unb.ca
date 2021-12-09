@@ -48,7 +48,7 @@ class ArchivesController extends ControllerBase {
     $url = 'https://7067.sydneyplus.com/archive/final/Portal.aspx';
 
     $id = $request->query->get('id');
-    if (!empty($id)) {
+    if (0 && !empty($id)) {
       $id = str_replace('KEY_', '', $id);
       $url = "https://gencat.eloquent-systems.com/unb_permalink.html?key={$id}";
     }
