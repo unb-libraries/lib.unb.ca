@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.ior_award.field_type
+  module:
+    - ior_awards
+id: ior_award.ior_award.field_type
+field_name: field_type
+entity_type: ior_award
+bundle: ior_award
+label: Type
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:ior_award_type'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference
