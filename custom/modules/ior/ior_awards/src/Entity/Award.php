@@ -23,6 +23,7 @@ use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
  *     "route_provider" = {
  *       "html" = "Drupal\ior_awards\Entity\Routing\AwardHtmlRouteProvider"
  *     },
+ *     "storage" = "Drupal\ior_awards\Entity\Storage\AwardStorage",
  *     "access" = "Drupal\custom_entity\Entity\Access\EntityAccessControlHandler"
  *   },
  *   base_table = "ior_award",
