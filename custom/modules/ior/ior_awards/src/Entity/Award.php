@@ -3,6 +3,9 @@
 namespace Drupal\ior_awards\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
+use Drupal\Core\Entity\EntityStorageInterface;
+use Drupal\ior\Entity\SubmissionInterface;
+use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
 
 /**
  * The "IOR Award" entity.
@@ -14,7 +17,7 @@ use Drupal\Core\Entity\ContentEntityBase;
  *   label_collection = @Translation("Awards"),
  *   handlers = {
  *     "form" = {
- *       "default" = "Drupal\Core\Entity\ContentEntityForm",
+ *       "default" = "Drupal\ior_awards\Form\AwardForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"
  *     },
  *     "route_provider" = {
@@ -37,5 +40,30 @@ use Drupal\Core\Entity\ContentEntityBase;
  * )
  */
 class Award extends ContentEntityBase implements AwardInterface {
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getSubmission() {
+    return $this->get(self::FIELD_SUBMISSION)
+      ->entity;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function setSubmission(SubmissionInterface $submission) {
+    $this->set(self::FIELD_SUBMISSION, $submission);
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function preSave(EntityStorageInterface $storage) {
+    if (!$this->getSubmission()) {
+      throw new MissingMandatoryParametersException('Awards must be assigned to a submission upon creation.');
+    }
+    parent::preSave($storage);
+  }
 
 }
