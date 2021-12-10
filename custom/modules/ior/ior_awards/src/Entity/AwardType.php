@@ -21,6 +21,7 @@ use Drupal\Core\Config\Entity\ConfigEntityBase;
  *     "route_provider" = {
  *       "html" = "Drupal\custom_entity\Entity\Routing\HtmlRouteProvider",
  *     },
+ *     "storage" = "Drupal\ior_awards\Entity\Storage\AwardTypeStorage",
  *     "access" = "Drupal\custom_entity\Entity\Access\EntityAccessControlHandler",
  *   },
  *   config_prefix = "ior_award_type",
