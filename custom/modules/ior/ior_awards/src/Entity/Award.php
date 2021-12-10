@@ -60,6 +60,21 @@ class Award extends ContentEntityBase implements AwardInterface {
   /**
    * {@inheritDoc}
    */
+  public function getType() {
+    return $this->get(self::FIELD_TYPE)
+      ->entity;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getTypeId() {
+    return $this->getType()->id();
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public function preSave(EntityStorageInterface $storage) {
     if (!$this->getSubmission()) {
       throw new MissingMandatoryParametersException('Awards must be assigned to a submission upon creation.');
