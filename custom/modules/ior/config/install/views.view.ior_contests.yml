@@ -8,6 +8,7 @@ dependencies:
   module:
     - datetime
     - ior
+    - user
 id: ior_contests
 label: 'IOR Contests'
 module: views
@@ -23,8 +24,9 @@ display:
     position: 0
     display_options:
       access:
-        type: none
-        options: {  }
+        type: perm
+        options:
+          perm: 'list contest entities'
       cache:
         type: tag
         options: {  }
@@ -291,6 +293,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
+        - user.permissions
       tags:
         - 'config:field.storage.contest.field_date_close'
         - 'config:field.storage.contest.field_date_open'
@@ -428,6 +431,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - user.permissions
       tags:
         - 'config:field.storage.contest.field_date_close'
         - 'config:field.storage.contest.field_date_open'
@@ -507,6 +511,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
+        - user.permissions
       tags:
         - 'config:field.storage.contest.field_date_close'
         - 'config:field.storage.contest.field_date_open'
