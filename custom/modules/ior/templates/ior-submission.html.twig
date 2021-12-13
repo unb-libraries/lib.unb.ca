@@ -1,18 +1,22 @@
 <div class="row">
-    <div class="col-md-6">
-        {{ submission.field_image }}
-        {%  if submission.image_link %}
-            <p>{{ submission.image_link }}</p>
+    <div class="col-md-12 col-lg-6 col-xl-8">
+        {% if submission.image_url %}
+            <a href="{{ submission.image_url }}" target="_blank">{{ submission.field_image }}</a>
+        {% else %}
+            {{ submission.field_image }}
         {% endif %}
     </div>
-    <div class="col-md-6">
-        {% if submission.published %}
-        <div class="submission-meta">
-            <h2>{{ submission.field_first_name }}{{ submission.field_last_name }}</h2>
-            <span class="subtitle">{{ submission.field_department }}</span>
-        </div>
-        {% endif %}
+    <div class="col-md-12 col-lg-6 col-xl-4">
         <div class="submission-description">{{ submission.field_description }}</div>
+        {% if submission.published %}
+            <div class="container overflow-hidden submission-meta">
+                <div class="row gy-2">
+                    <div class="col-6 pl-0"><div class="pt-1 pb-1">Submitted by:</div></div>
+                    <div class="col-6 pr-0"><div class="pt-1 pb-1">{{ submission.field_first_name }}{{ submission.field_last_name }}</div></div>
+                    <div class="col-6 pl-0"><div class="pt-1 pb-1">Department / Faculty: </div></div>
+                    <div class="col-6 pr-0"><div class="pt-1 pb-1">{{ submission.field_department }}</div></div>
+                </div>
+            </div>
+        {% endif %}
     </div>
-
 </div>

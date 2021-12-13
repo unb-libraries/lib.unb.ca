@@ -75,18 +75,7 @@ function template_preprocess_ior_submission(array &$variables) {
   $variables['submission']['published'] = $submission->isPublished();
 
   if (Drupal::currentUser()->hasPermission('download full_resolution images')) {
-    $variables['submission']['image_link'] = [
-      '#type' => 'link',
-      '#title' => t('View full size'),
-      '#url' => \Drupal\Core\Url::fromUri($submission->getImageUrl()),
-      '#attributes' => [
-        'target' => '_blank',
-        'class' => [
-          'btn',
-          'btn-primary',
-        ],
-      ],
-    ];
+    $variables['submission']['image_url'] = $submission->getImageUrl();
   }
 
   // This should be done in a template?
