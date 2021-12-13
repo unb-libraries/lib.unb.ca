@@ -43,4 +43,13 @@ class AwardStorage extends SqlContentEntityStorage implements AwardStorageInterf
       ->execute());
   }
 
+  /**
+   * {@inheritDoc}
+   */
+  public function loadBySubmission($submission_id) {
+    return $this->loadByProperties([
+      'field_submission' => $submission_id,
+    ]);
+  }
+
 }
