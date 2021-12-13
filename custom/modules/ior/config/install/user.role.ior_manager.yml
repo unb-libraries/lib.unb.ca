@@ -6,6 +6,7 @@ label: 'IOR Contest Manager'
 weight: 6
 is_admin: null
 permissions:
+  - 'access toolbar'
   - 'create contest entities'
   - 'download full_resolution images'
   - 'list contest entities'

@@ -6,6 +6,7 @@ label: 'IOR Reviewer'
 weight: 7
 is_admin: null
 permissions:
+  - 'access toolbar'
   - 'download full_resolution images'
   - 'list accepted ior_submission entities'
   - 'list contest entities'
