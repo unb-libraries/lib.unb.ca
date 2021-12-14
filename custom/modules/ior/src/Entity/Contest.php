@@ -16,7 +16,7 @@ use Drupal\Core\Entity\ContentEntityBase;
  *   handlers = {
  *     "views_data" = "Drupal\views\EntityViewsData",
  *     "form" = {
- *       "default" = "Drupal\Core\Entity\ContentEntityForm",
+ *       "default" = "Drupal\ior\Form\ContestForm",
  *       "delete" = "Drupal\ior\Form\ContestDeleteForm"
  *     },
  *     "storage" = "Drupal\ior\Entity\Storage\ContestStorage",
