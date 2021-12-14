@@ -1,0 +1,38 @@
+# Award entities
+administer ior_award entities:
+  title: "Administer awards."
+
+list ior_award entities:
+  title: "List awards."
+
+create ior_award entities:
+  title: "Create awards."
+
+view ior_award entities:
+  title: "View awards."
+
+update ior_award entities:
+  title: "Edit awards."
+
+delete ior_award entities:
+  title: "Delete awards."
+
+
+# Award type entities
+administer ior_award_type entities:
+  title: "Administer award types."
+
+list ior_award_type entities:
+  title: "List award types."
+
+create ior_award_type entities:
+  title: "Create award types."
+
+view ior_award_type entities:
+  title: "View award types."
+
+update ior_award_type entities:
+  title: "Edit award types."
+
+delete ior_award_type entities:
+  title: "Delete award types."
