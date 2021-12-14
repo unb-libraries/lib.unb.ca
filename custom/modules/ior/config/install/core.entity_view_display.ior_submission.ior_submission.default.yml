@@ -11,9 +11,11 @@ dependencies:
     - field.field.ior_submission.ior_submission.field_last_name
     - field.field.ior_submission.ior_submission.field_terms_conditions_accepted
     - field.field.ior_submission.ior_submission.field_title
+    - field.field.ior_submission.ior_submission.field_website
   module:
     - image
     - ior
+    - link
     - text
 id: ior_submission.ior_submission.default
 targetEntityType: ior_submission
@@ -34,7 +36,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
   field_description:
-    weight: 6
+    weight: 7
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -56,7 +58,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
   field_image:
-    weight: 7
+    weight: 8
     label: above
     settings:
       image_style: ''
@@ -73,12 +75,24 @@ content:
       link_to_entity: false
     third_party_settings: {  }
   field_title:
-    weight: 5
+    weight: 6
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_website:
+    weight: 5
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
     region: content
 hidden:
   field_contest: true

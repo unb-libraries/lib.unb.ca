@@ -10,7 +10,7 @@ id: ior_submission.ior_submission.field_website
 field_name: field_website
 entity_type: ior_submission
 bundle: ior_submission
-label: Website
+label: 'Research URL'
 description: ''
 required: false
 translatable: false

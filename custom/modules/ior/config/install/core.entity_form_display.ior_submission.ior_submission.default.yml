@@ -11,11 +11,13 @@ dependencies:
     - field.field.ior_submission.ior_submission.field_last_name
     - field.field.ior_submission.ior_submission.field_terms_conditions_accepted
     - field.field.ior_submission.ior_submission.field_title
+    - field.field.ior_submission.ior_submission.field_website
     - image.style.thumbnail
   module:
     - allowed_formats
     - image
     - ior
+    - link
     - text
 id: ior_submission.ior_submission.default
 targetEntityType: ior_submission
@@ -31,7 +33,7 @@ content:
     type: string_textfield
     region: content
   field_description:
-    weight: 5
+    weight: 6
     settings:
       rows: 5
       placeholder: ''
@@ -58,7 +60,7 @@ content:
     type: string_textfield
     region: content
   field_image:
-    weight: 6
+    weight: 7
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -75,18 +77,26 @@ content:
     region: content
   field_terms_conditions_accepted:
     type: boolean_checkbox
-    weight: 7
+    weight: 8
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_title:
-    weight: 4
+    weight: 5
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_website:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
     region: content
 hidden:
   field_contest: true

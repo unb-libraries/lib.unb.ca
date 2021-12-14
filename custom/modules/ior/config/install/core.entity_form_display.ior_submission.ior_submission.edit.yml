@@ -12,11 +12,13 @@ dependencies:
     - field.field.ior_submission.ior_submission.field_last_name
     - field.field.ior_submission.ior_submission.field_terms_conditions_accepted
     - field.field.ior_submission.ior_submission.field_title
+    - field.field.ior_submission.ior_submission.field_website
     - image.style.thumbnail
   module:
     - allowed_formats
     - image
     - ior
+    - link
     - text
 id: ior_submission.ior_submission.edit
 targetEntityType: ior_submission
@@ -82,6 +84,14 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_website:
+    type: link_default
+    weight: 7
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
 hidden:
   field_contest: true
   field_terms_conditions_accepted: true

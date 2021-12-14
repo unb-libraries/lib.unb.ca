@@ -12,6 +12,7 @@ dependencies:
     - field.field.ior_submission.ior_submission.field_last_name
     - field.field.ior_submission.ior_submission.field_terms_conditions_accepted
     - field.field.ior_submission.ior_submission.field_title
+    - field.field.ior_submission.ior_submission.field_website
     - workflows.workflow.ior_submission_review
   module:
     - content_moderation
@@ -37,4 +38,5 @@ hidden:
   field_last_name: true
   field_terms_conditions_accepted: true
   field_title: true
+  field_website: true
   path: true
