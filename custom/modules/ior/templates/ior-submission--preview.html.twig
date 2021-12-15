@@ -5,7 +5,9 @@
         <a href="{{ submission.url }}">{{ submission.field_image }}</a>
     </div>
     <div class="col-md-12">
-        <a class="title h4 {% if submission.state %}moderation-{{ submission.state }}{% endif %}" href="{{ submission.url }}">{{ submission.field_title }}</a>
+        <a class="title h4 {% if submission.state %}moderation-{{ submission.state.id }}{% endif %}" href="{{ submission.url }}" data-toggle="tooltip" title="{{ submission.state.label }}" data-placement="left">
+            {{ submission.field_title }}
+        </a>
         {% if submission.published %}
         <div class="submission-meta">
             <span>{{ submission.field_first_name }}{{ submission.field_last_name }}</span>

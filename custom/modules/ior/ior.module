@@ -116,7 +116,13 @@ function template_preprocess_ior_submission__preview(array &$variables) {
   }
 
   if (Drupal::currentUser()->hasPermission('view ior_submission moderation_state')) {
-    $variables['submission']['state'] = $submission->get('moderation_state')->value;
+    /** @var \Drupal\content_moderation\ModerationInformationInterface $moderation_info */
+    $moderation_info = Drupal::service('content_moderation.moderation_information');
+    $moderation_state = $moderation_info->getWorkflowForEntity($submission)
+      ->getTypePlugin()
+      ->getState($submission->get('moderation_state')->value);
+    $variables['submission']['state']['id'] = $moderation_state->id();
+    $variables['submission']['state']['label'] = $moderation_state->label();
   }
   $variables['submission']['published'] = $submission->isPublished();
   $variables['submission']['url'] = $variables['elements']['#ior_submission']

@@ -3,3 +3,5 @@ ior:
   css:
     component:
       css/ior.css: {}
+  js:
+    js/ior.behaviors.js: {}
