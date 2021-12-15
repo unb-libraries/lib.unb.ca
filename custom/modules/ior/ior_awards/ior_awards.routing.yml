@@ -1,0 +1,11 @@
+entity.contest.winners:
+  path: /researchcommons/ior/contests/{contest}/winners
+  defaults:
+    _controller: Drupal\ior_awards\Controller\AwardController::list
+    _title: Winners
+  requirements:
+    _permission: list contest winners
+  options:
+    parameters:
+      contest:
+        type: entity:contest

@@ -16,6 +16,7 @@ use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
  *   label_plural = @Translation("Awards"),
  *   label_collection = @Translation("Awards"),
  *   handlers = {
+ *     "view" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "form" = {
  *       "default" = "Drupal\ior_awards\Form\AwardForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"
