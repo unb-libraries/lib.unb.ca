@@ -53,6 +53,14 @@ name: eResources
 description: ''
 read_only: false
 field_settings:
+  id:
+    label: ID
+    datasource_id: 'entity:eresources_record'
+    property_path: id
+    type: integer
+    dependencies:
+      module:
+        - eresources
   kb_data_type:
     label: 'KB Data Type'
     datasource_id: 'entity:eresources_record'
@@ -65,7 +73,16 @@ field_settings:
     label: Title
     datasource_id: 'entity:eresources_record'
     property_path: title
-    type: text
+    type: string
+    boost: !!float 2
+    dependencies:
+      module:
+        - eresources
+  title_fulltext:
+    label: 'Title (Fulltext)'
+    datasource_id: 'entity:eresources_record'
+    property_path: title
+    type: 'solr_text_custom:ngram'
     boost: !!float 2
     dependencies:
       module:

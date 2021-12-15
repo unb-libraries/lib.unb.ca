@@ -5,6 +5,7 @@ eresources:
       css/eresources.css: {}
   js:
     js/navbar.js: {}
+    js/forms.js: {}
   dependencies:
     - core/drupal
     - core/drupalSettings

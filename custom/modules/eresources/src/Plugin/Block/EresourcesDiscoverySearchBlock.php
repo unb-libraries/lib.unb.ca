@@ -96,6 +96,8 @@ class EresourcesDiscoverySearchBlock extends BlockBase {
       '#children' => $build,
       '#attached' => [
         'library' => [
+          'lib_core/lib-chosen',
+          'lib_core/chosen-bootstrap',
           'lib_core/accessible-accordion',
           'eresources/eresources',
         ],
