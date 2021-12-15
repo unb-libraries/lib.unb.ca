@@ -37,7 +37,7 @@ function ior_awards_preprocess_page_title(array &$variables) {
       $award_variables = [
         'field_type' => $award
           ->get('field_type')
-          ->view('full'),
+          ->view('default'),
       ];
       $variables['awards'][$award->getTypeId()] = $award_variables;
     }
@@ -53,8 +53,13 @@ function ior_awards_preprocess_page_title(array &$variables) {
  *   parameter that resolves to a submission entity.
  */
 function _get_submission_from_route() {
+  $route_match = Drupal::routeMatch();
+  if ($route_match->getRouteName() !== 'entity.ior_submission.canonical') {
+    return FALSE;
+  }
+
   /** @var \Drupal\ior\Entity\SubmissionInterface $submission */
-  if ($submission = Drupal::routeMatch()->getParameter('ior_submission')) {
+  if ($submission = $route_match->getParameter('ior_submission')) {
     return $submission;
   }
   return FALSE;
