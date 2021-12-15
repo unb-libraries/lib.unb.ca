@@ -15,6 +15,8 @@
                     <div class="col-6 pr-0"><div class="pt-1 pb-1">{{ submission.field_first_name }}{{ submission.field_last_name }}</div></div>
                     <div class="col-6 pl-0"><div class="pt-1 pb-1">Department / Faculty: </div></div>
                     <div class="col-6 pr-0"><div class="pt-1 pb-1">{{ submission.field_department }}</div></div>
+                    <div class="col-6 pl-0"><div class="pt-1 pb-1">Research URL: </div></div>
+                    <div class="col-6 pr-0"><div class="pt-1 pb-1">{{ submission.field_website }}</div></div>
                     {% if submission.state %}
                     {{ attach_library('ior/ior') }}
                     <div class="col-6 pl-0"><div class="pt-1 pb-1">State: </div></div>
