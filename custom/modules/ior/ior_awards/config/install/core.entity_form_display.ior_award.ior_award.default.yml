@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.ior_award.ior_award.field_submission
+    - field.field.ior_award.ior_award.field_type
+  module:
+    - ior_awards
+id: ior_award.ior_award.default
+targetEntityType: ior_award
+bundle: ior_award
+mode: default
+content:
+  field_type:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_submission: true
