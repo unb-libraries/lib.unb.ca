@@ -8,16 +8,19 @@
     </div>
     <div class="col-md-12 col-lg-6 col-xl-4">
         <div class="submission-description">{{ submission.field_description }}</div>
-        {% if submission.published %}
-            <div class="container overflow-hidden submission-meta">
-                <div class="row gy-2">
+        <div class="container overflow-hidden submission-meta">
+            <div class="row gy-2">
+                {% if submission.published %}
                     <div class="col-6 pl-0"><div class="pt-1 pb-1">Submitted by:</div></div>
                     <div class="col-6 pr-0"><div class="pt-1 pb-1">{{ submission.field_first_name }}{{ submission.field_last_name }}</div></div>
                     <div class="col-6 pl-0"><div class="pt-1 pb-1">Department / Faculty: </div></div>
                     <div class="col-6 pr-0"><div class="pt-1 pb-1">{{ submission.field_department }}</div></div>
-                    <div class="col-6 pl-0"><div class="pt-1 pb-1">Research URL: </div></div>
-                    <div class="col-6 pr-0"><div class="pt-1 pb-1">{{ submission.field_website }}</div></div>
-                    {% if submission.state %}
+                    {% if submission.field_website %}
+                        <div class="col-6 pl-0"><div class="pt-1 pb-1">Research URL: </div></div>
+                        <div class="col-6 pr-0"><div class="pt-1 pb-1">{{ submission.field_website }}</div></div>
+                    {% endif %}
+                {% endif %}
+                {% if submission.state %}
                     {{ attach_library('ior/ior') }}
                     <div class="col-6 pl-0"><div class="pt-1 pb-1">State: </div></div>
                     <div class="col-6 pr-0">
@@ -25,9 +28,8 @@
                             <span class="badge moderation-{{ submission.state.id }} p-2">{{ submission.state.label }}</span>
                         </div>
                     </div>
-                    {% endif %}
-                </div>
+                {% endif %}
             </div>
-        {% endif %}
+        </div>
     </div>
 </div>

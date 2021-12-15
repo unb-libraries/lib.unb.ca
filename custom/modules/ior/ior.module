@@ -68,8 +68,10 @@ function template_preprocess_ior_submission(array &$variables) {
   $submission = $variables['elements']['#ior_submission'];
   $variables['submission']['entity'] = $submission;
   foreach (\Drupal\Core\Render\Element::children($variables['elements']) as $key) {
-    $variables['submission'][$key] = $variables['elements'][$key];
-    $variables['submission'][$key]['#label_display'] = 'hidden';
+    if ($submission->hasField($key) && !empty($submission->get($key)->getValue())) {
+      $variables['submission'][$key] = $variables['elements'][$key];
+      $variables['submission'][$key]['#label_display'] = 'hidden';
+    }
   }
 
   if (Drupal::currentUser()->hasPermission('view ior_submission moderation_state')) {
