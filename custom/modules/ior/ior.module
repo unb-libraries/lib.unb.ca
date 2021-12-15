@@ -72,6 +72,15 @@ function template_preprocess_ior_submission(array &$variables) {
     $variables['submission'][$key]['#label_display'] = 'hidden';
   }
 
+  if (Drupal::currentUser()->hasPermission('view ior_submission moderation_state')) {
+    /** @var \Drupal\content_moderation\ModerationInformationInterface $moderation_info */
+    $moderation_info = Drupal::service('content_moderation.moderation_information');
+    $moderation_state = $moderation_info->getWorkflowForEntity($submission)
+      ->getTypePlugin()
+      ->getState($submission->get('moderation_state')->value);
+    $variables['submission']['state']['id'] = $moderation_state->id();
+    $variables['submission']['state']['label'] = $moderation_state->label();
+  }
   $variables['submission']['published'] = $submission->isPublished();
 
   if (Drupal::currentUser()->hasPermission('download full_resolution images')) {

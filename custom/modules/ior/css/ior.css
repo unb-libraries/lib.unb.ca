@@ -11,21 +11,30 @@
     background-color: black;
 }
 
+.ior-submission-full .badge.moderation-draft,
 .ior-submission-preview .title.moderation-draft > .field::before {
     background-color: #ffcb00;
 }
+.ior-submission-full .badge.moderation-rejected,
 .ior-submission-preview .title.moderation-rejected > .field::before {
+    color: #ffffff;
     background-color: #d82e3b;
 }
+.ior-submission-full .badge.moderation-accepted,
 .ior-submission-preview .title.moderation-accepted > .field::before {
     background-color: #9de121;
 }
+.ior-submission-full .badge.moderation-published_anonymised_,
 .ior-submission-preview .title.moderation-published_anonymised_ > .field::before {
     background-color: #16fde7;
 }
+.ior-submission-full .badge.moderation-published,
 .ior-submission-preview .title.moderation-published > .field::before {
     background-color: #0d52f7;
+    color: #ffffff;
 }
+.ior-submission-full .badge.moderation-archived,
 .ior-submission-preview .title.moderation-archived > .field::before {
     background-color: #a30df7;
+    color: #ffffff;
 }
