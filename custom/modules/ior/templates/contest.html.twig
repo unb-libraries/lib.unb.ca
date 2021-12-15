@@ -27,6 +27,16 @@
         </div>
     </div>
     <div class="col-md-12 col-lg-6 order-lg-1 col-xl-8 order-xl-1">
-        {{ contest.field_description }}
+        {% if contest.field_description %}
+            <section>
+                {{ contest.field_description }}
+            </section>
+        {% endif %}
+        {% if contest.field_tor %}
+            <section>
+                <h2>Terms of Reference</h2>
+                {{ contest.field_tor }}
+            </section>
+        {% endif %}
     </div>
 </div>

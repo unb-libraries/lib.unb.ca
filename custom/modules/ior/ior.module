@@ -40,8 +40,10 @@ function template_preprocess_contest(array &$variables) {
   $variables['contest']['entity'] = $contest;
 
   foreach (\Drupal\Core\Render\Element::children($variables['elements']) as $key) {
-    $variables['contest'][$key] = $variables['elements'][$key];
-    $variables['contest'][$key]['#label_display'] = 'hidden';
+    if ($contest->hasField($key) && !empty($contest->get($key)->getValue())) {
+      $variables['contest'][$key] = $variables['elements'][$key];
+      $variables['contest'][$key]['#label_display'] = 'hidden';
+    }
   }
   $variables['contest']['is_open'] = $contest->isOpen();
   $variables['contest']['is_coming_up'] = $contest->isComingUp();
