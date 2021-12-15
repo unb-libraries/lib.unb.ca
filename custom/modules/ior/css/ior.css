@@ -1,0 +1,31 @@
+.ior-submission-preview .title .field::before {
+    content: "";
+    display: inline-block;
+    height: 0.9rem;
+    margin-right: 6px;
+    width: 0.9rem;
+    mask-image: url("../svg/bubble.svg");
+    -webkit-mask-image: url("../svg/bubble.svg");
+    mask-size: cover;
+    -webkit-mask-size: cover;
+    background-color: black;
+}
+
+.ior-submission-preview .title.moderation-draft > .field::before {
+    background-color: #ffcb00;
+}
+.ior-submission-preview .title.moderation-rejected > .field::before {
+    background-color: #d82e3b;
+}
+.ior-submission-preview .title.moderation-accepted > .field::before {
+    background-color: #9de121;
+}
+.ior-submission-preview .title.moderation-published_anonymised_ > .field::before {
+    background-color: #16fde7;
+}
+.ior-submission-preview .title.moderation-published > .field::before {
+    background-color: #0d52f7;
+}
+.ior-submission-preview .title.moderation-archived > .field::before {
+    background-color: #a30df7;
+}

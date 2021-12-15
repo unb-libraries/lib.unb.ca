@@ -67,6 +67,9 @@ view published ior_submission entities:
 view archived ior_submission entities:
   title: "View archived IOR submissions."
 
+view ior_submission moderation_state:
+  title: "View IOR submissions moderation state."
+
 update ior_submission entities:
   title: "Edit IOR submissions."
 

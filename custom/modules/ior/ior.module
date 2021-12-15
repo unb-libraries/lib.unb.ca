@@ -102,6 +102,9 @@ function template_preprocess_ior_submission__preview(array &$variables) {
     $variables['submission'][$key]['#label_display'] = 'hidden';
   }
 
+  if (Drupal::currentUser()->hasPermission('view ior_submission moderation_state')) {
+    $variables['submission']['state'] = $submission->get('moderation_state')->value;
+  }
   $variables['submission']['published'] = $submission->isPublished();
   $variables['submission']['url'] = $variables['elements']['#ior_submission']
     ->toUrl()

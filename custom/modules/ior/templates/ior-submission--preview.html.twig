@@ -1,9 +1,11 @@
-<div class="row">
+{{ attach_library('ior/ior') }}
+
+<div class="row ior-submission ior-submission-preview">
     <div class="col-md-12">
         <a href="{{ submission.url }}">{{ submission.field_image }}</a>
     </div>
     <div class="col-md-12">
-        <a class="h4" href="{{ submission.url }}">{{ submission.field_title }}</a>
+        <a class="title h4 {% if submission.state %}moderation-{{ submission.state }}{% endif %}" href="{{ submission.url }}">{{ submission.field_title }}</a>
         {% if submission.published %}
         <div class="submission-meta">
             <span>{{ submission.field_first_name }}{{ submission.field_last_name }}</span>
