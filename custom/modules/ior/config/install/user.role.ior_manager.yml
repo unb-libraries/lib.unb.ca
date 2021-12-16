@@ -24,3 +24,4 @@ permissions:
   - 'use text format no_media_html_ior_'
   - 'view contest entities'
   - 'view ior_submission entities'
+  - 'view ior_submission moderation_state'

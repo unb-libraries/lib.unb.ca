@@ -121,6 +121,7 @@ function template_preprocess_ior_submission__preview(array &$variables) {
     $moderation_state = $moderation_info->getWorkflowForEntity($submission)
       ->getTypePlugin()
       ->getState($submission->get('moderation_state')->value);
+    $variables['#attached']['library'][] = 'ior/ior';
     $variables['submission']['state']['id'] = $moderation_state->id();
     $variables['submission']['state']['label'] = $moderation_state->label();
   }
