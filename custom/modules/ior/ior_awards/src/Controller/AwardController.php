@@ -3,6 +3,7 @@
 namespace Drupal\ior_awards\Controller;
 
 use Drupal\Core\Entity\EntityViewBuilderInterface;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\ior\Entity\ContestInterface;
 use Drupal\ior_awards\Entity\Storage\AwardStorageInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,6 +14,8 @@ use Symfony\Component\HttpFoundation\Request;
  * @package Drupal\ior_awards\Controller
  */
 class AwardController {
+
+  use StringTranslationTrait;
 
   /**
    * The award storage.
@@ -75,14 +78,70 @@ class AwardController {
   public function list(ContestInterface $contest, Request $request) {
     $build = [];
 
-    $awards = $this->awardStorage()->loadByContest($contest->id());
-    foreach ($awards as $award) {
-      $build[] = $this
-        ->awardViewBuilder()
-        ->view($award);
+    if (!$contest->isClosed()) {
+      $build[] = $this->notClosedResponse($contest);
+    }
+    else {
+      $awards = $this->awardStorage()->loadByContest($contest->id());
+      if (!empty($awards)) {
+        foreach ($awards as $award) {
+          $build[] = $this
+            ->awardViewBuilder()
+            ->view($award);
+        }
+      }
+      else {
+        $build[] = $this->noWinnersResponse($contest);
+      }
     }
 
     return $build;
+  }
+
+  /**
+   * Response for when the contest is still accepting submissions.
+   *
+   * @param \Drupal\ior\Entity\ContestInterface $contest
+   *   A contest entity.
+   *
+   * @return array
+   *   A renderable response.
+   */
+  protected function notClosedResponse(ContestInterface $contest) {
+    return [
+      '#type' => 'html_tag',
+      '#tag' => 'p',
+      '#value' => $this->t('Winners wil be posted here after the submission deadline.'),
+      '#attributes' => [
+        'class' => [
+          'alert',
+          'alert-info',
+        ],
+      ],
+    ];
+  }
+
+  /**
+   * Response for when no winners have been selected.
+   *
+   * @param \Drupal\ior\Entity\ContestInterface $contest
+   *   A contest entity.
+   *
+   * @return array
+   *   A renderable response.
+   */
+  protected function noWinnersResponse(ContestInterface $contest) {
+    return [
+      '#type' => 'html_tag',
+      '#tag' => 'p',
+      '#value' => $this->t('No winners have been announced yet.'),
+      '#attributes' => [
+        'class' => [
+          'alert',
+          'alert-info',
+        ],
+      ],
+    ];
   }
 
 }
