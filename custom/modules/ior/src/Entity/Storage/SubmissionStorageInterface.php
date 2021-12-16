@@ -14,10 +14,12 @@ interface SubmissionStorageInterface extends ContentEntityStorageInterface {
    *
    * @param int|string $contest_id
    *   The contest ID.
+   * @param array $options
+   *   (optional) An array of options to control the result.
    *
    * @return \Drupal\ior\Entity\SubmissionInterface[]
    *   An array of ior_submission entities.
    */
-  public function loadByContest($contest_id);
+  public function loadByContest($contest_id, array $options = []);
 
 }

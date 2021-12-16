@@ -13,10 +13,19 @@ class SubmissionStorage extends SqlContentEntityStorage implements SubmissionSto
   /**
    * {@inheritDoc}
    */
-  public function loadByContest($contest_id) {
-    return $this->loadByProperties([
-      SubmissionInterface::FIELD_CONTEST => $contest_id,
-    ]);
+  public function loadByContest($contest_id, array $options = []) {
+    $options = array_merge([
+      'published' => NULL,
+    ], $options);
+
+    $query = $this->getQuery()
+      ->condition(SubmissionInterface::FIELD_CONTEST, $contest_id);
+
+    if (!is_null($options['published'])) {
+      $query->condition('published', $options['published']);
+    }
+
+    return $this->loadMultiple($query->execute());
   }
 
 }

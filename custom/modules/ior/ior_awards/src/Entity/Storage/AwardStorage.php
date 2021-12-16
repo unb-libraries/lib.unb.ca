@@ -34,9 +34,9 @@ class AwardStorage extends SqlContentEntityStorage implements AwardStorageInterf
   /**
    * {@inheritDoc}
    */
-  public function loadByContest($contest_id) {
+  public function loadByContest($contest_id, array $options = []) {
     $submissions = $this->submissionStorage()
-      ->loadByContest($contest_id);
+      ->loadByContest($contest_id, $options);
     return $this->loadMultiple($this
       ->getQuery()
       ->condition('field_submission', array_keys($submissions), 'IN')
@@ -46,7 +46,7 @@ class AwardStorage extends SqlContentEntityStorage implements AwardStorageInterf
   /**
    * {@inheritDoc}
    */
-  public function loadBySubmission($submission_id) {
+  public function loadBySubmission($submission_id, array $options = []) {
     return $this->loadByProperties([
       'field_submission' => $submission_id,
     ]);

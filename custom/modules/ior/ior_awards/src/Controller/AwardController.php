@@ -82,26 +82,56 @@ class AwardController {
       $build[] = $this->notClosedResponse($contest);
     }
     else {
-      $awards = $this->awardStorage()->loadByContest($contest->id());
-      if (!empty($awards)) {
-        foreach ($awards as $award) {
-          $build[] = $this
-            ->awardViewBuilder()
-            ->view($award);
-        }
-        $build['#cache'] = [
-          'tags' => [
-            "contest:{$contest->id()}",
-            'ior_award_list',
-          ],
-        ];
-      }
-      else {
+      $build += $this->listAwards($contest);
+      if (empty($build)) {
         $build[] = $this->noWinnersResponse($contest);
       }
     }
 
+    $build['#cache'] = [
+      'tags' => [
+        "contest:{$contest->id()}",
+        'ior_award_list',
+      ],
+    ];
+
     return $build;
+  }
+
+  /**
+   * Build a list of award entities.
+   *
+   * @param \Drupal\ior\Entity\ContestInterface $contest
+   *   A contest entity.
+   *
+   * @return array
+   *   A renderable list of award entities.
+   */
+  protected function listAwards(ContestInterface $contest) {
+    $build = [];
+    foreach ($this->loadAwardsOfPublishedSubmissions($contest) as $award) {
+      $build[] = $this
+        ->awardViewBuilder()
+        ->view($award);
+    }
+    return $build;
+  }
+
+  /**
+   * Load awards of published submissions.
+   *
+   * @param \Drupal\ior\Entity\ContestInterface $contest
+   *   A contest entity.
+   *
+   * @return \Drupal\ior_awards\Entity\AwardInterface[]
+   *   An array of award entities.
+   */
+  protected function loadAwardsOfPublishedSubmissions(ContestInterface $contest) {
+    return $this
+      ->awardStorage()
+      ->loadByContest($contest->id(), [
+        'published' => TRUE,
+      ]);
   }
 
   /**
