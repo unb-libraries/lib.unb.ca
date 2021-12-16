@@ -2,8 +2,9 @@
 
 namespace Drupal\ior_awards\Controller;
 
-use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Entity\EntityViewBuilderInterface;
 use Drupal\ior\Entity\ContestInterface;
+use Drupal\ior_awards\Entity\Storage\AwardStorageInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -11,7 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
  *
  * @package Drupal\ior_awards\Controller
  */
-class AwardController extends ControllerBase {
+class AwardController {
 
   /**
    * The award storage.
@@ -34,11 +35,6 @@ class AwardController extends ControllerBase {
    *   A storage handler for IOR award entities.
    */
   protected function awardStorage() {
-    if (!isset($this->awardStorage)) {
-      $this->awardStorage = $this
-        ->entityTypeManager()
-        ->getStorage('ior_award');
-    }
     return $this->awardStorage;
   }
 
@@ -49,12 +45,20 @@ class AwardController extends ControllerBase {
    *   An entity view builder.
    */
   protected function awardViewBuilder() {
-    if (!isset($this->awardViewBuilder)) {
-      $this->awardViewBuilder = $this
-        ->entityTypeManager()
-        ->getViewBuilder('ior_award');
-    }
     return $this->awardViewBuilder;
+  }
+
+  /**
+   * Create a new AwardController instance.
+   *
+   * @param \Drupal\ior_awards\Entity\Storage\AwardStorageInterface $award_storage
+   *   A storage handler for IOR award entities.
+   * @param \Drupal\Core\Entity\EntityViewBuilderInterface $view_builder
+   *   An entity view builder.
+   */
+  public function __construct(AwardStorageInterface $award_storage, EntityViewBuilderInterface $view_builder) {
+    $this->awardStorage = $award_storage;
+    $this->awardViewBuilder = $view_builder;
   }
 
   /**

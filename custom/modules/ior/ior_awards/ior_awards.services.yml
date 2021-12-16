@@ -1,0 +1,18 @@
+services:
+  entity_storage.ior_award:
+    class: Drupal\ior_awards\Entity\Storage\AwardStorageInterface
+    factory: ['@entity_type.manager', 'getStorage']
+    arguments: ['ior_award']
+    public: false
+
+  entity_view_builder.ior_award:
+    class: Drupal\Core\Entity\EntityViewBuilderInterface
+    factory: ['@entity_type.manager', 'getViewBuilder']
+    arguments: ['ior_award']
+    public: false
+
+  entity_controller.ior_award:
+    class: Drupal\ior_awards\Controller\AwardController
+    arguments:
+      - '@entity_storage.ior_award'
+      - '@entity_view_builder.ior_award'
