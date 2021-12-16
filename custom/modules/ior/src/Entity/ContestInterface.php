@@ -64,6 +64,14 @@ interface ContestInterface extends ContentEntityInterface {
   public function isComingUp();
 
   /**
+   * Whether the contest has closed.
+   *
+   * @return bool
+   *   TRUE if the current date is past the close date. FALSE otherwise.
+   */
+  public function isClosed();
+
+  /**
    * Get all submissions this contest has received.
    *
    * @return \Drupal\ior\Entity\SubmissionInterface[]

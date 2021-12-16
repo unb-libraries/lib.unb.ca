@@ -93,6 +93,13 @@ class Contest extends ContentEntityBase implements ContestInterface {
   /**
    * {@inheritDoc}
    */
+  public function isClosed() {
+    return !($this->isOpen() || $this->isComingUp());
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public function isComingUp() {
     $now = new DrupalDateTime();
     return $now < $this->getOpenDate();

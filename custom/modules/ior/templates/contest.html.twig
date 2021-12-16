@@ -17,12 +17,14 @@
                 <div class="col-6"><div class="p-1">{{ contest.field_date_open }}</div></div>
                 <div class="col-6"><div class="p-1">Until: </div></div>
                 <div class="col-6"><div class="p-1">{{ contest.field_date_close }}</div></div>
-                {% if contest.is_open %}
-                    <div class="col-12"><div class="p-1 mx-auto"><a href="{{ contest.submit_url }}" class="d-block btn btn-primary">Submit an image</a></div></div>
-                {% endif %}
-                {% if not contest.is_coming_up %}
-                    <div class="col-12"><div class="p-1 mx-auto"><a href="{{ contest.submissions_url }}" class="d-block text-center">View submissions</a></div></div>
-                {% endif %}
+                {% block contest_links %}
+                    {% if contest.is_open %}
+                        <div class="col-12"><div class="p-1 mx-auto"><a href="{{ contest.submit_url }}" class="d-block btn btn-primary">Submit an image</a></div></div>
+                    {% endif %}
+                    {% if not contest.is_coming_up %}
+                        <div class="col-12"><div class="p-1 mx-auto"><a href="{{ contest.submissions_url }}" class="d-block text-center">View submissions</a></div></div>
+                    {% endif %}
+                {% endblock %}
             </div>
         </div>
     </div>

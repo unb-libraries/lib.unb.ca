@@ -10,3 +10,7 @@ dependencies:
   - custom_entity_revisions
   - custom_entity_mail
   - datetime_plus
+
+components:
+  namespaces:
+    ior: templates
