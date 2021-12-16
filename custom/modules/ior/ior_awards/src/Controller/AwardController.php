@@ -89,6 +89,12 @@ class AwardController {
             ->awardViewBuilder()
             ->view($award);
         }
+        $build['#cache'] = [
+          'tags' => [
+            "contest:{$contest->id()}",
+            'ior_award_list',
+          ],
+        ];
       }
       else {
         $build[] = $this->noWinnersResponse($contest);
