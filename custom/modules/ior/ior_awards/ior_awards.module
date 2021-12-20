@@ -144,3 +144,16 @@ function _award_storage() {
   $award_storage = Drupal::entityTypeManager()->getStorage('ior_award');
   return $award_storage;
 }
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function ior_awards_entity_type_alter(array &$entity_types) {
+  /** @var \Drupal\Core\Entity\ContentEntityTypeInterface $ior_submission_type */
+  $ior_submission_type = $entity_types['ior_submission'];
+
+  $ior_submission_type->setFormClass(
+    'collections', \Drupal\Core\Entity\ContentEntityForm::class);
+  $ior_submission_type->setLinkTemplate(
+    'collections-form', '/researchcommons/ior/contests/{contest}/submissions/{ior_submission}/edit/collections');
+}

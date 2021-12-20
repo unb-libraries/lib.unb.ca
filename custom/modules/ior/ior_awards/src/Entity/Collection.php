@@ -14,8 +14,8 @@ use Drupal\Core\Entity\ContentEntityBase;
  *   label_collection = @Translation("Collections"),
  *   handlers = {
  *     "form" = {
- *       "default" = "Drupal\ior\Form\SubmissionForm",
- *       "delete" = "Drupal\ior\Form\SubmissionDeleteForm"
+ *       "default" = "Drupal\Core\Entity\ContentEntityForm",
+ *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"
  *     },
  *     "route_provider" = {
  *       "html" = "Drupal\custom_entity\Entity\Routing\HtmlRouteProvider"
@@ -30,10 +30,10 @@ use Drupal\Core\Entity\ContentEntityBase;
  *     "uuid" = "uuid",
  *   },
  *   links = {
- *     "canonical" = "/researchcommons/ior/contests/{contest}/collections/{ior_collection}",
- *     "add-form" = "/researchcommons/ior/contests/{contest}/collections/add",
- *     "edit-form" = "/researchcommons/ior/contests/{contest}/collections/{ior_collection}/edit",
- *     "delete-form" = "/researchcommons/ior/contests/{contest}/collections/{ior_collection}/delete",
+ *     "canonical" = "/researchcommons/ior/collections/{ior_collection}",
+ *     "add-form" = "/researchcommons/ior/collections/add",
+ *     "edit-form" = "/researchcommons/ior/collections/{ior_collection}/edit",
+ *     "delete-form" = "/researchcommons/ior/collections/{ior_collection}/delete",
  *   },
  *   field_ui_base_route = "entity.ior_collection.settings",
  * )

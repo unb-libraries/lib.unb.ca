@@ -9,3 +9,9 @@ entity.ior_award_type.add_form:
   route_name: entity.ior_award_type.add_form
   appears_on:
     - entity.ior_award_type.collection
+
+entity.ior_submission.collections_form:
+  title: 'Add to Collection'
+  route_name: entity.ior_submission.collections_form
+  appears_on:
+    - entity.ior_submission.canonical
