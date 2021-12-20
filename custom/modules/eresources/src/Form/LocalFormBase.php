@@ -118,13 +118,13 @@ class LocalFormBase extends FormBase {
       // $form['results_header'] = ['#markup' => '<h2 class="mt-3">Results</h2>'];
       $index = Index::load('eresources');
       $indexQuery = $index->query();
-      $indexQuery->setFulltextFields(['title_fulltext']);
       $parseMode = \Drupal::service('plugin.manager.search_api.parse_mode')->createInstance('direct');
       $parseMode->setConjunction('AND');
       $indexQuery->setParseMode($parseMode);
 
       switch ($req->get('type')) {
         case 'title':
+          $indexQuery->setFulltextFields(['title_fulltext']);
           $indexQuery->keys($query);
           break;
 
@@ -134,6 +134,10 @@ class LocalFormBase extends FormBase {
 
         case 'browse':
           $indexQuery->addCondition('title', "{$query}*");
+          break;
+
+        case 'keyword':
+          $indexQuery->keys($query);
           break;
       }
 

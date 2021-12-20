@@ -21,11 +21,9 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
    * {@inheritDoc}
    */
   public function getSearchOptions() {
-    return [
-      'title' => 'Word(s) in title',
-      'browse' => 'Title starts with',
-      'exact' => 'Exact title',
-    ];
+    $options = parent::getSearchOptions();
+    $options['keyword'] = 'Keyword search (title, description...)';
+    return $options;
   }
 
   /**
@@ -35,7 +33,12 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
     $form = parent::buildForm($form, $form_state);
 
     $form_wrapper = $this->getKbFormId() . "_wrapper";
-    unset($form[$form_wrapper]['type']);
+
+    // Change type option to hidden field with keyword as the value.
+    $form[$form_wrapper]['type'] = [
+      '#type' => 'hidden',
+      '#value' => 'keyword',
+    ];
 
     $form[$form_wrapper]['guide_wrapper'] = [
       '#type' => 'container',
@@ -80,6 +83,17 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
       ],
     ];
 
+    $form[$form_wrapper]['database_wrapper'] = [
+      '#type' => 'container',
+      '#attributes' => [
+        'class' => [
+          'form-row',
+          'flex-sm-nowrap',
+        ],
+      ],
+      '#weight' => 0,
+    ];
+
     $index = Index::load('eresources');
     $indexQuery = $index->query();
     $parseMode = \Drupal::service('plugin.manager.search_api.parse_mode')->createInstance('direct');
@@ -97,20 +111,30 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
       $options["id:{$id}"] = $entry->getField('title')->getValues()[0];
     }
 
-    $req = $this->getRequest()->query;
-    $query = $req->get('query');
-    $form[$form_wrapper]['query_wrapper']['query'] = [
+    $form[$form_wrapper]['database_wrapper']['database'] = [
       '#title' => 'Browse for Databases by title',
       '#type' => 'select',
       '#options' => $options,
-      '#value' => $query,
       '#attributes' => [
         'class' => [
           'custom-chosen-select',
           'form-control',
         ],
-        'id' => 'query',
-        'name' => 'query',
+        'id' => 'database',
+        'name' => '',
+      ],
+    ];
+
+    $form[$form_wrapper]['database_wrapper']['actions'] = [
+      '#type' => 'actions',
+    ];
+
+    $form[$form_wrapper]['database_wrapper']['actions']['submit_button'] = [
+      '#type' => 'submit',
+      '#value' => $this->t('GO'),
+      '#name' => '',
+      '#attributes' => [
+        'id' => 'database-submit',
       ],
     ];
 
@@ -128,7 +152,7 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
    * {@inheritDoc}
    */
   public function getSearchPlaceholder() {
-    return $this->t('Search for databases by title');
+    return $this->t('Search for databases by title, description, etc.');
   }
 
   /**
