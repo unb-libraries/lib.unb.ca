@@ -1,8 +1,10 @@
+uuid: c78ae5ec-f08e-4837-8f15-07b8c0a36fca
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.ior_submission.winner
+    - field.field.ior_submission.ior_submission.field_collections
     - field.field.ior_submission.ior_submission.field_contest
     - field.field.ior_submission.ior_submission.field_department
     - field.field.ior_submission.ior_submission.field_description
@@ -24,6 +26,8 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
+_core:
+  default_config_hash: oqatl7dEnuWbfpchHe0RslftMkY47kZUl1NKd-yHlCM
 id: ior_submission.ior_submission.winner
 targetEntityType: ior_submission
 bundle: ior_submission
@@ -72,6 +76,7 @@ content:
     region: content
 hidden:
   content_moderation_control: true
+  field_collections: true
   field_contest: true
   field_description: true
   field_email: true

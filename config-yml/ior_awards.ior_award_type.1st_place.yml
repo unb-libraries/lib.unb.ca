@@ -1,0 +1,10 @@
+uuid: e34405df-cb66-467f-9f3a-9eadccc904d8
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: bl4inCPo53bHgjbt9tz54tkUDkr5FD2bgdPmwwYwwIw
+id: 1st_place
+label: '1st place'
+quantity: 1
+weight: 0

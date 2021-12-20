@@ -1,0 +1,10 @@
+uuid: 20daddd0-a560-475c-9cec-9565e27fe9a7
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 1oT4voGJNViOtwVQEGYxZBdgg66wPLeLInZ5JZPn_wE
+id: honourable_mention
+label: 'Honourable mention'
+quantity: 0
+weight: 100

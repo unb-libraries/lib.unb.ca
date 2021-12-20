@@ -1,0 +1,10 @@
+uuid: 99705f18-483e-4734-987c-64bc96a1732c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: OaWnPoewWRcSk5_r2rCLAuxVcIzjEPsd86p74ylLOTM
+id: 3rd_place
+label: '3rd place'
+quantity: 1
+weight: 20

@@ -1,0 +1,25 @@
+uuid: cdb1e14a-a1f4-4707-971d-e675699330dd
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - ior_awards
+third_party_settings:
+  field_permissions:
+    permission_type: public
+_core:
+  default_config_hash: oO75zTkq6URGiYTCro2HC_84FJQkU6JA2M1fz6aGrR4
+id: ior_award.field_type
+field_name: field_type
+entity_type: ior_award
+type: entity_reference
+settings:
+  target_type: ior_award_type
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

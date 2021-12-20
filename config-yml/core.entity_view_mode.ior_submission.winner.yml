@@ -1,3 +1,4 @@
+uuid: 8a5ff6c2-841d-4115-99d0-bd04226f0ed3
 langcode: en
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
   enforced:
     module:
       - ior_awards
+_core:
+  default_config_hash: JdlrVGbfQwza1o7T8GvtS06SRqu1uW3a13umYEz5_ME
 id: ior_submission.winner
 label: Winner
 targetEntityType: ior_submission

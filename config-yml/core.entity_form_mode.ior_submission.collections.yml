@@ -1,3 +1,4 @@
+uuid: 86fcce54-6209-4477-976f-b877ddc7d761
 langcode: en
 status: true
 dependencies:
@@ -6,7 +7,7 @@ dependencies:
   enforced:
     module:
       - ior_awards
-id: ior_submission.winner
-label: Winner
+id: ior_submission.collections
+label: Collections
 targetEntityType: ior_submission
 cache: true

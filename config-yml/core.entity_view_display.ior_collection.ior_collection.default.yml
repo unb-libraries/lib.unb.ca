@@ -1,0 +1,25 @@
+uuid: 7cff39d8-9785-49ff-b621-ada3680b6cdc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.ior_collection.ior_collection.field_title
+  module:
+    - ior_awards
+_core:
+  default_config_hash: STXzKSq0kYn-6PVoo3g8n-hs9DpBSuJr3oDeXWZr53s
+id: ior_collection.ior_collection.default
+targetEntityType: ior_collection
+bundle: ior_collection
+mode: default
+content:
+  field_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

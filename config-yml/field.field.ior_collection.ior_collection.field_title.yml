@@ -1,0 +1,22 @@
+uuid: 33d7d845-7839-4a61-87e4-18da7cfc9cb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.ior_collection.field_title
+  module:
+    - ior_awards
+_core:
+  default_config_hash: 9dk0bY-ihvgHkGz5nsxwWCmbGAiEgmT0tOFiLkiZ6Y4
+id: ior_collection.ior_collection.field_title
+field_name: field_title
+entity_type: ior_collection
+bundle: ior_collection
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

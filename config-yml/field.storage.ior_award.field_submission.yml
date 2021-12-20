@@ -1,0 +1,26 @@
+uuid: 0a665328-d809-4d74-be84-e77030241932
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - ior
+    - ior_awards
+third_party_settings:
+  field_permissions:
+    permission_type: public
+_core:
+  default_config_hash: cwP8MnxY7utu39sl2-Z211acOBkXB4NRDQIhNBC8VT0
+id: ior_award.field_submission
+field_name: field_submission
+entity_type: ior_award
+type: entity_reference
+settings:
+  target_type: ior_submission
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

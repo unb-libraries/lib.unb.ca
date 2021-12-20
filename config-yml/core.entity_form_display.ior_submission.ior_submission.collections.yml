@@ -1,0 +1,46 @@
+uuid: 2ec2047c-4ea3-4a39-9fe6-0f06ee3b1540
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.ior_submission.collections
+    - field.field.ior_submission.ior_submission.field_collections
+    - field.field.ior_submission.ior_submission.field_contest
+    - field.field.ior_submission.ior_submission.field_department
+    - field.field.ior_submission.ior_submission.field_description
+    - field.field.ior_submission.ior_submission.field_email
+    - field.field.ior_submission.ior_submission.field_first_name
+    - field.field.ior_submission.ior_submission.field_image
+    - field.field.ior_submission.ior_submission.field_last_name
+    - field.field.ior_submission.ior_submission.field_terms_conditions_accepted
+    - field.field.ior_submission.ior_submission.field_title
+    - field.field.ior_submission.ior_submission.field_website
+  module:
+    - ior
+  enforced:
+    module:
+      - ior_awards
+id: ior_submission.ior_submission.collections
+targetEntityType: ior_submission
+bundle: ior_submission
+mode: collections
+content:
+  field_collections:
+    type: options_buttons
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_contest: true
+  field_department: true
+  field_description: true
+  field_email: true
+  field_first_name: true
+  field_image: true
+  field_last_name: true
+  field_terms_conditions_accepted: true
+  field_title: true
+  field_website: true
+  moderation_state: true
+  path: true
