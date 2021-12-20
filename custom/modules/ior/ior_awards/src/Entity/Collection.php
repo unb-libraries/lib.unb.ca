@@ -26,6 +26,7 @@ use Drupal\Core\Entity\ContentEntityBase;
  *   admin_permission = "administer collection entities",
  *   entity_keys = {
  *     "id" = "id",
+ *     "label" = "field_title",
  *     "uuid" = "uuid",
  *   },
  *   links = {

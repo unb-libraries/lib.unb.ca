@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.ior_collection.ior_collection.field_title
+  module:
+    - ior_awards
+id: ior_collection.ior_collection.default
+targetEntityType: ior_collection
+bundle: ior_collection
+mode: default
+content:
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }
