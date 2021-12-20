@@ -13,6 +13,7 @@ use Drupal\Core\Entity\ContentEntityBase;
  *   label_plural = @Translation("Collections"),
  *   label_collection = @Translation("Collections"),
  *   handlers = {
+ *     "views_data" = "Drupal\views\EntityViewsData",
  *     "form" = {
  *       "default" = "Drupal\Core\Entity\ContentEntityForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"
