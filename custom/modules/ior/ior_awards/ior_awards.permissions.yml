@@ -36,3 +36,28 @@ update ior_award_type entities:
 
 delete ior_award_type entities:
   title: "Delete award types."
+
+
+# Collection entities
+administer ior_collection entities:
+  title: "Administer collections."
+
+list ior_collection entities:
+  title: "List collections."
+
+create ior_collection entities:
+  title: "Create collections."
+
+view ior_collection entities:
+  title: "View collections."
+
+update ior_collection entities:
+  title: "Edit collections."
+
+delete ior_collection entities:
+  title: "Delete collections."
+
+
+# Other
+list contest winners:
+  title: "List awarded submissions."
