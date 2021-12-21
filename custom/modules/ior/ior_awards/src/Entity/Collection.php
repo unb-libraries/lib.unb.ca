@@ -21,6 +21,7 @@ use Drupal\Core\Entity\ContentEntityBase;
  *     "route_provider" = {
  *       "html" = "Drupal\custom_entity\Entity\Routing\HtmlRouteProvider"
  *     },
+ *     "storage" = "Drupal\ior_awards\Entity\Storage\CollectionStorage",
  *     "access" = "Drupal\custom_entity\Entity\Access\EntityAccessControlHandler"
  *   },
  *   base_table = "ior_collection",
