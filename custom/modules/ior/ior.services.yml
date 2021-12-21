@@ -12,6 +12,19 @@ services:
     tags:
       - { name: 'event_subscriber' }
 
+  entity_storage.user:
+    class: Drupal\user\UserStorage
+    factory: ['@entity_type.manager', 'getStorage']
+    arguments: ['user']
+    public: false
+
+  contest_manager.mailer.entity_event_subscriber:
+    class: Drupal\ior\EventSubscriber\ContestManagerMailer
+    arguments: [ 'ior_submission', '@entity_storage.user' ]
+    parent: template_mailer.entity_event_subscriber
+    tags:
+      - { name: 'event_subscriber' }
+
   entity.submission.field_subscriber:
     class: Drupal\ior\FieldSubscriber\SubmissionFieldSubscriber
     arguments:
