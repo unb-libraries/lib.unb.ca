@@ -2,6 +2,9 @@
 
 {% block contest_links %}
 {{ parent() }}
+{% for collection in contest.collections %}
+    <div class="col-12"><div class="p-1 mx-auto"><a href="{{ collection.url }}" class="d-block text-center">View {{ collection.title|lower }}</a></div></div>
+{% endfor %}
 {% if contest.is_closed %}
     <div class="col-12"><div class="p-1 mx-auto"><a href="{{ contest.winners_url }}" class="d-block text-center">View winners</a></div></div>
 {% endif %}

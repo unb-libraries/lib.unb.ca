@@ -41,6 +41,16 @@ function ior_awards_theme($existing, $type, $theme, $path) {
 function ior_awards_template_preprocess_contest(array &$variables) {
   /** @var \Drupal\ior\Entity\ContestInterface $contest */
   $contest = $variables['elements']['#contest'];
+  foreach (Drupal::entityTypeManager()->getStorage('ior_collection')->loadByContest($contest->id()) as $collection) {
+    $variables['contest']['collections'][$collection->id()] = [
+      'url' => \Drupal\Core\Url::fromRoute('view.ior_contest_collection.page_1', [
+        'contest' => $contest->id(),
+        'collection' => $collection->id(),
+      ]),
+      'title' => $collection->get('field_title')->value,
+    ];
+  }
+
   $variables['contest']['winners_url'] = \Drupal\Core\Url::fromRoute('entity.contest.winners', [
     'contest' => $contest->id(),
   ])->toString();
