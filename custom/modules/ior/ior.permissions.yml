@@ -91,6 +91,27 @@ update published ior_submission entities:
 update archived ior_submission entities:
   title: "Edit archived IOR submissions."
 
+moderate ior_submission entities:
+  title: "Moderate IOR submissions."
+
+moderate draft ior_submission entities:
+  title: "Moderate submitted IOR submissions."
+
+moderate accepted ior_submission entities:
+  title: "Moderate accepted IOR submissions."
+
+moderate rejected ior_submission entities:
+  title: "Moderate rejected IOR submissions."
+
+moderate published_anonymised_ ior_submission entities:
+  title: "Moderate published anonymised IOR submissions."
+
+moderate published ior_submission entities:
+  title: "Moderate published IOR submissions."
+
+moderate archived ior_submission entities:
+  title: "Moderate archived IOR submissions."
+
 review ior_submission entities:
   title: "Review IOR submissions."
 

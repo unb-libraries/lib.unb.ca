@@ -19,6 +19,7 @@ permissions:
   - 'use search_api_autocomplete for search_our_webpages'
   - 'use text format no_media_html_ior_'
   - 'view contest entities'
+  - 'view ior_award entities'
   - 'view media'
   - 'view own webform submission'
   - 'view portolan_record entities'

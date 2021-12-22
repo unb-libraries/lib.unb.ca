@@ -17,5 +17,6 @@ permissions:
   - 'use text format basic_html'
   - 'use text format library_page_html'
   - 'use text format no_media_html_ior_'
+  - 'view ior_award entities'
   - 'view media'
   - 'view portolan_record entities'
