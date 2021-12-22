@@ -18,8 +18,8 @@
 {% if title %}
     <h1{{ title_attributes.addClass('title') }}>
         {{ title }}
-        {% for award_type,award in awards %}
-            <span class="badge badge-primary badge-{{ award_type }}">
+        {% for award in awards %}
+            <span class="badge badge-primary">
                 {{ award }}
             </span>
         {% endfor %}

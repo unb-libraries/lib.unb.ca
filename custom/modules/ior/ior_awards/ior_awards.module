@@ -19,7 +19,7 @@ function ior_awards_theme($existing, $type, $theme, $path) {
     'ior_submission__winner' => [
       'render element' => 'ior_submission',
     ],
-    'ior_award' => [
+    'ior_award__winner' => [
       'render element' => 'award',
     ],
     'page_title__ior_submission' => [
@@ -110,17 +110,11 @@ function ior_awards_theme_suggestions_page_title(array $variables) {
  */
 function ior_awards_preprocess_page_title(array &$variables) {
   if ($submission = _get_submission_from_route()) {
-    $awards = _award_storage()->loadBySubmission($submission->id());
-    foreach ($awards as $award) {
-      $award_variables = [
-        'field_type' => $award
-          ->get('field_type')
-          ->view('default'),
-      ];
-      $variables['awards'][$award->getTypeId()] = $award_variables;
-    }
+    $view_builder = Drupal::entityTypeManager()->getViewBuilder('ior_award');
+    $variables['awards'] = array_map(function (\Drupal\ior_awards\Entity\AwardInterface $award) use ($view_builder) {
+      return $view_builder->view($award, 'default');
+    }, $submission->get('field_awards')->referencedEntities());
   }
-
 }
 
 /**
@@ -141,18 +135,6 @@ function _get_submission_from_route() {
     return $submission;
   }
   return FALSE;
-}
-
-/**
- * Get the IOR award storage.
- *
- * @return \Drupal\ior_awards\Entity\Storage\AwardStorageInterface
- *   A storage handler for IOR award entities.
- */
-function _award_storage() {
-  /** @var \Drupal\ior_awards\Entity\Storage\AwardStorageInterface $award_storage */
-  $award_storage = Drupal::entityTypeManager()->getStorage('ior_award');
-  return $award_storage;
 }
 
 /**
