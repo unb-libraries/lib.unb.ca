@@ -1,10 +1,9 @@
-uuid: 6d32e390-f88a-41ce-8a19-7fc41a6bcb4d
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.ior_award.ior_award.field_submission
-    - field.field.ior_award.ior_award.field_type
+    - field.field.ior_award.ior_award.field_title
+    - field.field.ior_award.ior_award.field_weight
   module:
     - ior_awards
 id: ior_award.ior_award.default
@@ -12,22 +11,14 @@ targetEntityType: ior_award
 bundle: ior_award
 mode: default
 content:
-  field_submission:
-    type: entity_reference_entity_view
-    label: hidden
+  field_title:
+    type: string
+    label: above
     settings:
-      view_mode: winner
-      link: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_type:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: false
+      link_to_entity: false
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
+  field_weight: true
   search_api_excerpt: true

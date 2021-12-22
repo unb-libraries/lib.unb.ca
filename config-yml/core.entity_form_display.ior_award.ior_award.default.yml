@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.ior_award.ior_award.field_submission
-    - field.field.ior_award.ior_award.field_type
+    - field.field.ior_award.ior_award.field_title
+    - field.field.ior_award.ior_award.field_weight
   module:
     - ior_awards
 _core:
@@ -14,11 +14,19 @@ targetEntityType: ior_award
 bundle: ior_award
 mode: default
 content:
-  field_type:
-    type: options_select
+  field_title:
+    type: string_textfield
     weight: 0
     region: content
-    settings: {  }
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-hidden:
-  field_submission: true
+  field_weight:
+    type: number
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,24 @@
+uuid: e30f7921-c5b5-42b9-bfce-97ca9071be3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.ior_award.field_weight
+  module:
+    - ior_awards
+id: ior_award.ior_award.field_weight
+field_name: field_weight
+entity_type: ior_award
+bundle: ior_award
+label: weight
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

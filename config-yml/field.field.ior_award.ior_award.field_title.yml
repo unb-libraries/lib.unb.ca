@@ -1,0 +1,20 @@
+uuid: ffba3c54-be7f-4c23-bd67-70305e1c9f2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.ior_award.field_title
+  module:
+    - ior_awards
+id: ior_award.ior_award.field_title
+field_name: field_title
+entity_type: ior_award
+bundle: ior_award
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
