@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_form_mode.ior_submission.review
+    - core.entity_form_mode.ior_submission.moderate
     - field.field.ior_submission.ior_submission.field_awards
     - field.field.ior_submission.ior_submission.field_collections
     - field.field.ior_submission.ior_submission.field_contest
@@ -15,26 +15,24 @@ dependencies:
     - field.field.ior_submission.ior_submission.field_terms_conditions_accepted
     - field.field.ior_submission.ior_submission.field_title
     - field.field.ior_submission.ior_submission.field_website
+    - workflows.workflow.ior_submission_review
   module:
+    - content_moderation
     - ior
-id: ior_submission.ior_submission.review
+id: ior_submission.ior_submission.moderate
 targetEntityType: ior_submission
 bundle: ior_submission
-mode: review
+mode: moderate
 content:
-  field_awards:
-    type: options_buttons
+  moderation_state:
+    type: moderation_state_default
     weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_collections:
-    type: options_buttons
-    weight: 1
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
+  field_awards: true
+  field_collections: true
   field_contest: true
   field_department: true
   field_description: true
@@ -45,5 +43,4 @@ hidden:
   field_terms_conditions_accepted: true
   field_title: true
   field_website: true
-  moderation_state: true
   path: true

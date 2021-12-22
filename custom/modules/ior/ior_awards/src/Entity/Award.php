@@ -31,7 +31,7 @@ use Drupal\ior_awards\Plugin\Field\FieldType\ComputedEntityReferenceFieldItemLis
  *   admin_permission = "administer award entities",
  *   entity_keys = {
  *     "id" = "id",
- *     "label" = "id",
+ *     "label" = "field_title",
  *     "uuid" = "uuid"
  *   },
  *   links = {

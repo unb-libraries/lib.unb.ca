@@ -119,8 +119,8 @@ class ContestManagerMailer extends EntityEventTemplateMailer {
   protected function getBodyContext(EntityInterface $entity, string $key) {
     $context = parent::getBodyContext($entity, $key);
 
-    $review_url = $this->getEntityUrlBase() . $entity->toUrl('review-form')->toString();
-    $context["{$entity->getEntityTypeId()}_review_url"] = $review_url;
+    $moderate_url = $this->getEntityUrlBase() . $entity->toUrl('moderate-form')->toString();
+    $context["{$entity->getEntityTypeId()}_moderate_url"] = $moderate_url;
 
     return $context;
   }

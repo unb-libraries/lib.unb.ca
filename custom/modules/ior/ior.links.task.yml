@@ -31,6 +31,11 @@ entity.ior_submission.edit_form:
   base_route: entity.ior_submission.canonical
   title: 'Edit'
 
+entity.ior_submission.moderate_form:
+  route_name: entity.ior_submission.moderate_form
+  base_route: entity.ior_submission.canonical
+  title: 'Moderate'
+
 entity.ior_submission.review_form:
   route_name: entity.ior_submission.review_form
   base_route: entity.ior_submission.canonical

@@ -1,0 +1,10 @@
+uuid: 8c037f50-1630-46e7-b15a-c168174d88de
+langcode: en
+status: true
+dependencies:
+  module:
+    - ior
+id: ior_submission.moderate
+label: Moderate
+targetEntityType: ior_submission
+cache: true
