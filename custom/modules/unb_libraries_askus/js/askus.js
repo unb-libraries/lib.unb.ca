@@ -89,10 +89,13 @@ var getOfflineNote = function () {
     if (!currentlyOpen && reopensData) {
         // Re-open details available.
         let tomorrow = moment().add(1, "days").format("Y-MM-DD");
+        let oneWeekFromNow = moment().add(7, "days").format("Y-MM-DD");
         let opensAt = moment(reopensData);
         let opensAtDate = opensAt.format("Y-MM-DD");
         if (opensAtDate < tomorrow) {
             note = " Reopens today at " + opensAt.format("h:mma");
+        } else if (opensAtDate > oneWeekFromNow) {
+            note = " Reopens on " + opensAt.format("MMMM Do, h:mma");
         } else if (opensAtDate > tomorrow) {
             note = " Reopens on " + opensAt.format("dddd, h:mma");
         } else {
