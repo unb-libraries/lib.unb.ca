@@ -16,7 +16,7 @@ mode: default
 content:
   field_title:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -24,4 +24,5 @@ content:
     region: content
 hidden:
   field_weight: true
+  ior_submissions: true
   search_api_excerpt: true
