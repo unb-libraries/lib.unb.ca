@@ -38,18 +38,21 @@ class UpcomingHours extends BlockBase {
           ],
         ],
       ],
-      'hours_page_url' => [
-        '#type' => 'link',
-        '#title' => $this->t('Complete Hours'),
-        '#url' => Url::fromUri($hours_page_url),
-        '#prefix' => '<span class="fas fa-clock">&nbsp;</span>',
-      ],
       '#attached' => [
         'library' => [
           'calendar_hours_client/calendar-hours',
         ],
       ],
     ];
+
+    if ($hours_page_url) {
+      $container['hours_page_url'] = [
+        '#type' => 'link',
+        '#title' => $this->t('Complete Hours'),
+        '#url' => Url::fromUri($hours_page_url),
+        '#prefix' => '<span class="fas fa-clock">&nbsp;</span>',
+      ];
+    }
 
     foreach (range(0, $days - 1) as $number) {
       $date_format = $number === 0 ? '[Current]' : 'dddd';
