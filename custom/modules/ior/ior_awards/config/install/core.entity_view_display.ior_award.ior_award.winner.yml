@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.ior_award.winner
+    - field.field.ior_award.ior_award.field_title
+    - field.field.ior_award.ior_award.field_weight
+  module:
+    - ior_awards
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: ior_award.ior_award.winner
+targetEntityType: ior_award
+bundle: ior_award
+mode: winner
+content:
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  ior_submissions:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: winner
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_weight: true
+  search_api_excerpt: true

@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ior_awards
+id: ior_award.winner
+label: Winner
+targetEntityType: ior_award
+cache: true

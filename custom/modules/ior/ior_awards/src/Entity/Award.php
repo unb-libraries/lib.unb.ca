@@ -17,6 +17,7 @@ use Drupal\ior_awards\Plugin\Field\FieldType\ComputedEntityReferenceFieldItemLis
  *   label_collection = @Translation("Awards"),
  *   handlers = {
  *     "view" = "Drupal\Core\Entity\EntityViewBuilder",
+ *     "views_data" = "Drupal\views\EntityViewsData",
  *     "form" = {
  *       "default" = "Drupal\Core\Entity\ContentEntityForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"
@@ -24,7 +25,6 @@ use Drupal\ior_awards\Plugin\Field\FieldType\ComputedEntityReferenceFieldItemLis
  *     "route_provider" = {
  *       "html" = "Drupal\ior_awards\Entity\Routing\AwardHtmlRouteProvider"
  *     },
- *     "storage" = "Drupal\ior_awards\Entity\Storage\AwardStorage",
  *     "access" = "Drupal\custom_entity\Entity\Access\EntityAccessControlHandler"
  *   },
  *   base_table = "ior_award",
@@ -56,7 +56,8 @@ class Award extends ContentEntityBase implements AwardInterface {
       ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED)
       ->setComputed(TRUE)
       ->setClass(ComputedEntityReferenceFieldItemList::class)
-      ->setSetting('target_type', 'ior_submission');
+      ->setSetting('target_type', 'ior_submission')
+      ->setDisplayConfigurable('view', TRUE);
 
     return $fields;
   }

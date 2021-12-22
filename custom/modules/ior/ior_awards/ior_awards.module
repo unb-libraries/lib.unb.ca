@@ -19,6 +19,9 @@ function ior_awards_theme($existing, $type, $theme, $path) {
     'ior_submission__winner' => [
       'render element' => 'ior_submission',
     ],
+    'ior_award' => [
+      'render element' => 'elements',
+    ],
     'ior_award__winner' => [
       'render element' => 'award',
     ],
@@ -51,7 +54,7 @@ function ior_awards_template_preprocess_contest(array &$variables) {
     ];
   }
 
-  $variables['contest']['winners_url'] = \Drupal\Core\Url::fromRoute('entity.contest.winners', [
+  $variables['contest']['winners_url'] = \Drupal\Core\Url::fromRoute('view.ior_contest_winners.page_1', [
     'contest' => $contest->id(),
   ])->toString();
 }
@@ -92,6 +95,58 @@ function template_preprocess_ior_submission__winner(array &$variables) {
   $variables['submission']['field_first_name']['#attributes']['class'][] = 'd-inline';
   $variables['submission']['field_last_name']['#attributes']['class'][] = 'd-inline';
   $variables['submission']['field_department']['#attributes']['class'][] = 'd-inline';
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function ior_awards_theme_suggestions_ior_award(array $variables) {
+  $suggestions = [];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+  $suggestions[] = 'ior_award__' . $sanitized_view_mode;
+  return $suggestions;
+}
+
+/**
+ * Prepares variables for award templates.
+ *
+ * Default template: ior-award.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing the user information and any
+ *   - attributes: HTML attributes for the containing element.
+ */
+function template_preprocess_ior_award(array &$variables) {
+  /** @var \Drupal\ior_awards\Entity\AwardInterface $award */
+  $award = $variables['elements']['#ior_award'];
+  $variables['award']['entity'] = $award;
+  foreach (\Drupal\Core\Render\Element::children($variables['elements']) as $key) {
+    if ($award->hasField($key) && !empty($award->get($key)->getValue())) {
+      $variables['award'][$key] = $variables['elements'][$key];
+    }
+  }
+}
+
+/**
+ * Prepares variables for award templates.
+ *
+ * Default template: ior-award--winner.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing the user information and any
+ *   - attributes: HTML attributes for the containing element.
+ */
+function template_preprocess_ior_award__winner(array &$variables) {
+  /** @var \Drupal\ior_awards\Entity\AwardInterface $award */
+  $award = $variables['elements']['#ior_award'];
+  $variables['award']['entity'] = $award;
+  foreach (\Drupal\Core\Render\Element::children($variables['elements']) as $key) {
+    if ($award->hasField($key) && !empty($award->get($key)->getValue())) {
+      $variables['award'][$key] = $variables['elements'][$key];
+    }
+  }
 }
 
 /**

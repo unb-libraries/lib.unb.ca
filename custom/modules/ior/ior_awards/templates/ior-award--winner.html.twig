@@ -1,6 +1,4 @@
 <div class="ior-award mb-3">
     <h2>{{ award.field_title }}</h2>
-    {% for submission in award.ior_submissions %}
-        {{ submission }}
-    {% endfor %}
+    {{ award.ior_submissions }}
 </div>
