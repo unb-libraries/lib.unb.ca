@@ -18,7 +18,7 @@ use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
  *   handlers = {
  *     "view" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "form" = {
- *       "default" = "Drupal\ior_awards\Form\AwardForm",
+ *       "default" = "Drupal\Core\Entity\ContentEntityForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"
  *     },
  *     "route_provider" = {
@@ -35,8 +35,9 @@ use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
  *     "uuid" = "uuid"
  *   },
  *   links = {
- *     "add-form" = "/researchcommons/ior/contests/{contest}/submissions/{ior_submission}/awards/add",
- *     "delete-form" = "/researchcommons/ior/contests/{contest}/submissions/{ior_submission}/awards/{ior_award}/delete",
+ *     "add-form" = "/researchcommons/ior/awards/add",
+ *     "edit-form" = "/researchcommons/ior/awards/{ior_award}/edit",
+ *     "delete-form" = "/researchcommons/ior/{ior_award}/delete",
  *   },
  *   field_ui_base_route = "entity.ior_award.settings",
  * )
