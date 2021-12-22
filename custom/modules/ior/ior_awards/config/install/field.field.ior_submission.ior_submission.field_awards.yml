@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.ior_submission.field_awards
+  module:
+    - ior
+  enforced:
+    module:
+      - ior_awards
+id: ior_submission.ior_submission.field_awards
+field_name: field_awards
+entity_type: ior_submission
+bundle: ior_submission
+label: Awards
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:ior_award'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: field_weight
+      direction: ASC
+    auto_create: false
+field_type: entity_reference

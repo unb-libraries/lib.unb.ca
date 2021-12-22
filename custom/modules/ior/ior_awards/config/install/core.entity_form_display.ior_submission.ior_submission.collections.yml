@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.ior_submission.collections
+    - field.field.ior_submission.ior_submission.field_awards
     - field.field.ior_submission.ior_submission.field_collections
     - field.field.ior_submission.ior_submission.field_contest
     - field.field.ior_submission.ior_submission.field_department
@@ -31,6 +32,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_awards: true
   field_contest: true
   field_department: true
   field_description: true

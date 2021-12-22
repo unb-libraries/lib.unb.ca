@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.ior_submission.winner
+    - field.field.ior_submission.ior_submission.field_awards
     - field.field.ior_submission.ior_submission.field_collections
     - field.field.ior_submission.ior_submission.field_contest
     - field.field.ior_submission.ior_submission.field_department
@@ -76,6 +77,7 @@ content:
     region: content
 hidden:
   content_moderation_control: true
+  field_awards: true
   field_collections: true
   field_contest: true
   field_description: true
