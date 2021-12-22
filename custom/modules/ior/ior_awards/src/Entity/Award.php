@@ -3,9 +3,9 @@
 namespace Drupal\ior_awards\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
-use Drupal\Core\Entity\EntityStorageInterface;
-use Drupal\ior\Entity\SubmissionInterface;
-use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\ior_awards\Plugin\Field\FieldType\ComputedEntityReferenceFieldItemList;
 
 /**
  * The "IOR Award" entity.
@@ -47,41 +47,18 @@ class Award extends ContentEntityBase implements AwardInterface {
   /**
    * {@inheritDoc}
    */
-  public function getSubmission() {
-    return $this->get(self::FIELD_SUBMISSION)
-      ->entity;
-  }
+  public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
+    $fields = parent::baseFieldDefinitions($entity_type);
 
-  /**
-   * {@inheritDoc}
-   */
-  public function setSubmission(SubmissionInterface $submission) {
-    $this->set(self::FIELD_SUBMISSION, $submission);
-  }
+    $fields['ior_submissions'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Submissions'))
+      ->setDescription(t('Submissions that have received this award.'))
+      ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED)
+      ->setComputed(TRUE)
+      ->setClass(ComputedEntityReferenceFieldItemList::class)
+      ->setSetting('target_type', 'ior_submission');
 
-  /**
-   * {@inheritDoc}
-   */
-  public function getType() {
-    return $this->get(self::FIELD_TYPE)
-      ->entity;
-  }
-
-  /**
-   * {@inheritDoc}
-   */
-  public function getTypeId() {
-    return $this->getType()->id();
-  }
-
-  /**
-   * {@inheritDoc}
-   */
-  public function preSave(EntityStorageInterface $storage) {
-    if (!$this->getSubmission()) {
-      throw new MissingMandatoryParametersException('Awards must be assigned to a submission upon creation.');
-    }
-    parent::preSave($storage);
+    return $fields;
   }
 
 }
