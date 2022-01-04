@@ -22,4 +22,14 @@ class ContestHtmlRouteProvider extends HtmlRouteProvider {
     return $routes;
   }
 
+  /**
+   * {@inheritDoc}
+   */
+  protected function getCanonicalRoute(EntityTypeInterface $entity_type) {
+    if ($route = parent::getCanonicalRoute($entity_type)) {
+      $route->setOption('no_cache', TRUE);
+    }
+    return $route;
+  }
+
 }
