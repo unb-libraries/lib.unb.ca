@@ -16,6 +16,9 @@ function ior_awards_theme($existing, $type, $theme, $path) {
         'ior_awards_template_preprocess_contest',
       ]),
     ],
+    'ior_submission' => [
+      'base hook' => 'ior_submission',
+    ],
     'ior_submission__winner' => [
       'render element' => 'ior_submission',
     ],
