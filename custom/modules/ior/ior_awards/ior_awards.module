@@ -191,3 +191,15 @@ function _get_submission_from_route() {
   }
   return FALSE;
 }
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function ior_awards_entity_type_alter(array &$entity_types) {
+  /** @var \Drupal\Core\Entity\ContentEntityTypeInterface $submission */
+  $submission = $entity_types['ior_submission'];
+  $submission->setFormClass('review', $submission->getFormClass('default'));
+
+  $canonical_path = $submission->getLinkTemplate('canonical');
+  $submission->setLinkTemplate('review-form', "{$canonical_path}/review");
+}
