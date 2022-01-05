@@ -89,6 +89,11 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
         'class' => [
           'form-row',
           'flex-sm-nowrap',
+          'border-top',
+          'border-bottom',
+          'border-dark',
+          'pt-4',
+          'pb-3',
         ],
       ],
       '#weight' => 0,
@@ -112,7 +117,7 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
     }
 
     $form[$form_wrapper]['database_wrapper']['database'] = [
-      '#title' => 'Browse for Databases by title',
+      '#title' => '<span class="text-danger">OR</span> Browse for Databases by title',
       '#type' => 'select',
       '#options' => $options,
       '#attributes' => [
@@ -137,6 +142,9 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
         'id' => 'database-submit',
       ],
     ];
+
+    $form[$form_wrapper]['query_wrapper']['query']['#title'] = '<span class="text-danger">OR</span> Search';
+    $form[$form_wrapper]['query_wrapper']['query']['#required'] = FALSE;
 
     return $form;
   }
