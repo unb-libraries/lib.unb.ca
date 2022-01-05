@@ -1,18 +1,23 @@
-Hello {{ ior_submission.firstName }},
+<p>Hello {{ ior_submission.firstName }},</p>
 
-We have received your submission for {{ ior_submission.contest.title }} with the following information provided by you:
+<p>We have received your submission to {{ ior_submission.contest.title }} with the following information provided by you:</p>
 
-Personal information:
-=====================
-Name: {{ ior_submission.lastName }}, {{ ior_submission.firstName }}
-Email: {{ ior_submission.email }}
-Department/Faculty: {{ ior_submission.department }}
+<h4>Personal information:</h4>
+<ul>
+    <li>Name: {{ ior_submission.lastName }}, {{ ior_submission.firstName }}</li>
+    <li>Email: {{ ior_submission.email }}</li>
+    <li>Department/Faculty: {{ ior_submission.department }}</li>
+</ul>
 
-Submission information:
-=======================
-Title: {{ ior_submission.title }}
-Description: {{ ior_submission.description }}
+<h4>Submission information:</h4>
+<ul>
+    <li>Title: {{ ior_submission.title }}</li>
+    <li>Description: {{ ior_submission.description }}</li>
+</ul>
 
-Your submission will shortly be reviewed for compliance with contest requirements. You will receive a separate email when your submission has been accepted.
+<p>Your submission will shortly be reviewed for compliance with contest requirements. You will receive a separate email when your submission has been accepted.</p>
 
-For any questions please contact Sasha Mullally (sasham@unb.ca).
+<p>For any questions please contact <a href="mailto:sasham@unb.ca">Sasha Mullally</a>.</p>
+
+<p><img src="https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png" alt="UNB Libraries"></p>
+

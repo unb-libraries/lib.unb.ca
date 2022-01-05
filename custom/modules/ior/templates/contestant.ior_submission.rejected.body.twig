@@ -1,7 +1,9 @@
-Hello {{ ior_submission.firstName }},
+<p>Hello {{ ior_submission.firstName }},</p>
 
-We are sorry to tell you that your submission to "Images of Research - {{ ior_submission.contest.title }}" has been rejected.
+<p>We are sorry to tell you that your submission to "Images of Research - {{ ior_submission.contest.title }}" has been rejected.</p>
 
-You may re-submit an image until the contest closes on {{ ior_submission.contest.closeDate|date('Y-m-d') }}.
+<p>You may re-submit an image until the contest closes on {{ ior_submission.contest.closeDate|date('Y-m-d') }}.</p>
 
-For any questions please contact Sasha Mullally (sasham@unb.ca).
+<p>For any questions please contact <a href="mailto:sasham@unb.ca">Sasha Mullally</a>.</p>
+
+<p><img src="https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png" alt="UNB Libraries"></p>
