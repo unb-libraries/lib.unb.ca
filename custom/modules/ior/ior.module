@@ -137,11 +137,12 @@ function template_preprocess_ior_submission__preview(array &$variables) {
 }
 
 /**
- * Implements hook_theme_suggestions_HOOK().
+ * Implements hook_theme_suggestions_HOOK_alter().
  */
-function ior_theme_suggestions_ior_submission(array $variables) {
-  $suggestions = [];
+function ior_theme_suggestions_ior_submission_alter(array &$suggestions, array $variables) {
   $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
-  $suggestions[] = 'ior_submission__' . $sanitized_view_mode;
-  return $suggestions;
+  $suggestion = 'ior_submission__' . $sanitized_view_mode;
+  if (!in_array($suggestion, $suggestions)) {
+    $suggestions[] = $suggestion;
+  }
 }

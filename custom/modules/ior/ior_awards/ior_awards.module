@@ -63,16 +63,6 @@ function ior_awards_template_preprocess_contest(array &$variables) {
 }
 
 /**
- * Implements hook_theme_suggestions_HOOK().
- */
-function ior_awards_theme_suggestions_ior_submission(array $variables) {
-  $suggestions = [];
-  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
-  $suggestions[] = 'ior_submission__' . $sanitized_view_mode;
-  return $suggestions;
-}
-
-/**
  * Prepares variables for submission templates.
  *
  * Default template: ior-submission.html.twig.
