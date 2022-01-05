@@ -2,7 +2,7 @@
 
 {% block submission_fields %}
 {{ parent() }}
-{% if submission.state.id == 'published_anonymised_' or submission.published %}
+{% if submission.field_collections and (submission.state.id == 'published_anonymised_' or submission.published) %}
     <div class="col-6 pl-0"><div class="pt-1 pb-1">Collections: </div></div>
     <div class="col-6 pr-0"><div class="pt-1 pb-1">{{ submission.field_collections }}</div></div>
 {% endif %}
