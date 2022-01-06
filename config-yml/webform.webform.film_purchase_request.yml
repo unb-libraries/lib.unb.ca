@@ -7,9 +7,9 @@ dependencies:
 third_party_settings:
   antibot:
     antibot: true
+weight: 0
 open: null
 close: null
-weight: 0
 uid: 1
 template: false
 archive: false
@@ -24,13 +24,12 @@ elements: |-
       <div class="card border-dark mb-4">
       <div class="card-body text-muted-wcag p-0 mb-3">
       <h2 class="card-title h6 bg-dark text-white p-2">Please complete the form below with as much information as you have available.</h2>
-      
+
       <div class="p-2">
       <p class="card-text">Thank you for your interest.</p>
       </div>
       </div>
       </div>
-      
   container:
     '#type': container
     '#attributes':
@@ -77,7 +76,6 @@ elements: |-
           <p class="text-red">
             Complete this section as accurately as possible. Your request may NOT be processed if there is insufficient information.
           </p>
-          
       title:
         '#type': textfield
         '#title': Title
@@ -94,9 +92,11 @@ elements: |-
       year:
         '#type': textfield
         '#title': Year
-        '#minlength': '4'
-        '#maxlength': '4'
-        '#input_mask': '''alias'': ''datetime'''
+        '#minlength': 4
+        '#maxlength': 4
+        '#placeholder': yyyy
+        '#pattern': '^(18|19|20)\d{2}$'
+        '#pattern_error': 'Year value must be between 1800-2099.'
       curricular_relevance:
         '#type': textarea
         '#title': 'Curricular Relevance'
@@ -131,9 +131,9 @@ settings:
   page_theme_name: ''
   form_title: source_entity_webform
   form_submit_once: false
-  form_exception_message: ''
   form_open_message: ''
   form_close_message: ''
+  form_exception_message: ''
   form_previous_submissions: false
   form_confidential: false
   form_confidential_message: ''
@@ -143,31 +143,36 @@ settings:
   form_prepopulate_source_entity: false
   form_prepopulate_source_entity_required: false
   form_prepopulate_source_entity_type: ''
-  form_reset: true
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
   form_disable_autocomplete: false
   form_novalidate: true
   form_disable_inline_errors: false
   form_required: false
-  form_unsaved: false
-  form_disable_back: false
-  form_submit_back: false
   form_autofocus: false
   form_details_toggle: false
+  form_reset: true
   form_access_denied: default
   form_access_denied_title: ''
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  form_attributes: {  }
   form_method: ''
   form_action: ''
-  form_attributes: {  }
   share: false
   share_node: false
   share_theme_name: ''
   share_title: true
   share_page_body_attributes: {  }
   submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
   submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
   submission_views: {  }
   submission_views_replace:
     webform_routes: {  }
@@ -178,11 +183,6 @@ settings:
   submission_access_denied_title: ''
   submission_access_denied_message: ''
   submission_access_denied_attributes: {  }
-  submission_exception_message: ''
-  submission_locked_message: ''
-  submission_excluded_elements: {  }
-  submission_exclude_empty: false
-  submission_exclude_empty_checkbox: false
   previous_submission_message: ''
   previous_submissions_message: ''
   autofill: true
@@ -199,13 +199,13 @@ settings:
   wizard_progress_percentage: false
   wizard_progress_link: false
   wizard_progress_states: false
-  wizard_auto_forward: true
-  wizard_auto_forward_hide_next_button: false
-  wizard_keyboard: true
   wizard_start_label: ''
   wizard_preview_link: false
   wizard_confirmation: true
   wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
   wizard_track: ''
   wizard_prev_button_label: ''
   wizard_next_button_label: ''
@@ -228,9 +228,9 @@ settings:
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
   confirmation_type: message
+  confirmation_url: ''
   confirmation_title: ''
   confirmation_message: "<p class=\"h6\"><em class=\"fa-clipboard-check fas\">&nbsp;</em>Film Purchase Request Successfully Submitted</p>\r\n\r\n<p class=\"pb-0\">Requests will be reviewed based on criteria that stress balance within the existing collection and the availability/affordability of public performance rights.</p>\r\n\r\n<p>We will notify you with an update on the status of your request(s). Material orders can take some time to arrive before making their way into our catalogue. If your need is urgent, you may wish to consider filling out a <a href=\"/services/docdel/\">Document Delivery Request form</a>.</p>"
-  confirmation_url: ''
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
@@ -309,9 +309,9 @@ access:
 handlers:
   email:
     id: email
+    handler_id: email
     label: Email
     notes: ''
-    handler_id: email
     status: true
     conditions: {  }
     weight: 0
@@ -320,13 +320,17 @@ handlers:
         - completed
       to_mail: mbragdon@unb.ca
       to_options: {  }
-      cc_mail: ''
-      cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
       from_mail: '[webform_submission:values:unb_stu_email:raw]'
       from_options: {  }
       from_name: '[webform_submission:values:name:raw]'
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
       subject: 'Film Purchase Request'
       body: "<p>The following information was submitted through our <b>Film Purchase Request</b> form by {{ webform_token('[webform_submission:user]', webform_submission) }} on {{ webform_token('[webform_submission:created]', webform_submission) }}.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
       excluded_elements: {  }
@@ -337,18 +341,14 @@ handlers:
       html: true
       attachments: false
       twig: true
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
       theme_name: ''
       parameters: {  }
+      debug: false
   email_1:
     id: email
+    handler_id: email_1
     label: 'Sender Confirmation Email'
     notes: ''
-    handler_id: email_1
     status: true
     conditions: {  }
     weight: 0
@@ -357,13 +357,17 @@ handlers:
         - completed
       to_mail: '[webform_submission:values:unb_stu_email:raw]'
       to_options: {  }
-      cc_mail: ''
-      cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
       from_mail: unb-libraries-no-reply@unb.ca
       from_options: {  }
       from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
       subject: 'Film Purchase Request'
       body: "<p>Thank you for submitting your Film Purchase Request.</p>\r\n\r\n<p>Requests will be reviewed based on criteria that stress balance within the existing collection and the availability/affordability of public performance rights.</p>\r\n\r\n<p>We will notify you with an update on the status of your request(s).  Material orders can take some time to arrive before making their way into our catalogue.  If your need is urgent, you may wish to consider filling out a Document Delivery Request form (<a href=\"http://lib.unb.ca/services/docdel\">http://lib.unb.ca/services/docdel</a>).</p>\r\n\r\n<p>Please note that films can still be considered for acquisition through departmental allocations and other sources should they be deemed ineligible for the audiovisual budget.</p>\r\n\r\n<p>Submitted information:</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
       excluded_elements: {  }
@@ -374,11 +378,7 @@ handlers:
       html: true
       attachments: false
       twig: true
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
       theme_name: ''
       parameters: {  }
+      debug: false
 variants: {  }
