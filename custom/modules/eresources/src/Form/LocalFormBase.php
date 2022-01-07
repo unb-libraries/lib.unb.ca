@@ -137,7 +137,12 @@ class LocalFormBase extends FormBase {
           break;
 
         case 'keyword':
-          $indexQuery->keys($query);
+          if (preg_match('/id:(\d+)/', $query, $matches)) {
+            $indexQuery->addCondition('id', $matches[1]);
+          }
+          else {
+            $indexQuery->keys($query);
+          }
           break;
       }
 
