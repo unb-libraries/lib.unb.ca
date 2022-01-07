@@ -1,0 +1,10 @@
+uuid: ffda3bb6-1c43-455b-9970-c3e55279937c
+langcode: en
+status: true
+dependencies:
+  module:
+    - ior_awards
+id: ior_award.badge
+label: Badge
+targetEntityType: ior_award
+cache: true

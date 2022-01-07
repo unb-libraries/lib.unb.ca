@@ -19,9 +19,7 @@
     <h1{{ title_attributes.addClass('title') }}>
         {{ title }}
         {% for award in awards %}
-            <span class="badge badge-primary">
-                {{ award }}
-            </span>
+            {{ award }}
         {% endfor %}
     </h1>
 {% endif %}

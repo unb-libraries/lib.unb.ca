@@ -25,6 +25,9 @@ function ior_awards_theme($existing, $type, $theme, $path) {
     'ior_award' => [
       'render element' => 'elements',
     ],
+    'ior_award__badge' => [
+      'render element' => 'elements',
+    ],
     'ior_award__winner' => [
       'render element' => 'award',
     ],
@@ -101,16 +104,16 @@ function ior_awards_theme_suggestions_ior_award(array $variables) {
 }
 
 /**
- * Prepares variables for award templates.
+ * Prepares variables for award badge templates.
  *
- * Default template: ior-award.html.twig.
+ * Default template: ior-award--badge.html.twig.
  *
  * @param array $variables
  *   An associative array containing:
  *   - elements: An associative array containing the user information and any
  *   - attributes: HTML attributes for the containing element.
  */
-function template_preprocess_ior_award(array &$variables) {
+function template_preprocess_ior_award__badge(array &$variables) {
   /** @var \Drupal\ior_awards\Entity\AwardInterface $award */
   $award = $variables['elements']['#ior_award'];
   $variables['award']['entity'] = $award;
@@ -160,7 +163,7 @@ function ior_awards_preprocess_page_title(array &$variables) {
   if ($submission = _get_submission_from_route()) {
     $view_builder = Drupal::entityTypeManager()->getViewBuilder('ior_award');
     $variables['awards'] = array_map(function (\Drupal\ior_awards\Entity\AwardInterface $award) use ($view_builder) {
-      return $view_builder->view($award, 'default');
+      return $view_builder->view($award, 'badge');
     }, $submission->get('field_awards')->referencedEntities());
   }
 }
