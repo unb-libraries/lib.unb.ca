@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.ior_collection.ior_collection.field_contest
     - field.field.ior_collection.ior_collection.field_title
   module:
     - ior_awards
@@ -18,4 +19,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_contest: true

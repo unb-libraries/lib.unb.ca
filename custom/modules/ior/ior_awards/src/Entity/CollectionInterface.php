@@ -9,4 +9,6 @@ use Drupal\Core\Entity\ContentEntityInterface;
  */
 interface CollectionInterface extends ContentEntityInterface {
 
+  const FIELD_CONTEST = 'field_contest';
+
 }

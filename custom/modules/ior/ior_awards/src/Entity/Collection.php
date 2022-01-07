@@ -3,6 +3,7 @@
 namespace Drupal\ior_awards\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
+use Drupal\ior\Entity\ContestInterface;
 
 /**
  * The "Collection" entity.
@@ -41,5 +42,20 @@ use Drupal\Core\Entity\ContentEntityBase;
  * )
  */
 class Collection extends ContentEntityBase implements CollectionInterface {
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getContest() {
+    return $this->get(self::FIELD_CONTEST)
+      ->entity;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function setContest(ContestInterface $contest) {
+    $this->set(self::FIELD_CONTEST, $contest);
+  }
 
 }
