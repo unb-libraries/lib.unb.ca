@@ -3,6 +3,7 @@
 namespace Drupal\ior_awards\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
+use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\ior_awards\Plugin\Field\FieldType\ComputedEntityReferenceFieldItemList;
@@ -16,7 +17,7 @@ use Drupal\ior_awards\Plugin\Field\FieldType\ComputedEntityReferenceFieldItemLis
  *   label_plural = @Translation("Awards"),
  *   label_collection = @Translation("Awards"),
  *   handlers = {
- *     "view" = "Drupal\Core\Entity\EntityViewBuilder",
+ *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "views_data" = "Drupal\views\EntityViewsData",
  *     "form" = {
  *       "default" = "Drupal\Core\Entity\ContentEntityForm",
@@ -31,10 +32,10 @@ use Drupal\ior_awards\Plugin\Field\FieldType\ComputedEntityReferenceFieldItemLis
  *   admin_permission = "administer award entities",
  *   entity_keys = {
  *     "id" = "id",
- *     "label" = "field_title",
  *     "uuid" = "uuid"
  *   },
  *   links = {
+ *     "canonical" = "/researchcommons/ior/awards/{ior_award}",
  *     "add-form" = "/researchcommons/ior/awards/add",
  *     "edit-form" = "/researchcommons/ior/awards/{ior_award}/edit",
  *     "delete-form" = "/researchcommons/ior/{ior_award}/delete",
@@ -43,6 +44,16 @@ use Drupal\ior_awards\Plugin\Field\FieldType\ComputedEntityReferenceFieldItemLis
  * )
  */
 class Award extends ContentEntityBase implements AwardInterface {
+
+  /**
+   * {@inheritDoc}
+   */
+  public function label() {
+    $label = $this->get('field_title');
+    return $label->view([
+      'label' => 'hidden',
+    ]);
+  }
 
   /**
    * {@inheritDoc}
