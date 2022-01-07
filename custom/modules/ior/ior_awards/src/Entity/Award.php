@@ -21,7 +21,7 @@ use Drupal\ior_awards\Plugin\Field\FieldType\ComputedEntityReferenceFieldItemLis
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "views_data" = "Drupal\views\EntityViewsData",
  *     "form" = {
- *       "default" = "Drupal\Core\Entity\ContentEntityForm",
+ *       "default" = "Drupal\ior_awards\Form\AwardForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"
  *     },
  *     "route_provider" = {
@@ -36,10 +36,10 @@ use Drupal\ior_awards\Plugin\Field\FieldType\ComputedEntityReferenceFieldItemLis
  *     "uuid" = "uuid"
  *   },
  *   links = {
- *     "canonical" = "/researchcommons/ior/awards/{ior_award}",
- *     "add-form" = "/researchcommons/ior/awards/add",
- *     "edit-form" = "/researchcommons/ior/awards/{ior_award}/edit",
- *     "delete-form" = "/researchcommons/ior/{ior_award}/delete",
+ *     "canonical" = "/researchcommons/ior/contests/{contest}/awards/{ior_award}",
+ *     "add-form" = "/researchcommons/ior/contests/{contest}/awards/add",
+ *     "edit-form" = "/researchcommons/ior/contests/{contest}/awards/{ior_award}/edit",
+ *     "delete-form" = "/researchcommons/ior/contests/{contest}/awards/{ior_award}/delete",
  *   },
  *   field_ui_base_route = "entity.ior_award.settings",
  * )
@@ -74,6 +74,15 @@ class Award extends ContentEntityBase implements AwardInterface {
   /**
    * {@inheritDoc}
    */
+  protected function urlRouteParameters($rel) {
+    $uri_route_parameters = parent::urlRouteParameters($rel);
+    $uri_route_parameters['contest'] = $this->getContest()->id();
+    return $uri_route_parameters;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
@@ -87,6 +96,16 @@ class Award extends ContentEntityBase implements AwardInterface {
       ->setDisplayConfigurable('view', TRUE);
 
     return $fields;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function preSave(EntityStorageInterface $storage) {
+    if (!$this->getContest()) {
+      throw new MissingMandatoryParametersException('Awards must be assigned to a contest upon creation.');
+    }
+    parent::preSave($storage);
   }
 
 }

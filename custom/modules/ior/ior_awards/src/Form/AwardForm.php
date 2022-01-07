@@ -3,7 +3,6 @@
 namespace Drupal\ior_awards\Form;
 
 use Drupal\Core\Entity\ContentEntityForm;
-use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Default form for IOR award entities.
@@ -15,11 +14,11 @@ class AwardForm extends ContentEntityForm {
    */
   protected function prepareEntity() {
     parent::prepareEntity();
-    if (!$this->entity->getSubmission()) {
-      $submission = $this
+    if (!$this->entity->getContest()) {
+      $contest = $this
         ->getRouteMatch()
-        ->getParameter('ior_submission');
-      $this->entity->setSubmission($submission);
+        ->getParameter('contest');
+      $this->entity->setContest($contest);
     }
   }
 
