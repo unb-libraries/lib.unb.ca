@@ -3,7 +3,9 @@ status: true
 dependencies:
   config:
     - field.storage.ior_award.field_title
+    - field.storage.ior_submission.field_title
   module:
+    - ior
     - ior_awards
     - user
 id: ior_awards
@@ -73,7 +75,71 @@ display:
           hide_alter_empty: true
           click_sort_column: value
           type: string
-          settings: {  }
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_title_1:
+          id: field_title_1
+          table: ior_submission__field_title
+          field: field_title
+          relationship: reverse__ior_submission__field_awards
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Awarded to'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -134,7 +200,48 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
-      arguments: {  }
+      arguments:
+        id:
+          id: id
+          table: ior_contest
+          field: id
+          relationship: field_contest
+          group_type: group
+          admin_label: ''
+          entity_type: contest
+          entity_field: id
+          plugin_id: numeric
+          default_action: 'not found'
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: fixed
+          default_argument_options:
+            argument: ''
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            override: false
+            items_per_page: 25
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: true
+          validate:
+            type: 'entity:contest'
+            fail: 'not found'
+          validate_options:
+            bundles: {  }
+            access: false
+            operation: view
+            multiple: 0
+          break_phrase: false
+          not: false
       filters: {  }
       style:
         type: table
@@ -148,7 +255,26 @@ display:
           distinct: false
           replica: false
           query_tags: {  }
-      relationships: {  }
+      relationships:
+        reverse__ior_submission__field_awards:
+          id: reverse__ior_submission__field_awards
+          table: ior_award
+          field: reverse__ior_submission__field_awards
+          relationship: none
+          group_type: group
+          admin_label: field_awards
+          entity_type: ior_award
+          plugin_id: entity_reverse
+          required: false
+        field_contest:
+          id: field_contest
+          table: ior_award__field_contest
+          field: field_contest
+          relationship: none
+          group_type: group
+          admin_label: 'field_contest: Contest'
+          plugin_id: standard
+          required: true
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -157,10 +283,12 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - user.permissions
       tags:
         - 'config:field.storage.ior_award.field_title'
+        - 'config:field.storage.ior_submission.field_title'
   page_1:
     id: page_1
     display_title: Page
@@ -168,13 +296,15 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: researchcommons/ior/awards
+      path: researchcommons/ior/contests/%contest/awards
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - user.permissions
       tags:
         - 'config:field.storage.ior_award.field_title'
+        - 'config:field.storage.ior_submission.field_title'

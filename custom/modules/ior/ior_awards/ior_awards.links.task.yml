@@ -1,4 +1,9 @@
-# Contests
+# Awards
+entity.ior_award.collection:
+  route_name: view.ior_awards.page_1
+  base_route: entity.contest.canonical
+  title: 'Awards'
+
 entity.ior_award.canonical:
   route_name: entity.ior_award.canonical
   base_route: entity.ior_award.canonical
