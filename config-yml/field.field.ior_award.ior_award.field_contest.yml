@@ -1,0 +1,27 @@
+uuid: 839c4448-cccf-4711-b3a2-3ba4fb2fe37e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.ior_award.field_contest
+  module:
+    - ior_awards
+id: ior_award.ior_award.field_contest
+field_name: field_contest
+entity_type: ior_award
+bundle: ior_award
+label: Contest
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:contest'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+field_type: entity_reference

@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.ior_award.ior_award.field_contest
     - field.field.ior_award.ior_award.field_title
     - field.field.ior_award.ior_award.field_weight
   module:
@@ -29,4 +30,5 @@ content:
     settings:
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_contest: true

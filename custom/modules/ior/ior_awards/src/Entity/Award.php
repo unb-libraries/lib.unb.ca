@@ -6,6 +6,7 @@ use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\ior\Entity\ContestInterface;
 use Drupal\ior_awards\Plugin\Field\FieldType\ComputedEntityReferenceFieldItemList;
 
 /**
@@ -53,6 +54,21 @@ class Award extends ContentEntityBase implements AwardInterface {
     return $label->view([
       'label' => 'hidden',
     ]);
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getContest() {
+    return $this->get(self::FIELD_CONTEST)
+      ->entity;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function setContest(ContestInterface $contest) {
+    $this->set(self::FIELD_CONTEST, $contest);
   }
 
   /**
