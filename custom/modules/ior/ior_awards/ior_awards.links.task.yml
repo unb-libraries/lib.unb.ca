@@ -1,0 +1,15 @@
+# Contests
+entity.ior_award.canonical:
+  route_name: entity.ior_award.canonical
+  base_route: entity.ior_award.canonical
+  title: 'View'
+
+entity.ior_award.edit_form:
+  route_name: entity.ior_award.edit_form
+  base_route: entity.ior_award.canonical
+  title: 'Edit'
+
+entity.ior_award.delete_form:
+  route_name: entity.ior_award.delete_form
+  base_route: entity.ior_award.canonical
+  title: 'Delete'
