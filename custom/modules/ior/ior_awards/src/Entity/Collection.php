@@ -3,7 +3,9 @@
 namespace Drupal\ior_awards\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
+use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\ior\Entity\ContestInterface;
+use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
 
 /**
  * The "Collection" entity.
@@ -16,11 +18,11 @@ use Drupal\ior\Entity\ContestInterface;
  *   handlers = {
  *     "views_data" = "Drupal\views\EntityViewsData",
  *     "form" = {
- *       "default" = "Drupal\Core\Entity\ContentEntityForm",
+ *       "default" = "Drupal\ior_awards\Form\CollectionForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"
  *     },
  *     "route_provider" = {
- *       "html" = "Drupal\custom_entity\Entity\Routing\HtmlRouteProvider"
+ *       "html" = "Drupal\ior_awards\Entity\Routing\CollectionHtmlRouteProvider"
  *     },
  *     "storage" = "Drupal\ior_awards\Entity\Storage\CollectionStorage",
  *     "access" = "Drupal\custom_entity\Entity\Access\EntityAccessControlHandler"
@@ -33,10 +35,9 @@ use Drupal\ior\Entity\ContestInterface;
  *     "uuid" = "uuid",
  *   },
  *   links = {
- *     "canonical" = "/researchcommons/ior/collections/{ior_collection}",
- *     "add-form" = "/researchcommons/ior/collections/add",
- *     "edit-form" = "/researchcommons/ior/collections/{ior_collection}/edit",
- *     "delete-form" = "/researchcommons/ior/collections/{ior_collection}/delete",
+ *     "add-form" = "/researchcommons/ior/contests/{contest}/collections/add",
+ *     "edit-form" = "/researchcommons/ior/contests/{contest}/collections/{ior_collection}/edit",
+ *     "delete-form" = "/researchcommons/ior/contests/{contest}/collections/{ior_collection}/delete",
  *   },
  *   field_ui_base_route = "entity.ior_collection.settings",
  * )
@@ -56,6 +57,25 @@ class Collection extends ContentEntityBase implements CollectionInterface {
    */
   public function setContest(ContestInterface $contest) {
     $this->set(self::FIELD_CONTEST, $contest);
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  protected function urlRouteParameters($rel) {
+    $uri_route_parameters = parent::urlRouteParameters($rel);
+    $uri_route_parameters['contest'] = $this->getContest()->id();
+    return $uri_route_parameters;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function preSave(EntityStorageInterface $storage) {
+    if (!$this->getContest()) {
+      throw new MissingMandatoryParametersException('Collections must be assigned to a contest upon creation.');
+    }
+    parent::preSave($storage);
   }
 
 }
