@@ -1,0 +1,11 @@
+entity.ior_award.add_form:
+  route_name: entity.ior_award.add_form
+  title: Add award
+  appears_on:
+    - view.ior_awards.page_1
+
+entity.collection.add_form:
+  route_name: entity.ior_collection.add_form
+  title: Add collection
+  appears_on:
+    - view.ior_collections.page_1
