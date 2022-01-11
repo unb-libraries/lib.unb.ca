@@ -18,3 +18,25 @@ entity.ior_award.delete_form:
   route_name: entity.ior_award.delete_form
   base_route: entity.ior_award.canonical
   title: 'Delete'
+
+
+# Collections
+entity.ior_collection.collection:
+  route_name: view.ior_collections.page_1
+  base_route: entity.contest.canonical
+  title: 'Collections'
+
+entity.ior_collection.canonical:
+  route_name: view.ior_contest_collection.page_1
+  base_route: view.ior_contest_collection.page_1
+  title: 'View'
+
+entity.ior_collection.edit_form:
+  route_name: entity.ior_collection.edit_form
+  base_route: view.ior_contest_collection.page_1
+  title: 'Edit'
+
+entity.ior_collection.delete_form:
+  route_name: entity.ior_collection.delete_form
+  base_route: view.ior_contest_collection.page_1
+  title: 'Delete'
