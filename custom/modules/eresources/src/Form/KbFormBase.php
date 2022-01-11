@@ -10,6 +10,7 @@ use Drupal\oclc_api\Oclc\OclcAuthorizationInterface;
 use Drupal\oclc_api\Plugin\oclc\OclcApiManagerInterface;
 use Drupal\oclc_api\Plugin\oclc\OclcPluginManagerTrait;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\eresources\KbResult;
 
 /**
  * KB Form base class.
@@ -180,7 +181,9 @@ class KbFormBase extends FormBase {
         $form[$form_wrapper]['search_results']['page'] = ['#markup' => "<div class='alert alert-info rounded-0'>Your search for <b>\"{$query}\"</b> returned no results.</div>"];
       }
       else {
-        $entries = $result->entries;
+        $entries = array_map(function ($i) {
+          return new KbResult($i);
+        }, $result->entries);
         $form[$form_wrapper]['search_results']['page'] = ['#markup' => "<div class='alert alert-info rounded-0'>Showing results {$start} to " . ($start + count($entries) - 1) . " of {$total} for search <b>\"{$query}\"</b>.</div>"];
         $pagerManager->createPager($total, $perPage);
         $form[$form_wrapper]['search_results']['top-pager'] = ['#type' => 'pager'];

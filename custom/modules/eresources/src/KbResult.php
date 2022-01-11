@@ -3,9 +3,9 @@
 namespace Drupal\eresources;
 
 /**
- * Twig filters to generate coverage statements and permitted use notes.
+ * KB result item.
  */
-class TwigExtension extends \Twig_Extension {
+class KbResult extends ResultBase implements ResultInterface {
 
   /**
    * Timespan replacement values.
@@ -21,35 +21,116 @@ class TwigExtension extends \Twig_Extension {
   /**
    * {@inheritDoc}
    */
-  public function getFilters() {
-    return [
-      new \Twig_SimpleFilter('eresources_coverage', [$this, 'coverage']),
-      new \Twig_SimpleFilter('eresources_permitted_use', [
-        $this, 'permittedUse',
-      ], ['is_safe' => ['html']]),
-    ];
+  public function getTitle() {
+    return $this->item->title;
   }
 
   /**
    * {@inheritDoc}
    */
-  public function getName() {
-    return 'eresources.twig_extension';
+  public function getCollectionName() {
+    return $this->item->{'kb:collection_name'};
   }
 
   /**
-   * Generate permitted use line.
+   * {@inheritDoc}
    */
-  public static function permittedUse($entry) {
-    $coverageEnum = property_exists($entry, 'kb:coverage_enum') ? $entry->{'kb:coverage_enum'} : '';
+  public function getOcn() {
+    return $this->item->{'kb:oclcnum'};
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getIsbn() {
+    return $this->item->{'kb:isbn'};
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getIssn() {
+    return $this->item->{'kb:issn'};
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getEissn() {
+    return $this->item->{'kb:eissn'};
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getViaUrl() {
+    foreach ($this->item->links as $link) {
+      if ($link->rel == 'via') {
+        return $link->href;
+      }
+    }
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getAuthor() {
+    return $this->item->{'kb:author'};
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getPublisher() {
+    return $this->item->{'kb:publisher'};
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getCoverage() {
+    return $this->item->{'kb:coverage'};
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getCoverageEnum() {
+    return $this->item->{'kb:coverage_enum'};
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getCoverageStatement() {
+    $coverageEnum = property_exists($entry->item, 'kb:coverage_enum') ? $entry->item->{'kb:coverage_enum'} : '';
+    if (preg_match('/^print/', $coverageEnum)) {
+      $coverage = implode('; ', [
+        $entry->item->{'kb:location'}, $entry->item->{'kb:coverage_notes'},
+      ]);
+    }
+    else {
+      $coverage = implode(' ', [
+        self::getCoverageText($entry->item->{'kb:coverage'}),
+        self::getEnumeratedCoverage($coverageEnum),
+      ]);
+    }
+    return trim($coverage);
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getPermittedUseStatement() {
+    $coverageEnum = property_exists($this->item, 'kb:coverage_enum') ? $this->item->{'kb:coverage_enum'} : '';
     // Ignore permitted use for print holdings.
     if (preg_match('/^print/', $coverageEnum)) {
       return '';
     }
 
     $data = [];
-    $coverageNotes = property_exists($entry, 'kb:coverage_notes') ? $entry->{'kb:coverage_notes'} : '';
-    $collectionUserNotes = property_exists($entry, 'kb:collection_user_notes') ? $entry->{'kb:collection_user_notes'} : '';
+    $coverageNotes = property_exists($this->item, 'kb:coverage_notes') ? $this->item->{'kb:coverage_notes'} : '';
+    $collectionUserNotes = property_exists($this->item, 'kb:collection_user_notes') ? $this->item->{'kb:collection_user_notes'} : '';
     if (preg_match('/(purchase|subscribe)/', $coverageNotes)
       && str_pos($coverageNotes, '|') === FALSE) {
       if ($collectionUserNotes) {
@@ -58,9 +139,9 @@ class TwigExtension extends \Twig_Extension {
       if ($coverageNotes) {
         $data = $coverageNotes;
       }
-      if (!preg_match('/^(ebook|video)/', $entry->{'kb:coverage'})) {
+      if (!preg_match('/^(ebook|video)/', $this->item->{'kb:coverage'})) {
         $data[] = implode(' ', [
-          self::getCoverage($entry->{'kb:coverage'}),
+          self::getCoverageText($this->item->{'kb:coverage'}),
           self::getEnumeratedCoverage($coverageEnum),
         ]);
       }
@@ -72,9 +153,9 @@ class TwigExtension extends \Twig_Extension {
       if ($coverageNotes) {
         $data = array_merge($data, explode(' | ', $coverageNotes));
       }
-      elseif (!preg_match('/^(ebook|video)/', $entry->{'kb:coverage'})) {
+      elseif (!preg_match('/^(ebook|video)/', $this->item->{'kb:coverage'})) {
         $data[] = implode(' ', [
-          self::getCoverage($entry->{'kb:coverage'}),
+          self::getCoverageText($this->item->{'kb:coverage'}),
           self::getEnumeratedCoverage($coverageEnum),
         ]);
       }
@@ -95,28 +176,9 @@ class TwigExtension extends \Twig_Extension {
   }
 
   /**
-   * Generate coverage statement.
-   */
-  public static function coverage($entry) {
-    $coverageEnum = property_exists($entry, 'kb:coverage_enum') ? $entry->{'kb:coverage_enum'} : '';
-    if (preg_match('/^print/', $coverageEnum)) {
-      $coverage = implode('; ', [
-        $entry->{'kb:location'}, $entry->{'kb:coverage_notes'},
-      ]);
-    }
-    else {
-      $coverage = implode(' ', [
-        self::getCoverage($entry->{'kb:coverage'}),
-        self::getEnumeratedCoverage($coverageEnum),
-      ]);
-    }
-    return trim($coverage);
-  }
-
-  /**
    * Generate enumerated coverage statement.
    */
-  public static function getEnumeratedCoverage($text) {
+  private static function getEnumeratedCoverage($text) {
     $fulltextRanges = self::getFulltextRanges($text);
     if (empty($fulltextRanges)) {
       // Return nothing. Some coverage information will be provided by
@@ -166,7 +228,7 @@ class TwigExtension extends \Twig_Extension {
   /**
    * Extracts coverage details from notes.
    */
-  public static function getCoverage($text) {
+  private static function getCoverageText($text) {
     $fulltextRanges = self::getFulltextRanges($text);
 
     if (empty($fulltextRanges)) {
