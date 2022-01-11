@@ -167,6 +167,7 @@ class LocalFormBase extends FormBase {
         $form[$form_wrapper]['search_results']['results'] = [
           '#theme' => 'eresources',
           '#eresources' => $entries,
+          '#form_id' => $this->getKbFormId(),
         ];
         $form[$form_wrapper]['search_results']['bottom-pager'] = ['#type' => 'pager'];
         $form[$form_wrapper]['#attached']['library'][] = 'eresources/eresources';
