@@ -69,6 +69,14 @@ field_settings:
     dependencies:
       module:
         - eresources
+  ocn:
+    label: 'OCLC Number (OCN)'
+    datasource_id: 'entity:eresources_record'
+    property_path: ocn
+    type: string
+    dependencies:
+      module:
+        - eresources
   title:
     label: Title
     datasource_id: 'entity:eresources_record'

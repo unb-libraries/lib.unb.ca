@@ -83,12 +83,14 @@ class HarvestedCollectionPageWorker extends QueueWorkerBase implements Container
           $entity = $storage->load($id);
           $entity->set('collection_id', $collection_id);
           $entity->set('title', $entry->title);
+          $entity->set('ocn', $entry->{'kb:oclcnum'});
         }
         else {
           $fields = [
             'collection_id' => $collection_id,
             'uid' => $entry->{'kb:entry_uid'},
             'title' => $entry->title,
+            'ocn' => $entry->{'kb:oclcnum'},
             'access_information' => '',
             'license_status' => '',
             'kb_data_type' => $collection->getKbDataType(),

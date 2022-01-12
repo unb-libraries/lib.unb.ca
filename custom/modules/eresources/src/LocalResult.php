@@ -26,7 +26,8 @@ class LocalResult extends ResultBase implements ResultInterface {
    * {@inheritDoc}
    */
   public function getOcn() {
-    return NULL;
+    $values = $this->item->getField('ocn')->getValues();
+    return $values[0];
   }
 
   /**
