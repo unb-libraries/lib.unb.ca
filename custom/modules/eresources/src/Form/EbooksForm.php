@@ -2,6 +2,8 @@
 
 namespace Drupal\eresources\Form;
 
+use Drupal\Core\Form\FormStateInterface;
+
 /**
  * KB Ebooks form.
  */
@@ -40,6 +42,39 @@ class EbooksForm extends KbFormBase implements KbFormInterface {
    */
   public function getKbContentType() {
     return 'ebook';
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function buildForm(array $form, FormStateInterface $form_state) {
+    $form = parent::buildForm($form, $form_state);
+
+    $req = $this->getRequest()->query;
+    $query = $req->get('query');
+    if (empty($query) || $this->getFormId() != $req->get('form_id')) {
+      $form_wrapper = $this->getKbFormId() . "_wrapper";
+
+      $form[$form_wrapper]['collections_wrapper'] = [
+        '#type' => 'container',
+        '#attributes' => [
+          'class' => [
+            'form-row',
+            'flex-sm-nowrap',
+            'border-top',
+            'border-dark',
+            'pt-4',
+            'pb-3',
+          ],
+        ],
+      ];
+
+      $form[$form_wrapper]['collections_wrapper']['collections'] = [
+        '#markup' => '<p class="font-weight-bold"><span class="text-danger">OR</span> Browse for eBooks Collections</p>',
+      ];
+    }
+
+    return $form;
   }
 
 }
