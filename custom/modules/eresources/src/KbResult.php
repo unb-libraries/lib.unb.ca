@@ -103,15 +103,15 @@ class KbResult extends ResultBase implements ResultInterface {
    * {@inheritDoc}
    */
   public function getCoverageStatement() {
-    $coverageEnum = property_exists($entry->item, 'kb:coverage_enum') ? $entry->item->{'kb:coverage_enum'} : '';
+    $coverageEnum = property_exists($this->item, 'kb:coverage_enum') ? $this->item->{'kb:coverage_enum'} : '';
     if (preg_match('/^print/', $coverageEnum)) {
       $coverage = implode('; ', [
-        $entry->item->{'kb:location'}, $entry->item->{'kb:coverage_notes'},
+        $this->item->{'kb:location'}, $this->item->{'kb:coverage_notes'},
       ]);
     }
     else {
       $coverage = implode(' ', [
-        self::getCoverageText($entry->item->{'kb:coverage'}),
+        self::getCoverageText($this->item->{'kb:coverage'}),
         self::getEnumeratedCoverage($coverageEnum),
       ]);
     }
