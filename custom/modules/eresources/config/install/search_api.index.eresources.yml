@@ -95,6 +95,14 @@ field_settings:
     dependencies:
       module:
         - eresources
+  url:
+    label: URL
+    datasource_id: 'entity:eresources_record'
+    property_path: url
+    type: string
+    dependencies:
+      module:
+        - eresources
 datasource_settings:
   'entity:eresources_record': {  }
 processor_settings:

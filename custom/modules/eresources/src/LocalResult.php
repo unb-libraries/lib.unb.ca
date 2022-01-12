@@ -55,7 +55,8 @@ class LocalResult extends ResultBase implements ResultInterface {
    * {@inheritDoc}
    */
   public function getViaUrl() {
-    return NULL;
+    $values = $this->item->getField('url')->getValues();
+    return $values[0];
   }
 
   /**
