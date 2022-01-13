@@ -2,6 +2,8 @@
 
 namespace Drupal\eresources\Form;
 
+use Drupal\Core\Form\FormStateInterface;
+
 /**
  * KB Reference form.
  */
@@ -23,6 +25,77 @@ class ReferenceForm extends KbFormBase implements KbFormInterface {
       'browse' => 'Title starts with',
       'exact' => 'Exact title',
     ];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function buildForm(array $form, FormStateInterface $form_state) {
+    $form = parent::buildForm($form, $form_state);
+
+    $form_wrapper = $this->getKbFormId() . "_wrapper";
+
+    // Change type option to hidden field with keyword as the value.
+    $form[$form_wrapper]['type'] = [
+      '#type' => 'hidden',
+      '#value' => 'keyword',
+    ];
+
+    $form[$form_wrapper]['guide_wrapper'] = [
+      '#type' => 'container',
+      '#attributes' => [
+        'class' => [
+          'form-row',
+          'flex-sm-nowrap',
+          'border-bottom',
+          'border-dark',
+          'pb-2',
+        ],
+      ],
+      '#weight' => 0,
+    ];
+
+    $guideOptions = ['' => '- Select a Subject -'] + _lib_core_get_guide_categories();
+    $form[$form_wrapper]['guide_wrapper']['guide'] = [
+      '#title' => 'Browse Reference Materials by subject',
+      '#type' => 'select',
+      '#options' => $guideOptions,
+      '#attributes' => [
+        'class' => [
+          'custom-chosen-select',
+          'form-control',
+        ],
+        'name' => '',
+        'id' => 'reference-guide',
+      ],
+      '#option_attributes' => [
+        0 => ['aria-disabled' => 'true'],
+      ],
+      '#weight' => 0,
+    ];
+
+    $form[$form_wrapper]['guide_wrapper']['actions'] = [
+      '#type' => 'actions',
+      '#weight' => 0,
+    ];
+
+    $form[$form_wrapper]['guide_wrapper']['actions']['submit_button'] = [
+      '#markup' => '<span class="btn btn-primary" id="reference-guide-submit">GO</span>',
+    ];
+
+    $form[$form_wrapper]['guide_wrapper']['links'] = [
+      '#markup' => '<div class="wrapper-list-inline item-list">
+<ul>
+<li><a href="https://lib.unb.ca/eresources/guide-finding-reference-materials" title="Guide to finding Reference Materials at UNB Libraries"><i class="fa fa-question-circle"></i> Reference Materials Guide</a></li>
+<li><a href="https://guides.lib.unb.ca/guide/98"><i class="fa fa-book"></i> Browse dictionaries</a></li>
+</ul>
+</div>',
+    ];
+
+    $form[$form_wrapper]['query_wrapper']['query']['#title'] = '<span class="text-danger">OR</span> Search';
+    $form[$form_wrapper]['query_wrapper']['query']['#required'] = FALSE;
+
+    return $form;
   }
 
   /**
@@ -50,7 +123,7 @@ class ReferenceForm extends KbFormBase implements KbFormInterface {
    * {@inheritDoc}
    */
   public function getKbContentType() {
-    return 'ref';
+    return 'REF';
   }
 
 }

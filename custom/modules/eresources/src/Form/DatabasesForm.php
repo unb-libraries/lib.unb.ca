@@ -62,7 +62,7 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
           'form-control',
         ],
         'name' => '',
-        'id' => 'guide',
+        'id' => 'database-guide',
       ],
       '#option_attributes' => [
         0 => ['aria-disabled' => 'true'],
@@ -75,7 +75,7 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
     ];
 
     $form[$form_wrapper]['guide_wrapper']['actions']['submit_button'] = [
-      '#markup' => '<span class="btn btn-primary" id="guide-submit">GO</span>',
+      '#markup' => '<span class="btn btn-primary" id="database-guide-submit">GO</span>',
     ];
 
     $form[$form_wrapper]['database_wrapper'] = [

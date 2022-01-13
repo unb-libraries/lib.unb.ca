@@ -1,9 +1,16 @@
 (function ($, Drupal) {
-    Drupal.behaviors.eresourcesDatabaseForm = {
+    Drupal.behaviors.eresourcesForms = {
         attach: function(context, settings) {
-            $('#guide-submit').click(function(e) {
+            $('#reference-guide-submit').click(function(e) {
                 e.preventDefault();
-                let cat = $('#guide').val();
+                let cat = $('#reference-guide').val();
+                if (cat) {
+                    window.location = 'https://guides.lib.unb.ca/category/' + cat;
+                }
+            });
+            $('#database-guide-submit').click(function(e) {
+                e.preventDefault();
+                let cat = $('#database-guide').val();
                 if (cat) {
                     window.location = 'https://guides.lib.unb.ca/category/' + cat;
                 }
