@@ -47,9 +47,7 @@ class ReferenceForm extends KbFormBase implements KbFormInterface {
         'class' => [
           'form-row',
           'flex-sm-nowrap',
-          'border-bottom',
-          'border-dark',
-          'pb-2',
+          'mb-0',
         ],
       ],
       '#weight' => 0,
@@ -83,7 +81,18 @@ class ReferenceForm extends KbFormBase implements KbFormInterface {
       '#markup' => '<span class="btn btn-primary" id="reference-guide-submit">GO</span>',
     ];
 
-    $form[$form_wrapper]['guide_wrapper']['links'] = [
+    $form[$form_wrapper]['links_wrapper'] = [
+      '#type' => 'container',
+      '#attributes' => [
+        'class' => [
+          'border-bottom',
+          'border-dark',
+          'pb-3',
+        ],
+      ],
+      '#weight' => 0,
+    ];
+    $form[$form_wrapper]['links_wrapper']['links'] = [
       '#markup' => '<div class="wrapper-list-inline item-list">
 <ul>
 <li><a href="https://lib.unb.ca/eresources/guide-finding-reference-materials" title="Guide to finding Reference Materials at UNB Libraries"><i class="fa fa-question-circle"></i> Reference Materials Guide</a></li>
