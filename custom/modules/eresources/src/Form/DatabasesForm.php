@@ -75,7 +75,17 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
     ];
 
     $form[$form_wrapper]['guide_wrapper']['actions']['submit_button'] = [
-      '#markup' => '<span class="btn btn-primary form-control" id="database-guide-submit" tabindex="0">GO</span>',
+      '#type' => 'button',
+      '#value' => $this->t('GO'),
+      '#attributes' => [
+        'class' => [
+          'btn',
+          'btn-primary',
+          'form-control',
+        ],
+        'id' => 'database-guide-submit',
+        'type' => 'submit',
+      ],
     ];
 
     $form[$form_wrapper]['database_wrapper'] = [
@@ -130,7 +140,17 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
     ];
 
     $form[$form_wrapper]['database_wrapper']['actions']['submit_button'] = [
-      '#markup' => '<span class="btn btn-primary form-control" id="database-submit" tabindex="0">GO</span>',
+      '#type' => 'button',
+      '#value' => $this->t('GO'),
+      '#attributes' => [
+        'class' => [
+          'btn',
+          'btn-primary',
+          'form-control',
+        ],
+        'id' => 'database-submit',
+        'type' => 'submit',
+      ],
     ];
 
     $form[$form_wrapper]['query_wrapper']['query']['#title'] = '<span class="text-danger">OR</span> Search';
