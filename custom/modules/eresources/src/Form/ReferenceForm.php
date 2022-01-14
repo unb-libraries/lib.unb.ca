@@ -78,7 +78,7 @@ class ReferenceForm extends KbFormBase implements KbFormInterface {
     ];
 
     $form[$form_wrapper]['guide_wrapper']['actions']['submit_button'] = [
-      '#markup' => '<span class="btn btn-primary form-control" id="reference-guide-submit">GO</span>',
+      '#markup' => '<span class="btn btn-primary form-control" id="reference-guide-submit" tabindex="0">GO</span>',
     ];
 
     $form[$form_wrapper]['links_wrapper'] = [
