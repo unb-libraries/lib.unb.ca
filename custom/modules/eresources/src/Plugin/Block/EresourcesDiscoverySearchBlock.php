@@ -45,7 +45,7 @@ class EresourcesDiscoverySearchBlock extends BlockBase {
     $build = '
      <div class="Accordion d-flex flex-column flex-lg-row">
         <div id="eresources-discovery-search" class="flex-grow-1">
-        <div class="card border border-dark rounded-0">
+        <div class="card">
           <div class="card-header bg-black px-2 pb-0 pb-md-1 rounded-0">
             <h2 class="sr-only">Search</h2>
             <nav class="navbar navbar-expand-md text-nowrap">
@@ -75,7 +75,7 @@ class EresourcesDiscoverySearchBlock extends BlockBase {
               </div>
             </nav>
           </div>
-          <div class="card-body bg-light px-2 py-0">
+          <div class="card-body bg-light border border-black px-2 py-0">
     ';
 
     foreach (self::$forms as $form) {
