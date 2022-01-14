@@ -58,7 +58,7 @@ class KbFormBase extends FormBase {
    * {@inheritdoc}
    */
   public function getFormId() {
-    return 'eresources_' . $this->getKbFormId() . '_form';
+    return 'eres_' . $this->getKbFormId();
   }
 
   /**

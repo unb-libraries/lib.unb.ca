@@ -35,7 +35,7 @@ class EresourcesDiscoverySearchBlock extends BlockBase {
     $formBuilder = \Drupal::formBuilder();
     $renderer = \Drupal::service('renderer');
     $formId = \Drupal::request()->get('form_id');
-    if (preg_match('/^eresources_(.+)_form$/', $formId, $matches)) {
+    if (preg_match('/^eres_(.+)$/', $formId, $matches)) {
       $formId = $matches[1];
     }
     else {
@@ -67,7 +67,7 @@ class EresourcesDiscoverySearchBlock extends BlockBase {
       $formClass = '\Drupal\eresources\Form\\' . ucfirst($form) . 'Form';
       $title = $formClass::getTitle();
 
-      $build .= '<li class="nav-item"><button href="?form_id=eresources_' . $form . '_form" aria-controls="' . $form . '" aria-expanded="' . $expanded . '" class="Accordion-trigger p-2" id="' . $form . 'Btn"' . $tabindex . '>' . $title . '</button></li>';
+      $build .= '<li class="nav-item"><button href="?form_id=eres_' . $form . '" aria-controls="' . $form . '" aria-expanded="' . $expanded . '" class="Accordion-trigger p-2" id="' . $form . 'Btn"' . $tabindex . '>' . $title . '</button></li>';
     }
 
     $build .= '

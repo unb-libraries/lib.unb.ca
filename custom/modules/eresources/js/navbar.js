@@ -30,8 +30,7 @@
                 // TODO: Fix tab button highlight.
                 // Existing form ID.
                 if(newFormId) {
-                  newFormId = newFormId.replace('eresources_', '');
-                  newFormId = newFormId.replace('_form', '');
+                  newFormId = newFormId.replace('eres_', '');
                   selector = 'button[aria-controls=' + newFormId + ']';
                 }
 
