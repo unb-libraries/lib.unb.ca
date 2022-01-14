@@ -2,10 +2,10 @@
     Drupal.behaviors.eresourcesForms = {
         attach: function(context, settings) {
             $('#eresources-reference-form .chosen-container, #eresources-databases-form .chosen-container').bind('keypress', function(e) {
-              if(e.which === 13) {
-                var id = this.id.replace('_chosen', '-submit').replace('_', '-');
-                $('#' + id).click();
-              }
+                if(e.which === 13) {
+                    var id = this.id.replace('_chosen', '-submit').replace('_', '-');
+                    $('#' + id).click();
+                }
             });
             $('#reference-guide-submit').click(function(e) {
                 let cat = $('#reference-guide').val();
