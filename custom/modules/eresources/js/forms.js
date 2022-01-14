@@ -29,6 +29,12 @@
                     $('#eresources-databases-form').submit();
                 }
             });
+            $('#eresources-reference-form input[name=query], #eresources-databases-form input[name=query]').on('keypress', function (e) {
+                if (e.keyCode == 13) {
+                    e.preventDefault();
+                    $(e.target).closest('form').find('input[type=submit]').last().focus().click();
+                }
+            });
         }
     }
 })(jQuery, Drupal);
