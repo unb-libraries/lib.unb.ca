@@ -77,6 +77,7 @@ class LocalFormBase extends FormBase {
       '#attributes' => [
         'placeholder' => $this->getSearchPlaceholder(),
       ],
+      '#value' => '',
     ];
 
     $form[$form_wrapper]['query_wrapper']['actions'] = [
