@@ -44,7 +44,7 @@ class LocalFormBase extends FormBase {
     $form[$form_wrapper]['#cache'] = [
       'max-age' => 0,
     ];
-    // $form['#action'] = Url::fromRoute('eresources.' . $this->getKbFormId() . '_form')->toString();
+
     $form[$form_wrapper]['#after_build'] = ['::afterBuild'];
 
     $form[$form_wrapper]['info'] = [
