@@ -112,6 +112,7 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
     $indexQuery->addCondition('kb_data_type', $this->getKbContentType());
     $indexQuery->sort('title', 'ASC');
     $indexQuery->keys('*');
+    $indexQuery->range(0, 10000);
     $result = $indexQuery->execute();
 
     $options = ['' => '- Select a Database -'];
