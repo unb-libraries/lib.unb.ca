@@ -1,7 +1,7 @@
 (function ($, Drupal) {
     Drupal.behaviors.eresourcesForms = {
         attach: function(context, settings) {
-            $('#eresources-reference-form .chosen-container, #eresources-databases-form .chosen-container').bind('keypress', function(e) {
+            $('#eres-reference .chosen-container, #eres-databases .chosen-container').bind('keypress', function(e) {
                 if(e.which === 13) {
                     var id = this.id.replace('_chosen', '-submit').replace('_', '-');
                     $('#' + id).click();
@@ -26,10 +26,10 @@
                 if (query) {
                     e.preventDefault();
                     $('input[name=query]').val(query);
-                    $('#eresources-databases-form').submit();
+                    $('#eres-databases').submit();
                 }
             });
-            $('#eresources-reference-form input[name=query], #eresources-databases-form input[name=query]').on('keypress', function (e) {
+            $('#eres-reference input[name=query], #eres-databases input[name=query]').on('keypress', function (e) {
                 if (e.keyCode == 13) {
                     e.preventDefault();
                     $(e.target).closest('form').find('input[type=submit]').last().focus().click();
