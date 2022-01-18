@@ -51,10 +51,8 @@ class Award extends ContentEntityBase implements AwardInterface {
    * {@inheritDoc}
    */
   public function label() {
-    $label = $this->get('field_title');
-    return $label->view([
-      'label' => 'hidden',
-    ]);
+    return $this->get('field_title')
+      ->value;
   }
 
   /**
