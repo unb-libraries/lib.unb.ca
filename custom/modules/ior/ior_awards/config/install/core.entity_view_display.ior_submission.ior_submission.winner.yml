@@ -15,6 +15,7 @@ dependencies:
     - field.field.ior_submission.ior_submission.field_terms_conditions_accepted
     - field.field.ior_submission.ior_submission.field_title
     - field.field.ior_submission.ior_submission.field_website
+    - image.style.full_width
   module:
     - image
     - ior
@@ -52,7 +53,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: full_width
     third_party_settings: {  }
     weight: 0
     region: content

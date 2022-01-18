@@ -2,6 +2,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.ior_submission.ior_submission.field_awards
+    - field.field.ior_submission.ior_submission.field_collections
     - field.field.ior_submission.ior_submission.field_contest
     - field.field.ior_submission.ior_submission.field_department
     - field.field.ior_submission.ior_submission.field_description
@@ -23,67 +25,75 @@ bundle: ior_submission
 mode: default
 content:
   content_moderation_control:
-    weight: 0
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
+  field_collections:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
   field_department:
     type: string
-    weight: 4
-    region: content
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 4
+    region: content
   field_description:
-    weight: 7
+    type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 8
     region: content
   field_email:
-    weight: 3
+    type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 3
     region: content
   field_first_name:
     type: string
-    weight: 1
-    region: content
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 1
+    region: content
   field_image:
-    weight: 8
+    type: image
     label: above
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
     third_party_settings: {  }
-    type: image
+    weight: 9
     region: content
   field_last_name:
     type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
     weight: 2
     region: content
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
   field_title:
-    weight: 6
+    type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 7
     region: content
   field_website:
-    weight: 5
+    type: link
     label: above
     settings:
       trim_length: 80
@@ -92,9 +102,10 @@ content:
       rel: '0'
       target: _blank
     third_party_settings: {  }
-    type: link
+    weight: 5
     region: content
 hidden:
+  field_awards: true
   field_contest: true
   field_terms_conditions_accepted: true
   search_api_excerpt: true
