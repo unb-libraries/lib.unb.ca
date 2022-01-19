@@ -69,6 +69,10 @@ class LaptopAvailability extends BlockBase implements ContainerFactoryPluginInte
       'Saint John Library (Saint John)',
       '1 day loan',
     ],
+    'HWK-MISC7D1H' => [
+      'Saint John Library (Saint John)',
+      '7 day loan',
+    ],
   ];
 
   use OclcPluginManagerTrait;
