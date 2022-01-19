@@ -70,7 +70,8 @@ class LocalResult extends ResultBase implements ResultInterface {
    * {@inheritDoc}
    */
   public function getPublisher() {
-    return NULL;
+    $values = $this->item->getField('publisher')->getValues();
+    return $values[0];
   }
 
   /**
