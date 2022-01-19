@@ -298,7 +298,7 @@
         "drupal/paragraphs": "1.12",
         "drupal/redirect": "1.7",
         "drupal/redis": "1.5",
-        "drupal/samlauth": "3.3",
+        "drupal/samlauth": "3.4",
         "drupal/search_api": "1.21",
         "drupal/search_api_autocomplete": "1.5",
         "drupal/search_api_exclude": "2.0.0",
