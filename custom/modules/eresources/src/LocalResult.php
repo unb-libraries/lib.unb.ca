@@ -78,7 +78,8 @@ class LocalResult extends ResultBase implements ResultInterface {
    * {@inheritDoc}
    */
   public function getCoverage() {
-    return NULL;
+    $values = $this->item->getField('date_coverage')->getValues();
+    return $values[0];
   }
 
   /**

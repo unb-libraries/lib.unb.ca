@@ -54,6 +54,14 @@ name: eResources
 description: ''
 read_only: false
 field_settings:
+  date_coverage:
+    label: 'Date Coverage'
+    datasource_id: 'entity:eresources_record'
+    property_path: date_coverage
+    type: string
+    dependencies:
+      module:
+        - eresources
   id:
     label: ID
     datasource_id: 'entity:eresources_record'
