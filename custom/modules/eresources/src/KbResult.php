@@ -29,35 +29,35 @@ class KbResult extends ResultBase implements ResultInterface {
    * {@inheritDoc}
    */
   public function getCollectionName() {
-    return $this->item->{'kb:collection_name'};
+    return $this->item->{'kb:collection_name'} ?? NULL;
   }
 
   /**
    * {@inheritDoc}
    */
   public function getOcn() {
-    return $this->item->{'kb:oclcnum'};
+    return $this->item->{'kb:oclcnum'} ?? NULL;
   }
 
   /**
    * {@inheritDoc}
    */
   public function getIsbn() {
-    return $this->item->{'kb:isbn'};
+    return $this->item->{'kb:isbn'} ?? NULL;
   }
 
   /**
    * {@inheritDoc}
    */
   public function getIssn() {
-    return $this->item->{'kb:issn'};
+    return $this->item->{'kb:issn'} ?? NULL;
   }
 
   /**
    * {@inheritDoc}
    */
   public function getEissn() {
-    return $this->item->{'kb:eissn'};
+    return $this->item->{'kb:eissn'} ?? NULL;
   }
 
   /**
@@ -75,28 +75,28 @@ class KbResult extends ResultBase implements ResultInterface {
    * {@inheritDoc}
    */
   public function getAuthor() {
-    return $this->item->{'kb:author'};
+    return $this->item->{'kb:author'} ?? NULL;
   }
 
   /**
    * {@inheritDoc}
    */
   public function getPublisher() {
-    return $this->item->{'kb:publisher'};
+    return $this->item->{'kb:publisher'} ?? NULL;
   }
 
   /**
    * {@inheritDoc}
    */
   public function getCoverage() {
-    return $this->item->{'kb:coverage'};
+    return $this->item->{'kb:coverage'} ?? NULL;
   }
 
   /**
    * {@inheritDoc}
    */
   public function getCoverageEnum() {
-    return $this->item->{'kb:coverage_enum'};
+    return $this->item->{'kb:coverage_enum'} ?? NULL;
   }
 
   /**
