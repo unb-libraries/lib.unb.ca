@@ -75,16 +75,23 @@ class HarvestedCollectionPageWorker extends QueueWorkerBase implements Container
           continue;
         }
 
-        $fields = [
-          'collection_id' => $collection_id,
-          'uid' => $entry->{'kb:entry_uid'},
-          'title' => $entry->title,
-          'ocn' => $entry->{'kb:oclcnum'},
-          'date_coverage' => $entry->{'kb:coverage'},
-          'publisher' => $entity->{'kb:publisher'},
+        $kb_fields = [
+          'title', 'kb:entry_uid', 'kb:oclcnum', 'kb:coverage', 'kb:coverageenum', 'kb:publisher',
+          'kb:isbn', 'kb:issn', 'kb:eissn', 'kb:coverage_notes', 'kb:collection_user_notes', 'kb:location',
+          'kb:author',
         ];
+
+        $fields = [
+          'status' => TRUE,
+          'collection_id' => $collection_id,
+        ];
+
+        foreach ($kb_fields as $key) {
+          $local = str_replace('kb:', '', $key);
+          $fields[$local] = $entry->{$key} ?? NULL;
+        };
+
         foreach ($entry->links as $link) {
-          $fields['kb_data_type'] = $collection->getKbDataType();
           if ($link->rel == 'via') {
             $fields['url'] = $link->href;
             break;
@@ -102,6 +109,7 @@ class HarvestedCollectionPageWorker extends QueueWorkerBase implements Container
           }
         }
         else {
+          $fields['kb_data_type'] = $collection->getKbDataType();
           $entity = $storage->create($fields);
         }
         $entity->save();
