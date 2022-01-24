@@ -25,9 +25,8 @@ class LocalResult extends ResultBase implements ResultInterface {
   /**
    * {@inheritDoc}
    */
-  public function getOcn() {
-    $values = $this->item->getField('ocn')->getValues();
-    return $values[0];
+  public function getOclcNum() {
+    return $this->getFirstValue('oclcnum');
   }
 
   /**
@@ -101,6 +100,14 @@ class LocalResult extends ResultBase implements ResultInterface {
    */
   public function getPermittedUseStatement() {
     return NULL;
+  }
+
+  /**
+   * Return the first field value from the index, or NULL.
+   */
+  private function getFirstValue($field) {
+    $values = $this->item->getField($field)->getValues();
+    return $values[0] ?? NULL;
   }
 
 }

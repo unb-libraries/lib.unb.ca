@@ -47,7 +47,7 @@
           {% endif %}
         </div>
         <div class="col col-lg-4 oclcnum">
-          {% if entry.getOcn is not empty %}<p>WorldCat: <a href="https://unb.on.worldcat.org/oclc/{{ entry.getOcn }}">{{ entry.getOcn }}</a></p>{% endif %}
+          {% if entry.getOclcNum is not empty %}<p>WorldCat: <a href="https://unb.on.worldcat.org/oclc/{{ entry.getOclcNum }}">{{ entry.getOclcNum }}</a></p>{% endif %}
         </div>
       </div>
     </li>
@@ -56,7 +56,7 @@
     {% set nextIndex = loop.index0 + 1 %}
     {% if loop.last or (
       entry.getTitle|lower != eresources[nextIndex].getTitle|lower and
-      entry.getOcn != eresources[nextIndex].getOcn
+      entry.getOclcNum != eresources[nextIndex].getOclcNum
     ) %}
       <li class="list-group-item {{ cycle(stripe, row) }}">
         <div class="row">

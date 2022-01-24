@@ -31,7 +31,7 @@ interface ResultInterface {
    * @return string
    *   OCLC Number.
    */
-  public function getOcn();
+  public function getOclcNum();
 
   /**
    * ISBN.

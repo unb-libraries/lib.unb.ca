@@ -77,13 +77,13 @@ class Record extends ContentEntityBase implements ContentEntityInterface {
       ])
       ->setDisplayConfigurable('form', TRUE);
 
-    $fields['ocn'] = BaseFieldDefinition::create('string')
+    $fields['oclcnum'] = BaseFieldDefinition::create('string')
       ->setLabel(t('OCLC Number (OCN)'))
       ->setRequired(TRUE)
       ->setSettings(
         [
           'default_value' => '',
-          'max_length' => 255,
+          'max_length' => 256,
         ]
       )
       ->setDisplayOptions('form', [

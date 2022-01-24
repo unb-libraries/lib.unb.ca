@@ -35,7 +35,7 @@ class KbResult extends ResultBase implements ResultInterface {
   /**
    * {@inheritDoc}
    */
-  public function getOcn() {
+  public function getOclcNum() {
     return $this->item->{'kb:oclcnum'} ?? NULL;
   }
 
