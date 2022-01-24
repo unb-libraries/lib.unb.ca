@@ -93,7 +93,7 @@ class HarvestedCollectionPageWorker extends QueueWorkerBase implements Container
 
         // Add or update record.
         $query = $storage->getQuery();
-        $ids = $query->condition('uid', $entry->{'kb:entry_uid'})->execute();
+        $ids = $query->condition('entry_uid', $entry->{'kb:entry_uid'})->execute();
         if (!empty($ids)) {
           $id = reset($ids);
           $entity = $storage->load($id);

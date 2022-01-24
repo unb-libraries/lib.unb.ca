@@ -47,13 +47,13 @@ class Record extends ContentEntityBase implements ContentEntityInterface {
       ->setSetting('target_type', 'eresources_harvested_collection')
       ->setSetting('handler', 'default');
 
-    $fields['uid'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('OCLC UID'))
+    $fields['entry_uid'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('OCLC Entry UID'))
       ->setRequired(TRUE)
       ->setSettings(
         [
           'default_value' => '',
-          'max_length' => 255,
+          'max_length' => 256,
         ]
       )
       ->setDisplayOptions('form', [
