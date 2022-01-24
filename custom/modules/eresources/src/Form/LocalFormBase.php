@@ -149,6 +149,7 @@ class LocalFormBase extends FormBase {
       }
 
       $indexQuery->addCondition('kb_data_type', $this->getKbContentType());
+      $indexQuery->addCondition('status', TRUE);
       $indexQuery->range($start - 1, $perPage);
       $indexQuery->sort('search_api_relevance', 'DESC');
 
