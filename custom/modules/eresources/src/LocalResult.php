@@ -11,15 +11,14 @@ class LocalResult extends ResultBase implements ResultInterface {
    * {@inheritDoc}
    */
   public function getTitle() {
-    $values = $this->item->getField('title')->getValues();
-    return $values[0];
+    return $this->getFirstValue('title');
   }
 
   /**
    * {@inheritDoc}
    */
   public function getCollectionName() {
-    return NULL;
+    return $this->getFirstValue('collection_name');
   }
 
   /**
@@ -33,73 +32,77 @@ class LocalResult extends ResultBase implements ResultInterface {
    * {@inheritDoc}
    */
   public function getIsbn() {
-    return NULL;
+    return $this->getFirstValue('isbn');
   }
 
   /**
    * {@inheritDoc}
    */
   public function getIssn() {
-    return NULL;
+    return $this->getFirstValue('issn');
   }
 
   /**
    * {@inheritDoc}
    */
   public function getEissn() {
-    return NULL;
+    return $this->getFirstValue('eissn');
   }
 
   /**
    * {@inheritDoc}
    */
   public function getViaUrl() {
-    $values = $this->item->getField('url')->getValues();
-    return $values[0];
+    return $this->getFirstValue('url');
   }
 
   /**
    * {@inheritDoc}
    */
   public function getAuthor() {
-    return NULL;
+    return $this->getFirstValue('author');
   }
 
   /**
    * {@inheritDoc}
    */
   public function getPublisher() {
-    $values = $this->item->getField('publisher')->getValues();
-    return $values[0];
+    return $this->getFirstValue('publisher');
   }
 
   /**
    * {@inheritDoc}
    */
   public function getCoverage() {
-    $values = $this->item->getField('date_coverage')->getValues();
-    return $values[0];
+    return $this->getFirstValue('coverage');
   }
 
   /**
    * {@inheritDoc}
    */
   public function getCoverageEnum() {
-    return NULL;
+    return $this->getFirstValue('coverageenum');
   }
 
   /**
    * {@inheritDoc}
    */
-  public function getCoverageStatement() {
-    return NULL;
+  public function getCoverageNotes() {
+    return $this->getFirstValue('coverage_notes');
   }
 
   /**
    * {@inheritDoc}
    */
-  public function getPermittedUseStatement() {
-    return NULL;
+  public function getCollectionUserNotes() {
+    return $this->getFirstValue('collection_user_notes');
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getLocation() {
+    return $this->getFirstValue('location');
   }
 
   /**

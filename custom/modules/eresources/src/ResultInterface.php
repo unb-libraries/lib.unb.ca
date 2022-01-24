@@ -98,19 +98,27 @@ interface ResultInterface {
   public function getCoverageEnum();
 
   /**
-   * Coverage Statement.
+   * Coverage notes.
    *
    * @return string
-   *   Coverage Statement.
+   *   Coverage notes.
    */
-  public function getCoverageStatement();
+  public function getCoverageNotes();
 
   /**
-   * Permitted Use.
+   * Collection user notes.
    *
    * @return string
-   *   Permitted Use.
+   *   Collection user notes.
    */
-  public function getPermittedUseStatement();
+  public function getCollectionUserNotes();
+
+  /**
+   * Location.
+   *
+   * @return string
+   *   Location.
+   */
+  public function getLocation();
 
 }
