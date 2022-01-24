@@ -92,13 +92,43 @@ class Record extends ContentEntityBase implements ContentEntityInterface {
       ])
       ->setDisplayConfigurable('form', TRUE);
 
-    $fields['alt_title'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Alternate Title'))
-      ->setRequired(FALSE)
+    $fields['isbn'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('ISBN'))
+      ->setRequired(TRUE)
       ->setSettings(
         [
           'default_value' => '',
-          'max_length' => 1024,
+          'max_length' => 256,
+        ]
+      )
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['issn'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('ISSN'))
+      ->setRequired(TRUE)
+      ->setSettings(
+        [
+          'default_value' => '',
+          'max_length' => 256,
+        ]
+      )
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['eissn'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('eISSN'))
+      ->setRequired(TRUE)
+      ->setSettings(
+        [
+          'default_value' => '',
+          'max_length' => 256,
         ]
       )
       ->setDisplayOptions('form', [
@@ -122,77 +152,6 @@ class Record extends ContentEntityBase implements ContentEntityInterface {
       ])
       ->setDisplayConfigurable('form', TRUE);
 
-    $fields['help_url'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Help URL'))
-      ->setRequired(FALSE)
-      ->setSettings(
-        [
-          'default_value' => '',
-          'max_length' => 1024,
-        ]
-      )
-      ->setDisplayOptions('form', [
-        'type' => 'string_textfield',
-        'weight' => 0,
-      ])
-      ->setDisplayConfigurable('form', TRUE);
-
-    $fields['about_url'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('About URL'))
-      ->setRequired(FALSE)
-      ->setSettings(
-        [
-          'default_value' => '',
-          'max_length' => 1024,
-        ]
-      )
-      ->setDisplayOptions('form', [
-        'type' => 'string_textfield',
-        'weight' => 0,
-      ])
-      ->setDisplayConfigurable('form', TRUE);
-
-    $fields['zotero_url'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Zotero URL'))
-      ->setRequired(FALSE)
-      ->setSettings(
-        [
-          'default_value' => '',
-          'max_length' => 1024,
-        ]
-      )
-      ->setDisplayOptions('form', [
-        'type' => 'string_textfield',
-        'weight' => 0,
-      ])
-      ->setDisplayConfigurable('form', TRUE);
-
-    $fields['subscribed_on'] = BaseFieldDefinition::create('datetime')
-      ->setLabel(t('Subscribed On'))
-      ->setRequired(FALSE)
-      ->setSettings([
-        'default_value' => '',
-        'datetime_type' => 'date',
-      ])
-      ->setDisplayOptions('form', [
-        'type' => 'datetime',
-        'weight' => 0,
-      ])
-      ->setDisplayConfigurable('form', TRUE);
-
-    $fields['subscription_expires'] = BaseFieldDefinition::create('datetime')
-      ->setLabel(t('Subscription Expires'))
-      ->setRequired(FALSE)
-      ->setSettings([
-        'default_value' => '',
-        'datetime_type' => 'date',
-      ])
-      ->setDisplayOptions('form', [
-        'type' => 'datetime',
-        'weight' => 0,
-      ])
-      ->setDisplayConfigurable('form', TRUE);
-
     $fields['publisher'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Publisher'))
       ->setRequired(FALSE)
@@ -208,28 +167,13 @@ class Record extends ContentEntityBase implements ContentEntityInterface {
       ])
       ->setDisplayConfigurable('form', TRUE);
 
-    $fields['description'] = BaseFieldDefinition::create('text')
-      ->setLabel(t('Description'))
+    $fields['coverage'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Coverage'))
       ->setRequired(FALSE)
       ->setSettings(
         [
           'default_value' => '',
-          'max_length' => 2048,
-        ]
-      )
-      ->setDisplayOptions('form', [
-        'type' => 'text_textfield',
-        'weight' => 0,
-      ])
-      ->setDisplayConfigurable('form', TRUE);
-
-    $fields['date_coverage'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Date Coverage'))
-      ->setRequired(FALSE)
-      ->setSettings(
-        [
-          'default_value' => '',
-          'max_length' => 255,
+          'max_length' => 256,
         ]
       )
       ->setDisplayOptions('form', [
@@ -238,13 +182,28 @@ class Record extends ContentEntityBase implements ContentEntityInterface {
       ])
       ->setDisplayConfigurable('form', TRUE);
 
-    $fields['access_info'] = BaseFieldDefinition::create('text')
-      ->setLabel(t('Access Information'))
-      ->setRequired(TRUE)
+    $fields['coverageenum'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Coverage enumeration'))
+      ->setRequired(FALSE)
       ->setSettings(
         [
           'default_value' => '',
-          'max_length' => 2048,
+          'max_length' => 256,
+        ]
+      )
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['coverage_notes'] = BaseFieldDefinition::create('text')
+      ->setLabel(t('Coverage Notes'))
+      ->setRequired(FALSE)
+      ->setSettings(
+        [
+          'default_value' => '',
+          'max_length' => 1024,
         ]
       )
       ->setDisplayOptions('form', [
@@ -253,17 +212,47 @@ class Record extends ContentEntityBase implements ContentEntityInterface {
       ])
       ->setDisplayConfigurable('form', TRUE);
 
-    $fields['license_status'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('License Status'))
+    $fields['collection_user_notes'] = BaseFieldDefinition::create('text')
+      ->setLabel(t('Collection User Notes'))
+      ->setRequired(FALSE)
+      ->setSettings(
+        [
+          'default_value' => '',
+          'max_length' => 1024,
+        ]
+      )
+      ->setDisplayOptions('form', [
+        'type' => 'text_textfield',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['location'] = BaseFieldDefinition::create('text')
+      ->setLabel(t('Location'))
+      ->setRequired(FALSE)
+      ->setSettings(
+        [
+          'default_value' => '',
+          'max_length' => 256,
+        ]
+      )
+      ->setDisplayOptions('form', [
+        'type' => 'text_textfield',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['author'] = BaseFieldDefinition::create('text')
+      ->setLabel(t('Author'))
       ->setRequired(TRUE)
       ->setSettings(
         [
           'default_value' => '',
-          'max_length' => 255,
+          'max_length' => 1024,
         ]
       )
       ->setDisplayOptions('form', [
-        'type' => 'string_textfield',
+        'type' => 'text_textfield',
         'weight' => 0,
       ])
       ->setDisplayConfigurable('form', TRUE);
@@ -274,7 +263,7 @@ class Record extends ContentEntityBase implements ContentEntityInterface {
       ->setSettings(
         [
           'default_value' => '',
-          'max_length' => 255,
+          'max_length' => 256,
         ]
       )
       ->setDisplayOptions('form', [
