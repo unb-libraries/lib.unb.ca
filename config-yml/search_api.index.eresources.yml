@@ -2,30 +2,27 @@ uuid: df57674d-58da-44d8-b893-9c5b939f9f46
 langcode: en
 status: true
 dependencies:
+  config:
+    - search_api.server.drupal_solr_lib_unb_ca
   module:
     - search_api_solr
     - eresources
     - search_api
-  config:
-    - search_api.server.drupal_solr_lib_unb_ca
 third_party_settings:
   search_api_solr:
     finalize: false
     commit_before_finalize: false
     commit_after_finalize: false
-    multilingual:
-      limit_to_content_language: false
-      include_language_independent: true
     highlighter:
       maxAnalyzedChars: 51200
       fragmenter: gap
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
       regex:
         slop: 0.5
         pattern: blank
         maxAnalyzedChars: 10000
-      usePhraseHighlighter: true
-      highlightMultiTerm: true
-      preserveMulti: false
       highlight:
         mergeContiguous: false
         requireFieldMatch: false
@@ -49,15 +46,66 @@ third_party_settings:
       index_prefix: ''
       collection: ''
       timezone: ''
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
 id: eresources
 name: eResources
 description: ''
 read_only: false
 field_settings:
-  date_coverage:
-    label: 'Date Coverage'
+  author:
+    label: Author
     datasource_id: 'entity:eresources_record'
-    property_path: date_coverage
+    property_path: author
+    type: text
+    dependencies:
+      module:
+        - eresources
+  collection_name:
+    label: 'Collection ID » eResources Harvested Collection » Name'
+    datasource_id: 'entity:eresources_record'
+    property_path: 'collection_id:entity:name'
+    type: string
+    dependencies:
+      module:
+        - eresources
+  collection_user_notes:
+    label: 'Collection User Notes'
+    datasource_id: 'entity:eresources_record'
+    property_path: collection_user_notes
+    type: string
+    dependencies:
+      module:
+        - eresources
+  coverage:
+    label: Coverage
+    datasource_id: 'entity:eresources_record'
+    property_path: coverage
+    type: string
+    dependencies:
+      module:
+        - eresources
+  coverage_notes:
+    label: 'Coverage Notes'
+    datasource_id: 'entity:eresources_record'
+    property_path: coverage_notes
+    type: string
+    dependencies:
+      module:
+        - eresources
+  coverageenum:
+    label: 'Coverage enumeration'
+    datasource_id: 'entity:eresources_record'
+    property_path: coverageenum
+    type: string
+    dependencies:
+      module:
+        - eresources
+  eissn:
+    label: eISSN
+    datasource_id: 'entity:eresources_record'
+    property_path: eissn
     type: string
     dependencies:
       module:
@@ -70,6 +118,22 @@ field_settings:
     dependencies:
       module:
         - eresources
+  isbn:
+    label: ISBN
+    datasource_id: 'entity:eresources_record'
+    property_path: isbn
+    type: string
+    dependencies:
+      module:
+        - eresources
+  issn:
+    label: ISSN
+    datasource_id: 'entity:eresources_record'
+    property_path: issn
+    type: string
+    dependencies:
+      module:
+        - eresources
   kb_data_type:
     label: 'KB Data Type'
     datasource_id: 'entity:eresources_record'
@@ -78,10 +142,10 @@ field_settings:
     dependencies:
       module:
         - eresources
-  ocn:
+  oclcnum:
     label: 'OCLC Number (OCN)'
     datasource_id: 'entity:eresources_record'
-    property_path: ocn
+    property_path: oclcnum
     type: string
     dependencies:
       module:
@@ -94,17 +158,16 @@ field_settings:
     dependencies:
       module:
         - eresources
-  title:
-    label: Title
+  status:
+    label: 'Publishing status'
     datasource_id: 'entity:eresources_record'
-    property_path: title
-    type: string
-    boost: !!float 2
+    property_path: status
+    type: boolean
     dependencies:
       module:
         - eresources
-  title_fulltext:
-    label: 'Title (Fulltext)'
+  title:
+    label: Title
     datasource_id: 'entity:eresources_record'
     property_path: title
     type: 'solr_text_custom:ngram'
@@ -125,6 +188,7 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
+  entity_type: {  }
   language_with_fallback: {  }
   rendered_item: {  }
   solr_date_range: {  }
@@ -132,6 +196,7 @@ tracker_settings:
   default:
     indexing_order: fifo
 options:
-  index_directly: true
   cron_limit: 50
+  index_directly: true
+  track_changes_in_references: true
 server: drupal_solr_lib_unb_ca
