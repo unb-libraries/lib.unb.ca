@@ -126,7 +126,7 @@ class LocalFormBase extends FormBase {
 
       switch ($req->get('type')) {
         case 'title':
-          $indexQuery->setFulltextFields(['title_fulltext']);
+          $indexQuery->setFulltextFields(['title']);
           $indexQuery->keys($query);
           break;
 
