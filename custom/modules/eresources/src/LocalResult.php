@@ -110,7 +110,11 @@ class LocalResult extends ResultBase implements ResultInterface {
    */
   private function getFirstValue($field) {
     $values = $this->item->getField($field)->getValues();
-    return $values[0] ?? NULL;
+    $result = $values[0] ?? NULL;
+    if (!is_null($result)) {
+      $result = (string) $result;
+    }
+    return $result;
   }
 
 }
