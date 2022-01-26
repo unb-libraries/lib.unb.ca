@@ -58,6 +58,22 @@ class Record extends ContentEntityBase implements ContentEntityInterface {
 
     $fields['entry_uid'] = BaseFieldDefinition::create('string')
       ->setLabel(t('OCLC Entry UID'))
+      ->setDescription(t('Used for Knowledge Base synchronization.'))
+      ->setRequired(FALSE)
+      ->setSettings(
+        [
+          'default_value' => '',
+          'max_length' => 256,
+        ]
+      )
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['kb_data_type'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('KB Data Type'))
       ->setRequired(TRUE)
       ->setSettings(
         [
@@ -86,69 +102,9 @@ class Record extends ContentEntityBase implements ContentEntityInterface {
       ])
       ->setDisplayConfigurable('form', TRUE);
 
-    $fields['oclcnum'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('OCLC Number (OCN)'))
-      ->setRequired(TRUE)
-      ->setSettings(
-        [
-          'default_value' => '',
-          'max_length' => 256,
-        ]
-      )
-      ->setDisplayOptions('form', [
-        'type' => 'string_textfield',
-        'weight' => 0,
-      ])
-      ->setDisplayConfigurable('form', TRUE);
-
-    $fields['isbn'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('ISBN'))
-      ->setRequired(TRUE)
-      ->setSettings(
-        [
-          'default_value' => '',
-          'max_length' => 256,
-        ]
-      )
-      ->setDisplayOptions('form', [
-        'type' => 'string_textfield',
-        'weight' => 0,
-      ])
-      ->setDisplayConfigurable('form', TRUE);
-
-    $fields['issn'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('ISSN'))
-      ->setRequired(TRUE)
-      ->setSettings(
-        [
-          'default_value' => '',
-          'max_length' => 256,
-        ]
-      )
-      ->setDisplayOptions('form', [
-        'type' => 'string_textfield',
-        'weight' => 0,
-      ])
-      ->setDisplayConfigurable('form', TRUE);
-
-    $fields['eissn'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('eISSN'))
-      ->setRequired(TRUE)
-      ->setSettings(
-        [
-          'default_value' => '',
-          'max_length' => 256,
-        ]
-      )
-      ->setDisplayOptions('form', [
-        'type' => 'string_textfield',
-        'weight' => 0,
-      ])
-      ->setDisplayConfigurable('form', TRUE);
-
-    $fields['url'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('URL'))
-      ->setRequired(TRUE)
+    $fields['author'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Author'))
+      ->setRequired(FALSE)
       ->setSettings(
         [
           'default_value' => '',
@@ -168,6 +124,81 @@ class Record extends ContentEntityBase implements ContentEntityInterface {
         [
           'default_value' => '',
           'max_length' => 256,
+        ]
+      )
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['oclcnum'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('OCLC Number (OCN)'))
+      ->setRequired(FALSE)
+      ->setSettings(
+        [
+          'default_value' => '',
+          'max_length' => 256,
+        ]
+      )
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['isbn'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('ISBN'))
+      ->setRequired(FALSE)
+      ->setSettings(
+        [
+          'default_value' => '',
+          'max_length' => 256,
+        ]
+      )
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['issn'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('ISSN'))
+      ->setRequired(FALSE)
+      ->setSettings(
+        [
+          'default_value' => '',
+          'max_length' => 256,
+        ]
+      )
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['eissn'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('eISSN'))
+      ->setRequired(FALSE)
+      ->setSettings(
+        [
+          'default_value' => '',
+          'max_length' => 256,
+        ]
+      )
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['url'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('URL'))
+      ->setRequired(FALSE)
+      ->setSettings(
+        [
+          'default_value' => '',
+          'max_length' => 1024,
         ]
       )
       ->setDisplayOptions('form', [
@@ -206,7 +237,7 @@ class Record extends ContentEntityBase implements ContentEntityInterface {
       ])
       ->setDisplayConfigurable('form', TRUE);
 
-    $fields['coverage_notes'] = BaseFieldDefinition::create('text')
+    $fields['coverage_notes'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Coverage Notes'))
       ->setRequired(FALSE)
       ->setSettings(
@@ -216,12 +247,12 @@ class Record extends ContentEntityBase implements ContentEntityInterface {
         ]
       )
       ->setDisplayOptions('form', [
-        'type' => 'text_textfield',
+        'type' => 'string_textfield',
         'weight' => 0,
       ])
       ->setDisplayConfigurable('form', TRUE);
 
-    $fields['collection_user_notes'] = BaseFieldDefinition::create('text')
+    $fields['collection_user_notes'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Collection User Notes'))
       ->setRequired(FALSE)
       ->setSettings(
@@ -231,44 +262,14 @@ class Record extends ContentEntityBase implements ContentEntityInterface {
         ]
       )
       ->setDisplayOptions('form', [
-        'type' => 'text_textfield',
+        'type' => 'string_textfield',
         'weight' => 0,
       ])
       ->setDisplayConfigurable('form', TRUE);
 
-    $fields['location'] = BaseFieldDefinition::create('text')
+    $fields['location'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Location'))
       ->setRequired(FALSE)
-      ->setSettings(
-        [
-          'default_value' => '',
-          'max_length' => 256,
-        ]
-      )
-      ->setDisplayOptions('form', [
-        'type' => 'text_textfield',
-        'weight' => 0,
-      ])
-      ->setDisplayConfigurable('form', TRUE);
-
-    $fields['author'] = BaseFieldDefinition::create('text')
-      ->setLabel(t('Author'))
-      ->setRequired(TRUE)
-      ->setSettings(
-        [
-          'default_value' => '',
-          'max_length' => 1024,
-        ]
-      )
-      ->setDisplayOptions('form', [
-        'type' => 'text_textfield',
-        'weight' => 0,
-      ])
-      ->setDisplayConfigurable('form', TRUE);
-
-    $fields['kb_data_type'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('KB Data Type'))
-      ->setRequired(TRUE)
       ->setSettings(
         [
           'default_value' => '',
@@ -282,9 +283,13 @@ class Record extends ContentEntityBase implements ContentEntityInterface {
       ->setDisplayConfigurable('form', TRUE);
 
     $fields['status'] = BaseFieldDefinition::create('boolean')
-      ->setLabel(t('Publishing status'))
+      ->setLabel(t('Mark as published'))
       ->setDescription(t('A boolean indicating whether the Record is published.'))
-      ->setDefaultValue(TRUE);
+      ->setDefaultValue(TRUE)
+      ->setDisplayOptions('form', [
+        'type' => 'boolean_checkbox',
+        'weight' => 0,
+      ]);
 
     return $fields;
   }
