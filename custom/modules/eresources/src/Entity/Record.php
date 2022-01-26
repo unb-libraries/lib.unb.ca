@@ -16,10 +16,16 @@ use Drupal\lib_unb_custom_entity\Entity\ContentEntityBase;
  *   label_plural = @Translation("eResources Records"),
  *   label_collection = @Translation("eResources Records"),
  *   handlers = {
+ *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
+ *     "views_data" = "Drupal\views\EntityViewsData",
  *     "route_provider" = {
  *       "html" = "Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider",
  *     },
  *     "access" = "Drupal\lib_unb_custom_entity\Entity\EntityAccessControlHandler",
+ *     "form" = {
+ *       "default" = "Drupal\lib_unb_custom_entity\Form\ContentEntityForm",
+ *       "delete" = "Drupal\lib_unb_custom_entity\Form\ContentEntityConfirmForm",
+ *     },
  *   },
  *   base_table = "eresources_record",
  *   admin_permission = "administer eresources_record entities",
@@ -29,7 +35,10 @@ use Drupal\lib_unb_custom_entity\Entity\ContentEntityBase;
  *     "status" = "status",
  *   },
  *   links = {
- *     "canonical" = "/eresources/record/{eresources_record}"
+ *     "canonical" = "/eresources/record/{eresources_record}",
+ *     "add-form" = "/admin/eresources/record/add",
+ *     "edit-form" = "/admin/eresources/record/{eresources_record}/edit",
+ *     "delete-form" = "/admin/eresources/record/{eresources_record}/delete",
  *   },
  *   field_ui_base_route = "entity.eresources_record.settings",
  * )
