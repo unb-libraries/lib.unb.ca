@@ -13,7 +13,7 @@ eresources.license.view:
   requirements:
     _permission: 'access content'
 entity.eresources_harvested_collection.synchronize:
-  path: '/eresources/harvested_collection/{eresources_harvested_collection}/sync'
+  path: '/admin/eresources/harvested_collection/{eresources_harvested_collection}/sync'
   defaults:
     _title: 'Synchronize eResources Harvested Collection'
     _controller: '\Drupal\eresources\Controller\HarvestedCollectionController::synchronize'

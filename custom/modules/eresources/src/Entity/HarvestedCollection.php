@@ -34,12 +34,12 @@ use Drupal\lib_unb_custom_entity\Entity\ContentEntityBase;
  *     "label" = "name",
  *   },
  *   links = {
- *     "canonical" = "/eresources/harvested_collection/{eresources_harvested_collection}",
- *     "add-form" = "/eresources/harvested_collections/add",
- *     "edit-form" = "/eresources/harvested_collections/{eresources_harvested_collection}/edit",
- *     "delete-form" = "/eresources/harvested_collections/{eresources_harvested_collection}/delete",
- *     "collection" = "/eresources/harvested_collections",
- *     "synchronize" = "/eresources/harvested_collections/{eresources_harvested_collection}/sync",
+ *     "canonical" = "/admin/eresources/harvested_collection/{eresources_harvested_collection}",
+ *     "add-form" = "/admin/eresources/harvested_collections/add",
+ *     "edit-form" = "/admin/eresources/harvested_collections/{eresources_harvested_collection}/edit",
+ *     "delete-form" = "/admin/eresources/harvested_collections/{eresources_harvested_collection}/delete",
+ *     "collection" = "/admin/eresources/harvested_collections",
+ *     "synchronize" = "/admin/eresources/harvested_collections/{eresources_harvested_collection}/sync",
  *   }
  * )
  */
