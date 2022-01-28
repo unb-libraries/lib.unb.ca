@@ -30,7 +30,7 @@ class RecordController extends ControllerBase {
 
     if ($result->getResultCount() == 0) {
       return [
-        '#markup' => '<p class="mt-3"><span class="text-danger fas fa-exclamation-triangle"></span> It appears we no longer license this resource or you have followed an invalid resource number.</p><p>Try searching <a href="?form_id=databases">Databases</a> or <a href="?form_id=eres_reference">e-Reference Materials</a> for alternatives.</p>',
+        '#markup' => '<p class="mt-3"><span class="text-danger fas fa-exclamation-triangle"></span> It appears we no longer license this resource or you have followed an invalid resource number.</p><p>Try searching <a href="?form_id=eres_databases">Databases</a> or <a href="?form_id=eres_reference">e-Reference Materials</a> for alternatives.</p>',
       ];
     }
 
