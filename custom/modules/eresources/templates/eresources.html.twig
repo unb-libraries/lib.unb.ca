@@ -14,7 +14,6 @@
        last item on the page.
     #}
     {% set chunk %}
-      {% set url = entry.getViaUrl %}
       {% set extra = [] %}
       {% if entry.getAuthor %}{% set author = entry.getAuthor|replace({'|': '; '}) %}{% set extra = extra|merge([author]) %}{% endif %}
       {% if form_id != 'journals' and entry.getPublisher %}{% set extra = extra|merge([entry.getPublisher]) %}{% endif %}
@@ -24,7 +23,7 @@
     <li>
       <div class="row mb-2">
         <div class="col-12 col-lg-8">
-          <p class="mb-0"><a class="d-inline" href="{{ url }}" target="_blank" onclick='javascript: _gaq.push(["_trackPageview", "/GA/{{ entry.getTitle }}"]);'>
+          <p class="mb-0"><a class="d-inline" href="{{ entry.getViaUrl }}" target="_blank" onclick='javascript: _gaq.push(["_trackPageview", "/GA/{{ entry.getTitle }}"]);'>
             <span class="sr-only">{{ entry.getTitle }} in </span> {{ entry.getCollectionName }}
           </a>
           {% if extra %}
