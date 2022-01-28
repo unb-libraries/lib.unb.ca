@@ -24,7 +24,7 @@ class SubmissionAccessControlHandler extends EntityAccessControlHandler {
    * {@inheritDoc}
    */
   protected function hasEntityTypePermission(EntityTypeInterface $entity_type, string $operation, AccountInterface $account) {
-    list($moderation_state, $operation) = explode('.', $operation);
+    [$moderation_state, $operation] = explode('.', $operation);
     if (!$access = parent::hasEntityTypePermission($entity_type, $operation, $account)) {
       $access = parent::hasEntityTypePermission($entity_type, "{$operation} {$moderation_state}", $account);
     }
