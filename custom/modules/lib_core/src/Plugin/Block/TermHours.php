@@ -21,7 +21,7 @@ class TermHours extends BlockBase {
    */
   public function build() {
     $config = $this->getConfiguration();
-    $body = isset($config['body']) ? $config['body'] : '';
+    $body = $config['body'] ?? '';
 
     return [
       '#type' => 'html_tag',
@@ -41,7 +41,7 @@ class TermHours extends BlockBase {
       '#type' => 'textarea',
       '#title' => $this->t('Body'),
       '#description' => $this->t('The content to display'),
-      '#default_value' => isset($config['body']) ? $config['body'] : '',
+      '#default_value' => $config['body'] ?? '',
     ];
     return $form;
   }

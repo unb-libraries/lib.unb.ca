@@ -40,7 +40,7 @@ class OCLCServiceAlertStatusClientSettingsForm extends ConfigFormBase {
       '#type' => 'textfield',
       '#title' => 'Request URL',
       '#description' => $this->t('URL from which request the oclc service status.'),
-      '#default_value' => isset($base_url) ? $base_url : $default_base_url,
+      '#default_value' => $base_url ?? $default_base_url,
     ];
 
     $refresh_interval = $config->get('refresh_interval');
@@ -58,7 +58,7 @@ class OCLCServiceAlertStatusClientSettingsForm extends ConfigFormBase {
       '#type' => 'textarea',
       '#title' => 'Message',
       '#description' => $this->t('Message to be displayed.'),
-      '#default_value' => isset($message) ? $message : $default_message,
+      '#default_value' => $message ?? $default_message,
     ];
 
     return parent::buildForm($form, $form_state);

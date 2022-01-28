@@ -266,7 +266,7 @@ class License {
         }
         $note = $this->getOption($subterm, 'Note');
         if ($note !== NULL) {
-          $notes["$key/" . $subterm->subTermName] = isset($note->value) ? $note->value : '';
+          $notes["$key/" . $subterm->subTermName] = $note->value ?? '';
         }
         else {
           // Search for "Description" metadata.

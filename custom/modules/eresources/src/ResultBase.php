@@ -122,7 +122,7 @@ class ResultBase {
     foreach ($fulltextRanges as $range) {
       if (preg_match("/([^~]+)(~(.*))?/", $range, $matches)) {
         $start = $matches[1];
-        $end   = isset($matches[3]) ? $matches[3] : '';
+        $end   = $matches[3] ?? '';
 
         $formattedRanges[] = str_replace('-', '–', str_replace(':', ' ', str_replace(';', ', ', "$start-$end")));
       }
@@ -173,8 +173,8 @@ class ResultBase {
     $formattedRanges = [];
     foreach ($fulltextRanges as $range) {
       if (preg_match("/([^~]+)(~(.*))?/", $range, $matches)) {
-        $start = isset($matches[1]) ? $matches[1] : '';
-        $end = isset($matches[3]) ? $matches[3] : '';
+        $start = $matches[1] ?? '';
+        $end = $matches[3] ?? '';
 
         if (preg_match('/(ebook|video)/', $text)) {
           $formattedRanges[] = $start;

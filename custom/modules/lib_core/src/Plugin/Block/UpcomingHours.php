@@ -24,9 +24,9 @@ class UpcomingHours extends BlockBase {
     global $base_url;
     $config = $this->getConfiguration();
 
-    $calendar_id = isset($config['calendar_id']) ? $config['calendar_id'] : 'libsys';
-    $days = isset($config['days']) ? $config['days'] : 7;
-    $hours_page_url = isset($config['hours_page_url']) ? $config['hours_page_url'] : $base_url . '/about/hours';
+    $calendar_id = $config['calendar_id'] ?? 'libsys';
+    $days = $config['days'] ?? 7;
+    $hours_page_url = $config['hours_page_url'] ?? $base_url . '/about/hours';
 
     $container = [
       'hours_table' => [
@@ -84,7 +84,7 @@ class UpcomingHours extends BlockBase {
       '#type' => 'textfield',
       '#title' => $this->t('Calendar'),
       '#description' => $this->t('ID of the calendar to display.'),
-      '#default_value' => isset($config['calendar_id']) ? $config['calendar_id'] : 'libsys',
+      '#default_value' => $config['calendar_id'] ?? 'libsys',
     ];
 
     $form['days'] = [
@@ -92,14 +92,14 @@ class UpcomingHours extends BlockBase {
       '#title' => $this->t('Number of Days'),
       '#min' => 1,
       '#step' => 1,
-      '#default_value' => isset($config['days']) ? $config['days'] : 7,
+      '#default_value' => $config['days'] ?? 7,
       '#size' => 3,
     ];
 
     $form['hours_page_url'] = [
       '#type' => 'url',
       '#title' => $this->t('Hours Page URL'),
-      '#default_value' => isset($config['hours_page_url']) ? $config['hours_page_url'] : $base_url . '/about/hours',
+      '#default_value' => $config['hours_page_url'] ?? $base_url . '/about/hours',
     ];
 
     return $form;
