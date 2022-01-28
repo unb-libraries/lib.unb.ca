@@ -35,7 +35,7 @@ use Drupal\lib_unb_custom_entity\Entity\ContentEntityBase;
  *     "status" = "status",
  *   },
  *   links = {
- *     "canonical" = "/eresources/record/{eresources_record}",
+ *     "canonical" = "/admin/eresources/record/{eresources_record}",
  *     "add-form" = "/admin/eresources/record/add",
  *     "edit-form" = "/admin/eresources/record/{eresources_record}/edit",
  *     "delete-form" = "/admin/eresources/record/{eresources_record}/delete",
