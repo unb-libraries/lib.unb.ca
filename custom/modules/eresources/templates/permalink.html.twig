@@ -1,0 +1,35 @@
+<h3>{{ entry.getTitle }}</h3>
+      {% set extra = [] %}
+      {% if entry.getAuthor %}{% set author = entry.getAuthor|replace({'|': '; '}) %}{% set extra = extra|merge([author]) %}{% endif %}
+      {% if entry.getPublisher %}{% set extra = extra|merge([entry.getPublisher]) %}{% endif %}
+      {% if entry.getCoverage matches '/^(ebook|video)/' %}
+      {%   set extra = extra|merge([entry.getCoverageStatement]) %}
+      {% endif %}
+      <div class="row mb-2">
+        <div class="col-12 col-lg-8">
+          <p class="mb-0"><a class="d-inline" href="{{ entry.getViaUrl }}" target="_blank" onclick='javascript: _gaq.push(["_trackPageview", "/GA/{{ entry.getTitle }}"]);'>
+            <span class="sr-only">{{ entry.getTitle }} in </span> {{ entry.getCollectionName }}
+          </a>
+          {% if extra %}
+          ({{ extra|join('; ') }})
+          {% endif %}
+          </p>
+          {% if entry.getCoverageEnum starts with 'print' %}
+            <div class="media ml-3">
+              <span class="fas fa-book mr-1"></span>
+              <p class="media-body mb-0"><span class="coverage">{{ entry.getCoverageStatement }}</span></p>
+            </div>
+          {% else %}
+            {% set permittedUse = entry.getPermittedUseStatement %}
+            {% if permittedUse %}
+            <div class="media ml-3">
+              <span class="fas fa-gavel mr-1"></span>
+              <p class="media-body mb-0">{{ permittedUse|raw }}</p>
+            </div>
+            {% endif %}
+          {% endif %}
+        </div>
+        <div class="col col-lg-4 oclcnum">
+          {% if entry.getOclcNum is not empty %}<p>WorldCat: <a href="https://unb.on.worldcat.org/oclc/{{ entry.getOclcNum }}">{{ entry.getOclcNum }}</a></p>{% endif %}
+        </div>
+      </div>

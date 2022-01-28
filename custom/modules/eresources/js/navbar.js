@@ -5,7 +5,8 @@
             var url = location.href;
             var urlParams = new URLSearchParams(location.search);
             var formId = urlParams.get('form_id');
-            var original = formId ? formId : '';
+            var id = urlParams.get('id');
+            var original = formId ? formId : id ? 'id=' + id : '';
 
             // Add history on tab change.
             $('#navbarNav button').once().click(function(e, triggered) {
@@ -25,6 +26,7 @@
             window.addEventListener("popstate", function(e) {
                 var newUrlParams = new URLSearchParams(window.location.search);
                 var newFormId = newUrlParams.get('form_id');
+                var newId = newUrlParams.get('id');
                 var selector = '#navbarNav button:first';
 
                 // TODO: Fix tab button highlight.
@@ -32,6 +34,9 @@
                 if(newFormId) {
                   newFormId = newFormId.replace('eres_', '');
                   selector = 'button[aria-controls=' + newFormId + ']';
+                }
+                else if(newId) {
+                  selector = 'button[aria-controls=resource]';
                 }
 
                 $(selector).trigger('click', [true]).focus();

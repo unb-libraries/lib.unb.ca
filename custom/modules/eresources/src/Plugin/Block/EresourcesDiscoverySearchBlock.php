@@ -3,6 +3,7 @@
 namespace Drupal\eresources\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\eresources\Controller\RecordController;
 
 /**
  * Provides the UNB Libraries eResources Discovery Search Block.
@@ -103,7 +104,9 @@ class EresourcesDiscoverySearchBlock extends BlockBase {
     }
 
     if ($permalink) {
-      $build .= '<div aria-labelledby="resourceBtn" class="Accordion-panel" id="resource" role="region"><p>Resource</p></div>';
+      $record = new RecordController();
+      $resourceRender = $record->permalink($permalink);
+      $build .= '<div aria-labelledby="resourceBtn" class="Accordion-panel" id="resource" role="region">' . $renderer->render($resourceRender) . '</div>';
     }
 
     $build .= '
