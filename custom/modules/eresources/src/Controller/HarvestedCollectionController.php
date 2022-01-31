@@ -61,7 +61,7 @@ class HarvestedCollectionController extends ControllerBase {
 
     $defaultParams = [
       'collection_uid' => $oclcId,
-      'content' => 'fulltext,print',
+      'content' => 'fulltext,ebook,video',
       'itemsPerPage' => $perPage,
     ];
 
