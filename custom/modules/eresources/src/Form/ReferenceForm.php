@@ -7,7 +7,7 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * KB Reference form.
  */
-class ReferenceForm extends KbFormBase implements KbFormInterface {
+class ReferenceForm extends LocalFormBase implements KbFormInterface {
 
   /**
    * {@inheritDoc}
