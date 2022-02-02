@@ -524,25 +524,27 @@ ul.field--name-field-categories:before {
 }
 
 /* Borrow BS4 widget styles */
-.ui-autocomplete {
-  &.ui-widget.ui-widget-content {
-    border-color: #ced4da;
-  }
+.page-view-search-our-webpages {
+  .ui-autocomplete {
+    &.ui-widget.ui-widget-content {
+      border-color: #ced4da;
+    }
 
-  background: #f8f9fa;
-  border-radius: .25rem;
-  padding: .25rem .5rem;
+    background: #f8f9fa;
+    border-radius: .25rem;
+    padding: .25rem .5rem;
 
-  /* Inject 'Suggested' text at top of autocomplete list */
-  li:first-child:before {
-    color: #004085;
-    border-bottom: 1px solid #ced4da;
-    content: 'Suggested matches';
-    display: block;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin-bottom: 0.5rem;
-    padding: .25rem;
+    /* Inject 'Suggested' text at top of autocomplete list */
+    li:first-child:before {
+      color: #004085;
+      border-bottom: 1px solid #ced4da;
+      content: 'Suggested pages';
+      display: block;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+      padding: .25rem;
+    }
   }
 }
 /** END Search Webpages **/
