@@ -12,4 +12,11 @@
     color: $link-hover-color;
     text-decoration: underline;
   }
+
+  .facet-item:hover,
+  .facet-item:hover input,
+  .facet-item:hover label,
+  label.checkbox-toggle:hover {
+    cursor: pointer;
+  }
 }
