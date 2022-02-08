@@ -31,8 +31,12 @@ class TrialsForm extends FormBase {
    * {@inheritDoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
+    $form['preamble'] = [
+      '#markup' => '<div class="alert alert-info" role="alert"><i class="fas fa-info-circle"></i> Trial resources are generally <b>NOT available from off-campus</b>. UNB Libraries <b>does not license</b> these products and therefore may not have access to all aspects of the product nor do we have full technical support.</div>',
+    ];
+
     $form['trials'] = [
-      '#markup' => '<p>Trials</p>',
+      '#markup' => '<p>There are no current trials.</p>',
     ];
     return $form;
   }

@@ -34,15 +34,15 @@ class EresourcesDiscoverySearchBlock extends BlockBase {
    */
   public function build() {
     $formList = self::$forms;
-    $trials = FALSE;
-    if ($trials) {
-      $formList[] = 'trials';
-    }
-
     $formBuilder = \Drupal::formBuilder();
     $renderer = \Drupal::service('renderer');
     $formId = \Drupal::request()->get('form_id');
     $permalink = \Drupal::request()->get('id');
+
+    $trials = FALSE;
+    if ($trials || $formId == 'eres_trials') {
+      $formList[] = 'trials';
+    }
 
     $title = 'Resource';
     if (preg_match('/^eres_(.+)$/', $formId, $matches)) {
