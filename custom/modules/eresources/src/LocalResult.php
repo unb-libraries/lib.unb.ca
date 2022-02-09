@@ -10,6 +10,13 @@ class LocalResult extends ResultBase implements ResultInterface {
   /**
    * {@inheritDoc}
    */
+  public function getResultType() {
+    return 'local';
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public function getTitle() {
     return $this->getFirstValue('title');
   }

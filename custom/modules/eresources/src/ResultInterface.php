@@ -10,6 +10,14 @@ namespace Drupal\eresources;
 interface ResultInterface {
 
   /**
+   * Result type (eg. local, kb).
+   *
+   * @return string
+   *   Result type.
+   */
+  public function getResultType();
+
+  /**
    * Title.
    *
    * @return string

@@ -21,6 +21,13 @@ class KbResult extends ResultBase implements ResultInterface {
   /**
    * {@inheritDoc}
    */
+  public function getResultType() {
+    return 'kb';
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public function getTitle() {
     return $this->item->title;
   }
