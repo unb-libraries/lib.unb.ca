@@ -113,6 +113,13 @@ class LocalResult extends ResultBase implements ResultInterface {
   }
 
   /**
+   * Returns the database ID of the record.
+   */
+  public function getId() {
+    return $this->getFirstValue('id');
+  }
+
+  /**
    * Return the first field value from the index, or NULL.
    */
   private function getFirstValue($field) {

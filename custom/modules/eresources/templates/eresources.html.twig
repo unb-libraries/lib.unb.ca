@@ -44,6 +44,11 @@
             </div>
             {% endif %}
           {% endif %}
+          {% if entry.getResultType == 'local' %}
+          <div class="border border-info bg-light rounded p-3 collapse" id="details-{{ entry.getId }}">
+            <p>Details TBD</p>
+          </div>
+          {% endif %}
         </div>
         <div class="col col-lg-4 oclcnum">
           {% if entry.getOclcNum is not empty %}<p>WorldCat: <a href="https://unb.on.worldcat.org/oclc/{{ entry.getOclcNum }}">{{ entry.getOclcNum }}</a></p>{% endif %}
@@ -59,7 +64,11 @@
     ) %}
       <li class="list-group-item {{ cycle(stripe, row) }}">
         <div class="row">
-          <div class="col-12 col-lg-8 title">{{ entry.getTitle }}</div>
+          <div class="col-12 col-lg-8 title">{{ entry.getTitle }}
+          {% if entry.getResultType == 'local' %}
+            <span class="text-info" role="button" data-toggle="collapse" data-target="#details-{{ entry.getId }}"><i class="fas fa-question-circle"></i> Details</span>
+          {% endif %}
+          </div>
           <div class="col-12 col-lg-4 mt-1 mt-lg-0 oclcnum">
             {% if isbn %}<p>ISBN: {{ isbn }}</p>{% endif %}
             {% if issn %}<p>ISSN: {{ issn }}</p>{% endif %}
