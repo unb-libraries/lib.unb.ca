@@ -69,13 +69,13 @@ settings:
             - assets
             - '-'
   plugins:
+    drupallink:
+      linkit_enabled: true
+      linkit_profile: default
     language:
       language_list: un
     stylescombo:
       styles: ''
-    drupallink:
-      linkit_enabled: true
-      linkit_profile: default
     codemirror:
       enable: true
       mode: application/x-httpd-php
@@ -93,6 +93,19 @@ settings:
         autoFormatOnStart: true
         autoFormatOnModeChange: true
         autoFormatOnUncomment: true
+    wordcount:
+      enable: false
+      show_remaining: false
+      show_paragraphs: false
+      show_word_count: false
+      show_char_count: false
+      count_bytes: false
+      count_spaces: false
+      count_html: 0
+      count_line_breaks: false
+      max_words: -1
+      max_chars: -1
+      hard_limit: 1
     colorbutton:
       colors: ''
     video_embed:
