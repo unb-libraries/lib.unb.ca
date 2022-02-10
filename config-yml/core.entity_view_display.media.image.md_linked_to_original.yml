@@ -1,12 +1,12 @@
-uuid: f422acb0-e7b5-468b-94f3-13c0b64dbeb9
+uuid: 66f76a12-1f9a-4106-9580-80e0f516026b
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.scale0_image_thumbnail
+    - core.entity_view_mode.media.md_linked_to_original
     - field.field.media.image.field_media_image
     - field.field.media.image.field_mime_type
-    - image.style.thumbnail_scale_width
+    - image.style.extra_large_scale_width
     - media.type.image
   module:
     - image
@@ -15,17 +15,17 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-id: media.image.scale0_image_thumbnail
+id: media.image.md_linked_to_original
 targetEntityType: media
 bundle: image
-mode: scale0_image_thumbnail
+mode: md_linked_to_original
 content:
   field_media_image:
     type: image
-    label: visually_hidden
+    label: hidden
     settings:
       image_link: file
-      image_style: thumbnail_scale_width
+      image_style: extra_large_scale_width
     third_party_settings: {  }
     weight: 1
     region: content
