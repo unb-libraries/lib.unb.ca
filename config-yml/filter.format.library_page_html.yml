@@ -7,6 +7,11 @@ dependencies:
     - core.entity_view_mode.media.bs_xl_extra_large
     - core.entity_view_mode.media.bs_xxl_extra_extra_large
     - core.entity_view_mode.media.extra_large
+    - core.entity_view_mode.media.md_linked_to_original
+    - core.entity_view_mode.media.sm_linked_to_original
+    - core.entity_view_mode.media.thumbnail_linked_to_original
+    - core.entity_view_mode.media.xs_linked_to_original
+    - core.entity_view_mode.media.xxs_linked_to_original
   module:
     - editor
     - entity_embed
@@ -21,13 +26,13 @@ filters:
     id: editor_file_reference
     provider: editor
     status: true
-    weight: -45
+    weight: -46
     settings: {  }
   entity_embed:
     id: entity_embed
     provider: entity_embed
     status: true
-    weight: -46
+    weight: -47
     settings: {  }
   filter_htmlcorrector:
     id: filter_htmlcorrector
@@ -52,7 +57,7 @@ filters:
     id: filter_caption
     provider: filter
     status: true
-    weight: -47
+    weight: -48
     settings: {  }
   filter_html_image_secure:
     id: filter_html_image_secure
@@ -64,13 +69,13 @@ filters:
     id: filter_align
     provider: filter
     status: true
-    weight: -48
+    weight: -49
     settings: {  }
   filter_html:
     id: filter_html
     provider: filter
     status: true
-    weight: -49
+    weight: -50
     settings:
       allowed_html: '<a href id target title aria-controls aria-expanded aria-selected hreflang data-entity-substitution data-entity-type data-entity-uuid data-toggle role class=""> <address class=""> <blockquote cite> <br> <button aria-controls aria-expanded aria-haspopup aria-label data-dismiss data-reference data-target data-toggle id type class=""> <caption class=""> <cite> <code> <div data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date data-parent id role aria-labelledby class=""> <dd id class=""> <dl id class=""> <dt id class=""> <em class=""> <h2 id class=""> <h3 id class=""> <h4 id class=""> <h5 id class=""> <h6 id class=""> <hr class=""> <img src alt width height data-entity-type data-entity-uuid data-align data-caption class=""> <li id class=""> <ol id start type class=""> <p id class=""> <span aria-hidden data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date data-color class=""> <small class=""> <strong class=""> <sub> <sup> <table id class=""> <tbody class=""> <td colspan data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date id rowspan class=""> <tfoot> <th colspan id rowspan scope class=""> <thead class=""> <tr data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date id class=""> <ul id type role class=""> <drupal-media data-align data-caption data-entity-type data-entity-uuid data-view-mode alt title class=""> <drupal-entity alt title data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button data-langcode class="">'
       filter_html_help: true
@@ -85,20 +90,20 @@ filters:
     id: linkit
     provider: linkit
     status: true
-    weight: -50
+    weight: -43
     settings:
       title: true
   video_embed_wysiwyg:
     id: video_embed_wysiwyg
     provider: video_embed_wysiwyg
     status: true
-    weight: -44
+    weight: -45
     settings: {  }
   media_embed:
     id: media_embed
     provider: media
     status: true
-    weight: -43
+    weight: -44
     settings:
       default_view_mode: default
       allowed_view_modes:
@@ -107,5 +112,10 @@ filters:
         bs_xl_extra_large: bs_xl_extra_large
         bs_xxl_extra_extra_large: bs_xxl_extra_extra_large
         extra_large: extra_large
+        md_linked_to_original: md_linked_to_original
+        sm_linked_to_original: sm_linked_to_original
+        thumbnail_linked_to_original: thumbnail_linked_to_original
+        xs_linked_to_original: xs_linked_to_original
+        xxs_linked_to_original: xxs_linked_to_original
       allowed_media_types:
         image: image
