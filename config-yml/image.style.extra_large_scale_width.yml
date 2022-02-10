@@ -1,0 +1,15 @@
+uuid: 77dc407a-6134-4647-bb2d-447c0ca2dba5
+langcode: en
+status: true
+dependencies: {  }
+name: extra_large_scale_width
+label: 'Extra large (Scale width 767)'
+effects:
+  b7f6d4ce-b29c-4e75-8c0d-7b0709ac67a0:
+    uuid: b7f6d4ce-b29c-4e75-8c0d-7b0709ac67a0
+    id: image_scale
+    weight: 1
+    data:
+      width: 767
+      height: null
+      upscale: true
