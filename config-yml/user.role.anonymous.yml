@@ -1,7 +1,20 @@
 uuid: d91a7727-0e67-4631-9678-ad317790dfcb
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.no_media_html_ior_
+  module:
+    - contact
+    - filter
+    - ior
+    - ior_awards
+    - media
+    - portolan
+    - samlauth
+    - search_api_autocomplete
+    - system
+    - webform
 _core:
   default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
 id: anonymous

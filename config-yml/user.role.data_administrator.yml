@@ -1,7 +1,16 @@
 uuid: fa3741bd-c49a-41d3-9772-715f1da61dfe
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - taxonomy.vocabulary.faculties
+    - taxonomy.vocabulary.library_departments
+  module:
+    - lib_unb_ca_user_protect
+    - node
+    - system
+    - taxonomy
+    - toolbar
 id: data_administrator
 label: 'Data Administrator'
 weight: 4

@@ -2,6 +2,12 @@ uuid: 70dfdf9c-e42b-47b2-808c-39e4137b92fb
 langcode: en
 status: true
 dependencies:
+  config:
+    - filter.format.no_media_html
+  module:
+    - field_permissions
+    - filter
+    - records_management
   enforced:
     module:
       - records_management

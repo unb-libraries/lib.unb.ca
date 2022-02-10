@@ -1,7 +1,20 @@
 uuid: 41ec6fd6-1dc4-4117-9f4e-64c12656759a
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.library_page_html
+    - filter.format.no_media_html_ior_
+  module:
+    - filter
+    - google_analytics
+    - honeypot
+    - ior_awards
+    - media
+    - portolan
+    - search_api_autocomplete
+    - system
 _core:
   default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
 id: authenticated

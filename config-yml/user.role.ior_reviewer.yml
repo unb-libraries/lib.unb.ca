@@ -1,7 +1,11 @@
 uuid: cd1f3009-c941-47bb-83ed-9192122f7f4b
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - ior
+    - ior_awards
+    - toolbar
 id: ior_reviewer
 label: 'IOR Reviewer'
 weight: 7

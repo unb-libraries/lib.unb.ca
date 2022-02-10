@@ -1,7 +1,22 @@
 uuid: e86d1689-45cb-4118-b227-c4e158d894c7
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - media.type.file
+    - media.type.image
+    - node.type.news_post
+    - taxonomy.vocabulary.categories
+  module:
+    - contextual
+    - entity_browser
+    - media
+    - node
+    - override_node_options
+    - quickedit
+    - system
+    - taxonomy
+    - toolbar
 id: library_news_author
 label: 'Library News Author'
 weight: 2

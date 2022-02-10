@@ -1,7 +1,21 @@
 uuid: 867f57e4-d442-47c8-8af2-ae45ba558f6a
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - media.type.file
+    - media.type.image
+    - node.type.library_page
+    - workflows.workflow.default_page_workflow
+  module:
+    - content_moderation
+    - entity_browser
+    - media
+    - node
+    - override_node_options
+    - quickedit
+    - system
+    - toolbar
 id: library_page_author
 label: 'Library Page Author'
 weight: 3
