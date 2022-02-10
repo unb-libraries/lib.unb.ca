@@ -24,7 +24,7 @@ content:
     type: image
     label: visually_hidden
     settings:
-      image_link: file
+      image_link: ''
       image_style: extra_large
     third_party_settings: {  }
     weight: 1
