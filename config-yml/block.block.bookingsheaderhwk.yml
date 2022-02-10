@@ -18,14 +18,14 @@ plugin: 'block_content:439accdc-1b35-4a1a-a833-708e77f79ad1'
 settings:
   id: 'block_content:439accdc-1b35-4a1a-a833-708e77f79ad1'
   label: 'Bookings Header: HWK'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full
 visibility:
   request_path:
     id: request_path
-    pages: /services/bookings/hwk
     negate: false
     context_mapping: {  }
+    pages: /services/bookings/hwk

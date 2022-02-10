@@ -20,12 +20,12 @@ plugin: 'facet_block:geographic_location'
 settings:
   id: 'facet_block:geographic_location'
   label: 'Geographic location'
-  provider: facets
   label_display: visible
+  provider: facets
   block_id: geographiclocation
 visibility:
   request_path:
     id: request_path
-    pages: /clc/portolan/search
     negate: false
     context_mapping: {  }
+    pages: /clc/portolan/search

@@ -16,11 +16,11 @@ plugin: staff_directory_nav
 settings:
   id: staff_directory_nav
   label: 'Staff and Departments Sidebar Navigation'
-  provider: lib_core
   label_display: '0'
+  provider: lib_core
 visibility:
   request_path:
     id: request_path
-    pages: /about/staff-and-departments
     negate: false
     context_mapping: {  }
+    pages: /about/staff-and-departments

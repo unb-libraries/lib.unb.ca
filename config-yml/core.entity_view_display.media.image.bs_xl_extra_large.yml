@@ -13,20 +13,20 @@ dependencies:
     - layout_builder
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: false
+    allow_custom: false
 id: media.image.bs_xl_extra_large
 targetEntityType: media
 bundle: image
 mode: bs_xl_extra_large
 content:
   field_media_image:
+    type: image
     label: hidden
     settings:
-      image_style: bs_xl_extra_large
       image_link: ''
+      image_style: bs_xl_extra_large
     third_party_settings: {  }
-    type: image
     weight: 1
     region: content
 hidden:

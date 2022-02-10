@@ -18,13 +18,13 @@ plugin: 'views_block:library_news-block_1'
 settings:
   id: 'views_block:library_news-block_1'
   label: ''
-  provider: views
   label_display: visible
+  provider: views
   views_label: ''
   items_per_page: none
 visibility:
   request_path:
     id: request_path
-    pages: "/news\r\n/news/*"
     negate: false
     context_mapping: {  }
+    pages: "/news\r\n/news/*"

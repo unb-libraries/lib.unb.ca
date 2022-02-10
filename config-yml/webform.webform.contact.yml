@@ -2,17 +2,19 @@ uuid: fd3f5b1a-6bba-4ad2-8c32-c4ee8dfdf239
 langcode: en
 status: open
 dependencies:
+  module:
+    - antibot
   enforced:
     module:
       - webform
-  module:
-    - antibot
 third_party_settings:
   antibot:
     antibot: true
+_core:
+  default_config_hash: Db1CJM6FchEqqeVz5YJThCK0WB599y4NjQ4GkPcGF5g
+weight: 0
 open: null
 close: null
-weight: 0
 uid: null
 template: false
 archive: false
@@ -92,9 +94,9 @@ settings:
   page_theme_name: ''
   form_title: source_entity_webform
   form_submit_once: false
-  form_exception_message: ''
   form_open_message: ''
   form_close_message: ''
+  form_exception_message: ''
   form_previous_submissions: false
   form_confidential: false
   form_confidential_message: ''
@@ -104,31 +106,36 @@ settings:
   form_prepopulate_source_entity: false
   form_prepopulate_source_entity_required: false
   form_prepopulate_source_entity_type: ''
-  form_reset: true
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
   form_disable_autocomplete: false
   form_novalidate: true
   form_disable_inline_errors: false
   form_required: false
-  form_unsaved: false
-  form_disable_back: false
-  form_submit_back: false
   form_autofocus: false
   form_details_toggle: false
+  form_reset: true
   form_access_denied: message
   form_access_denied_title: ''
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  form_attributes: {  }
   form_method: ''
   form_action: ''
-  form_attributes: {  }
   share: false
   share_node: false
   share_theme_name: ''
   share_title: true
   share_page_body_attributes: {  }
   submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
   submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
   submission_views: {  }
   submission_views_replace:
     webform_routes: {  }
@@ -139,11 +146,6 @@ settings:
   submission_access_denied_title: ''
   submission_access_denied_message: ''
   submission_access_denied_attributes: {  }
-  submission_exception_message: ''
-  submission_locked_message: ''
-  submission_excluded_elements: {  }
-  submission_exclude_empty: false
-  submission_exclude_empty_checkbox: false
   previous_submission_message: ''
   previous_submissions_message: ''
   autofill: false
@@ -154,13 +156,13 @@ settings:
   wizard_progress_percentage: false
   wizard_progress_link: false
   wizard_progress_states: false
-  wizard_auto_forward: true
-  wizard_auto_forward_hide_next_button: false
-  wizard_keyboard: true
   wizard_start_label: ''
   wizard_preview_link: false
   wizard_confirmation: true
   wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
   wizard_track: ''
   wizard_prev_button_label: ''
   wizard_next_button_label: ''
@@ -183,9 +185,9 @@ settings:
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
   confirmation_type: message
+  confirmation_url: '<front>'
   confirmation_title: ''
   confirmation_message: "<p class=\"h6\"><i class=\"fas fa-clipboard-check\"></i> Message Successfully Submitted</p>\r\n\r\n<p>Your email has been successfully been submitted using our webform.\r\nThank you for taking the time to fill it in.</p>"
-  confirmation_url: '<front>'
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
@@ -264,9 +266,9 @@ access:
 handlers:
   email_notification:
     id: email
+    handler_id: email_notification
     label: 'Email notification'
     notes: ''
-    handler_id: email_notification
     status: true
     conditions: {  }
     weight: 1
@@ -275,13 +277,17 @@ handlers:
         - completed
       to_mail: '[webform_submission:values:recipient:raw]'
       to_options: {  }
-      cc_mail: ''
-      cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
       from_mail: '[webform_submission:values:email:raw]'
       from_options: {  }
       from_name: '[webform_submission:values:name:raw]'
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
       subject: '[webform_submission:values:subject:raw]'
       body: "<p>The following information was submitted through our <b>Contact UNB Libraries Staff</b> form by {{ webform_token('[webform_submission:user]', webform_submission) }} on {{ webform_token('[webform_submission:created]', webform_submission) }}.</p>\r\n\r\n<p>\r\n<b>Name:</b><br />\r\n{{ webform_token('[webform_submission:values:name]', webform_submission) }}\r\n</p>\r\n\r\n<p>\r\n<b>Email:</b><br />\r\n{{ webform_token('[webform_submission:values:email]', webform_submission) }}\r\n</p>\r\n\r\n\r\n<p>\r\n<b>Subject:</b><br />\r\n{{ webform_token('[webform_submission:values:subject]', webform_submission) }}\r\n</p>\r\n\r\n\r\n<p>\r\n<b>Message:</b><br />\r\n{{ webform_token('[webform_submission:values:message]', webform_submission) }}\r\n</p>\r\n\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
       excluded_elements: {  }
@@ -292,18 +298,14 @@ handlers:
       html: true
       attachments: false
       twig: true
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
       theme_name: ''
       parameters: {  }
+      debug: false
   email:
     id: email
+    handler_id: email
     label: 'Confirmation Email'
     notes: ''
-    handler_id: email
     status: true
     conditions: {  }
     weight: 2
@@ -312,13 +314,17 @@ handlers:
         - completed
       to_mail: '[webform_submission:values:email:raw]'
       to_options: {  }
-      cc_mail: ''
-      cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
       from_mail: unb-libraries-no-reply@unb.ca
       from_options: {  }
       from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
       subject: 'UNB Libraries submission confirmation'
       body: "<p>Your comments and/or suggestions have been successfully submitted to UNB Libraries staff.</p>\r\n\r\n<p>Submitted information:</p>\r\n\r\n<p>\r\n<b>Name:</b><br />\r\n{{ webform_token('[webform_submission:values:name]', webform_submission) }}\r\n</p>\r\n\r\n<p>\r\n<b>Email:</b><br />\r\n{{ webform_token('[webform_submission:values:email]', webform_submission) }}\r\n</p>\r\n\r\n\r\n<p>\r\n<b>Subject:</b><br />\r\n{{ webform_token('[webform_submission:values:subject]', webform_submission) }}\r\n</p>\r\n\r\n\r\n<p>\r\n<b>Message:</b><br />\r\n{{ webform_token('[webform_submission:values:message]', webform_submission) }}\r\n</p>\r\n\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
       excluded_elements: {  }
@@ -329,13 +335,7 @@ handlers:
       html: true
       attachments: false
       twig: true
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
       theme_name: ''
       parameters: {  }
+      debug: false
 variants: {  }
-_core:
-  default_config_hash: Db1CJM6FchEqqeVz5YJThCK0WB599y4NjQ4GkPcGF5g

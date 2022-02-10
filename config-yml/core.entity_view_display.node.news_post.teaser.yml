@@ -19,21 +19,21 @@ mode: teaser
 content:
   field_categories:
     type: entity_reference_label
-    weight: 0
-    region: content
     label: hidden
     settings:
       link: true
     third_party_settings: {  }
+    weight: 0
+    region: content
   field_page_content:
     type: entity_reference_revisions_entity_view
-    weight: 1
-    region: content
     label: hidden
     settings:
       view_mode: preview
       link: ''
     third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
   field_featured_image: true
   field_unb_lib_page_content: true

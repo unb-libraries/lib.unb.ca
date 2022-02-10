@@ -11,20 +11,20 @@ dependencies:
     - text
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: false
+    allow_custom: false
 id: paragraph.body_section.preview
 targetEntityType: paragraph
 bundle: body_section
 mode: preview
 content:
   field_body:
-    weight: 0
+    type: text_summary_or_trimmed
     label: hidden
     settings:
       trim_length: 400
     third_party_settings: {  }
-    type: text_summary_or_trimmed
+    weight: 0
     region: content
 hidden:
   search_api_excerpt: true

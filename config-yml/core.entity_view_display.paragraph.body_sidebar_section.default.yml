@@ -11,8 +11,8 @@ dependencies:
     - layout_builder
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: true
+    allow_custom: false
     sections:
       -
         layout_id: layout_twocol_section
@@ -26,36 +26,36 @@ third_party_settings:
             configuration:
               id: 'field_block:paragraph:body_sidebar_section:field_column_1'
               label: 'Column 1'
-              provider: layout_builder
               label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
               formatter:
-                label: hidden
                 type: entity_reference_revisions_entity_view
+                label: hidden
                 settings:
                   view_mode: default
                 third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-            additional: {  }
             weight: 0
+            additional: {  }
           77301002-cc8f-472c-b68d-53f5da465105:
             uuid: 77301002-cc8f-472c-b68d-53f5da465105
             region: second
             configuration:
               id: 'field_block:paragraph:body_sidebar_section:field_column_2'
               label: 'Column 2'
-              provider: layout_builder
               label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
               formatter:
-                label: hidden
                 type: entity_reference_revisions_entity_view
+                label: hidden
                 settings:
                   view_mode: default
                 third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-            additional: {  }
             weight: 0
+            additional: {  }
         third_party_settings: {  }
 id: paragraph.body_sidebar_section.default
 targetEntityType: paragraph
@@ -64,21 +64,21 @@ mode: default
 content:
   field_column_1:
     type: entity_reference_revisions_entity_view
-    weight: 0
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    weight: 0
     region: content
   field_column_2:
     type: entity_reference_revisions_entity_view
-    weight: 1
     label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    weight: 1
     region: content
 hidden:
   search_api_excerpt: true

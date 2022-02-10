@@ -12,22 +12,22 @@ bundle: departement_membership
 mode: default
 content:
   field_is_department_head:
-    weight: 1
+    type: boolean
     label: hidden
     settings:
       format: custom
-      format_custom_true: '(Department Head)'
       format_custom_false: ''
+      format_custom_true: '(Department Head)'
     third_party_settings: {  }
-    type: boolean
+    weight: 1
     region: content
   field_library_department:
-    weight: 0
+    type: entity_reference_label
     label: hidden
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 0
     region: content
 hidden:
   search_api_excerpt: true

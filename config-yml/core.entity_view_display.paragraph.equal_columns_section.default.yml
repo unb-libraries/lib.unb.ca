@@ -11,8 +11,8 @@ dependencies:
     - layout_builder
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: true
+    allow_custom: false
     sections:
       -
         layout_id: layout_twocol_section
@@ -26,36 +26,36 @@ third_party_settings:
             configuration:
               id: 'field_block:paragraph:equal_columns_section:field_column_1'
               label: 'Column 1'
-              provider: layout_builder
               label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
               formatter:
-                label: hidden
                 type: entity_reference_revisions_entity_view
+                label: hidden
                 settings:
                   view_mode: default
                 third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-            additional: {  }
             weight: 0
+            additional: {  }
           97b10601-6c00-442c-9c3b-a4799c7253ae:
             uuid: 97b10601-6c00-442c-9c3b-a4799c7253ae
             region: second
             configuration:
               id: 'field_block:paragraph:equal_columns_section:field_column_2'
               label: 'Column 2'
-              provider: layout_builder
               label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
               formatter:
-                label: hidden
                 type: entity_reference_revisions_entity_view
+                label: hidden
                 settings:
                   view_mode: default
                 third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-            additional: {  }
             weight: 0
+            additional: {  }
         third_party_settings: {  }
 id: paragraph.equal_columns_section.default
 targetEntityType: paragraph
@@ -63,22 +63,22 @@ bundle: equal_columns_section
 mode: default
 content:
   field_column_1:
-    weight: 0
+    type: entity_reference_revisions_entity_view
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
+    weight: 0
     region: content
   field_column_2:
-    weight: 1
+    type: entity_reference_revisions_entity_view
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
+    weight: 1
     region: content
 hidden:
   search_api_excerpt: true

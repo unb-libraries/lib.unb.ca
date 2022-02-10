@@ -12,12 +12,12 @@ pattern: '/clc/portolan/jurisdictions/[term:name]'
 selection_criteria:
   eb5a761a-d75a-4030-8d7d-f2961c1439b6:
     id: 'entity_bundle:taxonomy_term'
-    bundles:
-      portolan_jurisdictions: portolan_jurisdictions
     negate: false
+    uuid: eb5a761a-d75a-4030-8d7d-f2961c1439b6
     context_mapping:
       taxonomy_term: taxonomy_term
-    uuid: eb5a761a-d75a-4030-8d7d-f2961c1439b6
+    bundles:
+      portolan_jurisdictions: portolan_jurisdictions
 selection_logic: and
 weight: -5
 relationships: {  }

@@ -16,11 +16,11 @@ plugin: research_subjects
 settings:
   id: research_subjects
   label: 'UNB Libraries Research Subjects'
-  provider: lib_core
   label_display: '0'
+  provider: lib_core
 visibility:
   request_path:
     id: request_path
-    pages: '<front>'
     negate: false
     context_mapping: {  }
+    pages: '<front>'

@@ -55,9 +55,9 @@ settings:
       linkit_profile: ''
     codemirror:
       enable: false
-      startupMode: wysiwyg
       mode: htmlmixed
       theme: default
+      startupMode: wysiwyg
       options:
         lineNumbers: true
         lineWrapping: true

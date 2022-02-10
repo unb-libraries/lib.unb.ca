@@ -22,20 +22,20 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       body_section: body_section
       custom_block_section: custom_block_section
+    negate: 0
     target_bundles_drag_drop:
       body_section:
-        enabled: true
         weight: 10
+        enabled: true
       body_sidebar_section:
         weight: 11
         enabled: false
       custom_block_section:
-        enabled: true
         weight: 12
+        enabled: true
       departement_membership:
         weight: 13
         enabled: false

@@ -20,121 +20,12 @@ base_table: search_api_index_retention_schedules
 base_field: search_api_id
 display:
   default:
-    display_plugin: default
     id: default
     display_title: Master
+    display_plugin: default
     position: 0
     display_options:
-      access:
-        type: role
-        options:
-          role: {  }
-      cache:
-        type: search_api_tag
-        options: {  }
-      query:
-        type: views_query
-        options:
-          bypass_access: false
-          skip_access: false
-          preserve_facet_query_args: false
-      exposed_form:
-        type: basic
-        options:
-          submit_button: Search
-          reset_button: false
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
-      pager:
-        type: mini
-        options:
-          items_per_page: 25
-          offset: 0
-          id: 0
-          total_pages: null
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
-          tags:
-            previous: ‹‹
-            next: ››
-      style:
-        type: table
-        options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: true
-          override: true
-          sticky: false
-          caption: ''
-          summary: ''
-          description: ''
-          columns:
-            id: id
-            code: code
-            number: number
-            name: name
-            oopr: oopr
-            approved: approved
-            revised: revised
-          info:
-            id:
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            code:
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            number:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            name:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            oopr:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            approved:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            revised:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-          default: '-1'
-          empty_table: false
-      row:
-        type: fields
+      title: 'Retention Schedules'
       fields:
         id:
           id: id
@@ -143,6 +34,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ID
+          entity_type: schedule
+          plugin_id: search_api_field
           label: ID
           exclude: true
           alter:
@@ -217,8 +110,6 @@ display:
             format_plural_values:
               - '1'
               - '@count'
-          entity_type: schedule
-          plugin_id: search_api_field
         classification_code:
           id: classification_code
           table: search_api_index_retention_schedules
@@ -226,6 +117,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_field
           label: Code
           exclude: true
           alter:
@@ -288,7 +180,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
         number:
           id: number
           table: search_api_index_retention_schedules
@@ -296,6 +187,7 @@ display:
           relationship: none
           group_type: group
           admin_label: 'Record series number (indexed)'
+          plugin_id: search_api_field
           label: Number
           exclude: false
           alter:
@@ -358,7 +250,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
         name:
           id: name
           table: search_api_index_retention_schedules
@@ -366,6 +257,7 @@ display:
           relationship: none
           group_type: group
           admin_label: 'Record series name (indexed)'
+          plugin_id: search_api_field
           label: Name
           exclude: false
           alter:
@@ -428,7 +320,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
         oopr:
           id: oopr
           table: search_api_index_retention_schedules
@@ -436,6 +327,7 @@ display:
           relationship: none
           group_type: group
           admin_label: 'Office of Primary Responsibility (indexed)'
+          plugin_id: search_api_field
           label: 'Office of Primary Responsibility'
           exclude: false
           alter:
@@ -498,7 +390,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
         approved:
           id: approved
           table: search_api_index_retention_schedules
@@ -506,6 +397,9 @@ display:
           relationship: none
           group_type: group
           admin_label: 'Schedule creation date (indexed)'
+          entity_type: null
+          entity_field: null
+          plugin_id: search_api_field
           label: 'Approved on'
           exclude: false
           alter:
@@ -569,9 +463,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: null
-          entity_field: null
-          plugin_id: search_api_field
         revised:
           id: revised
           table: search_api_index_retention_schedules
@@ -579,6 +470,7 @@ display:
           relationship: none
           group_type: group
           admin_label: 'Schedule revision date (indexed)'
+          plugin_id: search_api_field
           label: 'Revised on'
           exclude: false
           alter:
@@ -642,7 +534,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
         nothing:
           id: nothing
           table: views
@@ -650,6 +541,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: custom
           label: Operations
           exclude: false
           alter:
@@ -691,7 +583,70 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
-          plugin_id: custom
+      pager:
+        type: mini
+        options:
+          offset: 0
+          items_per_page: 25
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Search
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      access:
+        type: role
+        options:
+          role: {  }
+      cache:
+        type: search_api_tag
+        options: {  }
+      empty: {  }
+      sorts:
+        classification_code:
+          id: classification_code
+          table: search_api_index_retention_schedules
+          field: classification_code
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: classification_code
+          exposed: false
+        number:
+          id: number
+          table: search_api_index_retention_schedules
+          field: number
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: number
+          exposed: false
+      arguments: {  }
       filters:
         classification:
           id: classification
@@ -700,6 +655,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_term
           operator: or
           value: {  }
           group: 1
@@ -737,12 +693,11 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          type: select
-          limit: true
           vid: retention_classification
+          type: select
           hierarchy: false
+          limit: true
           error_message: true
-          plugin_id: search_api_term
         search_api_fulltext:
           id: search_api_fulltext
           table: search_api_index_retention_schedules
@@ -750,6 +705,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_fulltext
           operator: and
           value: ''
           group: 1
@@ -773,8 +729,8 @@ display:
               library_page_author: '0'
               data_administrator: '0'
               records_manager: '0'
-            placeholder: ''
             expose_fields: false
+            placeholder: ''
             searched_fields_id: search_api_fulltext_searched_fields
           is_grouped: false
           group_info:
@@ -800,36 +756,85 @@ display:
             - purpose
             - revised
             - summary
-          plugin_id: search_api_fulltext
-      sorts:
-        classification_code:
-          id: classification_code
-          table: search_api_index_retention_schedules
-          field: classification_code
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: false
-          expose:
-            label: ''
-          plugin_id: search_api
-        number:
-          id: number
-          table: search_api_index_retention_schedules
-          field: number
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: false
-          expose:
-            label: ''
-          plugin_id: search_api
-      title: 'Retention Schedules'
-      header: {  }
-      footer: {  }
-      empty: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      style:
+        type: table
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          columns:
+            id: id
+            code: code
+            number: number
+            name: name
+            oopr: oopr
+            approved: approved
+            revised: revised
+          default: '-1'
+          info:
+            id:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            code:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            number:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            name:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            oopr:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            approved:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            revised:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          override: true
+          sticky: false
+          summary: ''
+          empty_table: false
+          caption: ''
+          description: ''
+      row:
+        type: fields
+      query:
+        type: views_query
+        options:
+          bypass_access: false
+          skip_access: false
+          preserve_facet_query_args: false
       relationships:
         classification:
           id: classification
@@ -838,16 +843,13 @@ display:
           relationship: none
           group_type: group
           admin_label: Classification
-          required: false
-          skip_access: true
           entity_type: schedule
           plugin_id: search_api
-      arguments: {  }
+          required: false
+          skip_access: true
+      header: {  }
+      footer: {  }
       display_extenders: {  }
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
     cache_metadata:
       max-age: -1
       contexts:
@@ -861,20 +863,11 @@ display:
         - 'config:field.storage.taxonomy_term.field_code'
         - 'config:search_api.index.retention_schedules'
   page:
-    display_plugin: page
     id: page
     display_title: Page
+    display_plugin: page
     position: 1
     display_options:
-      display_extenders: {  }
-      path: records/schedules
-      access:
-        type: perm
-        options:
-          perm: 'list schedule entities'
-      defaults:
-        access: false
-        fields: false
       fields:
         id:
           id: id
@@ -883,6 +876,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ID
+          entity_type: schedule
+          plugin_id: search_api_field
           label: ID
           exclude: true
           alter:
@@ -957,8 +952,6 @@ display:
             format_plural_values:
               - '1'
               - '@count'
-          entity_type: schedule
-          plugin_id: search_api_field
         classification_code:
           id: classification_code
           table: search_api_index_retention_schedules
@@ -966,6 +959,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_field
           label: Code
           exclude: true
           alter:
@@ -1028,7 +1022,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
         number:
           id: number
           table: search_api_index_retention_schedules
@@ -1036,6 +1029,7 @@ display:
           relationship: none
           group_type: group
           admin_label: 'Record series number (indexed)'
+          plugin_id: search_api_field
           label: Number
           exclude: false
           alter:
@@ -1098,7 +1092,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
         name:
           id: name
           table: search_api_index_retention_schedules
@@ -1106,6 +1099,7 @@ display:
           relationship: none
           group_type: group
           admin_label: 'Record series name (indexed)'
+          plugin_id: search_api_field
           label: Name
           exclude: false
           alter:
@@ -1168,7 +1162,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
         oopr:
           id: oopr
           table: search_api_index_retention_schedules
@@ -1176,6 +1169,7 @@ display:
           relationship: none
           group_type: group
           admin_label: 'Office of Primary Responsibility (indexed)'
+          plugin_id: search_api_field
           label: 'Office of Primary Responsibility'
           exclude: false
           alter:
@@ -1238,7 +1232,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
         approved:
           id: approved
           table: search_api_index_retention_schedules
@@ -1246,6 +1239,9 @@ display:
           relationship: none
           group_type: group
           admin_label: 'Schedule creation date (indexed)'
+          entity_type: null
+          entity_field: null
+          plugin_id: search_api_field
           label: 'Approved on'
           exclude: false
           alter:
@@ -1309,9 +1305,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: null
-          entity_field: null
-          plugin_id: search_api_field
         revised:
           id: revised
           table: search_api_index_retention_schedules
@@ -1319,6 +1312,7 @@ display:
           relationship: none
           group_type: group
           admin_label: 'Schedule revision date (indexed)'
+          plugin_id: search_api_field
           label: 'Last revised on'
           exclude: false
           alter:
@@ -1382,8 +1376,16 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
+      access:
+        type: perm
+        options:
+          perm: 'list schedule entities'
       empty: {  }
+      defaults:
+        access: false
+        fields: false
+      display_extenders: {  }
+      path: records/schedules
     cache_metadata:
       max-age: -1
       contexts:
@@ -1397,24 +1399,11 @@ display:
         - 'config:field.storage.taxonomy_term.field_code'
         - 'config:search_api.index.retention_schedules'
   simple_search_form:
-    display_plugin: page
     id: simple_search_form
     display_title: 'Simple Search'
+    display_plugin: page
     position: 1
     display_options:
-      display_extenders: {  }
-      path: records/schedules
-      access:
-        type: perm
-        options:
-          perm: 'list schedule entities'
-      defaults:
-        access: false
-        fields: false
-        exposed_form: false
-        empty: false
-        filters: false
-        filter_groups: false
       fields:
         id:
           id: id
@@ -1423,6 +1412,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ID
+          entity_type: schedule
+          plugin_id: search_api_field
           label: ID
           exclude: true
           alter:
@@ -1497,8 +1488,6 @@ display:
             format_plural_values:
               - '1'
               - '@count'
-          entity_type: schedule
-          plugin_id: search_api_field
         classification_code:
           id: classification_code
           table: search_api_index_retention_schedules
@@ -1506,6 +1495,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_field
           label: Code
           exclude: true
           alter:
@@ -1568,7 +1558,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
         number:
           id: number
           table: search_api_index_retention_schedules
@@ -1576,6 +1565,7 @@ display:
           relationship: none
           group_type: group
           admin_label: 'Record series number (indexed)'
+          plugin_id: search_api_field
           label: Number
           exclude: false
           alter:
@@ -1638,7 +1628,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
         name:
           id: name
           table: search_api_index_retention_schedules
@@ -1646,6 +1635,7 @@ display:
           relationship: none
           group_type: group
           admin_label: 'Record series name (indexed)'
+          plugin_id: search_api_field
           label: Name
           exclude: false
           alter:
@@ -1708,7 +1698,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
         oopr:
           id: oopr
           table: search_api_index_retention_schedules
@@ -1716,6 +1705,7 @@ display:
           relationship: none
           group_type: group
           admin_label: 'Office of Primary Responsibility (indexed)'
+          plugin_id: search_api_field
           label: 'Office of Primary Responsibility'
           exclude: false
           alter:
@@ -1778,7 +1768,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
         approved:
           id: approved
           table: search_api_index_retention_schedules
@@ -1786,6 +1775,9 @@ display:
           relationship: none
           group_type: group
           admin_label: 'Schedule creation date (indexed)'
+          entity_type: null
+          entity_field: null
+          plugin_id: search_api_field
           label: 'Approved on'
           exclude: false
           alter:
@@ -1849,9 +1841,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: null
-          entity_field: null
-          plugin_id: search_api_field
         revised:
           id: revised
           table: search_api_index_retention_schedules
@@ -1859,6 +1848,7 @@ display:
           relationship: none
           group_type: group
           admin_label: 'Schedule revision date (indexed)'
+          plugin_id: search_api_field
           label: 'Last revised on'
           exclude: false
           alter:
@@ -1922,10 +1912,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
-      display_description: ''
-      exposed_block: false
-      display_comment: 'Duplicate of page which exposes search form as a block.'
       exposed_form:
         type: basic
         options:
@@ -1936,6 +1922,10 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
+      access:
+        type: perm
+        options:
+          perm: 'list schedule entities'
       empty: {  }
       filters:
         search_api_fulltext:
@@ -1945,6 +1935,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_fulltext
           operator: and
           value: ''
           group: 1
@@ -1968,8 +1959,8 @@ display:
               library_page_author: '0'
               data_administrator: '0'
               records_manager: '0'
-            placeholder: ''
             expose_fields: false
+            placeholder: ''
             searched_fields_id: search_api_fulltext_searched_fields
           is_grouped: false
           group_info:
@@ -1995,11 +1986,22 @@ display:
             - purpose
             - revised
             - summary
-          plugin_id: search_api_fulltext
       filter_groups:
         operator: AND
         groups:
           1: AND
+      defaults:
+        empty: false
+        access: false
+        exposed_form: false
+        fields: false
+        filters: false
+        filter_groups: false
+      display_description: ''
+      display_comment: 'Duplicate of page which exposes search form as a block.'
+      exposed_block: false
+      display_extenders: {  }
+      path: records/schedules
     cache_metadata:
       max-age: -1
       contexts:

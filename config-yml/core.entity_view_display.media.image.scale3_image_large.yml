@@ -13,20 +13,20 @@ dependencies:
     - layout_builder
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: false
+    allow_custom: false
 id: media.image.scale3_image_large
 targetEntityType: media
 bundle: image
 mode: scale3_image_large
 content:
   field_media_image:
+    type: image
     label: visually_hidden
     settings:
-      image_style: large_scale_width
       image_link: file
+      image_style: large_scale_width
     third_party_settings: {  }
-    type: image
     weight: 1
     region: content
 hidden:

@@ -11,12 +11,12 @@ pattern: '/admin/booking-spaces/[node:title]'
 selection_criteria:
   cb571114-bcbc-4210-8369-3911234f5e78:
     id: node_type
-    bundles:
-      booking_space: booking_space
     negate: false
+    uuid: cb571114-bcbc-4210-8369-3911234f5e78
     context_mapping:
       node: node
-    uuid: cb571114-bcbc-4210-8369-3911234f5e78
+    bundles:
+      booking_space: booking_space
 selection_logic: and
 weight: -5
 relationships: {  }

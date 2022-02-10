@@ -19,49 +19,12 @@ base_table: node_field_data
 base_field: nid
 display:
   default:
-    display_plugin: default
     id: default
     display_title: Master
+    display_plugin: default
     position: 0
     display_options:
-      access:
-        type: perm
-        options:
-          perm: 'view media'
-      cache:
-        type: time
-        options:
-          results_lifespan: 21600
-          results_lifespan_custom: 0
-          output_lifespan: 21600
-          output_lifespan_custom: 0
-      query:
-        type: views_query
-        options:
-          disable_sql_rewrite: false
-          distinct: false
-          replica: false
-          query_comment: ''
-          query_tags: {  }
-      exposed_form:
-        type: basic
-        options:
-          submit_button: Apply
-          reset_button: false
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
-      pager:
-        type: some
-        options:
-          items_per_page: 1
-          offset: 0
-      style:
-        type: default
-      row:
-        type: fields
+      title: 'Featured Content'
       fields:
         field_featured_image:
           id: field_featured_image
@@ -70,6 +33,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -114,8 +78,8 @@ display:
           click_sort_column: target_id
           type: media_thumbnail
           settings:
-            image_style: front_page_image
             image_link: content
+            image_style: front_page_image
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -126,30 +90,71 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 1
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      access:
+        type: perm
+        options:
+          perm: 'view media'
+      cache:
+        type: time
+        options:
+          results_lifespan: 21600
+          results_lifespan_custom: 0
+          output_lifespan: 21600
+          output_lifespan_custom: 0
+      empty: {  }
+      sorts:
+        random:
+          id: random
+          table: views
+          field: random
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: random
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: random
+          exposed: false
+      arguments: {  }
       filters:
         status:
-          value: '1'
+          id: status
           table: node_field_data
           field: status
-          plugin_id: boolean
           entity_type: node
           entity_field: status
-          id: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
           expose:
             operator: ''
             operator_limit_selection: false
             operator_list: {  }
-          group: 1
         type:
           id: type
           table: node_field_data
           field: type
-          value:
-            library_page: library_page
           entity_type: node
           entity_field: type
           plugin_id: bundle
+          value:
+            library_page: library_page
           expose:
             operator_limit_selection: false
             operator_list: {  }
@@ -160,6 +165,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: promote
+          plugin_id: boolean
           operator: '='
           value: '1'
           group: 1
@@ -190,9 +198,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: node
-          entity_field: promote
-          plugin_id: boolean
         field_featured_image_target_id:
           id: field_featured_image_target_id
           table: node__field_featured_image
@@ -200,6 +205,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: numeric
           operator: 'not empty'
           value:
             min: ''
@@ -221,9 +227,9 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -236,26 +242,21 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: numeric
-      sorts:
-        random:
-          id: random
-          table: views
-          field: random
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: false
-          expose:
-            label: ''
-          plugin_id: random
-      title: 'Featured Content'
+      style:
+        type: default
+      row:
+        type: fields
+      query:
+        type: views_query
+        options:
+          query_comment: ''
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_tags: {  }
+      relationships: {  }
       header: {  }
       footer: {  }
-      empty: {  }
-      relationships: {  }
-      arguments: {  }
       display_extenders: {  }
     cache_metadata:
       max-age: 0
@@ -267,20 +268,20 @@ display:
       tags:
         - 'config:field.storage.node.field_featured_image'
   featured_content_block:
-    display_plugin: block
     id: featured_content_block
     display_title: Block
+    display_plugin: block
     position: 1
     display_options:
-      display_extenders: {  }
-      block_description: 'Featured Library Page'
+      title: 'Featured Collection'
       cache:
         type: none
         options: {  }
       defaults:
         cache: false
         title: false
-      title: 'Featured Collection'
+      display_extenders: {  }
+      block_description: 'Featured Library Page'
     cache_metadata:
       max-age: 0
       contexts:

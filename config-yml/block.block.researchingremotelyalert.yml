@@ -18,14 +18,14 @@ plugin: 'block_content:ead32b3c-3b69-44eb-b6a0-f7af31f092a2'
 settings:
   id: 'block_content:ead32b3c-3b69-44eb-b6a0-f7af31f092a2'
   label: 'Researching Remotely Alert'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full
 visibility:
   request_path:
     id: request_path
-    pages: '<front>'
     negate: false
     context_mapping: {  }
+    pages: '<front>'

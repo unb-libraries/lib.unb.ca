@@ -21,13 +21,13 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       body_section: body_section
+    negate: 0
     target_bundles_drag_drop:
       body_section:
-        enabled: true
         weight: 6
+        enabled: true
       body_sidebar_section:
         weight: 7
         enabled: false

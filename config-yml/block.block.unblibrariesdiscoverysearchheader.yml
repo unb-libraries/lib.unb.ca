@@ -15,6 +15,6 @@ plugin: discovery_search_block
 settings:
   id: discovery_search_block
   label: 'UNB Libraries Discovery Search (Header)'
-  provider: lib_core
   label_display: '0'
+  provider: lib_core
 visibility: {  }

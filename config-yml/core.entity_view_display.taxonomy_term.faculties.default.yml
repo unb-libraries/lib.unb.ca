@@ -18,35 +18,35 @@ bundle: faculties
 mode: default
 content:
   field_campus:
-    weight: 0
+    type: list_default
     label: inline
     settings: {  }
     third_party_settings: {  }
-    type: list_default
+    weight: 0
     region: content
   field_department_rep_email:
-    weight: 2
+    type: string
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 2
     region: content
   field_department_rep_name:
-    weight: 1
+    type: string
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 1
     region: content
   field_department_rep_phone:
-    weight: 3
+    type: telephone_link
     label: inline
     settings:
       title: ''
     third_party_settings: {  }
-    type: telephone_link
+    weight: 3
     region: content
 hidden:
   description: true

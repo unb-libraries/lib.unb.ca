@@ -21,9 +21,9 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       departement_membership: departement_membership
+    negate: 0
     target_bundles_drag_drop:
       body_section:
         weight: -12
@@ -35,8 +35,8 @@ settings:
         weight: -10
         enabled: false
       departement_membership:
-        enabled: true
         weight: -13
+        enabled: true
       equal_columns_section:
         weight: -9
         enabled: false

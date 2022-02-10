@@ -7,9 +7,9 @@ dependencies:
 third_party_settings:
   antibot:
     antibot: true
+weight: 0
 open: null
 close: null
-weight: 0
 uid: 1
 template: false
 archive: false
@@ -138,9 +138,9 @@ settings:
   page_theme_name: ''
   form_title: source_entity_webform
   form_submit_once: false
-  form_exception_message: ''
   form_open_message: ''
   form_close_message: ''
+  form_exception_message: ''
   form_previous_submissions: false
   form_confidential: false
   form_confidential_message: ''
@@ -150,31 +150,36 @@ settings:
   form_prepopulate_source_entity: false
   form_prepopulate_source_entity_required: false
   form_prepopulate_source_entity_type: ''
-  form_reset: true
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
   form_disable_autocomplete: false
   form_novalidate: true
   form_disable_inline_errors: false
   form_required: false
-  form_unsaved: false
-  form_disable_back: false
-  form_submit_back: false
   form_autofocus: false
   form_details_toggle: false
+  form_reset: true
   form_access_denied: default
   form_access_denied_title: ''
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  form_attributes: {  }
   form_method: ''
   form_action: ''
-  form_attributes: {  }
   share: false
   share_node: false
   share_theme_name: ''
   share_title: true
   share_page_body_attributes: {  }
   submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
   submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: true
+  submission_exclude_empty_checkbox: true
   submission_views: {  }
   submission_views_replace: {  }
   submission_user_columns: {  }
@@ -183,11 +188,6 @@ settings:
   submission_access_denied_title: ''
   submission_access_denied_message: ''
   submission_access_denied_attributes: {  }
-  submission_exception_message: ''
-  submission_locked_message: ''
-  submission_excluded_elements: {  }
-  submission_exclude_empty: true
-  submission_exclude_empty_checkbox: true
   previous_submission_message: ''
   previous_submissions_message: ''
   autofill: true
@@ -205,13 +205,13 @@ settings:
   wizard_progress_percentage: false
   wizard_progress_link: false
   wizard_progress_states: false
-  wizard_auto_forward: true
-  wizard_auto_forward_hide_next_button: false
-  wizard_keyboard: true
   wizard_start_label: ''
   wizard_preview_link: false
   wizard_confirmation: true
   wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
   wizard_track: ''
   wizard_prev_button_label: ''
   wizard_next_button_label: ''
@@ -234,9 +234,9 @@ settings:
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
   confirmation_type: message
+  confirmation_url: ''
   confirmation_title: ''
   confirmation_message: '<p class="h6">Thank you for your submission. We will get back to you and confirm your booking.</p>'
-  confirmation_url: ''
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
@@ -315,9 +315,9 @@ access:
 handlers:
   email:
     id: email
+    handler_id: email
     label: Email
     notes: ''
-    handler_id: email
     status: true
     conditions: {  }
     weight: 0
@@ -326,13 +326,17 @@ handlers:
         - completed
       to_mail: mfonzo@unb.ca
       to_options: {  }
-      cc_mail: ''
-      cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
       from_mail: _default
       from_options: {  }
       from_name: 'Research Commons Space Request Form'
+      reply_to: '[webform_submission:values:email:raw]'
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
       subject: 'Research Commons Space Request'
       body: "<p><b>{{ webform_token('[webform_submission:user]', webform_submission) }}</b> submitted a HIL Research Commons Space Request with the following details:</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n\r\n\r\n\r\n"
       excluded_elements: {  }
@@ -343,18 +347,14 @@ handlers:
       html: true
       attachments: false
       twig: true
-      debug: false
-      reply_to: '[webform_submission:values:email:raw]'
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
       theme_name: ''
       parameters: {  }
+      debug: false
   email_confirm:
     id: email
+    handler_id: email_confirm
     label: 'Confirmation Email'
     notes: 'Confirms a webform submission via an email.'
-    handler_id: email_confirm
     status: true
     conditions: {  }
     weight: 0
@@ -363,13 +363,17 @@ handlers:
         - completed
       to_mail: '[webform_submission:values:email:raw]'
       to_options: {  }
-      cc_mail: ''
-      cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
       from_mail: _default
       from_options: {  }
       from_name: 'Research Commons Space Request Form'
+      reply_to: mfonzo@unb.ca
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
       subject: 'Your Research Commons Space Request'
       body: "<p>On {{ webform_token('[webform_submission:created]', webform_submission, [], options) }} you submitted a HIL Reserarch Commons Space Request with the following details:</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n\r\n<p>Please note that this is <b>not</b> a confirmation of your booking.\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
       excluded_elements: {  }
@@ -380,11 +384,7 @@ handlers:
       html: true
       attachments: false
       twig: true
-      debug: false
-      reply_to: mfonzo@unb.ca
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
       theme_name: ''
       parameters: {  }
+      debug: false
 variants: {  }

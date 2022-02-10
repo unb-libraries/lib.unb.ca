@@ -78,9 +78,9 @@ settings:
       linkit_profile: default
     codemirror:
       enable: true
-      startupMode: wysiwyg
       mode: application/x-httpd-php
       theme: tomorrow-night-bright
+      startupMode: wysiwyg
       options:
         lineNumbers: true
         lineWrapping: true

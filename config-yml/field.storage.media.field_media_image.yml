@@ -2,14 +2,14 @@ uuid: 9b735794-bf76-4d06-a8ce-0b4e13dea4a4
 langcode: en
 status: true
 dependencies:
-  enforced:
-    module:
-      - media
   module:
     - field_permissions
     - file
     - image
     - media
+  enforced:
+    module:
+      - media
 third_party_settings:
   field_permissions:
     permission_type: public
@@ -18,16 +18,16 @@ field_name: field_media_image
 entity_type: media
 type: image
 settings:
+  target_type: file
+  display_field: false
+  display_default: false
+  uri_scheme: public
   default_image:
     uuid: null
     alt: ''
     title: ''
     width: null
     height: null
-  target_type: file
-  display_field: false
-  display_default: false
-  uri_scheme: public
 module: image
 locked: false
 cardinality: 1

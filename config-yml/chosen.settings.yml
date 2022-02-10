@@ -1,15 +1,15 @@
+_core:
+  default_config_hash: YWbqKPHA3djohSgnBRKhK0NUjnO1dL1XmIo3yBw3oFo
 minimum_single: 1
 minimum_multiple: 6
 disable_search_threshold: 7
 minimum_width: 0
+max_shown_results: null
 use_relative_width: false
 jquery_selector: 'select:not(.custom-chosen-select):not(.custom-select):not(#edit-classification):visible'
 search_contains: false
 disable_search: false
 allow_single_deselect: false
-placeholder_text_multiple: '- Please choose 1 or more options -'
-placeholder_text_single: '- Please choose an option -'
-no_results_text: 'No results match'
 disabled_themes:
   bartik: '0'
   seven: '0'
@@ -17,6 +17,6 @@ disabled_themes:
   unb_lib_theme: '0'
   lib_unb_ca: '0'
 chosen_include: 2
-_core:
-  default_config_hash: YWbqKPHA3djohSgnBRKhK0NUjnO1dL1XmIo3yBw3oFo
-max_shown_results: null
+placeholder_text_multiple: '- Please choose 1 or more options -'
+placeholder_text_single: '- Please choose an option -'
+no_results_text: 'No results match'

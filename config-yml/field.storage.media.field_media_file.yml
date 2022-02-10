@@ -2,21 +2,21 @@ uuid: f40cf783-370c-4dc8-a4ff-2b5dec862bfd
 langcode: en
 status: true
 dependencies:
-  enforced:
-    module:
-      - media
   module:
     - file
     - media
+  enforced:
+    module:
+      - media
 id: media.field_media_file
 field_name: field_media_file
 entity_type: media
 type: file
 settings:
+  target_type: file
   display_field: false
   display_default: false
   uri_scheme: public
-  target_type: file
 module: file
 locked: false
 cardinality: 1

@@ -18,14 +18,14 @@ plugin: 'block_content:3289eca8-3ad4-4d0e-94c3-da972437d93f'
 settings:
   id: 'block_content:3289eca8-3ad4-4d0e-94c3-da972437d93f'
   label: 'Portolan logo'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full
 visibility:
   request_path:
     id: request_path
-    pages: "/clc/portolan\r\n/clc/portolan/*"
     negate: false
     context_mapping: {  }
+    pages: "/clc/portolan\r\n/clc/portolan/*"

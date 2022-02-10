@@ -30,6 +30,7 @@ content:
   field_department_memberships:
     type: entity_reference_paragraphs
     weight: 7
+    region: content
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -38,66 +39,65 @@ content:
       form_display_mode: default
       default_paragraph_type: departement_membership
     third_party_settings: {  }
-    region: content
   field_display_on_staff_directory:
+    type: boolean_checkbox
     weight: 9
+    region: content
     settings:
       display_label: true
     third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
   field_first_name:
+    type: string_textfield
     weight: 4
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_last_name:
+    type: string_textfield
     weight: 5
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_liaison_librarian:
+    type: options_select
     weight: 8
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_on_leave:
+    type: boolean_checkbox
     weight: 10
+    region: content
     settings:
       display_label: true
     third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
   field_phone_number:
-    weight: 2
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
     type: telephone_default
+    weight: 2
     region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   field_position_title:
+    type: string_textfield
     weight: 3
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_room_number:
+    type: string_textfield
     weight: 6
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   google_analytics:
     weight: 11
     region: content
@@ -117,9 +117,9 @@ content:
     third_party_settings: {  }
   timezone:
     weight: 6
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   contact: true
   field_email_id: true

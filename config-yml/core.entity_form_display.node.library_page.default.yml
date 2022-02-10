@@ -26,19 +26,19 @@ third_party_settings:
         - field_container_fluid
         - field_banner_image
         - field_alt_layout_header
+      label: 'Special Layout'
+      region: content
       parent_name: ''
       weight: 9
       format_type: details_sidebar
-      region: content
       format_settings:
-        description: '<b>Please consult Jeff Carter before enabling any of these features.</b>'
-        weight: 0
-        required_fields: true
-        id: ''
         classes: ''
         show_empty_fields: false
+        id: ''
         open: false
-      label: 'Special Layout'
+        description: '<b>Please consult Jeff Carter before enabling any of these features.</b>'
+        required_fields: true
+        weight: 0
 id: node.library_page.default
 targetEntityType: node
 bundle: library_page
@@ -51,20 +51,20 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_alt_layout_header:
+    type: text_textarea
     weight: 5
+    region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: text_textarea
-    region: content
   field_banner_image:
     type: media_library_widget
     weight: 4
+    region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
-    region: content
   field_container_fluid:
     type: boolean_checkbox
     weight: 3
@@ -75,6 +75,7 @@ content:
   field_page_content:
     type: entity_reference_paragraphs
     weight: 1
+    region: content
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -83,7 +84,6 @@ content:
       form_display_mode: default
       default_paragraph_type: _none
     third_party_settings: {  }
-    region: content
   langcode:
     type: language_select
     weight: 2
@@ -94,8 +94,8 @@ content:
   moderation_state:
     type: moderation_state_default
     weight: 8
-    settings: {  }
     region: content
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path
@@ -105,10 +105,10 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 6
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -121,12 +121,12 @@ content:
   uid:
     type: entity_reference_autocomplete
     weight: 3
+    region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
-    region: content
     third_party_settings: {  }
   url_redirects:
     weight: 7

@@ -20,12 +20,12 @@ plugin: 'facet_block:descriptor'
 settings:
   id: 'facet_block:descriptor'
   label: Descriptor
-  provider: facets
   label_display: visible
+  provider: facets
   block_id: descriptor
 visibility:
   request_path:
     id: request_path
-    pages: /clc/portolan/search
     negate: false
     context_mapping: {  }
+    pages: /clc/portolan/search

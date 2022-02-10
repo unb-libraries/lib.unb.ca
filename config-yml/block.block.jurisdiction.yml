@@ -20,12 +20,12 @@ plugin: 'facet_block:jurisdiction'
 settings:
   id: 'facet_block:jurisdiction'
   label: Jurisdiction
-  provider: facets
   label_display: visible
+  provider: facets
   block_id: jurisdiction
 visibility:
   request_path:
     id: request_path
-    pages: /clc/portolan/search
     negate: false
     context_mapping: {  }
+    pages: /clc/portolan/search

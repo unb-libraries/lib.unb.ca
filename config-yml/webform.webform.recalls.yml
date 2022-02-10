@@ -2,9 +2,9 @@ uuid: d5490d4f-aeff-48f1-99f7-8b5e273ddf7e
 langcode: en
 status: open
 dependencies: {  }
+weight: 0
 open: null
 close: null
-weight: 0
 uid: 1
 template: false
 archive: false
@@ -216,9 +216,9 @@ settings:
   page_theme_name: ''
   form_title: source_entity_webform
   form_submit_once: false
-  form_exception_message: ''
   form_open_message: ''
   form_close_message: ''
+  form_exception_message: ''
   form_previous_submissions: false
   form_confidential: false
   form_confidential_message: ''
@@ -228,31 +228,36 @@ settings:
   form_prepopulate_source_entity: false
   form_prepopulate_source_entity_required: false
   form_prepopulate_source_entity_type: ''
-  form_reset: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
   form_disable_autocomplete: false
   form_novalidate: true
   form_disable_inline_errors: false
   form_required: false
-  form_unsaved: false
-  form_disable_back: false
-  form_submit_back: false
   form_autofocus: false
   form_details_toggle: false
+  form_reset: false
   form_access_denied: default
   form_access_denied_title: ''
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  form_attributes: {  }
   form_method: ''
   form_action: ''
-  form_attributes: {  }
   share: false
   share_node: false
   share_theme_name: ''
   share_title: true
   share_page_body_attributes: {  }
   submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
   submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: true
+  submission_exclude_empty_checkbox: false
   submission_views: {  }
   submission_views_replace: {  }
   submission_user_columns: {  }
@@ -261,11 +266,6 @@ settings:
   submission_access_denied_title: ''
   submission_access_denied_message: ''
   submission_access_denied_attributes: {  }
-  submission_exception_message: ''
-  submission_locked_message: ''
-  submission_excluded_elements: {  }
-  submission_exclude_empty: true
-  submission_exclude_empty_checkbox: false
   previous_submission_message: ''
   previous_submissions_message: '<em class="fa-info-circle fas">&nbsp;</em>The <strong>Personal Information</strong> section has been prefilled using your previous submission data.'
   autofill: true
@@ -283,13 +283,13 @@ settings:
   wizard_progress_percentage: false
   wizard_progress_link: false
   wizard_progress_states: false
-  wizard_auto_forward: true
-  wizard_auto_forward_hide_next_button: false
-  wizard_keyboard: true
   wizard_start_label: ''
   wizard_preview_link: false
   wizard_confirmation: false
   wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
   wizard_track: ''
   wizard_prev_button_label: ''
   wizard_next_button_label: ''
@@ -312,9 +312,9 @@ settings:
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
   confirmation_type: message
+  confirmation_url: ''
   confirmation_title: ''
   confirmation_message: "<p class=\"h6\"><em class=\"fa-clipboard-check fas\">&nbsp;</em>Recall Request Submitted</p>\r\n\r\n<p>Your recall request has been successfully submitted using our webform. Thank you for taking the time to fill it in. You will be notified by email if we require additional information.</p>"
-  confirmation_url: ''
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
@@ -393,9 +393,9 @@ access:
 handlers:
   unb_libraries_recall_hwk:
     id: email
+    handler_id: unb_libraries_recall_hwk
     label: 'UNB Libraries Recall (hwk)'
     notes: ''
-    handler_id: unb_libraries_recall_hwk
     status: true
     conditions:
       enabled:
@@ -408,13 +408,17 @@ handlers:
         - completed
       to_mail: hwkcommons@unb.ca
       to_options: {  }
-      cc_mail: ''
-      cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
       from_mail: '[webform_submission:values:unb_stu_email:raw]'
       from_options: {  }
       from_name: '[webform_submission:values:name:raw]'
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
       subject: 'Recalls Request'
       body: "<p>The following information was submitted through our <b>Recalls Form</b> on {{ webform_token('[webform_submission:created]', webform_submission) }} by {{ webform_token('[webform_submission:user]', webform_submission) }}.</p>\r\n        \r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
       excluded_elements:
@@ -429,18 +433,14 @@ handlers:
       html: true
       attachments: false
       twig: true
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
       theme_name: ''
       parameters: {  }
+      debug: false
   unb_libraries_recall_law:
     id: email
+    handler_id: unb_libraries_recall_law
     label: 'UNB Libraries Recall (law)'
     notes: ''
-    handler_id: unb_libraries_recall_law
     status: true
     conditions:
       enabled:
@@ -453,13 +453,17 @@ handlers:
         - completed
       to_mail: lawres@unb.ca
       to_options: {  }
-      cc_mail: ''
-      cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
       from_mail: '[webform_submission:values:unb_stu_email:raw]'
       from_options: {  }
       from_name: '[webform_submission:values:name:raw]'
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
       subject: 'Recalls Request'
       body: "<p>The following information was submitted through our <b>Recalls Form</b> on {{ webform_token('[webform_submission:created]', webform_submission) }} by {{ webform_token('[webform_submission:user]', webform_submission) }}.</p>\r\n        \r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
       excluded_elements:
@@ -474,18 +478,14 @@ handlers:
       html: true
       attachments: false
       twig: true
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
       theme_name: ''
       parameters: {  }
+      debug: false
   sender_confirmation_email_circhi:
     id: email
+    handler_id: sender_confirmation_email_circhi
     label: 'Sender Confirmation Email (circhi)'
     notes: ''
-    handler_id: sender_confirmation_email_circhi
     status: true
     conditions:
       enabled:
@@ -498,13 +498,17 @@ handlers:
         - completed
       to_mail: '[webform_submission:values:unb_stu_email:raw]'
       to_options: {  }
-      cc_mail: ''
-      cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
       from_mail: unb-libraries-no-reply@unb.ca
       from_options: {  }
       from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
       subject: 'Recalls Request'
       body: "<p>UNB Libraries has received the following recall request. If this was not sent by you, please contact <a href=\"mailto:circhi@unb.ca\">circhi@unb.ca</a> immediately.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>"
       excluded_elements:
@@ -519,18 +523,14 @@ handlers:
       html: true
       attachments: false
       twig: true
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
       theme_name: ''
       parameters: {  }
+      debug: false
   sender_confirmation_email_hwk:
     id: email
+    handler_id: sender_confirmation_email_hwk
     label: 'Sender Confirmation Email (hwk)'
     notes: ''
-    handler_id: sender_confirmation_email_hwk
     status: true
     conditions:
       enabled:
@@ -543,13 +543,17 @@ handlers:
         - completed
       to_mail: '[webform_submission:values:unb_stu_email:raw]'
       to_options: {  }
-      cc_mail: ''
-      cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
       from_mail: unb-libraries-no-reply@unb.ca
       from_options: {  }
       from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
       subject: 'Recalls Request'
       body: "<p>UNB Libraries has received the following recall request. If this was not sent by you, please contact <a href=\"mailto:hwkcommons@unb.ca\">hwkcommons@unb.ca</a> immediately.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>"
       excluded_elements:
@@ -564,18 +568,14 @@ handlers:
       html: true
       attachments: false
       twig: true
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
       theme_name: ''
       parameters: {  }
+      debug: false
   sender_confirmation_email_lawres:
     id: email
+    handler_id: sender_confirmation_email_lawres
     label: 'Sender Confirmation Email (lawres)'
     notes: ''
-    handler_id: sender_confirmation_email_lawres
     status: true
     conditions:
       enabled:
@@ -588,13 +588,17 @@ handlers:
         - completed
       to_mail: '[webform_submission:values:unb_stu_email:raw]'
       to_options: {  }
-      cc_mail: ''
-      cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
       from_mail: unb-libraries-no-reply@unb.ca
       from_options: {  }
       from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
       subject: 'Recalls Request'
       body: "<p>UNB Libraries has received the following recall request. If this was not sent by you, please contact <a href=\"mailto:lawres@unb.ca\">lawres@unb.ca</a> immediately.</p>\r\n\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>"
       excluded_elements:
@@ -609,18 +613,14 @@ handlers:
       html: true
       attachments: false
       twig: true
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
       theme_name: ''
       parameters: {  }
+      debug: false
   unb_libraries_recall_circhi:
     id: email
+    handler_id: unb_libraries_recall_circhi
     label: 'UNB Libraries Recall (circhi)'
     notes: ''
-    handler_id: unb_libraries_recall_circhi
     status: true
     conditions:
       enabled:
@@ -633,13 +633,17 @@ handlers:
         - completed
       to_mail: circhi@unb.ca
       to_options: {  }
-      cc_mail: ''
-      cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
       from_mail: '[webform_submission:values:unb_stu_email:raw]'
       from_options: {  }
       from_name: '[webform_submission:values:name:raw]'
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
       subject: 'Recalls Request'
       body: "<p>The following information was submitted through our <b>Recalls Form</b> on {{ webform_token('[webform_submission:created]', webform_submission) }} by {{ webform_token('[webform_submission:user]', webform_submission) }}.</p>\r\n        \r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
       excluded_elements:
@@ -654,11 +658,7 @@ handlers:
       html: true
       attachments: false
       twig: true
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
       theme_name: ''
       parameters: {  }
+      debug: false
 variants: {  }

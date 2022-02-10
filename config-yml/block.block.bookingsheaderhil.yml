@@ -18,14 +18,14 @@ plugin: 'block_content:48bf2941-921e-4d21-a2a8-906e2e8b41ea'
 settings:
   id: 'block_content:48bf2941-921e-4d21-a2a8-906e2e8b41ea'
   label: 'Bookings Header: HIL'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full
 visibility:
   request_path:
     id: request_path
-    pages: /services/bookings/hil
     negate: false
     context_mapping: {  }
+    pages: /services/bookings/hil

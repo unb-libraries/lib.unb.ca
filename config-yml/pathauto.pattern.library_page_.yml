@@ -13,12 +13,12 @@ pattern: '[node:title]'
 selection_criteria:
   5a2a2a61-361d-4ce3-8efa-d053f7f1824c:
     id: node_type
-    bundles:
-      library_page: library_page
     negate: false
+    uuid: 5a2a2a61-361d-4ce3-8efa-d053f7f1824c
     context_mapping:
       node: node
-    uuid: 5a2a2a61-361d-4ce3-8efa-d053f7f1824c
+    bundles:
+      library_page: library_page
 selection_logic: and
 weight: -5
 relationships: {  }

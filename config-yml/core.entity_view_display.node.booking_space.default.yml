@@ -13,8 +13,8 @@ dependencies:
     - user
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: true
+    allow_custom: false
     sections:
       -
         layout_id: layout_onecol
@@ -25,21 +25,22 @@ third_party_settings:
             uuid: 02b8dbb3-92d4-4304-9b2c-455476006a72
             region: content
             configuration:
+              id: 'extra_field_block:node:booking_space:links'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'extra_field_block:node:booking_space:links'
-            additional: {  }
             weight: 0
+            additional: {  }
           84a15547-924c-4138-9b6b-243229c3d90d:
             uuid: 84a15547-924c-4138-9b6b-243229c3d90d
             region: content
             configuration:
+              id: 'field_block:node:booking_space:field_booking_space_link'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:booking_space:field_booking_space_link'
               formatter:
+                type: link
                 label: above
                 settings:
                   trim_length: 80
@@ -48,41 +49,40 @@ third_party_settings:
                   rel: ''
                   target: ''
                 third_party_settings: {  }
-                type: link
-            additional: {  }
             weight: 1
+            additional: {  }
           5ff35edc-ad15-4f00-80af-fdf53a433641:
             uuid: 5ff35edc-ad15-4f00-80af-fdf53a433641
             region: content
             configuration:
+              id: 'field_block:node:booking_space:field_location'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:booking_space:field_location'
               formatter:
+                type: entity_reference_label
                 label: above
                 settings:
                   link: true
                 third_party_settings: {  }
-                type: entity_reference_label
-            additional: {  }
             weight: 2
+            additional: {  }
           15c6cf5d-136d-4301-89b9-f7df67eead7e:
             uuid: 15c6cf5d-136d-4301-89b9-f7df67eead7e
             region: content
             configuration:
+              id: 'field_block:node:booking_space:field_booking_space_photo'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:booking_space:field_booking_space_photo'
               formatter:
+                type: entity_reference_label
                 label: above
                 settings:
                   link: true
                 third_party_settings: {  }
-                type: entity_reference_label
-            additional: {  }
             weight: 3
+            additional: {  }
         third_party_settings: {  }
 id: node.booking_space.default
 targetEntityType: node
@@ -90,7 +90,7 @@ bundle: booking_space
 mode: default
 content:
   field_booking_space_link:
-    weight: 101
+    type: link
     label: above
     settings:
       trim_length: 80
@@ -99,28 +99,28 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 101
     region: content
   field_booking_space_photo:
-    weight: 103
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 103
     region: content
   field_location:
-    weight: 102
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 102
     region: content
   links:
-    weight: 100
     settings: {  }
     third_party_settings: {  }
+    weight: 100
     region: content
 hidden:
   langcode: true

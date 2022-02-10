@@ -21,9 +21,9 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       linked_image: linked_image
+    negate: 0
     target_bundles_drag_drop:
       body_section:
         weight: 9
@@ -47,6 +47,6 @@ settings:
         weight: 15
         enabled: false
       linked_image:
-        enabled: true
         weight: 16
+        enabled: true
 field_type: entity_reference_revisions

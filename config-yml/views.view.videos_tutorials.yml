@@ -23,11 +23,226 @@ base_table: node_field_data
 base_field: nid
 display:
   default:
-    display_plugin: default
     id: default
     display_title: Master
+    display_plugin: default
     position: 0
     display_options:
+      title: 'Videos & Tutorials'
+      fields:
+        field_url:
+          id: field_url
+          table: paragraph__field_url
+          field: field_url
+          relationship: field_linked_images
+          group_type: group
+          admin_label: 'Link Text'
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: '{{ field_url__title }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: uri
+          type: link_separate
+          settings:
+            trim_length: null
+            url_only: false
+            url_plain: false
+            rel: '0'
+            target: '0'
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_url_1:
+          id: field_url_1
+          table: paragraph__field_url
+          field: field_url
+          relationship: field_linked_images
+          group_type: group
+          admin_label: 'Link Path'
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: uri
+          type: link
+          settings:
+            trim_length: 80
+            url_only: true
+            url_plain: true
+            rel: '0'
+            target: '0'
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_media_image:
+          id: field_media_image
+          table: paragraph__field_media_image
+          field: field_media_image
+          relationship: field_linked_images
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: "<figure class=\"link-hover-caption\">\r\n  {{ field_media_image }}\r\n  <figcaption\">\r\n    {{ field_url }}\r\n  </figcaption>\r\n</figure>"
+            make_link: true
+            path: '{{ field_url_1 }}'
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: '0'
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: '0'
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: media_thumbnail
+          settings:
+            image_link: ''
+            image_style: ''
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+      pager:
+        type: none
+        options:
+          offset: 0
+          items_per_page: null
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       access:
         type: perm
         options:
@@ -39,29 +254,106 @@ display:
           results_lifespan_custom: 0
           output_lifespan: 3600
           output_lifespan_custom: 0
-      query:
-        type: views_query
-        options:
-          disable_sql_rewrite: false
-          distinct: false
-          replica: false
-          query_comment: ''
-          query_tags: {  }
-      exposed_form:
-        type: basic
-        options:
-          submit_button: Apply
-          reset_button: false
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
-      pager:
-        type: none
-        options:
-          items_per_page: null
-          offset: 0
+      empty: {  }
+      sorts: {  }
+      arguments: {  }
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            images_page: images_page
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: string
+          operator: starts
+          value: Videos
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
       style:
         type: slideshow
         options:
@@ -69,36 +361,6 @@ display:
           default_row_class: false
           slideshow_skin: default
           slideshow_type: views_slideshow_cycle
-          views_slideshow_cycle:
-            effect: fade
-            transition_advanced: 1
-            timeout: '9000'
-            speed: '1000'
-            delay: '0'
-            sync: 1
-            random: 0
-            pause: 1
-            pause_on_click: 0
-            action_advanced: 0
-            start_paused: 0
-            remember_slide: 0
-            remember_slide_days: '1'
-            pause_in_middle: 0
-            pause_when_hidden: 0
-            pause_when_hidden_type: full
-            amount_allowed_visible: ''
-            nowrap: 0
-            fixed_height: 1
-            items_per_slide: '1'
-            items_per_slide_first: 0
-            items_per_slide_first_number: '1'
-            wait_for_image_load: 1
-            wait_for_image_load_timeout: '3000'
-            cleartype: 0
-            cleartypenobg: 0
-            advanced_options_choices: '0'
-            advanced_options_entry: ''
-            advanced_options: '{}'
           widgets:
             top:
               views_slideshow_controls:
@@ -146,6 +408,36 @@ display:
                   views_slideshow_pager_fields_hover: 0
                 views_slideshow_pager_bullets:
                   views_slideshow_pager_bullets_hover: 0
+          views_slideshow_cycle:
+            effect: fade
+            transition_advanced: 1
+            timeout: '9000'
+            speed: '1000'
+            delay: '0'
+            sync: 1
+            random: 0
+            pause: 1
+            pause_on_click: 0
+            action_advanced: 0
+            start_paused: 0
+            remember_slide: 0
+            remember_slide_days: '1'
+            pause_in_middle: 0
+            pause_when_hidden: 0
+            pause_when_hidden_type: full
+            amount_allowed_visible: ''
+            nowrap: 0
+            fixed_height: 1
+            items_per_slide: '1'
+            items_per_slide_first: 0
+            items_per_slide_first_number: '1'
+            wait_for_image_load: 1
+            wait_for_image_load_timeout: '3000'
+            cleartype: 0
+            cleartypenobg: 0
+            advanced_options_choices: '0'
+            advanced_options_entry: ''
+            advanced_options: '{}'
       row:
         type: fields
         options:
@@ -153,307 +445,14 @@ display:
           inline: {  }
           separator: ''
           hide_empty: false
-      fields:
-        field_url:
-          id: field_url
-          table: paragraph__field_url
-          field: field_url
-          relationship: field_linked_images
-          group_type: group
-          admin_label: 'Link Text'
-          label: ''
-          exclude: true
-          alter:
-            alter_text: true
-            text: '{{ field_url__title }}'
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: uri
-          type: link_separate
-          settings:
-            trim_length: null
-            url_only: false
-            url_plain: false
-            rel: '0'
-            target: '0'
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_url_1:
-          id: field_url_1
-          table: paragraph__field_url
-          field: field_url
-          relationship: field_linked_images
-          group_type: group
-          admin_label: 'Link Path'
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: uri
-          type: link
-          settings:
-            trim_length: 80
-            url_only: true
-            url_plain: true
-            rel: '0'
-            target: '0'
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_media_image:
-          id: field_media_image
-          table: paragraph__field_media_image
-          field: field_media_image
-          relationship: field_linked_images
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: true
-            text: "<figure class=\"link-hover-caption\">\r\n  {{ field_media_image }}\r\n  <figcaption\">\r\n    {{ field_url }}\r\n  </figcaption>\r\n</figure>"
-            make_link: true
-            path: '{{ field_url_1 }}'
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: '0'
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: '0'
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: media_thumbnail
-          settings:
-            image_style: ''
-            image_link: ''
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-      filters:
-        status:
-          value: '1'
-          table: node_field_data
-          field: status
-          plugin_id: boolean
-          entity_type: node
-          entity_field: status
-          id: status
-          expose:
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-          group: 1
-        type:
-          id: type
-          table: node_field_data
-          field: type
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: in
-          value:
-            images_page: images_page
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
-        title:
-          id: title
-          table: node_field_data
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: starts
-          value: Videos
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: node
-          entity_field: title
-          plugin_id: string
-      sorts: {  }
-      title: 'Videos & Tutorials'
-      header: {  }
-      footer: {  }
-      empty: {  }
+      query:
+        type: views_query
+        options:
+          query_comment: ''
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_tags: {  }
       relationships:
         field_linked_images:
           id: field_linked_images
@@ -462,9 +461,10 @@ display:
           relationship: none
           group_type: group
           admin_label: 'field_linked_images: Paragraph'
-          required: false
           plugin_id: standard
-      arguments: {  }
+          required: false
+      header: {  }
+      footer: {  }
       display_extenders: {  }
     cache_metadata:
       max-age: -1
@@ -477,31 +477,11 @@ display:
         - 'config:field.storage.paragraph.field_media_image'
         - 'config:field.storage.paragraph.field_url'
   links_block:
-    display_plugin: block
     id: links_block
     display_title: 'Learn About Links'
+    display_plugin: block
     position: 2
     display_options:
-      display_extenders: {  }
-      display_description: ''
-      style:
-        type: html_list
-        options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: false
-          type: ul
-          wrapper_class: ''
-          class: list-colcount-2
-      defaults:
-        style: false
-        row: false
-        fields: false
-        header: false
-        footer: false
-      row:
-        type: fields
-        options: {  }
       fields:
         field_url:
           id: field_url
@@ -510,6 +490,7 @@ display:
           relationship: field_linked_images
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -569,8 +550,25 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
-      block_description: 'Videos & Tutorials: Learn About Links'
+      style:
+        type: html_list
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: false
+          type: ul
+          wrapper_class: ''
+          class: list-colcount-2
+      row:
+        type: fields
+        options: {  }
+      defaults:
+        style: false
+        row: false
+        fields: false
+        header: false
+        footer: false
+      display_description: ''
       header:
         area_text_custom:
           id: area_text_custom
@@ -579,11 +577,13 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          empty: false
-          tokenize: false
-          content: '<h3 class="h4">Learn About</h3>'
           plugin_id: text_custom
+          empty: false
+          content: '<h3 class="h4">Learn About</h3>'
+          tokenize: false
       footer: {  }
+      display_extenders: {  }
+      block_description: 'Videos & Tutorials: Learn About Links'
     cache_metadata:
       max-age: -1
       contexts:
@@ -594,21 +594,11 @@ display:
       tags:
         - 'config:field.storage.paragraph.field_url'
   random_slideshow_block:
-    display_plugin: block
     id: random_slideshow_block
     display_title: 'Slideshow v2'
+    display_plugin: block
     position: 1
     display_options:
-      display_extenders: {  }
-      display_description: ''
-      css_class: videos-tutorials
-      defaults:
-        css_class: false
-        fields: false
-        empty: false
-        pager: false
-        sorts: false
-        footer: false
       fields:
         field_url:
           id: field_url
@@ -617,6 +607,7 @@ display:
           relationship: field_linked_images
           group_type: group
           admin_label: 'Link Text'
+          plugin_id: field
           label: ''
           exclude: true
           alter:
@@ -676,7 +667,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         field_url_1:
           id: field_url_1
           table: paragraph__field_url
@@ -684,6 +674,7 @@ display:
           relationship: field_linked_images
           group_type: group
           admin_label: 'Link Path'
+          plugin_id: field
           label: ''
           exclude: true
           alter:
@@ -743,7 +734,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         field_media_image:
           id: field_media_image
           table: paragraph__field_media_image
@@ -751,6 +741,7 @@ display:
           relationship: field_linked_images
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -795,8 +786,8 @@ display:
           click_sort_column: target_id
           type: media_thumbnail
           settings:
-            image_style: videos_and_tutorials
             image_link: ''
+            image_style: videos_and_tutorials
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -807,8 +798,11 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
-      block_description: 'Videos & Tutorials: Slideshow (Randomized)'
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 1
       empty:
         area_text_custom:
           id: area_text_custom
@@ -817,15 +811,10 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          empty: true
-          tokenize: false
-          content: "<div class=\"alert-warning border border-dark p-3\" role=\"alert\">\r\n  <i class=\"fas fa-exclamation-circle\"></i>\r\n   Please add content to the <em>Videos & Tutorials</em> page.\r\n</div>"
           plugin_id: text_custom
-      pager:
-        type: some
-        options:
-          items_per_page: 1
-          offset: 0
+          empty: true
+          content: "<div class=\"alert-warning border border-dark p-3\" role=\"alert\">\r\n  <i class=\"fas fa-exclamation-circle\"></i>\r\n   Please add content to the <em>Videos & Tutorials</em> page.\r\n</div>"
+          tokenize: false
       sorts:
         random:
           id: random
@@ -834,11 +823,21 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: random
           order: ASC
-          exposed: false
           expose:
             label: ''
-          plugin_id: random
+            field_identifier: random
+          exposed: false
+      defaults:
+        empty: false
+        css_class: false
+        pager: false
+        fields: false
+        sorts: false
+        footer: false
+      css_class: videos-tutorials
+      display_description: ''
       footer:
         area_text_custom:
           id: area_text_custom
@@ -847,10 +846,12 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          empty: false
-          tokenize: false
-          content: '<div class="more mt-3"><a href="/research/video">More Research Help<i class="fas fa-angle-double-right fa-xs fa-muted ml-1" aria-hidden="true"></i></a></div>'
           plugin_id: text_custom
+          empty: false
+          content: '<div class="more mt-3"><a href="/research/video">More Research Help<i class="fas fa-angle-double-right fa-xs fa-muted ml-1" aria-hidden="true"></i></a></div>'
+          tokenize: false
+      display_extenders: {  }
+      block_description: 'Videos & Tutorials: Slideshow (Randomized)'
     cache_metadata:
       max-age: 0
       contexts:

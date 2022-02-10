@@ -11,12 +11,12 @@ pattern: '/admin/[node:title]'
 selection_criteria:
   f652a51a-8165-471a-a206-62d904b4e2be:
     id: node_type
-    bundles:
-      carousel: carousel
     negate: false
+    uuid: f652a51a-8165-471a-a206-62d904b4e2be
     context_mapping:
       node: node
-    uuid: f652a51a-8165-471a-a206-62d904b4e2be
+    bundles:
+      carousel: carousel
 selection_logic: and
 weight: -5
 relationships: {  }

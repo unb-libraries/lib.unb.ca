@@ -18,14 +18,14 @@ plugin: 'block_content:88c6a719-aa08-4e44-b474-684635694bb8'
 settings:
   id: 'block_content:88c6a719-aa08-4e44-b474-684635694bb8'
   label: 'Bookings Header: SCI'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full
 visibility:
   request_path:
     id: request_path
-    pages: /services/bookings/sci
     negate: false
     context_mapping: {  }
+    pages: /services/bookings/sci

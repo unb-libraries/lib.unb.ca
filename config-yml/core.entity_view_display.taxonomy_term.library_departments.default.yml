@@ -18,35 +18,35 @@ bundle: library_departments
 mode: default
 content:
   field_department_email:
-    weight: 3
+    type: email_mailto
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: email_mailto
+    weight: 3
     region: content
   field_department_fax:
-    weight: 2
+    type: telephone_link
     label: inline
     settings:
       title: ''
     third_party_settings: {  }
-    type: telephone_link
+    weight: 2
     region: content
   field_department_location:
-    weight: 0
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 0
     region: content
   field_department_phone:
-    weight: 1
+    type: telephone_link
     label: inline
     settings:
       title: ''
     third_party_settings: {  }
-    type: telephone_link
+    weight: 1
     region: content
 hidden:
   description: true

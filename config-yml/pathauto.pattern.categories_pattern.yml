@@ -12,12 +12,12 @@ pattern: '/news/category/[term:name]'
 selection_criteria:
   ffe3e6c7-5b8d-4ecd-80d5-4fadd8377fc3:
     id: 'entity_bundle:taxonomy_term'
-    bundles:
-      categories: categories
     negate: false
+    uuid: ffe3e6c7-5b8d-4ecd-80d5-4fadd8377fc3
     context_mapping:
       taxonomy_term: taxonomy_term
-    uuid: ffe3e6c7-5b8d-4ecd-80d5-4fadd8377fc3
+    bundles:
+      categories: categories
 selection_logic: and
 weight: -5
 relationships: {  }

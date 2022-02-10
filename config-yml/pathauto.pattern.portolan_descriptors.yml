@@ -12,12 +12,12 @@ pattern: '/clc/portolan/descriptors/[term:name]'
 selection_criteria:
   bee4132c-a931-4bbc-9bd1-5478840bd199:
     id: 'entity_bundle:taxonomy_term'
-    bundles:
-      portolan_descriptors: portolan_descriptors
     negate: false
+    uuid: bee4132c-a931-4bbc-9bd1-5478840bd199
     context_mapping:
       taxonomy_term: taxonomy_term
-    uuid: bee4132c-a931-4bbc-9bd1-5478840bd199
+    bundles:
+      portolan_descriptors: portolan_descriptors
 selection_logic: and
 weight: -5
 relationships: {  }

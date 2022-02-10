@@ -23,15 +23,15 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 1
     target_bundles:
       body_section: body_section
       departement_membership: departement_membership
       linked_image: linked_image
+    negate: 1
     target_bundles_drag_drop:
       body_section:
-        enabled: true
         weight: -17
+        enabled: true
       body_sidebar_section:
         weight: -15
         enabled: false
@@ -39,8 +39,8 @@ settings:
         weight: -12
         enabled: false
       departement_membership:
-        enabled: true
         weight: -11
+        enabled: true
       equal_columns_section:
         weight: -14
         enabled: false
@@ -51,8 +51,8 @@ settings:
         weight: -16
         enabled: false
       linked_image:
-        enabled: true
         weight: 17
+        enabled: true
       slide:
         weight: -10
         enabled: false

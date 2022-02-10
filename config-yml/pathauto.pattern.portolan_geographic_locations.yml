@@ -12,12 +12,12 @@ pattern: '/clc/portolan/geographic-locations/[term:name]'
 selection_criteria:
   a1109812-9c58-454d-a65e-135b585141ae:
     id: 'entity_bundle:taxonomy_term'
-    bundles:
-      portolan_locations: portolan_locations
     negate: false
+    uuid: a1109812-9c58-454d-a65e-135b585141ae
     context_mapping:
       taxonomy_term: taxonomy_term
-    uuid: a1109812-9c58-454d-a65e-135b585141ae
+    bundles:
+      portolan_locations: portolan_locations
 selection_logic: and
 weight: -5
 relationships: {  }

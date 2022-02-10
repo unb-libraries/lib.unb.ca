@@ -16,13 +16,13 @@ plugin: contact_webform_sidebar
 settings:
   id: contact_webform_sidebar
   label: 'Additional Options'
-  provider: lib_core
   label_display: visible
+  provider: lib_core
 visibility:
   webform:
     id: webform
-    webforms:
-      contact: contact
     negate: false
     context_mapping:
       webform: '@webform.webform_route_context:webform'
+    webforms:
+      contact: contact

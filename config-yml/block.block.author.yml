@@ -20,12 +20,12 @@ plugin: 'facet_block:author'
 settings:
   id: 'facet_block:author'
   label: Author
-  provider: facets
   label_display: visible
+  provider: facets
   block_id: author
 visibility:
   request_path:
     id: request_path
-    pages: /clc/portolan/search
     negate: false
     context_mapping: {  }
+    pages: /clc/portolan/search

@@ -18,71 +18,12 @@ base_table: search_api_index_portolan
 base_field: search_api_id
 display:
   default:
-    display_plugin: default
     id: default
     display_title: Master
+    display_plugin: default
     position: 0
     display_options:
-      access:
-        type: none
-        options: {  }
-      cache:
-        type: tag
-        options: {  }
-      query:
-        type: views_query
-        options:
-          bypass_access: false
-          skip_access: false
-          preserve_facet_query_args: false
-      exposed_form:
-        type: input_required
-        options:
-          submit_button: GO
-          reset_button: false
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
-          text_input_required: 'Select any filter and click on Apply to see results'
-          text_input_required_format: library_page_html
-      pager:
-        type: full
-        options:
-          items_per_page: 25
-          offset: 0
-          id: 0
-          total_pages: null
-          tags:
-            previous: Prev
-            next: Next
-            first: First
-            last: Last
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
-          quantity: 10
-      style:
-        type: html_list
-        options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: true
-          type: ul
-          wrapper_class: item-list
-          class: ''
-      row:
-        type: search_api
-        options:
-          view_modes:
-            'entity:portolan_record':
-              portolan_record: search_excerpt
+      title: 'Portolan: Search'
       fields:
         abstract:
           id: abstract
@@ -91,6 +32,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -152,7 +94,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
         author:
           id: author
           table: search_api_index_portolan
@@ -160,6 +101,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -222,7 +164,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
         descriptor:
           id: descriptor
           table: search_api_index_portolan
@@ -230,6 +171,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -292,7 +234,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
         location:
           id: location
           table: search_api_index_portolan
@@ -300,6 +241,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -362,7 +304,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
         jurisdiction:
           id: jurisdiction
           table: search_api_index_portolan
@@ -370,6 +311,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -432,7 +374,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
         publication:
           id: publication
           table: search_api_index_portolan
@@ -440,6 +381,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -502,7 +444,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
         title:
           id: title
           table: search_api_index_portolan
@@ -510,6 +451,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -572,7 +514,61 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
+      pager:
+        type: full
+        options:
+          offset: 0
+          items_per_page: 25
+          total_pages: null
+          id: 0
+          tags:
+            next: Next
+            previous: Prev
+            first: First
+            last: Last
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 10
+      exposed_form:
+        type: input_required
+        options:
+          submit_button: GO
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: library_page_html
+      access:
+        type: none
+        options: {  }
+      cache:
+        type: tag
+        options: {  }
+      empty: {  }
+      sorts:
+        title_trimmed:
+          id: title_trimmed
+          table: search_api_index_portolan
+          field: title_trimmed
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: title_trimmed
+          exposed: false
+      arguments: {  }
       filters:
         search_api_fulltext:
           id: search_api_fulltext
@@ -581,6 +577,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_fulltext
           operator: and
           value: ''
           group: 1
@@ -603,8 +600,8 @@ display:
               library_news_author: '0'
               library_page_author: '0'
               data_administrator: '0'
-            placeholder: ''
             expose_fields: false
+            placeholder: ''
             searched_fields_id: search_api_fulltext_searched_fields
           is_grouped: false
           group_info:
@@ -628,21 +625,29 @@ display:
             - location_name
             - publication
             - title
-          plugin_id: search_api_fulltext
-      sorts:
-        title_trimmed:
-          id: title_trimmed
-          table: search_api_index_portolan
-          field: title_trimmed
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: false
-          expose:
-            label: ''
-          plugin_id: search_api
-      title: 'Portolan: Search'
+      style:
+        type: html_list
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          type: ul
+          wrapper_class: item-list
+          class: ''
+      row:
+        type: search_api
+        options:
+          view_modes:
+            'entity:portolan_record':
+              portolan_record: search_excerpt
+      query:
+        type: views_query
+        options:
+          bypass_access: false
+          skip_access: false
+          preserve_facet_query_args: false
+      relationships: {  }
+      use_ajax: false
       header:
         result:
           id: result
@@ -651,15 +656,11 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: result
           empty: false
           content: "<div class=\"alert alert-success fade-in\">\r\n    Displaying @start - @end of @total results\r\n</div>"
-          plugin_id: result
       footer: {  }
-      empty: {  }
-      relationships: {  }
-      arguments: {  }
       display_extenders: {  }
-      use_ajax: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -670,17 +671,17 @@ display:
       tags:
         - 'config:search_api.index.portolan'
   page_1:
-    display_plugin: page
     id: page_1
     display_title: Page
+    display_plugin: page
     position: 1
     display_options:
-      display_extenders: {  }
-      path: clc/portolan/search
       cache:
         type: none
       defaults:
         cache: false
+      display_extenders: {  }
+      path: clc/portolan/search
     cache_metadata:
       max-age: -1
       contexts:
@@ -691,20 +692,20 @@ display:
       tags:
         - 'config:search_api.index.portolan'
   simple_search_form:
-    display_plugin: page
     id: simple_search_form
     display_title: 'Simple Search'
+    display_plugin: page
     position: 1
     display_options:
-      display_extenders: {  }
-      path: clc/portolan/search
       cache:
         type: none
       defaults:
         cache: false
+      display_description: ''
       display_comment: 'Duplicate of page_1 which exports its search form as a block'
       exposed_block: true
-      display_description: ''
+      display_extenders: {  }
+      path: clc/portolan/search
     cache_metadata:
       max-age: -1
       contexts:

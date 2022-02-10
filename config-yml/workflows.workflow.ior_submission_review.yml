@@ -11,35 +11,35 @@ type: content_moderation
 type_settings:
   states:
     accepted:
-      published: false
-      default_revision: true
       label: Accepted
       weight: -2
-    archived:
       published: false
       default_revision: true
+    archived:
       label: Archived
       weight: 2
-    draft:
       published: false
-      default_revision: false
+      default_revision: true
+    draft:
       label: Submitted
       weight: -3
+      published: false
+      default_revision: false
     published:
       label: Published
+      weight: 1
       published: true
       default_revision: true
-      weight: 1
     published_anonymised_:
-      published: false
-      default_revision: true
       label: 'Published (Anonymised)'
       weight: 0
-    rejected:
       published: false
       default_revision: true
+    rejected:
       label: Rejected
       weight: -1
+      published: false
+      default_revision: true
   transitions:
     accept:
       label: Accept
