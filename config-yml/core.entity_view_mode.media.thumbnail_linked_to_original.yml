@@ -1,0 +1,10 @@
+uuid: 58e74d9b-ad5c-4c75-b52b-60a99e6a0b76
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.thumbnail_linked_to_original
+label: 'Linked Thumbnail (120px linked to original)'
+targetEntityType: media
+cache: true

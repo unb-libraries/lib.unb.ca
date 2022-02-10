@@ -1,0 +1,10 @@
+uuid: 892a7e95-bc71-4700-b3ea-0a1d9fcb024c
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.sm_linked_to_original
+label: 'Linked Small (480px linked to original)'
+targetEntityType: media
+cache: true

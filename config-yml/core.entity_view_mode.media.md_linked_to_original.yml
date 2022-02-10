@@ -1,0 +1,10 @@
+uuid: d70ab6f6-24e8-4672-9582-576380f87618
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.md_linked_to_original
+label: 'Linked Medium (767px linked to original)'
+targetEntityType: media
+cache: true

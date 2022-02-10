@@ -1,0 +1,10 @@
+uuid: 3a717269-236e-4b16-a379-babaf831c108
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.xxs_linked_to_original
+label: 'Linked XXS (220px linked to original)'
+targetEntityType: media
+cache: true

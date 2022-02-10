@@ -1,0 +1,10 @@
+uuid: 1f3ac4c1-7fb3-4109-8b36-2011a9ba4730
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.xs_linked_to_original
+label: 'Linked XS (360px linked to original)'
+targetEntityType: media
+cache: true
