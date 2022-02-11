@@ -6,10 +6,10 @@ dependencies:
     - core.entity_view_mode.media.sm_linked_to_original
     - field.field.media.image.field_media_image
     - field.field.media.image.field_mime_type
-    - image.style.large_scale_width
+    - image.style.content_lg_breakpoint
     - media.type.image
   module:
-    - image
+    - colorbox
     - layout_builder
 third_party_settings:
   layout_builder:
@@ -21,11 +21,16 @@ bundle: image
 mode: sm_linked_to_original
 content:
   field_media_image:
-    type: image
+    type: colorbox
     label: hidden
     settings:
-      image_link: file
-      image_style: large_scale_width
+      colorbox_node_style: content_lg_breakpoint
+      colorbox_node_style_first: ''
+      colorbox_image_style: ''
+      colorbox_gallery: page
+      colorbox_gallery_custom: ''
+      colorbox_caption: auto
+      colorbox_caption_custom: ''
     third_party_settings: {  }
     weight: 1
     region: content

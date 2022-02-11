@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.media.image.field_media_image
     - field.field.media.image.field_mime_type
+    - image.style.content_lg_breakpoint
     - media.type.image
   module:
     - image
@@ -18,7 +19,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: content_lg_breakpoint
     third_party_settings: {  }
     weight: 1
     region: content
