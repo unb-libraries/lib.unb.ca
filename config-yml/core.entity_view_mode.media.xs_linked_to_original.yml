@@ -5,6 +5,6 @@ dependencies:
   module:
     - media
 id: media.xs_linked_to_original
-label: 'Linked XS (360px linked to original)'
+label: 'Colorbox XS (320px linked to original)'
 targetEntityType: media
 cache: true

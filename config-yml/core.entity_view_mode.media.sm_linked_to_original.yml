@@ -5,6 +5,6 @@ dependencies:
   module:
     - media
 id: media.sm_linked_to_original
-label: 'Linked Small (480px linked to original)'
+label: 'Colorbox Small (576px linked to original)'
 targetEntityType: media
 cache: true

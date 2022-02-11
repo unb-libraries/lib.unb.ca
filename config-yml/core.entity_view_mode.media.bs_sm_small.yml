@@ -1,0 +1,10 @@
+uuid: 1248fe6c-f843-49a8-971a-84e7794ae34f
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.bs_sm_small
+label: 'BS SM (scale: 576 width)'
+targetEntityType: media
+cache: true

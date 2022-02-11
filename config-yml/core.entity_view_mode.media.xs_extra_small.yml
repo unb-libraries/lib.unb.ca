@@ -1,0 +1,10 @@
+uuid: e5fbe7ac-f980-4a3d-8d8e-8d1db22e6fa2
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.xs_extra_small
+label: 'BS XS (scale: 320px width)'
+targetEntityType: media
+cache: true
