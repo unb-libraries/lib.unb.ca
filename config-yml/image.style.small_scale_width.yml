@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 name: small_scale_width
-label: 'Small (Scale width 220)'
+label: 'Small (Scale width 240)'
 effects:
   b371b0f2-89e1-4257-acb1-7dba9e1a26ec:
     uuid: b371b0f2-89e1-4257-acb1-7dba9e1a26ec

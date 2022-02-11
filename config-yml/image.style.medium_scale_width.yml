@@ -3,13 +3,13 @@ langcode: en
 status: true
 dependencies: {  }
 name: medium_scale_width
-label: 'Medium (Scale width 360)'
+label: 'Medium (Scale width 320)'
 effects:
   1e2aa18d-a115-4b1b-89c4-a4fc8bdfd01a:
     uuid: 1e2aa18d-a115-4b1b-89c4-a4fc8bdfd01a
     id: image_scale
     weight: 1
     data:
-      width: 360
+      width: 320
       height: null
       upscale: true
