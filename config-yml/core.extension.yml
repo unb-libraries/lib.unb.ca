@@ -19,6 +19,7 @@ module:
   ckeditor_codemirror: 0
   ckwordcount: 0
   color: 0
+  colorbox: 0
   colorbutton: 0
   comment: 0
   config: 0
