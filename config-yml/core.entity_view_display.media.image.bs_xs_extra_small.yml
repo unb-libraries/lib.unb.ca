@@ -1,9 +1,9 @@
-uuid: 7cace78f-2428-41b4-819d-7d35679885ec
+uuid: 6b471f49-95dd-4463-9111-e25e142fe964
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.xs_extra_small
+    - core.entity_view_mode.media.bs_xs_extra_small
     - field.field.media.image.field_media_image
     - field.field.media.image.field_mime_type
     - image.style.medium_scale_width
@@ -15,10 +15,10 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-id: media.image.xs_extra_small
+id: media.image.bs_xs_extra_small
 targetEntityType: media
 bundle: image
-mode: xs_extra_small
+mode: bs_xs_extra_small
 content:
   field_media_image:
     type: image

@@ -6,12 +6,12 @@ dependencies:
     - core.entity_view_mode.media.bs_lg_large
     - core.entity_view_mode.media.bs_sm_small
     - core.entity_view_mode.media.bs_xl_extra_large
+    - core.entity_view_mode.media.bs_xs_extra_small
     - core.entity_view_mode.media.bs_xxl_extra_extra_large
     - core.entity_view_mode.media.extra_large
     - core.entity_view_mode.media.md_linked_to_original
     - core.entity_view_mode.media.sm_linked_to_original
     - core.entity_view_mode.media.thumbnail_linked_to_original
-    - core.entity_view_mode.media.xs_extra_small
     - core.entity_view_mode.media.xs_linked_to_original
     - core.entity_view_mode.media.xxs_linked_to_original
   module:
@@ -110,15 +110,15 @@ filters:
       default_view_mode: default
       allowed_view_modes:
         default: default
-        bs_xl_extra_large: bs_xl_extra_large
         bs_lg_large: bs_lg_large
         bs_sm_small: bs_sm_small
+        bs_xl_extra_large: bs_xl_extra_large
+        bs_xs_extra_small: bs_xs_extra_small
         bs_xxl_extra_extra_large: bs_xxl_extra_extra_large
         extra_large: extra_large
         md_linked_to_original: md_linked_to_original
         sm_linked_to_original: sm_linked_to_original
         thumbnail_linked_to_original: thumbnail_linked_to_original
-        xs_extra_small: xs_extra_small
         xs_linked_to_original: xs_linked_to_original
         xxs_linked_to_original: xxs_linked_to_original
       allowed_media_types:
