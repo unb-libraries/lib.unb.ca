@@ -63,7 +63,7 @@ field_settings:
       module:
         - eresources
   collection_name:
-    label: 'Collection ID » eResources Harvested Collection » Name'
+    label: 'Collection Name'
     datasource_id: 'entity:eresources_record'
     property_path: 'collection_id:entity:name'
     type: string
@@ -142,6 +142,86 @@ field_settings:
     dependencies:
       module:
         - eresources
+  metadata_local_about_url:
+    label: 'Local Metadata: About URL'
+    datasource_id: 'entity:eresources_record'
+    property_path: 'local_metadata_id:entity:about_url'
+    type: string
+    dependencies:
+      module:
+        - eresources
+  metadata_local_access_information:
+    label: 'Local Metadata: Access Information'
+    datasource_id: 'entity:eresources_record'
+    property_path: 'local_metadata_id:entity:access_information'
+    type: string
+    dependencies:
+      module:
+        - eresources
+  metadata_local_alternate_title:
+    label: 'Local Metadata: Alternate Title'
+    datasource_id: 'entity:eresources_record'
+    property_path: 'local_metadata_id:entity:alternate_title'
+    type: text
+    dependencies:
+      module:
+        - eresources
+  metadata_local_description:
+    label: 'Local Metadata: Description'
+    datasource_id: 'entity:eresources_record'
+    property_path: 'local_metadata_id:entity:description'
+    type: text
+    dependencies:
+      module:
+        - eresources
+  metadata_local_help_url:
+    label: 'Local Metadata: Help URL'
+    datasource_id: 'entity:eresources_record'
+    property_path: 'local_metadata_id:entity:help_url'
+    type: string
+    dependencies:
+      module:
+        - eresources
+  metadata_local_license_status:
+    label: 'Local Metadata: License Status'
+    datasource_id: 'entity:eresources_record'
+    property_path: 'local_metadata_id:entity:license_status'
+    type: string
+    dependencies:
+      module:
+        - eresources
+  metadata_local_subscription_end_date:
+    label: 'Local Metadata: Subscription End Date'
+    datasource_id: 'entity:eresources_record'
+    property_path: 'local_metadata_id:entity:subscription_end_date'
+    type: date
+    dependencies:
+      module:
+        - eresources
+  metadata_local_subscription_start_date:
+    label: 'Local Metadata: Subscription Start Date'
+    datasource_id: 'entity:eresources_record'
+    property_path: 'local_metadata_id:entity:subscription_start_date'
+    type: date
+    dependencies:
+      module:
+        - eresources
+  metadata_local_zotero_url:
+    label: 'Local Metadata: Zotero URL'
+    datasource_id: 'entity:eresources_record'
+    property_path: 'local_metadata_id:entity:zotero_url'
+    type: string
+    dependencies:
+      module:
+        - eresources
+  metadata_oclc_description:
+    label: 'OCLC Metadata: Description'
+    datasource_id: 'entity:eresources_record'
+    property_path: 'oclc_metadata_id:entity:description'
+    type: text
+    dependencies:
+      module:
+        - eresources
   oclcnum:
     label: 'OCLC Number (OCN)'
     datasource_id: 'entity:eresources_record'
@@ -191,7 +271,9 @@ processor_settings:
   entity_type: {  }
   language_with_fallback: {  }
   rendered_item: {  }
-  solr_date_range: {  }
+  solr_date_range:
+    weights:
+      preprocess_index: 0
 tracker_settings:
   default:
     indexing_order: fifo
