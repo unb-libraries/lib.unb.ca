@@ -120,6 +120,27 @@ class LocalResult extends ResultBase implements ResultInterface {
   }
 
   /**
+   * Return the metadata field value for a source (default "local").
+   */
+  public function getMetadataField($field, $source = 'local') {
+    return $this->getFirstValue("metadata_{$source}_{$field}");
+  }
+
+  /**
+   * Return the first metadata value found, iterating through sources.
+   */
+  public function getFirstMetadataField($field, $sources = ['local', 'oclc']) {
+    foreach ($sources as $source) {
+      $value = $this->getMetadataField($field, $source);
+      if (!empty($value)) {
+        return $value;
+      }
+    }
+
+    return NULL;
+  }
+
+  /**
    * Return the first field value from the index, or NULL.
    */
   private function getFirstValue($field) {
