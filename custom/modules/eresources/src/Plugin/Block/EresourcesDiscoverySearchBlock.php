@@ -4,6 +4,7 @@ namespace Drupal\eresources\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\eresources\Controller\RecordController;
+use Drupal\eresources\Form\TrialsForm;
 
 /**
  * Provides the UNB Libraries eResources Discovery Search Block.
@@ -40,6 +41,10 @@ class EresourcesDiscoverySearchBlock extends BlockBase {
     $permalink = \Drupal::request()->get('id');
 
     $trials = FALSE;
+    $trialsEntries = TrialsForm::getTrials();
+    if (!empty($trialsEntries)) {
+      $trials = TRUE;
+    }
     if ($trials || $formId == 'eres_trials') {
       $formList[] = 'trials';
     }

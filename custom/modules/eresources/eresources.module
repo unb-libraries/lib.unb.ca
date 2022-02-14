@@ -21,6 +21,11 @@ function eresources_theme($existing, $type, $theme, $path) {
         'form_id' => NULL,
       ],
     ],
+    'trials' => [
+      'variables' => [
+        'eresources' => NULL,
+      ],
+    ],
     'permalink' => [
       'variables' => [
         'entry' => NULL,
