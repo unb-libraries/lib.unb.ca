@@ -11,3 +11,8 @@
     width: 100%;
   }
 }
+
+/* Adjustment for Media Library's Legend within Photo Gallery form entity reference */
+.field--name-field-images fieldset.media-library-widget legend {
+  top: .5rem;
+}
