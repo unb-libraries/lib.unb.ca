@@ -1,6 +1,15 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.no_media_html_ior_
+    - workflows.workflow.ior_submission_review
+  module:
+    - content_moderation
+    - filter
+    - ior
+    - ior_awards
+    - toolbar
 id: ior_manager
 label: 'IOR Contest Manager'
 weight: 6

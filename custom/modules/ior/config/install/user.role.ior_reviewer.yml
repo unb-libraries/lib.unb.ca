@@ -1,6 +1,10 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - ior
+    - ior_awards
+    - toolbar
 id: ior_reviewer
 label: 'IOR Reviewer'
 weight: 7
