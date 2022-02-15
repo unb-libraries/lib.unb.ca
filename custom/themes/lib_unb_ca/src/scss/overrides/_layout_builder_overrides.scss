@@ -15,6 +15,9 @@
 .node__content .layout:not(:last-child) {
     margin-bottom: 2.5rem;
 }
+.layout__region--content .paragraph .field__item .field--type-image {
+  margin-bottom: 0;
+}
 
 .layout--twocol-section--67-33 {
   @media (min-width: 992px) {
