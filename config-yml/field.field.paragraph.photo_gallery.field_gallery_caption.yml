@@ -1,0 +1,26 @@
+uuid: c3a94866-c2a1-46b0-b7e6-a01cfd84c21d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_gallery_caption
+    - paragraphs.paragraphs_type.photo_gallery
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - library_page_html
+id: paragraph.photo_gallery.field_gallery_caption
+field_name: field_gallery_caption
+entity_type: paragraph
+bundle: photo_gallery
+label: 'Gallery Caption'
+description: 'Optional gallery caption text, supports HTML tags'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

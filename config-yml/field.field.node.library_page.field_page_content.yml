@@ -53,7 +53,7 @@ settings:
       linked_image:
         weight: 17
         enabled: true
-      slide:
-        weight: -10
+      photo_gallery:
+        weight: 10
         enabled: false
 field_type: entity_reference_revisions
