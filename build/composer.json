@@ -285,6 +285,7 @@
         "drupal/entity_reference_revisions": "1.9",
         "drupal/externalauth": "1.4",
         "drupal/facets": "2.0.1",
+        "drupal/field_formatter_class": "1.5",
         "drupal/field_group": "3.2",
         "drupal/field_permissions": "1.1.0",
         "drupal/file_management": "1.x-dev",
