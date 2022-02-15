@@ -1,0 +1,15 @@
+uuid: 973c4fe2-8376-4fb7-ba39-45baa3483729
+langcode: en
+status: true
+dependencies: {  }
+name: photo_gallery
+label: 'Photo Gallery (scale height 200px)'
+effects:
+  facbf4b6-b64b-4b5d-ad6e-6df580230790:
+    uuid: facbf4b6-b64b-4b5d-ad6e-6df580230790
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 200
+      upscale: true
