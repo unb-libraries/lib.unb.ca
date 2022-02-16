@@ -6,5 +6,5 @@ id: photo_gallery
 label: 'Photo Gallery'
 icon_uuid: null
 icon_default: null
-description: ''
+description: 'Used for Colorbox photo galleries with multiple image upload support.'
 behavior_plugins: {  }

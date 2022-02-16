@@ -17,7 +17,7 @@ field_name: field_gallery_caption
 entity_type: paragraph
 bundle: photo_gallery
 label: 'Gallery Caption'
-description: 'Optional gallery caption text, supports HTML tags'
+description: 'Optional gallery caption text with support for HTML tags / attributes.'
 required: false
 translatable: false
 default_value: {  }
