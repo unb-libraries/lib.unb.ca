@@ -3,7 +3,7 @@
   {% for entry in eresources %}
   <li class="list-group-item {{ cycle(stripe, loop.index0) }}">
     <div class="row">
-      <div class="col-12 col-lg-8">
+      <div class="col">
         <h4><a href="https://login.proxy.hil.unb.ca/login?url={{ entry.getViaUrl }}" target="_blank" onclick='javascript: _gaq.push(["_trackPageview", "/GA/{{ entry.getTitle }}"]);'>{{ entry.getTitle }}</a></h4>
         <p><b><i class="fas fa-calendar-alt"></i> Trial Runs:</b> {{ entry.getMetadatafield('subscription_start_date') | date('Y-m-d') }} to {{ entry.getMetadatafield('subscription_end_date') | date('Y-m-d') }}</p>
         {{ entry.getFirstMetadataField('description') | raw }}
