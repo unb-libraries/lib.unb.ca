@@ -5,11 +5,11 @@
     <div class="row">
       <div class="col-12 col-lg-8">
         <h4><a href="{{ entry.getViaUrl }}" target="_blank" onclick='javascript: _gaq.push(["_trackPageview", "/GA/{{ entry.getTitle }}"]);'>{{ entry.getTitle }}</a></h4>
+        <p><b><i class="fas fa-calendar-alt"></i> Trial Runs:</b> {{ entry.getMetadatafield('subscription_start_date') | date('Y-m-d') }} to {{ entry.getMetadatafield('subscription_end_date') | date('Y-m-d') }}</p>
         {{ entry.getFirstMetadataField('description') | raw }}
         {% if entry.getMetadatafield('subscription_start_date') is not empty %}
-        <p><b>Trial Runs:</b> {{ entry.getMetadatafield('subscription_start_date') | date('Y-m-d') }} to {{ entry.getMetadatafield('subscription_end_date') | date('Y-m-d') }}</p>
         {% endif %}
-        <p class="mb-0"><i class="fas fa-share"></i> <a class="d-inline" href="/contact-unb-libraries-staff?recipient=lroulsto&amp;subject=Trial%20Feedback%20[{{ entry.getTitle | url_encode }}]"> Feedback welcome</a></p>
+        <p class="mt-2 mb-0"><i class="fas fa-share"></i> <a class="d-inline" href="/contact-unb-libraries-staff?recipient=lroulsto&amp;subject=Trial%20Feedback%20[{{ entry.getTitle | url_encode }}]"> Feedback welcome</a></p>
       </div>
     </div>
   </li>
