@@ -138,7 +138,7 @@ field_settings:
     label: 'KB Data Type'
     datasource_id: 'entity:eresources_record'
     property_path: kb_data_type
-    type: string
+    type: solr_text_unstemmed
     dependencies:
       module:
         - eresources
