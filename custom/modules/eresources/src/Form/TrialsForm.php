@@ -78,6 +78,7 @@ class TrialsForm extends FormBase {
     $parseMode->setConjunction('AND');
     $indexQuery->setParseMode($parseMode);
     $indexQuery->addCondition('metadata_local_license_status', 'T');
+    $indexQuery->addCondition('metadata_local_subscription_end_date', date('Y-m-d'), '>=');
     $indexQuery->addCondition('status', TRUE);
     $indexQuery->range(0, 50);
     $indexQuery->sort('title', 'ASC');
