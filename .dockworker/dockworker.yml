@@ -7,7 +7,7 @@ dockworker:
       - LIB
       - RECORDS
     upstream_images:
-      - ghcr.io/unb-libraries/drupal:9.x-1.x-unblib
+      - ghcr.io/unb-libraries/drupal:9.x-2.x-unblib
     uuid: 3101
   deployment:
     environments:
