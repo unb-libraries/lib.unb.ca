@@ -1,6 +1,6 @@
 ![lib.unb.ca screenshot](https://github.com/unb-libraries/lib.unb.ca/raw/prod/.dockworker/screenshot.png "lib.unb.ca screenshot")
 # [lib.unb.ca](https://lib.unb.ca/) : Lean Instance Repository
-[![Build Status](https://github.com/unb-libraries/lib.unb.ca/actions/workflows/test-suite.yaml/badge.svg?branch=prod)](https://github.com/unb-libraries/lib.unb.ca/actions/workflows/test-suite.yaml)
+[![Build Status](https://github.com/unb-libraries/lib.unb.ca/actions/workflows/deployment-workflow.yaml/badge.svg?branch=prod)](https://github.com/unb-libraries/lib.unb.ca/actions/workflows/deployment-workflow.yaml)
 [![GitHub license](https://img.shields.io/github/license/unb-libraries/lib.unb.ca)](https://github.com/unb-libraries/lib.unb.ca/blob/prod/LICENSE)
 ![GitHub repo size](https://img.shields.io/github/repo-size/unb-libraries/lib.unb.ca?label=lean%20repo%20size)
 
@@ -31,8 +31,8 @@ Run ```vendor/bin/dockworker``` to list available dockworker commands for this a
 This application was created at [![UNB Libraries](https://github.com/unb-libraries/assets/raw/master/unblibbadge.png "UNB Libraries")](https://lib.unb.ca) by the following humans:
 
 <a href="https://github.com/jtmcd75"><img src="https://avatars.githubusercontent.com/u/10372283?v=3" title="Jeremy McDermott" width="128" height="128"></a>
-<a href="https://github.com/JacobSanford"><img src="https://avatars.githubusercontent.com/u/244894?v=3" title="Jacob Sanford" width="128" height="128"></a>
 <a href="https://github.com/patschilf"><img src="https://avatars.githubusercontent.com/u/46682967?v=3" title="patschilf" width="128" height="128"></a>
+<a href="https://github.com/JacobSanford"><img src="https://avatars.githubusercontent.com/u/244894?v=3" title="Jacob Sanford" width="128" height="128"></a>
 <a href="https://github.com/bricas"><img src="https://avatars.githubusercontent.com/u/18400?v=3" title="Brian Cassidy" width="128" height="128"></a>
 <a href="https://github.com/jeffcarter"><img src="https://avatars.githubusercontent.com/u/656114?v=3" title="Jeff Carter" width="128" height="128"></a>
 
