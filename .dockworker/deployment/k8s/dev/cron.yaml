@@ -85,6 +85,9 @@ spec:
                   mountPath: /app/html/sites/default
                   name: drupal-persistent-storage
                 -
+                  mountPath: /app/private_filesystem
+                  name: drupal-private-storage
+                -
                   name: oclc-sftp-key
                   mountPath: "/app/keys/oclc-sftp.root.key"
                   subPath: "oclc-sftp.root.key"
@@ -98,6 +101,10 @@ spec:
               name: drupal-persistent-storage
               persistentVolumeClaim:
                 claimName: lib-unb-ca
+            -
+              name: drupal-private-storage
+              persistentVolumeClaim:
+                claimName: lib-unb-ca-private
             -
               name: oclc-sftp-key
               secret:
