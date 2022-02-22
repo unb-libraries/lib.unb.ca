@@ -76,6 +76,11 @@ class Record extends ContentEntityBase implements ContentEntityInterface {
           'max_length' => 256,
         ]
       )
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'string',
+        'weight' => 0,
+      ])
       ->setDisplayOptions('form', [
         'type' => 'string_textfield',
         'weight' => 0,

@@ -27,20 +27,28 @@ class HarvestedCollectionPageWorker extends QueueWorkerBase implements Container
   use OclcPluginManagerTrait;
 
   /**
-   * An OCLC authorizer.
+   * An OCLC authorizer for the KB API.
    *
    * @var \Drupal\oclc_api\Oclc\OclcAuthorizationInterface
    */
-  protected $oclcAuthorization;
+  protected $oclcKbAuthorization;
+
+  /**
+   * An OCLC authorizer for the WC Search V2 API.
+   *
+   * @var \Drupal\oclc_api\Oclc\OclcAuthorizationInterface
+   */
+  protected $oclcWorldCatSearchAuthorization;
 
   /**
    * Class constructor.
    */
-  public function __construct(array $configuration, string $plugin_id, $plugin_definition, OclcApiManagerInterface $oclc_api_manager, OclcAuthorizationInterface $oclc_authorizer) {
+  public function __construct(array $configuration, string $plugin_id, $plugin_definition, OclcApiManagerInterface $oclc_api_manager, OclcAuthorizationInterface $oclc_kb_authorizer, OclcAuthorizationInterface $oclc_worldcat_search_authorizer) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
 
     $this->oclcApiManager = $oclc_api_manager;
-    $this->oclcAuthorization = $oclc_authorizer;
+    $this->oclcKbAuthorization = $oclc_kb_authorizer;
+    $this->oclcWorldCatSearchAuthorization = $oclc_worldcat_search_authorizer;
   }
 
   /**
@@ -49,7 +57,8 @@ class HarvestedCollectionPageWorker extends QueueWorkerBase implements Container
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     $oclc_api_manager = $container->get('plugin.manager.oclc_api');
     $oclc_authorizer = $container->get('oclc_authorizer.worldcat_knowledge_base');
-    return new static($configuration, $plugin_id, $plugin_definition, $oclc_api_manager, $oclc_authorizer);
+    $oclc_worldcat_search_authorizer = $container->get('oclc_authorizer.worldcat_search_v2');
+    return new static($configuration, $plugin_id, $plugin_definition, $oclc_api_manager, $oclc_authorizer, $oclc_worldcat_search_authorizer);
   }
 
   /**
@@ -66,7 +75,7 @@ class HarvestedCollectionPageWorker extends QueueWorkerBase implements Container
 
     $storage = \Drupal::entityTypeManager()->getStorage('eresources_record');
 
-    $api = $this->oclcApi('worldcat_knowledge_base', ['authorization' => $this->oclcAuthorization]);
+    $api = $this->oclcApi('worldcat_knowledge_base', ['authorization' => $this->oclcKbAuthorization]);
     $result = $api->get('search-entries', $data);
 
     if (!empty($result->entries)) {
@@ -114,8 +123,39 @@ class HarvestedCollectionPageWorker extends QueueWorkerBase implements Container
         }
         $entity->save();
 
+        $this->updateOclcMetadata($entity);
       }
     }
+  }
+
+  /**
+   * Pull extra metadata from OCLC APIs.
+   */
+  private function updateOclcMetadata($entity) {
+    $oclcMetadata = NULL;
+    if (empty($entity->oclc_metadata_id->target_id)) {
+      $oclcMetadataStorage = \Drupal::entityTypeManager()->getStorage('eresources_oclc_metadata');
+      $oclcMetadata = $oclcMetadataStorage->create([]);
+      $entity->oclc_metadata_id->entity = $oclcMetadata;
+    }
+    else {
+      $oclcMetadata = $entity->oclc_metadata_id->entity;
+    }
+
+    $searchApi = $this->oclcApi('worldcat_search_v2', ['authorization' => $this->oclcWorldCatSearchAuthorization]);
+    $result = $searchApi->get('get-bibliographic-resource', ['oclcNumber' => $entity->oclcnum->getString()]);
+    if ($result && isset($result->description->summaries[0]->text)) {
+      $oclcMetadata->set(
+        'description',
+        [
+          'value' => $result->description->summaries[0]->text,
+          'format' => 'plain_text',
+        ]
+      );
+    }
+
+    $oclcMetadata->save();
+    $entity->save();
   }
 
 }

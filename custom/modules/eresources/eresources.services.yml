@@ -25,3 +25,14 @@ services:
     arguments:
       - '@oclc.api_key.worldcat_knowledge_base'
       - '@plugin.manager.oclc_api'
+  oclc.api_key.worldcat_search_v2:
+    class: Drupal\key\Entity\Key
+    factory: [ '@key.repository', getKey ]
+    arguments: [ oclc_api ]
+    public: false
+  oclc_authorizer.worldcat_search_v2:
+    class: Drupal\oclc_api\Oclc\OclcV2Authorizer
+    arguments:
+      - '@oclc.api_key.worldcat_search_v2'
+      - '@plugin.manager.oclc_api'
+      - ['worldcat_search_v2']
