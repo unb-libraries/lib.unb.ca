@@ -81,7 +81,6 @@ module:
   lib_unb_custom_entity: 0
   link: 0
   linkit: 0
-  login_destination: 0
   mailsystem: 0
   media: 0
   media_entity_browser: 0
