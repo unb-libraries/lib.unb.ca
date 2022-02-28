@@ -320,6 +320,7 @@
     "drupal/paragraphs": "1.12",
     "drupal/pathauto": "1.9",
     "drupal/redirect": "1.7",
+    "drupal/r4032login": "2.1.0",
     "drupal/redis": "1.5",
     "drupal/samlauth": "3.4",
     "drupal/search_api": "1.23",
