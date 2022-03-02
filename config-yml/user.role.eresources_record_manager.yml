@@ -1,0 +1,9 @@
+uuid: 1532b1e4-629a-4e72-a6e6-6b588d2c19d6
+langcode: en
+status: true
+dependencies: {  }
+id: eresources_record_manager
+label: 'eResources Record Manager'
+weight: 8
+is_admin: null
+permissions: {  }

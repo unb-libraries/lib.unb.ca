@@ -1,0 +1,14 @@
+uuid: 3e38eaf5-0fc1-478f-bd53-9a69bba5b3de
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.eresources_record_manager
+  module:
+    - user
+id: user_remove_role_action.eresources_record_manager
+label: 'Remove the eResources Record Manager role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: eresources_record_manager

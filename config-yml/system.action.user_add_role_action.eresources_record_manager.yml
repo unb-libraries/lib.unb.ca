@@ -1,0 +1,14 @@
+uuid: beb18d93-e10a-4b09-808a-014cc98b6854
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.eresources_record_manager
+  module:
+    - user
+id: user_add_role_action.eresources_record_manager
+label: 'Add the eResources Record Manager role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: eresources_record_manager
