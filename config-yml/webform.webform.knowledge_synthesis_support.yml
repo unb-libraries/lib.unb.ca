@@ -1,0 +1,326 @@
+uuid: 54fa1ee3-5c3f-4841-8507-a30fde369098
+langcode: en
+status: open
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: knowledge_synthesis_support
+title: 'Knowledge Synthesis Support'
+description: 'Webform for Systematic Reviews website'
+category: ''
+elements: |-
+  container:
+    '#type': container
+    '#attributes':
+      class:
+        - theme-dark
+    eligibility:
+      '#type': fieldset
+      '#title': Eligibility
+      processed_text_eligibility:
+        '#type': processed_text
+        '#text': |
+          <p><span><span><span><span>In order to be eligible for our collaboration service, we require you to meet two (out of three) of the criteria below.&nbsp; If you are seeking our consultation service, meeting two of the criteria below will entitle you to an additional 3-hours of support.</span></span></span></span></p>
+        '#format': library_page_html
+      conditions:
+        '#type': checkboxes
+        '#title': Conditions
+        '#title_display': invisible
+        '#options':
+          prisma: 'I have a completed protocol that meets PRISMA-P guidelines for protocols.'
+          training: 'I have taken the Coursera Systematic Reviews course (free version) or an equivalent course (such as the JBI training course)'
+          team: 'I have at least one team member who has experience with knowledge synthesis methodologies and is prepared to serve as methodologist for this project'
+      protocol:
+        '#type': webform_document_file
+        '#title': Protocol
+        '#states':
+          visible:
+            ':input[name="conditions[prisma]"]':
+              checked: true
+        '#file_placeholder': 'Attach your completed protocol.'
+    personal_information:
+      '#type': fieldset
+      '#title': 'Personal information'
+      name:
+        '#type': textfield
+        '#title': Name
+        '#required': true
+      faculty_discipline:
+        '#type': textfield
+        '#title': Faculty/Discipline
+        '#required': true
+      email:
+        '#type': textfield
+        '#title': Email
+        '#input_mask': '''alias'': ''email'''
+        '#required': true
+        '#pattern': '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$'
+      role:
+        '#type': webform_radios_other
+        '#title': Role
+        '#options':
+          ra: 'Research assistant'
+          gs: 'Graduate student'
+          us: 'Undergraduate student'
+          fac: 'Faculty member'
+        '#other__option_label': Other
+        '#other__placeholder': ''
+        '#required': true
+    project_information:
+      '#type': fieldset
+      '#title': 'Project Information'
+      services:
+        '#type': radios
+        '#title': 'Which knowledge synthesis service are you interested in?'
+        '#options':
+          consultation: Consultation
+          collaboration: Collaboration
+        '#options_display': side_by_side
+        '#required': true
+      container_supervisor:
+        '#type': fieldset
+        '#title': 'Supervisor/Primary investigator (students only)'
+        processed_text_supervisor:
+          '#type': processed_text
+          '#text': |
+            <p><span><span><span>If you are a student, please provide the name and email of your supervisor or the project’s primary investigator</span></span></span></p>
+          '#format': library_page_html
+        supervisor_name:
+          '#type': textfield
+          '#title': Name
+        supervisor_email:
+          '#type': textfield
+          '#title': Email
+          '#input_mask': '''alias'': ''email'''
+          '#pattern': '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$'
+      team_members:
+        '#type': textarea
+        '#title': 'Who are your team members and what are their roles in this project? '
+      experience:
+        '#type': textarea
+        '#title': 'Do you or any of your team members have experience or training with knowledge synthesis? Please describe.'
+      type:
+        '#type': webform_radios_other
+        '#title': 'What type of knowledge synthesis are you performing'
+        '#options':
+          systematic: 'Systematic review'
+          scoping: 'Scoping review'
+        '#other__option_label': Other
+        '#other__placeholder': ''
+        '#required': true
+      purpose:
+        '#type': webform_radios_other
+        '#title': 'What is the purpose of this project?'
+        '#options':
+          thesis: Thesis/Project/Dissertation
+          publication: Publication
+          grant: Grant
+        '#other__option_label': Other
+        '#required': true
+      research_question:
+        '#type': textarea
+        '#title': 'What is your research question? '
+      in_ex_criteria:
+        '#type': textarea
+        '#title': 'What are your inclusion and exclusion criteria? '
+      rationale:
+        '#type': textarea
+        '#title': 'What is your rationale for conducting this review? What gap in practice / literature / policy will does it address? '
+      existing_research:
+        '#type': textarea
+        '#title': 'Have you searched for existing reviews or protocols on your topic?'
+        '#description': 'See the &ldquo;checking for existing reviews / protocols&rdquo; section of our <a href="https://lib.unb.ca/research/systematic-reviews/process-searching#searching_preparation" target="_blank">processes and searching webpage</a>'
+      timeframe:
+        '#type': textarea
+        '#title': 'What is your timeframe for this project?'
+        '#description': 'Please provide as much detail as you can.'
+      dois:
+        '#type': textarea
+        '#title': 'If you have already identified some relevant studies, please provide the DOI of the article, the PMID, or a detailed reference (including first author, article title, journal name, volume, issue, pages and year)'
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: source_entity_webform
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: true
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: true
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
+variants: {  }
