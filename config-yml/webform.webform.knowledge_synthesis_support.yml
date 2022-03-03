@@ -25,6 +25,10 @@ elements: |-
         '#type': processed_text
         '#text': |
           <p><span><span><span><span>In order to be eligible for our collaboration service, we require you to meet two (out of three) of the criteria below.&nbsp; If you are seeking our consultation service, meeting two of the criteria below will entitle you to an additional 3-hours of support.</span></span></span></span></p>
+
+          <p>For information on PRISMA-P guidelines, visit <a href="http://prisma-statement.org/Extensions/Protocols">http://prisma-statement.org/Extensions/Protocols</a></p>
+
+          <p>To take the Systematic Reviews course, visit <a href="https://www.coursera.org/learn/systematic-review">https://www.coursera.org/learn/systematic-review</a></p>
         '#format': library_page_html
       conditions:
         '#type': checkboxes
