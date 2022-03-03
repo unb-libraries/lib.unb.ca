@@ -24,28 +24,21 @@ elements: |-
       processed_text_eligibility:
         '#type': processed_text
         '#text': |
-          <p><span><span><span><span>In order to be eligible for our collaboration service, we require you to meet two (out of three) of the criteria below.&nbsp; If you are seeking our consultation service, meeting two of the criteria below will entitle you to an additional 3-hours of support.</span></span></span></span></p>
-
-          <p>For information on PRISMA-P guidelines, visit <a href="http://prisma-statement.org/Extensions/Protocols">http://prisma-statement.org/Extensions/Protocols</a></p>
-
-          <p>To take the Systematic Reviews course, visit <a href="https://www.coursera.org/learn/systematic-review">https://www.coursera.org/learn/systematic-review</a></p>
+          <p>In order to be eligible for our collaboration service, we require you to meet two (out of three) of the criteria below.&nbsp; If you are seeking our consultation service, meeting two of the criteria below will entitle you to an additional 3-hours of support.</p>
+          <ol>
+          	<li>You have a completed protocol that meets <a href="http://prisma-statement.org/Extensions/Protocols">PRISMA-P</a> guidelines for protocols.</li>
+          	<li>You have taken the <a href="https://www.coursera.org/learn/systematic-review">Coursera Systematic Reviews course</a> (free version) or an equivalent course (such as the JBI training course).</li>
+          	<li>You have at least one team member who has experience with knowledge synthesis methodologies and is prepared to serve as methodologist for this project.</li>
+          </ol>
         '#format': library_page_html
-      conditions:
-        '#type': checkboxes
-        '#title': Conditions
-        '#title_display': invisible
-        '#options':
-          prisma: 'I have a completed protocol that meets PRISMA-P guidelines for protocols.'
-          training: 'I have taken the Coursera Systematic Reviews course (free version) or an equivalent course (such as the JBI training course)'
-          team: 'I have at least one team member who has experience with knowledge synthesis methodologies and is prepared to serve as methodologist for this project'
       protocol:
         '#type': webform_document_file
         '#title': Protocol
-        '#states':
-          visible:
-            ':input[name="conditions[prisma]"]':
-              checked: true
-        '#file_placeholder': 'Attach your completed protocol.'
+        '#file_placeholder': 'If you have a protocol that meets PRISMA-P guidelines for protocols, please attach it.'
+      conditions:
+        '#type': checkbox
+        '#title': 'I meet at least two of the listed requirements.'
+        '#required': true
     personal_information:
       '#type': fieldset
       '#title': 'Personal information'
@@ -85,13 +78,33 @@ elements: |-
           collaboration: Collaboration
         '#options_display': side_by_side
         '#required': true
+      container_services_consultation:
+        '#type': container
+        '#states':
+          visible:
+            ':input[name="services"]':
+              value: consultation
+        processed_text_services_consultation_terms:
+          '#type': processed_text
+          '#text': |
+            <ul>
+              <li>The principal investigator for the project will be the first point of contact for the librarian.</li>
+              <li>Meetings between the librarian and team should always include the primary investigator.</li>
+              <li>The librarian will be offered authorship on the final publication(s), which they may accept or decline at their discretion.</li>
+              <li>Communication with the librarian will be prompt and responsive, to ensure that the project proceeds in a timely manner.</li>
+            </ul>
+          '#format': library_page_html
+        services_consultations_terms:
+          '#type': checkbox
+          '#title': 'I agree to above requirements.'
+          '#required': true
       container_supervisor:
         '#type': fieldset
         '#title': 'Supervisor/Primary investigator (students only)'
         processed_text_supervisor:
           '#type': processed_text
           '#text': |
-            <p><span><span><span>If you are a student, please provide the name and email of your supervisor or the project’s primary investigator</span></span></span></p>
+            <p>If you are a student, please provide the name and email of your supervisor or the project’s primary investigator</p>
           '#format': library_page_html
         supervisor_name:
           '#type': textfield
