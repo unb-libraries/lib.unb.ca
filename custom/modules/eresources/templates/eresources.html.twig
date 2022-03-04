@@ -72,7 +72,7 @@
     {% set nextIndex = loop.index0 + 1 %}
     {% if loop.last or (
       entry.getTitle|lower != eresources[nextIndex].getTitle|lower and
-      entry.getOclcNum != eresources[nextIndex].getOclcNum
+      (entry.getOclcNum is empty or entry.getOclcNum != eresources[nextIndex].getOclcNum)
     ) %}
       <li class="list-group-item {{ cycle(stripe, row) }}">
         <div class="row">
