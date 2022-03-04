@@ -169,6 +169,16 @@ class LocalMetadata extends ContentEntityBase implements ContentEntityInterface 
       ])
       ->setDisplayConfigurable('form', TRUE);
 
+    $fields['is_collection'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Is a Collection (Video tab only)'))
+      ->setRequired(FALSE)
+      ->setDefaultValue(FALSE)
+      ->setDisplayOptions('form', [
+        'type' => 'boolean_checkbox',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
     return $fields;
   }
 
