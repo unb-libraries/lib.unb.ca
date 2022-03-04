@@ -3,6 +3,8 @@
 namespace Drupal\eresources\Form;
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\search_api\Entity\Index;
+use Drupal\eresources\LocalResult;
 
 /**
  * KB Videos Form.
@@ -55,23 +57,47 @@ class VideosForm extends KbFormBase implements KbFormInterface {
     if (empty($query) || $this->getFormId() != $req->get('form_id')) {
       $form_wrapper = $this->getKbFormId() . "_wrapper";
 
-      $form[$form_wrapper]['collections_wrapper'] = [
-        '#type' => 'container',
-        '#attributes' => [
-          'class' => [
-            'form-row',
-            'flex-sm-nowrap',
-            'border-top',
-            'border-dark',
-            'pt-4',
-            'pb-3',
-          ],
-        ],
-      ];
+      $index = Index::load('eresources');
+      $indexQuery = $index->query();
+      $parseMode = \Drupal::service('plugin.manager.search_api.parse_mode')->createInstance('direct');
+      $indexQuery->setParseMode($parseMode);
 
-      $form[$form_wrapper]['collections_wrapper']['collections'] = [
-        '#markup' => '<p class="font-weight-bold"><span class="text-danger">OR</span> Browse for Video Collections</p>',
-      ];
+      $indexQuery->addCondition('kb_data_type', 'video');
+      $indexQuery->addCondition('metadata_local_is_collection', TRUE);
+      $indexQuery->sort('title', 'ASC');
+      $indexQuery->range(0, 10000);
+      $result = $indexQuery->execute();
+
+      $total = $result->getResultCount();
+      if ($total > 0) {
+        $form[$form_wrapper]['collections_wrapper'] = [
+          '#type' => 'container',
+          '#attributes' => [
+            'class' => [
+              'border-top',
+              'border-dark',
+              'pt-4',
+              'pb-3',
+            ],
+          ],
+        ];
+
+        $form[$form_wrapper]['collections_wrapper']['header'] = [
+          '#markup' => '<p class="font-weight-bold"><span class="text-danger">OR</span> Browse for Video Collections</p>',
+        ];
+
+        $entries = array_map(function ($i) {
+          return new LocalResult($i);
+        }, $result->getResultItems());
+
+        $form[$form_wrapper]['collections_wrapper']['results'] = [
+          '#prefix' => '<div id="search_results_wrapper" class="mt-4 mx-n4">',
+          '#suffix' => '</div>',
+          '#theme' => 'eresources',
+          '#eresources' => $entries,
+          '#form_id' => $this->getKbFormId(),
+        ];
+      }
     }
 
     return $form;
