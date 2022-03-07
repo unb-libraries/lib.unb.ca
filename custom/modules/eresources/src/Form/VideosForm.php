@@ -62,6 +62,7 @@ class VideosForm extends KbFormBase implements KbFormInterface {
       $parseMode = \Drupal::service('plugin.manager.search_api.parse_mode')->createInstance('direct');
       $indexQuery->setParseMode($parseMode);
 
+      $indexQuery->addCondition('status', TRUE);
       $indexQuery->addCondition('kb_data_type', 'video');
       $indexQuery->addCondition('metadata_local_is_collection', TRUE);
       $indexQuery->sort('title', 'ASC');
