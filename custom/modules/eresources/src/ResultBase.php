@@ -10,6 +10,17 @@ namespace Drupal\eresources;
 class ResultBase {
 
   /**
+   * Timespan replacement values.
+   *
+   * @var array
+   */
+  private static $timespan = [
+    'D' => 'day',
+    'M' => 'month',
+    'Y' => 'year',
+  ];
+
+  /**
    * Encapsulated item object.
    *
    * @var object

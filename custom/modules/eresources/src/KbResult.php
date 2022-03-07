@@ -8,17 +8,6 @@ namespace Drupal\eresources;
 class KbResult extends ResultBase implements ResultInterface {
 
   /**
-   * Timespan replacement values.
-   *
-   * @var array
-   */
-  private static $timespan = [
-    'D' => 'day',
-    'M' => 'month',
-    'Y' => 'year',
-  ];
-
-  /**
    * {@inheritDoc}
    */
   public function getResultType() {
