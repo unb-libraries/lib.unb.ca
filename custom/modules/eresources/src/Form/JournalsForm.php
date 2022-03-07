@@ -3,6 +3,7 @@
 namespace Drupal\eresources\Form;
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 
 /**
  * KB Journals form.
@@ -63,8 +64,8 @@ class JournalsForm extends KbFormBase implements KbFormInterface {
     $form['journals_wrapper']['links'] = [
       '#markup' => '<div class="wrapper-list-inline item-list">
 <ul>
-  <li><a href="#">Journal Packages</a></li>
-  <li><a href="#">Newspaper Packages</a></li>
+  <li><a href="' . Url::fromRoute('eresources.packages', ['type' => 'journals'])->toString() . '">Journal Packages</a></li>
+  <li><a href="' . Url::fromRoute('eresources.packages', ['type' => 'newspapers'])->toString() . '">Newspaper Packages</a></li>
   <li><a href="https://lib.unb.ca/eresources/newspaper-guide"><i class="fas fa-question-circle"></i> Newspaper Guide</a></li>
 </ul>
 </div>',
