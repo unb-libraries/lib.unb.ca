@@ -182,6 +182,14 @@ field_settings:
     dependencies:
       module:
         - eresources
+  metadata_local_is_collection:
+    label: 'Local Metadata: Is a Collection'
+    datasource_id: 'entity:eresources_record'
+    property_path: 'local_metadata_id:entity:is_collection'
+    type: boolean
+    dependencies:
+      module:
+        - eresources
   metadata_local_license_status:
     label: 'Local Metadata: License Status'
     datasource_id: 'entity:eresources_record'
