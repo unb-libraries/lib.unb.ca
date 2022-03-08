@@ -37,3 +37,10 @@ eresources.collections:
     _title_callback: '\Drupal\eresources\Controller\CollectionsController::title'
   requirements:
     _permission: 'access content'
+eresources.collection:
+  path: '/e-resources/collection/{collection_uid}'
+  defaults:
+    _controller: '\Drupal\eresources\Controller\CollectionController::view'
+    _title_callback: '\Drupal\eresources\Controller\CollectionController::title'
+  requirements:
+    _permission: 'access content'
