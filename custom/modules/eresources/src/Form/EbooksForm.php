@@ -3,6 +3,7 @@
 namespace Drupal\eresources\Form;
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 
 /**
  * KB Ebooks form.
@@ -69,8 +70,9 @@ class EbooksForm extends KbFormBase implements KbFormInterface {
         ],
       ];
 
+      $collectionsLink = Url::fromRoute('eresources.collections', ['type' => 'ebooks'])->toString();
       $form[$form_wrapper]['collections_wrapper']['collections'] = [
-        '#markup' => '<p class="font-weight-bold"><span class="text-danger">OR</span> Browse for eBooks Collections</p>',
+        '#markup' => '<p class="font-weight-bold mb-0"><span class="text-danger">OR</span> <a href="' . $collectionsLink . '">Browse for eBooks Collections</a></p>',
       ];
     }
 

@@ -30,3 +30,10 @@ eresources.packages:
     _title_callback: '\Drupal\eresources\Controller\PackagesController::title'
   requirements:
     _permission: 'access content'
+eresources.collections:
+  path: '/e-resources/collections/{type}'
+  defaults:
+    _controller: '\Drupal\eresources\Controller\CollectionsController::view'
+    _title_callback: '\Drupal\eresources\Controller\CollectionsController::title'
+  requirements:
+    _permission: 'access content'
