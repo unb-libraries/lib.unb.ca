@@ -86,6 +86,7 @@ class CollectionsController extends ControllerBase {
       $render['bottom-pager'] = ['#type' => 'pager'];
     }
 
+    $render['#attached']['library'][] = 'eresources/eresources';
     return $render;
   }
 
