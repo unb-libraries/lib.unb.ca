@@ -36,7 +36,7 @@ class CollectionsController extends ControllerBase {
   }
 
   /**
-   * Displays package list by type.
+   * Displays collection list by type.
    *
    * @return array
    *   A simple renderable array.
