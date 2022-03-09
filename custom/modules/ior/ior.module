@@ -77,7 +77,8 @@ function template_preprocess_ior_submission(array &$variables) {
     }
   }
 
-  if (Drupal::currentUser()->hasPermission('view ior_submission moderation_state')) {
+  $current_user = Drupal::currentUser();
+  if ($current_user->hasPermission('view ior_submission moderation_state')) {
     /** @var \Drupal\content_moderation\ModerationInformationInterface $moderation_info */
     $moderation_info = Drupal::service('content_moderation.moderation_information');
     $moderation_state = $moderation_info->getWorkflowForEntity($submission)
@@ -86,7 +87,7 @@ function template_preprocess_ior_submission(array &$variables) {
     $variables['submission']['state']['id'] = $moderation_state->id();
     $variables['submission']['state']['label'] = $moderation_state->label();
   }
-  $variables['submission']['published'] = $submission->isPublished();
+  $variables['submission']['published'] = $submission->isPublished() || $current_user->hasPermission('view contestant details');
 
   if (Drupal::currentUser()->hasPermission('download full_resolution images')) {
     $variables['submission']['image_url'] = $submission->getImageUrl();
@@ -116,7 +117,8 @@ function template_preprocess_ior_submission__preview(array &$variables) {
     $variables['submission'][$key]['#label_display'] = 'hidden';
   }
 
-  if (Drupal::currentUser()->hasPermission('view ior_submission moderation_state')) {
+  $current_user = Drupal::currentUser();
+  if ($current_user->hasPermission('view ior_submission moderation_state')) {
     /** @var \Drupal\content_moderation\ModerationInformationInterface $moderation_info */
     $moderation_info = Drupal::service('content_moderation.moderation_information');
     $moderation_state = $moderation_info->getWorkflowForEntity($submission)
@@ -126,7 +128,7 @@ function template_preprocess_ior_submission__preview(array &$variables) {
     $variables['submission']['state']['id'] = $moderation_state->id();
     $variables['submission']['state']['label'] = $moderation_state->label();
   }
-  $variables['submission']['published'] = $submission->isPublished();
+  $variables['submission']['published'] = $submission->isPublished() || $current_user->hasPermission('view contestant details');
   $variables['submission']['url'] = $variables['elements']['#ior_submission']
     ->toUrl()
     ->toString();

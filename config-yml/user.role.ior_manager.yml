@@ -41,6 +41,7 @@ permissions:
   - 'use ior_submission_review transition reject'
   - 'use text format no_media_html_ior_'
   - 'view contest entities'
+  - 'view contestant details'
   - 'view ior_award entities'
   - 'view ior_collection entities'
   - 'view ior_submission entities'

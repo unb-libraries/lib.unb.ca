@@ -19,6 +19,9 @@ delete contest entities:
 
 
 # Submission entities
+view contestant details:
+  title: "View contestant details."
+
 administer ior_submission entities:
   title: "Administer IOR submissions."
 
