@@ -66,7 +66,7 @@ class JournalsForm extends KbFormBase implements KbFormInterface {
 <ul>
   <li><a href="' . Url::fromRoute('eresources.packages', ['type' => 'journals'])->toString() . '">Journal Packages</a></li>
   <li><a href="' . Url::fromRoute('eresources.packages', ['type' => 'newspapers'])->toString() . '">Newspaper Packages</a></li>
-  <li><a href="https://lib.unb.ca/eresources/newspaper-guide"><i class="fas fa-question-circle"></i> Newspaper Guide</a></li>
+  <li><a href="https://lib.unb.ca/eresources/newspaper-guide"> Newspaper Guide</a></li>
 </ul>
 </div>',
     ];

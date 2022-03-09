@@ -105,8 +105,8 @@ class ReferenceForm extends LocalFormBase implements KbFormInterface {
     $form[$form_wrapper]['links_wrapper']['links'] = [
       '#markup' => '<div class="wrapper-list-inline item-list">
 <ul>
-<li><a href="https://lib.unb.ca/eresources/guide-finding-reference-materials" title="Guide to finding Reference Materials at UNB Libraries"><i class="fa fa-question-circle"></i> Reference Materials Guide</a></li>
-<li><a href="https://guides.lib.unb.ca/guide/98"><i class="fa fa-book"></i> Browse dictionaries</a></li>
+<li><a href="https://lib.unb.ca/eresources/guide-finding-reference-materials" title="Guide to finding Reference Materials at UNB Libraries"> Reference Materials Guide</a></li>
+<li><a href="https://guides.lib.unb.ca/guide/98"> Browse dictionaries</a></li>
 </ul>
 </div>',
     ];
