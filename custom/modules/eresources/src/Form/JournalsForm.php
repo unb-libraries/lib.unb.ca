@@ -61,6 +61,9 @@ class JournalsForm extends KbFormBase implements KbFormInterface {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form = parent::buildForm($form, $form_state);
+
+    $form['journals_wrapper']['query_wrapper']['#attributes']['class'][] = 'mb-0';
+
     $form['journals_wrapper']['links'] = [
       '#markup' => '<div class="wrapper-list-inline item-list">
 <ul>
