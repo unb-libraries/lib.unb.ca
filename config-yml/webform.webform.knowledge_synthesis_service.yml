@@ -1,4 +1,4 @@
-uuid: 54fa1ee3-5c3f-4841-8507-a30fde369098
+uuid: c85ca3d7-3743-4452-844a-c154c6a232c9
 langcode: en
 status: open
 dependencies: {  }
@@ -8,40 +8,29 @@ close: null
 uid: 1
 template: false
 archive: false
-id: knowledge_synthesis_support
-title: 'Knowledge Synthesis Support'
+id: knowledge_synthesis_service
+title: 'Knowledge Synthesis Service Request'
 description: 'Webform for Systematic Reviews website'
 category: ''
 elements: |-
+  note:
+    '#type': processed_text
+    '#text': |
+      <div class="card border-dark mb-4">
+      <div class="card-body text-muted-wcag p-0 mb-3">
+      <h2 class="card-title h6 bg-dark text-white p-2">Before you submit</h2>
+
+      <div class="p-2">
+      <p class="card-text">UNB Libraries welcomes knowledge synthesis service requests from faculty, staff and students.&nbsp; Prior to submitting a request, please review the service details our <a href="https://lib.unb.ca/research/systematic-reviews/getting-started#getting-started_KSservice">website</a></p>
+      </div>
+      </div>
+      </div>
+    '#format': library_page_html
   container:
     '#type': container
     '#attributes':
       class:
         - theme-dark
-    eligibility:
-      '#type': fieldset
-      '#title': Eligibility
-      processed_text_eligibility:
-        '#type': processed_text
-        '#text': |
-          <p>In order to be eligible for our collaboration service, we require you to meet two (out of three) of the criteria below.&nbsp; If you are seeking our consultation service, meeting two of the criteria below will entitle you to an additional 3-hours of support.</p>
-          <ol>
-          	<li>You have a completed protocol that meets <a href="http://prisma-statement.org/Extensions/Protocols">PRISMA-P</a> guidelines for protocols.</li>
-          	<li>You have taken the <a href="https://www.coursera.org/learn/systematic-review">Coursera Systematic Reviews course</a> (free version) or an equivalent course (such as the JBI training course).</li>
-          	<li>You have at least one team member who has experience with knowledge synthesis methodologies and is prepared to serve as methodologist for this project.</li>
-          </ol>
-        '#format': library_page_html
-      protocol:
-        '#type': managed_file
-        '#title': Protocol
-        '#file_placeholder': 'If you have a protocol that meets PRISMA-P guidelines for protocols, please attach it.'
-        '#file_extensions': 'rtf odf pdf doc docx'
-        '#file_name': '[webform_submission:webform:id]_protocol_[webform_submission:token]'
-        '#sanitize': true
-      conditions:
-        '#type': checkbox
-        '#title': 'I meet at least two of the listed requirements.'
-        '#required': true
     personal_information:
       '#type': fieldset
       '#title': 'Personal information'
@@ -70,6 +59,28 @@ elements: |-
         '#other__option_label': Other
         '#other__placeholder': ''
         '#required': true
+      container_supervisor:
+        '#type': fieldset
+        '#title': 'Supervisor/Primary investigator'
+        '#states':
+          visible:
+            ':input[name="role[radios]"]':
+              '!value': fac
+        processed_text_supervisor:
+          '#type': processed_text
+          '#text': |
+            <p>Please provide the name and email of your supervisor or the project’s primary investigator</p>
+          '#format': library_page_html
+        supervisor_name:
+          '#type': textfield
+          '#title': Name
+          '#required': true
+        supervisor_email:
+          '#type': textfield
+          '#title': Email
+          '#input_mask': '''alias'': ''email'''
+          '#pattern': '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$'
+          '#required': true
     project_information:
       '#type': fieldset
       '#title': 'Project Information'
@@ -81,15 +92,51 @@ elements: |-
           collaboration: Collaboration
         '#options_display': side_by_side
         '#required': true
-      container_services_consultation:
+      container_consultation:
         '#type': container
         '#states':
           visible:
             ':input[name="services"]':
               value: consultation
-        processed_text_services_consultation_terms:
+        note_consultation:
           '#type': processed_text
           '#text': |
+            <p>Our consultation service provides up to 5-hours of knowledge synthesis support.&nbsp; Meeting at least 2 out of 3 of the criteria below will entitle you to an additional 3-hours of support:</p>
+
+            <ol>
+            	<li>There is a completed protocol that meets <a class="sharedcomments-hyperlink" href="http://prisma-statement.org/Extensions/Protocols" target="_blank" title="http://prisma-statement.org/Extensions/Protocols">PRISMA-P</a> guidelines for protocols.</li>
+            	<li>The corresponding author has taken the <a class="sharedcomments-hyperlink" href="https://www.coursera.org/learn/systematic-review" target="_blank" title="https://www.coursera.org/learn/systematic-review">Coursera Systematic Reviews course</a> (free version) or an equivalent course (such as the JBI training course).</li>
+            	<li>At least one team member has experience with knowledge synthesis methodologies and is prepared to serve as methodologist for this project.</li>
+            </ol>
+          '#format': library_page_html
+        services_consultations_terms_1:
+          '#type': checkbox
+          '#title': 'This project meets at least two of the listed requirements.'
+          '#required': true
+        services_consultations_terms_2:
+          '#type': checkbox
+          '#title': 'I acknowledge that I will be receiving only 5 hours of support unless this project meets the above requirements after submission of this request.'
+          '#required': true
+      container_collaboration:
+        '#type': container
+        '#states':
+          visible:
+            ':input[name="services"]':
+              value: collaboration
+        note_collaboration:
+          '#type': processed_text
+          '#text': |
+            <p>This project meets at least two of the following three criteria:</p>
+            <ol>
+            	<li>There is a completed protocol that meets <a class="sharedcomments-hyperlink" href="http://prisma-statement.org/Extensions/Protocols" target="_blank" title="http://prisma-statement.org/Extensions/Protocols">PRISMA-P</a> guidelines for protocols.</li>
+            	<li>The corresponding author has taken the <a class="sharedcomments-hyperlink" href="https://www.coursera.org/learn/systematic-review" target="_blank" title="https://www.coursera.org/learn/systematic-review">Coursera Systematic Reviews course</a> (free version) or an equivalent course (such as the JBI training course).</li>
+            	<li>At least one team member has experience with knowledge synthesis methodologies and is prepared to serve as methodologist for this project.</li>
+            </ol>
+          '#format': library_page_html
+        terms_collaboration:
+          '#type': processed_text
+          '#text': |
+            <p>Furthermore, in submitting this request, I agree that:</p>
             <ul>
               <li>The principal investigator for the project will be the first point of contact for the librarian.</li>
               <li>Meetings between the librarian and team should always include the primary investigator.</li>
@@ -97,32 +144,18 @@ elements: |-
               <li>Communication with the librarian will be prompt and responsive, to ensure that the project proceeds in a timely manner.</li>
             </ul>
           '#format': library_page_html
-        services_consultations_terms:
+        services_collaboration_terms:
           '#type': checkbox
           '#title': 'I agree to above requirements.'
           '#required': true
-      container_supervisor:
-        '#type': fieldset
-        '#title': 'Supervisor/Primary investigator (students only)'
-        processed_text_supervisor:
-          '#type': processed_text
-          '#text': |
-            <p>If you are a student, please provide the name and email of your supervisor or the project’s primary investigator</p>
-          '#format': library_page_html
-        supervisor_name:
-          '#type': textfield
-          '#title': Name
-        supervisor_email:
-          '#type': textfield
-          '#title': Email
-          '#input_mask': '''alias'': ''email'''
-          '#pattern': '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$'
       team_members:
         '#type': textarea
         '#title': 'Who are your team members and what are their roles in this project? '
+        '#required': true
       experience:
         '#type': textarea
         '#title': 'Do you or any of your team members have experience or training with knowledge synthesis? Please describe.'
+        '#required': true
       type:
         '#type': webform_radios_other
         '#title': 'What type of knowledge synthesis are you performing'
@@ -136,31 +169,44 @@ elements: |-
         '#type': webform_radios_other
         '#title': 'What is the purpose of this project?'
         '#options':
-          thesis: Thesis/Project/Dissertation
           publication: Publication
+          thesis: Thesis/Project/Dissertation
           grant: Grant
         '#other__option_label': Other
         '#required': true
       research_question:
         '#type': textarea
         '#title': 'What is your research question? '
+        '#required': true
       in_ex_criteria:
         '#type': textarea
         '#title': 'What are your inclusion and exclusion criteria? '
+        '#required': true
       rationale:
         '#type': textarea
         '#title': 'What is your rationale for conducting this review? What gap in practice / literature / policy will does it address? '
+        '#required': true
       existing_research:
         '#type': textarea
         '#title': 'Have you searched for existing reviews or protocols on your topic?'
         '#description': 'See the &ldquo;checking for existing reviews / protocols&rdquo; section of our <a href="https://lib.unb.ca/research/systematic-reviews/process-searching#searching_preparation" target="_blank">processes and searching webpage</a>'
+        '#required': true
       timeframe:
         '#type': textarea
         '#title': 'What is your timeframe for this project?'
         '#description': 'Please provide as much detail as you can.'
+        '#required': true
       dois:
         '#type': textarea
         '#title': 'If you have already identified some relevant studies, please provide the DOI of the article, the PMID, or a detailed reference (including first author, article title, journal name, volume, issue, pages and year)'
+        '#required': true
+      protocol:
+        '#type': managed_file
+        '#title': Protocol
+        '#file_placeholder': 'If you have a protocol that meets PRISMA-P guidelines for protocols, please attach it.'
+        '#file_extensions': 'rtf odf pdf doc docx'
+        '#file_name': '[webform_submission:webform:id]_protocol_[webform_submission:token]'
+        '#sanitize': true
 css: ''
 javascript: ''
 settings:
@@ -170,7 +216,7 @@ settings:
   ajax_effect: ''
   ajax_speed: null
   page: true
-  page_submit_path: /research/systematic-reviews/knowledge-synthesis-support
+  page_submit_path: /research/systematic-reviews/knowledge-synthesis-service-request
   page_confirm_path: ''
   page_theme_name: ''
   form_title: source_entity_webform
@@ -367,15 +413,15 @@ handlers:
       return_path: ''
       sender_mail: ''
       sender_name: ''
-      subject: 'Your Knowledge Synthesis Support Request'
-      body: "<p>On {{ webform_token('[webform_submission:created]', webform_submission, [], options) }} you submitted a Knowledge Synthesis Support Request with the following details:</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
+      subject: 'Your Knowledge Synthesis Service Request'
+      body: "<p>On {{ webform_token('[webform_submission:created]', webform_submission, [], options) }} you submitted a Knowledge Synthesis Service Request with the following details:</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: false
-      exclude_attachments: false
+      exclude_attachments: true
       html: true
-      attachments: false
+      attachments: true
       twig: true
       theme_name: ''
       parameters: {  }
@@ -404,15 +450,15 @@ handlers:
       return_path: ''
       sender_mail: ''
       sender_name: ''
-      subject: 'New Knowledge Synthesis Support Request'
-      body: "<p>The following information was submitted through our <b>Knowledge Synthesis Support Request</b> form by {{ webform_token('[webform_submission:values:name]', webform_submission) }} on {{ webform_token('[webform_submission:created]', webform_submission) }}.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
+      subject: 'New Knowledge Synthesis Service Request'
+      body: "<p>The following information was submitted through our <b>Knowledge Synthesis Service Request</b> form by {{ webform_token('[webform_submission:values:name]', webform_submission) }} on {{ webform_token('[webform_submission:created]', webform_submission) }}.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: false
-      exclude_attachments: false
+      exclude_attachments: true
       html: true
-      attachments: false
+      attachments: true
       twig: true
       theme_name: ''
       parameters: {  }
