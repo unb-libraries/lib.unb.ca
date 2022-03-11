@@ -1,0 +1,25 @@
+system.admin.unblib.records:
+  title: Records Management
+  description: 'Manage retention schedules and classifications.'
+  route_name: view.retention_schedules.page
+  parent: system.admin.unblib
+  weight: 20
+
+system.admin.unblib.records.classifications:
+  title: Classifications
+  description: 'Manage retention classifications.'
+  route_name: view.retention_classifications.page_1
+  parent: system.admin.unblib.records
+  weight: 10
+
+system.admin.unblib.records.schedules:
+  title: Retention schedules
+  description: 'Manage retention schedules.'
+  route_name: view.retention_schedules.page
+  parent: system.admin.unblib.records
+  weight: 20
+
+
+
+
+
