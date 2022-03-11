@@ -8,6 +8,7 @@ dependencies:
     - field_permissions
     - filter
     - records_management
+    - toolbar
   enforced:
     module:
       - records_management
@@ -16,6 +17,7 @@ label: 'Records Manager'
 weight: 5
 is_admin: null
 permissions:
+  - 'access toolbar'
   - 'create field_file'
   - 'create retention_details entities'
   - 'create schedule entities'

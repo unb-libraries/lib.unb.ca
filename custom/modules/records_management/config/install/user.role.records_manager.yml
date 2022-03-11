@@ -1,6 +1,13 @@
 langcode: en
 status: true
 dependencies:
+  config:
+    - filter.format.no_media_html
+  module:
+    - field_permissions
+    - filter
+    - records_management
+    - toolbar
   enforced:
     module:
       - records_management
@@ -9,14 +16,20 @@ label: 'Records Manager'
 weight: 5
 is_admin: null
 permissions:
+  - 'access toolbar'
+  - 'create field_file'
   - 'create retention_details entities'
   - 'create schedule entities'
   - 'delete retention_details entities'
   - 'delete schedule entities'
+  - 'edit field_file'
+  - 'edit own field_file'
   - 'list classification entities'
   - 'list schedule entities'
   - 'update retention_details entities'
   - 'update schedule entities'
   - 'use text format no_media_html'
+  - 'view field_file'
+  - 'view own field_file'
   - 'view retention_details entities'
   - 'view schedule entities'
