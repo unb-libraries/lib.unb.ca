@@ -63,6 +63,14 @@ class PackagesController extends ControllerBase {
     $indexQuery->range($start - 1, $perPage);
     $result = $indexQuery->execute();
 
+    $typeName = rtrim($type, 's');
+    $searchLink = "/e-resources/?form_id=eres_journals";
+    $render = [
+      'header' => [
+        '#markup' => "Browse {$typeName} packages. <a href=\"{$searchLink}\">Search or browse for <b>individual</b> {$typeName} titles.</a>",
+      ],
+    ];
+
     $total = $result->getResultCount();
     if ($total == 0) {
       $render['results'] = ['#markup' => "<div class='alert alert-info rounded-0'>No results found</div>"];
