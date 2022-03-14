@@ -63,9 +63,10 @@ elements: |-
         '#type': fieldset
         '#title': 'Supervisor/Primary investigator'
         '#states':
-          visible:
+          visible-slide:
             ':input[name="role[radios]"]':
-              '!value': fac
+              value:
+                pattern: ^ra|gs|us|_other_$
         processed_text_supervisor:
           '#type': processed_text
           '#text': |
