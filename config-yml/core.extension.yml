@@ -111,6 +111,7 @@ module:
   redis: 0
   samlauth: 0
   samlauth_user_fields: 0
+  samlauth_user_roles: 0
   search_api: 0
   search_api_autocomplete: 0
   search_api_exclude: 0

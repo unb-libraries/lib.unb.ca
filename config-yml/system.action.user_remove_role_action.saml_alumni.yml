@@ -1,0 +1,14 @@
+uuid: 4a2a9ec5-6ff8-4e08-a090-582e807b69fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.saml_alumni
+  module:
+    - user
+id: user_remove_role_action.saml_alumni
+label: 'Remove the [saml] Alumni role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: saml_alumni

@@ -1,0 +1,14 @@
+uuid: aef5d270-46a9-40b2-a047-43064cde69e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.saml_student
+  module:
+    - user
+id: user_add_role_action.saml_student
+label: 'Add the [saml] Student role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: saml_student

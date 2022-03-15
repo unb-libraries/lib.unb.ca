@@ -1,0 +1,14 @@
+uuid: 2e5b6731-db8f-4776-96ee-bf1e4cee6316
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.saml_guest
+  module:
+    - user
+id: user_add_role_action.saml_guest
+label: 'Add the [saml] Guest role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: saml_guest

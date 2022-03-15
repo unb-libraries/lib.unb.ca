@@ -1,0 +1,14 @@
+uuid: be908c5b-d1cf-490b-b7f0-b3325046401a
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.saml_faculty_staff
+  module:
+    - user
+id: user_remove_role_action.saml_faculty_staff
+label: 'Remove the [saml] Faculty/Staff role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: saml_faculty_staff

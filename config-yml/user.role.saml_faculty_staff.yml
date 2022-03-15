@@ -1,0 +1,9 @@
+uuid: 074d412f-25f7-4fe9-bb3c-88152368c7e0
+langcode: en
+status: true
+dependencies: {  }
+id: saml_faculty_staff
+label: '[saml] Faculty/Staff'
+weight: 10
+is_admin: null
+permissions: {  }

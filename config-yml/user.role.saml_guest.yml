@@ -1,0 +1,9 @@
+uuid: c153e952-ba07-403d-be1a-9c7aa41d0477
+langcode: en
+status: true
+dependencies: {  }
+id: saml_guest
+label: '[saml] Guest'
+weight: 12
+is_admin: null
+permissions: {  }

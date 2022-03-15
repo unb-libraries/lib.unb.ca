@@ -1,0 +1,14 @@
+uuid: 94ee4c55-2505-468b-8a84-ecc35f205414
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.saml_guest
+  module:
+    - user
+id: user_remove_role_action.saml_guest
+label: 'Remove the [saml] Guest role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: saml_guest

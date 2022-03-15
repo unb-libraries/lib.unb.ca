@@ -1,0 +1,28 @@
+only_first_login: false
+unassign_roles:
+  saml_student: saml_student
+  saml_faculty_staff: saml_faculty_staff
+  saml_alumni: saml_alumni
+  saml_guest: saml_guest
+default_roles: {  }
+saml_attribute: eduPersonScopedAffiliation
+saml_attribute_separator: ''
+value_map:
+  -
+    attribute_value: faculty@unb.ca
+    role_machine_name: saml_faculty_staff
+  -
+    attribute_value: staff@unb.ca
+    role_machine_name: saml_faculty_staff
+  -
+    attribute_value: student@unb.ca
+    role_machine_name: saml_student
+  -
+    attribute_value: gradstudent@unb.ca
+    role_machine_name: saml_student
+  -
+    attribute_value: alumni@unb.ca
+    role_machine_name: saml_alumni
+  -
+    attribute_value: guest@unb.ca
+    role_machine_name: saml_guest

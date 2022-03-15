@@ -1,0 +1,9 @@
+uuid: 1b83f3d4-6f36-4cdf-9730-7b7dc1ed48ea
+langcode: en
+status: true
+dependencies: {  }
+id: saml_student
+label: '[saml] Student'
+weight: 9
+is_admin: null
+permissions: {  }

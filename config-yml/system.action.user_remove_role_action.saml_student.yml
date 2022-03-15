@@ -1,0 +1,14 @@
+uuid: a87b5f6a-bad6-4245-921c-6a3414cdff3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.saml_student
+  module:
+    - user
+id: user_remove_role_action.saml_student
+label: 'Remove the [saml] Student role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: saml_student

@@ -1,0 +1,14 @@
+uuid: 00012f77-ed21-4e3e-9566-d139144e3e6d
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.saml_alumni
+  module:
+    - user
+id: user_add_role_action.saml_alumni
+label: 'Add the [saml] Alumni role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: saml_alumni

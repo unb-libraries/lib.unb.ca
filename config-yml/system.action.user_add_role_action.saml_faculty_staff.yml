@@ -1,0 +1,14 @@
+uuid: 8f08e71a-938f-4b66-98f7-e23af43470e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.saml_faculty_staff
+  module:
+    - user
+id: user_add_role_action.saml_faculty_staff
+label: 'Add the [saml] Faculty/Staff role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: saml_faculty_staff
