@@ -50,7 +50,7 @@ map_users_roles:
   saml_faculty_staff: '0'
   saml_alumni: '0'
   saml_guest: '0'
-create_users: false
+create_users: true
 sync_name: false
 sync_mail: true
 user_name_attribute: uid
