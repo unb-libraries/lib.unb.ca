@@ -14,6 +14,13 @@ drupal_login_roles:
   library_page_author: '0'
   data_administrator: '0'
   records_manager: '0'
+  ior_manager: '0'
+  ior_reviewer: '0'
+  eresources_record_manager: '0'
+  saml_student: '0'
+  saml_faculty_staff: '0'
+  saml_alumni: '0'
+  saml_guest: '0'
 sp_entity_id: 'https://lib.unb.ca'
 sp_name_id_format: ''
 sp_x509_certificate: ''
@@ -36,6 +43,13 @@ map_users_roles:
   library_page_author: '0'
   data_administrator: '0'
   records_manager: '0'
+  ior_manager: '0'
+  ior_reviewer: '0'
+  eresources_record_manager: '0'
+  saml_student: '0'
+  saml_faculty_staff: '0'
+  saml_alumni: '0'
+  saml_guest: '0'
 create_users: false
 sync_name: false
 sync_mail: true
@@ -58,6 +72,7 @@ security_want_name_id: true
 security_request_authn_context: true
 security_lowercase_url_encoding: false
 security_logout_reuse_sigs: false
+security_allow_repeat_attribute_name: false
 debug_display_error_details: false
 debug_log_in: false
 debug_log_saml_in: false
