@@ -24,7 +24,6 @@ is_admin: false
 permissions:
   - 'access content'
   - 'access user contact forms'
-  - 'access user profiles'
   - 'create ior_submission entities'
   - 'list contest entities'
   - 'list published ior_submission entities'
