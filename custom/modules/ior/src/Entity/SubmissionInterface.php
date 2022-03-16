@@ -6,11 +6,12 @@ use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityPublishedInterface;
 use Drupal\custom_entity\Entity\UserCreatedInterface;
 use Drupal\custom_entity\Entity\UserEditedInterface;
+use Drupal\custom_entity_revisions\Entity\RevisionsInterface;
 
 /**
  * Interface for "submission" entities.
  */
-interface SubmissionInterface extends ContentEntityInterface, EntityPublishedInterface, UserCreatedInterface, UserEditedInterface {
+interface SubmissionInterface extends ContentEntityInterface, RevisionsInterface, EntityPublishedInterface, UserCreatedInterface, UserEditedInterface {
 
   const FIELD_FIRST_NAME = 'field_first_name';
   const FIELD_LAST_NAME = 'field_last_name';

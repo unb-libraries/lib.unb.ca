@@ -8,6 +8,7 @@ use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\custom_entity\Entity\EntityChangedTrait;
 use Drupal\custom_entity\Entity\EntityCreatedTrait;
+use Drupal\custom_entity_revisions\Entity\EntityRevisionsTrait;
 use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
 
 /**
@@ -56,6 +57,7 @@ use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
  */
 class Submission extends ContentEntityBase implements SubmissionInterface {
 
+  use EntityRevisionsTrait;
   use EntityPublishedTrait;
   use EntityCreatedTrait;
   use EntityChangedTrait;

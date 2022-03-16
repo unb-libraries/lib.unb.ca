@@ -26,10 +26,30 @@ class ContestantMailer extends EntityEventTemplateMailer {
    * {@inheritDoc}
    */
   public function doOnEntityUpdate(EntityEvent $event) {
-    $moderation_state = $event->getEntity()->get('moderation_state')->value;
-    if (in_array($moderation_state, ['accepted', 'rejected'])) {
+    $entity = $event->getEntity();
+    $state = $entity->get('moderation_state')->value;
+    $state_updated = $this->hasEntityModerationStateUpdated($entity);
+    if ($state_updated && in_array($state, ['accepted', 'rejected'])) {
       parent::doOnEntityUpdate($event);
     }
+  }
+
+  /**
+   * Whether the moderation state of the given entity has changed.
+   *
+   * @param \Drupal\Core\Entity\EntityInterface $entity
+   *   An entity.
+   *
+   * @return bool
+   *   TRUE if the moderation state of the given entity differs from the state
+   *   of its preceding revision. FALSE if both are equal.
+   */
+  protected function hasEntityModerationStateUpdated(EntityInterface $entity) {
+    $current_state = $entity->get('moderation_state')->value;
+    $previous_revision = $entity->getPreviousRevision();
+    $previous_state = $previous_revision
+      ->get('moderation_state')->value;
+    return $previous_state !== $current_state;
   }
 
   /**

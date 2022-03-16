@@ -3,11 +3,12 @@
 namespace Drupal\ior\Entity\Storage;
 
 use Drupal\Core\Entity\ContentEntityStorageInterface;
+use Drupal\lib_unb_custom_entity\Entity\Storage\RevisionableEntityStorageInterface;
 
 /**
  * Interface for storage handlers for "ior_submission" entities.
  */
-interface SubmissionStorageInterface extends ContentEntityStorageInterface {
+interface SubmissionStorageInterface extends ContentEntityStorageInterface, RevisionableEntityStorageInterface {
 
   /**
    * Load submission associated with the given contest ID.
