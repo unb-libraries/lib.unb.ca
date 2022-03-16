@@ -330,7 +330,7 @@ handlers:
       bcc_options: {  }
       cc_mail: ''
       cc_options: {  }
-      from_mail: _default
+      from_mail: unb-libraries-no-reply@unb.ca
       from_options: {  }
       from_name: 'Research Commons Space Request Form'
       reply_to: '[webform_submission:values:email:raw]'
@@ -367,7 +367,7 @@ handlers:
       bcc_options: {  }
       cc_mail: ''
       cc_options: {  }
-      from_mail: _default
+      from_mail: unb-libraries-no-reply@unb.ca
       from_options: {  }
       from_name: 'Research Commons Space Request Form'
       reply_to: mfonzo@unb.ca
