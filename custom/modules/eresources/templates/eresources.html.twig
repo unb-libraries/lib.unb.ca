@@ -15,7 +15,7 @@
     #}
     {% set chunk %}
       {% set extra = [] %}
-      {% if entry.getAuthor %}{% set author = entry.getAuthor|replace({'|': '; '}) %}{% set extra = extra|merge([author]) %}{% endif %}
+      {% if form_id != 'journals' and entry.getAuthor %}{% set author = entry.getAuthor|replace({'|': '; '}) %}{% set extra = extra|merge([author]) %}{% endif %}
       {% if form_id != 'journals' and entry.getPublisher %}{% set extra = extra|merge([entry.getPublisher]) %}{% endif %}
       {% if entry.getCoverage matches '/^(ebook|video)/' %}
       {%   set extra = extra|merge([entry.getCoverageStatement]) %}
