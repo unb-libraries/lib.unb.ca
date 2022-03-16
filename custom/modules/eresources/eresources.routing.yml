@@ -23,13 +23,6 @@ entity.eresources_harvested_collection.synchronize:
     parameters:
       eresources_harvested_collection:
         type: entity:eresources_harvested_collection
-eresources.packages:
-  path: '/e-resources/packages/{type}'
-  defaults:
-    _controller: '\Drupal\eresources\Controller\PackagesController::view'
-    _title_callback: '\Drupal\eresources\Controller\PackagesController::title'
-  requirements:
-    _permission: 'access content'
 eresources.collections:
   path: '/e-resources/collections/{type}'
   defaults:

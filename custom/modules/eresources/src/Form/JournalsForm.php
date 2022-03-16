@@ -67,8 +67,8 @@ class JournalsForm extends KbFormBase implements KbFormInterface {
     $form['journals_wrapper']['links'] = [
       '#markup' => '<div class="wrapper-list-inline item-list">
 <ul>
-  <li><a href="' . Url::fromRoute('eresources.packages', ['type' => 'journals'])->toString() . '">Journal Packages</a></li>
-  <li><a href="' . Url::fromRoute('eresources.packages', ['type' => 'newspapers'])->toString() . '">Newspaper Packages</a></li>
+  <li><a href="' . Url::fromRoute('eresources.collections', ['type' => 'journals'])->toString() . '">Browse Journal Collections</a></li>
+  <li><a href="' . Url::fromRoute('eresources.collections', ['type' => 'newspapers'])->toString() . '">Browse Newspaper Collections</a></li>
   <li><a href="https://lib.unb.ca/eresources/newspaper-guide"> Newspaper Guide</a></li>
 </ul>
 </div>',

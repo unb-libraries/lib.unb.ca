@@ -18,8 +18,26 @@ class CollectionsController extends ControllerBase {
    * @var array
    */
   private static $typeLookup = [
-    'videos' => 'video',
-    'ebooks' => 'ebooks',
+    'ebooks' => [
+      'kb_data_type' => 'ebooks',
+      'title' => 'e-Book',
+      'form_id' => 'eres_ebooks',
+    ],
+    'journals' => [
+      'kb_data_type' => 'jour',
+      'title' => 'Journal',
+      'form_id' => 'eres_journals',
+    ],
+    'newspapers' => [
+      'kb_data_type' => 'news',
+      'title' => 'Newspaper',
+      'form_id' => 'eres_journals',
+    ],
+    'videos' => [
+      'kb_data_type' => 'video',
+      'title' => 'Video',
+      'form_id' => 'eres_videos',
+    ],
   ];
 
   /**
@@ -32,7 +50,7 @@ class CollectionsController extends ControllerBase {
    *   The title.
    */
   public function title($type) {
-    return rtrim(ucfirst($type), 's') . ' Collections';
+    return self::$typeLookup[$type]['title'] . ' Collections';
   }
 
   /**
@@ -46,6 +64,16 @@ class CollectionsController extends ControllerBase {
       throw new NotFoundHttpException();
     }
 
+    $typeInfo = self::$typeLookup[$type];
+
+    $searchLink = "/e-resources/?form_id={$typeInfo['form_id']}";
+    $typeLower = strtolower($typeInfo['title']);
+    $render = [
+      'header' => [
+        '#markup' => "Browse {$typeLower} collections. <a href=\"{$searchLink}\">Search or browse for <b>individual</b> {$typeLower} titles.</a>",
+      ],
+    ];
+
     $index = Index::load('eresources');
     $indexQuery = $index->query();
     $parseMode = \Drupal::service('plugin.manager.search_api.parse_mode')->createInstance('direct');
@@ -58,7 +86,7 @@ class CollectionsController extends ControllerBase {
     $start = $perPage * $page + 1;
 
     $indexQuery->addCondition('status', TRUE);
-    $indexQuery->addCondition('kb_data_type', self::$typeLookup[$type]);
+    $indexQuery->addCondition('kb_data_type', $typeInfo['kb_data_type']);
     $indexQuery->addCondition('metadata_local_is_collection', TRUE);
     $indexQuery->sort('title', 'ASC');
     $indexQuery->range($start - 1, $perPage);
@@ -81,7 +109,7 @@ class CollectionsController extends ControllerBase {
         '#suffix' => '</div>',
         '#theme' => 'eresources',
         '#eresources' => $entries,
-        '#form_id' => $type,
+        '#form_id' => $typeInfo['form_id'],
       ];
       $render['bottom-pager'] = ['#type' => 'pager'];
     }

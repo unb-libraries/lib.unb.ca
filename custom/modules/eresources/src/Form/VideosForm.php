@@ -3,8 +3,7 @@
 namespace Drupal\eresources\Form;
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\search_api\Entity\Index;
-use Drupal\eresources\LocalResult;
+use Drupal\Core\Url;
 
 /**
  * KB Videos Form.
@@ -52,54 +51,15 @@ class VideosForm extends KbFormBase implements KbFormInterface {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form = parent::buildForm($form, $form_state);
 
-    $req = $this->getRequest()->query;
-    $query = $req->get('query');
-    if (empty($query) || $this->getFormId() != $req->get('form_id')) {
-      $form_wrapper = $this->getKbFormId() . "_wrapper";
+    $form['videos_wrapper']['query_wrapper']['#attributes']['class'][] = 'mb-0';
 
-      $index = Index::load('eresources');
-      $indexQuery = $index->query();
-      $parseMode = \Drupal::service('plugin.manager.search_api.parse_mode')->createInstance('direct');
-      $indexQuery->setParseMode($parseMode);
-
-      $indexQuery->addCondition('status', TRUE);
-      $indexQuery->addCondition('kb_data_type', 'video');
-      $indexQuery->addCondition('metadata_local_is_collection', TRUE);
-      $indexQuery->sort('title', 'ASC');
-      $indexQuery->range(0, 10000);
-      $result = $indexQuery->execute();
-
-      $total = $result->getResultCount();
-      if ($total > 0) {
-        $form[$form_wrapper]['collections_wrapper'] = [
-          '#type' => 'container',
-          '#attributes' => [
-            'class' => [
-              'border-top',
-              'border-dark',
-              'pt-4',
-              'pb-3',
-            ],
-          ],
-        ];
-
-        $form[$form_wrapper]['collections_wrapper']['header'] = [
-          '#markup' => '<p class="font-weight-bold"><span class="text-danger">OR</span> Browse for Video Collections</p>',
-        ];
-
-        $entries = array_map(function ($i) {
-          return new LocalResult($i);
-        }, $result->getResultItems());
-
-        $form[$form_wrapper]['collections_wrapper']['results'] = [
-          '#prefix' => '<div id="search_results_wrapper" class="mt-4 mx-n4">',
-          '#suffix' => '</div>',
-          '#theme' => 'eresources',
-          '#eresources' => $entries,
-          '#form_id' => $this->getKbFormId(),
-        ];
-      }
-    }
+    $form['videos_wrapper']['links'] = [
+      '#markup' => '<div class="wrapper-list-inline item-list">
+<ul>
+  <li><a href="' . Url::fromRoute('eresources.collections', ['type' => 'videos'])->toString() . '">Browse Video Collections</a></li>
+</ul>
+</div>',
+    ];
 
     return $form;
   }
