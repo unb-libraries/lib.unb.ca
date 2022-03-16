@@ -39,7 +39,9 @@
             {% set permittedUse = entry.getPermittedUseStatement %}
             {% if permittedUse %}
             <div class="media ml-3">
+              {% if 'Permitted Use' in permittedUse %}
               <span class="fas fa-gavel mr-1"></span>
+              {% endif %}
               <p class="media-body mb-0">{{ permittedUse|raw }}</p>
             </div>
             {% endif %}
