@@ -11,5 +11,5 @@ modules:
       formatter: mime_mail
   webform:
     none:
-      sender: webform_php_mail
-      formatter: webform_php_mail
+      sender: mime_mail
+      formatter: mime_mail
