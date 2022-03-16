@@ -21,3 +21,7 @@ services:
       - '@oclc.api_key.recall_idm'
       - '@plugin.manager.oclc_api'
       - ['worldshare_identity_management']
+  lib_core.route_subscriber:
+    class: Drupal\lib_core\Services\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
