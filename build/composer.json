@@ -296,7 +296,7 @@
     "drupal/field_group": "3.2",
     "drupal/field_permissions": "1.1.0",
     "drupal/file_management": "1.x-dev",
-    "drupal/fontawesome": "2.19",
+    "drupal/fontawesome": "2.20",
     "drupal/fontawesome_iconpicker": "1.x-dev",
     "drupal/google_analytics": "2.5",
     "drupal/health_check": "1.3",
