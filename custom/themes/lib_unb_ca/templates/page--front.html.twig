@@ -254,8 +254,8 @@ set banner_classes = [
 </footer>
 {% if env_indicator %}
     <div class="alert alert-{{ env_indicator_bg_color }} alert-dismissible fixed-bottom m-0 p-0 show fade" role="alert">
-        <div class="bg-{{ env_indicator_bg_color }} progress-bar progress-bar-striped py-1 text-{{ env_indicator_txt_color }} w-100" role="progressbar">
-            <small><span class="fa-cog fas mr-1"></span>{{ env_indicator }}</small>
+        <div class="bg-{{ env_indicator_bg_color }} progress-bar progress-bar-striped py-1 text-{{ env_indicator_txt_color }} w-100">
+            <small><span class="fa-cog fas mr-1" aria-hidden="true"></span>{{ env_indicator }}</small>
             <button type="button" class="close p-1" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
