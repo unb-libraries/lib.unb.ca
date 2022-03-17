@@ -7,7 +7,7 @@ preventOnFrontPage: 0
 scrollDistance: '100'
 scrollSpeed: '300'
 scrollTarget: false
-buttonType: icon
+buttonType: link
 buttonPlace: 1
 buttonTitle: ''
 buttonColor: ''

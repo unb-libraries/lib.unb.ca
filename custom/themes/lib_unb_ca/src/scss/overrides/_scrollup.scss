@@ -1,10 +1,37 @@
 #scrollUp {
-  box-shadow: inset 0 0 2px 1px #fff;
   opacity: .7;
   z-index: 9998!important;
+  /* Mirror SVG settings for Link skin */
+  background-color: $black;
+  border-radius: 100%;
+  box-shadow: inset 0 0 2px 1px $white;
+  right: 31px;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  text-indent: -9999px;
 
   &:focus,
   &:hover {
+    background: $link-hover-color;
     opacity: 1;
+  }
+
+  /* Mirror SVG settings for Link skin */
+  &::after {
+    background-color: $white;
+    display: block;
+    content: " ";
+    margin-top: -25px;
+    width: 100%;
+    height: 100%;
+    -webkit-mask-image: url(/modules/contrib/jquery_scrollup/misc/angle-up.svg);
+    -webkit-mask-size: 28px;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-image: url(/modules/contrib/jquery_scrollup/misc/angle-up.svg);
+    mask-size: 28px;
+    mask-repeat: no-repeat;
+    mask-position: center;
   }
 }
