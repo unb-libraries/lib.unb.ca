@@ -151,7 +151,17 @@ class LocalFormBase extends FormBase {
       $indexQuery->addCondition('kb_data_type', $this->getKbContentType());
       $indexQuery->addCondition('status', TRUE);
       $indexQuery->range($start - 1, $perPage);
-      $indexQuery->sort('search_api_relevance', 'DESC');
+
+      $order = ['title', 'ASC'];
+      if (!empty($req->get('order'))) {
+        $order = str_replace('relevance', 'search_api_relevance', $req->get('order'));
+        if (strpos($order, ',') === FALSE) {
+          $order .= ',asc';
+        }
+        $order = explode(',', $order);
+        $order[1] = strtoupper($order[1]);
+      }
+      $indexQuery->sort(...$order);
 
       $result = $indexQuery->execute();
 

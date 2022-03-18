@@ -157,7 +157,10 @@ class KbFormBase extends FormBase {
 
       // $form['results_header'] = ['#markup' => '<h2 class="mt-3">Results</h2>'];
       $api = $this->oclcApi('worldcat_knowledge_base', ['authorization' => $this->oclcAuthorization()]);
-      $search = ['title' => $query];
+      $search = [
+        'title' => $query,
+        'orderBy' => 'title asc',
+      ];
       switch ($req->get('type')) {
         case 'keyword':
           $search = ['q' => $query];
@@ -171,6 +174,12 @@ class KbFormBase extends FormBase {
           $search = ['title' => "{$query}%"];
           break;
       }
+      if (!empty($req->get('order'))) {
+        $order = str_replace(',', ' ', $req->get('order'));
+        $order = str_replace('relevance', 'relevancy', $order);
+        $search['orderBy'] = $order;
+      }
+
       $result = $api->get('search-entries', $search + [
         'content' => $this->getKbContentType(),
         'itemsPerPage' => $perPage,
