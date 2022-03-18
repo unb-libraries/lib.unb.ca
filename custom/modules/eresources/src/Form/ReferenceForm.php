@@ -3,6 +3,7 @@
 namespace Drupal\eresources\Form;
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 
 /**
  * KB Reference form.
@@ -105,8 +106,9 @@ class ReferenceForm extends LocalFormBase implements KbFormInterface {
     $form[$form_wrapper]['links_wrapper']['links'] = [
       '#markup' => '<div class="wrapper-list-inline item-list">
 <ul>
-<li><a href="https://lib.unb.ca/eresources/guide-finding-reference-materials" title="Guide to finding Reference Materials at UNB Libraries"> Reference Materials Guide</a></li>
-<li><a href="https://guides.lib.unb.ca/guide/98"> Browse dictionaries</a></li>
+  <li><a href="' . Url::fromRoute('eresources.collections', ['type' => 'references'])->toString() . '">Browse Reference Collections</a></li>
+  <li><a href="https://lib.unb.ca/eresources/guide-finding-reference-materials" title="Guide to finding Reference Materials at UNB Libraries"> Reference Materials Guide</a></li>
+  <li><a href="https://guides.lib.unb.ca/guide/98"> Browse dictionaries</a></li>
 </ul>
 </div>',
     ];

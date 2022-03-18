@@ -33,6 +33,11 @@ class CollectionsController extends ControllerBase {
       'title' => 'Newspaper',
       'form_id' => 'eres_journals',
     ],
+    'references' => [
+      'kb_data_type' => 'ref',
+      'title' => 'Reference',
+      'form_id' => 'eres_reference',
+    ],
     'videos' => [
       'kb_data_type' => 'video',
       'title' => 'Video',
