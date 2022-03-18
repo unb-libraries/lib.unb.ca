@@ -3,7 +3,7 @@
 namespace Drupal\ior\Entity\Storage;
 
 use Drupal\Core\Entity\ContentEntityStorageInterface;
-use Drupal\lib_unb_custom_entity\Entity\Storage\RevisionableEntityStorageInterface;
+use Drupal\custom_entity_revisions\Entity\Storage\RevisionableEntityStorageInterface;
 
 /**
  * Interface for storage handlers for "ior_submission" entities.
