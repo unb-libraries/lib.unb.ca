@@ -1,7 +1,7 @@
 <ul class="list-group list-group-flush list-results">
   {% set stripe = ['', 'bg-light'] %}
   {% for entry in eresources %}
-  <li class="list-group-item {{ cycle(stripe, loop.index0) }}">
+  <li class="list-group-item pl-2 {{ cycle(stripe, loop.index0) }}">
     <div class="row">
       <div class="col">
         <h4><a href="https://login.proxy.hil.unb.ca/login?url={{ entry.getViaUrl }}" target="_blank" onclick='javascript: _gaq.push(["_trackPageview", "/GA/{{ entry.getTitle }}"]);'>{{ entry.getTitle }}</a></h4>
