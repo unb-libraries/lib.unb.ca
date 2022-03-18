@@ -4,7 +4,6 @@ namespace Drupal\eresources\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Url;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\oclc_api\Oclc\OclcAuthorizationInterface;
 use Drupal\oclc_api\Plugin\oclc\OclcApiManagerInterface;
