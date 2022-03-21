@@ -26,3 +26,6 @@ value_map:
   -
     attribute_value: guest@unb.ca
     role_machine_name: saml_guest
+  -
+    attribute_value: member@unb.ca
+    role_machine_name: saml_unb

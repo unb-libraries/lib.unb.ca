@@ -1,0 +1,14 @@
+uuid: 97d40207-2673-4c0d-be97-ca5b6bb56bb0
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.saml_unb
+  module:
+    - user
+id: user_remove_role_action.saml_unb
+label: 'Remove the [saml] UNB role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: saml_unb

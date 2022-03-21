@@ -1,0 +1,14 @@
+uuid: e0d64d04-6682-4ede-8bd3-12d947ad2ecf
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.saml_unb
+  module:
+    - user
+id: user_add_role_action.saml_unb
+label: 'Add the [saml] UNB role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: saml_unb
