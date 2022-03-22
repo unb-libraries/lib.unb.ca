@@ -1,0 +1,14 @@
+uuid: 9851de25-a188-4757-87ee-85457a36815d
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.saml_unb_active
+  module:
+    - user
+id: user_remove_role_action.saml_unb_active
+label: 'Remove the [saml] UNB (Active) role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: saml_unb_active

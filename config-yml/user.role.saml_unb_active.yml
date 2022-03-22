@@ -1,0 +1,9 @@
+uuid: 19576716-ec34-4740-be01-9417db2613a7
+langcode: en
+status: true
+dependencies: {  }
+id: saml_unb_active
+label: '[saml] UNB (Active)'
+weight: 13
+is_admin: null
+permissions: {  }

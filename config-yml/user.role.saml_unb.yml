@@ -1,9 +1,0 @@
-uuid: 95776f37-ed70-4a68-9b42-17a8ae0e706f
-langcode: en
-status: true
-dependencies: {  }
-id: saml_unb
-label: '[saml] UNB'
-weight: 13
-is_admin: null
-permissions: {  }
