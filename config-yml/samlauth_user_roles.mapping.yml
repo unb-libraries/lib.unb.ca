@@ -4,6 +4,7 @@ unassign_roles:
   saml_faculty_staff: saml_faculty_staff
   saml_alumni: saml_alumni
   saml_guest: saml_guest
+  saml_unb: saml_unb
 default_roles: {  }
 saml_attribute: eduPersonScopedAffiliation
 saml_attribute_separator: ''
@@ -21,7 +22,7 @@ value_map:
     attribute_value: gradstudent@unb.ca
     role_machine_name: saml_student
   -
-    attribute_value: alumni@unb.ca
+    attribute_value: alum@unb.ca
     role_machine_name: saml_alumni
   -
     attribute_value: guest@unb.ca
