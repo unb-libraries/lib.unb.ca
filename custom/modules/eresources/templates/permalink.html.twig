@@ -13,7 +13,7 @@
 </ul>
 </div>
 {% if entry.getFirstMetadataField('description') is not empty %}
-<div class="px-2 mb-2">{{ entry.getFirstMetadataField('description') }}</div>
+<div class="px-2 mb-2">{{ entry.getFirstMetadataField('description') | raw }}</div>
 {% endif %}
 <dl>
   <dt>Access Information:</dt>

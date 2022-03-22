@@ -49,7 +49,7 @@
           {% if entry.getResultType == 'local' %}
           <div class="border border-info bg-light rounded p-3 collapse" id="details-{{ entry.getId }}">
             {% if entry.getFirstMetadataField('description') is not empty %}
-            <div>{{ entry.getFirstMetadataField('description') }}</div>
+            <div>{{ entry.getFirstMetadataField('description') | raw }}</div>
             {% endif %}
             <dl>
               <dt>Access Information:</dt>
