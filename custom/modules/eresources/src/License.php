@@ -241,7 +241,7 @@ class License {
       }
 
       // Some notes are contained in $term->notes.
-      if ($term->notes) {
+      if (property_exists($term, 'notes')) {
         $noteValues = [];
         foreach ($term->notes->note as $note) {
           $noteValues[] = $note->note;
@@ -272,7 +272,7 @@ class License {
           // Search for "Description" metadata.
           $options = $this->getOption($subterm, NULL);
           foreach ($options as $option) {
-            if ($option->optionMetadata != NULL) {
+            if (property_exists($option, 'optionMetadata')) {
               foreach ($option->optionMetadata->metadata as $metadata) {
                 if ($metadata->name == 'Description' && !empty($metadata->value)) {
                   $notes[$option->name . '/Description'] = $metadata->value;
@@ -371,7 +371,7 @@ class License {
       return NULL;
     }
     $subTerms = [];
-    if ($term->subTerms && property_exists($term->subTerms, 'subTerm')) {
+    if (property_exists($term, 'subTerms') && property_exists($term->subTerms, 'subTerm')) {
       foreach ($term->subTerms->subTerm as $subTerm) {
         $subTerms[] = $subTerm;
         if ($subTermName && property_exists($subTerm, 'subTermName') && $subTerm->subTermName == $subTermName) {
