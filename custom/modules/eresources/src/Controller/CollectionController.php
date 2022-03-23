@@ -87,13 +87,21 @@ class CollectionController extends ControllerBase {
     $page = $pagerParameters->findPage();
     $start = $perPage * $page + 1;
 
-    $api = $this->oclcApi('worldcat_knowledge_base', ['authorization' => $this->oclcAuthorization()]);
-    $result = $api->get('search-entries', [
-      'content' => 'fulltext,print',
-      'collection_uid' => $collection_uid,
-      'itemsPerPage' => $perPage,
-      'startIndex' => $start,
-    ]);
+    try {
+      $api = $this->oclcApi('worldcat_knowledge_base', ['authorization' => $this->oclcAuthorization()]);
+      $result = $api->get('search-entries', [
+        'content' => 'fulltext,print',
+        'collection_uid' => $collection_uid,
+        'itemsPerPage' => $perPage,
+        'startIndex' => $start,
+      ]);
+    }
+    catch (\Exception $error) {
+      \Drupal::logger('eresources')->error($error);
+      return [
+        '#markup' => '<div class="alert alert-danger rounded-0">Unable to retrieve collections this time. Please try again later.</div>',
+      ];
+    }
 
     $total = $result->{'os:totalResults'};
     if ($total == 0) {

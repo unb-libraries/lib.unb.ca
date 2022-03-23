@@ -155,7 +155,6 @@ class KbFormBase extends FormBase {
       $form[$form_wrapper]['type']['#default_value'] = $req->get('type');
 
       // $form['results_header'] = ['#markup' => '<h2 class="mt-3">Results</h2>'];
-      $api = $this->oclcApi('worldcat_knowledge_base', ['authorization' => $this->oclcAuthorization()]);
       $search = [
         'title' => $query,
         'orderBy' => 'title asc',
@@ -179,11 +178,19 @@ class KbFormBase extends FormBase {
         $search['orderBy'] = $order;
       }
 
-      $result = $api->get('search-entries', $search + [
-        'content' => $this->getKbContentType(),
-        'itemsPerPage' => $perPage,
-        'startIndex' => $start,
-      ]);
+      try {
+        $api = $this->oclcApi('worldcat_knowledge_base', ['authorization' => $this->oclcAuthorization()]);
+        $result = $api->get('search-entries', $search + [
+          'content' => $this->getKbContentType(),
+          'itemsPerPage' => $perPage,
+          'startIndex' => $start,
+        ]);
+      }
+      catch (\Exception $error) {
+        \Drupal::logger('eresources')->error($error);
+        $form[$form_wrapper]['search_results']['page'] = ['#markup' => '<div class="alert alert-danger rounded-0">Unable to complete your search at this time. Please try again later.</div>'];
+        return $form;
+      }
       $total = $result->{'os:totalResults'};
       if ($total == 0) {
         $form[$form_wrapper]['search_results']['page'] = ['#markup' => "<div class='alert alert-info rounded-0'>Your search for <b>\"{$query}\"</b> returned no results.</div>"];

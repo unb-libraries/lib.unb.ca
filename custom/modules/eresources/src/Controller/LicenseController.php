@@ -100,12 +100,20 @@ class LicenseController extends ControllerBase {
     $page = $pagerParameters->findPage();
     $start = $perPage * $page + 1;
 
-    $api = $this->oclcApi('wms_license_manager', ['authorization' => $this->oclcAuthorization()]);
-    $licensesData = $api->get('list', [
-      'itemsPerPage' => $perPage,
-      'startIndex' => $start,
-      'fetchDetails' => 'false',
-    ]);
+    try {
+      $api = $this->oclcApi('wms_license_manager', ['authorization' => $this->oclcAuthorization()]);
+      $licensesData = $api->get('list', [
+        'itemsPerPage' => $perPage,
+        'startIndex' => $start,
+        'fetchDetails' => 'false',
+      ]);
+    }
+    catch (\Exception $error) {
+      \Drupal::logger('eresources')->error($error);
+      return [
+        '#markup' => '<div class="alert alert-danger rounded-0">Unable to retrieve licenses at this time. Please try again later.</div>',
+      ];
+    }
     $licenses = json_decode($licensesData);
     $total = 0;
     foreach ($licenses->extensions as $ext) {
