@@ -34,12 +34,6 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
 
     $form_wrapper = $this->getKbFormId() . "_wrapper";
 
-    // Change type option to hidden field with keyword as the value.
-    $form[$form_wrapper]['type'] = [
-      '#type' => 'hidden',
-      '#value' => 'keyword',
-    ];
-
     $form[$form_wrapper]['guide_wrapper'] = [
       '#type' => 'container',
       '#attributes' => [
@@ -154,7 +148,8 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
       ],
     ];
 
-    $form[$form_wrapper]['query_wrapper']['query']['#title'] = '<span class="text-danger">OR</span> Search';
+    $form[$form_wrapper]['query_wrapper']['query']['#title_display'] = 'invisible';
+    $form[$form_wrapper]['type']['#prefix'] = '<span class="h6"><span class="text-danger">OR</span> Search</span>';
     $form[$form_wrapper]['query_wrapper']['query']['#required'] = FALSE;
 
     return $form;

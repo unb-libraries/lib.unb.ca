@@ -18,29 +18,12 @@ class ReferenceForm extends LocalFormBase implements KbFormInterface {
   }
 
   /**
-   * {@inheritDoc}
-   */
-  public function getSearchOptions() {
-    return [
-      'title' => 'Word(s) in title',
-      'browse' => 'Title starts with',
-      'exact' => 'Exact title',
-    ];
-  }
-
-  /**
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form = parent::buildForm($form, $form_state);
 
     $form_wrapper = $this->getKbFormId() . "_wrapper";
-
-    // Change type option to hidden field with keyword as the value.
-    $form[$form_wrapper]['type'] = [
-      '#type' => 'hidden',
-      '#value' => 'keyword',
-    ];
 
     $form[$form_wrapper]['guide_wrapper'] = [
       '#type' => 'container',
@@ -113,7 +96,8 @@ class ReferenceForm extends LocalFormBase implements KbFormInterface {
 </div>',
     ];
 
-    $form[$form_wrapper]['query_wrapper']['query']['#title'] = '<span class="text-danger">OR</span> Search';
+    $form[$form_wrapper]['query_wrapper']['query']['#title_display'] = 'invisible';
+    $form[$form_wrapper]['type']['#prefix'] = '<span class="h6"><span class="text-danger">OR</span> Search</span>';
     $form[$form_wrapper]['query_wrapper']['query']['#required'] = FALSE;
 
     return $form;
