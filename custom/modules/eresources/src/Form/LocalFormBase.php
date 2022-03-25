@@ -131,11 +131,13 @@ class LocalFormBase extends FormBase {
           break;
 
         case 'exact':
-          $indexQuery->addCondition('title', $query);
+          $indexQuery->addCondition('title_browse', $query);
           break;
 
         case 'browse':
-          $indexQuery->addCondition('title', "{$query}*");
+          $fields = $index->getServerInstance()->getBackend()->getSolrFieldNames($index);
+          $indexQuery->setFulltextFields(['title']);
+          $indexQuery->keys("{$fields['title_browse']}:{$query}*");
           break;
 
         case 'keyword':
