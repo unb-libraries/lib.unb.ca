@@ -120,34 +120,40 @@ class LocalFormBase extends FormBase {
       // $form['results_header'] = ['#markup' => '<h2 class="mt-3">Results</h2>'];
       $index = Index::load('eresources');
       $indexQuery = $index->query();
-      $parseMode = \Drupal::service('plugin.manager.search_api.parse_mode')->createInstance('direct');
-      $parseMode->setConjunction('AND');
-      $indexQuery->setParseMode($parseMode);
 
-      switch ($req->get('type')) {
-        case 'title':
-          $indexQuery->setFulltextFields(['title']);
-          $indexQuery->keys($query);
-          break;
+      $parseModeManager = \Drupal::service('plugin.manager.search_api.parse_mode');
+      $directMode = $parseModeManager->createInstance('direct');
+      $termMode = $parseModeManager->createInstance('terms');
 
-        case 'exact':
-          $indexQuery->addCondition('title_browse', $query);
-          break;
-
-        case 'browse':
-          $fields = $index->getServerInstance()->getBackend()->getSolrFieldNames($index);
-          $indexQuery->setFulltextFields(['title']);
-          $indexQuery->keys("{$fields['title_browse']}:{$query}*");
-          break;
-
-        case 'keyword':
-          if (preg_match('/id:(\d+)/', $query, $matches)) {
-            $indexQuery->addCondition('id', $matches[1]);
-          }
-          else {
+      if (preg_match('/id:(\d+)/', $query, $matches)) {
+        $indexQuery->setParseMode($directMode);
+        $indexQuery->addCondition('id', $matches[1]);
+      }
+      else {
+        switch ($req->get('type')) {
+          case 'title':
+            $indexQuery->setParseMode($termMode);
+            $indexQuery->setFulltextFields(['title']);
             $indexQuery->keys($query);
-          }
-          break;
+            break;
+
+          case 'exact':
+            $indexQuery->setParseMode($directMode);
+            $indexQuery->addCondition('title_browse', $query);
+            break;
+
+          case 'browse':
+            $indexQuery->setParseMode($directMode);
+            $fields = $index->getServerInstance()->getBackend()->getSolrFieldNames($index);
+            $indexQuery->setFulltextFields(['title']);
+            $indexQuery->keys("{$fields['title_browse']}:{$query}*");
+            break;
+
+          case 'keyword':
+            $indexQuery->setParseMode($termMode);
+            $indexQuery->keys($query);
+            break;
+        }
       }
 
       $indexQuery->addCondition('kb_data_type', $this->getKbContentType());
