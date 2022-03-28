@@ -265,7 +265,7 @@ field_settings:
     label: Title
     datasource_id: 'entity:eresources_record'
     property_path: title
-    type: 'solr_text_custom:ngram'
+    type: text
     boost: !!float 2
     dependencies:
       module:
