@@ -142,6 +142,10 @@ class HarvestedCollectionPageWorker extends QueueWorkerBase implements Container
       $oclcMetadata = $entity->oclc_metadata_id->entity;
     }
 
+    if (empty($entity->oclcnum->getString())) {
+      return;
+    }
+
     $searchApi = $this->oclcApi('worldcat_search_v2', ['authorization' => $this->oclcWorldCatSearchAuthorization]);
     $result = $searchApi->get('get-bibliographic-resource', ['oclcNumber' => $entity->oclcnum->getString()]);
     if ($result && isset($result->description->summaries[0]->text)) {
