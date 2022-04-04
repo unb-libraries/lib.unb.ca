@@ -55,7 +55,7 @@ module:
   file_management: 0
   filter: 0
   fontawesome: 0
-  fontawesome_iconpicker: 0
+  fontawesome_iconpicker_widget: 0
   google_analytics: 0
   health_check: 0
   help: 0
