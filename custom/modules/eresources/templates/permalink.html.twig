@@ -17,7 +17,13 @@
 {% endif %}
 <dl>
   <dt>Access Information:</dt>
-  <dd>{% if entry.getMetadataField('access_instructions') is not empty %}entry.getMetadataField('access_instructions'){% else %}No specific access instructions{% endif %}</dd>
+  <dd>
+    {% if entry.getMetadataField('access_information') is not empty %}
+      {{ entry.getMetadataField('access_information') }}
+    {% else %}
+      No specific access instructions
+    {% endif %}
+  </dd>
   <dt>Coverage/Publication Date:</dt>
   <dd>{{ entry.getPermittedUseStatement | raw }} {{ entry.getCoverageStatement }}</dd>
   {% if entry.getMetadataField('about_url') is not empty %}
