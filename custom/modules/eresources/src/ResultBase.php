@@ -42,10 +42,11 @@ class ResultBase {
    */
   public function getCoverageStatement() {
     $coverageEnum = $this->getCoverageEnum() ?? '';
-    if (preg_match('/^print/', $coverageEnum)) {
-      $coverage = implode('; ', [
+    $coverage = $this->getCoverage() ?? '';
+    if (preg_match('/^print/', $coverageEnum) || preg_match('/^other/', $coverage)) {
+      $coverage = implode(' / ', array_filter([
         $this->getLocation(), $this->getCoverageNotes(),
-      ]);
+      ]));
     }
     else {
       $coverage = implode(' ', [
@@ -64,15 +65,15 @@ class ResultBase {
    */
   public function getPermittedUseStatement() {
     $coverageEnum = $this->getCoverageEnum() ?? '';
-    // Ignore permitted use for print holdings.
-    if (preg_match('/^print/', $coverageEnum)) {
+    $coverage = $this->getCoverage() ?? '';
+    // Ignore permitted use for print/other holdings.
+    if (preg_match('/^print/', $coverageEnum) || preg_match('/^other/', $coverage)) {
       return '';
     }
 
     $data = [];
     $coverageNotes = $this->getCoverageNotes() ?? '';
     $collectionUserNotes = $this->getCollectionUserNotes() ?? '';
-    $coverage = $this->getCoverage() ?? '';
     if (preg_match('/(purchase|subscribe)/', $coverageNotes)
       && str_pos($coverageNotes, '|') === FALSE) {
       if ($collectionUserNotes) {
