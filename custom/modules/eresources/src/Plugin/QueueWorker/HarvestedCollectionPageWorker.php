@@ -98,6 +98,11 @@ class HarvestedCollectionPageWorker extends QueueWorkerBase implements Container
         foreach ($kb_fields as $key) {
           $local = str_replace('kb:', '', $key);
           $fields[$local] = $entry->{$key} ?? NULL;
+
+          // Clean up publisher data.
+          if ($key == 'kb:publisher') {
+            $fields[$local] = preg_replce('/[,\s]+$/', '', $fields[$local]);
+          }
         };
 
         foreach ($entry->links as $link) {

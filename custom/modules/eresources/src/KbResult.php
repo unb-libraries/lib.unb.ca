@@ -78,7 +78,12 @@ class KbResult extends ResultBase implements ResultInterface {
    * {@inheritDoc}
    */
   public function getPublisher() {
-    return $this->item->{'kb:publisher'} ?? NULL;
+    $result = $this->item->{'kb:publisher'} ?? NULL;
+    if (is_null($result)) {
+      return NULL;
+    }
+
+    return preg_replace('/[,\s]+$/', '', $result);
   }
 
   /**
