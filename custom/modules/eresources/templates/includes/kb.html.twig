@@ -23,7 +23,7 @@
       </p>
       {% if entry.getCoverageEnum starts with 'print' or entry.getCoverage starts with 'other' %}
         <div class="media ml-3">
-          <span class="fas fa-book mr-1"></span>
+          <span class="fas fa-{% if form_id == 'videos' %}compact-disc{% else %}book{% endif %} mr-1"></span>
           <p class="media-body mb-0"><span class="coverage">{{ entry.getCoverageStatement }}</span></p>
         </div>
       {% else %}
