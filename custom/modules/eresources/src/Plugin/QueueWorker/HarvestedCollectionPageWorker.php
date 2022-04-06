@@ -101,7 +101,7 @@ class HarvestedCollectionPageWorker extends QueueWorkerBase implements Container
 
           // Clean up publisher data.
           if ($key == 'kb:publisher') {
-            $fields[$local] = preg_replce('/[,\s]+$/', '', $fields[$local]);
+            $fields[$local] = preg_replace('/[,\s]+$/', '', $fields[$local]);
           }
         };
 
