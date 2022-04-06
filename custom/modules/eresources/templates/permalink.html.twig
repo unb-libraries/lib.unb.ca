@@ -25,7 +25,13 @@
     {% endif %}
   </dd>
   <dt>Coverage/Publication Date:</dt>
-  <dd>{{ entry.getPermittedUseStatement | raw }} {{ entry.getCoverageStatement }}</dd>
+  <dd>
+    {% set permittedUse = entry.getPermittedUseStatement %}
+    {% if 'Permitted Use' in permittedUse %}
+    <span class="fas fa-gavel"></span>
+    {% endif %}
+    {{ permittedUse | raw }} {{ entry.getCoverageStatement }}
+  </dd>
 </dl>
 {% set permalink = url('<current>', {'id': entry.getId}) %}
 <p class="mt-5 mb-0 small"><b>Permalink:</b> <a href="{{ permalink }}">{{ permalink }}</a></p>
