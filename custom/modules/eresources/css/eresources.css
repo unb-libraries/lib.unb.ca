@@ -29,6 +29,10 @@
   content: "\f309";
 }
 
+.local-description {
+  border-left: 4px solid #ccc;
+}
+
 @media (min-width: 1200px) {
   #eresources-discovery-search nav.navbar {
     max-width: 75%;
