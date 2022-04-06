@@ -26,10 +26,6 @@
   </dd>
   <dt>Coverage/Publication Date:</dt>
   <dd>{{ entry.getPermittedUseStatement | raw }} {{ entry.getCoverageStatement }}</dd>
-  {% if entry.getMetadataField('about_url') is not empty %}
-  <dt>More Information:</dt>
-  <dd><a href="{{ entry.getMetadataField('about_url') }}">View Publisher's Product Information</a></dd>
-  {% endif %}
 </dl>
 {% set permalink = url('<current>', {'id': entry.getId}) %}
 <p class="mt-5 mb-0 small"><b>Permalink:</b> <a href="{{ permalink }}">{{ permalink }}</a></p>

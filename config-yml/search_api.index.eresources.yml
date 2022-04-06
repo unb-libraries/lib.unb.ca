@@ -150,14 +150,6 @@ field_settings:
     dependencies:
       module:
         - eresources
-  metadata_local_about_url:
-    label: 'Local Metadata: About URL'
-    datasource_id: 'entity:eresources_record'
-    property_path: 'local_metadata_id:entity:about_url'
-    type: string
-    dependencies:
-      module:
-        - eresources
   metadata_local_access_information:
     label: 'Local Metadata: Access Information'
     datasource_id: 'entity:eresources_record'

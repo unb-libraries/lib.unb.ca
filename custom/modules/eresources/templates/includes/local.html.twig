@@ -38,10 +38,6 @@
             <dl>
               <dt>Access Information:</dt>
               <dd>{% if entry.getMetadataField('access_instructions') is not empty %}entry.getMetadataField('access_instructions'){% else %}No specific access instructions{% endif %}</dd>
-              {% if entry.getMetadataField('about_url') is not empty %}
-              <dt>More Information:</dt>
-              <dd><a href="{{ entry.getMetadataField('about_url') }}">View Publisher's Product Information</a></dd>
-              {% endif %}
             </dl>
             {% set permalink = url('<current>', {'id': entry.getId}) %}
             <p class="mt-2 mb-0 small"><b>Permalink:</b> <a href="{{ permalink }}">{{ permalink }}</a></p>

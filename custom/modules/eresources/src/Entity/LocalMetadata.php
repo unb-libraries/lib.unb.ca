@@ -75,21 +75,6 @@ class LocalMetadata extends ContentEntityBase implements ContentEntityInterface 
       ])
       ->setDisplayConfigurable('form', TRUE);
 
-    $fields['about_url'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('About URL'))
-      ->setRequired(FALSE)
-      ->setSettings(
-        [
-          'default_value' => '',
-          'max_length' => 255,
-        ]
-      )
-      ->setDisplayOptions('form', [
-        'type' => 'string_textfield',
-        'weight' => 0,
-      ])
-      ->setDisplayConfigurable('form', TRUE);
-
     $fields['zotero_url'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Zotero URL'))
       ->setRequired(FALSE)
