@@ -15,7 +15,13 @@ function eresources_theme($existing, $type, $theme, $path) {
         'license' => NULL,
       ],
     ],
-    'eresources' => [
+    'eresources-local' => [
+      'variables' => [
+        'eresources' => NULL,
+        'form_id' => NULL,
+      ],
+    ],
+    'eresources-kb' => [
       'variables' => [
         'eresources' => NULL,
         'form_id' => NULL,

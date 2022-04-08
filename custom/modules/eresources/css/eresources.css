@@ -68,6 +68,9 @@
     margin-bottom: 0.5rem;
   }
 }
+.list-results .eresources-local-record a {
+  display: inline;
+}
 .list-results .list-group-item li a {
   display: inline;
   font-style: italic;

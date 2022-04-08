@@ -1,0 +1,91 @@
+<ul class="list-group list-group-flush list-results">
+  {% set stripe = ['', 'bg-light'] %}
+  {% set row = 0 %}
+  {% set isbn = '' %}
+  {% set issn = '' %}
+  {% set eissn = '' %}
+  {% set content = '' %}
+  {% for entry in eresources %}
+    {% if entry.getIsbn is not empty %}{% set isbn = entry.getIsbn %}{% endif %}
+    {% if entry.getIssn is not empty %}{% set issn = entry.getIssn %}{% endif %}
+    {% if entry.getEissn is not empty %}{% set eissn = entry.getEissn %}{% endif %}
+    {# In order to group items by title/ocn, each item must be rendered, added to
+       the "content". Content is pushed out when the title changes or it's the
+       last item on the page.
+    #}
+    {% set chunk %}
+      {% set extra = [] %}
+      {% if form_id != 'journals' %}
+      {%   if entry.getAuthor %}
+      {%     set author = entry.getAuthor|replace({'|': '; '}) %}
+      {%     set extra = extra|merge([author]) %}
+      {%   endif %}
+      {%   if entry.getPublisher %}
+      {%     set extra = extra|merge([entry.getPublisher]) %}
+      {%   endif %}
+      {% endif %}
+      {% if entry.getCoverage matches '/^(ebook|video)/' %}
+      {%   set extra = extra|merge([entry.getCoverageStatement]) %}
+      {% endif %}
+      <li>
+        <div class="row mb-2">
+          <div class="col-12 col-lg-8">
+            <p class="mb-0"><a class="d-inline" href="{{ entry.getViaUrl }}" target="_blank" onclick='javascript: _gaq.push(["_trackPageview", "/GA/{{ entry.getTitle }}"]);'>
+              <span class="sr-only">{{ entry.getTitle }} in </span> {{ entry.getCollectionName }}
+            </a>
+            {% if extra %}
+            ({{ extra|join('; ') }})
+            {% endif %}
+            </p>
+            {% if entry.getCoverageEnum starts with 'print' or entry.getCoverage starts with 'other' %}
+              <div class="media ml-3">
+                <span class="fas fa-{% if form_id == 'videos' %}film{% else %}book{% endif %} mr-1"></span>
+                <p class="media-body mb-0"><span class="coverage">{{ entry.getCoverageStatement }}</span></p>
+              </div>
+            {% else %}
+              {% set permittedUse = entry.getPermittedUseStatement %}
+              {% if permittedUse %}
+              <div class="media ml-3">
+                {% if 'Permitted Use' in permittedUse %}
+                <span class="fas fa-gavel mr-1"></span>
+                {% endif %}
+                <p class="media-body mb-0">{{ permittedUse|raw }}</p>
+              </div>
+              {% endif %}
+            {% endif %}
+          </div>
+          <div class="col col-lg-4 oclcnum">
+          {% if entry.getOclcNum is not empty %}
+            <p>WorldCat: <a href="https://unb.on.worldcat.org/oclc/{{ entry.getOclcNum }}">{{ entry.getOclcNum }}</a></p>
+          {% endif %}
+          </div>
+        </div>
+      </li>
+    {% endset %}
+    {% set content = content ~ chunk %}
+    {% set nextIndex = loop.index0 + 1 %}
+    {% if loop.last or (
+      entry.getTitle|lower != eresources[nextIndex].getTitle|lower and
+      (entry.getOclcNum is empty or entry.getOclcNum != eresources[nextIndex].getOclcNum)
+    ) %}
+      <li class="list-group-item {{ cycle(stripe, row) }}">
+        <div class="row">
+          <div class="col-12 col-lg-8 title">{{ entry.getTitle }}</div>
+          <div class="col-12 col-lg-4 mt-1 mt-lg-0 oclcnum">
+            {% if isbn %}<p>ISBN: {{ isbn }}</p>{% endif %}
+            {% if issn %}<p>ISSN: {{ issn }}</p>{% endif %}
+            {% if eissn %}<p>eISSN: {{ eissn }}</p>{% endif %}
+          </div>
+        </div>
+        <ul>
+          {{ content|raw }}
+        </ul>
+      </li>
+      {% set isbn = '' %}
+      {% set issn = '' %}
+      {% set eissn = '' %}
+      {% set content = '' %}
+      {% set row = row + 1 %}
+    {% endif %}
+  {% endfor %}
+</ul>

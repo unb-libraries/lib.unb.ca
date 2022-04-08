@@ -186,7 +186,7 @@ class LocalFormBase extends FormBase {
         $pagerManager->createPager($total, $perPage);
         $form[$form_wrapper]['search_results']['top-pager'] = ['#type' => 'pager'];
         $form[$form_wrapper]['search_results']['results'] = [
-          '#theme' => 'eresources',
+          '#theme' => 'eresources-local',
           '#eresources' => $entries,
           '#form_id' => $this->getKbFormId(),
         ];

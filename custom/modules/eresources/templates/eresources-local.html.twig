@@ -1,0 +1,66 @@
+<ul class="list-group list-group-flush list-results">
+  {% set stripe = ['', 'bg-light'] %}
+  {% set row = 0 %}
+  {% for entry in eresources %}
+  <li class="list-group-item {{ cycle(stripe, row) }} eresources-local-record">
+    <div class="col title">
+      <a href="{{ entry.getViaUrl }}" target="_blank" onclick='javascript: _gaq.push(["_trackPageview", "/GA/{{ entry.getTitle }}"]);'>{{ entry.getTitle }}</a>
+      <div class="wrapper-list-inline item-list">
+        <ul class="mb-2">
+          <li>
+            <span class="text-info" role="button" data-toggle="collapse" data-target=".details-{{ entry.getId }}"><i class="fas fa-question-circle"></i> Details</span>
+          </li>
+        {% if entry.getMetadataField('help_url') is not empty %}
+          <li><a href="{{ entry.getMetadataField('help_url') }}"><i class="fas fa-info-circle"></i> Database Help</a></li>
+        {% endif %}
+        {% if entry.getMetadataField('zotero_url') is not empty %}
+          <li><a href="{{ entry.getMetadataField('zotero_url') }}"><i class="eresources-icon-zotero"></i> Zotero Help</a></li>
+        {% endif %}
+        {% if entry.getOclcNum is not empty %}
+          <li><i class="fas fa-search"></i> WorldCat: <a href="https://unb.on.worldcat.org/oclc/{{ entry.getOclcNum }}">{{ entry.getOclcNum }}</a></li>
+        {% endif %}
+        </ul>
+      </div>
+    </div>
+    <div class="col">
+      {% set permittedUse = entry.getPermittedUseStatement %}
+      {% if permittedUse %}
+      <div class="media ml-2">
+        {% if 'Permitted Use' in permittedUse %}
+        <span class="fas fa-gavel mr-1"></span>
+        {% endif %}
+        <p class="media-body">{{ permittedUse|raw }}</p>
+      </div>
+      {% endif %}
+      {% if entry.getFirstMetadataField('description') is not empty %}
+      <div class="ml-2">
+        {% set description = entry.getFirstMetadataField('description')|striptags %}
+        {% if description|length > 200 %}
+          <div class="collapse show details-{{ entry.getId }}" style="transition:none">
+          {{ (description|slice(0, 201)|split(' ')|slice(0, -1)|join(' ') ~ '&hellip;')|raw }}
+          </div>
+          <div class="collapse details-{{ entry.getId }}" style="transition:none">
+          {{ entry.getFirstMetadataField('description') | raw }}
+          </div>
+        {% else %}
+          {{ entry.getFirstMetadataField('description') | raw }}
+        {% endif %}
+      </div>
+      {% endif %}
+      <div class="border border-info bg-light rounded p-3 mt-2 collapse details-{{ entry.getId }}">
+        <dl>
+        {% if form_id == 'reference' %}
+          <dt>Collection:</dt>
+          <dd>{{ entry.getCollectionName }}</dd>
+        {% endif %}
+          <dt>Access Information:</dt>
+          <dd>{% if entry.getMetadataField('access_instructions') is not empty %}entry.getMetadataField('access_instructions'){% else %}No specific access instructions{% endif %}</dd>
+        </dl>
+        {% set permalink = url('<current>', {'id': entry.getId}) %}
+        <p class="mt-2 mb-0 small"><b>Permalink:</b> <a href="{{ permalink }}">{{ permalink }}</a></p>
+      </div>
+    </div>
+  </li>
+    {% set row = row + 1 %}
+  {% endfor %}
+</ul>
