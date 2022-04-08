@@ -68,12 +68,18 @@
     margin-bottom: 0.5rem;
   }
 }
+.list-results .eresources-local-record span[role=button] {
+  color: #00607a;
+}
 .list-results .eresources-local-record a {
   display: inline;
 }
 .list-results .list-group-item li a {
   display: inline;
   font-style: italic;
+}
+.list-results .eresources-local-record li a {
+  font-style: normal;
 }
 .list-results .list-group-item li .col-12 {
   padding-left: 0;
