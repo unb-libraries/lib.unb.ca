@@ -74,6 +74,9 @@
 .list-results .eresources-local-record a {
   display: inline;
 }
+.list-results .eresources-local-record .title ul {
+  font-family: "ProximaNovaA-Regular","Century Gothic",AppleGothic,Arial,sans-serif;
+}
 .list-results .list-group-item li a {
   display: inline;
   font-style: italic;
