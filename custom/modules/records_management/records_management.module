@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * @file
+ * Contains records_management.module.
+ */
+
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Utility\UpdateException;
+
+/**
+ * Implements hook_update_N().
+ */
+function records_management_update_8101(&$sandbox) {
+  $database = \Drupal::database();
+  $schedule_storage = \Drupal::entityTypeManager()
+    ->getStorage('schedule');
+  $definition_manager = \Drupal::entityDefinitionUpdateManager();
+
+  $transaction = $database->startTransaction('records_management__add_field_published');
+  try {
+    $published_field_definition = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Published'))
+      ->setRevisionable(TRUE)
+      ->setTranslatable(TRUE)
+      ->setDefaultValue(TRUE);
+
+    // Install the new definition.
+    $definition_manager->installFieldStorageDefinition(
+      'published',
+      $schedule_storage->getEntityTypeId(),
+      $schedule_storage->getEntityType()
+        ->getProvider(),
+      $published_field_definition
+    );
+
+    // Set all existing entities to "published".
+    foreach ($schedule_storage->loadMultiple() as $schedule) {
+      $schedule
+        ->setPublished()
+        ->save();
+    }
+  }
+  catch (\Exception $e) {
+    $transaction->rollBack();
+    \Drupal::logger('db')
+      ->error(t("An error occurred while trying to install a new \"published\" field. The field was not installed: @trace\n\n", [
+        '@trace' => $e->getTraceAsString(),
+      ]));
+    throw new UpdateException($e->getMessage());
+  }
+}

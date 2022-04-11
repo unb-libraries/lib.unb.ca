@@ -3,7 +3,8 @@
 namespace Drupal\records_management\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
-use Drupal\Core\Entity\EntityStorageInterface;
+use Drupal\Core\Entity\EntityPublishedInterface;
+use Drupal\Core\Entity\EntityPublishedTrait;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\custom_entity\Entity\EntityChangedTrait;
@@ -39,6 +40,7 @@ use Drupal\custom_entity\Entity\UserEditedInterface;
  *     "id" = "id",
  *     "revision" = "rid",
  *     "label" = "name",
+ *     "published" = "published",
  *     "uuid" = "uuid"
  *   },
  *   links = {
@@ -53,10 +55,11 @@ use Drupal\custom_entity\Entity\UserEditedInterface;
  *   field_ui_base_route = "entity.schedule.settings",
  * )
  */
-class Schedule extends ContentEntityBase implements ScheduleInterface, UserCreatedInterface, UserEditedInterface {
+class Schedule extends ContentEntityBase implements ScheduleInterface, EntityPublishedInterface, UserCreatedInterface, UserEditedInterface {
 
   use EntityCreatedTrait;
   use EntityChangedTrait;
+  use EntityPublishedTrait;
 
   /**
    * {@inheritDoc}
@@ -183,6 +186,13 @@ class Schedule extends ContentEntityBase implements ScheduleInterface, UserCreat
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
+
+    $fields += static::publishedBaseFieldDefinitions($entity_type);
+    $fields[$entity_type->getKey('published')]
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayOptions('form', [
+        'weight' => 97,
+      ]);
 
     $fields[self::FIELD_CREATED] = static::getCreatedBaseFieldDefinition($entity_type);
     $fields[self::FIELD_CREATOR] = static::getCreatorBaseFieldDefinition($entity_type);
