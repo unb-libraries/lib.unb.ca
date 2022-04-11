@@ -37,6 +37,7 @@ function eresources_theme($existing, $type, $theme, $path) {
     'permalink' => [
       'variables' => [
         'entry' => NULL,
+        'debug' => NULL,
       ],
     ],
   ];

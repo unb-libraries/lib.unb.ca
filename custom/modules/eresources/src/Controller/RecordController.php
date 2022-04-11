@@ -40,6 +40,7 @@ class RecordController extends ControllerBase {
     return [
       '#theme' => 'permalink',
       '#entry' => $entry,
+      '#debug' => !empty(\Drupal::request()->query->get('debug')),
     ];
   }
 

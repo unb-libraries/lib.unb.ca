@@ -4,6 +4,11 @@
 {% if entry.getOclcNum is not empty %}
   <li><i class="fas fa-search"></i> WorldCat: <a href="https://unb.on.worldcat.org/oclc/{{ entry.getOclcNum }}">{{ entry.getOclcNum }}</a></li>
 {% endif %}
+{% if debug %}
+  <li>
+    <span role="button" class="text-warning" data-toggle="collapse" data-target="#debug-{{ entry.getId }}"><i class="fas fa-info-circle"></i> Debug</span>
+  </li>
+{% endif %}
 </ul>
 </div>
 {% if entry.getFirstMetadataField('description') is not empty %}
@@ -27,5 +32,10 @@
     {{ coverage }}
   </dd>
 </dl>
+{% if debug %}
+<div class="border border-warning rounded bg-white p-3 mt-2 collapse" id="debug-{{ entry.getId }}">
+{{ entry.getDebug | raw }}
+</div>
+{% endif %}
 {% set permalink = url('<current>', {'id': entry.getId}) %}
 <p class="mt-5 mb-0 small"><b>Permalink:</b> <a href="{{ permalink }}">{{ permalink }}</a></p>
