@@ -136,9 +136,9 @@ class KbResult extends ResultBase implements ResultInterface {
     $debug .= '<ul class="mb-2">';
 
     $f = [
-      'entry_uid', 'title', 'collection_name', 'oclcnum', 'isbn', 'issn', 'eissn', 'url',
-      'author', 'publisher', 'coverage', 'coverageenum', 'coverage_notes',
-      'collection_user_notes', 'location',
+      'entry_uid', 'title', 'collection_name', 'oclcnum', 'isbn', 'issn',
+      'eissn', 'url', 'author', 'publisher', 'coverage', 'coverageenum',
+      'coverage_notes', 'collection_user_notes', 'location',
     ];
     foreach ($f as $k) {
       $value = $this->item->{"kb:{$k}"} ?? '';

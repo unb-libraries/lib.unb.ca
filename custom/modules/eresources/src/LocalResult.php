@@ -120,9 +120,9 @@ class LocalResult extends ResultBase implements ResultInterface {
     $debug .= '<ul class="mb-2">';
 
     $f = [
-      'title', 'collection_name', 'oclcnum', 'isbn', 'issn', 'eissn', 'url',
-      'author', 'publisher', 'coverage', 'coverageenum', 'coverage_notes',
-      'collection_user_notes', 'location',
+      'entry_uid', 'title', 'collection_name', 'oclcnum', 'isbn', 'issn',
+      'eissn', 'url', 'author', 'publisher', 'coverage', 'coverageenum',
+      'coverage_notes', 'collection_user_notes', 'location',
     ];
     foreach ($f as $k) {
       $debug .= "<li><b>{$k}:</b> " . htmlspecialchars($this->getFirstValue($k)) . '</li>';
