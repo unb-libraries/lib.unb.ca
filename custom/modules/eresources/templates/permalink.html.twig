@@ -1,12 +1,6 @@
 <h3><a href="{{ entry.getViaUrl }}" target="_blank" onclick='javascript: _gaq.push(["_trackPageview", "/GA/{{ entry.getTitle }}"]);'>{{ entry.getTitle }}</a></h3>
 <div class="wrapper-list-inline item-list">
 <ul class="mb-2">
-{% if entry.getMetadataField('help_url') is not empty %}
-  <li><a href="{{ entry.getMetadataField('help_url') }}"><i class="fas fa-info-circle"></i> Database Help</a></li>
-{% endif %}
-{% if entry.getMetadataField('zotero_url') is not empty %}
-  <li><a href="{{ entry.getMetadataField('zotero_url') }}"><i class="eresources-icon-zotero"></i> Zotero Help</a></li>
-{% endif %}
 {% if entry.getOclcNum is not empty %}
   <li><i class="fas fa-search"></i> WorldCat: <a href="https://unb.on.worldcat.org/oclc/{{ entry.getOclcNum }}">{{ entry.getOclcNum }}</a></li>
 {% endif %}
