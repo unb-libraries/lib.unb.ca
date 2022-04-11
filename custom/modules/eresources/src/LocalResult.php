@@ -133,9 +133,9 @@ class LocalResult extends ResultBase implements ResultInterface {
     $debug .= '<ul class="mb-2">';
 
     $f = [
-      'alternate_title', 'date_coverage', 'help_url', 'zotero_url',
-      'subscription_start_date', 'subscription_end_date', 'description',
-      'access_information', 'license_status', 'is_collection',
+      'alternate_title', 'date_coverage', 'subscription_start_date',
+      'subscription_end_date', 'description', 'access_information',
+      'license_status', 'is_collection',
     ];
     foreach ($f as $k) {
       $value = htmlspecialchars($this->getMetadataField($k, 'local'));
