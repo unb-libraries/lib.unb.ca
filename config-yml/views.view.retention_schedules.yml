@@ -1242,7 +1242,7 @@ display:
           entity_type: null
           entity_field: null
           plugin_id: search_api_field
-          label: 'Approved on'
+          label: 'Creation Date'
           exclude: false
           alter:
             alter_text: false
