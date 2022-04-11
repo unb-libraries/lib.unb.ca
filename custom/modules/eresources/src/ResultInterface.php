@@ -129,4 +129,12 @@ interface ResultInterface {
    */
   public function getLocation();
 
+  /**
+   * Debug info.
+   *
+   * @return string
+   *   Debug string.
+   */
+  public function getDebug();
+
 }

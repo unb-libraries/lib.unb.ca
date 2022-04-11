@@ -113,6 +113,53 @@ class LocalResult extends ResultBase implements ResultInterface {
   }
 
   /**
+   * {@inheritDoc}
+   */
+  public function getDebug() {
+    $debug = '<p class="h4">KB Record Fields</p>';
+    $debug .= '<ul class="mb-2">';
+
+    $f = [
+      'title', 'collection_name', 'oclcnum', 'isbn', 'issn', 'eissn', 'url',
+      'author', 'publisher', 'coverage', 'coverageenum', 'coverage_notes',
+      'collection_user_notes', 'location',
+    ];
+    foreach ($f as $k) {
+      $debug .= "<li><b>{$k}:</b> " . htmlspecialchars($this->getFirstValue($k)) . '</li>';
+    }
+
+    $debug .= '</ul>';
+    $debug .= '<p class="h4">Local Metadata</p>';
+    $debug .= '<ul class="mb-2">';
+
+    $f = [
+      'alternate_title', 'date_coverage', 'help_url', 'zotero_url',
+      'subscription_start_date', 'subscription_end_date', 'description',
+      'access_information', 'license_status', 'is_collection',
+    ];
+    foreach ($f as $k) {
+      $value = htmlspecialchars($this->getMetadataField($k, 'local'));
+      if (in_array($k, ['subscription_start_date', 'subscription_end_date'])) {
+        $value = date('Y-m-d H:i:s', (int) $value);
+      }
+      $debug .= "<li><b>{$k}:</b> " . $value . '</li>';
+    }
+
+    $debug .= '</ul>';
+    $debug .= '<p class="h4">OCLC Metadata</p>';
+    $debug .= '<ul class="mb-2">';
+
+    $f = ['description'];
+    foreach ($f as $k) {
+      $debug .= "<li><b>{$k}:</b> " . htmlspecialchars($this->getMetadataField($k, 'oclc')) . '</li>';
+    }
+
+    $debug .= '</ul>';
+
+    return $debug;
+  }
+
+  /**
    * Returns the database ID of the record.
    */
   public function getId() {

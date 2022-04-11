@@ -10,6 +10,11 @@
           <li>
             <span role="button" data-toggle="collapse" data-target=".details-{{ entry.getId }}"><i class="fas fa-question-circle"></i> Details</span>
           </li>
+        {% if debug %}
+          <li>
+            <span role="button" class="text-warning" data-toggle="collapse" data-target="#debug-{{ entry.getId }}"><i class="fas fa-info-circle"></i> Debug</span>
+          </li>
+        {% endif %}
         {% if entry.getMetadataField('help_url') is not empty %}
           <li><a href="{{ entry.getMetadataField('help_url') }}"><i class="fas fa-info-circle"></i> Database Help</a></li>
         {% endif %}
@@ -61,6 +66,11 @@
         {% set permalink = url('<current>', {'id': entry.getId}) %}
         <p class="mt-2 mb-0 small"><b>Permalink:</b> <a href="{{ permalink }}">{{ permalink }}</a></p>
       </div>
+      {% if debug %}
+      <div class="border border-warning rounded bg-white p-3 mt-2 collapse" id="debug-{{ entry.getId }}">
+      {{ entry.getDebug | raw }}
+      </div>
+      {% endif %}
     </div>
   </li>
     {% set row = row + 1 %}

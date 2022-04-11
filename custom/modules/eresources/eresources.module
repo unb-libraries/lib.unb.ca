@@ -19,12 +19,14 @@ function eresources_theme($existing, $type, $theme, $path) {
       'variables' => [
         'eresources' => NULL,
         'form_id' => NULL,
+        'debug' => NULL,
       ],
     ],
     'eresources-kb' => [
       'variables' => [
         'eresources' => NULL,
         'form_id' => NULL,
+        'debug' => NULL,
       ],
     ],
     'trials' => [

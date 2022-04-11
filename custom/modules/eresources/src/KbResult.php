@@ -121,4 +121,33 @@ class KbResult extends ResultBase implements ResultInterface {
     return $this->item->{'kb:location'} ?? NULL;
   }
 
+  /**
+   * Returns the KB entry ID of the record.
+   */
+  public function getId() {
+    return $this->item->{'kb:entry_uid'} ?? NULL;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getDebug() {
+    $debug = '<p class="h4">KB Record Fields</p>';
+    $debug .= '<ul class="mb-2">';
+
+    $f = [
+      'entry_uid', 'title', 'collection_name', 'oclcnum', 'isbn', 'issn', 'eissn', 'url',
+      'author', 'publisher', 'coverage', 'coverageenum', 'coverage_notes',
+      'collection_user_notes', 'location',
+    ];
+    foreach ($f as $k) {
+      $value = $this->item->{"kb:{$k}"} ?? '';
+      $debug .= "<li><b>{$k}:</b> " . htmlspecialchars($value) . '</li>';
+    }
+
+    $debug .= '</ul>';
+
+    return $debug;
+  }
+
 }

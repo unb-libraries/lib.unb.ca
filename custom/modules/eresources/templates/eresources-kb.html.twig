@@ -30,12 +30,16 @@
       <li>
         <div class="row mb-2">
           <div class="col-12 col-lg-8">
-            <p class="mb-0"><a class="d-inline" href="{{ entry.getViaUrl }}" target="_blank" onclick='javascript: _gaq.push(["_trackPageview", "/GA/{{ entry.getTitle }}"]);'>
-              <span class="sr-only">{{ entry.getTitle }} in </span> {{ entry.getCollectionName }}
-            </a>
-            {% if extra %}
-            ({{ extra|join('; ') }})
-            {% endif %}
+            <p class="mb-0">
+              <a class="d-inline" href="{{ entry.getViaUrl }}" target="_blank" onclick='javascript: _gaq.push(["_trackPageview", "/GA/{{ entry.getTitle }}"]);'>
+                <span class="sr-only">{{ entry.getTitle }} in </span> {{ entry.getCollectionName }}
+              </a>
+              {% if extra %}
+              ({{ extra|join('; ') }})
+              {% endif %}
+              {% if debug %}
+                <span role="button" class="text-warning" data-toggle="collapse" data-target="#debug-{{ entry.getId | replace({'.': '-'}) }}"><i class="fas fa-info-circle"></i> Debug</span>
+              {% endif %}
             </p>
             {% if entry.getCoverageEnum starts with 'print' or entry.getCoverage starts with 'other' %}
               <div class="media ml-3">
@@ -52,6 +56,11 @@
                 <p class="media-body mb-0">{{ permittedUse|raw }}</p>
               </div>
               {% endif %}
+            {% endif %}
+            {% if debug %}
+              <div class="border border-warning rounded bg-white p-3 mt-2 collapse" id="debug-{{ entry.getId | replace({'.': '-'}) }}">
+              {{ entry.getDebug | raw }}
+              </div>
             {% endif %}
           </div>
           <div class="col col-lg-4 oclcnum">
