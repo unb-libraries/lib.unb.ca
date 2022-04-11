@@ -182,14 +182,6 @@ field_settings:
     dependencies:
       module:
         - eresources
-  metadata_local_help_url:
-    label: 'Local Metadata: Help URL'
-    datasource_id: 'entity:eresources_record'
-    property_path: 'local_metadata_id:entity:help_url'
-    type: string
-    dependencies:
-      module:
-        - eresources
   metadata_local_is_collection:
     label: 'Local Metadata: Is a Collection'
     datasource_id: 'entity:eresources_record'
@@ -219,14 +211,6 @@ field_settings:
     datasource_id: 'entity:eresources_record'
     property_path: 'local_metadata_id:entity:subscription_start_date'
     type: date
-    dependencies:
-      module:
-        - eresources
-  metadata_local_zotero_url:
-    label: 'Local Metadata: Zotero URL'
-    datasource_id: 'entity:eresources_record'
-    property_path: 'local_metadata_id:entity:zotero_url'
-    type: string
     dependencies:
       module:
         - eresources
