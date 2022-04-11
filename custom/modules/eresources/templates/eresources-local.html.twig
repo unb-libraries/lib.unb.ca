@@ -10,13 +10,13 @@
           <li>
             <span role="button" data-toggle="collapse" data-target=".details-{{ entry.getId }}"><i class="fas fa-question-circle"></i> Details</span>
           </li>
+        {% if entry.getOclcNum is not empty %}
+          <li><i class="fas fa-search"></i> WorldCat: <a href="https://unb.on.worldcat.org/oclc/{{ entry.getOclcNum }}">{{ entry.getOclcNum }}</a></li>
+        {% endif %}
         {% if debug %}
           <li>
             <span role="button" class="text-warning" data-toggle="collapse" data-target="#debug-{{ entry.getId }}"><i class="fas fa-info-circle"></i> Debug</span>
           </li>
-        {% endif %}
-        {% if entry.getOclcNum is not empty %}
-          <li><i class="fas fa-search"></i> WorldCat: <a href="https://unb.on.worldcat.org/oclc/{{ entry.getOclcNum }}">{{ entry.getOclcNum }}</a></li>
         {% endif %}
         </ul>
       </div>
