@@ -139,7 +139,8 @@ class LocalResult extends ResultBase implements ResultInterface {
     ];
     foreach ($f as $k) {
       $value = htmlspecialchars($this->getMetadataField($k, 'local'));
-      if (in_array($k, ['subscription_start_date', 'subscription_end_date'])) {
+      if (!empty($value)
+        && in_array($k, ['subscription_start_date', 'subscription_end_date'])) {
         $value = date('Y-m-d H:i:s', (int) $value);
       }
       $debug .= "<li><b>{$k}:</b> " . $value . '</li>';
