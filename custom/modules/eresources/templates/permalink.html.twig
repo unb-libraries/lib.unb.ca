@@ -20,11 +20,11 @@
   </dd>
   <dt>Coverage/Publication Date:</dt>
   <dd>
-    {% set permittedUse = entry.getPermittedUseStatement %}
-    {% if 'Permitted Use' in permittedUse %}
-    <span class="fas fa-gavel"></span>
+    {% set coverage = entry.getMetadataField('date_coverage') %}
+    {% if coverage is empty and form_id == 'reference' %}
+    {%   set coverage = entry.getCoverageTest %}
     {% endif %}
-    {{ permittedUse | raw }} {{ entry.getCoverageStatement }}
+    {{ coverage }}
   </dd>
 </dl>
 {% set permalink = url('<current>', {'id': entry.getId}) %}
