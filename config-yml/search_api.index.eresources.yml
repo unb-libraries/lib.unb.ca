@@ -166,6 +166,14 @@ field_settings:
     dependencies:
       module:
         - eresources
+  metadata_local_date_coverage:
+    label: 'Local Metadata: Coverage/Publication Date'
+    datasource_id: 'entity:eresources_record'
+    property_path: 'local_metadata_id:entity:date_coverage'
+    type: string
+    dependencies:
+      module:
+        - eresources
   metadata_local_description:
     label: 'Local Metadata: Description'
     datasource_id: 'entity:eresources_record'
