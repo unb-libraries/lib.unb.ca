@@ -81,6 +81,6 @@ ul.list-bullets li.d-flex:before {
   content: '| ';
   margin: 0 .2rem;
 }
-#search_results_wrapper .pagination {
+.search-results-wrapper .pagination {
   flex-wrap: wrap;
 }

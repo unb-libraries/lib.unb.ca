@@ -110,7 +110,7 @@ class CollectionsController extends ControllerBase {
       $pagerManager->createPager($total, $perPage);
       $render['top-pager'] = ['#type' => 'pager'];
       $render['results'] = [
-        '#prefix' => '<div id="search_results_wrapper" class="mt-4">',
+        '#prefix' => '<div class="search-results-wrapper mt-4">',
         '#suffix' => '</div>',
         '#theme' => 'eresources',
         '#eresources' => $entries,

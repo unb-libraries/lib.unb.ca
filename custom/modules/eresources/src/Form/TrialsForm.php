@@ -47,7 +47,7 @@ class TrialsForm extends FormBase {
       $form['trials']['header'] = ['#markup' => '<h3 class="pb-2 mb-2 border-bottom">Browse Current Trials:</h3>'];
       $form['trials']['search_results'] = [
         '#weight' => 100,
-        '#prefix' => '<div id="search_results_wrapper" class="mt-4 mx-n4">',
+        '#prefix' => '<div class="mt-4 mx-n4">',
         '#suffix' => '</div>',
         '#markup' => '',
       ];

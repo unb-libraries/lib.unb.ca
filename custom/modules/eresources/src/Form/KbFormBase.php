@@ -127,24 +127,22 @@ class KbFormBase extends FormBase {
       '#name' => '',
     ];
 
-    // The wrapper for search results.
-    $form[$form_wrapper]['search_results'] = [
-      // Set the results to be below the form.
-      '#weight' => 100,
-      // The prefix/suffix are the div with the ID specified as the wrapper in
-      // the submit button's #ajax definition.
-      '#prefix' => '<div id="search_results_wrapper" class="mt-4 mx-n4">',
-      '#suffix' => '</div>',
-      // The #markup element forces rendering of the #prefix and #suffix.
-      // Without content, the wrappers are not rendered. Therefore, an empty
-      // string is declared, ensuring that the wrapper for the search results
-      // is present when the page is loaded.
-      '#markup' => '',
-    ];
-
     $req = $this->getRequest()->query;
     $query = $req->get('query');
     if (!empty($query) && $this->getFormId() == $req->get('form_id')) {
+      // The wrapper for search results.
+      $form[$form_wrapper]['search_results'] = [
+        // Set the results to be below the form.
+        '#weight' => 100,
+        '#prefix' => '<div class="search-results-wrapper mt-4 mx-n4">',
+        '#suffix' => '</div>',
+        // The #markup element forces rendering of the #prefix and #suffix.
+        // Without content, the wrappers are not rendered. Therefore, an empty
+        // string is declared, ensuring that the wrapper for the search results
+        // is present when the page is loaded.
+        '#markup' => '',
+      ];
+
       $perPage = 50;
       $pagerManager = \Drupal::service('pager.manager');
       $pagerParameters = \Drupal::service('pager.parameters');
