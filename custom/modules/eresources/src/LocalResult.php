@@ -168,6 +168,13 @@ class LocalResult extends ResultBase implements ResultInterface {
   }
 
   /**
+   * Returns the KB data type of the record.
+   */
+  public function getKbDataType() {
+    return $this->getFirstValue('kb_data_type');
+  }
+
+  /**
    * Return the metadata field value for a source (default "local").
    */
   public function getMetadataField($field, $source = 'local') {

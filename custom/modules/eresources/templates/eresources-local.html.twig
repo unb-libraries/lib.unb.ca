@@ -48,12 +48,13 @@
       {% endif %}
       <div class="border border-info bg-light rounded p-3 mt-2 collapse details-{{ entry.getId }}">
         <dl>
-        {% if form_id == 'reference' %}
+        {% set kb_data_type = entry.getKbDataType | lower %}
+        {% if 'ref' in kb_data_type %}
           <dt>Collection:</dt>
           <dd>{{ entry.getCollectionName }}</dd>
         {% endif %}
         {% set coverage = entry.getMetadataField('date_coverage') %}
-        {% if coverage is empty and form_id == 'reference' %}
+        {% if coverage is empty and 'ref' in kb_data_type %}
         {%   set coverage = entry.getCoverageTest %}
         {% endif %}
         {% if coverage %}

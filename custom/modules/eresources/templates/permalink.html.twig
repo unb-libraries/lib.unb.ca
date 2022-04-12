@@ -15,6 +15,11 @@
 <div class="p-3 m-2 local-description">{{ entry.getFirstMetadataField('description') | raw }}</div>
 {% endif %}
 <dl>
+  {% set kb_data_type = entry.getKbDataType | lower %}
+  {% if 'ref' in kb_data_type %}
+  <dt>Collection:</dt>
+  <dd>{{ entry.getCollectionName }}</dd>
+  {% endif %}
   <dt>Access Information:</dt>
   <dd>
     {% if entry.getMetadataField('access_information') is not empty %}
@@ -23,14 +28,14 @@
       No specific access instructions.
     {% endif %}
   </dd>
-  <dt>Coverage/Publication Date:</dt>
-  <dd>
-    {% set coverage = entry.getMetadataField('date_coverage') %}
-    {% if coverage is empty and form_id == 'reference' %}
-    {%   set coverage = entry.getCoverageTest %}
-    {% endif %}
-    {{ coverage }}
-  </dd>
+  {% set coverage = entry.getMetadataField('date_coverage') %}
+  {% if coverage is empty and 'ref' in kb_data_type %}
+  {%   set coverage = entry.getCoverageTest %}
+  {% endif %}
+  {% if coverage %}
+    <dt>Coverage/Publication Date:</dt>
+    <dd>{{ coverage }}</dd>
+  {% endif %}
 </dl>
 {% if debug %}
 <div class="border border-warning rounded bg-white p-3 mt-2 collapse" id="debug-{{ entry.getId }}">
