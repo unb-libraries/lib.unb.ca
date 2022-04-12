@@ -18,9 +18,9 @@
   <dt>Access Information:</dt>
   <dd>
     {% if entry.getMetadataField('access_information') is not empty %}
-      {{ entry.getMetadataField('access_information') }}
+      {{ entry.getMetadataField('access_information') | raw }}
     {% else %}
-      No specific access instructions
+      No specific access instructions.
     {% endif %}
   </dd>
   <dt>Coverage/Publication Date:</dt>
