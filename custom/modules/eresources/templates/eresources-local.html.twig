@@ -52,14 +52,14 @@
           <dt>Collection:</dt>
           <dd>{{ entry.getCollectionName }}</dd>
         {% endif %}
+        {% set coverage = entry.getMetadataField('date_coverage') %}
+        {% if coverage is empty and form_id == 'reference' %}
+        {%   set coverage = entry.getCoverageTest %}
+        {% endif %}
+        {% if coverage %}
           <dt>Coverage/Publication Date:</dt>
-          <dd>
-          {% set coverage = entry.getMetadataField('date_coverage') %}
-          {% if coverage is empty and form_id == 'reference' %}
-          {%   set coverage = entry.getCoverageTest %}
-          {% endif %}
-          {{ coverage }}
-          </dd>
+          <dd>{{ coverage }}</dd>
+        {% endif %}
           <dt>Access Information:</dt>
           <dd>
           {% if entry.getMetadataField('access_information') is not empty %}
