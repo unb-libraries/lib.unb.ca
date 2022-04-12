@@ -23,7 +23,7 @@
     </div>
     <div class="col">
       {% if entry.getFirstMetadataField('description') is not empty %}
-      <div class="ml-2 my-2">
+      <div class="ml-3 my-2">
         {% set description = entry.getFirstMetadataField('description')|striptags %}
         {% if description|length > 200 %}
           <div class="collapse show details-{{ entry.getId }}" style="transition:none">
@@ -39,7 +39,7 @@
       {% endif %}
       {% set permittedUse = entry.getPermittedUseStatement %}
       {% if permittedUse %}
-      <div class="media ml-2">
+      <div class="media ml-3">
         {% if 'Permitted Use' in permittedUse %}
         <span class="fas fa-gavel mr-1"></span>
         {% endif %}
