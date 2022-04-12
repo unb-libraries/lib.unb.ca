@@ -50,3 +50,18 @@ function records_management_update_8101(&$sandbox) {
     throw new UpdateException($e->getMessage());
   }
 }
+
+/**
+ * Implements hook_views_data_alter().
+ */
+function records_management_views_data_alter(array &$data) {
+  $data['search_api_index_retention_schedules']['unpublished'] = [
+    'title' => t('Unpublished permission'),
+    'filter' => [
+      'title' => t('Unpublished permission'),
+      'help' => t('Filter based on permission to view unpublished schedules.'),
+      'field' => 'published',
+      'id' => 'unpublished_permission_filter',
+    ],
+  ];
+}
