@@ -27,6 +27,7 @@ permissions:
   - 'edit own field_file'
   - 'list classification entities'
   - 'list schedule entities'
+  - 'list unpublished schedule entities'
   - 'update retention_details entities'
   - 'update schedule entities'
   - 'use text format no_media_html'

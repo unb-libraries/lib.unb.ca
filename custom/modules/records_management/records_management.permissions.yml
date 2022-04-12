@@ -24,6 +24,9 @@ administer schedule entities:
 list schedule entities:
   title: "List retention schedules."
 
+list unpublished schedule entities:
+  title: "List unpublished retention schedules."
+
 create schedule entities:
   title: "Create retention schedules."
 
