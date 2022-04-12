@@ -35,6 +35,14 @@
                     $(e.target).closest('form').find('input[type=submit]').last().focus().click();
                 }
             });
+
+            // Scroll to search results if available
+            let resultsSelector = '.Accordion-panel:not([hidden]) .search-results-wrapper';
+            if ($(resultsSelector).length) {
+                $('html, body').once().animate({
+                    scrollTop: $(resultsSelector).offset().top - 250
+                }, 'slow');
+            }
         }
     }
 })(jQuery, Drupal);
