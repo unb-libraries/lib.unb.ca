@@ -118,7 +118,7 @@ class CollectionController extends ControllerBase {
       $render['results'] = [
         '#prefix' => '<div class="search-results-wrapper mt-4">',
         '#suffix' => '</div>',
-        '#theme' => 'eresources',
+        '#theme' => 'eresources-kb',
         '#eresources' => $entries,
         '#form_id' => '',
       ];
