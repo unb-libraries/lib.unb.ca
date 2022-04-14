@@ -71,7 +71,13 @@ class CollectionController extends ControllerBase {
       return NULL;
     }
 
-    return $result->title;
+    $title = $result->title;
+    $content = \Drupal::request()->query->get('content');
+    if (!empty($content)) {
+      $title .= " ({$content})";
+    }
+
+    return $title;
   }
 
   /**
