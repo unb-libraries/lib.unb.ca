@@ -115,6 +115,7 @@ class CollectionsController extends ControllerBase {
         '#theme' => 'eresources-local',
         '#eresources' => $entries,
         '#form_id' => $typeInfo['form_id'],
+        '#debug' => !empty(\Drupal::request()->query->get('debug')),
       ];
       $render['bottom-pager'] = ['#type' => 'pager'];
     }
