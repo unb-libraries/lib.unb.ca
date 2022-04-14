@@ -89,12 +89,16 @@ class CollectionController extends ControllerBase {
 
     try {
       $api = $this->oclcApi('worldcat_knowledge_base', ['authorization' => $this->oclcAuthorization()]);
-      $result = $api->get('search-entries', [
-        'content' => 'fulltext,print',
+      $params = [
         'collection_uid' => $collection_uid,
         'itemsPerPage' => $perPage,
         'startIndex' => $start,
-      ]);
+      ];
+      $content = \Drupal::request()->query->get('content');
+      if (!empty($content)) {
+        $params += ['content' => $content];
+      }
+      $result = $api->get('search-entries', $params);
     }
     catch (\Exception $error) {
       \Drupal::logger('eresources')->error($error);
