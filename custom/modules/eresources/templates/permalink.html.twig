@@ -30,7 +30,7 @@
   </dd>
   {% set coverage = entry.getMetadataField('date_coverage') %}
   {% if coverage is empty and 'ref' in kb_data_type %}
-  {%   set coverage = entry.getCoverageTest %}
+  {%   set coverage = entry.getCoverageText %}
   {% endif %}
   {% if coverage %}
     <dt>Coverage/Publication Date:</dt>
