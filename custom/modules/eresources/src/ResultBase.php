@@ -97,7 +97,7 @@ class ResultBase {
         $data = array_merge($data, explode(' | ', $coverageNotes));
       }
       elseif (!preg_match('/^(ebook|video)/', $coverage)) {
-        if (empty($coverage) && preg_match('/LocalResult$/', get_class($this))) {
+        if ((empty($coverage) || preg_match('/^fulltext/', $coverage)) && preg_match('/LocalResult$/', get_class($this))) {
           return '';
         }
         $data[] = implode(' ', [
