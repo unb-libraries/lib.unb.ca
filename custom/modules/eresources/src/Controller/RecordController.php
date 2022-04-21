@@ -25,7 +25,6 @@ class RecordController extends ControllerBase {
     $indexQuery = $index->query();
     $indexQuery->addCondition('id', $id);
     $indexQuery->addCondition('status', TRUE);
-    $indexQuery->addCondition('entry_uid', NULL, '<>');
     $indexQuery->range(0, 1);
     $result = $indexQuery->execute();
 

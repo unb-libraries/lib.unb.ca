@@ -156,7 +156,6 @@ class LocalFormBase extends FormBase {
 
       $indexQuery->addCondition('kb_data_type', $this->getKbContentType());
       $indexQuery->addCondition('status', TRUE);
-      $indexQuery->addCondition('entry_uid', NULL, '<>');
       $indexQuery->range($start - 1, $perPage);
 
       $order = ['title', 'ASC'];
