@@ -4,7 +4,11 @@
   {% for entry in eresources %}
   <li class="list-group-item {{ cycle(stripe, row) }} eresources-local-record">
     <div class="col title">
+      {% if entry.getViaUrl %}
       <a href="{{ entry.getViaUrl }}" target="_blank" onclick='javascript: _gaq.push(["_trackPageview", "/GA/{{ entry.getTitle }}"]);'>{{ entry.getTitle }}</a>
+      {% else %}
+      {{ entry.getTitle }}
+      {% endif %}
       <div class="wrapper-list-inline item-list font-weight-normal">
         <ul class="mb-2">
           <li>

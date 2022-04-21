@@ -1,4 +1,10 @@
-<h3><a href="{{ entry.getViaUrl }}" target="_blank" onclick='javascript: _gaq.push(["_trackPageview", "/GA/{{ entry.getTitle }}"]);'>{{ entry.getTitle }}</a></h3>
+<h3>
+  {% if entry.getViaUrl %}
+  <a href="{{ entry.getViaUrl }}" target="_blank" onclick='javascript: _gaq.push(["_trackPageview", "/GA/{{ entry.getTitle }}"]);'>{{ entry.getTitle }}</a>
+  {% else %}
+  {{ entry.getTitle }}
+  {% endif %}
+</h3>
 <div class="wrapper-list-inline item-list">
 <ul class="mb-2">
 {% if entry.getOclcNum is not empty %}
