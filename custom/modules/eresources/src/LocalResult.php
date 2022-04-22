@@ -127,8 +127,10 @@ class LocalResult extends ResultBase implements ResultInterface {
     foreach ($f as $k) {
       $debug .= "<li><b>{$k}:</b> " . htmlspecialchars($this->getFirstValue($k)) . '</li>';
     }
+    $debug .= "<li><b>*kb_data_type:</b> " . htmlspecialchars($this->getFirstValue('kb_data_type')) . '</li>';
 
     $debug .= '</ul>';
+    $debug .= '<p>*Locally maintained data</p>';
     $debug .= '<p class="h4">Local Metadata</p>';
     $debug .= '<ul class="mb-2">';
 
