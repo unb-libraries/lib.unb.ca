@@ -1,0 +1,39 @@
+<h2>KB Record (<a href="{{ url('entity.eresources_record.edit_form', {'eresources_record': eresources_record.id.value}) }}">edit</a>)</h2>
+<table>
+  <tr><th>Key</th><th>Value</th></tr>
+{% set fields = [
+  'id', 'entry_uid', 'title', 'oclcnum', 'isbn', 'issn',
+  'eissn', 'url', 'author', 'publisher', 'coverage', 'coverageenum',
+  'coverage_notes', 'collection_user_notes', 'location',
+] %}
+{% for field in fields %}
+  {% set fieldObj = eresources_record.get(field) %}
+  <tr><td>{{ fieldObj.name }}</td><td>{{ fieldObj.value }}</td></tr>
+{% endfor %}
+</table>
+{% set local_metadata = eresources_record.local_metadata_id.entity %}
+<h2>Local Metadata (<a href="{{ url('entity.eresources_local_metadata.edit_form', {'eresources_local_metadata': local_metadata.id.value}) }}">edit</a>)</h2>
+<table>
+  <tr><th>Key</th><th>Value</th></tr>
+{% set fields = [
+  'alternate_title', 'date_coverage', 'subscription_start_date',
+  'subscription_end_date', 'description', 'access_information',
+  'license_status', 'is_collection',
+] %}
+{% for field in fields %}
+  {% set fieldObj = local_metadata.get(field) %}
+  <tr><td>{{ fieldObj.name }}</td><td>{{ fieldObj.value }}</td></tr>
+{% endfor %}
+</table>
+{% set oclc_metadata = eresources_record.oclc_metadata_id.entity %}
+<h2>OCLC Metadata</h2>
+<table>
+  <tr><th>Key</th><th>Value</th></tr>
+{% set fields = [
+  'description',
+] %}
+{% for field in fields %}
+  {% set fieldObj = oclc_metadata.get(field) %}
+  <tr><td>{{ fieldObj.name }}</td><td>{{ fieldObj.value }}</td></tr>
+{% endfor %}
+</table>
