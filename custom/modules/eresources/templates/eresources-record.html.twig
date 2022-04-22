@@ -5,6 +5,7 @@
   'id', 'entry_uid', 'title', 'oclcnum', 'isbn', 'issn',
   'eissn', 'url', 'author', 'publisher', 'coverage', 'coverageenum',
   'coverage_notes', 'collection_user_notes', 'location',
+  'kb_data_type', 'status',
 ] %}
 {% for field in fields %}
   {% set fieldObj = eresources_record.get(field) %}
