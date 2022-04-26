@@ -24,14 +24,14 @@ entity.eresources_harvested_collection.synchronize:
       eresources_harvested_collection:
         type: entity:eresources_harvested_collection
 eresources.collections:
-  path: '/e-resources/collections/{type}'
+  path: '/eresources/collections/{type}'
   defaults:
     _controller: '\Drupal\eresources\Controller\CollectionsController::view'
     _title_callback: '\Drupal\eresources\Controller\CollectionsController::title'
   requirements:
     _permission: 'access content'
 eresources.collection:
-  path: '/e-resources/collection/{collection_uid}'
+  path: '/eresources/collection/{collection_uid}'
   defaults:
     _controller: '\Drupal\eresources\Controller\CollectionController::view'
     _title_callback: '\Drupal\eresources\Controller\CollectionController::title'

@@ -71,7 +71,7 @@ class CollectionsController extends ControllerBase {
 
     $typeInfo = self::$typeLookup[$type];
 
-    $searchLink = "/e-resources/?form_id={$typeInfo['form_id']}";
+    $searchLink = "/eresources/?form_id={$typeInfo['form_id']}";
     $typeLower = strtolower($typeInfo['title']);
     $render = [
       'header' => [

@@ -74,7 +74,7 @@
           {% endif %}
           </dd>
         </dl>
-        {% set permalink = url('<front>')|render ~ 'e-resources?id=' ~ entry.getId %}
+        {% set permalink = url('<front>')|render ~ 'eresources?id=' ~ entry.getId %}
         <p class="mt-2 mb-0 small"><b>Permalink:</b> <a href="{{ permalink }}">{{ permalink }}</a></p>
       </div>
       {% if debug %}
