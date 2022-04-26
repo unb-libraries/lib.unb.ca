@@ -5,6 +5,7 @@ namespace Drupal\lib_core\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Component\Serialization\Json;
 use GuzzleHttp\Exception\GuzzleException;
+use Drupal\eresources\Form\DatabasesForm;
 
 /**
  * Provides the UNB Libraries Discovery Search Home Block.
@@ -307,32 +308,7 @@ class DiscoverySearch extends BlockBase {
       '' => 'Please choose a database title...',
     ];
 
-    try {
-      $response = \Drupal::httpClient()
-        ->get('https://web.lib.unb.ca/eresources/databases.php', [
-          'headers' => [
-            'Accept' => 'application/vnd.api+json',
-          ],
-        ]);
-      $json_string = (string) $response->getBody();
-      $json = Json::decode($json_string);
-
-      if (empty($json_string) || empty($json)) {
-        // Log empty response.
-        $msg = "Empty Databases/Titles JSON response!";
-        \Drupal::logger('lib_core')->notice($msg);
-      }
-      else {
-        foreach ($json['databases'] as $value) {
-          $options[$value["value"]] = $value["name"];
-        }
-      }
-    }
-    catch (GuzzleException $e) {
-      // Log response error.
-      $msg = "Databases/Titles JSON response error: " . $e;
-      \Drupal::logger('lib_core')->error($msg);
-    }
+    $options += DatabasesForm::getDatabaseList();
 
     $titles = [
       '#type' => 'select',
