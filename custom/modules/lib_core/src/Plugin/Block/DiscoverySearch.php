@@ -384,7 +384,7 @@ class DiscoverySearch extends BlockBase {
             </a>
         </li>
         <li class="list-inline-item mr-4 my-2 my-sm-1">
-            <a href="https://web.lib.unb.ca/eresources/newspapers.php" title="Guide to finding newspapers at UNB Libraries">
+            <a href="/eresources/newspaper-guide" title="Guide to finding newspapers at UNB Libraries">
                 Newspaper Guide
             </a>
         </li>
