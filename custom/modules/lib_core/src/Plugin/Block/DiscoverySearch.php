@@ -57,8 +57,8 @@ class DiscoverySearch extends BlockBase {
                   <li class="nav-item">
                     <a class="btn Accordion-trigger p-2 rounded-0 shadow-none text-left text-lg-center text-nowrap"
                        id="searchBtn5" aria-controls="searchPanel5" aria-expanded="false" tabindex="-1"
-                       href="https://web.lib.unb.ca/eresources/index.php?sub=refmat"
-                       onclick="location.href=\'https://web.lib.unb.ca/eresources/index.php?sub=refmat\';"
+                       href="/eresources?form_id=eres_reference"
+                       onclick="location.href=\'/eresources?form_id=eres_reference\';"
                        title="Guide to Finding Reference Materials (opens new page)">More<i class="fas fa-angle-double-right fa-sm fa-muted ml-1" aria-hidden="true"></i>
                     </a>
                   </li>
