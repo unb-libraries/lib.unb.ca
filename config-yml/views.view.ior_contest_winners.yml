@@ -196,6 +196,7 @@ display:
           admin_label: 'field_contest: Contest'
           plugin_id: standard
           required: true
+      group_by: true
       header: {  }
       footer: {  }
       display_extenders: {  }
