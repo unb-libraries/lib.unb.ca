@@ -80,7 +80,7 @@ class ResultBase {
         $data = explode(' | ', $collectionUserNotes);
       }
       if ($coverageNotes) {
-        $data = $coverageNotes;
+        $data = [$coverageNotes];
       }
       if (!preg_match('/^(ebook|video)/', $coverage)) {
         $data[] = implode(' ', [
