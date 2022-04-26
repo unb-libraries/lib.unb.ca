@@ -379,7 +379,7 @@ class DiscoverySearch extends BlockBase {
       </form>
       <ul class="list inline m-0 p-0">
         <li class="list-inline-item mr-4 my-2 my-sm-1">
-            <a href="https://web.lib.unb.ca/eresources/index.php?sub=journals">
+            <a href="/eresources?form_id=eres_journals">
                 More Search Options
             </a>
         </li>
