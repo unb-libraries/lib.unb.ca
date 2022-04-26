@@ -225,7 +225,7 @@ class DiscoverySearch extends BlockBase {
       <ul class="list inline m-0 p-0">
         <li class="list-inline-item mr-4 my-2 my-sm-1">
             <a href="//unb.on.worldcat.org/advancedsearch">Advanced Search</a>
-        </li>    
+        </li>
         <li class="list-inline-item mr-4 my-2 my-sm-1">
             <a href="/worldcat/unb-worldcat-frequently-asked-questions">Tips for Searching</a>
         </li>
@@ -242,7 +242,7 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getDatabasesForm() {
     $title_form =
-      '<form action="https://web.lib.unb.ca/eresources/index.php" id="title_results" class="chosen-compact mb-2" method="get">
+      '<form action="/eresources" id="title_results" class="chosen-compact mb-2" method="get">
         <div class="d-flex flex-column flex-md-row">
           <div class="flex-fill mb-2 mr-0 mr-md-2">
             <label class="sr-only" for="databaseID">
@@ -251,7 +251,8 @@ class DiscoverySearch extends BlockBase {
             $this->getDatabasesTitles() .
           '</div>
           <div class="mb-2">
-            <input type="hidden" name="sub" value="indexes">
+            <input type="hidden" name="form_id" value="eres_databases">
+            <input type="hidden" name="type" value="title">
             <button class="btn btn-primary form-control px-3" type="submit">GO</button>
           </div>
         </div>
@@ -316,7 +317,7 @@ class DiscoverySearch extends BlockBase {
       '#options' => $options,
       '#attributes' => [
         'id' => 'databaseID',
-        'name' => 'id',
+        'name' => 'query',
         'class' => [
           'custom-chosen-select',
           'form-control',
@@ -335,9 +336,9 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getJournalsForm() {
     $form_journals =
-      '<form action="https://web.lib.unb.ca/eresources/index.php" id="search_results_journals" class="mb-2" method="get">
-        <input id="sub" name="sub" type="hidden" value="journals">
-        <input id="searchtype_every_journal" name="searchtype" type="hidden" value="every_word">
+      '<form action="/eresources" id="search_results_journals" class="mb-2" method="get">
+        <input id="sub" name="form_id" type="hidden" value="eres_journals">
+        <input id="searchtype_every_journal" name="type" type="hidden" value="title">
 
         <div class="d-flex flex-column flex-md-row">
           <div class="flex-fill mb-2 mr-0 mr-md-2">
@@ -345,7 +346,7 @@ class DiscoverySearch extends BlockBase {
             <label class="sr-only" for="title_journal">
               Search words in title
             </label>
-            <input class="form-control" id="title_journal" name="title" placeholder="Search for journal and newspaper titles" type="search" required>
+            <input class="form-control" id="title_journal" name="query" placeholder="Search for journal and newspaper titles" type="search" required>
             </fieldset>
           </div>
           <div class="mb-2">
@@ -374,26 +375,26 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getEncyclopediasForm() {
     $form_encyclopedias =
-      '<form action="https://web.lib.unb.ca/eresources/index.php" method="get" id="search_results_refmat">
-        <input id="sub_refmat" name="sub" type="hidden" value="refmat">
+      '<form action="/eresources" method="get" id="search_results_refmat">
+        <input id="sub_refmat" name="form_id" type="hidden" value="eres_reference">
         <div class="form-group">
           <fieldset>
           <legend class="custom-legend mb-4">Search for Reference Materials by title<span class="sr-only"> using 1 of the following options</span>.</legend>
             <div class="form-row font-weight-bold ml-1">
               <div class="custom-control custom-radio custom-control-inline mb-2 mb-lg-0">
-                <input checked="checked" class="custom-control-input" id="searchtype_every_refmat" name="searchtype" type="radio" value="every_word">
+                <input checked="checked" class="custom-control-input" id="searchtype_every_refmat" name="type" type="radio" value="title">
                 <label class="custom-control-label" for="searchtype_every_refmat">
                   Word(s) in title
                 </label>
               </div>
               <div class="custom-control custom-radio custom-control-inline mb-2 mb-lg-0">
-                <input class="custom-control-input" id="searchtype_browse_refmat" name="searchtype" type="radio" value="browse">
+                <input class="custom-control-input" id="searchtype_browse_refmat" name="type" type="radio" value="browse">
                 <label class="custom-control-label" for="searchtype_browse_refmat">
                   Starts with
                 </label>
               </div>
               <div class="custom-control custom-radio custom-control-inline mb-2 mb-lg-0">
-                <input class="custom-control-input" id="searchtype_exact_refmat" name="searchtype" type="radio" value="exact">
+                <input class="custom-control-input" id="searchtype_exact_refmat" name="type" type="radio" value="exact">
                 <label class="custom-control-label" for="searchtype_exact_refmat">
                   Exact
                 </label>
@@ -413,7 +414,7 @@ class DiscoverySearch extends BlockBase {
                     <i class="fas fa-search"></i>
                   </div>
                 </div>
-                <input class="form-control" id="title_refmat" name="title" placeholder="Search for encyclopedias, dictionaries, etc." type="search" value="" required>
+                <input class="form-control" id="title_refmat" name="query" placeholder="Search for encyclopedias, dictionaries, etc." type="search" value="" required>
               </div>
             </div>
             <div class="col-md-2 mb-2">
@@ -423,7 +424,7 @@ class DiscoverySearch extends BlockBase {
         </div>
         </form>
         <div class="p-2">
-          <a href="https://web.lib.unb.ca/eresources/refguide.php">
+          <a href="https://lib.unb.ca/eresources/guide-finding-reference-materials">
             <i class="fas fa-compass"></i>
             Reference Materials Guide
           </a>
@@ -433,7 +434,7 @@ class DiscoverySearch extends BlockBase {
           </a>
         </div>
         <div class="px-2">
-          <a href="https://web.lib.unb.ca/eresources/index.php?sub=refmat">
+          <a href="/eresources?form_id=eres_reference">
             <i class="fas fa-search-plus" aria-hidden="true"></i>
             More Search Options
           </a>
@@ -447,27 +448,27 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getEbooksForm() {
     $form_ebooks =
-      '<form action="https://web.lib.unb.ca/eresources/index.php" id="search_results_ebooks" method="get">
-        <input id="sub_ebooks" name="sub" type="hidden" value="ebooks">
+      '<form action="/eresources" id="search_results_ebooks" method="get">
+        <input id="sub_ebooks" name="form_id" type="hidden" value="eres_ebooks">
         <div class="form-group">
           <fieldset>
             <legend class="custom-legend mb-4">Search our vast electronic book collections for titles suitable for your computer,
                 tablet or eReader<span class="sr-only"> using 1 of the following options</span>.</legend>
             <div class="form-row font-weight-bold ml-1">
               <div class="custom-control custom-radio custom-control-inline mb-2 mb-lg-0">
-                <input checked="checked" class="custom-control-input" id="searchtype_every_ebooks" name="searchtype" type="radio" value="every_word">
+                <input checked="checked" class="custom-control-input" id="searchtype_every_ebooks" name="type" type="radio" value="title">
                 <label class="custom-control-label" for="searchtype_every_ebooks">
                   Word(s) in title
                 </label>
               </div>
               <div class="custom-control custom-radio custom-control-inline mb-2 mb-lg-0">
-                <input class="custom-control-input" id="searchtype_exact_ebooks" name="searchtype" type="radio" value="exact">
+                <input class="custom-control-input" id="searchtype_exact_ebooks" name="type" type="radio" value="exact">
                 <label class="custom-control-label" for="searchtype_exact_ebooks">
                   Exact title
                 </label>
               </div>
               <div class="custom-control custom-radio custom-control-inline mb-2 mb-lg-0">
-                <input class="custom-control-input" id="searchtype_keyword_ebooks" name="searchtype" type="radio" value="keyword">
+                <input class="custom-control-input" id="searchtype_keyword_ebooks" name="type" type="radio" value="keyword">
                 <label class="custom-control-label" for="searchtype_keyword_ebooks">
                   Keyword search (title, author, publisher&hellip;)
                 </label>
@@ -487,7 +488,7 @@ class DiscoverySearch extends BlockBase {
                     <i class="fas fa-search"></i>
                   </div>
                 </div>
-                <input class="form-control" id="title_ebooks" name="title" placeholder="Enter search terms" type="search" value="" required>
+                <input class="form-control" id="title_ebooks" name="query" placeholder="Enter search terms" type="search" value="" required>
               </div>
             </div>
             <div class="col-md-2 mb-2">
@@ -497,7 +498,7 @@ class DiscoverySearch extends BlockBase {
         </div>
       </form>
       <div class="p-2">
-        <a href="https://web.lib.unb.ca/eresources/index.php?sub=ebooks">
+        <a href="/eresources/collections/ebooks">
           <i class="fas fa-th-list"></i>
           Browse e-Book Collections
         </a>
@@ -511,33 +512,33 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getVideosForm() {
     $form_videos =
-      '<form action="https://web.lib.unb.ca/eresources/index.php" id="search_results_video" method="get">
-        <input id="sub_video" name="sub" type="hidden" value="video">
+      '<form action="/eresources" id="search_results_video" method="get">
+        <input id="sub_video" name="form_id" type="hidden" value="eres_videos">
         <div class="form-group">
           <fieldset>
           <legend class="custom-legend mb-4">Search across our online video
             collections<span class="sr-only">using 1 of the following options</span>.</legend>
             <div class="form-row font-weight-bold ml-1">
               <div class="custom-control custom-radio custom-control-inline mb-2 mb-lg-0">
-                <input checked="checked" class="custom-control-input" id="searchtype_every_video" name="searchtype" type="radio" value="every_word">
+                <input checked="checked" class="custom-control-input" id="searchtype_every_video" name="type" type="radio" value="title">
                 <label class="custom-control-label" for="searchtype_every_video">
                   Word(s) in title
                 </label>
               </div>
               <div class="custom-control custom-radio custom-control-inline mb-2 mb-lg-0">
-                <input class="custom-control-input" id="searchtype_browse_video" name="searchtype" type="radio" value="browse">
+                <input class="custom-control-input" id="searchtype_browse_video" name="type" type="radio" value="browse">
                 <label class="custom-control-label" for="searchtype_browse_video">
                   Title starts with
                 </label>
               </div>
               <div class="custom-control custom-radio custom-control-inline mb-2 mb-lg-0">
-                <input class="custom-control-input" id="searchtype_exact_video" name="searchtype" type="radio" value="exact">
+                <input class="custom-control-input" id="searchtype_exact_video" name="type" type="radio" value="exact">
                 <label class="custom-control-label" for="searchtype_exact_video">
                   Exact title
                 </label>
               </div>
               <div class="custom-control custom-radio custom-control-inline mb-2 mb-lg-0">
-                <input class="custom-control-input" id="searchtype_keyword_video" name="searchtype" type="radio" value="keyword">
+                <input class="custom-control-input" id="searchtype_keyword_video" name="type" type="radio" value="keyword">
                 <label class="custom-control-label" for="searchtype_keyword_video">
                   Keyword search
                 </label>
@@ -557,7 +558,7 @@ class DiscoverySearch extends BlockBase {
                       <i class="fas fa-search"></i>
                     </div>
                 </div>
-                <input class="form-control" name="title" id="title_video" placeholder="Enter search terms" type="search" value="" required>
+                <input class="form-control" name="query" id="title_video" placeholder="Enter search terms" type="search" value="" required>
               </div>
             </div>
             <div class="col-md-2 mb-2">
@@ -566,7 +567,7 @@ class DiscoverySearch extends BlockBase {
           </div>
         </div>
         <div class="p-2">
-          <a href="https://web.lib.unb.ca/eresources/index.php?sub=video">
+          <a href="/eresources/collections/videos">
             <i class="fas fa-th-list"></i>
             Browse Video Collections
           </a>
