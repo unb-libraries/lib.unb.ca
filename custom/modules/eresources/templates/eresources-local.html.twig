@@ -53,7 +53,7 @@
       <div class="border border-info bg-light rounded p-3 mt-2 collapse details-{{ entry.getId }}">
         <dl>
         {% set kb_data_type = entry.getKbDataType | lower %}
-        {% if 'ref' in kb_data_type %}
+        {% if 'ref' in kb_data_type and entry.getCollectionName is not empty %}
           <dt>Collection:</dt>
           <dd>{{ entry.getCollectionName }}</dd>
         {% endif %}

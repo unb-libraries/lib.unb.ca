@@ -31,7 +31,7 @@
 {% endif %}
 <dl>
   {% set kb_data_type = entry.getKbDataType | lower %}
-  {% if 'ref' in kb_data_type %}
+  {% if 'ref' in kb_data_type and entry.getCollectionName is not empty %}
   <dt>Collection:</dt>
   <dd>{{ entry.getCollectionName }}</dd>
   {% endif %}
