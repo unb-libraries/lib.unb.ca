@@ -75,7 +75,7 @@ class ResultBase {
     $coverageNotes = $this->getCoverageNotes() ?? '';
     $collectionUserNotes = $this->getCollectionUserNotes() ?? '';
     if (preg_match('/(purchase|subscribe)/', $coverageNotes)
-      && str_pos($coverageNotes, '|') === FALSE) {
+      && strpos($coverageNotes, '|') === FALSE) {
       if ($collectionUserNotes) {
         $data = explode(' | ', $collectionUserNotes);
       }
