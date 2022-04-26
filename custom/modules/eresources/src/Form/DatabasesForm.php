@@ -98,24 +98,8 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
       '#weight' => 0,
     ];
 
-    $index = Index::load('eresources');
-    $indexQuery = $index->query();
-    $parseMode = \Drupal::service('plugin.manager.search_api.parse_mode')->createInstance('direct');
-    $indexQuery->setParseMode($parseMode);
-
-    $indexQuery->addCondition('kb_data_type', $this->getKbContentType());
-    $indexQuery->addCondition('entry_uid', NULL, '<>');
-    $indexQuery->sort('title', 'ASC');
-    $indexQuery->keys('*');
-    $indexQuery->range(0, 10000);
-    $result = $indexQuery->execute();
-
     $options = ['' => '- Select a Database -'];
-    $entries = $result->getResultItems();
-    foreach ($entries as $entry) {
-      $id = $entry->getField('id')->getValues()[0];
-      $options["id:{$id}"] = $entry->getField('title')->getValues()[0];
-    }
+    $options += self::getDatabaseList();
 
     $form[$form_wrapper]['database_wrapper']['database'] = [
       '#title' => '<span class="text-danger">OR</span> Browse for Databases by title',
@@ -182,6 +166,32 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
    */
   public function getKbContentType() {
     return 'DATA';
+  }
+
+  /**
+   * Gets a list of databases suitable for a dropdown menu.
+   */
+  public static function getDatabaseList() {
+    $index = Index::load('eresources');
+    $indexQuery = $index->query();
+    $parseMode = \Drupal::service('plugin.manager.search_api.parse_mode')->createInstance('direct');
+    $indexQuery->setParseMode($parseMode);
+
+    $indexQuery->addCondition('kb_data_type', 'DATA');
+    $indexQuery->addCondition('entry_uid', NULL, '<>');
+    $indexQuery->sort('title', 'ASC');
+    $indexQuery->keys('*');
+    $indexQuery->range(0, 10000);
+    $result = $indexQuery->execute();
+
+    $options = [];
+    $entries = $result->getResultItems();
+    foreach ($entries as $entry) {
+      $id = $entry->getField('id')->getValues()[0];
+      $options["id:{$id}"] = $entry->getField('title')->getValues()[0];
+    }
+
+    return $options;
   }
 
 }
