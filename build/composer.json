@@ -317,7 +317,7 @@
     "drupal/override_node_options": "2.6",
     "drupal/panelbutton": "1.4",
     "drupal/paragraphs": "1.14",
-    "drupal/pathauto": "1.9",
+    "drupal/pathauto": "1.10",
     "drupal/r4032login": "2.2.0",
     "drupal/redirect": "1.7",
     "drupal/redis": "1.5",
