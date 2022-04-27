@@ -15,4 +15,5 @@ permissions:
   - 'administer eresources_harvested_collection entities'
   - 'administer eresources_local_metadata entities'
   - 'administer eresources_record entities'
+  - 'create eresources_harvested_collection entities'
   - 'view the administration theme'
