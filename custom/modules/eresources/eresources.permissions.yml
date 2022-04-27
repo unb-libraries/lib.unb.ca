@@ -1,0 +1,56 @@
+# Havested Collection entities
+administer eresources_harvested_collection entities:
+  title: "Administer e-Resources Harvested Collections."
+
+list eresources_harvested_collection entities:
+  title: "List e-Resources Harvested Collections."
+
+create eresources_harvested_collection entities:
+  title: "Create e-Resources Harvested Collections."
+
+view eresources_harvested_collection entities:
+  title: "View e-Resources Harvested Collections."
+
+update eresources_harvested_collection entities:
+  title: "Edit e-Resources Harvested Collections."
+
+delete eresources_harvested_collection entities:
+  title: "Delete e-Resources Harvested Collections."
+
+# Record entities
+administer eresources_record entities:
+  title: "Administer e-Resources Records."
+
+list eresources_record entities:
+  title: "List e-Resources Records."
+
+create eresources_record entities:
+  title: "Create e-Resources Records."
+
+view eresources_record entities:
+  title: "View e-Resources Records."
+
+update eresources_record entities:
+  title: "Edit e-Resources Records."
+
+delete eresources_record entities:
+  title: "Delete e-Resources Records."
+
+# Local Metadata entities
+administer eresources_local_metadata entities:
+  title: "Administer e-Resources Local Metadata."
+
+list eresources_local_metadata entities:
+  title: "List e-Resources Local Metadata."
+
+create eresources_local_metadata entities:
+  title: "Create e-Resources Local Metadata."
+
+view eresources_local_metadata entities:
+  title: "View e-Resources Local Metadata."
+
+update eresources_local_metadata entities:
+  title: "Edit e-Resources Local Metadata."
+
+delete eresources_local_metadata entities:
+  title: "Delete e-Resources Local Metadata."

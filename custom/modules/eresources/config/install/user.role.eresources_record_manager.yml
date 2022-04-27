@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - eresources
     - system
     - toolbar
 id: eresources_record_manager
@@ -10,4 +11,7 @@ weight: 8
 is_admin: null
 permissions:
   - 'access toolbar'
+  - 'administer eresources_harvested_collection entities'
+  - 'administer eresources_local_metadata entities'
+  - 'administer eresources_record entities'
   - 'view the administration theme'
