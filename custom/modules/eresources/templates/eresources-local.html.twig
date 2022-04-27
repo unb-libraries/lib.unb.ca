@@ -5,7 +5,7 @@
   <li class="list-group-item {{ cycle(stripe, row) }} eresources-local-record">
     <div class="col title">
       {% if entry.getViaUrl %}
-      <a href="{{ entry.getViaUrl }}"  title="Link to {{ entry.getTitle }}" target="_blank" onclick='javascript: _gaq.push(["_trackPageview", "/GA/{{ entry.getTitle }}"]);'>{{ entry.getTitle }}</a>
+      <a href="{{ entry.getViaUrl }}" target="_blank" onclick='javascript: _gaq.push(["_trackPageview", "/GA/{{ entry.getTitle }}"]);'>{{ entry.getTitle }}</a>
       {% else %}
       {{ entry.getTitle }}
       {% endif %}
