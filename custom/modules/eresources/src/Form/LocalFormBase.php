@@ -77,6 +77,7 @@ class LocalFormBase extends FormBase {
       '#attributes' => [
         'placeholder' => $this->getSearchPlaceholder(),
       ],
+      '#id' => $this->getKbFormId() . '_query',
       '#value' => '',
     ];
 
