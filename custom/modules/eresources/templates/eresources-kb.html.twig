@@ -31,7 +31,7 @@
         <div class="row mb-2">
           <div class="col-12 col-lg-8">
             <p class="mb-0">
-              <a class="d-inline" href="{{ entry.getViaUrl }}" target="_blank" onclick='javascript: _gaq.push(["_trackPageview", "/GA/{{ entry.getTitle }}"]);'>
+              <a class="d-inline" href="{{ entry.getViaUrl }}" title="Link to {{ entry.getTitle }}"  target="_blank" onclick='javascript: _gaq.push(["_trackPageview", "/GA/{{ entry.getTitle }}"]);'>
                 <span class="sr-only">{{ entry.getTitle }} in </span> {{ entry.getCollectionName }}
               </a>
               {% if extra %}
