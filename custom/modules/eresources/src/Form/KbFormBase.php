@@ -115,7 +115,7 @@ class KbFormBase extends FormBase {
       '#attributes' => [
         'placeholder' => $this->getSearchPlaceholder(),
       ],
-      '#id' => $this->getKbFormId() . '_query',
+      '#id' => $this->getKbFormId() . '-query',
     ];
 
     $form[$form_wrapper]['query_wrapper']['actions'] = [
