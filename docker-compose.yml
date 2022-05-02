@@ -1,7 +1,7 @@
 services:
   drupal-mysql-lib-unb-ca:
     image: mysql:5.7
-    restart: always
+    restart: unless-stopped
     command: mysqld --skip-name-resolve --max_allowed_packet=64M
     env_file:
       - ./env/mysql.env
@@ -9,10 +9,9 @@ services:
       - "3306"
     networks:
       - lib.unb.ca
-
   drupal-solr-lib-unb-ca:
     image: ghcr.io/unb-libraries/solr-drupal:8.x-4.x
-    restart: always
+    restart: unless-stopped
     env_file:
       - ./env/solr.env
     expose:
@@ -22,20 +21,18 @@ services:
     entrypoint:
       - docker-entrypoint-multiple.sh
       - pages.lib.unb.ca:/solr-conf
-
   drupal-redis-lib-unb-ca:
     image: redis:5-alpine
-    restart: always
+    restart: unless-stopped
     expose:
       - "6379"
     networks:
       - lib.unb.ca
     env_file:
       - ./env/redis.env
-
   mailhog:
     image: mailhog/mailhog
-    restart: always
+    restart: unless-stopped
     expose:
       - "1025"
       - "8025"
@@ -43,11 +40,10 @@ services:
       - "4101:8025"
     networks:
       - lib.unb.ca
-
   lib.unb.ca:
     build:
       context: .
-    restart: always
+    restart: unless-stopped
     container_name: lib.unb.ca
     depends_on:
       - drupal-mysql-lib-unb-ca
@@ -65,7 +61,6 @@ services:
       - ./custom/modules:/app/html/modules/custom
       - ./custom/themes:/app/html/themes/custom
       - ./tests:/app/tests
-
 networks:
   lib.unb.ca:
     name: lib.unb.ca
