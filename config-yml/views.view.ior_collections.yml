@@ -162,8 +162,8 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: Title
-          exclude: false
+          label: ''
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -224,7 +224,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: Submissions
+          label: ''
           exclude: false
           alter:
             alter_text: false
@@ -261,7 +261,7 @@ display:
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
-          empty: ''
+          empty: 'None assigned yet.'
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
@@ -361,6 +361,55 @@ display:
       filters: {  }
       style:
         type: table
+        options:
+          grouping:
+            -
+              field: field_title
+              rendered: true
+              rendered_strip: false
+          row_class: ''
+          default_row_class: true
+          columns:
+            id: id
+            field_contest: field_contest
+            field_title: field_title
+            field_title_1: field_title_1
+          default: '-1'
+          info:
+            id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_contest:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_title:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_title_1:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          override: true
+          sticky: false
+          summary: ''
+          empty_table: false
+          caption: ''
+          description: ''
       row:
         type: fields
       query:
@@ -391,6 +440,7 @@ display:
           entity_type: ior_collection
           plugin_id: entity_reverse
           required: false
+      group_by: true
       header: {  }
       footer: {  }
       display_extenders: {  }
