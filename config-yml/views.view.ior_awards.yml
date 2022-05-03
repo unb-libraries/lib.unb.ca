@@ -33,8 +33,8 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: Title
-          exclude: false
+          label: ''
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -78,7 +78,7 @@ display:
           type: string
           settings:
             link_to_entity: true
-          group_column: value
+          group_column: entity_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -96,7 +96,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: 'Awarded to'
+          label: ''
           exclude: false
           alter:
             alter_text: false
@@ -133,7 +133,7 @@ display:
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
-          empty: ''
+          empty: 'No recipients of this award.'
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
@@ -141,7 +141,7 @@ display:
           type: string
           settings:
             link_to_entity: true
-          group_column: value
+          group_column: entity_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -151,6 +151,13 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+          set_precision: false
+          precision: 0
+          decimal: .
+          format_plural: false
+          format_plural_string: !!binary MQNAY291bnQ=
+          prefix: ''
+          suffix: ''
       pager:
         type: mini
         options:
@@ -246,6 +253,39 @@ display:
       filters: {  }
       style:
         type: table
+        options:
+          grouping:
+            -
+              field: field_title
+              rendered: true
+              rendered_strip: false
+          row_class: ''
+          default_row_class: true
+          columns:
+            field_title: field_title
+            field_title_1: field_title_1
+          default: '-1'
+          info:
+            field_title:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_title_1:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          override: true
+          sticky: false
+          summary: ''
+          empty_table: false
+          caption: ''
+          description: ''
       row:
         type: fields
       query:
@@ -276,6 +316,7 @@ display:
           admin_label: 'field_contest: Contest'
           plugin_id: standard
           required: true
+      group_by: false
       header: {  }
       footer: {  }
       display_extenders: {  }
