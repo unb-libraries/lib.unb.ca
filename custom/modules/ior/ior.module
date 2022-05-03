@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Url;
+use Drupal\ior\Entity\ContestInterface;
 
 /**
  * Implements hook_theme().
@@ -151,4 +152,45 @@ function ior_theme_suggestions_ior_submission_alter(array &$suggestions, array $
   if (!in_array($suggestion, $suggestions)) {
     $suggestions[] = $suggestion;
   }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ */
+function ior_contest_insert(ContestInterface $contest) {
+  /** @var \Drupal\token\Token $token */
+  $token = Drupal::service('token');
+  /** @var \Drupal\token\TokenEntityMapperInterface $token_entity_mapper */
+  $token_entity_mapper = Drupal::service('token.entity_mapper');
+  /** @var \Drupal\pathauto\AliasCleanerInterface $cleaner */
+  $cleaner = Drupal::service('pathauto.alias_cleaner');
+  /** @var \Drupal\pathauto\AliasUniquifierInterface $uniquifier */
+  $uniquifier = Drupal::service('pathauto.alias_uniquifier');
+  /** @var \Drupal\pathauto\AliasStorageHelperInterface $alias_storage_helper */
+  $alias_storage_helper = Drupal::service('pathauto.alias_storage_helper');
+
+  /** @var \Drupal\views\ViewEntityInterface $view */
+  $view = Drupal::entityTypeManager()->getStorage('view')->load('ior_submissions');
+  $path = $view->getDisplay('page_1')['display_options']['path'];
+
+  $data = [$token_entity_mapper->getEntityTypeForTokenType('contest') => $contest];
+  $options = [
+    'clear' => TRUE,
+    'callback' => [$cleaner, 'cleanTokenValues'],
+    'langcode' => $view->language()->getId(),
+    'pathauto' => TRUE,
+  ];
+
+  $source = str_replace('%contest', '[contest:id]', $path);
+  $alias = str_replace('%contest', '[contest:field_title]', $path);
+
+  $source = $cleaner->cleanAlias($token->replace($source, $data, $options));
+  $alias = $cleaner->cleanAlias($token->replace($alias, $data, $options));
+
+  $uniquifier->uniquify($alias, $source, $view->language()->getId());
+  $alias_storage_helper->save([
+    'source' => $source,
+    'alias' => $alias,
+    'language' => $view->language()->getId(),
+  ], NULL, 'insert');
 }
