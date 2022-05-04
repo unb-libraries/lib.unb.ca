@@ -24,6 +24,12 @@ function ior_awards_theme($existing, $type, $theme, $path) {
     'ior_submission' => [
       'base hook' => 'ior_submission',
     ],
+    'ior_submission__preview' => [
+      'base hook' => 'ior_submission__preview',
+      'preprocess functions' => array_merge($existing['ior_submission__preview']['preprocess functions'], [
+        'ior_awards_template_preprocess_ior_submission__preview',
+      ])
+    ],
     'ior_submission__winner' => [
       'render element' => 'ior_submission',
     ],
@@ -68,6 +74,17 @@ function ior_awards_template_preprocess_contest(array &$variables) {
   $variables['contest']['winners_url'] = Url::fromRoute('view.ior_contest_winners.page_1', [
     'contest' => $contest->id(),
   ])->toString();
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function ior_awards_template_preprocess_ior_submission__preview(array &$variables) {
+  $submission = $variables['elements']['#ior_submission'];
+  $view_builder = Drupal::entityTypeManager()->getViewBuilder('ior_award');
+  $variables['awards'] = array_map(function (AwardInterface $award) use ($view_builder) {
+    return $view_builder->view($award, 'badge');
+  }, $submission->get('field_awards')->referencedEntities());
 }
 
 /**

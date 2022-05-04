@@ -3,9 +3,11 @@
         <a href="{{ submission.url }}">{{ submission.field_image }}</a>
     </div>
     <div class="col-md-12">
-        <a class="title h4 {% if submission.state %}moderation-{{ submission.state.id }}{% endif %}" href="{{ submission.url }}" data-toggle="tooltip" title="{{ submission.state.label }}" data-placement="left">
-            {{ submission.field_title }}
-        </a>
+        {% block submission_title %}
+            <a class="title h4 d-inline-block{% if submission.state %} moderation-{{ submission.state.id }}{% endif %}" href="{{ submission.url }}" data-toggle="tooltip" title="{{ submission.state.label }}" data-placement="left">
+                {{ submission.field_title }}
+            </a>
+        {% endblock %}
         {% if submission.published or user.view_contestant_info %}
             <div class="submission-meta">
                 <span>{{ submission.field_first_name }}{{ submission.field_last_name }}</span>

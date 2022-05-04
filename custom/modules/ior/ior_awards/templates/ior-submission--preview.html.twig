@@ -1,0 +1,8 @@
+{% extends '@ior/ior-submission--preview.html.twig' %}
+
+{% block submission_title %}
+    {{ parent() }}
+    {% for award in awards %}
+        {{ award }}
+    {% endfor %}
+{% endblock %}
