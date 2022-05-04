@@ -5,6 +5,11 @@
  * Contains ior_awards.module.
  */
 
+use Drupal\Core\Render\Element;
+use Drupal\Core\Url;
+use Drupal\ior\Entity\ContestInterface;
+use Drupal\ior_awards\Entity\AwardInterface;
+
 /**
  * Implements hook_theme().
  */
@@ -52,7 +57,7 @@ function ior_awards_template_preprocess_contest(array &$variables) {
   $contest = $variables['elements']['#contest'];
   foreach (Drupal::entityTypeManager()->getStorage('ior_collection')->loadByContest($contest->id()) as $collection) {
     $variables['contest']['collections'][$collection->id()] = [
-      'url' => \Drupal\Core\Url::fromRoute('view.ior_contest_collection.page_1', [
+      'url' => Url::fromRoute('view.ior_contest_collection.page_1', [
         'contest' => $contest->id(),
         'collection' => $collection->id(),
       ]),
@@ -60,7 +65,7 @@ function ior_awards_template_preprocess_contest(array &$variables) {
     ];
   }
 
-  $variables['contest']['winners_url'] = \Drupal\Core\Url::fromRoute('view.ior_contest_winners.page_1', [
+  $variables['contest']['winners_url'] = Url::fromRoute('view.ior_contest_winners.page_1', [
     'contest' => $contest->id(),
   ])->toString();
 }
@@ -79,7 +84,7 @@ function template_preprocess_ior_submission__winner(array &$variables) {
   /** @var \Drupal\ior\Entity\SubmissionInterface $submission */
   $submission = $variables['elements']['#ior_submission'];
   $variables['submission']['entity'] = $submission;
-  foreach (\Drupal\Core\Render\Element::children($variables['elements']) as $key) {
+  foreach (Element::children($variables['elements']) as $key) {
     if ($submission->hasField($key) && !empty($submission->get($key)->getValue())) {
       $variables['submission'][$key] = $variables['elements'][$key];
       $variables['submission'][$key]['#label_display'] = 'hidden';
@@ -120,7 +125,7 @@ function ior_awards_theme_suggestions_page_title(array $variables) {
 function ior_awards_preprocess_page_title(array &$variables) {
   if ($submission = _get_submission_from_route()) {
     $view_builder = Drupal::entityTypeManager()->getViewBuilder('ior_award');
-    $variables['awards'] = array_map(function (\Drupal\ior_awards\Entity\AwardInterface $award) use ($view_builder) {
+    $variables['awards'] = array_map(function (AwardInterface $award) use ($view_builder) {
       return $view_builder->view($award, 'badge');
     }, $submission->get('field_awards')->referencedEntities());
   }
