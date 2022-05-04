@@ -9,6 +9,7 @@ dependencies:
   module:
     - ior
     - ior_awards
+    - user
 id: ior_collections
 label: 'IOR Collections'
 module: views
@@ -307,8 +308,9 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
-        type: none
-        options: {  }
+        type: perm
+        options:
+          perm: 'list ior_collection entities'
       cache:
         type: tag
         options: {  }
@@ -399,6 +401,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user.permissions
       tags:
         - 'config:field.storage.ior_collection.field_contest'
         - 'config:field.storage.ior_collection.field_title'
@@ -418,6 +421,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user.permissions
       tags:
         - 'config:field.storage.ior_collection.field_contest'
         - 'config:field.storage.ior_collection.field_title'
