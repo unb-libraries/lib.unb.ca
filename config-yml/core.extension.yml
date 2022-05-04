@@ -28,6 +28,7 @@ module:
   contextual: 0
   ctools: 0
   custom_entity: 0
+  custom_entity_alias: 0
   custom_entity_events: 0
   custom_entity_mail: 0
   custom_entity_revisions: 0
