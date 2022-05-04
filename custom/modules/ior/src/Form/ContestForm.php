@@ -23,4 +23,20 @@ class ContestForm extends ContentEntityForm {
     return $form;
   }
 
+  /**
+   * {@inheritDoc}
+   */
+  public function save(array $form, FormStateInterface $form_state) {
+    $return = parent::save($form, $form_state);
+
+    $contest = $this->getEntity();
+    $form_state->setRedirectUrl($contest->toUrl());
+    $this->messenger()->addStatus($this->t('@action contest @contest.', [
+      '@action' => $return === SAVED_NEW ? 'Created' : 'Updated',
+      '@contest' => $contest->label(),
+    ]));
+
+    return $return;
+  }
+
 }
