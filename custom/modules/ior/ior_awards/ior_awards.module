@@ -157,3 +157,17 @@ function ior_awards_entity_type_alter(array &$entity_types) {
   $canonical_path = $submission->getLinkTemplate('canonical');
   $submission->setLinkTemplate('review-form', "{$canonical_path}/review");
 }
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ *
+ * Create aliases for "ior_contest_winners", "ior_awards", "ior_collections" views.
+ */
+function ior_awards_contest_insert(ContestInterface $contest) {
+  $view_storage = Drupal::entityTypeManager()
+    ->getStorage('view');
+  foreach ($view_storage->loadMultiple(['ior_contest_winners', 'ior_awards', 'ior_collections']) as $view) {
+    Drupal::service('views.alias_generator')
+      ->generateViewAlias($view, $contest);
+  }
+}
