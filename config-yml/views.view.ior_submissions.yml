@@ -432,16 +432,14 @@ display:
             default_group_multiple: {  }
             group_items: {  }
       style:
-        type: grid
+        type: html_list
         options:
-          grouping: {  }
-          columns: 4
-          automatic_width: true
-          alignment: horizontal
-          row_class_custom: ''
-          row_class_default: true
-          col_class_custom: 'views-col p-2'
-          col_class_default: false
+          row_class: 'col-md-6 col-lg-4 col-xl-3'
+          default_row_class: true
+          uses_fields: false
+          type: ul
+          wrapper_class: ''
+          class: 'row list-unstyled'
       row:
         type: 'entity:ior_submission'
         options:
