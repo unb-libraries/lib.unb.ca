@@ -159,7 +159,7 @@ spec:
           name: oclc-sftp-key
           secret:
             secretName: oclc-sftp-key
-            defaultMode: 0400
+            defaultMode: '0400'
             items:
               - key: oclc-sftp.root.key
                 path: oclc-sftp.root.key
