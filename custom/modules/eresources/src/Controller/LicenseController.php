@@ -63,6 +63,9 @@ class LicenseController extends ControllerBase {
    *   The title.
    */
   public function title($license_id) {
+    if (preg_match('/^multi/', $license_id)) {
+      return 'Multiple Licenses';
+    }
     $license = $this->getLicense($license_id);
     return $license ? 'License: ' . $license->getName() : 'Not Found';
   }
@@ -157,6 +160,12 @@ class LicenseController extends ControllerBase {
    *   A simple renderable array.
    */
   public function view($license_id) {
+    if (preg_match('/^multi/', $license_id)) {
+      return [
+        '#theme' => 'license-multi',
+      ];
+    }
+
     $license = $this->getLicense($license_id);
     if (!$license) {
       throw new NotFoundHttpException();
