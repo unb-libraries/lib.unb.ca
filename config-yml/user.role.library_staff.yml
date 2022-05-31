@@ -1,0 +1,9 @@
+uuid: 16d035c1-74c1-4b7b-b82d-d08d0f04f07a
+langcode: en
+status: true
+dependencies: {  }
+id: library_staff
+label: 'Library Staff'
+weight: -6
+is_admin: null
+permissions: {  }
