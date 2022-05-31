@@ -4,6 +4,6 @@ status: true
 dependencies: {  }
 id: saml_guest
 label: '[saml] Guest'
-weight: 12
+weight: 3
 is_admin: null
 permissions: {  }

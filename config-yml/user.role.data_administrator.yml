@@ -13,7 +13,7 @@ dependencies:
     - toolbar
 id: data_administrator
 label: 'Data Administrator'
-weight: 4
+weight: -5
 is_admin: null
 permissions:
   - 'access content overview'

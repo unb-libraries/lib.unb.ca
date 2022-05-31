@@ -18,7 +18,7 @@ dependencies:
     - toolbar
 id: library_page_author
 label: 'Library Page Author'
-weight: 3
+weight: -7
 is_admin: null
 permissions:
   - 'access content overview'

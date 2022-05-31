@@ -19,7 +19,7 @@ dependencies:
     - toolbar
 id: library_news_author
 label: 'Library News Author'
-weight: 2
+weight: -8
 is_admin: null
 permissions:
   - 'access content overview'

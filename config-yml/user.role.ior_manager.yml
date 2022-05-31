@@ -13,7 +13,7 @@ dependencies:
     - toolbar
 id: ior_manager
 label: 'IOR Contest Manager'
-weight: 6
+weight: -3
 is_admin: null
 permissions:
   - 'access toolbar'

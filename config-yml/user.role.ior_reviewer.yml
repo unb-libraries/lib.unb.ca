@@ -8,7 +8,7 @@ dependencies:
     - toolbar
 id: ior_reviewer
 label: 'IOR Reviewer'
-weight: 7
+weight: -2
 is_admin: null
 permissions:
   - 'access toolbar'

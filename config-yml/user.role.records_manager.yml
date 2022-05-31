@@ -14,7 +14,7 @@ dependencies:
       - records_management
 id: records_manager
 label: 'Records Manager'
-weight: 5
+weight: -4
 is_admin: null
 permissions:
   - 'access toolbar'

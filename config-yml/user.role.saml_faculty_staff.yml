@@ -4,6 +4,6 @@ status: true
 dependencies: {  }
 id: saml_faculty_staff
 label: '[saml] Faculty/Staff'
-weight: 10
+weight: 1
 is_admin: null
 permissions: {  }

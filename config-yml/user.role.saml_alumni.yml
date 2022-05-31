@@ -4,6 +4,6 @@ status: true
 dependencies: {  }
 id: saml_alumni
 label: '[saml] Alumni'
-weight: 11
+weight: 2
 is_admin: null
 permissions: {  }
