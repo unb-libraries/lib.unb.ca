@@ -1,0 +1,14 @@
+uuid: 77af5852-fff6-4636-949a-39533e09682e
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.library_staff
+  module:
+    - user
+id: user_remove_role_action.library_staff
+label: 'Remove the Library Staff role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: library_staff
