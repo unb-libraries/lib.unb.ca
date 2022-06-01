@@ -23,7 +23,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: People
+      title: 'People (customized)'
       fields:
         user_bulk_form:
           id: user_bulk_form
@@ -781,10 +781,12 @@ display:
             operator_id: roles_target_id_op
             label: Role
             description: ''
-            use_operator: false
+            use_operator: true
             operator: roles_target_id_op
-            operator_limit_selection: false
-            operator_list: {  }
+            operator_limit_selection: true
+            operator_list:
+              or: or
+              not: not
             identifier: role
             required: false
             remember: false
@@ -792,7 +794,19 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
-              administrator: '0'
+              library_news_author: '0'
+              library_page_author: '0'
+              library_staff: '0'
+              data_administrator: '0'
+              records_manager: '0'
+              ior_manager: '0'
+              ior_reviewer: '0'
+              eresources_record_manager: '0'
+              saml_student: '0'
+              saml_faculty_staff: '0'
+              saml_alumni: '0'
+              saml_guest: '0'
+              saml_unb_active: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -823,10 +837,12 @@ display:
             operator_id: permission_op
             label: Permission
             description: ''
-            use_operator: false
+            use_operator: true
             operator: permission_op
-            operator_limit_selection: false
-            operator_list: {  }
+            operator_limit_selection: true
+            operator_list:
+              or: or
+              not: not
             identifier: permission
             required: false
             remember: false
@@ -834,7 +850,19 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
-              administrator: '0'
+              library_news_author: '0'
+              library_page_author: '0'
+              library_staff: '0'
+              data_administrator: '0'
+              records_manager: '0'
+              ior_manager: '0'
+              ior_reviewer: '0'
+              eresources_record_manager: '0'
+              saml_student: '0'
+              saml_faculty_staff: '0'
+              saml_alumni: '0'
+              saml_guest: '0'
+              saml_unb_active: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -1057,6 +1085,16 @@ display:
           empty: false
           content: "<ul class=\"action-links\">\r\n  <li>\r\n    <a class=\"button button--primary button--small\" href=\"/admin/structure/taxonomy/manage/faculties/overview\"><i class=\"fas fa-pencil-alt\">&nbsp;</i>Manage faculty terms</a>\r\n  </li>\r\n  <li>\r\n    <a class=\"button button--primary button--small\" href=\"/admin/structure/taxonomy/manage/library_departments/overview\"><i class=\"fas fa-pencil-alt\">&nbsp;</i>Manage library department terms</a>\r\n  </li>\r\n</ul>"
           tokenize: false
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: result
+          empty: false
+          content: "<header>\r\n  <div class=\"color-success\">\r\n    <hr>\r\n    <h2>Displaying @start - @end of @total</h2>\r\n    <hr>\r\n  </div>\r\n</header>"
       display_comment: ''
       hide_attachment_summary: false
       display_extenders: {  }
