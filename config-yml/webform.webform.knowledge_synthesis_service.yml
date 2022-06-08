@@ -409,7 +409,7 @@ handlers:
       from_mail: unb-libraries-no-reply@unb.ca
       from_options: {  }
       from_name: _default
-      reply_to: r.witherspoon@unb.ca
+      reply_to: knowledgesynthesis@unb.ca
       return_path: ''
       sender_mail: ''
       sender_name: ''
@@ -437,7 +437,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: 'r.witherspoon@unb.ca,Alex.Goudreau@unb.ca'
+      to_mail: knowledgesynthesis@unb.ca
       to_options: {  }
       bcc_mail: ''
       bcc_options: {  }
