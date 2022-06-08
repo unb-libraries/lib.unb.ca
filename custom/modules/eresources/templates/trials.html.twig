@@ -4,7 +4,7 @@
   <li class="list-group-item pl-2 {{ cycle(stripe, loop.index0) }}">
     <div class="row">
       <div class="col">
-        <h4><a href="https://login.proxy.hil.unb.ca/login?url={{ entry.getViaUrl }}" target="_blank" onclick='javascript: _gaq.push(["_trackPageview", "/GA/{{ entry.getTitle }}"]);'>{{ entry.getTitle }}</a></h4>
+        <h4><a href="{{ entry.getViaUrl }}" target="_blank" onclick='javascript: _gaq.push(["_trackPageview", "/GA/{{ entry.getTitle }}"]);'>{{ entry.getTitle }}</a></h4>
         <p><b><i class="fas fa-calendar-alt"></i> Trial Runs:</b> {{ entry.getMetadatafield('subscription_start_date') | date('Y-m-d') }} to {{ entry.getMetadatafield('subscription_end_date') | date('Y-m-d') }}</p>
         {{ entry.getFirstMetadataField('description') | raw }}
         {% if entry.getMetadatafield('subscription_start_date') is not empty %}

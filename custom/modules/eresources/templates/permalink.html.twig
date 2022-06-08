@@ -1,6 +1,6 @@
 <h3>
   {% if entry.getViaUrl %}
-  <a href="{% if entry.getMetadataField('license_status') in ['T','Y'] %}https://login.proxy.hil.unb.ca/login?url={% endif %}{{ entry.getViaUrl }}" target="_blank" onclick='javascript: _gaq.push(["_trackPageview", "/GA/{{ entry.getTitle }}"]);'>{{ entry.getTitle }}</a>
+  <a href="{{ entry.getViaUrl }}" target="_blank" onclick='javascript: _gaq.push(["_trackPageview", "/GA/{{ entry.getTitle }}"]);'>{{ entry.getTitle }}</a>
   {% else %}
   {{ entry.getTitle }}
   {% endif %}
