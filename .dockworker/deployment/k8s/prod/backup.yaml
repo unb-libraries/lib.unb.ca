@@ -1,4 +1,4 @@
-apiVersion: batch/v1beta1
+apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: hourly-backup-lib-unb-ca
@@ -64,7 +64,7 @@ spec:
               persistentVolumeClaim:
                 claimName: backup-lib-unb-ca
 ---
-apiVersion: batch/v1beta1
+apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: daily-backup-lib-unb-ca
@@ -133,7 +133,7 @@ spec:
               persistentVolumeClaim:
                 claimName: backup-lib-unb-ca
 ---
-apiVersion: batch/v1beta1
+apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: weekly-backup-lib-unb-ca
@@ -205,7 +205,7 @@ spec:
               persistentVolumeClaim:
                 claimName: backup-lib-unb-ca
 ---
-apiVersion: batch/v1beta1
+apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: monthly-backup-lib-unb-ca
