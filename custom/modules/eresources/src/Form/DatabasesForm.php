@@ -179,6 +179,7 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
 
     $indexQuery->addCondition('kb_data_type', 'DATA');
     $indexQuery->addCondition('entry_uid', NULL, '<>');
+    $indexQuery->addCondition('status', TRUE);
     $indexQuery->sort('title', 'ASC');
     $indexQuery->keys('*');
     $indexQuery->range(0, 10000);
