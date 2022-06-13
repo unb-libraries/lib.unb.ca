@@ -1,9 +1,68 @@
 <?php
 
+use Drupal\Core\Cache\Cache;
+use Drupal\Core\Entity\EntityInterface;
+
 /**
  * @file
  * Contains eresources.module.
  */
+
+/**
+ * Invalidate custom eresources_database_title cache tag when qualifying eresources records CR-eated.
+ */
+function eresources_eresources_record_insert(EntityInterface $entity) {
+  if (eresources_entity_invalidate_cache_tag($entity)) {
+    Cache::invalidateTags(['eresources_database_title']);
+  }
+}
+
+/**
+ * Invalidate custom eresources_database_title cache tag when qualifying eresources records U-pdated.
+ */
+function eresources_eresources_record_update(EntityInterface $entity) {
+  if (eresources_entity_invalidate_cache_tag($entity)) {
+    Cache::invalidateTags(['eresources_database_title']);
+  }
+}
+
+/**
+ * Invalidate custom eresources_database_title cache tag when qualifying eresources records D-eleted.
+ */
+function eresources_eresources_record_delete(EntityInterface $entity) {
+  if (eresources_entity_invalidate_cache_tag($entity)) {
+    Cache::invalidateTags(['eresources_database_title']);
+  }
+}
+
+/**
+ * Check if e-resources record meets conditions for cache tag invalidation.
+ *
+ * @param EntityInterface $entity
+ *  The eresources record entity to perform condition checks on.
+ *
+ * @return boolean
+ *   The condition checks result: true if conditions for cache tag invalidation met, false otherwise.
+ */
+function eresources_entity_invalidate_cache_tag(EntityInterface $entity) {
+  $original_values = $entity->original->toArray();
+  $current_values = $entity->toArray();
+
+  $original_kb_data_type_key = reset($original_values['kb_data_type']);
+  $original_kb_data_type = strtolower(reset($original_kb_data_type_key));
+  $current_kb_data_type_key = reset($current_values['kb_data_type']);
+  $current_kb_data_type = strtolower(reset($current_kb_data_type_key));
+  $current_entry_uid_key = reset($current_values['entry_uid']);
+  $current_entry_uid = reset($current_entry_uid_key);
+
+  // E-resources record entity > OCLC Entry UID field not null + KB Data Type field contains 'data' (or did previously).
+  if (!empty($current_entry_uid) && (str_contains($current_kb_data_type, 'data') || str_contains($original_kb_data_type, 'data'))) {
+    return TRUE;
+  }
+  else {
+    return FALSE;
+  }
+}
 
 /**
  * Implements hook_theme().
