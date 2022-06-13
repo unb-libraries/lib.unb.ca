@@ -321,7 +321,7 @@
     "drupal/r4032login": "2.2.0",
     "drupal/redirect": "1.7",
     "drupal/redis": "1.5",
-    "drupal/samlauth": "3.5",
+    "drupal/samlauth": "3.6",
     "drupal/search_api": "1.23",
     "drupal/search_api_autocomplete": "1.6",
     "drupal/search_api_exclude": "2.0.0",
