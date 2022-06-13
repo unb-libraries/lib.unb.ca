@@ -3,6 +3,7 @@
 namespace Drupal\lib_core\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Cache\Cache;
 use Drupal\Component\Serialization\Json;
 use GuzzleHttp\Exception\GuzzleException;
 use Drupal\eresources\Form\DatabasesForm;
@@ -82,7 +83,6 @@ class DiscoverySearch extends BlockBase {
       </div>';
 
     return [
-      '#children' => $html,
       '#attached' => [
         'library' => [
           'lib_core/lib-chosen',
@@ -91,7 +91,15 @@ class DiscoverySearch extends BlockBase {
           'lib_core/discoverysearch',
         ],
       ],
+      '#children' => $html,
     ];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getCacheTags() {
+    return Cache::mergeTags(parent::getCacheTags(), ['eresources_database_title']);
   }
 
   /**
