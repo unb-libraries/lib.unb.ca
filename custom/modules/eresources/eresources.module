@@ -45,15 +45,24 @@ function eresources_eresources_record_delete(EntityInterface $entity) {
  *   The condition checks result: true if conditions for cache tag invalidation met, false otherwise.
  */
 function eresources_entity_invalidate_cache_tag(EntityInterface $entity) {
-  $original_values = $entity->original->toArray();
-  $current_values = $entity->toArray();
+  if (empty($entity->original)) {
+    $original_kb_data_type = NULL;
+  } else {
+    $original_values = $entity->original->toArray();
+    $original_kb_data_type_key = reset($original_values['kb_data_type']);
+    $original_kb_data_type = strtolower(reset($original_kb_data_type_key));
+  }
 
-  $original_kb_data_type_key = reset($original_values['kb_data_type']);
-  $original_kb_data_type = strtolower(reset($original_kb_data_type_key));
+  $current_values = $entity->toArray();
   $current_kb_data_type_key = reset($current_values['kb_data_type']);
   $current_kb_data_type = strtolower(reset($current_kb_data_type_key));
-  $current_entry_uid_key = reset($current_values['entry_uid']);
-  $current_entry_uid = reset($current_entry_uid_key);
+
+  if (empty($current_values['entry_uid'])) {
+    $current_entry_uid = NULL;
+  } else {
+    $current_entry_uid_key = reset($current_values['entry_uid']);
+    $current_entry_uid = reset($current_entry_uid_key);
+  }
 
   // E-resources record entity > OCLC Entry UID field not null + KB Data Type field contains 'data' (or did previously).
   if (!empty($current_entry_uid) && (str_contains($current_kb_data_type, 'data') || str_contains($original_kb_data_type, 'data'))) {
