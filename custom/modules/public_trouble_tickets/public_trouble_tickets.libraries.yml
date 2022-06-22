@@ -1,0 +1,27 @@
+datatables_cdn:
+  remote: https://datatables.net/
+  version: 1.10.14
+  license:
+    name: MIT
+    url: https://datatables.net/license/mit
+    gpl-compatible: true
+  css:
+    theme:
+      //cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css: { type: external, minified: true }
+  js:
+    //cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js: { type: external, minified: true }
+  dependencies:
+    - core/jquery
+datatables:
+  js:
+    js/datatables.js: {}
+  dependencies:
+    - core/drupal
+    - public_trouble_tickets/datatables_cdn
+status:
+  js:
+    js/status.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once

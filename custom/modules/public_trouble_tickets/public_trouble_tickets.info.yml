@@ -1,0 +1,7 @@
+name: 'Trouble Tickets (Public Info)'
+type: module
+description: 'Create tickets and view ticket info and alerts.'
+core_version_requirement: ^8 || ^9
+package: 'UNB Libraries'
+dependencies:
+  - fogbugz_api

@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file
+ * Contains public_trouble_tickets.module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function public_trouble_tickets_theme($existing, $type, $theme, $path) {
+  return [
+    'status' => [
+      'variables' => [
+        'alerts' => NULL,
+        'askus' => NULL,
+      ],
+    ],
+    'view' => [
+      'variables' => [
+        'case' => NULL,
+        'askus' => NULL,
+        'new' => NULL,
+      ],
+    ],
+    'list' => [
+      'variables' => [
+        'alerts' => NULL,
+        'cases' => NULL,
+        'askus' => NULL,
+      ],
+    ],
+    'alerts' => [
+      'variables' => [
+        'alerts' => NULL,
+      ],
+    ],
+  ];
+}

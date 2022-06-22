@@ -350,6 +350,7 @@
     "unb-libraries/custom-entity": "dev-9.x-1.x",
     "unb-libraries/drupal-addon": "dev-8.x-1.x",
     "unb-libraries/drupal-builder": "^9",
+    "unb-libraries/fogbugz_api": "dev-9.x-1.x",
     "unb-libraries/font_awesome": "~5.15",
     "unb-libraries/oclc_api": "dev-8.x-1.x",
     "unb-libraries/saml_features": "dev-8.x-1.x",

@@ -1,0 +1,34 @@
+public_trouble_tickets.ticket_view:
+  path: '/help/ticket/{id}'
+  defaults:
+    _controller: '\Drupal\public_trouble_tickets\Controller\TicketController::view'
+    _title_callback: '\Drupal\public_trouble_tickets\Controller\TicketController::viewTitle'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+public_trouble_tickets.ticket_list:
+  path: '/help/tickets'
+  defaults:
+    _controller: '\Drupal\public_trouble_tickets\Controller\TicketController::list'
+    _title: 'Current e-Resources Tickets'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+public_trouble_tickets.service_status:
+  path: '/help/status'
+  defaults:
+    _controller: '\Drupal\public_trouble_tickets\Controller\TicketController::serviceStatus'
+    _title: 'Systems and Services Status'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+public_trouble_tickets.new_trouble_ticket:
+  path: '/help/ticket/new'
+  defaults:
+    _form: '\Drupal\public_trouble_tickets\Form\NewTicketForm'
+    _title: 'e-Resources Trouble Ticket'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-8">
+    {% if new %}
+    <div class="alert alert-success">
+      <p>Your UNB Libraries trouble ticket has been successfully submitted to our eResources staff.</p>
+      <p>Depending on the nature of your reported trouble, please note:</p>
+      <ul>
+        <li>You may be contacted by staff with questions or suggestions to help solve your issue.</li>
+        <li>Problems are triaged which may result in a speedy resolution to your trouble ticket, or a significant delay.</li>
+        <li>If needed, please <a href="/help/ask-us">ASK US</a> about research assistance or possible alternatives to existing problems.</li>
+      </ul>
+      <p>UNB eResources staff are addressing your concern as readily as we can. Further updates will be sent when available.</p>
+      {% set ticketUrl = url('public_trouble_tickets.ticket_view', {'id': case.getCaseId}) %}
+      <p>Your trouble ticket status can be tracked here: <a href="{{ ticketUrl }}">{{ ticketUrl }}</a>.
+      <p><a href="/help/ticket/new" class="form-reveal btn btn-success"><span class="fas fa-plus"></span> Submit Another Trouble Ticket</a></p>
+    </div>
+    {% endif %}
+    <p><b>Date Submitted:</b> {{ case.getDateOpened | date('Y-m-d') }}</p>
+    <div class="alert alert-warning pb-0">
+      <p><strong>Title of e-Resource:</strong> <span class="clr">{{ case.getTitle | striptags }}</span></p>
+      <p><strong>Nature of the Problem:</strong> {{ case.getCustomFields.nature }}</p>
+      <p><strong>Details:</strong> {{ case.getCaseSummary | default('No details provided.') | raw }}</p>
+    </div>
+    <h2>Updates</h2>
+    <div class="alert alert-info pb-0">
+      <p><strong>Status:</strong> {{ case.getStatus }}</p>
+      {% if case.getFilteredEvents %}
+        <ul>
+        {% for event in case.getFilteredEvents %}
+          <li>
+            <p><span class="fas fa-calendar-alt"></span> {{ event.date | date('F j, Y g:i a') }} - {{ event.action }}</p>
+            {% if event.changes and not (event.changes starts with 'Notified') %}
+            <p>{{ event.changes }}</p>
+            {% endif %}
+            {% if event.summary %}
+            <p>Notes: {{ event.summary | raw }}</p>
+            {% endif %}
+          </li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+      {% if case.getDateClosed %}
+        <p><strong>Date Closed:</strong> {{ case.getDateClosed | date('Y-m-d') }}</p>
+      {% endif %}
+    </div>
+  </div>
+  <div class="col-4">
+    <h2>Further Assistance</h2>
+    <p>To submit a new report for a problematic e-Resources, visit our <a href="/help/ticket/new">Trouble Ticket form</a>.
+    <p>If you require further assistance, need alternative or immediate access to the information or there has been considerable delay in correcting the problem, please <b>Ask Us</b> for assistance.</p>
+    {{ askus }}
+  </div>
+</div>

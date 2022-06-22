@@ -1,0 +1,25 @@
+{% for alert in alerts %}
+{% set alert_id = 'alert-' ~ alert.getCaseId %}
+<div class="accordion header-icons" id="{{ alert_id }}">
+  <div class="card">
+    <div class="card-header" id="header-{{ alert_id }}">
+      <h3 class="card-title h4">
+        <button aria-controls="body-{{ alert_id }}" aria-expanded="false" class="btn btn-{{ alert.getAlertClass }} btn-block text-left collapsed" data-target="#body-{{ alert_id }}" data-toggle="collapse" type="button">{{ alert.getTitle }} (Case ID {{ alert.getCaseId }})</button>
+     </h3>
+    </div>
+    <div aria-labelledby="header-{{ alert_id }}" class="collapse" data-parent="#{{ alert_id }}" id="body-{{ alert_id }}" style="">
+      <div class="card-body">
+        <ul>
+        {% for event in alert.getEvents|reverse %}
+          {% if '[alert message]' in event.summary %}
+          <li>
+            <p><span class="fas fa-calendar-alt"></span> {{ event.date | date('F j, Y g:i a') }}</p>
+            {{ event.summary | replace({'[alert message]': ''}) | raw }}</li>
+          {% endif %}
+        {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}

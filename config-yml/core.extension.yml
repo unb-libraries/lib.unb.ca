@@ -55,6 +55,7 @@ module:
   file: 0
   file_management: 0
   filter: 0
+  fogbugz_api: 0
   fontawesome: 0
   fontawesome_iconpicker_widget: 0
   google_analytics: 0
@@ -111,6 +112,7 @@ module:
   pathauto: 1
   portolan: 0
   portolan_sync: 0
+  public_trouble_tickets: 0
   quickedit: 0
   r4032login: 0
   rdf: 0

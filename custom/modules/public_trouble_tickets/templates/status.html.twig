@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-8">
+    <p>The Systems Group provides active monitoring of most major library systems and services.</p>
+    {% include '@public_trouble_tickets/alerts.html.twig' %}
+    <h2 class="mt-4">Active Monitoring</h2>
+    <div id="status-page">
+      <p><span class="fas fa-spinner fa-spin"></span> Loading...</p>
+    </div>
+  </div>
+  <div class="col-4">
+    <h2>Report Resource Issues</h2>
+    <p><a href="/help/ticket/new" class="btn btn-danger"><span class="fas fa-pencil-alt"></span> Submit New Trouble Ticket</a></p>
+    <p><a href="/help/tickets" class="btn btn-info"><span class="fas fa-list-ul"></span> View Current Trouble Tickets</a></p>
+    <hr />
+    <h2>Further Assistance</h2>
+    <p>If you require further assistance, need alternative or immediate access to the information or there has been considerable delay in correcting the problem, please <b>Ask Us</b> for assistance.</p>
+    {{ askus }}
+  </div>
+</div>

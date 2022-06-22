@@ -26,5 +26,10 @@ OCLC_API_KB=$(echo "$OCLC_API_KB" | sed 's/\//\\\//g')
 SETTINGS_FILE='/app/keys/api.knowledge_base.json'
 sed -i "s|OCLC_API_KB|$OCLC_API_KB|g" $SETTINGS_FILE
 
+# FogBugz Credentials
+SETTINGS_FILE='/app/keys/api.fogbugz.json'
+sed -i "s|FOGBUGZ_USERNAME|$FOGBUGZ_USERNAME|g" $SETTINGS_FILE
+sed -i "s|FOGBUGZ_PASSWORD|$FOGBUGZ_PASSWORD|g" $SETTINGS_FILE
+
 cp /app/keys/oclc-sftp.root.key /app/keys/oclc-sftp.key
 chown nginx /app/keys/oclc-sftp.key
