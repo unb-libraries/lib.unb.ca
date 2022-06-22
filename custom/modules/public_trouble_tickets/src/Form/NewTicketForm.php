@@ -228,6 +228,10 @@ Provide as much information as possible. Please DO NOT include any personal info
       $form_state->setErrorByName('email', $this->t('Email must be a UNB or STU address.'));
     }
 
+    if (substr_count($form_state->getValue('details'), '://') > 2) {
+      $form_state->setErrorByName('details', $this->t('Maximum two links per message.'));
+    }
+
     return parent::validateForm($form, $form_state);
   }
 
