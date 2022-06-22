@@ -110,7 +110,7 @@ class NewTicketForm extends FormBase {
         'Reserves problem' => $this->t('Reserves problem'),
         'Worldcat' => $this->t('UNB WorldCat (library catalogue)'),
         'Proxy' => $this->t('Proxy/Authentication Problems'),
-        'Other' => V'Other (describe below)'),
+        'Other' => $this->t('Other (describe below)'),
       ],
       '#required' => TRUE,
       '#weight' => 0,
