@@ -78,6 +78,18 @@ spec:
                     secretKeyRef:
                       name: oclc-kb
                       key: wskey
+                -
+                  name: FOGBUGZ_USERNAME
+                  valueFrom:
+                    secretKeyRef:
+                      name: fogbugz
+                      key: username
+                -
+                  name: FOGBUGZ_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: fogbugz
+                      key: password
               image: "||DEPLOYMENTIMAGE||"
               imagePullPolicy: Always
               volumeMounts:
