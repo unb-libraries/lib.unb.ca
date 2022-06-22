@@ -190,7 +190,7 @@ Provide as much information as possible. Please DO NOT include any personal info
     }
 
     $id = $case->getCaseId();
-    $ticketUrl = Url::fromRoute('public_trouble_tickets.ticket_view', ['id' => $id]);
+    $ticketUrl = Url::fromRoute('public_trouble_tickets.ticket_view', ['id' => $id], ['absolute' => TRUE]);
 
     // Send confirmation email as ticket forward.
     $message = $form_state->getValue('name') . ",\n\n";
