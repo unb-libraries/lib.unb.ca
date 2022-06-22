@@ -205,7 +205,7 @@ Provide as much information as possible. Please DO NOT include any personal info
 
     $params = [
       'bug' => $id,
-      'from' => $fogbugz->fbConfig->get('fogbugz_email'),
+      'from' => $fogbugz->getConfig()->get('fogbugz_email'),
       'to' => $form_state->getValue('email'),
       'subject' => 'Your trouble ticket has been submitted (Case ' . $id . ')',
       'event' => $message,
