@@ -198,7 +198,7 @@ Provide as much information as possible. Please DO NOT include any personal info
     $message .= "Depending on the nature of your reported trouble, please note:\n
       -You may be contacted by staff with questions or suggestions to help solve your issue.\n
       -Problems are triaged which may result in a speedy resolution to your trouble ticket, or a significant delay.\n
-      -If needed, please ASK US about research assistance or possible alternatives to existing problems: http://lib.unb.ca/help/ask-us\n\n";
+      -If needed, please ASK US about research assistance or possible alternatives to existing problems: https://lib.unb.ca/help/ask-us\n\n";
     $message .= "This email confirms UNB eResources staff are addressing your concern as readily as we can. Further updates will be sent when available.\n\n";
     $message .= "Your trouble ticket status can be tracked here:\n";
     $message .= $ticketUrl->toString() . "\n";
