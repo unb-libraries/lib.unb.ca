@@ -13,7 +13,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Drupal\eresources\License;
 
 /**
- * Provides route responses for the lib_core module.
+ * Provides route responses for eresources licenses.
  */
 class LicenseController extends ControllerBase {
 
