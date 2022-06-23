@@ -2,24 +2,26 @@
   <div class="col-8">
     {% include '@public_trouble_tickets/alerts.html.twig' %}
     <p><b>Note:</b> Tickets have been submitted for these e-Resources, but they may still be functioning normally or you may be able to access some of their functionality.</p>
-    <table class="table table-bordered table-hover table-striped dataTable" data-page-length="25" data-order='[[ 2, "desc"]]'>
-      <thead>
-        <tr>
-          <th style="width:45%">Resource Name</th>
-          <th>Nature of Problem</th>
-          <th>Date Submitted</th>
-        </tr>
-      </thead>
-      <tbody>
-      {% for case in cases %}
-        <tr>
-          <td><a href="/help/ticket/{{ case.getCaseId }}">{{ case.getTitle | striptags }}</a></td>
-          <td>{{ case.getCustomFields.nature }}</td>
-          <td>{{ case.getDateOpened | date('Y-m-d') }}</td>
-        </tr>
-      {% endfor %}
-      </tbody>
-    </table>
+    <div class="mb-3">
+      <table class="table table-bordered table-hover table-striped dataTable" data-page-length="25" data-order='[[ 2, "desc"]]'>
+        <thead>
+          <tr>
+            <th style="width:45%">Resource Name</th>
+            <th>Nature of Problem</th>
+            <th>Date Submitted</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for case in cases %}
+          <tr>
+            <td><a href="/help/ticket/{{ case.getCaseId }}">{{ case.getTitle | striptags }}</a></td>
+            <td>{{ case.getCustomFields.nature }}</td>
+            <td>{{ case.getDateOpened | date('Y-m-d') }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
   </div>
   <div class="col-4">
     <h2>Systems and Services Status</h2>
