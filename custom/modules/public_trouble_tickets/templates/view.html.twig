@@ -39,7 +39,7 @@
         {% endfor %}
         </ul>
       {% endif %}
-      {% if case.getDateClosed %}
+      {% if case.getDateClosed and not case.isOpen %}
         <p><strong>Date Closed:</strong> {{ case.getDateClosed | date('Y-m-d') }}</p>
       {% endif %}
     </div>
