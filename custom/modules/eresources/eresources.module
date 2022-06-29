@@ -84,6 +84,7 @@ function eresources_theme($existing, $type, $theme, $path) {
       ],
     ],
     'license-multi' => [
+      'variables' => [],
     ],
     'eresources-local' => [
       'variables' => [
