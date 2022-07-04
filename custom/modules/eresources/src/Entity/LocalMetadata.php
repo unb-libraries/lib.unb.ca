@@ -16,6 +16,8 @@ use Drupal\lib_unb_custom_entity\Entity\ContentEntityBase;
  *   label_plural = @Translation("eResources Local Metadata"),
  *   label_collection = @Translation("eResources Local Metadata"),
  *   handlers = {
+ *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
+ *     "views_data" = "Drupal\views\EntityViewsData",
  *     "route_provider" = {
  *       "html" = "Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider",
  *     },
