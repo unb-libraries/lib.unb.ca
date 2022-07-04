@@ -675,7 +675,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: combine
-          operator: contains
+          operator: allwords
           value: ''
           group: 1
           exposed: true
@@ -696,7 +696,17 @@ display:
               anonymous: '0'
               library_news_author: '0'
               library_page_author: '0'
+              library_staff: '0'
               data_administrator: '0'
+              records_manager: '0'
+              ior_manager: '0'
+              ior_reviewer: '0'
+              eresources_record_manager: '0'
+              saml_student: '0'
+              saml_faculty_staff: '0'
+              saml_alumni: '0'
+              saml_guest: '0'
+              saml_unb_active: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -712,9 +722,9 @@ display:
             group_items: {  }
           fields:
             name: name
-            mail: mail
-            field_first_name: field_first_name
             field_last_name: field_last_name
+            field_first_name: field_first_name
+            mail: mail
         status:
           id: status
           table: users_field_data
