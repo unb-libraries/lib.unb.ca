@@ -29,7 +29,7 @@ services:
     class: Drupal\portolan_sync\Synchronization\MarcFileProvider
     arguments:
       - '@portolan.remote_file_transfer'
-      - 'wx_unbca@filex-r3.oclc.org:/xfer/metacoll/out/ongoing/updates/metacoll.UNBCA.updates.W{@date}*portolan.1.mrc'
+      - 'wx_unbca@filex-r3.oclc.org:/xfer/metacoll/out/ongoing/updates/metacoll.UNBCA.updates.W*.portolan.1.mrc'
 
   portolan.storage:
     class: Drupal\Core\Entity\ContentEntityStorageInterface

@@ -61,7 +61,6 @@ class MarcFileProvider implements DataProviderInterface {
    */
   public function getData() {
     $from = $this->getSource();
-    $from = str_replace('{@date}', date('Ymd', strtotime("last friday")), $from);
     $marc_file_path = $this->fileTransfer()->copy($from, '/tmp/portolan.mrc');
     return new \File_MARC($marc_file_path);
   }
