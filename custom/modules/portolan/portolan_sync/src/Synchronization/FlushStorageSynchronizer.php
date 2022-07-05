@@ -18,16 +18,19 @@ class FlushStorageSynchronizer extends SynchronizerBase {
     $imported_records = 0;
     $skipped = 0;
 
-    $this->clearStorage();
-    $records = $this->import();
-    foreach ($records as $record) {
-      if ($this->persist($record)) {
-        $imported_records++;
-      }
-      else {
-        $skipped++;
+    // Clear storage only after we know there is new data to import
+    if ($records = $this->import()) {
+      $this->clearStorage();
+      foreach ($records as $record) {
+        if ($this->persist($record)) {
+          $imported_records++;
+        }
+        else {
+          $skipped++;
+        }
       }
     }
+
     return [
       'synced' => $imported_records,
       'skipped' => $skipped,
