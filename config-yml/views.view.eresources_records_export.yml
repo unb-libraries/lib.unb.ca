@@ -1699,7 +1699,7 @@ display:
             use_serializer_encode_only: false
       display_extenders: {  }
       path: admin/eresources/records/export
-      filename: ''
+      filename: 'eresources-records-[date:html_date].csv'
       automatic_download: false
       store_in_public_file_directory: false
       custom_redirect_path: false
