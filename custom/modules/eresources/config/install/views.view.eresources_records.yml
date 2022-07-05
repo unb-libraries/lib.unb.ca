@@ -694,7 +694,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: "<a href=\"/admin/eresources/record/add\" class=\"button\"><span class=\"fas fa-plus\"></span> Add a record</a>\r\n<a href=\"/admin/eresources/records/export\" class=\"button\"><span class=\"fas fa-download\"></span> Download CSV export</a>"
+          content: "<p>\r\n  <a href=\"/admin/eresources/record/add\" class=\"button\"><span class=\"fas fa-plus\"></span> Add a record</a>\r\n  <a href=\"/admin/eresources/records/export\" class=\"button\"><span class=\"fas fa-download\"></span> Download CSV export</a>\r\n</p>"
           tokenize: false
       footer: {  }
       display_extenders: {  }
