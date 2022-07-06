@@ -1697,6 +1697,82 @@ display:
             encoding: utf8
             utf8_bom: '0'
             use_serializer_encode_only: false
+      row:
+        type: data_field
+        options:
+          field_options:
+            id:
+              alias: ''
+              raw_output: false
+            title:
+              alias: ''
+              raw_output: false
+            author:
+              alias: ''
+              raw_output: false
+            collection_user_notes:
+              alias: ''
+              raw_output: false
+            coverage:
+              alias: ''
+              raw_output: false
+            coverageenum:
+              alias: ''
+              raw_output: false
+            coverage_notes:
+              alias: ''
+              raw_output: true
+            eissn:
+              alias: ''
+              raw_output: false
+            isbn:
+              alias: ''
+              raw_output: false
+            issn:
+              alias: ''
+              raw_output: false
+            kb_data_type:
+              alias: ''
+              raw_output: false
+            entry_uid:
+              alias: ''
+              raw_output: false
+            oclcnum:
+              alias: ''
+              raw_output: false
+            publisher:
+              alias: ''
+              raw_output: false
+            url:
+              alias: ''
+              raw_output: false
+            access_information__value:
+              alias: ''
+              raw_output: false
+            alternate_title:
+              alias: ''
+              raw_output: false
+            date_coverage:
+              alias: ''
+              raw_output: false
+            description__value:
+              alias: ''
+              raw_output: false
+            is_collection:
+              alias: ''
+              raw_output: false
+            license_status:
+              alias: ''
+              raw_output: false
+            subscription_end_date:
+              alias: ''
+              raw_output: false
+            subscription_start_date:
+              alias: ''
+              raw_output: false
+            status:
+              alias: ''
+              raw_output: false
       display_extenders: {  }
       path: admin/eresources/records/export
       filename: 'eresources-records-[date:html_date].csv'
