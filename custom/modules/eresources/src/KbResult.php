@@ -141,8 +141,12 @@ class KbResult extends ResultBase implements ResultInterface {
       'coverage_notes', 'collection_user_notes', 'location',
     ];
     foreach ($f as $k) {
+      $class = '';
+      if ($k == 'url') {
+        $class = ' class="text-break"';
+      }
       $value = $this->item->{"kb:{$k}"} ?? '';
-      $debug .= "<li><b>{$k}:</b> " . htmlspecialchars($value) . '</li>';
+      $debug .= "<li{$class}><b>{$k}:</b> " . htmlspecialchars($value) . '</li>';
     }
 
     $debug .= '</ul>';

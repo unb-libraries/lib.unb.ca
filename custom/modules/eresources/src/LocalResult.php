@@ -125,7 +125,11 @@ class LocalResult extends ResultBase implements ResultInterface {
       'coverage_notes', 'collection_user_notes', 'location',
     ];
     foreach ($f as $k) {
-      $debug .= "<li><b>{$k}:</b> " . htmlspecialchars($this->getFirstValue($k)) . '</li>';
+      $class = '';
+      if ($k == 'url') {
+        $class = ' class="text-break"';
+      }
+      $debug .= "<li{$class}><b>{$k}:</b> " . htmlspecialchars($this->getFirstValue($k)) . '</li>';
     }
     $debug .= "<li><b>*kb_data_type:</b> " . htmlspecialchars($this->getFirstValue('kb_data_type')) . '</li>';
 
