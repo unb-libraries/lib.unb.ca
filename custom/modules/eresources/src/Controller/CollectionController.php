@@ -131,7 +131,7 @@ class CollectionController extends ControllerBase {
         '#theme' => 'eresources-kb',
         '#eresources' => $entries,
         '#form_id' => '',
-        '#debug' => !empty(\Drupal::request()->query->get('debug')),
+        '#debug' => $this->currentUser()->hasPermission('administer eresources_record entities'),
       ];
       $render['bottom-pager'] = ['#type' => 'pager'];
     }

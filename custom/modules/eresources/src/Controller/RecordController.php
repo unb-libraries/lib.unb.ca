@@ -39,7 +39,7 @@ class RecordController extends ControllerBase {
     return [
       '#theme' => 'permalink',
       '#entry' => $entry,
-      '#debug' => !empty(\Drupal::request()->query->get('debug')),
+      '#debug' => $this->currentUser()->hasPermission('administer eresources_record entities'),
     ];
   }
 
