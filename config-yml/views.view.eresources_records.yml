@@ -788,6 +788,16 @@ display:
           empty: true
           content: "<p>\r\n  <a href=\"/admin/eresources/record/add\" class=\"button\"><span class=\"fas fa-plus\"></span> Add a record</a>\r\n  <a href=\"/admin/eresources/records/export\" class=\"button\"><span class=\"fas fa-download\"></span> Download CSV export</a>\r\n</p>"
           tokenize: false
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: result
+          empty: false
+          content: 'Displaying @start - @end of @total'
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -969,6 +979,16 @@ display:
           empty: true
           content: '<p>Showing records created in the last 7 days.</p>'
           tokenize: false
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: result
+          empty: false
+          content: 'Displaying @start - @end of @total'
       display_extenders: {  }
       path: admin/eresources/new-records
     cache_metadata:
@@ -1177,6 +1197,16 @@ display:
           empty: true
           content: '<p>Showing records that have not been touched in at least 3 days.</p>'
           tokenize: false
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: result
+          empty: false
+          content: 'Displaying @start - @end of @total'
       display_extenders: {  }
       path: admin/eresources/stale-records
     cache_metadata:
