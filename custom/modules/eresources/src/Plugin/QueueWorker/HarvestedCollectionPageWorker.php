@@ -121,6 +121,7 @@ class HarvestedCollectionPageWorker extends QueueWorkerBase implements Container
           foreach ($fields as $key => $value) {
             $entity->set($key, $value);
           }
+          $entity->set('changed', $now->getTimestamp());
         }
         else {
           $fields['kb_data_type'] = $collection->getKbDataType();
