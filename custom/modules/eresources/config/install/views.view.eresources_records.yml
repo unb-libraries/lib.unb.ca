@@ -1044,6 +1044,15 @@ display:
           content: 'Displaying @start - @end of @total'
       display_extenders: {  }
       path: admin/eresources/new-records
+      menu:
+        type: normal
+        title: 'New Records'
+        description: ''
+        weight: 10
+        expanded: false
+        menu_name: admin
+        parent: system.admin.unblib.eresources
+        context: '0'
     cache_metadata:
       max-age: -1
       contexts:
@@ -1305,6 +1314,15 @@ display:
           content: 'Displaying @start - @end of @total'
       display_extenders: {  }
       path: admin/eresources/stale-records
+      menu:
+        type: normal
+        title: 'Stale Records'
+        description: ''
+        weight: 10
+        expanded: false
+        menu_name: admin
+        parent: system.admin.unblib.eresources
+        context: '0'
     cache_metadata:
       max-age: -1
       contexts:
