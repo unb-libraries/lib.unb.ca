@@ -586,7 +586,18 @@ display:
       cache:
         type: tag
         options: {  }
-      empty: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: '<p>No records to display.</p>'
+          tokenize: false
       sorts: {  }
       arguments: {  }
       filters:
@@ -814,6 +825,7 @@ display:
     display_plugin: page
     position: 2
     display_options:
+      title: 'New eResources Records'
       filters:
         title:
           id: title
@@ -1003,6 +1015,7 @@ display:
         groups:
           1: AND
       defaults:
+        title: false
         filters: false
         filter_groups: false
         header: false
@@ -1073,6 +1086,7 @@ display:
     display_plugin: page
     position: 3
     display_options:
+      title: 'Stale eResources Records'
       filters:
         title:
           id: title
@@ -1262,6 +1276,7 @@ display:
         groups:
           1: AND
       defaults:
+        title: false
         filters: false
         filter_groups: false
         header: false
