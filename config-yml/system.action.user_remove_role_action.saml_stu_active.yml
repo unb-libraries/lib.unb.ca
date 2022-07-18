@@ -1,0 +1,14 @@
+uuid: b510aca5-e97c-41f4-82cc-c8a7d1d80403
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.saml_stu_active
+  module:
+    - user
+id: user_remove_role_action.saml_stu_active
+label: 'Remove the [saml] STU (Active) role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: saml_stu_active

@@ -1,0 +1,9 @@
+uuid: c3583af4-a87e-49e9-b4d9-c4bf354afdd1
+langcode: en
+status: true
+dependencies: {  }
+id: saml_stu_active
+label: '[saml] STU (Active)'
+weight: 5
+is_admin: null
+permissions: {  }

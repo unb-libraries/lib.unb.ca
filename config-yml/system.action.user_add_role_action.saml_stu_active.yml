@@ -1,0 +1,14 @@
+uuid: 5fbe7f28-38a2-4bb4-bbbe-e381d1ed9019
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.saml_stu_active
+  module:
+    - user
+id: user_add_role_action.saml_stu_active
+label: 'Add the [saml] STU (Active) role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: saml_stu_active
