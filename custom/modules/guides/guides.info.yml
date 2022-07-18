@@ -1,0 +1,7 @@
+name: UNB Libraries Guides
+description: Subject and course guides for UNB Libraries website.
+package: UNB Libraries
+type: module
+core_version_requirement: ^9
+dependencies:
+  - eresources
