@@ -3,6 +3,7 @@
 namespace Drupal\lib_core\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\user\Entity\Role;
 
 /**
  * Provides route responses for the lib_core module.
@@ -69,6 +70,8 @@ class HelpController extends ControllerBase {
         break;
       }
     }
+
+    $account = $this->currentUser();
     return [
       '#theme' => 'help_info',
       '#info' => [
@@ -76,6 +79,8 @@ class HelpController extends ControllerBase {
         'agent' => $_SERVER["HTTP_USER_AGENT"],
         'ip' => empty($_SERVER["HTTP_X_REAL_IP"]) ? \Drupal::request()->getClientIp() : $_SERVER["HTTP_X_REAL_IP"],
         'refer' => empty($_SERVER["HTTP_REFERER"]) ? '' : $_SERVER["HTTP_REFERER"],
+        'account' => $account,
+        'account_roles' => Role::loadMultiple($account->getRoles(TRUE)),
       ],
     ];
   }
