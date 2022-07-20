@@ -26,7 +26,7 @@
 {% if info.account.id != 0 %}
   <dt>Authentication</dt>
   <dd class="ml-4">
-    <i class="fas fa-check text-success">&nbsp;</i> Logged in as <b>{{ info.account.getDisplayName }}</b> with the following roles:
+    <i class="fas fa-check text-success">&nbsp;</i> Authenticated as <b>{{ info.account.getDisplayName }}</b> with the following roles:
     <ul>
     {% for role in info.account_roles | sort((a, b) => a.label | lower <=> b.label | lower) %}
       <li>{{ role.label }}</li>
