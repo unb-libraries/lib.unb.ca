@@ -83,9 +83,10 @@ class NewTicketForm extends FormBase {
       '#weight' => 0,
     ];
     $form['wrapper']['personal']['email'] = [
-      '#type' => 'email',
+      '#type' => 'webform_email_multiple',
       '#title' => $this->t('UNB/STU Email'),
       '#required' => TRUE,
+      '#cardinality' => 3,
       '#weight' => 0,
     ];
 
@@ -224,8 +225,12 @@ Provide as much information as possible. Please DO NOT include any personal info
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
-    if (!preg_match('/\@(unb|stu)\.ca$/', $form_state->getValue('email'))) {
-      $form_state->setErrorByName('email', $this->t('Email must be a UNB or STU address.'));
+    $emails = preg_split('/\\s*,\\s*/', $form_state->getValue('email'));
+    foreach ($emails as $email) {
+      if (!preg_match('/\@(unb|stu)\.ca$/', $email)) {
+        $form_state->setErrorByName('email', $this->t('Email must be a UNB or STU address.'));
+        break;
+      }
     }
 
     if (substr_count($form_state->getValue('details'), '://') > 2) {
