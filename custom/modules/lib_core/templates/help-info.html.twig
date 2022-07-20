@@ -10,12 +10,6 @@
 {% elseif info.ip starts with '131.202.193' %} <b>(via VPN for Students)</b>
 {% endif %}
   </dd>
-  <dt>Referring URL</dt>
-  <dd class="ml-4">
-{% if info.refer is empty %}<i class="fas fa-exclamation-triangle text-warning">&nbsp;</i> Either your browser is not properly passing headers or you have entered this URL manually. (<a href=/help/info>RETEST</a>)
-{% else %}<i class="fas fa-check text-success">&nbsp;</i> {{ info.refer }}
-{% endif %}
-  </dd>
   <dt>JavaScript</dt>
   <dd class="ml-4">
     <script type="text/javascript" language="javascript">document.write('<i class="fas fa-check text-success">&nbsp;</i> Your browser supports JavaScript.')</script>
