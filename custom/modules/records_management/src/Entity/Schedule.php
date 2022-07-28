@@ -213,6 +213,9 @@ class Schedule extends ContentEntityBase implements ScheduleInterface, EntityPub
         ],
       ])
       ->setDisplayOptions('view', [
+        'settings' => [
+          'link' => FALSE,
+        ],
         'weight' => 0,
       ])
       ->setDisplayOptions('form', [
