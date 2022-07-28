@@ -5,12 +5,10 @@ dependencies:
   config:
     - field.storage.taxonomy_term.field_code
     - taxonomy.vocabulary.retention_classification
-    - user.role.records_manager
     - views.view.retention_schedules
   module:
     - taxonomy
     - text
-    - user
 id: retention_classifications
 label: 'Retention Classifications'
 module: views
@@ -315,10 +313,8 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
-        type: role
-        options:
-          role:
-            records_manager: records_manager
+        type: none
+        options: {  }
       cache:
         type: tag
         options: {  }
@@ -397,7 +393,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
-        - user.roles
       tags:
         - 'config:field.storage.taxonomy_term.field_code'
   page_1:
@@ -414,6 +409,5 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
-        - user.roles
       tags:
         - 'config:field.storage.taxonomy_term.field_code'
