@@ -11,6 +11,7 @@ dependencies:
     - ior_awards
     - media
     - portolan
+    - records_management
     - samlauth
     - search_api_autocomplete
     - system
@@ -25,9 +26,12 @@ permissions:
   - 'access content'
   - 'access user contact forms'
   - 'create ior_submission entities'
+  - 'list classification entities'
   - 'list contest entities'
   - 'list published ior_submission entities'
   - 'list published_anonymised_ ior_submission entities'
+  - 'list retention_details entities'
+  - 'list schedule entities'
   - 'use search_api_autocomplete for search_our_webpages'
   - 'use text format no_media_html_ior_'
   - 'view contest entities'
@@ -37,4 +41,6 @@ permissions:
   - 'view portolan_record entities'
   - 'view published ior_submission entities'
   - 'view published_anonymised_ ior_submission entities'
+  - 'view retention_details entities'
+  - 'view schedule entities'
   - 'view sp metadata'
