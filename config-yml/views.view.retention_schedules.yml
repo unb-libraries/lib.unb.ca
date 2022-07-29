@@ -585,15 +585,17 @@ display:
           empty_zero: false
           hide_alter_empty: false
       pager:
-        type: mini
+        type: full
         options:
           offset: 0
           items_per_page: 25
           total_pages: null
           id: 0
           tags:
-            next: ››
-            previous: ‹‹
+            next: ›
+            previous: ‹
+            first: '« First'
+            last: 'Last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -602,6 +604,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+          quantity: 10
       exposed_form:
         type: basic
         options:
@@ -879,7 +882,7 @@ display:
       row:
         type: fields
       query:
-        type: views_query
+        type: search_api_query
         options:
           bypass_access: false
           skip_access: false
