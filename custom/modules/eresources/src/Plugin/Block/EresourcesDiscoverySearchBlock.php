@@ -114,10 +114,33 @@ class EresourcesDiscoverySearchBlock extends BlockBase {
       $build .= '<div aria-labelledby="resourceBtn" class="Accordion-panel" id="resource" role="region">' . $renderer->render($resourceRender) . '</div>';
     }
 
+    $blockManager = \Drupal::service('plugin.manager.block');
+    $askUsBlock = $blockManager->createInstance('askus_popup', []);
+    $access = $askUsBlock->access(\Drupal::currentUser());
+    if (is_object($access) && $access->isForbidden() || is_bool($access) && !$access) {
+      $askUs = '';
+    }
+    else {
+      $renderArray = $askUsBlock->build();
+      $askUs = render($renderArray);
+    }
+
     $build .= '
           </div>
         </div>
         </div>
+    </div>
+    <div id="eresources-notices" class="row mt-3">
+      <div class="col">
+        <dl class="ml-3">
+          <dt><span class="fas fa-bug"></span> Report a Problem</dt>
+          <dd><a href="/help/ticket/new">Submit a Trouble Ticket</a> for technical problems accessing or using e-Resources.</dd>
+          <dt><span class="fas fa-gavel"></span> Copyright Restrictions</dt>
+          <dd>Resources are licensed to the University of New Brunswick for academic purposes ONLY. The content may not be reproduced, retransmitted, disseminated, sold, distributed, published, broadcast or circulated.  Remote access restricted to members of the University of New Brunswick/St. Thomas University community.</dd>
+        </dl>
+      </div>
+      <div class="col mx-3">' . $askUs . '
+      </div>
     </div>
     ';
 
