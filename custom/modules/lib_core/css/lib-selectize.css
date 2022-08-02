@@ -1,0 +1,55 @@
+/* UNB Libraries selectize.js overrides */
+.selectize-input,
+.selectize.control.single,
+.selectize-input.input-active {
+  display: flex;
+}
+.selectize-input,
+.selectize-input.full {
+  background: none;
+  border: none;
+}
+.selectize-input.full {
+  position: absolute;
+}
+.selectize-input input,
+.selectize-input.full input {
+  left: inherit!important;
+  position: inherit!important;
+  width: 98%!important;
+}
+.form-control.selectize-control {
+  background: #fff;
+  height: calc(1.5em + 0.75rem + 2px);
+}
+.form-control.selectize-control:focus-within {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 60%);
+}
+.selectize-input.dropdown-active {
+  border-radius: inherit;
+}
+.selectize-dropdown.form-control {
+  padding: 1px .25rem;
+}
+.selectize-dropdown-emptyoptionlabel {
+  background: #6c757d;
+  color: #fff;
+  text-align: left;
+}
+.selectize-dropdown .active {
+  background-color: #3875d7;
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(20%,#3875d7),color-stop(90%,#2a62bc));
+  background-image: linear-gradient(#3875d7 20%,#2a62bc 90%);
+  color: #fff;
+}
+select.selectize {
+  display: block;
+  position: absolute;
+  opacity:0.1;
+  pointer-events: none;
+  border-color: transparent;
+  background: transparent;
+  appearance: none;
+}
+}
