@@ -85,8 +85,7 @@ class DiscoverySearch extends BlockBase {
     return [
       '#attached' => [
         'library' => [
-          'lib_core/lib-chosen',
-          'lib_core/chosen-bootstrap',
+          'lib_core/lib-selectize',
           'lib_core/accessible-accordion',
           'lib_core/discoverysearch',
         ],
@@ -327,7 +326,7 @@ class DiscoverySearch extends BlockBase {
         'id' => 'databaseID',
         'name' => 'query',
         'class' => [
-          'custom-chosen-select',
+          'selectize',
           'form-control',
           'required',
         ],
