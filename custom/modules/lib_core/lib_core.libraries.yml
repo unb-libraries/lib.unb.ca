@@ -20,16 +20,6 @@ library-lib-hours:
     theme:
       css/library-lib-hours.css: {}
 
-research-guides:
-  version: VERSION
-  css:
-    theme:
-      css/research-guides.css: {}
-  js:
-    js/guides-subject-select.js: {}
-  dependencies:
-    - core/jquery
-
 discoverysearch:
   version: VERSION
   css:
@@ -49,11 +39,34 @@ lib-chosen:
   dependencies:
     - core/jquery
 
+lib-selectize:
+  version: VERSION
+  css:
+    theme:
+      //cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.6/css/selectize.bootstrap4.min.css: {type: external}
+      css/lib-selectize.css: {}
+  js:
+    //cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js: {type: external}
+    //cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.6/js/standalone/selectize.min.js: {type: external}
+    js/lib-selectize.js: ()
+  dependencies:
+    - core/jquery
+
 quicklinks:
   version: VERSION
   css:
     theme:
       css/quicklinks.css: {}
+
+research-guides:
+  version: VERSION
+  css:
+    theme:
+      css/research-guides.css: {}
+  js:
+    js/guides-subject-select.js: {}
+  dependencies:
+    - core/jquery
 
 table-row-check:
   version: VERSION
