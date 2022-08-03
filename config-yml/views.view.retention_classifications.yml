@@ -371,7 +371,7 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: "<p>In accordance with the UNB Records Management Policy, the University Secretariat’s Records Management and Privacy Office has developed various Records Retention Schedules, organized by functional area.</p>\r\n<p>This database provides access to those Records Retention Schedules. Additions will be made as more Schedules are developed and approved.</p>\r\n<p>For further information, please contact <a href=\"mailto:jonathan.davidson@unb.ca\">Jonathan Davidson</a> or <a href=\"mailto:emilie.mcdonnell@unb.ca\">Emilie McDonnell</a>.</p>"
+            value: "<p>In accordance with the <a href=\"https://unbcloud.sharepoint.com/sites/Secretariat/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSecretariat%2FShared%20Documents%2FPOL%20R%2E3%20Records%20Management%20Policy%2Epdf&parent=%2Fsites%2FSecretariat%2FShared%20Documents\" target=\"_blank\">UNB Records Management Policy (<span class=\"fontawesome-icon-inline\"><span class=\"fa-lock fas\" aria-hidden=\"true\"></span>&nbsp;<span>Login required</span></span>)</a>, the University Secretariat’s Records Management and Privacy Office has developed various Records Retention Schedules, organized by functional area.</p>\r\n<p>This database provides access to those Records Retention Schedules. Additions will be made as more Schedules are developed and approved.</p>\r\n<p>For further information, please contact <a href=\"mailto:jonathan.davidson@unb.ca\">Jonathan Davidson</a> or <a href=\"mailto:emilie.mcdonnell@unb.ca\">Emilie McDonnell</a>.</p>"
             format: library_page_html
           tokenize: false
         view:
