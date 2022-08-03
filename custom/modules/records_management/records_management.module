@@ -52,6 +52,25 @@ function records_management_update_8101(&$sandbox) {
 }
 
 /**
+ * Implements hook_update_N().
+ *
+ * Re-save all schedule entities to apply changes in the text format.
+ */
+function records_management_update_8102(&$sandbox) {
+  $database = \Drupal::database();
+  $schedule_storage = \Drupal::entityTypeManager()
+    ->getStorage('schedule');
+  try {
+    foreach ($schedule_storage->loadMultiple() as $schedule) {
+      $schedule->save();
+    }
+  }
+  catch (\Exception $e) {
+    throw new UpdateException(($e->getMessage()));
+  }
+}
+
+/**
  * Implements hook_views_data_alter().
  */
 function records_management_views_data_alter(array &$data) {
