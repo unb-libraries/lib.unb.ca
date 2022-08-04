@@ -7,14 +7,16 @@
                 hideSelected: true,
             }).removeAttr("style");
 
-            $(context).find('#title_results button[type="submit"]').click(function (e) {
-                let db_select = document.querySelector("#databaseID");
-                let db_selectize = document.querySelector("#databaseID-selectized");
-	            if (!db_select.value) {
-                    db_selectize.setCustomValidity("Please select a database option");
-                    db_selectize.reportValidity();
+            $(context).find('form.custom-selectize button[type="submit"]').click(function (e) {
+                let form = this.closest('form');
+                let selectized_select = form.querySelector("select.selectize");
+                let selectize_input = form.querySelector(".selectize-input input");
+
+	            if (!selectized_select.value) {
+                    selectize_input.setCustomValidity("Please select a value to submit");
+                    selectize_input.reportValidity();
                 } else {
-                    db_selectize.setCustomValidity(""); // Leave this empty!
+                    selectize_input.setCustomValidity(""); // Leave this empty!
                 }
             });
         }

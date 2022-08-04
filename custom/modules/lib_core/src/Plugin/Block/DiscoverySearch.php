@@ -249,7 +249,7 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getDatabasesForm() {
     $title_form =
-      '<form action="/eresources" id="title_results" class="chosen-compact mb-2" method="get">
+      '<form action="/eresources" id="title_results" class="custom-selectize mb-2" method="get">
         <div class="d-flex flex-column flex-md-row">
           <div class="flex-fill mb-2 mr-0 mr-md-2">
             <label class="sr-only" for="databaseID">
