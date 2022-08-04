@@ -327,7 +327,7 @@
     "drupal/search_api_autocomplete": "1.6",
     "drupal/search_api_exclude": "2.0.0",
     "drupal/search_api_solr": "4.2.8",
-    "drupal/token": "1.10",
+    "drupal/token": "1.11",
     "drupal/tvi": "1.0-rc4",
     "drupal/upgrade_status": "3.11",
     "drupal/video_embed_field": "2.4",
