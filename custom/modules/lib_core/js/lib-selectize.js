@@ -3,7 +3,7 @@
         attach: function(context, settings) {
             // Selectize library
             $("select.selectize").selectize({
-                allowEmptyOption: true,
+                allowEmptyOption: false,
                 hideSelected: true,
             }).removeAttr("style");
 
