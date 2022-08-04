@@ -113,10 +113,18 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
         'id' => 'database',
         'name' => '',
       ],
+      '#prefix' => '<div class="flex-fill mb-2 mr-0 mr-md-2">',
+      '#suffix' => '</div>',
     ];
 
     $form[$form_wrapper]['database_wrapper']['actions'] = [
       '#type' => 'actions',
+      '#attributes' => [
+        'class' => [
+          'mb-4',
+          'px-0',
+        ],
+      ],
     ];
 
     $form[$form_wrapper]['database_wrapper']['actions']['submit_button'] = [
