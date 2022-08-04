@@ -6,12 +6,11 @@ disable_search_threshold: 7
 minimum_width: 0
 max_shown_results: null
 use_relative_width: false
-jquery_selector: 'select:not(.custom-chosen-select):not(.custom-select):not(#edit-classification):visible'
+jquery_selector: 'select:not(.custom-chosen-select):not(.custom-select):not(#edit-classification):not(.selectize):visible'
 search_contains: false
 disable_search: false
 allow_single_deselect: false
 disabled_themes:
-  bartik: '0'
   seven: '0'
   bootstrap_barrio: '0'
   unb_lib_theme: '0'
