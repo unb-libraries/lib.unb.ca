@@ -46,10 +46,9 @@
 select.selectize {
   display: block;
   position: absolute;
-  opacity:0.1;
+  opacity: 0;
   pointer-events: none;
   border-color: transparent;
   background: transparent;
   appearance: none;
-}
 }
