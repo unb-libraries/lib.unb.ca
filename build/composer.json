@@ -295,7 +295,7 @@
     "drupal/facets": "2.0.5",
     "drupal/field_formatter_class": "1.5",
     "drupal/field_group": "3.2",
-    "drupal/field_permissions": "1.1.0",
+    "drupal/field_permissions": "1.2",
     "drupal/file_management": "1.x-dev",
     "drupal/fontawesome": "2.23",
     "drupal/google_analytics": "2.5",
