@@ -9,22 +9,22 @@
             });
             $('#reference-guide-submit').click(function(e) {
                 let cat = $('#reference-guide').val();
+                e.preventDefault();
                 if (cat) {
-                    e.preventDefault();
                     window.location = 'https://guides.lib.unb.ca/category/' + cat;
                 }
             });
             $('#database-guide-submit').click(function(e) {
                 let cat = $('#database-guide').val();
+                e.preventDefault();
                 if (cat) {
-                    e.preventDefault();
                     window.location = 'https://guides.lib.unb.ca/category/' + cat;
                 }
             });
             $('#database-submit').click(function(e) {
                 let query = $('#database').val();
+                e.preventDefault();
                 if (query) {
-                    e.preventDefault();
                     $('input[name=query]').val(query);
                     $('#eres-databases').submit();
                 }
