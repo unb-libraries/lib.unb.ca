@@ -15,7 +15,7 @@
                     window.location = 'https://guides.lib.unb.ca/category/' + cat;
                 }
             });
-            $('#databases').bind('keypress', function(e) {
+            $('#database-selectized').bind('keypress', function(e) {
                 if(e.which === 13) {
                     e.preventDefault();
                     $('#database-submit').click();
