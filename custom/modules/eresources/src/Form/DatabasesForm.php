@@ -52,7 +52,7 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
       '#options' => $guideOptions,
       '#attributes' => [
         'class' => [
-          'custom-chosen-select',
+          'selectize',
           'form-control',
         ],
         'name' => '',
