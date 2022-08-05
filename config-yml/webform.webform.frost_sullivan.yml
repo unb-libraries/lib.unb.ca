@@ -41,11 +41,11 @@ elements: |-
       <p>Information is for individual, non-commercial, educational and research purposes only. Users are not able to systematically download or retain substantial portions of information.&nbsp;<strong>NOTE:</strong> UNB Libraries does not subscribe to all Frost &amp; Sullivan content.</p>
 
       <dl class="ml-4">
-      	<dt>Students</dt>
-      	<dd>Students can access, view and print information, but the database <strong>does not</strong> offer PDF downloading capabilities.</dd>
-      	<dt>Faculty:</dt>
-      	<dd>Faculty or staff requiring PDF downloading capabilities are required to contact Jeannie Bail (<a href="/contact-unb-libraries-staff?recipient=jbail">j.bail@unb.ca</a> | (506) 458-7212). Please include your university/departmental affiliation.</dd>
+      	<dt>Students/Faculty:</dt>
+      	<dd>Both faculty and students can view, print and download documents.</dd>
+
       </dl>
+      <p>For assistance using the resource contact Jeannie Bail (<a href="/contact-unb-libraries-staff?recipient=jbail">j.bail@unb.ca</a> | (506) 458-7212). Please include your university/departmental affiliation.</p>
     '#format': library_page_html
   frost_agree_container:
     '#type': container
@@ -176,7 +176,7 @@ settings:
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
   confirmation_type: url
-  confirmation_url: 'https://login.proxy.hil.unb.ca/form?qurl=https://cds.frost.com'
+  confirmation_url: 'https://login.proxy.hil.unb.ca/form?qurl=https://member.frost.com/'
   confirmation_title: ''
   confirmation_message: ''
   confirmation_attributes: {  }
