@@ -113,7 +113,7 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
         'id' => 'database',
         'name' => '',
       ],
-      '#prefix' => '<div class="flex-fill mb-2 mr-0 mr-md-2">',
+      '#prefix' => '<div class="flex-fill mb-2 mr-0 mr-md-1">',
       '#suffix' => '</div>',
     ];
 
