@@ -269,6 +269,7 @@
   "require": {
     "ckeditor/colorbutton": "~4.16",
     "ckeditor/panelbutton": "~4.16",
+    "commerceguys/addressing": "1.3.0",
     "drupal/address": "1.10",
     "drupal/admin_toolbar": "3.1.1",
     "drupal/allowed_formats": "1.5",
