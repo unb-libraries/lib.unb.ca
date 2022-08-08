@@ -1,0 +1,49 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.guide_feed.field_feed_enabled
+    - field.field.paragraph.guide_feed.field_feed_items
+    - field.field.paragraph.guide_feed.field_feed_title
+    - field.field.paragraph.guide_feed.field_feed_url
+    - paragraphs.paragraphs_type.guide_feed
+  module:
+    - link
+id: paragraph.guide_feed.default
+targetEntityType: paragraph
+bundle: guide_feed
+mode: default
+content:
+  field_feed_enabled:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_feed_items:
+    type: number
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_feed_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_feed_url:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_label
+    - paragraphs.paragraphs_type.guide_section
+id: paragraph.guide_section.field_section_label
+field_name: field_section_label
+entity_type: paragraph
+bundle: guide_section
+label: 'Section Label'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

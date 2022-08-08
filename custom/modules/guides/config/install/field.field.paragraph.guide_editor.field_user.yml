@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_user
+    - paragraphs.paragraphs_type.guide_editor
+id: paragraph.guide_editor.field_user
+field_name: field_user
+entity_type: paragraph
+bundle: guide_editor
+label: User
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: role
+      role:
+        guide_editor: guide_editor
+        library_news_author: '0'
+        library_page_author: '0'
+        library_staff: '0'
+        data_administrator: '0'
+        records_manager: '0'
+        ior_manager: '0'
+        ior_reviewer: '0'
+        eresources_record_manager: '0'
+        saml_student: '0'
+        saml_faculty_staff: '0'
+        saml_alumni: '0'
+        saml_guest: '0'
+        saml_unb_active: '0'
+        saml_stu_active: '0'
+    include_anonymous: false
+field_type: entity_reference

@@ -4,3 +4,24 @@
  * @file
  * Contains guides.module.
  */
+
+use Drupal\Core\Render\Element;
+
+/**
+ * Implements hook_preprocess_field_multiple_value_form().
+ *
+ * Set custom "add more X" button values.
+ */
+function guides_preprocess_field_multiple_value_form(&$variables) {
+  $values = [
+    'related_guide_categories_add_more' => 'Add Another Category',
+    'contacts_add_more' => 'Add Another Contact',
+  ];
+
+  if (isset($variables['element']['add_more']['#name'])) {
+    $name = $variables['element']['add_more']['#name'];
+    if (isset($values[$name])) {
+      $variables['button']['#value'] = t($values[$name]);
+    }
+  }
+}

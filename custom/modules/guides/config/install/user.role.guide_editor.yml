@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - guides
+    - system
+    - toolbar
+id: guide_editor
+label: 'Guide Editor'
+weight: 8
+is_admin: null
+permissions:
+  - 'access toolbar'
+  - 'administer guide entities'
+  - 'view the administration theme'

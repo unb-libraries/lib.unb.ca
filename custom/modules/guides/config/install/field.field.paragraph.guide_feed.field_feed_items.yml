@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_feed_items
+    - paragraphs.paragraphs_type.guide_feed
+id: paragraph.guide_feed.field_feed_items
+field_name: field_feed_items
+entity_type: paragraph
+bundle: guide_feed
+label: 'Number of Items'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

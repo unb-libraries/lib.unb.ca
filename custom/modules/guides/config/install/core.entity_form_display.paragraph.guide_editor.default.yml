@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.guide_editor.field_display_editor
+    - field.field.paragraph.guide_editor.field_user
+    - paragraphs.paragraphs_type.guide_editor
+id: paragraph.guide_editor.default
+targetEntityType: paragraph
+bundle: guide_editor
+mode: default
+content:
+  field_display_editor:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_user:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

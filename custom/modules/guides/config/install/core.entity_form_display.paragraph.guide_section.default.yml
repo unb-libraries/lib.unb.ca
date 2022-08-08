@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.guide_section.field_hide_section
+    - field.field.paragraph.guide_section.field_section_content
+    - field.field.paragraph.guide_section.field_section_label
+    - paragraphs.paragraphs_type.guide_section
+  module:
+    - text
+id: paragraph.guide_section.default
+targetEntityType: paragraph
+bundle: guide_section
+mode: default
+content:
+  field_hide_section:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_section_content:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_section_label:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

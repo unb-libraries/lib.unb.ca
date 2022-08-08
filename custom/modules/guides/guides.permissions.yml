@@ -1,0 +1,18 @@
+# Guide entities
+administer guide entities:
+  title: "Administer Guides."
+
+list guide entities:
+  title: "List Guides."
+
+create guide entities:
+  title: "Create Guides."
+
+view guide entities:
+  title: "View Guides."
+
+update guide entities:
+  title: "Edit Guides."
+
+delete guide entities:
+  title: "Delete Guides."

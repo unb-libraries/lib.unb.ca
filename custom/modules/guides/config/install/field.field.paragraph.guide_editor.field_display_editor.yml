@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_display_editor
+    - paragraphs.paragraphs_type.guide_editor
+id: paragraph.guide_editor.field_display_editor
+field_name: field_display_editor
+entity_type: paragraph
+bundle: guide_editor
+label: 'Display editor as Guide contact'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
