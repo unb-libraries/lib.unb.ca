@@ -59,25 +59,6 @@ settings:
       linkit_profile: ''
     stylescombo:
       styles: ''
-    language:
-      language_list: un
-    codemirror:
-      enable: false
-      mode: htmlmixed
-      theme: default
-      startupMode: wysiwyg
-      options:
-        lineNumbers: true
-        lineWrapping: true
-        matchBrackets: true
-        autoCloseTags: true
-        autoCloseBrackets: true
-        enableSearchTools: true
-        enableCodeFolding: true
-        enableCodeFormatting: true
-        autoFormatOnStart: true
-        autoFormatOnModeChange: true
-        autoFormatOnUncomment: true
     wordcount:
       enable: true
       show_remaining: true
@@ -91,15 +72,6 @@ settings:
       max_words: 200
       max_chars: 1000
       hard_limit: 1
-    colorbutton:
-      colors: ''
-    video_embed:
-      defaults:
-        children:
-          autoplay: true
-          responsive: true
-          width: '854'
-          height: '480'
 image_upload:
   status: false
   scheme: public

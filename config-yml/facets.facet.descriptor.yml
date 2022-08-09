@@ -13,6 +13,8 @@ id: descriptor
 name: Descriptor
 weight: -1
 min_count: 1
+missing: false
+missing_label: others
 url_alias: descriptor
 facet_source_id: 'search_api:views_page__portolan__page_1'
 field_identifier: descriptor_facet
