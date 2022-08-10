@@ -11,5 +11,6 @@ weight: 8
 is_admin: null
 permissions:
   - 'access toolbar'
-  - 'administer guide entities'
+  - 'create guide entities'
+  - 'update guide entities'
   - 'view the administration theme'
