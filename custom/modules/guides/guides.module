@@ -6,6 +6,8 @@
  */
 
 use Drupal\Core\Render\Element;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\user\Entity\User;
 
 /**
  * Implements hook_preprocess_field_multiple_value_form().
@@ -23,5 +25,13 @@ function guides_preprocess_field_multiple_value_form(&$variables) {
     if (isset($values[$name])) {
       $variables['button']['#value'] = t($values[$name]);
     }
+  }
+}
+
+function guides_form_guide_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $entity = $form_state->getFormObject()->getEntity();
+  if ($entity->isNew()) {
+    $user = User::load(\Drupal::currentUser()->id());
+    $form['editors']['widget'][0]['subform']['field_user']['widget'][0]['target_id']['#default_value'] = $user;
   }
 }
