@@ -5,8 +5,10 @@ namespace Drupal\guides\Entity;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
-use Drupal\lib_unb_custom_entity\Entity\ContentEntityInterface;
-use Drupal\lib_unb_custom_entity\Entity\ContentEntityBase;
+use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\Core\Entity\ContentEntityBase;
+use Drupal\custom_entity\Entity\EntityChangedTrait;
+use Drupal\custom_entity\Entity\EntityCreatedTrait;
 
 /**
  * Defines a guide entity.
@@ -22,10 +24,10 @@ use Drupal\lib_unb_custom_entity\Entity\ContentEntityBase;
  *     "route_provider" = {
  *       "html" = "Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider",
  *     },
- *     "access" = "Drupal\lib_unb_custom_entity\Entity\EntityAccessControlHandler",
+ *     "access" = "Drupal\guides\Entity\Access\GuideAccessControlHandler",
  *     "form" = {
- *       "default" = "Drupal\lib_unb_custom_entity\Form\ContentEntityForm",
- *       "delete" = "Drupal\lib_unb_custom_entity\Form\ContentEntityConfirmForm",
+ *       "default" = "Drupal\guides\Form\GuideForm",
+ *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
  *     },
  *   },
  *   base_table = "guide",
@@ -45,6 +47,9 @@ use Drupal\lib_unb_custom_entity\Entity\ContentEntityBase;
  * )
  */
 class Guide extends ContentEntityBase implements ContentEntityInterface {
+
+  use EntityCreatedTrait;
+  use EntityChangedTrait;
 
   /**
    * {@inheritDoc}
@@ -170,6 +175,13 @@ class Guide extends ContentEntityBase implements ContentEntityInterface {
       ]);
 
     return $fields;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function label() {
+    return $this->get('title')->value;
   }
 
 }

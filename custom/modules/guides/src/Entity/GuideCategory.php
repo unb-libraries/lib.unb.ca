@@ -5,8 +5,10 @@ namespace Drupal\guides\Entity;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
-use Drupal\lib_unb_custom_entity\Entity\ContentEntityInterface;
-use Drupal\lib_unb_custom_entity\Entity\ContentEntityBase;
+use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\Core\Entity\ContentEntityBase;
+use Drupal\custom_entity\Entity\EntityChangedTrait;
+use Drupal\custom_entity\Entity\EntityCreatedTrait;
 
 /**
  * Defines a guide_category entity.
@@ -22,10 +24,10 @@ use Drupal\lib_unb_custom_entity\Entity\ContentEntityBase;
  *     "route_provider" = {
  *       "html" = "Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider",
  *     },
- *     "access" = "Drupal\lib_unb_custom_entity\Entity\EntityAccessControlHandler",
+ *     "access" = "Drupal\custom_entity\Entity\Access\EntityAccessControlHandler",
  *     "form" = {
- *       "default" = "Drupal\lib_unb_custom_entity\Form\ContentEntityForm",
- *       "delete" = "Drupal\lib_unb_custom_entity\Form\ContentEntityConfirmForm",
+ *       "default" = "Drupal\Core\Entity\ContentEntityForm",
+ *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
  *     },
  *   },
  *   base_table = "guide_category",
@@ -45,6 +47,9 @@ use Drupal\lib_unb_custom_entity\Entity\ContentEntityBase;
  * )
  */
 class GuideCategory extends ContentEntityBase implements ContentEntityInterface {
+
+  use EntityChangedTrait;
+  use EntityCreatedTrait;
 
   /**
    * {@inheritDoc}
