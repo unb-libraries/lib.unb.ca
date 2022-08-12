@@ -94,7 +94,7 @@ class Guide extends ContentEntityBase implements ContentEntityInterface {
       ->setSetting('target_type', 'paragraph')
       ->setSetting('handler', 'default:paragraph')
       ->setDisplayOptions('form', [
-        'type' => 'entity_reference_paragraphs',
+        'type' => 'paragraphs',
         'weight' => 0,
       ])
       ->setDisplayConfigurable('view', TRUE)
@@ -135,7 +135,7 @@ class Guide extends ContentEntityBase implements ContentEntityInterface {
       ->setSetting('target_type', 'paragraph')
       ->setSetting('handler', 'default:paragraph')
       ->setDisplayOptions('form', [
-        'type' => 'entity_reference_paragraphs',
+        'type' => 'paragraphs',
         'weight' => 0,
       ])
       ->setDisplayConfigurable('view', TRUE)
@@ -149,7 +149,7 @@ class Guide extends ContentEntityBase implements ContentEntityInterface {
       ->setSetting('target_type', 'paragraph')
       ->setSetting('handler', 'default:paragraph')
       ->setDisplayOptions('form', [
-        'type' => 'entity_reference_paragraphs',
+        'type' => 'paragraphs',
         'weight' => 0,
         'group' => 'advanced',
       ])
