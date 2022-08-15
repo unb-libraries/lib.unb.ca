@@ -1,0 +1,6 @@
+guides.legacy_redirect:
+  path: '/guide/legacy/{id}'
+  defaults:
+    _controller: '\Drupal\guides\Controller\GuidesController::legacyRedirect'
+  requirements:
+    _access: 'TRUE'
