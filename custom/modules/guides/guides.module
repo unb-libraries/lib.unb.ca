@@ -29,6 +29,9 @@ function guides_preprocess_field_multiple_value_form(&$variables) {
   }
 }
 
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
 function guides_form_guide_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $entity = $form_state->getFormObject()->getEntity();
   if ($entity->isNew()) {
