@@ -8,6 +8,7 @@
 use Drupal\Core\Render\Element;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\user\Entity\User;
+use Drupal\editor\Entity\Editor;
 
 /**
  * Implements hook_preprocess_field_multiple_value_form().
@@ -34,4 +35,11 @@ function guides_form_guide_form_alter(&$form, FormStateInterface $form_state, $f
     $user = User::load(\Drupal::currentUser()->id());
     $form['editors']['widget'][0]['subform']['field_user']['widget'][0]['target_id']['#default_value'] = $user;
   }
+}
+
+/**
+ * Implements hook_ckeditor_css_alter().
+ */
+function guides_ckeditor_css_alter(array &$css, Editor $editor) {
+  $css[] = drupal_get_path('module', 'guides') . '/css/ckeditor.css';
 }

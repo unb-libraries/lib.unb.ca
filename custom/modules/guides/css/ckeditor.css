@@ -1,0 +1,10 @@
+div.wc-search {
+  margin: 1em;
+}
+
+div.wc-search img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
+}
