@@ -46,7 +46,7 @@ class WcSearch extends CKEditorPluginBase implements CKEditorPluginCssInterface 
    */
   public function getButtons() {
     return [
-      'wc-search' => [
+      'Wc-search' => [
         'label' => $this->t('WorldCat Search'),
         'image' => drupal_get_path('module', 'guides') . '/js/plugins/wc-search/icons/wc-search.png',
       ],
