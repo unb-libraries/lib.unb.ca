@@ -1,11 +1,24 @@
 (function ($, Drupal) {
     Drupal.behaviors.eresourcesForms = {
         attach: function(context, settings) {
+            $('#reference-guide-selectized').bind('keypress', function(e) {
+                if(e.which === 13) {
+                    e.preventDefault();
+                    $('#reference-guide-submit').click();
+                }
+            });
             $('#reference-guide-submit').click(function(e) {
                 let cat = $('#reference-guide').val();
                 e.preventDefault();
                 if (cat) {
                     window.location = 'https://guides.lib.unb.ca/category/' + cat;
+                }
+            });
+
+            $('#database-guide-selectized').bind('keypress', function(e) {
+                if(e.which === 13) {
+                    e.preventDefault();
+                    $('#database-guide-submit').click();
                 }
             });
             $('#database-guide-submit').click(function(e) {
@@ -15,6 +28,7 @@
                     window.location = 'https://guides.lib.unb.ca/category/' + cat;
                 }
             });
+
             $('#database-selectized').bind('keypress', function(e) {
                 if(e.which === 13) {
                     e.preventDefault();

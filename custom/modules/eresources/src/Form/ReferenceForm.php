@@ -62,8 +62,8 @@ class ReferenceForm extends LocalFormBase implements KbFormInterface {
     ];
 
     $form[$form_wrapper]['guide_wrapper']['actions']['submit_button'] = [
-      '#type' => 'button',
-      '#value' => $this->t('GO'),
+      '#type' => 'html_tag',
+      '#tag' => 'input',
       '#attributes' => [
         'class' => [
           'btn',
@@ -71,7 +71,8 @@ class ReferenceForm extends LocalFormBase implements KbFormInterface {
           'form-control',
         ],
         'id' => 'reference-guide-submit',
-        'type' => 'submit',
+        'type' => 'button',
+        'value' => $this->t('GO'),
       ],
     ];
 

@@ -69,8 +69,8 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
     ];
 
     $form[$form_wrapper]['guide_wrapper']['actions']['submit_button'] = [
-      '#type' => 'button',
-      '#value' => $this->t('GO'),
+      '#type' => 'html_tag',
+      '#tag' => 'input',
       '#attributes' => [
         'class' => [
           'btn',
@@ -78,7 +78,8 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
           'form-control',
         ],
         'id' => 'database-guide-submit',
-        'type' => 'submit',
+        'type' => 'button',
+        'value' => $this->t('GO'),
       ],
     ];
 
@@ -128,8 +129,8 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
     ];
 
     $form[$form_wrapper]['database_wrapper']['actions']['submit_button'] = [
-      '#type' => 'button',
-      '#value' => $this->t('GO'),
+      '#type' => 'html_tag',
+      '#tag' => 'input',
       '#attributes' => [
         'class' => [
           'btn',
@@ -137,7 +138,8 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
           'form-control',
         ],
         'id' => 'database-submit',
-        'type' => 'submit',
+        'type' => 'button',
+        'value' => $this->t('GO'),
       ],
     ];
 
