@@ -7,6 +7,7 @@ use Drupal\filter\FilterProcessResult;
 use Drupal\filter\Plugin\FilterBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Render\RendererInterface;
 
 /**
  * Provides a filter to convert wc-search tags to a full widget.
@@ -19,6 +20,22 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 class FilterCKEditorWcSearch extends FilterBase implements ContainerFactoryPluginInterface {
 
+
+  /**
+   * The renderer.
+   *
+   * @var \Drupal\Core\Render\RendererInterface
+   */
+  protected $renderer;
+
+  /**
+   * Class constructor.
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, RendererInterface $renderer) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+    $this->renderer = $renderer;
+  }
+
   /**
    * {@inheritdoc}
    */
@@ -26,7 +43,8 @@ class FilterCKEditorWcSearch extends FilterBase implements ContainerFactoryPlugi
     return new static(
       $configuration,
       $plugin_id,
-      $plugin_definition
+      $plugin_definition,
+      $container->get('renderer')
     );
   }
 
@@ -44,7 +62,10 @@ class FilterCKEditorWcSearch extends FilterBase implements ContainerFactoryPlugi
     $result = new FilterProcessResult($text);
 
     if (strpos($text, '<div class="wc-search"') !== FALSE) {
-      $widget = file_get_contents(drupal_get_path('module', 'guides') . '/templates/ckeditor/wc-search.html.twig');
+      $render = [
+        '#theme' => 'ckeditor-wc-search',
+      ];
+      $widget = $this->renderer->render($render);
       $text = str_replace('<div class="wc-search"><img src="/modules/custom/guides/img/wc-search-placeholder.png" /></div>', $widget, $text);
       $result->setProcessedText($text);
     }
