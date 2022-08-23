@@ -1,0 +1,6 @@
+.additional-toggle[aria-expanded=false] .text-expanded {
+  display: none;
+}
+.additional-toggle[aria-expanded=true] .text-collapsed {
+  display: none;
+}

@@ -7,9 +7,12 @@ use Drupal\filter\FilterProcessResult;
 use Drupal\filter\Plugin\FilterBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Render\RendererInterface;
 
 /**
- * Provides a filter to convert level2 tags to resource lists.
+ * Provides a filter to convert eresources tags to resource lists.
  *
  * @Filter(
  *   id = "filter_guides_ckeditor_eresources",
@@ -20,13 +23,38 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class FilterCKEditorEresources extends FilterBase implements ContainerFactoryPluginInterface {
 
   /**
+   * The entity type manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
+   * The renderer.
+   *
+   * @var \Drupal\Core\Render\RendererInterface
+   */
+  protected $renderer;
+
+  /**
+   * Class constructor.
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entityTypeManager, RendererInterface $renderer) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+    $this->entityTypeManager = $entityTypeManager;
+    $this->renderer = $renderer;
+  }
+
+  /**
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     return new static(
       $configuration,
       $plugin_id,
-      $plugin_definition
+      $plugin_definition,
+      $container->get('entity_type.manager'),
+      $container->get('renderer')
     );
   }
 
@@ -44,11 +72,63 @@ class FilterCKEditorEresources extends FilterBase implements ContainerFactoryPlu
     $result = new FilterProcessResult($text);
 
     if (strpos($text, '<eresources') !== FALSE) {
-      // Pull eres data here.
+      $document = Html::load($text);
+      $xpath = new \DOMXPath($document);
+
+      foreach ($xpath->query('//eresources') as $node) {
+        $ids = $node->nodeValue;
+        if (empty($ids)) {
+          $info = $document->createElement('div');
+          $info->appendChild($document->createTextNode('e-Resources List: No resources selected.'));
+          $node->parentNode->replaceChild($info, $node);
+        }
+        else {
+          $storage = $this->entityTypeManager->getStorage('eresources_record');
+          $query = $storage->getQuery();
+          $resources = $query->condition('id', $ids, 'IN')->execute();
+
+          if (!empty($resources)) {
+            $options = [];
+
+            $keyresources = $node->getAttribute('keyresources');
+            $options['keyresources'] = (is_numeric($keyresources) ? $keyresources : 999);
+            $options['headings'] = $node->getAttribute('noheadings') == 'true' ? FALSE : TRUE;
+            $options['searchbox'] = $node->getAttribute('searchbox') == 'true' ? TRUE : FALSE;
+
+            $listHtml = HTML::load($this->buildResourceList($resources, $options));
+            $list = $document->importNode($listHtml->documentElement, TRUE);
+
+            $node->parentNode->replaceChild($list, $node);
+          }
+        }
+      }
+
+      $text = Html::serialize($document);
+
       $result->setProcessedText($text);
     }
 
     return $result;
+  }
+
+  /**
+   * Build an HTML list of e-Resource info.
+   *
+   * @param array $resources
+   *   Array of e-Resources records.
+   * @param array $options
+   *   Array of options for rendering the list.
+   *
+   * @return string
+   *   Rendered HTML.
+   */
+  protected function buildResourceList(array $resources, array $options) {
+    $render = [
+      '#theme' => 'ckeditor-eresources',
+      '#resources' => $resources,
+      '#options' => $options,
+    ];
+    return $this->renderer->render($render);
   }
 
   /**

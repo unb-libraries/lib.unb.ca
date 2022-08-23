@@ -11,3 +11,12 @@ guides.legacy_redirect:
     _controller: '\Drupal\guides\Controller\GuidesController::legacyRedirect'
   requirements:
     _access: 'TRUE'
+guides.eresources_dialog:
+  path: '/admin/guides/eresources-dialog'
+  defaults:
+    _form: '\Drupal\guides\Form\EresourcesDialog'
+    _title: 'Add e-Resources List'
+  requirements:
+    _access: 'TRUE'
+  options:
+    _theme: ajax_base_page

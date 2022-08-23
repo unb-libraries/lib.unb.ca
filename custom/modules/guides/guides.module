@@ -11,12 +11,25 @@ use Drupal\user\Entity\User;
 use Drupal\editor\Entity\Editor;
 
 /**
+ * Implements hook_page_attachments().
+ */
+function guides_page_attachments(&$variables) {
+  $variables['#attached']['library'][] = 'guides/guides';
+}
+
+/**
  * Implements hook_theme().
  */
 function guides_theme($existing, $type, $theme, $path) {
   return [
     'ckeditor-wc-search' => [
       'variables' => [],
+    ],
+    'ckeditor-eresources' => [
+      'variables' => [
+        'resources' => NULL,
+        'options' => NULL,
+      ],
     ],
   ];
 }

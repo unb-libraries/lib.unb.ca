@@ -1,0 +1,5 @@
+guides:
+  version: VERSION
+  css:
+    theme:
+      css/guides.css: {}

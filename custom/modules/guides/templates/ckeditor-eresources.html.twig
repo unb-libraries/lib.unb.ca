@@ -1,0 +1,78 @@
+{% if options.searchbox %}
+{# TODO: pull dblist and dbnames for searching #}
+<!-- targeted WC databases search -->
+<form accept-charset="UTF-8" action="https://lib.unb.ca/worldcat-search-helper" method="post" class="alert alert-info" target="_blank">
+  <input type="hidden" name="scope" value="" /> <!-- searching worldwide; must pass empty variable -->
+  <input type="hidden" name="databaseList" value="{{ dblist }}" />
+  <div class="form-group mb-0">
+    <fieldset>
+      <div class="form-row mb-2 ml-1">
+        <legend class="custom-legend mb-1 mr-3">
+          <img class="wc-logo-left" src="/modules/custom/guides/img/wc-search-icon.png" alt="" /> Search targeted databases:
+        </legend>
+      </div>
+    </fieldset>
+    <div class="form-row">
+      <div class="col-md-5 mb-2">
+        <label class="sr-only" for="queryString_WCD">Search for:</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><i class="fas fa-search"></i></div>
+          </div>
+          <input class="form-control" id="queryString_WCD" name="queryString" placeholder="Enter search terms" type="search" required="">
+        </div>
+      </div>
+      <div class="col-md-5 mb-2 input-group flex-nowrap">
+        <label class="sr-only" for="searchIndex_WCD">Search index</label>
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-server"></i></span>
+        </div>
+        <select class="form-control" id="searchIndex_WCD" name="searchIndex" tabindex="-1">
+          <option value="kw">keyword</option>
+          <option value="ti">title</option>
+          <option value="au">author</option>
+          <option value="nu">call number</option>
+          <option value="tj">journal title</option>
+          <option value="su">subject</option>
+        </select>
+      </div>
+      <div class="col-md-2 mb-2">
+        <button class="btn btn-primary" id="search_WCD" title="Search" type="submit">GO</button>
+      </div>
+    </div>
+    <div class="p-2 small"><b>Databases searched:</b> {{ dbnames }}</div>
+  </div>
+</form>
+<!-- end WC search DBs -->
+{% endif %}
+
+{% set baseId = 'eresources-' ~ random() ~ '-' %}
+
+{% if options.headings %}
+<h3 class="h4">Key Resources</h3>
+{% endif %}
+
+<div>
+  <ul class="resource-list">
+{% for record in resources %}
+  {% if loop.index > options.keyresources %}
+  </ul>
+</div>
+<p class="mb-0">
+  <a class="additional-toggle d-inline-block" data-toggle="collapse" href="#{{ baseId }}-additional" role="button" aria-expanded="false" aria-controls="{{ baseId }}-additional">
+    <span class="text-collapsed">See Additional Resources</span>
+    <span class="text-expanded">Hide Additional Resources</span>
+  </a>
+</p>
+<div id="{{ baseId }}-additional" class="collapse">
+    {% if options.headings %}
+  <h3 class="h4">Additional Resources</h3>
+    {% endif %}
+  <ul class="resource-list">
+  {% endif %}
+    <li>
+    {# TODO: eresources record details #}
+    </li>
+{% endfor %}
+  </ul>
+</div>

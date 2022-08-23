@@ -1,4 +1,4 @@
-(function (CKEDITOR) {
+(function ($, Drupal, drupalSettings, CKEDITOR) {
 
   'use strict';
 
@@ -15,8 +15,23 @@
       });
       CKEDITOR.document.appendStyleText('.cke_button__eresources_label {display: inline;}');
 
-      editor.widgets.add('eresources', {
-        button: 'Add an e-Resources list',
+      editor.addCommand('eresources', {
+        exec: function (editor) {
+          var url = Drupal.url('admin/guides/eresources-dialog');
+          var existingValues = {};
+          var saveCallback = function (returnValues) {
+            console.log(returnValues);
+            editor.execCommand('eresources-widget');
+          };
+          var dialogSettings = {
+            title: 'e-Resources',
+            dialogClass: 'eresources-dialog'
+          };
+          Drupal.ckeditor.openDialog(editor, url, existingValues, saveCallback, dialogSettings);
+        }
+      });
+
+      editor.widgets.add('eresources-widget', {
         template: '<eresources keyresources="" noheadings="false" searchbox="false"></ereources>',
         allowedContent: 'eresources[keyresources,noheadings,searchbox]',
         requiredContent: 'eresources',
@@ -24,6 +39,7 @@
           return element.name == 'eresources';
         },
       });
+
     }
   });
-})(CKEDITOR);
+})(jQuery, Drupal, drupalSettings, CKEDITOR);
