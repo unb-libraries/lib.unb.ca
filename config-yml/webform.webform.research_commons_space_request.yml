@@ -324,7 +324,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: 'mfonzo@unb.ca,mbragdon@unb.ca'
+      to_mail: mfonzo@unb.ca
       to_options: {  }
       bcc_mail: ''
       bcc_options: {  }
