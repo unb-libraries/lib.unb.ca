@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-lg-3">
+    <h3>Detailed Guides</h3>
+    <h3>Related Guides</h3>
+    <h3>Related Categories</h3>
+  </div>
+  <div class="col">
+    <div class="resourceListings databases border border-dark rounded px-3 pt-3 mb-3">
+      <h3>Top Article &amp; Research Databases</h3>
+      <p class="topNote">Use article databases to find articles, reviews, book chapters, etc.</p>
+      {{ guide_category.databases.value|t }}
+    </div>
+    <div class="resourceListings reference border border-dark rounded px-3 pt-3 mb-3">
+      <h3>Top Reference Materials</h3>
+      <p class="topNote">Find dictionaries, encyclopedias, handbooks, and other materials</p>
+      {{ guide_category.references.value|t }}
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <h2>More Information</h2>
+  </div>
+</div>

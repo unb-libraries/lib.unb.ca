@@ -38,7 +38,7 @@ use Drupal\custom_entity\Entity\EntityCreatedTrait;
  *     "status" = "status",
  *   },
  *   links = {
- *     "canonical" = "/guide/category/{guide)_category}",
+ *     "canonical" = "/guide/category/{guide_category}",
  *     "add-form" = "/admin/guide/category/add",
  *     "edit-form" = "/admin/guide/category/{guide_category}/edit",
  *     "delete-form" = "/admin/guide/category/{guide_category}/delete",

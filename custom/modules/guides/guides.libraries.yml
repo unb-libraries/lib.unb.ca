@@ -3,3 +3,8 @@ guides:
   css:
     theme:
       css/guides.css: {}
+  js:
+    js/guides.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
