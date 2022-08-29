@@ -1,1 +1,76 @@
-<p>TBD</p>
+{% if guide.related_guide_categories is not empty or guide.related_guides is not empty %}
+<ul class="list-unstyled">
+  {% if guide.related_guides is not empty %}
+  <li>Related Guides:
+  {% for guide in guide.related_guides %}
+    <a href="{{ url('entity.guide.canonical', { 'guide': guide.entity.id() }) }}">{{ guide.entity.title.value }}</a>
+    {% if not loop.last %} &bull; {% endif %}
+  {% endfor %}
+  </li>
+  {% endif %}
+  {% if guide.related_guide_categories is not empty %}
+  <li>Related Categories:
+  {% for category in guide.related_guide_categories %}
+    <a href="{{ url('entity.guide_category.canonical', { 'guide_category': category.entity.id() }) }}">{{ category.entity.title.value }}</a>
+    {% if not loop.last %} &bull; {% endif %}
+  {% endfor %}
+  </li>
+  {% endif %}
+</ul>
+{% endif %}
+
+<div class="theme-dark tabs-accordion">
+  <ul class="nav nav-tabs guide-tabs pl-3" role="tablist">
+  {% set sections = guide.sections|filter(s => s.entity.field_hide_section.value == 0) %}
+  {% for section in sections %}
+    <li class="nav-item"><a role="tab" class="nav-link {% if loop.first %}active" aria-selected="true{% endif %}" href="#section-{{ section.entity.id() }}" data-toggle="tab">{{ section.entity.field_section_label.value }}</a></li>
+  {% endfor %}
+  </ul>
+  <div class="container">
+    <div class="guide-tabs-content row pt-3">
+      <div class="tab-content col-lg-8 col-xs-12">
+      {% for section in sections %}
+      {% set section_id = 'section-' ~ section.entity.id() %}
+        <div role="tabpanel" class="card tab-pane{% if loop.first %} active{% endif %}" id="{{ section_id }}">
+          <div class="card-header p-0" id="heading-section-{{ section_id }}">
+            <h2 class="h3 m-0">
+              <a aria-controls="collapse-section-{{ section_id }}" aria-expanded="false" class="link-no-icon nav-link p-2 collapsed" data-toggle="collapse" href="#collapse-section-{{ section_id }}" role="button">
+              {{ section.entity.field_section_label.value }}
+              </a>
+            </h2>
+          </div>
+          <div class="collapse" data-parent="#content" id="collapse-section-{{ section_id }}">
+            <div class="card-body">
+              <h2 class="visible-print-block sr-only">{{ section.entity.field_section_label.value }}</h2>
+              {{ section.entity.field_section_content.value|t }}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+      </div>
+      <div class="col-lg-4 col-xs-12 tab-pane">
+        <div class="border bg-light mb-3">
+          <h2 id="editors-toggle" class="h3 bg-dark card-header text-white m-0 px-2 pt-2 pb-1" data-toggle="collapse" data-target="#editors" aria-expanded="true" aria-controls="editors" role="button">
+            <i class="fa fa-question-circle mr-1"></i>More Information
+          </h2>
+          <div id="editors" class="collapse show p-2" aria-labelledby="editors-toggle">
+          {% set editors = guide.editors|filter(e => e.entity.field_display_editor.value == 1) %}
+          {% for editor in editors %}
+            {% set user = editor.entity.field_user.entity %}
+            <ul class="list-unstyled">
+              <li>{{ user.field_first_name.value }} {{ user.field_last_name.value }}</li>
+            </ul>
+          {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <p>Last modified on {{ guide.getChangedTime()|date }}</p>
+  <p>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ url('<current>') }}" target="_blank" class="btn btn-sm btn-facebook"><i class="fab fa-facebook-f"></i> Share</a></li>
+    <a href="https://twitter.com/share?url={{ url('<current>') }}&amp;text=UNB Libraries: {{ guide.title.value | url_encode }} Guide&amp;via=UNBLibraries&amp;hashtags=UNBLibraries" target="_blank" class="btn btn-sm btn-twitter"><i class="fab fa-twitter"></i> Tweet</a></li>
+  </p>
+</div>
