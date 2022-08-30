@@ -8,6 +8,8 @@ use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\custom_entity\Entity\EntityChangedTrait;
 use Drupal\custom_entity\Entity\EntityCreatedTrait;
+use Drupal\custom_entity\Entity\UserCreatedInterface;
+use Drupal\custom_entity\Entity\UserEditedInterface;
 
 /**
  * Defines a course link entity.
@@ -43,7 +45,7 @@ use Drupal\custom_entity\Entity\EntityCreatedTrait;
  *   field_ui_base_route = "entity.course_link.settings",
  * )
  */
-class CourseLink extends ContentEntityBase implements ContentEntityInterface {
+class CourseLink extends ContentEntityBase implements ContentEntityInterface, UserEditedInterface, UserCreatedInterface {
 
   use EntityChangedTrait;
   use EntityCreatedTrait;
@@ -167,6 +169,9 @@ class CourseLink extends ContentEntityBase implements ContentEntityInterface {
         'weight' => 0,
       ])
       ->setDisplayConfigurable('form', TRUE);
+
+    $fields[self::FIELD_CREATED] = static::getCreatedBaseFieldDefinition($entity_type);
+    $fields[self::FIELD_EDITED] = static::getEditedBaseFieldDefinition($entity_type);
 
     return $fields;
   }

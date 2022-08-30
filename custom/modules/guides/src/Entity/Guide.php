@@ -9,6 +9,8 @@ use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\custom_entity\Entity\EntityChangedTrait;
 use Drupal\custom_entity\Entity\EntityCreatedTrait;
+use Drupal\custom_entity\Entity\UserCreatedInterface;
+use Drupal\custom_entity\Entity\UserEditedInterface;
 
 /**
  * Defines a guide entity.
@@ -46,7 +48,7 @@ use Drupal\custom_entity\Entity\EntityCreatedTrait;
  *   field_ui_base_route = "entity.guide.settings",
  * )
  */
-class Guide extends ContentEntityBase implements ContentEntityInterface {
+class Guide extends ContentEntityBase implements ContentEntityInterface, UserEditedInterface, UserCreatedInterface {
 
   use EntityCreatedTrait;
   use EntityChangedTrait;
@@ -177,6 +179,9 @@ class Guide extends ContentEntityBase implements ContentEntityInterface {
         'type' => 'boolean_checkbox',
         'weight' => 10,
       ]);
+
+    $fields[self::FIELD_CREATED] = static::getCreatedBaseFieldDefinition($entity_type);
+    $fields[self::FIELD_EDITED] = static::getEditedBaseFieldDefinition($entity_type);
 
     return $fields;
   }
