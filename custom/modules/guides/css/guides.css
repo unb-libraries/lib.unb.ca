@@ -4,3 +4,32 @@
 .additional-toggle[aria-expanded=true] .text-collapsed {
   display: none;
 }
+
+.social-buttons .btn {
+  color: #fff;
+}
+
+.social-buttons .btn-twitter {
+  background-color: #55acee;
+}
+
+.social-buttons .btn-facebook {
+  background-color: #3b5998;
+}
+
+.social-buttons .btn-linkedin {
+  background-color: #007bb5;
+}
+
+.social-buttons .btn-researchgate {
+  background-color: #40ba9b;
+}
+
+.social-buttons .btn-orcid {
+  background-color: #447405;
+}
+
+.social-buttons .btn:hover, .social-buttons .btn:focus {
+  color: #fff;
+  opacity: 0.7;
+}
