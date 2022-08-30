@@ -22,6 +22,11 @@ function guides_page_attachments(&$variables) {
  */
 function guides_theme($existing, $type, $theme, $path) {
   return [
+    'categories' => [
+      'variables' => [
+        'categories' => NULL,
+      ],
+    ],
     'ckeditor-wc-search' => [
       'variables' => [],
     ],

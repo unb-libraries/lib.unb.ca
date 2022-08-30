@@ -11,6 +11,13 @@ guides.legacy_redirect:
     _controller: '\Drupal\guides\Controller\GuidesController::legacyRedirect'
   requirements:
     _access: 'TRUE'
+guides.categories:
+  path: '/guide'
+  defaults:
+    _controller: '\Drupal\guides\Controller\GuidesController::categories'
+    _title: 'Research Guides'
+  requirements:
+    _access: 'TRUE'
 guides.eresources_dialog:
   path: '/admin/guides/eresources-dialog'
   defaults:
