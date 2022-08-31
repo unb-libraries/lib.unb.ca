@@ -44,6 +44,9 @@ function guides_theme($existing, $type, $theme, $path) {
     ],
     'page_title__guide' => [
     ],
+    'views_exposed_form__research_guides' => [
+      'render element' => 'form',
+    ],
   ];
 }
 
