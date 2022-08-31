@@ -121,7 +121,7 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
       ->setRequired(FALSE)
       ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
       ->setSetting('target_type', 'guide_category')
-      ->setSetting('handler', 'default:user')
+      ->setSetting('handler', 'default')
       ->setDisplayOptions('form', [
         'type' => 'entity_autocomplete',
         'weight' => 0,
@@ -134,7 +134,7 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
       ->setRequired(FALSE)
       ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
       ->setSetting('target_type', 'user')
-      ->setSetting('handler', 'default')
+      ->setSetting('handler', 'default:user')
       ->setSetting('handler_settings', [
         'include_anonymous' => FALSE,
         'filter' => [
