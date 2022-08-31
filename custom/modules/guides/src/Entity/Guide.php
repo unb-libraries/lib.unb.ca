@@ -7,10 +7,12 @@ use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\ContentEntityBase;
+use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\custom_entity\Entity\EntityChangedTrait;
 use Drupal\custom_entity\Entity\EntityCreatedTrait;
 use Drupal\custom_entity\Entity\UserCreatedInterface;
 use Drupal\custom_entity\Entity\UserEditedInterface;
+use Drupal\Component\Utility\Html;
 
 /**
  * Defines a guide entity.
@@ -184,6 +186,42 @@ class Guide extends ContentEntityBase implements ContentEntityInterface, UserEdi
     $fields[self::FIELD_EDITED] = static::getEditedBaseFieldDefinition($entity_type);
 
     return $fields;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function postSave(EntityStorageInterface $storage, $update = TRUE) {
+    $linkStorage = $this->entityTypeManager()->getStorage('eresources_guide_link');
+
+    // Remove existing entries.
+    $query = $linkStorage->getQuery();
+    $ids = $query->condition('guide', $this->id())->execute();
+    if ($ids) {
+      $links = $linkStorage->loadMultiple($ids);
+      $linkStorage->delete($links);
+    }
+
+    foreach ($this->sections as $section) {
+      $text = $section->entity->field_section_content->value;
+      $document = Html::load($text);
+      $xpath = new \DOMXPath($document);
+
+      foreach ($xpath->query('//eresources') as $node) {
+        $ids = explode(',', $node->nodeValue);
+        foreach ($ids as $id) {
+          $linkData = [
+            'guide' => $this->id(),
+            'eresource' => $id,
+            'section' => $section->entity->id(),
+          ];
+          $link = $linkStorage->create($linkData);
+          $link->save();
+        }
+      }
+    }
+
+    parent::postSave($storage, $update);
   }
 
   /**
