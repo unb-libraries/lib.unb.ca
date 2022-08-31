@@ -1,0 +1,15 @@
+<div class="row">
+{% set percol = (categories|length / 3)|round(0, 'ceil') %}
+{% for col in categories|batch(percol) %}
+  <div class="col">
+    <ul>
+  {% for category in col %}
+      <li><a href="{{ path('entity.guide_category.canonical', {'guide_category': category.id()}) }}">{{ category.title.value }}</a></li>
+  {% endfor %}
+    </ul>
+  {% if loop.first %}
+    <span class="fas fa-search"></span> <a href="/guide/view-all">View All Research Guides</a>
+  {% endif %}
+  </div>
+{% endfor %}
+</div>
