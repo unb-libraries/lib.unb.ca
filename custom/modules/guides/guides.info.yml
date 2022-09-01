@@ -8,3 +8,4 @@ dependencies:
   - ckeditor
   - eresources
   - custom_entity
+  - lib_core
