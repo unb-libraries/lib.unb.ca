@@ -20,54 +20,76 @@
 </ul>
 {% endif %}
 
-<div class="theme-dark tabs-accordion">
-  <ul class="nav nav-tabs guide-tabs pl-3" role="tablist">
-  {% set sections = guide.sections|filter(s => s.entity.field_hide_section.value == 0) %}
-  {% for section in sections %}
-    <li class="nav-item"><a role="tab" class="nav-link {% if loop.first %}active" aria-selected="true{% endif %}" href="#section-{{ section.entity.id() }}" data-toggle="tab">{{ section.entity.field_section_label.value }}</a></li>
-  {% endfor %}
-  </ul>
-  <div class="container">
-    <div class="guide-tabs-content row pt-3">
-      <div class="tab-content col-lg-8 col-xs-12">
-      {% for section in sections %}
-      {% set section_id = 'section-' ~ section.entity.id() %}
-        <div role="tabpanel" class="card tab-pane{% if loop.first %} active{% endif %}" id="{{ section_id }}">
-          <div class="card-header p-0" id="heading-section-{{ section_id }}">
-            <h2 class="h3 m-0">
-              <a aria-controls="collapse-section-{{ section_id }}" aria-expanded="false" class="link-no-icon nav-link p-2 collapsed" data-toggle="collapse" href="#collapse-section-{{ section_id }}" role="button">
-              {{ section.entity.field_section_label.value }}
-              </a>
-            </h2>
-          </div>
-          <div class="collapse" data-parent="#content" id="collapse-section-{{ section_id }}">
-            <div class="card-body">
-              <h2 class="visible-print-block sr-only">{{ section.entity.field_section_label.value }}</h2>
-              {{ section.entity.field_section_content.value|t }}
-            </div>
-          </div>
-        </div>
-      {% endfor %}
-      </div>
-      <div class="col-lg-4 col-xs-12 tab-pane">
-        <div class="border bg-light mb-3">
-          <h2 id="editors-toggle" class="h3 bg-dark card-header text-white m-0 px-2 pt-2 pb-1" data-toggle="collapse" data-target="#editors" aria-expanded="true" aria-controls="editors" role="button">
-            <i class="fa fa-question-circle mr-1"></i>More Information
-          </h2>
-          <div id="editors" class="collapse show p-2" aria-labelledby="editors-toggle">
-          {% set editors = guide.editors|filter(e => e.entity.field_display_editor.value == 1) %}
-          {% for editor in editors %}
-            {% set user = editor.entity.field_user.entity %}
-            <ul class="list-unstyled">
-              <li>{{ user.field_first_name.value }} {{ user.field_last_name.value }}</li>
+<div class="Accordion d-flex flex-column flex-lg-row flex-wrap">
+  <div class="flex-fill" id="guide">
+    <div class="card">
+      <div class="bg-black card-header pb-1 pt-2 px-0 py-md-1">
+        <h2 class="sr-only">Guide Sections</h2>
+        <nav class="navbar navbar-expand-md">
+          {% set sections = guide.sections|filter(s => s.entity.field_hide_section.value == 0) %}
+          {% set first_section = sections|first %}
+          <h3 class="d-block d-md-none h4 px-2 py-1" id="category-label">
+            {{ first_section.entity.field_section_label.value }}
+          </h3>
+          <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+          class="navbar-toggler text-white" data-target="#navbarNav" data-toggle="collapse" type="button">
+            Switch section
+          </button>
+
+          <div class="collapse mx-3 mx-md-0 navbar-collapse" id="navbarNav">
+            <ul class="align-items-lg-end d-flex flex-grow-1 flex-wrap justify-content-between navbar-nav">
+              {% for section in sections %}
+                {% set section_id = section.entity.id() %}
+                <li class="nav-item">
+                  <button aria-controls="panelSection{{ section_id }}"
+                  {% if loop.first %} aria-expanded="true"{% else %} aria-expanded="false" tabindex="-1"{% endif %}
+                  class="Accordion-trigger p-2" id="btnSection{{ section_id }}" type="button">
+                    {{ section.entity.field_section_label.value }}
+                  </button>
+                </li>
+              {% endfor %}
             </ul>
-          {% endfor %}
+          </div>
+        </nav>
+      </div>
+
+      <div class="bg-light border border-black card-body d-flex flex-column flex-lg-row px-3 py-0">
+        {% for section in sections %}
+        {% set section_id = section.entity.id() %}
+          <div aria-labelledby="btnSection{{ section_id }}" class="Accordion-panel flex-grow-1"
+          id="panelSection{{ section_id }}" role="region" {% if not loop.first %} hidden=""{% endif %}>
+            {{ section.entity.field_section_content.value|t }}
+          </div>
+        {% endfor %}
+
+        <div id="moreInfo" class="my-3">
+          <h2 class="header-icons m-0">
+            <button aria-controls="editors" aria-expanded="true"
+            class="bg-dark border-0 card-header h4 m-0 p-2 rounded-0"
+            data-target="#editors" data-toggle="collapse" id="editors-toggle" type="button">
+              <i class="fa fa-question-circle fa-sm mr-1"></i>More Information
+            </button>
+          </h2>
+          <div class="border border-dark">
+            <div aria-labelledby="editors-toggle" class="collapse show" id="editors">
+              <div class="p-2">
+                <p><del>Sample editor content here</del></p>
+                {% set editors = guide.editors|filter(e => e.entity.field_display_editor.value == 1) %}
+                {% for editor in editors %}
+                  {% set user = editor.entity.field_user.entity %}
+                  <ul class="list-unstyled">
+                    <li>{{ user.field_first_name.value }} {{ user.field_last_name.value }}</li>
+                  </ul>
+                {% endfor %}
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 <div>
   <p>Last modified on {{ guide.getChangedTime()|date }}</p>
   <p class="social-buttons">
