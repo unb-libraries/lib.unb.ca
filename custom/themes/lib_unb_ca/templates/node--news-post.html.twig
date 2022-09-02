@@ -81,13 +81,19 @@
       </h2>
     {% endif %}
     {{ title_suffix }}
+    {% if old_post %}
+      <p class="alert alert-warning">
+        <span class="fas fa-history" aria-hidden="true"></span>
+        <b>{% trans %}This news post is more than one year old. Some information may have changed.{% endtrans %}</b>
+      </p>
+    {% endif %}
     {% if display_submitted %}
       <div {{ author_attributes.addClass('news-metadata') }}>
         {% block submitted %}
             <div class="attribution mb-2 mb-md-1">
                 {% trans %}Posted on {{ formatted_date }} by {{ author }}{% endtrans %}
                 {% if stickied %}
-                    <span class="badge badge-stickied"><i class="fas fa-thumbtack"></i></span>
+                    <span class="badge badge-stickied"><span class="fas fa-thumbtack" aria-hidden="true"></span></span>
                 {% endif %}
             </div>
         {% endblock %}
