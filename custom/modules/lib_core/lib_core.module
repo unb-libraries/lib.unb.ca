@@ -8,6 +8,7 @@
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Ajax\InvokeCommand;
+use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
@@ -265,10 +266,18 @@ function lib_core_page_attachments_alter(array &$attachments) {
  */
 function lib_core_preprocess_node__news_post(&$variables) {
   $node = $variables['node'];
+  $node_authoredon_date = new DrupalDateTime('@' . $node->getCreatedTime());
+  $variables['formatted_date'] = $node_authoredon_date->format('l, F dS, Y \a\t h:ia');
 
-  $node_authoredon = $node->getCreatedTime();
-  $formatted_date = \Drupal::service('date.formatter')->format($node_authoredon, 'metadata_date');
-  $variables['formatted_date'] = $formatted_date;
+  $todays_date = new DrupalDateTime();
+  $todays_date->setTimezone(timezone_open(date_default_timezone_get()));
+  $interval = $node_authoredon_date->diff($todays_date);
+  // Old post == 1+ years old.
+  if ($interval->y > 0) {
+    $variables['old_post'] = TRUE;
+  } else {
+    $variables['old_post'] = FALSE;
+  }
 
   $fname = $node
     ->getOwner()
