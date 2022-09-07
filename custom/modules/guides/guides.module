@@ -86,7 +86,7 @@ function template_preprocess_guide(array &$variables) {
 
       $parsedFeed = $parser->execute();
 
-      $title = $feed->field_feed_title->getString() ?? $parsedFeed->getTitle();
+      $title = $feed->field_feed_title->getString() ?: $parsedFeed->getTitle();
       $max = $feed->field_feed_items->getString();
 
       $count = 1;
