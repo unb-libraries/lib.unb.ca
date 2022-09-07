@@ -17,7 +17,7 @@ default_value:
     value: 10
 default_value_callback: ''
 settings:
-  min: null
+  min: 1
   max: null
   prefix: ''
   suffix: ''
