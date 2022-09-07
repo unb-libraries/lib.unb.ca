@@ -618,7 +618,7 @@ display:
         filter_groups: false
       display_description: ''
       display_extenders: {  }
-      path: guide/view-all
+      path: guides/view-all
       menu:
         type: 'default tab'
         title: 'All Guides'
@@ -739,7 +739,7 @@ display:
         filter_groups: false
       display_description: ''
       display_extenders: {  }
-      path: guide/view-all/by-editor
+      path: guides/view-all/by-editor
       menu:
         type: tab
         title: 'By Editor'
@@ -968,7 +968,7 @@ display:
           required: true
       display_description: ''
       display_extenders: {  }
-      path: guide/view-all/by-subject
+      path: guides/view-all/by-subject
       menu:
         type: tab
         title: 'By Subject'

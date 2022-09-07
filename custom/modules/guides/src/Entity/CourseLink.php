@@ -37,10 +37,10 @@ use Drupal\custom_entity\Entity\UserEditedInterface;
  *     "id" = "id"
  *   },
  *   links = {
- *     "canonical" = "/admin/guide/{guide}/courselink/{courselink}",
- *     "add-form" = "/admin/guide/{guide}/courselink/add",
- *     "edit-form" = "/admin/guide/{guide}/courselink/{courselink}/edit",
- *     "delete-form" = "/admin/guide/{guide}/courselink/{courselink}/delete",
+ *     "canonical" = "/admin/guides/{guide}/courselink/{courselink}",
+ *     "add-form" = "/admin/guides/{guide}/courselink/add",
+ *     "edit-form" = "/admin/guides/{guide}/courselink/{courselink}/edit",
+ *     "delete-form" = "/admin/guides/{guide}/courselink/{courselink}/delete",
  *   },
  *   field_ui_base_route = "entity.course_link.settings",
  * )

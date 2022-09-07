@@ -42,10 +42,10 @@ use Drupal\Component\Utility\Html;
  *     "status" = "status",
  *   },
  *   links = {
- *     "canonical" = "/guide/{guide}",
- *     "add-form" = "/admin/guide/add",
- *     "edit-form" = "/admin/guide/{guide}/edit",
- *     "delete-form" = "/admin/guide/{guide}/delete",
+ *     "canonical" = "/guides/{guide}",
+ *     "add-form" = "/admin/guides/add",
+ *     "edit-form" = "/admin/guides/{guide}/edit",
+ *     "delete-form" = "/admin/guides/{guide}/delete",
  *   },
  *   field_ui_base_route = "entity.guide.settings",
  * )

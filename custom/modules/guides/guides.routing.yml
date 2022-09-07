@@ -6,13 +6,13 @@ guides.settings:
   requirements:
     _permission: 'administer site configuration'
 guides.legacy_redirect:
-  path: '/guide/legacy/{id}'
+  path: '/guides/legacy/{id}'
   defaults:
     _controller: '\Drupal\guides\Controller\GuidesController::legacyRedirect'
   requirements:
     _access: 'TRUE'
 guides.categories:
-  path: '/guide'
+  path: '/guides'
   defaults:
     _controller: '\Drupal\guides\Controller\GuidesController::categories'
     _title: 'Research Guides'

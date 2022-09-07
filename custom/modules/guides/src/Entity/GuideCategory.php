@@ -40,10 +40,10 @@ use Drupal\custom_entity\Entity\UserEditedInterface;
  *     "status" = "status",
  *   },
  *   links = {
- *     "canonical" = "/guide/category/{guide_category}",
- *     "add-form" = "/admin/guide/category/add",
- *     "edit-form" = "/admin/guide/category/{guide_category}/edit",
- *     "delete-form" = "/admin/guide/category/{guide_category}/delete",
+ *     "canonical" = "/guides/category/{guide_category}",
+ *     "add-form" = "/admin/guides/category/add",
+ *     "edit-form" = "/admin/guides/category/{guide_category}/edit",
+ *     "delete-form" = "/admin/guides/category/{guide_category}/delete",
  *   },
  *   field_ui_base_route = "entity.guide_category.settings",
  * )
