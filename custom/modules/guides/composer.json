@@ -1,0 +1,11 @@
+{
+  "name": "unb-libraries/guides",
+  "type": "drupal-module",
+  "description": "Drupal module to administer \"Guides\" at the University of New Brunswick.",
+  "keywords": ["Drupal"],
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "require": {
+    "nicolus/picofeed": "0.1.43"
+  }
+}

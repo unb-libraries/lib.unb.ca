@@ -9,6 +9,7 @@ use Drupal\Core\Render\Element;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\user\Entity\User;
 use Drupal\editor\Entity\Editor;
+use PicoFeed\Reader\Reader;
 
 /**
  * Implements hook_page_attachments().
@@ -61,7 +62,51 @@ function guides_theme($existing, $type, $theme, $path) {
  *   - attributes: HTML attributes for the containing element.
  */
 function template_preprocess_guide(array &$variables) {
-  $variables['guide'] = $variables['elements']['#guide'];
+  $guide = $variables['guide'] = $variables['elements']['#guide'];
+
+  // Fetch feed data.
+  foreach ($guide->feeds as $feedItem) {
+    $feed = $feedItem->entity;
+    $enabled = $feed->field_feed_enabled->getString();
+    $url = $feed->field_feed_url->getString();
+
+    if (!$enabled || empty($url)) {
+      continue;
+    }
+
+    try {
+      $reader = new Reader();
+      $resource = $reader->download($url);
+
+      $parser = $reader->getParser(
+        $resource->getUrl(),
+        $resource->getContent(),
+        $resource->getEncoding()
+      );
+
+      $parsedFeed = $parser->execute();
+
+      $title = $feed->field_feed_title->getString() ?? $parsedFeed->getTitle();
+      $max = $feed->field_feed_items->getString();
+
+      $count = 1;
+      $items = [];
+      foreach ($parsedFeed->items as $item) {
+        $items[] = ['title' => $item->getTitle(), 'url' => $item->getUrl()];
+        if ($count == $max) {
+          break;
+        }
+        $count++;
+      }
+      $variables['feeds'][] = [
+        'title' => $title,
+        'items' => $items,
+      ];
+    }
+    catch (Exception $e) {
+      \Drupal::logger('guides_core')->error("Unable to parse feed: $url $e");
+    }
+  }
 }
 
 /**
