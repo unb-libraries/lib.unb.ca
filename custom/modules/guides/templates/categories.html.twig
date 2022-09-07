@@ -8,7 +8,7 @@
   {% endfor %}
     </ul>
   {% if loop.first %}
-    <span class="fas fa-search"></span> <a href="/guide/view-all">View All Research Guides</a>
+    <span class="fas fa-search"></span> <a href="{{ path('view.research_guides.all') }}">View All Research Guides</a>
   {% endif %}
   </div>
 {% endfor %}
