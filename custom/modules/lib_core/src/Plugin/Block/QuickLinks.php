@@ -191,7 +191,6 @@ class QuickLinks extends BlockBase {
         '#items' => [
           'covid_button' => $misc_btn,
           'book_button' => $booking_btn,
-          'covid_button_mobile' => $covid_btn_mobile,
         ],
       ],
     ];
