@@ -1,22 +1,12 @@
 {{ attach_library('lib_core/accessible-accordion') }}
-{% if guide.related_guide_categories is not empty or guide.related_guides is not empty %}
+{% if guide.related_guides is not empty %}
 <ul class="list-unstyled">
-  {% if guide.related_guides is not empty %}
   <li>Related Guides:
   {% for guide in guide.related_guides %}
-    <a href="{{ url('entity.guide.canonical', { 'guide': guide.entity.id() }) }}">{{ guide.entity.title.value }}</a>
+    <a href="{{ url('entity.guide.canonical', { 'guide': guide.entity.id() }) }}">{{ guide.entity.label }}</a>
     {% if not loop.last %} &bull; {% endif %}
   {% endfor %}
   </li>
-  {% endif %}
-  {% if guide.related_guide_categories is not empty %}
-  <li>Related Categories:
-  {% for category in guide.related_guide_categories %}
-    <a href="{{ url('entity.guide_category.canonical', { 'guide_category': category.entity.id() }) }}">{{ category.entity.title.value }}</a>
-    {% if not loop.last %} &bull; {% endif %}
-  {% endfor %}
-  </li>
-  {% endif %}
 </ul>
 {% endif %}
 
