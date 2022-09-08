@@ -81,6 +81,7 @@
                     <li>{{ user.field_first_name.value }} {{ user.field_last_name.value }}</li>
                   </ul>
                 {% endfor %}
+                {% set feeds = guide.getFeeds %}
                 {% if feeds is not empty %}
                 <hr class="border-secondary py-2 w-75">
                 <div id="guides-feeds" class="mx-3 mb-3">

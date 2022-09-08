@@ -13,6 +13,7 @@ use Drupal\custom_entity\Entity\EntityCreatedTrait;
 use Drupal\custom_entity\Entity\UserCreatedInterface;
 use Drupal\custom_entity\Entity\UserEditedInterface;
 use Drupal\Component\Utility\Html;
+use PicoFeed\Reader\Reader;
 
 /**
  * Defines a guide entity.
@@ -234,6 +235,58 @@ class Guide extends ContentEntityBase implements ContentEntityInterface, UserEdi
    */
   public function label() {
     return $this->get('title')->value;
+  }
+
+  /**
+   * Fetch the list of feed titles and items.
+   */
+  public function getFeeds() {
+    $feeds = [];
+
+    foreach ($this->feeds as $feedItem) {
+      $feed = $feedItem->entity;
+      $enabled = $feed->field_feed_enabled->getString();
+      $url = $feed->field_feed_url->getString();
+
+      if (!$enabled || empty($url)) {
+        continue;
+      }
+
+      try {
+        $reader = new Reader();
+        $resource = $reader->download($url);
+
+        $parser = $reader->getParser(
+          $resource->getUrl(),
+          $resource->getContent(),
+          $resource->getEncoding()
+        );
+
+        $parsedFeed = $parser->execute();
+
+        $title = $feed->field_feed_title->getString() ?: $parsedFeed->getTitle();
+        $max = $feed->field_feed_items->getString();
+
+        $count = 1;
+        $items = [];
+        foreach ($parsedFeed->items as $item) {
+          $items[] = ['title' => $item->getTitle(), 'url' => $item->getUrl()];
+          if ($count == $max) {
+            break;
+          }
+          $count++;
+        }
+        $feeds[] = [
+          'title' => $title,
+          'items' => $items,
+        ];
+      }
+      catch (Exception $e) {
+        \Drupal::logger('guides')->error("Unable to parse feed: $url $e");
+      }
+    }
+
+    return $feeds;
   }
 
 }
