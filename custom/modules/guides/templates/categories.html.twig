@@ -4,7 +4,7 @@
   <div class="col">
     <ul>
   {% for category in col %}
-      <li><a href="{{ path('entity.guide_category.canonical', {'guide_category': category.id()}) }}">{{ category.title.value }}</a></li>
+      <li><a href="{{ path('entity.guide_category.canonical', {'guide_category': category.id()}) }}">{{ category.label }}</a></li>
   {% endfor %}
     </ul>
   {% if loop.first %}
