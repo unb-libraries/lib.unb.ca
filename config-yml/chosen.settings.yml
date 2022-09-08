@@ -1,6 +1,6 @@
 _core:
   default_config_hash: YWbqKPHA3djohSgnBRKhK0NUjnO1dL1XmIo3yBw3oFo
-minimum_single: 1
+minimum_single: 7
 minimum_multiple: 6
 disable_search_threshold: 7
 minimum_width: 0
