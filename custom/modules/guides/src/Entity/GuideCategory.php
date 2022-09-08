@@ -164,4 +164,33 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
     return $fields;
   }
 
+  /**
+   * Get a list of guides that have marked this entity as their category.
+   */
+  public function getDetailedGuides() {
+    $storage = $this->entityTypeManager()->getStorage('guide');
+    $query = $storage->getQuery();
+    $ids = $query->condition('guide_categories', $this->id())->execute();
+
+    if (!empty($ids)) {
+      return $storage->loadMultiple($ids);
+    }
+
+    return [];
+  }
+
+  /**
+   * Get a list of guides that have marked this entity as a related category.
+   */
+  public function getRelatedGuides() {
+    $storage = $this->entityTypeManager()->getStorage('guide');
+    $query = $storage->getQuery();
+    $ids = $query->condition('related_guide_categories', $this->id())->execute();
+
+    if (!empty($ids)) {
+      return $storage->loadMultiple($ids);
+    }
+    return [];
+  }
+
 }

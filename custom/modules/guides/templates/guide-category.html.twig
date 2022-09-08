@@ -1,8 +1,31 @@
 <div class="row">
   <div class="col-lg-3">
+    {% set detailed_guides = guide_category.getDetailedGuides %}
+    {% if detailed_guides is not empty %}
     <h3>Detailed Guides</h3>
+    <ul>
+      {% for guide in detailed_guides %}
+      <li><a href="{{ url('entity.guide.canonical', {'guide': guide.id()}) }}">{{ guide.label }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% set related_guides = guide_category.getRelatedGuides %}
+    {% if related_guides is not empty %}
     <h3>Related Guides</h3>
+    <ul>
+      {% for guide in related_guides %}
+      <li><a href="{{ url('entity.guide.canonical', {'guide': guide.id()}) }}">{{ guide.label }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% if guide_category.related_guide_categories is not empty %}
     <h3>Related Categories</h3>
+    <ul>
+      {% for category in guide_category.related_guide_categories %}
+      <li><a href="{{ url('entity.guide_category.canonical', {'guide_category': category.entity.id()}) }}">{{ category.entity.label }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
   </div>
   <div class="col">
     <div class="resourceListings databases border border-dark rounded px-3 pt-3 mb-3">
