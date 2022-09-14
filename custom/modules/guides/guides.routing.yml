@@ -27,3 +27,10 @@ guides.eresources_dialog:
     _access: 'TRUE'
   options:
     _theme: ajax_base_page
+guides.clone:
+  path: '/admin/guides/clone'
+  defaults:
+    _form: '\Drupal\guides\Form\GuideCloningForm'
+    _title: 'Clone a guide'
+  requirements:
+    _permission: 'create guide entities'
