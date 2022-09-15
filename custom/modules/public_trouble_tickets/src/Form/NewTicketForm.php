@@ -142,6 +142,7 @@ Provide as much information as possible. Please DO NOT include any personal info
       '#value' => $this->t('Submit Ticket'),
     ];
 
+    $form['#cache']['contexts'] = ['url.query_args'];
     return $form;
   }
 
