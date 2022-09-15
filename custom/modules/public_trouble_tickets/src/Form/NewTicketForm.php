@@ -25,6 +25,7 @@ class NewTicketForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
+    $query = $this->getRequest()->query;
     $fogbugz = \Drupal::service('fogbugz_api.manager');
     $alerts = $fogbugz->getActiveAlerts();
 
@@ -81,6 +82,7 @@ class NewTicketForm extends FormBase {
       '#title' => $this->t('Name'),
       '#required' => TRUE,
       '#weight' => 0,
+      '#default_value' => $query->get('name') ?? NULL,
     ];
     $form['wrapper']['personal']['email'] = [
       '#type' => 'webform_email_multiple',
@@ -88,6 +90,7 @@ class NewTicketForm extends FormBase {
       '#required' => TRUE,
       '#cardinality' => 3,
       '#weight' => 0,
+      '#default_value' => $query->get('email') ?? NULL,
     ];
 
     $form['wrapper']['eresource'] = [
@@ -115,6 +118,7 @@ class NewTicketForm extends FormBase {
       ],
       '#required' => TRUE,
       '#weight' => 0,
+      '#default_value' => $query->get('nature') ?? NULL,
     ];
 
     $form['wrapper']['eresource']['details'] = [
