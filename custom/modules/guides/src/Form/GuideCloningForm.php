@@ -65,11 +65,10 @@ Course Linking is not cloned, as it is unique, but guide metadata is, so you sho
 
     $form['actions'] = [
       '#type' => 'actions',
-    ];
-
-    $form['actions']['submit'] = [
-      '#type' => 'submit',
-      '#value' => $this->t('Create Clone'),
+      'submit' => [
+        '#type' => 'submit',
+        '#value' => $this->t('Create Clone'),
+      ],
     ];
 
     return $form;
