@@ -1,0 +1,11 @@
+<h2>Simplified Google Analytics Page Views</h2>
+<div class="alert alert-info" role="alert">
+  <p><i class="fa fa-info-circle" aria-hidden="true"></i> This page provides basic <a href="https://www.google.ca/search?q=google+analytics+page+view">page view stats</a> tracked through Google Analytics for guides. More detailed stats are available upon request to <a href="mailto:jmackenz@unb.ca">James MacKenzie</a>.</p>
+  <p>Stats are available for guides and category pages for which you are an editor, as well as your profile page.</p>
+  {% if object_type == 'guide' %}
+  <p>Guide stats will show the tab name where possible, i.e. deleted tabs still have stats but no longer have names. Each tab is considered a separate page with respect to views. The default start tab for the guide will appear first but it may also appear again using its tab ID. This occurs when patrons navigate back to the home tab after visiting others tabs.</p>
+  {% endif %}
+</div>
+{{ stats }}
+<h2>Custom Date Range</h2>
+{{ form }}

@@ -6,6 +6,7 @@
   "license": "MIT",
   "minimum-stability": "dev",
   "require": {
-    "nicolus/picofeed": "0.1.43"
+    "nicolus/picofeed": "0.1.43",
+    "unb-libraries/gapi": "dev-9.x-1.x"
   }
 }

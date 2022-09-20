@@ -43,6 +43,13 @@ function guides_theme($existing, $type, $theme, $path) {
     'guide' => [
       'render element' => 'elements',
     ],
+    'guides_stats' => [
+      'variables' => [
+        'object_type' => NULL,
+        'stats' => NULL,
+        'form' => NULL,
+      ],
+    ],
     'page_title__guide' => [
     ],
     'views_exposed_form__research_guides' => [

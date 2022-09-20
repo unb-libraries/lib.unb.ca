@@ -34,3 +34,24 @@ guides.clone:
     _title: 'Clone a guide'
   requirements:
     _permission: 'create guide entities'
+guides.guide_stats:
+  path: '/guides/{guide}/stats'
+  defaults:
+    _controller: '\Drupal\guides\Controller\GuidesStatsController::guideStats'
+    _title: 'Guide Statistics'
+  requirements:
+    _permission: 'create guide entities'
+guides.category_stats:
+  path: '/guides/category/{category}/stats'
+  defaults:
+    _controller: '\Drupal\guides\Controller\GuidesStatsController::categoryStats'
+    _title: 'Category Statistics'
+  requirements:
+    _permission: 'create guide entities'
+guides.user_stats:
+  path: '/user/{user}/stats'
+  defaults:
+    _controller: '\Drupal\guides\Controller\GuidesStatsController::userStats'
+    _title: 'User Statistics'
+  requirements:
+    _permission: 'create guide entities'

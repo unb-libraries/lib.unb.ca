@@ -9,3 +9,4 @@ dependencies:
   - eresources
   - custom_entity
   - lib_core
+  - gapi
