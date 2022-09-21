@@ -4,13 +4,40 @@ namespace Drupal\guides\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\guides\Controller\GuidesStatsController;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\DependencyInjection\ClassResolverInterface;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Generate CSV stats data.
  */
 class StatsForm extends FormBase {
+
+  /**
+   * Class Resolver service.
+   *
+   * @var \Drupal\Core\DependencyInjection\ClassResolverInterface
+   */
+  protected $classResolver;
+
+  /**
+   * Class constructor.
+   *
+   * @param \Drupal\Core\DependencyInjection\ClassResolverInterface $classResolver
+   *   The class resolver service.
+   */
+  public function __construct(ClassResolverInterface $classResolver) {
+    $this->classResolver = $classResolver;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('class_resolver')
+    );
+  }
 
   /**
    * {@inheritdoc}
@@ -64,7 +91,7 @@ class StatsForm extends FormBase {
       $form_state->getValue('end_date'),
     ];
     $dimensions = ['ga:pagePath', 'ga:yearMonth'];
-    $controller = GuidesStatsController::create(\Drupal::getContainer());
+    $controller = $this->classResolver->getInstanceFromDefinition('\Drupal\guides\Controller\GuidesStatsController');
     $route = $this->getRouteMatch();
 
     $params = $route->getParameters()->all();
