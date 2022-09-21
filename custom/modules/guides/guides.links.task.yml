@@ -1,0 +1,10 @@
+guides.guide_stats_tab:
+  route_name: guides.guide_stats
+  base_route: entity.guide.canonical
+  title: 'Stats'
+  weight: 1000
+guides.category_stats_tab:
+  title: 'Stats'
+  route_name: guides.category_stats
+  base_route: entity.category.canonical
+  weight: 1000
