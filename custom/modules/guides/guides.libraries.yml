@@ -8,3 +8,12 @@ guides:
   dependencies:
     - core/jquery
     - core/drupal
+
+eresources:
+  version: VERSION
+  js:
+    js/eresources.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once

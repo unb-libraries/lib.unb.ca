@@ -92,8 +92,8 @@ class FilterCKEditorEresources extends FilterBase implements ContainerFactoryPlu
 
             $keyresources = $node->getAttribute('keyresources');
             $options['keyresources'] = (is_numeric($keyresources) ? $keyresources : 999);
-            $options['headings'] = $node->getAttribute('noheadings') == 'true' ? FALSE : TRUE;
-            $options['searchbox'] = $node->getAttribute('searchbox') == 'true' ? TRUE : FALSE;
+            $options['headings'] = $node->getAttribute('noheadings') ? FALSE : TRUE;
+            $options['searchbox'] = $node->getAttribute('searchbox') ? TRUE : FALSE;
 
             $listHtml = HTML::load($this->buildResourceList($resources, $options));
             $list = $document->importNode($listHtml->documentElement, TRUE);
