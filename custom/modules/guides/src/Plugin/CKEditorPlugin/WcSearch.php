@@ -64,7 +64,9 @@ class WcSearch extends CKEditorPluginBase implements CKEditorPluginCssInterface 
    * {@inheritdoc}
    */
   public function getCssFiles(Editor $editor) {
-    return [];
+    return [
+      drupal_get_path('module', 'guides') . '/css/ckeditor-wcsearch.css',
+    ];
   }
 
 }

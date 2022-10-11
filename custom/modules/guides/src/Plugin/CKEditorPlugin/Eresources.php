@@ -64,7 +64,9 @@ class Eresources extends CKEditorPluginBase implements CKEditorPluginCssInterfac
    * {@inheritdoc}
    */
   public function getCssFiles(Editor $editor) {
-    return [];
+    return [
+      drupal_get_path('module', 'guides') . '/css/ckeditor-eresources.css',
+    ];
   }
 
 }

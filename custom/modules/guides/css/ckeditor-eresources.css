@@ -1,0 +1,18 @@
+eresources {
+  margin: 1em;
+  border: 2px solid #4C9ED9;
+  display: block;
+  border-radius: 8px;
+  padding: 1em;
+}
+
+eresources::before {
+  content: "Double-click to EDIT";
+  position: absolute;
+  top: 0;
+  right: 1em;
+  background: #4C9ED9;
+  padding: 2px 4px;
+  font-weight: bold;
+  color: white;
+}
