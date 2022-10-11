@@ -79,10 +79,15 @@ class EresourcesDialog extends FormBase {
 
     $form['eresources_selector']['eresources_search'] = [
       '#type' => 'select',
+      '#size' => 5,
       '#title' => $this->t('e-Resources'),
       '#prefix' => '<div id="record-select">',
       '#suffix' => '</div>',
       '#options' => $options,
+      '#attributes' => [
+        'class' => ['custom-select'],
+        'style' => ['width:100%;'],
+      ],
     ];
 
     $form['eresources_selector']['eresources_add'] = [
