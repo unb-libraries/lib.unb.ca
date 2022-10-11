@@ -47,6 +47,31 @@
               }
               serializeSelections();
             });
+
+            var select = $('select[name="eresources_search"]');
+            select.children('option').each(function() {
+              if (this.text.match('; KB]')) {
+                this.style.background = '#f9b3e1';
+              }
+              else {
+                this.style.background = '#d3e4ff';
+              }
+            });
+            $(once('eresources-search', '#record-select', context)).each(function() {
+              var filter = $('<input placeholder="Filter list..." type="text" style="width:100%; margin-bottom: 7px;">');
+              filter.insertBefore(select);
+
+              filter.on('keyup', function() {
+                var regex = new RegExp($(this).val(), "gi");
+                select.children().each(function() {
+                  if (this.text.match(regex) !== null) {
+                    $(this).show();
+                  } else {
+                    $(this).hide();
+                  }
+                });
+              });
+            });
         }
     };
 })(jQuery, Drupal, once);
