@@ -1,7 +1,7 @@
-const reservesBase = 'lib.unb.ca/reserves/index.php'
-describe('Reserves', {baseUrl: reservesBase, groups: ['core','reserves']}, () => {
+const url = 'https://lib.unb.ca/reserves/index.php'
+describe('Reserves', {baseUrl: url, groups: ['core','reserves']}, () => {
 
-  context('Main page', {baseUrl: reservesBase}, () => {
+  context('Main page', {baseUrl: url}, () => {
     beforeEach(() => {
       cy.on('uncaught:exception', () => {
         return false;
@@ -12,14 +12,14 @@ describe('Reserves', {baseUrl: reservesBase, groups: ['core','reserves']}, () =>
       cy.visit('/')
       cy.get('form#searchReserves').within(() => {
         cy.get('#keywords')
-          .type('arts1000')
+            .type('arts1000')
         cy.get('#semester')
-          .select(0)
+            .select(0)
       }).submit()
       cy.url()
-        .should('contain', 'arts1000')
+          .should('contain', 'arts1000')
       cy.get('#quicksearch-results tr')
-        .should('have.lengthOf.at.least', 2)
+          .should('have.lengthOf.at.least', 2)
     });
   })
 
@@ -27,10 +27,10 @@ describe('Reserves', {baseUrl: reservesBase, groups: ['core','reserves']}, () =>
     specify('3+ readings should be listed under 2012/FY ARTS*1000*FR13Y', () => {
       cy.visit('/')
       cy.get('.heading-container')
-        .first()
-        .should('be.visible')
+          .first()
+          .should('be.visible')
       cy.get('.recordRow')
-        .should('have.lengthOf.at.least', 3)
+          .should('have.lengthOf.at.least', 3)
     });
   })
 
@@ -38,9 +38,9 @@ describe('Reserves', {baseUrl: reservesBase, groups: ['core','reserves']}, () =>
     specify('"The Arts 1000 Reader" should be available', () => {
       cy.visit('/')
       cy.get('.itemPhysical .availability-where i')
-        .should('be.empty')
+          .should('be.empty')
       cy.get('.itemPhysical .availability-where')
-        .should('not.contain.text', 'No record found')
+          .should('not.contain.text', 'No record found')
     });
 
   })
