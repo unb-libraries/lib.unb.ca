@@ -44,6 +44,18 @@ spec:
                     secretKeyRef:
                       name: lib-unb-ca-cypress
                       key: file_name
+                -
+                  name: DOCDEL_USER
+                  valueFrom:
+                    secretKeyRef:
+                      name: cypress
+                      key: docdel_user
+                -
+                  name: DOCDEL_PASS
+                  valueFrom:
+                    secretKeyRef:
+                      name: cypress
+                      key: docdel_pass
               image: "ghcr.io/unb-libraries/cypress.status.lib.unb.ca:prod"
               imagePullPolicy: Always
               volumeMounts:
