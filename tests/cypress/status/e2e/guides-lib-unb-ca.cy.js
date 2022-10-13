@@ -1,7 +1,7 @@
-const host = 'https://guides.lib.unb.ca'
-describe('Subject guides', {baseUrl: host, groups: ['core']}, () => {
+const guidesBaseUrl = 'https://guides.lib.unb.ca'
+describe('Subject guides', {baseUrl: guidesBaseUrl, groups: ['core']}, () => {
 
-  context('Main page', {baseUrl: host}, () => {
+  context('Main page', {baseUrl: guidesBaseUrl}, () => {
     beforeEach(() => {
       cy.visit('/')
       cy.title()
@@ -19,7 +19,7 @@ describe('Subject guides', {baseUrl: host, groups: ['core']}, () => {
     });
   })
 
-  context('All guides', {baseUrl: `${host}/research-guides`}, () => {
+  context('All guides', {baseUrl: `${guidesBaseUrl}/research-guides`}, () => {
     specify('Table should contain at least 20 rows', () => {
       cy.visit('/')
       cy.get('td.views-field-title')
@@ -27,7 +27,7 @@ describe('Subject guides', {baseUrl: host, groups: ['core']}, () => {
     });
   })
 
-  context('Profile: Joanne Smyth', {baseUrl: `${host}/profile/jsmyth`}, () => {
+  context('Profile: Joanne Smyth', {baseUrl: `${guidesBaseUrl}/profile/jsmyth`}, () => {
     beforeEach(() => {
       cy.visit('')
     })
@@ -43,7 +43,7 @@ describe('Subject guides', {baseUrl: host, groups: ['core']}, () => {
     });
   })
 
-  context('Category: History', {baseUrl: `${host}/category/history`}, () => {
+  context('Category: History', {baseUrl: `${guidesBaseUrl}/category/history`}, () => {
     beforeEach(() => {
       cy.visit('/')
     })
@@ -79,7 +79,7 @@ describe('Subject guides', {baseUrl: host, groups: ['core']}, () => {
     });
   })
 
-  context('Guide: Best Practices', {baseUrl: `${host}/guide/227`}, () => {
+  context('Guide: Best Practices', {baseUrl: `${guidesBaseUrl}/guide/227`}, () => {
     specify('Header should contain "Best Practices Guide"', () => {
       cy.visit('/')
       cy.get('#main h1')

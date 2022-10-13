@@ -1,7 +1,7 @@
-const host = 'https://lib.unb.ca'
-describe('UNB Libraries Website', {baseUrl: host, groups: ['core','reserves']}, () => {
+const libReservesBaseUrl = 'https://lib.unb.ca'
+describe('UNB Libraries Website', {baseUrl: libReservesBaseUrl, groups: ['core','reserves']}, () => {
 
-    context('Front page', {baseUrl: host}, () => {
+    context('Front page', {baseUrl: libReservesBaseUrl}, () => {
         specify('Header should contain "Reserves" tab', () => {
             cy.visit('')
             cy.get('#searchBtn2')

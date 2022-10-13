@@ -1,5 +1,5 @@
-const host = 'https://lib.unb.ca'
-describe('UNB Libraries Website', {baseUrl: host, groups: ['core']}, () => {
+const libBaseUrl = 'https://lib.unb.ca'
+describe('UNB Libraries Website', {baseUrl: libBaseUrl, groups: ['core']}, () => {
 
   beforeEach(() => {
     // Ignore error thrown by NewRelic JS-agent.
@@ -8,7 +8,7 @@ describe('UNB Libraries Website', {baseUrl: host, groups: ['core']}, () => {
     });
   })
 
-  context('Front page', {baseUrl: host}, () => {
+  context('Front page', {baseUrl: libBaseUrl}, () => {
     beforeEach(() => {
       cy.visit('/', {block: {intranetApi: false}})
       cy.title()
@@ -183,7 +183,7 @@ describe('UNB Libraries Website', {baseUrl: host, groups: ['core']}, () => {
     });
   })
 
-  const hilPageUrl = `${host}/about/harriet-irving-library`
+  const hilPageUrl = `${libBaseUrl}/about/harriet-irving-library`
   context('URL shortener', {baseUrl: hilPageUrl}, () => {
     const redirectUrl = 'https://go.lib.unb.ca/hil'
     specify(`${redirectUrl} should redirect here`, () => {
@@ -191,7 +191,7 @@ describe('UNB Libraries Website', {baseUrl: host, groups: ['core']}, () => {
     })
   })
 
-  context('Group Study Room Booking', {baseUrl: `${host}/services/bookings`}, () => {
+  context('Group Study Room Booking', {baseUrl: `${libBaseUrl}/services/bookings`}, () => {
 
     specify('Selecting building, seating zone, should lead to LibCal page', () => {
       cy.visit('/')
@@ -208,7 +208,7 @@ describe('UNB Libraries Website', {baseUrl: host, groups: ['core']}, () => {
     });
   })
 
-  context('Document delivery policies agreement form', {baseUrl: `${host}/services/docdel`}, () => {
+  context('Document delivery policies agreement form', {baseUrl: `${libBaseUrl}/services/docdel`}, () => {
     beforeEach(() => {
       cy.visit('')
       cy.title()
@@ -230,7 +230,7 @@ describe('UNB Libraries Website', {baseUrl: host, groups: ['core']}, () => {
     });
   })
 
-  context('Document delivery request form', {baseUrl: `${host}/docdel_auth/index.php?genre=journal&rft.jtitle=uitest`}, () => {
+  context('Document delivery request form', {baseUrl: `${libBaseUrl}/docdel_auth/index.php?genre=journal&rft.jtitle=uitest`}, () => {
     specify('Should require login, then show pre-populated request form', () => {
       cy.visit('')
       cy.get('form#docdel_auth').within(() => {

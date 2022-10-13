@@ -1,7 +1,7 @@
-const host = 'https://lib.unb.ca'
-describe('UNB Libraries Website', {baseUrl: host, groups: ['core','eresources']}, () => {
+const libEresourcesBaseUrl = 'https://lib.unb.ca'
+describe('UNB Libraries Website', {baseUrl: libEresourcesBaseUrl, groups: ['core','eresources']}, () => {
 
-    context('Front page', {baseUrl: host}, () => {
+    context('Front page', {baseUrl: libEresourcesBaseUrl}, () => {
         beforeEach(() => {
             cy.visit('')
         })

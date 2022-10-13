@@ -1,7 +1,7 @@
-const url = 'https://lib.unb.ca/reserves/index.php'
-describe('Reserves', {baseUrl: url, groups: ['core','reserves']}, () => {
+const reservesBaseUrl = 'https://lib.unb.ca/reserves/index.php'
+describe('Reserves', {baseUrl: reservesBaseUrl, groups: ['core','reserves']}, () => {
 
-  context('Main page', {baseUrl: url}, () => {
+  context('Main page', {baseUrl: reservesBaseUrl}, () => {
     beforeEach(() => {
       cy.on('uncaught:exception', () => {
         return false;
@@ -23,7 +23,7 @@ describe('Reserves', {baseUrl: url, groups: ['core','reserves']}, () => {
     });
   })
 
-  context('Reserves: Readings records', {baseUrl: `${url}/viewReserves/13631`}, () => {
+  context('Reserves: Readings records', {baseUrl: `${reservesBaseUrl}/viewReserves/13631`}, () => {
     specify('3+ readings should be listed under 2012/FY ARTS*1000*FR13Y', () => {
       cy.visit('/')
       cy.get('.heading-container')
@@ -34,7 +34,7 @@ describe('Reserves', {baseUrl: url, groups: ['core','reserves']}, () => {
     });
   })
 
-  context('Reserves: OPAC availability', {baseUrl: `${url}/viewReserves/18082`}, () => {
+  context('Reserves: OPAC availability', {baseUrl: `${reservesBaseUrl}/viewReserves/18082`}, () => {
     specify('"The Arts 1000 Reader" should be available', () => {
       cy.visit('/')
       cy.get('.itemPhysical .availability-where i')
