@@ -318,7 +318,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"alert alert-light border\">\r\n<div class=\"d-flex flex-row\">\r\n<div class=\"mr-2\"><span class=\"fas fa-bell\"></span></div>\r\n<p class=\"mb-0\">This search interface <strong>DOES NOT</strong> search our catalogue, electronic databases or other online\r\nresources; it will only search for local web pages. To find resources, consult <a href=\"https://unb.on.worldcat.org\">our catalogue,\r\nUNB WorldCat</a> or the <a href=\"//web.lib.unb.ca/eresources\">e-Resources section</a> of our website. To find a staff member please consult our <a href=\"/about/alphabetical-staff-directory\">staff directory</a>.</p>\r\n</div>\r\n</div>"
+            text: "<div class=\"alert alert-light border\">\r\n<div class=\"d-flex flex-row\">\r\n<div class=\"mr-2\"><span class=\"fas fa-bell\"></span></div>\r\n<p class=\"mb-0\">This search interface <strong>DOES NOT</strong> search our catalogue, electronic databases or other online\r\nresources; it will only search for local web pages. To find resources, consult <a href=\"https://unb.on.worldcat.org\">our catalogue,\r\nUNB WorldCat</a> or the <a href=\"/eresources\">e-Resources section</a> of our website. To find a staff member please consult our <a href=\"/about/alphabetical-staff-directory\">staff directory</a>.</p>\r\n</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
