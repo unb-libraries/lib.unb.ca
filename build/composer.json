@@ -51,9 +51,6 @@
     "patches": {
       "drupal/entity_browser": {
         "Provide upload widget for media of media type file": "https://www.drupal.org/files/issues/2019-02-28/entity_browser-media-file-upload-2922885-15.patch"
-      },
-      "drupal/samlauth": {
-        "Ignore Role Restrictions": "/build/patches/samlauth_rolematch.patch"
       }
     }
   },
@@ -356,7 +353,7 @@
     "unb-libraries/fogbugz_api": "dev-9.x-1.x",
     "unb-libraries/font_awesome": "~5.15",
     "unb-libraries/oclc_api": "dev-8.x-1.x",
-    "unb-libraries/saml_features": "dev-8.x-1.x",
+    "unb-libraries/saml_features": "dev-9.x-1.x",
     "unb-libraries/task-ui": "dev-8.x-1.x",
     "unb-libraries/unb_lib_theme": "dev-9.x-4.x",
     "w8tcha/ckeditor-codemirror-plugin": "^1.17.12",
