@@ -22,12 +22,14 @@ use Drupal\custom_entity\Entity\UserEditedInterface;
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "views_data" = "Drupal\views\EntityViewsData",
+ *     "list_builder" = "Drupal\guides\Entity\CourseLinkListBuilder",
  *     "route_provider" = {
  *       "html" = "Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider",
  *     },
  *     "access" = "Drupal\custom_entity\Entity\Access\EntityAccessControlHandler",
  *     "form" = {
- *       "default" = "Drupal\Core\Entity\ContentEntityForm",
+ *       "default" = "Drupal\guides\Form\CourseLinkForm",
+ *       "edit" = "Drupal\guides\Form\CourseLinkForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
  *     },
  *   },
@@ -37,10 +39,11 @@ use Drupal\custom_entity\Entity\UserEditedInterface;
  *     "id" = "id"
  *   },
  *   links = {
- *     "canonical" = "/admin/guides/{guide}/courselink/{courselink}",
+ *     "canonical" = "/admin/guides/{guide}/courselink/{course_link}",
+ *     "collection" = "/admin/guides/{guide}/courselink",
  *     "add-form" = "/admin/guides/{guide}/courselink/add",
- *     "edit-form" = "/admin/guides/{guide}/courselink/{courselink}/edit",
- *     "delete-form" = "/admin/guides/{guide}/courselink/{courselink}/delete",
+ *     "edit-form" = "/admin/guides/{guide}/courselink/{course_link}/edit",
+ *     "delete-form" = "/admin/guides/{guide}/courselink/{course_link}/delete",
  *   },
  *   field_ui_base_route = "entity.course_link.settings",
  * )
@@ -60,12 +63,9 @@ class CourseLink extends ContentEntityBase implements ContentEntityInterface, Us
       ->setLabel(t('Guide'))
       ->setSettings(
         [
-          'target_type' => 'node',
+          'target_type' => 'guide',
           'handler' => 'default',
-          'handler_settings' => [
-            'target_bundles' => ['guide' => 'guide'],
-          ],
-        ]
+        ],
       );
 
     $fields['year'] = BaseFieldDefinition::create('string')
@@ -174,6 +174,15 @@ class CourseLink extends ContentEntityBase implements ContentEntityInterface, Us
     $fields[self::FIELD_EDITED] = static::getEditedBaseFieldDefinition($entity_type);
 
     return $fields;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  protected function urlRouteParameters($rel) {
+    $parameters = parent::urlRouteParameters($rel);
+    $parameters['guide'] = $this->guide->target_id;
+    return $parameters;
   }
 
 }
