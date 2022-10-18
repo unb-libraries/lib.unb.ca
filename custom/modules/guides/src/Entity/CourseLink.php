@@ -124,8 +124,9 @@ class CourseLink extends ContentEntityBase implements ContentEntityInterface, Us
 
     $fields['prefix'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Prefix'))
-      ->setDescription(t('E.g. ENGL'))
+      ->setDescription(t('E.g. ENGL (ONLY a single value is permitted)'))
       ->setRequired(TRUE)
+      ->addConstraint('SingleValue')
       ->setSettings(
         [
           'default_value' => '',
@@ -140,8 +141,9 @@ class CourseLink extends ContentEntityBase implements ContentEntityInterface, Us
 
     $fields['course_number'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Course Number'))
-      ->setDescription(t('E.g. 1000'))
+      ->setDescription(t('E.g. 1000 (ONLY a single value is permitted)'))
       ->setRequired(FALSE)
+      ->addConstraint('SingleValue')
       ->setSettings(
         [
           'default_value' => '',
@@ -156,8 +158,9 @@ class CourseLink extends ContentEntityBase implements ContentEntityInterface, Us
 
     $fields['section'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Section'))
-      ->setDescription(t('E.g. E1A'))
+      ->setDescription(t('E.g. E1A (ONLY a single value is permitted)'))
       ->setRequired(FALSE)
+      ->addConstraint('SingleValue')
       ->setSettings(
         [
           'default_value' => '',
