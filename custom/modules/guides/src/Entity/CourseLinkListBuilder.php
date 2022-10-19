@@ -2,8 +2,13 @@
 
 namespace Drupal\guides\Entity;
 
-use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityListBuilder;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Entity\EntityStorageInterface;
+use Drupal\Core\Form\FormBuilderInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Url;
 
 /**
@@ -12,13 +17,61 @@ use Drupal\Core\Url;
 class CourseLinkListBuilder extends EntityListBuilder {
 
   /**
+   * The form builder.
+   *
+   * @var \Drupal\Core\Form\FormBuilderInterface
+   */
+  protected $formBuilder;
+
+  /**
+   * The current route match.
+   *
+   * @var \Drupal\Core\Routing\RouteMatchInterface
+   */
+  protected $routeMatch;
+
+  /**
+   * Constructs a new EntityListBuilder object.
+   *
+   * @param \Drupal\Core\Entity\EntityTypeInterface $entity_type
+   *   The entity type definition.
+   * @param \Drupal\Core\Entity\EntityStorageInterface $storage
+   *   The entity storage class.
+   * @param \Drupal\Core\Form\FormBuilderInterface $form_builder
+   *   The form builder.
+   * @param \Drupal\Core\Routing\RouteMatchInterface $route_match
+   *   The current route match.
+   */
+  public function __construct(EntityTypeInterface $entity_type, EntityStorageInterface $storage, FormBuilderInterface $form_builder, RouteMatchInterface $route_match) {
+    $this->entityTypeId = $entity_type
+      ->id();
+    $this->storage = $storage;
+    $this->entityType = $entity_type;
+    $this->formBuilder = $form_builder;
+    $this->routeMatch = $route_match;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function createInstance(ContainerInterface $container, EntityTypeInterface $entity_type) {
+    return new static($entity_type,
+      $container->get('entity_type.manager')->getStorage($entity_type->id()),
+      $container->get('form_builder'),
+      $container->get('current_route_match'));
+  }
+
+  /**
    * {@inheritdoc}
    */
   public function render() {
     $build = parent::render();
     $build['table']['#empty'] = 'No course links have been added to this guide yet.';
 
-    $guide = \Drupal::routeMatch()->getParameters()->get('guide');
+    $guide = $this->routeMatch->getParameters()->get('guide');
+
+    $build['is_subject_guide_form'] = $this->formBuilder->getForm('Drupal\guides\Form\IsSubjectGuideForm', $guide);
+    $build['is_subject_guide_form']['#weight'] = -1;
 
     $build['description'] = [
       '#markup' => $this->t('<p>Entries found here are <strong>PRIMARILY</strong> used by the system to direct patrons to the most appropriate Guide for their <strong>D2L</strong> course. They also help define whether this is a subject-level guide or a specific course guide. It is not necessary to have any values entered and improper configuration can disrupt proper linking. If it doubt, contact Jeff.</p>
