@@ -69,11 +69,15 @@ class TicketController extends ControllerBase {
     $fogbugz = \Drupal::service('fogbugz_api.manager');
     $alerts = $fogbugz->getActiveAlerts();
 
-    // Newer version doesn't need #attached library 'public_trouble_tickets/status'.
     return [
       '#theme' => 'status',
       '#alerts' => $alerts,
       '#askus' => $this->getAskUsSidebar(),
+      '#attached' => [
+        'library' => [
+          'public_trouble_tickets/status-v2',
+        ],
+      ],
     ];
   }
 

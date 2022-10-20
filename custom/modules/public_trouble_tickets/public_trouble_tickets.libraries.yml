@@ -25,3 +25,7 @@ status:
     - core/drupal
     - core/jquery
     - core/jquery.once
+status-v2:
+  css:
+    theme:
+      css/status.css: {}

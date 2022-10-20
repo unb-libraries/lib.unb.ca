@@ -1,0 +1,28 @@
+.embed-responsive-status::before {
+  padding-top: 120%;
+}
+@media (min-width: 536px) {
+  .embed-responsive-status::before {
+    padding-top: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .embed-responsive-status::before {
+    padding-top: 70%;
+  }
+}
+@media (min-width: 992px) {
+  .embed-responsive-status::before {
+    padding-top: 78%;
+  }
+}
+@media (min-width: 1194px) {
+  .embed-responsive-status::before {
+    padding-top: 65%;
+  }
+}
+@media (min-width: 1366px) {
+  .embed-responsive-status::before {
+    padding-top: 57%;
+  }
+}
