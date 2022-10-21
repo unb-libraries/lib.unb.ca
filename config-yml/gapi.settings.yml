@@ -1,0 +1,5 @@
+application_name: 'UNB Libraries'
+authentication_method: application_credentials
+developer_key: google_api
+application_credentials: google_api
+application_scopes: 'https://www.googleapis.com/auth/analytics.readonly'

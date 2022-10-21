@@ -58,6 +58,7 @@ module:
   fogbugz_api: 0
   fontawesome: 0
   fontawesome_iconpicker_widget: 0
+  gapi: 0
   google_analytics: 0
   health_check: 0
   help: 0
