@@ -153,6 +153,10 @@ spec:
               name: oclc-sftp-key
               mountPath: "/app/keys/oclc-sftp.root.key"
               subPath: "oclc-sftp.root.key"
+            -
+              name: api-google-json
+              mountPath: "/app/keys/api.google.json"
+              subPath: "api.google.json"
       priorityClassName: dev-med-priority-services
       imagePullSecrets:
         -
@@ -175,3 +179,10 @@ spec:
             items:
               - key: oclc-sftp.root.key
                 path: oclc-sftp.root.key
+        -
+          name: api-google-json
+          secret:
+            secretName: api-google-json
+            items:
+              - key: api.google.json
+                path: api.google.json
