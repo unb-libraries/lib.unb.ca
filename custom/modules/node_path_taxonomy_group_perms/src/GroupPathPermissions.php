@@ -47,12 +47,13 @@ class GroupPathPermissions {
     // Otherwise, check for specific path.
     $user_path_accesses = self::getUserPathPermissions($user, $node->bundle());
     $node_path = NodeTaxonomyPath::getNodePathTerm($node);
-    foreach ($user_path_accesses as $user_path_access) {
-      if ($node_path->id() == $user_path_access->id()) {
-        return AccessResult::allowed();
+    if (!empty($node_path)) {
+      foreach ($user_path_accesses as $user_path_access) {
+        if ($node_path->id() == $user_path_access->id()) {
+          return AccessResult::allowed();
+        }
       }
     }
-
     return AccessResult::forbidden();
   }
 
