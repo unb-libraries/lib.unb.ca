@@ -55,6 +55,8 @@ function node_path_taxonomy_form_alter(&$form, FormStateInterface $form_state, $
 
       // Ensure paths are saved after submit but before pathauto hooks run.
       array_unshift($form['actions']['submit']['#submit'], 'Drupal\node_path_taxonomy\Controller\NodeTaxonomyPathController::setPath');
+      // Extra submit handler to save node to term association.
+      $form['actions']['submit']['#submit'][] = 'Drupal\node_path_taxonomy\Controller\NodeTaxonomyPathController::savePath';
     }
   }
 }
@@ -88,13 +90,11 @@ function node_path_taxonomy_pathauto_alias_alter(&$alias, array &$context) {
       return;
     }
 
-    // Set up the new path TID in our storage.
-    NodeTaxonomyPathRelationship::setNodePathRelationship($node, $path_tid);
-
     // Generate and set the path if we are asked to do so. Ignores manual.
     if ($node->path->pathauto) {
       $clean_label = \Drupal::service('pathauto.alias_cleaner')->cleanString($node->label());
-      $node_path = NodeTaxonomyPath::getNodePath($node);
+      $term = Term::load($path_tid);
+      $node_path = NodeTaxonomyPath::getTermPathValue($term);
       if ($node_path == '/') {
         $node_path = NULL;
       }
