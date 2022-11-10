@@ -10,3 +10,4 @@ dependencies:
   - custom_entity
   - lib_core
   - gapi
+  - profile
