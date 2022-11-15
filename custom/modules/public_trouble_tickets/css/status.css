@@ -12,6 +12,9 @@
   }
 }
 @media (min-width: 992px) {
+  .embed-responsive-status {
+    min-height: 750px;
+  }
   .embed-responsive-status::before {
     padding-top: 78%;
   }
