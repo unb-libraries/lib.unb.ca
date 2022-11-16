@@ -289,7 +289,7 @@
     "drupal/entity_reference_revisions": "1.10",
     "drupal/externalauth": "1.4",
     "drupal/facets": "2.0.5",
-    "drupal/field_formatter_class": "1.5",
+    "drupal/field_formatter_class": "1.6",
     "drupal/field_group": "3.3",
     "drupal/field_permissions": "1.2",
     "drupal/file_management": "1.x-dev",
