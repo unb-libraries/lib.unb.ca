@@ -27,10 +27,10 @@
           </button>
 
           <div class="collapse mx-3 mx-md-0 navbar-collapse" id="navbarNav">
-            <ul class="align-items-lg-end d-flex flex-grow-1 flex-wrap justify-content-between navbar-nav">
+            <ul class="align-items-lg-end d-flex flex-grow-1 flex-wrap navbar-nav">
               {% for section in sections %}
                 {% set section_id = section.entity.id() %}
-                <li class="nav-item">
+                <li class="nav-item mr-2">
                   <button aria-controls="panelSection{{ section_id }}"
                   {% if loop.first %} aria-expanded="true"{% else %} aria-expanded="false" tabindex="-1"{% endif %}
                   class="Accordion-trigger p-2" id="btnSection{{ section_id }}" type="button">
