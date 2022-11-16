@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - guides
+id: guide
+label: Guide
+type: 'canonical_entities:guide'
+pattern: '/guides/[guide:title]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }
