@@ -13,7 +13,7 @@
 }
 @media (min-width: 992px) {
   .embed-responsive-status {
-    min-height: 750px;
+    min-height: 805px;
   }
   .embed-responsive-status::before {
     padding-top: 78%;
