@@ -24,6 +24,7 @@ dependencies:
     - field.field.profile.guides.field_status_note
     - field.field.profile.guides.field_subject_specialties
     - field.field.profile.guides.field_twitter_id
+    - field.field.profile.guides.field_url_fragment
     - field.field.profile.guides.field_website
     - profile.type.guides
   module:
@@ -241,4 +242,5 @@ content:
     weight: 13
     region: content
 hidden:
+  field_url_fragment: true
   search_api_excerpt: true

@@ -9,6 +9,7 @@ use Drupal\Core\Render\Element;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\user\Entity\User;
 use Drupal\editor\Entity\Editor;
+use Drupal\Core\Entity\EntityInterface;
 use PicoFeed\Reader\Reader;
 
 /**
@@ -150,5 +151,18 @@ function guides_theme_suggestions_page_title_alter(array &$suggestions, array $v
   switch ($route->getRouteName()) {
     case 'entity.guide.canonical':
       $suggestions[] = 'page_title__guide';
+  }
+}
+
+/**
+ * Implements hook_entity_presave().
+ */
+function guides_profile_presave(EntityInterface $entity) {
+  if ($entity->bundle() == 'guides') {
+    $user = $entity->getOwner();
+    $name = implode('-', [$user->get('field_first_name')->getString(), $user->get('field_last_name')->getString()]);
+    $fragment = preg_replace('/[^a-z]+/', '-', strtolower($name));
+
+    $entity->set('field_url_fragment', $fragment);
   }
 }

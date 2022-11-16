@@ -24,6 +24,7 @@ dependencies:
     - field.field.profile.guides.field_status_note
     - field.field.profile.guides.field_subject_specialties
     - field.field.profile.guides.field_twitter_id
+    - field.field.profile.guides.field_url_fragment
     - field.field.profile.guides.field_website
     - image.style.thumbnail
     - profile.type.guides
@@ -45,7 +46,7 @@ third_party_settings:
       label: 'Social Media'
       region: content
       parent_name: ''
-      weight: 16
+      weight: 15
       format_type: fieldset
       format_settings:
         classes: ''
@@ -68,7 +69,7 @@ content:
     third_party_settings: {  }
   field_book_a_meeting:
     type: link_default
-    weight: 26
+    weight: 16
     region: content
     settings:
       placeholder_url: ''
@@ -90,7 +91,7 @@ content:
     third_party_settings: {  }
   field_guides_listing:
     type: options_select
-    weight: 27
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -232,4 +233,5 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
 hidden:
+  field_url_fragment: true
   is_default: true
