@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_guides_listing
+    - profile.type.guides
+  module:
+    - options
+id: profile.guides.field_guides_listing
+field_name: field_guides_listing
+entity_type: profile
+bundle: guides
+label: 'Your complete guides listing on your profile'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

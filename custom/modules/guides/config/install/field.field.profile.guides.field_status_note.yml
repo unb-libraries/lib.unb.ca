@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_status_note
+    - profile.type.guides
+id: profile.guides.field_status_note
+field_name: field_status_note
+entity_type: profile
+bundle: guides
+label: 'Status note'
+description: 'Use this for leave notices, change in availability, pandemic notices, etc.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

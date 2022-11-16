@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_linkedin_id
+    - profile.type.guides
+id: profile.guides.field_linkedin_id
+field_name: field_linkedin_id
+entity_type: profile
+bundle: guides
+label: 'LinkedIn ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

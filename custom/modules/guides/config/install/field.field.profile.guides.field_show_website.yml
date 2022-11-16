@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_show_website
+    - profile.type.guides
+id: profile.guides.field_show_website
+field_name: field_show_website
+entity_type: profile
+bundle: guides
+label: 'Show website on your guides'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

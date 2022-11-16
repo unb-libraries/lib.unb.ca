@@ -1,0 +1,235 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.profile.guides.field_biography
+    - field.field.profile.guides.field_book_a_meeting
+    - field.field.profile.guides.field_campus
+    - field.field.profile.guides.field_facebook_id
+    - field.field.profile.guides.field_guides_listing
+    - field.field.profile.guides.field_library_link
+    - field.field.profile.guides.field_linkedin_id
+    - field.field.profile.guides.field_mini_biography
+    - field.field.profile.guides.field_orcid_id
+    - field.field.profile.guides.field_profile_picture
+    - field.field.profile.guides.field_pronouns
+    - field.field.profile.guides.field_researchgate_id
+    - field.field.profile.guides.field_show_library_link
+    - field.field.profile.guides.field_show_phone_number
+    - field.field.profile.guides.field_show_position_title
+    - field.field.profile.guides.field_show_pronouns
+    - field.field.profile.guides.field_show_social_media_icons
+    - field.field.profile.guides.field_show_subject_specialties
+    - field.field.profile.guides.field_show_website
+    - field.field.profile.guides.field_status_note
+    - field.field.profile.guides.field_subject_specialties
+    - field.field.profile.guides.field_twitter_id
+    - field.field.profile.guides.field_website
+    - image.style.thumbnail
+    - profile.type.guides
+  module:
+    - field_group
+    - image
+    - link
+    - text
+third_party_settings:
+  field_group:
+    group_social_media:
+      children:
+        - field_twitter_id
+        - field_facebook_id
+        - field_linkedin_id
+        - field_researchgate_id
+        - field_orcid_id
+        - field_show_social_media_icons
+      label: 'Social Media'
+      region: content
+      parent_name: ''
+      weight: 16
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+id: profile.guides.default
+targetEntityType: profile
+bundle: guides
+mode: default
+content:
+  field_biography:
+    type: text_textarea
+    weight: 7
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_book_a_meeting:
+    type: link_default
+    weight: 26
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_campus:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_facebook_id:
+    type: string_textfield
+    weight: 16
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_guides_listing:
+    type: options_select
+    weight: 27
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_library_link:
+    type: string_textfield
+    weight: 11
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_linkedin_id:
+    type: string_textfield
+    weight: 17
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_mini_biography:
+    type: string_textarea
+    weight: 8
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_orcid_id:
+    type: string_textfield
+    weight: 19
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_profile_picture:
+    type: image_image
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_pronouns:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_researchgate_id:
+    type: string_textfield
+    weight: 18
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_show_library_link:
+    type: boolean_checkbox
+    weight: 12
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_show_phone_number:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_show_position_title:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_show_pronouns:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_show_social_media_icons:
+    type: boolean_checkbox
+    weight: 20
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_show_subject_specialties:
+    type: boolean_checkbox
+    weight: 10
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_show_website:
+    type: boolean_checkbox
+    weight: 14
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_status_note:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_subject_specialties:
+    type: string_textarea
+    weight: 9
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_twitter_id:
+    type: string_textfield
+    weight: 15
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_website:
+    type: link_default
+    weight: 13
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  is_default: true

@@ -1,0 +1,48 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - options
+    - profile
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: profile.field_campus
+field_name: field_campus
+entity_type: profile
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Beijing
+      label: Beijing
+    -
+      value: Etobicoke
+      label: Etobicoke
+    -
+      value: Fredericton
+      label: Fredericton
+    -
+      value: Moncton
+      label: Moncton
+    -
+      value: Montreal
+      label: Montreal
+    -
+      value: 'Saint John'
+      label: 'Saint John'
+    -
+      value: 'Trinidad and Tobago'
+      label: 'Trinidad and Tobago'
+    -
+      value: Woodstock
+      label: Woodstock
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
