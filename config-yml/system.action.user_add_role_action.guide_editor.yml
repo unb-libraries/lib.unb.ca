@@ -1,0 +1,14 @@
+uuid: b6555f53-4a66-4dd0-a122-32b20a4b2f64
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.guide_editor
+  module:
+    - user
+id: user_add_role_action.guide_editor
+label: 'Add the Guide Editor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: guide_editor

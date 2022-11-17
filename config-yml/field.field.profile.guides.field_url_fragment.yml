@@ -1,0 +1,26 @@
+uuid: 4efd77df-0fa6-4fef-bfe0-79b2f1a64111
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_url_fragment
+    - profile.type.guides
+  module:
+    - profile
+third_party_settings:
+  profile:
+    profile_private: true
+_core:
+  default_config_hash: hty6TtZLlXxQiedSQJaRP-vqLmmEqazaAC3G1APGnnI
+id: profile.guides.field_url_fragment
+field_name: field_url_fragment
+entity_type: profile
+bundle: guides
+label: 'URL Fragment'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

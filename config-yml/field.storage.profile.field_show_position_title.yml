@@ -1,0 +1,24 @@
+uuid: e1e142a4-c9f1-4162-b9c7-d453beec2f52
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - profile
+third_party_settings:
+  field_permissions:
+    permission_type: public
+_core:
+  default_config_hash: jufYItDmeRnGOQLByjbxz5H8FqeokMKiNbYu6MnOeKQ
+id: profile.field_show_position_title
+field_name: field_show_position_title
+entity_type: profile
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

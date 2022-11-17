@@ -1,0 +1,16 @@
+uuid: 61d72e53-90f1-4447-8b6a-e5df2ff787a9
+langcode: en
+status: true
+dependencies:
+  module:
+    - guides
+_core:
+  default_config_hash: SfuqDnO7bIa1kUUn1JQkPfPS8EOb8nGjq1B9mpahkFs
+id: guide_category
+label: 'Guide Category'
+type: 'canonical_entities:guide_category'
+pattern: '/guides/category/[guide_category:title]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }

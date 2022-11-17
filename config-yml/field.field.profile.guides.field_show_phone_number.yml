@@ -1,0 +1,25 @@
+uuid: 268e4ac6-5ded-4c5a-8f89-051a43d480a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_show_phone_number
+    - profile.type.guides
+_core:
+  default_config_hash: cvLGGsvPcAzZaw5jaucL4JE3g1EMEF7oFf0072lxEFI
+id: profile.guides.field_show_phone_number
+field_name: field_show_phone_number
+entity_type: profile
+bundle: guides
+label: 'Show phone number on your guides'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

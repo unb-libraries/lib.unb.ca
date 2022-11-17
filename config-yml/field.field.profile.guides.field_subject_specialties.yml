@@ -1,0 +1,21 @@
+uuid: 5d343ce4-7d16-4a95-8871-f305e08d6625
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_subject_specialties
+    - profile.type.guides
+_core:
+  default_config_hash: yfWygrpwoRyTfpbRjx8NGi3ZiwrooKz8Vi0JlS74y4g
+id: profile.guides.field_subject_specialties
+field_name: field_subject_specialties
+entity_type: profile
+bundle: guides
+label: 'Subject specialties'
+description: 'Used in the sidebar of a guide.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

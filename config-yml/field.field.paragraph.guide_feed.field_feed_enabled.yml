@@ -1,0 +1,25 @@
+uuid: fcad02bc-90f3-435d-8ed1-8c42da94a842
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_feed_enabled
+    - paragraphs.paragraphs_type.guide_feed
+_core:
+  default_config_hash: ErMcH5auEzcSY1DOvZCwNFNPUWzJmRNLhowGbNX-cRI
+id: paragraph.guide_feed.field_feed_enabled
+field_name: field_feed_enabled
+entity_type: paragraph
+bundle: guide_feed
+label: Enabled
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

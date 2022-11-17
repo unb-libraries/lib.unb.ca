@@ -1,0 +1,28 @@
+uuid: 2d700e3c-08c1-453b-a3ff-a39e0ceb3bda
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_biography
+    - profile.type.guides
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - library_page_html
+_core:
+  default_config_hash: P0d-ozcvLsBJLLPW3XuwkSfgn8tKIKC82_Od0l6UQqA
+id: profile.guides.field_biography
+field_name: field_biography
+entity_type: profile
+bundle: guides
+label: Biography
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

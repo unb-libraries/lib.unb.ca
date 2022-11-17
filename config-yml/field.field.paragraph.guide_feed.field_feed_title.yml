@@ -1,0 +1,21 @@
+uuid: 53b35468-08bb-48db-ab35-82dc797015b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_feed_title
+    - paragraphs.paragraphs_type.guide_feed
+_core:
+  default_config_hash: k_nW-nsuio1JAVK5jf8dic48QzAxAC-IJeywNectBM8
+id: paragraph.guide_feed.field_feed_title
+field_name: field_feed_title
+entity_type: paragraph
+bundle: guide_feed
+label: 'Feed Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

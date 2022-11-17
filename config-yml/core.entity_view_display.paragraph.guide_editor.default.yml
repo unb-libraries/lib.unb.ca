@@ -1,0 +1,35 @@
+uuid: bb3496d0-18a6-4d28-abe3-5c5ceec3375b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.guide_editor.field_display_editor
+    - field.field.paragraph.guide_editor.field_user
+    - paragraphs.paragraphs_type.guide_editor
+_core:
+  default_config_hash: hFLwbD8As8IKcUGnZzOsXA15ZnPmLk-GXM4GfjyXUmw
+id: paragraph.guide_editor.default
+targetEntityType: paragraph
+bundle: guide_editor
+mode: default
+content:
+  field_display_editor:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_user:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

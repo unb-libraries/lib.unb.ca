@@ -1,0 +1,12 @@
+uuid: ed437205-9c80-47d5-a700-5ae36c516890
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: M24Ph_M--NU2xzU2SlnfJslVk9ZazbC1rnAe8GD4MQA
+id: guide_feed
+label: 'Guide Feed'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

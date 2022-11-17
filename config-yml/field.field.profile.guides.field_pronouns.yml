@@ -1,0 +1,21 @@
+uuid: 1838edea-ce42-41f1-8c88-4fdaa16e0688
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_pronouns
+    - profile.type.guides
+_core:
+  default_config_hash: b6YVitjxp_Nmu9aDsVdFUbHuIdL6RsPlugYIX92MioI
+id: profile.guides.field_pronouns
+field_name: field_pronouns
+entity_type: profile
+bundle: guides
+label: Pronouns
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

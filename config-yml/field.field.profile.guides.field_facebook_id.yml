@@ -1,0 +1,21 @@
+uuid: 454b70cb-85ba-403d-bc9c-f91f4831e806
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_facebook_id
+    - profile.type.guides
+_core:
+  default_config_hash: LskycBdlh_NyHbzAArT_CcRTVWlk6PCX2XCIoi1i-MA
+id: profile.guides.field_facebook_id
+field_name: field_facebook_id
+entity_type: profile
+bundle: guides
+label: 'Facebook ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

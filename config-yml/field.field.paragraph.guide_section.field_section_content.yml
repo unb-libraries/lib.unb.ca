@@ -1,0 +1,28 @@
+uuid: 951ca2a9-a11e-485c-9f94-9cbd6a5578ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_content
+    - paragraphs.paragraphs_type.guide_section
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - library_page_html
+_core:
+  default_config_hash: m39rnKZd0HDWtLyI3OqoyxHrFPKib3woKBYPjOJknYw
+id: paragraph.guide_section.field_section_content
+field_name: field_section_content
+entity_type: paragraph
+bundle: guide_section
+label: 'Section Content'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

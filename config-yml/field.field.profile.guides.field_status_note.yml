@@ -1,0 +1,21 @@
+uuid: 2ac8d82b-33b7-4542-a73f-8e388071a581
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_status_note
+    - profile.type.guides
+_core:
+  default_config_hash: JE4PpAfl2vyVhNqSQI-5mWNaY6Mo7dJq3XA94qDSBpY
+id: profile.guides.field_status_note
+field_name: field_status_note
+entity_type: profile
+bundle: guides
+label: 'Status note'
+description: 'Use this for leave notices, change in availability, pandemic notices, etc.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

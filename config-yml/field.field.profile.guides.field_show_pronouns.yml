@@ -1,0 +1,25 @@
+uuid: 2f11eb18-c865-47c1-ba5b-53a1754b83a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_show_pronouns
+    - profile.type.guides
+_core:
+  default_config_hash: ol37l5kzESWJmS0tNRhscMKWtAuuiZVxXPKihxrwRkA
+id: profile.guides.field_show_pronouns
+field_name: field_show_pronouns
+entity_type: profile
+bundle: guides
+label: 'Show pronouns on your guides'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

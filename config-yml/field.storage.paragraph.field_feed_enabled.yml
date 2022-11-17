@@ -1,0 +1,24 @@
+uuid: dc40517f-cc41-4d03-a543-98230e95726b
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - paragraphs
+third_party_settings:
+  field_permissions:
+    permission_type: public
+_core:
+  default_config_hash: XzGgFdb2T5VTn48LQeObz6gAbn46pHqFqukzg5gaBuY
+id: paragraph.field_feed_enabled
+field_name: field_feed_enabled
+entity_type: paragraph
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

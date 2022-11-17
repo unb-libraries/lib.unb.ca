@@ -1,0 +1,14 @@
+uuid: 6adce0b2-6110-4e1c-b9d8-827e00edbd05
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.guide_editor
+  module:
+    - user
+id: user_remove_role_action.guide_editor
+label: 'Remove the Guide Editor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: guide_editor

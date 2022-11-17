@@ -1,0 +1,45 @@
+uuid: edae27c2-4870-45b4-937e-4246d3494e43
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.guide_section.field_hide_section
+    - field.field.paragraph.guide_section.field_section_content
+    - field.field.paragraph.guide_section.field_section_label
+    - paragraphs.paragraphs_type.guide_section
+  module:
+    - text
+_core:
+  default_config_hash: GtdzXZKkEuFq4I3TijKB-i7dq5-1Qper2a2ANCXRM_0
+id: paragraph.guide_section.default
+targetEntityType: paragraph
+bundle: guide_section
+mode: default
+content:
+  field_hide_section:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_section_content:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_section_label:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

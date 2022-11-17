@@ -1,0 +1,23 @@
+uuid: 5e954878-6b77-4f82-a4fd-37328078528a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_campus
+    - profile.type.guides
+  module:
+    - options
+_core:
+  default_config_hash: 2BfKfZB_ICP-Njy--ikQhvQ28EPighuVkTuUqQrrZxg
+id: profile.guides.field_campus
+field_name: field_campus
+entity_type: profile
+bundle: guides
+label: Campus
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

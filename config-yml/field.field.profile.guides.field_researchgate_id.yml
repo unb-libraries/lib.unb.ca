@@ -1,0 +1,21 @@
+uuid: 69a6c68e-86d0-4323-bfcf-b3536af89177
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_researchgate_id
+    - profile.type.guides
+_core:
+  default_config_hash: CHRZb6rNkLJOPRYe1X9OVdAz1BhP4yyXq_AJMKZbO_s
+id: profile.guides.field_researchgate_id
+field_name: field_researchgate_id
+entity_type: profile
+bundle: guides
+label: 'ResearchGate ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

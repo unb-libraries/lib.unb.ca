@@ -1,0 +1,40 @@
+uuid: 8970146a-ddc7-45ea-a0cc-747a03d8fdbe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_profile_picture
+    - profile.type.guides
+  module:
+    - image
+_core:
+  default_config_hash: 1DaVvG8DB2hidx5K0-AK7JZi8vGd3iHgzfE0x5Cg100
+id: profile.guides.field_profile_picture
+field_name: field_profile_picture
+entity_type: profile
+bundle: guides
+label: 'Profile Picture'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

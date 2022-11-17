@@ -1,0 +1,19 @@
+uuid: e6374e85-5d6e-468d-964e-71ba6d859c1a
+langcode: en
+status: true
+dependencies:
+  module:
+    - guides
+    - system
+    - toolbar
+_core:
+  default_config_hash: _TZQ2YwTw4Bwjw_IKQkZm3KhoOiKKVbYOSq0-ZQ7Lac
+id: guide_editor
+label: 'Guide Editor'
+weight: 8
+is_admin: null
+permissions:
+  - 'access toolbar'
+  - 'create guide entities'
+  - 'update guide entities'
+  - 'view the administration theme'

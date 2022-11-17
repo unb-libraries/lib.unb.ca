@@ -1,0 +1,25 @@
+uuid: eacca53e-e271-4620-859d-4f839848d791
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_show_subject_specialties
+    - profile.type.guides
+_core:
+  default_config_hash: ukzM00QTsUEjVs2QxIQpidDJAT8-NXOrr1T2Ig8LCP8
+id: profile.guides.field_show_subject_specialties
+field_name: field_show_subject_specialties
+entity_type: profile
+bundle: guides
+label: 'Show subject specialties on your guides'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

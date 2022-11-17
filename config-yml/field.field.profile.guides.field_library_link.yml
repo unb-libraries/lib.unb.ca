@@ -1,0 +1,21 @@
+uuid: ae018d4c-f2ff-4d0d-a0c7-e215b3ce1809
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_library_link
+    - profile.type.guides
+_core:
+  default_config_hash: 3d4gw0rJvTRc_eTgAv_03mKF8BM7Fs5bobRrO2-iLrA
+id: profile.guides.field_library_link
+field_name: field_library_link
+entity_type: profile
+bundle: guides
+label: 'Library or service hours link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

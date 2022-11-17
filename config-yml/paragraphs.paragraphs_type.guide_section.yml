@@ -1,0 +1,12 @@
+uuid: ca51ffa7-4722-41a2-991c-9adbd9b03dc7
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: mupsVTXYXZ_0Snwj5Jk2apGtKddOtt5aINUqSgoe7WU
+id: guide_section
+label: 'Guide Section'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

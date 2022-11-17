@@ -40,6 +40,7 @@ module:
   editor: 0
   editor_file: 0
   embed: 0
+  entity: 0
   entity_browser: 0
   entity_browser_entity_form: 0
   entity_embed: 0
@@ -60,6 +61,7 @@ module:
   fontawesome_iconpicker_widget: 0
   gapi: 0
   google_analytics: 0
+  guides: 0
   health_check: 0
   help: 0
   history: 0
@@ -107,6 +109,7 @@ module:
   path_alias: 0
   portolan: 0
   portolan_sync: 0
+  profile: 0
   public_trouble_tickets: 0
   quickedit: 0
   r4032login: 0

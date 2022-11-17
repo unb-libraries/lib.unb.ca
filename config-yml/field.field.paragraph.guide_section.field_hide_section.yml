@@ -1,0 +1,25 @@
+uuid: 5887bc9f-f408-4cd8-95cc-d6f60ee5fe54
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hide_section
+    - paragraphs.paragraphs_type.guide_section
+_core:
+  default_config_hash: HABPzYszH-vsZa06JglUqifipPgw0b5DO6Y9KHJyv0A
+id: paragraph.guide_section.field_hide_section
+field_name: field_hide_section
+entity_type: paragraph
+bundle: guide_section
+label: 'Hide Section'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

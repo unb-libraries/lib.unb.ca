@@ -1,0 +1,12 @@
+uuid: 4e9dad57-f9b5-4e8c-8f38-7d958f2e9d24
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: V04I6yFk6V68zISGs21TOih_Gy6onvb6mT5iLGKAupw
+id: guide_editor
+label: 'Guide Editor'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
