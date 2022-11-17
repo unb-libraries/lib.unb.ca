@@ -16,3 +16,22 @@ update guide entities:
 
 delete guide entities:
   title: "Delete Guides."
+
+# Guide Category entities
+administer guide category entities:
+  title: "Administer Guide Categories."
+
+list guide category entities:
+  title: "List Guide Categories."
+
+create guide category entities:
+  title: "Create Guide Categories."
+
+view guide category entities:
+  title: "View Guide Categories."
+
+update guide category entities:
+  title: "Edit Guide Categories."
+
+delete guide category entities:
+  title: "Delete Guide Categories."
