@@ -7,6 +7,7 @@ dependencies:
   module:
     - contact
     - filter
+    - guides
     - ior
     - ior_awards
     - media
@@ -35,6 +36,8 @@ permissions:
   - 'use search_api_autocomplete for search_our_webpages'
   - 'use text format no_media_html_ior_'
   - 'view contest entities'
+  - 'view guide category entities'
+  - 'view guide entities'
   - 'view ior_award entities'
   - 'view media'
   - 'view own webform submission'
