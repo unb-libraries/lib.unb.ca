@@ -17,6 +17,7 @@ datatables:
     js/datatables.js: {}
   dependencies:
     - core/drupal
+    - core/drupal.ajax
     - public_trouble_tickets/datatables_cdn
 status:
   js:

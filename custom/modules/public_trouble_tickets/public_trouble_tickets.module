@@ -26,8 +26,12 @@ function public_trouble_tickets_theme($existing, $type, $theme, $path) {
     'list' => [
       'variables' => [
         'alerts' => NULL,
-        'cases' => NULL,
         'askus' => NULL,
+      ],
+    ],
+    'ticket-list' => [
+      'variables' => [
+        'cases' => NULL,
       ],
     ],
     'alerts' => [

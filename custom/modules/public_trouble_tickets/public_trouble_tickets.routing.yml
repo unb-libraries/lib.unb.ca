@@ -16,6 +16,14 @@ public_trouble_tickets.ticket_list:
     _permission: 'access content'
   options:
     no_cache: 'TRUE'
+public_trouble_tickets.ticket_list_data:
+  path: '/help/tickets/data'
+  defaults:
+    _controller: '\Drupal\public_trouble_tickets\Controller\TicketController::listData'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
 public_trouble_tickets.service_status:
   path: '/help/status'
   defaults:

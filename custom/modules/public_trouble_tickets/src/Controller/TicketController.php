@@ -4,6 +4,8 @@ namespace Drupal\public_trouble_tickets\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\HtmlCommand;
 
 /**
  * Provides route responses for the public_trouble_tickets module.
@@ -90,21 +92,40 @@ class TicketController extends ControllerBase {
   public function list() {
     $fogbugz = \Drupal::service('fogbugz_api.manager');
     $alerts = $fogbugz->getActiveAlerts();
+
+    return [
+      '#theme' => 'list',
+      '#alerts' => $alerts,
+      '#askus' => $this->getAskUsSidebar(),
+      '#attached' => [
+        'library' => ['public_trouble_tickets/datatables'],
+      ],
+    ];
+  }
+
+  /**
+   * Ajax active tickets list.
+   *
+   * @return \Drupal\Core\Ajax\AjaxResponse
+   *   Ajax response.
+   */
+  public function listData() {
+    $fogbugz = \Drupal::service('fogbugz_api.manager');
     $cases = $fogbugz->searchCases('tag:"trouble_ticket_eresources" -status:"closed"');
 
     usort($cases, function ($a, $b) {
       return $b->getDateOpened() <=> $a->getDateOpened();
     });
 
-    return [
-      '#theme' => 'list',
-      '#alerts' => $alerts,
+    $content = [
+      '#theme' => 'ticket-list',
       '#cases' => $cases,
-      '#askus' => $this->getAskUsSidebar(),
-      '#attached' => [
-        'library' => ['public_trouble_tickets/datatables'],
-      ],
     ];
+
+    $response = new AjaxResponse();
+    $response->addCommand(new HtmlCommand('#ticket-list', $content));
+
+    return $response;
   }
 
   /**

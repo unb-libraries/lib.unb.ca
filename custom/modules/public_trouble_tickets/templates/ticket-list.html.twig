@@ -1,0 +1,18 @@
+<table class="table table-bordered table-hover table-striped dataTable"  data-page-length="25" data-order='[[ 2, "desc"]]'>
+  <thead>
+    <tr>
+      <th style="width:45%">Resource Name</th>
+      <th>Nature of Problem</th>
+      <th>Date Submitted</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for case in cases %}
+    <tr>
+      <td><a href="/help/ticket/{{ case.getCaseId }}">{{ case.getTitle | striptags }}</a></td>
+      <td>{{ case.getCustomFields.nature }}</td>
+      <td>{{ case.getDateOpened | date('Y-m-d') }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
