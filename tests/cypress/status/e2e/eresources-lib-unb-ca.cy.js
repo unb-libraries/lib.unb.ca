@@ -1,5 +1,5 @@
 const eresourcesBaseUrl = 'https://lib.unb.ca/eresources'
-describe('e-Resources', {baseUrl: eresourcesBaseUrl, retries: {runMode: 4}, groups: ['core','eresources']}, () => {
+describe('e-Resources and Knowledge Base', {baseUrl: eresourcesBaseUrl, retries: {runMode: 4}, groups: ['core','eresources']}, () => {
 
   context('Knowledge Base and Resolver', {baseUrl: eresourcesBaseUrl}, () => {
     specify('Searching "Journals & Newspapers" for "Biology" should find 10+ results', () => {

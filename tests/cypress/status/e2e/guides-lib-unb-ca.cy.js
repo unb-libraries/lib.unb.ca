@@ -1,5 +1,5 @@
 const guidesBaseUrl = 'https://guides.lib.unb.ca'
-describe('Subject guides', {baseUrl: guidesBaseUrl, groups: ['core']}, () => {
+describe('Research Guides', {baseUrl: guidesBaseUrl, groups: ['core']}, () => {
 
   context('Main page', {baseUrl: guidesBaseUrl}, () => {
     beforeEach(() => {
