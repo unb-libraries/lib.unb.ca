@@ -68,6 +68,11 @@ settings:
             - Source
             - assets
             - '-'
+        -
+          name: e-Resources
+          items:
+            - Wc-search
+            - eresources
   plugins:
     drupallink:
       linkit_enabled: true
