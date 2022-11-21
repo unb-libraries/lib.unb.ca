@@ -76,7 +76,7 @@ class FilterCKEditorEresources extends FilterBase implements ContainerFactoryPlu
       $xpath = new \DOMXPath($document);
 
       foreach ($xpath->query('//eresources') as $node) {
-        $ids = $node->nodeValue;
+        $ids = $node->getAttribute('ids');
         if (empty($ids)) {
           $info = $document->createElement('div');
           $info->appendChild($document->createTextNode('e-Resources List: No resources selected.'));
