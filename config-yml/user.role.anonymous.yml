@@ -38,6 +38,7 @@ permissions:
   - 'view contest entities'
   - 'view guide category entities'
   - 'view guide entities'
+  - 'view guide_category entities'
   - 'view ior_award entities'
   - 'view media'
   - 'view own webform submission'
