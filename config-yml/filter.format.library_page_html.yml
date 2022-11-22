@@ -124,14 +124,14 @@ filters:
         xxs_linked_to_original: xxs_linked_to_original
       allowed_media_types:
         image: image
-  filter_guides_ckeditor_wc-search:
-    id: filter_guides_ckeditor_wc-search
+  filter_guides_ckeditor_eresources:
+    id: filter_guides_ckeditor_eresources
     provider: guides
     status: true
     weight: 0
     settings: {  }
-  filter_guides_ckeditor_eresources:
-    id: filter_guides_ckeditor_eresources
+  filter_guides_ckeditor_wc-search:
+    id: filter_guides_ckeditor_wc-search
     provider: guides
     status: true
     weight: 0
