@@ -3,6 +3,7 @@ status: true
 dependencies:
   module:
     - guides
+    - profile
     - system
     - toolbar
 id: guide_editor
@@ -12,5 +13,9 @@ is_admin: null
 permissions:
   - 'access toolbar'
   - 'create guide entities'
+  - 'create guides profile'
+  - 'delete own guides profile'
   - 'update guide entities'
+  - 'update guide_category entities'
+  - 'update own guides profile'
   - 'view the administration theme'
