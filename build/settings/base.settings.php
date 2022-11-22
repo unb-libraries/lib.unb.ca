@@ -5,9 +5,6 @@
  * Include global settings overrides here.
  */
 
-// Specify install profile.
-$settings['install_profile'] = 'minimal';
-
 // Private file system.
 $settings['file_private_path'] = '/app/private_filesystem';
 
