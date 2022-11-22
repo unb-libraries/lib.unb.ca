@@ -79,7 +79,7 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
       ->setRequired(TRUE)
       ->setSettings([
         'allowed_formats' => [
-          'no_media_html',
+          'library_page_html',
         ],
       ])
       ->setDisplayOptions('form', [
@@ -100,7 +100,7 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
       ->setRequired(TRUE)
       ->setSettings([
         'allowed_formats' => [
-          'no_media_html',
+          'library_page_html',
         ],
       ])
       ->setDisplayOptions('form', [
