@@ -19,5 +19,6 @@ permissions:
   - 'create guides profile'
   - 'delete own guides profile'
   - 'update guide entities'
+  - 'update guide_category entities'
   - 'update own guides profile'
   - 'view the administration theme'

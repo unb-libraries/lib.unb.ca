@@ -26,7 +26,7 @@ use Drupal\custom_entity\Entity\UserEditedInterface;
  *     "route_provider" = {
  *       "html" = "Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider",
  *     },
- *     "access" = "Drupal\custom_entity\Entity\Access\EntityAccessControlHandler",
+ *     "access" = "Drupal\guides\Entity\Access\GuideCategoryAccessControlHandler",
  *     "form" = {
  *       "default" = "Drupal\Core\Entity\ContentEntityForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
