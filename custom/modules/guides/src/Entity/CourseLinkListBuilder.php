@@ -105,6 +105,25 @@ class CourseLinkListBuilder extends EntityListBuilder {
   /**
    * {@inheritdoc}
    */
+  public function load() {
+    $guide = $this->routeMatch->getParameters()->get('guide');
+    $query = $this->getStorage()->getQuery()
+      ->condition('guide', $guide)
+      ->sort('prefix')
+      ->sort('course_number')
+      ->sort('section');
+
+    if ($this->limit) {
+      $query->pager($this->limit);
+    }
+
+    $ids = $query->execute();
+    return $this->storage->loadMultiple($ids);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function buildHeader() {
     $header['year'] = $this->t('Year');
     $header['term'] = $this->t('Term');
