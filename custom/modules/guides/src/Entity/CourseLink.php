@@ -74,7 +74,6 @@ class CourseLink extends ContentEntityBase implements ContentEntityInterface, Us
       ->setRequired(FALSE)
       ->setSettings(
         [
-          'default_value' => '',
           'max_length' => 4,
           'text_processing' => 0,
         ]
@@ -129,7 +128,6 @@ class CourseLink extends ContentEntityBase implements ContentEntityInterface, Us
       ->addConstraint('SingleValue')
       ->setSettings(
         [
-          'default_value' => '',
           'max_length' => 255,
         ]
       )
@@ -146,7 +144,6 @@ class CourseLink extends ContentEntityBase implements ContentEntityInterface, Us
       ->addConstraint('SingleValue')
       ->setSettings(
         [
-          'default_value' => '',
           'max_length' => 255,
         ]
       )
@@ -163,7 +160,6 @@ class CourseLink extends ContentEntityBase implements ContentEntityInterface, Us
       ->addConstraint('SingleValue')
       ->setSettings(
         [
-          'default_value' => '',
           'max_length' => 255,
         ]
       )

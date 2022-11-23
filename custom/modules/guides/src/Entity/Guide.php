@@ -67,7 +67,6 @@ class Guide extends ContentEntityBase implements ContentEntityInterface, UserEdi
       ->setRequired(TRUE)
       ->setSettings(
         [
-          'default_value' => '',
           'max_length' => 1024,
         ]
       )
@@ -84,7 +83,7 @@ class Guide extends ContentEntityBase implements ContentEntityInterface, UserEdi
     $fields['is_subject_guide'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Is this a subject guide?'))
       ->setRequired(FALSE)
-      ->setSettings(['default_value' => TRUE]);
+      ->setDefaultValue(TRUE);
 
     $fields['guide_categories'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Guide Categories'))

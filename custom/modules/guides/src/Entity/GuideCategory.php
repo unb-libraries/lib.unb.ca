@@ -64,7 +64,6 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
       ->setRequired(TRUE)
       ->setSettings(
         [
-          'default_value' => '',
           'max_length' => 1024,
         ]
       )
