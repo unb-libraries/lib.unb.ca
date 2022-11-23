@@ -34,7 +34,7 @@ use Drupal\custom_entity\Entity\UserEditedInterface;
  *     },
  *   },
  *   base_table = "course_link",
- *   admin_permission = "administer course link entities",
+ *   admin_permission = "administer course_link entities",
  *   entity_keys = {
  *     "id" = "id"
  *   },
