@@ -9,6 +9,12 @@ guides:
     - core/jquery
     - core/drupal
 
+guides-view-all:
+  version: VERSION
+  css:
+    theme:
+      css/guides_view_all.css: {}
+
 eresources:
   version: VERSION
   js:

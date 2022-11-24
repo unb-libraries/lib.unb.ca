@@ -10,7 +10,17 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\user\Entity\User;
 use Drupal\editor\Entity\Editor;
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\views\ViewExecutable;
 use PicoFeed\Reader\Reader;
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function guides_views_pre_render(ViewExecutable $view) {
+  if (isset($view) && ($view->storage->id() == 'research_guides')) {
+    $view->element['#attached']['library'][] = 'guides/guides-view-all';
+  }
+}
 
 /**
  * Implements hook_page_attachments().

@@ -1,0 +1,19 @@
+.nav-tabs .active .nav-link:hover {
+  cursor: default;
+}
+.nav-tabs .active .nav-link:after {
+  color:  #6c757d;
+  font-family: "Font Awesome 5 Free";
+  font-size: .85rem;
+  font-weight: 900;
+  content: '\f058';
+  margin-left: .25rem;
+  vertical-align: baseline;
+}
+h2.alert {
+  color: #212529;
+  font-size: 1rem;
+}
+.view-content {
+  margin-top: 1rem;
+}
