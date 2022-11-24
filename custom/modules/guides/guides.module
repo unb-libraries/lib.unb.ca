@@ -66,6 +66,11 @@ function guides_theme($existing, $type, $theme, $path) {
     'views_exposed_form__research_guides' => [
       'render element' => 'form',
     ],
+    // Override Barrio's Views Grid template for research_guides View.
+    'views_view_grid__research_guides' => [
+      'template' => 'views-view-grid--research_guides',
+      'base hook' => 'view',
+    ],
   ];
 }
 
