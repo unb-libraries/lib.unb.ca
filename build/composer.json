@@ -51,7 +51,11 @@
     "patches": {
       "drupal/entity_browser": {
         "Provide upload widget for media of media type file": "https://www.drupal.org/files/issues/2019-02-28/entity_browser-media-file-upload-2922885-15.patch"
+      },
+      "drupal/entity_reference_revisions": {
+        "Provide entity reference revision relation to Views": "https://www.drupal.org/files/issues/2022-06-01/entity_reference_revisions-relationship_host_id-2799479-176.patch"
       }
+
     }
   },
   "license": "MIT",
