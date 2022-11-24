@@ -5,6 +5,7 @@ dependencies:
   module:
     - better_exposed_filters
     - guides
+    - views_autocomplete_filters
 _core:
   default_config_hash: _NVukHSXCEJy_pcNBjc-el5R25gWQKL-cKvefNdSZyw
 id: research_guides
@@ -542,6 +543,12 @@ display:
               saml_stu_active: '0'
               guide_editor: '0'
             placeholder: 'Enter search terms'
+            autocomplete_filter: 1
+            autocomplete_min_chars: '3'
+            autocomplete_items: '10'
+            autocomplete_raw_suggestion: 1
+            autocomplete_raw_dropdown: 1
+            autocomplete_dependent: 0
           is_grouped: false
           group_info:
             label: ''
