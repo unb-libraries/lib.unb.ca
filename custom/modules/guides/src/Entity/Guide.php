@@ -115,6 +115,7 @@ class Guide extends ContentEntityBase implements ContentEntityInterface, UserEdi
 
     $fields['related_guide_categories'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Related Guide Categories'))
+      ->setDescription(t('Related guides categories.'))
       ->setRequired(FALSE)
       ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
       ->setSetting('target_type', 'guide_category')
