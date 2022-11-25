@@ -36,9 +36,11 @@ use PicoFeed\Reader\Reader;
  *     },
  *   },
  *   base_table = "guide",
+ *   revision_table = "guide_revision",
  *   admin_permission = "administer guide entities",
  *   entity_keys = {
  *     "id" = "id",
+ *     "revision" = "revision_id",
  *     "label" = "title",
  *     "status" = "status",
  *   },
@@ -47,6 +49,9 @@ use PicoFeed\Reader\Reader;
  *     "add-form" = "/admin/guides/add",
  *     "edit-form" = "/admin/guides/{guide}/edit",
  *     "delete-form" = "/admin/guides/{guide}/delete",
+ *     "revisions" = "/admin/guides/{guide}/revisions",
+ *     "revision" = "/admin/guides/{guide}/revisions/{guide_revision}",
+ *     "revision-restore-form" = "/admin/guides/{guide}/revisions/{guide_revision}/restore",
  *   },
  *   field_ui_base_route = "entity.guide.settings",
  * )
@@ -65,6 +70,7 @@ class Guide extends ContentEntityBase implements ContentEntityInterface, UserEdi
     $fields['title'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Title'))
       ->setRequired(TRUE)
+      ->setRevisionable(TRUE)
       ->setSettings(
         [
           'max_length' => 1024,
@@ -89,6 +95,7 @@ class Guide extends ContentEntityBase implements ContentEntityInterface, UserEdi
       ->setLabel(t('Guide Categories'))
       ->setDescription(t('A guide is intended to have <b>ONLY ONE category.</b><br>You may add a second category for cross-listed courses or interdisciplinary guides. Otherwise, use Related Guides.'))
       ->setRequired(TRUE)
+      ->setRevisionable(TRUE)
       ->setCardinality(2)
       ->setSetting('target_type', 'guide_category')
       ->setSetting('handler', 'default')
@@ -102,6 +109,7 @@ class Guide extends ContentEntityBase implements ContentEntityInterface, UserEdi
     $fields['sections'] = BaseFieldDefinition::create('entity_reference_revisions')
       ->setLabel(t('Sections'))
       ->setRequired(TRUE)
+      ->setRevisionable(TRUE)
       ->setCardinality(8)
       ->setSetting('handler_settings', ['target_bundles' => ['guide_section' => 'guide_section']])
       ->setSetting('target_type', 'paragraph')
@@ -117,6 +125,7 @@ class Guide extends ContentEntityBase implements ContentEntityInterface, UserEdi
       ->setLabel(t('Related Guide Categories'))
       ->setDescription(t('Related guides categories.'))
       ->setRequired(FALSE)
+      ->setRevisionable(TRUE)
       ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
       ->setSetting('target_type', 'guide_category')
       ->setSetting('handler', 'default')
@@ -131,6 +140,7 @@ class Guide extends ContentEntityBase implements ContentEntityInterface, UserEdi
       ->setLabel(t('Related Guides'))
       ->setDescription(t('Select up to 5 related guides'))
       ->setRequired(FALSE)
+      ->setRevisionable(TRUE)
       ->setCardinality(5)
       ->setSetting('target_type', 'guide')
       ->setSetting('handler', 'default')
@@ -144,6 +154,7 @@ class Guide extends ContentEntityBase implements ContentEntityInterface, UserEdi
     $fields['editors'] = BaseFieldDefinition::create('entity_reference_revisions')
       ->setLabel(t('Editors'))
       ->setRequired(FALSE)
+      ->setRevisionable(TRUE)
       ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
       ->setSetting('handler_settings', ['target_bundles' => ['guide_editor' => 'guide_editor']])
       ->setSetting('target_type', 'paragraph')
@@ -158,6 +169,7 @@ class Guide extends ContentEntityBase implements ContentEntityInterface, UserEdi
     $fields['feeds'] = BaseFieldDefinition::create('entity_reference_revisions')
       ->setLabel(t('Feeds'))
       ->setRequired(FALSE)
+      ->setRevisionable(TRUE)
       ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
       ->setSetting('handler_settings', ['target_bundles' => ['guide_feed' => 'guide_feed']])
       ->setSetting('target_type', 'paragraph')
