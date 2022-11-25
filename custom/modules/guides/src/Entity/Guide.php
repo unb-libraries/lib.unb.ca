@@ -27,7 +27,7 @@ use PicoFeed\Reader\Reader;
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "views_data" = "Drupal\views\EntityViewsData",
  *     "route_provider" = {
- *       "html" = "Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider",
+ *       "html" = "Drupal\guides\Entity\Routing\GuideRouteProvider",
  *     },
  *     "access" = "Drupal\guides\Entity\Access\GuideAccessControlHandler",
  *     "form" = {

@@ -1,3 +1,23 @@
+entity.guide.canonical:
+  route_name: entity.guide.canonical
+  base_route: entity.guide.canonical
+  title: 'View'
+
+entity.guide.edit_form:
+  route_name: entity.guide.edit_form
+  base_route: entity.guide.canonical
+  title: 'Edit'
+
+entity.guide.delete_form:
+  route_name: entity.guide.delete_form
+  base_route: entity.guide.canonical
+  title: 'Delete'
+
+entity.guide.revisions:
+  route_name: entity.guide.revisions
+  base_route: entity.guide.canonical
+  title: 'Revisions'
+
 guides.guide_stats_tab:
   route_name: guides.guide_stats
   base_route: entity.guide.canonical
