@@ -7,18 +7,17 @@ _core:
 id: global
 label: Global
 tags:
-  content_language: en
   canonical_url: '[current-page:url]'
-  title: '[current-page:title] | [site:name]'
+  content_language: en
   geo_placename: Fredericton
-  generator: 'Drupal 8 (https://www.drupal.org)'
-  geo_region: CA-NB
   geo_position: '45.946153; -66.643089'
-  og_locale: en_CA
-  og_latitude: '45.946153'
+  geo_region: CA-NB
   og_country_name: Canada
+  og_latitude: '45.946153'
+  og_locale: en_CA
+  og_locality: Fredericton
   og_longitude: '-66.643089'
   og_postal_code: 'E3B 5H5'
-  og_locality: Fredericton
   og_region: 'New Brunswick'
   og_street_address: '5 Macaulay Ln'
+  title: '[current-page:title] | [site:name]'
