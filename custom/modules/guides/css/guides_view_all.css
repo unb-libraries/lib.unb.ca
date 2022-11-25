@@ -17,3 +17,9 @@ h2.alert {
 .view-content {
   margin-top: 1rem;
 }
+.view-content h2 {
+  margin-bottom: 0;
+}
+.view-content .vertical {
+  margin-bottom: 1.5rem;
+}
