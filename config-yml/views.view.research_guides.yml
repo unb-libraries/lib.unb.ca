@@ -954,7 +954,7 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: "<div class=\"bg-light d-flex mb-2 py-2 views-view-grid\">\r\n  <div class=\"col\">\r\n    <h2 class=\"m-0\">{{ field_first_name }} {{ field_last_name }}</h2>\r\n  </div>\r\n  <div class=\"col\">\r\n    <i class=\"fas fa-user\"></i>\r\n      <a class=\"highlight\" href=\"/profile/{{ field_url_fragment }}\">Editor Profile</a>\r\n  </div>\r\n</div>"
+            text: "<div class=\"bg-light d-flex mb-2 py-2\">\r\n  <div class=\"col\">\r\n    <h2>{{ field_first_name }} {{ field_last_name }}</h2>\r\n  </div>\r\n  <div class=\"col\">\r\n    <span class=\"fas fa-user fa-sm\"></span> <a class=\"highlight\" href=\"/profile/{{ field_url_fragment }}\">Editor Profile</a>\r\n  </div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -1044,14 +1044,14 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
+          element_type: '0'
           element_class: ''
-          element_label_type: ''
+          element_label_type: '0'
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: ''
+          element_wrapper_type: '0'
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -1292,14 +1292,14 @@ display:
           columns: 2
           automatic_width: false
           alignment: vertical
-          row_class_custom: guide-item
+          row_class_custom: guide-title
           row_class_default: false
-          col_class_custom: 'col mb-3'
+          col_class_custom: views-cols
           col_class_default: false
       row:
         type: fields
         options:
-          default_field_elements: true
+          default_field_elements: false
           inline: {  }
           separator: ''
           hide_empty: false
@@ -1442,7 +1442,7 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: "<div class=\"bg-light d-flex mb-2 py-2 views-view-grid\">\r\n  <div class=\"col\">\r\n    <h2 class=\"views-col m-0\">{{ title_2 }} Guides</h2>\r\n  </div>\r\n  <div class=\"col\">\r\n   <i class=\"fas fa-home fa-sm\"></i> <a class=\"highlight\" href=\"{{ view_guide_category }}\">Subject Homepage</a>\r\n  </div>\r\n</div>"
+            text: "<div class=\"bg-light d-flex mb-2 py-2\">\r\n  <div class=\"col\">\r\n    <h2\">{{ title_2 }} Guides</h2>\r\n  </div>\r\n  <div class=\"col\">\r\n   <span class=\"fas fa-home fa-sm\"></span> <a class=\"highlight\" href=\"{{ view_guide_category }}\">Subject Homepage</a>\r\n  </div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -1600,9 +1600,9 @@ display:
           columns: 2
           automatic_width: false
           alignment: vertical
-          row_class_custom: guide-item
-          row_class_default: true
-          col_class_custom: 'col mb-3'
+          row_class_custom: guide-title
+          row_class_default: false
+          col_class_custom: views-cols
           col_class_default: false
       row:
         type: fields
