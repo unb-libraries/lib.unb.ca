@@ -10,15 +10,15 @@
 </ul>
 {% endif %}
 
-<div class="Accordion d-flex flex-column flex-lg-row flex-wrap">
-  <div class="flex-fill" id="guide">
+<div class="Accordion">
+  <div id="guide">
     <div class="card">
       <div class="bg-black card-header pb-1 pt-2 px-0 py-md-1">
         <h2 class="sr-only">Guide Sections</h2>
         <nav class="navbar navbar-expand-md">
           {% set sections = guide.sections|filter(s => s.entity.field_hide_section.value == 0) %}
           {% set first_section = sections|first %}
-          <h3 class="d-block d-md-none h4 px-2 py-1" id="category-label">
+          <h3 class="d-inline-block d-md-none h4 px-2 py-1" id="category-label">
             {{ first_section.entity.field_section_label.value }}
           </h3>
           <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
