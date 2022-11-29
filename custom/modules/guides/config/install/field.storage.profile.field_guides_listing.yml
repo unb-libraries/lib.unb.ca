@@ -15,14 +15,14 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: none
-      label: 'Do not display'
-    -
       value: body
       label: 'Display in main body of the page'
     -
       value: sidebar
       label: 'Display in the sidebar after the contact section'
+    -
+      value: none
+      label: 'Do not display'
   allowed_values_function: ''
 module: options
 locked: false
