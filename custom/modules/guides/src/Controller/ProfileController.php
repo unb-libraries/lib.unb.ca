@@ -79,8 +79,10 @@ class ProfileController extends ControllerBase {
     $query = $storage->getQuery();
     $ids = $query
       ->condition('status', 1)
+      ->condition('unlisted', 0)
       ->condition('editors.entity:paragraph.field_user.target_id', $profile->uid->target_id, 'IN')
       ->condition('editors.entity:paragraph.field_display_editor', 1)
+      ->sort('title', 'ASC')
       ->execute();
     $guides = $storage->loadMultiple($ids);
 
