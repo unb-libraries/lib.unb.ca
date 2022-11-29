@@ -54,6 +54,13 @@ function guides_theme($existing, $type, $theme, $path) {
     'guide' => [
       'render element' => 'elements',
     ],
+    'guides_profile' => [
+      'variables' => [
+        'profile' => NULL,
+        'account' => NULL,
+        'guides' => NULL,
+      ],
+    ],
     'guides_stats' => [
       'variables' => [
         'object_type' => NULL,
