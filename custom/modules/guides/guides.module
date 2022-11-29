@@ -12,6 +12,7 @@ use Drupal\editor\Entity\Editor;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\views\ViewExecutable;
 use PicoFeed\Reader\Reader;
+use Drupal\Core\Cache\Cache;
 
 /**
  * Implements hook_views_pre_render().
@@ -186,5 +187,7 @@ function guides_profile_presave(EntityInterface $entity) {
     $fragment = preg_replace('/[^a-z]+/', '-', strtolower($name));
 
     $entity->set('field_url_fragment', $fragment);
+
+    Cache::invalidateTags(['user:' . $user->id()]);
   }
 }

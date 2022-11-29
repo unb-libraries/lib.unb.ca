@@ -94,6 +94,7 @@ class ProfileController extends ControllerBase {
       '#cache' => [
         'tags' => [
           'guide_list',
+          'user:' . $account->id(),
         ],
       ],
     ];
