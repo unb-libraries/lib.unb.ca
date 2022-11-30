@@ -31,6 +31,7 @@ class ProfileController extends ControllerBase {
         ->condition('status', 1)
         ->condition('type', 'guides')
         ->condition('field_url_fragment', $url_fragment)
+        ->accessCheck(FALSE)
         ->execute();
 
       if (!empty($ids)) {
