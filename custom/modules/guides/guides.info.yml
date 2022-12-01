@@ -11,3 +11,4 @@ dependencies:
   - lib_core
   - gapi
   - profile
+  - twig_tweak
