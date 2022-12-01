@@ -10,6 +10,7 @@ display_label: 'Public Profile'
 multiple: false
 registration: false
 roles:
+  guide_editor: guide_editor
   public_profile: public_profile
 allow_revisions: false
 new_revision: false
