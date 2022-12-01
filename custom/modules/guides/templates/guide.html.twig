@@ -48,7 +48,7 @@
         {% set section_id = section.entity.id() %}
           <div aria-labelledby="btnSection{{ section_id }}" class="Accordion-panel flex-grow-1"
           id="panelSection{{ section_id }}" role="region" {% if not loop.first %} hidden=""{% endif %}>
-            {{ section.entity.field_section_content.value|t }}
+            {{ drupal_field('field_section_content', 'paragraph', section_id, 'paragraph.default') }}
           </div>
         {% endfor %}
 
@@ -63,7 +63,6 @@
           <div class="border border-dark">
             <div aria-labelledby="editors-toggle" class="collapse show" id="editors">
               <div class="p-2">
-                <p><del>Sample editor content here</del></p>
                 {% set editors = guide.editors|filter(e => e.entity.field_display_editor.value == 1) %}
                 {% for editor in editors %}
                   {% set user = editor.entity.field_user.entity %}
