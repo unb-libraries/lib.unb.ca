@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\guides\Services;
+namespace Drupal\public_profile\Services;
 
 use Drupal\Core\Routing\RouteSubscriberBase;
 use Symfony\Component\Routing\RouteCollection;

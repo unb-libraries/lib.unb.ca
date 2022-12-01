@@ -10,5 +10,5 @@ dependencies:
   - custom_entity
   - lib_core
   - gapi
-  - profile
+  - public_profile
   - twig_tweak

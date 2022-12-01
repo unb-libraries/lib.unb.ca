@@ -1,5 +1,0 @@
-services:
-  guides.route_subscriber:
-    class: Drupal\guides\Services\RouteSubscriber
-    tags:
-      - { name: event_subscriber }
