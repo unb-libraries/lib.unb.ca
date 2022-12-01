@@ -178,6 +178,15 @@ function guides_theme_suggestions_page_title_alter(array &$suggestions, array $v
 }
 
 /**
+ * Implements hook_editor_js_settings_alter().
+ */
+function guides_editor_js_settings_alter(array &$settings) {
+  foreach ($settings['editor']['formats'] as $name => $value) {
+    $settings['editor']['formats'][$name]['editorSettings']['autoParagraph'] = FALSE;
+  }
+}
+
+/**
  * Implements hook_entity_presave().
  */
 function guides_profile_presave(EntityInterface $entity) {
