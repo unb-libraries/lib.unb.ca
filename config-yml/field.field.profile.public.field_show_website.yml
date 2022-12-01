@@ -1,16 +1,16 @@
-uuid: 462bbf4b-f38d-4709-8170-06cea97d7f07
+uuid: fcb37db4-104e-4695-a6a1-0a1d7b307c97
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.profile.field_show_website
-    - profile.type.guides
+    - profile.type.public
 _core:
   default_config_hash: knSd8Vy5bHIkjRvwbtuJGZlTnnfL-0Awe658ZFAvMnw
-id: profile.guides.field_show_website
+id: profile.public.field_show_website
 field_name: field_show_website
 entity_type: profile
-bundle: guides
+bundle: public
 label: 'Show website on your guides'
 description: ''
 required: false

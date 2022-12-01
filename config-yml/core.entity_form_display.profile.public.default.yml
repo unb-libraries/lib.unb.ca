@@ -1,34 +1,34 @@
-uuid: cc464bb4-373f-4f6d-bf6c-0102b89df3c1
+uuid: 2030933f-b95f-4287-a88a-c94fb7096d87
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.profile.guides.field_biography
-    - field.field.profile.guides.field_book_a_meeting
-    - field.field.profile.guides.field_campus
-    - field.field.profile.guides.field_facebook_id
-    - field.field.profile.guides.field_guides_listing
-    - field.field.profile.guides.field_library_link
-    - field.field.profile.guides.field_linkedin_id
-    - field.field.profile.guides.field_mini_biography
-    - field.field.profile.guides.field_orcid_id
-    - field.field.profile.guides.field_profile_picture
-    - field.field.profile.guides.field_pronouns
-    - field.field.profile.guides.field_researchgate_id
-    - field.field.profile.guides.field_show_library_link
-    - field.field.profile.guides.field_show_phone_number
-    - field.field.profile.guides.field_show_position_title
-    - field.field.profile.guides.field_show_pronouns
-    - field.field.profile.guides.field_show_social_media_icons
-    - field.field.profile.guides.field_show_subject_specialties
-    - field.field.profile.guides.field_show_website
-    - field.field.profile.guides.field_status_note
-    - field.field.profile.guides.field_subject_specialties
-    - field.field.profile.guides.field_twitter_id
-    - field.field.profile.guides.field_url_fragment
-    - field.field.profile.guides.field_website
+    - field.field.profile.public.field_biography
+    - field.field.profile.public.field_book_a_meeting
+    - field.field.profile.public.field_campus
+    - field.field.profile.public.field_facebook_id
+    - field.field.profile.public.field_guides_listing
+    - field.field.profile.public.field_library_link
+    - field.field.profile.public.field_linkedin_id
+    - field.field.profile.public.field_mini_biography
+    - field.field.profile.public.field_orcid_id
+    - field.field.profile.public.field_profile_picture
+    - field.field.profile.public.field_pronouns
+    - field.field.profile.public.field_researchgate_id
+    - field.field.profile.public.field_show_library_link
+    - field.field.profile.public.field_show_phone_number
+    - field.field.profile.public.field_show_position_title
+    - field.field.profile.public.field_show_pronouns
+    - field.field.profile.public.field_show_social_media_icons
+    - field.field.profile.public.field_show_subject_specialties
+    - field.field.profile.public.field_show_website
+    - field.field.profile.public.field_status_note
+    - field.field.profile.public.field_subject_specialties
+    - field.field.profile.public.field_twitter_id
+    - field.field.profile.public.field_url_fragment
+    - field.field.profile.public.field_website
     - image.style.thumbnail
-    - profile.type.guides
+    - profile.type.public
   module:
     - field_group
     - image
@@ -57,9 +57,9 @@ third_party_settings:
         required_fields: true
 _core:
   default_config_hash: Z_uvDrGi8E4_txRO988w-xhGG_htNLadz3IgrJYWzIk
-id: profile.guides.default
+id: profile.public.default
 targetEntityType: profile
-bundle: guides
+bundle: public
 mode: default
 content:
   field_biography:

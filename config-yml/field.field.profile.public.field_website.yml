@@ -1,18 +1,18 @@
-uuid: e57b4f54-c67c-4ff0-9759-431568bc3c43
+uuid: 5ec9663a-83b5-451f-b251-437d917011e9
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.profile.field_website
-    - profile.type.guides
+    - profile.type.public
   module:
     - link
 _core:
   default_config_hash: 76viyqCKdwf8qmUI5Vk5KIfDg63He5Wvx9jou2YvWHY
-id: profile.guides.field_website
+id: profile.public.field_website
 field_name: field_website
 entity_type: profile
-bundle: guides
+bundle: public
 label: Website
 description: ''
 required: false

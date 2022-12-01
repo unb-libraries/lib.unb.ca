@@ -1,10 +1,10 @@
-uuid: 4efd77df-0fa6-4fef-bfe0-79b2f1a64111
+uuid: 0c99fd01-9faf-478c-b346-3b5c8aa4fab5
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.profile.field_url_fragment
-    - profile.type.guides
+    - profile.type.public
   module:
     - profile
 third_party_settings:
@@ -12,10 +12,10 @@ third_party_settings:
     profile_private: true
 _core:
   default_config_hash: hty6TtZLlXxQiedSQJaRP-vqLmmEqazaAC3G1APGnnI
-id: profile.guides.field_url_fragment
+id: profile.public.field_url_fragment
 field_name: field_url_fragment
 entity_type: profile
-bundle: guides
+bundle: public
 label: 'URL Fragment'
 description: ''
 required: false

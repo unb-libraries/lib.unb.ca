@@ -1,16 +1,16 @@
-uuid: e49bb82c-5dad-44d9-9c6d-9548e92d701f
+uuid: 622649e7-5338-4170-830b-d5892b638df3
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.profile.field_show_position_title
-    - profile.type.guides
+    - profile.type.public
 _core:
   default_config_hash: OvljOj3Q3kxBpccsYayW800DHEuzxMblFqrmlQ6h8Gc
-id: profile.guides.field_show_position_title
+id: profile.public.field_show_position_title
 field_name: field_show_position_title
 entity_type: profile
-bundle: guides
+bundle: public
 label: 'Show position/title on your guides'
 description: ''
 required: false

@@ -1,15 +1,15 @@
-uuid: dd3e70b7-bddc-4f1b-83d5-a9f1d6ac1986
+uuid: 4c42973e-b983-4495-91b4-5d531d3f4e27
 langcode: en
 status: true
 dependencies: {  }
 _core:
   default_config_hash: M5lpWXFLvKVRBNgUkXJnSl57a_27gnnfc12KrolBTeY
-id: guides
-label: Guides
-display_label: Guides
+id: public
+label: Public
+display_label: 'Public Profile'
 multiple: false
 registration: false
 roles:
-  guide_editor: guide_editor
+  public_profile: public_profile
 allow_revisions: false
 new_revision: false

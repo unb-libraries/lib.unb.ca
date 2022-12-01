@@ -1,16 +1,16 @@
-uuid: 73e3e2f0-1fc4-47c6-85f8-8e3be4a2bd1a
+uuid: e9c7c05f-1ad9-4b63-add4-8fc09e8a66bf
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.profile.field_orcid_id
-    - profile.type.guides
+    - profile.type.public
 _core:
   default_config_hash: mJv-rP88iprSFzXCkghBHFZSWyGx5ZMhwNoaUT8iNQc
-id: profile.guides.field_orcid_id
+id: profile.public.field_orcid_id
 field_name: field_orcid_id
 entity_type: profile
-bundle: guides
+bundle: public
 label: 'ORCID ID'
 description: ''
 required: false

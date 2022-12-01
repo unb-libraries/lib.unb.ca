@@ -1,16 +1,16 @@
-uuid: 268e4ac6-5ded-4c5a-8f89-051a43d480a5
+uuid: 786d6eae-4e6e-49fc-8b62-b7eb46ed8f44
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.profile.field_show_phone_number
-    - profile.type.guides
+    - profile.type.public
 _core:
   default_config_hash: cvLGGsvPcAzZaw5jaucL4JE3g1EMEF7oFf0072lxEFI
-id: profile.guides.field_show_phone_number
+id: profile.public.field_show_phone_number
 field_name: field_show_phone_number
 entity_type: profile
-bundle: guides
+bundle: public
 label: 'Show phone number on your guides'
 description: ''
 required: false

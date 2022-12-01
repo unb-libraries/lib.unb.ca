@@ -1,16 +1,16 @@
-uuid: 2312640c-5bff-4ae3-bbf9-8ab50f66228e
+uuid: ee12d37e-6785-4f62-b4cc-ceca473ee04d
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.profile.field_show_library_link
-    - profile.type.guides
+    - profile.type.public
 _core:
   default_config_hash: xy26zpUJvlCnPy4QrQt3zV53T0NBUfQ9ChiP_71vsrA
-id: profile.guides.field_show_library_link
+id: profile.public.field_show_library_link
 field_name: field_show_library_link
 entity_type: profile
-bundle: guides
+bundle: public
 label: 'Show library or service hours link on your guides'
 description: ''
 required: false

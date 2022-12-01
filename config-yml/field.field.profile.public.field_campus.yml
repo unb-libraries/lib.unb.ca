@@ -1,18 +1,18 @@
-uuid: 5e954878-6b77-4f82-a4fd-37328078528a
+uuid: 5b2b3abd-b54d-47a3-befa-49100f30ae29
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.profile.field_campus
-    - profile.type.guides
+    - profile.type.public
   module:
     - options
 _core:
   default_config_hash: 2BfKfZB_ICP-Njy--ikQhvQ28EPighuVkTuUqQrrZxg
-id: profile.guides.field_campus
+id: profile.public.field_campus
 field_name: field_campus
 entity_type: profile
-bundle: guides
+bundle: public
 label: Campus
 description: ''
 required: false

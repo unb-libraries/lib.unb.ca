@@ -1,0 +1,14 @@
+uuid: e60cf97f-d48c-4688-8fc7-788ffd4971bb
+langcode: en
+status: true
+dependencies:
+  module:
+    - profile
+id: public_profile
+label: 'Public Profile'
+weight: 9
+is_admin: null
+permissions:
+  - 'create public profile'
+  - 'delete own public profile'
+  - 'update own public profile'

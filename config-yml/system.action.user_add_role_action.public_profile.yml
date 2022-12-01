@@ -1,0 +1,14 @@
+uuid: 4a80a700-610f-4d5a-a9ec-45da8c608343
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.public_profile
+  module:
+    - user
+id: user_add_role_action.public_profile
+label: 'Add the Public Profile role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: public_profile

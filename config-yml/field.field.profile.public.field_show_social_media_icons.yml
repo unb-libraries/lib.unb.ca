@@ -1,16 +1,16 @@
-uuid: f8b13a7b-e4ff-4561-a8eb-469dd79f3d8b
+uuid: 21600ef2-7e01-4dd5-976f-1bc31a8276a0
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.profile.field_show_social_media_icons
-    - profile.type.guides
+    - profile.type.public
 _core:
   default_config_hash: 6vJLlwzh-VAyUlUZAQIJKHTcv6xEB0gYVBTCTMsLynQ
-id: profile.guides.field_show_social_media_icons
+id: profile.public.field_show_social_media_icons
 field_name: field_show_social_media_icons
 entity_type: profile
-bundle: guides
+bundle: public
 label: 'Show social media icons on your guides'
 description: ''
 required: false

@@ -1,16 +1,16 @@
-uuid: 2ff4b546-0cf8-40e8-8676-e44c7f9a6a9f
+uuid: 0c180e39-49f9-4af4-80b7-5cdca5db5f99
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.profile.field_linkedin_id
-    - profile.type.guides
+    - profile.type.public
 _core:
   default_config_hash: yNUf-bktspldf18jdz_Q_u8_jfohMfo6I_NvWQ1jnhA
-id: profile.guides.field_linkedin_id
+id: profile.public.field_linkedin_id
 field_name: field_linkedin_id
 entity_type: profile
-bundle: guides
+bundle: public
 label: 'LinkedIn ID'
 description: ''
 required: false

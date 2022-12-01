@@ -1,18 +1,18 @@
-uuid: 505f5500-0fb4-4405-8913-9a2d0abba1f3
+uuid: be172426-fc82-4a3a-918f-847905c950c4
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.profile.field_guides_listing
-    - profile.type.guides
+    - profile.type.public
   module:
     - options
 _core:
   default_config_hash: NdsKnWm2uzBeTT9Xw1uUdCBXcjPnyZ9-U9c0n1jitsg
-id: profile.guides.field_guides_listing
+id: profile.public.field_guides_listing
 field_name: field_guides_listing
 entity_type: profile
-bundle: guides
+bundle: public
 label: 'Your complete guides listing on your profile'
 description: ''
 required: true

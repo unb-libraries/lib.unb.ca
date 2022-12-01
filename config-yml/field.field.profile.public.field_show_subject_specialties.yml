@@ -1,16 +1,16 @@
-uuid: eacca53e-e271-4620-859d-4f839848d791
+uuid: 41123951-78f0-4b34-9cc7-dff54b131c30
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.profile.field_show_subject_specialties
-    - profile.type.guides
+    - profile.type.public
 _core:
   default_config_hash: ukzM00QTsUEjVs2QxIQpidDJAT8-NXOrr1T2Ig8LCP8
-id: profile.guides.field_show_subject_specialties
+id: profile.public.field_show_subject_specialties
 field_name: field_show_subject_specialties
 entity_type: profile
-bundle: guides
+bundle: public
 label: 'Show subject specialties on your guides'
 description: ''
 required: false

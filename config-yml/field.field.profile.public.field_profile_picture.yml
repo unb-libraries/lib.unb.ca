@@ -1,18 +1,18 @@
-uuid: 8970146a-ddc7-45ea-a0cc-747a03d8fdbe
+uuid: 1d3a9465-f86d-4914-a849-acf45d49758e
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.profile.field_profile_picture
-    - profile.type.guides
+    - profile.type.public
   module:
     - image
 _core:
   default_config_hash: 1DaVvG8DB2hidx5K0-AK7JZi8vGd3iHgzfE0x5Cg100
-id: profile.guides.field_profile_picture
+id: profile.public.field_profile_picture
 field_name: field_profile_picture
 entity_type: profile
-bundle: guides
+bundle: public
 label: 'Profile Picture'
 description: ''
 required: false

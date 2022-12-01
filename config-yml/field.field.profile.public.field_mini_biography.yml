@@ -1,16 +1,16 @@
-uuid: 3df89756-d536-489f-b5ca-7adb39856f0b
+uuid: 5b9b3af5-a45a-4a00-9158-10f354a3b0bd
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.profile.field_mini_biography
-    - profile.type.guides
+    - profile.type.public
 _core:
   default_config_hash: BDforvzfgP3v2-4sOl6jvUH_xWQLJ1VYj78tBylChck
-id: profile.guides.field_mini_biography
+id: profile.public.field_mini_biography
 field_name: field_mini_biography
 entity_type: profile
-bundle: guides
+bundle: public
 label: 'Mini biography'
 description: 'Used in the sidebar of a guide.'
 required: false

@@ -1,18 +1,18 @@
-uuid: 24b13ce7-5e08-45d5-8421-2f0a056ba8fc
+uuid: cf053c45-e842-401f-bd2e-23ad49b112bd
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.profile.field_book_a_meeting
-    - profile.type.guides
+    - profile.type.public
   module:
     - link
 _core:
   default_config_hash: rH_NzO7QFm_lYCL_D02EM_1dmxwdtQz4i9SIc27wrGg
-id: profile.guides.field_book_a_meeting
+id: profile.public.field_book_a_meeting
 field_name: field_book_a_meeting
 entity_type: profile
-bundle: guides
+bundle: public
 label: 'Book a meeting'
 description: 'e.g. Boook a meeting with me!'
 required: false
