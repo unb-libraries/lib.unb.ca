@@ -1,0 +1,7 @@
+public_profile.view:
+  path: '/profile/{url_fragment}'
+  defaults:
+    _controller: '\Drupal\public_profile\Controller\ProfileController::view'
+    _title_callback: '\Drupal\public_profile\Controller\ProfileController::title'
+  requirements:
+    _access: 'TRUE'

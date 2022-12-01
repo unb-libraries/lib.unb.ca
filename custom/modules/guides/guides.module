@@ -9,10 +9,8 @@ use Drupal\Core\Render\Element;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\user\Entity\User;
 use Drupal\editor\Entity\Editor;
-use Drupal\Core\Entity\EntityInterface;
 use Drupal\views\ViewExecutable;
 use PicoFeed\Reader\Reader;
-use Drupal\Core\Cache\Cache;
 
 /**
  * Implements hook_views_pre_render().
@@ -54,13 +52,6 @@ function guides_theme($existing, $type, $theme, $path) {
     ],
     'guide' => [
       'render element' => 'elements',
-    ],
-    'guides_profile' => [
-      'variables' => [
-        'profile' => NULL,
-        'account' => NULL,
-        'guides' => NULL,
-      ],
     ],
     'guides_stats' => [
       'variables' => [
@@ -183,20 +174,5 @@ function guides_theme_suggestions_page_title_alter(array &$suggestions, array $v
 function guides_editor_js_settings_alter(array &$settings) {
   foreach ($settings['editor']['formats'] as $name => $value) {
     $settings['editor']['formats'][$name]['editorSettings']['autoParagraph'] = FALSE;
-  }
-}
-
-/**
- * Implements hook_entity_presave().
- */
-function guides_profile_presave(EntityInterface $entity) {
-  if ($entity->bundle() == 'guides') {
-    $user = $entity->getOwner();
-    $name = implode('-', [$user->get('field_first_name')->getString(), $user->get('field_last_name')->getString()]);
-    $fragment = preg_replace('/[^a-z]+/', '-', strtolower($name));
-
-    $entity->set('field_url_fragment', $fragment);
-
-    Cache::invalidateTags(['user:' . $user->id()]);
   }
 }

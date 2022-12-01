@@ -4,3 +4,36 @@
  * @file
  * Contains public_profile.module.
  */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Cache\Cache;
+
+/**
+ * Implements hook_theme().
+ */
+function public_profile_theme($existing, $type, $theme, $path) {
+  return [
+    'public_profile' => [
+      'variables' => [
+        'profile' => NULL,
+        'account' => NULL,
+        'guides' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_entity_presave().
+ */
+function public_profile_profile_presave(EntityInterface $entity) {
+  if ($entity->bundle() == 'public') {
+    $user = $entity->getOwner();
+    $name = implode('-', [$user->get('field_first_name')->getString(), $user->get('field_last_name')->getString()]);
+    $fragment = preg_replace('/[^a-z]+/', '-', strtolower($name));
+
+    $entity->set('field_url_fragment', $fragment);
+
+    Cache::invalidateTags(['user:' . $user->id()]);
+  }
+}

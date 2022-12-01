@@ -1,12 +1,12 @@
 <?php
 
-namespace Drupal\guides\Controller;
+namespace Drupal\public_profile\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
- * Provides route responses for the guides module.
+ * Provides route responses for the public_profile module.
  */
 class ProfileController extends ControllerBase {
 
@@ -29,7 +29,7 @@ class ProfileController extends ControllerBase {
       $query = $storage->getQuery();
       $ids = $query
         ->condition('status', 1)
-        ->condition('type', 'guides')
+        ->condition('type', 'public')
         ->condition('field_url_fragment', $url_fragment)
         ->accessCheck(FALSE)
         ->execute();
@@ -88,7 +88,7 @@ class ProfileController extends ControllerBase {
     $guides = $storage->loadMultiple($ids);
 
     return [
-      '#theme' => 'guides_profile',
+      '#theme' => 'public_profile',
       '#profile' => $profile,
       '#account' => $account,
       '#guides' => $guides,

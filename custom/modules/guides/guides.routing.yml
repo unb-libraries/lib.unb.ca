@@ -55,10 +55,3 @@ guides.user_stats:
     _title: 'User Statistics'
   requirements:
     _permission: 'create guide entities'
-guides.profile:
-  path: '/profile/{url_fragment}'
-  defaults:
-    _controller: '\Drupal\guides\Controller\ProfileController::view'
-    _title_callback: '\Drupal\guides\Controller\ProfileController::title'
-  requirements:
-    _access: 'TRUE'
