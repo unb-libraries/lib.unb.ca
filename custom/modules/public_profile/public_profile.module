@@ -7,6 +7,7 @@
 
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Cache\Cache;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Implements hook_theme().
@@ -35,5 +36,30 @@ function public_profile_profile_presave(EntityInterface $entity) {
     $entity->set('field_url_fragment', $fragment);
 
     Cache::invalidateTags(['user:' . $user->id()]);
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function public_profile_form_profile_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $entity = $form_state->getFormObject()->getEntity();
+  $user = \Drupal::currentUser();
+  if ($entity->bundle() == 'public' && !in_array('guide_editor', $user->getRoles())) {
+    $toHide = [
+      'field_guides_listing',
+      'field_mini_biography',
+      'field_show_library_link',
+      'field_show_phone_number',
+      'field_show_position_title',
+      'field_show_pronouns',
+      'field_show_social_media_icons',
+      'field_show_subject_specialties',
+      'field_show_website',
+    ];
+
+    foreach ($toHide as $field) {
+      $form[$field]['#access'] = FALSE;
+    }
   }
 }

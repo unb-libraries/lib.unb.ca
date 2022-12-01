@@ -12,7 +12,7 @@ field_name: field_subject_specialties
 entity_type: profile
 bundle: public
 label: 'Subject specialties'
-description: 'Used in the sidebar of a guide.'
+description: 'Shown in the sidebar.'
 required: false
 translatable: false
 default_value: {  }
