@@ -16,30 +16,14 @@ targetEntityType: paragraph
 bundle: guide_section
 mode: default
 content:
-  field_hide_section:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 2
-    region: content
   field_section_content:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_section_label:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
+  field_hide_section: true
+  field_section_label: true
   search_api_excerpt: true
