@@ -1,0 +1,29 @@
+uuid: 7f7f6afe-1603-4848-b8fc-b290d1c709c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_functional_specializations
+    - profile.type.public
+    - taxonomy.vocabulary.functional_specializations
+id: profile.public.field_functional_specializations
+field_name: field_functional_specializations
+entity_type: profile
+bundle: public
+label: 'Functional Specializations'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      functional_specializations: functional_specializations
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

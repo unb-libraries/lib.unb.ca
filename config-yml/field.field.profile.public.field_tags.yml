@@ -1,0 +1,29 @@
+uuid: 2eb91cfe-1fe1-4bf2-a04a-e5e0ba0753e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_tags
+    - profile.type.public
+    - taxonomy.vocabulary.specialized_help_tags
+id: profile.public.field_tags
+field_name: field_tags
+entity_type: profile
+bundle: public
+label: Tags
+description: '<p>Optional keywords that are associated with your user profile and may be searched for on the <a href="/connect">Get Specialized Help</a> page</p>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      specialized_help_tags: specialized_help_tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,8 @@
+uuid: 0c86f5ae-2585-4e15-8016-ea9b42576b33
+langcode: en
+status: true
+dependencies: {  }
+name: 'Functional Specializations'
+vid: functional_specializations
+description: 'Specialty terms associated with User profiles that are used for the Find A Specialist search.'
+weight: 0

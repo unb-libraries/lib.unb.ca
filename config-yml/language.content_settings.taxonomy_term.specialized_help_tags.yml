@@ -1,0 +1,11 @@
+uuid: cb447c95-7793-4f87-b7d1-ab9adc67427c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.specialized_help_tags
+id: taxonomy_term.specialized_help_tags
+target_entity_type_id: taxonomy_term
+target_bundle: specialized_help_tags
+default_langcode: site_default
+language_alterable: false

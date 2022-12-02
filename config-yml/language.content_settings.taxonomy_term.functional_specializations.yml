@@ -1,0 +1,11 @@
+uuid: 4d15c417-f3de-45a0-ae22-a627ac917ce7
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.functional_specializations
+id: taxonomy_term.functional_specializations
+target_entity_type_id: taxonomy_term
+target_bundle: functional_specializations
+default_langcode: site_default
+language_alterable: false

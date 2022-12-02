@@ -7,6 +7,8 @@ dependencies:
     - field.field.profile.public.field_book_a_meeting
     - field.field.profile.public.field_campus
     - field.field.profile.public.field_facebook_id
+    - field.field.profile.public.field_functional_specializations
+    - field.field.profile.public.field_guide_categories
     - field.field.profile.public.field_guides_listing
     - field.field.profile.public.field_library_link
     - field.field.profile.public.field_linkedin_id
@@ -24,6 +26,7 @@ dependencies:
     - field.field.profile.public.field_show_website
     - field.field.profile.public.field_status_note
     - field.field.profile.public.field_subject_specialties
+    - field.field.profile.public.field_tags
     - field.field.profile.public.field_twitter_id
     - field.field.profile.public.field_url_fragment
     - field.field.profile.public.field_website
@@ -73,6 +76,22 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 16
+    region: content
+  field_functional_specializations:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 23
+    region: content
+  field_guide_categories:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 24
     region: content
   field_guides_listing:
     type: list_default
@@ -223,6 +242,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 9
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 25
     region: content
   field_twitter_id:
     type: string
