@@ -93,7 +93,7 @@ class Guide extends ContentEntityBase implements ContentEntityInterface, UserEdi
 
     $fields['guide_categories'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Guide Categories'))
-      ->setDescription(t('A guide is intended to have <b>ONLY ONE category.</b><br>You may add a second category for cross-listed courses or interdisciplinary guides. Otherwise, use Related Guides.'))
+      ->setDescription(t('A guide is intended to have <b>ONLY ONE category.</b><br>You may add a second category for cross-listed courses or interdisciplinary guides. Otherwise, use Related Categories.'))
       ->setRequired(TRUE)
       ->setRevisionable(TRUE)
       ->setCardinality(2)
