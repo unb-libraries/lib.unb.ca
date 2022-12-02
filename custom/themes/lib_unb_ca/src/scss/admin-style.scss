@@ -16,3 +16,15 @@
 .field--name-field-images fieldset.media-library-widget legend {
   top: .5rem;
 }
+
+.details-wrapper {
+  .form-wrapper:not(:first-child) {
+    margin-top: 1.5rem;
+  }
+}
+
+th.field-label .label {
+  border-bottom: 1px solid #bfbfbf;
+  display: block;
+  margin-bottom: .25rem;
+}
