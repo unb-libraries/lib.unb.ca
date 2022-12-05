@@ -8,6 +8,7 @@
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_theme().
@@ -45,6 +46,23 @@ function public_profile_profile_presave(EntityInterface $entity) {
 function public_profile_form_profile_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $entity = $form_state->getFormObject()->getEntity();
   $user = \Drupal::currentUser();
+
+  if ($urlFragment = $entity->get('field_url_fragment')->value) {
+    $form['profile_link_button'] = [
+      '#type' => 'operations',
+      '#links' => [
+        'view' => [
+          'title' => 'View your profile',
+          'url' => Url::fromRoute('public_profile.view', ['url_fragment' => $urlFragment]),
+        ],
+      ],
+      '#weight' => -1,
+      '#attributes' => [
+        'style' => ['margin-top:1em'],
+      ],
+    ];
+  }
+
   if ($entity->bundle() == 'public' && !in_array('guide_editor', $user->getRoles())) {
     $toHide = [
       'field_guides_listing',
