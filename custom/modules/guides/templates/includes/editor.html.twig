@@ -1,0 +1,69 @@
+<ul class="list-unstyled">
+{% if profile.field_profile_picture.entity.uri.value %}
+  {% set picture = {
+    '#theme': 'image_style',
+    '#style_name': 'small_scale_width',
+    '#uri': profile.field_profile_picture.entity.uri.value,
+    '#alt': profile.field_profile_picture.alt,
+  } %}
+  <li class="text-center mt-0 mb-3">{{ picture }}</li>
+{% endif %}
+  <li>
+    <a href="{{ url('public_profile.view', {'url_fragment': profile.field_url_fragment.value}) }}">{{ account.field_first_name.value }} {{ account.field_last_name.value }}</a>
+{% if profile.field_pronouns.value and profile.field_show_pronouns.value %}
+    <span class="pronouns">({{ profile.field_pronouns.value }})</span>
+{% endif %}
+  </li>
+{% if profile.field_status_note.value %}
+  <li><i class="fas fa-asterisk text-danger"></i> {{ profile.field_status_note.value }}</li>
+{% endif %}
+{% if account.field_position_title.value and profile.field_show_position_title.value %}
+  <li><strong>{{ account.field_position_title.value }}</strong></li>
+{% endif %}
+{% if profile.field_campus.value %}
+  <li><strong>UNB {{ profile.field_campus.value }}</strong></li>
+{% endif %}
+  <li><a href="https://lib.unb.ca/contact-unb-libraries-staff?recipient={{ account.getUsername }}">{{ account.getEmail }}</a></li>
+{% if account.field_phone_number.value and profile.field_show_phone_number.value %}
+  <li>{{ account.field_phone_number.value|replace({' ': '-'})|trim('1-', 'left') }}</li>
+{% endif %}
+{% if profile.field_show_social_media_icons.value %}
+  {% if profile.field_twitter_id.value or profile.field_facebook_id.value or profile.field_linkedin_id.value or profile.field_researchgate_id.value or profile.field_orcid_id.value %}
+  <li class="social-buttons">
+    {% if profile.field_twitter_id.value %}
+    <a href="https://twitter.com/{{ profile.field_twitter_id.value }}" class="btn btn-sm btn-twitter"><i class="fab fa-twitter"></i> Follow</a>
+    {% endif %}
+    {% if profile.field_facebook_id.value %}
+    <a href="https://facebook.com/{{ profile.field_facebook_id.value }}" class="btn btn-sm btn-facebook"><i class="fab fa-facebook-f"></i> Follow</a>
+    {% endif %}
+    {% if profile.field_linkedin_id.value %}
+    <a href="https://linkedin.com/in/{{ profile.field_linkedin_id.value }}" class="btn btn-sm btn-linkedin"><i class="fab fa-linkedin"></i> Follow</a>
+    {% endif %}
+    {% if profile.field_researchgate_id.value %}
+    <a href="https://www.researchgate.net/profile/{{ profile.field_researchgate_id.value }}" class="btn btn-sm btn-researchgate"><i class="fab fa-researchgate fa-lg"></i> Follow</a>
+    {% endif %}
+    {% if profile.field_orcid_id.value %}
+    <a href="https://orcid.org/{{ profile.field_orcid_id.value }}" class="btn btn-sm btn-orcid"><i class="fab fa-orcid fa-lg"></i> ORCID Record</a>
+    {% endif %}
+  </li>
+  {% endif %}
+{% endif %}
+{% if profile.field_book_a_meeting.uri %}
+  <li style="margin-top:4px;"><a href="{{ profile.field_book_a_meeting.uri }}" class="btn btn-sm btn-success"><i class="fas fa-calendar-check"></i> {{ profile.field_book_a_meeting.title }}</a></li>
+{% endif %}
+{% if profile.field_website.uri and profile.field_show_website.value %}
+  <li><a href="{{ profile.field_website.uri }}">{{ profile.field_website.title }}</a></li>
+{% endif %}
+{% if profile.field_library_link.value and profile.field_show_library_link.value %}
+  <li><a href="{{ profile.field_library_link.value }}">Library Hours</a></li>
+{% endif %}
+
+</ul>
+
+{% if profile.field_mini_biography.value %}
+  <p>{{ profile.field_mini_biography.value  }} </p>
+{% endif %}
+
+{% if profile.field_subject_specialties.value and profile.field_show_subject_specialties.value %}
+  <p><strong>Subject Specialties:</strong><br/>{{ profile.field_subject_specialties.value }}</p>
+{% endif %}
