@@ -192,4 +192,17 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
     return [];
   }
 
+  /**
+   * {@inheritDoc}
+   */
+  public function getCacheTags() {
+    $tags = parent::getCacheTags();
+    foreach ($this->get('contacts') as $editorItem) {
+      $user = $editorItem->entity;
+      $tags[] = 'user:' . $user->id();
+    }
+
+    return $tags;
+  }
+
 }
