@@ -15,6 +15,7 @@ dependencies:
     - field.storage.user.field_position_title
     - image.style.specialist
   module:
+    - guides
     - image
     - link
     - options
@@ -700,8 +701,8 @@ display:
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
+          element_wrapper_type: div
+          element_wrapper_class: areas
           element_default_classes: false
           empty: ''
           hide_empty: true
@@ -763,8 +764,8 @@ display:
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
+          element_wrapper_type: div
+          element_wrapper_class: subjects
           element_default_classes: false
           empty: ''
           hide_empty: true
@@ -796,7 +797,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"staff-specializations\">\r\n  <div class=\"sr-only\">Areas and Subjects:</div>\r\n  <div class=\"areas\">\r\n    {{ field_functional_specializations }}\r\n  </div>\r\n  <div class=\"subjects\">\r\n    {{ field_guide_categories }}\r\n  </div> \r\n</div>"
+            text: "<div class=\"sr-only\">Areas and Subjects:</div>\r\n{{ field_functional_specializations }}\r\n{{ field_guide_categories }} \r\n"
             make_link: false
             path: ''
             absolute: false
@@ -822,17 +823,17 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: ''
+          element_class: staff-specializations
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
-          hide_empty: false
+          hide_empty: true
           empty_zero: false
-          hide_alter_empty: false
+          hide_alter_empty: true
         view_user:
           id: view_user
           table: users
@@ -1002,6 +1003,71 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
+        title:
+          id: title
+          table: guide_category
+          field: title
+          relationship: field_guide_categories
+          group_type: group
+          admin_label: 'Combined field filter (Subjects)'
+          entity_type: guide_category
+          entity_field: title
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
       pager:
         type: none
         options:
@@ -1086,7 +1152,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: views_autocomplete_filters_combine
-          operator: '='
+          operator: allwords
           value: ''
           group: 1
           exposed: true
@@ -1140,7 +1206,11 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          fields: {  }
+          fields:
+            field_first_name: field_first_name
+            field_last_name: field_last_name
+            field_position_title: field_position_title
+            title: title
       style:
         type: table
         options:
@@ -1276,7 +1346,17 @@ display:
           entity_field: uid
           plugin_id: standard
           required: true
+        field_guide_categories:
+          id: field_guide_categories
+          table: profile__field_guide_categories
+          field: field_guide_categories
+          relationship: none
+          group_type: group
+          admin_label: 'field_guide_categories: Guide Category'
+          plugin_id: standard
+          required: false
       css_class: 'find-specialist mt-4'
+      group_by: false
       header:
         area_text_custom:
           id: area_text_custom
@@ -1286,7 +1366,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: text_custom
-          empty: false
+          empty: true
           content: "<div class=\"d-flex justify-content-md-end mb-4 mb-md-2 mb-lg-0 mt-n2\">\r\n<div><a href=\"https://lib.unb.ca/about/staff-directory\" class=\"btn btn-sm btn-secondary px-3\"><span class=\"fas fa-user-friends mr-1\"></span>Staff Directory</a></div>\r\n</div>"
           tokenize: false
       footer: {  }

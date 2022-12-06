@@ -45,6 +45,16 @@ fieldset input.form-autocomplete.ui-autocomplete-loading {
 .staff-info {
   width: 30%;
 }
+.staff-specializations .areas .field__items .field__item,
+.staff-specializations .subjects .field__items .field__item {
+  display: inline;
+}
+.staff-specializations .subjects .field__items .field__item:first-child:before {
+  content: "Subjects: ";
+  display: inline;
+  font-family: "ProximaNovaA-Semibold", Arial, sans-serif;
+}
+
 .staff-buttons {
   width: 10%;
 }
