@@ -1431,7 +1431,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: "<div class=\"d-flex justify-content-md-end mb-4 mb-md-2 mb-lg-0 mt-n2\">\r\n<div><a href=\"https://lib.unb.ca/about/staff-directory\" class=\"btn btn-sm btn-secondary px-3\"><span class=\"fas fa-user-friends mr-1\"></span>Staff Directory</a></div>\r\n</div>"
+          content: "<div class=\"d-flex justify-content-md-end mb-4 mb-md-2 mb-lg-0 mt-n2\">\r\n<div><a href=\"/about/staff-directory\" class=\"btn btn-sm btn-secondary px-3\"><span class=\"fas fa-user-friends mr-1\"></span>Staff Directory</a></div>\r\n</div>"
           tokenize: false
       footer: {  }
       display_extenders: {  }
