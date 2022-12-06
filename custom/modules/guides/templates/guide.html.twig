@@ -70,12 +70,12 @@
                   {% set profile = account.public_profiles.get(0).entity %}
                   {% include '@guides/includes/editor.html.twig' with {account: account, profile: profile} %}
                   {% if loop.index < editorCount %}
-                    <hr class="border-secondary py-2 w-75">
+                    <hr class="border-secondary w-75">
                   {% endif %}
                 {% endfor %}
                 {% set feeds = guide.getFeeds %}
                 {% if feeds is not empty %}
-                <hr class="border-secondary py-2 w-75">
+                <hr class="border-secondary w-75">
                 <div id="guides-feeds" class="mx-3 mb-3">
                   {% for feed in feeds %}
                   <h4>{{ feed.title }}</h4>
