@@ -199,7 +199,9 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
     $tags = parent::getCacheTags();
     foreach ($this->get('contacts') as $editorItem) {
       $user = $editorItem->entity;
-      $tags[] = 'user:' . $user->id();
+      if ($user) {
+        $tags[] = 'user:' . $user->id();
+      }
     }
 
     return $tags;
