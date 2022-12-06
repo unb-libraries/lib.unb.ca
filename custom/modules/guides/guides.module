@@ -16,8 +16,12 @@ use PicoFeed\Reader\Reader;
  * Implements hook_views_pre_render().
  */
 function guides_views_pre_render(ViewExecutable $view) {
-  if (isset($view) && ($view->storage->id() == 'research_guides')) {
-    $view->element['#attached']['library'][] = 'guides/guides-view-all';
+  if (isset($view)) {
+    if ($view->storage->id() == 'research_guides') {
+      $view->element['#attached']['library'][] = 'guides/guides-view-all';
+    } elseif ($view->storage->id() == 'connect_with_a_librarian') {
+      $view->element['#attached']['library'][] = 'guides/guides-connect';
+    }
   }
 }
 

@@ -9,6 +9,12 @@ guides:
     - core/jquery
     - core/drupal
 
+guides-connect:
+  version: VERSION
+  css:
+    theme:
+      css/guides_connect.css: {}
+
 guides-view-all:
   version: VERSION
   css:
