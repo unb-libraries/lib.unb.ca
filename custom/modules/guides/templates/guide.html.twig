@@ -68,7 +68,7 @@
                 {% for editor in editors %}
                   {% set account = editor.entity.field_user.entity %}
                   {% set profile = account.public_profiles.get(0).entity %}
-                  {% include '@guides/includes/editor.html.twig' with {account: account, profile: profile} %}
+                  {% include '@guides/includes/editor.html.twig' with {account: account, profile: profile, show_extended_info: TRUE} %}
                   {% if loop.index < editorCount %}
                     <hr class="border-secondary w-75">
                   {% endif %}

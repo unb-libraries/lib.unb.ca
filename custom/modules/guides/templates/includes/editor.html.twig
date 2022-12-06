@@ -60,10 +60,12 @@
 
 </ul>
 
-{% if profile.field_mini_biography.value %}
-  <p>{{ profile.field_mini_biography.value  }}</p>
-{% endif %}
+{% if show_extended_info %}
+  {% if profile.field_mini_biography.value %}
+   <p>{{ profile.field_mini_biography.value  }}</p>
+  {% endif %}
 
-{% if profile.field_subject_specialties.value and profile.field_show_subject_specialties.value %}
-  <p><strong>Subject Specialties:</strong><br/>{{ profile.field_subject_specialties.value }}</p>
+  {% if profile.field_subject_specialties.value and profile.field_show_subject_specialties.value %}
+   <p><strong>Subject Specialties:</strong><br/>{{ profile.field_subject_specialties.value }}</p>
+  {% endif %}
 {% endif %}
