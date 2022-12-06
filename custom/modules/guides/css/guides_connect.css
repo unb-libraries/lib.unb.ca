@@ -1,8 +1,10 @@
 .find-specialist .view-filters {
   float: left;
 }
-.find-specialist .view-content {
-  float: none;
+.find-specialist .view-header::after {
+   display: block;
+   content: "";
+   clear: both;
 }
 
 fieldset {
