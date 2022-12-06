@@ -1,0 +1,56 @@
+.find-specialist .view-filters {
+  float: left;
+}
+.find-specialist .view-content {
+  float: none;
+}
+
+fieldset {
+  min-width: 50%;
+}
+fieldset input.form-autocomplete,
+fieldset input.form-autocomplete.ui-autocomplete-loading {
+  background-position: 99% center;
+}
+
+.staff-image {
+  width: 10%;
+}
+.staff-image img {
+  min-width: 70px;
+}
+@media (min-width: 992px) {
+  .staff-image img {
+    max-width: inherit;
+  }
+}
+
+.staff-fullname {
+  font-size: 105%;
+  line-height: 1.35;
+}
+.staff-pronouns {
+  font-size: 88%;
+}
+.staff-title {
+  line-height: 1.2;
+  margin-top: .15rem;
+  margin-bottom: .5rem;
+}
+.staff-phone {
+  font-size: 95%;
+  margin-bottom: 1px;
+  white-space: nowrap!important;
+}
+.staff-info {
+  width: 30%;
+}
+.staff-buttons {
+  width: 10%;
+}
+
+@media (min-width: 568px) {
+  .staff-links .btn {
+      min-width: 118px;
+  }
+}
