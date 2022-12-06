@@ -1,0 +1,15 @@
+uuid: b92014c8-08c8-422e-8afc-95065c29c700
+langcode: en
+status: true
+dependencies: {  }
+name: specialist
+label: 'Specialist (120x120)'
+effects:
+  9516bc43-6503-46fe-838b-da006f52aae7:
+    uuid: 9516bc43-6503-46fe-838b-da006f52aae7
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 120
+      height: 120
+      anchor: center-top
