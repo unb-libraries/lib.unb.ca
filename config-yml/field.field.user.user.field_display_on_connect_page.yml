@@ -1,0 +1,24 @@
+uuid: 9e7e3252-539f-4c3b-8c7f-c8739c9c8132
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_display_on_connect_page
+  module:
+    - user
+id: user.user.field_display_on_connect_page
+field_name: field_display_on_connect_page
+entity_type: user
+bundle: user
+label: 'Display on Connect with a Specialist'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

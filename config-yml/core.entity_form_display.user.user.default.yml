@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.user.user.field_department_memberships
+    - field.field.user.user.field_display_on_connect_page
     - field.field.user.user.field_display_on_staff_directory
     - field.field.user.user.field_email_id
     - field.field.user.user.field_first_name
@@ -39,6 +40,13 @@ content:
       form_display_mode: default
       default_paragraph_type: departement_membership
     third_party_settings: {  }
+  field_display_on_connect_page:
+    type: boolean_checkbox
+    weight: 10
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_display_on_staff_directory:
     type: boolean_checkbox
     weight: 9
@@ -70,7 +78,7 @@ content:
     third_party_settings: {  }
   field_on_leave:
     type: boolean_checkbox
-    weight: 10
+    weight: 11
     region: content
     settings:
       display_label: true
@@ -99,7 +107,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   google_analytics:
-    weight: 11
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -123,5 +131,7 @@ content:
 hidden:
   contact: true
   field_email_id: true
+  guides_profiles: true
   langcode: true
   language: true
+  public_profiles: true

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.user.user.field_department_memberships
+    - field.field.user.user.field_display_on_connect_page
     - field.field.user.user.field_display_on_staff_directory
     - field.field.user.user.field_email_id
     - field.field.user.user.field_first_name
@@ -30,6 +31,16 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 7
+    region: content
+  field_display_on_connect_page:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 11
     region: content
   field_display_on_staff_directory:
     type: boolean
@@ -114,5 +125,7 @@ content:
     region: content
 hidden:
   field_email_id: true
+  guides_profiles: true
   langcode: true
+  public_profiles: true
   search_api_excerpt: true
