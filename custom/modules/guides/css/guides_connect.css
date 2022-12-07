@@ -47,11 +47,13 @@ fieldset input.form-autocomplete.ui-autocomplete-loading {
 .staff-info {
   width: 30%;
 }
-.staff-specializations .areas .field__items .field__item,
-.staff-specializations .subjects .field__items .field__item {
+
+.staff-specializations span.area:first-of-type::before {
+  content: "Areas: ";
   display: inline;
+  font-family: "ProximaNovaA-Semibold", Arial, sans-serif;
 }
-.staff-specializations .subjects .field__items .field__item:first-child:before {
+.staff-specializations span.subject:first-of-type::before {
   content: "Subjects: ";
   display: inline;
   font-family: "ProximaNovaA-Semibold", Arial, sans-serif;
