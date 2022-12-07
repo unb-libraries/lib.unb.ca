@@ -1618,7 +1618,7 @@ display:
           entity_field: is_subject_guide
           plugin_id: boolean
           operator: '='
-          value: '0'
+          value: '1'
           group: 1
           exposed: false
           expose:
