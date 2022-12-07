@@ -21,6 +21,7 @@ dependencies:
     - link
     - options
     - profile
+    - taxonomy
     - user
     - views_autocomplete_filters
 id: connect_with_a_librarian
@@ -671,8 +672,8 @@ display:
           label: ''
           exclude: true
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '<span class="area">{{ field_functional_specializations }}</span>'
             make_link: false
             path: ''
             absolute: false
@@ -705,10 +706,10 @@ display:
           element_wrapper_type: div
           element_wrapper_class: areas
           element_default_classes: false
-          empty: ''
-          hide_empty: true
+          empty: '<div class="sr-only">{{ field_first_name }} does not have any functional specializations.</div>'
+          hide_empty: false
           empty_zero: false
-          hide_alter_empty: true
+          hide_alter_empty: false
           click_sort_column: target_id
           type: entity_reference_label
           settings:
@@ -721,7 +722,7 @@ display:
           delta_reversed: false
           delta_first_last: false
           multi_type: separator
-          separator: ' &middot; '
+          separator: ', '
           field_api_classes: false
         field_guide_categories:
           id: field_guide_categories
@@ -734,8 +735,8 @@ display:
           label: ''
           exclude: true
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '<span class="subject">{{ field_guide_categories }}</span>'
             make_link: false
             path: ''
             absolute: false
@@ -765,13 +766,13 @@ display:
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: div
-          element_wrapper_class: subjects
+          element_wrapper_type: ''
+          element_wrapper_class: ''
           element_default_classes: false
-          empty: ''
-          hide_empty: true
+          empty: '<div class="sr-only">{{ field_first_name }} does not specialize in a particular subject.</div>'
+          hide_empty: false
           empty_zero: false
-          hide_alter_empty: true
+          hide_alter_empty: false
           click_sort_column: target_id
           type: entity_reference_label
           settings:
@@ -784,7 +785,7 @@ display:
           delta_reversed: false
           delta_first_last: false
           multi_type: separator
-          separator: ' &middot; '
+          separator: ', '
           field_api_classes: false
         nothing_2:
           id: nothing_2
@@ -798,7 +799,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"sr-only\">Areas and Subjects:</div>\r\n{{ field_functional_specializations }}\r\n{{ field_guide_categories }} \r\n"
+            text: "<div class=\"sr-only\">Areas and Subjects of Specialization:</div>\r\n{{ field_functional_specializations }}\r\n{{ field_guide_categories }} \r\n"
             make_link: false
             path: ''
             absolute: false
@@ -1113,7 +1114,7 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -1132,6 +1133,72 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        name_1:
+          id: name_1
+          table: taxonomy_term_field_data
+          field: name
+          relationship: field_functional_specializations
+          group_type: group
+          admin_label: 'Combined field filter (Functional Specialization taxonomy name)'
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          convert_spaces: false
       pager:
         type: none
         options:
@@ -1275,6 +1342,7 @@ display:
             field_last_name: field_last_name
             field_position_title: field_position_title
             title: title
+            name_1: name_1
       style:
         type: table
         options:
@@ -1292,9 +1360,14 @@ display:
             name: name
             field_phone_number: field_phone_number
             nothing: nothing
-            view_user: view_user
+            field_functional_specializations: field_functional_specializations
+            field_guide_categories: field_guide_categories
+            nothing_2: nothing_2
             field_book_a_meeting: field_book_a_meeting
+            view_user: view_user
+            field_url_fragment: field_url_fragment
             nothing_1: nothing_1
+            title: title
           default: '-1'
           info:
             field_profile_picture:
@@ -1365,9 +1438,17 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-            view_user:
-              sortable: false
-              default_sort_order: asc
+            field_functional_specializations:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_guide_categories:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            nothing_2:
               align: ''
               separator: ''
               empty_column: false
@@ -1377,12 +1458,33 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
+            view_user:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_url_fragment:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
             nothing_1:
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-          override: true
+            title:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          override: false
           sticky: false
           summary: ''
           empty_table: false
@@ -1417,6 +1519,15 @@ display:
           relationship: none
           group_type: group
           admin_label: 'field_guide_categories: Guide Category'
+          plugin_id: standard
+          required: false
+        field_functional_specializations:
+          id: field_functional_specializations
+          table: profile__field_functional_specializations
+          field: field_functional_specializations
+          relationship: none
+          group_type: group
+          admin_label: 'field_functional_specializations: Taxonomy term'
           plugin_id: standard
           required: false
       css_class: 'find-specialist mt-4'
