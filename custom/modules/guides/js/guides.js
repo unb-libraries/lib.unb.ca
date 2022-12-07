@@ -12,6 +12,22 @@
                 event.stopPropagation();
                 return false;
             });
+
+            // Direct Links to tabs
+            var url = document.location.toString();
+            if (url.match('#')) {
+              showTab(url);
+            }
+
+            // Navigate to tabs and deep linked achors
+            function showTab(url) {
+                anchor = url.split('#')[1];
+                tabParts = anchor.split('__');
+                $('#guide button[aria-controls="' + tabParts[0] + '"]').click();
+                document.querySelector('#' + anchor).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
         }
     };
 })(jQuery, Drupal);
