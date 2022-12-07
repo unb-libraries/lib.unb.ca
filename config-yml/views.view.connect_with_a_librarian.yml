@@ -1364,7 +1364,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: "<div class=\"alert alert-info mb-4\">\r\n<i class=\"fas fa-exclamation-circle mr-1\"></i>Sorry, no results were found for your search criteria.\r\n</div>\r\n\r\n<a class=\"btn btn-light border\" href=\"https://lib.unb.ca/help/ask-us\"><span class=\"fas fa-question-circle mr-1 text-secondary\"></span>Need further assistance? Ask Us!</a>"
+          content: "<div class=\"alert alert-info mb-4\">\r\n<i class=\"fas fa-exclamation-circle mr-1\"></i>Sorry, no results were found for your search criteria.\r\n</div>\r\n\r\n<a class=\"btn btn-light border\" href=\"/help/ask-us\"><span class=\"fas fa-question-circle mr-1 text-secondary\"></span>Need further assistance? Ask Us!</a>"
           tokenize: false
       sorts:
         field_last_name_value:
