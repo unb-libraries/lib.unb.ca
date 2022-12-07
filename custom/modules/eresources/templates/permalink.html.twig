@@ -14,6 +14,9 @@
   <li>
     <span role="button" class="text-warning" data-toggle="collapse" data-target="#debug-{{ entry.getId }}"><i class="fas fa-info-circle"></i> Debug</span>
   </li>
+  <li>
+    <a role="button" class="text-danger" href="{{ url('entity.eresources_record.edit_form', {'eresources_record': entry.getId}) }}"><i class="fas fa-pencil-alt"></i> Admin</a>
+  </li>
 {% endif %}
 </ul>
 </div>
