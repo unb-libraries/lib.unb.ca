@@ -48,7 +48,9 @@ fieldset input.form-autocomplete.ui-autocomplete-loading {
   width: 30%;
 }
 
-
+.staff-specializations .area {
+  display: inline;
+}
 .staff-specializations div:first-of-type::before {
   content: "Areas: ";
   display: inline;
