@@ -1910,6 +1910,18 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: "<div class=\"alert alert-info mb-4\">\r\n<i class=\"fas fa-exclamation-circle mr-1\"></i>We didn't find anybody matching all of your search terms.\r\n</div>\r\n<ul>\r\n<li>Check your spelling</li>\r\n<li>Try fewer words, e.g. <kbd>Copyright Digital Delivery</kbd> instead of <kbd>Manager Copyright and Digital Delivery</kbd></li>\r\n<li>Try similar search words, e.g. <kbd>program</kbd> instead of <kbd>programming</kbd></li>\r\n</ul>\r\n\r\n<a class=\"btn btn-light border\" href=\"/help/ask-us\"><span class=\"fas fa-question-circle mr-1 text-secondary\"></span>Need further assistance? Ask Us!</a>"
+          tokenize: false
       filters:
         status:
           id: status
@@ -1967,7 +1979,7 @@ display:
               saml_stu_active: '0'
               guide_editor: '0'
               public_profile: '0'
-            placeholder: 'Enter a search topic'
+            placeholder: 'Enter 1 or more search terms'
             autocomplete_filter: 0
             autocomplete_min_chars: '0'
             autocomplete_items: '10'
@@ -2037,6 +2049,7 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         filters: false
         filter_groups: false
       display_extenders: {  }
