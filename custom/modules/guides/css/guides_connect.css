@@ -48,15 +48,24 @@ fieldset input.form-autocomplete.ui-autocomplete-loading {
   width: 30%;
 }
 
-.staff-specializations span.area:first-of-type::before {
+
+.staff-specializations div:first-of-type::before {
   content: "Areas: ";
   display: inline;
   font-family: "ProximaNovaA-Semibold", Arial, sans-serif;
 }
-.staff-specializations span.subject:first-of-type::before {
+.staff-specializations div:last-of-type::after {
+  display: block;
+  content: "";
+  margin-bottom: .5rem;
+}
+.staff-specializations .subject::before {
   content: "Subjects: ";
   display: inline;
   font-family: "ProximaNovaA-Semibold", Arial, sans-serif;
+}
+.staff-specializations .subject + .subject::before {
+  content: none;
 }
 
 .staff-buttons {
