@@ -270,7 +270,7 @@
     "ckeditor/colorbutton": "~4.16",
     "ckeditor/panelbutton": "~4.16",
     "drupal/address": "1.11",
-    "drupal/admin_toolbar": "3.2.1",
+    "drupal/admin_toolbar": "3.3.0",
     "drupal/allowed_formats": "1.5",
     "drupal/antibot": "1.5",
     "drupal/better_exposed_filters": "5.2",
