@@ -81,3 +81,11 @@ function public_profile_form_profile_form_alter(&$form, FormStateInterface $form
     }
   }
 }
+
+/**
+ * Implements hook_entity_type_alter().
+ *
+ */
+function public_profile_entity_type_alter(array &$entity_types) {
+  $entity_types['profile']->setFormClass('edit', '\Drupal\public_profile\Form\PublicProfileForm');
+}
