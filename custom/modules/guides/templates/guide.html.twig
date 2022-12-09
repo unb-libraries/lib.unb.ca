@@ -31,9 +31,9 @@
               {% for section in sections %}
                 {% set section_id = section.entity.id() %}
                 <li class="nav-item mr-2">
-                  <button aria-controls="panelSection{{ section_id }}"
+                  <button aria-controls="section-{{ section_id }}"
                   {% if loop.first %} aria-expanded="true"{% else %} aria-expanded="false" tabindex="-1"{% endif %}
-                  class="Accordion-trigger p-2" id="btnSection{{ section_id }}" type="button">
+                  class="Accordion-trigger p-2" id="btn-section-{{ section_id }}" type="button">
                     {{ section.entity.field_section_label.value }}
                   </button>
                 </li>
@@ -46,8 +46,8 @@
       <div class="bg-light border border-black card-body d-flex flex-column flex-lg-row px-3 py-0">
         {% for section in sections %}
         {% set section_id = section.entity.id() %}
-          <div aria-labelledby="btnSection{{ section_id }}" class="Accordion-panel flex-grow-1"
-          id="panelSection{{ section_id }}" role="region" {% if not loop.first %} hidden=""{% endif %}>
+          <div aria-labelledby="btn-section-{{ section_id }}" class="Accordion-panel flex-grow-1"
+          id="section-{{ section_id }}" role="region" {% if not loop.first %} hidden=""{% endif %}>
             {{ drupal_field('field_section_content', 'paragraph', section_id, 'paragraph.default') }}
           </div>
         {% endfor %}
