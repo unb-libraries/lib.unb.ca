@@ -15,7 +15,7 @@ third_party_settings:
       label: 'Guide Feeds'
       region: content
       parent_name: ''
-      weight: 3
+      weight: 2
       format_type: details
       format_settings:
         classes: ''
@@ -32,7 +32,7 @@ third_party_settings:
       label: 'Category / Related Categories / Related Guides'
       region: content
       parent_name: ''
-      weight: 1
+      weight: 5
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -48,7 +48,7 @@ third_party_settings:
       label: Editors
       region: content
       parent_name: ''
-      weight: 5
+      weight: 6
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -84,7 +84,7 @@ content:
     third_party_settings: {  }
   feeds:
     type: paragraphs
-    weight: 6
+    weight: 3
     region: content
     settings:
       title: Paragraph
@@ -114,7 +114,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -140,13 +140,13 @@ content:
     third_party_settings: {  }
   sections:
     type: paragraphs
-    weight: 2
+    weight: 1
     region: content
     settings:
       title: Paragraph
       title_plural: Paragraphs
       edit_mode: closed_expand_nested
-      closed_mode: summary
+      closed_mode: preview
       autocollapse: none
       closed_mode_threshold: 0
       add_mode: dropdown
