@@ -1,0 +1,38 @@
+uuid: 63c426ae-bf21-43e0-9ba0-7494975353d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.guide_section.field_hide_section
+    - field.field.paragraph.guide_section.field_section_content
+    - field.field.paragraph.guide_section.field_section_label
+    - paragraphs.paragraphs_type.guide_section
+  module:
+    - field_formatter_class
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: GtdzXZKkEuFq4I3TijKB-i7dq5-1Qper2a2ANCXRM_0
+id: paragraph.guide_section.preview
+targetEntityType: paragraph
+bundle: guide_section
+mode: preview
+content:
+  field_section_label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      field_formatter_class:
+        class: label
+    weight: 0
+    region: content
+hidden:
+  field_hide_section: true
+  field_section_content: true
+  search_api_excerpt: true
