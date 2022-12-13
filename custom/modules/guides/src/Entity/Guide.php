@@ -189,7 +189,8 @@ class Guide extends ContentEntityBase implements ContentEntityInterface, UserEdi
       ->setDisplayOptions('form', [
         'type' => 'boolean_checkbox',
         'weight' => 10,
-      ]);
+      ])
+      ->setDisplayConfigurable('form', TRUE);
 
     $fields['status'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Mark as published'))
