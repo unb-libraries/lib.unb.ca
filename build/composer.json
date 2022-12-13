@@ -49,6 +49,9 @@
       ]
     },
     "patches": {
+      "drupal/core": {
+        "Use admin theme for custom entity admin forms": "https://www.drupal.org/files/issues/2022-02-07/2893740-39.patch"
+      },
       "drupal/entity_browser": {
         "Provide upload widget for media of media type file": "https://www.drupal.org/files/issues/2019-02-28/entity_browser-media-file-upload-2922885-15.patch"
       },
