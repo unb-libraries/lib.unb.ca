@@ -194,7 +194,6 @@ class Guide extends ContentEntityBase implements ContentEntityInterface, UserEdi
 
     $fields['status'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Mark as published'))
-      ->setDescription(t('A boolean indicating whether the guide is published.'))
       ->setDefaultValue(FALSE)
       ->setDisplayOptions('form', [
         'type' => 'boolean_checkbox',
