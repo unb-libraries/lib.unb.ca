@@ -14,17 +14,41 @@
             });
 
             // Direct Links to tabs
-            var url = document.location.toString();
-            if (url.match('#')) {
-              showTab(url);
+            if (location.hash) {
+              showTab(location.hash);
             }
 
+            // Push tab hash to history when it is shown
+            $('#guide .Accordion-panel').on('show-guide-tab', function() {
+                thisHash = '#' + this.id;
+                if (location.hash != thisHash) {
+                    history.pushState({}, "", thisHash);
+                    ga("set", "page", location.pathname + location.search + location.hash);
+                    ga("send", "pageview");
+                }
+            });
+
+            // Show tab if hash exists, first tab otherwise.
+            window.addEventListener('popstate', function(e) {
+                if (!location.hash) {
+                    $('#guide nav .navbar-nav button:first').click();
+                }
+                else {
+                    showTab(location.hash);
+                }
+            });
+
+            // Fire event when guide nav button is clicked
+            $('#guide nav .navbar-nav button').on('click', function() {
+                $('#' + $(this).attr('aria-controls')).trigger('show-guide-tab');
+            });
+
             // Navigate to tabs and deep linked achors
-            function showTab(url) {
-                anchor = url.split('#')[1];
-                tabParts = anchor.split('__');
-                $('#guide button[aria-controls="' + tabParts[0] + '"]').click();
-                document.querySelector('#' + anchor).scrollIntoView({
+            function showTab(id) {
+                id = id.replace('#', '');
+                tabParts = id.split('__');
+                $('#guide nav .navbar-nav button[aria-controls="' + tabParts[0] + '"]').click();
+                document.querySelector('#' + id).scrollIntoView({
                     behavior: 'smooth'
                 });
             }
