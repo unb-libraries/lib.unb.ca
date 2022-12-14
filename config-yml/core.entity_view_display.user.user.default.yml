@@ -15,7 +15,6 @@ dependencies:
     - field.field.user.user.field_position_title
     - field.field.user.user.field_room_number
   module:
-    - entity_reference_revisions
     - telephone
     - user
 id: user.user.default
@@ -23,15 +22,6 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
-  field_department_memberships:
-    type: entity_reference_revisions_entity_view
-    label: inline
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 7
-    region: content
   field_display_on_connect_page:
     type: boolean
     label: above
@@ -40,7 +30,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 11
+    weight: 10
     region: content
   field_display_on_staff_directory:
     type: boolean
@@ -50,7 +40,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 9
+    weight: 8
     region: content
   field_first_name:
     type: string
@@ -74,7 +64,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 8
+    weight: 7
     region: content
   field_on_leave:
     type: boolean
@@ -84,7 +74,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 10
+    weight: 9
     region: content
   field_phone_number:
     type: telephone_link
@@ -124,6 +114,7 @@ content:
     weight: 6
     region: content
 hidden:
+  field_department_memberships: true
   field_email_id: true
   guides_profiles: true
   langcode: true
