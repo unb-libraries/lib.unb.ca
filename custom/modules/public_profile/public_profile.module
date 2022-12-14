@@ -45,7 +45,7 @@ function public_profile_profile_presave(EntityInterface $entity) {
  */
 function public_profile_form_profile_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $entity = $form_state->getFormObject()->getEntity();
-  $user = \Drupal::currentUser();
+  $user = $entity->uid->entity;
 
   if ($urlFragment = $entity->get('field_url_fragment')->value) {
     $form['profile_link_button'] = [
