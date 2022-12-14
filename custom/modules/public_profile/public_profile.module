@@ -63,6 +63,10 @@ function public_profile_form_profile_form_alter(&$form, FormStateInterface $form
     ];
   }
 
+  if (!($user->field_display_on_connect_page->getValue())) {
+    $form['group_specialized_help_tagging']['#access'] = FALSE;
+  }
+
   if ($entity->bundle() == 'public' && !in_array('guide_editor', $user->getRoles())) {
     $toHide = [
       'field_guides_listing',
