@@ -74,6 +74,13 @@ fieldset input.form-autocomplete.ui-autocomplete-loading {
   width: 10%;
 }
 
+.view-empty kbd {
+  background-color: inherit;
+  color: #e83e8c;
+  padding: initial;
+  word-wrap: break-word;
+}
+
 @media (min-width: 568px) {
   .staff-links .btn {
       min-width: 118px;
