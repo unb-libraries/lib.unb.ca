@@ -882,3 +882,10 @@ function _lib_core_recalls_validate_handler(array &$form, FormStateInterface $fo
       \Drupal::logger('lib_core')->error("Webform | Recalls | Unexpected wizard page step:$current_step.");
   }
 }
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function lib_core_entity_type_alter(&$entity_types) {
+  $entity_types['user']->setClass(\Drupal\lib_core\Entity\User::class);
+}
