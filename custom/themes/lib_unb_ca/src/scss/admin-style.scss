@@ -28,3 +28,19 @@ th.field-label .label {
   display: block;
   margin-bottom: .25rem;
 }
+
+// Guide admin form overrides.
+.guide-form {
+  #edit-path-wrapper {
+    margin: 0;
+  }
+  #edit-unlisted-wrapper {
+    margin-bottom: 0;
+  }
+
+  .layout-region-content-entity-footer__content {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
