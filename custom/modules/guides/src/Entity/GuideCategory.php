@@ -142,7 +142,7 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
         ],
       ])
       ->setDisplayOptions('form', [
-        'type' => 'entity_autocomplete',
+        'type' => 'multiple_options_select',
         'weight' => 0,
       ])
       ->setDisplayConfigurable('view', TRUE)

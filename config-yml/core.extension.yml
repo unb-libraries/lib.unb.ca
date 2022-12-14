@@ -94,6 +94,7 @@ module:
   metatag: 0
   metatag_open_graph: 0
   mimemail: 0
+  multiple_selects: 0
   mysql: 0
   node: 0
   node_edit_protection: 0
