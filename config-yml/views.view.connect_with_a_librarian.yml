@@ -1920,7 +1920,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: "<div class=\"alert alert-info mb-4\">\r\n<i class=\"fas fa-exclamation-circle mr-1\"></i>We didn't find anybody matching all of your search terms.\r\n</div>\r\n<ul>\r\n<li>Check your spelling</li>\r\n<li>Try fewer words, e.g. <kbd>Copyright Digital Delivery</kbd> instead of <kbd>Manager Copyright and Digital Delivery</kbd></li>\r\n<li>Try similar search words, e.g. <kbd>program</kbd> instead of <kbd>programming</kbd></li>\r\n</ul>\r\n\r\n<a class=\"btn btn-light border\" href=\"/help/ask-us\"><span class=\"fas fa-question-circle mr-1 text-secondary\"></span>Need further assistance? Ask Us!</a>"
+          content: "<div class=\"alert alert-info mb-4\">\r\n<i class=\"fas fa-exclamation-circle mr-1\"></i>We didn't find anyone matching all of your search terms.\r\n</div>\r\n<ul>\r\n<li>Check your spelling</li>\r\n<li>Try fewer words, e.g. <kbd>Copyright Digital Delivery</kbd> instead of <kbd>Manager Copyright and Digital Delivery</kbd></li>\r\n<li>Try similar search words, e.g. <kbd>program</kbd> instead of <kbd>programming</kbd></li>\r\n</ul>\r\n\r\n<a class=\"btn btn-light border\" href=\"/help/ask-us\"><span class=\"fas fa-question-circle mr-1 text-secondary\"></span>Need further assistance? Ask Us!</a>"
           tokenize: false
       filters:
         status:
