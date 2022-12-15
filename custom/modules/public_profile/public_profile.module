@@ -63,7 +63,7 @@ function public_profile_form_profile_form_alter(&$form, FormStateInterface $form
     ];
   }
 
-  if (!($user->field_display_on_connect_page->getValue())) {
+  if (!($user->field_display_on_connect_page->getString())) {
     $form['group_specialized_help_tagging']['#access'] = FALSE;
   }
 
