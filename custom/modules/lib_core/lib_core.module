@@ -80,6 +80,11 @@ function lib_core_entity_presave(EntityInterface $entity) {
  * Implements hook_form_alter().
  */
 function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Work-around re: Webform meta section added by: https://www.drupal.org/files/issues/2022-02-07/2893740-39.patch.
+  if (isset($form['#webform_id'])) {
+    unset($form['meta']);
+  };
+
   switch ($form_id) {
     case 'entity_browser_media_entity_browser_form':
       // Add entity browser library for improvements.
