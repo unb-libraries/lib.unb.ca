@@ -1,8 +1,14 @@
+.nav-tabs .nav-link {
+  letter-spacing: 1px;
+}
+.nav-tabs .active .nav-link.active {
+  color: #212529;
+}
 .nav-tabs .active .nav-link:hover {
   cursor: default;
 }
 .nav-tabs .active .nav-link:after {
-  color:  #6c757d;
+  color: #212529;
   font-family: "Font Awesome 5 Free";
   font-size: .85rem;
   font-weight: 900;
