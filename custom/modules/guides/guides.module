@@ -125,6 +125,22 @@ function guides_preprocess_field_multiple_value_form(&$variables) {
 }
 
 /**
+ * Implements hook_FORM_alter().
+ */
+function guides_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Apply Node edit protection functionality to guide-related forms.
+  switch ($form_id) {
+    case 'guide_category_form':
+    case 'guide_form':
+    case 'profile_public_edit_form':
+      $form['#attributes']['class'][] = 'node-form';
+      $form['#attached']['library'][] = 'node_edit_protection/node_edit_protection';
+      break;
+    default:
+      // Only add unsaved change protection to whitelisted Guides-related forms.
+  }
+}
+/**
  * Implements hook_form_FORM_ID_alter().
  */
 function guides_form_guide_form_alter(&$form, FormStateInterface $form_state, $form_id) {
@@ -133,10 +149,6 @@ function guides_form_guide_form_alter(&$form, FormStateInterface $form_state, $f
     $user = User::load(\Drupal::currentUser()->id());
     $form['editors']['widget'][0]['subform']['field_user']['widget'][0]['target_id']['#default_value'] = $user;
   }
-
-  // Add unsaved form change protection.
-  $form['#attributes']['class'][] = 'node-form';
-  $form['#attached']['library'][] = 'node_edit_protection/node_edit_protection';
 }
 
 /**
