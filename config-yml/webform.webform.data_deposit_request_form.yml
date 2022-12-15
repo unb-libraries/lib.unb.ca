@@ -91,9 +91,18 @@ elements: |-
           '#type': textfield
           '#title': Department
           '#required': true
-        orcid_id_scopusid_researcherid:
+        orcid_id:
           '#type': textfield
-          '#title': 'ORCID ID, ScopusID, ResearcherID'
+          '#title': 'ORCID ID'
+        scopusid:
+          '#type': textfield
+          '#title': ScopusID
+        researcher_id:
+          '#type': textfield
+          '#title': 'Researcher ID'
+        other_id:
+          '#type': textfield
+          '#title': Other
         unb_email:
           '#type': textfield
           '#title': 'UNB Email'
@@ -112,9 +121,18 @@ elements: |-
             '#type': email
             '#required': true
             '#title': Email
+          orcid_id:
+            '#type': textfield
+            '#title': ORCID
+          scopus_id:
+            '#type': textfield
+            '#title': 'Scopus ID'
           researcher_id:
             '#type': textfield
-            '#title': 'ORCID ID, Scopus ID, Researcher ID or other'
+            '#title': 'Researcher ID'
+          other_id:
+            '#type': textfield
+            '#title': Other
       subject:
         '#type': textfield
         '#title': Subject
@@ -173,7 +191,7 @@ settings:
   ajax_effect: ''
   ajax_speed: null
   page: true
-  page_submit_path: '/rdm/data-deposit'
+  page_submit_path: /rdm/data-deposit
   page_confirm_path: ''
   page_theme_name: ''
   form_title: both
