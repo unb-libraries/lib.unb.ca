@@ -134,9 +134,9 @@ function guides_form_guide_form_alter(&$form, FormStateInterface $form_state, $f
     $form['editors']['widget'][0]['subform']['field_user']['widget'][0]['target_id']['#default_value'] = $user;
   }
 
-  if ($form_id == 'guide_form') {
-    $form['#attached']['library'][] = 'lib_unb_ca/admin-styling';
-  }
+  // Add unsaved form change protection.
+  $form['#attributes']['class'][] = 'node-form';
+  $form['#attached']['library'][] = 'node_edit_protection/node_edit_protection';
 }
 
 /**
