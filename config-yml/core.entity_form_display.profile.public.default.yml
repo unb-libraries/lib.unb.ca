@@ -50,7 +50,7 @@ third_party_settings:
       label: 'Social Media'
       region: content
       parent_name: ''
-      weight: 16
+      weight: 15
       format_type: fieldset
       format_settings:
         classes: ''
@@ -66,14 +66,16 @@ third_party_settings:
       label: 'Specialized Help Tagging'
       region: content
       parent_name: ''
-      weight: 9
-      format_type: fieldset
+      weight: 18
+      format_type: details_sidebar
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
+        open: true
         description: "<aside class=\"item-list leader\"><ul><li><b>Get Specialized Help</b> searching will include any of the 41 Guide Categories or 13 Functional Specialties that have been identified for you, as well as the actual titles of your guides and the keywords you have listed above.</li>\r\n<li>If you require, changes please submit a Trouble Ticket.</li>\r\n<li>User must contains <b>at least 1</b> Guide Category <b>or</b> 1 Functional Specialization term to be included in searches (or complete listing)</li>\r\n<li>Tags will not display on the search page.</li>\r\n</ul>\r\n</aside>"
         required_fields: true
+        weight: 0
 _core:
   default_config_hash: Z_uvDrGi8E4_txRO988w-xhGG_htNLadz3IgrJYWzIk
 id: profile.public.default
@@ -91,7 +93,7 @@ content:
     third_party_settings: {  }
   field_book_a_meeting:
     type: link_default
-    weight: 17
+    weight: 16
     region: content
     settings:
       placeholder_url: ''
@@ -105,7 +107,7 @@ content:
     third_party_settings: {  }
   field_facebook_id:
     type: string_textfield
-    weight: 16
+    weight: 11
     region: content
     settings:
       size: 60
@@ -125,13 +127,13 @@ content:
     third_party_settings: {  }
   field_guides_listing:
     type: options_select
-    weight: 18
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
   field_library_link:
     type: string_textfield
-    weight: 12
+    weight: 11
     region: content
     settings:
       size: 60
@@ -139,7 +141,7 @@ content:
     third_party_settings: {  }
   field_linkedin_id:
     type: string_textfield
-    weight: 17
+    weight: 12
     region: content
     settings:
       size: 60
@@ -155,7 +157,7 @@ content:
     third_party_settings: {  }
   field_orcid_id:
     type: string_textfield
-    weight: 19
+    weight: 14
     region: content
     settings:
       size: 60
@@ -179,7 +181,7 @@ content:
     third_party_settings: {  }
   field_researchgate_id:
     type: string_textfield
-    weight: 18
+    weight: 13
     region: content
     settings:
       size: 60
@@ -187,7 +189,7 @@ content:
     third_party_settings: {  }
   field_show_library_link:
     type: boolean_checkbox
-    weight: 13
+    weight: 12
     region: content
     settings:
       display_label: true
@@ -215,21 +217,21 @@ content:
     third_party_settings: {  }
   field_show_social_media_icons:
     type: boolean_checkbox
-    weight: 20
+    weight: 15
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_show_subject_specialties:
     type: boolean_checkbox
-    weight: 11
+    weight: 10
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_show_website:
     type: boolean_checkbox
-    weight: 15
+    weight: 14
     region: content
     settings:
       display_label: true
@@ -244,7 +246,7 @@ content:
     third_party_settings: {  }
   field_subject_specialties:
     type: string_textarea
-    weight: 10
+    weight: 9
     region: content
     settings:
       rows: 5
@@ -262,7 +264,7 @@ content:
     third_party_settings: {  }
   field_twitter_id:
     type: string_textfield
-    weight: 15
+    weight: 10
     region: content
     settings:
       size: 60
@@ -270,7 +272,7 @@ content:
     third_party_settings: {  }
   field_website:
     type: link_default
-    weight: 14
+    weight: 13
     region: content
     settings:
       placeholder_url: ''
