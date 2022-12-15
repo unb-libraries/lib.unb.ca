@@ -401,17 +401,7 @@ display:
       relationships: {  }
       use_ajax: true
       group_by: true
-      header:
-        result:
-          id: result
-          table: views
-          field: result
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: result
-          empty: false
-          content: '<div class="alert bg-light border">Showing @total Guides</div>'
+      header: {  }
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -770,19 +760,8 @@ display:
         fields: false
         filters: false
         filter_groups: false
-        header: false
+        header: true
       display_description: ''
-      header:
-        result:
-          id: result
-          table: views
-          field: result
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: result
-          empty: false
-          content: '<h2 class="alert bg-light border">Showing @total Guides</h2>'
       display_extenders: {  }
       path: guides/view-all
       menu:
