@@ -85,9 +85,10 @@ class FilterCKEditorEresources extends FilterBase implements ContainerFactoryPlu
         else {
           $storage = $this->entityTypeManager->getStorage('eresources_record');
           $query = $storage->getQuery();
-          $resources = $query->condition('id', $ids, 'IN')->execute();
+          $ids = explode(',', $ids);
+          $resourceIds = $query->condition('id', $ids, 'IN')->execute();
 
-          if (!empty($resources)) {
+          if (!empty($resourceIds)) {
             $options = [];
 
             $keyresources = $node->getAttribute('keyresources');
@@ -95,6 +96,7 @@ class FilterCKEditorEresources extends FilterBase implements ContainerFactoryPlu
             $options['headings'] = $node->getAttribute('noheadings') ? FALSE : TRUE;
             $options['searchbox'] = $node->getAttribute('searchbox') ? TRUE : FALSE;
 
+            $resources = $storage->loadMultiple($resourceIds);
             $listHtml = HTML::load($this->buildResourceList($resources, $options));
             $list = $document->importNode($listHtml->documentElement, TRUE);
 
