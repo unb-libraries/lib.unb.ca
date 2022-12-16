@@ -6,12 +6,14 @@ dependencies:
     - filter.format.no_media_html_ior_
   module:
     - contact
+    - field_permissions
     - filter
     - guides
     - ior
     - ior_awards
     - media
     - portolan
+    - profile
     - records_management
     - samlauth
     - search_api_autocomplete
@@ -35,7 +37,10 @@ permissions:
   - 'list schedule entities'
   - 'use search_api_autocomplete for search_our_webpages'
   - 'use text format no_media_html_ior_'
+  - 'view any profile'
   - 'view contest entities'
+  - 'view field_book_a_meeting'
+  - 'view field_url_fragment'
   - 'view guide category entities'
   - 'view guide entities'
   - 'view guide_category entities'

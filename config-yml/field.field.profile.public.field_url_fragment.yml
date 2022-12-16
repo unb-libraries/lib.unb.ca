@@ -5,11 +5,6 @@ dependencies:
   config:
     - field.storage.profile.field_url_fragment
     - profile.type.public
-  module:
-    - profile
-third_party_settings:
-  profile:
-    profile_private: true
 _core:
   default_config_hash: hty6TtZLlXxQiedSQJaRP-vqLmmEqazaAC3G1APGnnI
 id: profile.public.field_url_fragment
