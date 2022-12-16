@@ -53,9 +53,9 @@
 {% endif %}
 
 <div>
-  <ul class="resource-list">
+  <ul class="resource-list mb-1">
 {% for record in resources %}
-  {% if loop.index > options.keyresources %}
+  {% if loop.index == options.keyresources + 1 %}
   </ul>
 </div>
 <p class="mb-0">
@@ -66,12 +66,11 @@
 </p>
 <div id="{{ baseId }}-additional" class="collapse">
     {% if options.headings %}
-  <h3 class="h4">Additional Resources</h3>
+  <h3 class="h4 mt-1">Additional Resources</h3>
     {% endif %}
   <ul class="resource-list">
   {% endif %}
-    <li>
-    {# TODO: eresources record details #}
+    <li><a href="{{ record.get('url').value }}">{{ record.label() }}</a>
     </li>
 {% endfor %}
   </ul>
