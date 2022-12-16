@@ -48,3 +48,4 @@ permissions:
   - 'view retention_details entities'
   - 'view schedule entities'
   - 'view sp metadata'
+  - 'view user email addresses'
