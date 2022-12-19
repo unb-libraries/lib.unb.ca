@@ -26,7 +26,7 @@
       <a href="{{ entry.getViaUrl }}">{{ entry.getTitle }}</a>
       {% set descriptionId = 'description-' ~ entry.getId ~ '-' ~ random() %}
       <a data-toggle="collapse" href="#{{ descriptionId }}" aria-expanded="false"></a>
-      <div class="my-2 p-2 border border-info bg-light rounded collapse" id="{{ descriptionId }}">{{ entry.getFirstMetadataField('description') | raw }}</div>
+      <div class="my-2 p-2 border border-info bg-white rounded collapse" id="{{ descriptionId }}">{{ entry.getFirstMetadataField('description') | raw }}</div>
     </li>
 {% endfor %}
   </ul>
