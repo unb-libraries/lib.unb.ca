@@ -81,9 +81,9 @@ class FilterCKEditorEresources extends FilterBase implements ContainerFactoryPlu
           $indexQuery = $index->query();
           $indexQuery->addCondition('id', $ids, 'IN');
           $indexQuery->addCondition('status', TRUE);
-          $result = $indexQuery->execute();
+          $results = $indexQuery->execute();
 
-          if ($result->getResultCount() != 0) {
+          if ($results->getResultCount() != 0) {
             $options = [];
 
             $keyresources = $node->getAttribute('keyresources');
@@ -92,7 +92,7 @@ class FilterCKEditorEresources extends FilterBase implements ContainerFactoryPlu
 
             $resources = array_map(function ($i) {
               return new LocalResult($i);
-            }, $result->getResultItems());
+            }, $results->getResultItems());
 
             $listHtml = HTML::load($this->buildResourceList($resources, $options));
             $list = $document->importNode($listHtml->documentElement, TRUE);
