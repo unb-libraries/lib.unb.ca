@@ -8,8 +8,9 @@ use Drupal\filter\Plugin\FilterBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Component\Utility\Html;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Render\RendererInterface;
+use Drupal\search_api\Entity\Index;
+use Drupal\eresources\LocalResult;
 
 /**
  * Provides a filter to convert eresources tags to resource lists.
@@ -23,13 +24,6 @@ use Drupal\Core\Render\RendererInterface;
 class FilterCKEditorEresources extends FilterBase implements ContainerFactoryPluginInterface {
 
   /**
-   * The entity type manager.
-   *
-   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
-   */
-  protected $entityTypeManager;
-
-  /**
    * The renderer.
    *
    * @var \Drupal\Core\Render\RendererInterface
@@ -39,9 +33,8 @@ class FilterCKEditorEresources extends FilterBase implements ContainerFactoryPlu
   /**
    * Class constructor.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entityTypeManager, RendererInterface $renderer) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, RendererInterface $renderer) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->entityTypeManager = $entityTypeManager;
     $this->renderer = $renderer;
   }
 
@@ -53,7 +46,6 @@ class FilterCKEditorEresources extends FilterBase implements ContainerFactoryPlu
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('entity_type.manager'),
       $container->get('renderer')
     );
   }
@@ -83,12 +75,15 @@ class FilterCKEditorEresources extends FilterBase implements ContainerFactoryPlu
           $node->parentNode->replaceChild($info, $node);
         }
         else {
-          $storage = $this->entityTypeManager->getStorage('eresources_record');
-          $query = $storage->getQuery();
           $ids = explode(',', $ids);
-          $resourceIds = $query->condition('id', $ids, 'IN')->execute();
 
-          if (!empty($resourceIds)) {
+          $index = Index::load('eresources');
+          $indexQuery = $index->query();
+          $indexQuery->addCondition('id', $ids);
+          $indexQuery->addCondition('status', TRUE);
+          $result = $indexQuery->execute();
+
+          if ($result->getResultCount() != 0) {
             $options = [];
 
             $keyresources = $node->getAttribute('keyresources');
@@ -96,7 +91,10 @@ class FilterCKEditorEresources extends FilterBase implements ContainerFactoryPlu
             $options['headings'] = $node->getAttribute('noheadings') ? FALSE : TRUE;
             $options['searchbox'] = $node->getAttribute('searchbox') ? TRUE : FALSE;
 
-            $resources = $storage->loadMultiple($resourceIds);
+            $resources = array_map(function ($i) {
+              return new LocalResult($i);
+            }, $result->getResultItems());
+
             $listHtml = HTML::load($this->buildResourceList($resources, $options));
             $list = $document->importNode($listHtml->documentElement, TRUE);
 

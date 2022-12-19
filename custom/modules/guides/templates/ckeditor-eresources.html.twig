@@ -54,7 +54,7 @@
 
 <div>
   <ul class="resource-list mb-1">
-{% for record in resources %}
+{% for entry in resources %}
   {% if loop.index == options.keyresources + 1 %}
   </ul>
 </div>
@@ -70,7 +70,11 @@
     {% endif %}
   <ul class="resource-list">
   {% endif %}
-    <li><a href="{{ record.get('url').value }}">{{ record.label() }}</a>
+    <li>
+      <a href="{{ entry.getViaUrl }}">{{ entry.getTitle }}</a>
+      {% set descriptionId = 'description-' ~ entry.getId ~ '-' ~ random() %}
+      <a data-toggle="collapse" href="#{{ descriptionId }}" aria-expanded="false"><span class="fas fa-question-circle" aria-hidden="true"></span></a>
+      <div class="my-2 p-2 border border-info bg-light rounded collapse" id="{{ descriptionId }}">{{ entry.getFirstMetadataField('description') | raw }}</div>
     </li>
 {% endfor %}
   </ul>
