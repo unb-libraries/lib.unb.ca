@@ -34,8 +34,8 @@
       });
 
       editor.widgets.add('eresources-widget', {
-        template: '<eresources ids="{ids}" keyresources="{keyresources}" noheadings="{noheadings}" searchbox="{searchbox}">{html}</ereources>',
-        allowedContent: 'eresources[ids,keyresources,noheadings,searchbox]; ul; li',
+        template: '<eresources ids="{ids}" keyresources="{keyresources}" noheadings="{noheadings}">{html}</ereources>',
+        allowedContent: 'eresources[ids,keyresources,noheadings]; ul; li',
         requiredContent: 'eresources',
         upcast: function(element, data) {
           if (element.name == 'eresources') {
@@ -47,7 +47,6 @@
           ids: '',
           keyresources: 10,
           noheadings: 0,
-          searchbox: 0,
           html: '',
         },
         init: function() {
@@ -58,7 +57,6 @@
               widget.setData(values);
               widget.element.setAttribute('ids', values.ids);
               widget.element.setAttribute('keyresources', values.keyresources);
-              widget.element.setAttribute('searchbox', values.searchbox);
               widget.element.setAttribute('noheadings', values.noheadings);
               widget.element.setHtml(values.html);
             }, {});

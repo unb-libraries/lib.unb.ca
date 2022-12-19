@@ -146,12 +146,6 @@ class EresourcesDialog extends FormBase {
       '#default_value' => $input['keyresources'] ?? 10,
     ];
 
-    $form['searchbox'] = [
-      '#type' => 'checkbox',
-      '#title' => $this->t('Enable WorldCat targeted database search for these resources'),
-      '#default_value' => $input['searchbox'] ?? 0,
-    ];
-
     $form['noheadings'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Disable headings'),
@@ -223,7 +217,7 @@ class EresourcesDialog extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $values = array_intersect_key(
       $form_state->getValues(),
-      array_flip(['ids', 'keyresources', 'searchbox', 'noheadings']),
+      array_flip(['ids', 'keyresources', 'noheadings']),
     );
 
     // Render an HTML list for display in the editor.
