@@ -833,6 +833,7 @@ display:
           admin_label: 'field_user: User'
           plugin_id: standard
           required: false
+      group_by: true
       header: {  }
       footer: {  }
       display_extenders: {  }
