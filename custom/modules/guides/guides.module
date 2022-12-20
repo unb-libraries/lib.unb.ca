@@ -13,6 +13,23 @@ use Drupal\views\ViewExecutable;
 use PicoFeed\Reader\Reader;
 
 /**
+ * Implements hook_preprocess_HOOK().
+ */
+function guides_menu_local_tasks_alter(&$data, $router_item, $root_path) {
+  // Menu Local Tasks (tabs) and their corresponding desired new title.
+  $target_tabs = [
+    'entity.user.edit_form' => t('Edit Directory Info'),
+    'profile.user_page:public' => t('Edit Public Profile'),
+  ];
+  // If we're on a route that displays a tab whose title we want renamed, make it so.
+  foreach ($data['tabs'][0] as $tabs_key=>$value) {
+    if (isset($target_tabs[$tabs_key])) {
+      $data['tabs'][0][$tabs_key]['#link']['title'] = $target_tabs[$tabs_key];
+    }
+  }
+}
+
+/**
  * Implements hook_views_pre_render().
  */
 function guides_views_pre_render(ViewExecutable $view) {
