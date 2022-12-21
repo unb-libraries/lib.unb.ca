@@ -683,6 +683,7 @@ display:
           entity_field: contacts
           plugin_id: standard
           required: false
+      group_by: true
       header: {  }
       footer: {  }
       display_extenders: {  }
