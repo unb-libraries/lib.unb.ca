@@ -17,15 +17,21 @@ use PicoFeed\Reader\Reader;
  */
 function guides_menu_local_tasks_alter(&$data, $route_name, \Drupal\Core\Cache\RefinableCacheableDependencyInterface &$cacheability) {
   // Menu Local Tasks (tabs) and their corresponding desired new title.
-  $target_tabs = [
+  $rename_tabs = [
     'entity.user.edit_form' => t('Edit Directory Info'),
     'profile.user_page:public' => t('Edit Public Profile'),
+  ];
+  // Tabs to be disabled.
+  $disable_tabs = [
+    'entity.user.canonical' => TRUE,
   ];
   // If we're on a route that displays a tab whose title we want renamed, make it so.
   if (isset($data['tabs'][0])) {
     foreach ($data['tabs'][0] as $tabs_key => $value) {
-      if (isset($target_tabs[$tabs_key])) {
-        $data['tabs'][0][$tabs_key]['#link']['title'] = $target_tabs[$tabs_key];
+      if (isset($rename_tabs[$tabs_key])) {
+        $data['tabs'][0][$tabs_key]['#link']['title'] = $rename_tabs[$tabs_key];
+      } elseif (isset($disable_tabs[$tabs_key])) {
+        unset($data['tabs'][0][$tabs_key]);
       }
     }
   }
