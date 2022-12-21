@@ -857,7 +857,7 @@ display:
       path: admin/guides
       menu:
         type: normal
-        title: 'Guides List'
+        title: 'View guides'
         description: ''
         weight: 0
         expanded: false
