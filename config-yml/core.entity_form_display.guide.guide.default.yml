@@ -80,7 +80,7 @@ content:
       features:
         add_above: '0'
         collapse_edit_all: collapse_edit_all
-        duplicate: duplicate
+        duplicate: '0'
     third_party_settings: {  }
   feeds:
     type: paragraphs
