@@ -1,0 +1,28 @@
+uuid: 309c8006-7b61-48d5-b155-722e70f55a07
+langcode: en
+status: true
+dependencies:
+  module:
+    - guides
+    - user
+  theme:
+    - lib_unb_ca
+id: guidesinformationbar
+theme: lib_unb_ca
+region: content
+weight: -4
+provider: null
+plugin: guides_info_bar_block
+settings:
+  id: guides_info_bar_block
+  label: 'Guides Information Bar'
+  label_display: '0'
+  provider: guides
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      guide_editor: guide_editor
