@@ -33,6 +33,11 @@ function guides_menu_local_tasks_alter(&$data, $route_name, \Drupal\Core\Cache\R
       } elseif (isset($disable_tabs[$tabs_key])) {
         unset($data['tabs'][0][$tabs_key]);
       }
+
+      // Push Webform|Submissions tab to end of the tabs list.
+      if (isset($data['tabs'][0]['entity.webform_submission.user'])) {
+        $data['tabs'][0]['entity.webform_submission.user']['#weight'] = 100;
+      }
     }
   }
 }
