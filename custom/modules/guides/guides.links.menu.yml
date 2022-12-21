@@ -14,4 +14,4 @@ system.admin.unblib.guides.guide.clone:
   title: Clone an existing guide
   route_name: guides.clone
   parent: system.admin.unblib.guides
-  weight: 5
+  weight: 0
