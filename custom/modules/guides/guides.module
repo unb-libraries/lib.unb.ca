@@ -22,9 +22,11 @@ function guides_menu_local_tasks_alter(&$data, $router_item, $root_path) {
     'profile.user_page:public' => t('Edit Public Profile'),
   ];
   // If we're on a route that displays a tab whose title we want renamed, make it so.
-  foreach ($data['tabs'][0] as $tabs_key=>$value) {
-    if (isset($target_tabs[$tabs_key])) {
-      $data['tabs'][0][$tabs_key]['#link']['title'] = $target_tabs[$tabs_key];
+  if (isset($data['tabs'][0])) {
+    foreach ($data['tabs'][0] as $tabs_key => $value) {
+      if (isset($target_tabs[$tabs_key])) {
+        $data['tabs'][0][$tabs_key]['#link']['title'] = $target_tabs[$tabs_key];
+      }
     }
   }
 }
