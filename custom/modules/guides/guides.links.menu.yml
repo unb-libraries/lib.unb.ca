@@ -1,5 +1,5 @@
 system.admin.unblib.guides:
-  title: Guides
+  title: Research Guides
   description: 'UNB Libraries Guides.'
   route_name: guides.categories
   parent: system.admin.unblib
