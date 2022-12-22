@@ -30,57 +30,71 @@ elements: |-
     licences_and_terms_of_use:
       '#type': fieldset
       '#title': 'Licences and Terms of Use'
-      licence_data_use_agreement_public_domain_cco:
+      data_use_agreement:
         '#type': radios
-        '#title': 'Public Domain CCO'
-        '#options': yes_no
+        '#title': 'Licence/Data Use Agreement'
+        '#description': 'See <a href="https://support.dataverse.harvard.edu/sample-data-usage-agreement">Sample Data Usage Agreement</a>'
+        '#options':
+          pub: 'Public Domain'
+          cus: 'Custom Dataset Terms'
+        '#options_display': two_columns
         '#required': true
-      restrict_files_and_allow_request_access_to_files:
-        '#type': radios
-        '#title': 'Restrict files and allow request access to files'
-        '#options': yes_no
-        '#required': true
+      public_domain_info:
+        '#type': webform_markup
+        '#states':
+          visible:
+            ':input[name="data_use_agreement"]':
+              value: pub
+        '#wrapper_attributes':
+          class:
+            - alert
+            - alert-info
+        '#markup': '<p style="margin-left:48px"><span style="line-height:100%">This dataset will be published under the CC0 licence. The <u><a href="https://dataverse.org/best-practices/dataverse-community-norms">Dataverse Community Norms</a></u>, as well as good data management practices, expect that proper credit is given via citation.</span></p>'
+      custom_dataset_terms:
+        '#type': checkboxes
+        '#title': 'Custom Dataset Terms'
+        '#options':
+          res: 'Restrict files and allow request access to files'
+          emb: Embargoes
+          dua: 'Data Use Agreement'
+        '#states':
+          visible:
+            ':input[name="licence_data_use_agreement_public_domain_cco"]':
+              value: cus
+          required:
+            ':input[name="licence_data_use_agreement_public_domain_cco"]':
+              value: cus
       contact_person:
         '#type': textfield
         '#title': 'Contact Person'
         '#states':
           visible:
-            ':input[name="restrict_files_and_allow_request_access_to_files"]':
-              value: 'Yes'
+            ':input[name="custom_dataset_terms[res]"]':
+              checked: true
           required:
-            ':input[name="restrict_files_and_allow_request_access_to_files"]':
-              value: 'Yes'
-      embargoes:
-        '#type': radios
-        '#title': Embargoes
-        '#options': yes_no
-        '#required': true
+            ':input[name="custom_dataset_terms[res]"]':
+              checked: true
       embargo_end_date:
         '#type': date
         '#title': 'Embargo End Date'
         '#states':
           visible:
-            ':input[name="embargoes"]':
-              value: 'Yes'
+            ':input[name="custom_dataset_terms[emb]"]':
+              checked: true
           required:
-            ':input[name="embargoes"]':
-              value: 'Yes'
+            ':input[name="custom_dataset_terms[emb]"]':
+              checked: true
         '#datepicker': true
-      data_use_agreement:
-        '#type': radios
-        '#title': 'Data Use Agreement'
-        '#options': yes_no
-        '#required': true
-      data_use_agreement_text:
+      custom_data_use_agreement_text:
         '#type': textarea
         '#title': 'Data Use Agreement'
         '#states':
           visible:
-            ':input[name="data_use_agreement"]':
-              value: 'Yes'
+            ':input[name="custom_dataset_terms[dua]"]':
+              checked: true
           required:
-            ':input[name="data_use_agreement"]':
-              value: 'Yes'
+            ':input[name="custom_dataset_terms[dua]"]':
+              checked: true
     metadata:
       '#type': fieldset
       '#title': Metadata
