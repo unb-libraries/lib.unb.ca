@@ -5,13 +5,14 @@ system.admin.unblib.guides:
   parent: system.admin.unblib
   weight: 5
 system.admin.unblib.guides.guide.add:
-  title: Add a new guide
-  description: 'Add new research guide.'
+  title: Create new guide
+  description: 'Add a new research guide.'
   route_name: entity.guide.add_form
   parent: system.admin.unblib.guides
   weight: 0
 system.admin.unblib.guides.guide.clone:
-  title: Clone an existing guide
+  title: Clone existing guide
+  Description: 'Create a copy of an existing guide.'
   route_name: guides.clone
   parent: system.admin.unblib.guides
   weight: 0
