@@ -859,7 +859,7 @@ display:
         type: normal
         title: 'View guides'
         description: ''
-        weight: 0
+        weight: -5
         expanded: false
         menu_name: admin
         parent: system.admin.unblib.guides
