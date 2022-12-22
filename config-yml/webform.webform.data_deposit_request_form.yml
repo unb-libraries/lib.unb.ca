@@ -103,7 +103,7 @@ elements: |-
         '#title': 'Principal Investigator (must be from UNB)'
         department:
           '#type': textfield
-          '#title': Department
+          '#title': 'Department (Faculty or other division)'
           '#required': true
         orcid_id:
           '#type': textfield
