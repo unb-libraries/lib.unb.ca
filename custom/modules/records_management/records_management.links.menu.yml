@@ -3,7 +3,7 @@ system.admin.unblib.records:
   description: 'Manage retention schedules and classifications.'
   route_name: view.retention_schedules.page
   parent: system.admin.unblib
-  weight: 20
+  weight: 0
 
 system.admin.unblib.records.classifications:
   title: Classifications

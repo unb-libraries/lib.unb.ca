@@ -3,7 +3,7 @@ system.admin.unblib.guides:
   description: 'UNB Libraries Guides.'
   route_name: guides.categories
   parent: system.admin.unblib
-  weight: 5
+  weight: 0
 system.admin.unblib.guides.guide.add:
   title: Create new guide
   description: 'Add a new research guide.'

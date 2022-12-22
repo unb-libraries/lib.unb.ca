@@ -3,7 +3,7 @@ system.admin.unblib.eresources:
   description: 'UNB Libraries eResources.'
   route_name: entity.eresources_harvested_collection.collection
   parent: system.admin.unblib
-  weight: 0
+  weight: -10
 system.admin.unblib.eresources.harvested_collection:
   title: Harvested Collections
   description: 'eResources Harvested Collections.'
