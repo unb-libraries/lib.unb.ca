@@ -30,6 +30,7 @@ function guides_menu_local_tasks_alter(&$data, $route_name, \Drupal\Core\Cache\R
     foreach ($data['tabs'][0] as $tabs_key => $value) {
       if (isset($rename_tabs[$tabs_key])) {
         $data['tabs'][0][$tabs_key]['#link']['title'] = $rename_tabs[$tabs_key];
+        $data['tabs'][0][$tabs_key]['#weight'] = 0;
       } elseif (isset($disable_tabs[$tabs_key])) {
         unset($data['tabs'][0][$tabs_key]);
       }
