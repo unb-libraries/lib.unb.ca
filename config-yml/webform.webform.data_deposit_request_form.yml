@@ -59,10 +59,10 @@ elements: |-
           dua: 'Data Use Agreement'
         '#states':
           visible:
-            ':input[name="licence_data_use_agreement_public_domain_cco"]':
+            ':input[name="data_use_agreement"]':
               value: cus
           required:
-            ':input[name="licence_data_use_agreement_public_domain_cco"]':
+            ':input[name="data_use_agreement"]':
               value: cus
       contact_person:
         '#type': textfield
