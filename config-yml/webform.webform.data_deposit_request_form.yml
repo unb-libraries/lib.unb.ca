@@ -154,6 +154,7 @@ elements: |-
       keywords:
         '#type': textfield
         '#title': Keywords
+        '#multiple': true
         '#required': true
       related_publications:
         '#type': textarea
