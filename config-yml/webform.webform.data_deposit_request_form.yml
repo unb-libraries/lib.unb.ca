@@ -66,7 +66,7 @@ elements: |-
               value: cus
       contact_person:
         '#type': textfield
-        '#title': 'Contact Person'
+        '#title': 'Contact Person (Name, Email)'
         '#states':
           visible:
             ':input[name="custom_dataset_terms[res]"]':
