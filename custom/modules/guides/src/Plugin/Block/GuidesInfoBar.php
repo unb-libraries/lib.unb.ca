@@ -5,6 +5,7 @@ namespace Drupal\guides\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Routing\CurrentRouteMatch;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Url;
 
@@ -27,6 +28,13 @@ class GuidesInfoBar extends BlockBase implements ContainerFactoryPluginInterface
   protected $entityTypeManager;
 
   /**
+   * The route match service.
+   *
+   * @var \\Drupal\Core\Routing\CurrentRouteMatch
+   */
+  protected $routeMatch;
+
+  /**
    * Constructs a new CartBlock.
    *
    * @param array $configuration
@@ -37,11 +45,14 @@ class GuidesInfoBar extends BlockBase implements ContainerFactoryPluginInterface
    *   The plugin implementation definition.
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   The entity type manager.
+   * @param \Drupal\Core\Routing\CurrentRouteMatch $route_match
+   *   The route match service.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager, CurrentRouteMatch $route_match) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
 
     $this->entityTypeManager = $entity_type_manager;
+    $this->routeMatch = $route_match;
   }
 
   /**
@@ -52,7 +63,8 @@ class GuidesInfoBar extends BlockBase implements ContainerFactoryPluginInterface
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('entity_type.manager')
+      $container->get('entity_type.manager'),
+      $container->get('current_route_match')
     );
   }
 
@@ -62,10 +74,8 @@ class GuidesInfoBar extends BlockBase implements ContainerFactoryPluginInterface
   public function build() {
     $build = [];
 
-    $routeMatch = \Drupal::routeMatch();
-
-    if ($routeMatch->getRouteName() == 'entity.guide.canonical') {
-      $guide = $routeMatch->getParameter('guide');
+    if ($this->routeMatch->getRouteName() == 'entity.guide.canonical') {
+      $guide = $this->routeMatch->getParameter('guide');
 
       $isPublished = $guide->get('status')->getString();
       $published = $isPublished ? 'a <em>published</em>' : 'an <em>unpublished</em>';
