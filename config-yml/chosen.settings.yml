@@ -3,7 +3,7 @@ _core:
 minimum_single: 7
 minimum_multiple: 6
 disable_search_threshold: 7
-minimum_width: null
+minimum_width: 100
 max_shown_results: null
 use_relative_width: true
 jquery_selector: 'select:not(.custom-chosen-select):not(.custom-select):not(#edit-classification):not(.selectize):visible'
@@ -13,8 +13,8 @@ allow_single_deselect: false
 disabled_themes:
   seven: '0'
   bootstrap_barrio: '0'
-  unb_lib_theme: '0'
   lib_unb_ca: '0'
+  unb_lib_theme: '0'
 chosen_include: 2
 placeholder_text_multiple: '- Please choose 1 or more options -'
 placeholder_text_single: '- Please choose an option -'
