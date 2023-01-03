@@ -9,7 +9,7 @@ system.admin.unblib.guides.guide.add:
   description: 'Add a new research guide.'
   route_name: entity.guide.add_form
   parent: system.admin.unblib.guides
-  weight: 0
+  weight: -5
 system.admin.unblib.guides.guide.clone:
   title: Clone existing guide
   Description: 'Create a copy of an existing guide.'
