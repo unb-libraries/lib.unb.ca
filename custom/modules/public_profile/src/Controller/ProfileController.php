@@ -31,6 +31,7 @@ class ProfileController extends ControllerBase {
         ->condition('status', 1)
         ->condition('type', 'public')
         ->condition('field_url_fragment', $url_fragment)
+        ->condition('uid.entity.status', 0, '!=')
         ->accessCheck(FALSE)
         ->execute();
 
