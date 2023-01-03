@@ -1,7 +1,7 @@
 system.admin.unblib.guides:
   title: Research Guides
   description: 'UNB Libraries Guides.'
-  route_name: guides.categories
+  route_name: view.guides.page_1
   parent: system.admin.unblib
   weight: 0
 system.admin.unblib.guides.guide.add:
