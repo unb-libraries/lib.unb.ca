@@ -112,6 +112,7 @@ class GuidesInfoBar extends BlockBase implements ContainerFactoryPluginInterface
       }
 
       $build['#markup'] = '<p class="alert alert-info"><span class="fas fa-certificate"></span> ' . $status . '.</p>';
+      $build['#cache'] = ['max-age' => 0];
     }
 
     return $build;
