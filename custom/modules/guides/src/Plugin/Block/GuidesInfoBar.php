@@ -106,8 +106,30 @@ class GuidesInfoBar extends BlockBase implements ContainerFactoryPluginInterface
           $status .= ' AND matches several <a href="' . $linkUrl . '">specific D2L courses</a>';
         }
         else {
-          $course = $storage->loadMultiple(reset(ids));
-          // @todo Add course info.
+          $course = $storage->load(reset($ids));
+
+          $year = $course->get('year')->getString();
+          $term = $course->get('term')->getString();
+          $campus = $course->get('campus')->getString();
+          $prefix = $course->get('prefix')->getString();
+          $number = $course->get('course_number')->getString();
+
+          if (empty($number)) {
+            if ($campus) {
+              $campus = " ({$campus})";
+            }
+            $status .= " AND the default D2L guide for {$prefix}{$campus}";
+          }
+          else {
+            $courseCode = $year . $term . '_';
+            $courseCode .= implode('*', [
+              $prefix,
+              $number,
+              $campus . $course->get('section')->getString(),
+            ]);
+            $courseCode = trim($courseCode, '*_ ');
+            $status .= " for {$courseCode}";
+          }
         }
       }
 
