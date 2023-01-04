@@ -49,7 +49,7 @@
   {% endif %}
 {% endif %}
 {% if profile.field_book_a_meeting.uri %}
-  <li style="margin-top:4px;"><a href="{{ profile.field_book_a_meeting.uri }}" class="btn btn-sm btn-success"><i class="fas fa-calendar-check"></i> {{ profile.field_book_a_meeting.title }}</a></li>
+  <li class="social-buttons"><a href="{{ profile.field_book_a_meeting.uri }}" class="btn btn-sm btn-success"><i class="fas fa-calendar-check"></i> {{ profile.field_book_a_meeting.title }}</a></li>
 {% endif %}
 {% if profile.field_website.uri and profile.field_show_website.value %}
   <li><a href="{{ profile.field_website.uri }}">{{ profile.field_website.title }}</a></li>
