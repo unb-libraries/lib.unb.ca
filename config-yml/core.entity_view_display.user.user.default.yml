@@ -15,33 +15,12 @@ dependencies:
     - field.field.user.user.field_position_title
     - field.field.user.user.field_room_number
   module:
-    - telephone
     - user
 id: user.user.default
 targetEntityType: user
 bundle: user
 mode: default
 content:
-  field_display_on_connect_page:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 10
-    region: content
-  field_display_on_staff_directory:
-    type: boolean
-    label: inline
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 8
-    region: content
   field_first_name:
     type: string
     label: inline
@@ -58,65 +37,19 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_liaison_librarian:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 7
-    region: content
-  field_on_leave:
-    type: boolean
-    label: inline
-    settings:
-      format: yes-no
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 9
-    region: content
-  field_phone_number:
-    type: telephone_link
-    label: inline
-    settings:
-      title: ''
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_position_title:
-    type: string
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_room_number:
-    type: string
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  member_for:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  simple_groups:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 6
-    region: content
 hidden:
   field_department_memberships: true
+  field_display_on_connect_page: true
+  field_display_on_staff_directory: true
   field_email_id: true
+  field_liaison_librarian: true
+  field_on_leave: true
+  field_phone_number: true
+  field_position_title: true
+  field_room_number: true
   guides_profiles: true
   langcode: true
+  member_for: true
   public_profiles: true
   search_api_excerpt: true
+  simple_groups: true
