@@ -92,7 +92,7 @@ class CourseLinkListBuilder extends EntityListBuilder {
           'url' => Url::fromRoute(
             'entity.course_link.add_form',
             [
-              'guide' => $guide,
+              'guide' => $guide->id(),
             ]
           ),
         ],
@@ -108,7 +108,7 @@ class CourseLinkListBuilder extends EntityListBuilder {
   public function load() {
     $guide = $this->routeMatch->getParameters()->get('guide');
     $query = $this->getStorage()->getQuery()
-      ->condition('guide', $guide)
+      ->condition('guide', $guide->id())
       ->sort('prefix')
       ->sort('course_number')
       ->sort('section');

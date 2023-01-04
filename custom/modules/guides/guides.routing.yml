@@ -55,3 +55,14 @@ guides.user_stats:
     _title: 'User Statistics'
   requirements:
     _permission: 'create guide entities'
+entity.course_link.collection:
+  path: '/admin/guides/{guide}/courselink'
+  defaults:
+    _entity_list: 'course_link'
+    _title_callback: '\Drupal\guides\Controller\CourseLinkController::pageTitle'
+  requirements:
+    _custom_access: '\Drupal\guides\Controller\CourseLinkController::checkEditAccess'
+  options:
+    parameters:
+      guide:
+        type: entity:guide

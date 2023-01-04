@@ -3,11 +3,10 @@
 namespace Drupal\guides\Form;
 
 use Drupal\Core\Form\FormBase;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\ReplaceCommand;
+use Drupal\Core\Entity\EntityInterface;
 
 /**
  * Ajax form to set is_subject_guide field.
@@ -22,32 +21,6 @@ class IsSubjectGuideForm extends FormBase {
   private $guide;
 
   /**
-   * The entity type manager.
-   *
-   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
-   */
-  protected $entityTypeManager;
-
-  /**
-   * Class constructor.
-   *
-   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
-   *   An entity type manager.
-   */
-  public function __construct(EntityTypeManagerInterface $entityTypeManager) {
-    $this->entityTypeManager = $entityTypeManager;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function create(ContainerInterface $container) {
-    return new static(
-      $container->get('entity_type.manager')
-    );
-  }
-
-  /**
    * {@inheritdoc}
    */
   public function getFormId() {
@@ -57,8 +30,8 @@ class IsSubjectGuideForm extends FormBase {
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state, int $guideId = NULL) {
-    $this->guide = $this->entityTypeManager->getStorage('guide')->load($guideId);
+  public function buildForm(array $form, FormStateInterface $form_state, EntityInterface $guide = NULL) {
+    $this->guide = $guide;
 
     $form['is_subject_guide_metadata'] = [
       '#type' => 'container',
