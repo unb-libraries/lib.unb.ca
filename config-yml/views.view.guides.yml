@@ -895,7 +895,7 @@ display:
               secondary_open: false
               reset_button_always_show: false
             filter:
-              title:
+              combine:
                 plugin_id: default
                 advanced:
                   placeholder_text: ''
@@ -906,10 +906,18 @@ display:
                 advanced:
                   sort_options: false
                   rewrite:
-                    filter_rewrite_values: ''
+                    filter_rewrite_values: "- Any -|- Show All -\r\nTrue|Published\r\nFalse|Unpublished"
                   collapsible: false
                   is_secondary: false
               unlisted:
+                plugin_id: default
+                advanced:
+                  sort_options: true
+                  rewrite:
+                    filter_rewrite_values: "- Any -|- Show All -\r\nTrue|Unlisted\r\nFalse|Listed"
+                  collapsible: false
+                  is_secondary: false
+              uid_current:
                 plugin_id: default
                 advanced:
                   sort_options: false
