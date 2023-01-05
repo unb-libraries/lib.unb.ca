@@ -75,7 +75,7 @@ class GuidesSettingsForm extends ConfigFormBase {
 
     $help = NULL;
     if (!empty($config->get('help_guide'))) {
-      $start = $storage->load($config->get('help_guide'));
+      $help = $storage->load($config->get('help_guide'));
     }
 
     $form['help_guide'] = [
@@ -93,7 +93,7 @@ class GuidesSettingsForm extends ConfigFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->config('guides.settings')
-      ->set('start_guide', $form_state->getValue('start_guide'))
+      ->set('start_guide', $form_state->getValue('getting_started_guide'))
       ->set('help_guide', $form_state->getValue('help_guide'))
       ->save();
 
