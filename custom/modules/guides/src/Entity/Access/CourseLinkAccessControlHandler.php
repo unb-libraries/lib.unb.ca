@@ -77,7 +77,7 @@ class CourseLinkAccessControlHandler extends EntityAccessControlHandler {
    * @return bool
    *   TRUE if user is listed, FALSE otherwise.
    */
-  public function hasCourseLinkAccess(EntityInterface $entity, AccountInterface $account) {
+  private function hasCourseLinkAccess(EntityInterface $entity, AccountInterface $account) {
     $hasAccess = FALSE;
     foreach ($entity->editors as $editor) {
       $user = $editor->entity->field_user->entity;
