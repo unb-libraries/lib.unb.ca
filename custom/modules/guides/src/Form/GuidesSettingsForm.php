@@ -97,6 +97,9 @@ class GuidesSettingsForm extends ConfigFormBase {
       ->set('help_guide', $form_state->getValue('help_guide'))
       ->save();
 
+    \Drupal::cache('menu')->invalidateAll();
+    \Drupal::service('plugin.manager.menu.link')->rebuild();
+
     parent::submitForm($form, $form_state);
   }
 
