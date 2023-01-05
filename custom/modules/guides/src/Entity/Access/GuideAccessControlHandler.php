@@ -23,6 +23,36 @@ class GuideAccessControlHandler extends EntityAccessControlHandler {
    *   TRUE if user is listed, FALSE otherwise.
    */
   protected function hasEntityUpdateAccess(EntityInterface $entity, AccountInterface $account) {
+    return $this->hasGuideAccess($entity, $account);
+  }
+
+  /**
+   * Grant delete access to any listed editor.
+   *
+   * @param \Drupal\Core\Entity\EntityInterface $entity
+   *   An entity.
+   * @param \Drupal\Core\Session\AccountInterface $account
+   *   A user.
+   *
+   * @return bool
+   *   TRUE if user is listed, FALSE otherwise.
+   */
+  public function hasEntityDeleteAccess(EntityInterface $entity, AccountInterface $account) {
+    return $this->hasGuideAccess($entity, $account);
+  }
+
+  /**
+   * Grant access to any listed editor.
+   *
+   * @param \Drupal\Core\Entity\EntityInterface $entity
+   *   An entity.
+   * @param \Drupal\Core\Session\AccountInterface $account
+   *   A user.
+   *
+   * @return bool
+   *   TRUE if user is listed, FALSE otherwise.
+   */
+  private function hasGuideAccess(EntityInterface $entity, AccountInterface $account) {
     $hasAccess = FALSE;
     foreach ($entity->editors as $editor) {
       $user = $editor->entity->field_user->entity;
@@ -32,6 +62,7 @@ class GuideAccessControlHandler extends EntityAccessControlHandler {
       }
     }
     return $hasAccess;
+
   }
 
 }
