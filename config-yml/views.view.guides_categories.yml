@@ -223,17 +223,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        created:
-          id: created
-          table: guide_category
-          field: created
+        contacts_target_id:
+          id: contacts_target_id
+          table: guide_category__contacts
+          field: contacts_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: guide_category
-          entity_field: created
+          entity_field: contacts
           plugin_id: field
-          label: Created
+          label: Contacts
           exclude: false
           alter:
             alter_text: false
@@ -274,20 +274,18 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: timestamp
+          click_sort_column: target_id
+          type: entity_reference_label
           settings:
-            date_format: medium
-            custom_date_format: ''
-            timezone: ''
-          group_column: value
+            link: false
+          group_column: entity_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
           delta_reversed: false
           delta_first_last: false
-          multi_type: separator
+          multi_type: ul
           separator: ', '
           field_api_classes: false
         edited:
@@ -357,6 +355,116 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        edit_guide_category:
+          id: edit_guide_category
+          table: guide_category
+          field: edit_guide_category
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: guide_category
+          plugin_id: entity_link_edit
+          label: 'Link to edit Guide Category'
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          text: edit
+          output_url_as_text: false
+          absolute: false
+        dropbutton:
+          id: dropbutton
+          table: views
+          field: dropbutton
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: dropbutton
+          label: Actions
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          destination: true
+          fields:
+            edit_guide_category: edit_guide_category
+            id: '0'
+            title: '0'
+            status: '0'
+            created: '0'
+            edited: '0'
       pager:
         type: mini
         options:
@@ -618,6 +726,8 @@ display:
             status: status
             created: created
             edited: edited
+            edit_guide_category: edit_guide_category
+            dropbutton: dropbutton
           default: title
           info:
             id:
@@ -635,7 +745,7 @@ display:
               empty_column: false
               responsive: ''
             status:
-              sortable: false
+              sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
@@ -650,6 +760,20 @@ display:
               responsive: ''
             edited:
               sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            edit_guide_category:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            dropbutton:
+              sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
