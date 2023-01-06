@@ -183,7 +183,7 @@ class GuidesStatsController extends ControllerBase {
       $header = $report->getColumnHeader();
       $dimensionHeaders = $header->getDimensions();
       $metricHeaders = $header->getMetricHeader()->getMetricHeaderEntries();
-      $rows = $report->getData()->getRows();
+      $rows = $report->getData()->getRows() ?? [];
 
       for ($rowIndex = 0; $rowIndex < count($rows); $rowIndex++) {
         $data = [];
