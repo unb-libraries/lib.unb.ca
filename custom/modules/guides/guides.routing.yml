@@ -40,7 +40,7 @@ guides.guide_stats:
     _controller: '\Drupal\guides\Controller\GuidesStatsController::guideStats'
     _title: 'Guide Statistics'
   requirements:
-    _permission: 'create guide entities'
+    _custom_access: '\Drupal\guides\Controller\GuidesAccessController::checkEditAccess'
 guides.category_stats:
   path: '/guides/category/{category}/stats'
   defaults:
@@ -61,7 +61,7 @@ entity.course_link.collection:
     _entity_list: 'course_link'
     _title_callback: '\Drupal\guides\Controller\CourseLinkController::pageTitle'
   requirements:
-    _custom_access: '\Drupal\guides\Controller\CourseLinkController::checkEditAccess'
+    _custom_access: '\Drupal\guides\Controller\GuidesAccessController::checkEditAccess'
   options:
     parameters:
       guide:
