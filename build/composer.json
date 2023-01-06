@@ -58,7 +58,6 @@
       "drupal/entity_reference_revisions": {
         "Provide entity reference revision relation to Views": "https://www.drupal.org/files/issues/2022-06-01/entity_reference_revisions-relationship_host_id-2799479-176.patch"
       }
-
     }
   },
   "license": "MIT",
@@ -287,7 +286,7 @@
     "drupal/colorbox": "1.10",
     "drupal/colorbutton": "1.4",
     "drupal/config_update": "1.7",
-    "drupal/core": "9.4.9",
+    "drupal/core": "9.5.1",
     "drupal/easy_breadcrumb": "2.0.4",
     "drupal/editor_file": "1.6",
     "drupal/embed": "1.6",
