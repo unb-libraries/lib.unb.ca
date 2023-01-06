@@ -72,71 +72,70 @@ class GuidesInfoBar extends BlockBase implements ContainerFactoryPluginInterface
    * {@inheritdoc}
    */
   public function build() {
-    $build = [];
-
-    if ($this->routeMatch->getRouteName() == 'entity.guide.canonical') {
-      $guide = $this->routeMatch->getParameter('guide');
-
-      $isPublished = $guide->get('status')->getString();
-      $published = $isPublished ? 'a <em>published</em>' : 'an <em>unpublished</em>';
-      $published .= $isPublished && $guide->get('unlisted')->getString() ? ' <em>(unlisted)</em>' : '';
-
-      $type = $guide->get('is_subject_guide')->getString() ? 'subject-level' : 'course-level';
-
-      $status = "This is {$published} {$type} guide";
-
-      $categories = [];
-      foreach ($guide->get('guide_categories') as $category) {
-        $categories[] = $category->entity->toLink()->toString();
-      }
-
-      if (!empty($categories)) {
-        $status .= ' within ' . implode(' and ', $categories);
-      }
-
-      $storage = $this->entityTypeManager->getStorage('course_link');
-      $query = $storage->getQuery();
-      $ids = $query
-        ->condition('guide', $guide->id())
-        ->execute();
-
-      if (!empty($ids)) {
-        if (count($ids) > 1) {
-          $linkUrl = Url::fromRoute('entity.course_link.collection', ['guide' => $guide->id()])->toString();
-          $status .= ' AND matches several <a href="' . $linkUrl . '">specific D2L courses</a>';
-        }
-        else {
-          $course = $storage->load(reset($ids));
-
-          $year = $course->get('year')->getString();
-          $term = $course->get('term')->getString();
-          $campus = $course->get('campus')->getString();
-          $prefix = $course->get('prefix')->getString();
-          $number = $course->get('course_number')->getString();
-
-          if (empty($number)) {
-            if ($campus) {
-              $campus = " ({$campus})";
-            }
-            $status .= " AND the default D2L guide for {$prefix}{$campus}";
-          }
-          else {
-            $courseCode = $year . $term . '_';
-            $courseCode .= implode('*', [
-              $prefix,
-              $number,
-              $campus . $course->get('section')->getString(),
-            ]);
-            $courseCode = trim($courseCode, '*_ ');
-            $status .= " for {$courseCode}";
-          }
-        }
-      }
-
-      $build['#markup'] = '<p class="alert alert-info"><span class="fas fa-certificate"></span> ' . $status . '.</p>';
-      $build['#cache'] = ['max-age' => 0];
+    $build = ['#cache' => ['max-age' => 0]];
+    if ($this->routeMatch->getRouteName() != 'entity.guide.canonical') {
+      return $build;
     }
 
+    $guide = $this->routeMatch->getParameter('guide');
+
+    $isPublished = $guide->get('status')->getString();
+    $published = $isPublished ? 'a <em>published</em>' : 'an <em>unpublished</em>';
+    $published .= $isPublished && $guide->get('unlisted')->getString() ? ' <em>(unlisted)</em>' : '';
+
+    $type = $guide->get('is_subject_guide')->getString() ? 'subject-level' : 'course-level';
+
+    $status = "This is {$published} {$type} guide";
+
+    $categories = [];
+    foreach ($guide->get('guide_categories') as $category) {
+      $categories[] = $category->entity->toLink()->toString();
+    }
+
+    if (!empty($categories)) {
+      $status .= ' within ' . implode(' and ', $categories);
+    }
+
+    $storage = $this->entityTypeManager->getStorage('course_link');
+    $query = $storage->getQuery();
+    $ids = $query
+      ->condition('guide', $guide->id())
+      ->execute();
+
+    if (!empty($ids)) {
+      if (count($ids) > 1) {
+        $linkUrl = Url::fromRoute('entity.course_link.collection', ['guide' => $guide->id()])->toString();
+        $status .= ' AND matches several <a href="' . $linkUrl . '">specific D2L courses</a>';
+      }
+      else {
+        $course = $storage->load(reset($ids));
+
+        $year = $course->get('year')->getString();
+        $term = $course->get('term')->getString();
+        $campus = $course->get('campus')->getString();
+        $prefix = $course->get('prefix')->getString();
+        $number = $course->get('course_number')->getString();
+
+        if (empty($number)) {
+          if ($campus) {
+            $campus = " ({$campus})";
+          }
+          $status .= " AND the default D2L guide for {$prefix}{$campus}";
+        }
+        else {
+          $courseCode = $year . $term . '_';
+          $courseCode .= implode('*', [
+            $prefix,
+            $number,
+            $campus . $course->get('section')->getString(),
+          ]);
+          $courseCode = trim($courseCode, '*_ ');
+          $status .= " for {$courseCode}";
+        }
+      }
+    }
+
+    $build['#markup'] = '<p class="alert alert-info"><span class="fas fa-certificate"></span> ' . $status . '.</p>';
     return $build;
   }
 
