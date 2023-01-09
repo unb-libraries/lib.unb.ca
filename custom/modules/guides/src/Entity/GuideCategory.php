@@ -170,6 +170,8 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
     $storage = $this->entityTypeManager()->getStorage('guide');
     $query = $storage->getQuery();
     $ids = $query
+      ->condition('status', 1)
+      ->condition('unlisted', FALSE)
       ->condition('is_subject_guide', TRUE)
       ->condition('guide_categories', $this->id())
       ->execute();
@@ -188,6 +190,8 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
     $storage = $this->entityTypeManager()->getStorage('guide');
     $query = $storage->getQuery();
     $ids = $query
+      ->condition('status', 1)
+      ->condition('unlisted', FALSE)
       ->condition('is_subject_guide', FALSE)
       ->condition('guide_categories', $this->id())
       ->execute();
