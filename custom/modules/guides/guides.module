@@ -31,8 +31,8 @@ function guides_menu_local_tasks_alter(&$data, $route_name, \Drupal\Core\Cache\R
   ];
   // Tabs to adjust order.
   $tabs_weight = [
-    'entity.webform_submission.user' => 20,
     'guides.user.stats' => 15,
+    'entity.webform_submission.user' => 20,
   ];
 
   if (isset($data['tabs'][0])) {

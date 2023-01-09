@@ -5,7 +5,6 @@ dependencies:
   config:
     - filter.format.no_media_html_ior_
   module:
-    - contact
     - field_permissions
     - filter
     - guides
@@ -27,7 +26,6 @@ weight: -10
 is_admin: false
 permissions:
   - 'access content'
-  - 'access user contact forms'
   - 'create ior_submission entities'
   - 'list classification entities'
   - 'list contest entities'
