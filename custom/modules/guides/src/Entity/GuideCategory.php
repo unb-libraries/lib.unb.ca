@@ -174,6 +174,7 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
       ->condition('unlisted', FALSE)
       ->condition('is_subject_guide', TRUE)
       ->condition('guide_categories', $this->id())
+      ->sort('title', 'ASC')
       ->execute();
 
     if (!empty($ids)) {
@@ -194,6 +195,7 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
       ->condition('unlisted', FALSE)
       ->condition('is_subject_guide', FALSE)
       ->condition('guide_categories', $this->id())
+      ->sort('title', 'ASC')
       ->execute();
 
     if (!empty($ids)) {
@@ -213,6 +215,7 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
       ->condition('status', 1)
       ->condition('unlisted', FALSE)
       ->condition('related_guide_categories', $this->id())
+      ->sort('title', 'ASC')
       ->execute();
 
     if (!empty($ids)) {
