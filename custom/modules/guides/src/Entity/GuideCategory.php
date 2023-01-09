@@ -209,7 +209,11 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
   public function getRelatedGuides() {
     $storage = $this->entityTypeManager()->getStorage('guide');
     $query = $storage->getQuery();
-    $ids = $query->condition('related_guide_categories', $this->id())->execute();
+    $ids = $query
+      ->condition('status', 1)
+      ->condition('unlisted', FALSE)
+      ->condition('related_guide_categories', $this->id())
+      ->execute();
 
     if (!empty($ids)) {
       return $storage->loadMultiple($ids);
