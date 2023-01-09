@@ -33,3 +33,9 @@ guides.course_links:
   title: 'Course Linking / D2L'
   base_route: entity.guide.canonical
   weight: 100
+
+guides.user.stats:
+  route_name: guides.user_stats
+  title: 'Profile Stats'
+  base_route: entity.user.canonical
+  weight: 1
