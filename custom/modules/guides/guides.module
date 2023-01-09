@@ -16,28 +16,48 @@ use PicoFeed\Reader\Reader;
  * Implements hook_preprocess_HOOK().
  */
 function guides_menu_local_tasks_alter(&$data, $route_name, \Drupal\Core\Cache\RefinableCacheableDependencyInterface &$cacheability) {
-  // Menu Local Tasks (tabs) and their corresponding desired new title.
-  $rename_tabs = [
+  // Tabs to add corresponding FA icon prefix.
+  $tabs_add_icons = [
+    'guides.user.stats' => 'fas fa-chart-line',
+  ];
+  // Tabs to disable.
+  $tabs_disable = [
+    'entity.user.canonical' => TRUE,
+  ];
+  // Tabs to relabel using corresponding title.
+  $tabs_rename = [
     'entity.user.edit_form' => t('Edit Directory Info'),
     'profile.user_page:public' => t('Edit Public Profile'),
   ];
-  // Tabs to be disabled.
-  $disable_tabs = [
-    'entity.user.canonical' => TRUE,
+  // Tabs to adjust order.
+  $tabs_weight = [
+    'entity.webform_submission.user' => 20,
+    'guides.user.stats' => 15,
   ];
-  // If we're on a route that displays a tab whose title we want renamed, make it so.
+
   if (isset($data['tabs'][0])) {
-    foreach ($data['tabs'][0] as $tabs_key => $value) {
-      if (isset($rename_tabs[$tabs_key])) {
-        $data['tabs'][0][$tabs_key]['#link']['title'] = $rename_tabs[$tabs_key];
-        $data['tabs'][0][$tabs_key]['#weight'] = 0;
-      } elseif (isset($disable_tabs[$tabs_key])) {
-        unset($data['tabs'][0][$tabs_key]);
+    foreach ($data['tabs'][0] as $tab_key => $value) {
+      if (isset($tabs_rename[$tab_key])) {
+        // Rename the tab using the new & improved label.
+        $data['tabs'][0][$tab_key]['#link']['title'] = $tabs_rename[$tab_key];
+      } elseif (isset($tabs_disable[$tab_key])) {
+        // Purge the undesirable tab.
+        unset($data['tabs'][0][$tab_key]);
       }
 
-      // Push Webform|Submissions tab to end of the tabs list.
-      if (isset($data['tabs'][0]['entity.webform_submission.user'])) {
-        $data['tabs'][0]['entity.webform_submission.user']['#weight'] = 100;
+      // Adjust tab order.
+      if (isset($tabs_weight[$tab_key])) {
+        $data['tabs'][0][$tab_key]['#weight'] = $tabs_weight[$tab_key];
+      }
+
+      // Add Font Awesome icon title prefix.
+      if (isset($tabs_add_icons[$tab_key])) {
+        $current_title = $data['tabs'][0][$tab_key]['#link']['title'];
+        $icon_prefix = '<span class="' . $tabs_add_icons[$tab_key] . '"></span> ';
+        // Borrowed from guides.lib stats.
+        $data['tabs'][0][$tab_key]['#link']['title'] = [
+          '#markup' => $icon_prefix . $current_title,
+        ];
       }
     }
   }
