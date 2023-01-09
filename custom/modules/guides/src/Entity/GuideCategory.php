@@ -164,12 +164,33 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
   }
 
   /**
-   * Get a list of guides that have marked this entity as their category.
+   * Get list of subject guides that have marked this entity as their category.
    */
   public function getDetailedGuides() {
     $storage = $this->entityTypeManager()->getStorage('guide');
     $query = $storage->getQuery();
-    $ids = $query->condition('guide_categories', $this->id())->execute();
+    $ids = $query
+      ->condition('is_subject_guide', TRUE)
+      ->condition('guide_categories', $this->id())
+      ->execute();
+
+    if (!empty($ids)) {
+      return $storage->loadMultiple($ids);
+    }
+
+    return [];
+  }
+
+  /**
+   * Get a list of course guides that have marked this entity as their category.
+   */
+  public function getCourseGuides() {
+    $storage = $this->entityTypeManager()->getStorage('guide');
+    $query = $storage->getQuery();
+    $ids = $query
+      ->condition('is_subject_guide', FALSE)
+      ->condition('guide_categories', $this->id())
+      ->execute();
 
     if (!empty($ids)) {
       return $storage->loadMultiple($ids);

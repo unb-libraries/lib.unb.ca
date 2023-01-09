@@ -306,11 +306,18 @@ class Guide extends ContentEntityBase implements ContentEntityInterface, UserEdi
    */
   public function getCacheTags() {
     $tags = parent::getCacheTags();
+
     foreach ($this->get('editors') as $editorItem) {
       $editor = $editorItem->entity;
       if ($editor && $editor->field_display_editor->getString()) {
         $user = $editor->field_user->entity;
         $tags[] = 'user:' . $user->id();
+      }
+    }
+
+    foreach ($this->get('guide_categories') as $categoryItem) {
+      if ($category = $categoryItem->entity) {
+        $tags[] = 'guide_category:' . $category->id();
       }
     }
 

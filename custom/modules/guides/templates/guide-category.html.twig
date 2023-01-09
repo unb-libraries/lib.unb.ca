@@ -9,6 +9,15 @@
       {% endfor %}
     </ul>
     {% endif %}
+    {% set course_guides = guide_category.getCourseGuides %}
+    {% if course_guides is not empty %}
+    <h3>Course Guides</h3>
+    <ul>
+      {% for guide in course_guides %}
+      <li><a href="{{ url('entity.guide.canonical', {'guide': guide.id()}) }}">{{ guide.label }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
     {% set related_guides = guide_category.getRelatedGuides %}
     {% if related_guides is not empty %}
     <h3>Related Guides</h3>
