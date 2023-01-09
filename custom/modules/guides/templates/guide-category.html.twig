@@ -27,11 +27,12 @@
       {% endfor %}
     </ul>
     {% endif %}
-    {% if guide_category.related_guide_categories is not empty %}
+    {% set related_categories = guide_category.getRelatedCategories %}
+    {% if related_categories is not empty %}
     <h3>Related Categories</h3>
     <ul>
-      {% for category in guide_category.related_guide_categories %}
-      <li><a href="{{ url('entity.guide_category.canonical', {'guide_category': category.entity.id()}) }}">{{ category.entity.label }}</a></li>
+      {% for category in related_categories %}
+      <li><a href="{{ url('entity.guide_category.canonical', {'guide_category': category.id()}) }}">{{ category.label }}</a></li>
       {% endfor %}
     </ul>
     {% endif %}
