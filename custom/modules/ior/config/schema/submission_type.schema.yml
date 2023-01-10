@@ -1,0 +1,10 @@
+ior.submission_type.*:
+  type: config_entity
+  label: 'Submission type config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
