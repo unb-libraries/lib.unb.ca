@@ -23,11 +23,13 @@ guides.guide_stats_tab:
   base_route: entity.guide.canonical
   title: 'Stats'
   weight: 1000
+
 guides.category_stats_tab:
   title: 'Stats'
   route_name: guides.category_stats
-  base_route: entity.category.canonical
+  base_route: entity.guide_category.canonical
   weight: 1000
+
 guides.course_links:
   route_name: entity.course_link.collection
   title: 'Course Linking / D2L'

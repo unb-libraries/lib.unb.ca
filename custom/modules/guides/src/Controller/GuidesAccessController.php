@@ -34,4 +34,26 @@ class GuidesAccessController extends ControllerBase {
     return AccessResult::forbidden();
   }
 
+  /**
+   * Grant editing access to any listed contact.
+   *
+   * @param \Drupal\Core\Entity\EntityInterface $guide_category
+   *   An entity.
+   * @param \Drupal\Core\Session\AccountInterface $account
+   *   A user.
+   *
+   * @return \Drupal\Core\Access\AccessResultInterface
+   *   The access result.
+   */
+  public function checkCategoryEditAccess(EntityInterface $guide_category, AccountInterface $account) {
+    foreach ($guide_category->contacts as $contact) {
+      $user = $contact->entity;
+      if ($user->id() == $account->id()) {
+        return AccessResult::allowed();
+      }
+    }
+
+    return AccessResult::forbidden();
+  }
+
 }

@@ -42,12 +42,12 @@ guides.guide_stats:
   requirements:
     _custom_access: '\Drupal\guides\Controller\GuidesAccessController::checkEditAccess'
 guides.category_stats:
-  path: '/guides/category/{category}/stats'
+  path: '/guides/category/{guide_category}/stats'
   defaults:
     _controller: '\Drupal\guides\Controller\GuidesStatsController::categoryStats'
     _title: 'Category Statistics'
   requirements:
-    _permission: 'create guide entities'
+    _custom_access: '\Drupal\guides\Controller\GuidesAccessController::checkCategoryEditAccess'
 guides.user_stats:
   path: '/user/{user}/stats'
   defaults:

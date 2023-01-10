@@ -68,11 +68,11 @@ class GuidesStatsController extends ControllerBase {
   /**
    * Category Stats from Google Analytics.
    */
-  public function categoryStats(EntityInterface $category) {
-    $render = $this->getStatsTableFor($category);
+  public function categoryStats(EntityInterface $guide_category) {
+    $render = $this->getStatsTableFor($guide_category);
 
     $render['#object_type'] = 'category';
-    $render['#title'] = 'Statistics for ' . $category->label();
+    $render['#title'] = 'Statistics for ' . $guide_category->label();
 
     return $render;
   }
