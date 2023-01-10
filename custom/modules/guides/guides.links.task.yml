@@ -24,17 +24,37 @@ guides.guide_stats_tab:
   title: 'Stats'
   weight: 1000
 
-guides.category_stats_tab:
-  title: 'Stats'
-  route_name: guides.category_stats
-  base_route: entity.guide_category.canonical
-  weight: 1000
-
 guides.course_links:
   route_name: entity.course_link.collection
   title: 'Course Linking / D2L'
   base_route: entity.guide.canonical
   weight: 100
+
+entity.guide_category.canonical:
+  route_name: entity.guide_category.canonical
+  base_route: entity.guide_category.canonical
+  title: 'View'
+
+entity.guide_category.edit_form:
+  route_name: entity.guide_category.edit_form
+  base_route: entity.guide_category.canonical
+  title: 'Edit'
+
+entity.guide_category.delete_form:
+  route_name: entity.guide_category.delete_form
+  base_route: entity.guide_category.canonical
+  title: 'Delete'
+
+#entity.guide_category.revisions:
+#  route_name: entity.guide_category.revisions
+#  base_route: entity.guide_category.canonical
+#  title: 'Revisions'
+
+guides.category_stats_tab:
+  title: 'Stats'
+  route_name: guides.category_stats
+  base_route: entity.guide_category.canonical
+  weight: 1000
 
 guides.user.stats:
   route_name: guides.user_stats
