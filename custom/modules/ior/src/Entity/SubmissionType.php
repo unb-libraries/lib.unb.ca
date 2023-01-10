@@ -16,6 +16,7 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
  *     "form" = {
  *       "default" = "Drupal\ior\Form\SubmissionTypeForm",
  *     },
+ *     "list_builder" = "Drupal\ior\Entity\SubmissionTypeListBuilder",
  *     "route_provider" = {
  *       "html" = "Drupal\custom_entity\Entity\Routing\HtmlRouteProvider",
  *     },
@@ -35,6 +36,7 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
  *   links = {
  *     "add-form" = "/researchcommons/ior/submission-types/add",
  *     "edit-form" = "/researchcommons/ior/submission-types/{ior_submission_type}/edit",
+ *     "collection" = "/researchcommons/ior/submission-types",
  *   }
  * )
  */
