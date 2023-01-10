@@ -3,3 +3,9 @@ entity.contest.add_form:
   title: "Create contest"
   appears_on:
     - view.ior_contests.page_1
+
+entity.submission_type.add_form:
+  route_name: entity.ior_submission_type.add_form
+  title: 'Create Submission type'
+  appears_on:
+    - entity.ior_submission_type.collection
