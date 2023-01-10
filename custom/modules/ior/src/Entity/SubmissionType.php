@@ -15,6 +15,7 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
  *   handlers = {
  *     "form" = {
  *       "default" = "Drupal\ior\Form\SubmissionTypeForm",
+ *       "delete" = "Drupal\ior\Form\SubmissionTypeDeleteForm",
  *     },
  *     "list_builder" = "Drupal\ior\Entity\SubmissionTypeListBuilder",
  *     "route_provider" = {
@@ -36,6 +37,7 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
  *   links = {
  *     "add-form" = "/researchcommons/ior/submission-types/add",
  *     "edit-form" = "/researchcommons/ior/submission-types/{ior_submission_type}/edit",
+ *     "delete-form" = "/researchcommons/ior/submission-types/{ior_submission_type}/delete",
  *     "collection" = "/researchcommons/ior/submission-types",
  *   }
  * )
