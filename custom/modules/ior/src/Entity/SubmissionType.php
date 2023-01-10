@@ -13,6 +13,9 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
  *   label_plural = @Translation("Submission types"),
  *   label_collection = @Translation("Submission types"),
  *   handlers = {
+ *     "form" = {
+ *       "default" = "Drupal\ior\Form\SubmissionTypeForm",
+ *     },
  *     "route_provider" = {
  *       "html" = "Drupal\custom_entity\Entity\Routing\HtmlRouteProvider",
  *     },
@@ -28,6 +31,10 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
  *   config_export = {
  *     "id",
  *     "label",
+ *   },
+ *   links = {
+ *     "add-form" = "/researchcommons/ior/submission-types/add",
+ *     "edit-form" = "/researchcommons/ior/submission-types/{ior_submission_type}/edit",
  *   }
  * )
  */
