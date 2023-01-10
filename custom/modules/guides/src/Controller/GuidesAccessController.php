@@ -48,7 +48,7 @@ class GuidesAccessController extends ControllerBase {
   public function checkCategoryEditAccess(EntityInterface $guide_category, AccountInterface $account) {
     foreach ($guide_category->contacts as $contact) {
       $user = $contact->entity;
-      if ($user->id() == $account->id()) {
+      if ($user && $user->id() == $account->id()) {
         return AccessResult::allowed();
       }
     }
