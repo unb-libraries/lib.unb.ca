@@ -23,6 +23,7 @@ function guides_menu_local_tasks_alter(&$data, $route_name, \Drupal\Core\Cache\R
   // Tabs to disable.
   $tabs_disable = [
     'entity.user.canonical' => TRUE,
+    'entity.user.contact_form' => TRUE,
   ];
   // Tabs to relabel using corresponding title.
   $tabs_rename = [
