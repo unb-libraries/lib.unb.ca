@@ -31,7 +31,7 @@ class GuidesAccessController extends ControllerBase {
       }
     }
 
-    return AccessResult::forbidden();
+    return $account->hasPermission('administer guide entities') ? AccessResult::allowed() : AccessResult::forbidden();
   }
 
   /**
@@ -53,7 +53,7 @@ class GuidesAccessController extends ControllerBase {
       }
     }
 
-    return AccessResult::forbidden();
+    return $account->hasPermission('administer guide_category entities') ? AccessResult::allowed() : AccessResult::forbidden();
   }
 
 }
