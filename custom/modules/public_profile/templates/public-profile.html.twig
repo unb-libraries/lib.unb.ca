@@ -30,7 +30,7 @@
       {% if profile.field_profile_picture.entity.uri.value %}
         {% set picture = {
           '#theme': 'image_style',
-          '#style_name': 'medium_scale_width',
+          '#style_name': 'public_profile',
           '#uri': profile.field_profile_picture.entity.uri.value,
           '#alt': profile.field_profile_picture.alt,
         } %}
