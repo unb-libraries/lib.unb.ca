@@ -3,21 +3,13 @@ langcode: en
 status: true
 dependencies: {  }
 name: public_profile
-label: 'Public (300x300)'
+label: 'Public (260x260)'
 effects:
-  a78d38fa-e6d9-41b1-9aea-4cd6601b429c:
-    uuid: a78d38fa-e6d9-41b1-9aea-4cd6601b429c
-    id: image_scale
-    weight: 1
+  3f9c58b6-de3f-40d0-9577-5cc21d9e495d:
+    uuid: 3f9c58b6-de3f-40d0-9577-5cc21d9e495d
+    id: image_scale_and_crop
+    weight: 3
     data:
-      width: 300
-      height: null
-      upscale: true
-  4b928430-49b9-4969-85f6-ac70237a6296:
-    uuid: 4b928430-49b9-4969-85f6-ac70237a6296
-    id: image_crop
-    weight: 2
-    data:
-      width: 300
-      height: 300
+      width: 260
+      height: 260
       anchor: center-top
