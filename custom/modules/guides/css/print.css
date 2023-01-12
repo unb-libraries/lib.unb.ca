@@ -1,0 +1,8 @@
+#moreInfo button {
+  color: #212529!important;
+  font-family: "ProximaNovaA-Thin", "Century Gothic", AppleGothic, Arial, sans-serif;
+  font-size: inherit!important;
+}
+#moreInfo .header-icons button[aria-expanded="true"]:after {
+  content: none;
+}

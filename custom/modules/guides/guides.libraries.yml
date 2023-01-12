@@ -3,6 +3,7 @@ guides:
   css:
     theme:
       css/guides.css: {}
+      css/print.css: { media: print }
   js:
     js/guides.js: {}
   dependencies:
