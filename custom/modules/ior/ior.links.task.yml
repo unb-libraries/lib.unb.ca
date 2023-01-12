@@ -50,3 +50,12 @@ entity.ior_submission.revisions:
   route_name: entity.ior_submission.revisions
   base_route: entity.ior_submission.canonical
   title: 'Revisions'
+
+
+# Submission types
+entity.ior_submission_type.edit_form:
+  route_name: entity.ior_submission_type.edit_form
+  base_route: entity.ior_submission_type.edit_form
+  title: 'Edit submission type'
+  class: 'Drupal\ior\Plugin\Menu\LocalTask\SubmissionTypeLocalEditTask'
+
