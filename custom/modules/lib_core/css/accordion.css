@@ -108,7 +108,16 @@
   .Accordion .Accordion-panel[hidden] {
     display: block!important;
   }
-  .Accordion div.border {
+
+  .Accordion .card,
+  .Accordion div.border,
+  .Accordion .card-header {
     border: none!important;
+  }
+
+  .Accordion .card-body,
+  .Accordion .Accordion-panel{
+    padding-left: 0!important;
+    padding-right: 0!important;
   }
 }
