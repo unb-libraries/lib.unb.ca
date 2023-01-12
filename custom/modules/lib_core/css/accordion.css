@@ -100,3 +100,15 @@
     color: #ffc107;
   }
 }
+
+@media print {
+  .Accordion .card > .d-flex {
+    display: block;
+  }
+  .Accordion .Accordion-panel[hidden] {
+    display: block!important;
+  }
+  .Accordion div.border {
+    border: none!important;
+  }
+}
