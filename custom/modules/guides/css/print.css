@@ -4,8 +4,8 @@
 }
 
 /* ALTER PRINT DISPLAY */
-#moreInfo button {
-  color: #212529!important;
+#moreInfo .header-icons button[data-toggle="collapse"] {
+  color: #900;
   font-family: "ProximaNovaA-Thin", "Century Gothic", AppleGothic, Arial, sans-serif;
   font-size: inherit!important;
 }
