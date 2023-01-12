@@ -1,3 +1,9 @@
+/* DO NOT PRINT */
+.social-buttons {
+  display: none;
+}
+
+/* ALTER PRINT DISPLAY */
 #moreInfo button {
   color: #212529!important;
   font-family: "ProximaNovaA-Thin", "Century Gothic", AppleGothic, Arial, sans-serif;
