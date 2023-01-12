@@ -1,0 +1,6 @@
+uuid: d595d37a-55e4-4830-9dcc-30b2ddf2be9a
+langcode: en
+status: true
+dependencies: {  }
+id: image
+label: 'Image submission'
