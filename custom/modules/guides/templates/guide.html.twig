@@ -48,6 +48,7 @@
         {% set section_id = section.entity.id() %}
           <div aria-labelledby="btn-section-{{ section_id }}" class="Accordion-panel flex-grow-1"
           id="section-{{ section_id }}" role="region" {% if not loop.first %} hidden=""{% endif %}>
+            <h2 class="d-none d-print-block">{{ section.entity.field_section_label.value }}</h2>
             {{ drupal_field('field_section_content', 'paragraph', section_id, 'paragraph.default') }}
           </div>
         {% endfor %}
