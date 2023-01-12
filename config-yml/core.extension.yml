@@ -33,6 +33,7 @@ module:
   custom_entity_mail: 0
   custom_entity_revisions: 0
   custom_entity_ui: 0
+  custom_entity_update_n: 0
   datetime: 0
   datetime_plus: 0
   dynamic_page_cache: 0
