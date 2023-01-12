@@ -164,3 +164,16 @@ function ior_contest_insert(ContestInterface $contest) {
   Drupal::service('views.alias_generator')
     ->generateViewAlias($view, $contest);
 }
+
+/**
+ * Install 'ior_submission.type' field and set default value.
+ */
+function ior_update_9001(&$sandbox) {
+  /** @var \Drupal\custom_entity_update_n\Entity\SchemaUpdateManagerInterface $field_data_update_manager */
+  $field_schema_update_manager = Drupal::service('entity_field.schema_update.manager');
+  /** @var \Drupal\custom_entity_update_n\Entity\DataUpdateManagerInterface $field_data_update_manager */
+  $field_data_update_manager = Drupal::service('entity_field.data_update.manager');
+
+  $field_schema_update_manager->installBaseField('type', 'ior_submission');
+  $field_data_update_manager->set('type', 'ior_submission', ['target_id' => 'image']);
+}
