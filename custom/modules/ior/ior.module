@@ -225,6 +225,14 @@ function base_field_additions_9001() {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayOptions('view', ['weight' => 30])
       ->setDisplayOptions('form', ['weight' => 30]),
+    'department' => BaseFieldDefinition::create('string')
+      ->setLabel(t('Department & Faculty'))
+      ->setRequired(TRUE)
+      ->setRevisionable(TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayOptions('view', ['weight' => 40])
+      ->setDisplayOptions('form', ['weight' => 40]),
   ];
 }
 
