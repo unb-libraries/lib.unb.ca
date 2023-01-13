@@ -5,6 +5,7 @@
  * Contains ior.module.
  */
 
+use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Url;
 use Drupal\ior\Entity\ContestInterface;
 
@@ -169,11 +170,23 @@ function ior_contest_insert(ContestInterface $contest) {
  * Install 'ior_submission.type' field and set default value.
  */
 function ior_update_9001(&$sandbox) {
-  /** @var \Drupal\custom_entity_update_n\Entity\SchemaUpdateManagerInterface $field_data_update_manager */
-  $field_schema_update_manager = Drupal::service('entity_field.schema_update.manager');
+  /** @var \Drupal\Core\Entity\EntityDefinitionUpdateManagerInterface $definition_update_manager */
+  $definition_update_manager = Drupal::service('entity.definition_update_manager');
   /** @var \Drupal\custom_entity_update_n\Entity\DataUpdateManagerInterface $field_data_update_manager */
   $field_data_update_manager = Drupal::service('entity_field.data_update.manager');
 
-  $field_schema_update_manager->installBaseField('type', 'ior_submission');
+  $type_field = BaseFieldDefinition::create('entity_reference')
+    ->setLabel(t('Submission type'))
+    ->setSetting('target_type', 'submission_type')
+    ->setRequired(TRUE)
+    ->setReadOnly(TRUE);
+
+  $definition_update_manager->installFieldStorageDefinition(
+    'type',
+    'ior_submission',
+    'ior',
+    $type_field
+  );
+
   $field_data_update_manager->set('type', 'ior_submission', ['target_id' => 'image']);
 }
