@@ -171,6 +171,15 @@ class Submission extends ContentEntityBase implements SubmissionInterface {
       ->setDisplayConfigurable('view', FALSE)
       ->setDisplayConfigurable('form', FALSE);
 
+    $fields['first_name'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('First name'))
+      ->setRequired(TRUE)
+      ->setRevisionable(TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayOptions('view', ['weight' => 10])
+      ->setDisplayOptions('form', ['weight' => 10]);
+
     $fields += static::publishedBaseFieldDefinitions($entity_type);
     $fields[$entity_type->getKey('published')]
       ->setDefaultValue(FALSE);

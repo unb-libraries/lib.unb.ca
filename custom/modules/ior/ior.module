@@ -201,6 +201,14 @@ function base_field_additions_9001() {
       ->setSetting('target_type', 'contest')
       ->setDisplayConfigurable('view', FALSE)
       ->setDisplayConfigurable('form', FALSE),
+    'first_name' => BaseFieldDefinition::create('string')
+      ->setLabel(t('First name'))
+      ->setRequired(TRUE)
+      ->setRevisionable(TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayOptions('view', ['weight' => 10])
+      ->setDisplayOptions('form', ['weight' => 10]),
   ];
 }
 
