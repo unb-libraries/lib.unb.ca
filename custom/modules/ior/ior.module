@@ -209,6 +209,14 @@ function base_field_additions_9001() {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayOptions('view', ['weight' => 10])
       ->setDisplayOptions('form', ['weight' => 10]),
+    'last_name' => BaseFieldDefinition::create('string')
+      ->setLabel(t('Last name'))
+      ->setRequired(TRUE)
+      ->setRevisionable(TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayOptions('view', ['weight' => 20])
+      ->setDisplayOptions('form', ['weight' => 20]),
   ];
 }
 
