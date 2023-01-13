@@ -304,8 +304,8 @@ class Guide extends ContentEntityBase implements ContentEntityInterface, UserEdi
   /**
    * {@inheritDoc}
    */
-  public function getCacheTags() {
-    $tags = parent::getCacheTags();
+  public function getCacheTagsToInvalidate() {
+    $tags = parent::getCacheTagsToInvalidate();
 
     foreach ($this->get('editors') as $editorItem) {
       $editor = $editorItem->entity;

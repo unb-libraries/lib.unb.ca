@@ -251,8 +251,8 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
   /**
    * {@inheritDoc}
    */
-  public function getCacheTags() {
-    $tags = parent::getCacheTags();
+  public function getCacheTagsToInvalidate() {
+    $tags = parent::getCacheTagsToInvalidate();
     foreach ($this->get('contacts') as $editorItem) {
       $user = $editorItem->entity;
       if ($user) {
