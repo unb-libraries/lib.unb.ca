@@ -270,6 +270,13 @@ function base_field_additions_9001() {
           'no_media_html_ior_',
         ],
       ]),
+    'terms_conditions_accepted' => BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Terms & Conditions accepted'))
+      ->setRequired(TRUE)
+      ->setRevisionable(FALSE)
+      ->setDisplayConfigurable('view', FALSE)
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayOptions('form', ['weight' => 80])
   ];
 }
 

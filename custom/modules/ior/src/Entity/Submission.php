@@ -247,6 +247,14 @@ class Submission extends ContentEntityBase implements SubmissionInterface {
         ],
       ]);
 
+    $fields['terms_conditions_accepted'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Terms & Conditions accepted'))
+      ->setRequired(TRUE)
+      ->setRevisionable(FALSE)
+      ->setDisplayConfigurable('view', FALSE)
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayOptions('form', ['weight' => 80]);
+
     $fields += static::publishedBaseFieldDefinitions($entity_type);
     $fields[$entity_type->getKey('published')]
       ->setDefaultValue(FALSE);
