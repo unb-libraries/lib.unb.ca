@@ -233,6 +233,14 @@ function base_field_additions_9001() {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayOptions('view', ['weight' => 40])
       ->setDisplayOptions('form', ['weight' => 40]),
+    'website' => BaseFieldDefinition::create('link')
+      ->setLabel(t('Research URL'))
+      ->setRequired(FALSE)
+      ->setRevisionable(TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayOptions('view', ['weight' => 50])
+      ->setDisplayOptions('form', ['weight' => 50]),
   ];
 }
 
