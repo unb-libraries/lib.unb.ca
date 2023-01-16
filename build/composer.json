@@ -14,7 +14,9 @@
     "allow-plugins": {
       "composer/installers": true,
       "cweagans/composer-patches": true,
-      "drupal/core-composer-scaffold": true
+      "drupal/core-composer-scaffold": true,
+      "wikimedia/composer-merge-plugin": false,
+      "dealerdirect/phpcodesniffer-composer-installer": false
     },
     "discard-changes": true,
     "preferred-install": {
