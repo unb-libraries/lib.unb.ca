@@ -20,8 +20,6 @@ use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
  *   label = @Translation("Submission"),
  *   label_plural = @Translation("Submissions"),
  *   label_collection = @Translation("Submissions"),
- *   bundle_entity_type = "ior_submission_type",
- *   bundle_label = @Translation("Submission type"),
  *   handlers = {
  *     "views_data" = "Drupal\ior\Entity\SubmissionViewsData",
  *     "form" = {
@@ -43,7 +41,6 @@ use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
  *     "id" = "id",
  *     "revision" = "rid",
  *     "uuid" = "uuid",
- *     "bundle" = "type",
  *     "published" = "published",
  *   },
  *   links = {
@@ -56,7 +53,7 @@ use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
  *     "revision" = "/researchcommons/ior/contests/{contest}/submissions/{ior_submission}/revisions/{ior_submission_revision}",
  *     "revision-restore-form" = "/researchcommons/ior/contests/{contest}/submissions/{ior_submission}/revisions/{ior_submission_revision}/restore",
  *   },
- *   field_ui_base_route = "entity.ior_submission_type.edit_form",
+ *   field_ui_base_route = "entity.ior_submission.settings",
  * )
  */
 class Submission extends ContentEntityBase implements SubmissionInterface {
