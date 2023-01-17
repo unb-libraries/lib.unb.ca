@@ -9,6 +9,9 @@ use Drupal\Core\Render\Element;
 use Drupal\Core\Url;
 use Drupal\ior\Entity\ContestInterface;
 use Drupal\ior_awards\Entity\AwardInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
+use \Drupal\Core\Field\FieldStorageDefinitionInterface;
+use \Drupal\Core\Entity\EntityTypeInterface;
 
 /**
  * Implements hook_theme().
@@ -192,4 +195,64 @@ function ior_awards_contest_insert(ContestInterface $contest) {
     Drupal::service('views.alias_generator')
       ->generateViewAlias($view, $contest);
   }
+}
+
+/**
+ * Provide 'collections' and 'awards' base fields.
+ */
+function ior_awards_entity_base_field_info(EntityTypeInterface $entity_type) {
+  if ($entity_type->id() === 'ior_submission') {
+    $fields['awards'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Awards'))
+      ->setRequired(FALSE)
+      ->setRevisionable(TRUE)
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+      ->setSetting('target_type', 'ior_award')
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayOptions('form', ['weight' => 90])
+      ->setDisplayOptions('view', ['weight' => 90]);
+    return $fields;
+  }
+}
+
+/**
+ * Convert field_collections, field_awards to basefields.
+ */
+function ior_awards_update_9001(&$sandbox) {
+  /** @var \Drupal\Core\Entity\EntityDefinitionUpdateManagerInterface $definition_update_manager */
+  $definition_update_manager = Drupal::service('entity.definition_update_manager');
+  /** @var \Drupal\custom_entity_update_n\Entity\DataUpdateManagerInterface $field_data_update_manager */
+  $field_data_update_manager = Drupal::service('entity_field.data_update.manager');
+
+  foreach (ior_awards_base_field_additions_9001() as $field_id => $field_definition) {
+    // Install the field
+    $definition_update_manager->installFieldStorageDefinition(
+      $field_id,
+      'ior_submission',
+      'ior_awards',
+      $field_definition
+    );
+
+    // Migrate existing field data
+    $field_data_update_manager->move(
+      "field_$field_id",
+      $field_id,
+      'ior_submission');
+  }
+}
+
+function ior_awards_base_field_additions_9001() {
+  return [
+    'awards' => BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Awards'))
+      ->setRequired(FALSE)
+      ->setRevisionable(TRUE)
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+      ->setSetting('target_type', 'ior_award')
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayOptions('form', ['weight' => 90])
+      ->setDisplayOptions('view', ['weight' => 90]),
+  ];
 }
