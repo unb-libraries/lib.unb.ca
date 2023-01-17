@@ -102,6 +102,7 @@ module:
   notification: 0
   oclc_api: 0
   oclc_service_alert_status_client: 0
+  oembed_providers: 0
   options: 0
   override_node_options: 0
   page_cache: 0

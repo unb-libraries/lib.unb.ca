@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: remote_video
-label: 'Remote video'
+label: 'Remote video (core)'
 description: 'A remotely hosted video from YouTube or Vimeo.'
 source: 'oembed:video'
 queue_thumbnail_downloads: false
