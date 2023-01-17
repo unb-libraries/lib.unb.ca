@@ -42,12 +42,13 @@
     <div class="resourceListings databases border border-dark rounded px-3 pt-3 mb-3">
       <h3>Top Article &amp; Research Databases</h3>
       <p class="topNote">Use article databases to find articles, reviews, book chapters, etc.</p>
-      {{ guide_category.databases.value|t }}
+      {{ guide_category.databases.value|check_markup(guide_category.databases.format) }}
     </div>
     <div class="resourceListings reference border border-dark rounded px-3 pt-3 mb-3">
       <h3>Top Reference Materials</h3>
       <p class="topNote">Find dictionaries, encyclopedias, handbooks, and other materials</p>
-      {{ guide_category.references.value|t }}
+      {{ guide_category.references.value|check_markup(guide_category.references.format) }}
+
     </div>
   </div>
   <div class="col-lg-3">
