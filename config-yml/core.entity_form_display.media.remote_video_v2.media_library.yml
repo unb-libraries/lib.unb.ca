@@ -1,0 +1,21 @@
+uuid: 8681cfc1-8214-4ecb-954a-a3cf110d87f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.remote_video_v2.field_media_oembed_unb_lib
+    - media.type.remote_video_v2
+id: media.remote_video_v2.media_library
+targetEntityType: media
+bundle: remote_video_v2
+mode: media_library
+content: {  }
+hidden:
+  created: true
+  field_media_oembed_unb_lib: true
+  langcode: true
+  name: true
+  path: true
+  status: true
+  uid: true

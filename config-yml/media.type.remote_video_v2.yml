@@ -1,0 +1,22 @@
+uuid: 4a604703-5ae2-488f-9682-6247b8d6e753
+langcode: en
+status: true
+dependencies:
+  config:
+    - oembed_providers.bucket.unb_lib
+  module:
+    - oembed_providers
+id: remote_video_v2
+label: 'Remote Video'
+description: 'A remotely hosted video from our allowed providers (eg. YouTube).'
+source: 'oembed:unb_lib'
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_oembed_unb_lib
+  thumbnails_directory: 'public://oembed_thumbnails/[date:custom:Y-m]'
+  providers:
+    - Vimeo
+    - YouTube
+field_map:
+  title: name

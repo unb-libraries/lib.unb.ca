@@ -1,0 +1,11 @@
+uuid: f9a37ff0-e644-439f-bfc6-bfa9ecaedc43
+langcode: en
+status: true
+dependencies: {  }
+id: unb_lib
+label: 'UNB Libraries'
+description: 'Default oEmbed provider bucket for UNB Libraries.'
+providers:
+  - Sketchfab
+  - Vimeo
+  - YouTube
