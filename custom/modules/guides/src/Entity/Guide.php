@@ -202,7 +202,9 @@ class Guide extends ContentEntityBase implements ContentEntityInterface, UserEdi
       ]);
 
     $fields[self::FIELD_CREATED] = static::getCreatedBaseFieldDefinition($entity_type);
+    $fields[self::FIELD_CREATOR] = static::getCreatorBaseFieldDefinition($entity_type);
     $fields[self::FIELD_EDITED] = static::getEditedBaseFieldDefinition($entity_type);
+    $fields[self::FIELD_EDITOR] = static::getEditorBaseFieldDefinition($entity_type);
 
     return $fields;
   }
