@@ -25,6 +25,7 @@ permissions:
   - 'delete own guides profile'
   - 'delete own public profile'
   - 'list course_link entities'
+  - 'list guide revisions'
   - 'update course_link entities'
   - 'update guide entities'
   - 'update guide_category entities'

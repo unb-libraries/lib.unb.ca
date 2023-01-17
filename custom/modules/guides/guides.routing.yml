@@ -66,3 +66,14 @@ entity.course_link.collection:
     parameters:
       guide:
         type: entity:guide
+entity.guide.revisions:
+  path: '/admin/guides/{guide}/revisions'
+  defaults:
+    _controller: '\Drupal\custom_entity_revisions\Controller\EntityRevisionsListController::listing'
+    _title_callback: '\Drupal\custom_entity_revisions\Controller\EntityRevisionsListController::listTitle'
+  requirements:
+    _custom_access: '\Drupal\guides\Controller\GuidesAccessController::checkEditAccess'
+  options:
+    parameters:
+      guide:
+        type: entity:guide

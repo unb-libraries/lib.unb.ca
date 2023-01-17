@@ -29,6 +29,7 @@ use PicoFeed\Reader\Reader;
  *     "route_provider" = {
  *       "html" = "Drupal\guides\Entity\Routing\GuideRouteProvider",
  *     },
+ *     "storage" = "Drupal\guides\Entity\Storage\GuideStorage",
  *     "access" = "Drupal\guides\Entity\Access\GuideAccessControlHandler",
  *     "form" = {
  *       "default" = "Drupal\guides\Form\GuideForm",
