@@ -1,6 +1,5 @@
 /* DO NOT PRINT */
-h1.title .btn,
-.social-buttons {
+h1.title .btn {
   display: none;
 }
 
@@ -12,4 +11,20 @@ h1.title .btn,
 }
 #moreInfo .header-icons button[aria-expanded="true"]:after {
   content: none;
+}
+
+.social-buttons a {
+  border: none;
+  color: #343a40!important;
+  display: block;
+  padding: 0;
+  text-align: left;
+}
+.social-buttons .fab,
+.social-buttons .fas {
+  font-size: 1.25rem;
+}
+.social-buttons a::after {
+  color: #adb5bd;
+  content: " [" attr(href) "]";
 }
