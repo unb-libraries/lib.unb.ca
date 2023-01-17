@@ -212,6 +212,16 @@ function ior_awards_entity_base_field_info(EntityTypeInterface $entity_type) {
       ->setDisplayConfigurable('view', TRUE)
       ->setDisplayOptions('form', ['weight' => 90])
       ->setDisplayOptions('view', ['weight' => 90]);
+    $fields['collections'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Collections'))
+      ->setRequired(FALSE)
+      ->setRevisionable(TRUE)
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+      ->setSetting('target_type', 'ior_collection')
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayOptions('form', ['weight' => 100])
+      ->setDisplayOptions('view', ['weight' => 100]);
     return $fields;
   }
 }
@@ -254,5 +264,15 @@ function ior_awards_base_field_additions_9001() {
       ->setDisplayConfigurable('view', TRUE)
       ->setDisplayOptions('form', ['weight' => 90])
       ->setDisplayOptions('view', ['weight' => 90]),
+    'collections' => BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Collections'))
+      ->setRequired(FALSE)
+      ->setRevisionable(TRUE)
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+      ->setSetting('target_type', 'ior_collection')
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayOptions('form', ['weight' => 100])
+      ->setDisplayOptions('view', ['weight' => 100]),
   ];
 }
