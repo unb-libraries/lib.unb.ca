@@ -4,7 +4,10 @@ namespace Drupal\ior_awards\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityStorageInterface;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\ior\Entity\ContestInterface;
+use Drupal\ior_awards\Plugin\Field\FieldType\ComputedCollectionSubmissionsEntityReferenceFieldItemList;
 use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
 
 /**
@@ -16,7 +19,7 @@ use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
  *   label_plural = @Translation("Collections"),
  *   label_collection = @Translation("Collections"),
  *   handlers = {
- *     "views_data" = "Drupal\views\EntityViewsData",
+ *     "views_data" = "Drupal\ior_awards\Entity\CollectionViewsData",
  *     "form" = {
  *       "default" = "Drupal\ior_awards\Form\CollectionForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"
@@ -76,6 +79,24 @@ class Collection extends ContentEntityBase implements CollectionInterface {
       throw new MissingMandatoryParametersException('Collections must be assigned to a contest upon creation.');
     }
     parent::preSave($storage);
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
+    $fields = parent::baseFieldDefinitions($entity_type);
+
+    $fields['ior_submission'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Submissions'))
+      ->setDescription(t('Submissions that are in this collection.'))
+      ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED)
+      ->setComputed(TRUE)
+      ->setClass(ComputedCollectionSubmissionsEntityReferenceFieldItemList::class)
+      ->setSetting('target_type', 'ior_submission')
+      ->setDisplayConfigurable('view', TRUE);
+
+    return $fields;
   }
 
 }
