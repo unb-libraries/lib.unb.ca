@@ -6,11 +6,19 @@ use Drupal\Core\Field\EntityReferenceFieldItemList;
 use Drupal\Core\TypedData\ComputedItemListTrait;
 
 /**
- * Compute reverse entity references for IOR submission's "awards" field.
+ * Base class for computed, reverse many-to-many entity references.
  */
-class ComputedEntityReferenceFieldItemList extends EntityReferenceFieldItemList {
+abstract class ComputedEntityReferenceFieldItemList extends EntityReferenceFieldItemList {
 
   use ComputedItemListTrait;
+
+  /**
+   * Get the field ID of the target entity.
+   *
+   * @return string
+   *   An entity field ID.
+   */
+  abstract protected function getTargetFieldId();
 
   /**
    * {@inheritDoc}
@@ -20,7 +28,7 @@ class ComputedEntityReferenceFieldItemList extends EntityReferenceFieldItemList 
     $target_storage = \Drupal::entityTypeManager()->getStorage($target_type_id);
     $target_ids = $target_storage
       ->getQuery()
-      ->condition('field_awards', $this->getEntity()->id(), 'CONTAINS')
+      ->condition($this->getTargetFieldId(), $this->getEntity()->id(), 'CONTAINS')
       ->execute();
     foreach ($target_ids as $index => $target_id) {
       $this->list[] = $this->createItem($index, $target_id);

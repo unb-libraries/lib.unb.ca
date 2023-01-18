@@ -7,7 +7,7 @@ use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\ior\Entity\ContestInterface;
-use Drupal\ior_awards\Plugin\Field\FieldType\ComputedEntityReferenceFieldItemList;
+use Drupal\ior_awards\Plugin\Field\FieldType\ComputedAwardSubmissionsEntityReferenceFieldItemList;
 use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
 
 /**
@@ -20,7 +20,7 @@ use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
  *   label_collection = @Translation("Awards"),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
- *     "views_data" = "Drupal\views\EntityViewsData",
+ *     "views_data" = "Drupal\ior_awards\Entity\AwardViewsData",
  *     "form" = {
  *       "default" = "Drupal\ior_awards\Form\AwardForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm"
@@ -85,12 +85,12 @@ class Award extends ContentEntityBase implements AwardInterface {
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
-    $fields['ior_submissions'] = BaseFieldDefinition::create('entity_reference')
+    $fields['ior_submission'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Submissions'))
       ->setDescription(t('Submissions that have received this award.'))
       ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED)
       ->setComputed(TRUE)
-      ->setClass(ComputedEntityReferenceFieldItemList::class)
+      ->setClass(ComputedAwardSubmissionsEntityReferenceFieldItemList::class)
       ->setSetting('target_type', 'ior_submission')
       ->setDisplayConfigurable('view', TRUE);
 
