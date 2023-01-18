@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: unb_lib
-label: 'UNB Libraries'
+label: 'Allowed Providers Bucket'
 description: 'Default oEmbed provider bucket for UNB Libraries.'
 providers:
   - Sketchfab

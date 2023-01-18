@@ -123,6 +123,7 @@ filters:
         xs_linked_to_original: xs_linked_to_original
         xxs_linked_to_original: xxs_linked_to_original
       allowed_media_types:
+        remote_video: remote_video
         image: image
   filter_guides_ckeditor_eresources:
     id: filter_guides_ckeditor_eresources
