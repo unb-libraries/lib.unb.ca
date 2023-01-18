@@ -37,7 +37,9 @@
 .title .btn {
   font-weight: bold;
 }
-
+.Accordion-panel {
+  min-width: 66%;
+}
 #moreInfo {
   min-width: 33%;
 }
@@ -62,3 +64,10 @@
 #moreInfo .header-icons [aria-expanded="false"]:after {
   content: "\f078";
 }
+
+/* Quick hack to prevent Edit Guide | Details Sidebar | Guise Category collapse re: validation
+details[data-drupal-selector="edit-group-guide-categories"] > summary {
+  list-style-type: none;
+  pointer-events: none
+}
+*/
