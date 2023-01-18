@@ -212,6 +212,16 @@ class Guide extends ContentEntityBase implements ContentEntityInterface, UserEdi
   /**
    * {@inheritDoc}
    */
+  public function save() {
+    if (!$this->isNew()) {
+      $this->setNewRevision(TRUE);
+    }
+    return parent::save();
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public function postSave(EntityStorageInterface $storage, $update = TRUE) {
     $linkStorage = $this->entityTypeManager()->getStorage('eresources_guide_link');
 

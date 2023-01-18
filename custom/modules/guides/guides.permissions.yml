@@ -20,6 +20,12 @@ delete guide entities:
 list guide revisions:
   title: "List Guide Revisions."
 
+view guide revisions:
+  title: "View Guide Revisions."
+
+restore guide revisions:
+  title: "Restore Guide Revisions."
+
 # Guide Category entities
 administer guide_category entities:
   title: "Administer Guide Categories."

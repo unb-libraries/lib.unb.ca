@@ -77,3 +77,28 @@ entity.guide.revisions:
     parameters:
       guide:
         type: entity:guide
+entity.guide.revision:
+  path: '/admin/guides/{guide}/revisions/{guide_revision}'
+  defaults:
+    _controller: '\Drupal\custom_entity_revisions\Controller\EntityRevisionsListController::view'
+    _title_callback: '\Drupal\custom_entity_revisions\Controller\EntityRevisionsListController::title'
+  requirements:
+    _custom_access: '\Drupal\guides\Controller\GuidesAccessController::checkEditAccess'
+  options:
+    parameters:
+      guide:
+        type: entity:guide
+      guide_revision:
+        type: entity_revision:guide
+entity.guide.revision_restore_form:
+  path: '/admin/guides/{guide}/revisions/{guide_revision}/restore'
+  defaults:
+    _form: 'Drupal\custom_entity_revisions\Form\RevisionRestoreForm'
+  requirements:
+    _custom_access: '\Drupal\guides\Controller\GuidesAccessController::checkEditAccess'
+  options:
+    parameters:
+      guide:
+        type: entity:guide
+      guide_revision:
+        type: entity_revision:guide
