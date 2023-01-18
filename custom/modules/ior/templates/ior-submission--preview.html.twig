@@ -5,13 +5,13 @@
     <div class="col-md-12">
         {% block submission_title %}
             <a class="title h4 d-inline-block{% if submission.state %} moderation-{{ submission.state.id }}{% endif %}" href="{{ submission.url }}" data-toggle="tooltip" title="{{ submission.state.label }}" data-placement="left">
-                {{ submission.field_title }}
+                {{ submission.title }}
             </a>
         {% endblock %}
         {% if submission.published or user.view_contestant_info %}
             <div class="submission-meta">
-                <span>{{ submission.field_first_name }}{{ submission.field_last_name }}</span>
-                <span class="subtitle">{{ submission.field_department }}</span>
+                <span>{{ submission.first_name }}{{ submission.last_name }}</span>
+                <span class="subtitle">{{ submission.department }}</span>
             </div>
         {% endif %}
     </div>

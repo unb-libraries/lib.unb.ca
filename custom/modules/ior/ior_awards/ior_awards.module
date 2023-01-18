@@ -87,7 +87,7 @@ function ior_awards_template_preprocess_ior_submission__preview(array &$variable
   $view_builder = Drupal::entityTypeManager()->getViewBuilder('ior_award');
   $variables['awards'] = array_map(function (AwardInterface $award) use ($view_builder) {
     return $view_builder->view($award, 'badge');
-  }, $submission->get('field_awards')->referencedEntities());
+  }, $submission->get('awards')->referencedEntities());
 }
 
 /**
@@ -113,9 +113,9 @@ function template_preprocess_ior_submission__winner(array &$variables) {
   $variables['submission']['url'] = $submission->toUrl()->toString();
 
   // This should be done in a template?
-  $variables['submission']['field_first_name']['#attributes']['class'][] = 'd-inline';
-  $variables['submission']['field_last_name']['#attributes']['class'][] = 'd-inline';
-  $variables['submission']['field_department']['#attributes']['class'][] = 'd-inline';
+  $variables['submission']['first_name']['#attributes']['class'][] = 'd-inline';
+  $variables['submission']['last_name']['#attributes']['class'][] = 'd-inline';
+  $variables['submission']['department']['#attributes']['class'][] = 'd-inline';
 }
 
 /**
@@ -147,7 +147,7 @@ function ior_awards_preprocess_page_title(array &$variables) {
     $view_builder = Drupal::entityTypeManager()->getViewBuilder('ior_award');
     $variables['awards'] = array_map(function (AwardInterface $award) use ($view_builder) {
       return $view_builder->view($award, 'badge');
-    }, $submission->get('field_awards')->referencedEntities());
+    }, $submission->get('awards')->referencedEntities());
   }
 }
 

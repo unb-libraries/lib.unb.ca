@@ -13,14 +13,14 @@ use Drupal\custom_entity_revisions\Entity\RevisionsInterface;
  */
 interface SubmissionInterface extends ContentEntityInterface, RevisionsInterface, EntityPublishedInterface, UserCreatedInterface, UserEditedInterface {
 
-  const FIELD_FIRST_NAME = 'field_first_name';
-  const FIELD_LAST_NAME = 'field_last_name';
-  const FIELD_EMAIL = 'field_email';
-  const FIELD_DEPARTMENT = 'field_department';
-  const FIELD_TITLE = 'field_title';
-  const FIELD_DESCRIPTION = 'field_description';
+  const FIELD_FIRST_NAME = 'first_name';
+  const FIELD_LAST_NAME = 'last_name';
+  const FIELD_EMAIL = 'email';
+  const FIELD_DEPARTMENT = 'department';
+  const FIELD_TITLE = 'title';
+  const FIELD_DESCRIPTION = 'description';
   const FIELD_IMAGE = 'field_image';
-  const FIELD_CONTEST = 'field_contest';
+  const FIELD_CONTEST = 'contest';
 
   /**
    * Get the contestant's first name.

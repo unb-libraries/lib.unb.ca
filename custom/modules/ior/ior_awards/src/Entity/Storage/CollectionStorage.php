@@ -20,7 +20,7 @@ class CollectionStorage extends SqlContentEntityStorage implements CollectionSto
 
     $submissions = $this->submissionStorage()->loadByContest($contest_id, $options);
     foreach ($submissions as $submission) {
-      $collections = $submission->get('field_collections')->referencedEntities();
+      $collections = $submission->get('collections')->referencedEntities();
       foreach ($collections as $collection) {
         $collection_ids[] = $collection->id();
       }
