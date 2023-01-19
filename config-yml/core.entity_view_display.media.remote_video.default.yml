@@ -17,8 +17,8 @@ content:
     type: oembed
     label: hidden
     settings:
-      max_width: 1400
-      max_height: 787
+      max_width: 926
+      max_height: 520
     third_party_settings:
       field_formatter_class:
         class: ''
