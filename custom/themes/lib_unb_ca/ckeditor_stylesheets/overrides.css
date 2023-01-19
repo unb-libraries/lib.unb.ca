@@ -12,5 +12,8 @@ strong,
     font-weight: bold;
 }
 drupal-media {
-  display: initial;
+  display: block!important;
+}
+drupal-media > div {
+  min-width: 66%;
 }
