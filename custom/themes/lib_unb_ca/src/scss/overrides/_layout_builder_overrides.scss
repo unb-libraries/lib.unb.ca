@@ -15,7 +15,8 @@
 .node__content .layout:not(:last-child) {
     margin-bottom: 2.5rem;
 }
-.layout__region--content .paragraph .field__item .field--type-image {
+.layout__region--content .paragraph .field__item .field--type-image,
+.layout__region--content .paragraph .field__item .field__item {
   margin-bottom: 0;
 }
 
