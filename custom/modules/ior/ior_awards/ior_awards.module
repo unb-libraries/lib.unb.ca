@@ -42,9 +42,6 @@ function ior_awards_theme($existing, $type, $theme, $path) {
     'ior_award__badge' => [
       'base hook' => 'ior_award',
     ],
-    'ior_award__winner' => [
-      'base hook' => 'ior_award',
-    ],
     'page_title__ior_submission' => [
       'base hook' => 'page_title',
     ],
@@ -88,34 +85,6 @@ function ior_awards_template_preprocess_ior_submission__preview(array &$variable
   $variables['awards'] = array_map(function (AwardInterface $award) use ($view_builder) {
     return $view_builder->view($award, 'badge');
   }, $submission->get('awards')->referencedEntities());
-}
-
-/**
- * Prepares variables for submission templates.
- *
- * Default template: ior-submission.html.twig.
- *
- * @param array $variables
- *   An associative array containing:
- *   - elements: An associative array containing the user information and any
- *   - attributes: HTML attributes for the containing element.
- */
-function template_preprocess_ior_submission__winner(array &$variables) {
-  /** @var \Drupal\ior\Entity\SubmissionInterface $submission */
-  $submission = $variables['elements']['#ior_submission'];
-  $variables['submission']['entity'] = $submission;
-  foreach (Element::children($variables['elements']) as $key) {
-    if ($submission->hasField($key) && !empty($submission->get($key)->getValue())) {
-      $variables['submission'][$key] = $variables['elements'][$key];
-      $variables['submission'][$key]['#label_display'] = 'hidden';
-    }
-  }
-  $variables['submission']['url'] = $submission->toUrl()->toString();
-
-  // This should be done in a template?
-  $variables['submission']['first_name']['#attributes']['class'][] = 'd-inline';
-  $variables['submission']['last_name']['#attributes']['class'][] = 'd-inline';
-  $variables['submission']['department']['#attributes']['class'][] = 'd-inline';
 }
 
 /**
