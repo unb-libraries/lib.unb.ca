@@ -11,3 +11,6 @@ strong,
     font-family: Helvetica, sans-serif;
     font-weight: bold;
 }
+drupal-media {
+  display: initial;
+}
