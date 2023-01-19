@@ -3,9 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.ior_collection.field_contest
     - field.storage.ior_collection.field_title
-    - field.storage.ior_submission.field_title
   module:
     - ior
     - ior_awards
@@ -26,134 +24,6 @@ display:
     display_options:
       title: Collections
       fields:
-        id:
-          id: id
-          table: ior_collection
-          field: id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: ior_collection
-          entity_field: id
-          plugin_id: field
-          label: ID
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: number_integer
-          settings:
-            thousand_separator: ''
-            prefix_suffix: true
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_contest:
-          id: field_contest
-          table: ior_collection__field_contest
-          field: field_contest
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: Contest
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_entity_id
-          settings: {  }
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
         field_title:
           id: field_title
           table: ior_collection__field_title
@@ -162,8 +32,8 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: ''
-          exclude: true
+          label: Title
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -216,15 +86,16 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_title_1:
-          id: field_title_1
-          table: ior_submission__field_title
-          field: field_title
-          relationship: reverse__ior_submission__field_collections
+        ior_submission:
+          id: ior_submission
+          table: ior_collection
+          field: ior_submission
+          relationship: none
           group_type: group
           admin_label: ''
+          entity_type: ior_collection
           plugin_id: field
-          label: ''
+          label: Submissions
           exclude: false
           alter:
             alter_text: false
@@ -261,15 +132,15 @@ display:
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
-          empty: 'None assigned yet.'
+          empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: string
+          click_sort_column: target_id
+          type: entity_reference_label
           settings:
-            link_to_entity: true
-          group_column: value
+            link: true
+          group_column: target_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -362,18 +233,13 @@ display:
       style:
         type: table
         options:
-          grouping:
-            -
-              field: field_title
-              rendered: true
-              rendered_strip: false
+          grouping: {  }
           row_class: ''
           default_row_class: true
           columns:
             id: id
             field_contest: field_contest
             field_title: field_title
-            field_title_1: field_title_1
           default: '-1'
           info:
             id:
@@ -391,13 +257,6 @@ display:
               empty_column: false
               responsive: ''
             field_title:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            field_title_1:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -430,17 +289,7 @@ display:
           admin_label: 'field_contest: Contest'
           plugin_id: standard
           required: true
-        reverse__ior_submission__field_collections:
-          id: reverse__ior_submission__field_collections
-          table: ior_collection
-          field: reverse__ior_submission__field_collections
-          relationship: none
-          group_type: group
-          admin_label: field_collections
-          entity_type: ior_collection
-          plugin_id: entity_reverse
-          required: false
-      group_by: true
+      group_by: false
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -453,9 +302,7 @@ display:
         - url.query_args
         - user.permissions
       tags:
-        - 'config:field.storage.ior_collection.field_contest'
         - 'config:field.storage.ior_collection.field_title'
-        - 'config:field.storage.ior_submission.field_title'
   page_1:
     id: page_1
     display_title: Page
@@ -473,6 +320,4 @@ display:
         - url.query_args
         - user.permissions
       tags:
-        - 'config:field.storage.ior_collection.field_contest'
         - 'config:field.storage.ior_collection.field_title'
-        - 'config:field.storage.ior_submission.field_title'
