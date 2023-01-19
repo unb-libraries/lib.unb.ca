@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.storage.ior_award.field_title
-    - field.storage.ior_submission.field_title
   module:
     - ior
     - ior_awards
@@ -33,8 +32,8 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: ''
-          exclude: true
+          label: Title
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -77,8 +76,8 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
-          group_column: entity_id
+            link_to_entity: false
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -88,15 +87,16 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_title_1:
-          id: field_title_1
-          table: ior_submission__field_title
-          field: field_title
-          relationship: reverse__ior_submission__field_awards
+        ior_submission:
+          id: ior_submission
+          table: ior_award
+          field: ior_submission
+          relationship: none
           group_type: group
           admin_label: ''
+          entity_type: ior_award
           plugin_id: field
-          label: ''
+          label: 'Awarded to'
           exclude: false
           alter:
             alter_text: false
@@ -133,15 +133,15 @@ display:
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
-          empty: 'No recipients of this award.'
+          empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: string
+          click_sort_column: target_id
+          type: entity_reference_label
           settings:
-            link_to_entity: true
-          group_column: entity_id
+            link: true
+          group_column: target_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -151,23 +151,18 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          set_precision: false
-          precision: 0
-          decimal: .
-          format_plural: false
-          format_plural_string: !!binary MQNAY291bnQ=
-          prefix: ''
-          suffix: ''
       pager:
-        type: mini
+        type: full
         options:
           offset: 0
-          items_per_page: 25
+          items_per_page: 20
           total_pages: null
           id: 0
           tags:
             next: ››
             previous: ‹‹
+            first: First
+            last: Last
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -176,6 +171,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+          quantity: 5
       exposed_form:
         type: basic
         options:
@@ -254,16 +250,12 @@ display:
       style:
         type: table
         options:
-          grouping:
-            -
-              field: field_title
-              rendered: true
-              rendered_strip: false
+          grouping: {  }
           row_class: ''
           default_row_class: true
           columns:
             field_title: field_title
-            field_title_1: field_title_1
+            ior_submission: ior_submission
           default: '-1'
           info:
             field_title:
@@ -273,9 +265,7 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-            field_title_1:
-              sortable: false
-              default_sort_order: asc
+            ior_submission:
               align: ''
               separator: ''
               empty_column: false
@@ -297,16 +287,6 @@ display:
           replica: false
           query_tags: {  }
       relationships:
-        reverse__ior_submission__field_awards:
-          id: reverse__ior_submission__field_awards
-          table: ior_award
-          field: reverse__ior_submission__field_awards
-          relationship: none
-          group_type: group
-          admin_label: field_awards
-          entity_type: ior_award
-          plugin_id: entity_reverse
-          required: false
         field_contest:
           id: field_contest
           table: ior_award__field_contest
@@ -316,7 +296,6 @@ display:
           admin_label: 'field_contest: Contest'
           plugin_id: standard
           required: true
-      group_by: false
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -330,7 +309,6 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.ior_award.field_title'
-        - 'config:field.storage.ior_submission.field_title'
   page_1:
     id: page_1
     display_title: Page
@@ -349,4 +327,3 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.ior_award.field_title'
-        - 'config:field.storage.ior_submission.field_title'
