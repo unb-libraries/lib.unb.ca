@@ -355,13 +355,13 @@ display:
           id: id
           table: ior_contest
           field: id
-          relationship: field_contest
+          relationship: contest
           group_type: group
           admin_label: ''
           entity_type: contest
           entity_field: id
           plugin_id: numeric
-          default_action: ignore
+          default_action: 'not found'
           exception:
             value: all
             title_enable: false
@@ -456,13 +456,15 @@ display:
           replica: false
           query_tags: {  }
       relationships:
-        field_contest:
-          id: field_contest
-          table: ior_submission__field_contest
-          field: field_contest
+        contest:
+          id: contest
+          table: ior_submission
+          field: contest
           relationship: none
           group_type: group
-          admin_label: 'field_contest: Contest'
+          admin_label: Contest
+          entity_type: ior_submission
+          entity_field: contest
           plugin_id: standard
           required: true
       header:
