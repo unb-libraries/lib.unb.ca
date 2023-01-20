@@ -47,7 +47,7 @@ guides.category_stats:
     _controller: '\Drupal\guides\Controller\GuidesStatsController::categoryStats'
     _title: 'Category Statistics'
   requirements:
-    _custom_access: 'guide_category.update'
+    _entity_access: 'guide_category.update'
 guides.user_stats:
   path: '/user/{user}/stats'
   defaults:
