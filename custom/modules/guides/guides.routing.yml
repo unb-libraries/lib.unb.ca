@@ -24,7 +24,7 @@ guides.eresources_dialog:
     _form: '\Drupal\guides\Form\EresourcesDialog'
     _title: 'Add e-Resources List'
   requirements:
-    _access: 'TRUE'
+    _permission: 'create guide entities'
   options:
     _theme: ajax_base_page
 guides.clone:
