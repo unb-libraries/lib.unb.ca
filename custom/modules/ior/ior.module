@@ -304,3 +304,39 @@ function base_field_additions_9001() {
 //
 //  $field_data_update_manager->set('type', 'ior_submission', ['target_id' => 'image']);
 //}
+
+/**
+ * Set 'contest.accepted_submissions' default value.
+ */
+function ior_update_9003(&$sandbox) {
+  $db = Drupal::database();
+  /** @var \Drupal\ior\Entity\Storage\ContestStorageInterface $contest_storage */
+  $contest_storage = Drupal::entityTypeManager()->getStorage('contest');
+  $contests = $contest_storage->loadMultiple();
+
+  foreach ($contests as $contest) {
+    /** @var \Drupal\ior\Entity\ContestInterface $contest */
+    $db->insert('contest__field_accepted_submissions')->fields([
+      'bundle' => 'contest',
+      'deleted' => 0,
+      'entity_id' => $contest->id(),
+      'revision_id' => $contest->getRevisionId(),
+      'langcode' => 'und',
+      'delta' => 0,
+      'field_accepted_submissions_target_id' => 'image',
+    ])->execute();
+
+    $revisions = $contest_storage->loadEntityRevisions($contest);
+    foreach ($revisions as $revision) {
+      $db->insert('contest_revision__field_accepted_submissions')->fields([
+        'bundle' => 'contest',
+        'deleted' => 0,
+        'entity_id' => $contest->id(),
+        'revision_id' => $revision->id(),
+        'langcode' => 'und',
+        'delta' => 0,
+        'field_accepted_submissions_target_id' => 'image',
+      ])->execute();
+    }
+  }
+}
