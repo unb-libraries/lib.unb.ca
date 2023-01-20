@@ -2,9 +2,14 @@
 .field--name-field-media-oembed-video {
   position: relative;
   overflow: hidden;
+  min-width: $max-breakpoint * 0.66;
   width: 100%;
   padding-top: 56.25%;
   padding-bottom: 1rem;
+}
+.layout__region--second .field--name-field-media-oembed-video,
+.layout--threecol-section .field--name-field-media-oembed-video {
+    min-width: $max-breakpoint * 0.31;
 }
 /* Style iframe to fit in the container div with full height and width */
 .media-oembed-content {
