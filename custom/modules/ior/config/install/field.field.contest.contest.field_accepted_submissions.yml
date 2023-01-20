@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.contest.field_accepted_submissions
+  module:
+    - ior
+id: contest.contest.field_accepted_submissions
+field_name: field_accepted_submissions
+entity_type: contest
+bundle: contest
+label: 'Accepted submissions'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:ior_submission_type'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

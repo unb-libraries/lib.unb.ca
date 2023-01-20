@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.contest.contest.field_accepted_submissions
     - field.field.contest.contest.field_date_close
     - field.field.contest.contest.field_date_open
     - field.field.contest.contest.field_description
@@ -18,15 +19,21 @@ targetEntityType: contest
 bundle: contest
 mode: default
 content:
+  field_accepted_submissions:
+    type: options_buttons
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_date_close:
     type: datetime_default
-    weight: 4
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   field_date_open:
     type: datetime_default
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }

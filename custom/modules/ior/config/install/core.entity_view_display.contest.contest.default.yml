@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.contest.contest.field_accepted_submissions
     - field.field.contest.contest.field_date_close
     - field.field.contest.contest.field_date_open
     - field.field.contest.contest.field_description
@@ -9,6 +10,7 @@ dependencies:
     - field.field.contest.contest.field_tor
   module:
     - datetime
+    - field_formatter_class
     - ior
     - text
 id: contest.contest.default
@@ -16,45 +18,55 @@ targetEntityType: contest
 bundle: contest
 mode: default
 content:
+  field_accepted_submissions:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 3
+    region: content
   field_date_close:
-    weight: 4
+    type: datetime_default
     label: above
     settings:
       timezone_override: ''
       format_type: html_date
     third_party_settings: {  }
-    type: datetime_default
+    weight: 5
     region: content
   field_date_open:
-    weight: 3
+    type: datetime_default
     label: above
     settings:
       timezone_override: ''
       format_type: html_date
     third_party_settings: {  }
-    type: datetime_default
+    weight: 4
     region: content
   field_description:
-    weight: 1
+    type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 1
     region: content
   field_title:
-    weight: 0
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 0
     region: content
   field_tor:
-    weight: 2
+    type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 2
     region: content
 hidden:
   field_submissions: true
