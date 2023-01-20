@@ -24,8 +24,9 @@ use Drupal\custom_entity\Entity\UserEditedInterface;
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "views_data" = "Drupal\views\EntityViewsData",
  *     "route_provider" = {
- *       "html" = "Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider",
+ *       "html" = "Drupal\guides\Entity\Routing\GuideCategoryRouteProvider",
  *     },
+ *     "storage" = "Drupal\guides\Entity\Storage\GuideCategoryStorage",
  *     "access" = "Drupal\guides\Entity\Access\GuideCategoryAccessControlHandler",
  *     "form" = {
  *       "default" = "Drupal\Core\Entity\ContentEntityForm",
@@ -33,17 +34,22 @@ use Drupal\custom_entity\Entity\UserEditedInterface;
  *     },
  *   },
  *   base_table = "guide_category",
+ *   revision_table = "guide_category_revision",
  *   admin_permission = "administer guide_category entities",
  *   entity_keys = {
  *     "id" = "id",
  *     "label" = "title",
  *     "status" = "status",
+ *     "revision" = "revision_id",
  *   },
  *   links = {
  *     "canonical" = "/guides/category/{guide_category}",
  *     "add-form" = "/admin/guides/category/add",
  *     "edit-form" = "/admin/guides/category/{guide_category}/edit",
  *     "delete-form" = "/admin/guides/category/{guide_category}/delete",
+ *     "revisions" = "/admin/guides/category/{guide_category}/revisions",
+ *     "revision" = "/admin/guides/category/{guide_category}/revisions/{guide_category_revision}",
+ *     "revision-restore-form" = "/admin/guides/category/{guide_category}/revisions/{guide_category_revision}/restore",
  *   },
  *   field_ui_base_route = "entity.guide_category.settings",
  * )
@@ -62,6 +68,7 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
     $fields['title'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Title'))
       ->setRequired(TRUE)
+      ->setRevisionable(TRUE)
       ->setSettings(
         [
           'max_length' => 1024,
@@ -76,6 +83,7 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
     $fields['databases'] = BaseFieldDefinition::create('text_long')
       ->setLabel(t('Top Databases'))
       ->setRequired(TRUE)
+      ->setRevisionable(TRUE)
       ->setSettings([
         'allowed_formats' => [
           'library_page_html',
@@ -97,6 +105,7 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
     $fields['references'] = BaseFieldDefinition::create('text_long')
       ->setLabel(t('Top Reference Materials'))
       ->setRequired(TRUE)
+      ->setRevisionable(TRUE)
       ->setSettings([
         'allowed_formats' => [
           'library_page_html',
@@ -118,6 +127,7 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
     $fields['related_guide_categories'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Related Guide Categories'))
       ->setRequired(FALSE)
+      ->setRevisionable(TRUE)
       ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
       ->setSetting('target_type', 'guide_category')
       ->setSetting('handler', 'default')
@@ -131,6 +141,7 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
     $fields['contacts'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Contacts'))
       ->setRequired(FALSE)
+      ->setRevisionable(TRUE)
       ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
       ->setSetting('target_type', 'user')
       ->setSetting('handler', 'default:user')
@@ -158,9 +169,21 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
       ]);
 
     $fields[self::FIELD_CREATED] = static::getCreatedBaseFieldDefinition($entity_type);
+    $fields[self::FIELD_CREATOR] = static::getCreatorBaseFieldDefinition($entity_type);
     $fields[self::FIELD_EDITED] = static::getEditedBaseFieldDefinition($entity_type);
+    $fields[self::FIELD_EDITOR] = static::getEditorBaseFieldDefinition($entity_type);
 
     return $fields;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function save() {
+    if (!$this->isNew()) {
+      $this->setNewRevision(TRUE);
+    }
+    return parent::save();
   }
 
   /**

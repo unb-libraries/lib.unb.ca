@@ -45,6 +45,15 @@ update guide_category entities:
 delete guide_category entities:
   title: "Delete Guide Categories."
 
+list guide_category revisions:
+  title: "List Guide Category Revisions."
+
+view guide_category revisions:
+  title: "View Guide Category Revisions."
+
+restore guide_category revisions:
+  title: "Restore Guide Category Revisions."
+
 # Course Link entities
 administer course_link entities:
   title: "Administer Course Links."

@@ -45,6 +45,11 @@ entity.guide_category.delete_form:
   base_route: entity.guide_category.canonical
   title: 'Delete'
 
+entity.guide_category.revisions:
+  route_name: entity.guide_category.revisions
+  base_route: entity.guide_category.canonical
+  title: 'Revisions'
+
 guides.category_stats_tab:
   title: 'Stats'
   route_name: guides.category_stats
