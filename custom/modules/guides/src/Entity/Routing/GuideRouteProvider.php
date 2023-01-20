@@ -19,6 +19,13 @@ class GuideRouteProvider extends HtmlRouteProvider {
   public function getRoutes(EntityTypeInterface $entity_type) {
     $routes = parent::getRoutes($entity_type);
     $routes->addCollection($this->getAllRevisionRoutes($entity_type));
+
+    $revRoutes = ['revisions', 'revision', 'revision_restore_form'];
+    foreach ($revRoutes as $revRoute) {
+      $route = $routes->get("entity.guide.{$revRoute}");
+      $route->setRequirements(['_entity_access' => 'guide.update']);
+    }
+
     return $routes;
   }
 

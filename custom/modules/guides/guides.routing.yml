@@ -40,7 +40,7 @@ guides.guide_stats:
     _controller: '\Drupal\guides\Controller\GuidesStatsController::guideStats'
     _title: 'Guide Statistics'
   requirements:
-    _custom_access: '\Drupal\guides\Controller\GuidesAccessController::checkEditAccess'
+    _entity_access: 'guide.update'
 guides.category_stats:
   path: '/guides/category/{guide_category}/stats'
   defaults:
@@ -61,44 +61,8 @@ entity.course_link.collection:
     _entity_list: 'course_link'
     _title_callback: '\Drupal\guides\Controller\CourseLinkController::pageTitle'
   requirements:
-    _custom_access: '\Drupal\guides\Controller\GuidesAccessController::checkEditAccess'
+    _entity_access: 'guide.update'
   options:
     parameters:
       guide:
         type: entity:guide
-entity.guide.revisions:
-  path: '/admin/guides/{guide}/revisions'
-  defaults:
-    _controller: '\Drupal\custom_entity_revisions\Controller\EntityRevisionsListController::listing'
-    _title_callback: '\Drupal\custom_entity_revisions\Controller\EntityRevisionsListController::listTitle'
-  requirements:
-    _custom_access: '\Drupal\guides\Controller\GuidesAccessController::checkEditAccess'
-  options:
-    parameters:
-      guide:
-        type: entity:guide
-entity.guide.revision:
-  path: '/admin/guides/{guide}/revisions/{guide_revision}'
-  defaults:
-    _controller: '\Drupal\custom_entity_revisions\Controller\EntityRevisionsListController::view'
-    _title_callback: '\Drupal\custom_entity_revisions\Controller\EntityRevisionsListController::title'
-  requirements:
-    _custom_access: '\Drupal\guides\Controller\GuidesAccessController::checkEditAccess'
-  options:
-    parameters:
-      guide:
-        type: entity:guide
-      guide_revision:
-        type: entity_revision:guide
-entity.guide.revision_restore_form:
-  path: '/admin/guides/{guide}/revisions/{guide_revision}/restore'
-  defaults:
-    _form: 'Drupal\custom_entity_revisions\Form\RevisionRestoreForm'
-  requirements:
-    _custom_access: '\Drupal\guides\Controller\GuidesAccessController::checkEditAccess'
-  options:
-    parameters:
-      guide:
-        type: entity:guide
-      guide_revision:
-        type: entity_revision:guide
