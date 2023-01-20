@@ -11,4 +11,5 @@ use Drupal\Core\Entity\EntityDeleteFormTrait;
 class SubmissionTypeDeleteForm extends EntityConfirmFormBase {
 
   use EntityDeleteFormTrait;
+
 }
