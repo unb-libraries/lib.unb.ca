@@ -13,6 +13,7 @@ interface ContestInterface extends ContentEntityInterface {
   const FIELD_DESCRIPTION = 'field_description';
   const FIELD_DATE_OPEN = 'field_date_open';
   const FIELD_DATE_CLOSE = 'field_date_close';
+  const FIELD_ACCEPTED_SUBMISSIONS = 'field_accepted_submissions';
 
   /**
    * Get the contest title.
@@ -78,5 +79,13 @@ interface ContestInterface extends ContentEntityInterface {
    *   An array of submission entities.
    */
   public function getSubmissions();
+
+  /**
+   * Get the type of submission that can be entered for this contest.
+   *
+   * @return \Drupal\Core\Config\Entity\ConfigEntityInterface
+   *   A submission type entity.
+   */
+  public function getSubmissionType();
 
 }

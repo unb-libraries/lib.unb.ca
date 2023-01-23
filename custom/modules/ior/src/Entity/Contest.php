@@ -123,4 +123,12 @@ class Contest extends ContentEntityBase implements ContestInterface {
     parent::delete();
   }
 
+  /**
+   * {@inheritDoc}
+   */
+  public function getSubmissionType() {
+    return $this->get(self::FIELD_ACCEPTED_SUBMISSIONS)
+      ->entity;
+  }
+
 }
