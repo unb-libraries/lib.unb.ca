@@ -280,35 +280,10 @@ function base_field_additions_9001() {
   ];
 }
 
-///**
-// * Install 'ior_submission.type' field and set default value.
-// */
-//function ior_update_9002(&$sandbox) {
-//  /** @var \Drupal\Core\Entity\EntityDefinitionUpdateManagerInterface $definition_update_manager */
-//  $definition_update_manager = Drupal::service('entity.definition_update_manager');
-//  /** @var \Drupal\custom_entity_update_n\Entity\DataUpdateManagerInterface $field_data_update_manager */
-//  $field_data_update_manager = Drupal::service('entity_field.data_update.manager');
-//
-//  $type_field = BaseFieldDefinition::create('entity_reference')
-//    ->setLabel(t('Submission type'))
-//    ->setSetting('target_type', 'submission_type')
-//    ->setRequired(TRUE)
-//    ->setReadOnly(TRUE);
-//
-//  $definition_update_manager->installFieldStorageDefinition(
-//    'type',
-//    'ior_submission',
-//    'ior',
-//    $type_field
-//  );
-//
-//  $field_data_update_manager->set('type', 'ior_submission', ['target_id' => 'image']);
-//}
-
 /**
  * Set 'contest.accepted_submissions' default value.
  */
-function ior_update_9003(&$sandbox) {
+function ior_update_9002(&$sandbox) {
   $db = Drupal::database();
   /** @var \Drupal\ior\Entity\Storage\ContestStorageInterface $contest_storage */
   $contest_storage = Drupal::entityTypeManager()->getStorage('contest');
@@ -339,4 +314,29 @@ function ior_update_9003(&$sandbox) {
       ])->execute();
     }
   }
+}
+
+/**
+ * Install 'ior_submission.type' field and set default value.
+ */
+function ior_update_9003(&$sandbox) {
+  /** @var \Drupal\Core\Entity\EntityDefinitionUpdateManagerInterface $definition_update_manager */
+  $definition_update_manager = Drupal::service('entity.definition_update_manager');
+  /** @var \Drupal\custom_entity_update_n\Entity\DataUpdateManagerInterface $field_data_update_manager */
+  $field_data_update_manager = Drupal::service('entity_field.data_update.manager');
+
+  $type_field = BaseFieldDefinition::create('entity_reference')
+    ->setLabel(t('Submission type'))
+    ->setSetting('target_type', 'ior_submission_type')
+    ->setRequired(TRUE)
+    ->setReadOnly(TRUE);
+
+  $definition_update_manager->installFieldStorageDefinition(
+    'type',
+    'ior_submission',
+    'ior',
+    $type_field
+  );
+
+  $field_data_update_manager->set('type', 'ior_submission', ['target_id' => 'image']);
 }
