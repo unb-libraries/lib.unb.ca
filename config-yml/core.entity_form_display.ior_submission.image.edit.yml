@@ -1,0 +1,92 @@
+uuid: d5de9516-fcee-4023-ad21-ee89923cddd4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.ior_submission.edit
+    - field.field.ior_submission.ior_submission.field_image
+    - image.style.thumbnail
+  module:
+    - allowed_formats
+    - image
+    - ior
+    - link
+    - text
+id: ior_submission.image.edit
+targetEntityType: ior_submission
+bundle: image
+mode: edit
+content:
+  department:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  description:
+    type: text_textarea
+    weight: 6
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+  email:
+    type: email_default
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  field_image:
+    type: image_image
+    weight: 7
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  first_name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  last_name:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  website:
+    type: link_default
+    weight: 4
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  awards: true
+  collections: true
+  moderation_state: true
+  path: true
+  terms_conditions_accepted: true

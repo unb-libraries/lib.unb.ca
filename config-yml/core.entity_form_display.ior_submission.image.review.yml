@@ -1,0 +1,38 @@
+uuid: fdaa6eb0-5d19-4bb2-8cf2-93dc1a0639ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.ior_submission.review
+    - field.field.ior_submission.ior_submission.field_image
+  module:
+    - ior
+id: ior_submission.image.review
+targetEntityType: ior_submission
+bundle: image
+mode: review
+content:
+  awards:
+    type: options_buttons
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  collections:
+    type: options_buttons
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  department: true
+  description: true
+  email: true
+  field_image: true
+  first_name: true
+  last_name: true
+  moderation_state: true
+  path: true
+  terms_conditions_accepted: true
+  title: true
+  website: true

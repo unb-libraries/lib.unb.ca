@@ -1,0 +1,83 @@
+uuid: 55e79aed-4c17-47fa-9515-ef6ba0238306
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.ior_submission.preview
+    - field.field.ior_submission.ior_submission.field_image
+    - image.style.featured
+  module:
+    - image
+    - ior
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: ior_submission.image.preview
+targetEntityType: ior_submission
+bundle: image
+mode: preview
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  department:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: featured
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  first_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  last_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  awards: true
+  collections: true
+  email: true
+  search_api_excerpt: true
+  website: true

@@ -1,0 +1,35 @@
+uuid: 1452a12b-306d-46b7-baf9-824cf88065b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.ior_submission.moderate
+    - field.field.ior_submission.ior_submission.field_image
+    - workflows.workflow.ior_submission_review
+  module:
+    - content_moderation
+    - ior
+id: ior_submission.image.moderate
+targetEntityType: ior_submission
+bundle: image
+mode: moderate
+content:
+  moderation_state:
+    type: moderation_state_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  awards: true
+  collections: true
+  department: true
+  description: true
+  email: true
+  field_image: true
+  first_name: true
+  last_name: true
+  path: true
+  terms_conditions_accepted: true
+  title: true
+  website: true
