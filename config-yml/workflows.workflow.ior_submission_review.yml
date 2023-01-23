@@ -77,5 +77,5 @@ type_settings:
       weight: -2
   entity_types:
     ior_submission:
-      - ior_submission
+      - image
   default_moderation_state: draft
