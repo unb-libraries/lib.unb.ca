@@ -340,3 +340,16 @@ function ior_update_9003(&$sandbox) {
 
   $field_data_update_manager->set('type', 'ior_submission', ['target_id' => 'image']);
 }
+
+/**
+ * Transfer 'ior_submission.field_image' values to "image" bundle.
+ */
+function ior_update_9004(&$sandbox) {
+  $db = Drupal::database();
+  $db->update('ior_submission__field_image')
+    ->fields(['bundle' => 'image'])
+  ->execute();
+  $db->update('ior_submission_revision__field_image')
+    ->fields(['bundle' => 'image'])
+    ->execute();
+}
