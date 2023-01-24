@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.ior_submission.3dmodel.field_model
+    - field.field.ior_submission.3dmodel.field_model_embed
     - ior.ior_submission_type.3dmodel
   module:
     - file
@@ -59,6 +60,15 @@ content:
       use_description_as_link_text: true
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_model_embed:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 102
     region: content
   first_name:
     type: string

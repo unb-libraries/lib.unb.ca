@@ -5,10 +5,12 @@ dependencies:
   config:
     - core.entity_form_mode.ior_submission.edit
     - field.field.ior_submission.3dmodel.field_model
+    - field.field.ior_submission.3dmodel.field_model_embed
     - ior.ior_submission_type.3dmodel
   module:
     - allowed_formats
     - link
+    - media_library
     - path
     - text
 id: ior_submission.3dmodel.edit
@@ -42,6 +44,13 @@ content:
     settings:
       placeholder: ''
       size: 60
+    third_party_settings: {  }
+  field_model_embed:
+    type: media_library_widget
+    weight: 9
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   first_name:
     type: string_textfield

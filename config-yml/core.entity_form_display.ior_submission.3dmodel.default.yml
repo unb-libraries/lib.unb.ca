@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.ior_submission.3dmodel.field_model
+    - field.field.ior_submission.3dmodel.field_model_embed
     - ior.ior_submission_type.3dmodel
   module:
     - allowed_formats
@@ -98,4 +99,5 @@ content:
 hidden:
   awards: true
   collections: true
+  field_model_embed: true
   moderation_state: true

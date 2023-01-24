@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.ior_submission.full
     - field.field.ior_submission.3dmodel.field_model
+    - field.field.ior_submission.3dmodel.field_model_embed
     - ior.ior_submission_type.3dmodel
   module:
     - layout_builder
@@ -88,4 +89,5 @@ content:
 hidden:
   awards: true
   field_model: true
+  field_model_embed: true
   search_api_excerpt: true
