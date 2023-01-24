@@ -21,7 +21,7 @@ settings:
   handler: 'default:file'
   handler_settings: {  }
   file_directory: ior
-  file_extensions: 'zib obj'
+  file_extensions: 'zip obj'
   max_filesize: 200MB
   description_field: false
 field_type: file
