@@ -5,6 +5,7 @@ namespace Drupal\ior\Form;
 use Drupal\Core\Entity\ContentEntityForm;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
+use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Url;
 
 /**
@@ -23,6 +24,23 @@ class SubmissionForm extends ContentEntityForm {
         ->getParameter('contest');
       $this->entity->setContest($contest);
     }
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getEntityFromRouteMatch(RouteMatchInterface $route_match, $entity_type_id) {
+    if ($contest = $route_match->getParameter('contest')) {
+      /** @var \Drupal\ior\Entity\ContestInterface $contest */
+      $route_match->getParameters()->add([
+        'ior_submission_type' => $contest->getSubmissionType(),
+      ]);
+      $route_match->getRawParameters()->add([
+        'ior_submission_type' => $contest->getSubmissionType()->id(),
+      ]);
+    }
+    $entity = parent::getEntityFromRouteMatch($route_match, $entity_type_id);
+    return $entity;
   }
 
   /**
