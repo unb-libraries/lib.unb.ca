@@ -1,7 +1,10 @@
 langcode: en
 status: true
 dependencies:
+  config:
+    - filter.format.guide_category
   module:
+    - filter
     - guides
     - profile
     - system
@@ -12,13 +15,24 @@ weight: 8
 is_admin: null
 permissions:
   - 'access toolbar'
+  - 'administer course_link entities'
+  - 'create course_link entities'
   - 'create guide entities'
   - 'create guides profile'
   - 'create public profile'
+  - 'delete course_link entities'
+  - 'delete guide entities'
   - 'delete own guides profile'
   - 'delete own public profile'
+  - 'list course_link entities'
+  - 'list guide revisions'
+  - 'list guide_category revisions'
+  - 'restore guide revisions'
+  - 'restore guide_category revisions'
+  - 'update course_link entities'
   - 'update guide entities'
   - 'update guide_category entities'
   - 'update own guides profile'
   - 'update own public profile'
+  - 'use text format guide_category'
   - 'view the administration theme'

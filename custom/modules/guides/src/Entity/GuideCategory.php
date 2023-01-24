@@ -86,7 +86,7 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
       ->setRevisionable(TRUE)
       ->setSettings([
         'allowed_formats' => [
-          'library_page_html',
+          'guide_category',
         ],
       ])
       ->setDisplayOptions('form', [
@@ -108,7 +108,7 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
       ->setRevisionable(TRUE)
       ->setSettings([
         'allowed_formats' => [
-          'library_page_html',
+          'guide_category',
         ],
       ])
       ->setDisplayOptions('form', [

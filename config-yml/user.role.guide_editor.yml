@@ -2,7 +2,10 @@ uuid: e6374e85-5d6e-468d-964e-71ba6d859c1a
 langcode: en
 status: true
 dependencies:
+  config:
+    - filter.format.guide_category
   module:
+    - filter
     - guides
     - profile
     - system
@@ -25,13 +28,14 @@ permissions:
   - 'delete own guides profile'
   - 'delete own public profile'
   - 'list course_link entities'
-  - 'list guide_category revisions'
   - 'list guide revisions'
-  - 'restore guide_category revisions'
+  - 'list guide_category revisions'
   - 'restore guide revisions'
+  - 'restore guide_category revisions'
   - 'update course_link entities'
   - 'update guide entities'
   - 'update guide_category entities'
   - 'update own guides profile'
   - 'update own public profile'
+  - 'use text format guide_category'
   - 'view the administration theme'
