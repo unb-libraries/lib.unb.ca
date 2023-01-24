@@ -93,8 +93,10 @@ function template_preprocess_ior_submission(array &$variables) {
   $variables['submission']['published'] = $submission->isPublished();
   $variables['current_user']['view_contestant_info'] = $current_user->hasPermission('view contestant details');
 
-  if (Drupal::currentUser()->hasPermission('download full_resolution images')) {
-    $variables['submission']['image_url'] = $submission->getImageUrl();
+  if ($submission->getType()->id() == 'image') {
+    if (Drupal::currentUser()->hasPermission('download full_resolution images')) {
+      $variables['submission']['entity']['image_url'] = $submission->getImageUrl();
+    }
   }
 
   // This should be done in a template?
