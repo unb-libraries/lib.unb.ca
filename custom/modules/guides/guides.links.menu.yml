@@ -21,3 +21,9 @@ system.admin.unblib.guides.guide.help:
   deriver: Drupal\guides\Plugin\Derivative\HelpMenuLink
   parent: system.admin.unblib.guides
   weight: 10
+system.admin.unblib.guides.guide_category.add:
+  title: Create new category
+  Description: 'Add a new guide category.'
+  route_name: entity.guide_category.add_form
+  parent: system.admin.unblib.guides
+  weight: 5
