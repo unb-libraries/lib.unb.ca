@@ -3,8 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.ior_submission.3dmodel.field_model
     - ior.ior_submission_type.3dmodel
   module:
+    - file
     - link
     - text
 id: ior_submission.3dmodel.default
@@ -49,6 +51,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 30
+    region: content
+  field_model:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 101
     region: content
   first_name:
     type: string

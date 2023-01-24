@@ -3,9 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.ior_submission.3dmodel.field_model
     - ior.ior_submission_type.3dmodel
   module:
     - allowed_formats
+    - file
     - link
     - path
     - text
@@ -41,6 +43,13 @@ content:
       placeholder: ''
       size: 60
     third_party_settings: {  }
+  field_model:
+    type: file_generic
+    weight: 8
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
   first_name:
     type: string_textfield
     weight: 0
@@ -65,7 +74,7 @@ content:
     third_party_settings: {  }
   terms_conditions_accepted:
     type: boolean_checkbox
-    weight: 8
+    weight: 9
     region: content
     settings:
       display_label: true

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.ior_submission.edit
+    - field.field.ior_submission.3dmodel.field_model
     - ior.ior_submission_type.3dmodel
   module:
     - allowed_formats
@@ -83,5 +84,6 @@ content:
 hidden:
   awards: true
   collections: true
+  field_model: true
   moderation_state: true
   terms_conditions_accepted: true

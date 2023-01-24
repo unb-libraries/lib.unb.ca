@@ -1,0 +1,27 @@
+uuid: 154b17dd-acbe-4888-b9cc-8477b7bd63e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.ior_submission.field_model
+    - ior.ior_submission_type.3dmodel
+  module:
+    - file
+id: ior_submission.3dmodel.field_model
+field_name: field_model
+entity_type: ior_submission
+bundle: 3dmodel
+label: Model
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: ior
+  file_extensions: 'zib obj'
+  max_filesize: 200MB
+  description_field: false
+field_type: file

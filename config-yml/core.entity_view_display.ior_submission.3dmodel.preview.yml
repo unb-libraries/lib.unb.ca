@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.ior_submission.preview
+    - field.field.ior_submission.3dmodel.field_model
     - ior.ior_submission_type.3dmodel
   module:
     - layout_builder
@@ -66,5 +67,6 @@ content:
 hidden:
   awards: true
   collections: true
+  field_model: true
   search_api_excerpt: true
   website: true

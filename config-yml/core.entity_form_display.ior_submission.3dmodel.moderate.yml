@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.ior_submission.moderate
+    - field.field.ior_submission.3dmodel.field_model
     - ior.ior_submission_type.3dmodel
   module:
     - content_moderation
@@ -24,6 +25,7 @@ hidden:
   department: true
   description: true
   email: true
+  field_model: true
   first_name: true
   last_name: true
   path: true
