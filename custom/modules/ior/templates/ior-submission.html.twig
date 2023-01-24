@@ -1,6 +1,6 @@
 <div class="row ior-submission ior-submission-full">
     <div class="col-md-12 col-lg-6 col-xl-8">
-        {% if submission.type == 'image' %}
+        {% if submission.field_image %}
             {% if submission.image_url %}
                 <a href="{{ submission.image_url }}" target="_blank">{{ submission.field_image }}</a>
             {% else %}
