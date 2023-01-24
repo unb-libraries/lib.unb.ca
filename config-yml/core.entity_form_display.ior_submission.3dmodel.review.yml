@@ -1,0 +1,43 @@
+uuid: 7a242f99-ba09-4d1c-94d7-7d187d2588a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.ior_submission.review
+    - ior.ior_submission_type.3dmodel
+id: ior_submission.3dmodel.review
+targetEntityType: ior_submission
+bundle: 3dmodel
+mode: review
+content:
+  awards:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  collections:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  department: true
+  description: true
+  email: true
+  first_name: true
+  last_name: true
+  moderation_state: true
+  path: true
+  terms_conditions_accepted: true
+  title: true
+  website: true

@@ -1,0 +1,32 @@
+uuid: 99085380-ac76-4d7a-9ea5-30ba35ca4683
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.ior_submission.moderate
+    - ior.ior_submission_type.3dmodel
+  module:
+    - content_moderation
+id: ior_submission.3dmodel.moderate
+targetEntityType: ior_submission
+bundle: 3dmodel
+mode: moderate
+content:
+  moderation_state:
+    type: moderation_state_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  awards: true
+  collections: true
+  department: true
+  description: true
+  email: true
+  first_name: true
+  last_name: true
+  path: true
+  terms_conditions_accepted: true
+  title: true
+  website: true

@@ -1,0 +1,6 @@
+uuid: f9a886d2-2d9e-40f0-9da9-9c26d40ce5ef
+langcode: en
+status: true
+dependencies: {  }
+id: 3dmodel
+label: '3D Model'
