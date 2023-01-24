@@ -7,6 +7,10 @@
   padding-top: 56.25%;
   padding-bottom: 1rem;
 }
+.oembed_3d_model {
+  min-height: 480px;
+}
+
 .layout__region--second .field--name-field-media-oembed-video,
 .layout--threecol-section .field--name-field-media-oembed-video {
     min-width: $max-breakpoint * 0.31;

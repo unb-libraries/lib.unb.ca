@@ -17,24 +17,17 @@ content:
     type: oembed
     label: visually_hidden
     settings:
-      max_width: 480
+      max_width: 0
       max_height: 320
     third_party_settings:
       field_formatter_class:
-        class: ''
-    weight: 1
-    region: content
-  name:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
+        class: oembed_3d_model
     weight: 0
     region: content
 hidden:
   created: true
   langcode: true
+  name: true
   search_api_excerpt: true
   thumbnail: true
   uid: true
