@@ -27,11 +27,8 @@ class CourseLinkAccessControlHandler extends EntityAccessControlHandler {
    *   The access result.
    */
   protected function checkCreateAccess(AccountInterface $account, array $context, $entity_bundle = NULL) {
-    $guideId = (int) \Drupal::routeMatch()->getParameter('guide');
-    $guide = \Drupal::entityTypeManager()->getStorage('guide')->load($guideId);
-
-    if (!$this->hasCourseLinkAccess($guide, $account)) {
-      return AccessResult::forbidden();
+    if (!$this->hasCourseLinkAccess($account)) {
+      return AccessResult::allowedIf($account->hasPermission('administer course_link entities'));
     }
     return parent::checkCreateAccess($account, $context, $entity_bundle);
   }
@@ -48,7 +45,7 @@ class CourseLinkAccessControlHandler extends EntityAccessControlHandler {
    *   TRUE if user is listed, FALSE otherwise.
    */
   public function hasEntityUpdateAccess(EntityInterface $entity, AccountInterface $account) {
-    return $this->hasCourseLinkAccess($enitity, $account);
+    return $this->hasCourseLinkAccess($account);
   }
 
   /**
@@ -63,21 +60,24 @@ class CourseLinkAccessControlHandler extends EntityAccessControlHandler {
    *   TRUE if user is listed, FALSE otherwise.
    */
   public function hasEntityDeleteAccess(EntityInterface $entity, AccountInterface $account) {
-    return $this->hasCourseLinkAccess($enitity, $account);
+    return $this->hasCourseLinkAccess($account);
   }
 
   /**
    * Grant access to any listed editor.
    *
-   * @param \Drupal\Core\Entity\EntityInterface $entity
-   *   An entity.
    * @param \Drupal\Core\Session\AccountInterface $account
    *   A user.
    *
    * @return bool
    *   TRUE if user is listed, FALSE otherwise.
    */
-  private function hasCourseLinkAccess(EntityInterface $entity, AccountInterface $account) {
+  private function hasCourseLinkAccess(AccountInterface $account) {
+    $entity = \Drupal::routeMatch()->getParameter('guide');
+    if (!is_object($entity)) {
+      $entity = \Drupal::entityTypeManager()->getStorage('guide')->load((int) $entity);
+    }
+
     $hasAccess = FALSE;
     foreach ($entity->editors as $editor) {
       $user = $editor->entity->field_user->entity;

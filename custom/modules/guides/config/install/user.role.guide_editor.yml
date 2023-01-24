@@ -15,7 +15,6 @@ weight: 8
 is_admin: null
 permissions:
   - 'access toolbar'
-  - 'administer course_link entities'
   - 'create course_link entities'
   - 'create guide entities'
   - 'create guides profile'
