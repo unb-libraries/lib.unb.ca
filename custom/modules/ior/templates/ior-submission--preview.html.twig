@@ -1,6 +1,10 @@
 <div class="ior-submission ior-submission-preview">
     <div class="col-md-12">
-        <a href="{{ submission.url }}">{{ submission.field_image }}</a>
+        {% if submission.type == 'image' %}
+            <a href="{{ submission.url }}">{{ submission.field_image }}</a>
+        {% else %}
+            <a href="{{ submission.url }}">{{ submission.field_model_embed }}</a>
+        {% endif %}
     </div>
     <div class="col-md-12">
         {% block submission_title %}

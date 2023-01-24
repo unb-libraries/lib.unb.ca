@@ -19,3 +19,4 @@ source_configuration:
     - Sketchfab
 field_map:
   author_name: name
+  provider_url: field_media_oembed_unb_lib
