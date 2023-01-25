@@ -48,6 +48,7 @@ function template_preprocess_contest(array &$variables) {
     }
   }
   $variables['contest']['is_open'] = $contest->isOpen();
+  $variables['contest']['submission_type_label'] = $contest->getSubmissionType()->label();
   $variables['contest']['is_coming_up'] = $contest->isComingUp();
   $variables['contest']['is_closed'] = $contest->isClosed();
   $variables['contest']['submit_url'] = Url::fromRoute('entity.ior_submission.add_form', [
