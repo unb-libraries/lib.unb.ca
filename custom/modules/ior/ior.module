@@ -100,8 +100,8 @@ function template_preprocess_ior_submission(array &$variables) {
   }
 
   // This should be done in a template?
-  $variables['submission']['field_first_name']['#attributes']['class'][] = 'd-inline';
-  $variables['submission']['field_last_name']['#attributes']['class'][] = 'd-inline';
+  $variables['submission']['first_name']['#attributes']['class'][] = 'd-inline';
+  $variables['submission']['last_name']['#attributes']['class'][] = 'd-inline';
 }
 
 /**
@@ -142,8 +142,8 @@ function template_preprocess_ior_submission__preview(array &$variables) {
     ->toString();
 
   // This should be done in a template?
-  $variables['submission']['field_first_name']['#attributes']['class'][] = 'd-inline';
-  $variables['submission']['field_last_name']['#attributes']['class'][] = 'd-inline';
+  $variables['submission']['first_name']['#attributes']['class'][] = 'd-inline';
+  $variables['submission']['last_name']['#attributes']['class'][] = 'd-inline';
 }
 
 /**
