@@ -9,7 +9,6 @@ dependencies:
   module:
     - allowed_formats
     - image
-    - link
     - text
 id: ior_submission.image.default
 targetEntityType: ior_submission
@@ -26,7 +25,7 @@ content:
     third_party_settings: {  }
   description:
     type: text_textarea
-    weight: 6
+    weight: 5
     region: content
     settings:
       rows: 5
@@ -45,7 +44,7 @@ content:
     third_party_settings: {  }
   field_image:
     type: image_image
-    weight: 7
+    weight: 6
     region: content
     settings:
       progress_indicator: throbber
@@ -69,29 +68,22 @@ content:
     third_party_settings: {  }
   terms_conditions_accepted:
     type: boolean_checkbox
-    weight: 8
+    weight: 7
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 5
+    weight: 4
     region: content
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  website:
-    type: link_default
-    weight: 4
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
     third_party_settings: {  }
 hidden:
   awards: true
   collections: true
   moderation_state: true
   path: true
+  website: true
