@@ -155,42 +155,33 @@ elements: |-
         '#type': textfield
         '#title': Keywords
         '#multiple': true
-        '#required': true
       related_publications:
         '#type': textarea
         '#title': 'Related Publications'
-        '#required': true
       language:
         '#type': textfield
         '#title': Language
-        '#required': true
       production_date:
         '#type': date
         '#title': 'Production Date'
-        '#required': true
         '#datepicker': true
       production_location:
         '#type': textfield
         '#title': 'Production Location'
-        '#required': true
       funding_information_agency_identifier_:
         '#type': textfield
         '#title': 'Funding Information (agency, identifier)'
-        '#required': true
       start_of_data_collection:
         '#type': date
         '#title': 'Start of Data Collection'
-        '#required': true
         '#datepicker': true
       end_of_data_collection:
         '#type': date
         '#title': 'End of Data Collection'
-        '#required': true
         '#datepicker': true
       data_type:
         '#type': textfield
         '#title': 'Data Type'
-        '#required': true
       software_used_to_generate_the_dataset:
         '#type': textfield
         '#title': 'Software used to generate the dataset'
