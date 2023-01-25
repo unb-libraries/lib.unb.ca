@@ -14,6 +14,11 @@
     }
   };
 
+  const found = window.location.pathname.match(/(guides|category)\/(\d+)/);
+  if (found) {
+    dialog.url += '?' + found[1] + '=' + found[2];
+  }
+
   CKEDITOR.plugins.add('eresources', {
     requires: 'widget',
     icons: 'eresources',

@@ -55,6 +55,8 @@ class EresourcesDialog extends FormBase {
     $userInput = $form_state->getUserInput();
     $input = $userInput['editor_object'] ?? [];
 
+    $category = $this->getRequest()->query->get('category') ?? NULL;
+
     $form['eresources_selector'] = [
       '#prefix' => '<div class="eresources-selector">',
       '#suffix' => '</div>',
@@ -146,11 +148,21 @@ class EresourcesDialog extends FormBase {
       '#default_value' => $input['keyresources'] ?? 10,
     ];
 
+    if ($category) {
+      $form['keyresources']['#default_value'] = 999;
+      $form['keyresources']['#type'] = 'hidden';
+    }
+
     $form['noheadings'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Disable headings'),
       '#default_value' => $input['noheadings'] ?? 0,
     ];
+
+    if ($category) {
+      $form['noheadings']['#default_value'] = 1;
+      $form['noheadings']['#type'] = 'hidden';
+    }
 
     $form['actions'] = [
       '#type' => 'actions',
