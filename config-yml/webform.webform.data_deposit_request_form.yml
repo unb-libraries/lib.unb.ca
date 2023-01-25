@@ -377,5 +377,79 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers: {  }
+handlers:
+  email:
+    id: email
+    handler_id: email
+    label: Email
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: rdm.services@unb.ca
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: unb-libraries-no-reply@unb.ca
+      from_options: {  }
+      from_name: 'Data Deposit Request Form'
+      reply_to: '[webform_submission:values:unb_email:raw]'
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Data Deposit Request'
+      body: "<p><b>{{ webform_token('[webform_submission:user]', webform_submission) }}</b> submitted a UNB Dataverse Data Deposit Request Form with the following details:</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n\r\n\r\n\r\n"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  confirmation_email:
+    id: email
+    handler_id: confirmation_email
+    label: 'Confirmation Email'
+    notes: 'Confirms a webform submission via an email.'
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:unb_email:raw]'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: unb-libraries-no-reply@unb.ca
+      from_options: {  }
+      from_name: 'UNB Dataverse Data Deposit Request Form'
+      reply_to: rdm.services@unb.ca
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Your UNB Dataverse Data Deposit Request'
+      body: "<p>On {{ webform_token('[webform_submission:created]', webform_submission, [], options) }} you submitted a UNB Dataverse Data Deposit Request with the following details:</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n\r\n<p>Please note that this is <b>not</b> a confirmation of your request.\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      theme_name: ''
+      parameters: {  }
+      debug: false
 variants: {  }
