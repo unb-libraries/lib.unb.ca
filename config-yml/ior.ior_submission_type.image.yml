@@ -3,4 +3,4 @@ langcode: en
 status: true
 dependencies: {  }
 id: image
-label: 'Image submission'
+label: Image
