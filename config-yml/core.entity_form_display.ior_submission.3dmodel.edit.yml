@@ -9,6 +9,7 @@ dependencies:
     - ior.ior_submission_type.3dmodel
   module:
     - allowed_formats
+    - file
     - link
     - media_library
     - text
@@ -43,6 +44,13 @@ content:
     settings:
       placeholder: ''
       size: 60
+    third_party_settings: {  }
+  field_model:
+    type: file_generic
+    weight: 7
+    region: content
+    settings:
+      progress_indicator: throbber
     third_party_settings: {  }
   field_model_embed:
     type: media_library_widget
@@ -86,7 +94,6 @@ content:
 hidden:
   awards: true
   collections: true
-  field_model: true
   moderation_state: true
   path: true
   terms_conditions_accepted: true
