@@ -11,7 +11,7 @@ field_name: field_featured_image
 entity_type: node
 bundle: news_post
 label: 'Featured Image'
-description: ''
+description: 'Used in conjunction with the <em>Promotion Options | Include in news carousel</em> checkbox'
 required: false
 translatable: false
 default_value: {  }
@@ -23,6 +23,7 @@ settings:
       image: image
     sort:
       field: _none
+      direction: ASC
     auto_create: true
     auto_create_bundle: ''
 field_type: entity_reference

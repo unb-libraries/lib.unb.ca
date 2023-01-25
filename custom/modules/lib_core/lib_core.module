@@ -109,7 +109,7 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     case 'node_news_post_edit_form':
       $form['#attached']['library'][] = 'lib_unb_ca/admin-styling';
 
-      $form['promote']['widget']['value']['#title'] = t('Include in rotating featured news section');
+      $form['promote']['widget']['value']['#title'] = t('Include Featured Image in front page news carousel');
       break;
 
     case 'video_embed_dialog':
