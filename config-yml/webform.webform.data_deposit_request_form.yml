@@ -126,6 +126,10 @@ elements: |-
       authors:
         '#type': webform_custom_composite
         '#title': Author(s)
+        '#multiple__header': false
+        '#multiple__operations': false
+        '#multiple__add_more_input': false
+        '#multiple__add_more_button_label': 'Add author'
         '#element':
           affiliation:
             '#type': textfield
@@ -155,6 +159,9 @@ elements: |-
         '#type': textfield
         '#title': Keywords
         '#multiple': true
+        '#multiple__operations': false
+        '#multiple__add_more_input': false
+        '#multiple__add_more_button_label': 'Add keyword'
       related_publications:
         '#type': textarea
         '#title': 'Related Publications'
