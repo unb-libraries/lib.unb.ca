@@ -58,6 +58,12 @@ fieldset[data-drupal-states*='required'] legend .form-required:after {
   }
 }
 
+.webform-multiple-add {
+  .btn-primary[type="submit"] {
+    width: fit-content;
+  }
+}
+
 form.theme-dark>.webform-elements>.form-group>fieldset>legend {
   border-bottom: 2px solid #1B2125;
   color: #495057;
