@@ -40,7 +40,7 @@
 
       editor.widgets.add('eresources-widget', {
         template: '<eresources ids="{ids}" keyresources="{keyresources}" noheadings="{noheadings}">{html}</ereources>',
-        allowedContent: 'eresources[ids,keyresources,noheadings]; ul; li',
+        allowedContent: 'eresources[ids,keyresources,noheadings]; p; ul; li',
         requiredContent: 'eresources',
         upcast: function(element, data) {
           if (element.name == 'eresources') {
