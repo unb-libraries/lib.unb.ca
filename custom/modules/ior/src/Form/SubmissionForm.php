@@ -49,7 +49,7 @@ class SubmissionForm extends ContentEntityForm {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form = parent::buildForm($form, $form_state);
 
-    $form['field_terms_conditions_accepted']['widget']['value']['#title'] = $this->t('I certify that I am the copyright owner of the submitted image and have the necessary rights, permissions, and/or licenses to submit the image to the competition according to the full @link_to_contest_rules.', [
+    $form['terms_conditions_accepted']['widget']['value']['#title'] = $this->t('I certify that I am the copyright owner of the submitted image and have the necessary rights, permissions, and/or licenses to submit the image to the competition according to the full @link_to_contest_rules.', [
       '@link_to_contest_rules' => $this->buildContestRulesLink()->toString(),
     ]);
 
