@@ -196,6 +196,7 @@ class EresourcesDialog extends FormBase {
   public function getRecords($showLocal, $selected = NULL) {
     $options = [];
 
+    $category = $this->getRequest()->query->get('category') ?? NULL;
     $storage = $this->entityTypeManager->getStorage('eresources_record');
     $query = $storage->getQuery()
       ->condition('status', 1)
@@ -206,6 +207,26 @@ class EresourcesDialog extends FormBase {
     elseif (!$showLocal) {
       $query->exists('entry_uid');
     }
+
+    // Allow only resources used in published guides from this category.
+    if ($category) {
+      $indexStorage = $this->entityTypeManager->getStorage('eresources_guide_link');
+      $indexQuery = $indexStorage->getQuery()
+        ->condition('guide.entity.status', 1)
+        ->condition('guide.entity.guide_categories', $category);
+      $indexIds = $indexQuery->execute();
+      $indexRecords = $indexStorage->loadMultiple($indexIds);
+
+      if ($indexRecords) {
+        $resourceIds = [];
+        foreach ($indexRecords as $indexRecord) {
+          $resourceIds[] = $indexRecord->get('eresource')->target_id;
+        }
+
+        $query->condition('id', $resourceIds, 'IN');
+      }
+    }
+
     $ids = $query->execute();
     $records = $storage->loadMultiple($ids);
     foreach ($records as $record) {
