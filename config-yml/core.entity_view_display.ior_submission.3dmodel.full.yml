@@ -9,6 +9,7 @@ dependencies:
     - ior.ior_submission_type.3dmodel
   module:
     - field_formatter_class
+    - file
     - layout_builder
     - link
     - text
@@ -55,6 +56,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_model:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 10
     region: content
   field_model_embed:
     type: entity_reference_entity_view
@@ -105,5 +114,4 @@ content:
     region: content
 hidden:
   awards: true
-  field_model: true
   search_api_excerpt: true

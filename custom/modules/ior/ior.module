@@ -99,6 +99,9 @@ function template_preprocess_ior_submission(array &$variables) {
       $variables['submission']['image_url'] = $submission->getImageUrl();
     }
   }
+  elseif ($submission->get('type')->entity->id() == '3dmodel' && !$current_user->hasPermission('download 3dmodel file')) {
+    unset($variables['submission']['field_model']);
+  }
 
   // This should be done in a template?
   $variables['submission']['first_name']['#attributes']['class'][] = 'd-inline';
