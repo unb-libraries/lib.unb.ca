@@ -1,8 +1,8 @@
 <p>Hello {{ ior_submission.firstName }},</p>
 
-<p>Your submission to "Images of Research - {{ ior_submission.contest.title }}" has been accepted.</p>
+<p>Your submission to "Images of Research - {{ ior_submission.getContest.title }}" has been accepted.</p>
 
-<p>All submissions will be reviewed after the contest closes on {{ ior_submission.contest.closeDate|date('Y-m-d') }}.</p>
+<p>All submissions will be reviewed after the contest closes on {{ ior_submission.getContest.closeDate|date('Y-m-d') }}.</p>
 
 <p>For any questions please contact <a href="mailto:sasham@unb.ca">Sasha Mullally</a>.</p>
 

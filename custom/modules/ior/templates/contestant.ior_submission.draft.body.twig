@@ -1,18 +1,18 @@
-<p>Hello {{ ior_submission.firstName }},</p>
+<p>Hello {{ ior_submission.getFirstName }},</p>
 
-<p>We have received your submission to {{ ior_submission.contest.title }} with the following information provided by you:</p>
+<p>We have received your submission to {{ ior_submission.getContest.title }} with the following information provided by you:</p>
 
 <h4>Personal information:</h4>
 <ul>
-    <li>Name: {{ ior_submission.lastName }}, {{ ior_submission.firstName }}</li>
-    <li>Email: {{ ior_submission.email }}</li>
-    <li>Department/Faculty: {{ ior_submission.department }}</li>
+    <li>Name: {{ ior_submission.getLastName }}, {{ ior_submission.getFirstName }}</li>
+    <li>Email: {{ ior_submission.getEmail }}</li>
+    <li>Department/Faculty: {{ ior_submission.getDepartment }}</li>
 </ul>
 
 <h4>Submission information:</h4>
 <ul>
-    <li>Title: {{ ior_submission.title }}</li>
-    <li>Description: {{ ior_submission.description }}</li>
+    <li>Title: {{ ior_submission.getTitle }}</li>
+    <li>Description: {{ ior_submission.getDescription }}</li>
 </ul>
 
 <p>Your submission will shortly be reviewed for compliance with contest requirements. You will receive a separate email when your submission has been accepted.</p>
