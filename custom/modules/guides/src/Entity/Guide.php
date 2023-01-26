@@ -239,7 +239,7 @@ class Guide extends ContentEntityBase implements ContentEntityInterface, UserEdi
       $xpath = new \DOMXPath($document);
 
       foreach ($xpath->query('//eresources') as $node) {
-        $ids = explode(',', $node->nodeValue);
+        $ids = explode(',', $node->getAttribute('ids'));
         foreach ($ids as $id) {
           $linkData = [
             'guide' => $this->id(),
