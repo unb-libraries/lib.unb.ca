@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - guides
+name: 'Guide Category Databases'
+format: guide_category_databases
+weight: 0
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<eresources ids keyresources noheadings> <p> <ul> <li>'
+      filter_html_help: true
+      filter_html_nofollow: false
+  filter_guides_ckeditor_eresources:
+    id: filter_guides_ckeditor_eresources
+    provider: guides
+    status: true
+    weight: 0
+    settings: {  }

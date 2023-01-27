@@ -208,6 +208,11 @@ class EresourcesDialog extends FormBase {
       $query->exists('entry_uid');
     }
 
+    // Filter by type.
+    if ($type = $this->getRequest()->query->get('type')) {
+      $query->condition('kb_data_type', "%{$type}%", 'LIKE');
+    }
+
     // Allow only resources used in published guides from this category.
     if ($category) {
       $indexStorage = $this->entityTypeManager->getStorage('eresources_guide_link');

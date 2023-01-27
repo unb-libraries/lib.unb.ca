@@ -1,8 +1,9 @@
+uuid: 9ca4e177-44a2-408d-8f22-5dc61e18d558
 langcode: en
 status: true
 dependencies:
   config:
-    - filter.format.guide_category
+    - filter.format.guide_category_references
   module:
     - ckeditor
     - editor_file
@@ -13,17 +14,20 @@ third_party_settings:
     directory: inline-files
     extensions: txt
     max_size: ''
-format: guide_category
+format: guide_category_references
 editor: ckeditor
 settings:
   toolbar:
     rows:
       -
         -
-          name: eResources
+          name: e-Resources
           items:
             - eresources
-  plugins: {  }
+  plugins:
+    eresources:
+      target_entity: category
+      resource_type: REF
 image_upload:
   status: false
   scheme: public

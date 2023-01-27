@@ -2,7 +2,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - filter.format.guide_category
+    - filter.format.guide_category_databases
+    - filter.format.guide_category_references
   module:
     - filter
     - guides
@@ -33,5 +34,6 @@ permissions:
   - 'update guide_category entities'
   - 'update own guides profile'
   - 'update own public profile'
-  - 'use text format guide_category'
+  - 'use text format guide_category_databases'
+  - 'use text format guide_category_references'
   - 'view the administration theme'

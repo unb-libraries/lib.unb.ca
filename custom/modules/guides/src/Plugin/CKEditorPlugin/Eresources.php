@@ -3,7 +3,9 @@
 namespace Drupal\guides\Plugin\CKEditorPlugin;
 
 use Drupal\ckeditor\CKEditorPluginBase;
+use Drupal\ckeditor\CKEditorPluginConfigurableInterface;
 use Drupal\ckeditor\CKEditorPluginCssInterface;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\editor\Entity\Editor;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 
@@ -16,7 +18,7 @@ use Drupal\Core\StringTranslation\StringTranslationTrait;
  *   module = "guides"
  * )
  */
-class Eresources extends CKEditorPluginBase implements CKEditorPluginCssInterface {
+class Eresources extends CKEditorPluginBase implements CKEditorPluginConfigurableInterface, CKEditorPluginCssInterface {
 
   use StringTranslationTrait;
 
@@ -57,7 +59,45 @@ class Eresources extends CKEditorPluginBase implements CKEditorPluginCssInterfac
    * {@inheritdoc}
    */
   public function getConfig(Editor $editor) {
-    return [];
+    $settings = $editor->getSettings();
+
+    return [
+      'eresources' => [
+        'target_entity' => $settings['plugins']['eresources']['target_entity'] ?? 'guide',
+        'resource_type' => $settings['plugins']['eresources']['resource_type'] ?? NULL,
+      ],
+    ];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function settingsForm(array $form, FormStateInterface $form_state, Editor $editor) {
+    $settings = $editor->getSettings();
+
+    $form['target_entity'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Target Entity Type'),
+      '#description' => $this->t('Setting this to "Category" will limit resource selection to what has been selected in guides in this category'),
+      '#options' => [
+        'guide' => $this->t('Guide'),
+        'category' => $this->t('Category'),
+      ],
+      '#default_value' => $settings['plugins']['eresources']['target_entity'] ?? 'guide',
+    ];
+
+    $form['resource_type'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Limit e-Resource selection'),
+      '#options' => [
+        '' => 'Any',
+        'REF' => $this->t('References'),
+        'DATA' => $this->t('Databases'),
+      ],
+      '#default_value' => $settings['plugins']['eresources']['resource_type'] ?? NULL,
+    ];
+
+    return $form;
   }
 
   /**

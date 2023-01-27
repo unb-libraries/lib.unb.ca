@@ -1,18 +1,13 @@
+uuid: e4841be4-a007-4fe3-bd9d-63fbd405a37a
 langcode: en
 status: true
 dependencies:
   module:
     - guides
-name: 'Guide Category'
-format: guide_category
+name: 'Guide Category References'
+format: guide_category_references
 weight: 0
 filters:
-  filter_guides_ckeditor_eresources:
-    id: filter_guides_ckeditor_eresources
-    provider: guides
-    status: true
-    weight: 0
-    settings: {  }
   filter_html:
     id: filter_html
     provider: filter
@@ -22,3 +17,9 @@ filters:
       allowed_html: '<eresources ids keyresources noheadings> <p> <ul> <li>'
       filter_html_help: true
       filter_html_nofollow: false
+  filter_guides_ckeditor_eresources:
+    id: filter_guides_ckeditor_eresources
+    provider: guides
+    status: true
+    weight: 0
+    settings: {  }

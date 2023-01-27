@@ -3,7 +3,7 @@
   'use strict';
 
   var dialog = {
-    url: Drupal.url('admin/guides/eresources-dialog'),
+    url: Drupal.url.toAbsolute('/admin/guides/eresources-dialog'),
     save: function(editor, values) {
       var widgetDef = editor.widgets.registered['eresources-widget'];
       var template = widgetDef.template;
@@ -13,11 +13,6 @@
       widget.setData(values);
     }
   };
-
-  const found = window.location.pathname.match(/(guides|category)\/(\d+)/);
-  if (found) {
-    dialog.url += '?' + found[1] + '=' + found[2];
-  }
 
   CKEDITOR.plugins.add('eresources', {
     requires: 'widget',
@@ -34,7 +29,7 @@
 
       editor.addCommand('eresources', {
         exec: function (editor) {
-          Drupal.ckeditor.openDialog(editor, dialog.url, {}, function(v) { dialog.save(editor, v); }, {});
+          Drupal.ckeditor.openDialog(editor, adjustUrl(dialog.url, editor), {}, function(v) { dialog.save(editor, v); }, {});
         }
       });
 
@@ -58,7 +53,7 @@
           this.setData(this.element.getAttributes());
           var widget = this;
           this.on('doubleclick', function(e) {
-            Drupal.ckeditor.openDialog(editor, dialog.url, widget.data, function(values) {
+            Drupal.ckeditor.openDialog(editor, adjustUrl(dialog.url, editor), widget.data, function(values) {
               widget.setData(values);
               widget.element.setAttribute('ids', values.ids);
               widget.element.setAttribute('keyresources', values.keyresources);
@@ -70,4 +65,20 @@
       });
     }
   });
+
+  function adjustUrl(url, editor) {
+    var newUrl = new URL(url);
+    if (editor.config.eresources.target_entity) {
+      const typeRegex = new RegExp('(' + editor.config.eresources.target_entity + ')\/(\\d+)');
+      const found = window.location.pathname.match(typeRegex);
+      if (found) {
+        newUrl.searchParams.set(found[1], found[2]);
+      }
+    }
+    if (editor.config.eresources.resource_type) {
+      newUrl.searchParams.set('type', editor.config.eresources.resource_type);
+    }
+
+    return newUrl.toString();
+  }
 })(jQuery, Drupal, drupalSettings, CKEDITOR);
