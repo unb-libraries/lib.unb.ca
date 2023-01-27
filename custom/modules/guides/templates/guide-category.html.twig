@@ -43,12 +43,15 @@
       <h3>Top Article &amp; Research Databases</h3>
       <p class="topNote">Use article databases to find articles, reviews, book chapters, etc.</p>
       {{ guide_category.databases.value|check_markup(guide_category.databases.format) }}
+      {% set dat_count = guide_category.getDatabaseCount %}
+      <p>(Showing {{ dat_count.current }} of {{ dat_count.total }} resources | <a href="{{ url('guides.category_resources', {'guide_category': guide_category.id(), 'type': 'databases'}) }}">View All Results</a>)</p>
     </div>
     <div class="resourceListings reference border border-dark rounded px-3 pt-3 mb-3">
       <h3>Top Reference Materials</h3>
       <p class="topNote">Find dictionaries, encyclopedias, handbooks, and other materials</p>
       {{ guide_category.references.value|check_markup(guide_category.references.format) }}
-
+      {% set ref_count = guide_category.getReferenceCount %}
+      <p>(Showing {{ ref_count.current }} of {{ ref_count.total }} resources | <a href="{{ url('guides.category_resources', {'guide_category': guide_category.id(), 'type': 'reference'}) }}">View All Results</a>)</p>
     </div>
   </div>
   <div class="col-lg-3">

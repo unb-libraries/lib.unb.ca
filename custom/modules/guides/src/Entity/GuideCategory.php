@@ -11,6 +11,9 @@ use Drupal\custom_entity\Entity\EntityChangedTrait;
 use Drupal\custom_entity\Entity\EntityCreatedTrait;
 use Drupal\custom_entity\Entity\UserCreatedInterface;
 use Drupal\custom_entity\Entity\UserEditedInterface;
+use Drupal\Component\Utility\Html;
+use Drupal\search_api\Entity\Index;
+use Drupal\eresources\LocalResult;
 
 /**
  * Defines a guide_category entity.
@@ -268,6 +271,84 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
     if (!empty($ids)) {
       return $storage->loadMultiple($ids);
     }
+    return [];
+  }
+
+  /**
+   * Get a count (in this category and total) of reference records.
+   */
+  public function getReferenceCount() {
+    $result = [
+      'current' => $this->countEresourcesIdsInHtml($this->get('references')->value),
+      'total' => $this->getEresourcesByType('REF', TRUE),
+    ];
+
+    return $result;
+  }
+
+  /**
+   * Get a count (in this category and total) of database records.
+   */
+  public function getDatabaseCount() {
+    $result = [
+      'current' => $this->countEresourcesIdsInHtml($this->get('databases')->value),
+      'total' => $this->getEresourcesByType('DATA', TRUE),
+    ];
+
+    return $result;
+  }
+
+  /**
+   * Count number of ids in eresources tag.
+   */
+  private function countEresourcesIdsInHtml($html) {
+    $document = Html::load($html);
+    $xpath = new \DOMXPath($document);
+
+    $count = 0;
+    foreach ($xpath->query('//eresources') as $node) {
+      $ids = $node->getAttribute('ids');
+      $count += count(explode(',', $ids));
+    }
+
+    return $count;
+  }
+
+  /**
+   * Fetch the eresources in every guide in this category.
+   */
+  public function getEresourcesByType($type, $count = NULL) {
+    $storage = $this->entityTypeManager()->getStorage('eresources_guide_link');
+    $query = $storage->getQuery()
+      ->condition('eresource.entity.status', 1)
+      ->condition('eresource.entity.kb_data_type', "%{$type}%", 'LIKE')
+      ->condition('guide.entity.status', 1)
+      ->condition('guide.entity.guide_categories', $this->id());
+
+    if ($count) {
+      $total = $query->count()->execute();
+      return $total;
+    }
+
+    $linkIds = $query->execute();
+    $links = $storage->loadMultiple($linkIds);
+    $ids = array_map(function ($i) {
+      return $i->get('eresource')->target_id;
+    }, $links);
+
+    $index = Index::load('eresources');
+    $indexQuery = $index->query();
+    $indexQuery->addCondition('id', $ids, 'IN');
+    $indexQuery->addCondition('status', TRUE);
+    $results = $indexQuery->execute();
+
+    if ($results->getResultCount() != 0) {
+      $resources = array_map(function ($i) {
+        return new LocalResult($i);
+      }, $results->getResultItems());
+      return $resources;
+    }
+
     return [];
   }
 

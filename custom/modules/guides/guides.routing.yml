@@ -18,6 +18,17 @@ guides.categories:
     _title: 'Research Guides'
   requirements:
     _access: 'TRUE'
+guides.category_resources:
+  path: '/guides/category/{guide_category}/resources/{type}'
+  defaults:
+    _controller: '\Drupal\guides\Controller\CategoryController::viewResources'
+    _title_callback: '\Drupal\guides\Controller\CategoryController::pageTitle'
+  requirements:
+    _access: 'TRUE'
+  options:
+    parameters:
+      guide_category:
+        type: entity:guide_category
 guides.eresources_dialog:
   path: '/admin/guides/eresources-dialog'
   defaults:
