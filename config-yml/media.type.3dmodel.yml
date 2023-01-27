@@ -17,6 +17,7 @@ source_configuration:
   thumbnails_directory: 'public://oembed_thumbnails/[date:custom:Y-m]'
   providers:
     - Sketchfab
+    - YouTube
 field_map:
   author_name: name
   provider_url: field_media_oembed_unb_lib
