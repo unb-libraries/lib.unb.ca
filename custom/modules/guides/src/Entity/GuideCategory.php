@@ -336,6 +336,10 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
       return $i->get('eresource')->target_id;
     }, $links);
 
+    if (empty($ids)) {
+      return [];
+    }
+
     $index = Index::load('eresources');
     $indexQuery = $index->query();
     $indexQuery->addCondition('id', $ids, 'IN');
