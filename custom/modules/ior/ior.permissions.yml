@@ -159,3 +159,6 @@ delete archived ior_submission entities:
 
 download full_resolution images:
   title: "Download full-resolution images."
+
+download 3dmodel file:
+  title: "Download raw 3D model files."

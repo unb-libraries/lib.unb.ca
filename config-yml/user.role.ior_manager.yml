@@ -22,6 +22,7 @@ permissions:
   - 'create ior_collection entities'
   - 'delete ior_award entities'
   - 'delete ior_collection entities'
+  - 'download 3dmodel file'
   - 'download full_resolution images'
   - 'list contest entities'
   - 'list ior_award entities'
