@@ -204,13 +204,6 @@ function guides_form_guide_form_alter(&$form, FormStateInterface $form_state, $f
 }
 
 /**
- * Implements hook_ckeditor_css_alter().
- */
-function guides_ckeditor_css_alter(array &$css, Editor $editor) {
-  $css[] = drupal_get_path('module', 'guides') . '/css/ckeditor.css';
-}
-
-/**
  * Implements hook_preprocess_page_title().
  */
 function guides_preprocess_page_title(&$variables) {
