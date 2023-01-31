@@ -4,6 +4,7 @@ namespace Drupal\guides\Entity;
 
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\ContentEntityBase;
@@ -187,6 +188,41 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
       $this->setNewRevision(TRUE);
     }
     return parent::save();
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function postSave(EntityStorageInterface $storage, $update = TRUE) {
+    $aliasRepo = \Drupal::service('path_alias.repository');
+    $thisPath = $this->toUrl()->toString();
+    $thisAlias = $aliasRepo->lookupByAlias($thisPath, NULL);
+    $aliasStorage = $this->entityTypeManager()->getStorage('path_alias');
+
+    $types = ['databases', 'reference'];
+    foreach ($types as $type) {
+      $newAlias = "{$thisAlias['alias']}/resources/{$type}";
+      $listPath = "{$thisAlias['path']}/resources/{$type}";
+
+      $alias = NULL;
+      $query = $aliasStorage->getQuery();
+      $ids = $query->condition('path', $listPath)->execute();
+      if (!empty($ids)) {
+        $id = reset($ids);
+        $alias = $aliasStorage->load($id);
+        $alias->set('alias', $newAlias);
+      }
+      else {
+        $alias = $aliasStorage->create([
+          'path' => $listPath,
+          'alias' => $newAlias,
+          'status' => 1,
+        ]);
+      }
+      $alias->save();
+    }
+
+    return parent::postSave($storage, $update);
   }
 
   /**
