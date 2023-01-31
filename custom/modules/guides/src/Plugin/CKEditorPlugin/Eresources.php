@@ -109,4 +109,13 @@ class Eresources extends CKEditorPluginBase implements CKEditorPluginConfigurabl
     ];
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function getLibraries(Editor $editor) {
+    return [
+      'editor/drupal.editor.dialog',
+    ];
+  }
+
 }
