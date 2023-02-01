@@ -33,7 +33,7 @@ elements: |-
       data_use_agreement:
         '#type': radios
         '#title': 'Licence/Data Use Agreement'
-        '#description': 'See <a href="https://support.dataverse.harvard.edu/sample-data-usage-agreement">Sample Data Usage Agreement</a>'
+        '#description': 'See <a class="external" href="https://support.dataverse.harvard.edu/sample-data-usage-agreement" target="_blank"><span class="sr-only">(opens in new tab)</span>Sample Data Usage Agreement</a>'
         '#options':
           pub: 'Public Domain'
           cus: 'Custom Dataset Terms'
