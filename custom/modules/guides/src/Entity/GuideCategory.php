@@ -136,7 +136,7 @@ class GuideCategory extends ContentEntityBase implements ContentEntityInterface,
       ->setSetting('target_type', 'guide_category')
       ->setSetting('handler', 'default')
       ->setDisplayOptions('form', [
-        'type' => 'entity_autocomplete',
+        'type' => 'entity_reference_autocomplete',
         'weight' => 0,
       ])
       ->setDisplayConfigurable('view', TRUE)
