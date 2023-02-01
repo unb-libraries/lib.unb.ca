@@ -82,7 +82,8 @@ function lib_core_entity_presave(EntityInterface $entity) {
 function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   // Restrict edit-advanced|edit-meta section to guide-related forms, see:
   // https://www.drupal.org/files/issues/2022-02-07/2893740-39.patch.
-  if (isset($form['meta']) && substr($form_id, 0, 6) != "guide_") {
+  $form_id_snippet = substr($form_id, 0, 5);
+  if (isset($form['meta']) && $form_id_snippet != "guide" && $form_id_snippet != "node_") {
     unset($form['meta']);
   };
 
