@@ -11,6 +11,14 @@ guides.legacy_redirect:
     _controller: '\Drupal\guides\Controller\GuidesController::legacyRedirect'
   requirements:
     _access: 'TRUE'
+guides.d2l_redirect:
+  path: '/guides/d2l/{id}'
+  defaults:
+    _controller: '\Drupal\guides\Controller\CourseLinkController::d2lRedirect'
+  requirements:
+    _access: 'TRUE'
+  options:
+    no_cache: 'TRUE'
 guides.categories:
   path: '/guides'
   defaults:
