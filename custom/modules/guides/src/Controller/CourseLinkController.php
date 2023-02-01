@@ -39,7 +39,11 @@ class CourseLinkController extends ControllerBase {
     $toJson = $request->query->has('json') ? TRUE : FALSE;
     $startGuide = $this->config('guides.settings')->get('start_guide');
 
-    $defaultLink = Url::fromRoute('entity.guide.canonical', ['guide' => $startGuide], ['absolute' => TRUE])->toString();
+    $defaultLink = Url::fromRoute('guides.categories', [], ['absolute' => TRUE])->toString();
+    if ($startGuide) {
+      $defaultLink = Url::fromRoute('entity.guide.canonical', ['guide' => $startGuide], ['absolute' => TRUE])->toString();
+    }
+
     $info = [
       'type' => 'Research Guide',
       'title' => 'Getting Started',
