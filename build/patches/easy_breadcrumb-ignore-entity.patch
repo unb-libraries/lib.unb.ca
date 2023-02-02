@@ -1,0 +1,13 @@
+diff --git a/src/EasyBreadcrumbBuilder.php b/src/EasyBreadcrumbBuilder.php
+index 2fe41c0..fcef0fb 100644
+--- a/src/EasyBreadcrumbBuilder.php
++++ b/src/EasyBreadcrumbBuilder.php
+@@ -516,7 +516,7 @@ class EasyBreadcrumbBuilder implements BreadcrumbBuilderInterface {
+             $title = FALSE;
+             if (($route = $route_match->getRouteObject()) && ($parameters = $route->getOption('parameters'))) {
+               foreach ($parameters as $name => $options) {
+-                if (isset($options['type']) && strpos($options['type'], 'entity:') === 0) {
++                if (0 && isset($options['type']) && strpos($options['type'], 'entity:') === 0) {
+                   $entity = $route_match->getParameter($name);
+                   if ($entity instanceof EntityInterface && $entity->hasLinkTemplate('canonical')) {
+                     $title = $this->normalizeText($this->getTitleString($route_request, $route_match, $replacedTitles));
