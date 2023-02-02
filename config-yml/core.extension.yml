@@ -113,6 +113,7 @@ module:
   portolan: 0
   portolan_sync: 0
   profile: 0
+  protected_file: 0
   public_profile: 0
   public_trouble_tickets: 0
   quickedit: 0
