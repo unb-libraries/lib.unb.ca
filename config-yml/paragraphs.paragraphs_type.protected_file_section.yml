@@ -1,0 +1,10 @@
+uuid: 4db91881-3116-4d84-88c0-dce08441bce5
+langcode: en
+status: true
+dependencies: {  }
+id: protected_file_section
+label: 'Protected File Section'
+icon_uuid: null
+icon_default: null
+description: 'Used for section of files that may be optionally restricted for open/download by <em>authenticated</em> users only.'
+behavior_plugins: {  }

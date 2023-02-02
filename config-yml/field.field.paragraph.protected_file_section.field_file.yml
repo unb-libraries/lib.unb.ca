@@ -1,0 +1,27 @@
+uuid: 5776df3d-4b4a-4c9b-b122-2b55b655327f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_file
+    - paragraphs.paragraphs_type.protected_file_section
+  module:
+    - protected_file
+id: paragraph.protected_file_section.field_file
+field_name: field_file
+entity_type: paragraph
+bundle: protected_file_section
+label: 'PDF File'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: true
+field_type: protected_file

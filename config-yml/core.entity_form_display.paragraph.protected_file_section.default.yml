@@ -1,0 +1,34 @@
+uuid: f3ea623b-040b-438f-a92a-4d9dae796347
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.protected_file_section.field_file
+    - field.field.paragraph.protected_file_section.field_section_content
+    - paragraphs.paragraphs_type.protected_file_section
+  module:
+    - protected_file
+    - text
+id: paragraph.protected_file_section.default
+targetEntityType: paragraph
+bundle: protected_file_section
+mode: default
+content:
+  field_file:
+    type: protected_file_widget
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  field_section_content:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

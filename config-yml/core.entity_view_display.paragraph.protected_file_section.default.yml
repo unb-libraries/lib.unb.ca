@@ -1,0 +1,40 @@
+uuid: a20f86d3-02a3-464a-8958-433d2dd07e56
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.protected_file_section.field_file
+    - field.field.paragraph.protected_file_section.field_section_content
+    - paragraphs.paragraphs_type.protected_file_section
+  module:
+    - field_formatter_class
+    - protected_file
+    - text
+id: paragraph.protected_file_section.default
+targetEntityType: paragraph
+bundle: protected_file_section
+mode: default
+content:
+  field_file:
+    type: protected_file_formatter
+    label: hidden
+    settings:
+      protected_file_new_window: false
+      protected_file_path: /user/login
+      redirect_to_file: false
+      protected_file_modal: false
+      protected_file_message: 'You need to be logged in to be able to download this file'
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 1
+    region: content
+  field_section_content:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,26 @@
+uuid: d7784991-a583-4e1c-b66d-36cda6faf39f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_content
+    - paragraphs.paragraphs_type.protected_file_section
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - no_media_html
+id: paragraph.protected_file_section.field_section_content
+field_name: field_section_content
+entity_type: paragraph
+bundle: protected_file_section
+label: 'Body Text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
