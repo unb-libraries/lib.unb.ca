@@ -249,14 +249,14 @@
       "package": {
         "dist": {
           "type": "zip",
-          "url": "https://github.com/w8tcha/CKEditor-CodeMirror-Plugin/archive/v1.17.12.zip"
+          "url": "https://github.com/w8tcha/CKEditor-CodeMirror-Plugin/archive/refs/tags/v1.18.6.zip"
         },
         "extra": {
           "installer-name": "ckeditor_codemirror"
         },
         "name": "w8tcha/ckeditor-codemirror-plugin",
         "type": "drupal-library",
-        "version": "1.17.12"
+        "version": "1.18.6"
       },
       "type": "package"
     },
@@ -373,7 +373,7 @@
     "unb-libraries/saml_features": "dev-9.x-1.x",
     "unb-libraries/task-ui": "dev-8.x-1.x",
     "unb-libraries/unb_lib_theme": "dev-9.x-4.x",
-    "w8tcha/ckeditor-codemirror-plugin": "^1.17.12",
+    "w8tcha/ckeditor-codemirror-plugin": "~1.18.1",
     "w8tcha/ckeditor-wordcount-plugin": "1.17.8",
     "wikimedia/composer-merge-plugin": "2.0.1"
   },
