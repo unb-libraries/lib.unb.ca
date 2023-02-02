@@ -158,9 +158,25 @@ elements: |-
           other_id:
             '#type': textfield
             '#title': Other
-      subject:
-        '#type': textfield
-        '#title': Subject
+      subjects:
+        '#type': webform_select_other
+        '#title': Subjects
+        '#multiple': true
+        '#options':
+          agricultural_sciences: 'Agricultural Sciences'
+          arts_humanities: 'Arts and Humanities'
+          astronomy_astrophysics: 'Astronomy and Astrophysics'
+          business_management: 'Business and Management'
+          chemistry: Chemistry
+          computer_information_science: 'Computer and Information Science'
+          earth_environmental_sciences: 'Earth and Environmental Sciences'
+          engineering: Engineering
+          law: Law
+          mathematical_sciences: 'Mathematical Sciences'
+          medicine_health_life_sciences: 'Medicine, Health and Life Sciences'
+          physics: Physics
+          social_sciences: 'Social Sciences'
+        '#chosen': true
         '#required': true
       keywords:
         '#type': textfield
