@@ -14,15 +14,31 @@ third_party_settings:
     group_contact_list:
       children:
         - contacts
-        - path
       label: 'Contact List'
+      region: content
+      parent_name: ''
+      weight: 4
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        open: true
+        description: ''
+        required_fields: true
+        weight: 0
+    group_related_categories:
+      children:
+        - related_guide_categories
+        - path
+      label: 'Related Categories'
       region: content
       parent_name: ''
       weight: 5
       format_type: details_sidebar
       format_settings:
         classes: ''
-        show_empty_fields: true
+        show_empty_fields: false
         id: ''
         open: true
         description: ''
@@ -54,7 +70,7 @@ content:
     rows: 6
   path:
     type: path
-    weight: 5
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
