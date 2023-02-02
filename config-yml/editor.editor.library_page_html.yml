@@ -66,13 +66,13 @@ settings:
             - '-'
             - Maximize
             - Source
-            - assets
             - '-'
         -
           name: e-Resources
           items:
             - Wc-search
             - eresources
+            - assets
   plugins:
     drupallink:
       linkit_enabled: true
@@ -94,8 +94,24 @@ settings:
         autoFormatOnStart: true
         autoFormatOnModeChange: true
         autoFormatOnUncomment: true
+    wordcount:
+      enable: true
+      show_remaining: false
+      show_paragraphs: true
+      show_word_count: true
+      show_char_count: true
+      count_bytes: false
+      count_spaces: false
+      count_html: 0
+      count_line_breaks: false
+      max_words: -1
+      max_chars: -1
+      hard_limit: 1
     colorbutton:
       colors: ''
+    eresources:
+      target_entity: guide
+      resource_type: ''
     video_embed:
       defaults:
         children:
