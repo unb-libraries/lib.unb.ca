@@ -185,7 +185,7 @@ elements: |-
         '#title_display': none
         '#multiple__header_label': Keywords
         '#multiple__sorting': false
-        '#multiple__operations': false
+        '#multiple__add': false
         '#multiple__add_more_input': false
         '#multiple__add_more_button_label': 'Add keyword'
         '#wrapper_attributes':
