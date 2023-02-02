@@ -6,7 +6,6 @@ use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
-use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\custom_entity\Entity\EntityChangedTrait;
 use Drupal\custom_entity\Entity\EntityCreatedTrait;
@@ -15,6 +14,7 @@ use Drupal\custom_entity\Entity\UserEditedInterface;
 use Drupal\Component\Utility\Html;
 use Drupal\search_api\Entity\Index;
 use Drupal\eresources\LocalResult;
+use Drupal\guides\Entity\GuideCategoryInterface;
 
 /**
  * Defines a guide_category entity.
@@ -58,7 +58,7 @@ use Drupal\eresources\LocalResult;
  *   field_ui_base_route = "entity.guide_category.settings",
  * )
  */
-class GuideCategory extends ContentEntityBase implements ContentEntityInterface, UserEditedInterface, UserCreatedInterface {
+class GuideCategory extends ContentEntityBase implements GuideCategoryInterface, UserEditedInterface, UserCreatedInterface {
 
   use EntityChangedTrait;
   use EntityCreatedTrait;

@@ -3,7 +3,7 @@
 namespace Drupal\guides\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\Core\Entity\EntityInterface;
+use Drupal\guides\Entity\GuideCategoryInterface;
 
 /**
  * Category controller object.
@@ -13,7 +13,7 @@ class CategoryController extends ControllerBase {
   /**
    * Page title for resources in category by type.
    */
-  public function pageTitle(EntityInterface $guide_category, $type) {
+  public function pageTitle(GuideCategoryInterface $guide_category, $type) {
     $name = $guide_category->label();
 
     if ($type == 'databases') {
@@ -27,7 +27,7 @@ class CategoryController extends ControllerBase {
   /**
    * List resources for the category by type.
    */
-  public function viewResources(EntityInterface $guide_category, $type) {
+  public function viewResources(GuideCategoryInterface $guide_category, $type) {
     $build = [];
 
     if ($type == 'databases') {
