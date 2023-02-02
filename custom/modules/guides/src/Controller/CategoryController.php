@@ -33,6 +33,8 @@ class CategoryController extends ControllerBase {
     if ($type == 'databases') {
       $build['#markup'] = '<p>Use article databases to find articles, reviews, book chapters, etc.</p>';
       $build['eresources'] = [
+        '#prefix' => '<div class="mb-5">',
+        '#suffix' => '</div>',
         '#theme' => 'ckeditor-eresources',
         '#resources' => $guide_category->getEresourcesByType('DATA'),
         '#options' => ['keyresources' => 99999],
@@ -41,6 +43,8 @@ class CategoryController extends ControllerBase {
     else {
       $build['#markup'] = '<p>Find dictionaries, encyclopedias, handbooks, and other reference materials</p>';
       $build['eresources'] = [
+        '#prefix' => '<div class="mb-5">',
+        '#suffix' => '</div>',
         '#theme' => 'ckeditor-eresources',
         '#resources' => $guide_category->getEresourcesByType('REF'),
         '#options' => ['keyresources' => 99999],
