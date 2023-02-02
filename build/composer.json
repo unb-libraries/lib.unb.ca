@@ -264,11 +264,11 @@
       "package": {
         "dist": {
           "type": "zip",
-          "url": "https://github.com/w8tcha/CKEditor-WordCount-Plugin/releases/download/v1.17.8/CKEditor-WordCount-Plugin.zip"
+          "url": "https://github.com/w8tcha/CKEditor-WordCount-Plugin/archive/refs/tags/v1.17.10.zip"
         },
         "name": "w8tcha/ckeditor-wordcount-plugin",
         "type": "drupal-library",
-        "version": "1.17.8"
+        "version": "1.17.10"
       },
       "type": "package"
     }
@@ -374,7 +374,7 @@
     "unb-libraries/task-ui": "dev-8.x-1.x",
     "unb-libraries/unb_lib_theme": "dev-9.x-4.x",
     "w8tcha/ckeditor-codemirror-plugin": "~1.18.1",
-    "w8tcha/ckeditor-wordcount-plugin": "1.17.8",
+    "w8tcha/ckeditor-wordcount-plugin": "~1.17.8",
     "wikimedia/composer-merge-plugin": "2.0.1"
   },
   "require-dev": {
