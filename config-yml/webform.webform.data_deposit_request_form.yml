@@ -126,10 +126,17 @@ elements: |-
       authors:
         '#type': webform_custom_composite
         '#title': Author(s)
+        '#title_display': none
         '#multiple__header': false
-        '#multiple__operations': false
+        '#multiple__header_label': Author(s)
+        '#multiple__min_items': 1
+        '#multiple__sorting': false
+        '#multiple__add': false
         '#multiple__add_more_input': false
         '#multiple__add_more_button_label': 'Add author'
+        '#wrapper_attributes':
+          class:
+            - form-group
         '#element':
           affiliation:
             '#type': textfield
@@ -159,9 +166,15 @@ elements: |-
         '#type': textfield
         '#title': Keywords
         '#multiple': true
+        '#title_display': none
+        '#multiple__header_label': Keywords
+        '#multiple__sorting': false
         '#multiple__operations': false
         '#multiple__add_more_input': false
         '#multiple__add_more_button_label': 'Add keyword'
+        '#wrapper_attributes':
+          class:
+            - form-group
       related_publications:
         '#type': textarea
         '#title': 'Related Publications'
