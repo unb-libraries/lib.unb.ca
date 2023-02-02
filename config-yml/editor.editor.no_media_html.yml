@@ -23,6 +23,7 @@ settings:
         -
           name: Formatting
           items:
+            - Format
             - Bold
             - Italic
             - Underline

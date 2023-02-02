@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.no_media_html
     - media.type.file
     - media.type.image
     - node.type.library_page
@@ -10,6 +11,7 @@ dependencies:
   module:
     - content_moderation
     - entity_browser
+    - filter
     - media
     - node
     - override_node_options
@@ -40,6 +42,7 @@ permissions:
   - 'use default_page_workflow transition private_revision'
   - 'use default_page_workflow transition publish'
   - 'use default_page_workflow transition unpublish'
+  - 'use text format no_media_html'
   - 'view any unpublished content'
   - 'view latest version'
   - 'view library_page revisions'

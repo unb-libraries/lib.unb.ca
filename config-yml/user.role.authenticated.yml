@@ -11,10 +11,13 @@ dependencies:
     - google_analytics
     - guides
     - honeypot
+    - ior
     - ior_awards
     - media
     - portolan
     - profile
+    - protected_file
+    - records_management
     - search_api_autocomplete
     - system
 _core:
@@ -27,6 +30,7 @@ permissions:
   - 'access content'
   - 'bypass honeypot protection'
   - 'create ior_submission entities'
+  - 'download protected file'
   - 'list classification entities'
   - 'list contest entities'
   - 'list published ior_submission entities'
