@@ -26,7 +26,7 @@ class InformationAbout extends BlockBase {
         <li><a href="/gddm/govdocs">Government Documents</a></li>
         <li><a href="/about/policies">Library Policies</a></li>
         <li><a href="/gddm/maps">Maps &amp; GIS</a></li>
-        <li><a href="https://guides.lib.unb.ca/guide/284">Open Access</a></li>
+        <li><a href="/openaccess">Open Access</a></li>
         <li><a href="/rdm">Research Data Management</a></li>
         <li><a href="/services/writing-help">Writing & Citation Help</a></li>
         <li><a href="https://guides.lib.unb.ca/guide/206">Zotero</a></li>
