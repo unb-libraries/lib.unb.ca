@@ -108,6 +108,21 @@ form.theme-dark>.webform-elements>.form-group>fieldset>legend {
   }
 }
 
+/* Dataverse Data Deposit Request Style/Alignment Overrides */
+.webform-submission-data-deposit-request-form-form {
+  .thead-dark th {
+    background-color: $light;
+    border-color: $light;
+    color: $dark;
+    padding-left: 0;
+  }
+
+  #edit-container-pi .fieldset-wrapper,
+  td {
+    padding-left: 1rem;
+  }
+}
+
 /* Webform 5.x Progress Tracker
 .webform-progress-tracker {
   &.progress-tracker {
