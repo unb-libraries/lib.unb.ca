@@ -49,7 +49,7 @@ elements: |-
           class:
             - alert
             - alert-info
-        '#markup': '<p style="margin-left:48px"><span style="line-height:100%">This dataset will be published under the CC0 licence. The <u><a href="https://dataverse.org/best-practices/dataverse-community-norms">Dataverse Community Norms</a></u>, as well as good data management practices, expect that proper credit is given via citation.</span></p>'
+        '#markup': '<p style="margin-left:48px"><span style="line-height:100%">This dataset will be published under the CC0 licence. The <u><a class="external" href="https://dataverse.org/best-practices/dataverse-community-norms"><span class="sr-only">(opens in new tab)</span>Dataverse Community Norms</a></u>, as well as good data management practices, expect that proper credit is given via citation.</span></p>'
       custom_dataset_terms:
         '#type': checkboxes
         '#title': 'Custom Dataset Terms'
