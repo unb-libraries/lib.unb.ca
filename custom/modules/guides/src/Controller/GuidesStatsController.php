@@ -138,7 +138,7 @@ class GuidesStatsController extends ControllerBase {
   public function getStatsFor($path, $dates, $reportDimensions) {
     $analytics = $this->gapiAnalyticsReportingClient;
 
-    $view_id = "158778041";
+    $view_id = $this->config('guides.settings')->get('analytics_view_id');
 
     $dateRange = new \Google_Service_AnalyticsReporting_DateRange();
     $dateRange->setStartDate($dates[0]);

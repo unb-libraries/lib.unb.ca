@@ -85,6 +85,12 @@ class GuidesSettingsForm extends ConfigFormBase {
       '#default_value' => $help,
     ];
 
+    $form['analytics_view_id'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Google Analytics View ID'),
+      '#default_value' => $config->get('analytics_view_id'),
+    ];
+
     return parent::buildForm($form, $form_state);
   }
 
@@ -95,6 +101,7 @@ class GuidesSettingsForm extends ConfigFormBase {
     $this->config('guides.settings')
       ->set('start_guide', $form_state->getValue('getting_started_guide'))
       ->set('help_guide', $form_state->getValue('help_guide'))
+      ->set('analytics_view_id', $form_state->getValue('analytics_view_id'))
       ->save();
 
     \Drupal::cache('menu')->invalidateAll();
