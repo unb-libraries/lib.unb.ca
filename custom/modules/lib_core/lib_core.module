@@ -378,7 +378,7 @@ function _lib_core_contactable_department($mailbox) {
     'library' => 'UNB Libraries Administration',
     'libweb' => 'Website Administrator',
     'maproom' => 'Map Room',
-    'mic' => 'Microforms/Microfilming Services',
+    'mic' => 'Microforms Collection',
     'rdm.services' => 'Research Data Management Services',
     'refsj' => 'Saint John Reference',
     'reserves' => 'Course Reserves',
