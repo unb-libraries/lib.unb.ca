@@ -187,13 +187,9 @@ class GuideCategory extends ContentEntityBase implements GuideCategoryInterface,
     if (!$this->isNew()) {
       $this->setNewRevision(TRUE);
     }
-    return parent::save();
-  }
 
-  /**
-   * {@inheritDoc}
-   */
-  public function postSave(EntityStorageInterface $storage, $update = TRUE) {
+    $result = parent::save();
+
     $aliasRepo = \Drupal::service('path_alias.repository');
     $thisPath = $this->toUrl()->toString();
     $thisAlias = $aliasRepo->lookupByAlias($thisPath, NULL);
@@ -222,7 +218,7 @@ class GuideCategory extends ContentEntityBase implements GuideCategoryInterface,
       $alias->save();
     }
 
-    return parent::postSave($storage, $update);
+    return $result;
   }
 
   /**
