@@ -580,7 +580,7 @@ display:
                 advanced:
                   sort_options: false
                   rewrite:
-                    filter_rewrite_values: ''
+                    filter_rewrite_values: "Yes|Yes\r\nNo|\r\n- Any -|All Categories"
                   collapsible: false
                   is_secondary: false
       access:
@@ -738,7 +738,7 @@ display:
             operator_limit_selection: false
             operator_list: {  }
             identifier: uid_current
-            required: true
+            required: false
             remember: false
             multiple: false
             remember_roles:
