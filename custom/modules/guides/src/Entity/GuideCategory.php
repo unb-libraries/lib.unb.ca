@@ -222,6 +222,26 @@ class GuideCategory extends ContentEntityBase implements GuideCategoryInterface,
   }
 
   /**
+   * {@inheritDoc}
+   */
+  public function delete() {
+    $aliasRepo = \Drupal::service('path_alias.repository');
+    $thisPath = $this->toUrl()->toString();
+    $aliasStorage = $this->entityTypeManager()->getStorage('path_alias');
+
+    $types = ['databases', 'reference'];
+    foreach ($types as $type) {
+      $alias = "{$thisPath}/resources/{$type}";
+      $aliasInfo = $aliasRepo->lookupByAlias($alias, NULL);
+
+      $entity = $aliasStorage->load($aliasInfo['id']);
+      $entity->delete();
+    }
+
+    return parent::delete();
+  }
+
+  /**
    * Get list of subject guides that have marked this entity as their category.
    */
   public function getDetailedGuides() {
