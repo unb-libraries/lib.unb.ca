@@ -143,7 +143,7 @@ class GuideCategory extends ContentEntityBase implements GuideCategoryInterface,
       ->setDisplayConfigurable('form', TRUE);
 
     $fields['contacts'] = BaseFieldDefinition::create('entity_reference')
-      ->setLabel(t('Contacts'))
+      ->setLabel(t('Editors'))
       ->setRequired(FALSE)
       ->setRevisionable(TRUE)
       ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
@@ -161,6 +161,22 @@ class GuideCategory extends ContentEntityBase implements GuideCategoryInterface,
         'weight' => 0,
       ])
       ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['other_contacts'] = BaseFieldDefinition::create('list_string')
+      ->setLabel(t('Add generic contacts to the More Information sidebar'))
+      ->setRevisionable(TRUE)
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+      ->setRequired(FALSE)
+      ->setSettings([
+        'allowed_values' => [
+          'askus' => 'Ask Us',
+          'archives' => 'Archives & Special Collections',
+        ],
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_buttons',
+      ])
       ->setDisplayConfigurable('form', TRUE);
 
     $fields['status'] = BaseFieldDefinition::create('boolean')

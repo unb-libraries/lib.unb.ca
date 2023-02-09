@@ -74,6 +74,20 @@
                     <hr class="border-secondary w-75">
                   {% endif %}
                 {% endfor %}
+                {% set contacts = guide.other_contacts %}
+                {% if editors is empty and contacts is empty %}
+                  {% include '@guides/includes/other-contact-askus.html.twig' %}
+                {% else %}
+                  {% if editors is not empty and contacts is not empty %}
+                    <hr class="border-secondary w-75">
+                  {% endif %}
+                  {% for contact in contacts %}
+                    {% include '@guides/includes/other-contact-' ~ contact.getString ~ '.html.twig' %}
+                    {% if not loop.last %}
+                      <hr class="border-secondary w-75">
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
                 {% set feeds = guide.getFeeds %}
                 {% if feeds is not empty %}
                 <hr class="border-secondary w-75">

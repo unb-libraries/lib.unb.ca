@@ -165,7 +165,7 @@ function template_preprocess_guide_category(array &$variables) {
 function guides_preprocess_field_multiple_value_form(&$variables) {
   $values = [
     'related_guide_categories_add_more' => 'Add Another Category',
-    'contacts_add_more' => 'Add Another Contact',
+    'contacts_add_more' => 'Add Category Editor',
   ];
 
   if (isset($variables['element']['add_more']['#name'])) {
