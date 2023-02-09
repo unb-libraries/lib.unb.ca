@@ -164,6 +164,7 @@ module:
   paragraphs: 11
   saml_features: 12
   tvi: 15
+  linked_field: 100
   minimal: 1000
 theme:
   stable: 0
