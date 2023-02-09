@@ -33,7 +33,7 @@ use Drupal\guides\Entity\GuideCategoryInterface;
  *     "storage" = "Drupal\guides\Entity\Storage\GuideCategoryStorage",
  *     "access" = "Drupal\guides\Entity\Access\GuideCategoryAccessControlHandler",
  *     "form" = {
- *       "default" = "Drupal\Core\Entity\ContentEntityForm",
+ *       "default" = "Drupal\guides\Form\GuideCategoryForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
  *     },
  *   },
