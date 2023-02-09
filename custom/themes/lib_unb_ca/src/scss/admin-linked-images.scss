@@ -1,0 +1,19 @@
+.paragraph-type-top {
+  margin-right:8.5rem;
+}
+.media-image-edit-link {
+  border-bottom: 1px solid #dbdbdb;
+  display: block;
+  padding: .5rem;
+  text-align: center;
+  text-decoration: none;
+
+  &:focus,
+  &:hover {
+    background: #f9f9f9;
+    text-decoration: underline;
+  }
+}
+.media-library-item__attributes {
+  left: 1px;
+}

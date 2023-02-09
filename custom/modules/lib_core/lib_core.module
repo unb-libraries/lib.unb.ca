@@ -113,6 +113,10 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
       $form['promote']['widget']['value']['#title'] = t('Include Featured Image in front page news carousel');
       break;
 
+    case 'node_images_page_edit_form':
+      $form['#attached']['library'][] = 'lib_unb_ca/admin-linked-images';
+      break;
+
     case 'video_embed_dialog':
       // Disable ability to enable Autoplay setting.
       $form['settings']['autoplay']['#access'] = FALSE;
