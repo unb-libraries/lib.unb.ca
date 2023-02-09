@@ -104,6 +104,7 @@ elements: |-
         name_family_name_given_name_:
           '#type': textfield
           '#title': 'Name (family name, given name)'
+          '#required': true
         department:
           '#type': textfield
           '#title': 'Department (Faculty or other division)'
