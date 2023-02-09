@@ -7,6 +7,7 @@ dependencies:
     - field.field.paragraph.linked_image.field_url
     - paragraphs.paragraphs_type.linked_image
   module:
+    - field_formatter_class
     - link
 id: paragraph.linked_image.default
 targetEntityType: paragraph
@@ -17,9 +18,11 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
+      view_mode: media_image
       link: false
-    third_party_settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: ''
     weight: 1
     region: content
   field_url:
