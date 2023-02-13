@@ -101,9 +101,13 @@ elements: |-
       container_pi:
         '#type': fieldset
         '#title': 'Principal Investigator (must be from UNB)'
-        name_family_name_given_name_:
+        family_name:
           '#type': textfield
-          '#title': 'Name (family name, given name)'
+          '#title': 'Family name'
+          '#required': true
+        given_name:
+          '#type': textfield
+          '#title': 'Given name'
           '#required': true
         department:
           '#type': textfield
@@ -142,10 +146,14 @@ elements: |-
           class:
             - form-group
         '#element':
-          name:
+          family_name:
             '#type': textfield
             '#required': true
-            '#title': 'Name (family name, given name)'
+            '#title': 'Family name'
+          given_name:
+            '#type': textfield
+            '#required': true
+            '#title': 'Given name'
           affiliation:
             '#type': textfield
             '#required': true
