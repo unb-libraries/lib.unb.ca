@@ -31,7 +31,10 @@
             // Show tab if hash exists, first tab otherwise.
             window.addEventListener('popstate', function(e) {
                 if (!location.hash) {
-                    $('#guide nav .navbar-nav button:first').click();
+                    $('#guide nav .navbar-nav button').attr({'aria-expanded': 'false', 'aria-disabled': 'false'});
+                    $('#guide nav .navbar-nav button:first').attr({'aria-expanded': 'true', 'aria-disabled': 'true'}).focus();
+                    $('#guide .Accordion-panel').attr('hidden', 'hidden');
+                    $('#guide .Accordion-panel:first').removeAttr('hidden');
                 }
                 else {
                     showTab(location.hash);
