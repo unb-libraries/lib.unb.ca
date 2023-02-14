@@ -6,6 +6,7 @@ use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\HtmlCommand;
+use Drupal\Core\Ajax\InvokeCommand;
 
 /**
  * Provides route responses for the public_trouble_tickets module.
@@ -124,6 +125,7 @@ class TicketController extends ControllerBase {
 
     $response = new AjaxResponse();
     $response->addCommand(new HtmlCommand('#ticket-list', $content));
+    $response->addCommand(new InvokeCommand('#ticket-list table.dataTable', 'DataTable'));
 
     return $response;
   }
