@@ -16,6 +16,8 @@ use Drupal\lib_unb_custom_entity\Entity\ContentEntityBase;
  *   label_plural = @Translation("eResources Harvested Collections"),
  *   label_collection = @Translation("eResources Harvested Collections"),
  *   handlers = {
+ *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
+ *     "views_data" = "Drupal\views\EntityViewsData",
  *     "form" = {
  *       "default" = "Drupal\lib_unb_custom_entity\Form\ContentEntityForm",
  *       "delete" = "Drupal\lib_unb_custom_entity\Form\ContentEntityConfirmForm",
