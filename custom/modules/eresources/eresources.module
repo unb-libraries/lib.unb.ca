@@ -2,6 +2,7 @@
 
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * @file
@@ -129,4 +130,32 @@ function eresources_theme($existing, $type, $theme, $path) {
  */
 function template_preprocess_eresources_record(array &$variables) {
   $variables['eresources_record'] = $variables['elements']['#eresources_record'];
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function eresources_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (!preg_match('/^views-exposed-form-eresources-records-(records|new|stale)$/', $form['#id'])) {
+    return FALSE;
+  }
+
+  $storage = Drupal::getContainer()->get('entity_type.manager')->getStorage('eresources_harvested_collection');
+  $query = $storage->getQuery();
+
+  $ids = $query->sort('name')->execute();
+
+  $options = [];
+  $collections = $storage->loadMultiple($ids);
+
+  foreach ($collections as $collection) {
+    $options[$collection->id()] = $collection->label();
+  }
+
+  $form['collection_id'] = [
+    '#type' => 'select',
+    '#multiple' => FALSE,
+    '#empty_option' => t('- Any -'),
+    '#options' => $options,
+  ];
 }

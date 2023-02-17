@@ -9,6 +9,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\lib_unb_custom_entity\Entity\EntityListBuilder;
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Datetime\DateFormatterInterface;
+use Drupal\Core\Link;
 
 /**
  * Defines a class to build a listing of harvested collection entities.
@@ -72,10 +73,12 @@ class HarvestedCollectionListBuilder extends EntityListBuilder {
       $last_sync = $this->dateFormatter->format($last_sync_value->getTimestamp(), 'custom', 'Y-m-d H:i:s');
     }
 
+    $link = Link::createFromRoute($entity->label(), 'view.eresources_records.records', ['collection_id' => $entity->id()]);
+
     return [
       'id' => $entity->id(),
       'oclc_id' => $entity->get('oclc_id')->value,
-      'name' => $entity->toLink(),
+      'name' => $link,
       'default_tab' => HarvestedCollection::$tabs[$entity->get('default_tab')->value],
       'last_sync' => $last_sync,
       'records' => $this->getStorage()->getRecordCount($entity),
