@@ -1,0 +1,22 @@
+uuid: 4958cfe5-86c6-47e6-9f24-00c9a706a380
+langcode: en
+status: true
+dependencies:
+  module:
+    - profile
+id: public_profile
+label: 'Public Profile'
+type: 'canonical_entities:profile'
+pattern: '/profile/[profile:field_url_fragment]'
+selection_criteria:
+  c71bcce8-3f02-4ab3-b797-fc187fd665b3:
+    id: 'entity_bundle:profile'
+    negate: false
+    uuid: c71bcce8-3f02-4ab3-b797-fc187fd665b3
+    context_mapping:
+      profile: profile
+    bundles:
+      public: public
+selection_logic: and
+weight: -5
+relationships: {  }

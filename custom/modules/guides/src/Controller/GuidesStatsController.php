@@ -7,6 +7,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\user\UserInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Google\Service\AnalyticsReporting;
+use Drupal\profile\Entity\ProfileInterface;
 
 /**
  * Provides route responses for guides stats.
@@ -75,6 +76,14 @@ class GuidesStatsController extends ControllerBase {
     $render['#title'] = 'Statistics for ' . $guide_category->label();
 
     return $render;
+  }
+
+  /**
+   * Redirect to user stats from profile entity.
+   */
+  public function redirectFromProfile(ProfileInterface $profile) {
+    $user = $profile->uid->entity;
+    return $this->redirect('guides.user_stats', ['user' => $user->id()]);
   }
 
   /**

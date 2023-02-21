@@ -15,14 +15,33 @@ use Drupal\Core\Url;
  */
 function public_profile_theme($existing, $type, $theme, $path) {
   return [
-    'public_profile' => [
-      'variables' => [
-        'profile' => NULL,
-        'account' => NULL,
-        'guides' => NULL,
-      ],
+    'profile__public' => [
+      'template' => 'profile--public',
+      'path' => drupal_get_path('module', 'public_profile') . '/templates',
+      'base hook' => 'profile__public',
     ],
   ];
+}
+
+/**
+ * Implements hook_preprocess_hook().
+ */
+function public_profile_preprocess_profile__public(&$variables) {
+  $account = $variables['profile']->uid->entity;
+  $variables['account'] = $account;
+
+  $storage = \Drupal::entityTypeManager()->getStorage('guide');
+  $query = $storage->getQuery();
+  $ids = $query
+    ->condition('status', 1)
+    ->condition('unlisted', 0)
+    ->condition('editors.entity:paragraph.field_user.target_id', $account->id(), 'IN')
+    ->condition('editors.entity:paragraph.field_display_editor', 1)
+    ->sort('title', 'ASC')
+    ->execute();
+  $guides = $storage->loadMultiple($ids);
+
+  $variables['guides'] = $guides;
 }
 
 /**
@@ -45,29 +64,17 @@ function public_profile_profile_presave(EntityInterface $entity) {
  */
 function public_profile_form_profile_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $entity = $form_state->getFormObject()->getEntity();
-  $user = $entity->uid->entity;
-
-  if ($urlFragment = $entity->get('field_url_fragment')->value) {
-    $form['profile_link_button'] = [
-      '#type' => 'operations',
-      '#links' => [
-        'view' => [
-          'title' => 'View your profile',
-          'url' => Url::fromRoute('public_profile.view', ['url_fragment' => $urlFragment]),
-        ],
-      ],
-      '#weight' => -1,
-      '#attributes' => [
-        'style' => ['margin-top:1em'],
-      ],
-    ];
+  if ($entity->bundle() != 'public') {
+    return;
   }
+
+  $user = $entity->uid->entity;
 
   if (!($user->field_display_on_connect_page->getString())) {
     $form['group_specialized_help_tagging']['#access'] = FALSE;
   }
 
-  if ($entity->bundle() == 'public' && !in_array('guide_editor', $user->getRoles())) {
+  if (!in_array('guide_editor', $user->getRoles())) {
     $toHide = [
       'field_guides_listing',
       'field_mini_biography',
@@ -94,4 +101,5 @@ function public_profile_entity_type_alter(array &$entity_types) {
   $class = '\Drupal\public_profile\Form\PublicProfileForm';
   $entity_types['profile']->setFormClass('edit', $class);
   $entity_types['profile']->setFormClass('add', $class);
+  $entity_types['profile']->setClass('\Drupal\public_profile\Entity\Profile');
 }

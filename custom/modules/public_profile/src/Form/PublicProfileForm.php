@@ -17,8 +17,8 @@ class PublicProfileForm extends ProfileForm {
     parent::save($form, $form_state);
     $profile = $this->entity;
     if ($profile->bundle() == 'public') {
-      $form_state->setRedirect('public_profile.view', [
-        'url_fragment' => $profile->get('field_url_fragment')->value,
+      $form_state->setRedirect('entity.profile.canonical', [
+        'profile' => $profile->id(),
       ]);
     }
   }

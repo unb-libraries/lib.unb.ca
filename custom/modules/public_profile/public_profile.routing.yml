@@ -1,7 +1,13 @@
 public_profile.view:
-  path: '/profile/{url_fragment}'
+  path: '/user/{user}/view_public_profile'
   defaults:
     _controller: '\Drupal\public_profile\Controller\ProfileController::view'
-    _title_callback: '\Drupal\public_profile\Controller\ProfileController::title'
   requirements:
-    _access: 'TRUE'
+    _permission: 'update own public profile'
+
+public_profile.edit_user:
+  path: '/profile/{profile}/edit_user'
+  defaults:
+    _controller: '\Drupal\public_profile\Controller\ProfileController::editUser'
+  requirements:
+    _permission: 'update own public profile'

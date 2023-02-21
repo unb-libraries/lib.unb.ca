@@ -19,6 +19,7 @@ function guides_menu_local_tasks_alter(&$data, $route_name, \Drupal\Core\Cache\R
   // Tabs to add corresponding FA icon prefix.
   $tabs_add_icons = [
     'guides.user.stats' => 'fas fa-chart-line',
+    'guides.profile.stats' => 'fas fa-chart-line',
   ];
   // Tabs to disable.
   $tabs_disable = [

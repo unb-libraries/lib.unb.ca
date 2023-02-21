@@ -18,6 +18,9 @@ class RouteSubscriber extends RouteSubscriberBase {
     if ($route = $collection->get('profile.user_page.single')) {
       $route->setOption('_admin_route', TRUE);
     }
+    if ($route = $collection->get('entity.profile.edit_form')) {
+      $route->setOption('_admin_route', TRUE);
+    }
   }
 
 }

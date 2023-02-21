@@ -3,8 +3,9 @@ _core:
 enabled_entity_types:
   - guide
   - guide_category
-  - ior_submission
   - contest
+  - ior_submission
+  - profile
 punctuation:
   double_quotes: 0
   quotes: 0

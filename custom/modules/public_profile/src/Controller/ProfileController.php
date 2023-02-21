@@ -3,7 +3,8 @@
 namespace Drupal\public_profile\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\profile\Entity\ProfileInterface;
 
 /**
  * Provides route responses for the public_profile module.
@@ -11,95 +12,19 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 class ProfileController extends ControllerBase {
 
   /**
-   * Profile object.
-   *
-   * @var \Drupal\profile\Entity\Profile
+   * Redirect to profile view from user entity.
    */
-  private $profile;
-
-  /**
-   * Get profile data based on url fragment field.
-   *
-   * @param string $url_fragment
-   *   URL fragment.
-   */
-  private function getProfile($url_fragment) {
-    if (empty($profile)) {
-      $storage = $this->entityTypeManager()->getStorage('profile');
-      $query = $storage->getQuery();
-      $ids = $query
-        ->condition('status', 1)
-        ->condition('type', 'public')
-        ->condition('field_url_fragment', $url_fragment)
-        ->condition('uid.entity.status', 0, '!=')
-        ->accessCheck(FALSE)
-        ->execute();
-
-      if (!empty($ids)) {
-        $id = reset($ids);
-        $this->profile = $storage->load($id);
-      }
-    }
-
-    return $this->profile;
+  public function view(AccountInterface $user) {
+    $profile = $user->public_profiles->get(0)->entity;
+    return $this->redirect('entity.profile.canonical', ['profile' => $profile->id()]);
   }
 
   /**
-   * Page title for profiles.
-   *
-   * @param string $url_fragment
-   *   URL fragment.
+   * Redirect to user edit from profile entity.
    */
-  public function title($url_fragment) {
-    $profile = $this->getProfile($url_fragment);
-    if (empty($profile)) {
-      throw new NotFoundHttpException();
-    }
-
-    $account = $profile->uid->entity;
-    return implode(' ', [
-      $account->field_first_name->value,
-      $account->field_last_name->value,
-    ]);
-  }
-
-  /**
-   * Profile page.
-   *
-   * @param string $url_fragment
-   *   URL fragment.
-   */
-  public function view($url_fragment) {
-    $profile = $this->getProfile($url_fragment);
-    if (empty($profile)) {
-      throw new NotFoundHttpException();
-    }
-
-    $account = $profile->uid->entity;
-
-    $storage = $this->entityTypeManager()->getStorage('guide');
-    $query = $storage->getQuery();
-    $ids = $query
-      ->condition('status', 1)
-      ->condition('unlisted', 0)
-      ->condition('editors.entity:paragraph.field_user.target_id', $profile->uid->target_id, 'IN')
-      ->condition('editors.entity:paragraph.field_display_editor', 1)
-      ->sort('title', 'ASC')
-      ->execute();
-    $guides = $storage->loadMultiple($ids);
-
-    return [
-      '#theme' => 'public_profile',
-      '#profile' => $profile,
-      '#account' => $account,
-      '#guides' => $guides,
-      '#cache' => [
-        'tags' => [
-          'guide_list',
-          'user:' . $account->id(),
-        ],
-      ],
-    ];
+  public function editUser(ProfileInterface $profile) {
+    $user = $profile->uid->entity;
+    return $this->redirect('entity.user.edit_form', ['user' => $user->id()]);
   }
 
 }

@@ -70,6 +70,12 @@ guides.user_stats:
     _title: 'User Statistics'
   requirements:
     _permission: 'create guide entities'
+guides.profile_stats:
+  path: '/profile/{profile}/stats'
+  defaults:
+    _controller: '\Drupal\guides\Controller\GuidesStatsController::redirectFromProfile'
+  requirements:
+    _permission: 'create guide entities'
 entity.course_link.collection:
   path: '/admin/guides/{guide}/courselink'
   defaults:

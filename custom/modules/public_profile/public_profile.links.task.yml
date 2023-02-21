@@ -1,0 +1,23 @@
+user.public_profile.view:
+  route_name: public_profile.view
+  title: 'View Public Profile'
+  base_route: entity.user.canonical
+  weight: 1
+
+public_profile.user.edit:
+  route_name: public_profile.edit_user
+  title: 'Edit Directory Info'
+  base_route: entity.profile.canonical
+  weight: 1
+
+public_profile.view:
+  route_name: entity.profile.canonical
+  title: 'View Public Profile'
+  base_route: entity.profile.canonical
+  weight: 1
+
+public_profile.edit:
+  route_name: entity.profile.edit_form
+  title: 'Edit Public Profile'
+  base_route: entity.profile.canonical
+  weight: 1
