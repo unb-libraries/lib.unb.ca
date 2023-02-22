@@ -60,6 +60,29 @@ function public_profile_profile_presave(EntityInterface $entity) {
 }
 
 /**
+ * Implements hook_ENTITY_TYPE_update().
+ */
+function public_profile_user_update(EntityInterface $entity) {
+  $active = !$entity->isBlocked();
+
+  // Using the public_profiles relationship only gives active profiles.
+  $storage = \Drupal::entityTypeManager()->getStorage('profile');
+  $query = $storage->getQuery();
+  $ids = $query
+    ->condition('type', 'public')
+    ->condition('uid', $entity->id())
+    ->execute();
+  $profiles = $storage->loadMultiple($ids);
+
+  foreach ($profiles as $profile) {
+    if ($profile->isActive() != $active) {
+      $profile->setActive($active);
+      $profile->save();
+    }
+  }
+}
+
+/**
  * Implements hook_form_FORM_ID_alter().
  */
 function public_profile_form_profile_form_alter(&$form, FormStateInterface $form_state, $form_id) {
