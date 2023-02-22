@@ -283,7 +283,7 @@
     "drupal/antibot": "1.5",
     "drupal/better_exposed_filters": "6.0.3",
     "drupal/block_field": "1.0-rc4",
-    "drupal/bootstrap_barrio": "5.1.7",
+    "drupal/bootstrap_barrio": "5.1.10",
     "drupal/cache_control_override": "1.1",
     "drupal/changed_fields": "^3.2",
     "drupal/chosen": "3.0.5",
