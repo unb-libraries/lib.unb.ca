@@ -23,7 +23,7 @@ class ProfileController extends ControllerBase {
    * Redirect to user edit from profile entity.
    */
   public function editUser(ProfileInterface $profile) {
-    $user = $profile->uid->entity;
+    $user = $profile->getOwner();
     return $this->redirect('entity.user.edit_form', ['user' => $user->id()]);
   }
 
