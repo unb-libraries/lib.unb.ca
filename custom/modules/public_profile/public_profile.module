@@ -45,7 +45,7 @@ function public_profile_preprocess_profile__public(&$variables) {
 }
 
 /**
- * Implements hook_entity_presave().
+ * Implements hook_ENTITY_TYPE_presave().
  */
 function public_profile_profile_presave(EntityInterface $entity) {
   if ($entity->bundle() == 'public') {
