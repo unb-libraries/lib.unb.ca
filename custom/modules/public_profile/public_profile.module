@@ -124,5 +124,4 @@ function public_profile_entity_type_alter(array &$entity_types) {
   $class = '\Drupal\public_profile\Form\PublicProfileForm';
   $entity_types['profile']->setFormClass('edit', $class);
   $entity_types['profile']->setFormClass('add', $class);
-  $entity_types['profile']->setClass('\Drupal\public_profile\Entity\Profile');
 }

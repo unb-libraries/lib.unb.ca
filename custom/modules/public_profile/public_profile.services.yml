@@ -3,3 +3,7 @@ services:
     class: Drupal\public_profile\Services\RouteSubscriber
     tags:
       - { name: event_subscriber }
+  public_profile.profile_label:
+    class: '\Drupal\public_profile\Services\ProfileLabelEventSubscriber'
+    tags:
+      - { name: event_subscriber }
