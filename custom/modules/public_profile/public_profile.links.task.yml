@@ -6,7 +6,7 @@ user.public_profile.view:
 
 public_profile.user.edit:
   route_name: public_profile.edit_user
-  title: 'Edit Directory Info'
+  title: 'Directory Info'
   base_route: entity.profile.canonical
   weight: 1
 

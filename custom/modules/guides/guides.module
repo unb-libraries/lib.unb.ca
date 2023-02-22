@@ -28,7 +28,7 @@ function guides_menu_local_tasks_alter(&$data, $route_name, \Drupal\Core\Cache\R
   ];
   // Tabs to relabel using corresponding title.
   $tabs_rename = [
-    'entity.user.edit_form' => t('Edit Directory Info'),
+    'entity.user.edit_form' => t('Directory Info'),
     'profile.user_page:public' => t('Edit Public Profile'),
   ];
   // Tabs to adjust order.
