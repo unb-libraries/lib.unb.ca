@@ -36,7 +36,7 @@ class DiscoverySearch extends BlockBase {
     else {
       // Store block render array in variable prior pass to render().
       $render_array = $plugin_block->build();
-      $askus_block = render($render_array);
+      $askus_block = \Drupal::service('renderer')->render($render_array);
     }
 
     $html =
