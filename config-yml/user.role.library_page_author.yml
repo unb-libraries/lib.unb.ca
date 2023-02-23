@@ -15,7 +15,6 @@ dependencies:
     - media
     - node
     - override_node_options
-    - quickedit
     - system
     - toolbar
 id: library_page_author
@@ -24,7 +23,6 @@ weight: -7
 is_admin: null
 permissions:
   - 'access content overview'
-  - 'access in-place editing'
   - 'access media overview'
   - 'access media_entity_browser entity browser pages'
   - 'access mycontent overview'

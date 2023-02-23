@@ -9,6 +9,7 @@ dependencies:
     - node.type.booking_space
   module:
     - layout_builder
+    - layout_discovery
     - link
     - user
 third_party_settings:
