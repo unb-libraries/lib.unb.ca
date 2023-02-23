@@ -22,7 +22,7 @@ foreach ($terms as $term) {
   $query = $connection->query("SELECT nid FROM {node_taxonomy_path} where tid={$term->tid}");
   $results = $query->fetchAll();
   foreach ($results as $result) {
-    $alias = \Drupal::service('path.alias_manager')->getAliasByPath('/node/' . $result->nid);
+    $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $result->nid);
     echo "- $alias\n";
   }
 }
@@ -55,7 +55,7 @@ foreach ($results as $result) {
   $node_obj = Node::load($result->nid);
   $path = NodeTaxonomyPath::getNodePath($node_obj);
   if ($path == '/') {
-    $full_path = \Drupal::service('path.alias_manager')->getAliasByPath('/node/' . $result->nid);
+    $full_path = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $result->nid);
     echo "Root Node [$full_path]...\n";
   }
 }

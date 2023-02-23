@@ -314,7 +314,7 @@ class AttachParagraphsToCreatedNewsItemsEvent implements EventSubscriberInterfac
     $old_url = trim($this->currentRow->getSourceProperty('url'));
     $old_path = str_replace(self::BASE_URI, '', $old_url);
 
-    $aliasManager = \Drupal::service('path.alias_manager');
+    $aliasManager = \Drupal::service('path_alias.manager');
     $new_path = $aliasManager->getAliasByPath('/node/' . $this->currentNode->id());
 
     $padded_old_string = str_pad($old_path, 50, " ");
