@@ -7,3 +7,6 @@ services:
     class: '\Drupal\public_profile\Services\ProfileLabelEventSubscriber'
     tags:
       - { name: event_subscriber }
+  public_profile.user_toolbar_link_builder:
+    class: Drupal\public_profile\Services\UserToolbarLinkBuilder
+    arguments: ['@current_user']

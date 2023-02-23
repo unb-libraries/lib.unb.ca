@@ -125,3 +125,16 @@ function public_profile_entity_type_alter(array &$entity_types) {
   $entity_types['profile']->setFormClass('edit', $class);
   $entity_types['profile']->setFormClass('add', $class);
 }
+
+/**
+ * Implements hook_toolbar_alter().
+ */
+function public_profile_toolbar_alter(&$items) {
+  $account = \Drupal::currentUser();
+  if (in_array('public_profile', $account->getRoles())) {
+    $items['user']['tray']['user_links']['#lazy_builder'] = [
+      'public_profile.user_toolbar_link_builder:renderToolbarLinks',
+      [],
+    ];
+  }
+}
