@@ -9,6 +9,7 @@ use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Render\Markup;
 
 /**
  * Implements hook_help().
@@ -30,6 +31,9 @@ function lib_unb_ca_user_protect_help($route_name, RouteMatchInterface $route_ma
  * Implements hook_form_FORMID_alter().
  */
 function lib_unb_ca_user_protect_form_user_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $warning = Markup::Create('Directory Info metadata is maintained centrally, displayed on our Staff Directory and should generally mirror UNB\'s Colleague-driven data. <a href="/contact-unb-libraries-staff?recipient=pollockl">Contact Lisa Pollock</a> if you encounter errors.');
+  \Drupal::messenger()->addWarning($warning);
+
   $user = \Drupal::currentUser();
   if (!$user->hasPermission('edit any user details')) {
     foreach (Element::children($form) as $key) {
