@@ -16,6 +16,7 @@ use Drupal\views\ViewExecutable;
 use Scriptotek\Marc\Record;
 use Scriptotek\Marc\Fields\Person;
 use Scriptotek\Marc\Fields\Title;
+use Drupal\lib_core\Entity\User;
 
 /**
  * Implements hook_theme().
@@ -898,5 +899,5 @@ function _lib_core_recalls_validate_handler(array &$form, FormStateInterface $fo
  * Implements hook_entity_type_alter().
  */
 function lib_core_entity_type_alter(&$entity_types) {
-  $entity_types['user']->setClass(\Drupal\lib_core\Entity\User::class);
+  $entity_types['user']->setClass(User::class);
 }
