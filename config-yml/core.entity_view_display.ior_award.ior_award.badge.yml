@@ -32,6 +32,5 @@ content:
 hidden:
   field_contest: true
   field_weight: true
-  ior_submission: true
   ior_submissions: true
   search_api_excerpt: true
