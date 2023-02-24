@@ -11,11 +11,12 @@ use Drupal\user\Entity\User;
 use Drupal\editor\Entity\Editor;
 use Drupal\views\ViewExecutable;
 use PicoFeed\Reader\Reader;
+use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
 
 /**
  * Implements hook_preprocess_HOOK().
  */
-function guides_menu_local_tasks_alter(&$data, $route_name, \Drupal\Core\Cache\RefinableCacheableDependencyInterface &$cacheability) {
+function guides_menu_local_tasks_alter(&$data, $route_name, RefinableCacheableDependencyInterface &$cacheability) {
   // Tabs to add corresponding FA icon prefix.
   $tabs_add_icons = [
     'guides.user.stats' => 'fas fa-chart-line',
