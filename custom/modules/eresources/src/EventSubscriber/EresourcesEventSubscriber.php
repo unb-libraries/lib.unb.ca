@@ -4,7 +4,7 @@ namespace Drupal\eresources\EventSubscriber;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\KernelEvents;
-use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
+use Symfony\Component\HttpKernel\Event\ResponseEvent;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Url;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -39,10 +39,10 @@ class EresourcesEventSubscriber implements EventSubscriberInterface {
   /**
    * Checks if user is coming from the proxy for protected pages.
    *
-   * @param \Symfony\Component\HttpKernel\Event\FilterResponseEvent $event
+   * @param \Symfony\Component\HttpKernel\Event\ResponseEvent $event
    *   The event.
    */
-  public function checkProxyIpOnResponse(FilterResponseEvent $event) {
+  public function checkProxyIpOnResponse(ResponseEvent $event) {
     // Don't bother proceeding on sub-requests.
     if (!$event->isMasterRequest()) {
       return;
