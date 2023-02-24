@@ -130,7 +130,7 @@ class Submission extends ContentEntityBase implements SubmissionInterface {
       ->entity
       ->uri
       ->value;
-    return file_create_url($image_uri);
+    return \Drupal::service('file_url_generator')->generateAbsoluteString($image_uri);
   }
 
   /**
