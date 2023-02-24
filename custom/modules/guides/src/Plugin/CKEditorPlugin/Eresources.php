@@ -40,7 +40,7 @@ class Eresources extends CKEditorPluginBase implements CKEditorPluginConfigurabl
    * {@inheritdoc}
    */
   public function getFile() {
-    return drupal_get_path('module', 'guides') . '/js/plugins/eresources/plugin.js';
+    return \Drupal::service('extension.list.module')->getPath('guides') . '/js/plugins/eresources/plugin.js';
   }
 
   /**
@@ -50,7 +50,7 @@ class Eresources extends CKEditorPluginBase implements CKEditorPluginConfigurabl
     return [
       'eresources' => [
         'label' => $this->t('e-Resources'),
-        'image' => drupal_get_path('module', 'guides') . '/js/plugins/eresources/icons/eresources.png',
+        'image' => \Drupal::service('extension.list.module')->getPath('guides') . '/js/plugins/eresources/icons/eresources.png',
       ],
     ];
   }
@@ -105,7 +105,7 @@ class Eresources extends CKEditorPluginBase implements CKEditorPluginConfigurabl
    */
   public function getCssFiles(Editor $editor) {
     return [
-      drupal_get_path('module', 'guides') . '/css/ckeditor-eresources.css',
+      \Drupal::service('extension.list.module')->getPath('guides') . '/css/ckeditor-eresources.css',
     ];
   }
 

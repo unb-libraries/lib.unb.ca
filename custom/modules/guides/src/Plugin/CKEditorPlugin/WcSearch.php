@@ -38,7 +38,7 @@ class WcSearch extends CKEditorPluginBase implements CKEditorPluginCssInterface 
    * {@inheritdoc}
    */
   public function getFile() {
-    return drupal_get_path('module', 'guides') . '/js/plugins/wc-search/plugin.js';
+    return \Drupal::service('extension.list.module')->getPath('guides') . '/js/plugins/wc-search/plugin.js';
   }
 
   /**
@@ -48,7 +48,7 @@ class WcSearch extends CKEditorPluginBase implements CKEditorPluginCssInterface 
     return [
       'Wc-search' => [
         'label' => $this->t('WorldCat Search'),
-        'image' => drupal_get_path('module', 'guides') . '/js/plugins/wc-search/icons/wc-search.png',
+        'image' => \Drupal::service('extension.list.module')->getPath('guides') . '/js/plugins/wc-search/icons/wc-search.png',
       ],
     ];
   }
@@ -65,7 +65,7 @@ class WcSearch extends CKEditorPluginBase implements CKEditorPluginCssInterface 
    */
   public function getCssFiles(Editor $editor) {
     return [
-      drupal_get_path('module', 'guides') . '/css/ckeditor-wcsearch.css',
+      \Drupal::service('extension.list.module')->getPath('guides') . '/css/ckeditor-wcsearch.css',
     ];
   }
 

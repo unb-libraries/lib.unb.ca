@@ -18,7 +18,7 @@ function public_profile_theme($existing, $type, $theme, $path) {
   return [
     'profile__public' => [
       'template' => 'profile--public',
-      'path' => drupal_get_path('module', 'public_profile') . '/templates',
+      'path' => \Drupal::service('extension.list.module')->getPath('public_profile') . '/templates',
       'base hook' => 'profile__public',
     ],
   ];
