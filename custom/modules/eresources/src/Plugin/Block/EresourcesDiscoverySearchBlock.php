@@ -122,7 +122,7 @@ class EresourcesDiscoverySearchBlock extends BlockBase {
     }
     else {
       $renderArray = $askUsBlock->build();
-      $askUs = render($renderArray);
+      $askUs = $renderer->render($renderArray);
     }
 
     $build .= '

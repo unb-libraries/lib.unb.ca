@@ -37,7 +37,7 @@ class NewTicketForm extends FormBase {
     }
     else {
       $renderArray = $askUsBlock->build();
-      $askUs = render($renderArray);
+      $askUs = \Drupal::service('renderer')->render($renderArray);
     }
 
     $form['#prefix'] = '<div class="row"><div class="col-8">';
