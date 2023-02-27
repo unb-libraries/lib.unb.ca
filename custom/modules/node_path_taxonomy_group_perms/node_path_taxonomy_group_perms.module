@@ -105,7 +105,11 @@ function node_path_taxonomy_group_perms_node_access(NodeInterface $node, $op, $a
   $type = $node->bundle();
   $access = AccessResult::neutral();
 
-  // Only interfere with types that have active relationship taxonomies.
+  // Only interfere with types that have active relationship taxonomies + != root user.
+  if ($account->id() == 1) {
+    return $access;
+  }
+
   $active_node_types = NodeTaxonomyPathRelationship::getConfiguredNodeTypes();
   if (in_array($type, $active_node_types)) {
     $access = GroupPathPermissions::userGroupNodePermissionAccessResult($account, $node, $op)
