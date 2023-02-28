@@ -21,7 +21,7 @@ settings:
   handler: 'default:file'
   handler_settings: {  }
   file_directory: ior
-  file_extensions: 'stp max fbx obj x3d vrml 3ds 3mf stl dae'
+  file_extensions: 'stp max fbx obj x3d vrml 3ds 3mf stl dae dwg'
   max_filesize: 200MB
   description_field: false
 field_type: file
