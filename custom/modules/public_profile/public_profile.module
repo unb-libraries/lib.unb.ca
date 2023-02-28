@@ -61,9 +61,17 @@ function public_profile_profile_presave(EntityInterface $entity) {
 }
 
 /**
+ * Implements hook_ENTITY_TYPE_create().
+ */
+function public_profile_user_create(EntityInterface $entity) {
+  ensure_user_has_profile($entity);
+}
+
+/**
  * Implements hook_ENTITY_TYPE_update().
  */
 function public_profile_user_update(EntityInterface $entity) {
+  ensure_user_has_profile($entity);
   $active = !$entity->isBlocked();
 
   // Using the public_profiles relationship only gives active profiles.
@@ -81,6 +89,32 @@ function public_profile_user_update(EntityInterface $entity) {
       $profile->save();
     }
   }
+}
+
+/**
+ * If the user has the public_profile role, then make sure a profile entity exists.
+ */
+function ensure_user_has_profile(EntityInterface $user) {
+  if(!in_array('public_profile', $user->getRoles())) {
+    return;
+  }
+
+  $storage = \Drupal::entityTypeManager()->getStorage('profile');
+  $query = $storage->getQuery();
+  $ids = $query
+    ->condition('type', 'public')
+    ->condition('uid', $user->id())
+    ->execute();
+
+  if(!empty($ids)) {
+    return;
+  }
+
+  $profile = $storage->create([
+    'type' => 'public',
+    'uid' => $user->id(),
+  ]);
+  $profile->save();
 }
 
 /**
