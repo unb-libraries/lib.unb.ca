@@ -116,7 +116,6 @@ module:
   public_profile: 0
   public_trouble_tickets: 0
   r4032login: 0
-  rdf: 0
   records_management: 0
   redirect: 0
   redis: 0
