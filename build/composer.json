@@ -175,14 +175,14 @@
       "package": {
         "dist": {
           "type": "zip",
-          "url": "https://github.com/briancherne/jquery-hoverIntent/archive/v1.10.0.zip"
+          "url": "https://github.com/briancherne/jquery-hoverIntent/archive/refs/tags/v1.10.2.zip"
         },
         "extra": {
-          "installer-name": "jquery.hoverIntent"
+          "installer-name": "jquery.hover-intent"
         },
         "name": "jquery/hover_intent",
         "type": "drupal-library",
-        "version": "1.10.0"
+        "version": "1.10.2"
       },
       "type": "package"
     },
@@ -354,7 +354,7 @@
     "html2text/html2text": "4.2.1",
     "jackmoore/colorbox": "dev-master",
     "jquery/cycle": "3.0.3",
-    "jquery/hover_intent": "1.10.0",
+    "jquery/hover_intent": "1.10.2",
     "jquery/json2": "dev-master",
     "jquery/pause": "dev-master",
     "league/oauth2-client": "^2.4",
