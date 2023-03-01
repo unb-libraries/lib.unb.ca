@@ -110,12 +110,21 @@ function template_preprocess_ior_submission(array &$variables) {
 
   $index = array_search($submission, $submissions);
   if ($index - 1 >= 0) {
-    $variables['prev_url'] = $submissions[$index - 1]
-      ->toUrl();
+    $variables['prev_url'] = [
+      '#type' => 'link',
+      '#title' => t('Previous'),
+      '#url' => $submissions[$index - 1]
+        ->toUrl(),
+    ];
   }
+
   if ($index + 1 < count($submissions)) {
-    $variables['next_url'] = $submissions[$index + 1]
-      ->toUrl();
+    $variables['next_url'] = [
+      '#type' => 'link',
+      '#title' => t('Next'),
+      '#url' => $submissions[$index + 1]
+        ->toUrl(),
+    ];
   }
 
   // This should be done in a template?
