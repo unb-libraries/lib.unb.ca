@@ -104,6 +104,20 @@ function template_preprocess_ior_submission(array &$variables) {
     unset($variables['submission']['field_model']);
   }
 
+  $submissions = array_values(array_filter($submission->getContest()->getSubmissions(), function ($submission) {
+    return $submission->access('view');
+  }));
+
+  $index = array_search($submission, $submissions);
+  if ($index - 1 >= 0) {
+    $variables['prev_url'] = $submissions[$index - 1]
+      ->toUrl();
+  }
+  if ($index + 1 < count($submissions)) {
+    $variables['next_url'] = $submissions[$index + 1]
+      ->toUrl();
+  }
+
   // This should be done in a template?
   $variables['submission']['first_name']['#attributes']['class'][] = 'd-inline';
   $variables['submission']['last_name']['#attributes']['class'][] = 'd-inline';
