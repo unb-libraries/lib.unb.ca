@@ -5,6 +5,7 @@ dependencies:
   config:
     - media.type.file
     - media.type.image
+    - media.type.remote_video
     - node.type.news_post
     - taxonomy.vocabulary.categories
   module:
@@ -31,12 +32,17 @@ permissions:
   - 'access toolbar'
   - 'create image media'
   - 'create news_post content'
+  - 'create remote_video media'
   - 'create terms in categories'
   - 'delete any news_post content'
   - 'delete own image media'
+  - 'delete own remote_video media'
   - 'edit any image media'
   - 'edit any news_post content'
+  - 'edit any remote_video media'
   - 'edit own file media'
+  - 'edit own image media'
+  - 'edit own remote_video media'
   - 'edit terms in categories'
   - 'enter news_post revision log entry'
   - 'override news_post authored on option'

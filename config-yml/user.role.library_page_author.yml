@@ -6,6 +6,7 @@ dependencies:
     - filter.format.no_media_html
     - media.type.file
     - media.type.image
+    - media.type.remote_video
     - node.type.library_page
     - workflows.workflow.default_page_workflow
   module:
@@ -29,11 +30,16 @@ permissions:
   - 'access toolbar'
   - 'create image media'
   - 'create library_page content'
+  - 'create remote_video media'
   - 'delete any library_page content'
   - 'delete own image media'
+  - 'delete own remote_video media'
   - 'edit any image media'
   - 'edit any library_page content'
+  - 'edit any remote_video media'
   - 'edit own file media'
+  - 'edit own image media'
+  - 'edit own remote_video media'
   - 'enter library_page revision log entry'
   - 'override library_page published option'
   - 'revert library_page revisions'
