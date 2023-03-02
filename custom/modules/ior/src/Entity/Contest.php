@@ -68,8 +68,12 @@ class Contest extends ContentEntityBase implements ContestInterface {
    * {@inheritDoc}
    */
   public function getOpenDate() {
+    // @todo Avoid static Drupal call.
+    $timezone = \Drupal::config('system.date')
+      ->get('timezone')['default'];
     return $this->get(static::FIELD_DATE_OPEN)
       ->date
+      ->setTimeZone(new \DateTimeZone($timezone))
       ->setTime(0, 0, 0);
   }
 
@@ -77,8 +81,12 @@ class Contest extends ContentEntityBase implements ContestInterface {
    * {@inheritDoc}
    */
   public function getCloseDate() {
+    // @todo Avoid static Drupal call.
+    $timezone = \Drupal::config('system.date')
+      ->get('timezone')['default'];
     return $this->get(static::FIELD_DATE_CLOSE)
       ->date
+      ->setTimeZone(new \DateTimeZone($timezone))
       ->setTime(23, 59, 59);
   }
 
