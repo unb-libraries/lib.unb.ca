@@ -29,6 +29,7 @@ permissions:
   - 'list ior_collection entities'
   - 'list ior_submission entities'
   - 'moderate ior_submission entities'
+  - 'update accepted ior_submission entities'
   - 'update contest entities'
   - 'update ior_award entities'
   - 'update ior_collection entities'
