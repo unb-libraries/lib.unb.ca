@@ -56,7 +56,6 @@ settings:
           name: 'Media and Characters'
           items:
             - DrupalFile
-            - video_embed
             - DrupalMediaLibrary
             - SpecialChar
             - DrupalFontAwesome
@@ -72,6 +71,10 @@ settings:
           items:
             - Wc-search
             - eresources
+        -
+          name: Deprecated
+          items:
+            - video_embed
             - assets
   plugins:
     drupallink:
