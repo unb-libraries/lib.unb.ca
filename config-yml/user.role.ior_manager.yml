@@ -4,12 +4,15 @@ status: true
 dependencies:
   config:
     - filter.format.no_media_html_ior_
+    - media.type.3dmodel
+    - media.type.remote_video
     - workflows.workflow.ior_submission_review
   module:
     - content_moderation
     - filter
     - ior
     - ior_awards
+    - media
     - toolbar
 id: ior_manager
 label: 'IOR Contest Manager'
@@ -17,13 +20,19 @@ weight: -3
 is_admin: null
 permissions:
   - 'access toolbar'
+  - 'create 3dmodel media'
   - 'create contest entities'
   - 'create ior_award entities'
   - 'create ior_collection entities'
+  - 'create remote_video media'
   - 'delete ior_award entities'
   - 'delete ior_collection entities'
+  - 'delete own 3dmodel media'
+  - 'delete own remote_video media'
   - 'download 3dmodel file'
   - 'download full_resolution images'
+  - 'edit own 3dmodel media'
+  - 'edit own remote_video media'
   - 'list contest entities'
   - 'list ior_award entities'
   - 'list ior_collection entities'
