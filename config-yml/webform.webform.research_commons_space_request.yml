@@ -107,6 +107,13 @@ elements: |-
           'No': 'No'
         '#options_display': side_by_side
         '#required': true
+      catering_message:
+        '#type': webform_markup
+        '#states':
+          visible:
+            ':input[name="catering"]':
+              value: 'Yes'
+        '#markup': '<div class="alert alert-info" role="alert"><p class="mt-2 text-red"><i class="fas fa-exclamation-triangle mr-2"></i>For all catering needs, please contact <strong>Sodexo Catering Services</strong>.</p></div>'
       event_description:
         '#type': textarea
         '#title': 'Event description'
