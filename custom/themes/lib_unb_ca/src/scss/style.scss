@@ -738,6 +738,7 @@ ul.field--name-field-categories:before {
       display: table-caption;
       caption-side: bottom;
       @include css3-prefix(transition, all .3s ease-in-out);
+      margin-top: .25rem;
     }
   }
 }
