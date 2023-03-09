@@ -1,5 +1,6 @@
 /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
-.field--name-field-media-oembed-video {
+.field--name-field-media-oembed-video,
+.oembed_3d_model {
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -71,7 +72,3 @@ figure {
   }
 }
 
-// Images of Research.
-.oembed_3d_model {
-  min-height: 480px;
-}
