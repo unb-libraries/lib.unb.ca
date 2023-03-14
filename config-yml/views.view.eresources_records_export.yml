@@ -1774,7 +1774,7 @@ display:
               alias: ''
               raw_output: false
       display_extenders: {  }
-      path: admin/eresources/records/export
+      path: admin/eresources/records-export
       filename: 'eresources-records-[date:html_date].csv'
       automatic_download: false
       store_in_public_file_directory: false
