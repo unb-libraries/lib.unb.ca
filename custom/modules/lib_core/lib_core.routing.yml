@@ -33,3 +33,12 @@ lib_core.archives_eloquent_redirect:
     _permission: 'access content'
   options:
     no_cache: 'TRUE'
+lib_core.proxy_noredirect:
+  path: '/proxy-redirect'
+  defaults:
+    _controller: '\Drupal\lib_core\Controller\ProxyController::noRedirect'
+    _title: 'EZProxy Redirect'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'

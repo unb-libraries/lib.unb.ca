@@ -29,6 +29,12 @@ function lib_core_theme($existing, $type, $theme, $path) {
     'proxy_login' => [
       'variables' => ['url' => NULL],
     ],
+    'proxy_noredirect' => [
+      'variables' => [
+        'url' => NULL,
+        'askus' => NULL,
+      ],
+    ],
   ];
 }
 
