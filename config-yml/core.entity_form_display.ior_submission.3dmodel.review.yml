@@ -13,24 +13,16 @@ bundle: 3dmodel
 mode: review
 content:
   awards:
-    type: entity_reference_autocomplete
+    type: options_buttons
     weight: 0
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   collections:
-    type: entity_reference_autocomplete
+    type: options_buttons
     weight: 1
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
 hidden:
   department: true
