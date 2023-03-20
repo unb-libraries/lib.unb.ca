@@ -176,17 +176,24 @@ function ior_awards_entity_base_field_info(EntityTypeInterface $entity_type) {
       ->setRequired(FALSE)
       ->setRevisionable(TRUE)
       ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
-      ->setSetting('target_type', 'ior_award')
+      ->setSettings([
+        'target_type' => 'ior_award',
+        'handler' => 'ior_contest',
+      ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
       ->setDisplayOptions('form', ['weight' => 90])
       ->setDisplayOptions('view', ['weight' => 90]);
+
     $fields['collections'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Collections'))
       ->setRequired(FALSE)
       ->setRevisionable(TRUE)
       ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
-      ->setSetting('target_type', 'ior_collection')
+      ->setSettings([
+        'target_type' => 'ior_collection',
+        'handler' => 'ior_contest',
+      ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
       ->setDisplayOptions('form', ['weight' => 100])
