@@ -60,10 +60,10 @@ class DuplicateIdChecker extends FormBase {
       $result = $search->countQuery()->execute()->fetchField();
 
       if ($result == 1) {
-        $form['patron-search-results'] = ['#markup' => '<p><span class="alert fas fa-times-square"></span> Login ID in use.</p>'];
+        $form['patron-search-results'] = ['#markup' => '<p><span class="text-danger fas fa-times-circle"></span> Login ID in use.</p>'];
       }
       else {
-        $form['patron-search-results'] = ['#markup' => '<p><span class="success fas fa-check-circle"></span> Login ID available.</p>'];
+        $form['patron-search-results'] = ['#markup' => '<p><span class="text-success fas fa-check-circle"></span> Login ID available.</p>'];
       }
 
       Database::setActiveConnection();
