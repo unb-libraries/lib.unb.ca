@@ -1,0 +1,14 @@
+uuid: 171ee1a7-affd-4ae1-928a-b6a1dfc2b5bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.duplicate_id_checker
+  module:
+    - user
+id: user_remove_role_action.duplicate_id_checker
+label: 'Remove the Duplicate ID Checker role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: duplicate_id_checker

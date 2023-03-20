@@ -18,4 +18,7 @@ if (extension_loaded('newrelic')) {
   require_once dirname(__FILE__) . "/settings.newrelic.inc";
 }
 
+// Patron DB.
+require_once dirname(__FILE__) . "/settings.patrons.inc";
+
 $settings['config_sync_directory'] = 'DRUPAL_CONFIGURATION_DIR';

@@ -42,3 +42,12 @@ lib_core.proxy_noredirect:
     _permission: 'access content'
   options:
     no_cache: 'TRUE'
+lib_core.duplicate_id_checker:
+  path: '/duplicate-id-checker'
+  defaults:
+    _form: '\Drupal\lib_core\Form\DuplicateIdChecker'
+    _title: 'UNB Duplicate Login ID Checker'
+  requirements:
+    _permission: 'can use duplicate id checker'
+  options:
+    no_cache: 'TRUE'

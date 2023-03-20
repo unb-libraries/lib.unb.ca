@@ -1,0 +1,14 @@
+uuid: 449625c1-3398-42cc-a572-4868270e2850
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.duplicate_id_checker
+  module:
+    - user
+id: user_add_role_action.duplicate_id_checker
+label: 'Add the Duplicate ID Checker role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: duplicate_id_checker

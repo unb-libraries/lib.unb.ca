@@ -137,6 +137,30 @@ spec:
                 secretKeyRef:
                   name: fogbugz
                   key: password
+            -
+              name: PATRON_DATABASE_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: patron-db
+                  key: hostname
+            -
+              name: PATRON_DATABASE
+              valueFrom:
+                secretKeyRef:
+                  name: patron-db
+                  key: database
+            -
+              name: PATRON_DATABASE_USER
+              valueFrom:
+                secretKeyRef:
+                  name: patron-db
+                  key: username
+            -
+              name: PATRON_DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: patron-db
+                  key: password
           image: "||DEPLOYMENTIMAGE||"
           imagePullPolicy: Always
           ports:

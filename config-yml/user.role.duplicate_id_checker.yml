@@ -1,0 +1,12 @@
+uuid: 02791e63-b790-40cf-88d5-d15eab5f3b37
+langcode: en
+status: true
+dependencies:
+  module:
+    - lib_core
+id: duplicate_id_checker
+label: 'Duplicate ID Checker'
+weight: 10
+is_admin: null
+permissions:
+  - 'can use duplicate id checker'
