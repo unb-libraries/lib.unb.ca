@@ -31,5 +31,12 @@ SETTINGS_FILE='/app/keys/api.fogbugz.json'
 sed -i "s|FOGBUGZ_USERNAME|$FOGBUGZ_USERNAME|g" $SETTINGS_FILE
 sed -i "s|FOGBUGZ_PASSWORD|$FOGBUGZ_PASSWORD|g" $SETTINGS_FILE
 
+# Patron DB
+SETTINGS_FILE='/app/html/sites/all/settings/settings.patrons.inc'
+sed -i "s|PATRON_DATABASE_USER|$PATRON_DATABASE_USER|g" $SETTINGS_FILE
+sed -i "s|PATRON_DATABASE_PASSWORD|$PATRON_DATABASE_PASSWORD|g" $SETTINGS_FILE
+sed -i "s|PATRON_DATABASE_HOST|$PATRON_DATABASE_HOST|g" $SETTINGS_FILE
+sed -i "s|PATRON_DATABASE|$PATRON_DATABASE|g" $SETTINGS_FILE
+
 cp /app/keys/oclc-sftp.root.key /app/keys/oclc-sftp.key
 chown nginx /app/keys/oclc-sftp.key
