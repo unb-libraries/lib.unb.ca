@@ -57,3 +57,6 @@ permissions:
   - 'view ior_collection entities'
   - 'view ior_submission entities'
   - 'view ior_submission moderation_state'
+  - 'review accepted ior_submission entities'
+  - 'review published ior_submission entities'
+  - 'review published_anonymised_ ior_submission entities'

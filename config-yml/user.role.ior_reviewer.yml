@@ -17,8 +17,6 @@ permissions:
   - 'list contest entities'
   - 'list published ior_submission entities'
   - 'list published_anonymised_ ior_submission entities'
-  - 'review accepted ior_submission entities'
-  - 'review published_anonymised_ ior_submission entities'
   - 'view accepted ior_submission entities'
   - 'view contest entities'
   - 'view ior_award entities'
