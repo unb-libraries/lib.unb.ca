@@ -137,7 +137,7 @@ class ContestSelection extends SelectionPluginBase implements ContainerFactoryPl
     $options = [];
     foreach ($entities as $entity) {
       $bundle = $this->getBundle($entity);
-      $options[$bundle][] = $entity->label();
+      $options[$bundle][$entity->id()] = $entity->label();
     }
 
     return $options;
