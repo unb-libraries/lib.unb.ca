@@ -38,12 +38,18 @@ class DuplicateIdChecker extends FormBase {
       '#title' => $this->t('Login ID'),
       '#type' => 'textfield',
       '#required' => TRUE,
+      '#attributes' => [
+        'class' => ['w-25'],
+      ],
     ];
 
     $form['submit_button'] = [
       '#type' => 'submit',
-      '#value' => $this->t('Search'),
+      '#value' => $this->t('Check ID'),
       '#name' => '',
+      '#attributes' => [
+        'class' => ['w-25'],
+      ],
     ];
 
     if (!empty($query = $this->getRequest()->query->get('pq'))) {
