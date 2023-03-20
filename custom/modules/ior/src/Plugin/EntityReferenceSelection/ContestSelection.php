@@ -17,6 +17,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   group = "ior_contest",
  *   entity_types = {
  *     "ior_award",
+ *     "ior_collection",
  *   },
  *   weight = 0
  * )
