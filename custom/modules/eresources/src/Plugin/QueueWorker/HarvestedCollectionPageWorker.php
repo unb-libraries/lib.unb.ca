@@ -160,6 +160,9 @@ class HarvestedCollectionPageWorker extends QueueWorkerBase implements Container
     $result = $searchApi->get('get-bibliographic-resource', ['oclcNumber' => $entity->oclcnum->getString()]);
     if ($result && isset($result->description->summaries[0]->text)) {
       $text = strip_tags($result->description->summaries[0]->text);
+      if (!preg_match('/[\?\!\.]$/', $text)) {
+        $text .= ' …';
+      }
       $oclcMetadata->set(
         'description',
         [
