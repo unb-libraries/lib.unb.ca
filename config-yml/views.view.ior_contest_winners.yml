@@ -560,8 +560,8 @@ display:
             -
               field: awards_target_id
               rendered: true
-              rendered_strip: false
-          row_class: ''
+              rendered_strip: true
+          row_class: mb-5
           default_row_class: true
           type: ul
           wrapper_class: item-list
