@@ -161,7 +161,7 @@ class HarvestedCollectionPageWorker extends QueueWorkerBase implements Container
     if ($result && isset($result->description->summaries[0]->text)) {
       $text = strip_tags($result->description->summaries[0]->text);
       if (!preg_match('/[\?\!\.]$/', $text)) {
-        $text .= ' …';
+        $text .= '.';
       }
       $oclcMetadata->set(
         'description',
