@@ -34,7 +34,7 @@
       });
 
       editor.widgets.add('eresources-widget', {
-        template: '<eresources ids="{ids}" keyresources="{keyresources}" noheadings="{noheadings}">{html}</ereources>',
+        template: '<eresources ids="{ids}" keyresources="{keyresources}" noheadings="{noheadings}">{html}</eresources>',
         allowedContent: 'eresources[ids,keyresources,noheadings]; p; ul; li',
         requiredContent: 'eresources',
         upcast: function(element, data) {
