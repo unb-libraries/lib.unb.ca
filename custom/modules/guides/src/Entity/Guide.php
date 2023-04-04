@@ -322,7 +322,7 @@ class Guide extends ContentEntityBase implements ContentEntityInterface, UserEdi
           'items' => $items,
         ];
       }
-      catch (Exception $e) {
+      catch (\Exception $e) {
         \Drupal::logger('guides')->error("Unable to parse feed: $url $e");
       }
     }
