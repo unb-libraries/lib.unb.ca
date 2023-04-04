@@ -339,8 +339,9 @@ class Guide extends ContentEntityBase implements ContentEntityInterface, UserEdi
     foreach ($this->get('editors') as $editorItem) {
       $editor = $editorItem->entity;
       if ($editor && $editor->field_display_editor->getString()) {
-        $user = $editor->field_user->entity;
-        $tags[] = 'user:' . $user->id();
+        if ($user = $editor->field_user->entity) {
+          $tags[] = 'user:' . $user->id();
+        }
       }
     }
 
