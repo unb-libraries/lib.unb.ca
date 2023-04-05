@@ -94,6 +94,11 @@ class FilterCKEditorEresources extends FilterBase implements ContainerFactoryPlu
               return new LocalResult($i);
             }, $results->getResultItems());
 
+            $idMap = array_flip($ids);
+            usort($resources, function ($a, $b) use ($idMap) {
+              return $idMap[$a->getId()] <=> $idMap[$b->getId()];
+            });
+
             $listHtml = HTML::load($this->buildResourceList($resources, $options));
             $list = $document->importNode($listHtml->documentElement, TRUE);
 
