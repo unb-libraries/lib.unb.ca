@@ -4,8 +4,6 @@ namespace Drupal\guides\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Ajax\AjaxResponse;
-use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Url;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -70,12 +68,12 @@ class EresourcesListForm extends FormBase {
       '#markup' => '<h2>Browse/Edit Existing Records</h2>',
     ];
 
-    $form['eresources_selector'] = [
+    $form['selector'] = [
       '#prefix' => '<div class="eresources-selector">',
       '#suffix' => '</div>',
     ];
 
-    $form['eresources_selector']['eresources_all'] = [
+    $form['selector']['all'] = [
       '#type' => 'checkbox',
       '#title' => 'Include Cataloguing-maintained eResource records',
       '#ajax' => [
@@ -89,10 +87,10 @@ class EresourcesListForm extends FormBase {
       ],
     ];
 
-    $showAll = !!$form_state->getValue('eresources_all');
+    $showAll = !!$form_state->getValue('all');
     $options = $this->getRecords($showAll);
 
-    $form['eresources_selector']['eresources_search'] = [
+    $form['selector']['search'] = [
       '#type' => 'select',
       '#title' => $this->t('e-Resources'),
       '#prefix' => '<div id="record-select">',
@@ -103,7 +101,7 @@ class EresourcesListForm extends FormBase {
         'style' => ['width:100%;'],
       ],
       '#ajax' => [
-        'callback' => '::findGuidesByRes',
+        'callback' => '::refreshRecordInfo',
         'event' => 'change',
         'progress' => [
           'type' => 'throbber',
@@ -113,9 +111,9 @@ class EresourcesListForm extends FormBase {
     ];
 
     $form['result'] = [
-      '#type' => 'html_tag',
-      '#tag' => 'div',
-      '#attributes' => ['id' => 'result'],
+      '#prefix' => '<div id="result">',
+      '#suffix' => '</div>',
+      '#markup' => $this->recordInfo($form_state),
     ];
 
     $form['#attached']['library'][] = 'lib_core/lib-selectize';
@@ -126,7 +124,7 @@ class EresourcesListForm extends FormBase {
    * Ajax callback for eresources record list.
    */
   public function loadRecords(array &$form, FormStateInterface $form_state) {
-    return $form['eresources_selector']['eresources_search'];
+    return $form['selector']['search'];
   }
 
   /**
@@ -155,12 +153,50 @@ class EresourcesListForm extends FormBase {
   }
 
   /**
-   * Ajax callback to find guides by level2 record.
+   * Load record info.
    */
-  public function findGuidesByRes(array &$form, FormStateInterface $form_state) {
-    $response = new AjaxResponse();
-    $response->addCommand(new HtmlCommand('#result', '<p>test</p>'));
-    return $response;
+  public function recordInfo(FormStateInterface $form_state) {
+    $id = $form_state->getValue('search');
+
+    $linkStorage = $this->entityTypeManager->getStorage('eresources_guide_link');
+    $query = $linkStorage->getQuery();
+    $linksIds = $query->condition('eresource', $id)
+      ->sort('guide.entity.title')
+      ->execute();
+    $links = $linkStorage->loadMultiple($linksIds);
+
+    if ($id) {
+      $recordStorage = $this->entityTypeManager->getStorage('eresources_record');
+      $record = $recordStorage->load($id);
+      $text = '<h2>' . $record->label() . " <span class=\"text-muted small\">[id:{$rid}]</span></h2>";
+    }
+    else {
+      $text = '<h2>Deleted Resource <span class="text-muted small">[id:0]</span></h2>';
+    }
+
+    if (empty($links)) {
+      $text .= '<p>This record is not used in any guides.</p>';
+    }
+    else {
+      $text .= '<p>Record found in the following guides:</p>';
+      $text .= '<ul>';
+      foreach ($links as $link) {
+        $url = $link->get('guide')->entity->toUrl()->toString();
+        $sectionId = $link->get('section')->getString();
+        $section = $this->entityTypeManager->getStorage('paragraph')->load($sectionId)->field_section_label->value();
+        $text .= "<li><a href=\"{$url}#section-{$sectionId}\" target=\"_blank\"></a> <span>({$section})</span></li>";
+      }
+      $text .= '</ul>';
+    }
+
+    return $text;
+  }
+
+  /**
+   * Ajax callback for record info.
+   */
+  public function refreshRecordInfo(array &$form, FormStateInterface $form_state) {
+    return $form['result'];
   }
 
   /**
