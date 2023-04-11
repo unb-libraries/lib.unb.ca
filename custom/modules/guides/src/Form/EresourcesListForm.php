@@ -54,9 +54,9 @@ class EresourcesListForm extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form['intro'] = [
       '#markup' => '<p>Use this tool to view resource record use within Guides or to create and edit <b>Print, eBook or Custom Local Records</b>.
-<p>The custom records (blue) here are maintained by Subject Specialists (Librarians and Reference staff) and not by Cataloguing staff. Be cautious when editing records as others may also have linked them from within their guides.</p>
+<p>The custom records here are maintained by Subject Specialists (Librarians and Reference staff) and not by Cataloguing staff. Be cautious when editing records as others may also have linked them from within their guides.</p>
 <p>Only local records which are unused may be deleted.</p>
-<p>You may also view the usage of Cataloguing-maintained eResource Discovery records (pink) but you may not edit them.</p>',
+<p>You may also view the usage of Cataloguing-maintained eResource Discovery records but you may not edit them.</p>',
     ];
 
     $form['add'] = [
@@ -75,9 +75,9 @@ class EresourcesListForm extends FormBase {
       '#suffix' => '</div>',
     ];
 
-    $form['eresources_selector']['eresources_local'] = [
+    $form['eresources_selector']['eresources_all'] = [
       '#type' => 'checkbox',
-      '#title' => 'Show local records',
+      '#title' => 'Include Cataloguing-maintained eResource records',
       '#ajax' => [
         'callback' => '::loadRecords',
         'disable-refocus' => FALSE,
@@ -89,8 +89,8 @@ class EresourcesListForm extends FormBase {
       ],
     ];
 
-    $showLocal = !!$form_state->getValue('eresources_local');
-    $options = $this->getRecords($showLocal);
+    $showAll = !!$form_state->getValue('eresources_all');
+    $options = $this->getRecords($showAll);
 
     $form['eresources_selector']['eresources_search'] = [
       '#type' => 'select',
@@ -131,15 +131,15 @@ class EresourcesListForm extends FormBase {
   /**
    * Convenience function for listing eresources records.
    */
-  public function getRecords($showLocal) {
+  public function getRecords($showAll) {
     $options = [];
 
     $storage = $this->entityTypeManager->getStorage('eresources_record');
     $query = $storage->getQuery()
       ->condition('status', 1)
       ->sort('title', 'ASC');
-    if (!$showLocal) {
-      $query->exists('entry_uid');
+    if (!$showAll) {
+      $query->notExists('entry_uid');
     }
 
     $ids = $query->execute();
