@@ -99,7 +99,6 @@ class EresourcesListForm extends FormBase {
       '#suffix' => '</div>',
       '#options' => $options,
       '#attributes' => [
-        'class' => ['custom-select'],
         'style' => ['width:100%;'],
       ],
       '#ajax' => [
@@ -118,6 +117,7 @@ class EresourcesListForm extends FormBase {
       '#attributes' => ['id' => 'result'],
     ];
 
+    $form['#attached']['library'][] = 'lib_core/lib-chosen';
     return $form;
   }
 
