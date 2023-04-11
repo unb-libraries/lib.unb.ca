@@ -285,6 +285,7 @@ function lib_core_page_attachments_alter(array &$attachments) {
 function lib_core_preprocess_node__news_post(&$variables) {
   $node = $variables['node'];
   $node_authoredon_date = new DrupalDateTime('@' . $node->getCreatedTime());
+  $node_authoredon_date->setTimezone(timezone_open(date_default_timezone_get()));
   $variables['formatted_date'] = $node_authoredon_date->format('l, F dS, Y \a\t h:ia');
 
   $todays_date = new DrupalDateTime();
