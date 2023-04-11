@@ -42,6 +42,13 @@ guides.eresources_dialog:
     _permission: 'create guide entities'
   options:
     _theme: ajax_base_page
+guides.eresources_list:
+  path: '/admin/guides/eresources'
+  defaults:
+    _form: '\Drupal\guides\Form\EresourcesListForm'
+    _title: 'Guide e-Resources'
+  requirements:
+    _permission: 'create guide entities'
 guides.clone:
   path: '/admin/guides/clone'
   defaults:
