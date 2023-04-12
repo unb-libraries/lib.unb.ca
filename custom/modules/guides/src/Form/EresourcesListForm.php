@@ -132,7 +132,9 @@ class EresourcesListForm extends FormBase {
    * Convenience function for listing eresources records.
    */
   public function getRecords($showAll) {
-    $options = [];
+    $options = [
+      0 => '[id:0] Deleted Resource',
+    ];
 
     $storage = $this->entityTypeManager->getStorage('eresources_record');
     $query = $storage->getQuery()
