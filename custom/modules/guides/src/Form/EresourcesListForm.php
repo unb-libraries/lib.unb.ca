@@ -172,6 +172,13 @@ class EresourcesListForm extends FormBase {
       $recordStorage = $this->entityTypeManager->getStorage('eresources_record');
       $record = $recordStorage->load($id);
       $text = '<h2>' . $record->label() . " <span class=\"text-muted small\">[id:{$id}]</span></h2>";
+
+      if (strpos($res->typeMulti, 'PHYS')) {
+        $text .= '<p>This record has been <b>added manually</b> by a Guide Editor and <b>may need review</b>.</p>';
+      }
+      else {
+        $text .= '<p>This record is <b>maintained by Cataloguing</b> and is part of eResources Discovery.</p>';
+      }
     }
     else {
       $text = '<h2>Deleted Resource <span class="text-muted small">[id:0]</span></h2>';
