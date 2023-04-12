@@ -1,12 +1,16 @@
+#record-select {
+  max-width: 767px;
+}
+
 div.selectize.single.form-control {
   border: 2px #000 solid;
   border-radius: 0.5rem;
-
-.selectize.single.form-control {
+}
+.selectize .selectize.single.form-control {
   border: none;
   padding: 2px 0;
 }
-}
+
 .selectize-dropdown-content {
   background: #fff;
   border: 2px #000 solid;
