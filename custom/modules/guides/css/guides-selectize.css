@@ -1,6 +1,11 @@
 #record-select {
   max-width: 767px;
 }
+#record-select label {
+  display: inline-block;
+  padding-bottom: 2px;
+  padding-top: 1px;
+}
 
 div.selectize.single.form-control {
   border: 2px #000 solid;
