@@ -162,11 +162,20 @@ class EresourcesListForm extends FormBase {
     $id = $form_state->getValue('search');
 
     $linkStorage = $this->entityTypeManager->getStorage('eresources_guide_link');
-    $query = $linkStorage->getQuery();
-    $linksIds = $query->condition('eresource', $id)
-      ->sort('guide.entity.title')
-      ->execute();
-    $links = $linkStorage->loadMultiple($linksIds);
+    $query = $linkStorage->getQuery()
+      ->sort('guide.entity.title');
+    if ($id) {
+      $query->condition('eresource', $id);
+    }
+    else {
+      $orGroup = $query->orConditionGroup()
+        ->condition('eresource', 0)
+        ->notExists('eresource');
+      $query->condition($orGroup);
+    }
+
+    $linkIds = $query->execute();
+    $links = $linkStorage->loadMultiple($linkIds);
 
     if ($id) {
       $recordStorage = $this->entityTypeManager->getStorage('eresources_record');
