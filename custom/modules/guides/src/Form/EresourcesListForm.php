@@ -102,6 +102,7 @@ class EresourcesListForm extends FormBase {
       ],
       '#ajax' => [
         'callback' => '::refreshRecordInfo',
+        'wrapper' => 'result',
         'event' => 'change',
         'progress' => [
           'type' => 'throbber',
@@ -168,7 +169,7 @@ class EresourcesListForm extends FormBase {
     if ($id) {
       $recordStorage = $this->entityTypeManager->getStorage('eresources_record');
       $record = $recordStorage->load($id);
-      $text = '<h2>' . $record->label() . " <span class=\"text-muted small\">[id:{$rid}]</span></h2>";
+      $text = '<h2>' . $record->label() . " <span class=\"text-muted small\">[id:{$id}]</span></h2>";
     }
     else {
       $text = '<h2>Deleted Resource <span class="text-muted small">[id:0]</span></h2>';
