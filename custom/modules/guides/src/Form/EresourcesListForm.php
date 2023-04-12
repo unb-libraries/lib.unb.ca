@@ -182,11 +182,11 @@ class EresourcesListForm extends FormBase {
       $record = $recordStorage->load($id);
       $text = '<h2>' . $record->label() . " <span class=\"text-muted small\">[id:{$id}]</span></h2>";
 
-      if (strpos($res->typeMulti, 'PHYS')) {
-        $text .= '<p>This record has been <b>added manually</b> by a Guide Editor and <b>may need review</b>.</p>';
+      if ($record->entry_uid->getString()) {
+        $text .= '<p>This record is <b>maintained by Cataloguing</b> and is part of eResources Discovery.</p>';
       }
       else {
-        $text .= '<p>This record is <b>maintained by Cataloguing</b> and is part of eResources Discovery.</p>';
+        $text .= '<p>This record has been <b>added manually</b> by a Guide Editor and <b>may need review</b>.</p>';
       }
     }
     else {
