@@ -97,8 +97,7 @@ class EresourcesListForm extends FormBase {
       '#suffix' => '</div>',
       '#options' => $options,
       '#attributes' => [
-        'class' => ['selectize'],
-        'style' => ['width:100%;'],
+        'class' => ['form-control', 'selectize', 'selectize-control'],
       ],
       '#ajax' => [
         'callback' => '::refreshRecordInfo',
@@ -118,6 +117,7 @@ class EresourcesListForm extends FormBase {
     ];
 
     $form['#attached']['library'][] = 'lib_core/lib-selectize';
+    $form['#attached']['library'][] = 'guides/guides-selectize';
     return $form;
   }
 

@@ -16,6 +16,13 @@ guides-connect:
     theme:
       css/guides_connect.css: {}
 
+
+guides-selectize:
+  version: VERSION
+  css:
+    theme:
+      css/guides-selectize.css: {}
+
 guides-view-all:
   version: VERSION
   css:
