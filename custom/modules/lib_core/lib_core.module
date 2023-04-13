@@ -388,6 +388,7 @@ function _lib_core_contactable_department($mailbox) {
     'mic' => 'Microforms Collection',
     'rdm.services' => 'Research Data Management Services',
     'refsj' => 'Saint John Reference',
+    'researchcommons' => 'Research Commons',
     'reserves' => 'Course Reserves',
     'scilib' => 'Science & Forestry',
     'worldcat' => 'WorldCat Support',
