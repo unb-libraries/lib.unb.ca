@@ -59,6 +59,7 @@ elements: |-
         '#title': Subject
         '#prepopulate': true
         '#required': true
+        '#default_value': 'Patron Web Query'
         '#test': 'Testing contact webform from [site:name]'
       message:
         '#title': Message
