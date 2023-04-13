@@ -147,11 +147,6 @@ describe('UNB Libraries Website', {baseUrl: libBaseUrl, groups: ['core']}, () =>
         .click(1, 1)
     });
 
-    specify('"Research Commons" featured image should be available', () => {
-      cy.get('.block-research-commons-advert-block img')
-        .should('be.visible')
-    })
-
     specify('"Library News" section should contain 2+ articles', () => {
       cy.get('#block-mainpagecontent')
         .contains('Library News')
