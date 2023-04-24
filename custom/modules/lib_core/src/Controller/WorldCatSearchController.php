@@ -24,7 +24,9 @@ class WorldCatSearchController extends ControllerBase {
 
     $keys = ['queryString', 'scope', 'format', 'databaseList'];
     $index = str_replace("&quot;", '"', stripslashes($request->request->get('searchIndex')));
-    $q = [];
+    $q = [
+      'sortKey' => 'BEST_MATCH',
+    ];
 
     foreach ($keys as $key) {
       $value = $request->request->get($key);
