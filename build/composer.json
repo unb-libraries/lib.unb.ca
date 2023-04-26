@@ -307,7 +307,7 @@
     "drupal/field_formatter_class": "1.6",
     "drupal/field_group": "3.4",
     "drupal/field_permissions": "1.2",
-    "drupal/file_management": "1.x-dev",
+    "drupal/file_management": "2.1",
     "drupal/fontawesome": "2.25",
     "drupal/google_analytics": "2.5",
     "drupal/health_check": "1.3",
