@@ -52,8 +52,13 @@ class CourseLinkController extends ControllerBase {
 
     $pattern = '/^(?P<year>\d{4})(?P<term>\w{2})_(?P<prefix>\w+)\*(?P<course_number>\d+)\*?(?P<campus>\w{2})(?P<section>\S+)(\s+MULTI(\s\d+)?)?$/';
     $fields = ['prefix', 'course_number', 'campus', 'year', 'term', 'section'];
-    $empties = [];
 
+    if (preg_match('/^ONLINE_/', $id)) {
+      $pattern = '/^ONLINE_(?P<prefix>\w+)\*(?P<course_number>\d+)\*?(?P<campus>\w{2})(?P<section>\S+)/';
+      $fields = ['prefix', 'course_number', 'section'];
+    }
+
+    $empties = [];
     if (preg_match($pattern, $id, $matches)) {
       $storage = $this->entityTypeManager()->getStorage('course_link');
       $queryBase = $storage->getQuery()
