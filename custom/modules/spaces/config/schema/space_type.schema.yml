@@ -1,0 +1,10 @@
+spaces.space_type.*:
+  type: config_entity
+  label: 'Space type config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
