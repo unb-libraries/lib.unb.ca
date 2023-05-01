@@ -37,6 +37,7 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
  *   config_export = {
  *     "id",
  *     "label",
+ *     "bundle_class",
  *   },
  *   links = {
  *     "canonical" = "/explore-spaces/types/{space_type}",

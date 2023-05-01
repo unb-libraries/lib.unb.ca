@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+id: area
+label: Area
+bundle_class: Drupal\spaces\Entity\Area

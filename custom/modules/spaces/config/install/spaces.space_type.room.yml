@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+id: room
+label: Room
+bundle_class: Drupal\spaces\Entity\Room

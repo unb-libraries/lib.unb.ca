@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+id: building
+label: Building
+bundle_class: Drupal\spaces\Entity\Building

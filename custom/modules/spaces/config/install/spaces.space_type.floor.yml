@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+id: floor
+label: Floor
+bundle_class: Drupal\spaces\Entity\Floor
