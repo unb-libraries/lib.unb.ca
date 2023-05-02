@@ -60,6 +60,9 @@ elements: |-
           report: report
           proceeding: proceeding
           book: 'book/book part'
+        '#other__option_label': 'other …'
+        '#other__placeholder': 'Enter custom publication type …'
+        '#other__description': 'Note field may not be empty when "other" is selected'
       publication_doi:
         '#type': textfield
         '#title': 'Publication DOI'
@@ -93,8 +96,9 @@ elements: |-
           submitted_manuscript: 'submitted manuscript (preprint)'
           accepted_manuscript: 'accepted manuscript (postprint)'
           publisher_version: 'publisher version (version of record)'
-        '#other__option_label': ''
-        '#other__description': 'Please enter any other details you wish to tell us about the work'
+        '#other__option_label': 'other …'
+        '#other__placeholder': 'Enter custom version information …'
+        '#other__description': 'Please enter any other details you wish to tell us about the work (field may not be empty)'
     deposit_license:
       '#type': fieldset
       '#title': 'Deposit License'
