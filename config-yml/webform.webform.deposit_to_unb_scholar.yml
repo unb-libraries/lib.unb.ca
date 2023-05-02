@@ -307,5 +307,79 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers: {  }
+handlers:
+  submission_email:
+    id: email
+    handler_id: submission_email
+    label: 'Submission Email'
+    notes: 'Sends a Deposit to UNB Scholar webform submission via email.'
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: unb.scholar@unb.ca
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: '[webform_submission:values:depositor_email_address:raw]'
+      from_options: {  }
+      from_name: '[webform_submission:values:depositor_name:raw]'
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Deposit for UNB Scholar'
+      body: "<p>The following information was submitted through our <b>Deposit form for UNB Scholar</b>.\r\n<p>Submitted values are:</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: true
+      twig: true
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  sender_confirmation_email:
+    id: email
+    handler_id: sender_confirmation_email
+    label: 'Sender Confirmation Email'
+    notes: 'Sends thank you email message to the form submitter.'
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:depositor_email_address:raw]'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: unb-libraries-no-reply@unb.ca
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Confirmation: Deposit for UNB Scholar '
+      body: "<p>Thanks for depositing your work to UNB Scholar. We will review publisher policies and ensure that the provided article file is an acceptable version. We will also apply any embargo requirements stipulated by the publisher. Deposits will generally be processed within two weeks of submission *if* they do not require any follow-up clarification.</p>\r\n\r\n<p>If you have any questions in the meantime, please contact unb.scholar@unb.ca and we’d be happy to follow up.</p>\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      theme_name: ''
+      parameters: {  }
+      debug: false
 variants: {  }
