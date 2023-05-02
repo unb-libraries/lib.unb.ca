@@ -71,6 +71,9 @@ elements: |-
       file_upload:
         '#type': webform_document_file
         '#title': 'File Upload'
+        '#required': true
+        '#file_extensions': pdf
+        '#sanitize': true
       checked_policies:
         '#type': radios
         '#title': 'Have you checked policies to see which version(s) you’re allowed to share?'
@@ -334,8 +337,7 @@ handlers:
       sender_name: ''
       subject: 'Deposit for UNB Scholar'
       body: "<p>The following information was submitted through our <b>Deposit form for UNB Scholar</b>.\r\n<p>Submitted values are:</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>"
-      excluded_elements:
-        file_upload: file_upload
+      excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: false
@@ -372,14 +374,13 @@ handlers:
       sender_name: ''
       subject: 'Thank you for your UNB Scholar Deposit'
       body: "<p>Thanks for depositing your work to UNB Scholar. We will review publisher policies and ensure that the provided article file is an acceptable version. We will also apply any embargo requirements stipulated by the publisher. Deposits will generally be processed within two weeks of submission *if* they do not require any follow-up clarification.</p>\r\n\r\n<p>If you have any questions in the meantime, please contact unb.scholar@unb.ca and we’d be happy to follow up.</p>\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
-      excluded_elements:
-        file_upload: file_upload
+      excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: false
       exclude_attachments: false
       html: true
-      attachments: true
+      attachments: false
       twig: true
       theme_name: ''
       parameters: {  }
