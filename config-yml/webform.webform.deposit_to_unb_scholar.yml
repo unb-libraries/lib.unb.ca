@@ -37,7 +37,7 @@ elements: |-
         - theme-dark
     personal_information:
       '#type': fieldset
-      '#title': 'Personal Information'
+      '#title': 'Depositor Information'
       depositor_name:
         '#type': textfield
         '#title': 'Depositor Name'
@@ -49,10 +49,10 @@ elements: |-
       orcid:
         '#type': textfield
         '#title': ORCID
-        '#input_mask': 'https://orcid.org/9999-9999-9999-9999'
+        '#input_mask': 9999-9999-9999-9999
     details_work:
       '#type': fieldset
-      '#title': 'Details About Your Work'
+      '#title': Metadata
       title_of_work:
         '#type': textfield
         '#title': 'Title of Work'
