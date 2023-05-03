@@ -64,9 +64,10 @@ elements: |-
           report: report
           proceeding: proceeding
           book: 'book/book part'
+        '#empty_option': '- none -'
         '#other__option_label': 'other …'
-        '#other__placeholder': 'Enter custom publication type …'
-        '#other__description': 'Note field may not be empty when "other" is selected'
+        '#other__placeholder': 'Enter custom publication type'
+        '#other__description': 'Note: field may not be empty when "other" is selected'
       publication_doi:
         '#type': textfield
         '#title': 'Publication DOI'
