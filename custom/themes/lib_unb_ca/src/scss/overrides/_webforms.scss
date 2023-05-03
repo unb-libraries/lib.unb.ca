@@ -123,6 +123,13 @@ form.theme-dark>.webform-elements>.form-group>fieldset>legend {
   }
 }
 
+
+/* Legend Help element tweaks */
+.webform-element-help {
+  font-size: 14px;
+  line-height: 18px;
+}
+
 /* Webform 5.x Progress Tracker
 .webform-progress-tracker {
   &.progress-tracker {
