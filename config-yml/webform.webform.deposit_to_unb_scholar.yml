@@ -16,7 +16,7 @@ elements: |-
   intro_text:
     '#type': processed_text
     '#text': |
-      <div class="card border-dark mb-4 mt-2">
+      <div class="alert card border-dark mb-4 mt-2 p-0">
       <div class="card-body p-0">
       <h2 class="card-title h6 bg-dark text-white px-4 py-2">Thanks for depositing your work to UNB Scholar</h2>
 
