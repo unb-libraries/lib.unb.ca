@@ -85,6 +85,8 @@ elements: |-
       checked_policies:
         '#type': radios
         '#title': 'Have you checked policies to see which version(s) you’re allowed to share?'
+        '#help_title': 'Check journal policies:'
+        '#help': '<a href="https://www.sherpa.ac.uk/romeo">Sherpa Romeo Services</a>'
         '#options':
           'yes': 'yes'
           'no': 'no'
