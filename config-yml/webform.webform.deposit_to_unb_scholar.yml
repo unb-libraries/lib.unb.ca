@@ -1,7 +1,15 @@
 uuid: 23a1f388-27d6-45fb-b425-a9001f95db80
 langcode: en
-status: closed
-dependencies: {  }
+status: open
+dependencies:
+  module:
+    - antibot
+  enforced:
+    module:
+      - webform
+third_party_settings:
+  antibot:
+    antibot: true
 weight: 0
 open: null
 close: null
