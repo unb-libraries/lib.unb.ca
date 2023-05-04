@@ -49,17 +49,14 @@ elements: |-
       depositor_name:
         '#type': textfield
         '#title': 'Depositor Name'
-        '#prepopulate': true
         '#required': true
       depositor_email_address:
         '#type': email
         '#title': 'Depositor Email Address'
-        '#prepopulate': true
         '#required': true
       orcid:
         '#type': textfield
         '#title': ORCID
-        '#prepopulate': true
         '#input_mask': 9999-9999-9999-9999
     details_work:
       '#type': fieldset
@@ -177,7 +174,7 @@ settings:
   form_confidential_message: ''
   form_disable_remote_addr: false
   form_convert_anonymous: false
-  form_prepopulate: true
+  form_prepopulate: false
   form_prepopulate_source_entity: false
   form_prepopulate_source_entity_required: false
   form_prepopulate_source_entity_type: ''
@@ -221,9 +218,19 @@ settings:
   submission_access_denied_attributes: {  }
   previous_submission_message: ''
   previous_submissions_message: ''
-  autofill: false
+  autofill: true
   autofill_message: ''
-  autofill_excluded_elements: {  }
+  autofill_excluded_elements:
+    title_of_work: title_of_work
+    publication_type: publication_type
+    publication_doi: publication_doi
+    funding_body: funding_body
+    file_upload: file_upload
+    checked_policies: checked_policies
+    pay_apc: pay_apc
+    version_submitted: version_submitted
+    other: other
+    agree: agree
   wizard_progress_bar: false
   wizard_progress_pages: false
   wizard_progress_percentage: false
