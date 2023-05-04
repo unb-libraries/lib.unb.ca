@@ -49,14 +49,17 @@ elements: |-
       depositor_name:
         '#type': textfield
         '#title': 'Depositor Name'
+        '#prepopulate': true
         '#required': true
       depositor_email_address:
         '#type': email
         '#title': 'Depositor Email Address'
+        '#prepopulate': true
         '#required': true
       orcid:
         '#type': textfield
         '#title': ORCID
+        '#prepopulate': true
         '#input_mask': 9999-9999-9999-9999
     details_work:
       '#type': fieldset
@@ -119,7 +122,7 @@ elements: |-
         '#type': textarea
         '#title': Other
         '#description': 'Please enter any other details you wish to tell us about the work'
-        '#rows': 2
+        '#rows': 3
     deposit_license:
       '#type': fieldset
       '#title': 'Deposit License'
@@ -161,7 +164,7 @@ settings:
   ajax_effect: ''
   ajax_speed: null
   page: true
-  page_submit_path: ''
+  page_submit_path: /unb-scholar/deposit
   page_confirm_path: ''
   page_theme_name: ''
   form_title: source_entity_webform
@@ -174,7 +177,7 @@ settings:
   form_confidential_message: ''
   form_disable_remote_addr: false
   form_convert_anonymous: false
-  form_prepopulate: false
+  form_prepopulate: true
   form_prepopulate_source_entity: false
   form_prepopulate_source_entity_required: false
   form_prepopulate_source_entity_type: ''
@@ -188,7 +191,7 @@ settings:
   form_autofocus: true
   form_details_toggle: false
   form_reset: false
-  form_access_denied: default
+  form_access_denied: login
   form_access_denied_title: ''
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
@@ -257,15 +260,15 @@ settings:
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
   confirmation_type: page
-  confirmation_url: ''
-  confirmation_title: ''
-  confirmation_message: ''
+  confirmation_url: confirmation
+  confirmation_title: 'Deposit Successful'
+  confirmation_message: "<p>Thanks for depositing your work to UNB Scholar. Deposits will generally be processed within two weeks of submission, and a follow-up email will be sent to the depositor with confirmation and a link to the record. Deposits will be screened for copyright and/or licensing clearance with, if necessary, the assistance of the UNB Libraries Copyright Officer.</p>\r\n\r\n<div class=\"d-flex justify-content-center mt-4\">\r\n\t<a class=\"btn btn-primary mx-2\" href=\"[webform:url]\">Deposit another article</a>\r\n  \t<a class=\"btn btn-unb-red mx-2\" href=\"https://unbscholar.lib.unb.ca\">Visit UNB Scholar</a>\r\n</div>"
   confirmation_attributes: {  }
   confirmation_back: false
   confirmation_back_label: ''
   confirmation_back_attributes: {  }
-  confirmation_exclude_query: false
-  confirmation_exclude_token: false
+  confirmation_exclude_query: true
+  confirmation_exclude_token: true
   confirmation_update: false
   limit_total: null
   limit_total_interval: null
@@ -291,7 +294,6 @@ settings:
 access:
   create:
     roles:
-      - anonymous
       - authenticated
     users: {  }
     permissions: {  }
