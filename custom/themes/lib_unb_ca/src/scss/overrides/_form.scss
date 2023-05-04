@@ -27,3 +27,18 @@ form {
     }
   }
 }
+
+.form-managed-file {
+  align-items: center !important;
+  display:flex !important;
+
+  &> span.file {
+    flex-grow: 1 !important;
+  }
+
+  input[name="file_upload_remove_button"] {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    width: auto;
+  }
+}
