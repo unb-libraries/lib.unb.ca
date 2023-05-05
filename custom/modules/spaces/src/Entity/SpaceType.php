@@ -40,10 +40,9 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
  *     "bundle_class",
  *   },
  *   links = {
- *     "canonical" = "/explore-spaces/types/{space_type}",
- *     "add-form" = "/explore-spaces/types/add",
- *     "edit-form" = "/explore-spaces/types/{space_type}/edit",
- *     "delete-form" = "/explore-spaces/types/{space_type}/delete",
+ *     "add-form" = "/admin/structure/spaces/add",
+ *     "edit-form" = "/admin/structure/spaces/manage/{space_type}",
+ *     "delete-form" = "/admin/structure/spaces/manage/{space_type}/delete",
  *   },
  * )
  */
