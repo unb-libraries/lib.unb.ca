@@ -24,6 +24,7 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
  *     },
  *     "route_provider" = {
  *       "html" = "Drupal\custom_entity\Entity\Routing\HtmlRouteProvider",
+ *       "permissions" = "Drupal\user\Entity\EntityPermissionsRouteProvider",
  *     },
  *     "access" = "Drupal\custom_entity\Entity\Access\EntityAccessControlHandler",
  *   },
@@ -43,6 +44,7 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
  *     "add-form" = "/admin/structure/spaces/add",
  *     "edit-form" = "/admin/structure/spaces/manage/{space_type}",
  *     "delete-form" = "/admin/structure/spaces/manage/{space_type}/delete",
+ *     "entity-permissions-form" = "/admin/structure/spaces/manage/{space_type}/permissions",
  *   },
  * )
  */
