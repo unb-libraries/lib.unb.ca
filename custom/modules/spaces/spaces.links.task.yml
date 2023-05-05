@@ -1,0 +1,5 @@
+# Space types
+entity.space_type.edit_form:
+  route_name: entity.space_type.edit_form
+  base_route: entity.space_type.edit_form
+  title: 'Edit'
