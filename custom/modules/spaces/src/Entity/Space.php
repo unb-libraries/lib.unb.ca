@@ -28,6 +28,7 @@ use Drupal\Core\Entity\ContentEntityBase;
  *       "html" = "Drupal\custom_entity\Entity\Routing\HtmlRouteProvider",
  *     },
  *     "access" = "Drupal\custom_entity\Entity\Access\EntityAccessControlHandler",
+ *     "permissions" = "Drupal\custom_entity\Entity\Access\EntityPermissionsHandler",
  *   },
  *   admin_permission = "administer space entities",
  *   base_table = "space",
