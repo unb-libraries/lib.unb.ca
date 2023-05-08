@@ -1,7 +1,15 @@
 uuid: 23a1f388-27d6-45fb-b425-a9001f95db80
 langcode: en
-status: closed
-dependencies: {  }
+status: open
+dependencies:
+  module:
+    - antibot
+  enforced:
+    module:
+      - webform
+third_party_settings:
+  antibot:
+    antibot: true
 weight: 0
 open: null
 close: null
@@ -16,14 +24,14 @@ elements: |-
   intro_text:
     '#type': processed_text
     '#text': |
-      <div class="card border-dark mb-4 mt-2">
+      <div class="alert card border-dark mb-4 mt-2 p-0">
       <div class="card-body p-0">
       <h2 class="card-title h6 bg-dark text-white px-4 py-2">Thanks for depositing your work to UNB Scholar</h2>
 
       <div class="px-4 py-2">
       <p>If you’d like, you can <a href="https://lib.unb.ca/unb-scholar/policy">review scholar policy here</a>. Deposits will generally be processed within two weeks of submission, and a follow-up email will be sent to the depositor with confirmation and a link to the record.</p>
 
-      <p>Deposits will be screened for copyright and/or licensing clearance with, if necessary, the assistance of the UNB Libraries Copyright Officer. If you would like to submit content to <em>UNB Scholar</em> but are unsure of the policies of your publisher, you can check journal policies using the database <strong><a href="http://www.sherpa.ac.uk/romeo/">SHERPA/RoMEO</a></strong>.</p>
+      <p>Deposits will be screened for copyright and/or licensing clearance with, if necessary, the assistance of the UNB Libraries Copyright Officer. If you would like to submit content to <em>UNB Scholar</em> but are unsure of the policies of your publisher, you can check journal policies using the database <strong><a class="external" href="http://www.sherpa.ac.uk/romeo/">SHERPA/RoMEO</a></strong>.</p>
 
       <p>For inquiries or assistance, please contact <a href="mailto:unb.scholar@unb.ca">unb.scholar@unb.ca</a>.</p>
       </div>
@@ -37,7 +45,7 @@ elements: |-
         - theme-dark
     personal_information:
       '#type': fieldset
-      '#title': 'Personal Information'
+      '#title': 'Depositor Information'
       depositor_name:
         '#type': textfield
         '#title': 'Depositor Name'
@@ -46,9 +54,13 @@ elements: |-
         '#type': email
         '#title': 'Depositor Email Address'
         '#required': true
+      orcid:
+        '#type': textfield
+        '#title': ORCID
+        '#input_mask': 9999-9999-9999-9999
     details_work:
       '#type': fieldset
-      '#title': 'Details About Your Work'
+      '#title': Metadata
       title_of_work:
         '#type': textfield
         '#title': 'Title of Work'
@@ -60,6 +72,10 @@ elements: |-
           report: report
           proceeding: proceeding
           book: 'book/book part'
+        '#empty_option': '- none -'
+        '#other__option_label': 'other …'
+        '#other__placeholder': 'Enter custom publication type'
+        '#other__description': 'Note: field may not be empty when "other" is selected'
       publication_doi:
         '#type': textfield
         '#title': 'Publication DOI'
@@ -71,9 +87,14 @@ elements: |-
       file_upload:
         '#type': webform_document_file
         '#title': 'File Upload'
+        '#required': true
+        '#file_extensions': pdf
+        '#sanitize': true
       checked_policies:
         '#type': radios
         '#title': 'Have you checked policies to see which version(s) you’re allowed to share?'
+        '#help_title': 'Check journal policies:'
+        '#help': '<a class="external" href="https://www.sherpa.ac.uk/romeo">Sherpa Romeo Services</a>'
         '#options':
           'yes': 'yes'
           'no': 'no'
@@ -90,8 +111,15 @@ elements: |-
           submitted_manuscript: 'submitted manuscript (preprint)'
           accepted_manuscript: 'accepted manuscript (postprint)'
           publisher_version: 'publisher version (version of record)'
-        '#other__option_label': ''
-        '#other__description': 'Please enter any other details you wish to tell us about the work'
+        '#empty_option': '- none -'
+        '#other__option_label': 'other …'
+        '#other__placeholder': 'Enter custom version'
+        '#other__description': 'Note: field may not be empty when "other" is selected'
+      other:
+        '#type': textarea
+        '#title': Other
+        '#description': 'Please enter any other details you wish to tell us about the work'
+        '#rows': 3
     deposit_license:
       '#type': fieldset
       '#title': 'Deposit License'
@@ -133,7 +161,7 @@ settings:
   ajax_effect: ''
   ajax_speed: null
   page: true
-  page_submit_path: ''
+  page_submit_path: /unb-scholar/deposit
   page_confirm_path: ''
   page_theme_name: ''
   form_title: source_entity_webform
@@ -141,7 +169,7 @@ settings:
   form_open_message: ''
   form_close_message: ''
   form_exception_message: ''
-  form_previous_submissions: true
+  form_previous_submissions: false
   form_confidential: false
   form_confidential_message: ''
   form_disable_remote_addr: false
@@ -150,17 +178,17 @@ settings:
   form_prepopulate_source_entity: false
   form_prepopulate_source_entity_required: false
   form_prepopulate_source_entity_type: ''
-  form_unsaved: false
+  form_unsaved: true
   form_disable_back: false
   form_submit_back: false
   form_disable_autocomplete: false
   form_novalidate: false
   form_disable_inline_errors: false
   form_required: false
-  form_autofocus: false
+  form_autofocus: true
   form_details_toggle: false
   form_reset: false
-  form_access_denied: default
+  form_access_denied: login
   form_access_denied_title: ''
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
@@ -190,10 +218,20 @@ settings:
   submission_access_denied_attributes: {  }
   previous_submission_message: ''
   previous_submissions_message: ''
-  autofill: false
+  autofill: true
   autofill_message: ''
-  autofill_excluded_elements: {  }
-  wizard_progress_bar: true
+  autofill_excluded_elements:
+    title_of_work: title_of_work
+    publication_type: publication_type
+    publication_doi: publication_doi
+    funding_body: funding_body
+    file_upload: file_upload
+    checked_policies: checked_policies
+    pay_apc: pay_apc
+    version_submitted: version_submitted
+    other: other
+    agree: agree
+  wizard_progress_bar: false
   wizard_progress_pages: false
   wizard_progress_percentage: false
   wizard_progress_link: false
@@ -229,15 +267,15 @@ settings:
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
   confirmation_type: page
-  confirmation_url: ''
-  confirmation_title: ''
-  confirmation_message: ''
+  confirmation_url: confirmation
+  confirmation_title: 'Deposit Successful'
+  confirmation_message: "<p>Thanks for depositing your work to UNB Scholar. Deposits will generally be processed within two weeks of submission, and a follow-up email will be sent to the depositor with confirmation and a link to the record. Deposits will be screened for copyright and/or licensing clearance with, if necessary, the assistance of the UNB Libraries Copyright Officer.</p>\r\n\r\n<div class=\"d-flex justify-content-center mt-4\">\r\n\t<a class=\"btn btn-primary mx-2\" href=\"[webform:url]\">Deposit another article</a>\r\n  \t<a class=\"btn btn-unb-red mx-2\" href=\"https://unbscholar.lib.unb.ca\">Visit UNB Scholar</a>\r\n</div>"
   confirmation_attributes: {  }
-  confirmation_back: true
+  confirmation_back: false
   confirmation_back_label: ''
   confirmation_back_attributes: {  }
-  confirmation_exclude_query: false
-  confirmation_exclude_token: false
+  confirmation_exclude_query: true
+  confirmation_exclude_token: true
   confirmation_update: false
   limit_total: null
   limit_total_interval: null
@@ -263,7 +301,6 @@ settings:
 access:
   create:
     roles:
-      - anonymous
       - authenticated
     users: {  }
     permissions: {  }
@@ -307,5 +344,81 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers: {  }
+handlers:
+  submission_email:
+    id: email
+    handler_id: submission_email
+    label: 'Submission Email'
+    notes: 'Sends a Deposit to UNB Scholar webform submission via email.'
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: unb.scholar.deposits@unb.ca
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: '[webform_submission:values:depositor_email_address:raw]'
+      from_options: {  }
+      from_name: '[webform_submission:values:depositor_name:raw]'
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Scholar Deposit from [webform_submission:values:depositor_name:raw]'
+      body: "<p>The following information was submitted through our <b>Deposit form for UNB Scholar</b>:\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>"
+      excluded_elements:
+        intro_text: intro_text
+        processed_text: processed_text
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: true
+      twig: true
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  sender_confirmation_email:
+    id: email
+    handler_id: sender_confirmation_email
+    label: 'Sender Confirmation Email'
+    notes: 'Sends thank you email message to the form submitter.'
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:depositor_email_address:raw]'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: unb-libraries-no-reply@unb.ca
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Thank you for your UNB Scholar Deposit'
+      body: "<p>Thanks for depositing your work to <a href=\"https://unbscholar.lib.unb.ca/\">UNB Scholar</a>. We will review publisher policies and ensure that the provided article file is an acceptable version. We will also apply any embargo requirements stipulated by the publisher. Deposits will generally be processed within two weeks of submission *if* they do not require any follow-up clarification.</p>\r\n\r\n<p>If you have any questions in the meantime, please contact unb.scholar@unb.ca and we’d be happy to follow up.</p>\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      theme_name: ''
+      parameters: {  }
+      debug: false
 variants: {  }

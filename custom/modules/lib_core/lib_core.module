@@ -84,6 +84,33 @@ function lib_core_entity_presave(EntityInterface $entity) {
 }
 
 /**
+* Implements hook_webform_element_alter().
+*/
+
+function lib_core_webform_element_alter(array &$element, FormStateInterface $form_state, array $context) {
+  if (isset($element['#webform_id'])) {
+    switch ($element['#webform_id']) {
+      case 'deposit_to_unb_scholar--depositor_name':
+         // Scholar Deposit: pre-populate name field if not prefilled from previous submission.
+        if (\Drupal::currentUser()->isAuthenticated() && empty($element['#default_value'])) {
+          $user = User::load(\Drupal::currentUser()->id());
+          if ($user->hasField('field_first_name') && $user->hasField('field_last_name')) {
+            $name = $user->get('field_first_name')->value . ' ' . $user->get('field_last_name')->value;
+            $element['#default_value'] = trim($name);
+          }
+        }
+        break;
+      case 'deposit_to_unb_scholar--depositor_email_address':
+        // Scholar Deposit: pre-populate email field if not prefilled from previous submission.
+        if (\Drupal::currentUser()->isAuthenticated() && empty($element['#default_value'])) {
+          $element['#default_value'] = \Drupal::currentUser()->getEmail();
+        }
+        break;
+    }
+  }
+}
+
+/**
  * Implements hook_form_alter().
  */
 function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {

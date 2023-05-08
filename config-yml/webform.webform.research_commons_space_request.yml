@@ -331,7 +331,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: mfonzo@unb.ca
+      to_mail: researchcommons@unb.ca
       to_options: {  }
       bcc_mail: ''
       bcc_options: {  }
@@ -377,7 +377,7 @@ handlers:
       from_mail: unb-libraries-no-reply@unb.ca
       from_options: {  }
       from_name: 'Research Commons Space Request Form'
-      reply_to: mfonzo@unb.ca
+      reply_to: researchcommons@unb.ca
       return_path: ''
       sender_mail: ''
       sender_name: ''
