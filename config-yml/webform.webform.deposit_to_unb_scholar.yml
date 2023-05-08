@@ -31,7 +31,7 @@ elements: |-
       <div class="px-4 py-2">
       <p>If you’d like, you can <a href="https://lib.unb.ca/unb-scholar/policy">review scholar policy here</a>. Deposits will generally be processed within two weeks of submission, and a follow-up email will be sent to the depositor with confirmation and a link to the record.</p>
 
-      <p>Deposits will be screened for copyright and/or licensing clearance with, if necessary, the assistance of the UNB Libraries Copyright Officer. If you would like to submit content to <em>UNB Scholar</em> but are unsure of the policies of your publisher, you can check journal policies using the database <strong><a href="http://www.sherpa.ac.uk/romeo/">SHERPA/RoMEO</a></strong>.</p>
+      <p>Deposits will be screened for copyright and/or licensing clearance with, if necessary, the assistance of the UNB Libraries Copyright Officer. If you would like to submit content to <em>UNB Scholar</em> but are unsure of the policies of your publisher, you can check journal policies using the database <strong><a class="external" href="http://www.sherpa.ac.uk/romeo/">SHERPA/RoMEO</a></strong>.</p>
 
       <p>For inquiries or assistance, please contact <a href="mailto:unb.scholar@unb.ca">unb.scholar@unb.ca</a>.</p>
       </div>
@@ -94,7 +94,7 @@ elements: |-
         '#type': radios
         '#title': 'Have you checked policies to see which version(s) you’re allowed to share?'
         '#help_title': 'Check journal policies:'
-        '#help': '<a href="https://www.sherpa.ac.uk/romeo">Sherpa Romeo Services</a>'
+        '#help': '<a class="external" href="https://www.sherpa.ac.uk/romeo">Sherpa Romeo Services</a>'
         '#options':
           'yes': 'yes'
           'no': 'no'
