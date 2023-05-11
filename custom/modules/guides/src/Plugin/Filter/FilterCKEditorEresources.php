@@ -78,7 +78,7 @@ class FilterCKEditorEresources extends FilterBase implements ContainerFactoryPlu
           $ids = explode(',', $ids);
 
           $index = Index::load('eresources');
-          $indexQuery = $index->query();
+          $indexQuery = $index->query(['limit' => 1000]);
           $indexQuery->addCondition('id', $ids, 'IN');
           $indexQuery->addCondition('status', TRUE);
           $results = $indexQuery->execute();
