@@ -121,6 +121,7 @@ class CollectionsController extends ControllerBase {
     }
 
     $render['#attached']['library'][] = 'eresources/eresources';
+    $render['#cache']['tags'][] = 'eresources_record_list';
     return $render;
   }
 
