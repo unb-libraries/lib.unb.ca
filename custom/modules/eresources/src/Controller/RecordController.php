@@ -40,6 +40,9 @@ class RecordController extends ControllerBase {
       '#theme' => 'permalink',
       '#entry' => $entry,
       '#debug' => $this->currentUser()->hasPermission('administer eresources_record entities'),
+      '#cache' => [
+        'tags' => $item->getOriginalObject()->getValue()->getCacheTags(),
+      ],
     ];
   }
 
