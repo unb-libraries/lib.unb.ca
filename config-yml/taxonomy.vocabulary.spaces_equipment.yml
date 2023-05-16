@@ -1,0 +1,8 @@
+uuid: c73b711b-470c-4df9-b379-81be9a3e8975
+langcode: en
+status: true
+dependencies: {  }
+name: '[Spaces] Equipment'
+vid: spaces_equipment
+description: ''
+weight: 0

@@ -1,0 +1,11 @@
+uuid: 03804681-e186-4e95-948d-2e921edf50e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.spaces_equipment
+id: taxonomy_term.spaces_equipment
+target_entity_type_id: taxonomy_term
+target_bundle: spaces_equipment
+default_langcode: site_default
+language_alterable: false
