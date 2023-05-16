@@ -1,0 +1,11 @@
+uuid: 2b4c168d-358c-434e-88d5-516463425f73
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.spaces_sound
+id: taxonomy_term.spaces_sound
+target_entity_type_id: taxonomy_term
+target_bundle: spaces_sound
+default_langcode: site_default
+language_alterable: false
