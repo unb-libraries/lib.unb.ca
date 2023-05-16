@@ -1,0 +1,19 @@
+uuid: 8d9a2caa-f8d1-4b8f-8b37-c98827b35af3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.space.field_name
+    - spaces.space_type.building
+id: space.building.field_name
+field_name: field_name
+entity_type: space
+bundle: building
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,22 @@
+uuid: 058f013e-462c-4c15-9abd-050ac41aeec7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.space.area.field_name
+    - spaces.space_type.area
+id: space.area.default
+targetEntityType: space
+bundle: area
+mode: default
+content:
+  field_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

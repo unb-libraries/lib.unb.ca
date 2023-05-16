@@ -1,0 +1,19 @@
+uuid: a67c7d8b-53b9-42bf-ac12-4039d259ac04
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.space.field_name
+    - spaces.space_type.floor
+id: space.floor.field_name
+field_name: field_name
+entity_type: space
+bundle: floor
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

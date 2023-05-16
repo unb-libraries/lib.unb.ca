@@ -1,0 +1,21 @@
+uuid: 091902b8-4ea2-4f14-adc9-a074fbed05ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.space.floor.field_name
+    - spaces.space_type.floor
+id: space.floor.default
+targetEntityType: space
+bundle: floor
+mode: default
+content:
+  field_name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

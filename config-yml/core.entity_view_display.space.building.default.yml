@@ -1,0 +1,22 @@
+uuid: 4a1a8f19-a32e-4b4d-801f-5d394420501f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.space.building.field_name
+    - spaces.space_type.building
+id: space.building.default
+targetEntityType: space
+bundle: building
+mode: default
+content:
+  field_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

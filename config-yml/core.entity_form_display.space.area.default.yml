@@ -1,0 +1,21 @@
+uuid: 301c548b-cefd-4c8c-936b-a646319952ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.space.area.field_name
+    - spaces.space_type.area
+id: space.area.default
+targetEntityType: space
+bundle: area
+mode: default
+content:
+  field_name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,21 @@
+uuid: bc274d8e-703c-48ec-9546-62f7d5cbebf3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.space.room.field_name
+    - spaces.space_type.room
+id: space.room.default
+targetEntityType: space
+bundle: room
+mode: default
+content:
+  field_name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

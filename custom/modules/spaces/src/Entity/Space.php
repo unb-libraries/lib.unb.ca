@@ -50,4 +50,13 @@ use Drupal\Core\Entity\ContentEntityBase;
  * )
  */
 class Space extends ContentEntityBase implements SpaceInterface {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function label() {
+    return $this->get('field_name')
+      ->value;
+  }
+
 }
