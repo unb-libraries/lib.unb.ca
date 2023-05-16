@@ -3,6 +3,8 @@
 namespace Drupal\spaces\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
 
 /**
  * Defines the "Space" entity.
@@ -57,6 +59,31 @@ class Space extends ContentEntityBase implements SpaceInterface {
   public function label() {
     return $this->get('field_name')
       ->value;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
+    $fields = parent::baseFieldDefinitions($entity_type);
+
+    $fields['parent'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Parent'))
+      ->setDescription(t('The space this space belongs to.'))
+      ->setRequired(TRUE)
+      ->setCardinality(1)
+      ->setSetting('target_type', 'space')
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayOptions('form', [
+        'type' => 'options_select',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayOptions('view', [
+        'weight' => 0,
+      ]);
+
+    return $fields;
   }
 
 }

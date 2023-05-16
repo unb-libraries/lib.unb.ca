@@ -18,4 +18,10 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  parent:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }
