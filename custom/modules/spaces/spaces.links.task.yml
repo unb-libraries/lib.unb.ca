@@ -3,3 +3,19 @@ entity.space_type.edit_form:
   route_name: entity.space_type.edit_form
   base_route: entity.space_type.edit_form
   title: 'Edit'
+
+# Spaces
+entity.space.canonical:
+  route_name: entity.space.canonical
+  base_route: entity.space.canonical
+  title: 'View'
+
+entity.space.edit_form:
+  route_name: entity.space.edit_form
+  base_route: entity.space.canonical
+  title: 'Edit'
+
+entity.space.delete_form:
+  route_name: entity.space.delete_form
+  base_route: entity.space.canonical
+  title: 'Delete'
