@@ -4,6 +4,7 @@ namespace Drupal\eresources\Entity;
 
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\lib_unb_custom_entity\Entity\ContentEntityInterface;
 use Drupal\lib_unb_custom_entity\Entity\ContentEntityBase;
 
@@ -152,6 +153,18 @@ class LocalMetadata extends ContentEntityBase implements ContentEntityInterface 
       ->setDisplayConfigurable('form', TRUE);
 
     return $fields;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function postSave(EntityStorageInterface $storage, $update = TRUE) {
+    parent::postSave($storage, $update);
+    $records = $this->entityTypeManager()->getStorage('eresources_record')->loadByProperties([
+      'local_metadata_id' => $this->id(),
+    ]);
+    $record = end($records);
+    $record->save();
   }
 
 }
