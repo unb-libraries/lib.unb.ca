@@ -3,13 +3,25 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.space.floor.field_images
     - field.field.space.floor.field_name
+    - image.style.thumbnail
     - spaces.space_type.floor
+  module:
+    - image
 id: space.floor.default
 targetEntityType: space
 bundle: floor
 mode: default
 content:
+  field_images:
+    type: image_image
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
   field_name:
     type: string_textfield
     weight: 0

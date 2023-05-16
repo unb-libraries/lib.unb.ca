@@ -1,0 +1,38 @@
+uuid: ee277862-14cc-472c-a323-301a1bcc2657
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.space.field_images
+    - spaces.space_type.building
+  module:
+    - image
+id: space.building.field_images
+field_name: field_images
+entity_type: space
+bundle: building
+label: Images
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: false
+  title_field: true
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

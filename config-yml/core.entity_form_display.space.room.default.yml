@@ -3,13 +3,25 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.space.room.field_images
     - field.field.space.room.field_name
+    - image.style.thumbnail
     - spaces.space_type.room
+  module:
+    - image
 id: space.room.default
 targetEntityType: space
 bundle: room
 mode: default
 content:
+  field_images:
+    type: image_image
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
   field_name:
     type: string_textfield
     weight: 0

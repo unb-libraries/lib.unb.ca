@@ -1,0 +1,38 @@
+uuid: 6338faf3-a94a-4e13-8bf4-8a7186c63f39
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.space.field_images
+    - spaces.space_type.room
+  module:
+    - image
+id: space.room.field_images
+field_name: field_images
+entity_type: space
+bundle: room
+label: Images
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: false
+  title_field: true
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image
