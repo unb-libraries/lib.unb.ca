@@ -1,0 +1,9 @@
+uuid: 512916be-a2fd-4777-832d-c11c039c6a7f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: DRQXZqi5BuZXQkkE16Ba-nrAewp1lRdUUNKZ4wSqdec
+id: floor
+label: Floor
+bundle_class: Drupal\spaces\Entity\Floor

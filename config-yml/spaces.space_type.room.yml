@@ -1,0 +1,9 @@
+uuid: 57fd13dc-13a6-4dd0-aefc-c627dcb2180d
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: L5rCSZoXnaZ3J0m7PptyD5azogvHjd1tN53zG1FE0jE
+id: room
+label: Room
+bundle_class: Drupal\spaces\Entity\Room

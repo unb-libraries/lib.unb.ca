@@ -1,0 +1,9 @@
+uuid: 507b3e28-370c-4b04-ac06-60df4c8055d9
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 7LoQnELAf9E0R7MibpV4LozZEWSp5-xiJve3LRyF-4E
+id: building
+label: Building
+bundle_class: Drupal\spaces\Entity\Building

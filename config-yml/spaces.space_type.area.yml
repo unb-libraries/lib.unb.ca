@@ -1,0 +1,9 @@
+uuid: 5e371c02-3414-45b6-97f8-f615d99a7737
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: vGZZJO3RWJsfqmUXwgSGd4ex2pt-knF-jlRz5ggMRjo
+id: area
+label: Area
+bundle_class: Drupal\spaces\Entity\Area
