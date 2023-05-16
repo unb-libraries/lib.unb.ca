@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.space.building.field_campus
     - field.field.space.building.field_images
     - field.field.space.building.field_name
     - image.style.thumbnail
@@ -14,9 +15,15 @@ targetEntityType: space
 bundle: building
 mode: default
 content:
+  field_campus:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_images:
     type: image_image
-    weight: 1
+    weight: 2
     region: content
     settings:
       progress_indicator: throbber

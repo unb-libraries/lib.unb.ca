@@ -1,0 +1,21 @@
+uuid: f6afa6f9-ac65-432a-8f35-3ec7d093c36c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.space.field_campus
+    - spaces.space_type.building
+  module:
+    - options
+id: space.building.field_campus
+field_name: field_campus
+entity_type: space
+bundle: building
+label: Campus
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
