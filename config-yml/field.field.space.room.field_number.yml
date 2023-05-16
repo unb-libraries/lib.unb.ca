@@ -1,0 +1,19 @@
+uuid: e1e101fa-8237-465e-b802-0ba73abbaba6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.space.field_number
+    - spaces.space_type.room
+id: space.room.field_number
+field_name: field_number
+entity_type: space
+bundle: room
+label: Number
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

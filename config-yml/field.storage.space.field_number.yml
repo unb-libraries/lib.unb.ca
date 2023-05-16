@@ -1,0 +1,25 @@
+uuid: ec827280-7fa5-431f-872e-7746ccda7c4e
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - spaces
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: space.field_number
+field_name: field_number
+entity_type: space
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

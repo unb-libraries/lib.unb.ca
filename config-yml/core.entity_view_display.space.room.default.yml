@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.space.room.field_images
     - field.field.space.room.field_name
+    - field.field.space.room.field_number
     - image.style.bs_lg_large
     - spaces.space_type.room
   module:
@@ -26,7 +27,7 @@ content:
     third_party_settings:
       field_formatter_class:
         class: ''
-    weight: 1
+    weight: 3
     region: content
   field_name:
     type: string
@@ -36,6 +37,21 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_number:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  parent:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
 hidden:
-  parent: true
   search_api_excerpt: true
