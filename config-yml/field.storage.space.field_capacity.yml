@@ -1,0 +1,43 @@
+uuid: 71454a56-508d-4351-95a0-d24bd584eacc
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - options
+    - spaces
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: space.field_capacity
+field_name: field_capacity
+entity_type: space
+type: list_integer
+settings:
+  allowed_values:
+    -
+      value: 2
+      label: '1-2 people'
+    -
+      value: 5
+      label: '3-5 people'
+    -
+      value: 10
+      label: '5-10 people'
+    -
+      value: 20
+      label: '10-20 people'
+    -
+      value: 30
+      label: '20-30 people'
+    -
+      value: 31
+      label: '30+ people'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

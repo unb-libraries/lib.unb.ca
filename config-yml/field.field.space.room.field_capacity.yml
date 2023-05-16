@@ -1,0 +1,21 @@
+uuid: cccccf7a-3028-41f5-9cb8-291eef61bcfd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.space.field_capacity
+    - spaces.space_type.room
+  module:
+    - options
+id: space.room.field_capacity
+field_name: field_capacity
+entity_type: space
+bundle: room
+label: Capacity
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

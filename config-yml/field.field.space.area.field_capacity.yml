@@ -1,0 +1,21 @@
+uuid: 424e4faf-6e13-49a5-977b-17a71206f957
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.space.field_capacity
+    - spaces.space_type.area
+  module:
+    - options
+id: space.area.field_capacity
+field_name: field_capacity
+entity_type: space
+bundle: area
+label: Capacity
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer
