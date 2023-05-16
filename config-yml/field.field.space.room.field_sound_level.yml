@@ -1,0 +1,29 @@
+uuid: e7ea752c-6c76-45f8-8ef8-95d1a404c994
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.space.field_sound_level
+    - spaces.space_type.room
+    - taxonomy.vocabulary.spaces_sound
+id: space.room.field_sound_level
+field_name: field_sound_level
+entity_type: space
+bundle: room
+label: 'Sound level'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      spaces_sound: spaces_sound
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: spaces_equipment
+field_type: entity_reference

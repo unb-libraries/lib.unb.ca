@@ -1,0 +1,24 @@
+uuid: bebc12b4-83fa-4315-bfe9-09806efa44f5
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - spaces
+    - taxonomy
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: space.field_sound_level
+field_name: field_sound_level
+entity_type: space
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

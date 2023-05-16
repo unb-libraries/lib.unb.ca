@@ -1,0 +1,29 @@
+uuid: 9ec1e10c-057b-4ae8-aafb-a14ca449721f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.space.field_equipment
+    - spaces.space_type.room
+    - taxonomy.vocabulary.spaces_equipment
+id: space.room.field_equipment
+field_name: field_equipment
+entity_type: space
+bundle: room
+label: 'What''s inside'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      spaces_equipment: spaces_equipment
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.space.area.field_capacity
+    - field.field.space.area.field_equipment
     - field.field.space.area.field_images
     - field.field.space.area.field_name
+    - field.field.space.area.field_sound_level
     - image.style.bs_lg_large
     - spaces.space_type.area
   module:
@@ -23,6 +25,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_equipment:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
     region: content
   field_images:
     type: image
@@ -44,6 +54,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_sound_level:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
     region: content
   parent:
     type: entity_reference_label

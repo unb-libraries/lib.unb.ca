@@ -1,0 +1,29 @@
+uuid: 8e9cac6b-64bd-4cf4-b14b-c7be71cac353
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.space.field_sound_level
+    - spaces.space_type.area
+    - taxonomy.vocabulary.spaces_sound
+id: space.area.field_sound_level
+field_name: field_sound_level
+entity_type: space
+bundle: area
+label: 'Sound level'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      spaces_sound: spaces_sound
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

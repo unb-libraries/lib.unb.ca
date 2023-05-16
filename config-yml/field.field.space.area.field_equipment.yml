@@ -1,0 +1,29 @@
+uuid: fd57642e-b084-4855-8e2b-d28fbd665224
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.space.field_equipment
+    - spaces.space_type.area
+    - taxonomy.vocabulary.spaces_equipment
+id: space.area.field_equipment
+field_name: field_equipment
+entity_type: space
+bundle: area
+label: 'What''s inside'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      spaces_equipment: spaces_equipment
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
