@@ -1,0 +1,49 @@
+uuid: 68d6b769-ad41-4823-aa22-9ec76b242fb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.space.teaser
+    - field.field.space.room.field_images
+    - field.field.space.room.field_name
+    - image.style.content_lg_breakpoint
+    - spaces.space_type.room
+  module:
+    - field_formatter_class
+    - image
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: space.room.teaser
+targetEntityType: space
+bundle: room
+mode: teaser
+content:
+  field_images:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: content
+      image_style: content_lg_breakpoint
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 0
+    region: content
+  field_name:
+    type: string
+    label: visually_hidden
+    settings:
+      link_to_entity: true
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 1
+    region: content
+hidden:
+  parent: true
+  search_api_excerpt: true

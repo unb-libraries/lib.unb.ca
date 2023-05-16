@@ -1,0 +1,10 @@
+uuid: bac44a72-a936-4957-814b-1fd6ee59ae26
+langcode: en
+status: true
+dependencies:
+  module:
+    - spaces
+id: space.teaser
+label: Teaser
+targetEntityType: space
+cache: true
