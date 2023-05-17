@@ -1,0 +1,29 @@
+uuid: 8a12f2ca-7fa2-401c-95a5-eb14b531ea7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.capacity
+  module:
+    - facets
+    - system
+  theme:
+    - lib_unb_ca
+id: capacity
+theme: lib_unb_ca
+region: sidebar_second
+weight: -8
+provider: null
+plugin: 'facet_block:capacity'
+settings:
+  id: 'facet_block:capacity'
+  label: Capacity
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: capacity
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /explore-spaces

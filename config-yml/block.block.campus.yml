@@ -1,0 +1,29 @@
+uuid: b03083c7-ae81-491b-9ecb-f0f141da59f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.campus
+  module:
+    - facets
+    - system
+  theme:
+    - lib_unb_ca
+id: campus
+theme: lib_unb_ca
+region: sidebar_second
+weight: -9
+provider: null
+plugin: 'facet_block:campus'
+settings:
+  id: 'facet_block:campus'
+  label: Campus
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: campus
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /explore-spaces

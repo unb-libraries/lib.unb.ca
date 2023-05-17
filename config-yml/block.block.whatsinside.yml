@@ -1,0 +1,29 @@
+uuid: 4f7cfcb5-475d-422e-af98-82d9815f2c58
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.what_s_inside
+  module:
+    - facets
+    - system
+  theme:
+    - lib_unb_ca
+id: whatsinside
+theme: lib_unb_ca
+region: sidebar_second
+weight: -7
+provider: null
+plugin: 'facet_block:what_s_inside'
+settings:
+  id: 'facet_block:what_s_inside'
+  label: 'What''s inside'
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: whatsinside
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /explore-spaces
