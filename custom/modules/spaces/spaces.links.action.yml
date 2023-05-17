@@ -1,0 +1,31 @@
+space.building.add_form:
+  route_name: entity.space.add_form
+  route_parameters:
+    space_type: building
+  title: "Add building"
+  appears_on:
+    - view.spaces.page_1
+
+space.area.add_form:
+  route_name: entity.space.add_form
+  route_parameters:
+    space_type: area
+  title: "Add area"
+  appears_on:
+    - view.spaces.page_1
+
+space.floor.add_form:
+  route_name: entity.space.add_form
+  route_parameters:
+    space_type: floor
+  title: "Add floor"
+  appears_on:
+    - view.spaces.page_1
+
+space.room.add_form:
+  route_name: entity.space.add_form
+  route_parameters:
+    space_type: room
+  title: "Add room"
+  appears_on:
+    - view.spaces.page_1
