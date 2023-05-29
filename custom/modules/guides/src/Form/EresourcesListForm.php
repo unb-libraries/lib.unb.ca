@@ -141,14 +141,14 @@ class EresourcesListForm extends FormBase {
       ->condition('status', 1)
       ->sort('title', 'ASC');
     if (!$showAll) {
-      $query->notExists('entry_uid');
+      $query->condition('is_local', 1);
     }
 
     $ids = $query->execute();
     $records = $storage->loadMultiple($ids);
     foreach ($records as $record) {
       $id = $record->id();
-      $label = "[id:{$id}; " . ($record->entry_uid->getString() ? 'KB' : 'LOCAL') . '] ' . $record->label();
+      $label = "[id:{$id}; " . ($record->is_local->getString() ? 'LOCAL' : 'KB') . '] ' . $record->label();
       $options[$id] = $label;
     }
 
@@ -182,7 +182,7 @@ class EresourcesListForm extends FormBase {
       $record = $recordStorage->load($id);
       $text = '<h2>' . $record->label() . " <span class=\"text-muted small\">[id:{$id}]</span></h2>";
 
-      if ($record->entry_uid->getString()) {
+      if ($record->is_local->getString()) {
         $text .= '<p>This record is <b>maintained by Cataloguing</b> and is part of eResources Discovery.</p>';
       }
       else {
