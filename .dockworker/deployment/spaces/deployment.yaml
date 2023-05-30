@@ -1,0 +1,97 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: drupal
+    appMajor: "9"
+    instance: spaces.lib.unb.ca
+    tier: frontend
+    uri: spaces.lib.unb.ca
+    vcsOwner: unb-libraries
+    vcsRepository: lib.unb.ca
+    vcsRef: new_front_page
+  name: spaces-lib-unb-ca
+  namespace: spaces
+spec:
+  selector:
+    matchLabels:
+      uri: spaces.lib.unb.ca
+  replicas: 1
+  revisionHistoryLimit: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: drupal
+        appMajor: "9"
+        instance: spaces.lib.unb.ca
+        tier: frontend
+        uri: spaces.lib.unb.ca
+        vcsOwner: unb-libraries
+        vcsRepository: lib.unb.ca
+        vcsRef: new_front_page
+    spec:
+      nodeSelector:
+        deployenv: dev
+      containers:
+        -
+          name: spaces-lib-unb-ca
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 80
+            initialDelaySeconds: 30
+            timeoutSeconds: 3
+            periodSeconds: 15
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 80
+            initialDelaySeconds: 100
+            timeoutSeconds: 3
+            periodSeconds: 15
+          env:
+            -
+              name: DEPLOY_ENV
+              value: spaces
+            -
+              name: MYSQL_HOSTNAME
+              value: drupal-mysql-lib-unb-ca
+            -
+              name: MYSQL_PORT
+              value: "3306"
+            -
+              name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql
+                  key: root-password
+            -
+              name: NR_INSTALL_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: newrelic
+                  key: install-key
+          image: "||DEPLOYMENTIMAGE||"
+          imagePullPolicy: Always
+          ports:
+            -
+              containerPort: 80
+          volumeMounts:
+            -
+              mountPath: /app/html/sites/default
+              name: drupal-persistent-storage
+      priorityClassName: dev-high-priority-services
+      imagePullSecrets:
+        -
+          name: github-container-registry-auth
+      restartPolicy: Always
+      volumes:
+        -
+          name: drupal-persistent-storage
+          persistentVolumeClaim:
+            claimName: spaces-lib-unb-ca
