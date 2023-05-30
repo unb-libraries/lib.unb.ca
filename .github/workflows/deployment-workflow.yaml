@@ -9,7 +9,7 @@ jobs:
   drupal:
     uses: unb-libraries/dockworker-drupal/.github/workflows/deployment-workflow.yaml@5.x
     with:
-      deploy-branches: '["dev","prod"]'
+      deploy-branches: '["dev","prod","spaces"]'
     secrets:
       DOCKER_CLOUD_ACCESS_TOKEN: ${{ secrets.DOCKER_CLOUD_ACCESS_TOKEN }}
       DOCKER_CLOUD_USER_NAME: ${{ secrets.DOCKER_CLOUD_USER_NAME }}
