@@ -13,6 +13,7 @@ dockworker:
     environments:
       - dev
       - prod
+      - spaces
     workflow:
       source: dockworker-drupal
       type: deployment-workflow
@@ -25,6 +26,7 @@ dockworker:
     push_branches:
       - dev
       - prod
+      - spaces
     name: ghcr.io/unb-libraries/lib.unb.ca
     date_tag_image: true
     repository: ghcr
