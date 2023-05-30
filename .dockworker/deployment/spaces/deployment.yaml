@@ -36,7 +36,7 @@ spec:
         vcsRef: new_front_page
     spec:
       nodeSelector:
-        deploy_cron: 'true'
+        deploy_dev: 'true'
       containers:
         -
           name: spaces-lib-unb-ca

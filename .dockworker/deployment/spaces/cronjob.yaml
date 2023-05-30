@@ -20,7 +20,7 @@ spec:
       template:
         spec:
           nodeSelector:
-            deploy_cron: 'true'
+            deploy_dev: 'true'
           containers:
             -
               name: cron-spaces-lib-unb-ca
