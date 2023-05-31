@@ -49,6 +49,13 @@ guides.eresources_list:
     _title: 'Guide e-Resources'
   requirements:
     _permission: 'create guide entities'
+guides.add_local_eresource:
+  path: '/admin/guides/eresources/add'
+  defaults:
+    _form: '\Drupal\guides\Form\EresourcesLocalRecordForm'
+    _title: 'Add a Local e-Resource Record'
+  requirements:
+    _permission: 'create guide entities'
 guides.clone:
   path: '/admin/guides/clone'
   defaults:

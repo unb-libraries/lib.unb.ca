@@ -59,8 +59,8 @@ class EresourcesListForm extends FormBase {
 
     $form['add'] = [
       '#type' => 'link',
-      '#title' => 'Add a new CUSTOM record',
-      '#url' => Url::fromUri('https://example.com'),
+      '#title' => 'Add a new LOCAL record',
+      '#url' => Url::fromRoute('guides.add_local_eresource'),
       '#attributes' => ['class' => ['button']],
     ];
 
