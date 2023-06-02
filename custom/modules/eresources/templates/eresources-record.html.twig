@@ -26,6 +26,7 @@
   <tr><td>{{ fieldObj.name }}</td><td>{{ fieldObj.value }}</td></tr>
 {% endfor %}
 </table>
+{% if eresources_record.oclc_metadata_id is not empty %}
 {% set oclc_metadata = eresources_record.oclc_metadata_id.entity %}
 <h2>OCLC Metadata</h2>
 <table>
@@ -38,3 +39,4 @@
   <tr><td>{{ fieldObj.name }}</td><td>{{ fieldObj.value }}</td></tr>
 {% endfor %}
 </table>
+{% endif %}

@@ -142,6 +142,36 @@ class LocalMetadata extends ContentEntityBase implements ContentEntityInterface 
       ])
       ->setDisplayConfigurable('form', TRUE);
 
+    $fields['catalogue_location'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Catalog Location'))
+      ->setRequired(FALSE)
+      ->setSettings(
+        [
+          'default_value' => '',
+          'max_length' => 255,
+        ]
+      )
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['call_number'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Call Number'))
+      ->setRequired(FALSE)
+      ->setSettings(
+        [
+          'default_value' => '',
+          'max_length' => 255,
+        ]
+      )
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
     $fields['is_collection'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Is a Collection'))
       ->setRequired(FALSE)
@@ -163,8 +193,10 @@ class LocalMetadata extends ContentEntityBase implements ContentEntityInterface 
     $records = $this->entityTypeManager()->getStorage('eresources_record')->loadByProperties([
       'local_metadata_id' => $this->id(),
     ]);
-    $record = end($records);
-    $record->save();
+    if (!empty($records)) {
+      $record = end($records);
+      $record->save();
+    }
   }
 
 }

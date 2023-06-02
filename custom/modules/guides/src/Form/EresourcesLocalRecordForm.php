@@ -4,11 +4,39 @@ namespace Drupal\guides\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 
 /**
  * Form for custom local eresources.
  */
 class EresourcesLocalRecordForm extends FormBase {
+
+  /**
+   * The entity type manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
+   * Class constructor.
+   *
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
+   *   An entity type manager.
+   */
+  public function __construct(EntityTypeManagerInterface $entityTypeManager) {
+    $this->entityTypeManager = $entityTypeManager;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('entity_type.manager')
+    );
+  }
 
   /**
    * {@inheritdoc}
@@ -36,7 +64,7 @@ class EresourcesLocalRecordForm extends FormBase {
       '#format' => 'library_page_html',
     ];
 
-    $form['type'] = [
+    $form['kb_data_type'] = [
       '#type' => 'select',
       '#title' => 'Resource Type',
       '#options' => [
@@ -52,17 +80,18 @@ class EresourcesLocalRecordForm extends FormBase {
       '#value' => 'For online resources',
     ];
 
-    $form['ebook'] = [
+    $form['url'] = [
       '#type' => 'textfield',
       '#title' => 'e-Book Link or URL',
       '#description' => $this->t('Will hyperlink the title to the value in this field. Omit the proxy prefix.'),
       '#maxlength' => 256,
     ];
 
-    $form['license'] = [
+    $form['license_status'] = [
       '#type' => 'checkbox',
       '#title' => 'This is a licensed resource',
       '#description' => $this->t('The proxy prefix will be added automatically.'),
+      '#return_value' => 'Y',
     ];
 
     $form['print'] = [
@@ -71,21 +100,21 @@ class EresourcesLocalRecordForm extends FormBase {
       '#value' => 'For print resources',
     ];
 
-    $form['cat_location'] = [
+    $form['catalogue_location'] = [
       '#type' => 'textfield',
       '#title' => 'Catalogue Location',
       '#description' => $this->t('eg. HIL-REF. If you want this represented as multiple locations, enter "multiple locations" and enter the search parameter in the OCLC Number field.'),
       '#maxlength' => 256,
     ];
 
-    $form['callnumber'] = [
+    $form['call_number'] = [
       '#type' => 'textfield',
       '#title' => 'Call Number',
       '#description' => $this->t('eg. GN316 .R37 2000'),
       '#maxlength' => 256,
     ];
 
-    $form['cat_link'] = [
+    $form['oclcnum'] = [
       '#type' => 'number',
       '#title' => 'OCLC Number',
       '#description' => $this->t('eg. 69734537. Enter ONLY one with no spaces or hyphens. This is an OCLC Number search into WorldCat.'),
@@ -114,11 +143,11 @@ class EresourcesLocalRecordForm extends FormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
-    if ($form_state->getValue('cat_location') == 'multiple locations') {
+    if ($form_state->getValue('catalogue_location') == 'multiple locations') {
       return;
     }
 
-    $fields = ['cat_location', 'callnumber', 'cat_link'];
+    $fields = ['catalogue_location', 'call_number', 'oclcnum'];
     $filled = [];
     foreach ($fields as $f) {
       if (!empty($form_state->getValue($f))) {
@@ -143,6 +172,28 @@ class EresourcesLocalRecordForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
+    $storage = $this->entityTypeManager->getStorage('eresources_local_metadata');
+    $localMetadata = $storage->create();
+
+    $fields = [
+      'description', 'license_status', 'catalogue_location', 'call_number'
+    ];
+    foreach ($fields as $field) {
+      $localMetadata->set($field, $form_state->getValue($field));
+    }
+    $localMetadata->save();
+
+    $storage = $this->entityTypeManager->getStorage('eresources_record');
+    $record = $storage->create();
+    $record->set('is_local', TRUE);
+    $record->set('local_metadata_id', $localMetadata->id());
+
+    $fields = ['title', 'kb_data_type', 'url', 'oclcnum'];
+    foreach ($fields as $field) {
+      $record->set($field, $form_state->getValue($field));
+    }
+    $record->save();
+
     $form_state->setRedirect('guides.eresources_list');
     $this->messenger()->addStatus('Record created');
   }
