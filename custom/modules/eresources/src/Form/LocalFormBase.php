@@ -119,6 +119,7 @@ class LocalFormBase extends FormBase {
       // $form['results_header'] = ['#markup' => '<h2 class="mt-3">Results</h2>'];
       $index = Index::load('eresources');
       $indexQuery = $index->query();
+      $indexQuery->addCondition('is_local', FALSE);
 
       $parseModeManager = \Drupal::service('plugin.manager.search_api.parse_mode');
       $directMode = $parseModeManager->createInstance('direct');
