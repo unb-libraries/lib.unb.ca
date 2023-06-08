@@ -377,7 +377,7 @@
     "unb-libraries/oclc_api": "dev-8.x-1.x",
     "unb-libraries/saml_features": "dev-9.x-1.x",
     "unb-libraries/task-ui": "dev-8.x-1.x",
-    "unb-libraries/unb_lib_theme": "dev-9.x-4.x",
+    "unb-libraries/unb_lib_theme": "dev-10.x-4.x",
     "w8tcha/ckeditor-codemirror-plugin": "~1.18.1",
     "w8tcha/ckeditor-wordcount-plugin": "~1.17.8",
     "wikimedia/composer-merge-plugin": "2.0.1"

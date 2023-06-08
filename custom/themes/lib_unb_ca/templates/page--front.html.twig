@@ -74,13 +74,13 @@ set banner_classes = [
     is_front ? 'front d-flex align-items-end py-4 py-lg-5',
 ]
 %}
-<header id="header" class="header-fluid" aria-label="Site header" style="background-image: url({{ banner_image }})">
+<header id="header" class="header-fluid" style="background-image: url({{ banner_image }})">
     {{ attach_library('alert_scheduler_client/alerts') }}
     <div id="emergency-banner"><div class="container" data-alerts-container></div></div>
     <div id="header-overlay">
         <div id="navbar-top" class="d-none d-lg-block py-3">
             <div class="container">
-                <nav class="d-flex">
+                <nav aria-label="Header Utility Menu" class="d-flex">
                     <ul class="nav">
                         <li><a class="nav-link" href="https://unb.ca">UNB</a></li>
                         <li><a class="nav-link" href="https://lib.unb.ca/help/ask-us">Ask Us</a></li>
@@ -108,14 +108,14 @@ set banner_classes = [
             </div>
         </div>
 
-        <nav id="navbar-main" class="navbar navbar-expand-lg px-0">
+        <nav aria-label="Main Menu" id="navbar-main" class="navbar navbar-expand-lg px-0">
             <div class="container">
                 <div id="navbar-main-content" class="d-flex flex-column flex-lg-row w-100">
                     <div class="align-self-center branding mr-lg-3">
-                        <h1 class="mb-0 text-center text-lg-left">
+                        <div class="mb-0 text-center text-lg-left">
                             <img alt="UNB Libraries" class="img-fluid unblib-logo" src="{{ unb_lib_theme_path }}/img/unb-libraries-red-white.png" />
                             <img alt="UNB Libraries" class="img-fluid unblib-logo-affix" src="{{ unb_lib_theme_path }}/img/unb-libraries-white.png" />
-                        </h1>
+                        </div>
                     </div>
                     <div id="nav-btn" class="d-flex d-lg-none mx-0">
                         <ul class="container nav nav-pills justify-content-between">
@@ -134,7 +134,7 @@ set banner_classes = [
                             </li>
                         </ul>
                     </div>
-                    {% include '@unb_lib_theme/includes/navbar.html.twig' %}
+                    {% include '@unb_lib_theme/includes/megamenu.html.twig' %}
                 </div>
             </div>
         </nav>
@@ -155,6 +155,7 @@ set banner_classes = [
         <div class="row row-offcanvas row-offcanvas-left clearfix">
             <main{{ content_attributes }}>
                 <section class="section">
+                  <h1 class="sr-only">UNB Libraries</h1>
                   {{ page.content }}
                 </section>
             </main>
@@ -177,80 +178,7 @@ set banner_classes = [
 {% endblock %}
 
 <footer class="site-footer p-0">
-    <div class="footer-top container py-4">
-        <div class="d-flex flex-wrap justify-content-between">
-            <div class="unb-logo mb-4 text-left">
-                <a class="d-none d-lg-block link-no-hover mb-3" href="//unb.ca">
-                    <img class="img-fluid" src="{{ unb_lib_theme_path }}/img/unb-logo-primary-w.png" alt="University of New Brunswick: established in 1785">
-                </a>
-                {#<a class="donate" href="//donations.helpforcharities.com/unbdonation">
-                    <img class="img-fluid" src="{{ unb_lib_theme_path }}/img/donate.png" alt="Donate to UNB Libraries">
-                </a>#}
-            </div>
-            <nav class="my-2">
-                <h2>General</h2>
-                <ul class="clearfix nav" role="menu">
-                    <li role="none"><a class="nav-link" href="https://lib.unb.ca/about/contact-us" role="menuitem">Contact Us</a></li>
-                    <li role="none"><a class="nav-link" href="https://lib.unb.ca/about/find-us" role="menuitem">Find Us</a></li>
-                    <li role="none"><a class="nav-link" href="https://lib.unb.ca/news" role="menuitem">Library News</a></li>
-                    <li role="none"><a class="nav-link" href="https://lib.unb.ca/about/hours" role="menuitem">Hours</a></li>
-                    <li role="none"><a class="nav-link" href="https://lib.unb.ca/about/policies" role="menuitem">Policies</a></li>
-                </ul>
-            </nav>
-            <nav class="my-2">
-                <h2>Libraries</h2>
-                <ul class="clearfix nav" role="menu">
-                    <li role="none"><a class="nav-link" href="https://lib.unb.ca/about/harriet-irving-library" role="menuitem">Harriet Irving</a></li>
-                    <li role="none"><a class="nav-link" href="https://lib.unb.ca/about/science-forestry-library" role="menuitem">Science &amp; Forestry</a></li>
-                    <li role="none"><a class="nav-link" href="https://lib.unb.ca/about/engineering-computer-science-library" role="menuitem">Engineering &amp; Computer Science</a></li>
-                    <li role="none"><a class="nav-link" href="https://lib.unb.ca/about/hans-w-klohn-commons" role="menuitem">Hans W. Klohn Commons</a></li>
-                    <li role="none"><a class="nav-link" href="https://unb.ca/fredericton/law/library" role="menuitem">Gerard V. La Forest Law</a></li>
-                </ul>
-            </nav>
-            <nav class="my-2">
-                <h2>Departments</h2>
-                <ul class="clearfix nav" role="menu">
-                    <li role="none"><a class="nav-link" href="https://lib.unb.ca/archives" role="menuitem">Archives &amp; Special Collections</a></li>
-                    <li role="none"><a class="nav-link" href="https://lib.unb.ca/cds" role="menuitem">Centre for Digital Scholarship</a></li>
-                    <li role="none"><a class="nav-link" href="https://lib.unb.ca/microforms" role="menuitem">Microforms</a></li>
-                    <li role="none"><a class="nav-link" href="https://lib.unb.ca/gddm" role="menuitem">Government Documents, Data &amp; Maps</a></li>
-                    <li role="none"><a class="nav-link" href="https://lib.unb.ca/about/contact-us#units" role="menuitem">&hellip;&nbsp;more</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-
-    <div class="footer-middle container pb-3">
-        <nav>
-            <h2 class="mr-4">Join the conversation:</h2>
-            <ul class="nav">
-                <li><a class="nav-link" href="https://facebook.com/UNBLibraries/"><i class="fab fa-facebook-f mr-1" aria-hidden="true"></i>Facebook</a></li>
-                <li class="mx-4"><a class="nav-link" href="https://twitter.com/UNBLibraries"><i class="fab fa-twitter mr-1" aria-hidden="true"></i>Twitter</a></li>
-                <li><a class="nav-link" href="https://instagram.com/unblibraries"><i class="fab fa-instagram mr-1" aria-hidden="true"></i>Instagram</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <div class="footer-bottom py-2">
-        <div class="container d-flex flex-column flex-lg-row justify-content-lg-between">
-            <nav>
-                <ul class="list-inline mb-0">
-                    <li class="list-inline-item"><a class="nav-link" href="https://unb.ca/copyright">Copyright</a></li>
-                    <li class="list-inline-item"><a class="nav-link" href="https://unb.ca/privacy/">Privacy</a></li>
-                    <li class="list-inline-item"><a class="nav-link" href="https://lib.unb.ca/help/web-accessibility-statement">Accessibility</a></li>
-                    <li class="list-inline-item"><a class="nav-link" href="https://lib.unb.ca/contact-unb-libraries-staff">Web Feedback</a></li>
-                </ul>
-            </nav>
-            <nav class="pt-3 pt-lg-0">
-                <ul class="list-inline mb-0 text-lg-right">
-                    <li class="list-inline-item"><a class="nav-link" href="https://unb.ca">UNB</a></li>
-                    <li class="list-inline-item"><a class="nav-link" href="https://lib.unb.ca/help/ask-us"><i class="fas fa-question-circle mr-1" aria-hidden="true"></i>Ask Us</a></li>
-                    <li class="list-inline-item"><a class="nav-link" href="https://lib.unb.ca/services/your-comments-and-suggestions"><i class="fas fa-comments mr-1" aria-hidden="true"></i>Feedback</a></li>
-                    <li class="list-inline-item"><a class="nav-link" href="https://lib.unb.ca/search"><i class="fas fa-search mr-1" aria-hidden="true"></i>Search</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
+  {% include '@unb_lib_theme/includes/footer.html.twig' %}
 </footer>
 {% if env_indicator %}
     <div class="alert alert-{{ env_indicator_bg_color }} alert-dismissible fixed-bottom m-0 p-0 show fade" role="alert">

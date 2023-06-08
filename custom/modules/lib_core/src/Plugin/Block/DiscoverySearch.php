@@ -45,7 +45,7 @@ class DiscoverySearch extends BlockBase {
         <div class="card">
           <div class="card-header px-2 pb-0 pb-md-1">
             <h2 class="sr-only">Search</h2>
-            <nav class="navbar navbar-expand-md text-nowrap">
+            <nav aria-label="Discovery Search" class="navbar navbar-expand-md text-nowrap">
               <h3 id="category-label" class="d-block d-md-none h4 px-2 py-1">Catalogue</h3>
               <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 Switch search
@@ -74,7 +74,10 @@ class DiscoverySearch extends BlockBase {
             <div aria-labelledby="searchBtn3 dropdownBtn3" class="Accordion-panel" id="searchPanel3" role="region" hidden="">' . $this->getDatabasesForm() . '</div>
             <div aria-labelledby="searchBtn4 dropdownBtn4" class="Accordion-panel" id="searchPanel4" role="region" hidden="">' . $this->getJournalsForm() . '</div>
             <div aria-labelledby="searchBtn5 dropdownBtn5" class="Accordion-panel" id="searchPanel5" role="region" hidden="">
-              <div class="d-flex justify-content-center pt-4"><i class="fas fa-circle-notch fa-lg fa-spin text-warning" aria-hidden="true"></i></div>
+              <div class="d-flex justify-content-center pt-4">
+                <i class="fas fa-circle-notch fa-lg fa-spin text-warning" aria-hidden="true"></i>
+                <span class="sr-only">Navigating to the Guide to Finding Reference Materials page</span>
+              </div>
             </div>
           </div>
         </div>
