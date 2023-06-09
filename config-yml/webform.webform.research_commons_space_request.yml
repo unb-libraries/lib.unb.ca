@@ -73,7 +73,7 @@ elements: |-
         '#prepopulate': true
         '#options':
           active-learning-lab: 'Active Learning Lab'
-          digital-scholarship-hub: 'Digital Scholarship Hub'
+          filmmaker-studio: 'Filmmaker Studio'
           data-visualization-lab: 'Data Visualization Lab'
           event-space: 'Event Space'
           fabrication-lab: 'Fabrication Lab'
