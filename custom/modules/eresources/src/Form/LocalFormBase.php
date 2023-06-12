@@ -5,8 +5,8 @@ namespace Drupal\eresources\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
-use Drupal\search_api\Entity\Index;
 use Drupal\eresources\LocalResult;
+use Drupal\search_api\Entity\Index;
 
 /**
  * KB Form base class.

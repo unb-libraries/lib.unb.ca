@@ -2,9 +2,9 @@
 
 namespace Drupal\public_profile\Services;
 
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Drupal\profile\Event\ProfileLabelEvent;
 use Drupal\profile\Event\ProfileEvents;
+use Drupal\profile\Event\ProfileLabelEvent;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
  * Listens to the profile label event.

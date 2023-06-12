@@ -2,12 +2,12 @@
 
 namespace Drupal\eresources\EventSubscriber;
 
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\HttpKernel\KernelEvents;
-use Symfony\Component\HttpKernel\Event\ResponseEvent;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Url;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpKernel\Event\ResponseEvent;
+use Symfony\Component\HttpKernel\KernelEvents;
 
 /**
  * Class EntityTypeSubscriber.

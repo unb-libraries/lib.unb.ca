@@ -2,8 +2,8 @@
 
 namespace Drupal\public_profile\Services;
 
-use Drupal\user\ToolbarLinkBuilder;
 use Drupal\Core\Url;
+use Drupal\user\ToolbarLinkBuilder;
 
 /**
  * User toolbar link overrides.

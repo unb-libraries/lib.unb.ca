@@ -2,8 +2,8 @@
 
 namespace Drupal\public_profile\Form;
 
-use Drupal\profile\Form\ProfileForm;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\profile\Form\ProfileForm;
 
 /**
  * Override for public profile form.

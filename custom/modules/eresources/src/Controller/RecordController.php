@@ -3,8 +3,8 @@
 namespace Drupal\eresources\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\search_api\Entity\Index;
 use Drupal\eresources\LocalResult;
+use Drupal\search_api\Entity\Index;
 
 /**
  * Provides route responses for the lib_core module.

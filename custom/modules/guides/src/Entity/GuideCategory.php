@@ -12,8 +12,8 @@ use Drupal\custom_entity\Entity\EntityChangedTrait;
 use Drupal\custom_entity\Entity\EntityCreatedTrait;
 use Drupal\custom_entity\Entity\UserCreatedInterface;
 use Drupal\custom_entity\Entity\UserEditedInterface;
-use Drupal\guides\Entity\GuideCategoryInterface;
 use Drupal\eresources\LocalResult;
+use Drupal\guides\Entity\GuideCategoryInterface;
 use Drupal\search_api\Entity\Index;
 
 /**

@@ -5,11 +5,11 @@ namespace Drupal\eresources\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
+use Drupal\eresources\KbResult;
 use Drupal\oclc_api\Oclc\OclcAuthorizationInterface;
 use Drupal\oclc_api\Plugin\oclc\OclcApiManagerInterface;
 use Drupal\oclc_api\Plugin\oclc\OclcPluginManagerTrait;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\eresources\KbResult;
 
 /**
  * KB Form base class.
