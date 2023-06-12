@@ -27,3 +27,9 @@ system.admin.unblib.guides.guide_category.add:
   route_name: entity.guide_category.add_form
   parent: system.admin.unblib.guides
   weight: 5
+system.admin.unblib.guides.eresources_list:
+  title: Manage e-Resources
+  Description: 'Manage e-Resource records.'
+  route_name: guides.eresources_list
+  parent: system.admin.unblib.guides
+  weight: 7
