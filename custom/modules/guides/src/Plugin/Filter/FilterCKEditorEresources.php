@@ -2,15 +2,15 @@
 
 namespace Drupal\guides\Plugin\Filter;
 
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Render\RendererInterface;
+use Drupal\eresources\LocalResult;
 use Drupal\filter\FilterProcessResult;
 use Drupal\filter\Plugin\FilterBase;
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Component\Utility\Html;
-use Drupal\Core\Render\RendererInterface;
 use Drupal\search_api\Entity\Index;
-use Drupal\eresources\LocalResult;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a filter to convert eresources tags to resource lists.

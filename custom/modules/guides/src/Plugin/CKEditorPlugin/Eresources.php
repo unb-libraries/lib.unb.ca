@@ -6,8 +6,8 @@ use Drupal\ckeditor\CKEditorPluginBase;
 use Drupal\ckeditor\CKEditorPluginConfigurableInterface;
 use Drupal\ckeditor\CKEditorPluginCssInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\editor\Entity\Editor;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
+use Drupal\editor\Entity\Editor;
 
 /**
  * Defines the "e-Resources" plugin.

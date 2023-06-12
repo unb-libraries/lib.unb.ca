@@ -2,19 +2,19 @@
 
 namespace Drupal\guides\Entity;
 
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Entity\ContentEntityBase;
+use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
-use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
-use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\custom_entity\Entity\EntityChangedTrait;
 use Drupal\custom_entity\Entity\EntityCreatedTrait;
 use Drupal\custom_entity\Entity\UserCreatedInterface;
 use Drupal\custom_entity\Entity\UserEditedInterface;
-use Drupal\Component\Utility\Html;
-use Drupal\search_api\Entity\Index;
-use Drupal\eresources\LocalResult;
 use Drupal\guides\Entity\GuideCategoryInterface;
+use Drupal\eresources\LocalResult;
+use Drupal\search_api\Entity\Index;
 
 /**
  * Defines a guide_category entity.

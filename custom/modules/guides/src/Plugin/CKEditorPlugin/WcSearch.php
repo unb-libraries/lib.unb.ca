@@ -4,8 +4,8 @@ namespace Drupal\guides\Plugin\CKEditorPlugin;
 
 use Drupal\ckeditor\CKEditorPluginBase;
 use Drupal\ckeditor\CKEditorPluginCssInterface;
-use Drupal\editor\Entity\Editor;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
+use Drupal\editor\Entity\Editor;
 
 /**
  * Defines the "WorldCat Search" plugin.

@@ -2,10 +2,10 @@
 
 namespace Drupal\guides\Form;
 
+use Drupal\Core\DependencyInjection\ClassResolverInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\DependencyInjection\ClassResolverInterface;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

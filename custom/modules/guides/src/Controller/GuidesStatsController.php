@@ -3,11 +3,11 @@
 namespace Drupal\guides\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\user\UserInterface;
 use Drupal\Core\Entity\EntityInterface;
-use Google\Service\AnalyticsReporting;
 use Drupal\profile\Entity\ProfileInterface;
+use Drupal\user\UserInterface;
+use Google\Service\AnalyticsReporting;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides route responses for guides stats.
