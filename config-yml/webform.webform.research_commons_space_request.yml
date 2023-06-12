@@ -73,10 +73,10 @@ elements: |-
         '#prepopulate': true
         '#options':
           active-learning-lab: 'Active Learning Lab'
-          filmmaker-studio: 'Filmmaker Studio'
           data-visualization-lab: 'Data Visualization Lab'
           event-space: 'Event Space'
           fabrication-lab: 'Fabrication Lab'
+          filmmaker-studio: 'Filmmaker Studio'
           graduate-lounge-kitchenette: 'Graduate Lounge Kitchenette'
           graduate-lounge-study-space: 'Graduate Lounge Study Space'
           innovation-hub: 'Innovation Hub'
