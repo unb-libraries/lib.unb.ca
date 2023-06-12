@@ -2,11 +2,11 @@
 
 namespace Drupal\eresources\Entity;
 
+use Drupal\Core\Datetime\DateFormatterInterface;
+use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
-use Drupal\Core\Datetime\DateFormatterInterface;
-use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Link;
 use Drupal\lib_unb_custom_entity\Entity\EntityListBuilder;
 use Symfony\Component\DependencyInjection\ContainerInterface;
