@@ -176,7 +176,7 @@ class EresourcesLocalRecordForm extends FormBase {
     $localMetadata = $storage->create();
 
     $fields = [
-      'description', 'license_status', 'catalogue_location', 'call_number'
+      'description', 'license_status', 'catalogue_location', 'call_number',
     ];
     foreach ($fields as $field) {
       $localMetadata->set($field, $form_state->getValue($field));

@@ -110,6 +110,11 @@ class EresourcesListForm extends FormBase {
       ],
     ];
 
+    $id = $this->getRequest()->query->get('id');
+    if (!empty($id)) {
+      $form['selector']['search']['#default_value'] = $id;
+    }
+
     $form['result'] = [
       '#prefix' => '<div id="result">',
       '#suffix' => '</div>',
