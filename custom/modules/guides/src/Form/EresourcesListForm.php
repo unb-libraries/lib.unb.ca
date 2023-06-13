@@ -60,7 +60,7 @@ class EresourcesListForm extends FormBase {
     $form['add'] = [
       '#type' => 'link',
       '#title' => 'Add a new LOCAL record',
-      '#url' => Url::fromRoute('guides.add_local_eresource'),
+      '#url' => Url::fromRoute('guides.local_eresource.add'),
       '#attributes' => ['class' => ['button']],
     ];
 
@@ -186,12 +186,36 @@ class EresourcesListForm extends FormBase {
       $recordStorage = $this->entityTypeManager->getStorage('eresources_record');
       $record = $recordStorage->load($id);
       $text = '<h2>' . $record->label() . " <span class=\"text-muted small\">[id:{$id}]</span></h2>";
+      $localMetadata = $record->local_metadata_id->entity;
 
       if ($record->is_local->getString()) {
-        $text .= '<p>This record is <b>maintained by Cataloguing</b> and is part of eResources Discovery.</p>';
+        $editUrl = Url::fromRoute('guides.local_eresource.edit', ['id' => $id])->toString();
+        $text .= '<a class="button" href="' . $editUrl . '">Edit Record</a>';
+        if (empty($links)) {
+          $deleteUrl = Url::fromRoute('guides.local_eresource.delete', ['id' => $id])->toString();
+          $text .= ' <a class="button" href="' . $deleteUrl . '">Delete Record</a>';
+        }
+
+        $text .= '<p>This record has been <b>added manually</b> by a Guide Editor and <b>may need review</b>.</p>';
+        $text .= '<ul><li>URL or eBookLink: ' . $record->url->getString() . '</li>';
+        $text .= '<li>Physical items:<ul>';
+        $text .= '  <li>Shelving Location: ' . $localMetadata->catalogue_location->getString() . '</li>';
+        $text .= '  <li>Call Number: ' . $localMetadata->call_number->getString() . '</li>';
+        $text .= '  <li>OCLC Number: ' . $record->oclcnum->getString() . '</li>';
+        $text .= '</ul></li></ul>';
       }
       else {
-        $text .= '<p>This record has been <b>added manually</b> by a Guide Editor and <b>may need review</b>.</p>';
+        $text .= '<p>This record is <b>maintained by Cataloguing</b> and is part of eResources Discovery.</p>';
+      }
+
+      if (!empty($localMetadata->description->getString())) {
+        $render = [
+          '#type' => 'processed_text',
+          '#text' => $localMetadata->description->value,
+          '#format' => $localMetadata->description->format,
+        ];
+        $description = \Drupal::service('renderer')->render($render);
+        $text .= '<blockquote>' . $description . '</blockquote>';
       }
     }
     else {

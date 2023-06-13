@@ -42,6 +42,10 @@ class EresourcesLocalRecordForm extends FormBase {
    * {@inheritdoc}
    */
   public function getFormId() {
+    $id = $this->getRequest()->query->get('id');
+    if (!empty($id)) {
+      return 'edit_local_eresource';
+    }
     return 'add_local_eresource';
   }
 
