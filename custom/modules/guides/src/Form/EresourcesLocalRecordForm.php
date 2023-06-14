@@ -52,7 +52,7 @@ class EresourcesLocalRecordForm extends FormBase {
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state) {
+  public function buildForm(array $form, FormStateInterface $form_state, $id = NULL) {
 
     $form['title'] = [
       '#type' => 'textfield',
@@ -140,6 +140,34 @@ class EresourcesLocalRecordForm extends FormBase {
       '#limit_validation_errors' => [],
     ];
 
+    if ($id) {
+      $form['id'] = [
+        '#type' => 'hidden',
+        '#value' => $id,
+      ];
+      $form['actions']['submit']['#value'] = $this->t('Update');
+
+      $storage = $this->entityTypeManager->getStorage('eresources_record');
+      $record = $storage->load($id);
+
+      $fields = ['title', 'kb_data_type', 'url', 'oclcnum'];
+      foreach ($fields as $field) {
+        $form[$field]['#default_value'] = $record->get($field)->getString();
+      }
+
+      $localMetadata = $record->local_metadata_id->entity;
+
+      $fields = [
+        'license_status', 'catalogue_location', 'call_number',
+      ];
+      foreach ($fields as $field) {
+        $form[$field]['#default_value'] = $localMetadata->get($field)->getString();
+      }
+
+      $description = $localMetadata->description->getValue()[0];
+      $form['description']['#default_value'] = $description['value'];
+    }
+
     return $form;
   }
 
@@ -176,6 +204,31 @@ class EresourcesLocalRecordForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
+    $id = $form_state->getValue('id');
+    if ($id) {
+      $storage = $this->entityTypeManager->getStorage('eresources_record');
+      $record = $storage->load($id);
+
+      $fields = ['title', 'kb_data_type', 'url', 'oclcnum'];
+      foreach ($fields as $field) {
+        $record->set($field, $form_state->getValue($field));
+      }
+      $record->save();
+
+      $localMetadata = $record->local_metadata_id->entity;
+      $fields = [
+        'description', 'license_status', 'catalogue_location', 'call_number',
+      ];
+      foreach ($fields as $field) {
+        $localMetadata->set($field, $form_state->getValue($field));
+      }
+      $localMetadata->save();
+
+      $form_state->setRedirect('guides.eresources_list', [], ['query' => ['id' => $id]]);
+      $this->messenger()->addStatus('Record updated');
+      return;
+    }
+
     $storage = $this->entityTypeManager->getStorage('eresources_local_metadata');
     $localMetadata = $storage->create();
 
