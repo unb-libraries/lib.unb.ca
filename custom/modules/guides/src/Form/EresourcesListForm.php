@@ -118,7 +118,7 @@ class EresourcesListForm extends FormBase {
     $form['result'] = [
       '#prefix' => '<div id="result">',
       '#suffix' => '</div>',
-      '#markup' => $this->recordInfo($form_state),
+      '#markup' => $this->recordInfo($form, $form_state),
     ];
 
     $form['#attached']['library'][] = 'lib_core/lib-selectize';
@@ -163,8 +163,11 @@ class EresourcesListForm extends FormBase {
   /**
    * Load record info.
    */
-  public function recordInfo(FormStateInterface $form_state) {
+  public function recordInfo(array &$form, FormStateInterface $form_state) {
     $id = $form_state->getValue('search');
+    if (is_null($id) && !empty($form['selector']['search']['#default_value'])) {
+      $id = $form['selector']['search']['#default_value'];
+    }
 
     $linkStorage = $this->entityTypeManager->getStorage('eresources_guide_link');
     $query = $linkStorage->getQuery()
