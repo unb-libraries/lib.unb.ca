@@ -138,7 +138,7 @@ class EresourcesListForm extends FormBase {
    */
   public function getRecords($showAll) {
     $options = [
-      0 => '[id:0] Deleted Resource',
+      0 => '[DEL] Deleted Resource',
     ];
 
     $storage = $this->entityTypeManager->getStorage('eresources_record');
@@ -153,7 +153,7 @@ class EresourcesListForm extends FormBase {
     $records = $storage->loadMultiple($ids);
     foreach ($records as $record) {
       $id = $record->id();
-      $label = "[id:{$id}; " . ($record->is_local->getString() ? 'LOCAL' : 'KB') . '] ' . $record->label();
+      $label = ($record->is_local->getString() ? '[LOCAL] ' : '') . $record->label();
       $options[$id] = $label;
     }
 
