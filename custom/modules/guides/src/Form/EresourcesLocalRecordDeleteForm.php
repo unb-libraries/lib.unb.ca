@@ -103,6 +103,13 @@ class EresourcesLocalRecordDeleteForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
+    $storage = $this->entityTypeManager->getStorage('eresources_record');
+    $record = $storage->load($form_state->getValue('id'));
+    $localMetadata = $record->local_metadata_id->entity;
+
+    $localMetadata->delete();
+    $record->delete();
+
     $form_state->setRedirect('guides.eresources_list');
     $this->messenger()->addStatus('Record deleted');
   }
