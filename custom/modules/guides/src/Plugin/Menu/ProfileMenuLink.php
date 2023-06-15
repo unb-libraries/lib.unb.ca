@@ -56,7 +56,7 @@ class ProfileMenuLink extends MenuLinkDefault {
    * {@inheritdoc}
    */
   public function getTitle() {
-    return $this->t('View public profile');
+    return $this->t('View my public profile');
   }
 
   /**
