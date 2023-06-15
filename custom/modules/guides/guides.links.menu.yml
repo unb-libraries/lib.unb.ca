@@ -33,3 +33,7 @@ system.admin.unblib.guides.eresources_list:
   route_name: guides.eresources_list
   parent: system.admin.unblib.guides
   weight: 7
+system.admin.unblib.guides.public_profile.view:
+  class: Drupal\guides\Plugin\Menu\ProfileMenuLink
+  parent: system.admin.unblib.guides
+  weight: 7
