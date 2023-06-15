@@ -1412,7 +1412,7 @@ display:
       path: admin/guides
       menu:
         type: normal
-        title: 'View guides'
+        title: 'View my guides'
         description: ''
         weight: -10
         expanded: false
