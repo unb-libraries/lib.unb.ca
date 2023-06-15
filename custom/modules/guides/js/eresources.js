@@ -50,11 +50,11 @@
 
             var select = $('select[name="eresources_search"]');
             select.children('option').each(function() {
-              if (this.text.match('; KB]')) {
-                this.style.background = '#f9b3e1';
+              if (this.text.match('\\[LOCAL\\]')) {
+                this.style.background = '#d3e4ff';
               }
               else {
-                this.style.background = '#d3e4ff';
+                this.style.background = '#f9b3e1';
               }
             });
             $(once('eresources-search', '#record-select', context)).each(function() {
