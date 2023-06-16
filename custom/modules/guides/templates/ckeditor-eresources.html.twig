@@ -43,15 +43,16 @@
     {% endif %}
       </span>
   {% else %}
-
-      <a href="{{ entry.getViaUrl }}" target_"_blank">{{ entry.getTitle }}</a>
-
+      <a href="{% if entry.getLicenseStatus|upper != 'N' %}https://login.proxy.hil.unb.ca/login?url={% endif %}{{ entry.getViaUrl }}" target_"_blank">{{ entry.getTitle }}</a>
   {% endif %}
-
       {% set descriptionId = 'description-' ~ entry.getId ~ '-' ~ random() %}
       <a data-toggle="collapse" href="#{{ descriptionId }}" aria-expanded="false"></a>
-      <div class="my-2 p-2 border border-info bg-white rounded collapse" id="{{ descriptionId }}">{{ entry.getFirstMetadataField('description') | raw }}</div>
-
+      <div class="my-2 p-2 border border-info bg-white rounded collapse" id="{{ descriptionId }}">
+        {{ entry.getFirstMetadataField('description') | raw }}
+      {% if entry.getPermittedUseStatement %}
+        <br><em>{{ entry.getPermittedUseStatement }}</em>
+      {% endif %}
+      </div>
     </li>
 {% endfor %}
   </ul>
