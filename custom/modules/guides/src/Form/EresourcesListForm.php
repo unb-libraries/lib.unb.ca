@@ -200,7 +200,7 @@ class EresourcesListForm extends FormBase {
         }
 
         $text .= '<p>This record has been <b>added manually</b> by a Guide Editor and <b>may need review</b>.</p>';
-        $text .= '<ul><li>URL or eBookLink: ' . $record->url->getString() . '</li>';
+        $text .= '<ul><li>URL or eBook link: ' . $record->url->getString() . ($localMetadata->license_status->getString() == 'Y' ? ' (Licensed Resource)' : '') . '</li>';
         $text .= '<li>Physical items:<ul>';
         $text .= '  <li>Shelving Location: ' . $localMetadata->catalogue_location->getString() . '</li>';
         $text .= '  <li>Call Number: ' . $localMetadata->call_number->getString() . '</li>';
