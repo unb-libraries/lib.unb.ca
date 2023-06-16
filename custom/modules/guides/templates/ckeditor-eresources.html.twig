@@ -50,7 +50,7 @@
       <div class="my-2 p-2 border border-info bg-white rounded collapse" id="{{ descriptionId }}">
         {{ entry.getFirstMetadataField('description') | raw }}
       {% if entry.getPermittedUseStatement %}
-        <br><em>{{ entry.getPermittedUseStatement }}</em>
+        <br><em>{{ entry.getPermittedUseStatement | raw }}</em>
       {% endif %}
       </div>
     </li>
