@@ -23,10 +23,35 @@
   <ul class="resource-list">
   {% endif %}
     <li>
-      <a href="{{ entry.getViaUrl }}">{{ entry.getTitle }}</a>
+  {% if entry.getIsLocalRecord %}
+    {% if entry.getViaUrl is not empty %}
+      <a target="_blank" href="{% if entry.getLicenseStatus|upper == 'Y' %}https://login.proxy.hil.unb.ca/login?url={% endif %}{{ entry.getViaUrl }}">{{ entry.getTitle }}</a>
+    {% else %}
+      {{ entry.getTitle }}
+    {% endif %}
+    {% if entry.getViaUrl is not empty and entry.getCatalogueLocation is not empty %}
+      <br/><span class="alsoPrint"><em>see also</em>
+    {% else %}
+      <span>
+    {% endif %}
+    {% if entry.getCatalogueLocation|lower == 'multiple location' or (entry.getCatalogueLocation is not empty and entry.getCallNumber is not empty) %}
+      {% if entry.getOclcNum is not empty %}
+        [<a target="_blank" href="https://unb.on.worldcat.org/oclc/{{ entry.getOclcNum }}">{{ entry.getCatalogueLocation }} {{ entry.getCallNumber }}</a>]
+      {% else %}
+        {{ entry.getCatalogueLocation }} {{ entry.getCallNumber }}
+      {% endif %}
+    {% endif %}
+      </span>
+  {% else %}
+
+      <a href="{{ entry.getViaUrl }}" target_"_blank">{{ entry.getTitle }}</a>
+
+  {% endif %}
+
       {% set descriptionId = 'description-' ~ entry.getId ~ '-' ~ random() %}
       <a data-toggle="collapse" href="#{{ descriptionId }}" aria-expanded="false"></a>
       <div class="my-2 p-2 border border-info bg-white rounded collapse" id="{{ descriptionId }}">{{ entry.getFirstMetadataField('description') | raw }}</div>
+
     </li>
 {% endfor %}
   </ul>

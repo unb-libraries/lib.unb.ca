@@ -181,6 +181,34 @@ class LocalResult extends ResultBase implements ResultInterface {
   }
 
   /**
+   * Returns the is_local status.
+   */
+  public function getIsLocalRecord() {
+    return $this->getFirstValue('is_local');
+  }
+
+  /**
+   * Returns the license status.
+   */
+  public function getLicenseStatus() {
+    return $this->getMetadataField('license_status');
+  }
+
+  /**
+   * Returns the catalogue location.
+   */
+  public function getCatalogueLocation() {
+    return $this->getMetadataField('catalogue_location');
+  }
+
+  /**
+   * Returns the call number.
+   */
+  public function getCallNumber() {
+    return $this->getMetadataField('call_number');
+  }
+
+  /**
    * Return the metadata field value for a source (default "local").
    */
   public function getMetadataField($field, $source = 'local') {

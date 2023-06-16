@@ -175,6 +175,22 @@ field_settings:
     dependencies:
       module:
         - eresources
+  metadata_local_call_number:
+    label: 'Local Metadata: Call Number'
+    datasource_id: 'entity:eresources_record'
+    property_path: 'local_metadata_id:entity:call_number'
+    type: string
+    dependencies:
+      module:
+        - eresources
+  metadata_local_catalogue_location:
+    label: 'Local Metadata: Catalog Location'
+    datasource_id: 'entity:eresources_record'
+    property_path: 'local_metadata_id:entity:catalogue_location'
+    type: string
+    dependencies:
+      module:
+        - eresources
   metadata_local_date_coverage:
     label: 'Local Metadata: Coverage/Publication Date'
     datasource_id: 'entity:eresources_record'
