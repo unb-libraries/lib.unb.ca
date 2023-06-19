@@ -250,6 +250,14 @@ class EresourcesDialog extends FormBase {
       $options[$id] = $label;
     }
 
+    if (!empty($selected)) {
+      $newoptions = [];
+      foreach ($selected as $i) {
+        $newoptions[$i] = $options[$i];
+      }
+      return $newoptions;
+    }
+
     return $options;
   }
 
