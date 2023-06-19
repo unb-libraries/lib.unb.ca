@@ -5,6 +5,7 @@ namespace Drupal\guides\Form;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Markup;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -53,6 +54,13 @@ class EresourcesLocalRecordForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state, $id = NULL) {
+    $warning = Markup::Create('<b>Cataloguing-maintained eResource records</b><br>
+The updated eResources Discovery system now includes over 1500 titles from Wiley/Blackwell Reference, Oxford Reference/Bibliographies, Gale Virtual  Reference and Cambridge Histories.<br><br>
+<b>We strongly encourage</b> you to use these maintained records instead of adding new ones and convert any old custom record selections to these. This will ensure any updates or URL changes are made for you.<br><br>
+<b>Local Record Display</b><br>
+Local custom records are shared across all guides that are currently linked to them. Please keep this in mind when editing. Others may depend on them.<br><br>
+Reach out to <a href="https://lib.unb.ca/help/ticket/new" target="_blank">Scott Shannon</a> if you need help with selections or there are issues with records.');
+    $this->messenger()->addWarning($warning);
 
     $form['title'] = [
       '#type' => 'textfield',
