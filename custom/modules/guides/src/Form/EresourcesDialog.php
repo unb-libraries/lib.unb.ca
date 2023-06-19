@@ -7,6 +7,7 @@ use Drupal\Core\Ajax\CloseModalDialogCommand;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 use Drupal\editor\Ajax\EditorDialogSave;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -163,6 +164,15 @@ class EresourcesDialog extends FormBase {
       $form['noheadings']['#default_value'] = 1;
       $form['noheadings']['#type'] = 'hidden';
     }
+
+    $form['admin_link'] = [
+      '#type' => 'link',
+      '#title' => $this->t('ADD / EDIT Print, eBook or Custom Local Resource Records'),
+      '#url' => Url::fromRoute('guides.eresources_list'),
+      '#attributes' => [
+        'target' => '_blank',
+      ],
+    ];
 
     $form['actions'] = [
       '#type' => 'actions',
