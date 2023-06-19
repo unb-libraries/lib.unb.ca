@@ -1,13 +1,14 @@
 _core:
   default_config_hash: SMk3vOyh4KT6rXnqkDcNQ51YGpJzRV5hyig5SSIfU6U
-account: UA-9333082-2
+account: G-BE6MD70JEL
 domain_mode: 0
 cross_domains: ''
 visibility:
   request_path_mode: 0
   request_path_pages: "/admin\r\n/admin/*\r\n/batch\r\n/node/add*\r\n/node/*/*\r\n/user/*/*"
   user_role_mode: 0
-  user_role_roles: {  }
+  user_role_roles:
+    anonymous: anonymous
   user_account_mode: 0
 track:
   outbound: true
@@ -25,7 +26,8 @@ track:
   displayfeatures: false
 privacy:
   anonymizeip: true
-custom: {  }
+custom:
+  parameters: {  }
 codesnippet:
   create: {  }
   before: ''
