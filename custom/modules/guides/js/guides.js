@@ -23,8 +23,6 @@
                 thisHash = '#' + this.id;
                 if (location.hash != thisHash) {
                     history.pushState({}, "", thisHash);
-                    ga("set", "page", location.pathname + location.search + location.hash);
-                    ga("send", "pageview");
                 }
             });
 
