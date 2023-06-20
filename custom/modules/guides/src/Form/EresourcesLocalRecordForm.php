@@ -59,7 +59,7 @@ The updated eResources Discovery system now includes over 1500 titles from Wiley
 <b>We strongly encourage</b> you to use these maintained records instead of adding new ones and convert any old custom record selections to these. This will ensure any updates or URL changes are made for you.<br><br>
 <b>Local Record Display</b><br>
 Local custom records are shared across all guides that are currently linked to them. Please keep this in mind when editing. Others may depend on them.<br><br>
-Reach out to <a href="https://lib.unb.ca/help/ticket/new" target="_blank">Scott Shannon</a> if you need help with selections or there are issues with records.');
+Reach out to <a href="https://lib.unb.ca/help/ticket/new?nature=Other&title=eResources%20in%20Research%20Guides" target="_blank">Scott Shannon</a> if you need help with selections or there are issues with records.');
     $this->messenger()->addWarning($warning);
 
     $form['title'] = [
