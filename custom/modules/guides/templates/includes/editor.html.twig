@@ -28,7 +28,7 @@
   <li>{{ account.field_phone_number.value|replace({' ': '-'})|trim('1-', 'left') }}</li>
 {% endif %}
 {% if profile.field_show_social_media_icons.value %}
-  {% if profile.field_twitter_id.value or profile.field_facebook_id.value or profile.field_linkedin_id.value or profile.field_researchgate_id.value or profile.field_orcid_id.value %}
+  {% if profile.field_twitter_id.value or profile.field_facebook_id.value or profile.field_linkedin_id.value or profile.field_researchgate_id.value or profile.field_orcid_id.value or profile.field_instagram_id.value %}
   <li class="social-buttons">
     {% if profile.field_twitter_id.value %}
     <a href="https://twitter.com/{{ profile.field_twitter_id.value }}" class="btn btn-sm btn-twitter"><i class="fab fa-twitter"></i> Follow</a>
@@ -44,6 +44,9 @@
     {% endif %}
     {% if profile.field_orcid_id.value %}
     <a href="https://orcid.org/{{ profile.field_orcid_id.value }}" class="btn btn-sm btn-orcid"><i class="fab fa-orcid fa-lg"></i> ORCID Record</a>
+    {% endif %}
+    {% if profile.field_instagram_id.value %}
+    <a href="https://instagram.com/{{ profile.field_instagram_id.value }}" class="btn btn-sm btn-instagram"><i class="fab fa-instagram fa-lg"></i> Follow</a>
     {% endif %}
   </li>
   {% endif %}

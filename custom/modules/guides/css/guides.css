@@ -30,6 +30,10 @@
   background-color: #447405;
 }
 
+.social-buttons .btn-instagram {
+  background-color: #d03f7c;
+}
+
 .social-buttons .btn:hover, .social-buttons .btn:focus {
   color: #fff;
   opacity: 0.7;

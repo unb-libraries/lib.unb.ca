@@ -10,6 +10,7 @@ dependencies:
     - field.field.profile.public.field_functional_specializations
     - field.field.profile.public.field_guide_categories
     - field.field.profile.public.field_guides_listing
+    - field.field.profile.public.field_instagram_id
     - field.field.profile.public.field_library_link
     - field.field.profile.public.field_linkedin_id
     - field.field.profile.public.field_mini_biography
@@ -60,7 +61,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 21
+    weight: 22
     region: content
   field_campus:
     type: list_default
@@ -83,7 +84,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 23
+    weight: 24
     region: content
   field_guide_categories:
     type: entity_reference_label
@@ -91,14 +92,22 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 24
+    weight: 25
     region: content
   field_guides_listing:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 22
+    weight: 23
+    region: content
+  field_instagram_id:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 20
     region: content
   field_library_link:
     type: string
@@ -206,7 +215,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 20
+    weight: 21
     region: content
   field_show_subject_specialties:
     type: boolean
@@ -249,7 +258,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 25
+    weight: 26
     region: content
   field_twitter_id:
     type: string
