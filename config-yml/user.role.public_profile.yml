@@ -4,11 +4,13 @@ status: true
 dependencies:
   module:
     - profile
+    - toolbar
 id: public_profile
 label: 'Public Profile'
 weight: 9
 is_admin: null
 permissions:
+  - 'access toolbar'
   - 'create public profile'
   - 'delete own public profile'
   - 'update own public profile'
