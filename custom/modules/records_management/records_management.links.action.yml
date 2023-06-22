@@ -12,3 +12,4 @@ schedule.add_form:
   appears_on:
     - entity.schedule.collection
     - view.retention_schedules.page
+    - view.retention_classifications.page_1
