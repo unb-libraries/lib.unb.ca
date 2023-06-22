@@ -385,6 +385,17 @@ display:
           empty: true
           view_to_insert: 'retention_schedules:simple_search_form'
           inherit_arguments: false
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: false
+          content: '<a class="d-block mb-2" href="/records/schedules">View all schedules</a>'
+          tokenize: false
       footer: {  }
       display_extenders: {  }
     cache_metadata:
