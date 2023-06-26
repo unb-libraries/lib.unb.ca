@@ -1,3 +1,9 @@
+system.admin.unblib.eresources.guides:
+  title: eResources Guides Usage
+  description: 'eResources Guides Usage.'
+  route_name: guides.eresources_list
+  parent: system.admin.unblib.eresources
+  weight: 50
 system.admin.unblib.guides:
   title: Research Guides
   description: 'UNB Libraries Guides.'
