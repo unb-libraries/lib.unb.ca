@@ -48,28 +48,28 @@ guides.eresources_list:
     _form: '\Drupal\guides\Form\EresourcesListForm'
     _title: 'Guide e-Resources'
   requirements:
-    _permission: 'create guide entities'
+    _permission: 'create guide entities+administer eresources_record entities'
 guides.local_eresource.add:
   path: '/admin/guides/eresources/add'
   defaults:
     _form: '\Drupal\guides\Form\EresourcesLocalRecordForm'
     _title: 'Add a Local e-Resource Record'
   requirements:
-    _permission: 'create guide entities'
+    _permission: 'create guide entities+administer eresources_record entities'
 guides.local_eresource.edit:
   path: '/admin/guides/eresources/{id}/edit'
   defaults:
     _form: '\Drupal\guides\Form\EresourcesLocalRecordForm'
     _title: 'Edit a Local e-Resource Record'
   requirements:
-    _permission: 'create guide entities'
+    _permission: 'create guide entities+administer eresources_record entities'
 guides.local_eresource.delete:
   path: '/admin/guides/eresources/{id}/delete'
   defaults:
     _form: '\Drupal\guides\Form\EresourcesLocalRecordDeleteForm'
     _title: 'Delete a Local e-Resource Record'
   requirements:
-    _permission: 'create guide entities'
+    _permission: 'create guide entities+administer eresources_record entities'
 guides.clone:
   path: '/admin/guides/clone'
   defaults:
