@@ -5,6 +5,7 @@ namespace Drupal\guides\Form;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Markup;
 use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -50,12 +51,14 @@ class EresourcesListForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $form['intro'] = [
-      '#markup' => '<p>Use this tool to view resource record use within Guides or to create and edit <b>Print, eBook or Custom Local Records</b>.
+    if (empty($form_state->getUserInput())) {
+      $message = Markup::Create('<p>Use this tool to view resource record use within Guides or to create and edit <b>Print, eBook or Custom Local Records</b>.
 <p>The custom records here are maintained by Subject Specialists (Librarians and Reference staff) and not by Cataloguing staff. Be cautious when editing records as others may also have linked them from within their guides.</p>
 <p>Only local records which are unused may be deleted.</p>
-<p>You may also view the usage of Cataloguing-maintained eResource Discovery records but you may not edit them.</p>',
-    ];
+<p>You may also view the usage of Cataloguing-maintained eResource Discovery records but you may not edit them.</p>');
+
+      $this->messenger()->addMessage($message);
+    }
 
     $form['add'] = [
       '#type' => 'link',
