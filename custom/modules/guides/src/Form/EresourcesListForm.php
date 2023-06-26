@@ -126,6 +126,7 @@ class EresourcesListForm extends FormBase {
 
     $form['#attached']['library'][] = 'lib_core/lib-selectize';
     $form['#attached']['library'][] = 'guides/guides-selectize';
+    $form['#attached']['library'][] = 'guides/guides-admin';
     return $form;
   }
 
@@ -201,8 +202,7 @@ class EresourcesListForm extends FormBase {
           $deleteUrl = Url::fromRoute('guides.local_eresource.delete', ['id' => $id])->toString();
           $text .= ' <a class="button" href="' . $deleteUrl . '">Delete Record</a>';
         }
-
-        $text .= '<p>This record has been <b>added manually</b> by a Guide Editor and <b>may need review</b>.</p>';
+        $text .= '<p class="local">[LOCAL] This record has been <b>added manually</b> by a Guide Editor and <b>may need review</b>.</p>';
         $text .= '<ul><li>URL or eBook link: ' . $record->url->getString() . ($localMetadata->license_status->getString() == 'Y' ? ' (Licensed Resource)' : '') . '</li>';
         $text .= '<li>Physical items:<ul>';
         $text .= '  <li>Shelving Location: ' . $localMetadata->catalogue_location->getString() . '</li>';
@@ -211,7 +211,7 @@ class EresourcesListForm extends FormBase {
         $text .= '</ul></li></ul>';
       }
       else {
-        $text .= '<p>This record is <b>maintained by Cataloguing</b> and is part of eResources Discovery.</p>';
+        $text .= '<p class="catalogue">This record is <b>maintained by Cataloguing</b> and is part of eResources Discovery.</p>';
         if ($this->currentUser()->hasPermission('update eresources_record entities')) {
           $editUrl = Url::fromRoute('entity.eresources_record.edit_form', ['eresources_record' => $id])->toString();
           $text .= '<a class="button" href="' . $editUrl . '">Edit Record</a>';
