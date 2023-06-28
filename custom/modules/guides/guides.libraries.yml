@@ -31,6 +31,8 @@ guides-view-all:
 
 guides-admin:
   version: VERSION
+  js:
+    js/guides-admin.js: {}
   css:
     theme:
       css/guides-admin.css: {}
