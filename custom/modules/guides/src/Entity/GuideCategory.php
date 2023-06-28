@@ -409,7 +409,7 @@ class GuideCategory extends ContentEntityBase implements GuideCategoryInterface,
     }
 
     $index = Index::load('eresources');
-    $indexQuery = $index->query();
+    $indexQuery = $index->query(['limit' => 10000]);
     $indexQuery->addCondition('id', $ids, 'IN');
     $indexQuery->addCondition('status', TRUE);
     $results = $indexQuery->execute();
