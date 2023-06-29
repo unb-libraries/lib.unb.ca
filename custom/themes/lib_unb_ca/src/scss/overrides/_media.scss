@@ -61,7 +61,7 @@ figure {
     display: block;
   }
 
-  &.caption {
+  &.caption:not(.img-thumbnail) {
     figcaption {
       margin-top: 0;
     }
