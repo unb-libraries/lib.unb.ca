@@ -69,6 +69,10 @@
   content: "\f078";
 }
 
+.custom-legend {
+  font-size: 1.3rem;
+}
+
 /* Quick hack to prevent Edit Guide | Details Sidebar | Guise Category collapse re: validation
 details[data-drupal-selector="edit-group-guide-categories"] > summary {
   list-style-type: none;
