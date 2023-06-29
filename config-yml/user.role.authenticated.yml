@@ -55,3 +55,4 @@ permissions:
   - 'view published_anonymised_ ior_submission entities'
   - 'view retention_details entities'
   - 'view schedule entities'
+  - 'view user email addresses'
