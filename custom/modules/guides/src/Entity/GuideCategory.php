@@ -411,6 +411,7 @@ class GuideCategory extends ContentEntityBase implements GuideCategoryInterface,
     $indexQuery = $index->query(['limit' => 10000]);
     $indexQuery->addCondition('id', $ids, 'IN');
     $indexQuery->addCondition('status', TRUE);
+    $indexQuery->sort('title', 'ASC');
     $results = $indexQuery->execute();
 
     if ($results->getResultCount() != 0) {
