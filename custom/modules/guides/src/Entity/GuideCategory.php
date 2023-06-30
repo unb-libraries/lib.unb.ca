@@ -393,17 +393,16 @@ class GuideCategory extends ContentEntityBase implements GuideCategoryInterface,
       ->condition('guide.entity.status', 1)
       ->condition('guide.entity.guide_categories', $this->id());
 
-    if ($count) {
-      $total = $query->count()->execute();
-      return $total;
-    }
-
     $linkIds = $query->execute();
     $links = $storage->loadMultiple($linkIds);
     $ids = array_map(function ($i) {
       return $i->get('eresource')->target_id;
     }, $links);
 
+    $ids = array_unique($ids);
+    if ($count) {
+      return count($ids);
+    }
     if (empty($ids)) {
       return [];
     }
