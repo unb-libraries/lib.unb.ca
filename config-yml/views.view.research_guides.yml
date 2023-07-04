@@ -202,7 +202,7 @@ display:
                 advanced:
                   sort_options: false
                   rewrite:
-                    filter_rewrite_values: "True|Subject Guide\r\nFalse|Course Guide\r\n- Any -|- All -"
+                    filter_rewrite_values: "- Any -|- All -\r\nTrue|Subject Guide\r\nFalse|Course Guide"
                   collapsible: false
                   is_secondary: false
       access:
@@ -307,7 +307,7 @@ display:
           entity_field: is_subject_guide
           plugin_id: boolean
           operator: '='
-          value: '1'
+          value: All
           group: 1
           exposed: true
           expose:
@@ -340,6 +340,8 @@ display:
               saml_unb_active: '0'
               saml_stu_active: '0'
               guide_editor: '0'
+              public_profile: '0'
+              duplicate_id_checker: '0'
           is_grouped: false
           group_info:
             label: ''
@@ -707,7 +709,7 @@ display:
           entity_field: is_subject_guide
           plugin_id: boolean
           operator: '='
-          value: '1'
+          value: All
           group: 1
           exposed: true
           expose:
@@ -740,6 +742,8 @@ display:
               saml_unb_active: '0'
               saml_stu_active: '0'
               guide_editor: '0'
+              public_profile: '0'
+              duplicate_id_checker: '0'
           is_grouped: false
           group_info:
             label: ''
