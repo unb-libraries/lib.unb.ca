@@ -61,7 +61,8 @@ class DiscoverySearch extends BlockBase {
                        id="searchBtn5" aria-controls="searchPanel5" aria-expanded="false" tabindex="-1"
                        href="/eresources?form_id=eres_reference"
                        onclick="location.href=\'/eresources?form_id=eres_reference\';"
-                       title="Guide to Finding Reference Materials (opens new page)">More<i class="fas fa-angle-double-right fa-sm fa-muted ml-1" aria-hidden="true"></i>
+                       aria-label="Guide to Finding Reference Materials (link leads to e-Resources page)"
+                       title="(link leads to e-Resources page)">More<i class="fas fa-angle-double-right fa-sm fa-muted ml-1" aria-hidden="true"></i>
                     </a>
                   </li>
                 </ul>
@@ -75,8 +76,8 @@ class DiscoverySearch extends BlockBase {
             <div aria-labelledby="searchBtn4 dropdownBtn4" class="Accordion-panel" id="searchPanel4" role="region" hidden="">' . $this->getJournalsForm() . '</div>
             <div aria-labelledby="searchBtn5 dropdownBtn5" class="Accordion-panel" id="searchPanel5" role="region" hidden="">
               <div class="d-flex justify-content-center pt-4">
-                <i class="fas fa-circle-notch fa-lg fa-spin text-warning" aria-hidden="true"></i>
-                <span class="sr-only">Navigating to the Guide to Finding Reference Materials page</span>
+                <i class="fas fa-circle-notch fa-spin mr-2 text-warning" aria-hidden="true"></i>
+                Redirecting to the e-Resources page
               </div>
             </div>
           </div>
