@@ -353,6 +353,7 @@
     "drupal/views_slideshow": "5.0.0",
     "drupal/webform": "6.1.5",
     "furf/jquery-ui-touch-punch": "dev-master",
+    "google/analytics-data": "^0.10.1",
     "harvesthq/chosen": "~1.8",
     "html2text/html2text": "4.2.1",
     "jackmoore/colorbox": "dev-master",
