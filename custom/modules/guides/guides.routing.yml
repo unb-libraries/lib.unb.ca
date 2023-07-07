@@ -80,21 +80,21 @@ guides.clone:
 guides.guide_stats:
   path: '/guides/{guide}/stats'
   defaults:
-    _controller: '\Drupal\guides\Controller\GuidesStatsController::guideStats'
+    _form: '\Drupal\guides\Form\GuideStatsForm'
     _title: 'Guide Statistics'
   requirements:
     _entity_access: 'guide.update'
 guides.category_stats:
   path: '/guides/category/{guide_category}/stats'
   defaults:
-    _controller: '\Drupal\guides\Controller\GuidesStatsController::categoryStats'
+    _form: '\Drupal\guides\Form\GuideCategoryStatsForm'
     _title: 'Category Statistics'
   requirements:
     _entity_access: 'guide_category.update'
 guides.user_stats:
   path: '/user/{user}/stats'
   defaults:
-    _controller: '\Drupal\guides\Controller\GuidesStatsController::userStats'
+    _form: '\Drupal\guides\Form\UserStatsForm'
     _title: 'User Statistics'
   requirements:
     _permission: 'create guide entities'
