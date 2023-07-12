@@ -18,11 +18,11 @@
 #}
 {{ title_prefix }}
 {% if title %}
-  <h1{{ title_attributes.addClass('title') }}>
-    <a class="btn btn-primary hidden-xs float-right{% if askusStatus == 'available' %} askus-popup" href="//ca.libraryh3lp.com/chat/askus@chat.ca.libraryh3lp.com?title=Ask+Us&amp;theme=gota&amp;css=//web.lib.unb.ca/core/css-2015/libraryh3lp.unb.lib.css"{% else %}" href="//lib.unb.ca/help/ask-us"{% endif %}>Ask Us
+  <h1{{ title_attributes.addClass('d-flex justify-content-between title') }}>
+    {{ title }}
+    <a class="btn btn-primary d-none d-lg-inline-block{% if askusStatus == 'available' %} askus-popup" href="//ca.libraryh3lp.com/chat/askus@chat.ca.libraryh3lp.com?title=Ask+Us&amp;theme=gota&amp;css=//web.lib.unb.ca/core/css-2015/libraryh3lp.unb.lib.css"{% else %}" href="//lib.unb.ca/help/ask-us"{% endif %}>Ask Us
       <i class="fas fa-comments fa-lg"></i>
     </a>
-    {{ title }}
   </h1>
 {% endif %}
 {{ title_suffix }}
