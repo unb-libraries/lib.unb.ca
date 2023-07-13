@@ -1,0 +1,6 @@
+system.admin.unblib.spaces:
+  title: Explore Spaces
+  description: 'UNB Libraries Spaces.'
+  route_name: view.spaces.page_1
+  parent: system.admin.unblib
+  weight: 0
