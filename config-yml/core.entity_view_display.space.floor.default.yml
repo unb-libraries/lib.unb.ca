@@ -18,7 +18,7 @@ mode: default
 content:
   field_images:
     type: image
-    label: above
+    label: visually_hidden
     settings:
       image_link: ''
       image_style: bs_lg_large
@@ -31,7 +31,7 @@ content:
     region: content
   field_name:
     type: string
-    label: above
+    label: visually_hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -39,7 +39,7 @@ content:
     region: content
   field_number:
     type: string
-    label: above
+    label: visually_hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -47,7 +47,7 @@ content:
     region: content
   parent:
     type: entity_reference_label
-    label: above
+    label: visually_hidden
     settings:
       link: true
     third_party_settings: {  }

@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Contains spaces.module.
+ */
+
+use Drupal\Core\Render\Element;
+
+/**
+ * Implements hook_theme().
+ */
+function spaces_theme($existing, $type, $theme, $path) {
+  return [
+    'space' => [
+      'render element' => 'elements',
+    ],
+    'space__teaser' => [
+      'render element' => 'elements',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function spaces_theme_suggestions_space_alter(array &$suggestions, array $variables) {
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+  $suggestion = 'space__' . $sanitized_view_mode;
+  if (!in_array($suggestion, $suggestions)) {
+    $suggestions[] = $suggestion;
+  }
+}
+
+function template_preprocess_space__teaser(array &$variables) {
+  /** @var \Drupal\ior\Entity\SubmissionInterface $space */
+  $space = $variables['elements']['#space'];
+  $variables['space']['entity'] = $space;
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['space'][$key] = $variables['elements'][$key];
+  }
+}
