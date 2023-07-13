@@ -3,11 +3,11 @@
 namespace Drupal\eresources\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\eresources\Entity\HarvestedCollection;
 use Drupal\oclc_api\Oclc\OclcAuthorizationInterface;
 use Drupal\oclc_api\Plugin\oclc\OclcApiManagerInterface;
 use Drupal\oclc_api\Plugin\oclc\OclcPluginManagerTrait;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\eresources\Entity\HarvestedCollection;
 
 /**
  * Provides route responses for the lib_core module.

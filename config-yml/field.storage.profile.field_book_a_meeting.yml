@@ -8,7 +8,7 @@ dependencies:
     - profile
 third_party_settings:
   field_permissions:
-    permission_type: custom
+    permission_type: public
 _core:
   default_config_hash: x-gmgFvsP9VriP2msmfLbXebXk29CQUpT4m2rncuh9k
 id: profile.field_book_a_meeting

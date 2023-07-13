@@ -102,6 +102,7 @@ class NewTicketForm extends FormBase {
       '#title' => $this->t('Title of e-Resource'),
       '#required' => TRUE,
       '#weight' => 0,
+      '#default_value' => $query->get('title') ?? NULL,
     ];
     $form['wrapper']['eresource']['nature'] = [
       '#type' => 'select',

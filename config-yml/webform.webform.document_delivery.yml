@@ -15,11 +15,11 @@ category: ''
 elements: |-
   docdel_introduction:
     '#type': webform_markup
-    '#markup': 'Document Delivery and Interlibrary Loans supplement library resources held by UNB by obtaining material located at other libraries and organizations. UNB Libraries&#39; Document Delivery is part of the&nbsp;<a href="https://caul-cbua.ca/committee/document-delivery-group">CAUL Document Delivery Group</a>, a resource sharing network among Atlantic Canadian universities.'
+    '#markup': '<p>Document Delivery and Interlibrary Loans supplement library resources held by UNB by obtaining material located at other libraries and organizations. UNB Libraries&#39; Document Delivery is part of the&nbsp;<a href="https://caul-cbua.ca/committee/document-delivery-group">CAUL Document Delivery Group</a>, a resource sharing network among Atlantic Canadian universities.</p>'
   docdel_please_note:
     '#type': processed_text
     '#text': |
-      <dl>
+      <dl class="link-underline">
       	<dt>Please note:</dt>
       	<dd>
       	<ul>

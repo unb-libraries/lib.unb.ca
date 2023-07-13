@@ -14,7 +14,7 @@ field_name: field_profile_picture
 entity_type: profile
 bundle: public
 label: 'Profile Picture'
-description: ''
+description: "<div><b>Note:</b> Some smartphone photos have EXIF data that causes rotation - you may need to process and re-save the image or <i>submit a design request</i> for a professionally edited copy.</div>\r\n<br>Images are cropped and scaled to 260x260 pixels.\r\n"
 required: false
 translatable: false
 default_value: {  }

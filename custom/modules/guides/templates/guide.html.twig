@@ -1,7 +1,7 @@
 {{ attach_library('lib_core/accessible-accordion') }}
 {% if guide.related_guides is not empty %}
 <ul class="list-unstyled">
-  <li>Related Guides:
+  <li><strong>Related Guides:</strong>
   {% for guide in guide.related_guides %}
     <a href="{{ url('entity.guide.canonical', { 'guide': guide.entity.id() }) }}">{{ guide.entity.label }}</a>
     {% if not loop.last %} &bull; {% endif %}

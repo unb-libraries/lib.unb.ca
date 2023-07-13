@@ -187,6 +187,7 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
     $parseMode = \Drupal::service('plugin.manager.search_api.parse_mode')->createInstance('direct');
     $indexQuery->setParseMode($parseMode);
 
+    $indexQuery->addCondition('is_local', FALSE);
     $indexQuery->addCondition('kb_data_type', 'DATA');
     $indexQuery->addCondition('entry_uid', NULL, '<>');
     $indexQuery->addCondition('status', TRUE);

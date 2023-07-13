@@ -3,10 +3,10 @@
 namespace Drupal\node_path_taxonomy\Entity;
 
 use Drupal\Core\Config\Entity\ConfigEntityBase;
+use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\NodeInterface;
 use Drupal\taxonomy\Entity\Term;
-use Drupal\Core\Entity\EntityStorageInterface;
 
 /**
  * Defines the Node taxonomy path relationship entity.

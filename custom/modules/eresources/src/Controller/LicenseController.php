@@ -3,14 +3,14 @@
 namespace Drupal\eresources\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\Core\Url;
 use Drupal\Core\Link;
+use Drupal\Core\Url;
+use Drupal\eresources\License;
 use Drupal\oclc_api\Oclc\OclcAuthorizationInterface;
 use Drupal\oclc_api\Plugin\oclc\OclcApiManagerInterface;
 use Drupal\oclc_api\Plugin\oclc\OclcPluginManagerTrait;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Drupal\eresources\License;
 
 /**
  * Provides route responses for eresources licenses.

@@ -2,10 +2,10 @@
 
 namespace Drupal\guides\Entity\Access;
 
+use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\custom_entity\Entity\Access\EntityAccessControlHandler;
-use Drupal\Core\Access\AccessResult;
 
 /**
  * Access control handler for "course_link" entities.

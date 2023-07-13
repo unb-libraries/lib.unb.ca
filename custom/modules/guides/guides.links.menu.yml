@@ -1,3 +1,9 @@
+system.admin.unblib.eresources.guides:
+  title: eResources Guides Usage
+  description: 'eResources Guides Usage.'
+  route_name: guides.eresources_list
+  parent: system.admin.unblib.eresources
+  weight: 50
 system.admin.unblib.guides:
   title: Research Guides
   description: 'UNB Libraries Guides.'
@@ -27,3 +33,13 @@ system.admin.unblib.guides.guide_category.add:
   route_name: entity.guide_category.add_form
   parent: system.admin.unblib.guides
   weight: 5
+system.admin.unblib.guides.eresources_list:
+  title: Manage e-Resources
+  Description: 'Manage e-Resource records.'
+  route_name: guides.eresources_list
+  parent: system.admin.unblib.guides
+  weight: 7
+system.admin.unblib.guides.public_profile.view:
+  class: Drupal\guides\Plugin\Menu\ProfileMenuLink
+  parent: system.admin.unblib.guides
+  weight: 7

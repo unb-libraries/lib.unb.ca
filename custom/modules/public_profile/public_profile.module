@@ -35,9 +35,7 @@ function public_profile_preprocess_profile__public(&$variables) {
   $query = $storage->getQuery();
   $ids = $query
     ->condition('status', 1)
-    ->condition('unlisted', 0)
     ->condition('editors.entity:paragraph.field_user.target_id', $account->id(), 'IN')
-    ->condition('editors.entity:paragraph.field_display_editor', 1)
     ->sort('title', 'ASC')
     ->execute();
   $guides = $storage->loadMultiple($ids);
@@ -128,10 +126,12 @@ function public_profile_form_profile_form_alter(&$form, FormStateInterface $form
 
   $user = $entity->getOwner();
 
-  $warning = Markup::Create('Some data previously found here, eg. phone, email, position/title, is now synchronized with the Staff Directory and centrally maintained. See the <a href="'
-    . Url::fromRoute('entity.user.edit_form', ['user' => $user->id()])->toString()
-    . '">Directory Info</a> tab.');
-  \Drupal::messenger()->addWarning($warning);
+  if (empty($form_state->getUserInput())) {
+    $warning = Markup::Create('Some data previously found here, eg. phone, email, position/title, is now synchronized with the Staff Directory and centrally maintained. See the <a href="'
+      . Url::fromRoute('entity.user.edit_form', ['user' => $user->id()])->toString()
+      . '">Directory Info</a> tab.');
+    \Drupal::messenger()->addWarning($warning);
+  }
 
   if (!($user->field_display_on_connect_page->getString())) {
     $form['group_specialized_help_tagging']['#access'] = FALSE;

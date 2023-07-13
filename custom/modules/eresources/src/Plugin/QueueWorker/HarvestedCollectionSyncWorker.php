@@ -3,14 +3,14 @@
 namespace Drupal\eresources\Plugin\QueueWorker;
 
 use Drupal\Core\Logger\LoggerChannelInterface;
+use Drupal\oclc_api\Oclc\OclcAuthorizationInterface;
+use Drupal\oclc_api\Plugin\oclc\OclcApiManagerInterface;
+use Drupal\oclc_api\Plugin\oclc\OclcPluginManagerTrait;
 use Drupal\task_ui\Entity\Storage\TaskStorageInterface;
 use Drupal\task_ui\Queue\QueueItem;
 use Drupal\task_ui\Queue\TaskQueueWorkerBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Drupal\oclc_api\Oclc\OclcAuthorizationInterface;
-use Drupal\oclc_api\Plugin\oclc\OclcApiManagerInterface;
-use Drupal\oclc_api\Plugin\oclc\OclcPluginManagerTrait;
 
 /**
  * HarvestedCollectionSyncWorker synchronize entries from KB collections.

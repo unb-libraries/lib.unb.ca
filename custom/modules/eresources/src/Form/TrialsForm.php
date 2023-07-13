@@ -4,8 +4,8 @@ namespace Drupal\eresources\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\search_api\Entity\Index;
 use Drupal\eresources\LocalResult;
+use Drupal\search_api\Entity\Index;
 
 /**
  * KB Journals form.

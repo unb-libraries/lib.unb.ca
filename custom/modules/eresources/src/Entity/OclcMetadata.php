@@ -4,8 +4,8 @@ namespace Drupal\eresources\Entity;
 
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
-use Drupal\lib_unb_custom_entity\Entity\ContentEntityInterface;
 use Drupal\lib_unb_custom_entity\Entity\ContentEntityBase;
+use Drupal\lib_unb_custom_entity\Entity\ContentEntityInterface;
 
 /**
  * Defines an eResources OCLC metadata entity.

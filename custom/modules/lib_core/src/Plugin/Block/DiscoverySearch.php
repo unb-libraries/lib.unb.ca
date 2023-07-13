@@ -2,11 +2,11 @@
 
 namespace Drupal\lib_core\Plugin\Block;
 
+use Drupal\Component\Serialization\Json;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Cache\Cache;
-use Drupal\Component\Serialization\Json;
-use GuzzleHttp\Exception\GuzzleException;
 use Drupal\eresources\Form\DatabasesForm;
+use GuzzleHttp\Exception\GuzzleException;
 
 /**
  * Provides the UNB Libraries Discovery Search Home Block.
@@ -45,7 +45,7 @@ class DiscoverySearch extends BlockBase {
         <div class="card">
           <div class="card-header px-2 pb-0 pb-md-1">
             <h2 class="sr-only">Search</h2>
-            <nav class="navbar navbar-expand-md text-nowrap">
+            <nav aria-label="Discovery Search" class="navbar navbar-expand-md text-nowrap">
               <h3 id="category-label" class="d-block d-md-none h4 px-2 py-1">Catalogue</h3>
               <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 Switch search
@@ -61,7 +61,8 @@ class DiscoverySearch extends BlockBase {
                        id="searchBtn5" aria-controls="searchPanel5" aria-expanded="false" tabindex="-1"
                        href="/eresources?form_id=eres_reference"
                        onclick="location.href=\'/eresources?form_id=eres_reference\';"
-                       title="Guide to Finding Reference Materials (opens new page)">More<i class="fas fa-angle-double-right fa-sm fa-muted ml-1" aria-hidden="true"></i>
+                       aria-label="Guide to Finding Reference Materials (link leads to e-Resources page)"
+                       title="(link leads to e-Resources page)">More<i class="fas fa-angle-double-right fa-sm fa-muted ml-1" aria-hidden="true"></i>
                     </a>
                   </li>
                 </ul>
@@ -74,7 +75,10 @@ class DiscoverySearch extends BlockBase {
             <div aria-labelledby="searchBtn3 dropdownBtn3" class="Accordion-panel" id="searchPanel3" role="region" hidden="">' . $this->getDatabasesForm() . '</div>
             <div aria-labelledby="searchBtn4 dropdownBtn4" class="Accordion-panel" id="searchPanel4" role="region" hidden="">' . $this->getJournalsForm() . '</div>
             <div aria-labelledby="searchBtn5 dropdownBtn5" class="Accordion-panel" id="searchPanel5" role="region" hidden="">
-              <div class="d-flex justify-content-center pt-4"><i class="fas fa-circle-notch fa-lg fa-spin text-warning" aria-hidden="true"></i></div>
+              <div class="d-flex justify-content-center pt-4">
+                <i class="fas fa-circle-notch fa-spin mr-2 text-warning" aria-hidden="true"></i>
+                Redirecting to the e-Resources page
+              </div>
             </div>
           </div>
         </div>

@@ -1,4 +1,8 @@
 /* Bootstrap Barrio fixes */
+.node__content {
+  font-size: inherit;
+}
+
 /* Undo 'col-auto' container horizontal padding */
 .col-auto {
   padding-left: 0;

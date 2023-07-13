@@ -4,9 +4,9 @@ namespace Drupal\ior\EventSubscriber;
 
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Mail\MailManagerInterface;
-use Drupal\custom_entity_mail\EventSubscriber\EntityEventTemplateMailer;
 use Drupal\custom_entity_events\Event\EntityEvent;
 use Drupal\custom_entity_events\Event\EntityEvents;
+use Drupal\custom_entity_mail\EventSubscriber\EntityEventTemplateMailer;
 use Drupal\user\UserInterface;
 use Drupal\user\UserStorageInterface;
 use Symfony\Component\HttpFoundation\Request;

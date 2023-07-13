@@ -3,8 +3,8 @@
 namespace Drupal\eresources\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\search_api\Entity\Index;
 use Drupal\eresources\LocalResult;
+use Drupal\search_api\Entity\Index;
 
 /**
  * Provides route responses for the lib_core module.
@@ -40,6 +40,9 @@ class RecordController extends ControllerBase {
       '#theme' => 'permalink',
       '#entry' => $entry,
       '#debug' => $this->currentUser()->hasPermission('administer eresources_record entities'),
+      '#cache' => [
+        'tags' => $item->getOriginalObject()->getValue()->getCacheTags(),
+      ],
     ];
   }
 

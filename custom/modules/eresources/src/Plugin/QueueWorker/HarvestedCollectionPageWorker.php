@@ -2,14 +2,14 @@
 
 namespace Drupal\eresources\Plugin\QueueWorker;
 
-use Drupal\Core\Queue\QueueWorkerBase;
-use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Queue\QueueWorkerBase;
+use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
 use Drupal\oclc_api\Oclc\OclcAuthorizationInterface;
 use Drupal\oclc_api\Plugin\oclc\OclcApiManagerInterface;
 use Drupal\oclc_api\Plugin\oclc\OclcPluginManagerTrait;
-use Drupal\Core\Datetime\DrupalDateTime;
-use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * HarvestedCollectionPageWorker synchronize entries from a KB collection page.

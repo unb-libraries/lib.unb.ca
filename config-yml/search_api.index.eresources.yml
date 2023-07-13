@@ -127,6 +127,14 @@ field_settings:
     dependencies:
       module:
         - eresources
+  is_local:
+    label: 'Local Record'
+    datasource_id: 'entity:eresources_record'
+    property_path: is_local
+    type: boolean
+    dependencies:
+      module:
+        - eresources
   isbn:
     label: ISBN
     datasource_id: 'entity:eresources_record'
@@ -164,6 +172,22 @@ field_settings:
     datasource_id: 'entity:eresources_record'
     property_path: 'local_metadata_id:entity:alternate_title'
     type: text
+    dependencies:
+      module:
+        - eresources
+  metadata_local_call_number:
+    label: 'Local Metadata: Call Number'
+    datasource_id: 'entity:eresources_record'
+    property_path: 'local_metadata_id:entity:call_number'
+    type: string
+    dependencies:
+      module:
+        - eresources
+  metadata_local_catalogue_location:
+    label: 'Local Metadata: Catalog Location'
+    datasource_id: 'entity:eresources_record'
+    property_path: 'local_metadata_id:entity:catalogue_location'
+    type: string
     dependencies:
       module:
         - eresources
@@ -277,6 +301,7 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
+  auto_aggregated_fulltext_field: {  }
   entity_type: {  }
   language_with_fallback: {  }
   rendered_item: {  }

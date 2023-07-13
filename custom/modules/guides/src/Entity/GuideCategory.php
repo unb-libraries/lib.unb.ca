@@ -2,19 +2,19 @@
 
 namespace Drupal\guides\Entity;
 
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Entity\ContentEntityBase;
+use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
-use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
-use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\custom_entity\Entity\EntityChangedTrait;
 use Drupal\custom_entity\Entity\EntityCreatedTrait;
 use Drupal\custom_entity\Entity\UserCreatedInterface;
 use Drupal\custom_entity\Entity\UserEditedInterface;
-use Drupal\Component\Utility\Html;
-use Drupal\search_api\Entity\Index;
 use Drupal\eresources\LocalResult;
 use Drupal\guides\Entity\GuideCategoryInterface;
+use Drupal\search_api\Entity\Index;
 
 /**
  * Defines a guide_category entity.
@@ -393,25 +393,25 @@ class GuideCategory extends ContentEntityBase implements GuideCategoryInterface,
       ->condition('guide.entity.status', 1)
       ->condition('guide.entity.guide_categories', $this->id());
 
-    if ($count) {
-      $total = $query->count()->execute();
-      return $total;
-    }
-
     $linkIds = $query->execute();
     $links = $storage->loadMultiple($linkIds);
     $ids = array_map(function ($i) {
       return $i->get('eresource')->target_id;
     }, $links);
 
+    $ids = array_unique($ids);
+    if ($count) {
+      return count($ids);
+    }
     if (empty($ids)) {
       return [];
     }
 
     $index = Index::load('eresources');
-    $indexQuery = $index->query();
+    $indexQuery = $index->query(['limit' => 10000]);
     $indexQuery->addCondition('id', $ids, 'IN');
     $indexQuery->addCondition('status', TRUE);
+    $indexQuery->sort('title', 'ASC');
     $results = $indexQuery->execute();
 
     if ($results->getResultCount() != 0) {

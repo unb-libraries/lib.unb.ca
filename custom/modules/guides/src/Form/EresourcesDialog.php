@@ -2,13 +2,14 @@
 
 namespace Drupal\guides\Form;
 
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\CloseModalDialogCommand;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Url;
 use Drupal\editor\Ajax\EditorDialogSave;
-use Drupal\Core\Ajax\CloseModalDialogCommand;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
 
 /**
  * Eresources selector widget for ckeditor.
@@ -164,6 +165,15 @@ class EresourcesDialog extends FormBase {
       $form['noheadings']['#type'] = 'hidden';
     }
 
+    $form['admin_link'] = [
+      '#type' => 'link',
+      '#title' => $this->t('ADD / EDIT Print, eBook or Custom Local Resource Records'),
+      '#url' => Url::fromRoute('guides.eresources_list'),
+      '#attributes' => [
+        'target' => '_blank',
+      ],
+    ];
+
     $form['actions'] = [
       '#type' => 'actions',
     ];
@@ -236,8 +246,16 @@ class EresourcesDialog extends FormBase {
     $records = $storage->loadMultiple($ids);
     foreach ($records as $record) {
       $id = $record->id();
-      $label = "[id:{$id}; " . ($record->entry_uid->getString() ? 'KB' : 'LOCAL') . '] ' . $record->label();
+      $label = ($record->entry_uid->getString() ? '' : '[LOCAL] ') . $record->label();
       $options[$id] = $label;
+    }
+
+    if (!empty($selected)) {
+      $newoptions = [];
+      foreach ($selected as $i) {
+        $newoptions[$i] = $options[$i];
+      }
+      return $newoptions;
     }
 
     return $options;

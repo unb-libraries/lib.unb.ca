@@ -29,6 +29,14 @@ guides-view-all:
     theme:
       css/guides_view_all.css: {}
 
+guides-admin:
+  version: VERSION
+  js:
+    js/guides-admin.js: {}
+  css:
+    theme:
+      css/guides-admin.css: {}
+
 eresources:
   version: VERSION
   js:

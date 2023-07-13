@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row mb-4">
 {% set percol = (categories|length / 3)|round(0, 'ceil') %}
 {% for col in categories|batch(percol) %}
   <div class="col">
@@ -8,7 +8,7 @@
   {% endfor %}
     </ul>
   {% if loop.first %}
-    <span class="fas fa-search"></span> <a href="{{ path('view.research_guides.all') }}">View All Research Guides</a>
+    <a class="btn btn-primary" href="{{ path('view.research_guides.all') }}"><span class="fas fa-search"></span> View All Research Guides</a>
   {% endif %}
   </div>
 {% endfor %}

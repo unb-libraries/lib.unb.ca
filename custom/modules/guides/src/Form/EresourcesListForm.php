@@ -2,10 +2,11 @@
 
 namespace Drupal\guides\Form;
 
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Markup;
 use Drupal\Core\Url;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -50,17 +51,19 @@ class EresourcesListForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $form['intro'] = [
-      '#markup' => '<p>Use this tool to view resource record use within Guides or to create and edit <b>Print, eBook or Custom Local Records</b>.
+    if (empty($form_state->getUserInput())) {
+      $message = Markup::Create('<p>Use this tool to view resource record use within Guides or to create and edit <b>Print, eBook or Custom Local Records</b>.
 <p>The custom records here are maintained by Subject Specialists (Librarians and Reference staff) and not by Cataloguing staff. Be cautious when editing records as others may also have linked them from within their guides.</p>
 <p>Only local records which are unused may be deleted.</p>
-<p>You may also view the usage of Cataloguing-maintained eResource Discovery records but you may not edit them.</p>',
-    ];
+<p>You may also view the usage of Cataloguing-maintained eResource Discovery records but you may not edit them.</p>');
+
+      $this->messenger()->addMessage($message);
+    }
 
     $form['add'] = [
       '#type' => 'link',
-      '#title' => 'Add a new CUSTOM record',
-      '#url' => Url::fromUri('https://example.com'),
+      '#title' => 'Add a new LOCAL record',
+      '#url' => Url::fromRoute('guides.local_eresource.add'),
       '#attributes' => ['class' => ['button']],
     ];
 
@@ -110,14 +113,20 @@ class EresourcesListForm extends FormBase {
       ],
     ];
 
+    $id = $this->getRequest()->query->get('id');
+    if (!empty($id)) {
+      $form['selector']['search']['#default_value'] = $id;
+    }
+
     $form['result'] = [
       '#prefix' => '<div id="result">',
       '#suffix' => '</div>',
-      '#markup' => $this->recordInfo($form_state),
+      '#markup' => $this->recordInfo($form, $form_state),
     ];
 
     $form['#attached']['library'][] = 'lib_core/lib-selectize';
     $form['#attached']['library'][] = 'guides/guides-selectize';
+    $form['#attached']['library'][] = 'guides/guides-admin';
     return $form;
   }
 
@@ -133,7 +142,7 @@ class EresourcesListForm extends FormBase {
    */
   public function getRecords($showAll) {
     $options = [
-      0 => '[id:0] Deleted Resource',
+      0 => '[DEL] Deleted Resource',
     ];
 
     $storage = $this->entityTypeManager->getStorage('eresources_record');
@@ -141,14 +150,14 @@ class EresourcesListForm extends FormBase {
       ->condition('status', 1)
       ->sort('title', 'ASC');
     if (!$showAll) {
-      $query->notExists('entry_uid');
+      $query->condition('is_local', 1);
     }
 
     $ids = $query->execute();
     $records = $storage->loadMultiple($ids);
     foreach ($records as $record) {
       $id = $record->id();
-      $label = "[id:{$id}; " . ($record->entry_uid->getString() ? 'KB' : 'LOCAL') . '] ' . $record->label();
+      $label = ($record->is_local->getString() ? '[LOCAL] ' : '') . $record->label();
       $options[$id] = $label;
     }
 
@@ -158,8 +167,11 @@ class EresourcesListForm extends FormBase {
   /**
    * Load record info.
    */
-  public function recordInfo(FormStateInterface $form_state) {
+  public function recordInfo(array &$form, FormStateInterface $form_state) {
     $id = $form_state->getValue('search');
+    if (is_null($id) && !empty($form['selector']['search']['#default_value'])) {
+      $id = $form['selector']['search']['#default_value'];
+    }
 
     $linkStorage = $this->entityTypeManager->getStorage('eresources_guide_link');
     $query = $linkStorage->getQuery()
@@ -181,12 +193,39 @@ class EresourcesListForm extends FormBase {
       $recordStorage = $this->entityTypeManager->getStorage('eresources_record');
       $record = $recordStorage->load($id);
       $text = '<h2>' . $record->label() . " <span class=\"text-muted small\">[id:{$id}]</span></h2>";
+      $localMetadata = $record->local_metadata_id->entity;
 
-      if ($record->entry_uid->getString()) {
-        $text .= '<p>This record is <b>maintained by Cataloguing</b> and is part of eResources Discovery.</p>';
+      if ($record->is_local->getString()) {
+        $editUrl = Url::fromRoute('guides.local_eresource.edit', ['id' => $id])->toString();
+        $text .= '<a class="button" href="' . $editUrl . '">Edit Record</a>';
+        if (empty($links)) {
+          $deleteUrl = Url::fromRoute('guides.local_eresource.delete', ['id' => $id])->toString();
+          $text .= ' <a class="button" href="' . $deleteUrl . '">Delete Record</a>';
+        }
+        $text .= '<p class="local">[LOCAL] This record has been <b>added manually</b> by a Guide Editor and <b>may need review</b>.</p>';
+        $text .= '<ul><li>URL or eBook link: ' . $record->url->getString() . ($localMetadata->license_status->getString() == 'Y' ? ' (Licensed Resource)' : '') . '</li>';
+        $text .= '<li>Physical items:<ul>';
+        $text .= '  <li>Shelving Location: ' . $localMetadata->catalogue_location->getString() . '</li>';
+        $text .= '  <li>Call Number: ' . $localMetadata->call_number->getString() . '</li>';
+        $text .= '  <li>OCLC Number: ' . $record->oclcnum->getString() . '</li>';
+        $text .= '</ul></li></ul>';
       }
       else {
-        $text .= '<p>This record has been <b>added manually</b> by a Guide Editor and <b>may need review</b>.</p>';
+        $text .= '<p class="catalogue">This record is <b>maintained by Cataloguing</b> and is part of eResources Discovery.</p>';
+        if ($this->currentUser()->hasPermission('update eresources_record entities')) {
+          $editUrl = Url::fromRoute('entity.eresources_record.edit_form', ['eresources_record' => $id])->toString();
+          $text .= '<a class="button" href="' . $editUrl . '">Edit Record</a>';
+        }
+      }
+
+      if (!empty($localMetadata->description->getString())) {
+        $render = [
+          '#type' => 'processed_text',
+          '#text' => $localMetadata->description->value,
+          '#format' => $localMetadata->description->format,
+        ];
+        $description = \Drupal::service('renderer')->render($render);
+        $text .= '<blockquote>' . $description . '</blockquote>';
       }
     }
     else {

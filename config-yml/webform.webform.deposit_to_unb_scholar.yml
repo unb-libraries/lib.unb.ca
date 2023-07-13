@@ -88,6 +88,7 @@ elements: |-
         '#type': webform_document_file
         '#title': 'File Upload'
         '#required': true
+        '#uri_scheme': public
         '#file_extensions': pdf
         '#sanitize': true
       checked_policies:

@@ -39,6 +39,12 @@ figure {
 
 /* Link hover effect (not in button/chosen/nav contexts) */
 #main {
+  p a:not(.link-no-hover):not(.btn):not(.button):not(.chosen-single):not(.dropdown-item):not(.nav-link):not(.page-link),
+  .link-underline a:not(.link-no-hover):not(.btn):not(.button):not(.chosen-single):not(.dropdown-item):not(.nav-link):not(.page-link) {
+    text-decoration: underline;
+    text-decoration-color: $link-text-decoration-color-fallback;
+    text-decoration-color: $link-text-decoration-color;
+  }
   a:not(.link-no-hover):not(.btn):not(.button):not(.chosen-single):not(.dropdown-item):not(.nav-link):not(.page-link) {
     text-decoration: underline;
     text-decoration-color: transparent;

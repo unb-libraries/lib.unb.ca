@@ -27,9 +27,18 @@ class ProxyController extends ControllerBase {
       $askUs = \Drupal::service('renderer')->render($renderArray);
     }
 
+    $url = \Drupal::request()->query->get('url');
+
+    // Attempt to unhide burried urls.
+    // Eg http://clients1.google.la/url?q=https://fundforpublicadvocacy.org
+    $pos = strrpos($url, 'http');
+    if ($pos != 0) {
+      $url = substr($url, $pos);
+    }
+
     return [
       '#theme' => 'proxy_noredirect',
-      '#url' => \Drupal::request()->query->get('url'),
+      '#url' => $url,
       '#askus' => $askUs,
     ];
   }

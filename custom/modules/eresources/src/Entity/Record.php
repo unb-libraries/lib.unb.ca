@@ -4,8 +4,8 @@ namespace Drupal\eresources\Entity;
 
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
-use Drupal\lib_unb_custom_entity\Entity\ContentEntityInterface;
 use Drupal\lib_unb_custom_entity\Entity\ContentEntityBase;
+use Drupal\lib_unb_custom_entity\Entity\ContentEntityInterface;
 
 /**
  * Defines an eResources record entity.
@@ -296,6 +296,15 @@ class Record extends ContentEntityBase implements ContentEntityInterface {
         'weight' => 0,
       ])
       ->setDisplayConfigurable('form', TRUE);
+
+    $fields['is_local'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Mark as a custom local record'))
+      ->setDescription(t('A boolean indicating whether the Record is a custom local record.'))
+      ->setDefaultValue(FALSE)
+      ->setDisplayOptions('form', [
+        'type' => 'boolean_checkbox',
+        'weight' => 0,
+      ]);
 
     $fields['status'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Mark as published'))

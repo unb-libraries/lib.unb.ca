@@ -3,8 +3,8 @@
 namespace Drupal\ior\Entity\Storage;
 
 use Drupal\Core\Entity\Sql\SqlContentEntityStorage;
-use Drupal\ior\Entity\SubmissionInterface;
 use Drupal\custom_entity_revisions\Entity\Storage\RevisionableEntityStorageTrait;
+use Drupal\ior\Entity\SubmissionInterface;
 
 /**
  * Entity storage handler for ior_submission entities.

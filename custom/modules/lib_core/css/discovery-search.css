@@ -4,7 +4,7 @@
 }
 #discovery-search {
   background-color: #505050;
-  background-color: rgb(80  80  80 / 85%);
+  background-color: rgb(80  80  80 / 87%);
 }
 #discovery-search .card {
   background: #505050;
@@ -54,7 +54,7 @@
 /* Ask Us */
 #ask-us {
   background-color: #ffc14c;
-  background-color: rgb(255 193 7 / 82%);
+  background-color: rgb(255 193 7 / 86%);
   width: 30%;
 }
 #ask-us .askus-header h2 {

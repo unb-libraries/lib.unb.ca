@@ -222,6 +222,7 @@ function guides_preprocess_page_title(&$variables) {
 function guides_preprocess_page_title__guide(&$variables) {
   $variables['title'] .= ' Guide';
   $variables['askusStatus'] = _unb_libraries_askus_check_presence();
+  $variables['#cache'] = ['max-age' => 0];
 }
 
 /**

@@ -1,0 +1,19 @@
+uuid: c29f1878-8c8f-4230-bfc2-b556cfcfb031
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_instagram_id
+    - profile.type.public
+id: profile.public.field_instagram_id
+field_name: field_instagram_id
+entity_type: profile
+bundle: public
+label: 'Instagram ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

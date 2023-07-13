@@ -11,7 +11,7 @@ id: paragraph.guide_section.field_hide_section
 field_name: field_hide_section
 entity_type: paragraph
 bundle: guide_section
-label: 'Hide Section'
+label: 'Hide section/tab from public view'
 description: ''
 required: false
 translatable: false
