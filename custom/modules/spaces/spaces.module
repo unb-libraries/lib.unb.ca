@@ -39,4 +39,6 @@ function template_preprocess_space__teaser(array &$variables) {
   foreach (Element::children($variables['elements']) as $key) {
     $variables['space'][$key] = $variables['elements'][$key];
   }
+
+  $variables['space']['first_image'] = $variables['space']['field_images']['#items'][0]->view('teaser');
 }
