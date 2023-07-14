@@ -109,6 +109,6 @@
     font-size: 90%;
     opacity: .7;
     text-rendering: auto;
-    vertical-align: text-top;
+    vertical-align: bottom;
     -webkit-font-smoothing: antialiased;
 }
