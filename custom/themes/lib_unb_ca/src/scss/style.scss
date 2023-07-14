@@ -351,9 +351,9 @@ ul.pagination {
 
   &:before {
     font: var(--fa-font-solid);
-    font-size: 80%;
-    margin-right: .45rem;
-    vertical-align: top;
+    font-size: 85%;
+    margin-right: .25rem;
+    vertical-align: text-top;
     text-rendering: auto;
     width: .8rem;
     -webkit-font-smoothing: antialiased;
@@ -408,7 +408,7 @@ ul.field--name-field-categories:before {
       font: var(--fa-font-solid);
       margin-right: .25rem;
       text-rendering: auto;
-      vertical-align: top;
+      vertical-align: text-top;
       -webkit-font-smoothing: antialiased;
     }
 
