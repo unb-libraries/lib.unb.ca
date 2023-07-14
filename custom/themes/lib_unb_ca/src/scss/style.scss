@@ -451,15 +451,16 @@ ul.field--name-field-categories:before {
         border-top-left-radius: .25rem;
         color: #495057;
         content: '\f002';
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
+        font: var(--fa-font-solid);
         /* Match form margin */
         left: .25rem;
         top: .25rem;
         padding: 0.56rem 0.75rem;
         position: absolute;
+        text-rendering: auto;
         white-space: nowrap;
         z-index: -1;
+        -webkit-font-smoothing: antialiased;
       }
 
       input {
