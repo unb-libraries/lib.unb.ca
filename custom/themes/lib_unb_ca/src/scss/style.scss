@@ -273,11 +273,12 @@ ul.pagination {
 
     &:after {
       content: '\f101';
-      font-family: "Font Awesome 5 Free";
-      font-size: .75em;
-      font-weight: 900;
+      font: var(--fa-font-solid);
+      font-size: 75%;
       margin-left: .25rem;
       opacity: .7;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
     }
   }
 
@@ -349,13 +350,13 @@ ul.pagination {
   }
 
   &:before {
-    display: inherit;
-    font-family: "Font Awesome 5 Free";
-    font-size: .8rem;
-    font-weight: 900;
+    font: var(--fa-font-solid);
+    font-size: 80%;
     margin-right: .45rem;
     vertical-align: top;
+    text-rendering: auto;
     width: .8rem
+    -webkit-font-smoothing: antialiased;
   }
 }
 /* News categories tags icon */
@@ -404,10 +405,11 @@ ul.field--name-field-categories:before {
     &:before {
       color: $gray-dark;
       content: '\f0fe';
-      font-family: "Font Awesome 5 Free";
-      font-weight: 900;
+      font: var(--fa-font-solid);
       margin-right: .25rem;
+      text-rendering: auto;
       vertical-align: top;
+      -webkit-font-smoothing: antialiased;
     }
 
     a {
