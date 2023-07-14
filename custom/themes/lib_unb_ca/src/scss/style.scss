@@ -570,10 +570,11 @@ ul.field--name-field-categories:before {
   .field__item:not(:empty) {
     &:before {
       color: $gray-700;
-      font-family: "Font Awesome 5 Free";
-      font-weight: 900;
+      font: var(--fa-font-solid);
       margin-left: 1px;
       margin-right: .25rem;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
     }
   }
 
@@ -620,10 +621,11 @@ ul.field--name-field-categories:before {
       .field__item:not(:empty) {
         &:before {
           color: $gray-700;
-          font-family: "Font Awesome 5 Free";
-          font-weight: 900;
+          font: var(--fa-font-solid);
           margin-left: 1px;
           margin-right: .25rem;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
         }
       }
 
