@@ -8,16 +8,18 @@
   padding: .5rem;
 }
 .Accordion .navbar-toggler[aria-expanded="false"]:after {
-  font-family: 'Font Awesome 5 Free';
-  font-size: smaller;
-  font-weight: bold;
   content: '\f078';
+  font: var(--fa-font-solid);
+  font-size: smaller;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
 }
 .Accordion .navbar-toggler[aria-expanded="true"]:after {
-  font-family: 'Font Awesome 5 Free';
-  font-size: smaller;
-  font-weight: bold;
   content: '\f077';
+  font-size: smaller;
+  font: var(--fa-font-solid);
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
 }
 .Accordion .form-control,
 .Accordion button.btn-primary {
