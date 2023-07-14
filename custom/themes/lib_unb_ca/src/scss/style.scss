@@ -106,12 +106,13 @@ thead {
       &:before {
         content: '\f362';
         display: inline-block;
-        font-family: "Font Awesome 5 Free";
-        font-size: .8rem;
-        font-weight: 900;
+        font: var(--fa-font-solid);
+        font-size: 80%;
         margin-bottom: 2px;
         margin-right: .25rem;
+        text-rendering: auto;
         transform: rotate(90deg);
+        -webkit-font-smoothing: antialiased;
       }
     }
   }
