@@ -9,12 +9,13 @@
 }
 .nav-tabs .active .nav-link:after {
   color: #212529;
-  font-family: "Font Awesome 5 Free";
-  font-size: .85rem;
-  font-weight: 900;
   content: '\f058';
+  font: var(--fa-font-solid);
+  font-size: 85%;
   margin-left: .25rem;
+  text-rendering: auto;
   vertical-align: baseline;
+  -webkit-font-smoothing: antialiased;
 }
 h2.alert {
   color: #212529;
