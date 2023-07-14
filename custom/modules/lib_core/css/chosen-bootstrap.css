@@ -104,10 +104,11 @@
     background: none;
 }
 .chosen-compact .chosen-container-single .chosen-single div b:before {
-    font-family: "Font Awesome 5 Free";
-    font-size: 90%;
-    font-weight: 900;
     content: '\f0dc';
+    font: var(--fa-font-solid);
+    font-size: 90%;
     opacity: .7;
+    text-rendering: auto;
     vertical-align: text-top;
+    -webkit-font-smoothing: antialiased;
 }
