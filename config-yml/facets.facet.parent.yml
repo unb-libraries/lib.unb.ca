@@ -19,10 +19,10 @@ field_identifier: parent
 query_operator: or
 hard_limit: 0
 exclude: false
-use_hierarchy: false
+use_hierarchy: true
 keep_hierarchy_parents_active: false
 hierarchy:
-  type: taxonomy
+  type: space
   config: {  }
 expand_hierarchy: true
 enable_parent_when_child_gets_disabled: true
