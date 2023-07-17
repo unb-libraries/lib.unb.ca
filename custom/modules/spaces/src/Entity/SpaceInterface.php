@@ -10,6 +10,14 @@ use Drupal\Core\Entity\ContentEntityInterface;
 interface SpaceInterface extends ContentEntityInterface {
 
   /**
+   * Get the parent space, if present.
+   *
+   * @return \Drupal\spaces\Entity\SpaceInterface|null
+   *   A "space" entity.
+   */
+  public function getParent();
+
+  /**
    * Whether the space features at least one image.
    *
    * @return bool
