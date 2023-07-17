@@ -105,6 +105,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.space.field_sound_level
+  parent:
+    label: Parent
+    datasource_id: 'entity:space'
+    property_path: parent
+    type: string
+    dependencies:
+      module:
+        - spaces
   type:
     label: 'Space type'
     datasource_id: 'entity:space'

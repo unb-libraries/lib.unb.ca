@@ -1,27 +1,27 @@
-uuid: 4f7cfcb5-475d-422e-af98-82d9815f2c58
+uuid: 6fccf7a6-5bc5-4bb3-b226-99ddb2572cc6
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.what_s_inside
+    - facets.facet.parent
   module:
     - facets
     - system
   theme:
     - lib_unb_ca
-id: whatsinside
+id: parent
 theme: lib_unb_ca
 region: sidebar_second
-weight: -12
+weight: -14
 provider: null
-plugin: 'facet_block:what_s_inside'
+plugin: 'facet_block:parent'
 settings:
-  id: 'facet_block:what_s_inside'
-  label: 'What''s inside'
+  id: 'facet_block:parent'
+  label: Location
   label_display: visible
   provider: facets
   context_mapping: {  }
-  block_id: whatsinside
+  block_id: parent
 visibility:
   request_path:
     id: request_path
