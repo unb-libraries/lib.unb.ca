@@ -228,7 +228,7 @@ class EresourcesDialog extends FormBase {
     $records = $storage->loadMultiple($ids);
     foreach ($records as $record) {
       $id = $record->id();
-      $label = ($record->entry_uid->getString() ? '' : '[LOCAL] ') . $record->label() . ' <' . $record->kb_data_tye->getString() . '>';
+      $label = ($record->entry_uid->getString() ? '' : '[LOCAL] ') . $record->label() . ' <' . $record->kb_data_type->getString() . '>';
       $options[$id] = $label;
     }
 
