@@ -63,22 +63,7 @@ class EresourcesDialog extends FormBase {
       '#suffix' => '</div>',
     ];
 
-    $form['eresources_selector']['eresources_local'] = [
-      '#type' => 'checkbox',
-      '#title' => 'Show local records',
-      '#ajax' => [
-        'callback' => '::loadRecords',
-        'disable-refocus' => FALSE,
-        'wrapper' => 'record-select',
-        'progress' => [
-          'type' => 'throbber',
-          'message' => $this->t('Loading...'),
-        ],
-      ],
-    ];
-
-    $showLocal = !!$form_state->getValue('eresources_local');
-    $options = $this->getRecords($showLocal);
+    $options = $this->getRecords();
 
     $form['eresources_selector']['eresources_search'] = [
       '#type' => 'select',
@@ -203,7 +188,7 @@ class EresourcesDialog extends FormBase {
   /**
    * Convenience function for listing eresources records.
    */
-  public function getRecords($showLocal, $selected = NULL) {
+  public function getRecords($selected = NULL) {
     $options = [];
 
     $category = $this->getRequest()->query->get('category') ?? NULL;
@@ -213,9 +198,6 @@ class EresourcesDialog extends FormBase {
       ->sort('title', 'ASC');
     if (!empty($selected)) {
       $query->condition('id', $selected, 'IN');
-    }
-    elseif (!$showLocal) {
-      $query->exists('entry_uid');
     }
 
     // Filter by type.
