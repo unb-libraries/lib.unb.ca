@@ -76,22 +76,7 @@ class EresourcesListForm extends FormBase {
       '#suffix' => '</div>',
     ];
 
-    $form['selector']['all'] = [
-      '#type' => 'checkbox',
-      '#title' => 'Include Cataloguing-maintained eResource records',
-      '#ajax' => [
-        'callback' => '::loadRecords',
-        'disable-refocus' => FALSE,
-        'wrapper' => 'record-select',
-        'progress' => [
-          'type' => 'throbber',
-          'message' => $this->t('Loading...'),
-        ],
-      ],
-    ];
-
-    $showAll = !!$form_state->getValue('all');
-    $options = $this->getRecords($showAll);
+    $options = $this->getRecords();
 
     $form['selector']['search'] = [
       '#type' => 'select',
@@ -140,7 +125,7 @@ class EresourcesListForm extends FormBase {
   /**
    * Convenience function for listing eresources records.
    */
-  public function getRecords($showAll) {
+  public function getRecords() {
     $options = [
       0 => '[DEL] Deleted Resource',
     ];
@@ -149,9 +134,6 @@ class EresourcesListForm extends FormBase {
     $query = $storage->getQuery()
       ->condition('status', 1)
       ->sort('title', 'ASC');
-    if (!$showAll) {
-      $query->condition('is_local', 1);
-    }
 
     $ids = $query->execute();
     $records = $storage->loadMultiple($ids);
