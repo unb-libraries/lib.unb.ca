@@ -139,7 +139,7 @@ class EresourcesListForm extends FormBase {
     $records = $storage->loadMultiple($ids);
     foreach ($records as $record) {
       $id = $record->id();
-      $label = ($record->is_local->getString() ? '[LOCAL] ' : '') . $record->label();
+      $label = ($record->is_local->getString() ? '[LOCAL] ' : '') . $record->label() . ' <' . $record->kb_data_type->getString() . '>';
       $options[$id] = $label;
     }
 
