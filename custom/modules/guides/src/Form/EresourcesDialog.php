@@ -89,7 +89,7 @@ class EresourcesDialog extends FormBase {
     $selected = [];
     if ($input['ids']) {
       $ids = explode(',', $input['ids']);
-      $selected = $this->getRecords(TRUE, $ids);
+      $selected = $this->getRecords($ids);
     }
     $form['eresources_selector']['eresources_selected'] = [
       '#type' => 'select',
