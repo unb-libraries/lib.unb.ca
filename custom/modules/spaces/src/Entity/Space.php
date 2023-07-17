@@ -62,6 +62,13 @@ class Space extends ContentEntityBase implements SpaceInterface {
   }
 
   /**
+   * {@inheritDoc}
+   */
+  public function hasImages() {
+    return count($this->get('field_images')) > 0;
+  }
+
+  /**
    * {@inheritdoc}
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {

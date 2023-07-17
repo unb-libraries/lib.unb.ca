@@ -1,4 +1,8 @@
 <div>
-    {{ space.first_image }}
+    {% if space.has_images %}
+        {{ space.first_image }}
+    {% else %}
+        <div class="px-3 py-5 text-center" style="background-color: #CCCCCC"><i class="fas fa-image fa-lg" style="color: #9a9996;"></i></div>
+    {% endif %}
     {{ space.field_name }}
 </div>

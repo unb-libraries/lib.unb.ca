@@ -33,12 +33,17 @@ function spaces_theme_suggestions_space_alter(array &$suggestions, array $variab
 }
 
 function template_preprocess_space__teaser(array &$variables) {
-  /** @var \Drupal\ior\Entity\SubmissionInterface $space */
+  /** @var \Drupal\spaces\Entity\SpaceInterface $space */
   $space = $variables['elements']['#space'];
+
   $variables['space']['entity'] = $space;
   foreach (Element::children($variables['elements']) as $key) {
     $variables['space'][$key] = $variables['elements'][$key];
   }
 
-  $variables['space']['first_image'] = $variables['space']['field_images']['#items'][0]->view('teaser');
+  $variables['space']['has_images'] = $space->hasImages();
+  if ($space->hasImages()) {
+    $variables['space']['first_image'] =
+      $variables['space']['field_images']['#items'][0]->view('teaser');
+  }
 }
