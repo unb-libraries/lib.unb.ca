@@ -32,6 +32,28 @@ function spaces_theme_suggestions_space_alter(array &$suggestions, array $variab
   }
 }
 
+function template_preprocess_space(array &$variables) {
+  /** @var \Drupal\spaces\Entity\SpaceInterface $space */
+  $space = $variables['elements']['#space'];
+
+  $variables['space']['entity'] = $space;
+  foreach (Element::children($variables['elements']) as $key) {
+    if (array_key_exists('#items', $variables['elements'][$key])) {
+      /** @var \Drupal\Core\Field\FieldItemListInterface $items */
+      $items = $variables['elements'][$key]['#items'];
+      if ($items->count() > 0) {
+        $variables['space'][$key] = $variables['elements'][$key];
+      }
+    }
+  }
+
+  $variables['space']['has_images'] = $space->hasImages();
+  if ($space->hasImages()) {
+    $variables['space']['first_image'] =
+      $variables['space']['field_images']['#items'][0]->view('teaser');
+  }
+}
+
 function template_preprocess_space__teaser(array &$variables) {
   /** @var \Drupal\spaces\Entity\SpaceInterface $space */
   $space = $variables['elements']['#space'];

@@ -1,1 +1,34 @@
-<div><!-- Render the space --></div>
+<div>
+    {% if space.has_images %}
+        <div>{{ space.field_images }}</div>
+    {% endif %}
+
+    <h2>Reservation</h2>
+    {% if space.field_reservation %}
+        <div>{{ space.field_reservation }}</div>
+    {% else %}
+        <div>No reservation required</div>
+    {% endif %}
+
+    {% if space.field_sound_level %}
+        <h2>Sound level</h2>
+        <div>{{ space.field_sound_level }}</div>
+    {% endif %}
+
+    {% if space.field_equipment %}
+        <div>
+            <h2>What's inside</h2>
+            <div>{{ space.field_equipment }}</div>
+        </div>
+    {% endif %}
+
+    <h2>Food & Drink</h2>
+    {% if space.field_food_drinks %}
+        <div>{{ space.field_food_drinks }}</div>
+    {% else %}
+        <div>No food or drinks allowed</div>
+    {% endif %}
+
+    <h2>Capacity</h2>
+    <div>{{ space.field_capacity }}</div>
+</div>
