@@ -5,6 +5,7 @@ namespace Drupal\spaces\Entity;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\spaces\Plugin\Field\FieldType\CampusFieldItemList;
 
 /**
  * Defines the "Space" entity.
@@ -97,6 +98,19 @@ class Space extends ContentEntityBase implements SpaceInterface {
       ->setDisplayOptions('view', [
         'weight' => 0,
       ]);
+
+    $fields['campus'] = BaseFieldDefinition::create('list_string')
+      ->setLabel(t('Campus'))
+      ->setDescription(t('Campus on which this space is located.'))
+      ->setComputed(TRUE)
+      ->setClass(CampusFieldItemList::class)
+      ->setCardinality(1)
+      ->setSetting('allowed_values', [
+        'fr' => t('Fredericton'),
+        'sj' => t('Saint John'),
+      ])
+      ->setDisplayConfigurable('view', FALSE)
+      ->setDisplayConfigurable('form', FALSE);
 
     return $fields;
   }
