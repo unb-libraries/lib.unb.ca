@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.space.field_capacity
     - field.storage.space.field_name
+    - field.storage.space.field_reservation
     - field.storage.space.field_sound_level
     - field.storage.space.field_equipment
     - search_api.server.drupal_solr_lib_unb_ca
@@ -96,6 +97,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.space.field_name
+  field_reservation:
+    label: Reservation
+    datasource_id: 'entity:space'
+    property_path: field_reservation
+    type: integer
+    dependencies:
+      config:
+        - field.storage.space.field_reservation
   field_sound_level:
     label: 'Sound level'
     datasource_id: 'entity:space'
