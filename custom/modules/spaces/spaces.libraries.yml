@@ -1,0 +1,9 @@
+drupal.facets.radio-widget:
+  version: VERSION
+  js:
+    js/radio-widget.js: {}
+  css:
+    theme:
+      css/facets.radio.css: { }
+  dependencies:
+    - facets/widget

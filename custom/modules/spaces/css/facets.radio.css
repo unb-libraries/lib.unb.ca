@@ -1,0 +1,13 @@
+.block-facet--radio ul {
+    padding-left: 1rem;
+}
+
+.facets-widget-radio input[type="radio"] {
+    margin-right: 0.35rem;
+    margin-top: 2px;
+    transform: scale(1.2);
+}
+
+.facet-item input[type="radio"] {
+    float: left;
+}
