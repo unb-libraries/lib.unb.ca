@@ -1,0 +1,8 @@
+uuid: 506999fb-84f5-4af6-9d01-7c692d4f366c
+langcode: en
+status: true
+dependencies: {  }
+name: '[Spaces] Food & Drinks'
+vid: spaces_food_drinks
+description: ''
+weight: 0

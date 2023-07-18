@@ -1,0 +1,24 @@
+uuid: b7a8aca6-9f48-4b71-a196-1c45176cc971
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - spaces
+    - taxonomy
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: space.field_food_drinks
+field_name: field_food_drinks
+entity_type: space
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

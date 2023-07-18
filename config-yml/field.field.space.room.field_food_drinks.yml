@@ -1,0 +1,29 @@
+uuid: 9b7db436-56cf-47c8-9737-1ae7f62b5a08
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.space.field_food_drinks
+    - spaces.space_type.room
+    - taxonomy.vocabulary.spaces_food_drinks
+id: space.room.field_food_drinks
+field_name: field_food_drinks
+entity_type: space
+bundle: room
+label: 'Food & Drinks'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      spaces_food_drinks: spaces_food_drinks
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

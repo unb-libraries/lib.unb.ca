@@ -1,0 +1,11 @@
+uuid: b77b5944-8214-4279-bd12-c6aedfbe19bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.spaces_food_drinks
+id: taxonomy_term.spaces_food_drinks
+target_entity_type_id: taxonomy_term
+target_bundle: spaces_food_drinks
+default_langcode: site_default
+language_alterable: false
