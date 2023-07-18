@@ -9,7 +9,7 @@ dependencies:
     - search_api
 id: what_s_inside
 name: 'What''s inside'
-weight: 0
+weight: 1
 min_count: 1
 missing: false
 missing_label: others

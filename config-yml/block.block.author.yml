@@ -14,7 +14,7 @@ _core:
 id: author
 theme: lib_unb_ca
 region: sidebar_second
-weight: -11
+weight: -10
 provider: null
 plugin: 'facet_block:author'
 settings:

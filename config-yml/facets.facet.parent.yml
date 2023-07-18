@@ -9,7 +9,7 @@ dependencies:
     - search_api
 id: parent
 name: Parent
-weight: 0
+weight: -5
 min_count: 1
 missing: false
 missing_label: others
@@ -27,20 +27,20 @@ hierarchy:
 expand_hierarchy: true
 enable_parent_when_child_gets_disabled: true
 widget:
-  type: checkbox
+  type: radio
   config:
     show_numbers: true
-    soft_limit: 0
-    show_reset_link: false
-    reset_text: 'Show all'
-    hide_reset_when_no_selection: false
+    soft_limit: '0'
     soft_limit_settings:
       show_less_label: 'Show less'
       show_more_label: 'Show more'
+    show_reset_link: 0
+    reset_text: 'Show all'
+    hide_reset_when_no_selection: 0
 empty_behavior:
   behavior: none
-only_visible_when_facet_source_is_visible: true
-show_only_one_result: false
+only_visible_when_facet_source_is_visible: false
+show_only_one_result: true
 show_title: false
 processor_configs:
   active_widget_order:
@@ -55,6 +55,31 @@ processor_configs:
       sort: 30
     settings:
       sort: DESC
+  dependent_processor:
+    processor_id: dependent_processor
+    weights:
+      build: -8
+    settings:
+      campus:
+        enable: true
+        condition: not_empty
+        values: 'fr,sj'
+        negate: false
+      capacity:
+        enable: false
+        condition: null
+        values: ''
+        negate: false
+      sound_level:
+        enable: false
+        condition: null
+        values: ''
+        negate: false
+      what_s_inside:
+        enable: false
+        condition: null
+        values: ''
+        negate: false
   display_value_widget_order:
     processor_id: display_value_widget_order
     weights:
@@ -64,16 +89,16 @@ processor_configs:
   hierarchy_processor:
     processor_id: hierarchy_processor
     weights:
-      build: 100
+      build: -7
     settings: {  }
   translate_entity:
     processor_id: translate_entity
     weights:
-      build: 5
+      build: -10
     settings: {  }
   url_processor_handler:
     processor_id: url_processor_handler
     weights:
       pre_query: 50
-      build: 15
+      build: -9
     settings: {  }

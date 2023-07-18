@@ -12,7 +12,7 @@ dependencies:
 id: parent
 theme: lib_unb_ca
 region: sidebar_second
-weight: -14
+weight: -15
 provider: null
 plugin: 'facet_block:parent'
 settings:

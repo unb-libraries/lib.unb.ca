@@ -12,7 +12,7 @@ dependencies:
 id: campus
 theme: lib_unb_ca
 region: sidebar_second
-weight: -15
+weight: -16
 provider: null
 plugin: 'facet_block:campus'
 settings:
