@@ -74,7 +74,6 @@ settings:
         -
           name: Deprecated
           items:
-            - video_embed
             - assets
   plugins:
     drupallink:
@@ -115,13 +114,6 @@ settings:
     eresources:
       target_entity: guide
       resource_type: ''
-    video_embed:
-      defaults:
-        children:
-          autoplay: false
-          responsive: true
-          width: '854'
-          height: '480'
 image_upload:
   status: false
   scheme: public

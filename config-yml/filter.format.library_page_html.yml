@@ -99,7 +99,7 @@ filters:
   video_embed_wysiwyg:
     id: video_embed_wysiwyg
     provider: video_embed_wysiwyg
-    status: true
+    status: false
     weight: -45
     settings: {  }
   media_embed:
