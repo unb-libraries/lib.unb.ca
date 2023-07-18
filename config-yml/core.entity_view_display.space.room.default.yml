@@ -5,9 +5,11 @@ dependencies:
   config:
     - field.field.space.room.field_capacity
     - field.field.space.room.field_equipment
+    - field.field.space.room.field_food_drinks
     - field.field.space.room.field_images
     - field.field.space.room.field_name
     - field.field.space.room.field_number
+    - field.field.space.room.field_reservation
     - field.field.space.room.field_sound_level
     - image.style.bs_lg_large
     - spaces.space_type.room
@@ -25,15 +27,27 @@ content:
     label: visually_hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 5
     region: content
   field_equipment:
     type: entity_reference_label
     label: visually_hidden
     settings:
-      link: true
-    third_party_settings: {  }
-    weight: 5
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 3
+    region: content
+  field_food_drinks:
+    type: entity_reference_label
+    label: visually_hidden
+    settings:
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 4
     region: content
   field_images:
     type: image
@@ -46,39 +60,30 @@ content:
     third_party_settings:
       field_formatter_class:
         class: ''
-    weight: 4
-    region: content
-  field_name:
-    type: string
-    label: visually_hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
     weight: 0
     region: content
-  field_number:
-    type: string
+  field_reservation:
+    type: entity_reference_label
     label: visually_hidden
     settings:
-      link_to_entity: false
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
     weight: 1
     region: content
   field_sound_level:
     type: entity_reference_label
     label: visually_hidden
     settings:
-      link: true
-    third_party_settings: {  }
-    weight: 6
-    region: content
-  parent:
-    type: entity_reference_label
-    label: visually_hidden
-    settings:
-      link: true
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
     weight: 2
     region: content
 hidden:
+  field_name: true
+  field_number: true
+  parent: true
   search_api_excerpt: true
