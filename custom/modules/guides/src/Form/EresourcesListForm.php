@@ -90,9 +90,10 @@ class EresourcesListForm extends FormBase {
     ];
 
     $id = $this->getRequest()->query->get('id');
-    if (!empty($id)) {
-      $form['selector']['search']['#default_value'] = $id;
+    if (empty($id)) {
+      $id = array_keys($options)[1];
     }
+    $form['selector']['search']['#default_value'] = $id;
 
     $form['selector']['view'] = [
       '#type' => 'button',
