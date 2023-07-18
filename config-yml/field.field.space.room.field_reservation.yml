@@ -1,0 +1,29 @@
+uuid: cf3d81c8-0fda-4758-b4c0-5dc2592ffe1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.space.field_reservation
+    - spaces.space_type.room
+    - taxonomy.vocabulary.spaces_reservation
+id: space.room.field_reservation
+field_name: field_reservation
+entity_type: space
+bundle: room
+label: Reservation
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      spaces_reservation: spaces_reservation
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

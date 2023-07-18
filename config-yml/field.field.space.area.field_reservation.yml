@@ -1,0 +1,29 @@
+uuid: d8bf6ed7-fac8-40d7-bdeb-3a6d0532afbf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.space.field_reservation
+    - spaces.space_type.area
+    - taxonomy.vocabulary.spaces_reservation
+id: space.area.field_reservation
+field_name: field_reservation
+entity_type: space
+bundle: area
+label: Reservation
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      spaces_reservation: spaces_reservation
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
