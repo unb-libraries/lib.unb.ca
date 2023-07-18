@@ -87,21 +87,25 @@ class EresourcesListForm extends FormBase {
       '#attributes' => [
         'class' => ['form-control', 'selectize', 'selectize-control'],
       ],
-      '#ajax' => [
-        'callback' => '::refreshRecordInfo',
-        'wrapper' => 'result',
-        'event' => 'change',
-        'progress' => [
-          'type' => 'throbber',
-          'message' => $this->t('Loading...'),
-        ],
-      ],
     ];
 
     $id = $this->getRequest()->query->get('id');
     if (!empty($id)) {
       $form['selector']['search']['#default_value'] = $id;
     }
+
+    $form['selector']['view'] = [
+      '#type' => 'button',
+      '#value' => 'View',
+      '#ajax' => [
+        'callback' => '::refreshRecordInfo',
+        'wrapper' => 'result',
+        'progress' => [
+          'type' => 'throbber',
+          'message' => $this->t('Loading...'),
+        ],
+      ],
+    ];
 
     $form['result'] = [
       '#prefix' => '<div id="result">',
