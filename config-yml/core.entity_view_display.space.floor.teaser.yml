@@ -39,7 +39,7 @@ content:
     type: string
     label: visually_hidden
     settings:
-      link_to_entity: true
+      link_to_entity: false
     third_party_settings:
       field_formatter_class:
         class: ''
