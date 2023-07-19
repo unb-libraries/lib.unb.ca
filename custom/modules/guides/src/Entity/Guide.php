@@ -51,7 +51,7 @@ use PicoFeed\Reader\Reader;
  *     "edit-form" = "/admin/guides/{guide}/edit",
  *     "delete-form" = "/admin/guides/{guide}/delete",
  *     "revisions" = "/admin/guides/{guide}/revisions",
- *     "revision" = "/admin/guides/{guide}/revisions/{guide_revision}",
+ *     "revision" = "/guides/{guide}/revisions/{guide_revision}",
  *     "revision-restore-form" = "/admin/guides/{guide}/revisions/{guide_revision}/restore",
  *   },
  *   field_ui_base_route = "entity.guide.settings",
