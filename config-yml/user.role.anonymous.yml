@@ -4,6 +4,10 @@ status: true
 dependencies:
   config:
     - filter.format.no_media_html_ior_
+    - spaces.space_type.area
+    - spaces.space_type.building
+    - spaces.space_type.floor
+    - spaces.space_type.room
   module:
     - field_permissions
     - filter
@@ -16,6 +20,7 @@ dependencies:
     - records_management
     - samlauth
     - search_api_autocomplete
+    - spaces
     - system
     - webform
 _core:
@@ -50,4 +55,8 @@ permissions:
   - 'view retention_details entities'
   - 'view schedule entities'
   - 'view sp metadata'
+  - 'view space:area entities'
+  - 'view space:building entities'
+  - 'view space:floor entities'
+  - 'view space:room entities'
   - 'view user email addresses'
