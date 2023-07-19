@@ -202,6 +202,8 @@ class GuideCategory extends ContentEntityBase implements GuideCategoryInterface,
   public function save() {
     if (!$this->isNew()) {
       $this->setNewRevision(TRUE);
+      $now = \Drupal::time()->getCurrentTime();
+      $this->set(self::FIELD_EDITED, $now);
     }
 
     $result = parent::save();

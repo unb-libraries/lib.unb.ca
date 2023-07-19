@@ -230,6 +230,8 @@ class Guide extends ContentEntityBase implements ContentEntityInterface, UserEdi
    */
   public function save() {
     if (!$this->isNew()) {
+      $now = \Drupal::time()->getCurrentTime();
+      $this->set(self::FIELD_EDITED, $now);
       $this->setNewRevision(TRUE);
     }
     return parent::save();
