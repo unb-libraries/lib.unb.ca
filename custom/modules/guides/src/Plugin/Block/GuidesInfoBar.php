@@ -89,7 +89,9 @@ class GuidesInfoBar extends BlockBase implements ContainerFactoryPluginInterface
 
     $categories = [];
     foreach ($guide->get('guide_categories') as $category) {
-      $categories[] = $category->entity->toLink()->toString();
+      if ($category->entity) {
+        $categories[] = $category->entity->toLink()->toString();
+      }
     }
 
     if (!empty($categories)) {
