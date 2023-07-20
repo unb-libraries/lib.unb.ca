@@ -3,11 +3,13 @@
 namespace Drupal\spaces\Entity;
 
 use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\custom_entity\Entity\UserCreatedInterface;
+use Drupal\custom_entity\Entity\UserEditedInterface;
 
 /**
  * Defines the interface for "Space" entities.
  */
-interface SpaceInterface extends ContentEntityInterface {
+interface SpaceInterface extends ContentEntityInterface, UserCreatedInterface, UserEditedInterface {
 
   /**
    * Get the parent space, if present.

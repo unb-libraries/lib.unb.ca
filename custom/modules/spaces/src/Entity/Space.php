@@ -5,6 +5,8 @@ namespace Drupal\spaces\Entity;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\custom_entity\Entity\EntityChangedTrait;
+use Drupal\custom_entity\Entity\EntityCreatedTrait;
 use Drupal\spaces\Plugin\Field\FieldType\CampusFieldItemList;
 
 /**
@@ -53,6 +55,9 @@ use Drupal\spaces\Plugin\Field\FieldType\CampusFieldItemList;
  * )
  */
 class Space extends ContentEntityBase implements SpaceInterface {
+
+  use EntityCreatedTrait;
+  use EntityChangedTrait;
 
   /**
    * {@inheritdoc}
@@ -111,6 +116,9 @@ class Space extends ContentEntityBase implements SpaceInterface {
       ])
       ->setDisplayConfigurable('view', FALSE)
       ->setDisplayConfigurable('form', FALSE);
+
+    $fields[static::FIELD_CREATED] = static::getCreatedBaseFieldDefinition($entity_type);
+    $fields[static::FIELD_EDITED] = static::getEditedBaseFieldDefinition($entity_type);
 
     return $fields;
   }
