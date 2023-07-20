@@ -98,7 +98,10 @@ class EresourcesDialog extends FormBase {
       '#options' => $selected,
       '#prefix' => '<div id="records">',
       '#suffix' => '</div>',
-      '#attributes' => ['style' => ['width:100%;']],
+      '#attributes' => [
+        'class' => ['custom-select'],
+        'style' => ['width:100%;'],
+      ],
     ];
 
     $form['eresources_selector']['ids'] = [
