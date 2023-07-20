@@ -14,6 +14,14 @@
     }
   };
 
+  CKEDITOR.dtd['eresources'] = {
+    p: 1,
+    ul: 1,
+    li: 1
+  };
+  CKEDITOR.dtd.body['eresources'] = 1;
+  CKEDITOR.dtd.$block['eresources'] = 1;
+
   CKEDITOR.plugins.add('eresources', {
     requires: 'widget',
     icons: 'eresources',
