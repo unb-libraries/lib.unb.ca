@@ -1,0 +1,5 @@
+/* Work around dialogOptions imposed by Drupal.ckeditor.openDialog(). */
+.ui-dialog--narrow.eresources-dialog-widget {
+  width: 75% !important;
+  max-width: none;
+}

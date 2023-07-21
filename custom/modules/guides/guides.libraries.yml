@@ -41,6 +41,9 @@ eresources:
   version: VERSION
   js:
     js/eresources.js: {}
+  css:
+    theme:
+      css/guides-eresources.css: {}
   dependencies:
     - core/jquery
     - core/drupal

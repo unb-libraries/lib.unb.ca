@@ -37,7 +37,7 @@
 
       editor.addCommand('eresources', {
         exec: function (editor) {
-          Drupal.ckeditor.openDialog(editor, adjustUrl(dialog.url, editor), {}, function(v) { dialog.save(editor, v); }, {});
+          Drupal.ckeditor.openDialog(editor, adjustUrl(dialog.url, editor), {}, function(v) { dialog.save(editor, v); }, { dialogClass: 'eresources-dialog-widget'});
         }
       });
 
