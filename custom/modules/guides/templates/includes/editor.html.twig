@@ -9,7 +9,11 @@
   <li class="text-center mt-0 mb-3">{{ picture }}</li>
 {% endif %}
   <li>
+{% if profile %}
     <a href="{{ url('entity.profile.canonical', {'profile': profile.id()}) }}">{{ account.field_first_name.value }} {{ account.field_last_name.value }}</a>
+{% else %}
+    {{ account.field_first_name.value }} {{ account.field_last_name.value }}
+{% endif %}
 {% if profile.field_pronouns.value and profile.field_show_pronouns.value %}
     <span class="pronouns">({{ profile.field_pronouns.value }})</span>
 {% endif %}
