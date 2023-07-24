@@ -48,13 +48,7 @@ processor_configs:
     weights:
       sort: 20
     settings:
-      sort: DESC
-  count_widget_order:
-    processor_id: count_widget_order
-    weights:
-      sort: 30
-    settings:
-      sort: DESC
+      sort: ASC
   dependent_processor:
     processor_id: dependent_processor
     weights:
@@ -66,6 +60,11 @@ processor_configs:
         values: 'fr,sj'
         negate: false
       capacity:
+        enable: false
+        condition: null
+        values: ''
+        negate: false
+      reservation:
         enable: false
         condition: null
         values: ''
