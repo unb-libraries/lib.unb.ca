@@ -38,18 +38,38 @@
   color: #fff;
   opacity: 0.7;
 }
+
 .title .btn {
+  font-family: "ProximaNovaA-Regular", "Century Gothic", AppleGothic, Arial, sans-serif;
   font-weight: bold;
 }
 .Accordion-panel {
   min-width: 66%;
 }
 
+#guide figure {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+#guide figure iframe {
+  padding: 0;
+}
+#guide .field--name-field-media-oembed-video {
+  display: inline-block;
+}
 #guide .align-center .field--name-field-media-oembed-video,
 #guide .align-left .field--name-field-media-oembed-video,
 #guide .align-right .field--name-field-media-oembed-video {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
   max-width: 100%;
   width: 300px;
+}
+#guide .caption.align-center .field--name-field-media-oembed-video,
+#guide .caption.align-left .field--name-field-media-oembed-video,
+#guide .caption.align-right .field--name-field-media-oembed-video {
+  margin-bottom: 0;
+  margin-top: 0;
 }
 @media (min-width: 576px) {
   #guide .align-center .field--name-field-media-oembed-video,
