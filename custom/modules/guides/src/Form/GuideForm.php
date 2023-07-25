@@ -13,6 +13,13 @@ class GuideForm extends ContentEntityForm {
   /**
    * {@inheritDoc}
    */
+  protected function getNewRevisionDefault() {
+    return TRUE;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public function save(array $form, FormStateInterface $form_state) {
     $return = parent::save($form, $form_state);
 

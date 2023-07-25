@@ -3,10 +3,10 @@
 namespace Drupal\guides\Entity;
 
 use Drupal\Component\Utility\Html;
-use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Entity\RevisionableContentEntityBase;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\custom_entity\Entity\EntityChangedTrait;
@@ -37,6 +37,7 @@ use PicoFeed\Reader\Reader;
  *     },
  *   },
  *   base_table = "guide",
+ *   show_revision_ui = TRUE,
  *   revision_table = "guide_revision",
  *   admin_permission = "administer guide entities",
  *   entity_keys = {
@@ -44,6 +45,11 @@ use PicoFeed\Reader\Reader;
  *     "revision" = "revision_id",
  *     "label" = "title",
  *     "status" = "status",
+ *   },
+ *   revision_metadata_keys = {
+ *     "revision_user" = "revision_user",
+ *     "revision_created" = "revision_created",
+ *     "revision_log_message" = "revision_log_message",
  *   },
  *   links = {
  *     "canonical" = "/guides/{guide}",
@@ -57,7 +63,7 @@ use PicoFeed\Reader\Reader;
  *   field_ui_base_route = "entity.guide.settings",
  * )
  */
-class Guide extends ContentEntityBase implements ContentEntityInterface, UserEditedInterface, UserCreatedInterface {
+class Guide extends RevisionableContentEntityBase implements ContentEntityInterface, UserEditedInterface, UserCreatedInterface {
 
   use EntityCreatedTrait;
   use EntityChangedTrait;
@@ -230,8 +236,6 @@ class Guide extends ContentEntityBase implements ContentEntityInterface, UserEdi
    */
   public function save() {
     if (!$this->isNew()) {
-      $now = \Drupal::time()->getCurrentTime();
-      $this->set(self::FIELD_EDITED, $now);
       $this->setNewRevision(TRUE);
     }
     return parent::save();
