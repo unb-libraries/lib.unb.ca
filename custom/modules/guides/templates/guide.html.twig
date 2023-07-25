@@ -43,17 +43,17 @@
         </nav>
       </div>
 
-      <div class="border border-black card-body d-flex flex-column flex-lg-row px-3 py-0">
+      <div class="border border-black card-body d-flex flex-column flex-lg-row p-0">
         {% for section in sections %}
         {% set section_id = section.entity.id() %}
-          <div aria-labelledby="btn-section-{{ section_id }}" class="Accordion-panel flex-grow-1"
+          <div aria-labelledby="btn-section-{{ section_id }}" class="Accordion-panel flex-grow-1 px-3"
           id="section-{{ section_id }}" role="region" {% if not loop.first %} hidden=""{% endif %}>
             <h2 class="d-none d-print-block">{{ section.entity.field_section_label.value }}</h2>
             {{ drupal_field('field_section_content', 'paragraph', section_id, 'paragraph.default') }}
           </div>
         {% endfor %}
 
-        <div id="moreInfo" class="my-3">
+        <div id="moreInfo" class="p-3">
           <h2 class="header-icons m-0">
             <button aria-controls="editors" aria-expanded="true"
             class="bg-dark border-0 card-header h4 m-0 p-2 rounded-0"

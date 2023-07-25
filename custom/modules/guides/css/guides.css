@@ -44,6 +44,42 @@
 .Accordion-panel {
   min-width: 66%;
 }
+
+#guide .align-center .field--name-field-media-oembed-video,
+#guide .align-left .field--name-field-media-oembed-video,
+#guide .align-right .field--name-field-media-oembed-video {
+  max-width: 100%;
+  width: 300px;
+}
+@media (min-width: 576px) {
+  #guide .align-center .field--name-field-media-oembed-video,
+  #guide .align-left .field--name-field-media-oembed-video,
+  #guide .align-right .field--name-field-media-oembed-video {
+    width: 416px;
+  }
+}
+@media (min-width: 768px) {
+  #guide .align-center .field--name-field-media-oembed-video,
+  #guide .align-left .field--name-field-media-oembed-video,
+  #guide .align-right .field--name-field-media-oembed-video {
+    width: 516px;
+  }
+}
+@media (min-width: 1200px) {
+  #guide .align-center .field--name-field-media-oembed-video,
+  #guide .align-left .field--name-field-media-oembed-video,
+  #guide .align-right .field--name-field-media-oembed-video {
+    width: 616px;
+  }
+}
+@media (min-width: 1400px) {
+  #guide .align-center .field--name-field-media-oembed-video,
+  #guide .align-left .field--name-field-media-oembed-video,
+  #guide .align-right .field--name-field-media-oembed-video {
+    width: 716px;
+  }
+}
+
 #moreInfo {
   min-width: 33%;
 }
