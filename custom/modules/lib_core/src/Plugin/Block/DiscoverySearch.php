@@ -76,8 +76,8 @@ class DiscoverySearch extends BlockBase {
             <div aria-labelledby="searchBtn4 dropdownBtn4" class="Accordion-panel" id="searchPanel4" role="region" hidden="">' . $this->getJournalsForm() . '</div>
             <div aria-labelledby="searchBtn5 dropdownBtn5" class="Accordion-panel" id="searchPanel5" role="region" hidden="">
               <div class="d-flex justify-content-center pt-4">
-                <i class="fas fa-circle-notch fa-spin mr-2 text-warning" aria-hidden="true"></i>
-                Redirecting to the e-Resources page
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-lg text-warning" aria-hidden="true" style="line-height: inherit;"></i>
+                <span class="ml-2 mt-1">Redirecting to the e-Resources page</span>
               </div>
             </div>
           </div>
