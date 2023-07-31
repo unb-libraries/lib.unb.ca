@@ -127,21 +127,21 @@ function _unb_libraries_askus_get_widget($type) {
         $html .=
       '</div>
       <div id="lh3-offline" class="form-control media status" style="display:none;">
-        <i class="fas fa-circle fa-xs mr-1 mt-1 text-danger"></i>
+        <i class="fas fa-circle fa-xs mr-1 mt-2 text-danger"></i>
         <div class="media-body">CHAT is closed.<span class="offline-msg"></span></div>
       </div>
       <div id="lh3-away" class="form-control media status" style="display:none;">
-        <i class="fas fa-circle fa-xs mr-1 mt-1 text-warning"></i>
+        <i class="fas fa-circle fa-xs mr-1 mt-2 text-warning"></i>
         <div class="media-body">CHAT is away.</div>
       </div>
       <div id="lh3-busy" class="form-control media status"  style="display:none;">
-        <i class="fas fa-circle fa-xs mr-1 mt-1 text-warning"></i>
+        <i class="fas fa-circle fa-xs mr-1 mt-2 text-warning"></i>
         <div class="ch-nd d-none" data-ch-format-time="h:mma" data-ch-id="hil_help"></div>
         <div class="busy">CHAT is busy.</div>
       </div>
     </div>
-    <div class="form-control media status text-dark" id="lh3-noscript">
-      <i class="fas fa-circle-notch fa-spin fa-xs mr-1 mt-1"></i>CHAT requires JavaScript.
+    <div class="form-control media status text-unb-red" id="lh3-noscript">
+      <i class="fas fa-circle-notch fa-spin fa-xs mr-1 mt-2"></i>CHAT requires JavaScript.
     </div >';
 
   return $html;
