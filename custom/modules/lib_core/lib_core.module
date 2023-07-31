@@ -425,62 +425,6 @@ function _lib_core_contactable_department($mailbox) {
 }
 
 /**
- * Port get_guide_categories() from core/inc-2015/guide_categories.php.
- *
- * @return array
- *   Associative array of Research Subjects where key = URL, value = label.
- */
-function _lib_core_get_guide_categories() {
-  $categories = [
-    'anthropology' => 'Anthropology',
-    'biology' => 'Biology',
-    'business' => 'Business & Management',
-    'chemistry' => 'Chemistry',
-    'classics' => 'Classics and Ancient History',
-    'computerscience' => 'Computer Science',
-    'criminology' => 'Criminology',
-    'development' => 'International Development Studies',
-    'earth-sciences' => 'Earth Sciences',
-    'economics' => 'Economics',
-    'education' => 'Education',
-    'engineering' => 'Engineering',
-    'english' => 'English',
-    'entrepreneurship' => 'Entrepreneurship',
-    'familyviolence' => 'Family Violence Issues',
-    'film' => 'Film Studies',
-    'finearts' => 'Fine Arts',
-    'forestry' => 'Forestry & Environmental Management',
-    'french' => 'French',
-    'german' => 'German Literature',
-    'gerontology' => 'Gerontology',
-    'history' => 'History',
-    'ics' => 'Communication Studies',
-    'journalism' => 'Journalism & Communications',
-    'kinesiology' => 'Kinesiology',
-    'law' => 'Law',
-    'math' => 'Mathematics and Statistics',
-    'media' => 'Media Arts and Cultures',
-    // 'miscellaneous' => 'Miscellaneous',
-    'music' => 'Music',
-    'indigenous' => 'Indigenous Studies',
-    'nursing' => 'Nursing & Health',
-    'philosophy' => 'Philosophy',
-    'physics' => 'Physics',
-    'politicalscience' => 'Political Science',
-    'psychology' => 'Psychology',
-    'religiousstudies' => 'Religious Studies',
-    'sts' => 'Science & Technology Studies',
-    'socialwork' => 'Social Work',
-    'sociology' => 'Sociology',
-    'spanish' => 'Spanish Literature',
-    'womensstudies' => 'Gender and Women\'s Studies',
-  ];
-  asort($categories);
-
-  return $categories;
-}
-
-/**
  * Custom Recall Form validation.
  *
  * @param array $form

@@ -11,7 +11,7 @@
                 let cat = $('#reference-guide').val();
                 e.preventDefault();
                 if (cat) {
-                    window.location = 'https://guides.lib.unb.ca/category/' + cat;
+                    window.location = 'https://lib.unb.ca' + cat;
                 }
             });
 
@@ -25,7 +25,7 @@
                 let cat = $('#database-guide').val();
                 e.preventDefault();
                 if (cat) {
-                    window.location = 'https://guides.lib.unb.ca/category/' + cat;
+                    window.location = 'https://lib.unb.ca' + cat;
                 }
             });
 

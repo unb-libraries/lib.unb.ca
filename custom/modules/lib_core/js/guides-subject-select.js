@@ -5,7 +5,7 @@
                 e.preventDefault();
                 let cat = $(this).find('select').val();
                 if (cat) {
-                    window.location = 'https://guides.lib.unb.ca/category/' + cat;
+                    window.location = 'https://lib.unb.ca' + cat;
                 }
                 e.reportValidity();
             });

@@ -3,6 +3,9 @@
 namespace Drupal\lib_core\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a 'Research Guides' block.
@@ -13,7 +16,44 @@ use Drupal\Core\Block\BlockBase;
  *  category = @Translation("UNB Libraries"),
  * )
  */
-class ResearchGuides extends BlockBase {
+class ResearchGuides extends BlockBase implements ContainerFactoryPluginInterface {
+
+  /**
+   * The entity type manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
+   * Constructs a new CartBlock.
+   *
+   * @param array $configuration
+   *   A configuration array containing information about the plugin instance.
+   * @param string $plugin_id
+   *   The plugin ID for the plugin instance.
+   * @param mixed $plugin_definition
+   *   The plugin implementation definition.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The entity type manager.
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+
+    $this->entityTypeManager = $entity_type_manager;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    return new static(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      $container->get('entity_type.manager'),
+    );
+  }
 
   /**
    * {@inheritdoc}
@@ -38,10 +78,14 @@ class ResearchGuides extends BlockBase {
    *   The html structure for Research Guides block/form/select/chosen.
    */
   protected function getResearchGuidesContainer() {
-    $categories = _lib_core_get_guide_categories();
+    $storage = $this->entityTypeManager->getStorage('guide_category');
+    $query = $storage->getQuery();
+    $ids = $query->sort('title')->execute();
+    $categories = $storage->loadMultiple($ids);
+
     $options = '<option value="" aria-disabled="true">Please choose a subject...</option>';
-    foreach ($categories as $value => $label) {
-      $options .= '<option value="' . $value . '">' . $label . '</option>';
+    foreach ($categories as $category) {
+      $options .= '<option value="' . $category->toUrl()->toString() . '">' . $category->label() . '</option>';
     }
 
     return '

@@ -45,7 +45,17 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
       '#weight' => 0,
     ];
 
-    $guideOptions = ['' => '- Select a Subject -'] + _lib_core_get_guide_categories();
+    $storage = \Drupal::entityTypeManager()->getStorage('guide_category');
+    $query = $storage->getQuery();
+    $ids = $query->sort('title')->execute();
+    $categoryList = $storage->loadMultiple($ids);
+
+    $categories = [];
+    foreach ($categoryList as $category) {
+      $categories[$category->toUrl()->toString()] = $category->label();
+    }
+
+    $guideOptions = ['' => '- Select a Subject -'] + $categories;
     $form[$form_wrapper]['guide_wrapper']['guide'] = [
       '#title' => 'Browse for Databases by subject',
       '#type' => 'select',
