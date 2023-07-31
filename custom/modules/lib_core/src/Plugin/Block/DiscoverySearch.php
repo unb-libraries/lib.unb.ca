@@ -283,37 +283,6 @@ class DiscoverySearch extends BlockBase {
   /**
    * {@inheritdoc}
    */
-  protected function getDatabasesSubjects() {
-    // Set default empty option.
-    $options = [
-      '' => '- Please choose an option -',
-    ];
-
-    $categories = _lib_core_get_guide_categories();
-    foreach ($categories as $value => $label) {
-      $options[$value] = $label;
-    }
-
-    $subjects = [
-      '#type' => 'select',
-      '#required' => 'TRUE',
-      '#options' => $options,
-      '#attributes' => [
-        'class' => [
-          'custom-chosen-select',
-          'form-control',
-        ],
-        'id' => 'database-subjects',
-        'name' => 'category',
-      ],
-    ];
-
-    return \Drupal::service('renderer')->render($subjects);
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   protected function getDatabasesTitles() {
     // Set default empty option.
     $options = [
