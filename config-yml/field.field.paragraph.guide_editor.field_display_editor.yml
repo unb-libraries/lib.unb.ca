@@ -11,7 +11,7 @@ id: paragraph.guide_editor.field_display_editor
 field_name: field_display_editor
 entity_type: paragraph
 bundle: guide_editor
-label: 'Display editor as Guide contact'
+label: 'Display editor as contact'
 description: ''
 required: false
 translatable: false
