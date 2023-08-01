@@ -200,8 +200,8 @@ class EresourcesListForm extends FormBase {
       else {
         $text .= '<p class="catalogue">This record is <b>maintained by Cataloguing</b> and is part of eResources Discovery.</p>';
         if ($this->currentUser()->hasPermission('update eresources_record entities')) {
-          $editUrl = Url::fromRoute('entity.eresources_record.edit_form', ['eresources_record' => $id])->toString();
-          $text .= '<a class="button" href="' . $editUrl . '">Edit Record</a>';
+          $recordUrl = Url::fromRoute('entity.eresources_record.canonical', ['eresources_record' => $id])->toString();
+          $text .= '<a class="button" href="' . $recordUrl . '">View Record</a>';
         }
       }
 
