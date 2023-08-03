@@ -24,8 +24,8 @@ class GuideCategoryAccessControlHandler extends EntityAccessControlHandler {
    */
   protected function hasEntityUpdateAccess(EntityInterface $entity, AccountInterface $account) {
     $hasAccess = FALSE;
-    foreach ($entity->contacts as $contact) {
-      $user = $contact->entity;
+    foreach ($entity->editors as $editor) {
+      $user = $editor->entity->field_user->entity;
       if ($user->id() == $account->id()) {
         $hasAccess = TRUE;
         break;
