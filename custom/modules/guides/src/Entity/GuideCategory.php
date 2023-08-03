@@ -143,7 +143,7 @@ class GuideCategory extends ContentEntityBase implements GuideCategoryInterface,
       ->setDisplayConfigurable('form', TRUE);
 
     $fields['contacts'] = BaseFieldDefinition::create('entity_reference')
-      ->setLabel(t('Editors'))
+      ->setLabel(t('Editors (old)'))
       ->setRequired(FALSE)
       ->setRevisionable(TRUE)
       ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
@@ -158,6 +158,21 @@ class GuideCategory extends ContentEntityBase implements GuideCategoryInterface,
       ])
       ->setDisplayOptions('form', [
         'type' => 'multiple_options_select',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['editors'] = BaseFieldDefinition::create('entity_reference_revisions')
+      ->setLabel(t('Editors'))
+      ->setRequired(FALSE)
+      ->setRevisionable(TRUE)
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+      ->setSetting('handler_settings', ['target_bundles' => ['guide_editor' => 'guide_editor']])
+      ->setSetting('target_type', 'paragraph')
+      ->setSetting('handler', 'default:paragraph')
+      ->setDisplayOptions('form', [
+        'type' => 'paragraphs',
         'weight' => 0,
       ])
       ->setDisplayConfigurable('view', TRUE)
