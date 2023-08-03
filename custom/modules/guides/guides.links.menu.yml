@@ -34,8 +34,8 @@ system.admin.unblib.guides.guide_category.add:
   parent: system.admin.unblib.guides
   weight: 5
 system.admin.unblib.guides.eresources_list:
-  title: Manage e-Resources
-  Description: 'Manage e-Resource records.'
+  title: 'Add / Edit Resource Records'
+  Description: 'Add / Edit Resource Records.'
   route_name: guides.eresources_list
   parent: system.admin.unblib.guides
   weight: 7

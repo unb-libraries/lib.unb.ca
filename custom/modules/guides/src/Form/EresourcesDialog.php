@@ -155,7 +155,7 @@ class EresourcesDialog extends FormBase {
 
     $form['admin_link'] = [
       '#type' => 'link',
-      '#title' => $this->t('ADD / EDIT Print, eBook or Custom Local Resource Records'),
+      '#title' => $this->t('Add / Edit Local Resource Records'),
       '#url' => Url::fromRoute('guides.eresources_list'),
       '#attributes' => [
         'target' => '_blank',
