@@ -59,7 +59,7 @@
     {% set editors = guide_category.editors|filter(e => e.entity.field_display_editor.value == 1) %}
     {% set editorCount = editors|length %}
       {% for editor in editors %}
-        {% set account = editor.entity %}
+        {% set account = editor.entity.field_user.entity %}
         {% set profile = account.public_profiles.get(0).entity %}
         {% include '@guides/includes/editor.html.twig' with {account: account, profile: profile} %}
         {% if loop.index < editorCount %}
