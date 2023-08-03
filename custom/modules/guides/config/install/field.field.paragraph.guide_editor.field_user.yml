@@ -19,7 +19,7 @@ settings:
   handler_settings:
     target_bundles: null
     sort:
-      field: _none
+      field: field_first_name
       direction: ASC
     auto_create: false
     filter:
@@ -40,5 +40,7 @@ settings:
         saml_guest: '0'
         saml_unb_active: '0'
         saml_stu_active: '0'
+        public_profile: '0'
+        duplicate_id_checker: '0'
     include_anonymous: false
 field_type: entity_reference
