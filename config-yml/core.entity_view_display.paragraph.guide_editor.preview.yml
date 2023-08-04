@@ -1,0 +1,36 @@
+uuid: db19fbbf-9854-4389-b321-c21ef0736379
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.guide_editor.field_display_editor
+    - field.field.paragraph.guide_editor.field_user
+    - paragraphs.paragraphs_type.guide_editor
+  module:
+    - field_formatter_class
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: hFLwbD8As8IKcUGnZzOsXA15ZnPmLk-GXM4GfjyXUmw
+id: paragraph.guide_editor.preview
+targetEntityType: paragraph
+bundle: guide_editor
+mode: preview
+content:
+  field_user:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 0
+    region: content
+hidden:
+  field_display_editor: true
+  search_api_excerpt: true
