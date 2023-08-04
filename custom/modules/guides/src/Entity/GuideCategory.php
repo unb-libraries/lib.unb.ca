@@ -425,10 +425,12 @@ class GuideCategory extends ContentEntityBase implements GuideCategoryInterface,
    */
   public function getCacheTagsToInvalidate() {
     $tags = parent::getCacheTagsToInvalidate();
-    foreach ($this->get('contacts') as $editorItem) {
-      $user = $editorItem->entity;
-      if ($user) {
-        $tags[] = 'user:' . $user->id();
+    foreach ($this->get('editors') as $editorItem) {
+      $editor = $editorItem->entity;
+      if ($editor && $editor->field_display_editor->getString()) {
+        if ($user = $editor->field_user->entity) {
+          $tags[] = 'user:' . $user->id();
+        }
       }
     }
 
