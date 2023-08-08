@@ -40,7 +40,7 @@
       {% if profile.field_status_note.value %}
         <li><i class="fas fa-asterisk text-danger"></i> {{ profile.field_status_note.value }}</li>
       {% endif %}
-        <li><a href="https://lib.unb.ca/contact-unb-libraries-staff?recipient={{ account.getUsername }}">{{ account.getEmail }}</a></li>
+        <li><a href="https://lib.unb.ca/contact-unb-libraries-staff?recipient={{ account.getAccountName }}">{{ account.getEmail }}</a></li>
       {% if account.field_phone_number.value %}
         <li>{{ account.field_phone_number.value|replace({' ': '-'})|trim('1-', 'left') }}</li>
       {% endif %}
