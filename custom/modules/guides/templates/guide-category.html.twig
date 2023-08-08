@@ -4,7 +4,7 @@
     {% set detailed_guides = guide_category.getDetailedGuides %}
     {% if detailed_guides is not empty %}
     <h3>Detailed Guides</h3>
-    <ul>
+    <ul class="detailed-guides">
       {% for guide in detailed_guides %}
       <li><a href="{{ url('entity.guide.canonical', {'guide': guide.id()}) }}">{{ guide.label }}</a></li>
       {% endfor %}
@@ -13,7 +13,7 @@
     {% set course_guides = guide_category.getCourseGuides %}
     {% if course_guides is not empty %}
     <h3>Course Guides</h3>
-    <ul>
+    <ul class="course-guides">
       {% for guide in course_guides %}
       <li><a href="{{ url('entity.guide.canonical', {'guide': guide.id()}) }}">{{ guide.label }}</a></li>
       {% endfor %}
@@ -22,7 +22,7 @@
     {% set related_guides = guide_category.getRelatedGuides %}
     {% if related_guides is not empty %}
     <h3>Related Guides</h3>
-    <ul>
+    <ul class="related-guides">
       {% for guide in related_guides %}
       <li><a href="{{ url('entity.guide.canonical', {'guide': guide.id()}) }}">{{ guide.label }}</a></li>
       {% endfor %}
@@ -31,7 +31,7 @@
     {% set related_categories = guide_category.getRelatedCategories %}
     {% if related_categories is not empty %}
     <h3>Related Categories</h3>
-    <ul>
+    <ul class="related-categories">
       {% for category in related_categories %}
       <li><a href="{{ url('entity.guide_category.canonical', {'guide_category': category.id()}) }}">{{ category.label }}</a></li>
       {% endfor %}

@@ -1,11 +1,11 @@
-const guidesBaseUrl = 'https://guides.lib.unb.ca'
+const guidesBaseUrl = 'https://lib.unb.ca'
 describe('Research Guides', {baseUrl: guidesBaseUrl, groups: ['core']}, () => {
 
-  context('Main page', {baseUrl: guidesBaseUrl}, () => {
+  context('Main page', {baseUrl: `${guidesBaseUrl}/guides`}, () => {
     beforeEach(() => {
       cy.visit('/')
       cy.title()
-          .should('contain', 'UNB Libraries Guides')
+          .should('contain', 'Research Guides')
     })
 
     specify('Header should contain "Research by Subject"', () => {
@@ -14,12 +14,12 @@ describe('Research Guides', {baseUrl: guidesBaseUrl, groups: ['core']}, () => {
     });
 
     specify('List should contain 20+ entries', () => {
-      cy.get('.research-guides .guide-item')
+      cy.get('#block-mainpagecontent li')
           .should('have.lengthOf.at.least', 20)
     });
   })
 
-  context('All guides', {baseUrl: `${guidesBaseUrl}/research-guides`}, () => {
+  context('All guides', {baseUrl: `${guidesBaseUrl}/guides/view-all`}, () => {
     specify('Table should contain at least 20 rows', () => {
       cy.visit('/')
       cy.get('td.views-field-title')
@@ -27,7 +27,7 @@ describe('Research Guides', {baseUrl: guidesBaseUrl, groups: ['core']}, () => {
     });
   })
 
-  context('Profile: Joanne Smyth', {baseUrl: `${guidesBaseUrl}/profile/jsmyth`}, () => {
+  context('Profile: Joanne Smyth', {baseUrl: `${guidesBaseUrl}/profile/joanne-smyth`}, () => {
     beforeEach(() => {
       cy.visit('')
     })
@@ -38,12 +38,12 @@ describe('Research Guides', {baseUrl: guidesBaseUrl, groups: ['core']}, () => {
     });
 
     specify('Sidebar should contain 5+ entries', () => {
-      cy.get('.view-user-guides li')
+      cy.get('#block-mainpagecontent li')
           .should('have.lengthOf.at.least', 5)
     });
   })
 
-  context('Category: History', {baseUrl: `${guidesBaseUrl}/category/history`}, () => {
+  context('Category: History', {baseUrl: `${guidesBaseUrl}/guides/category/history`}, () => {
     beforeEach(() => {
       cy.visit('/')
     })
@@ -54,17 +54,22 @@ describe('Research Guides', {baseUrl: guidesBaseUrl, groups: ['core']}, () => {
     })
 
     specify('"Detailed Guides" should contain 1+ entries', () => {
-      cy.get('ul.detailed li')
+      cy.get('ul.detailed-guides')
           .should('have.lengthOf.at.least', 1)
     });
 
     specify('"Course Guides" should contain 1+ entries', () => {
-      cy.get('ul.course li')
+      cy.get('ul.course-guides li')
           .should('have.lengthOf.at.least', 1)
     });
 
     specify('"Related Guides" should contain at least 1+ entries', () => {
-      cy.get('ul.related li')
+      cy.get('ul.related-guides li')
+          .should('have.lengthOf.at.least', 1)
+    });
+
+    specify('"Related Categories" should contain at least 1+ entries', () => {
+      cy.get('ul.related-categories li')
           .should('have.lengthOf.at.least', 1)
     });
 
@@ -79,11 +84,11 @@ describe('Research Guides', {baseUrl: guidesBaseUrl, groups: ['core']}, () => {
     });
   })
 
-  context('Guide: Best Practices', {baseUrl: `${guidesBaseUrl}/guide/227`}, () => {
-    specify('Header should contain "Best Practices Guide"', () => {
+  context('Guide: Help', {baseUrl: `${guidesBaseUrl}/guides/help`}, () => {
+    specify('Header should contain "Help Guide"', () => {
       cy.visit('/')
       cy.get('#main h1')
-          .should('contain', 'Best Practices Guide')
+          .should('contain', 'Help Guide')
     })
   })
 
