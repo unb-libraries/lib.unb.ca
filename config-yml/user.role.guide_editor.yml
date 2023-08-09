@@ -5,9 +5,14 @@ dependencies:
   config:
     - filter.format.guide_category_databases
     - filter.format.guide_category_references
+    - media.type.file
+    - media.type.image
+    - media.type.remote_video
   module:
+    - entity_browser
     - filter
     - guides
+    - media
     - profile
     - system
     - toolbar
@@ -18,15 +23,26 @@ label: 'Guide Editor'
 weight: 8
 is_admin: null
 permissions:
+  - 'access media overview'
+  - 'access media_entity_browser entity browser pages'
   - 'access toolbar'
   - 'create course_link entities'
   - 'create guide entities'
   - 'create guides profile'
+  - 'create image media'
   - 'create public profile'
+  - 'create remote_video media'
   - 'delete course_link entities'
   - 'delete guide entities'
   - 'delete own guides profile'
+  - 'delete own image media'
   - 'delete own public profile'
+  - 'delete own remote_video media'
+  - 'edit any image media'
+  - 'edit any remote_video media'
+  - 'edit own file media'
+  - 'edit own image media'
+  - 'edit own remote_video media'
   - 'list course_link entities'
   - 'list guide revisions'
   - 'list guide_category revisions'
