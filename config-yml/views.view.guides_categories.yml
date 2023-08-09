@@ -8,6 +8,7 @@ dependencies:
     - better_exposed_filters
     - entity_reference_revisions
     - guides
+    - paragraphs
     - user
     - views_autocomplete_filters
 id: guides_categories
@@ -270,7 +271,7 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: false
+          element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -721,7 +722,7 @@ display:
           id: uid_current
           table: users
           field: uid_current
-          relationship: contacts_target_id
+          relationship: field_user
           group_type: group
           admin_label: ''
           entity_type: user
@@ -761,6 +762,7 @@ display:
               saml_stu_active: '0'
               guide_editor: '0'
               public_profile: '0'
+              duplicate_id_checker: '0'
           is_grouped: false
           group_info:
             label: ''
@@ -859,15 +861,24 @@ display:
           replica: false
           query_tags: {  }
       relationships:
-        contacts_target_id:
-          id: contacts_target_id
-          table: guide_category__contacts
-          field: contacts_target_id
+        editors_target_id:
+          id: editors_target_id
+          table: guide_category__editors
+          field: editors_target_id
           relationship: none
           group_type: group
-          admin_label: User
+          admin_label: 'editors: Paragraph'
           entity_type: guide_category
-          entity_field: contacts
+          entity_field: editors
+          plugin_id: standard
+          required: false
+        field_user:
+          id: field_user
+          table: paragraph__field_user
+          field: field_user
+          relationship: editors_target_id
+          group_type: group
+          admin_label: 'field_user: User'
           plugin_id: standard
           required: false
       group_by: true
