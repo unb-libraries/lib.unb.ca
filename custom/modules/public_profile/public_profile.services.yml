@@ -10,3 +10,7 @@ services:
   public_profile.user_toolbar_link_builder:
     class: Drupal\public_profile\Services\UserToolbarLinkBuilder
     arguments: ['@current_user']
+  public_profile.breadcrumb_builder:
+    class: Drupal\public_profile\Services\BreadcrumbBuilder
+    tags:
+      - { name: breadcrumb_builder, priority: 2000 }
