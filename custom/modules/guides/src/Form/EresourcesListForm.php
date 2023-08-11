@@ -84,16 +84,16 @@ class EresourcesListForm extends FormBase {
       '#prefix' => '<div id="record-select">',
       '#suffix' => '</div>',
       '#options' => $options,
+      '#empty_value' => '',
       '#attributes' => [
         'class' => ['form-control', 'selectize', 'selectize-control'],
       ],
     ];
 
     $id = $this->getRequest()->query->get('id');
-    if (empty($id)) {
-      $id = array_keys($options)[1];
+    if (!empty($id) && array_key_exists($id, $options)) {
+      $form['selector']['search']['#default_value'] = $id;
     }
-    $form['selector']['search']['#default_value'] = $id;
 
     $form['selector']['view'] = [
       '#type' => 'button',
@@ -131,9 +131,7 @@ class EresourcesListForm extends FormBase {
    * Convenience function for listing eresources records.
    */
   public function getRecords() {
-    $options = [
-      0 => '[DEL] Deleted Resource',
-    ];
+    $options = [];
 
     $storage = $this->entityTypeManager->getStorage('eresources_record');
     $query = $storage->getQuery()
@@ -156,7 +154,10 @@ class EresourcesListForm extends FormBase {
    */
   public function recordInfo(array &$form, FormStateInterface $form_state) {
     $id = $form_state->getValue('search');
-    if (is_null($id) && !empty($form['selector']['search']['#default_value'])) {
+    if (is_null($id)) {
+      return;
+    }
+    if (!empty($form['selector']['search']['#default_value'])) {
       $id = $form['selector']['search']['#default_value'];
     }
 
