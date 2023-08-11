@@ -5,6 +5,7 @@
             $("select.selectize").selectize({
                 allowEmptyOption: false,
                 hideSelected: true,
+                maxOptions: 7500,
             }).removeAttr("style");
 
             $(context).find('form.custom-selectize button[type="submit"]').click(function (e) {
