@@ -71,10 +71,6 @@ settings:
           items:
             - Wc-search
             - eresources
-        -
-          name: Deprecated
-          items:
-            - assets
   plugins:
     drupallink:
       linkit_enabled: true
