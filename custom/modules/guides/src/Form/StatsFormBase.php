@@ -138,13 +138,12 @@ class StatsFormBase extends FormBase {
     $pagePath = $this->object->toUrl()->toString();
 
     $data = $this->getStatsFor($pagePath, $dateRanges, $dimensions);
-    ksort($data);
+    $rows = $this->mergeStatsRows($data);
 
     if ($this->getFormType() == 'guide') {
-      $data = $this->addTabNames($data);
+      $rows = $this->addTabNames($rows);
     }
 
-    $rows = $this->mergeStatsRows($data);
     $output = '';
     foreach ($rows as $row) {
       $output .= implode(',', $row) . "\n";
@@ -173,14 +172,23 @@ class StatsFormBase extends FormBase {
     ];
 
     $data = $this->getStatsFor($pagePath, $dateRanges, $dimensions);
-    ksort($data);
+    $stats = [];
+    foreach ($data as $result) {
+      $path = $result['pagePath'];
+      if (empty($stats[$path])) {
+        $stats[$path] = [0, 0, 0];
+      }
+      $col = (int) str_replace('date_range_', '', $result['dateRange']);
+      $stats[$path][$col] = $result['screenPageViews'];
+    }
 
+    ksort($stats);
     if ($this->getFormType() == 'guide') {
-      $data = $this->addTabNames($data);
+      $stats = $this->addTabNames($stats);
     }
 
     $rows = [];
-    foreach ($data as $page => $row) {
+    foreach ($stats as $page => $row) {
       $rows[] = array_merge([$page], $row);
     }
 
@@ -269,17 +277,7 @@ class StatsFormBase extends FormBase {
       $results[] = $data;
     }
 
-    $stats = [];
-    foreach ($results as $result) {
-      $path = $result['pagePath'];
-      if (empty($stats[$path])) {
-        $stats[$path] = [0, 0, 0];
-      }
-      $col = (int) str_replace('date_range_', '', $result['dateRange']);
-      $stats[$path][$col] = $result['screenPageViews'];
-    }
-
-    return $stats;
+    return $results;
   }
 
   /**
@@ -290,13 +288,14 @@ class StatsFormBase extends FormBase {
     $dates = [];
     foreach ($results as $result) {
       $data[$result['pagePath']][$result['yearMonth']] = $result['screenPageViews'];
-      $dates[$result['yearMonth']] = 1;
+      $date = \DateTime::createFromFormat('Ym', $result['yearMonth']);
+      $dates[$result['yearMonth']] = $date->format('M Y');
     }
 
     ksort($dates);
     ksort($data);
 
-    $rows = [array_merge(['Page'], array_keys($dates))];
+    $rows = [array_merge(['Page'], array_values($dates))];
     foreach ($data as $page => $dateData) {
       $row = [$page];
       foreach (array_keys($dates) as $date) {
