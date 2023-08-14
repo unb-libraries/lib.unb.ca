@@ -37,7 +37,6 @@ settings:
           name: Alignment
           items:
             - JustifyLeft
-            - JustifyCenter
             - JustifyRight
         -
           name: Links
