@@ -78,8 +78,7 @@ class StatsFormBase extends FormBase {
     if ($this->getFormType() == 'guide') {
       $header .= '<p>Guide stats will show the tab name where possible, i.e. deleted tabs still have stats but no longer have names. Each tab is considered a separate page with respect to views. The default start tab for the guide will appear first but it may also appear again using its tab ID. This occurs when patrons navigate back to the home tab after visiting others tabs.</p>';
     }
-
-    $header .= '</div>';
+    $header .= '<p><i class="fa fa-exclamation-triangle"></i> Google has migrated from <i>Universal Analytics</i> to <i>Goggle Analytics 4</i>. The two formats are not compatible. If you are looking for stats prior to July 2023, please submit a <a href="https://intranet.lib.unb.ca/requests/trouble-tickets">Trouble Ticket</a>.</p></div>';
 
     $form['header'] = [
       '#markup' => $header,
@@ -87,7 +86,7 @@ class StatsFormBase extends FormBase {
 
     $form['stats'] = $this->getStatsTableFor($pagePath);
 
-    $start = '2017-09-01';
+    $start = '2023-06-01';
     $today = date('Y-m-d');
 
     $form['custom_header'] = [
