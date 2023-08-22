@@ -23,6 +23,13 @@ entity.eresources_harvested_collection.synchronize:
     parameters:
       eresources_harvested_collection:
         type: entity:eresources_harvested_collection
+entity.eresources_record.collection:
+  path: '/admin/eresources/collection-redirect'
+  defaults:
+    _controller: '\Drupal\eresources\Controller\RecordController::collectionRedirect'
+    _title: 'Collection Redirect'
+  requirements:
+    _permission: 'access content'
 eresources.collections:
   path: '/eresources/collections/{type}'
   defaults:

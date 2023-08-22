@@ -39,6 +39,7 @@ use Drupal\lib_unb_custom_entity\Entity\ContentEntityInterface;
  *     "add-form" = "/admin/eresources/record/add",
  *     "edit-form" = "/admin/eresources/record/{eresources_record}/edit",
  *     "delete-form" = "/admin/eresources/record/{eresources_record}/delete",
+ *     "collection" = "/admin/eresources/collection-redirect",
  *   },
  *   field_ui_base_route = "entity.eresources_record.settings",
  * )

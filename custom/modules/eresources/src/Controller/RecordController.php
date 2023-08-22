@@ -46,4 +46,11 @@ class RecordController extends ControllerBase {
     ];
   }
 
+  /**
+   * Redirect for entity.eresources_record.collection.
+   */
+  public function collectionRedirect() {
+    return $this->redirect('view.eresources_records.records');
+  }
+
 }
