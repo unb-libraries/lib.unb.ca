@@ -2,6 +2,7 @@
 
 namespace Drupal\ior\Entity\Access;
 
+use Drupal\Core\Config\Entity\ConfigEntityInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Session\AccountInterface;
@@ -23,10 +24,10 @@ class SubmissionAccessControlHandler extends EntityAccessControlHandler {
   /**
    * {@inheritDoc}
    */
-  protected function hasEntityTypePermission(EntityTypeInterface $entity_type, string $operation, AccountInterface $account) {
+  protected function hasEntityTypePermission(string $operation, AccountInterface $account, EntityTypeInterface $entity_type, ConfigEntityInterface $bundle = NULL) {
     [$moderation_state, $operation] = explode('.', $operation);
-    if (!$access = parent::hasEntityTypePermission($entity_type, $operation, $account)) {
-      $access = parent::hasEntityTypePermission($entity_type, "{$operation} {$moderation_state}", $account);
+    if (!$access = parent::hasEntityTypePermission($operation, $account, $entity_type, $bundle)) {
+      $access = parent::hasEntityTypePermission("{$operation} {$moderation_state}", $account, $entity_type, $bundle);
     }
     return $access;
   }
