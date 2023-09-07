@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.space.teaser
     - field.field.space.room.field_capacity
+    - field.field.space.room.field_description
     - field.field.space.room.field_equipment
     - field.field.space.room.field_food_drinks
     - field.field.space.room.field_images
@@ -52,6 +53,7 @@ content:
     region: content
 hidden:
   field_capacity: true
+  field_description: true
   field_equipment: true
   field_food_drinks: true
   field_number: true

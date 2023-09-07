@@ -4,12 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.space.building.field_campus
+    - field.field.space.building.field_description
     - field.field.space.building.field_images
     - field.field.space.building.field_name
     - image.style.thumbnail
     - spaces.space_type.building
   module:
     - image
+    - text
 id: space.building.default
 targetEntityType: space
 bundle: building
@@ -20,6 +22,14 @@ content:
     weight: 1
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_description:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
   field_images:
     type: image_image

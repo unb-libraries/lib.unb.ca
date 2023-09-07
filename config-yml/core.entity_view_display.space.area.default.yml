@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.space.area.field_capacity
+    - field.field.space.area.field_description
     - field.field.space.area.field_equipment
     - field.field.space.area.field_food_drinks
     - field.field.space.area.field_images
@@ -16,6 +17,7 @@ dependencies:
     - field_formatter_class
     - image
     - options
+    - text
 id: space.area.default
 targetEntityType: space
 bundle: area
@@ -26,7 +28,14 @@ content:
     label: visually_hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 6
+    region: content
+  field_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
     region: content
   field_equipment:
     type: entity_reference_label
@@ -36,7 +45,7 @@ content:
     third_party_settings:
       field_formatter_class:
         class: ''
-    weight: 3
+    weight: 4
     region: content
   field_food_drinks:
     type: entity_reference_label
@@ -46,7 +55,7 @@ content:
     third_party_settings:
       field_formatter_class:
         class: ''
-    weight: 4
+    weight: 5
     region: content
   field_images:
     type: image
@@ -69,7 +78,7 @@ content:
     third_party_settings:
       field_formatter_class:
         class: ''
-    weight: 1
+    weight: 2
     region: content
   field_sound_level:
     type: entity_reference_label
@@ -79,7 +88,7 @@ content:
     third_party_settings:
       field_formatter_class:
         class: ''
-    weight: 2
+    weight: 3
     region: content
 hidden:
   field_name: true

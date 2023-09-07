@@ -1,0 +1,26 @@
+uuid: d7c699fa-5dcc-4a5a-bb26-a992a871e3fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.space.field_description
+    - spaces.space_type.room
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - no_media_html
+id: space.room.field_description
+field_name: field_description
+entity_type: space
+bundle: room
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

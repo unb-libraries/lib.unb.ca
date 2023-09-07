@@ -1,0 +1,26 @@
+uuid: 4a15882d-9f6a-41a2-bb28-f097abcf956f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.space.field_description
+    - spaces.space_type.area
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - no_media_html
+id: space.area.field_description
+field_name: field_description
+entity_type: space
+bundle: area
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

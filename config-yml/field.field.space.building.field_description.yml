@@ -1,0 +1,26 @@
+uuid: 8ffcb6ab-4c56-43ff-b93c-65f0c8a390ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.space.field_description
+    - spaces.space_type.building
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - no_media_html
+id: space.building.field_description
+field_name: field_description
+entity_type: space
+bundle: building
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
