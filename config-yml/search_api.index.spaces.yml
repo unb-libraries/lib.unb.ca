@@ -6,6 +6,7 @@ dependencies:
     - field.storage.space.field_capacity
     - field.storage.space.field_featured
     - field.storage.space.field_name
+    - field.storage.space.field_printing
     - field.storage.space.field_reservation
     - field.storage.space.field_sound_level
     - field.storage.space.field_equipment
@@ -106,6 +107,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.space.field_name
+  field_printing:
+    label: Printing
+    datasource_id: 'entity:space'
+    property_path: field_printing
+    type: integer
+    dependencies:
+      config:
+        - field.storage.space.field_printing
   field_reservation:
     label: Reservation
     datasource_id: 'entity:space'
