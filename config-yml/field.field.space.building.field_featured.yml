@@ -1,0 +1,23 @@
+uuid: 4c17874c-f98b-4bde-8c77-8bba63571dd9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.space.field_featured
+    - spaces.space_type.building
+id: space.building.field_featured
+field_name: field_featured
+entity_type: space
+bundle: building
+label: Featured
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

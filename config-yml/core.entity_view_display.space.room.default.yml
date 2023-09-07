@@ -6,6 +6,7 @@ dependencies:
     - field.field.space.room.field_capacity
     - field.field.space.room.field_description
     - field.field.space.room.field_equipment
+    - field.field.space.room.field_featured
     - field.field.space.room.field_food_drinks
     - field.field.space.room.field_images
     - field.field.space.room.field_name
@@ -17,6 +18,7 @@ dependencies:
   module:
     - field_formatter_class
     - image
+    - link
     - options
     - text
 id: space.room.default
@@ -29,7 +31,7 @@ content:
     label: visually_hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 5
     region: content
   field_description:
     type: text_default
@@ -46,7 +48,7 @@ content:
     third_party_settings:
       field_formatter_class:
         class: ''
-    weight: 4
+    weight: 3
     region: content
   field_food_drinks:
     type: entity_reference_label
@@ -56,7 +58,7 @@ content:
     third_party_settings:
       field_formatter_class:
         class: ''
-    weight: 5
+    weight: 4
     region: content
   field_images:
     type: image
@@ -72,14 +74,16 @@ content:
     weight: 0
     region: content
   field_reservation:
-    type: entity_reference_label
-    label: visually_hidden
+    type: link
+    label: above
     settings:
-      link: false
-    third_party_settings:
-      field_formatter_class:
-        class: ''
-    weight: 2
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 6
     region: content
   field_sound_level:
     type: entity_reference_label
@@ -89,9 +93,10 @@ content:
     third_party_settings:
       field_formatter_class:
         class: ''
-    weight: 3
+    weight: 2
     region: content
 hidden:
+  field_featured: true
   field_name: true
   field_number: true
   parent: true

@@ -6,6 +6,7 @@ dependencies:
     - field.field.space.room.field_capacity
     - field.field.space.room.field_description
     - field.field.space.room.field_equipment
+    - field.field.space.room.field_featured
     - field.field.space.room.field_food_drinks
     - field.field.space.room.field_images
     - field.field.space.room.field_name
@@ -16,6 +17,7 @@ dependencies:
     - spaces.space_type.room
   module:
     - image
+    - link
     - text
 id: space.room.default
 targetEntityType: space
@@ -24,7 +26,7 @@ mode: default
 content:
   field_capacity:
     type: options_buttons
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -38,13 +40,20 @@ content:
     third_party_settings: {  }
   field_equipment:
     type: options_buttons
-    weight: 7
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_featured:
+    type: boolean_checkbox
+    weight: 10
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_food_drinks:
     type: options_buttons
-    weight: 8
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -73,14 +82,16 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_reservation:
-    type: options_buttons
-    weight: 5
+    type: link_default
+    weight: 9
     region: content
-    settings: {  }
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   field_sound_level:
     type: options_buttons
-    weight: 6
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }

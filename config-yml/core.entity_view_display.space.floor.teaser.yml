@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.space.teaser
     - field.field.space.floor.field_description
+    - field.field.space.floor.field_featured
     - field.field.space.floor.field_images
     - field.field.space.floor.field_name
     - field.field.space.floor.field_number
@@ -48,6 +49,7 @@ content:
     region: content
 hidden:
   field_description: true
+  field_featured: true
   field_number: true
   parent: true
   search_api_excerpt: true

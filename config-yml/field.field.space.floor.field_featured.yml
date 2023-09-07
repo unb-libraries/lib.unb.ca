@@ -1,0 +1,23 @@
+uuid: 5c9e8918-9235-4f99-adda-d0ca1756978a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.space.field_featured
+    - spaces.space_type.floor
+id: space.floor.field_featured
+field_name: field_featured
+entity_type: space
+bundle: floor
+label: Featured
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

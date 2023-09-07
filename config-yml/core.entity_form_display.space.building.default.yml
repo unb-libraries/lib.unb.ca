@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.space.building.field_campus
     - field.field.space.building.field_description
+    - field.field.space.building.field_featured
     - field.field.space.building.field_images
     - field.field.space.building.field_name
     - image.style.thumbnail
@@ -30,6 +31,13 @@ content:
     settings:
       rows: 5
       placeholder: ''
+    third_party_settings: {  }
+  field_featured:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_images:
     type: image_image

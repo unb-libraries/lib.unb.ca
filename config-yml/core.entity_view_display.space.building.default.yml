@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.space.building.field_campus
     - field.field.space.building.field_description
+    - field.field.space.building.field_featured
     - field.field.space.building.field_images
     - field.field.space.building.field_name
     - image.style.bs_lg_large
@@ -48,5 +49,6 @@ content:
     region: content
 hidden:
   field_campus: true
+  field_featured: true
   parent: true
   search_api_excerpt: true

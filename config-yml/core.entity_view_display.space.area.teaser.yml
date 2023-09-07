@@ -7,6 +7,7 @@ dependencies:
     - field.field.space.area.field_capacity
     - field.field.space.area.field_description
     - field.field.space.area.field_equipment
+    - field.field.space.area.field_featured
     - field.field.space.area.field_food_drinks
     - field.field.space.area.field_images
     - field.field.space.area.field_name
@@ -54,6 +55,7 @@ hidden:
   field_capacity: true
   field_description: true
   field_equipment: true
+  field_featured: true
   field_food_drinks: true
   field_reservation: true
   field_sound_level: true

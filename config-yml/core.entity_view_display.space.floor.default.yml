@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.space.floor.field_description
+    - field.field.space.floor.field_featured
     - field.field.space.floor.field_images
     - field.field.space.floor.field_name
     - field.field.space.floor.field_number
@@ -39,6 +40,7 @@ content:
     weight: 0
     region: content
 hidden:
+  field_featured: true
   field_name: true
   field_number: true
   parent: true
