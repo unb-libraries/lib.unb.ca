@@ -3,6 +3,10 @@
         <div>{{ space.field_images }}</div>
     {% endif %}
 
+    {% if space.field_description %}
+        <div>{{ space.field_description }}</div>
+    {% endif %}
+
     <h2>Reservation</h2>
     {% if space.field_reservation %}
         <div>{{ space.field_reservation }}</div>
@@ -31,4 +35,9 @@
 
     <h2>Capacity</h2>
     <div>{{ space.field_capacity }}</div>
+
+    {% if space.field_printing %}
+        <h2>Printing</h2>
+        <div>{{ space.field_printing }}</div>
+    {% endif %}
 </div>
