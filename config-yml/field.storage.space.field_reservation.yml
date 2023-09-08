@@ -1,21 +1,20 @@
-uuid: 7bef93ef-92cf-4707-8559-ca92d17e46aa
+uuid: 7437d3ac-e0aa-4073-b688-c84120e16f22
 langcode: en
 status: true
 dependencies:
   module:
     - field_permissions
+    - link
     - spaces
-    - taxonomy
 third_party_settings:
   field_permissions:
     permission_type: public
 id: space.field_reservation
 field_name: field_reservation
 entity_type: space
-type: entity_reference
-settings:
-  target_type: taxonomy_term
-module: core
+type: link
+settings: {  }
+module: link
 locked: false
 cardinality: 1
 translatable: true

@@ -1,8 +1,0 @@
-uuid: f0f43ac6-5136-40ae-9f42-7dbe9a94451d
-langcode: en
-status: true
-dependencies: {  }
-name: '[Spaces] Reservation'
-vid: spaces_reservation
-description: ''
-weight: 0

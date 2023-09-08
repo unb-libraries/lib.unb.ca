@@ -119,7 +119,7 @@ field_settings:
     label: Reservation
     datasource_id: 'entity:space'
     property_path: field_reservation
-    type: integer
+    type: string
     dependencies:
       config:
         - field.storage.space.field_reservation
