@@ -113,7 +113,7 @@ elements: |-
           visible:
             ':input[name="catering"]':
               value: 'Yes'
-        '#markup': '<div class="alert alert-info mt-2 text-red" role="alert"><i class="fas fa-exclamation-triangle mr-2"></i>For all catering needs, please contact <strong>Sodexo Catering Services</strong>.</div>'
+        '#markup': '<div class="alert alert-info mt-2 text-red" role="alert">For all catering needs, please contact <strong>Chartwells</strong>.</div>'
       consent_photos_video:
         '#type': radios
         '#title': 'Do you authorize the Research Commons staff to take photos/videos of your event for advertisement purposes (ie. in promotional materials in the library and social media)'
