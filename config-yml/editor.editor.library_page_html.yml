@@ -28,6 +28,7 @@ settings:
             - Format
             - '-'
             - RemoveFormat
+            - footnotes
             - Bold
             - Italic
             - TextColor
