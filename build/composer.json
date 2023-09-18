@@ -333,7 +333,7 @@
     "drupal/profile": "1.7",
     "drupal/protected_file": "1.4",
     "drupal/r4032login": "2.2.1",
-    "drupal/redirect": "1.8",
+    "drupal/redirect": "1.9",
     "drupal/redis": "1.7",
     "drupal/samlauth": "3.9",
     "drupal/search_api": "1.29",
