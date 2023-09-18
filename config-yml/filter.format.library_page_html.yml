@@ -17,6 +17,7 @@ dependencies:
   module:
     - editor
     - entity_embed
+    - footnotes
     - guides
     - linkit
     - media
@@ -41,19 +42,19 @@ filters:
     id: filter_htmlcorrector
     provider: filter
     status: false
-    weight: -38
+    weight: -35
     settings: {  }
   filter_html_escape:
     id: filter_html_escape
     provider: filter
     status: false
-    weight: -41
+    weight: -38
     settings: {  }
   filter_url:
     id: filter_url
     provider: filter
     status: false
-    weight: -42
+    weight: -39
     settings:
       filter_url_length: 72
   filter_caption:
@@ -66,7 +67,7 @@ filters:
     id: filter_html_image_secure
     provider: filter
     status: false
-    weight: -39
+    weight: -36
     settings: {  }
   filter_align:
     id: filter_align
@@ -80,33 +81,33 @@ filters:
     status: true
     weight: -50
     settings:
-      allowed_html: '<a href id target title aria-controls aria-expanded aria-selected hreflang data-entity-substitution data-entity-type data-entity-uuid data-toggle role class> <address class> <blockquote cite> <br> <button aria-controls aria-expanded aria-haspopup aria-label data-dismiss data-reference data-target data-toggle id type class> <caption class> <cite> <code> <div data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date data-parent id role aria-labelledby class> <dd id class> <dl id class> <dt id class> <em class> <h2 id class> <h3 id class> <h4 id class> <h5 id class> <h6 id class> <hr class> <img src alt width height data-entity-type data-entity-uuid data-align data-caption class> <li id class> <ol id start type class> <p id class> <span aria-hidden data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date data-color class> <small class> <strong class> <sub> <sup> <table id class> <tbody class> <td colspan data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date id rowspan class> <tfoot> <th colspan id rowspan scope class> <thead class> <tr data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date id class> <ul id type role class> <drupal-media data-align data-caption data-entity-type data-entity-uuid data-view-mode alt title class> <drupal-entity alt title data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button data-langcode class> <eresources ids keyresources noheadings> <iframe allow allowfullscreen frameborder height width src title>'
+      allowed_html: '<a href id target title aria-controls aria-expanded aria-selected hreflang data-entity-substitution data-entity-type data-entity-uuid data-toggle role class> <address class> <blockquote cite> <br> <button aria-controls aria-expanded aria-haspopup aria-label data-dismiss data-reference data-target data-toggle id type class> <caption class> <cite> <code> <div data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date data-parent id role aria-labelledby class> <dd id class> <dl id class> <dt id class> <em class> <h2 id class> <h3 id class> <h4 id class> <h5 id class> <h6 id class> <hr class> <img src alt width height data-entity-type data-entity-uuid data-align data-caption class> <li id class> <ol id start type class> <p id class> <span aria-hidden data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date data-color class> <small class> <strong class> <sub> <sup> <table id class> <tbody class> <td colspan data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date id rowspan class> <tfoot> <th colspan id rowspan scope class> <thead class> <tr data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date id class> <ul id type role class> <drupal-media data-align data-caption data-entity-type data-entity-uuid data-view-mode alt title class> <drupal-entity alt title data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button data-langcode class> <eresources ids keyresources noheadings> <iframe allow allowfullscreen frameborder height width src title> <fn>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_autop:
     id: filter_autop
     provider: filter
     status: false
-    weight: -40
+    weight: -37
     settings: {  }
   linkit:
     id: linkit
     provider: linkit
     status: true
-    weight: -43
+    weight: -44
     settings:
       title: true
   video_embed_wysiwyg:
     id: video_embed_wysiwyg
     provider: video_embed_wysiwyg
     status: false
-    weight: -45
+    weight: -40
     settings: {  }
   media_embed:
     id: media_embed
     provider: media
     status: true
-    weight: -44
+    weight: -45
     settings:
       default_view_mode: default
       allowed_view_modes:
@@ -129,11 +130,20 @@ filters:
     id: filter_guides_ckeditor_eresources
     provider: guides
     status: true
-    weight: 0
+    weight: -43
     settings: {  }
   filter_guides_ckeditor_wc-search:
     id: filter_guides_ckeditor_wc-search
     provider: guides
     status: true
-    weight: 0
+    weight: -42
     settings: {  }
+  filter_footnotes:
+    id: filter_footnotes
+    provider: footnotes
+    status: true
+    weight: -41
+    settings:
+      footnotes_collapse: '0'
+      footnotes_html: '1'
+      footnotes_css: '1'

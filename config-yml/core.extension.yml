@@ -48,6 +48,7 @@ module:
   eresources: 0
   externalauth: 0
   facets: 0
+  fakeobjects: 0
   field: 0
   field_formatter_class: 0
   field_group: 0
@@ -59,6 +60,7 @@ module:
   fogbugz_api: 0
   fontawesome: 0
   fontawesome_iconpicker_widget: 0
+  footnotes: 0
   gapi: 0
   google_analytics: 0
   guides: 0
