@@ -15,8 +15,12 @@ ul.footnotes {
   padding: 0 1px;
 }
 
-.see-footnote:target,
-.footnotes .footnote:target {
-  background-color: $gray-200;
-  border: 1px solid $gray-300;
+.see-footnote,
+.footnotes .footnote {
+  border: 1px solid transparent;
+
+  &:target {
+    background-color: $gray-200;
+    border: 1px solid $gray-300;
+  }
 }
