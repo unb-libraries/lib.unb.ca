@@ -1,13 +1,20 @@
 ul.footnotes {
   border-top-color: $dark;
+  display: table;
   font-size: inherit;
   margin-top: 2.5rem;
   padding-top: .25rem;
 
   li {
-    margin-left: 1.25em;
-    padding-left: .25rem;
-    padding-right: .25rem;
+    line-height: 1.25;
+    margin: 0;
+    display: table-row;
+  }
+
+  .footnote-label {
+    display: table-cell;
+    padding: .25rem .5rem .25rem 0;
+    position: relative;
   }
 }
 
