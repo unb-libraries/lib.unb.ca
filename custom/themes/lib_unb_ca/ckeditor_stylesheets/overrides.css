@@ -6,6 +6,9 @@
     max-width: 100%;
     height: auto;
 }
+.cke_editable img.cke_footnote {
+  max-width: 3rem;
+}
 strong,
 .font-weight-bold {
     font-family: Helvetica, sans-serif;
