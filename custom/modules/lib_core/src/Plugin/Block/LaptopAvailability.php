@@ -45,9 +45,9 @@ class LaptopAvailability extends BlockBase implements ContainerFactoryPluginInte
       'Harriet Irving Library (Fredericton)',
       '7 day loan',
     ],
-    'HIL-MISC' => [
+    'HIL-MISC7' => [
       'Harriet Irving Library (Fredericton)',
-      '2 hour loan',
+      '7 day loan',
     ],
     'ENG-MISC: Miscellaneous 2' => [
       'Engineering Library (Fredericton)',
