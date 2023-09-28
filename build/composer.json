@@ -66,6 +66,9 @@
       },
       "drupal/footnotes": {
         "Fix warnings": "https://www.drupal.org/files/issues/2023-08-23/fix-warnings-when-leaving-values-empty-3381366-5.patch"
+      },
+      "drupal/search_api_autocomplete": {
+        "Fix SEARCH_API_SOLR_SCHEMA_VERSION WSOD": "https://git.drupalcode.org/project/search_api_autocomplete/-/merge_requests/14.patch"
       }
     }
   },
