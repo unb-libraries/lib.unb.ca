@@ -172,6 +172,9 @@ class LaptopAvailability extends BlockBase implements ContainerFactoryPluginInte
         if (!$result) {
           continue;
         }
+        if (str_contains((string) $holding->callNumber, 'Charger')) {
+          continue;
+        }
         $location = $matches[1];
         if (empty($locations[$location])) {
           $locations[$location] = ['avail' => 0, 'total' => 0, 'next' => ''];
