@@ -15,7 +15,6 @@ dependencies:
     - node
     - paragraphs
     - user
-    - views_autocomplete_filters
 id: meet_with_a_librarian
 label: 'Meet With a Librarian (Ask Me About/Specialists)'
 module: views

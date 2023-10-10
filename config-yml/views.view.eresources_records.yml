@@ -9,7 +9,6 @@ dependencies:
     - better_exposed_filters
     - eresources
     - user
-    - views_autocomplete_filters
 id: eresources_records
 label: 'eResources Records'
 module: views
@@ -1019,11 +1018,29 @@ display:
               anonymous: '0'
               library_news_author: '0'
               library_page_author: '0'
+              library_staff: '0'
               data_administrator: '0'
               records_manager: '0'
               ior_manager: '0'
               ior_reviewer: '0'
+              eresources_record_manager: '0'
+              saml_student: '0'
+              saml_faculty_staff: '0'
+              saml_alumni: '0'
+              saml_guest: '0'
+              saml_unb_active: '0'
+              saml_stu_active: '0'
+              guide_editor: '0'
+              public_profile: '0'
+              duplicate_id_checker: '0'
             placeholder: ''
+            autocomplete_filter: 1
+            autocomplete_min_chars: '0'
+            autocomplete_items: '10'
+            autocomplete_field: title
+            autocomplete_raw_suggestion: 1
+            autocomplete_raw_dropdown: 1
+            autocomplete_dependent: 0
           is_grouped: false
           group_info:
             label: ''
@@ -1984,11 +2001,29 @@ display:
               anonymous: '0'
               library_news_author: '0'
               library_page_author: '0'
+              library_staff: '0'
               data_administrator: '0'
               records_manager: '0'
               ior_manager: '0'
               ior_reviewer: '0'
+              eresources_record_manager: '0'
+              saml_student: '0'
+              saml_faculty_staff: '0'
+              saml_alumni: '0'
+              saml_guest: '0'
+              saml_unb_active: '0'
+              saml_stu_active: '0'
+              guide_editor: '0'
+              public_profile: '0'
+              duplicate_id_checker: '0'
             placeholder: ''
+            autocomplete_filter: 1
+            autocomplete_min_chars: '0'
+            autocomplete_items: '10'
+            autocomplete_field: title
+            autocomplete_raw_suggestion: 1
+            autocomplete_raw_dropdown: 1
+            autocomplete_dependent: 0
           is_grouped: false
           group_info:
             label: ''
@@ -2314,11 +2349,29 @@ display:
               anonymous: '0'
               library_news_author: '0'
               library_page_author: '0'
+              library_staff: '0'
               data_administrator: '0'
               records_manager: '0'
               ior_manager: '0'
               ior_reviewer: '0'
+              eresources_record_manager: '0'
+              saml_student: '0'
+              saml_faculty_staff: '0'
+              saml_alumni: '0'
+              saml_guest: '0'
+              saml_unb_active: '0'
+              saml_stu_active: '0'
+              guide_editor: '0'
+              public_profile: '0'
+              duplicate_id_checker: '0'
             placeholder: ''
+            autocomplete_filter: 1
+            autocomplete_min_chars: '0'
+            autocomplete_items: '10'
+            autocomplete_field: title
+            autocomplete_raw_suggestion: 1
+            autocomplete_raw_dropdown: 1
+            autocomplete_dependent: 0
           is_grouped: false
           group_info:
             label: ''
