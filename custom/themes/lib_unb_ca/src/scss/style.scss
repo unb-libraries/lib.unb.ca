@@ -533,6 +533,13 @@ ul.field--name-field-categories:before {
   background: inherit;
 }
 
+/* Remove transition effect on autocomplete dropdown items */
+.ui-autocomplete {
+  a.ui-menu-item-wrapper {
+    transition: none;
+  }
+}
+
 /* Borrow BS4 widget styles */
 .page-view-search-our-webpages {
   .ui-autocomplete {
