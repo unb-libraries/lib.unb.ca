@@ -1,0 +1,418 @@
+uuid: f5a21f8d-2f65-48a6-9674-1c61601022ee
+langcode: en
+status: open
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: oa_pol
+title: 'Supporting OA Policy'
+description: ''
+category: ''
+elements: |-
+  main_wrapper:
+    '#type': container
+    section_1:
+      '#type': processed_text
+      '#wrapper_attributes':
+        class:
+          - ml-5
+      '#text': |
+        <div class="row">
+        <div class="col-lg-7">
+        <div class="d-flex flex-wrap justify-content-between">
+        <h2>UNB Open Access Policy</h2>
+
+        <div><small><a href="#edit-show-support-container">skip to feedback<span class="fa-chevron-circle-down fas ml-1"></span></a></small></div>
+        </div>
+
+        <p>The University of New Brunswick is committed to the democratization of knowledge and recognizes that open research and scholarship practices foster collaborative, community-engaged, reproducible, and impactful scholarship that can “mobilize knowledge to transform communitiesii”. As a publicly funded institution, UNB has a responsibility to “tell our story proudly”; to “share the knowledge that is essential to push society forward”, as a “mission of service to our province and the world.”</p>
+
+        <h3><strong>Rationale</strong></h3>
+
+        <p>Open access accelerates discovery across the disciplines and increases the visibility and impact of research. It facilitates connections and collaborations between scholars and strengthens the rigour of published research by ensuring it is open to scrutiny by all, enabling scholars from all sectors, policymakers, and the public to use and build on this knowledge.</p>
+
+        <p>Since academic research is developed within this institution and is supported through salaries and tri-agency funding, its dissemination should take place with as little third-party, commercial involvement as is possible.</p>
+        </div>
+
+        <div class="col-lg-5 layout__region--second px-lg-5">
+        <div class="embed-responsive embed-responsive-16by9 mb-4"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="border responsive-item" frameborder="0" height="315" src="https://www.youtube.com/embed/VxFtXmWjNXI?si=kWCiZRP7nY6PFHJ2" title="YouTube video player" width="560"></iframe></div>
+        </div>
+        </div>
+      '#format': library_page_html
+    section_2:
+      '#type': processed_text
+      '#text': |
+        <p class="d-inline-block text-right"><span class="fa-2xl fa-quote-left fas mx-3 text-secondary"></span><small class="border-top pt-2">UNB exists to serve the public good, to create positive change in the world.</small><br />
+        <cite><small class="text-muted">UNB Towards 2030</small></cite></p>
+      '#format': library_page_html
+    wrapper_sidebar:
+      '#type': container
+      '#attributes':
+        class:
+          - container
+      section_3:
+        '#type': processed_text
+        '#text': |
+          <div class="row mb-4">
+          <div class="col-lg-8 theme-dark js-form-wrapper mb-4">
+          <h2>Application / Actions</h2>
+
+          <p>UNB commits to increasing access to the products of research and scholarship consistent with the open access movement. Application of this policy involves the following clauses:</p>
+
+          <ol>
+          	<li>UNB researchers will… &nbsp;
+          	<ol>
+          		<li>publish research in open access publications and/or;&nbsp;</li>
+          		<li>deposit accepted versions of scholarly works in UNB’s Institutional Repository (UNB Scholar or another trusted repository in accordance with publisher policies.</li>
+          	</ol>
+          	</li>
+          	<li>Works should be deposited sometime between the date of acceptance and the date of publication.&nbsp;</li>
+          	<li>Deposited works may be embargoed to meet publisher or granting body requirements.&nbsp;</li>
+          	<li>The authors of works deposited in UNB Scholar will maintain ownership of their right in their works. To facilitate the dissemination and archiving of deposited works into UNB Scholar, authors grant to UNB Libraries the non-exclusive permission to archive, preserve, reproduce, and freely disseminate an electronic copy of deposited materials, provided that these works are properly attributed to the authors, and that it is done for non-commercial purposes only1. &nbsp;</li>
+          	<li>Open access will not be considered mandatory, recognizing that, in some cases, its tenets are at odds with the protection of Indigenous Knowledges, legal or privacy requirements, academic freedom, or other interests.</li>
+          </ol>
+
+          <h3 class="mt-4">Scope</h3>
+
+          <p>In the spirit of enabling the broadest access to research, accelerating discovery, enabling transparency and reproducibility of research, this policy applies to journal articles, book chapters, and conference papers produced by faculty members, graduate students and any other scholars affiliated with UNB. In addition to these types of scholarly output, authors are urged to consider depositing into the UNB Scholar – or our research data repository, Dataverse – all their scholarly works, regardless of format, including their research data, to enhance visibility and impact of these research outputs.</p>
+
+          <h3 class="mt-4">Implementation</h3>
+
+          <p>While this policy commits UNB to the open dissemination of research, it also recognizes that the University’s authors are entitled to full control of their intellectual property. UNB faculty, staff and graduate students are encouraged to know their rights as authors and to retain copyright of their works through use of appropriate author addenda when negotiating publication of their works. Further, UNB encourages faculty to understand the open access policies and procedures of their publisher. These policies set out terms and conditions under which open access can be provided, such as the version of a work, which can be made available, time delays after publication and required credit statements or links to the original publication.</p>
+
+          <p>This policy is intended to encourage open access to scholarly work and strengthen author rights. This policy is to be read and interpreted in a manner consistent with relevant collective agreements and University policies related to academic freedom and intellectual property.</p>
+          </div>
+
+          <div class="col-lg-4 px-0 pl-lg-5">
+          <div class="card alert alert-info mt-0 mb-5">
+          <div class="card-body">
+          <h3 class="alert-info card-title">Open Sessions</h3>
+
+          <p class="card-text"><small>We will be holding several open sessions to present information and provide an opportunity to ask question or provide feedback.</small></p>
+
+          <table class="alert-info table table-borderless table-sm">
+          	<tbody>
+          		<tr class="border-bottom border-info">
+          			<th>Fredericton</th>
+          			<td>Nov.&nbsp;1st 2023</td>
+          		</tr>
+          		<tr class="border-bottom border-info">
+          			<th>Saint John</th>
+          			<td>Nov. 1st 2023</td>
+          		</tr>
+          		<tr>
+          			<th>Virtual</th>
+          			<td>Nov. 1st 2023</td>
+          		</tr>
+          	</tbody>
+          </table>
+          </div>
+          </div>
+
+          <div class="pl-4">
+          <h2>Contacts</h2>
+
+          <div class="mt-4">
+          <h3>Lesley Balcomm<br />
+          <small>Dean of Libraries</small></h3>
+
+          <div class="d-flex flex-wrap justify-content-between">
+          <div><a href="mailto:lbalcomm@unb.ca">lbalcomm@unb.ca</a></div>
+
+          <div><a href="tel:5064587056">506-458-7056</a></div>
+          </div>
+
+          <hr /></div>
+
+          <div class="mt-4">
+          <h3>Joanne Smyth<br />
+          <small>Director, Scholarly Communications</small></h3>
+
+          <ul>
+          	<li>Library Collections</li>
+          	<li>Open Access Models</li>
+          	<li>Scholarly Communication</li>
+          </ul>
+
+          <div class="d-flex flex-wrap justify-content-between">
+          <div><a href="mailto:jsmyth@unb.ca">jsmyth@unb.ca</a></div>
+
+          <div><a href="tel:5064533516">506-453-3516</a></div>
+          </div>
+
+          <hr /></div>
+
+          <div class="mt-4">
+          <h3>James MacKenzie<br />
+          <small>Associate Dean of Libraries, Advanced Digital Research &amp; Scholarship</small></h3>
+
+          <ul>
+          	<li>Digital Hunanities</li>
+          	<li>Digital Publishing</li>
+          	<li>Research Data Management</li>
+          </ul>
+
+          <div class="d-flex flex-wrap justify-content-between">
+          <div><a href="mailto:jmackenz@unb.ca">jmackenz@unb.ca</a></div>
+
+          <div><a href="tel:5062592774">506-259-2774</a></div>
+          </div>
+
+          <hr /></div>
+
+          <div class="mt-4">
+          <h3>Julie Morris<br />
+          <small>Collections Analyst, Bibliometrics Librarian</small></h3>
+
+          <ul>
+          	<li>Bibliometrics</li>
+          	<li>DResearch Impact</li>
+          	<li>French Resources</li>
+          </ul>
+
+          <div class="d-flex flex-wrap justify-content-between">
+          <div><a href="mailto:julie.morris@unb.ca">julie.morris@unb.ca</a></div>
+
+          <div><a href="tel:5064473220">506-447-3220</a></div>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+        '#format': library_page_html
+      show_support:
+        '#type': container
+        '#attributes':
+          class:
+            - row
+        show_support_container:
+          '#type': container
+          '#attributes':
+            class:
+              - col-lg-8
+              - theme-dark
+          title:
+            '#type': webform_markup
+            '#markup': '<h2 class="mb-0 text-unb-red border-bottom border-unb-red">Show Support!</h2>'
+          i_support_this_updated_open_access_policy:
+            '#type': checkbox
+            '#title': 'I support this updated Open Access Policy'
+            '#field_suffix': '<span class="text-unb-red">(required)</span>'
+            '#required': true
+          provide_feedback:
+            '#type': fieldset
+            '#title': 'Provide Feedback'
+            '#attributes':
+              class:
+                - mt-4
+                - row
+            please_provide_any_feedback_comments_optional_:
+              '#type': textarea
+              '#title': 'Please provide any feedback/comments (optional)'
+              '#wrapper_attributes':
+                class:
+                  - mb-3
+            flexbox:
+              '#type': webform_flexbox
+              name_optional_:
+                '#type': textfield
+                '#title': 'Name (optional)'
+              position_optional_:
+                '#type': textfield
+                '#title': 'Position (optional)'
+          actions:
+            '#type': webform_actions
+            '#title': 'Submit button(s)'
+            '#submit__label': Submit
+            '#submit__attributes':
+              class:
+                - px-4
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: /oa-policy
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+    users: {  }
+    permissions:
+      - 'administer webform'
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
+variants: {  }
