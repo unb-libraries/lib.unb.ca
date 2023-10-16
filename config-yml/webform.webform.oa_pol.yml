@@ -369,8 +369,7 @@ settings:
   serial_disabled: false
 access:
   create:
-    roles:
-      - anonymous
+    roles: {  }
     users: {  }
     permissions:
       - 'administer webform'
