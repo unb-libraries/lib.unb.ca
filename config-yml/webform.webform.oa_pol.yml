@@ -58,8 +58,33 @@ elements: |-
         '#type': processed_text
         '#text': |
           <div class="row mb-4">
-          <div class="col-lg-8 theme-dark js-form-wrapper mb-4">
-          <h2>Application / Actions</h2>
+          <div class="col-lg-8 mb-4">
+          <div class="d-flex flex-wrap justify-content-between">
+          <h2>UNB Open Access Policy (Draft)</h2>
+
+          <div><a class="btn btn-dark btn-sm link-no-icon" href="/system/files/2023-10/UNB_Libraries-OA_Policy-Draft.pdf">Download as PDF<span class="fa-download fas ml-1"></span></a></div>
+          </div>
+
+          <div class="theme-dark js-form-wrapper">
+          <h3>Preamble</h3>
+
+          <p>The University of New Brunswick is committed to the democratization of knowledge and recognizes<br />
+          that open research and scholarship practices foster collaborative, community-engaged, reproducible,<br />
+          and impactful scholarship that can “mobilize knowledge to transform communities ii ”. As a publicly funded<br />
+          institution, UNB has a responsibility to “tell our story proudly”; to “share the knowledge that is essential to<br />
+          push society forward”, as a “mission of service to our province and the world.”</p>
+
+          <h3 class="mt-4">Rationale</h3>
+
+          <p>Open access accelerates discovery across the disciplines and increases the visibility and impact of research.<br />
+          It facilitates connections and collaborations between scholars and strengthens the rigour of published<br />
+          research by ensuring it is open to scrutiny by all, enabling scholars from all sectors, policymakers, and the<br />
+          public to use and build on this knowledge.</p>
+
+          <p>Since academic research is developed within this institution and is supported through salaries and tri-agency<br />
+          funding, its dissemination should take place with as little third-party, commercial involvement as is possible.</p>
+
+          <h3 class="mt-4">Application / Actions</h3>
 
           <p>UNB commits to increasing access to the products of research and scholarship consistent with the open access movement. Application of this policy involves the following clauses:</p>
 
@@ -85,6 +110,7 @@ elements: |-
           <p>While this policy commits UNB to the open dissemination of research, it also recognizes that the University’s authors are entitled to full control of their intellectual property. UNB faculty, staff and graduate students are encouraged to know their rights as authors and to retain copyright of their works through use of appropriate author addenda when negotiating publication of their works. Further, UNB encourages faculty to understand the open access policies and procedures of their publisher. These policies set out terms and conditions under which open access can be provided, such as the version of a work, which can be made available, time delays after publication and required credit statements or links to the original publication.</p>
 
           <p>This policy is intended to encourage open access to scholarly work and strengthen author rights. This policy is to be read and interpreted in a manner consistent with relevant collective agreements and University policies related to academic freedom and intellectual property.</p>
+          </div>
           </div>
 
           <div class="col-lg-4 px-0 pl-lg-5">
