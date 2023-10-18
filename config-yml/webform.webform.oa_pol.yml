@@ -24,11 +24,12 @@ elements: |-
         <div class="row">
         <div class="col-lg-7">
         <div class="d-flex flex-wrap justify-content-between">
-        <h2>UNB Open Access Policy<br />
-        <small>Strengthening UNB's research contributions to the advancement of science, scholarship, and the betterment of society</small></h2>
+        <h2 class="mb-1">UNB Open Access Policy</h2>
 
-        <div class="mb-2"><small><a href="#edit-show-support-container">skip to feedback<span class="fa-chevron-circle-down fas ml-1"></span></a></small></div>
+        <div class="mb-2"><small><a href="#edit-show-support-container">skip to feedback<span class="fa-arrow-alt-circle-down fas ml-1"></span></a></small></div>
         </div>
+
+        <p class="subtitle mb-4">Strengthening UNB's research contributions to the advancement of science, scholarship, and the betterment of society</p>
 
         <h3>Support Open Research</h3>
 
@@ -158,7 +159,7 @@ elements: |-
 
           <div class="mt-4">
           <h3>Lesley Balcomm<br />
-          <small>Dean of Libraries</small></h3>
+            <span class="subtitle">Dean of Libraries</span></h3>
 
           <div class="d-flex flex-wrap justify-content-between">
           <div><a href="mailto:lbalcomm@unb.ca">lbalcomm@unb.ca</a></div>
@@ -170,7 +171,7 @@ elements: |-
 
           <div class="mt-4">
           <h3>Joanne Smyth<br />
-          <small>Director, Scholarly Communications</small></h3>
+          <span class="subtitle">Director, Scholarly Communications</span></h3>
 
           <ul>
           	<li>Library Collections</li>
@@ -188,7 +189,7 @@ elements: |-
 
           <div class="mt-4">
           <h3>James MacKenzie<br />
-          <small>Associate Dean of Libraries, Advanced Digital Research &amp; Scholarship</small></h3>
+          <span class="subtitle">Associate Dean of Libraries, Advanced Digital Research &amp; Scholarship</span></h3>
 
           <ul>
           	<li>Digital Hunanities</li>
@@ -206,7 +207,7 @@ elements: |-
 
           <div class="mt-4">
           <h3>Julie Morris<br />
-          <small>Collections Analyst, Bibliometrics Librarian</small></h3>
+          <span class="subtitle">Collections Analyst, Bibliometrics Librarian</span></h3>
 
           <ul>
           	<li>Bibliometrics</li>
