@@ -9,7 +9,7 @@ uid: 1
 template: false
 archive: false
 id: oa_pol
-title: 'Supporting OA Policy'
+title: 'Supporting Open Access'
 description: ''
 category: ''
 elements: |-
@@ -24,18 +24,17 @@ elements: |-
         <div class="row">
         <div class="col-lg-7">
         <div class="d-flex flex-wrap justify-content-between">
-        <h2>UNB Open Access Policy</h2>
+        <h2>UNB Open Access Policy<br />
+        <small>Strengthening UNB's research contributions to the advancement of science, scholarship, and the betterment of society</small></h2>
 
-        <div><small><a href="#edit-show-support-container">skip to feedback<span class="fa-chevron-circle-down fas ml-1"></span></a></small></div>
+        <div class="mb-2"><small><a href="#edit-show-support-container">skip to feedback<span class="fa-chevron-circle-down fas ml-1"></span></a></small></div>
         </div>
 
-        <p>The University of New Brunswick is committed to the democratization of knowledge and recognizes that open research and scholarship practices foster collaborative, community-engaged, reproducible, and impactful scholarship that can “mobilize knowledge to transform communitiesii”. As a publicly funded institution, UNB has a responsibility to “tell our story proudly”; to “share the knowledge that is essential to push society forward”, as a “mission of service to our province and the world.”</p>
+        <h3>Support Open Research</h3>
 
-        <h3><strong>Rationale</strong></h3>
+        <p>We ask for the UNB community's particpation and support in a more intentional approach to publishing and research access.</p>
 
-        <p>Open access accelerates discovery across the disciplines and increases the visibility and impact of research. It facilitates connections and collaborations between scholars and strengthens the rigour of published research by ensuring it is open to scrutiny by all, enabling scholars from all sectors, policymakers, and the public to use and build on this knowledge.</p>
-
-        <p>Since academic research is developed within this institution and is supported through salaries and tri-agency funding, its dissemination should take place with as little third-party, commercial involvement as is possible.</p>
+        <p>We're seeking a commitment for an Open Access Policy, aligned with the role that UNB Libraries plays in contributing our expertise, services, and support locally for UNB researchers and the necessary regional, national, and international open infrastructures and services.</p>
         </div>
 
         <div class="col-lg-5 layout__region--second px-lg-5">
@@ -70,7 +69,7 @@ elements: |-
 
           <p>The University of New Brunswick is committed to the democratization of knowledge and recognizes<br />
           that open research and scholarship practices foster collaborative, community-engaged, reproducible,<br />
-          and impactful scholarship that can “mobilize knowledge to transform communities ii ”. As a publicly funded<br />
+          and impactful scholarship that can “mobilize knowledge to transform communities<a class="see-footnote" href="#footnote1" id="footnoteref1" title="UNB Toward 2030">1</a>”. As a publicly funded<br />
           institution, UNB has a responsibility to “tell our story proudly”; to “share the knowledge that is essential to<br />
           push society forward”, as a “mission of service to our province and the world.”</p>
 
@@ -89,15 +88,15 @@ elements: |-
           <p>UNB commits to increasing access to the products of research and scholarship consistent with the open access movement. Application of this policy involves the following clauses:</p>
 
           <ol>
-          	<li>UNB researchers will… &nbsp;
-          	<ol>
-          		<li>publish research in open access publications and/or;&nbsp;</li>
+          	<li>UNB researchers will…
+          	<ol type="a">
+          		<li>publish research in open access publications and/or;</li>
           		<li>deposit accepted versions of scholarly works in UNB’s Institutional Repository (UNB Scholar or another trusted repository in accordance with publisher policies.</li>
           	</ol>
           	</li>
-          	<li>Works should be deposited sometime between the date of acceptance and the date of publication.&nbsp;</li>
-          	<li>Deposited works may be embargoed to meet publisher or granting body requirements.&nbsp;</li>
-          	<li>The authors of works deposited in UNB Scholar will maintain ownership of their right in their works. To facilitate the dissemination and archiving of deposited works into UNB Scholar, authors grant to UNB Libraries the non-exclusive permission to archive, preserve, reproduce, and freely disseminate an electronic copy of deposited materials, provided that these works are properly attributed to the authors, and that it is done for non-commercial purposes only1. &nbsp;</li>
+          	<li>Works should be deposited sometime between the date of acceptance and the date of publication.</li>
+          	<li>Deposited works may be embargoed to meet publisher or granting body requirements.</li>
+          	<li>The authors of works deposited in UNB Scholar will maintain ownership of their right in their works. To facilitate the dissemination and archiving of deposited works into UNB Scholar, authors grant to UNB Libraries the non-exclusive permission to archive, preserve, reproduce, and freely disseminate an electronic copy of deposited materials, provided that these works are properly attributed to the authors, and that it is done for non-commercial purposes only<a class="see-footnote" href="#footnote2" id="footnoteref2" title="Creative Commons">2</a>.</li>
           	<li>Open access will not be considered mandatory, recognizing that, in some cases, its tenets are at odds with the protection of Indigenous Knowledges, legal or privacy requirements, academic freedom, or other interests.</li>
           </ol>
 
@@ -110,6 +109,21 @@ elements: |-
           <p>While this policy commits UNB to the open dissemination of research, it also recognizes that the University’s authors are entitled to full control of their intellectual property. UNB faculty, staff and graduate students are encouraged to know their rights as authors and to retain copyright of their works through use of appropriate author addenda when negotiating publication of their works. Further, UNB encourages faculty to understand the open access policies and procedures of their publisher. These policies set out terms and conditions under which open access can be provided, such as the version of a work, which can be made available, time delays after publication and required credit statements or links to the original publication.</p>
 
           <p>This policy is intended to encourage open access to scholarly work and strengthen author rights. This policy is to be read and interpreted in a manner consistent with relevant collective agreements and University policies related to academic freedom and intellectual property.</p>
+
+          <blockquote class="ml-5">
+          <p>This policy come into force on [date] and applies to all applicable works published after this date.</p>
+
+          <p>[Specific university body(ies)] will be responsible for interpreting this policy, resolving disputes concerning its interpretation and application, and recommending changes to the policy to the appropriate university body as necessary</p>
+          </blockquote>
+
+          <div class="clearfix">
+          <ul class="footnotes float-right mr-4">
+          	<li class="footnote" id="footnote1"><a class="footnote-label" href="#footnoteref1">1</a>UNB Toward 2030</li>
+          	<li class="footnote" id="footnote2"><a class="footnote-label" href="#footnoteref2">2</a>For further clarification, Creative Commons defined non-commercial<br />
+          	uses “as not primarily intended for or directed towards commercial<br />
+          	advantage or monetary compensation.”</li>
+          </ul>
+          </div>
           </div>
           </div>
 
@@ -227,8 +241,6 @@ elements: |-
           i_support_this_updated_open_access_policy:
             '#type': checkbox
             '#title': 'I support this updated Open Access Policy'
-            '#field_suffix': '<span class="text-unb-red">(required)</span>'
-            '#required': true
           provide_feedback:
             '#type': fieldset
             '#title': 'Provide Feedback'
