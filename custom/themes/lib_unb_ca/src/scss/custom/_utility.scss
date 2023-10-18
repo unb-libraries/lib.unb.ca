@@ -31,3 +31,12 @@
 .fa-muted {
   opacity: .7;
 }
+.subtitle {
+  color: $black;
+  font-family: "ProximaNovaA-Thin", "Century Gothic", AppleGothic, Arial, sans-serif;
+  font-size: .93rem;
+  font-weight: bold;
+}
+p.subtitle {
+  font-size: 1.05rem;
+}
