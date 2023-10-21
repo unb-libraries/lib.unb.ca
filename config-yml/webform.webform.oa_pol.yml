@@ -24,7 +24,7 @@ elements: |-
           	<li class="list-inline-item text-muted">On This Page:</li>
           	<li class="list-inline-item"><a href="#edit-draft">View the Draft</a></li>
           	<li class="list-inline-item"><a href="#edit-show-support-container">Show Support / Provide Feedback</a></li>
-          	<li class="list-inline-item"><a href="faqs">FAQs</a></li>
+          	<li class="list-inline-item"><a href="#edit-faq">FAQs</a></li>
           	<li class="list-inline-item"><a href="#edit-definitions">Definitions</a></li>
           </ul>
         '#format': library_page_html
