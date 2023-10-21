@@ -398,7 +398,7 @@ elements: |-
 
           <p>If you have questions about making your work openly available, your <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="149d697c-b025-4302-b034-1a6dfcd71369" href="/node/123">liaison librarian</a> is an excellent contact to discuss open access publishing and related UNB supports.</p>
 
-          <p>If you have feedback or questiopns about the UNB Open Access Policy, contact <a href="oa.policy@unb.ca">oa.policy@unb.ca</a></p>
+          <p>If you have feedback or questiopns about the UNB Open Access Policy, contact <a href="mailto:oa.policy@unb.ca">oa.policy@unb.ca</a></p>
         '#format': library_page_html
       definitions:
         '#type': processed_text
