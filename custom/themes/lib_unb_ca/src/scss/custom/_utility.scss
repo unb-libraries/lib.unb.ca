@@ -76,3 +76,12 @@ p.subtitle {
     font-size: .95rem;
   }
 }
+
+.theme-dark {
+  .custom-control-label {
+    &::before,
+    &::after {
+      top: .25rem
+    }
+  }
+}
