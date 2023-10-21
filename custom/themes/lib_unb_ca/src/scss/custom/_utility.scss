@@ -38,9 +38,41 @@
   font-weight: bold;
 }
 p.subtitle {
-  font-size: 1.05rem;
+  font-family: inherit;
+  font-size: 1rem;
 }
 
 .font-size-smaller {
   font-size: 1rem;
+}
+.legend-small legend {
+  font-size: inherit;
+}
+
+.font-style-normal {
+  font-style: normal;
+}
+
+.font-family-inherit {
+  font-family: inherit;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.limit-height {
+  max-height: 643px;
+}
+@media (min-width: 1367px) {
+  .limit-height {
+    max-height: 601px;
+  }
+}
+
+.custom-dl {
+  dd {
+    margin-left: 0;
+    font-size: .95rem;
+  }
 }
