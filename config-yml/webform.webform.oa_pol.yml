@@ -9,82 +9,116 @@ uid: 1
 template: false
 archive: false
 id: oa_pol
-title: 'Supporting Open Access'
+title: 'UNB Open Access Policy Update'
 description: ''
 category: ''
 elements: |-
   main_wrapper:
     '#type': container
+    nav_wrapper:
+      '#type': container
+      nav_items:
+        '#type': processed_text
+        '#text': |
+          <ul class="list-inline font-size-smaller">
+          	<li class="list-inline-item text-muted">On This Page:</li>
+          	<li class="list-inline-item"><a href="#edit-draft">View the Draft</a></li>
+          	<li class="list-inline-item"><a href="#edit-show-support-container">Show Support / Provide Feedback</a></li>
+          	<li class="list-inline-item"><a href="faqs">FAQs</a></li>
+          	<li class="list-inline-item"><a href="#edit-definitions">Definitions</a></li>
+          </ul>
+        '#format': library_page_html
     section_1:
       '#type': processed_text
       '#wrapper_attributes':
         class:
-          - ml-5
+          - mb-0
       '#text': |
         <div class="row">
-        <div class="col-lg-7">
-        <div class="d-flex flex-wrap justify-content-between">
-        <h2 class="mb-1">UNB Open Access Policy</h2>
-
-        <div class="mb-2"><small><a href="#edit-show-support-container">skip to feedback<span class="fa-arrow-alt-circle-down fas ml-1"></span></a></small></div>
-        </div>
+        <div class="col-lg-6">
+        <h2 class="mb-2 text-black">UNB Open Access Policy</h2>
 
         <p class="subtitle mb-4">Strengthening UNB's research contributions to the advancement of science, scholarship, and the betterment of society</p>
 
-        <h3>Support Open Research</h3>
+        <h3 class="text-unb-red">Support Open Research</h3>
 
-        <p>We ask for the UNB community's particpation and support in a more intentional approach to publishing and research access.</p>
+        <p>UNB Libraries are proposing the adoption of an open access policy to increase the impact of UNB research by making it more accessible.</p>
 
-        <p>We're seeking a commitment for an Open Access Policy, aligned with the role that UNB Libraries plays in contributing our expertise, services, and support locally for UNB researchers and the necessary regional, national, and international open infrastructures and services.</p>
+        <p>An open access (OA) policy would also support authors as they explorer options for compliance with funders' open access requirements.</p>
+
+        <p class="mb-4">We're seeking a commitment for an Open Access Policy, aligned with the role that UNB Libraries plays in contributing our expertise, services, and support locally for UNB researchers and the necessary regional, national, and international open infrastructures and services.</p>
+
+        <p class="text-center border-top border-bottom py-2"><small class="font-italic">UNB exists to serve the public good, to create positive change in the world.</small><br />
+        <cite><small class="font-style-normal text-muted">UNB Towards 2030</small></cite></p>
         </div>
 
-        <div class="col-lg-5 layout__region--second px-lg-5">
-        <div class="embed-responsive embed-responsive-16by9 mb-4"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="border responsive-item" frameborder="0" height="315" src="https://www.youtube.com/embed/VxFtXmWjNXI?si=kWCiZRP7nY6PFHJ2" title="YouTube video player" width="560"></iframe></div>
+        <div class="col-lg-6 layout__region--second pl-lg-5">
+        <div class="card alert alert-info mt-0 mb-5">
+        <div class="card-body">
+        <h3>Information Sessions</h3>
+
+        <p class="card-text">A policy has been shared with Senates on both campuses, and in-person information sessions will be held to review the draft and answer your questions.</p>
+
+        <table class="alert-info table table-borderless table-sm">
+        	<tbody>
+        		<tr class="border-info border-top">
+        			<th colspan="2" scope="col">Saint John</th>
+        		</tr>
+        		<tr class="border-bottom border-info">
+        			<td>Hans W. Klohn Commons<br />
+        			Potash Conference Room, HWK 107</td>
+        			<td class="text-right">Wednesday Oct. 25th<br />
+        			3:30pm</td>
+        		</tr>
+        		<tr>
+        			<th colspan="2">Fredericton</th>
+        		</tr>
+        		<tr class="border-bottom border-info">
+        			<td>Harriet Irving Library<br />
+        			3rd Floor, Event Space</td>
+        			<td class="text-right">Thursday, Nov. 2nd<br />
+        			1:00pm</td>
+        		</tr>
+        	</tbody>
+        </table>
+
+        <p class="card-text mt-5">A video will be made available here following the sessions for anyone who can't attend.</p>
+        </div>
+        </div>
+
+        <p>&nbsp;</p>
         </div>
         </div>
       '#format': library_page_html
-    section_2:
+    section_heading:
       '#type': processed_text
       '#text': |
-        <p class="d-inline-block text-right"><span class="fa-2xl fa-quote-left fas mx-3 text-secondary"></span><small class="border-top pt-2">UNB exists to serve the public good, to create positive change in the world.</small><br />
-        <cite><small class="text-muted">UNB Towards 2030</small></cite></p>
+        <h2 class="text-black mb-0">UNB Open Access Policy (Draft)</h2>
       '#format': library_page_html
     wrapper_sidebar:
       '#type': container
       '#attributes':
         class:
-          - container
-      section_3:
+          - row
+      draft:
         '#type': processed_text
+        '#wrapper_attributes':
+          class:
+            - col-lg-8
         '#text': |
-          <div class="row mb-4">
-          <div class="col-lg-8 mb-4">
-          <div class="d-flex flex-wrap justify-content-between">
-          <h2>UNB Open Access Policy (Draft)</h2>
+          <div class="mb-4">
+          <div class="theme-dark js-form-wrapper p-5 overflow-auto limit-height">
+          <h3 class="font-family-inherit">Preamble</h3>
 
-          <div><a class="btn btn-dark btn-sm link-no-icon" href="/system/files/2023-10/UNB_Libraries-OA_Policy-Draft.pdf">Download as PDF<span class="fa-download fas ml-1"></span></a></div>
-          </div>
+          <p><span class="ml-3">The</span> University of New Brunswick is committed to the democratization of knowledge and recognizes that open research and scholarship practices foster collaborative, community-engaged, reproducible, and impactful scholarship that can “mobilize knowledge to transform communities<a class="see-footnote" href="#footnote1" id="footnoteref1" title="UNB Toward 2030">ii</a>”. As a publicly funded institution, UNB has a responsibility to “tell our story proudly”; to “share the knowledge that is essential to push society forward”, as a “mission of service to our province and the world.”</p>
 
-          <div class="theme-dark js-form-wrapper">
-          <h3>Preamble</h3>
+          <h3 class="font-family-inherit mt-4">Rationale</h3>
 
-          <p>The University of New Brunswick is committed to the democratization of knowledge and recognizes<br />
-          that open research and scholarship practices foster collaborative, community-engaged, reproducible,<br />
-          and impactful scholarship that can “mobilize knowledge to transform communities<a class="see-footnote" href="#footnote1" id="footnoteref1" title="UNB Toward 2030">1</a>”. As a publicly funded<br />
-          institution, UNB has a responsibility to “tell our story proudly”; to “share the knowledge that is essential to<br />
-          push society forward”, as a “mission of service to our province and the world.”</p>
+          <p>Open access accelerates discovery across the disciplines and increases the visibility and impact of research. It facilitates connections and collaborations between scholars and strengthens the rigour of published research by ensuring it is open to scrutiny by all, enabling scholars from all sectors, policymakers, and the public to use and build on this knowledge.</p>
 
-          <h3 class="mt-4">Rationale</h3>
+          <p>Since academic research is developed within this institution and is supported through salaries and tri-agency funding, its dissemination should take place with as little third-party, commercial involvement as is possible.</p>
 
-          <p>Open access accelerates discovery across the disciplines and increases the visibility and impact of research.<br />
-          It facilitates connections and collaborations between scholars and strengthens the rigour of published<br />
-          research by ensuring it is open to scrutiny by all, enabling scholars from all sectors, policymakers, and the<br />
-          public to use and build on this knowledge.</p>
-
-          <p>Since academic research is developed within this institution and is supported through salaries and tri-agency<br />
-          funding, its dissemination should take place with as little third-party, commercial involvement as is possible.</p>
-
-          <h3 class="mt-4">Application / Actions</h3>
+          <h3 class="font-family-inherit mt-4">Application / Actions</h3>
 
           <p>UNB commits to increasing access to the products of research and scholarship consistent with the open access movement. Application of this policy involves the following clauses:</p>
 
@@ -97,15 +131,15 @@ elements: |-
           	</li>
           	<li>Works should be deposited sometime between the date of acceptance and the date of publication.</li>
           	<li>Deposited works may be embargoed to meet publisher or granting body requirements.</li>
-          	<li>The authors of works deposited in UNB Scholar will maintain ownership of their right in their works. To facilitate the dissemination and archiving of deposited works into UNB Scholar, authors grant to UNB Libraries the non-exclusive permission to archive, preserve, reproduce, and freely disseminate an electronic copy of deposited materials, provided that these works are properly attributed to the authors, and that it is done for non-commercial purposes only<a class="see-footnote" href="#footnote2" id="footnoteref2" title="Creative Commons">2</a>.</li>
+          	<li>The authors of works deposited in UNB Scholar will maintain ownership of their right in their works. To facilitate the dissemination and archiving of deposited works into UNB Scholar, authors grant to UNB Libraries the non-exclusive permission to archive, preserve, reproduce, and freely disseminate an electronic copy of deposited materials, provided that these works are properly attributed to the authors, and that it is done for non-commercial purposes only<a class="see-footnote" href="#footnote2" id="footnoteref2" title="Creative Commons">1</a>.</li>
           	<li>Open access will not be considered mandatory, recognizing that, in some cases, its tenets are at odds with the protection of Indigenous Knowledges, legal or privacy requirements, academic freedom, or other interests.</li>
           </ol>
 
-          <h3 class="mt-4">Scope</h3>
+          <h3 class="font-family-inherit mt-4">Scope</h3>
 
           <p>In the spirit of enabling the broadest access to research, accelerating discovery, enabling transparency and reproducibility of research, this policy applies to journal articles, book chapters, and conference papers produced by faculty members, graduate students and any other scholars affiliated with UNB. In addition to these types of scholarly output, authors are urged to consider depositing into the UNB Scholar – or our research data repository, Dataverse – all their scholarly works, regardless of format, including their research data, to enhance visibility and impact of these research outputs.</p>
 
-          <h3 class="mt-4">Implementation</h3>
+          <h3 class="font-family-inherit mt-4">Implementation</h3>
 
           <p>While this policy commits UNB to the open dissemination of research, it also recognizes that the University’s authors are entitled to full control of their intellectual property. UNB faculty, staff and graduate students are encouraged to know their rights as authors and to retain copyright of their works through use of appropriate author addenda when negotiating publication of their works. Further, UNB encourages faculty to understand the open access policies and procedures of their publisher. These policies set out terms and conditions under which open access can be provided, such as the version of a work, which can be made available, time delays after publication and required credit statements or links to the original publication.</p>
 
@@ -114,131 +148,35 @@ elements: |-
           <blockquote class="ml-5">
           <p>This policy come into force on [date] and applies to all applicable works published after this date.</p>
 
-          <p>[Specific university body(ies)] will be responsible for interpreting this policy, resolving disputes concerning its interpretation and application, and recommending changes to the policy to the appropriate university body as necessary</p>
+          <p>[Specific university body(ies)] will be responsible for interpreting this policy, resolving disputes concerning its interpretation and application, and recommending changes to the policy to the appropriate university body as necessary.</p>
           </blockquote>
 
           <div class="clearfix">
           <ul class="footnotes float-right mr-4">
-          	<li class="footnote" id="footnote1"><a class="footnote-label" href="#footnoteref1">1</a>UNB Toward 2030</li>
-          	<li class="footnote" id="footnote2"><a class="footnote-label" href="#footnoteref2">2</a>For further clarification, Creative Commons defined non-commercial<br />
+          	<li class="footnote" id="footnote2"><a class="footnote-label" href="#footnoteref2">1</a>For further clarification, Creative Commons defined non-commercial<br />
           	uses “as not primarily intended for or directed towards commercial<br />
           	advantage or monetary compensation.”</li>
+          	<li class="footnote" id="footnote1"><a class="footnote-label" href="#footnoteref1">ii</a>UNB Toward 2030</li>
           </ul>
           </div>
           </div>
-          </div>
 
-          <div class="col-lg-4 px-0 pl-lg-5">
-          <div class="card alert alert-info mt-0 mb-5">
-          <div class="card-body">
-          <h3 class="alert-info card-title">Open Sessions</h3>
-
-          <p class="card-text"><small>We will be holding several open sessions to present information and provide an opportunity to ask question or provide feedback.</small></p>
-
-          <table class="alert-info table table-borderless table-sm">
-          	<tbody>
-          		<tr class="border-bottom border-info">
-          			<th>Fredericton</th>
-          			<td>Nov.&nbsp;1st 2023</td>
-          		</tr>
-          		<tr class="border-bottom border-info">
-          			<th>Saint John</th>
-          			<td>Nov. 1st 2023</td>
-          		</tr>
-          		<tr>
-          			<th>Virtual</th>
-          			<td>Nov. 1st 2023</td>
-          		</tr>
-          	</tbody>
-          </table>
-          </div>
-          </div>
-
-          <div class="pl-4">
-          <h2>Contacts</h2>
-
-          <div class="mt-4">
-          <h3>Lesley Balcomm<br />
-            <span class="subtitle">Dean of Libraries</span></h3>
-
-          <div class="d-flex flex-wrap justify-content-between">
-          <div><a href="mailto:lbalcomm@unb.ca">lbalcomm@unb.ca</a></div>
-
-          <div><a href="tel:5064587056">506-458-7056</a></div>
-          </div>
-
-          <hr /></div>
-
-          <div class="mt-4">
-          <h3>Joanne Smyth<br />
-          <span class="subtitle">Director, Scholarly Communications</span></h3>
-
-          <ul>
-          	<li>Library Collections</li>
-          	<li>Open Access Models</li>
-          	<li>Scholarly Communication</li>
-          </ul>
-
-          <div class="d-flex flex-wrap justify-content-between">
-          <div><a href="mailto:jsmyth@unb.ca">jsmyth@unb.ca</a></div>
-
-          <div><a href="tel:5064533516">506-453-3516</a></div>
-          </div>
-
-          <hr /></div>
-
-          <div class="mt-4">
-          <h3>James MacKenzie<br />
-          <span class="subtitle">Associate Dean of Libraries, Advanced Digital Research &amp; Scholarship</span></h3>
-
-          <ul>
-          	<li>Digital Hunanities</li>
-          	<li>Digital Publishing</li>
-          	<li>Research Data Management</li>
-          </ul>
-
-          <div class="d-flex flex-wrap justify-content-between">
-          <div><a href="mailto:jmackenz@unb.ca">jmackenz@unb.ca</a></div>
-
-          <div><a href="tel:5062592774">506-259-2774</a></div>
-          </div>
-
-          <hr /></div>
-
-          <div class="mt-4">
-          <h3>Julie Morris<br />
-          <span class="subtitle">Collections Analyst, Bibliometrics Librarian</span></h3>
-
-          <ul>
-          	<li>Bibliometrics</li>
-          	<li>DResearch Impact</li>
-          	<li>French Resources</li>
-          </ul>
-
-          <div class="d-flex flex-wrap justify-content-between">
-          <div><a href="mailto:julie.morris@unb.ca">julie.morris@unb.ca</a></div>
-
-          <div><a href="tel:5064473220">506-447-3220</a></div>
-          </div>
-          </div>
-          </div>
-          </div>
+          <div class="mt-3"><a class="btn btn-dark btn-sm link-no-icon px-3" href="/system/files/2023-10/UNB_Libraries-OA_Policy-Draft.pdf">DOWNLOAD AS PDF<span class="fa-download fas ml-1"></span></a></div>
           </div>
         '#format': library_page_html
       show_support:
         '#type': container
         '#attributes':
           class:
-            - row
+            - col-lg-4
         show_support_container:
           '#type': container
           '#attributes':
             class:
-              - col-lg-8
               - theme-dark
           title:
             '#type': webform_markup
-            '#markup': '<h2 class="mb-0 text-unb-red border-bottom border-unb-red">Show Support!</h2>'
+            '#markup': '<h3 class="mb-0 text-unb-red border-bottom border-unb-red">Show Support!</h3>'
           i_support_this_updated_open_access_policy:
             '#type': checkbox
             '#title': 'I support this updated Open Access Policy'
@@ -249,27 +187,249 @@ elements: |-
               class:
                 - mt-4
                 - row
+                - legend-small
             please_provide_any_feedback_comments_optional_:
               '#type': textarea
-              '#title': 'Please provide any feedback/comments (optional)'
+              '#title': 'Please provide any feedback/comments'
+              '#required': true
               '#wrapper_attributes':
                 class:
                   - mb-3
-            flexbox:
-              '#type': webform_flexbox
-              name_optional_:
-                '#type': textfield
-                '#title': 'Name (optional)'
-              position_optional_:
-                '#type': textfield
-                '#title': 'Position (optional)'
+            name_optional_:
+              '#type': textfield
+              '#title': 'Name (optional)'
+            position_optional_:
+              '#type': textfield
+              '#title': 'Position (optional)'
           actions:
             '#type': webform_actions
             '#title': 'Submit button(s)'
-            '#submit__label': Submit
+            '#submit__label': SUBMIT
             '#submit__attributes':
               class:
-                - px-4
+                - px-5
+    contacts:
+      '#type': container
+      processed_text:
+        '#type': processed_text
+        '#text': |
+          <h2>Contacts</h2>
+
+          <div class="card-group mb-4">
+          <div class="card">
+          <div class="card-body bg-light py-2">
+          <div class="card-title">Lesley Balcomm<br />
+          <span class="subtitle">Dean of Libraries</span></div>
+          </div>
+
+          <div class="card-footer bg-white font-size-smaller">
+          <div class="d-flex flex-wrap justify-content-between">
+          <div><a href="mailto:lbalcomm@unb.ca">lbalcomm@unb.ca</a></div>
+
+          <div><a href="tel:5064587056">506-458-7056</a></div>
+          </div>
+          </div>
+          </div>
+
+          <div class="card mx-lg-2 border">
+          <div class="card-body bg-light py-2">
+          <div class="card-title">Joanne Smyth<br />
+          <span class="subtitle">Director, Scholarly Communications</span></div>
+          </div>
+
+          <div class="card-footer bg-white font-size-smaller">
+          <div class="d-flex flex-wrap justify-content-between">
+          <div><a href="mailto:jsmyth@unb.ca">jsmyth@unb.ca</a></div>
+
+          <div><a href="tel:5064533516">506-453-3516</a></div>
+          </div>
+          </div>
+          </div>
+
+          <div class="card mr-lg-2 border">
+          <div class="card-body bg-light py-2">
+          <div class="card-title">James MacKenzie<br />
+          <span class="subtitle">Associate Dean of Libraries, Advanced Digital Research &amp; Scholarship</span></div>
+          </div>
+
+          <div class="card-footer bg-white font-size-smaller">
+          <div class="d-flex flex-wrap justify-content-between">
+          <div><a href="mailto:jmackenz@unb.ca">jmackenz@unb.ca</a></div>
+
+          <div><a href="tel:5062592774">506-259-2774</a></div>
+          </div>
+          </div>
+          </div>
+
+          <div class="card">
+          <div class="card-body bg-light py-2">
+          <div class="card-title">Julie Morris<br />
+          <span class="subtitle">Collections Analyst, Bibliometrics Librarian</span></div>
+          </div>
+
+          <div class="card-footer bg-white font-size-smaller">
+          <div class="d-flex flex-wrap justify-content-between">
+          <div><a href="mailto:julie.morris@unb.ca">julie.morris@unb.ca</a></div>
+
+          <div><a href="tel:5064473220">506-447-3220</a></div>
+          </div>
+          </div>
+          </div>
+          </div>
+        '#format': library_page_html
+    faq_heading:
+      '#type': processed_text
+      '#text': |
+        <h2 class="text-black mb-0">UNB Open Access Policy FAQs</h2>
+      '#format': library_page_html
+    faq_wrapper_sidebar:
+      '#type': container
+      '#attributes':
+        class:
+          - row
+      faq:
+        '#type': processed_text
+        '#wrapper_attributes':
+          class:
+            - col-lg-8
+        '#text': |
+          <h3 class="font-family-inherit">Supporting the Policy</h3>
+
+          <p class="text-underline">Does UNB Have an Open Access Policy now?</p>
+
+          <p>No. UNB Senates approved an Open Access Statement in 2014 that affirmed support for “experimentation ;with emerging models of open access”. We have moved past the early stage of experimentation, and the existing Statement is no longer aligned with with the academic publishing landscape and the goals of UNB’s Strategic Plan.</p>
+
+          <p class="text-underline">What will be expected of me if an updated UNB Open Access Policy is approved?</p>
+
+          <p>You can deposit a copy of scholarly articles in UNB Scholar within 12 months of publication. In some cases,<br />
+          this may require you to retain your copyright:</p>
+
+          <ul>
+          	<li>If you are unsure about what rights to retain, contact the copyright office at UNB Libraries, before signing any agreement with the publisher.</li>
+          	<li>If the publisher is requiring you to sign a copyright agreement that does not allow self-archiving, use an author addendum to amend the agreement.</li>
+          	<li>If you are not able to secure the rights to deposit, we can at least assist in self-archiving some version of the work provided you are comfortable.</li>
+          </ul>
+
+          <p class="font-italic">This policy does not cover articles published prior to the adoption of the Open Access Policy. However, UNB researchers are welcome to deposit materials published prior to 2023.</p>
+
+          <p class="text-underline">Does depositing in another repository or publishing in an open access journal mean | don't need to deposit my article with UNB?</p>
+
+          <p>Under most arrangements, if you retain the right to deposit in one place, you can deposit in any other website of your choice without any further effort. The UNB Open Access Policy does recommend that a copy containing the finalized text of all scholarly articles be placed in UNB Scholar, UNB's Institutional Repository, even if they are accessible elsewhere.</p>
+
+          <p class="text-underline">When and how do I submit my articles to UNB Scholar, UNB Institutional Repository?</p>
+
+          <p>Scholarly articles should be submitted to UNB Scholar via the <a href="/unb-scholar/deposit">deposit form</a>. The Libraries will manage any embargo periods required by your publisher. Public access to the article will be automatic following any embargo end dates.</p>
+
+          <p class="text-underline">How do I get a copy of the finalized text of my article?</p>
+
+          <p>You can request a clean copy of the finalized text of an article from the publisher following all revisions. If you would like help obtaining a clean copy, please contact <a href="mailto:unb.scholar@unb.ca">unb.scholar@unb.ca</a></p>
+
+          <h3 class="font-family-inherit mt-4">Impact of Policy on the Scholarly Publishing Environment</h3>
+
+          <p class="text-underline">Does this policy limit academic freedom? Might it harm those in tenure processes who need to show publication in specific journals?</p>
+
+          <p>Because you are free to publish in the journal of your choice, the policy will have no impact on the tenure or promotion review process.</p>
+
+          <h3 class="font-family-inherit mt-4">Relation to Other Open Access Policies</h3>
+
+          <p class="text-underline">How is the UNB Open Access Policy related to the Tri-Agency Open Access Policy? By complying with one, do | comply with the other?</p>
+
+          <p>This policy complements the Tri-Agency Open Access Policy which requires peer-reviewed journal articles from Agency funded research by faculty members be deposited in an institutional or disciplinary repository and made openly available within 12 months of publication.</p>
+
+          <p>UNB authors depositing their scholarly articles in UNB Scholar, with an embargo period of 12 months or less, will be fulfilling their obligations under the Tri-Agency OA Policy.</p>
+
+          <p>By reserving sufficient rights to comply with the Tri-Agency Open Access Policy when entering into a publication agreement, authors will already have reserved sufficient rights to comply with UNB's policy.</p>
+
+          <p>If authors comply with the Tri-Agency Open Access Policy by depositing in UNB Scholar, they will at the same time comply with UNB's Open Access Policy.</p>
+
+          <p class="text-underline">Do other institutions have Open Access policies?</p>
+
+          <p>There are similar policies in place at hundreds of institutions worldwide, including Concordia University, Harvard University, MIT, and the University of California system. See a worldwide list of various kinds of open access policies.</p>
+
+          <h3 class="font-family-inherit mt-4">Scope of the Policy</h3>
+
+          <p class="text-underline">What kind of works does the UNB Open Access Policy apply to?</p>
+
+          <p>While all products of research are welcome, only scholarly articles fall within the Policy.</p>
+
+          <p class="text-underline">What version of the paper is submitted under the UNB Open Access Policy?</p>
+
+          <p>The Policy specifies that a copy containing the finalized text of scholarly articles be deposited in UNB Scholar.</p>
+
+          <p class="text-underline">Does the UNB Open Access Policy apply to articles I've already written?</p>
+
+          <p>UNB Libraries welcomes older submissions; however, the Policy applies only to scholarly articles published after the adoption of the policy. If you require assistance to add your previous work to the repository, please contact unb.scholaraunb.ca or your liaison librarian.</p>
+
+          <p class="text-underline">Does the UNB Open Access Policy apply to co-authored papers?</p>
+
+          <p>Yes, scholarly articles authored or co-authored by UNB faculty or graduate students are included in the Policy. If there are multiple UNB authors, only one copy of the paper needs to be submitted.</p>
+
+          <p class="text-underline">Does the UNB Open Access Policy apply to post-doctoral fellows, staff, and others doing research at UNB? papers?</p>
+
+          <p>UNB Libraries welcomes submissions from everyone in the UNB community; however, the policy only applies to UNB faculty members, postdoctoral fellows and students, collectively referred to as “University authors”.</p>
+
+          <p>The policy applies if one or more co-authors are a “University author”.</p>
+
+          <h3 class="font-family-inherit mt-4">Legal Aspects</h3>
+
+          <p class="text-underline">Is UNB taking the rights to my writing?</p>
+
+          <p>All rights to the work remain with the author. Under the UNB Open Access Policy, authors then grant specific ;non-exclusive permissions to UNB Libraries, such as the right to make the article available in UNB Scholar, and to migrate the work to newer formats as they develop for purposes of preservation.</p>
+
+          <p>If your article arises from Tri-Agency funded research awarded after May 1, 2015 (SSHRC, NSERC) or January 1, 2008 (CIHR), you must retain sufficient rights to comply with the Tri-Agency Open Access Policy.</p>
+
+          <h3 class="font-family-inherit mt-4">What will be done with the Articles?</h3>
+
+          <p class="text-underline">What will UNB do with the articles?</p>
+
+          <p>UNB will continue to operate its Institutional Repository, UNB Scholar, to make available the scholarly articles ;provided under the UNB Open Access Policy. To aid in discoverability, materials in the repository are assigned metadata and optimized for discovery via search engines such as Google, Google Scholar, and OpenAIRE. UNB Scholar also provides a persistent URL for each deposited object and secure replicated storage, ensuring that its contents will continue to be available to readers in the future.</p>
+
+          <h3 class="font-family-inherit mt-4">More Information</h3>
+
+          <p class="text-underline">Who will be responsible for interpreting UNB’s Open Access Policy?</p>
+
+          <p>The VP Research, in consultation with the Dean of Libraries, will be responsible for interpreting this policy,&nbsp;resolving disputes concerning its interpretation and application, and recommending changes to Senate periodically.</p>
+
+          <p class="text-underline">Can UNB delay access to my article / Can | place an embargo on my article?</p>
+
+          <p>When submitting an article to UNB Scholar, University authors may stipulate an embargo period in cases where&nbsp;a publisher requires a delay before posting.</p>
+
+          <p class="text-underline">Who should | contact if | have feedback or questions about UNB's Open Access Policy?</p>
+
+          <p>If you have questions about making your work openly available, your liaison librarianis an excellent contact to discuss open access publishing and related UNB supports.</p>
+
+          <p>If you have feedback or questiopns about the UNB Open Access Policy, contact <a href="oa.policy@unb.ca">oa.policy@unb.ca</a></p>
+        '#format': library_page_html
+      definitions:
+        '#type': processed_text
+        '#wrapper_attributes':
+          class:
+            - col-lg-4
+        '#text': |
+          <h3 class="font-family-inherit mb-3">Definitions</h3>
+
+          <dl class="custom-dl">
+          	<dt>Open Access</dt>
+          	<dd>Publications that are free to read on the internet. Readers can download, copy, and distribute an Open Access publication, as long as credit is given to the authors.</dd>
+          	<dt>Research / Institutional Repository</dt>
+          <dd>A digital collection of the scholarship of an institution's researchers. Research repositories both preserve intellectual output and allow for wide distribution. UNB’s research repository is UNB Scholar. Research repositories are also called institutional repositories.</dd>
+          <dt>Subject / Disciplinary Repository</dt>
+          <dd>A digital collection of publications in a particular subject area. These repositories collect, preserve, and provide open access to the publications. Examples include arXiv,
+          RePEc, and PubMed Central. Subject repositories are
+            also called disciplinary repositories.</dd>
+
+          <dt>Finalized Text</dt>
+          <dd>Term used to describe any copy of the accepted version of an article after peer-review, that includes the final version of the author's text, with revisions having been made.</dd>
+
+          <dt>Author Addendum</dt>
+          <dd>A legal instrument that modifies the publisher's
+          copyright transfer agreement and allows you to keep
+          tights to your article(s). E.g. SPARC Canadian Author Addendum.</dd>
+
+          <dt>University Authors</dt>
+          <dd>For the Open Access Policy at UNB, university authors include current faculty members, postdoctoral fellows, and students. We respectfully acknowledge that many members of UNB staff also author academic papers. These are also welcome for deposit.</dd>
+          </dl>
+        '#format': library_page_html
 css: ''
 javascript: ''
 settings:
@@ -374,10 +534,10 @@ settings:
   draft_loaded_message: ''
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
-  confirmation_type: page
+  confirmation_type: message
   confirmation_url: ''
   confirmation_title: ''
-  confirmation_message: ''
+  confirmation_message: "<p>Successfully Submitted</p>\r\n\r\n<p>Thank you for taking the time to submit your feedback to UNB Libraries.</p>"
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
@@ -408,7 +568,8 @@ settings:
   serial_disabled: false
 access:
   create:
-    roles: {  }
+    roles:
+      - saml_unb_active
     users: {  }
     permissions:
       - 'administer webform'
@@ -452,5 +613,42 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers: {  }
+handlers:
+  email_submission:
+    id: email
+    handler_id: email_submission
+    label: 'Email submission'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: oa.policy@unb.ca
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: unb-libraries-no-reply@unb.ca
+      from_options: {  }
+      from_name: ''
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'UNB OA Policy Update Feedback'
+      body: '[webform_submission:values]'
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
 variants: {  }
