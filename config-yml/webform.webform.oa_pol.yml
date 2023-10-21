@@ -297,7 +297,7 @@ elements: |-
 
           <p class="text-underline">Does UNB Have an Open Access Policy now?</p>
 
-          <p>No. UNB Senates approved an Open Access Statement in 2014 that affirmed support for “experimentation ;with emerging models of open access”. We have moved past the early stage of experimentation, and the existing Statement is no longer aligned with with the academic publishing landscape and the goals of UNB’s Strategic Plan.</p>
+          <p>No. UNB Senates approved an Open Access Statement in 2014 that affirmed support for “experimentation with emerging models of open access”. We have moved past the early stage of experimentation, and the existing Statement is no longer aligned with with the academic publishing landscape and the goals of UNB’s Strategic Plan.</p>
 
           <p class="text-underline">What will be expected of me if an updated UNB Open Access Policy is approved?</p>
 
@@ -358,7 +358,7 @@ elements: |-
 
           <p class="text-underline">Does the UNB Open Access Policy apply to articles I've already written?</p>
 
-          <p>UNB Libraries welcomes older submissions; however, the Policy applies only to scholarly articles published after the adoption of the policy. If you require assistance to add your previous work to the repository, please contact unb.scholaraunb.ca or your liaison librarian.</p>
+          <p>UNB Libraries welcomes older submissions; however, the Policy applies only to scholarly articles published after the adoption of the policy. If you require assistance to add your previous work to the repository, please contact <a href="mailto:unb.scholar@unb.ca">unb.scholar@unb.ca</a> or your liaison librarian.</p>
 
           <p class="text-underline">Does the UNB Open Access Policy apply to co-authored papers?</p>
 
@@ -374,7 +374,7 @@ elements: |-
 
           <p class="text-underline">Is UNB taking the rights to my writing?</p>
 
-          <p>All rights to the work remain with the author. Under the UNB Open Access Policy, authors then grant specific ;non-exclusive permissions to UNB Libraries, such as the right to make the article available in UNB Scholar, and to migrate the work to newer formats as they develop for purposes of preservation.</p>
+          <p>All rights to the work remain with the author. Under the UNB Open Access Policy, authors then grant specific non-exclusive permissions to UNB Libraries, such as the right to make the article available in UNB Scholar, and to migrate the work to newer formats as they develop for purposes of preservation.</p>
 
           <p>If your article arises from Tri-Agency funded research awarded after May 1, 2015 (SSHRC, NSERC) or January 1, 2008 (CIHR), you must retain sufficient rights to comply with the Tri-Agency Open Access Policy.</p>
 
@@ -382,7 +382,7 @@ elements: |-
 
           <p class="text-underline">What will UNB do with the articles?</p>
 
-          <p>UNB will continue to operate its Institutional Repository, UNB Scholar, to make available the scholarly articles ;provided under the UNB Open Access Policy. To aid in discoverability, materials in the repository are assigned metadata and optimized for discovery via search engines such as Google, Google Scholar, and OpenAIRE. UNB Scholar also provides a persistent URL for each deposited object and secure replicated storage, ensuring that its contents will continue to be available to readers in the future.</p>
+          <p>UNB will continue to operate its Institutional Repository, UNB Scholar, to make available the scholarly articles provided under the UNB Open Access Policy. To aid in discoverability, materials in the repository are assigned metadata and optimized for discovery via search engines such as Google, Google Scholar, and OpenAIRE. UNB Scholar also provides a persistent URL for each deposited object and secure replicated storage, ensuring that its contents will continue to be available to readers in the future.</p>
 
           <h3 class="font-family-inherit mt-4">More Information</h3>
 
@@ -396,7 +396,7 @@ elements: |-
 
           <p class="text-underline">Who should | contact if | have feedback or questions about UNB's Open Access Policy?</p>
 
-          <p>If you have questions about making your work openly available, your liaison librarianis an excellent contact to discuss open access publishing and related UNB supports.</p>
+          <p>If you have questions about making your work openly available, your <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="149d697c-b025-4302-b034-1a6dfcd71369" href="/node/123">liaison librarian</a> is an excellent contact to discuss open access publishing and related UNB supports.</p>
 
           <p>If you have feedback or questiopns about the UNB Open Access Policy, contact <a href="oa.policy@unb.ca">oa.policy@unb.ca</a></p>
         '#format': library_page_html
