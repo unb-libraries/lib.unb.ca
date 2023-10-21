@@ -145,10 +145,10 @@ elements: |-
 
           <p>This policy is intended to encourage open access to scholarly work and strengthen author rights. This policy is to be read and interpreted in a manner consistent with relevant collective agreements and University policies related to academic freedom and intellectual property.</p>
 
-          <blockquote class="ml-5">
-          <p>This policy come into force on [date] and applies to all applicable works published after this date.</p>
+          <blockquote class="border-0 ml-5">
+          <p>This policy come into force on <span class="font-italic">[date]</span> and applies to all applicable works published after this date.</p>
 
-          <p>[Specific university body(ies)] will be responsible for interpreting this policy, resolving disputes concerning its interpretation and application, and recommending changes to the policy to the appropriate university body as necessary.</p>
+            <p><span class="font-italic">[Specific university body(ies)]</span> will be responsible for interpreting this policy, resolving disputes concerning its interpretation and application, and recommending changes to the policy to the appropriate university body as necessary.</p>
           </blockquote>
 
           <div class="clearfix">
