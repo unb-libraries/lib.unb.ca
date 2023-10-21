@@ -213,7 +213,7 @@ elements: |-
       processed_text:
         '#type': processed_text
         '#text': |
-          <h2>Contacts</h2>
+          <h2 class="text-black">Contacts</h2>
 
           <div class="card-group mb-4">
           <div class="card">
