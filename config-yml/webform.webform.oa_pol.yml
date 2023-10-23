@@ -185,6 +185,7 @@ elements: |-
             '#wrapper_attributes':
               class:
                 - mb-4
+                - font-weight-bold
           name_optional_:
             '#type': textfield
             '#title': Name
