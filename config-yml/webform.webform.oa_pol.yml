@@ -148,7 +148,7 @@ elements: |-
           <blockquote class="border-0 ml-5">
           <p>This policy come into force on <span class="font-italic">[date]</span> and applies to all applicable works published after this date.</p>
 
-            <p><span class="font-italic">[Specific university body(ies)]</span> will be responsible for interpreting this policy, resolving disputes concerning its interpretation and application, and recommending changes to the policy to the appropriate university body as necessary.</p>
+          <p><span class="font-italic">[Specific university body(ies)]</span> will be responsible for interpreting this policy, resolving disputes concerning its interpretation and application, and recommending changes to the policy to the appropriate university body as necessary.</p>
           </blockquote>
 
           <div class="clearfix">
@@ -156,7 +156,7 @@ elements: |-
           	<li class="footnote" id="footnote2"><a class="footnote-label" href="#footnoteref2">1</a>For further clarification, Creative Commons defined non-commercial<br />
           	uses “as not primarily intended for or directed towards commercial<br />
           	advantage or monetary compensation.”</li>
-          	<li class="footnote" id="footnote1"><a class="footnote-label" href="#footnoteref1">ii</a>UNB Toward 2030</li>
+          	<li class="footnote" id="footnote1"><a class="footnote-label" href="#footnoteref1">ii</a><a href="https://www.unb.ca/toward2030/ourplan.html">UNB Toward 2030</a></li>
           </ul>
           </div>
           </div>
@@ -224,7 +224,7 @@ elements: |-
 
           <div class="card-footer bg-white font-size-smaller">
           <div class="d-flex flex-wrap justify-content-between">
-          <div><a href="mailto:lbalcomm@unb.ca">lbalcomm@unb.ca</a></div>
+          <div><a href="/contact-unb-libraries-staff?recipient=lbalcom">lbalcomm@unb.ca</a></div>
 
           <div><a href="tel:5064587056">506-458-7056</a></div>
           </div>
@@ -239,7 +239,7 @@ elements: |-
 
           <div class="card-footer bg-white font-size-smaller">
           <div class="d-flex flex-wrap justify-content-between">
-          <div><a href="mailto:jsmyth@unb.ca">jsmyth@unb.ca</a></div>
+          <div><a href="/contact-unb-libraries-staff?recipient=jsmyth">jsmyth@unb.ca</a></div>
 
           <div><a href="tel:5064533516">506-453-3516</a></div>
           </div>
@@ -254,7 +254,7 @@ elements: |-
 
           <div class="card-footer bg-white font-size-smaller">
           <div class="d-flex flex-wrap justify-content-between">
-          <div><a href="mailto:jmackenz@unb.ca">jmackenz@unb.ca</a></div>
+          <div><a href="/contact-unb-libraries-staff?recipient=jmackenz">jmackenz@unb.ca</a></div>
 
           <div><a href="tel:5062592774">506-259-2774</a></div>
           </div>
@@ -269,7 +269,7 @@ elements: |-
 
           <div class="card-footer bg-white font-size-smaller">
           <div class="d-flex flex-wrap justify-content-between">
-          <div><a href="mailto:julie.morris@unb.ca">julie.morris@unb.ca</a></div>
+          <div><a href="/contact-unb-libraries-staff?recipient=jmorris9">julie.morris@unb.ca</a></div>
 
           <div><a href="tel:5064473220">506-447-3220</a></div>
           </div>
