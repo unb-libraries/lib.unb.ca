@@ -181,28 +181,23 @@ elements: |-
             '#markup': '<h3 class="mb-0 text-unb-red border-bottom border-unb-red">Show Support!</h3>'
           i_support_this_updated_open_access_policy:
             '#type': checkbox
-            '#title': 'I support this updated Open Access Policy'
-          provide_feedback:
-            '#type': fieldset
-            '#title': 'Provide Feedback'
-            '#attributes':
+            '#title': 'I support this Open Access Policy'
+            '#wrapper_attributes':
               class:
-                - mt-4
-                - row
-                - legend-small
-            please_provide_any_feedback_comments_optional_:
-              '#type': textarea
-              '#title': 'Please provide any feedback/comments'
-              '#wrapper_attributes':
-                class:
-                  - mb-3
-            name_optional_:
-              '#type': textfield
-              '#title': Name
-              '#required': true
-            position_optional_:
-              '#type': textfield
-              '#title': Position
+                - mb-4
+          name_optional_:
+            '#type': textfield
+            '#title': Name
+            '#required': true
+          position_optional_:
+            '#type': textfield
+            '#title': 'Position <small class="text-muted">(optional)</small>'
+          please_provide_any_feedback_comments_optional_:
+            '#type': textarea
+            '#title': 'Please provide any feedback/comments <small class="text-muted">(optional)</small>'
+            '#wrapper_attributes':
+              class:
+                - mb-3
           actions:
             '#type': webform_actions
             '#title': 'Submit button(s)'
