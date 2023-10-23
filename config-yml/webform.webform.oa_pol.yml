@@ -193,16 +193,16 @@ elements: |-
             please_provide_any_feedback_comments_optional_:
               '#type': textarea
               '#title': 'Please provide any feedback/comments'
-              '#required': true
               '#wrapper_attributes':
                 class:
                   - mb-3
             name_optional_:
               '#type': textfield
-              '#title': 'Name (optional)'
+              '#title': Name
+              '#required': true
             position_optional_:
               '#type': textfield
-              '#title': 'Position (optional)'
+              '#title': Position
           actions:
             '#type': webform_actions
             '#title': 'Submit button(s)'
