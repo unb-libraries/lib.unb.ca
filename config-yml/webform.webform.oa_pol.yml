@@ -110,7 +110,7 @@ elements: |-
           <div class="theme-dark js-form-wrapper p-5 overflow-auto limit-height">
           <h3 class="font-family-inherit">Preamble</h3>
 
-          <p><span class="ml-3">The</span> University of New Brunswick is committed to the democratization of knowledge and recognizes that open research and scholarship practices foster collaborative, community-engaged, reproducible, and impactful scholarship that can “mobilize knowledge to transform communities<a class="see-footnote" href="#footnote1" id="footnoteref1" title="Adaptation and license">i</a>”. As a publicly funded institution, UNB has a responsibility to “tell our story proudly”; to “share the knowledge that is essential to push society forward”, as a “mission of service to our province and the world<a class="see-footnote" href="#footnote2" id="footnoteref2" title="UNB Toward 2030">ii</a>.”</p>
+          <p><span class="ml-3">The</span> University of New Brunswick is committed to the democratization of knowledge and recognizes that open research and scholarship practices foster collaborative, community-engaged, reproducible, and impactful scholarship that can “mobilize knowledge to transform communities.”<a class="see-footnote" href="#footnote1" id="footnoteref1" title="Adaptation and license">i</a> As a publicly funded institution, UNB has a responsibility to “tell our story proudly”; to “share the knowledge that is essential to push society forward”, as a “mission of service to our province and the world.”<a class="see-footnote" href="#footnote2" id="footnoteref2" title="UNB Toward 2030">ii</a></p>
 
           <h3 class="font-family-inherit mt-4">Rationale</h3>
 
