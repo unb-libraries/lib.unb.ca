@@ -38,7 +38,7 @@ class DeansMessage extends BlockBase {
   protected function getValue() {
     // Note: image manually resized to match Content Lg Breakpoint image style.
     $html = '
-      <a href="/what-to-expect">
+      <a href="/oa-policy">
         <figure class="figcaption-overlay front-page-border">
             <img src="/modules/custom/lib_core/img/towards_open.jpg"
               alt="Towards Open: UNB Libraries are proposing the adoption of an open access policy to increase the 
