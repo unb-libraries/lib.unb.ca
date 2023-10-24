@@ -40,9 +40,10 @@ class DeansMessage extends BlockBase {
     $html = '
       <a href="/what-to-expect">
         <figure class="figcaption-overlay front-page-border">
-            <img src="/modules/custom/lib_core/img/lesley-balcomm-welcome-unb-libraries.png"
-              alt="Welcome to UNB Libraries">
-            <figcaption class="caption-bottom font-weight-bold">Welcome and FAQs</figcaption>
+            <img src="/modules/custom/lib_core/img/towards_open.jpg"
+              alt="Towards Open: UNB Libraries are proposing the adoption of an open access policy to increase the 
+              impact of UNB research by making it more accessible.">
+            <figcaption class="caption-bottom font-size-smaller">More information, view the policy, show support and provide feedback here &raquo;</figcaption>
         </figure>
       </a>
     ';
