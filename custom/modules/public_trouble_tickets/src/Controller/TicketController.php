@@ -39,7 +39,7 @@ class TicketController extends ControllerBase {
     $fogbugz = \Drupal::service('fogbugz_api.manager');
     $case = $fogbugz->getCase($id);
 
-    if (!$case) {
+    if (!$case || !in_array('trouble_ticket_eresources', $case->getTags())) {
       throw new NotFoundHttpException();
     }
 
