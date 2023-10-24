@@ -196,6 +196,7 @@ elements: |-
           please_provide_any_feedback_comments_optional_:
             '#type': textarea
             '#title': 'Please provide any feedback/comments <small class="text-muted">(optional)</small>'
+            '#rows': 8
             '#wrapper_attributes':
               class:
                 - mb-3
