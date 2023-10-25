@@ -78,7 +78,7 @@ settings:
     codemirror:
       enable: true
       mode: application/x-httpd-php
-      theme: tomorrow-night-bright
+      theme: xq-dark
       startupMode: wysiwyg
       options:
         lineNumbers: true
