@@ -228,11 +228,16 @@ class EresourcesListForm extends FormBase {
       $text .= '<ul>';
       foreach ($links as $link) {
         $guide = $link->get('guide')->entity;
-        $label = $guide->label();
-        $url = $guide->toUrl()->toString();
-        $sectionId = $link->get('section')->getString();
-        $section = $this->entityTypeManager->getStorage('paragraph')->load($sectionId)->field_section_label->getString();
-        $text .= "<li><a href=\"{$url}#section-{$sectionId}\" target=\"_blank\">$label</a> <span>({$section})</span></li>";
+        if (!$guide) {
+          $text .= '<li>[Deleted Guide: ID #' . $link->get('guide')->getString() . ']</li>';
+        }
+        else {
+          $label = $guide->label();
+          $url = $guide->toUrl()->toString();
+          $sectionId = $link->get('section')->getString();
+          $section = $this->entityTypeManager->getStorage('paragraph')->load($sectionId)->field_section_label->getString();
+          $text .= "<li><a href=\"{$url}#section-{$sectionId}\" target=\"_blank\">$label</a> <span>({$section})</span></li>";
+        }
       }
       $text .= '</ul>';
     }
