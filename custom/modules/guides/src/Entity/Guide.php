@@ -234,6 +234,22 @@ class Guide extends RevisionableContentEntityBase implements ContentEntityInterf
   /**
    * {@inheritDoc}
    */
+  public function delete() {
+    if (!$this->isNew()) {
+      $linkStorage = $this->entityTypeManager()->getStorage('eresources_guide_link');
+      $query = $linkStorage->getQuery();
+      $ids = $query->condition('guide', $this->id())->execute();
+      if ($ids) {
+        $links = $linkStorage->loadMultiple($ids);
+        $linkStorage->delete($links);
+      }
+    }
+    return parent::delete();
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public function save() {
     if (!$this->isNew()) {
       $this->setNewRevision(TRUE);
