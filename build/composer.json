@@ -312,7 +312,7 @@
     "drupal/csv_serialization": "3.0.1",
     "drupal/easy_breadcrumb": "2.0.5",
     "drupal/editor_file": "1.7",
-    "drupal/embed": "1.6",
+    "drupal/embed": "1.7",
     "drupal/entity_browser": "2.9",
     "drupal/entity_embed": "1.4",
     "drupal/entity_reference_revisions": "1.10",
