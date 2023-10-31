@@ -70,6 +70,11 @@ figcaption .font-size-smaller {
 .limit-height {
   max-height: 655px;
 }
+@media (min-width: 1194px) {
+  .limit-height {
+    max-height: 627px;
+  }
+}
 @media (min-width: 1367px) {
   .limit-height {
     max-height: 613px;
