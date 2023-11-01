@@ -110,7 +110,7 @@ elements: |-
           <div class="theme-dark js-form-wrapper p-5 overflow-auto limit-height">
           <h3 class="font-family-inherit">Preamble</h3>
 
-          <p><span class="ml-3">The</span> University of New Brunswick is committed to the democratization of knowledge and recognizes that open research and scholarship practices foster collaborative, community-engaged, reproducible, and impactful scholarship that can “mobilize knowledge to transform communities.”<a class="see-footnote" href="#footnote1" id="footnoteref1" title="Adaptation and license">i</a> As a publicly funded institution, UNB has a responsibility to “tell our story proudly”; to “share the knowledge that is essential to push society forward”, as a “mission of service to our province and the world.”<a class="see-footnote" href="#footnote2" id="footnoteref2" title="UNB Toward 2030">ii</a></p>
+          <p><span class="ml-3">The</span> University of New Brunswick is committed to the democratization of knowledge and recognizes that open research and scholarship practices foster collaborative, community-engaged, reproducible, and impactful scholarship that can “mobilize knowledge to transform communities.”<a class="see-footnote link-no-hover" href="#footnote1" id="footnoteref1" title="Adaptation and license">i</a> As a publicly funded institution, UNB has a responsibility to “tell our story proudly”; to “share the knowledge that is essential to push society forward”, as a “mission of service to our province and the world.”<a class="see-footnote link-no-hover" href="#footnote2" id="footnoteref2" title="UNB Toward 2030">ii</a></p>
 
           <h3 class="font-family-inherit mt-4">Rationale</h3>
 
@@ -146,7 +146,7 @@ elements: |-
           <p>This policy is intended to encourage open access to scholarly work and strengthen author rights. This policy is to be read and interpreted in a manner consistent with relevant collective agreements and University policies related to academic freedom and intellectual property.</p>
 
           <blockquote class="border-0 ml-5">
-          <p>This policy come into force on <span class="font-italic">[date]</span> and applies to all applicable works published after this date.</p>
+          <p>This policy comes into force on <span class="font-italic">[date]</span> and applies to all applicable works published after this date.</p>
 
           <p><span class="font-italic"></span>The VP Research, in consultation with the Dean of Libraries will be responsible for interpreting this policy, resolving disputes concerning its interpretation and application, and recommending changes to the policy to the appropriate university body as necessary.</p>
           </blockquote>
@@ -156,9 +156,9 @@ elements: |-
           	<li class="footnote" id="footnote3"><a class="footnote-label" href="#footnoteref3">1</a>For further clarification, Creative Commons defined non-commercial<br />
           	uses “as not primarily intended for or directed towards commercial<br />
           	advantage or monetary compensation.”</li>
-          	<li class="footnote" id="footnote1"><a class="footnote-label" href="#footnoteref1">i</a> Adapted from <a href="https://www.carl-abrc.ca/oa-policy-template-and-toolkit/sections-of-a-typical-policy/#institutionalrelevance">CARL Institutional Open Access Policy Template</a> and<br />
-          	licensed under a <a href="https://creativecommons.org/licenses/by/4.0/deed.en">Creative Commons Attribution 4.0 International License</a></li>
-          	<li class="footnote" id="footnote2"><a class="footnote-label" href="#footnoteref2">ii</a><a href="https://www.unb.ca/toward2030/ourplan.html">UNB Toward 2030</a></li>
+          	<li class="footnote" id="footnote1"><a class="footnote-label" href="#footnoteref1">i</a> <span class="link-underline">Adapted from <a href="https://www.carl-abrc.ca/oa-policy-template-and-toolkit/sections-of-a-typical-policy/#institutionalrelevance">CARL Institutional Open Access Policy Template</a> and<br />
+          	licensed under a <a href="https://creativecommons.org/licenses/by/4.0/deed.en">Creative Commons Attribution 4.0 International License</a></span></li>
+          	<li class="footnote" id="footnote2"><a class="footnote-label" href="#footnoteref2">ii</a><span class="link-underline"><a href="https://www.unb.ca/toward2030/ourplan.html">UNB Toward 2030</a></span></li>
           </ul>
           </div>
           </div>
@@ -294,110 +294,88 @@ elements: |-
         '#text': |
           <h3 class="font-family-inherit">Supporting the Policy</h3>
 
-          <p class="text-underline">Does UNB Have an Open Access Policy now?</p>
-
-          <p>No. UNB Senates approved an Open Access Statement in 2014 that affirmed support for “experimentation with emerging models of open access”. We have moved past the early stage of experimentation, and the existing Statement is no longer aligned with with the academic publishing landscape and the goals of UNB’s Strategic Plan.</p>
-
-          <p class="text-underline">What will be expected of me if an updated UNB Open Access Policy is approved?</p>
-
-          <p>You can deposit a copy of scholarly articles in UNB Scholar within 12 months of publication. In some cases,<br />
-          this may require you to retain your copyright:</p>
-
-          <ul>
-          	<li>If you are unsure about what rights to retain, contact the copyright office at UNB Libraries, before signing any agreement with the publisher.</li>
-          	<li>If the publisher is requiring you to sign a copyright agreement that does not allow self-archiving, use an author addendum to amend the agreement.</li>
-          	<li>If you are not able to secure the rights to deposit, we can at least assist in self-archiving some version of the work provided you are comfortable.</li>
-          </ul>
-
-          <p class="font-italic">This policy does not cover articles published prior to the adoption of the Open Access Policy. However, UNB researchers are welcome to deposit materials published prior to 2023.</p>
-
-          <p class="text-underline">Does depositing in another repository or publishing in an open access journal mean | don't need to deposit my article with UNB?</p>
-
-          <p>Under most arrangements, if you retain the right to deposit in one place, you can deposit in any other website of your choice without any further effort. The UNB Open Access Policy does recommend that a copy containing the finalized text of all scholarly articles be placed in UNB Scholar, UNB's Institutional Repository, even if they are accessible elsewhere.</p>
-
-          <p class="text-underline">When and how do I submit my articles to UNB Scholar, UNB Institutional Repository?</p>
-
-          <p>Scholarly articles should be submitted to UNB Scholar via the <a href="/unb-scholar/deposit">deposit form</a>. The Libraries will manage any embargo periods required by your publisher. Public access to the article will be automatic following any embargo end dates.</p>
-
-          <p class="text-underline">How do I get a copy of the finalized text of my article?</p>
-
-          <p>You can request a clean copy of the finalized text of an article from the publisher following all revisions. If you would like help obtaining a clean copy, please contact <a href="mailto:unb.scholar@unb.ca">unb.scholar@unb.ca</a></p>
+          <dl class="faq link-underline">
+          	<dt>Does UNB Have an Open Access Policy now?</dt>
+          	<dd>No. UNB Senates approved an Open Access Statement in 2014 that affirmed support for “experimentation with emerging models of open access”. We have moved past the early stage of experimentation, and the existing Statement is no longer aligned with with the academic publishing landscape and the goals of UNB’s Strategic Plan.</dd>
+          	<dt>What will be expected of me if an updated UNB Open Access Policy is approved?</dt>
+          	<dd>You can deposit a copy of scholarly articles in UNB Scholar within 12 months of publication. In some cases, this may require you to retain your copyright:</dd>
+          	<dd>
+          	<ul>
+          		<li>If you are unsure about what rights to retain, contact the copyright office at UNB Libraries, before signing any agreement with the publisher.</li>
+          		<li>If the publisher is requiring you to sign a copyright agreement that does not allow self-archiving, use an author addendum to amend the agreement.</li>
+          		<li>If you are not able to secure the rights to deposit, we can at least assist in self-archiving some version of the work provided you are comfortable.</li>
+          	</ul>
+          	</dd>
+          	<dd class="font-italic">This policy does not cover articles published prior to the adoption of the Open Access Policy. However, UNB researchers are welcome to deposit materials published prior to 2023.</dd>
+          	<dt>Does depositing in another repository or publishing in an open access journal mean | don't need to deposit my article with UNB?</dt>
+          	<dd>Under most arrangements, if you retain the right to deposit in one place, you can deposit in any other website of your choice without any further effort. The UNB Open Access Policy does recommend that a copy containing the finalized text of all scholarly articles be placed in UNB Scholar, UNB's Institutional Repository, even if they are accessible elsewhere.</dd>
+          	<dt>When and how do I submit my articles to UNB Scholar, UNB Institutional Repository?</dt>
+          	<dd>Scholarly articles should be submitted to UNB Scholar via the <a href="/unb-scholar/deposit">deposit form</a>. The Libraries will manage any embargo periods required by your publisher. Public access to the article will be automatic following any embargo end dates.</dd>
+          	<dt>How do I get a copy of the finalized text of my article?</dt>
+          	<dd>You can request a clean copy of the finalized text of an article from the publisher following all revisions. If you would like help obtaining a clean copy, please contact <a href="mailto:unb.scholar@unb.ca">unb.scholar@unb.ca</a></dd>
+          </dl>
 
           <h3 class="font-family-inherit mt-4">Impact of Policy on the Scholarly Publishing Environment</h3>
 
-          <p class="text-underline">Does this policy limit academic freedom? Might it harm those in tenure processes who need to show publication in specific journals?</p>
-
-          <p>Because you are free to publish in the journal of your choice, the policy will have no impact on the tenure or promotion review process.</p>
+          <dl class="faq">
+          	<dt>Does this policy limit academic freedom? Might it harm those in tenure processes who need to show publication in specific journals?</dt>
+          	<dd>Because you are free to publish in the journal of your choice, the policy will have no impact on the tenure or promotion review process.</dd>
+          </dl>
 
           <h3 class="font-family-inherit mt-4">Relation to Other Open Access Policies</h3>
 
-          <p class="text-underline">How is the UNB Open Access Policy related to the Tri-Agency Open Access Policy? By complying with one, do | comply with the other?</p>
-
-          <p>This policy complements the Tri-Agency Open Access Policy which requires peer-reviewed journal articles from Agency funded research by faculty members be deposited in an institutional or disciplinary repository and made openly available within 12 months of publication.</p>
-
-          <p>UNB authors depositing their scholarly articles in UNB Scholar, with an embargo period of 12 months or less, will be fulfilling their obligations under the Tri-Agency OA Policy.</p>
-
-          <p>By reserving sufficient rights to comply with the Tri-Agency Open Access Policy when entering into a publication agreement, authors will already have reserved sufficient rights to comply with UNB's policy.</p>
-
-          <p>If authors comply with the Tri-Agency Open Access Policy by depositing in UNB Scholar, they will at the same time comply with UNB's Open Access Policy.</p>
-
-          <p class="text-underline">Do other institutions have Open Access policies?</p>
-
-          <p>There are similar policies in place at hundreds of institutions worldwide, including Concordia University, Harvard University, MIT, and the University of California system. See a worldwide list of various kinds of open access policies.</p>
+          <dl class="faq">
+          	<dt>How is the UNB Open Access Policy related to the Tri-Agency Open Access Policy? By complying with one, do | comply with the other?</dt>
+          	<dd>This policy complements the Tri-Agency Open Access Policy which requires peer-reviewed journal articles from Agency funded research by faculty members be deposited in an institutional or disciplinary repository and made openly available within 12 months of publication.</dd>
+          	<dd>UNB authors depositing their scholarly articles in UNB Scholar, with an embargo period of 12 months or less, will be fulfilling their obligations under the Tri-Agency OA Policy.</dd>
+          	<dd>By reserving sufficient rights to comply with the Tri-Agency Open Access Policy when entering into a publication agreement, authors will already have reserved sufficient rights to comply with UNB's policy.</dd>
+          	<dd>If authors comply with the Tri-Agency Open Access Policy by depositing in UNB Scholar, they will at the same time comply with UNB's Open Access Policy.</dd>
+          	<dt>Do other institutions have Open Access policies?</dt>
+          	<dd>There are similar policies in place at hundreds of institutions worldwide, including Concordia University, Harvard University, MIT, and the University of California system. See a worldwide list of various kinds of open access policies.</dd>
+          </dl>
 
           <h3 class="font-family-inherit mt-4">Scope of the Policy</h3>
 
-          <p class="text-underline">What kind of works does the UNB Open Access Policy apply to?</p>
-
-          <p>While all products of research are welcome, only scholarly articles fall within the Policy.</p>
-
-          <p class="text-underline">What version of the paper is submitted under the UNB Open Access Policy?</p>
-
-          <p>The Policy specifies that a copy containing the finalized text of scholarly articles be deposited in UNB Scholar.</p>
-
-          <p class="text-underline">Does the UNB Open Access Policy apply to articles I've already written?</p>
-
-          <p>UNB Libraries welcomes older submissions; however, the Policy applies only to scholarly articles published after the adoption of the policy. If you require assistance to add your previous work to the repository, please contact <a href="mailto:unb.scholar@unb.ca">unb.scholar@unb.ca</a> or your liaison librarian.</p>
-
-          <p class="text-underline">Does the UNB Open Access Policy apply to co-authored papers?</p>
-
-          <p>Yes, scholarly articles authored or co-authored by UNB faculty or graduate students are included in the Policy. If there are multiple UNB authors, only one copy of the paper needs to be submitted.</p>
-
-          <p class="text-underline">Does the UNB Open Access Policy apply to post-doctoral fellows, staff, and others doing research at UNB? papers?</p>
-
-          <p>UNB Libraries welcomes submissions from everyone in the UNB community; however, the policy only applies to UNB faculty members, postdoctoral fellows and students, collectively referred to as “University authors”.</p>
-
-          <p>The policy applies if one or more co-authors are a “University author”.</p>
+          <dl class="faq link-underline">
+          	<dt>What kind of works does the UNB Open Access Policy apply to?</dt>
+          	<dd>While all products of research are welcome, only scholarly articles fall within the Policy.</dd>
+          	<dt>What version of the paper is submitted under the UNB Open Access Policy?</dt>
+          	<dd>The Policy specifies that a copy containing the finalized text of scholarly articles be deposited in UNB Scholar.</dd>
+          	<dt>Does the UNB Open Access Policy apply to articles I've already written?</dt>
+          	<dd>UNB Libraries welcomes older submissions; however, the Policy applies only to scholarly articles published after the adoption of the policy. If you require assistance to add your previous work to the repository, please contact <a href="mailto:unb.scholar@unb.ca">unb.scholar@unb.ca</a> or your liaison librarian.</dd>
+          	<dt>Does the UNB Open Access Policy apply to co-authored papers?</dt>
+          	<dd>Yes, scholarly articles authored or co-authored by UNB faculty or graduate students are included in the Policy. If there are multiple UNB authors, only one copy of the paper needs to be submitted.</dd>
+          	<dt>Does the UNB Open Access Policy apply to post-doctoral fellows, staff, and others doing research at UNB? papers?</dt>
+          	<dd>UNB Libraries welcomes submissions from everyone in the UNB community; however, the policy only applies to UNB faculty members, postdoctoral fellows and students, collectively referred to as “University authors”.</dd>
+          	<dd>The policy applies if one or more co-authors are a “University author”.</dd>
+          </dl>
 
           <h3 class="font-family-inherit mt-4">Legal Aspects</h3>
 
-          <p class="text-underline">Is UNB taking the rights to my writing?</p>
-
-          <p>All rights to the work remain with the author. Under the UNB Open Access Policy, authors then grant specific non-exclusive permissions to UNB Libraries, such as the right to make the article available in UNB Scholar, and to migrate the work to newer formats as they develop for purposes of preservation.</p>
-
-          <p>If your article arises from Tri-Agency funded research awarded after May 1, 2015 (SSHRC, NSERC) or January 1, 2008 (CIHR), you must retain sufficient rights to comply with the Tri-Agency Open Access Policy.</p>
+          <dl class="faq">
+          	<dt>Is UNB taking the rights to my writing?</dt>
+          	<dd>All rights to the work remain with the author. Under the UNB Open Access Policy, authors then grant specific non-exclusive permissions to UNB Libraries, such as the right to make the article available in UNB Scholar, and to migrate the work to newer formats as they develop for purposes of preservation.</dd>
+          	<dd>If your article arises from Tri-Agency funded research awarded after May 1, 2015 (SSHRC, NSERC) or January 1, 2008 (CIHR), you must retain sufficient rights to comply with the Tri-Agency Open Access Policy.</dd>
+          </dl>
 
           <h3 class="font-family-inherit mt-4">What will be done with the Articles?</h3>
 
-          <p class="text-underline">What will UNB do with the articles?</p>
-
-          <p>UNB will continue to operate its Institutional Repository, UNB Scholar, to make available the scholarly articles provided under the UNB Open Access Policy. To aid in discoverability, materials in the repository are assigned metadata and optimized for discovery via search engines such as Google, Google Scholar, and OpenAIRE. UNB Scholar also provides a persistent URL for each deposited object and secure replicated storage, ensuring that its contents will continue to be available to readers in the future.</p>
+          <dl class="faq">
+          	<dt>What will UNB do with the articles?</dt>
+          	<dd>UNB will continue to operate its Institutional Repository, UNB Scholar, to make available the scholarly articles provided under the UNB Open Access Policy. To aid in discoverability, materials in the repository are assigned metadata and optimized for discovery via search engines such as Google, Google Scholar, and OpenAIRE. UNB Scholar also provides a persistent URL for each deposited object and secure replicated storage, ensuring that its contents will continue to be available to readers in the future.</dd>
+          </dl>
 
           <h3 class="font-family-inherit mt-4">More Information</h3>
 
-          <p class="text-underline">Who will be responsible for interpreting UNB’s Open Access Policy?</p>
-
-          <p>The VP Research, in consultation with the Dean of Libraries, will be responsible for interpreting this policy,&nbsp;resolving disputes concerning its interpretation and application, and recommending changes to Senate periodically.</p>
-
-          <p class="text-underline">Can UNB delay access to my article / Can | place an embargo on my article?</p>
-
-          <p>When submitting an article to UNB Scholar, University authors may stipulate an embargo period in cases where&nbsp;a publisher requires a delay before posting.</p>
-
-          <p class="text-underline">Who should | contact if | have feedback or questions about UNB's Open Access Policy?</p>
-
-          <p>If you have questions about making your work openly available, your <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="149d697c-b025-4302-b034-1a6dfcd71369" href="/node/123">liaison librarian</a> is an excellent contact to discuss open access publishing and related UNB supports.</p>
-
-          <p>If you have feedback or questiopns about the UNB Open Access Policy, contact <a href="mailto:oa.policy@unb.ca">oa.policy@unb.ca</a></p>
+          <dl class="faq link-underline">
+          	<dt>Who will be responsible for interpreting UNB’s Open Access Policy?</dt>
+          	<dd>The VP Research, in consultation with the Dean of Libraries, will be responsible for interpreting this policy,&nbsp;resolving disputes concerning its interpretation and application, and recommending changes to Senate periodically.</dd>
+          	<dt>Can UNB delay access to my article / Can | place an embargo on my article?</dt>
+          	<dd>When submitting an article to UNB Scholar, University authors may stipulate an embargo period in cases where&nbsp;a publisher requires a delay before posting.</dd>
+          	<dt>Who should | contact if | have feedback or questions about UNB's Open Access Policy?</dt>
+          	<dd>If you have questions about making your work openly available, your <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="149d697c-b025-4302-b034-1a6dfcd71369" href="/node/123">liaison librarian</a> is an excellent contact to discuss open access publishing and related UNB supports.</dd>
+          	<dd>If you have feedback or questiopns about the UNB Open Access Policy, contact <a href="mailto:oa.policy@unb.ca">oa.policy@unb.ca</a></dd>
+          </dl>
         '#format': library_page_html
       definitions:
         '#type': processed_text
