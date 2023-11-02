@@ -3,6 +3,7 @@
 .selectize.control.single,
 .selectize-input.input-active {
   display: flex;
+  min-height: inherit;
 }
 .selectize-input,
 .selectize-input.full {
