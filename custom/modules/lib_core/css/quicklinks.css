@@ -12,14 +12,17 @@
     color: #ffc107;
 }
 
+@media (min-width: 1366px) {
+  #quicklinks-buttons li:last-child {
+    padding-right: 0;
+  }
+}
 @media (min-width: 992px) {
     /* Force visible on large display */
     #quicklinks-wrapper.collapse:not(.show) {
         display: flex!important;
     }
-     #quicklinks-buttons li:last-child {
-         padding-right: 0;
-     }
+
     #quicklinks-buttons .btn {
         padding: 0.25rem 0.5rem;
         font-size: 0.875rem;
