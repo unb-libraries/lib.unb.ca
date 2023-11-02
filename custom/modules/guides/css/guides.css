@@ -39,6 +39,9 @@
   opacity: 0.7;
 }
 
+.guide-title {
+  margin-bottom: .25rem;
+}
 .title .btn {
   font-family: "ProximaNovaA-Regular", "Century Gothic", AppleGothic, Arial, sans-serif;
   font-weight: bold;
