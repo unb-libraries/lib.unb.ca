@@ -74,9 +74,6 @@
 #ask-us .askus-header .askus-icon .fas:before {
   font-size: 2.4rem;
 }
-#ask-us  #lh3-chat a.focus-ring {
-  border-radius: .5rem;
-}
 #ask-us .askus-footer {
   font-size: inherit;
   margin-top: 1.75rem;
@@ -89,9 +86,11 @@
 #ask-us .askus-footer a:focus {
   background: inherit;
   border-color: transparent;
+  border-radius: 0;
   box-shadow: none;
   color: #900;
-  outline: 1px dotted #fff;
+  outline-offset: 3px;
+  outline: 2px dotted #900;
 }
 #ask-us .askus-footer span:not(.sr-only) {
   margin: 0;

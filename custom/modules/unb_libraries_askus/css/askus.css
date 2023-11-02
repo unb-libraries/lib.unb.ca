@@ -24,6 +24,9 @@
     background-color: #f0f0f0;
     text-decoration: none!important;
 }
+#lh3-chat .form-control .fas {
+  margin-top: .58rem;
+}
 .chat-embedded #lh3-online {
     border: 1px solid #aaa;
     box-shadow: none;

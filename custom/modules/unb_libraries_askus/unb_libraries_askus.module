@@ -122,26 +122,26 @@ function _unb_libraries_askus_get_widget($type) {
 
           default:
             $html .= '<a class="form-control media" href="' . $askus_src . '">
-                <i class="fa-solid fa-circle fa-xs mr-1 mt-2 text-success"></i>CHAT is open.</a>';
+                <span class="fas fa-circle fa-xs mr-1 text-success"></span>CHAT is open.</a>';
         }
         $html .=
       '</div>
       <div id="lh3-offline" class="form-control media status" style="display:none;">
-        <i class="fa-solid fa-circle fa-xs mr-1 mt-2 text-danger"></i>
+        <span class="fas fa-circle fa-xs mr-1 text-danger"></span>
         <div class="media-body">CHAT is closed.<span class="offline-msg"></span></div>
       </div>
       <div id="lh3-away" class="form-control media status" style="display:none;">
-        <i class="fa-solid fa-circle fa-xs mr-1 mt-2 text-warning"></i>
+        <span class="fas fa-circle fa-xs mr-1 text-warning"></span>
         <div class="media-body">CHAT is away.</div>
       </div>
       <div id="lh3-busy" class="form-control media status"  style="display:none;">
-        <i class="fa-solid fa-circle fa-xs mr-1 mt-2 text-warning"></i>
+        <span class="fas fa-circle fa-xs mr-1 text-warning"></span>
         <div class="ch-nd d-none" data-ch-format-time="h:mma" data-ch-id="hil_help"></div>
         <div class="busy">CHAT is busy.</div>
       </div>
     </div>
     <div class="form-control media status text-dark" id="lh3-noscript">
-      <i class="fa-solid fa-circle-exclamation fa-xs mr-1 mt-2"></i>CHAT requires JavaScript.
+      <span class="fas fa-circle-exclamation fa-xs mr-1"></span>CHAT requires JavaScript.
     </div >';
 
   return $html;
