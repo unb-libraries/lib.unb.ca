@@ -32,7 +32,7 @@ elements: |-
       '#type': processed_text
       '#wrapper_attributes':
         class:
-          - mb-0
+          - mb-5
       '#text': |
         <div class="row">
         <div class="col-lg-6">
@@ -53,40 +53,12 @@ elements: |-
         </div>
 
         <div class="col-lg-6 layout__region--second pl-lg-5">
-        <div class="card alert alert-info mt-0 mb-5">
-        <div class="card-body">
-        <h3>Information Sessions</h3>
-
-        <p class="card-text">A policy has been shared with Senates on both campuses, and in-person information sessions will be held to review the draft and answer your questions.</p>
-
-        <table class="alert-info table table-borderless table-sm">
-        	<tbody>
-        		<tr class="border-info border-top">
-        			<th colspan="2" scope="col">Saint John</th>
-        		</tr>
-        		<tr class="border-bottom border-info">
-        			<td>Hans W. Klohn Commons<br />
-        			Potash Conference Room, HWK 107</td>
-        			<td class="text-right">Wednesday Oct. 25th<br />
-        			3:30pm</td>
-        		</tr>
-        		<tr>
-        			<th colspan="2">Fredericton</th>
-        		</tr>
-        		<tr class="border-bottom border-info">
-        			<td>Harriet Irving Library<br />
-        			3rd Floor, Event Space</td>
-        			<td class="text-right">Thursday, Nov. 2nd<br />
-        			1:00pm</td>
-        		</tr>
-        	</tbody>
-        </table>
-
-        <p class="card-text mt-5">A video will be made available here following the sessions for anyone who can't attend.</p>
+        <div class="card alert alert-info mt-lg-0 p-0">
+        <div class="card-body p-0">
+        <drupal-media class="p-3" data-entity-type="media" data-entity-uuid="1a7ca1ae-7063-4fb8-867c-fc34bf87bd9f" data-view-mode=""></drupal-media>
         </div>
         </div>
 
-        <p>&nbsp;</p>
         </div>
         </div>
       '#format': library_page_html
