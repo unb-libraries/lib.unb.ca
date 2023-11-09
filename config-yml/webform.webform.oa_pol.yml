@@ -296,14 +296,14 @@ elements: |-
 
           <h3 class="font-family-inherit mt-4">Relation to Other Open Access Policies</h3>
 
-          <dl class="faq">
+          <dl class="faq link-underline">
           	<dt>How is the UNB Open Access Policy related to the Tri-Agency Open Access Policy? By complying with one, do | comply with the other?</dt>
           	<dd>This policy complements the Tri-Agency Open Access Policy which requires peer-reviewed journal articles from Agency funded research by faculty members be deposited in an institutional or disciplinary repository and made openly available within 12 months of publication.</dd>
           	<dd>UNB authors depositing their scholarly articles in UNB Scholar, with an embargo period of 12 months or less, will be fulfilling their obligations under the Tri-Agency OA Policy.</dd>
           	<dd>By reserving sufficient rights to comply with the Tri-Agency Open Access Policy when entering into a publication agreement, authors will already have reserved sufficient rights to comply with UNB's policy.</dd>
           	<dd>If authors comply with the Tri-Agency Open Access Policy by depositing in UNB Scholar, they will at the same time comply with UNB's Open Access Policy.</dd>
           	<dt>Do other institutions have Open Access policies?</dt>
-          	<dd>There are similar policies in place at hundreds of institutions worldwide, including Concordia University, Harvard University, MIT, and the University of California system. See a worldwide list of various kinds of open access policies.</dd>
+          	<dd>There are similar policies in place at hundreds of institutions worldwide, including Concordia University, Harvard University, MIT, and the University of California system. See a <a href="https://roarmap.eprints.org/">worldwide list of various kinds of open access policies</a>.</dd>
           </dl>
 
           <h3 class="font-family-inherit mt-4">Scope of the Policy</h3>
@@ -341,9 +341,9 @@ elements: |-
 
           <dl class="faq link-underline">
           	<dt>Who will be responsible for interpreting UNB’s Open Access Policy?</dt>
-          	<dd>The VP Research, in consultation with the Dean of Libraries, will be responsible for interpreting this policy,&nbsp;resolving disputes concerning its interpretation and application, and recommending changes to Senate periodically.</dd>
+          	<dd>The VP Research, in consultation with the Dean of Libraries, will be responsible for interpreting this policy, resolving disputes concerning its interpretation and application, and recommending changes to Senate periodically.</dd>
           	<dt>Can UNB delay access to my article / Can | place an embargo on my article?</dt>
-          	<dd>When submitting an article to UNB Scholar, University authors may stipulate an embargo period in cases where&nbsp;a publisher requires a delay before posting.</dd>
+          	<dd>When submitting an article to UNB Scholar, University authors may stipulate an embargo period in cases where a publisher requires a delay before posting.</dd>
           	<dt>Who should | contact if | have feedback or questions about UNB's Open Access Policy?</dt>
           	<dd>If you have questions about making your work openly available, your <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="149d697c-b025-4302-b034-1a6dfcd71369" href="/node/123">liaison librarian</a> is an excellent contact to discuss open access publishing and related UNB supports.</dd>
           	<dd>If you have feedback or questiopns about the UNB Open Access Policy, contact <a href="mailto:oa.policy@unb.ca">oa.policy@unb.ca</a></dd>
