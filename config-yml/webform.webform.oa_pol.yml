@@ -189,13 +189,13 @@ elements: |-
           <div class="card-group mb-4">
           <div class="card">
           <div class="card-body bg-light py-2">
-          <div class="card-title">Lesley Balcomm<br />
+          <div class="card-title">Lesley Balcom<br />
           <span class="subtitle">Dean of Libraries</span></div>
           </div>
 
           <div class="card-footer bg-white font-size-smaller">
           <div class="d-flex flex-wrap justify-content-between">
-          <div><a href="/contact-unb-libraries-staff?recipient=lbalcom">lbalcomm@unb.ca</a></div>
+          <div><a href="/contact-unb-libraries-staff?recipient=lbalcom">lbalcom@unb.ca</a></div>
 
           <div><a href="tel:5064587056">506-458-7056</a></div>
           </div>
