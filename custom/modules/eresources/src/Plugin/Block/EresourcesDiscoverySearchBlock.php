@@ -90,7 +90,7 @@ class EresourcesDiscoverySearchBlock extends BlockBase {
     }
 
     if ($permalink) {
-      $build .= '<li class="nav-item"><button href="?id=' . $permalink . '" aria-controls="resource" aria-expanded="true" class="Accordion-trigger p-2" id="resourceBtn">Resource</button></li>';
+      $build .= '<li class="nav-item"><button href="?id=' . urlencode($permalink) . '" aria-controls="resource" aria-expanded="true" class="Accordion-trigger p-2" id="resourceBtn">Resource</button></li>';
     }
 
     $build .= '
