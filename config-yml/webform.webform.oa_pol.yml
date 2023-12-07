@@ -22,8 +22,8 @@ elements: |-
         '#text': |
           <ul class="list-inline font-size-smaller">
           	<li class="list-inline-item text-muted">On This Page:</li>
-          	<li class="list-inline-item"><a href="#edit-draft">View the Draft</a></li>
-          	<li class="list-inline-item"><a href="#edit-show-support-container">Show Support / Provide Feedback</a></li>
+          	<li class="list-inline-item"><a href="#edit-draft">View the Policy</a></li>
+          	<li class="list-inline-item d-none"><a href="#edit-show-support-container">Show Support / Provide Feedback</a></li>
           	<li class="list-inline-item"><a href="#edit-faq">FAQs</a></li>
           	<li class="list-inline-item"><a href="#edit-definitions">Definitions</a></li>
           </ul>
@@ -42,11 +42,7 @@ elements: |-
 
         <h3 class="text-unb-red">Support Open Research</h3>
 
-        <p>UNB Libraries are proposing the adoption of an open access policy to increase the impact of UNB research by making it more accessible.</p>
-
-        <p>An open access (OA) policy would also support authors as they explorer options for compliance with funders' open access requirements.</p>
-
-        <p class="mb-4">We're seeking a commitment for an Open Access Policy, aligned with the role that UNB Libraries plays in contributing our expertise, services, and support locally for UNB researchers and the necessary regional, national, and international open infrastructures and services.</p>
+        <p>UNB’s Open Access Policy met with unanimous support at both Senates’ November 2023 meetings. This policy reaffirms the library’s mandate to help UNB authors comply with funders’ open access requirements, make their research more widely discoverable and accessible, and collaborate with other researchers globally.</p>
 
         <p class="text-center border-top border-bottom py-2"><small class="font-italic">UNB exists to serve the public good, to create positive change in the world.</small><br />
         <cite><small class="font-style-normal text-muted">UNB Towards 2030</small></cite></p>
@@ -58,14 +54,13 @@ elements: |-
         <drupal-media class="p-3" data-entity-type="media" data-entity-uuid="1a7ca1ae-7063-4fb8-867c-fc34bf87bd9f" data-view-mode=""></drupal-media>
         </div>
         </div>
-
         </div>
         </div>
       '#format': library_page_html
     section_heading:
       '#type': processed_text
       '#text': |
-        <h2 class="text-black mb-0">UNB Open Access Policy (Draft)</h2>
+        <h2 class="text-black mb-0">UNB Open Access Policy</h2>
       '#format': library_page_html
     wrapper_sidebar:
       '#type': container
@@ -76,7 +71,7 @@ elements: |-
         '#type': processed_text
         '#wrapper_attributes':
           class:
-            - col-lg-8
+            - col-lg-12
         '#text': |
           <div class="mb-4">
           <div class="theme-dark js-form-wrapper p-5 overflow-auto limit-height">
@@ -118,7 +113,7 @@ elements: |-
           <p>This policy is intended to encourage open access to scholarly work and strengthen author rights. This policy is to be read and interpreted in a manner consistent with relevant collective agreements and University policies related to academic freedom and intellectual property.</p>
 
           <blockquote class="border-0 ml-5">
-          <p>This policy comes into force on <span class="font-italic">[date]</span> and applies to all applicable works published after this date.</p>
+          <p>This policy comes into force on January 1, 2024&nbsp;and applies to all applicable works published after this date.</p>
 
           <p><span class="font-italic"></span>The VP Research, in consultation with the Dean of Libraries will be responsible for interpreting this policy, resolving disputes concerning its interpretation and application, and recommending changes to the policy to the appropriate university body as necessary.</p>
           </blockquote>
@@ -135,7 +130,7 @@ elements: |-
           </div>
           </div>
 
-          <div class="mt-3"><a class="btn btn-dark btn-sm link-no-icon px-3" href="/system/files/2023-10/UNB_Libraries-OA_Policy-Draft.pdf">DOWNLOAD AS PDF<span class="fa-download fas ml-1"></span></a></div>
+          <div class="mt-3 d-none"><a class="btn btn-dark btn-sm link-no-icon px-3" href="/system/files/2023-10/UNB_Libraries-OA_Policy-Draft.pdf">DOWNLOAD AS PDF<span class="fa-download fas ml-1"></span></a></div>
           </div>
         '#format': library_page_html
       show_support:
@@ -148,6 +143,7 @@ elements: |-
           '#attributes':
             class:
               - theme-dark
+              - d-none
           title:
             '#type': webform_markup
             '#markup': '<h3 class="mb-0 text-unb-red border-bottom border-unb-red">Show Support!</h3>'
