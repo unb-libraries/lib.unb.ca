@@ -36,11 +36,10 @@ elements: |-
       '#text': |
         <div class="row">
         <div class="col-lg-6">
-        <h2 class="mb-2 text-black">UNB Open Access Policy</h2>
 
         <p class="subtitle mb-4">Strengthening UNB's research contributions to the advancement of science, scholarship, and the betterment of society</p>
 
-        <h3 class="text-unb-red">Support Open Research</h3>
+        <h2 class="h3">Support Open Research</h3>
 
         <p>UNB’s Open Access Policy met with unanimous support at both Senates’ November 2023 meetings. This policy reaffirms the library’s mandate to help UNB authors comply with funders’ open access requirements, make their research more widely discoverable and accessible, and collaborate with other researchers globally.</p>
 
