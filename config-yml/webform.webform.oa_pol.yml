@@ -512,10 +512,11 @@ settings:
   serial_disabled: false
 access:
   create:
-    roles: {  }
+    roles:
+      - anonymous
+      - authenticated
     users: {  }
-    permissions:
-      - 'administer webform'
+    permissions: {  }
   view_any:
     roles: {  }
     users: {  }
