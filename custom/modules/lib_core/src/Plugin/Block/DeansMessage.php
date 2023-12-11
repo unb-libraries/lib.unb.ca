@@ -44,7 +44,7 @@ class DeansMessage extends BlockBase {
               alt="Towards Open: UNB Libraries are proposing the adoption of an open access policy to increase the 
               impact of UNB research by making it more accessible.">
             <figcaption class="caption-bottom font-size-smaller">More information, view the policy, show support and
-             provide feedback here <span class="font-size-smaller">(UNB-login required)</span> &raquo;</figcaption>
+             provide feedback here <span class="font-size-smaller d-none">(UNB-login required)</span> &raquo;</figcaption>
         </figure>
       </a>
     ';
