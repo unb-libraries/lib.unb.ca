@@ -21,7 +21,9 @@ elements: |-
       <h2 class="card-title h6 bg-dark text-white p-2">Before you submit</h2>
 
       <div class="p-2">
-      <p class="card-text">UNB Libraries welcomes knowledge synthesis service requests from faculty, staff and students.&nbsp; Prior to submitting a request, please review the service details our <a class="font-weight-bold" href="https://lib.unb.ca/research/systematic-reviews/getting-started#getting-started_KSservice">website</a></p>
+      <p class="card-text"><span>Currently we have limited capacity to accept new review requests. Please <strong><a href="/contact-unb-libraries-staff?recipient=knowledgesynthesis">contact us</a></strong> to discuss librarian availability for your project in advance of submitting a request.</span></p>
+
+      <p class="card-text"><span></span>UNB Libraries welcomes knowledge synthesis service requests from faculty, staff and students.&nbsp; Prior to submitting a request, please review the service details our <a class="font-weight-bold" href="https://lib.unb.ca/research/systematic-reviews/getting-started#getting-started_KSservice">website</a></p>
       </div>
       </div>
       </div>

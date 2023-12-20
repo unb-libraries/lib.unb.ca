@@ -407,6 +407,7 @@ function _lib_core_contactable_department($mailbox) {
     'hwkacq' => 'HWK Acquisitions',
     'hwkcommons' => 'Hans W. Klohn Commons',
     'hwkcreserves' => 'HWK Reserves',
+    'knowledgesynthesis' => 'Knowledge Synthesis',
     'lawlib' => 'Law Library',
     'lib' => 'UNB Libraries Administration',
     'library' => 'UNB Libraries Administration',
