@@ -110,7 +110,7 @@ class ResearchGuides extends BlockBase implements ContainerFactoryPluginInterfac
           </div>
         </form>
         <div class="mt-4 text-left">
-          <a href="/guides/view-all">
+          <a href="https://support.lib.unb.ca/default.asp?20083">
             All Research Guides
           </a>
         </div>
