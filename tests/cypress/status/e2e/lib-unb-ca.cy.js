@@ -136,7 +136,7 @@ describe('UNB Libraries Website', {baseUrl: libBaseUrl, groups: ['core']}, () =>
         .within(() => {
           cy.get('> div a')
             .its('0.href')
-            .should('contain', 'https://guides.lib.unb.ca/research-guides')
+            .should('contain', '/guides/view-all')
           cy.get('#database_subjects_chosen')
             .click()
             .within(() => {
