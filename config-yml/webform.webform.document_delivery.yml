@@ -15,7 +15,7 @@ category: ''
 elements: |-
   docdel_introduction:
     '#type': webform_markup
-    '#markup': '<p>Document Delivery and Interlibrary Loans supplement library resources held by UNB by obtaining material located at other libraries and organizations. UNB Libraries&#39; Document Delivery is part of the&nbsp;<a href="https://caul-cbua.ca/committee/document-delivery-group">CAUL Document Delivery Group</a>, a resource sharing network among Atlantic Canadian universities.</p>'
+    '#markup': '<p>Document Delivery services are generally free to all UNB/STU patrons. If there are charges, we will contact you before proceeding with your request. Please review <a href="/services/docdel/policies-and-fees" target="_blank">Document Delivery Policies and Fees</a> prior to submitting requests.</p>'
   docdel_please_note:
     '#type': processed_text
     '#text': |
@@ -23,14 +23,9 @@ elements: |-
       	<dt>Please note:</dt>
       	<dd>
       	<ul>
-      		<li>Document Delivery services are in support of research for academic purposes only.</li>
-      		<li>All Requests must be searched in&nbsp;<a href="https://unb.on.worldcat.org/">UNB WorldCat</a>&nbsp;before being submitted.</li>
-      		<li>Messaging is sent to&nbsp;<strong>UNB or STU email accounts ONLY</strong>.</li>
-      		<li>Requests without a "<strong>not useful after</strong>" date may be dropped after 30 days.</li>
-      		<li>Please verify that the pickup location is correct and change it to the correct location if necessary.</li>
-      		<li>Once submitted, your request will generate a request number.&nbsp;<strong>If you DO NOT receive this number</strong>, please&nbsp;<a href="https://lib.unb.ca/requests/docdel/policy-fees.php#queries">contact staff</a>&nbsp;at the Document Delivery Unit of your home library.</li>
-      		<li><strong>UNB law students and faculty</strong>&nbsp;should ALWAYS use the&nbsp;<a href="http://www.unb.ca/fredericton/law/library/interlibrary-loan/">UNB Law Library Interlibrary Loan / Document Delivery Request Form</a>&nbsp;for ALL requests.</li>
-      		<li>For LAW-RELATED REQUESTS ONLY, UNBF and STU NON-law students and faculty should also use the&nbsp;<a href="http://www.unb.ca/fredericton/law/library/interlibrary-loan/">UNB Law Library Interlibrary Loan / Document Delivery Request Form</a>.</li>
+      		<li>Document Delivery services are in support of research purposes only.</li>
+      		<li>Verify that the <strong>pickup location</strong> is correct and change it to the correct location if necessary.</li>
+      		<li>Once submitted, your request will generate a request number. If you DO NOT receive this number, please <a href="/requests/docdel/policy-fees.php#queries" target="_blank">contact staff</a> at the Document Delivery Unit of your home library.</li>
       	</ul>
       	</dd>
       </dl>
@@ -40,12 +35,6 @@ elements: |-
     '#attributes':
       class:
         - 'alert alert-danger no-icon mx-4'
-    agree_intro:
-      '#type': webform_markup
-      '#wrapper_attributes':
-        class:
-          - d-inline
-      '#markup': '<em class="d-table-cell fa-exclamation-circle fas">&nbsp;</em><span class="d-table-cell">Document Delivery services are generally free to all UNB/STU patrons. If there are charges, we will contact you before proceeding with your request. <a href="/services/docdel/policies-and-fees">See Document Delivery Policies.</a></span>'
     agree_container:
       '#type': container
       '#attributes':
@@ -69,6 +58,14 @@ elements: |-
         '#submit__attributes':
           class:
             - bg-dark
+  agree_intro:
+    '#type': webform_markup
+    '#wrapper_attributes':
+      class:
+        - d-inline
+    '#markup': |-
+      <div><em class="fa-exclamation-circle fas">&nbsp;</em><strong>Faculty of Law</strong>&nbsp;-&nbsp;Use the&nbsp;<a href="https://www.unb.ca/fredericton/law/library/interlibrary-loan/index.html">Law Library Document Delivery Service.</a><br />
+      <em class="fa-exclamation-circle fas">&nbsp;</em><strong>Community / Alumni / CURBA patrons</strong>&nbsp;-&nbsp;Online document delivery services unavailable.&nbsp;<a href="/services/docdel/community-and-alumni-borrowers">Limited service is provided.</a></div>
 css: ''
 javascript: ''
 settings:
