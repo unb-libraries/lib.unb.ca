@@ -20,26 +20,30 @@ elements: |-
     '#type': processed_text
     '#text': |
       <dl class="link-underline">
-      	<dt>Please note:</dt>
-      	<dd>
-      	<ul>
-      		<li>Document Delivery services are in support of research purposes only.</li>
-      		<li>Verify that the <strong>pickup location</strong> is correct and change it to the correct location if necessary.</li>
-      		<li>Once submitted, your request will generate a request number. If you DO NOT receive this number, please <a href="/requests/docdel/policy-fees.php#queries" target="_blank">contact staff</a> at the Document Delivery Unit of your home library.</li>
-      	</ul>
-      	</dd>
+        <dt>Please note:</dt>
+        <dd class="m-0">
+          <ul>
+            <li>Document Delivery services are in support of research purposes only.</li>
+            <li>Verify that the <strong>pickup location</strong> is correct and change it to the correct location if necessary.</li>
+            <li>Once submitted, your request will generate a request number. If you DO NOT receive this number, please <a href="/requests/docdel/policy-fees.php#queries" target="_blank">contact staff</a> at the Document Delivery Unit of your home library.</li>
+          </ul>
+        </dd>
       </dl>
     '#format': library_page_html
   submit_container:
     '#type': container
     '#attributes':
       class:
-        - 'alert alert-danger no-icon mx-4'
+        - alert
+        - alert-danger
+        - mx-auto
+        - no-icon
+        - pt-4
+        - text-left
+        - text-md-center
+        - w-75
     agree_container:
       '#type': container
-      '#attributes':
-        class:
-          - ml-5
       agree_checkbox:
         '#type': checkbox
         '#title': '<b>I have reviewed the Document Delivery Policies prior to submitting my requests(s).</b>'
@@ -53,19 +57,34 @@ elements: |-
               unchecked: true
         '#attributes':
           class:
-            - 'mx-4 my-2'
+            - my-3
         '#submit__label': 'I agree'
         '#submit__attributes':
           class:
             - bg-dark
-  agree_intro:
-    '#type': webform_markup
-    '#wrapper_attributes':
+            - px-5
+  additional_notes:
+    '#type': fieldset
+    '#title': 'Additional Notes'
+    '#title_display': invisible
+    '#attributes':
       class:
-        - d-inline
-    '#markup': |-
-      <div><em class="fa-exclamation-circle fas">&nbsp;</em><strong>Faculty of Law</strong>&nbsp;-&nbsp;Use the&nbsp;<a href="https://www.unb.ca/fredericton/law/library/interlibrary-loan/index.html">Law Library Document Delivery Service.</a><br />
-      <em class="fa-exclamation-circle fas">&nbsp;</em><strong>Community / Alumni / CURBA patrons</strong>&nbsp;-&nbsp;Online document delivery services unavailable.&nbsp;<a href="/services/docdel/community-and-alumni-borrowers">Limited service is provided.</a></div>
+        - bg-light
+        - border
+        - mt-4
+        - py-3
+        - ''
+    processed_text:
+      '#type': processed_text
+      '#wrapper_attributes':
+        class:
+          - m-0
+      '#text': |
+        <ul class="m-0">
+          <li><strong>Faculty of Law</strong>&nbsp;-&nbsp;Use <a href="https://www.unb.ca/fredericton/law/library/interlibrary-loan/index.html">Law Library Document Delivery Service.</a></li>
+          <li><strong>Community / Alumni / CURBA patrons</strong>&nbsp;-&nbsp;Online document delivery services unavailable.&nbsp;<a href="/services/docdel/community-and-alumni-borrowers">Limited service is provided.</a></li>
+        </ul>
+      '#format': library_page_html
 css: ''
 javascript: ''
 settings:
