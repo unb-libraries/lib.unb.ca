@@ -316,7 +316,7 @@
     "drupal/entity_browser": "2.10",
     "drupal/entity_embed": "1.5",
     "drupal/entity_reference_revisions": "1.11",
-    "drupal/externalauth": "1.4",
+    "drupal/externalauth": "2.0.4",
     "drupal/facets": "2.0.6",
     "drupal/fakeobjects": "1.2",
     "drupal/field_formatter_class": "1.6",
