@@ -152,6 +152,8 @@ settings:
   wizard_toggle: true
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
   preview: 0
   preview_label: ''
   preview_title: ''
@@ -170,7 +172,7 @@ settings:
   confirmation_type: message
   confirmation_url: ''
   confirmation_title: ''
-  confirmation_message: "<p class=\"h6\"><i class=\"fas fa-clipboard-check\"></i> Successfully Submitted</p>\r\n\r\n<p>Thank you for taking the time to submit your comments and suggestions to UNB Libraries.</p>"
+  confirmation_message: "<p class=\"h6\">Successfully Submitted</p>\r\n\r\n<p class=\"mb-0\">Thank you for taking the time to submit your comments and suggestions to UNB Libraries. Please note that responses will only be sent for submissions that have provided a <strong>correct email address</strong>.</p>"
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
