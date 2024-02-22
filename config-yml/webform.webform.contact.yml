@@ -190,7 +190,7 @@ settings:
   confirmation_type: message
   confirmation_url: '<front>'
   confirmation_title: ''
-  confirmation_message: "<p class=\"h6\">Message Successfully Submitted</p>\r\n\r\n<p>Your email has been successfully been submitted using our webform. Thank you for taking the time to fill it in. Please note that you will only receive a reply if you have provided us with a <strong>valid email address</strong>.</p>"
+  confirmation_message: "<p class=\"h6\">Thank you for your submission.</p>\r\n\r\n<p class=\"mb-0\">Please note that you will only receive a reply if your submitted email is <strong>valid</strong> ([webform_submission:values:email]).</p>"
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
