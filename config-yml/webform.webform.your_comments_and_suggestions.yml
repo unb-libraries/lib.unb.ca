@@ -172,7 +172,7 @@ settings:
   confirmation_type: message
   confirmation_url: ''
   confirmation_title: ''
-  confirmation_message: "<p class=\"h6\">Successfully Submitted</p>\r\n\r\n<p class=\"mb-0\">Thank you for taking the time to submit your comments and suggestions to UNB Libraries. Please note that responses will only be sent for submissions that have provided a <strong>correct email address</strong>.</p>"
+  confirmation_message: "<p class=\"h6\">Successfully Submitted</p>\r\n\r\n<p class=\"mb-0\">Thank you for taking the time to submit your comments and suggestions to UNB Libraries. Please note that you will only receive a reply if you have provided us with a <strong>valid email address</strong>.</p>"
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
