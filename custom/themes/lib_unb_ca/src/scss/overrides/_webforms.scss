@@ -70,6 +70,16 @@ form.theme-dark>.webform-elements>.form-group>fieldset>legend {
   font-weight: bold;
   margin-bottom: 1.5rem;
 }
+
+.alert-success {
+  mark {
+    background-color: inherit;
+    color: #743944;
+    font-size: 95%;
+    font-weight: bold;
+  }
+}
+
 /* Webform 6.x Progress Tracker */
 .webform-progress-tracker {
   margin: 0.5rem 10%;
