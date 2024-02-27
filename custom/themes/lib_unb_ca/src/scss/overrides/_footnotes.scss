@@ -18,6 +18,19 @@ ul.footnotes {
   }
 }
 
+.see-footnote {
+  display: inline-block;
+  min-width: 15px;
+
+  &:focus,
+  &:hover {
+    outline-color: $unb-red;
+    outline-width: 1px;
+    outline-style: solid;
+  }
+
+
+}
 .footnote-label,
 .see-footnote {
   padding: 0 1px;
