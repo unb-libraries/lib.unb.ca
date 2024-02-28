@@ -80,9 +80,11 @@ elements: |-
         class:
           - m-0
       '#text': |
+        <p class="mx-3"><span class="fa-exclamation-triangle fas"></span> We have received inconsistent reports from users for “Bad Requests” when authenticating. Sometimes this is corrected on the second attempt. if you are unable to login, please submit a request directly to <a href="mailto:docdel@unb.ca">docdel@unb.ca</a>.</p>
+
         <ul class="m-0">
-          <li><strong>Faculty of Law</strong>&nbsp;-&nbsp;Use <a href="https://www.unb.ca/fredericton/law/library/interlibrary-loan/index.html">Law Library Document Delivery Service.</a></li>
-          <li><strong>Community / Alumni / CURBA patrons</strong>&nbsp;-&nbsp;Online document delivery services unavailable.&nbsp;<a href="/services/docdel/community-and-alumni-borrowers">Limited service is provided.</a></li>
+        	<li><strong>Faculty of Law</strong>&nbsp;-&nbsp;Use <a href="https://www.unb.ca/fredericton/law/library/interlibrary-loan/index.html">Law Library Document Delivery Service.</a></li>
+        	<li><strong>Community / Alumni / CURBA patrons</strong>&nbsp;-&nbsp;Online document delivery services unavailable.&nbsp;<a href="/services/docdel/community-and-alumni-borrowers">Limited service is provided.</a></li>
         </ul>
       '#format': library_page_html
 css: ''
