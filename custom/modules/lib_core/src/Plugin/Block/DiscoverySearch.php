@@ -61,8 +61,8 @@ class DiscoverySearch extends BlockBase {
                        id="searchBtn5" aria-controls="searchPanel5" aria-expanded="false" tabindex="-1"
                        href="/eresources?form_id=eres_reference"
                        onclick="location.href=\'/eresources?form_id=eres_reference\';"
-                       aria-label="Guide to Finding Reference Materials (link leads to e-Resources page)"
-                       title="(link leads to e-Resources page)">More<i class="fas fa-angle-double-right fa-sm fa-muted ml-1" aria-hidden="true"></i>
+                       aria-label="Guide to Finding Reference Materials (e-Resources page)"
+                       title="e-Resources page">More<i class="fas fa-angle-double-right fa-sm fa-muted ml-1" aria-hidden="true"></i>
                     </a>
                   </li>
                 </ul>
