@@ -85,12 +85,21 @@ Array.prototype.slice.call(document.querySelectorAll('.Accordion')).forEach(func
 
         var isExpanded = target.getAttribute('aria-expanded') == 'true';
         var allowToggle = (allowMultiple) ? allowMultiple : accordion.hasAttribute('data-allow-toggle');
+        var isLinkButton = target.hasAttribute('onclick');
 
         // 33 = Page Up, 34 = Page Down
         var ctrlModifier = (event.ctrlKey && key.match(/33|34/));
 
         // Is this coming from an accordion header?
         if (target.classList.contains('Accordion-trigger')) {
+            // Accessibility: enable space key activation on re: link button
+            if (isLinkButton && key.match(/32/)) {
+                var index = triggers.indexOf(target);
+                triggers[index].click();
+                // Prevent default browser scroll down behaviour from spacebar
+                event.preventDefault();
+            }
+
             // Up/ Down arrow and Control + Page Up/ Page Down keyboard operations
             // 38 = Up, 40 = Down
             if (key.match(/37|38|39|40/) || ctrlModifier) {
