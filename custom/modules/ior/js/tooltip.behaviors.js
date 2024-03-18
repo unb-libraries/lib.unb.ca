@@ -1,5 +1,5 @@
 (function ($, Drupal) {
-  Drupal.behaviors.ior = {
+  Drupal.behaviors.tooltip = {
     attach: function (context, settings) {
       $('[data-toggle="tooltip"]').tooltip()
     }

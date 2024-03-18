@@ -24,6 +24,9 @@ function ior_theme($existing, $type, $theme, $path) {
     'ior_submission__preview' => [
       'render element' => 'elements',
     ],
+    'page_title__contest' => [
+        'base hook' => 'page_title',
+    ],
   ];
 }
 
@@ -61,8 +64,28 @@ function template_preprocess_contest(array &$variables) {
 }
 
 /**
- * Prepares variables for submission templates.
- *
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function ior_theme_suggestions_page_title(array $variables) {
+  $current_user = Drupal::currentUser();
+  $suggestions = [];
+  if ($current_user->getAccount()->hasPermission('create contest invite URLs') && !empty(preg_match('/^entity\.contest/', Drupal::routeMatch()->getRouteName(), $matches))) {
+    $suggestions[] = 'page_title__contest';
+  }
+  return $suggestions;
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function ior_preprocess_page_title(array &$variables) {
+  $current_user = Drupal::currentUser();
+  if ($current_user->hasPermission('create contest invite URLs') && !empty(preg_match('/^entity\.contest/', Drupal::routeMatch()->getRouteName(), $matches))) {
+    $variables['#attached']['library'][] = 'ior/invite';
+  }
+}
+
+/**
  * Default template: ior-submission.html.twig.
  *
  * @param array $variables
@@ -158,7 +181,7 @@ function template_preprocess_ior_submission__preview(array &$variables) {
     $moderation_state = $moderation_info->getWorkflowForEntity($submission)
       ->getTypePlugin()
       ->getState($submission->get('moderation_state')->value);
-    $variables['#attached']['library'][] = 'ior/ior';
+    $variables['#attached']['library'][] = 'ior/tooltip';
     $variables['submission']['state']['id'] = $moderation_state->id();
     $variables['submission']['state']['label'] = $moderation_state->label();
   }

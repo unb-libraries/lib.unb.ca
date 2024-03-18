@@ -1,0 +1,5 @@
+.invite {
+    content: 'Copy';
+    cursor: pointer;
+    font-size: 0.8em;
+}

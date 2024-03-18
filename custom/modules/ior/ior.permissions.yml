@@ -17,6 +17,8 @@ update contest entities:
 delete contest entities:
   title: "Delete IOR contests."
 
+create contest invite URLs:
+  title: "Create invite URLs for IOR contests."
 
 # Submission entities
 view contestant details:

@@ -1,7 +1,15 @@
-ior:
+tooltip:
   version: 1.x
   css:
     component:
-      css/ior.css: {}
+      css/ior.css: { }
   js:
-    js/ior.behaviors.js: {}
+    js/tooltip.behaviors.js: {}
+
+invite:
+  version: 1.x
+  css:
+    component:
+      css/invite.css: { }
+  js:
+    js/invite.behaviors.js: {}

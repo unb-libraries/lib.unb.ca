@@ -19,6 +19,7 @@ permissions:
   - 'create contest entities'
   - 'create ior_award entities'
   - 'create ior_collection entities'
+  - 'create contest invite URLs'
   - 'delete ior_award entities'
   - 'delete ior_collection entities'
   - 'download full_resolution images'
