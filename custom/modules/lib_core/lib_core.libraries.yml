@@ -46,7 +46,12 @@ lib-selectize:
       //cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.6/css/selectize.bootstrap4.min.css: { type: external, minified: true }
       css/lib-selectize.css: {}
   js:
-    //cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js: { type: external, minified: true }
+    //cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js:
+      type: external
+      minified: true
+      attributes:
+        integrity: 'sha512-WMEKGZ7L5LWgaPeJtw9MBM4i5w5OSBlSjTjCtSnvFJGSVD26gE5+Td12qN5pvWXhuWaWcVwF++F7aqu9cvqP0A=='
+        crossorigin: anonymous
     //cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.6/js/standalone/selectize.min.js: { type: external, minified: true }
     js/lib-selectize.js: ()
   dependencies:
