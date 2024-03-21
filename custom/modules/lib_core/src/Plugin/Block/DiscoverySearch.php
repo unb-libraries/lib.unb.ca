@@ -62,7 +62,7 @@ class DiscoverySearch extends BlockBase {
                        href="/eresources?form_id=eres_reference"
                        onclick="location.href=\'/eresources?form_id=eres_reference\';"
                        aria-label="Guide to Finding Reference Materials (e-Resources page)"
-                       title="e-Resources page">More<i class="fas fa-angle-double-right fa-sm fa-muted ml-1" aria-hidden="true"></i>
+                       title="e-Resources page">More<i class="fa-solid fa-angle-double-right fa-sm fa-muted ml-1" aria-hidden="true"></i>
                     </a>
                   </li>
                 </ul>
@@ -131,7 +131,7 @@ class DiscoverySearch extends BlockBase {
       </form>
       <ul class="list inline m-0 p-0">
         <li class="list-inline-item mr-4 my-2 my-sm-1">
-          <a href="//web.lib.unb.ca/reserves/index.php?h=1"><i class="fas fa-sign-in-alt" aria-hidden="true"></i>
+          <a href="//web.lib.unb.ca/reserves/index.php?h=1"><i class="fa-solid fa-sign-in-alt" aria-hidden="true"></i>
             Login to My UNB Reserves
           </a>
         </li>
@@ -146,7 +146,7 @@ class DiscoverySearch extends BlockBase {
   protected function getReservesSemesters() {
     // Set default empty option.
     $options = [
-      '' => 'All semesters',
+      '' => $this->t('All semesters'),
     ];
     $default_value = '';
 
@@ -286,7 +286,7 @@ class DiscoverySearch extends BlockBase {
   protected function getDatabasesTitles() {
     // Set default empty option.
     $options = [
-      '' => 'Please choose a database title...',
+      '' => $this->t('Please choose a title…'),
     ];
 
     $options += DatabasesForm::getDatabaseList();
@@ -391,7 +391,7 @@ class DiscoverySearch extends BlockBase {
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
-                    <i class="fas fa-search"></i>
+                    <i class="fa-solid fa-search"></i>
                   </div>
                 </div>
                 <input class="form-control" id="title_refmat" name="query" placeholder="Search for encyclopedias, dictionaries, etc." type="search" value="" required>
@@ -405,7 +405,7 @@ class DiscoverySearch extends BlockBase {
         </form>
         <div class="p-2">
           <a href="https://lib.unb.ca/eresources/guide-finding-reference-materials">
-            <i class="fas fa-compass"></i>
+            <i class="fa-solid fa-compass"></i>
             Reference Materials Guide
           </a>
           |
@@ -415,7 +415,7 @@ class DiscoverySearch extends BlockBase {
         </div>
         <div class="px-2">
           <a href="/eresources?form_id=eres_reference">
-            <i class="fas fa-search-plus" aria-hidden="true"></i>
+            <i class="fa-solid fa-search-plus" aria-hidden="true"></i>
             More Search Options
           </a>
         </div>';
@@ -465,7 +465,7 @@ class DiscoverySearch extends BlockBase {
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
-                    <i class="fas fa-search"></i>
+                    <i class="fa-solid fa-search"></i>
                   </div>
                 </div>
                 <input class="form-control" id="title_ebooks" name="query" placeholder="Enter search terms" type="search" value="" required>
@@ -479,7 +479,7 @@ class DiscoverySearch extends BlockBase {
       </form>
       <div class="p-2">
         <a href="/eresources/collections/ebooks">
-          <i class="fas fa-th-list"></i>
+          <i class="fa-solid fa-th-list"></i>
           Browse e-Book Collections
         </a>
       </div>';
@@ -535,7 +535,7 @@ class DiscoverySearch extends BlockBase {
               <div class="input-group">
                 <div class="input-group-prepend">
                     <div class="input-group-text">
-                      <i class="fas fa-search"></i>
+                      <i class="fa-solid fa-search"></i>
                     </div>
                 </div>
                 <input class="form-control" name="query" id="title_video" placeholder="Enter search terms" type="search" value="" required>
