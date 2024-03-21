@@ -1,12 +1,12 @@
 (function ($, Drupal) {
     Drupal.behaviors.libSelectize = {
-        attach: function(context, settings) {
+        attach: function(context) {
             // Selectize library
             $("select.selectize").selectize({
-                allowEmptyOption: false,
                 hideSelected: true,
+                maxItems: 1,
                 maxOptions: 7500,
-            }).removeAttr("style");
+            });
 
             $(context).find('form.custom-selectize button[type="submit"]').click(function (e) {
                 let form = this.closest('form');
