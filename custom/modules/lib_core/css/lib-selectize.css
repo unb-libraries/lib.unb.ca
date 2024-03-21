@@ -18,6 +18,10 @@
 .selectize-input.full {
   position: absolute;
 }
+.selectize-input:not(.dropdown-active) .item {
+  height: 1.5rem;
+  overflow: hidden;
+}
 .selectize-input input,
 .selectize-input.full input {
   left: inherit!important;
