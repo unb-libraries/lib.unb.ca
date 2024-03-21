@@ -35,6 +35,9 @@
   .list-results .list-group-item li {
     margin-bottom: 0.5rem;
   }
+  .js-form-item.form-group {
+    width: 100%;
+  }
 }
 .list-results .eresources-local-record span[role=button] {
   color: #00607a;
