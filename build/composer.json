@@ -362,7 +362,7 @@
     "drupal/simple_sitemap": ">=4.1.8",
     "drupal/token": "1.13",
     "drupal/tvi": "1.0-rc4",
-    "drupal/twig_tweak": "3.2.1",
+    "drupal/twig_tweak": "3.3.0",
     "drupal/upgrade_status": "3.18",
     "drupal/video_embed_field": "2.5",
     "drupal/views_autocomplete_filters": "1.7",
