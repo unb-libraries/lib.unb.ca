@@ -5,6 +5,14 @@ accessible-accordion:
       css/accordion.css: {}
   js:
     js/accordion.js: {}
+
+chosen:
+  version: 1.8.7
+  css:
+    theme:
+      css/chosen.min.css: { minified: true }
+  js:
+    js/chosen.jquery.min.js: { minified: true }
   dependencies:
     - core/jquery
 
@@ -14,12 +22,6 @@ chosen-bootstrap:
     theme:
       css/chosen-bootstrap.css: {}
 
-library-lib-hours:
-  version: VERSION
-  css:
-    theme:
-      css/library-lib-hours.css: {}
-
 discoverysearch:
   version: VERSION
   css:
@@ -28,34 +30,38 @@ discoverysearch:
   dependencies:
     - core/jquery
 
-lib-chosen:
-  version: VERSION
-  css:
-    theme:
-      css/chosen.min.css: { minified: true }
+jquery-validate:
+  version: 1.20.0
   js:
-    js/chosen.jquery.min.js: { minified: true }
-    js/lib-chosen.js: {}
+    js/jquery.validate.min.js: { minified: true }
   dependencies:
     - core/jquery
+
+lib-chosen:
+  version: VERSION
+  js:
+    js/lib-chosen.js: {}
+  dependencies:
+    - core/drupal
+    - lib_core/chosen
 
 lib-selectize:
   version: VERSION
   css:
     theme:
-      //cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.6/css/selectize.bootstrap4.min.css: { type: external, minified: true }
       css/lib-selectize.css: {}
   js:
-    //cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js:
-      type: external
-      minified: true
-      attributes:
-        integrity: 'sha512-WMEKGZ7L5LWgaPeJtw9MBM4i5w5OSBlSjTjCtSnvFJGSVD26gE5+Td12qN5pvWXhuWaWcVwF++F7aqu9cvqP0A=='
-        crossorigin: anonymous
-    //cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.6/js/standalone/selectize.min.js: { type: external, minified: true }
-    js/lib-selectize.js: ()
+    js/lib-selectize.js: {}
   dependencies:
-    - core/jquery
+    - core/drupal
+    - lib_core/jquery-validate
+    - lib_core/selectize
+
+library-lib-hours:
+  version: VERSION
+  css:
+    theme:
+      css/library-lib-hours.css: {}
 
 quicklinks:
   version: VERSION
@@ -70,6 +76,16 @@ research-guides:
       css/research-guides.css: {}
   js:
     js/guides-subject-select.js: {}
+  dependencies:
+    - core/jquery
+
+selectize:
+  version: 0.13.6
+  css:
+    theme:
+      css/selectize.bootstrap4.min.css: { minified: true }
+  js:
+    js/selectize-standalone.min.js: { minified: true }
   dependencies:
     - core/jquery
 
