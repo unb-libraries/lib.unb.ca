@@ -1,6 +1,6 @@
 (function ($, Drupal) {
     Drupal.behaviors.libChosen = {
-        attach: function(context, settings) {
+        attach: function() {
             // Do not apply on Mobile: match chosen.jquery.js v.1.8.7 exceptions.
             if (/iP(od|hone)/i.test(window.navigator.userAgent) || /IEMobile/i.test(window.navigator.userAgent) ||
                 /Windows Phone/i.test(window.navigator.userAgent) || /BlackBerry/i.test(window.navigator.userAgent) ||
