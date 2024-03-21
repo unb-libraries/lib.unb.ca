@@ -1,9 +1,11 @@
 /* UNB Libraries selectize.js overrides */
 .selectize-control.single .selectize-input:after {
-  right: calc(0.5rem + 5px);
+  right: calc(0.5rem + 2px);
   top: 1rem;
 }
-
+.selectize-input {
+  padding: 0.35rem 0.5rem;
+}
 .selectize-input,
 .selectize.control.single,
 .selectize-input.input-active {
