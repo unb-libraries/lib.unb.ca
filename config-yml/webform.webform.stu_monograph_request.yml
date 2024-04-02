@@ -20,17 +20,16 @@ category: ''
 elements: |-
   introduction:
     '#type': webform_markup
-    '#markup': |
+    '#markup': |-
       <div class="card border-dark mb-4">
       <div class="card-body text-muted-wcag p-0 mb-3">
       <h2 class="card-title h6 bg-dark text-white p-2">Please provide as much information as you can for each title requested.</h2>
-      
+
       <div class="p-2">
-      <p class="card-text">Thank you for your interest.</p>
+      <p class="card-text">The deadline for placing requests is January 31st each year.</p>
       </div>
       </div>
       </div>
-      
   container:
     '#type': container
     '#attributes':
