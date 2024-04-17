@@ -298,6 +298,25 @@ class Record extends ContentEntityBase implements ContentEntityInterface {
       ])
       ->setDisplayConfigurable('form', TRUE);
 
+    $fields['linked_collections'] = BaseFieldDefinition::create('string_long')
+      ->setLabel(t('Linked Collections'))
+      ->setRequired(FALSE)
+      ->setSettings(
+        [
+          'default_value' => '',
+          'max_length' => 1024,
+        ]
+      )
+      ->setDisplayOptions('form', [
+        'type' => 'string_textarea',
+        'weight' => 0,
+        'settings' => [
+          'rows' => 7,
+          'placeholder' => "Title,URL\nTitle,URL",
+        ],
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
     $fields['is_local'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Mark as a custom local record'))
       ->setDescription(t('A boolean indicating whether the Record is a custom local record.'))
