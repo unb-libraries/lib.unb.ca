@@ -54,6 +54,18 @@
     <dt>Coverage/Publication Date:</dt>
     <dd>{{ coverage }}</dd>
   {% endif %}
+  {% if entry.getLinkedCollections is not empty %}
+    <dt>Collection Titles:</dt>
+    <dd>
+    <ul>
+    {% set links = entry.getLinkedCollections|split("\n") %}
+    {% for link in links %}
+      {% set info = link|split(',') %}
+      <li><a href="{{ info[1] }}">{{ info[0] }}</a></li>
+    {% endfor %}
+    </ul>
+    </dd>
+  {% endif %}
 </dl>
 {% if debug %}
 <div class="border border-warning rounded bg-white p-3 mt-2 collapse" id="debug-{{ entry.getId }}">

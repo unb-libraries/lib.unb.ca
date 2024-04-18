@@ -115,6 +115,13 @@ class LocalResult extends ResultBase implements ResultInterface {
   /**
    * {@inheritDoc}
    */
+  public function getLinkedCollections() {
+    return $this->getFirstValue('linked_collections');
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public function getDebug() {
     $debug = '<p class="h4">KB Record Fields</p>';
     $debug .= '<ul class="mb-2">';
@@ -122,7 +129,7 @@ class LocalResult extends ResultBase implements ResultInterface {
     $f = [
       'entry_uid', 'title', 'collection_name', 'oclcnum', 'isbn', 'issn',
       'eissn', 'url', 'author', 'publisher', 'coverage', 'coverageenum',
-      'coverage_notes', 'collection_user_notes', 'location',
+      'coverage_notes', 'collection_user_notes', 'location', 'linked_collections',
     ];
     foreach ($f as $k) {
       $class = '';

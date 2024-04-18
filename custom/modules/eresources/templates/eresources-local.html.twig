@@ -76,6 +76,18 @@
             No specific access instructions.
           {% endif %}
           </dd>
+        {% if entry.getLinkedCollections is not empty %}
+          <dt>Collection Titles:</dt>
+          <dd>
+            <ul>
+            {% set links = entry.getLinkedCollections|split("\n") %}
+            {% for link in links %}
+              {% set info = link|split(',') %}
+              <li><a href="{{ info[1] }}">{{ info[0] }}</a></li>
+            {% endfor %}
+            </ul>
+          </dd>
+        {% endif %}
         </dl>
         {% set permalink = url('<front>')|render ~ 'eresources?id=' ~ entry.getId %}
         <p class="mt-2 mb-0 small"><b>Permalink:</b> <a href="{{ permalink }}">{{ permalink }}</a></p>
