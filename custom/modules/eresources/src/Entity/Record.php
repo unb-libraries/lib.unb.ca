@@ -312,7 +312,7 @@ class Record extends ContentEntityBase implements ContentEntityInterface {
         'weight' => 0,
         'settings' => [
           'rows' => 7,
-          'placeholder' => "Title,URL\nTitle,URL",
+          'placeholder' => "Title,Collection UID\nTitle,Collection UID",
         ],
       ])
       ->setDisplayConfigurable('form', TRUE);
