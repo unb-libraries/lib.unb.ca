@@ -61,7 +61,8 @@
     {% set links = entry.getLinkedCollections|split("\n") %}
     {% for link in links %}
       {% set info = link|split(',') %}
-      <li><a href="{{ info[1] }}">{{ info[0] }}</a></li>
+      {% set cid = info[1] | trim %}
+      <li><a href="{{ url('eresources.collection', {'collection_uid': cid }) }}">{{ info[0] }}</a></li>
     {% endfor %}
     </ul>
     </dd>
