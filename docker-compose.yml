@@ -44,11 +44,11 @@ services:
       - "4101:8025"
     networks:
       - lib.unb.ca
-  lib.unb.ca:
+  lib-unb-ca:
     build:
       context: .
     restart: unless-stopped
-    container_name: lib.unb.ca
+    container_name: lib-unb-ca
     depends_on:
       - drupal-mysql-lib-unb-ca
       - drupal-solr-lib-unb-ca
@@ -63,7 +63,7 @@ services:
       - ./env/drupal.env
     volumes:
       - drupal-data:/app/html/sites/default
-      - ./config-yml:/app/configuration
+      - ./configuration:/app/configuration
       - ./custom/modules:/app/html/modules/custom
       - ./custom/themes:/app/html/themes/custom
       - ./tests:/app/tests
