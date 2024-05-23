@@ -112,7 +112,7 @@
 </div>
 
 <div>
-  <p>Last modified on {{ guide.getChangedTime()|date }}</p>
+  <p>Last modified on {{ guide.getEditedTime()|date }}</p>
   <p class="social-buttons">
     <a href="https://www.facebook.com/sharer/sharer.php?u={{ url('<current>') }}" target="_blank" class="btn btn-sm btn-facebook"><i class="fab fa-facebook-f"></i> Share</a></li>
     <a href="https://twitter.com/intent/tweet?url={{ url('<current>') }}&amp;text=UNB Libraries: {{ guide.label | url_encode }} Guide&amp;via=UNBLibraries&amp;hashtags=UNBLibraries" target="_blank" class="btn btn-sm btn-twitter"><i class="fa-brands fa-x-twitter"></i> Share</a></li>
