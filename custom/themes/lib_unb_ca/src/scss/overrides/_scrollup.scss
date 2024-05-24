@@ -1,22 +1,29 @@
+
 #scrollUp {
   opacity: .7;
   z-index: 9998!important;
   /* Mirror SVG settings for Link skin */
   background-color: $black;
   border-radius: 100%;
-  box-shadow: inset 0 0 2px 1px $white;
-  right: 31px;
-  bottom: 20px;
-  width: 50px;
-  height: 50px;
+  box-shadow: $ivy-boxshadow;
+  right: $ivy-position;
+  bottom: 108px;
+  width: $ivy-size;
+  height: $ivy-size;
   text-indent: -9999px;
+  transition: none;
+  transition: opacity $ivy-transition-duration ease-in-out, outline $ivy-transition-duration ease-in-out;
 
   &:focus,
   &:hover {
-    background: $link-hover-color;
     opacity: 1;
   }
 
+  &:hover,
+  &.focus-ring {
+    outline-offset: -5px;
+    outline: 3px solid $white;
+  }
   /* Mirror SVG settings for Link skin */
   &::after {
     background-color: $white;
