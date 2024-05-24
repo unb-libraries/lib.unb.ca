@@ -1,0 +1,13 @@
+div.ivy-main.ivy-t-circle {
+  #ivy-bot {
+    transition: none;
+    transition: opacity $ivy-transition-duration ease-in-out, outline $ivy-transition-duration ease-in-out;
+
+    &:focus,
+    &:hover {
+      outline-offset: -5px;
+      outline-style: solid;
+      outline-color: $white!important;
+    }
+  }
+}
