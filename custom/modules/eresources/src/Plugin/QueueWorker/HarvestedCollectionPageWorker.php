@@ -142,16 +142,6 @@ class HarvestedCollectionPageWorker extends QueueWorkerBase implements Container
    * Pull extra metadata from OCLC APIs.
    */
   private function updateOclcMetadata($entity) {
-    $oclcMetadata = NULL;
-    if (empty($entity->oclc_metadata_id->target_id)) {
-      $oclcMetadataStorage = \Drupal::entityTypeManager()->getStorage('eresources_oclc_metadata');
-      $oclcMetadata = $oclcMetadataStorage->create([]);
-      $entity->oclc_metadata_id->entity = $oclcMetadata;
-    }
-    else {
-      $oclcMetadata = $entity->oclc_metadata_id->entity;
-    }
-
     if (empty($entity->oclcnum->getString())) {
       return;
     }
@@ -163,8 +153,8 @@ class HarvestedCollectionPageWorker extends QueueWorkerBase implements Container
       if (!preg_match('/[\?\!\.]$/', $text)) {
         $text .= '.';
       }
-      $oclcMetadata->set(
-        'description',
+      $entity->set(
+        'oclc_description',
         [
           'value' => $text,
           'format' => 'plain_text',
@@ -172,7 +162,6 @@ class HarvestedCollectionPageWorker extends QueueWorkerBase implements Container
       );
     }
 
-    $oclcMetadata->save();
     $entity->save();
   }
 
