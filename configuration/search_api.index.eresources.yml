@@ -170,7 +170,7 @@ field_settings:
   metadata_local_access_information:
     label: 'Local Metadata: Access Information'
     datasource_id: 'entity:eresources_record'
-    property_path: 'local_metadata_id:entity:access_information'
+    property_path: access_information
     type: string
     dependencies:
       module:
@@ -178,7 +178,7 @@ field_settings:
   metadata_local_alternate_title:
     label: 'Local Metadata: Alternate Title'
     datasource_id: 'entity:eresources_record'
-    property_path: 'local_metadata_id:entity:alternate_title'
+    property_path: alternate_title
     type: text
     dependencies:
       module:
@@ -186,7 +186,7 @@ field_settings:
   metadata_local_call_number:
     label: 'Local Metadata: Call Number'
     datasource_id: 'entity:eresources_record'
-    property_path: 'local_metadata_id:entity:call_number'
+    property_path: call_number
     type: string
     dependencies:
       module:
@@ -194,7 +194,7 @@ field_settings:
   metadata_local_catalogue_location:
     label: 'Local Metadata: Catalog Location'
     datasource_id: 'entity:eresources_record'
-    property_path: 'local_metadata_id:entity:catalogue_location'
+    property_path: catalogue_location
     type: string
     dependencies:
       module:
@@ -202,7 +202,7 @@ field_settings:
   metadata_local_date_coverage:
     label: 'Local Metadata: Coverage/Publication Date'
     datasource_id: 'entity:eresources_record'
-    property_path: 'local_metadata_id:entity:date_coverage'
+    property_path: date_coverage
     type: string
     dependencies:
       module:
@@ -210,7 +210,7 @@ field_settings:
   metadata_local_description:
     label: 'Local Metadata: Description'
     datasource_id: 'entity:eresources_record'
-    property_path: 'local_metadata_id:entity:description'
+    property_path: description
     type: text
     dependencies:
       module:
@@ -218,7 +218,7 @@ field_settings:
   metadata_local_is_collection:
     label: 'Local Metadata: Is a Collection'
     datasource_id: 'entity:eresources_record'
-    property_path: 'local_metadata_id:entity:is_collection'
+    property_path: is_collection
     type: boolean
     dependencies:
       module:
@@ -226,7 +226,7 @@ field_settings:
   metadata_local_license_status:
     label: 'Local Metadata: License Status'
     datasource_id: 'entity:eresources_record'
-    property_path: 'local_metadata_id:entity:license_status'
+    property_path: license_status
     type: string
     dependencies:
       module:
@@ -234,7 +234,7 @@ field_settings:
   metadata_local_subscription_end_date:
     label: 'Local Metadata: Subscription End Date'
     datasource_id: 'entity:eresources_record'
-    property_path: 'local_metadata_id:entity:subscription_end_date'
+    property_path: subscription_end_date
     type: date
     dependencies:
       module:
@@ -242,7 +242,7 @@ field_settings:
   metadata_local_subscription_start_date:
     label: 'Local Metadata: Subscription Start Date'
     datasource_id: 'entity:eresources_record'
-    property_path: 'local_metadata_id:entity:subscription_start_date'
+    property_path: subscription_start_date
     type: date
     dependencies:
       module:
@@ -250,7 +250,7 @@ field_settings:
   metadata_oclc_description:
     label: 'OCLC Metadata: Description'
     datasource_id: 'entity:eresources_record'
-    property_path: 'oclc_metadata_id:entity:description'
+    property_path: oclc_description
     type: text
     dependencies:
       module:
