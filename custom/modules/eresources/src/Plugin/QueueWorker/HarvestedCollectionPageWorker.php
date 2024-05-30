@@ -126,10 +126,6 @@ class HarvestedCollectionPageWorker extends QueueWorkerBase implements Container
         else {
           $fields['kb_data_type'] = $collection->getKbDataType();
           $entity = $storage->create($fields);
-          // Create matching local metadata row.
-          $localMetadataStorage = \Drupal::entityTypeManager()->getStorage('eresources_local_metadata');
-          $localMetadata = $localMetadataStorage->create([]);
-          $entity->local_metadata_id->entity = $localMetadata;
         }
         $entity->save();
 
