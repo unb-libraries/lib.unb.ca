@@ -118,6 +118,21 @@ class Record extends ContentEntityBase implements ContentEntityInterface {
       ])
       ->setDisplayConfigurable('form', TRUE);
 
+    $fields['alternate_title'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Alternate Title'))
+      ->setRequired(FALSE)
+      ->setSettings(
+        [
+          'default_value' => '',
+          'max_length' => 255,
+        ]
+      )
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
     $fields['author'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Author'))
       ->setRequired(FALSE)
@@ -283,6 +298,125 @@ class Record extends ContentEntityBase implements ContentEntityInterface {
       ])
       ->setDisplayConfigurable('form', TRUE);
 
+    $fields['date_coverage'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Coverage/Publication Date'))
+      ->setRequired(FALSE)
+      ->setSettings(
+        [
+          'default_value' => '',
+          'max_length' => 255,
+        ]
+      )
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['subscription_start_date'] = BaseFieldDefinition::create('datetime')
+      ->setLabel(t('Subscription Start Date'))
+      ->setRequired(FALSE)
+      ->setSettings([
+        'datetime_type' => 'date',
+      ])
+      ->setDisplayOptions('form', [
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['subscription_end_date'] = BaseFieldDefinition::create('datetime')
+      ->setLabel(t('Subscription End Date'))
+      ->setRequired(FALSE)
+      ->setSettings([
+        'datetime_type' => 'date',
+      ])
+      ->setDisplayOptions('form', [
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['description'] = BaseFieldDefinition::create('text_long')
+      ->setLabel(t('Description'))
+      ->setRequired(FALSE)
+      ->setSettings([
+        'max_length' => 4096,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'text_textarea',
+        'rows' => 6,
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['access_information'] = BaseFieldDefinition::create('text_long')
+      ->setLabel(t('Access Information'))
+      ->setRequired(FALSE)
+      ->setSettings([
+        'max_length' => 4096,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'text_textarea',
+        'rows' => 6,
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['license_status'] = BaseFieldDefinition::create('list_string')
+      ->setLabel(t('License Status'))
+      ->setRequired(FALSE)
+      ->setSettings([
+        'allowed_values' => [
+          'Y' => 'Licensed',
+          'OA' => 'Free / Open Access',
+          'T' => 'Trial',
+          'C' => 'Cancelled',
+        ],
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_select',
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['catalogue_location'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Catalog Location'))
+      ->setRequired(FALSE)
+      ->setSettings(
+        [
+          'default_value' => '',
+          'max_length' => 255,
+        ]
+      )
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['call_number'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Call Number'))
+      ->setRequired(FALSE)
+      ->setSettings(
+        [
+          'default_value' => '',
+          'max_length' => 255,
+        ]
+      )
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['is_collection'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Is a Collection'))
+      ->setRequired(FALSE)
+      ->setDefaultValue(FALSE)
+      ->setDisplayOptions('form', [
+        'type' => 'boolean_checkbox',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
     $fields['location'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Location'))
       ->setRequired(FALSE)
@@ -316,6 +450,13 @@ class Record extends ContentEntityBase implements ContentEntityInterface {
         ],
       ])
       ->setDisplayConfigurable('form', TRUE);
+
+    $fields['oclc_description'] = BaseFieldDefinition::create('text_long')
+      ->setLabel(t('OCLC Description'))
+      ->setRequired(FALSE)
+      ->setSettings([
+        'max_length' => 4096,
+      ]);
 
     $fields['is_local'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Mark as a custom local record'))
