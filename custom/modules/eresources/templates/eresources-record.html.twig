@@ -12,8 +12,7 @@
   <tr><td>{{ fieldObj.name }}</td><td>{{ fieldObj.value }}</td></tr>
 {% endfor %}
 </table>
-{% set local_metadata = eresources_record.local_metadata_id.entity %}
-<h2>Local Metadata (<a href="{{ url('entity.eresources_local_metadata.edit_form', {'eresources_local_metadata': local_metadata.id.value}) }}">edit</a>)</h2>
+<h2>Local Metadata</h2>
 <table>
   <tr><th>Key</th><th>Value</th></tr>
 {% set fields = [
@@ -22,21 +21,18 @@
   'license_status', 'is_collection',
 ] %}
 {% for field in fields %}
-  {% set fieldObj = local_metadata.get(field) %}
+  {% set fieldObj = eresources_record.get(field) %}
   <tr><td>{{ fieldObj.name }}</td><td>{{ fieldObj.value }}</td></tr>
 {% endfor %}
 </table>
-{% if eresources_record.oclc_metadata_id is not empty %}
-{% set oclc_metadata = eresources_record.oclc_metadata_id.entity %}
 <h2>OCLC Metadata</h2>
 <table>
   <tr><th>Key</th><th>Value</th></tr>
 {% set fields = [
-  'description',
+  'oclc_description',
 ] %}
 {% for field in fields %}
-  {% set fieldObj = oclc_metadata.get(field) %}
+  {% set fieldObj = eresources_record.get(field) %}
   <tr><td>{{ fieldObj.name }}</td><td>{{ fieldObj.value }}</td></tr>
 {% endfor %}
 </table>
-{% endif %}

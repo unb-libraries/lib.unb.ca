@@ -1004,14 +1004,144 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        access_information__value:
-          id: access_information__value
-          table: eresources_local_metadata
-          field: access_information__value
-          relationship: local_metadata_id
+        call_number_1:
+          id: call_number_1
+          table: eresources_record
+          field: call_number
+          relationship: none
           group_type: group
           admin_label: ''
-          entity_type: eresources_local_metadata
+          entity_type: eresources_record
+          entity_field: call_number
+          plugin_id: field
+          label: 'Call Number'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        catalogue_location_1:
+          id: catalogue_location_1
+          table: eresources_record
+          field: catalogue_location
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: eresources_record
+          entity_field: catalogue_location
+          plugin_id: field
+          label: 'Catalog Location'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        access_information__value:
+          id: access_information__value
+          table: eresources_record
+          field: access_information__value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: eresources_record
           entity_field: access_information
           plugin_id: field
           label: 'Access Information'
@@ -1070,12 +1200,12 @@ display:
           field_api_classes: false
         alternate_title:
           id: alternate_title
-          table: eresources_local_metadata
+          table: eresources_record
           field: alternate_title
-          relationship: local_metadata_id
+          relationship: none
           group_type: group
           admin_label: ''
-          entity_type: eresources_local_metadata
+          entity_type: eresources_record
           entity_field: alternate_title
           plugin_id: field
           label: 'Alternate Title'
@@ -1135,12 +1265,12 @@ display:
           field_api_classes: false
         date_coverage:
           id: date_coverage
-          table: eresources_local_metadata
+          table: eresources_record
           field: date_coverage
-          relationship: local_metadata_id
+          relationship: none
           group_type: group
           admin_label: ''
-          entity_type: eresources_local_metadata
+          entity_type: eresources_record
           entity_field: date_coverage
           plugin_id: field
           label: 'Coverage/Publication Date'
@@ -1200,12 +1330,12 @@ display:
           field_api_classes: false
         description__value:
           id: description__value
-          table: eresources_local_metadata
+          table: eresources_record
           field: description__value
-          relationship: local_metadata_id
+          relationship: none
           group_type: group
           admin_label: ''
-          entity_type: eresources_local_metadata
+          entity_type: eresources_record
           entity_field: description
           plugin_id: field
           label: Description
@@ -1264,12 +1394,12 @@ display:
           field_api_classes: false
         is_collection:
           id: is_collection
-          table: eresources_local_metadata
+          table: eresources_record
           field: is_collection
-          relationship: local_metadata_id
+          relationship: none
           group_type: group
           admin_label: ''
-          entity_type: eresources_local_metadata
+          entity_type: eresources_record
           entity_field: is_collection
           plugin_id: field
           label: 'Is a Collection'
@@ -1331,12 +1461,12 @@ display:
           field_api_classes: false
         license_status:
           id: license_status
-          table: eresources_local_metadata
+          table: eresources_record
           field: license_status
-          relationship: local_metadata_id
+          relationship: none
           group_type: group
           admin_label: ''
-          entity_type: eresources_local_metadata
+          entity_type: eresources_record
           entity_field: license_status
           plugin_id: field
           label: 'License Status'
@@ -1393,17 +1523,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        subscription_end_date:
-          id: subscription_end_date
-          table: eresources_local_metadata
-          field: subscription_end_date
-          relationship: local_metadata_id
+        subscription_start_date_1:
+          id: subscription_start_date_1
+          table: eresources_record
+          field: subscription_start_date
+          relationship: none
           group_type: group
           admin_label: ''
-          entity_type: eresources_local_metadata
-          entity_field: subscription_end_date
+          entity_type: eresources_record
+          entity_field: subscription_start_date
           plugin_id: field
-          label: 'Subscription End Date'
+          label: 'Subscription Start Date'
           exclude: false
           alter:
             alter_text: false
@@ -1459,17 +1589,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        subscription_start_date:
-          id: subscription_start_date
-          table: eresources_local_metadata
-          field: subscription_start_date
-          relationship: local_metadata_id
+        subscription_end_date_1:
+          id: subscription_end_date_1
+          table: eresources_record
+          field: subscription_end_date
+          relationship: none
           group_type: group
           admin_label: ''
-          entity_type: eresources_local_metadata
-          entity_field: subscription_start_date
+          entity_type: eresources_record
+          entity_field: subscription_end_date
           plugin_id: field
-          label: 'Subscription Start Date'
+          label: 'Subscription End Date'
           exclude: false
           alter:
             alter_text: false
@@ -1654,18 +1784,7 @@ display:
           distinct: false
           replica: false
           query_tags: {  }
-      relationships:
-        local_metadata_id:
-          id: local_metadata_id
-          table: eresources_record
-          field: local_metadata_id
-          relationship: none
-          group_type: group
-          admin_label: 'eResources Local Metadata'
-          entity_type: eresources_record
-          entity_field: local_metadata_id
-          plugin_id: standard
-          required: true
+      relationships: {  }
       header: {  }
       footer: {  }
       display_extenders: {  }

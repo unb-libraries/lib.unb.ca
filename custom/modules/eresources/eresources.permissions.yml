@@ -35,22 +35,3 @@ update eresources_record entities:
 
 delete eresources_record entities:
   title: "Delete e-Resources Records."
-
-# Local Metadata entities
-administer eresources_local_metadata entities:
-  title: "Administer e-Resources Local Metadata."
-
-list eresources_local_metadata entities:
-  title: "List e-Resources Local Metadata."
-
-create eresources_local_metadata entities:
-  title: "Create e-Resources Local Metadata."
-
-view eresources_local_metadata entities:
-  title: "View e-Resources Local Metadata."
-
-update eresources_local_metadata entities:
-  title: "Edit e-Resources Local Metadata."
-
-delete eresources_local_metadata entities:
-  title: "Delete e-Resources Local Metadata."

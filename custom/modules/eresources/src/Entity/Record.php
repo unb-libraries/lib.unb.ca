@@ -57,16 +57,6 @@ class Record extends ContentEntityBase implements ContentEntityInterface {
       ->setSetting('target_type', 'eresources_harvested_collection')
       ->setSetting('handler', 'default');
 
-    $fields['local_metadata_id'] = BaseFieldDefinition::create('entity_reference')
-      ->setLabel(t('Local Metadata ID'))
-      ->setSetting('target_type', 'eresources_local_metadata')
-      ->setSetting('handler', 'default');
-
-    $fields['oclc_metadata_id'] = BaseFieldDefinition::create('entity_reference')
-      ->setLabel(t('OCLC Metadata ID'))
-      ->setSetting('target_type', 'eresources_oclc_metadata')
-      ->setSetting('handler', 'default');
-
     $fields['entry_uid'] = BaseFieldDefinition::create('string')
       ->setLabel(t('OCLC Entry UID'))
       ->setDescription(t('Used for Knowledge Base synchronization.'))
