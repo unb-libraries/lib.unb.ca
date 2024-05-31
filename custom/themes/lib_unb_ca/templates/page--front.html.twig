@@ -182,7 +182,7 @@ set banner_classes = [
 <footer class="site-footer p-0">
   {% include '@unb_lib_theme/includes/footer.html.twig' %}
 </footer>
-{% if env_indicator is defined %}
+{% if env_indicator %}
     {% if env_indicator == 'Development Server' %}
       <script type="text/javascript" src="https://bot.ivy.ai/bot/script/category/Er19XwoBKRpe5G8w7XMj8zkZv7a4N0dq" referrerpolicy="no-referrer-when-downgrade" async></script>
     {% endif %}
