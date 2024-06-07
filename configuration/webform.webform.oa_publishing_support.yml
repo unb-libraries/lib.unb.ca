@@ -335,7 +335,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: jsmyth@unb.ca
+      to_mail: mnason@unb.ca
       to_options: {  }
       bcc_mail: ''
       bcc_options: {  }
