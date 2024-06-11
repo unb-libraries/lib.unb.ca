@@ -26,7 +26,7 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.18);
 }
 #discovery-search .card-body {
-  min-height: 134px;
+  min-height: 140px;
 }
 #discovery-search .list a {
   text-decoration: underline;
