@@ -44,7 +44,7 @@ class DiscoverySearch extends BlockBase {
         <div id="discovery-search" class="flex-grow-1">
         <div class="card">
           <div class="card-header px-2 pb-0 pb-md-1">
-            <h2 class="sr-only">Search</h2>
+            <h2 class="visually-hidden">Search</h2>
             <nav aria-label="Discovery Search" class="navbar navbar-expand-md text-nowrap">
               <h3 id="category-label" class="d-block d-md-none h4 px-2 py-1">Catalogue</h3>
               <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -113,14 +113,14 @@ class DiscoverySearch extends BlockBase {
       '<form action="//web.lib.unb.ca/reserves/index.php/quickSearch" id="searchReserves" class="chosen-compact mb-2" method="post">
         <div class="d-flex flex-column flex-md-row">
           <div class="flex-fill mb-2 mr-0 mr-md-2">
-            <label class="sr-only" for="keywords">
-              Search for:
+            <label class="visually-hidden" for="keywords">
+              Search by instructor, course name, or course number:
             </label>
             <input class="form-control" id="keywords" name="keywords" placeholder="Search by instructor, course name, or course number" type="search" value="" required>
           </div>
           <div class="flex-fill mb-2 mr-0 mr-md-2">
-            <label class="sr-only" for="semester">
-              Course Semester
+            <label class="visually-hidden" for="semester">
+              Please choose a course semester:
             </label>' .
             $this->getReservesSemesters() .
          '</div>
@@ -208,14 +208,14 @@ class DiscoverySearch extends BlockBase {
           <input type="hidden" id="scope_UNBLibraries_WCD" name="scope" value="wz:66413">
           <div class="d-flex flex-column flex-md-row">
             <div class="flex-fill mb-2 mr-0 mr-md-2">
-              <label class="sr-only" for="queryString_WCD">
-                Search UNB WorldCat for:
+              <label class="visually-hidden" for="queryString_WCD">
+                Search for books, articles, and more:
               </label>
-              <input class="form-control" id="queryString_WCD" name="queryString" placeholder="Search books, articles, and more" type="search" required>
+              <input class="form-control" id="queryString_WCD" name="queryString" placeholder="Search for books, articles, and more" type="search" required>
             </div>
             <div class="flex-fill mb-2 mr-0 mr-md-2">
-              <label class="sr-only" for="searchIndex_WCD">
-                Search index
+              <label class="visually-hidden" for="searchIndex_WCD">
+                Please choose a search index:
               </label>
               <fieldset class="form-type-select form-group">
                 <select class="custom-chosen-select custom-select form-control" id="searchIndex_WCD" name="searchIndex">
@@ -256,8 +256,8 @@ class DiscoverySearch extends BlockBase {
       '<form action="/eresources" id="title_results" class="custom-selectize mb-2" method="get">
         <div class="d-flex flex-column flex-md-row">
           <div class="flex-fill mb-2 mr-0 mr-md-2">
-            <label class="sr-only" for="databaseID">
-              Browse for databases by title
+            <label class="visually-hidden" for="databaseID">
+             Please choose a database title
             </label>' .
             $this->getDatabasesTitles() .
           '</div>
@@ -323,8 +323,8 @@ class DiscoverySearch extends BlockBase {
         <div class="d-flex flex-column flex-md-row">
           <div class="flex-fill mb-2 mr-0 mr-md-2">
             <fieldset class="form-group">
-            <label class="sr-only" for="title_journal">
-              Search words in title
+            <label class="visually-hidden" for="title_journal">
+              Search for journal and newspaper titles:
             </label>
             <input class="form-control" id="title_journal" name="query" placeholder="Search for journal and newspaper titles" type="search" required>
             </fieldset>
@@ -359,7 +359,7 @@ class DiscoverySearch extends BlockBase {
         <input id="sub_refmat" name="form_id" type="hidden" value="eres_reference">
         <div class="form-group">
           <fieldset>
-          <legend class="custom-legend mb-4">Search for Reference Materials by title<span class="sr-only"> using 1 of the following options</span>.</legend>
+          <legend class="custom-legend mb-4">Search for Reference Materials by title<span class="visually-hidden"> using 1 of the following options</span>.</legend>
             <div class="form-row font-weight-bold ml-1">
               <div class="custom-control custom-radio custom-control-inline mb-2 mb-lg-0">
                 <input checked="checked" class="custom-control-input" id="searchtype_every_refmat" name="type" type="radio" value="title">
@@ -384,7 +384,7 @@ class DiscoverySearch extends BlockBase {
         </div>
         <div class="form-group">
           <div class="form-row">
-            <label class="sr-only" for="title_refmat">
+            <label class="visually-hidden" for="title_refmat">
               Title
             </label>
             <div class="col-md-10 mb-2">
@@ -433,7 +433,7 @@ class DiscoverySearch extends BlockBase {
         <div class="form-group">
           <fieldset>
             <legend class="custom-legend mb-4">Search our vast electronic book collections for titles suitable for your computer,
-                tablet or eReader<span class="sr-only"> using 1 of the following options</span>.</legend>
+                tablet or eReader<span class="visually-hidden"> using 1 of the following options</span>.</legend>
             <div class="form-row font-weight-bold ml-1">
               <div class="custom-control custom-radio custom-control-inline mb-2 mb-lg-0">
                 <input checked="checked" class="custom-control-input" id="searchtype_every_ebooks" name="type" type="radio" value="title">
@@ -458,7 +458,7 @@ class DiscoverySearch extends BlockBase {
         </div>
         <div class="form-group">
           <div class="form-row">
-            <label class="sr-only" for="title_ebooks">
+            <label class="visually-hidden" for="title_ebooks">
               Title
             </label>
             <div class="col-md-10 mb-2">
@@ -497,7 +497,7 @@ class DiscoverySearch extends BlockBase {
         <div class="form-group">
           <fieldset>
           <legend class="custom-legend mb-4">Search across our online video
-            collections<span class="sr-only">using 1 of the following options</span>.</legend>
+            collections<span class="visually-hidden">using 1 of the following options</span>.</legend>
             <div class="form-row font-weight-bold ml-1">
               <div class="custom-control custom-radio custom-control-inline mb-2 mb-lg-0">
                 <input checked="checked" class="custom-control-input" id="searchtype_every_video" name="type" type="radio" value="title">
@@ -528,7 +528,7 @@ class DiscoverySearch extends BlockBase {
          </div>
          <div class="form-group">
           <div class="form-row">
-            <label for="title_video" class="sr-only">
+            <label for="title_video" class="visually-hidden">
               Title
             </label>
             <div class="col-md-9 mb-2">
