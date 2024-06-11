@@ -38,7 +38,7 @@ class DiscoverySearch extends BlockBase {
       $render_array = $plugin_block->build();
       $askus_block = \Drupal::service('renderer')->render($render_array);
     }
-
+    $eres_href = '/eresources?form_id=eres_reference';
     $html =
       '<div class="Accordion d-flex flex-column flex-lg-row px-4 px-lg-0">
         <div id="discovery-search" class="flex-grow-1">
@@ -59,8 +59,8 @@ class DiscoverySearch extends BlockBase {
                   <li class="nav-item">
                     <a class="btn Accordion-trigger p-2 rounded-0 shadow-none text-left text-lg-center text-nowrap"
                        id="searchBtn5" aria-controls="searchPanel5" aria-expanded="false" tabindex="-1"
-                       href="/eresources?form_id=eres_reference"
-                       onclick="location.href=\'/eresources?form_id=eres_reference\';"
+                       href="'. $eres_href . '"
+                       onclick="location.href=\'' . $eres_href . '\';"
                        aria-label="Guide to Finding Reference Materials (e-Resources page)"
                        title="e-Resources page">More<i class="fa-solid fa-angle-double-right fa-sm fa-muted ml-1" aria-hidden="true"></i>
                     </a>
@@ -76,8 +76,9 @@ class DiscoverySearch extends BlockBase {
             <div aria-labelledby="searchBtn4" class="Accordion-panel" id="searchPanel4" role="region" hidden="">' . $this->getJournalsForm() . '</div>
             <div aria-labelledby="searchBtn5" class="Accordion-panel" id="searchPanel5" role="region" hidden="">
               <div class="d-flex justify-content-center pt-4">
-                <i class="fa-solid fa-spinner fa-spin-pulse fa-lg text-warning" aria-hidden="true" style="line-height: inherit;"></i>
-                <span class="ml-2 mt-1">Redirecting to the e-Resources page</span>
+                <i class="fa-solid fa-arrow-up-right-from-square fa-bounce fa-lg" aria-hidden="true" style="line-height: inherit;"></i>
+                <span class="ml-2 mt-1">Redirecting to the
+                <a href="' . $eres_href . '" class="text-warning">e-Resources page</a>.</span>
               </div>
             </div>
           </div>
