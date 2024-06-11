@@ -70,11 +70,11 @@ class DiscoverySearch extends BlockBase {
             </nav>
           </div>
           <div class="card-body px-2 py-0 theme-dark">
-            <div aria-labelledby="searchBtn1 dropdownBtn1" class="Accordion-panel" id="searchPanel1" role="region">' . $this->getCatalogueForm() . '</div>
-            <div aria-labelledby="searchBtn2 dropdownBtn2" class="Accordion-panel" id="searchPanel2" role="region" hidden="">' . $this->getReservesForm() . '</div>
-            <div aria-labelledby="searchBtn3 dropdownBtn3" class="Accordion-panel" id="searchPanel3" role="region" hidden="">' . $this->getDatabasesForm() . '</div>
-            <div aria-labelledby="searchBtn4 dropdownBtn4" class="Accordion-panel" id="searchPanel4" role="region" hidden="">' . $this->getJournalsForm() . '</div>
-            <div aria-labelledby="searchBtn5 dropdownBtn5" class="Accordion-panel" id="searchPanel5" role="region" hidden="">
+            <div aria-labelledby="searchBtn1" class="Accordion-panel" id="searchPanel1" role="region">' . $this->getCatalogueForm() . '</div>
+            <div aria-labelledby="searchBtn2" class="Accordion-panel" id="searchPanel2" role="region" hidden="">' . $this->getReservesForm() . '</div>
+            <div aria-labelledby="searchBtn3" class="Accordion-panel" id="searchPanel3" role="region" hidden="">' . $this->getDatabasesForm() . '</div>
+            <div aria-labelledby="searchBtn4" class="Accordion-panel" id="searchPanel4" role="region" hidden="">' . $this->getJournalsForm() . '</div>
+            <div aria-labelledby="searchBtn5" class="Accordion-panel" id="searchPanel5" role="region" hidden="">
               <div class="d-flex justify-content-center pt-4">
                 <i class="fa-solid fa-spinner fa-spin-pulse fa-lg text-warning" aria-hidden="true" style="line-height: inherit;"></i>
                 <span class="ml-2 mt-1">Redirecting to the e-Resources page</span>
