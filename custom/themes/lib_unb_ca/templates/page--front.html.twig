@@ -110,12 +110,9 @@ set banner_classes = [
 
         <nav aria-label="Main Menu" id="navbar-main" class="navbar navbar-expand-lg px-0">
             <div class="container">
-                <div id="navbar-main-content" class="d-flex flex-column flex-lg-row w-100">
-                    <div class="align-self-center branding mr-lg-3">
-                        <div class="mb-0 text-center text-lg-left">
-                            <img alt="UNB Libraries" class="img-fluid unblib-logo" src="{{ unb_lib_theme_path }}/img/unb-libraries-red-white.png" />
-                            <img alt="UNB Libraries" class="img-fluid unblib-logo-affix" src="{{ unb_lib_theme_path }}/img/unb-libraries-white.png" />
-                        </div>
+                <div id="navbar-main-content" class="d-flex align-items-stretch flex-column flex-lg-row w-100">
+                    <div class="d-flex branding mr-lg-3 mx-auto text-lg-left">
+                      {% include '@unb_lib_theme/includes/branding-logo.html.twig' %}
                     </div>
                     <div id="nav-btn" class="d-flex d-lg-none mx-0">
                         <ul class="container nav nav-pills justify-content-between">
