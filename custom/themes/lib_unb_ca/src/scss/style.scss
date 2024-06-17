@@ -13,27 +13,31 @@ img.float-right,
   margin-left: .5rem;
 }
 figure {
-  &.align-left {
-    margin-right: 1rem;
+  &.align-center,
+  &.align-left,
+  &.align-right {
+    .field--type-image {
+      margin: 0;
+    }
 
     img {
       margin: 0;
+      width: 100%;
     }
+  }
+  &.align-left {
+    margin-right: 1rem;
   }
   &.align-right {
     margin-left: 1rem;
-
-    img {
-      margin: 0;
-    }
   }
 
   figcaption {
     color: $gray-700;
     font-size: 95%;
     line-height: 1.15rem;
-    margin-top: .5rem;
-    padding: 0.6rem 0.75rem!important;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 }
 

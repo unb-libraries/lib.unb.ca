@@ -56,9 +56,11 @@ figure {
     padding-bottom: 0;
   }
 
-  &.caption,
-  &.caption > figcaption {
-    display: block;
+  &:not(.image-style) {
+    &.caption,
+    &.caption > figcaption {
+      display: block;
+    }
   }
 
   &.caption:not(.img-thumbnail) {
