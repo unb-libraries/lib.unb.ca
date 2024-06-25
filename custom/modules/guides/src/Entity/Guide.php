@@ -3,6 +3,7 @@
 namespace Drupal\guides\Entity;
 
 use Drupal\Component\Utility\Html;
+use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
@@ -254,6 +255,8 @@ class Guide extends RevisionableContentEntityBase implements ContentEntityInterf
     if (!$this->isNew()) {
       $this->setNewRevision(TRUE);
     }
+    $now = (new DrupalDateTime())->getTimestamp();
+    $this->setEditedTime($now);
     return parent::save();
   }
 
