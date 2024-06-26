@@ -314,7 +314,7 @@
     "drupal/editor_file": "<=1.8",
     "drupal/embed": "1.7",
     "drupal/entity_browser": "2.10",
-    "drupal/entity_embed": "1.5",
+    "drupal/entity_embed": "1.6",
     "drupal/entity_reference_revisions": "1.11",
     "drupal/externalauth": "2.0.5",
     "drupal/facets": "2.0.7",
