@@ -351,7 +351,7 @@
     "drupal/pathauto": "1.12",
     "drupal/profile": "1.10",
     "drupal/protected_file": "1.4",
-    "drupal/r4032login": "2.2.1",
+    "drupal/r4032login": "2.2.2",
     "drupal/redirect": "1.9",
     "drupal/redis": "1.7",
     "drupal/samlauth": "3.9",
