@@ -725,7 +725,7 @@ ul.field--name-field-categories:before {
   }
 
   figure {
-    display: table;
+    display: table!important;
 
     &.caption-drupal-media {
       a {
@@ -759,7 +759,7 @@ ul.field--name-field-categories:before {
     }
 
     figcaption {
-      display: table-caption;
+      display: table-caption!important;
       caption-side: bottom;
       @include css3-prefix(transition, all .3s ease-in-out);
       line-height: 120%;
