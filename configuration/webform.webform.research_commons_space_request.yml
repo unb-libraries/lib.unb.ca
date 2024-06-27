@@ -384,7 +384,7 @@ handlers:
       from_mail: unb-libraries-no-reply@unb.ca
       from_options: {  }
       from_name: 'Research Commons Space Request Form'
-      reply_to: mbragdon@unb.ca
+      reply_to: mfonzo@unb.ca
       return_path: ''
       sender_mail: ''
       sender_name: ''
