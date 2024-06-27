@@ -55,6 +55,9 @@
       "drupal/core": {
         "Use admin theme for custom entity admin forms": "https://www.drupal.org/files/issues/2022-02-07/2893740-39.patch"
       },
+      "drupal/better_exposed_filters": {
+        "Fix syntax error re: PHP7 parameter list comma": "https://www.drupal.org/files/issues/2024-05-29/syntax_error_fix.patch"
+      },
       "drupal/easy_breadcrumb": {
         "Ignore entities in routes": "/build/patches/easy_breadcrumb-ignore-entity.patch"
       },
@@ -297,7 +300,7 @@
     "drupal/admin_toolbar": "3.4.2",
     "drupal/allowed_formats": "2.0.0",
     "drupal/antibot": "2.0.3",
-    "drupal/better_exposed_filters": "6.0.3",
+    "drupal/better_exposed_filters": "6.0.6",
     "drupal/block_field": "1.0-rc4",
     "drupal/bootstrap_barrio": "5.1.10",
     "drupal/cache_control_override": "1.1",
