@@ -181,7 +181,6 @@ class EresourcesListForm extends FormBase {
       $recordStorage = $this->entityTypeManager->getStorage('eresources_record');
       $record = $recordStorage->load($id);
       $text = '<h2>' . $record->label() . " <span class=\"text-muted small\">[id:{$id}]</span></h2>";
-      $localMetadata = $record->local_metadata_id->entity;
 
       if ($record->is_local->getString()) {
         $editUrl = Url::fromRoute('guides.local_eresource.edit', ['id' => $id])->toString();
@@ -191,10 +190,10 @@ class EresourcesListForm extends FormBase {
           $text .= ' <a class="button" href="' . $deleteUrl . '">Delete Record</a>';
         }
         $text .= '<p class="local">[LOCAL] This record has been <b>added manually</b> by a Guide Editor and <b>may need review</b>.</p>';
-        $text .= '<ul><li>URL or eBook link: ' . $record->url->getString() . ($localMetadata->license_status->getString() == 'Y' ? ' (Licensed Resource)' : '') . '</li>';
+        $text .= '<ul><li>URL or eBook link: ' . $record->url->getString() . ($record->license_status->getString() == 'Y' ? ' (Licensed Resource)' : '') . '</li>';
         $text .= '<li>Physical items:<ul>';
-        $text .= '  <li>Shelving Location: ' . $localMetadata->catalogue_location->getString() . '</li>';
-        $text .= '  <li>Call Number: ' . $localMetadata->call_number->getString() . '</li>';
+        $text .= '  <li>Shelving Location: ' . $record->catalogue_location->getString() . '</li>';
+        $text .= '  <li>Call Number: ' . $record->call_number->getString() . '</li>';
         $text .= '  <li>OCLC Number: ' . $record->oclcnum->getString() . '</li>';
         $text .= '</ul></li></ul>';
       }
@@ -206,11 +205,11 @@ class EresourcesListForm extends FormBase {
         }
       }
 
-      if (!empty($localMetadata->description->getString())) {
+      if (!empty($record->description->getString())) {
         $render = [
           '#type' => 'processed_text',
-          '#text' => $localMetadata->description->value,
-          '#format' => $localMetadata->description->format,
+          '#text' => $record->description->value,
+          '#format' => $record->description->format,
         ];
         $description = \Drupal::service('renderer')->render($render);
         $text .= '<blockquote>' . $description . '</blockquote>';
