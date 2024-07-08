@@ -161,18 +161,12 @@ Reach out to <a href="https://lib.unb.ca/help/ticket/new?nature=Other&title=eRes
       $storage = $this->entityTypeManager->getStorage('eresources_record');
       $record = $storage->load($id);
 
-      $fields = ['title', 'kb_data_type', 'url', 'oclcnum'];
-      foreach ($fields as $field) {
-        $form[$field]['#default_value'] = $record->get($field)->getString();
-      }
-
-      $localMetadata = $record->local_metadata_id->entity;
-
       $fields = [
+        'title', 'kb_data_type', 'url', 'oclcnum',
         'license_status', 'catalogue_location', 'call_number',
       ];
       foreach ($fields as $field) {
-        $form[$field]['#default_value'] = $localMetadata->get($field)->getString();
+        $form[$field]['#default_value'] = $record->get($field)->getString();
       }
 
       $description = $localMetadata->description->getValue()[0];
