@@ -163,14 +163,11 @@ Reach out to <a href="https://lib.unb.ca/help/ticket/new?nature=Other&title=eRes
 
       $fields = [
         'title', 'kb_data_type', 'url', 'oclcnum',
-        'license_status', 'catalogue_location', 'call_number',
+        'license_status', 'catalogue_location', 'call_number', 'description',
       ];
       foreach ($fields as $field) {
         $form[$field]['#default_value'] = $record->get($field)->getString();
       }
-
-      $description = $localMetadata->description->getValue()[0];
-      $form['description']['#default_value'] = $description['value'];
     }
 
     return $form;
