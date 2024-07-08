@@ -190,12 +190,29 @@ class EresourcesListForm extends FormBase {
           $text .= ' <a class="button" href="' . $deleteUrl . '">Delete Record</a>';
         }
         $text .= '<p class="local">[LOCAL] This record has been <b>added manually</b> by a Guide Editor and <b>may need review</b>.</p>';
-        $text .= '<ul><li>URL or eBook link: ' . $record->url->getString() . ($record->license_status->getString() == 'Y' ? ' (Licensed Resource)' : '') . '</li>';
-        $text .= '<li>Physical items:<ul>';
-        $text .= '  <li>Shelving Location: ' . $record->catalogue_location->getString() . '</li>';
-        $text .= '  <li>Call Number: ' . $record->call_number->getString() . '</li>';
-        $text .= '  <li>OCLC Number: ' . $record->oclcnum->getString() . '</li>';
-        $text .= '</ul></li></ul>';
+        $url = $record->url->getString();
+        $text .= '<ul>';
+        if (!empty($url)) {
+          $text .= '<li>URL or eBook link: ' . $url . ($record->license_status->getString() == 'Y' ? ' (Licensed Resource)' : '') . '</li>';
+        }
+
+        $location = $record->catalogue_location->getString();
+        $callnum = $record->call_number->getString();
+        $oclcnum = $record->oclcnum->getString();
+        if (!empty($location) || !empty($callnum) || !empty($oclcnum)) {
+          $text .= '<li>Physical item:<ul>';
+          if (!empty($location)) {
+            $text .= '  <li>Shelving Location: ' . $record->catalogue_location->getString() . '</li>';
+          }
+          if (!empty($callnum)) {
+            $text .= '  <li>Call Number: ' . $record->call_number->getString() . '</li>';
+          }
+          if (!empty($oclcnum)) {
+            $text .= '  <li>OCLC Number: ' . $record->oclcnum->getString() . '</li>';
+          }
+          $text .= '</ul></li>';
+        }
+        $text .= '</ul>';
       }
       else {
         $text .= '<p class="catalogue">This record is <b>maintained by Cataloguing</b> and is part of eResources Discovery.</p>';
