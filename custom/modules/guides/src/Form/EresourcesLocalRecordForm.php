@@ -219,51 +219,27 @@ Reach out to <a href="https://lib.unb.ca/help/ticket/new?nature=Other&title=eRes
     if ($id) {
       $storage = $this->entityTypeManager->getStorage('eresources_record');
       $record = $storage->load($id);
-
-      $fields = ['title', 'kb_data_type', 'url', 'oclcnum'];
-      foreach ($fields as $field) {
-        $record->set($field, $form_state->getValue($field));
-      }
-      $record->save();
-
-      $localMetadata = $record->local_metadata_id->entity;
-      $fields = [
-        'description', 'license_status', 'catalogue_location', 'call_number',
-      ];
-      foreach ($fields as $field) {
-        $localMetadata->set($field, $form_state->getValue($field));
-      }
-      $localMetadata->save();
-
-      $form_state->setRedirect('guides.eresources_list', [], ['query' => ['id' => $id]]);
-      $this->messenger()->addStatus('Record updated');
-      return;
+      $mode = 'updated';
     }
-
-    $storage = $this->entityTypeManager->getStorage('eresources_local_metadata');
-    $localMetadata = $storage->create();
+    else {
+      $storage = $this->entityTypeManager->getStorage('eresources_record');
+      $record = $storage->create();
+      $record->set('is_local', TRUE);
+      $mode = 'created';
+    }
 
     $fields = [
+      'title', 'kb_data_type', 'url', 'oclcnum',
       'description', 'license_status', 'catalogue_location', 'call_number',
     ];
-    foreach ($fields as $field) {
-      $localMetadata->set($field, $form_state->getValue($field));
-    }
-    $localMetadata->save();
-
-    $storage = $this->entityTypeManager->getStorage('eresources_record');
-    $record = $storage->create();
-    $record->set('is_local', TRUE);
-    $record->set('local_metadata_id', $localMetadata->id());
-
-    $fields = ['title', 'kb_data_type', 'url', 'oclcnum'];
     foreach ($fields as $field) {
       $record->set($field, $form_state->getValue($field));
     }
     $record->save();
 
-    $form_state->setRedirect('guides.eresources_list');
-    $this->messenger()->addStatus('Record created');
+    $form_state->setRedirect('guides.eresources_list', [], ['query' => ['id' => $record->id]]);
+    $this->messenger()->addStatus("Record $mode");
+    return;
   }
 
 }
