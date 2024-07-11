@@ -64,7 +64,7 @@
           <div class="bg-light border border-dark">
             <div aria-labelledby="editors-toggle" class="collapse show" id="editors">
               <div class="p-2">
-                {% set editors = guide.editors|filter(e => e.entity.field_display_editor.value == 1) %}
+                {% set editors = guide.editors|filter(e => (e.entity.field_display_editor.value == 1 and e.entity.field_user.entity.status.value == 1)) %}
                 {% set editorCount = editors|length %}
                 {% for editor in editors %}
                   {% set account = editor.entity.field_user.entity %}
