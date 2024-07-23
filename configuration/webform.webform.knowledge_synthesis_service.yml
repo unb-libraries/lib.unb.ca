@@ -66,18 +66,22 @@ elements: |-
         '#type': checkbox
         '#title': 'I have read the requirements for partnering with a librarian on my knowledge synthesis project.'
         '#required': true
+        '#required_error': 'You must agree that you have read the requirements for partnering with a librarian on my knowledge synthesis project'
       i_will_act_as_the_primary_contact_for_my_librarian_collaborator_:
         '#type': checkbox
         '#title': 'I will act as the primary contact and will respond promptly to requests for meetings and feedback / clarification'
         '#required': true
+        '#required_error': 'You must agree that you will act as the primary contact and will respond promptly to requests ...'
       i_will_seek_librarian_feedback_from_my_librarian_collaborator_on:
         '#type': checkbox
         '#title': 'I will seek librarian feedback on the manuscript for the review prior to submitting it for publication'
         '#required': true
+        '#required_error': 'You must agree that you will seek librarian feedback on the manuscript for the review prior to submitting it for publication'
       i_will_offer_authorship_on_the_review_to_the_librarian:
         '#type': checkbox
         '#title': 'I will offer authorship on the review to the librarian'
         '#required': true
+        '#required_error': 'You must agree that you will offer authorship on the review to the librarian'
       team_members:
         '#type': textarea
         '#title': 'Who are your team members and what are their roles in this project? '
