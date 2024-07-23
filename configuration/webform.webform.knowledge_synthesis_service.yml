@@ -9,7 +9,7 @@ uid: 1
 template: false
 archive: false
 id: knowledge_synthesis_service
-title: 'Knowledge Synthesis Service Request'
+title: 'Application for Knowledge Synthesis Collaboration'
 description: 'Webform for Systematic Reviews website'
 category: ''
 elements: |-
@@ -23,7 +23,7 @@ elements: |-
       <div class="p-2">
       <p class="card-text"><span>Currently we have limited capacity to accept new review requests. Please <strong><a href="/contact-unb-libraries-staff?recipient=knowledgesynthesis">contact us</a></strong> to discuss librarian availability for your project in advance of submitting a request.</span></p>
 
-      <p class="card-text"><span></span>UNB Libraries welcomes knowledge synthesis service requests from faculty, staff and students.&nbsp; Prior to submitting a request, please review the service details our <a class="font-weight-bold" href="https://lib.unb.ca/research/systematic-reviews/getting-started#getting-started_KSservice">website</a></p>
+      <p class="card-text">Prior to submitting a request, please review the details our <a class="font-weight-bold" href="https://lib.unb.ca/research/systematic-reviews/getting-started#getting-started_KSservice">website</a></p>
       </div>
       </div>
       </div>
@@ -51,106 +51,33 @@ elements: |-
         '#required': true
         '#pattern': '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$'
       role:
-        '#type': webform_radios_other
+        '#type': radios
         '#title': Role
         '#options':
-          ra: 'Research assistant'
-          gs: 'Graduate student'
-          us: 'Undergraduate student'
-          fac: 'Faculty member'
+          fac: 'I am a faculty member'
+          lib: 'I have been pre-approved by a librarian'
         '#other__option_label': Other
         '#other__placeholder': ''
         '#required': true
-      container_supervisor:
-        '#type': fieldset
-        '#title': 'Supervisor/Primary investigator'
-        '#states':
-          visible-slide:
-            ':input[name="role[radios]"]':
-              value:
-                pattern: ^ra|gs|us|_other_$
-        processed_text_supervisor:
-          '#type': processed_text
-          '#text': |
-            <p>Please provide the name and email of your supervisor or the project’s primary investigator</p>
-          '#format': library_page_html
-        supervisor_name:
-          '#type': textfield
-          '#title': Name
-          '#required': true
-        supervisor_email:
-          '#type': textfield
-          '#title': Email
-          '#input_mask': '''alias'': ''email'''
-          '#pattern': '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$'
-          '#required': true
     project_information:
       '#type': fieldset
       '#title': 'Project Information'
-      services:
-        '#type': radios
-        '#title': 'Which knowledge synthesis service are you interested in?'
-        '#options':
-          consultation: Consultation
-          collaboration: Collaboration
-        '#options_display': side_by_side
+      i_have_read_the_requirements_for_partnering_with_a_librarian_on_:
+        '#type': checkbox
+        '#title': 'I have read the requirements for partnering with a librarian on my knowledge synthesis project.'
         '#required': true
-      container_consultation:
-        '#type': container
-        '#states':
-          visible:
-            ':input[name="services"]':
-              value: consultation
-        note_consultation:
-          '#type': processed_text
-          '#text': |
-            <p>Our consultation service provides up to 5-hours of knowledge synthesis support.&nbsp; Meeting at least 2 out of 3 of the criteria below will entitle you to an additional 3-hours of support:</p>
-
-            <ol>
-            	<li>There is a completed protocol that meets <a class="sharedcomments-hyperlink" href="http://prisma-statement.org/Extensions/Protocols" target="_blank" title="http://prisma-statement.org/Extensions/Protocols">PRISMA-P</a> guidelines for protocols.</li>
-            	<li>The corresponding author has taken the <a class="sharedcomments-hyperlink" href="https://www.coursera.org/learn/systematic-review" target="_blank" title="https://www.coursera.org/learn/systematic-review">Coursera Systematic Reviews course</a> (free version) or an equivalent course (such as the JBI training course).</li>
-            	<li>At least one team member has experience with knowledge synthesis methodologies and is prepared to serve as methodologist for this project.</li>
-            </ol>
-          '#format': library_page_html
-        services_consultations_terms_1:
-          '#type': checkbox
-          '#title': 'This project meets at least two of the listed requirements.'
-          '#required': true
-        services_consultations_terms_2:
-          '#type': checkbox
-          '#title': 'I acknowledge that I will be receiving only 5 hours of support unless this project meets the above requirements after submission of this request.'
-          '#required': true
-      container_collaboration:
-        '#type': container
-        '#states':
-          visible:
-            ':input[name="services"]':
-              value: collaboration
-        note_collaboration:
-          '#type': processed_text
-          '#text': |
-            <p>This project meets at least two of the following three criteria:</p>
-            <ol>
-            	<li>There is a completed protocol that meets <a class="sharedcomments-hyperlink" href="http://prisma-statement.org/Extensions/Protocols" target="_blank" title="http://prisma-statement.org/Extensions/Protocols">PRISMA-P</a> guidelines for protocols.</li>
-            	<li>The corresponding author has taken the <a class="sharedcomments-hyperlink" href="https://www.coursera.org/learn/systematic-review" target="_blank" title="https://www.coursera.org/learn/systematic-review">Coursera Systematic Reviews course</a> (free version) or an equivalent course (such as the JBI training course).</li>
-            	<li>At least one team member has experience with knowledge synthesis methodologies and is prepared to serve as methodologist for this project.</li>
-            </ol>
-          '#format': library_page_html
-        terms_collaboration:
-          '#type': processed_text
-          '#text': |
-            <p>Furthermore, in submitting this request, I agree that:</p>
-            <ul>
-              <li>The principal investigator for the project will be the first point of contact for the librarian.</li>
-              <li>Meetings between the librarian and team should always include the primary investigator.</li>
-              <li>The librarian will be offered authorship on the final publication(s), which they may accept or decline at their discretion.</li>
-              <li>Communication with the librarian will be prompt and responsive, to ensure that the project proceeds in a timely manner.</li>
-            </ul>
-          '#format': library_page_html
-        services_collaboration_terms:
-          '#type': checkbox
-          '#title': 'I agree to above requirements.'
-          '#required': true
+      i_will_act_as_the_primary_contact_for_my_librarian_collaborator_:
+        '#type': checkbox
+        '#title': 'I will act as the primary contact and will respond promptly to requests for meetings and feedback / clarification'
+        '#required': true
+      i_will_seek_librarian_feedback_from_my_librarian_collaborator_on:
+        '#type': checkbox
+        '#title': 'I will seek librarian feedback on the manuscript for the review prior to submitting it for publication'
+        '#required': true
+      i_will_offer_authorship_on_the_review_to_the_librarian:
+        '#type': checkbox
+        '#title': 'I will offer authorship on the review to the librarian'
+        '#required': true
       team_members:
         '#type': textarea
         '#title': 'Who are your team members and what are their roles in this project? '
@@ -173,7 +100,6 @@ elements: |-
         '#title': 'What is the purpose of this project?'
         '#options':
           publication: Publication
-          thesis: Thesis/Project/Dissertation
           grant: Grant
         '#other__option_label': Other
         '#required': true
@@ -184,6 +110,7 @@ elements: |-
       in_ex_criteria:
         '#type': textarea
         '#title': 'What are your inclusion and exclusion criteria? '
+        '#description': 'Note that applications that have an unclear research question or inclusion/exclusion criteria will not be considered.'
         '#required': true
       rationale:
         '#type': textarea
@@ -202,11 +129,12 @@ elements: |-
       dois:
         '#type': textarea
         '#title': 'If you have already identified some relevant studies, please provide the DOI of the article, the PMID, or a detailed reference (including first author, article title, journal name, volume, issue, pages and year)'
+        '#description': 'Please provide the DOI, PMID or a detailed reference for at least 3 articles that fit within your inclusion / exclusion criteria.'
         '#required': true
       protocol:
         '#type': managed_file
         '#title': Protocol
-        '#file_placeholder': 'If you have a protocol that meets PRISMA-P guidelines for protocols, please attach it.'
+        '#file_placeholder': 'If you have a protocol that meets PRISMA-P guidelines for protocols, please attach it. Note that preference will be given to applications with complete and well-defined protocols.'
         '#file_extensions': 'rtf odf pdf doc docx'
         '#file_name': '[webform_submission:webform:id]_protocol_[webform_submission:token]'
         '#sanitize': true
@@ -297,6 +225,8 @@ settings:
   wizard_toggle: true
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
   preview: 0
   preview_label: ''
   preview_title: ''
