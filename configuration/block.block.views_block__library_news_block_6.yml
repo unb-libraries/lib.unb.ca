@@ -1,6 +1,6 @@
 uuid: b8032e0a-0938-4a94-93d8-97977357eaa5
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.library_news
