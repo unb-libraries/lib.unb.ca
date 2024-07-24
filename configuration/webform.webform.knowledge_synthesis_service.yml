@@ -23,7 +23,7 @@ elements: |-
       <div class="p-2">
       <p class="card-text"><span>Currently we have limited capacity to accept new review requests. Please <strong><a href="/contact-unb-libraries-staff?recipient=knowledgesynthesis">contact us</a></strong> to discuss librarian availability for your project in advance of submitting a request.</span></p>
 
-      <p class="card-text">Prior to submitting a request, please review the details our <a class="font-weight-bold" href="https://lib.unb.ca/research/systematic-reviews/getting-started#getting-started_KSservice">website</a></p>
+      <p class="card-text">Prior to submitting a request, please review the details on our <a class="font-weight-bold" href="https://lib.unb.ca/research/systematic-reviews/getting-started#getting-started_KSservice">website</a>.</p>
       </div>
       </div>
       </div>
@@ -62,26 +62,28 @@ elements: |-
     project_information:
       '#type': fieldset
       '#title': 'Project Information'
-      i_have_read_the_requirements_for_partnering_with_a_librarian_on_:
-        '#type': checkbox
-        '#title': 'I have read the requirements for partnering with a librarian on my knowledge synthesis project.'
-        '#required': true
-        '#required_error': 'You must agree that you have read the requirements for partnering with a librarian on my knowledge synthesis project'
-      i_will_act_as_the_primary_contact_for_my_librarian_collaborator_:
-        '#type': checkbox
-        '#title': 'I will act as the primary contact and will respond promptly to requests for meetings and feedback / clarification'
-        '#required': true
-        '#required_error': 'You must agree that you will act as the primary contact and will respond promptly to requests ...'
-      i_will_seek_librarian_feedback_from_my_librarian_collaborator_on:
-        '#type': checkbox
-        '#title': 'I will seek librarian feedback on the manuscript for the review prior to submitting it for publication'
-        '#required': true
-        '#required_error': 'You must agree that you will seek librarian feedback on the manuscript for the review prior to submitting it for publication'
-      i_will_offer_authorship_on_the_review_to_the_librarian:
-        '#type': checkbox
-        '#title': 'I will offer authorship on the review to the librarian'
-        '#required': true
-        '#required_error': 'You must agree that you will offer authorship on the review to the librarian'
+      project_information_agree:
+        '#type': container
+        i_have_read_the_requirements_for_partnering_with_a_librarian_on_:
+          '#type': checkbox
+          '#title': 'I have read the requirements for partnering with a librarian on my knowledge synthesis project.'
+          '#required': true
+          '#required_error': 'You must agree that you have read the requirements for partnering with a librarian on my knowledge synthesis project'
+        i_will_act_as_the_primary_contact_for_my_librarian_collaborator_:
+          '#type': checkbox
+          '#title': 'I will act as the primary contact and will respond promptly to requests for meetings and feedback / clarification'
+          '#required': true
+          '#required_error': 'You must agree that you will act as the primary contact and will respond promptly to requests ...'
+        i_will_seek_librarian_feedback_from_my_librarian_collaborator_on:
+          '#type': checkbox
+          '#title': 'I will seek librarian feedback on the manuscript for the review prior to submitting it for publication'
+          '#required': true
+          '#required_error': 'You must agree that you will seek librarian feedback on the manuscript for the review prior to submitting it for publication'
+        i_will_offer_authorship_on_the_review_to_the_librarian:
+          '#type': checkbox
+          '#title': 'I will offer authorship on the review to the librarian'
+          '#required': true
+          '#required_error': 'You must agree that you will offer authorship on the review to the librarian'
       team_members:
         '#type': textarea
         '#title': 'Who are your team members and what are their roles in this project? '
