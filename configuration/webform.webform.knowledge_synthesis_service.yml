@@ -353,7 +353,11 @@ handlers:
       sender_name: ''
       subject: 'Your Knowledge Synthesis Service Request'
       body: "<p>On {{ webform_token('[webform_submission:created]', webform_submission, [], options) }} you submitted a Knowledge Synthesis Service Request with the following details:</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
-      excluded_elements: {  }
+      excluded_elements:
+        i_have_read_the_requirements_for_partnering_with_a_librarian_on_: i_have_read_the_requirements_for_partnering_with_a_librarian_on_
+        i_will_act_as_the_primary_contact_for_my_librarian_collaborator_: i_will_act_as_the_primary_contact_for_my_librarian_collaborator_
+        i_will_seek_librarian_feedback_from_my_librarian_collaborator_on: i_will_seek_librarian_feedback_from_my_librarian_collaborator_on
+        i_will_offer_authorship_on_the_review_to_the_librarian: i_will_offer_authorship_on_the_review_to_the_librarian
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: false
@@ -390,7 +394,11 @@ handlers:
       sender_name: ''
       subject: 'New Knowledge Synthesis Service Request'
       body: "<p>The following information was submitted through our <b>Knowledge Synthesis Service Request</b> form by {{ webform_token('[webform_submission:values:name]', webform_submission, [], options) }} on {{ webform_token('[webform_submission:created]', webform_submission, [], options) }}.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
-      excluded_elements: {  }
+      excluded_elements:
+        i_have_read_the_requirements_for_partnering_with_a_librarian_on_: i_have_read_the_requirements_for_partnering_with_a_librarian_on_
+        i_will_act_as_the_primary_contact_for_my_librarian_collaborator_: i_will_act_as_the_primary_contact_for_my_librarian_collaborator_
+        i_will_seek_librarian_feedback_from_my_librarian_collaborator_on: i_will_seek_librarian_feedback_from_my_librarian_collaborator_on
+        i_will_offer_authorship_on_the_review_to_the_librarian: i_will_offer_authorship_on_the_review_to_the_librarian
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: false
