@@ -29,7 +29,7 @@ class InformationAbout extends BlockBase {
         <li><a href="/openaccess">Open Access</a></li>
         <li><a href="/rdm">Research Data Management</a></li>
         <li><a href="/services/writing-help">Writing & Citation Help</a></li>
-        <li><a href="https://guides.lib.unb.ca/guide/206">Zotero</a></li>
+        <li><a href="/guides/zotero">Zotero</a></li>
       </ul>
     ';
 

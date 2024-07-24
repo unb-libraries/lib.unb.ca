@@ -410,7 +410,7 @@ class DiscoverySearch extends BlockBase {
             Reference Materials Guide
           </a>
           |
-          <a href="//guides.lib.unb.ca/guide/98">
+          <a href="/guides/dictionaries">
             Browse dictionaries
           </a>
         </div>

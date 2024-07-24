@@ -78,7 +78,7 @@ class QuickLinks extends BlockBase {
         ],
         '#children' => Link::fromTextAndUrl(
           $this->t('Zotero'),
-          Url::fromUri('https://guides.lib.unb.ca/guide/206')
+          Url::fromUri('https://lib.unb.ca/guides/zotero')
         )->toString(),
       ],*/
       [

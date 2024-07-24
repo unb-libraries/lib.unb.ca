@@ -102,7 +102,7 @@ class ReferenceForm extends LocalFormBase implements KbFormInterface {
 <ul>
   <li><a href="' . Url::fromRoute('eresources.collections', ['type' => 'references'])->toString() . '">Browse Reference Collections</a></li>
   <li><a href="https://lib.unb.ca/eresources/guide-finding-reference-materials" title="Guide to finding Reference Materials at UNB Libraries"> Reference Materials Guide</a></li>
-  <li><a href="https://guides.lib.unb.ca/guide/98"> Browse Dictionaries</a></li>
+  <li><a href="https://lib.unb.ca/guides/dictionaries"> Browse Dictionaries</a></li>
 </ul>
 </div>',
     ];
