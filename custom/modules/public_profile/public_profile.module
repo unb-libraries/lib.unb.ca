@@ -70,7 +70,11 @@ function public_profile_user_create(EntityInterface $entity) {
  */
 function public_profile_user_update(EntityInterface $entity) {
   ensure_user_has_profile($entity);
+
   $active = !$entity->isBlocked();
+  if ($active && !in_array('public_profile', $entity->getRoles())) {
+    $active = FALSE;
+  }
 
   // Using the public_profiles relationship only gives active profiles.
   $storage = \Drupal::entityTypeManager()->getStorage('profile');
