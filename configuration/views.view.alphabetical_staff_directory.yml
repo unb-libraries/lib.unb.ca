@@ -1553,7 +1553,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{% if field_url_fragment %}<a href="/profile/{{ field_url_fragment }}">{{ field_last_name }}, {{ field_first_name }}</a>{% else %}{{ field_last_name }}, {{ field_first_name }}{% endif %} {{ field_on_leave }}'
+            text: '{% if field_url_fragment %}<a href="/profile/{{ field_url_fragment }}">{{ field_last_name }}, {{ field_first_name }}</a>{% else %}{{ field_last_name }}, {{ field_first_name }}{% endif %}{{ field_on_leave }}'
             make_link: false
             path: ''
             absolute: false
