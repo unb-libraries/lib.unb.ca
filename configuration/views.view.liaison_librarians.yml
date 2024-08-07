@@ -613,7 +613,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      title: 'Liaison Librarians and Departmental Representatives'
+      title: 'Liaison Librarians'
       fields:
         field_display_name:
           id: field_display_name
