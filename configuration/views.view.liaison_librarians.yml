@@ -18,7 +18,7 @@ dependencies:
     - telephone
     - user
 id: liaison_librarians
-label: 'Liaison Librarians'
+label: 'Collections Librarians (previously Liaison)'
 module: views
 description: ''
 tag: ''
