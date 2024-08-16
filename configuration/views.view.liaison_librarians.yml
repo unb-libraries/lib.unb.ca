@@ -613,7 +613,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      title: 'Liaison Librarians'
+      title: 'Collections Librarians'
       fields:
         field_display_name:
           id: field_display_name
@@ -1943,6 +1943,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      title: 'Collections Librarians'
       filters:
         status:
           id: status
@@ -2015,11 +2016,13 @@ display:
         groups:
           1: AND
       defaults:
-        title: true
+        title: false
         filters: false
         filter_groups: false
       display_description: ''
-      display_extenders: {  }
+      display_extenders:
+        simple_sitemap_display_extender:
+          variants: {  }
       path: faculty/liaison-librarians/institution/unbsj
       menu:
         type: tab
