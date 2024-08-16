@@ -1124,7 +1124,7 @@ display:
       display_extenders:
         simple_sitemap_display_extender:
           variants: {  }
-      path: faculty/liaison-librarians/institution
+      path: faculty/collections-librarians/institution
       menu:
         type: 'default tab'
         title: 'UNB Fredericton'
@@ -2023,7 +2023,7 @@ display:
       display_extenders:
         simple_sitemap_display_extender:
           variants: {  }
-      path: faculty/liaison-librarians/institution/unbsj
+      path: faculty/collections-librarians/institution/unbsj
       menu:
         type: tab
         title: 'UNB Saint John'
