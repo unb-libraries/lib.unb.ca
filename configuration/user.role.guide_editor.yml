@@ -13,7 +13,6 @@ dependencies:
     - filter
     - guides
     - media
-    - profile
     - system
     - toolbar
 _core:
@@ -30,13 +29,11 @@ permissions:
   - 'create guide entities'
   - 'create guides profile'
   - 'create image media'
-  - 'create public profile'
   - 'create remote_video media'
   - 'delete course_link entities'
   - 'delete guide entities'
   - 'delete own guides profile'
   - 'delete own image media'
-  - 'delete own public profile'
   - 'delete own remote_video media'
   - 'edit any image media'
   - 'edit any remote_video media'
@@ -52,7 +49,6 @@ permissions:
   - 'update guide entities'
   - 'update guide_category entities'
   - 'update own guides profile'
-  - 'update own public profile'
   - 'use text format guide_category_databases'
   - 'use text format guide_category_references'
   - 'view the administration theme'
