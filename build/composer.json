@@ -363,7 +363,7 @@
     "drupal/search_api_exclude": "2.0.2",
     "drupal/search_api_solr": "<=4.3.1",
     "drupal/simple_sitemap": ">=4.1.8",
-    "drupal/token": "1.14",
+    "drupal/token": "1.15",
     "drupal/tvi": "1.0-rc4",
     "drupal/twig_tweak": "3.3.0",
     "drupal/upgrade_status": "3.18",
