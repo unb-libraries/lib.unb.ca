@@ -297,7 +297,7 @@
     "ckeditor/fakeobjects": "~4.23",
     "ckeditor/panelbutton": "~4.20",
     "drupal/address": "1.12",
-    "drupal/admin_toolbar": "3.4.2",
+    "drupal/admin_toolbar": "3.5.0",
     "drupal/allowed_formats": "2.0.0",
     "drupal/antibot": "2.0.4",
     "drupal/better_exposed_filters": "6.0.6",
