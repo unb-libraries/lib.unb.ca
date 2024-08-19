@@ -356,7 +356,7 @@
     "drupal/protected_file": "1.4",
     "drupal/r4032login": "2.2.2",
     "drupal/redirect": "1.10",
-    "drupal/redis": "1.7",
+    "drupal/redis": "1.8",
     "drupal/samlauth": "3.10",
     "drupal/search_api": "<=1.30",
     "drupal/search_api_autocomplete": "1.8",
