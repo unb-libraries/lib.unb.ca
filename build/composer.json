@@ -305,7 +305,7 @@
     "drupal/bootstrap_barrio": "5.1.10",
     "drupal/cache_control_override": "1.1",
     "drupal/changed_fields": "^3.2",
-    "drupal/chosen": "3.0.5",
+    "drupal/chosen": "3.0.6",
     "drupal/ckeditor_codemirror": "2.4",
     "drupal/ckwordcount": "2.1.0",
     "drupal/colorbox": "2.0.2",
