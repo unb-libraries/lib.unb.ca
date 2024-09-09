@@ -302,7 +302,7 @@
     "drupal/antibot": "2.0.4",
     "drupal/better_exposed_filters": "6.0.6",
     "drupal/block_field": "1.0-rc5",
-    "drupal/bootstrap_barrio": "5.1.10",
+    "drupal/bootstrap_barrio": "5.1.12",
     "drupal/cache_control_override": "1.1",
     "drupal/changed_fields": "^3.2",
     "drupal/chosen": "3.0.6",
