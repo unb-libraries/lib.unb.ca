@@ -24,15 +24,14 @@ elements: |-
       <div class="card border-dark mb-4">
       <div class="card-body text-muted-wcag p-0 mb-3">
       <h2 class="card-title h6 bg-dark text-white p-2">Please complete the form below with as much information as you have available.</h2>
-      
+
       <div class="p-2">
       <p class="card-text">We welcome suggestions from UNB faculty, staff, students and extramural borrowers for materials you would like us to consider purchasing for our collection. STU faculty are asked to contact their departmental Chair to obtain a separate form for purchase requests.</p>
-      
+
       <p class="card-text">Thank you for your interest.</p>
       </div>
       </div>
       </div>
-      
   container:
     '#type': container
     '#attributes':
@@ -92,7 +91,6 @@ elements: |-
         '#type': webform_select_other
         '#title': 'Subject Area'
         '#options':
-          Management: Management
           Anthropology|ecmoore@unb.ca: Anthropology
           Biology|t.zaraiskaya@unb.ca: Biology
           'Biomedical Engineering|saran.croos@unb.ca': 'Biomedical Engineering'
@@ -101,33 +99,37 @@ elements: |-
           'Civil Engineering|saran.croos@unb.ca': 'Civil Engineering'
           'Classics & Ancient History|ecmoore@unb.ca': 'Classics & Ancient History'
           'Computer Science|saran.croos@unb.ca': 'Computer Science'
-          'Culture & Media Studies|mbragdon@unb.ca': 'Culture & Media Studies'
-          'Earth Sciences': 'Earth Sciences'
-          Economics|lwells@unb.ca: Economics
-          Education|mbragdon@unb.ca: Education
+          'Culture & Media Studies|ecmoore@unb.ca': 'Culture & Media Studies'
+          'Earth Sciences|T.Zaraiskaya@unb.ca': 'Earth Sciences'
+          Economics|bcull@unb.ca: Economics
+          Education|bcull@unb.ca: Education
           'Electrical & Computer Engineering|saran.croos@unb.ca': 'Electrical & Computer Engineering'
+          Engineering|saran.croos@unb.ca: Engineering
           'Engineering Library Reference Collection|saran.croos@unb.ca': 'Engineering Library Reference Collection'
           English|ecmoore@unb.ca: English
           'Forestry & Environmental Management|t.zaraiskaya@unb.ca': 'Forestry & Environmental Management'
-          French|jlt@unb.ca: French
+          French|ecmoore@unb.ca: French
           'Geodesy and Geomatics Engineering|saran.croos@unb.ca': 'Geodesy and Geomatics Engineering'
           Geology|t.zaraiskaya@unb.ca: Geology
-          'Harriet Irving Library Reference Collection|jlt@unb.ca': 'Harriet Irving Library Reference Collection'
+          'Harriet Irving Library Reference Collection|hanratty@unb.ca': 'Harriet Irving Library Reference Collection'
           'Health Sciences|r.whitherspoon@unb.ca': 'Health Sciences'
-          History|jsmyth@unb.ca: History
-          Interdisciplinary|jlt@unb.ca: Interdisciplinary
+          History|ecmoore@unb.ca: History
+          Interdisciplinary|bcull@unb.ca: Interdisciplinary
           'Kinesiology & Recreation|r.witherspoon@unb.ca': 'Kinesiology & Recreation'
+          Languages|ecmoore@unb.ca: Languages
+          Management|julie.morris@unb.ca: Management/Business
           'Mathematics & Statistics|t.zaraiskaya@unb.ca': 'Mathematics & Statistics'
           'Mechanical Engineering|saran.croos@unb.ca': 'Mechanical Engineering'
           Nursing|r.witherspoon@unb.ca: Nursing
-          Philosophy|bcull@unb.ca: Philosophy
+          Philosophy|ecmoore@unb.ca: Philosophy
           Physics|t.zaraiskaya@unb.ca: Physics
-          'Political Science|jsmyth@unb.ca': 'Political Science'
-          Psychology|r.whitherspoon@unb.ca: Psychology
-          'Renaissance College|jsmyth@unb.ca': 'Renaissance College'
+          'Political Science/Politics|bcull@unb.ca': 'Political Science/Politics'
+          Psychology|r.witherspoon@unb.ca: Psychology
+          'Renaissance College|bcull@unb.ca': 'Renaissance College'
           'Science Library Reference Collection|t.zaraiskaya@unb.ca': 'Science Library Reference Collection'
+          'Social Work|bcull@unb.ca': 'Social Work'
           Sociology|bcull@unb.ca: Sociology
-          'Womens Studies|sfisher@unb.ca': 'Womens Studies'
+          'Womens Studies|bcull@unb.ca': 'Womens Studies'
         '#empty_option': '- Please choose an option -'
         '#chosen': true
         '#other__placeholder': ''
@@ -392,7 +394,7 @@ handlers:
     handler_id: sj_email
     label: 'SJ Purchase Suggestion'
     notes: ''
-    status: true
+    status: false
     conditions:
       enabled:
         ':input[name="campus"]':
@@ -473,16 +475,13 @@ handlers:
     conditions:
       enabled:
         ':input[name="campus"]':
-          value: campus_UNBFR
+          checked: true
     weight: -50
     settings:
       states:
         - completed
       to_mail: '[webform_submission:values:subject_area:raw]'
       to_options:
-        -
-          value: Management
-          text: jbail@unb.ca
         -
           value: Anthropology|ecmoore@unb.ca
           text: ecmoore@unb.ca
@@ -508,19 +507,22 @@ handlers:
           value: 'Computer Science|saran.croos@unb.ca'
           text: saran.croos@unb.ca
         -
-          value: 'Culture & Media Studies|mbragdon@unb.ca'
-          text: mbragdon@unb.ca
+          value: 'Culture & Media Studies|ecmoore@unb.ca'
+          text: ecmoore@unb.ca
         -
-          value: 'Earth Sciences'
-          text: t.zaraiskaya@unb.ca
+          value: 'Earth Sciences|T.Zaraiskaya@unb.ca'
+          text: T.Zaraiskaya@unb.ca
         -
-          value: Economics|lwells@unb.ca
-          text: mtiozzo@unb.ca
+          value: Economics|bcull@unb.ca
+          text: bcull@unb.ca
         -
-          value: Education|mbragdon@unb.ca
-          text: mbragdon@unb.ca
+          value: Education|bcull@unb.ca
+          text: bcull@unb.ca
         -
           value: 'Electrical & Computer Engineering|saran.croos@unb.ca'
+          text: saran.croos@unb.ca
+        -
+          value: Engineering|saran.croos@unb.ca
           text: saran.croos@unb.ca
         -
           value: 'Engineering Library Reference Collection|saran.croos@unb.ca'
@@ -532,8 +534,8 @@ handlers:
           value: 'Forestry & Environmental Management|t.zaraiskaya@unb.ca'
           text: t.zaraiskaya@unb.ca
         -
-          value: French|jlt@unb.ca
-          text: julie.morris@unb.ca
+          value: French|ecmoore@unb.ca
+          text: ecmoore@unb.ca
         -
           value: 'Geodesy and Geomatics Engineering|saran.croos@unb.ca'
           text: saran.croos@unb.ca
@@ -541,20 +543,26 @@ handlers:
           value: Geology|t.zaraiskaya@unb.ca
           text: t.zaraiskaya@unb.ca
         -
-          value: 'Harriet Irving Library Reference Collection|jlt@unb.ca'
+          value: 'Harriet Irving Library Reference Collection|hanratty@unb.ca'
           text: hanratty@unb.ca
         -
           value: 'Health Sciences|r.whitherspoon@unb.ca'
           text: r.witherspoon@unb.ca
         -
-          value: History|jsmyth@unb.ca
-          text: asliwka@unb.ca
+          value: History|ecmoore@unb.ca
+          text: ecmoore@unb.ca
         -
-          value: Interdisciplinary|jlt@unb.ca
-          text: jsmyth@unb.ca
+          value: Interdisciplinary|bcull@unb.ca
+          text: bcull@unb.ca
         -
           value: 'Kinesiology & Recreation|r.witherspoon@unb.ca'
           text: r.witherspoon@unb.ca
+        -
+          value: Languages|ecmoore@unb.ca
+          text: ecmoore@unb.ca
+        -
+          value: Management|julie.morris@unb.ca
+          text: julie.morris@unb.ca
         -
           value: 'Mathematics & Statistics|t.zaraiskaya@unb.ca'
           text: t.zaraiskaya@unb.ca
@@ -565,29 +573,32 @@ handlers:
           value: Nursing|r.witherspoon@unb.ca
           text: r.witherspoon@unb.ca
         -
-          value: Philosophy|bcull@unb.ca
-          text: bcull@unb.ca
+          value: Philosophy|ecmoore@unb.ca
+          text: ecmoore@unb.ca
         -
           value: Physics|t.zaraiskaya@unb.ca
           text: t.zaraiskaya@unb.ca
         -
-          value: 'Political Science|jsmyth@unb.ca'
-          text: hanratty@unb.ca
+          value: 'Political Science/Politics|bcull@unb.ca'
+          text: bcull@unb.ca
         -
-          value: Psychology|r.whitherspoon@unb.ca
+          value: Psychology|r.witherspoon@unb.ca
           text: r.witherspoon@unb.ca
         -
-          value: 'Renaissance College|jsmyth@unb.ca'
-          text: jbail@unb.ca
+          value: 'Renaissance College|bcull@unb.ca'
+          text: bcull@unb.ca
         -
           value: 'Science Library Reference Collection|t.zaraiskaya@unb.ca'
           text: t.zaraiskaya@unb.ca
         -
+          value: 'Social Work|bcull@unb.ca'
+          text: bcull@unb.ca
+        -
           value: Sociology|bcull@unb.ca
           text: bcull@unb.ca
         -
-          value: 'Womens Studies|sfisher@unb.ca'
-          text: sfisher@unb.ca
+          value: 'Womens Studies|bcull@unb.ca'
+          text: bcull@unb.ca
         -
           value: _other_
           text: jsmyth@unb.ca
