@@ -263,7 +263,7 @@ settings:
   previous_submission_message: ''
   previous_submissions_message: ''
   autofill: true
-  autofill_message: '<i class="fas fa-info-circle">&nbsp;</i>The <strong>Personal Information</strong> section has been prefilled using your previous submission data.'
+  autofill_message: '<i class="fa-info-circle fas mr-1"></i>The <strong>Personal Information</strong> section has been prefilled using your previous submission data.'
   autofill_excluded_elements:
     subject_area: subject_area
     title: title
@@ -294,6 +294,8 @@ settings:
   wizard_toggle: true
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
   preview: 0
   preview_label: ''
   preview_title: ''
