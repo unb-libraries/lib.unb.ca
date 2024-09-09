@@ -69,11 +69,14 @@ elements: |-
         '#wrapper_type': form_element
       email:
         '#type': textfield
-        '#title': Email
+        '#title': 'UNB Email'
+        '#description': 'Only a <code>UNB</code> <code>address</code> is accepted.'
         '#title_display': inline
+        '#placeholder': user@unb.ca
         '#input_mask': '''alias'': ''email'''
         '#required': true
-        '#pattern': '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$'
+        '#pattern': '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@unb.ca$'
+        '#pattern_error': 'Please use an email address with unb.ca domain'
       phone_number:
         '#type': textfield
         '#title': 'Phone Number'
@@ -250,9 +253,7 @@ settings:
   submission_exclude_empty: false
   submission_exclude_empty_checkbox: false
   submission_views: {  }
-  submission_views_replace:
-    webform_routes: {  }
-    node_routes: {  }
+  submission_views_replace: {  }
   submission_user_columns: {  }
   submission_user_duplicate: false
   submission_access_denied: default
