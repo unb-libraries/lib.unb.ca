@@ -77,6 +77,13 @@ guides.clone:
     _title: 'Clone a guide'
   requirements:
     _permission: 'create guide entities'
+guides.admin_tools:
+  path: '/admin/guides/admin_tools'
+  defaults:
+    _form: '\Drupal\guides\Form\GuideAdminToolsForm'
+    _title: 'Admin Tools'
+  requirements:
+    _permission: 'administer site configuration'
 guides.guide_stats:
   path: '/guides/{guide}/stats'
   defaults:

@@ -22,6 +22,12 @@ system.admin.unblib.guides.guide.clone:
   route_name: guides.clone
   parent: system.admin.unblib.guides
   weight: 0
+system.admin.unblib.guides.guide.admin_tools:
+  title: Admin tools
+  Description: 'Guides admin tools.'
+  route_name: guides.admin_tools
+  parent: system.admin.unblib.guides
+  weight: 0
 system.admin.unblib.guides.guide.help:
   class: Drupal\guides\Plugin\Menu\HelpMenuLink
   deriver: Drupal\guides\Plugin\Derivative\HelpMenuLink
