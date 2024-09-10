@@ -314,7 +314,7 @@ settings:
   confirmation_type: message
   confirmation_url: ''
   confirmation_title: ''
-  confirmation_message: "<p class=\"h6\"><em class=\"fa-clipboard-check fas\">&nbsp;</em>Purchase Suggestion Successful</p>\r\n\r\n<p>Thank you! <strong>Your submission has been processed.</strong> If you like, you may make an additional request.</p>"
+  confirmation_message: "<p class=\"h3 mb-3\"><span class=\"fa-solid fa-clipboard-check fa-sm\">&nbsp;</span>Purchase Suggestion Successful</p>\r\n\r\n<p>Thank you! <strong>Your submission has been processed.</strong> If you like, you may make an additional request.</p>"
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: 'Submit another purchase suggestion'
