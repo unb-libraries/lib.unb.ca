@@ -2,6 +2,8 @@
 
 namespace Drupal\guides\Form;
 
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\MessageCommand;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -111,7 +113,11 @@ class GuideAdminToolsForm extends FormBase {
         '#type' => 'submit',
         '#name' => 'user_mod',
         '#value' => $this->t('Run'),
-        '#submit' => ['::userModSubmitForm'],
+        '#ajax' => [
+          'type' => 'throbber',
+          'message' => $this->t('Updating...'),
+          'callback' => '::userModSubmitForm',
+        ],
       ],
     ];
 
@@ -134,9 +140,13 @@ class GuideAdminToolsForm extends FormBase {
     $types = $form_state->getValue('types');
     $asContact = $form_state->getValue('contact')['contact'] ? TRUE : FALSE;
 
+    $response = new AjaxResponse();
+
     if (empty($sourceUserId) || empty($targetUserId)) {
-      $this->messenger()->addError('Source and target users must be selected');
-      return;
+      $response->addCommand(new MessageCommand('Source and target users must be selected.', NULL, [
+        'type' => 'error',
+      ]));
+      return $response;
     }
 
     if ($types['guides']) {
@@ -182,7 +192,7 @@ class GuideAdminToolsForm extends FormBase {
           $count++;
         }
       }
-      $this->messenger()->addStatus(($op == 'add' ? 'Added to' : 'Removed from') . " $count guide" . ($count == 1 ? '' : 's') . '.');
+      $response->addCommand(new MessageCommand(($op == 'add' ? 'Added to' : 'Removed from') . " $count guide" . ($count == 1 ? '' : 's') . '.'));
     }
 
     if ($types['categories']) {
@@ -228,8 +238,9 @@ class GuideAdminToolsForm extends FormBase {
           $count++;
         }
       }
-      $this->messenger()->addStatus(($op == 'add' ? 'Added to' : 'Removed from') . " $count " . ($count == 1 ? 'category' : 'categories') . '.');
+      $response->addCommand(new MessageCommand(($op == 'add' ? 'Added to' : 'Removed from') . " $count " . ($count == 1 ? 'category' : 'categories') . '.', NULL, [], FALSE));
     }
+    return $response;
   }
 
 }
