@@ -14,8 +14,8 @@ uid: 1
 template: false
 archive: false
 id: research_commons_space_request
-title: 'Research Commons Space Request'
-description: 'Form to request HIL Research Commons spaces.'
+title: 'Harriet Irving Library Space Request'
+description: 'Form to request HIL spaces.'
 category: ''
 elements: |-
   notice:
@@ -68,20 +68,30 @@ elements: |-
       '#type': fieldset
       '#title': 'Bookings Details'
       room:
-        '#type': checkboxes
-        '#title': Room
-        '#prepopulate': true
+        '#type': select
+        '#title': Room(s)
+        '#multiple': true
         '#options':
-          active-learning-lab: 'Active Learning Lab'
-          data-visualization-lab: 'Data Visualization Lab'
-          event-space: 'Event Space'
-          fabrication-lab: 'Fabrication Lab'
-          graduate-lounge-kitchenette: 'Graduate Lounge Kitchenette'
-          graduate-lounge-study-space: 'Graduate Lounge Study Space'
-          innovation-hub: 'Innovation Hub'
-          seminar-room-321a: 'Seminar Room 321A'
-          seminar-room-321b: 'Seminar Room 321B'
+          '1st Floor':
+            milham: 'Milham Room'
+            lamsoq: 'Lamsoq Polam'
+            llab: 'Learning Lab'
+          '3rd Floor (Research Commons)':
+            active-learning-lab: 'Active Learning Lab'
+            data-visualization-lab: 'Data Visualization Lab'
+            event-space: 'Event Space'
+            fabrication-lab: 'Fabrication Lab'
+            graduate-lounge-kitchenette: 'Graduate Lounge Kitchenette'
+            graduate-lounge-study-space: 'Graduate Lounge Study Space'
+            innovation-hub: 'Innovation Hub'
+            seminar-room-321a: 'Seminar Room 321A'
+            seminar-room-321b: 'Seminar Room 321B'
+          '4th Floor':
+            gis: 'Data/GIS Lab'
+        '#chosen': true
+        '#empty_option': '- Please choose an option -'
         '#required': true
+        '#wrapper_type': form_element
       event_title:
         '#type': textfield
         '#title': 'Event title'
@@ -115,7 +125,7 @@ elements: |-
         '#markup': '<div class="alert alert-info mt-2 text-red" role="alert">For all catering needs, please contact <strong>Chartwells</strong>.</div>'
       consent_photos_video:
         '#type': radios
-        '#title': 'Do you authorize the Research Commons staff to take photos/videos of your event for advertisement purposes (ie. in promotional materials in the library and social media)'
+        '#title': 'Do you authorize UNB Libraries' staff to take photos/videos of your event for advertisement purposes (ie. in promotional materials in the library and social media)'
         '#options':
           'Yes': 'Yes'
           'No': 'No'
@@ -232,6 +242,8 @@ settings:
   wizard_toggle: true
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
   preview: 0
   preview_label: ''
   preview_title: ''
@@ -346,13 +358,13 @@ handlers:
       cc_options: {  }
       from_mail: unb-libraries-no-reply@unb.ca
       from_options: {  }
-      from_name: 'Research Commons Space Request Form'
+      from_name: 'Harriet Irving Library Space Request Form'
       reply_to: '[webform_submission:values:email:raw]'
       return_path: ''
       sender_mail: ''
       sender_name: ''
-      subject: 'Research Commons Space Request'
-      body: "<p><b>{{ webform_token('[webform_submission:user]', webform_submission) }}</b> submitted a HIL Research Commons Space Request with the following details:</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n\r\n\r\n\r\n"
+      subject: 'Harriet Irving Library Space Request'
+      body: "<p><b>{{ webform_token('[webform_submission:user]', webform_submission) }}</b> submitted a Harriet Irving Library Space Request with the following details:</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n\r\n\r\n\r\n"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
@@ -383,13 +395,13 @@ handlers:
       cc_options: {  }
       from_mail: unb-libraries-no-reply@unb.ca
       from_options: {  }
-      from_name: 'Research Commons Space Request Form'
+      from_name: 'Harriet Irving Library Space Request Form'
       reply_to: mfonzo@unb.ca
       return_path: ''
       sender_mail: ''
       sender_name: ''
-      subject: 'Your Research Commons Space Request'
-      body: "<p>On {{ webform_token('[webform_submission:created]', webform_submission, [], options) }} you submitted a HIL Reserarch Commons Space Request with the following details:</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n\r\n<p>Please note that this is <b>not</b> a confirmation of your booking.\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
+      subject: 'Your Harriet Irving Library Space Request'
+      body: "<p>On {{ webform_token('[webform_submission:created]', webform_submission, [], options) }} you submitted a Harriet Irving Library Space Request with the following details:</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n\r\n<p>Please note that this is <b>not</b> a confirmation of your booking.\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true

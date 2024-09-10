@@ -168,6 +168,7 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
     case 'webform_submission_purchase_suggestion_add_form':
     case 'webform_submission_material_retrieval_add_form':
+    case 'webform_submission_research_commons_space_request_add_form':
     case 'webform_submission_stu_monograph_request_add_form':
       $form['#attached']['library'][] = 'lib_core/chosen-bootstrap';
       break;
