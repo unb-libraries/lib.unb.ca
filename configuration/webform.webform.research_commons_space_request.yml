@@ -125,7 +125,7 @@ elements: |-
         '#markup': '<div class="alert alert-info mt-2 text-red" role="alert">For all catering needs, please contact <strong>Chartwells</strong>.</div>'
       consent_photos_video:
         '#type': radios
-        '#title': 'Do you authorize UNB Libraries' staff to take photos/videos of your event for advertisement purposes (ie. in promotional materials in the library and social media)'
+        '#title': 'Do you authorize UNB Libraries'' staff to take photos/videos of your event for advertisement purposes (ie. in promotional materials in the library and social media)'
         '#options':
           'Yes': 'Yes'
           'No': 'No'
