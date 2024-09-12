@@ -71,27 +71,27 @@ elements: |-
         '#type': select
         '#title': Room(s)
         '#multiple': true
+        '#description': 'Please select one or more options.'
+        '#description_display': after
+        '#placeholder': '- Select -'
         '#options':
           '1st Floor':
-            milham: 'Milham Room'
-            lamsoq: 'Lamsoq Polam'
-            llab: 'Learning Lab'
+            milham: 'Milham Room (100)'
+            lamsoq: 'Lamsoq Polam (109)'
+            llab: 'Learning Lab (112)'
           '3rd Floor (Research Commons)':
-            active-learning-lab: 'Active Learning Lab'
-            data-visualization-lab: 'Data Visualization Lab'
-            event-space: 'Event Space'
-            fabrication-lab: 'Fabrication Lab'
-            graduate-lounge-kitchenette: 'Graduate Lounge Kitchenette'
-            graduate-lounge-study-space: 'Graduate Lounge Study Space'
-            innovation-hub: 'Innovation Hub'
-            seminar-room-321a: 'Seminar Room 321A'
-            seminar-room-321b: 'Seminar Room 321B'
+            active-learning-lab: 'Active Learning Lab (303)'
+            data-visualization-lab: 'Data Visualization Lab (320D)'
+            event-space: 'Event Space (318)'
+            fabrication-lab: 'Fabrication Lab (310)'
+            graduate-lounge: 'Graduate Lounge (306 / 309)'
+            innovation-hub: 'Innovation Hub (316)'
+            seminar-room-321a: 'Seminar Room (321A)'
+            seminar-room-321b: 'Seminar Room (321B)'
           '4th Floor':
-            gis: 'Data/GIS Lab'
+            gis: 'Data/GIS Lab (417)'
         '#chosen': true
-        '#empty_option': '- Please choose an option -'
         '#required': true
-        '#wrapper_type': form_element
       event_title:
         '#type': textfield
         '#title': 'Event title'
