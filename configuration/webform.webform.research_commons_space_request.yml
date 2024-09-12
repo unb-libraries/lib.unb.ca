@@ -69,7 +69,7 @@ elements: |-
       '#title': 'Bookings Details'
       room:
         '#type': select
-        '#title': Room(s)
+        '#title': 'Room Selection'
         '#multiple': true
         '#description': 'Please select one or more options.'
         '#description_display': after
