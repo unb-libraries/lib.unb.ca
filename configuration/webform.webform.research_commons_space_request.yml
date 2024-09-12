@@ -74,6 +74,7 @@ elements: |-
         '#description': 'Please select one or more options.'
         '#description_display': after
         '#placeholder': '- Select -'
+        '#prepopulate': true
         '#options':
           '1st Floor':
             milham: 'Milham Room (100)'
