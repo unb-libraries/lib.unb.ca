@@ -99,6 +99,9 @@ function guides_theme($existing, $type, $theme, $path) {
     'ckeditor-wc-search' => [
       'variables' => [],
     ],
+    'ckeditor-scifree' => [
+      'variables' => [],
+    ],
     'ckeditor-eresources' => [
       'variables' => [
         'resources' => NULL,

@@ -147,3 +147,9 @@ filters:
       footnotes_collapse: '0'
       footnotes_html: '1'
       footnotes_css: '1'
+  filter_guides_ckeditor_scifree:
+    id: filter_guides_ckeditor_scifree
+    provider: guides
+    status: true
+    weight: 0
+    settings: {  }

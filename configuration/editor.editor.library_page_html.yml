@@ -71,6 +71,7 @@ settings:
           items:
             - Wc-search
             - eresources
+            - Scifree
   plugins:
     drupallink:
       linkit_enabled: true
