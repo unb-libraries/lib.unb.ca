@@ -1,2 +1,9 @@
-<div id="scfwid" data-account="unb"></div>
-<script src="https://search.scifree.se/assets/external/widget.js"></script>
+ <form accept-charset="UTF-8" action="https://search.scifree.se/unb" method="get" class="form-inline">
+  <label for="scfsearchparam" class="h4 justify-content-start mb-1 w-100">
+    {{ 'Search for journals'|t }}:
+  </label>
+  <input id="scfsearchparam" name="term" placeholder="SciFree Search" type="search"
+    class="form-control col-sm-5 mb-2 mb-sm-0 mr-sm-2">
+  <button formtarget="_blank" type="submit"
+    class="btn btn-dark col-12 col-sm-3 col-md-2">{{ 'Search'|t }}</button>
+</form>
