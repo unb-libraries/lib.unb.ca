@@ -154,13 +154,17 @@ class KbFormBase extends FormBase {
       $form[$form_wrapper]['type']['#default_value'] = $req->get('type');
 
       // $form['results_header'] = ['#markup' => '<h2 class="mt-3">Results</h2>'];
+      $stopWords = ['and', '&'];
+      $cleanQuery = preg_replace('/\b(' . implode('|', $stopWords) . ')\b/i', '', $query);
+      $cleanQuery = trim(preg_replace('/\s+/', ' ', $cleanQuery));
+
       $search = [
-        'title' => $query,
+        'title' => $cleanQuery,
         'orderBy' => 'title asc',
       ];
       switch ($req->get('type')) {
         case 'keyword':
-          $search = ['q' => $query];
+          $search = ['q' => $cleanQuery];
           break;
 
         case 'exact':
