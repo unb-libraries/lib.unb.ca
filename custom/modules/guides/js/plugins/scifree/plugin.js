@@ -11,9 +11,9 @@
 
       editor.widgets.add('scifree', {
         button: 'SciFree',
-        template: '<div class="scifree">SciFree Search Widget</div>',
-        allowedContent: 'div(!scifree)',
-        requiredContent: 'div(scifree)',
+        template: '<div class="scifree"><img src="/modules/custom/guides/img/scifree-placeholder.png" /></div>',
+        allowedContent: 'div(!scifree); img[!src]',
+        requiredContent: 'div(scifree); img[src]',
         upcast: function(element) {
           return element.name == 'div' && element.hasClass('scifree');
         },

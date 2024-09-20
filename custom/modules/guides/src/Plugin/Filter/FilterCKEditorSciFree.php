@@ -66,7 +66,7 @@ class FilterCKEditorSciFree extends FilterBase implements ContainerFactoryPlugin
         '#theme' => 'ckeditor-scifree',
       ];
       $widget = $this->renderer->render($render);
-      $text = str_replace('<div class="scifree">SciFree Search Widget</div>', $widget, $text);
+      $text = str_replace('<div class="scifree"><img src="/modules/custom/guides/img/scifree-placeholder.png" /></div>', $widget, $text);
       $result->setProcessedText($text);
     }
     return $result;
