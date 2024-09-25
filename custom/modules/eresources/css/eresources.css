@@ -66,6 +66,7 @@ ul.list-bullets li.d-flex:before {
 .list-results .coverage {
   font-weight: 600;
   font-family: "ProximaNovaA-Semibold","Century Gothic",AppleGothic,Arial,sans-serif;
+  font-synthesis-weight: none !important;
 }
 .list-results .list-group-item .oclcnum {
   font-size: 80%;
