@@ -5,6 +5,8 @@ namespace Drupal\guides\Entity;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\Core\Entity\EntityPublishedInterface;
+use Drupal\Core\Entity\EntityPublishedTrait;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\RevisionableContentEntityBase;
@@ -45,7 +47,7 @@ use PicoFeed\Reader\Reader;
  *     "id" = "id",
  *     "revision" = "revision_id",
  *     "label" = "title",
- *     "status" = "status",
+ *     "published" = "status",
  *   },
  *   revision_metadata_keys = {
  *     "revision_user" = "revision_user",
@@ -64,10 +66,11 @@ use PicoFeed\Reader\Reader;
  *   field_ui_base_route = "entity.guide.settings",
  * )
  */
-class Guide extends RevisionableContentEntityBase implements ContentEntityInterface, UserEditedInterface, UserCreatedInterface {
+class Guide extends RevisionableContentEntityBase implements ContentEntityInterface, EntityPublishedInterface, UserEditedInterface, UserCreatedInterface {
 
   use EntityCreatedTrait;
   use EntityChangedTrait;
+  use EntityPublishedTrait;
 
   /**
    * {@inheritDoc}
@@ -216,11 +219,11 @@ class Guide extends RevisionableContentEntityBase implements ContentEntityInterf
       ])
       ->setDisplayConfigurable('form', TRUE);
 
-    $fields['status'] = BaseFieldDefinition::create('boolean')
+    $fields += static::publishedBaseFieldDefinitions($entity_type);
+    $fields[$entity_type->getKey('published')]
       ->setLabel(t('Mark as published'))
       ->setDefaultValue(FALSE)
       ->setDisplayOptions('form', [
-        'type' => 'boolean_checkbox',
         'weight' => 10,
       ]);
 

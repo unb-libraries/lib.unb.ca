@@ -4,6 +4,7 @@ namespace Drupal\guides\Entity;
 
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\ContentEntityBase;
+use Drupal\Core\Entity\EntityPublishedTrait;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
@@ -43,7 +44,7 @@ use Drupal\search_api\Entity\Index;
  *   entity_keys = {
  *     "id" = "id",
  *     "label" = "title",
- *     "status" = "status",
+ *     "published" = "status",
  *     "revision" = "revision_id",
  *   },
  *   links = {
@@ -62,6 +63,7 @@ class GuideCategory extends ContentEntityBase implements GuideCategoryInterface,
 
   use EntityChangedTrait;
   use EntityCreatedTrait;
+  use EntityPublishedTrait;
 
   /**
    * {@inheritDoc}
@@ -173,12 +175,11 @@ class GuideCategory extends ContentEntityBase implements GuideCategoryInterface,
       ])
       ->setDisplayConfigurable('form', TRUE);
 
-    $fields['status'] = BaseFieldDefinition::create('boolean')
+    $fields += static::publishedBaseFieldDefinitions($entity_type);
+    $fields[$entity_type->getKey('published')]
       ->setLabel(t('Mark as published'))
       ->setDescription(t('A boolean indicating whether the guide category is published.'))
-      ->setDefaultValue(TRUE)
       ->setDisplayOptions('form', [
-        'type' => 'boolean_checkbox',
         'weight' => 10,
       ]);
 
