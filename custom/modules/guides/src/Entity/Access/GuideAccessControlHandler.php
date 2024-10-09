@@ -2,6 +2,7 @@
 
 namespace Drupal\guides\Entity\Access;
 
+use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\custom_entity\Entity\Access\EntityAccessControlHandler;
@@ -63,6 +64,19 @@ class GuideAccessControlHandler extends EntityAccessControlHandler {
     }
     return $hasAccess;
 
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function checkAccess(EntityInterface $entity, $operation, AccountInterface $account) {
+    $status = $entity->isPublished();
+
+    if ($operation === 'view' && !$status && !$account->hasPermission('view unpublished guide entities')) {
+      return AccessResult::forbidden()->addCacheableDependency($entity);
+    }
+
+    return parent::checkAccess($entity, $operation, $account);
   }
 
 }

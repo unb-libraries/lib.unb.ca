@@ -52,3 +52,5 @@ permissions:
   - 'use text format guide_category_databases'
   - 'use text format guide_category_references'
   - 'view the administration theme'
+  - 'view unpublished guide entities'
+  - 'view unpublished guide_category entities'

@@ -11,6 +11,9 @@ create guide entities:
 view guide entities:
   title: "View Guides."
 
+view unpublished guide entities:
+  title: "View Unpublished Guides."
+
 update guide entities:
   title: "Edit Guides."
 
@@ -38,6 +41,9 @@ create guide_category entities:
 
 view guide_category entities:
   title: "View Guide Categories."
+
+view unpublished guide_category entities:
+  title: "View Unpublished Guide Categories."
 
 update guide_category entities:
   title: "Edit Guide Categories."
