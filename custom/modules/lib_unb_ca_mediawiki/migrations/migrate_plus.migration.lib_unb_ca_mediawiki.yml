@@ -1,0 +1,294 @@
+id: lib_unb_mediawiki
+label: Pages of UNB Libraries Core Website
+migration_group: UNBLIB
+migration_tags:
+  - html
+
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: dom
+
+  # A URL that lists all MediaWiki pages to process.
+  urls:
+    - 'https://systems.lib.unb.ca/lib-import-urls.html'
+
+  ids:
+    url:
+      type: string
+  item_selector: url
+
+  dom_config:
+    migration_tools:
+      -
+        source_operations:
+          -
+            operation: modifier
+            modifier: basicCleanup
+        fields:
+          url:
+            obtainer: ObtainLinkFile
+            jobs:
+              -
+                job: addSearch
+                method: findFileLinksHref
+                arguments:
+                  - 'body'
+                  - []
+                  - [ 'lib.unb.ca' ]
+        dom_operations:
+          -
+            operation: modifier
+            modifier: convertBaseHrefLinks
+          -
+            operation: get_field
+            field: url
+
+  migration_tools:
+    -
+      source: url
+      source_type: url
+      source_operations:
+        -
+          operation: modifier
+          modifier: basicCleanup
+      fields:
+        title:
+          obtainer: ObtainTitle
+          jobs:
+            -
+              job: addSearch
+              method: pluckSelector
+              arguments:
+                - '#main h1'
+
+        has_sidebar:
+          obtainer: ObtainHTML
+          jobs:
+            - job: addSearch
+              method: findSelector
+              arguments:
+                - '#main #sidebar'
+                - 1
+                - html
+        has_non_sidebar:
+          obtainer: ObtainHTML
+          jobs:
+            - job: addSearch
+              method: findSelector
+              arguments:
+                - '#main div.col-md-8'
+                - 1
+                - html
+
+        chatwidget_sidebar:
+          obtainer: ObtainHTML
+          jobs:
+            -
+              job: addSearch
+              method: pluckSelector
+              arguments:
+                - '#main #sidebar div.chatWidget'
+                - 1
+                - innerHtml
+
+        chatwidget_popup_sidebar:
+          obtainer: ObtainHTML
+          jobs:
+            -
+              job: addSearch
+              method: pluckSelector
+              arguments:
+                - '#main #sidebar div.askUs'
+                - 1
+                - innerHtml
+
+        chatwidget_offline_sidebar:
+          obtainer: ObtainHTML
+          jobs:
+            -
+              job: addSearch
+              method: pluckSelector
+              arguments:
+                - '#main #sidebar p.askus-offline'
+                - 1
+                - innerHtml
+
+        sidebar_hours_upcoming:
+          obtainer: ObtainHtml
+          jobs:
+            - job: addSearch
+              method: pluckSelector
+              arguments:
+                - '#main #sidebar .hoursBlock-upcoming'
+                - html
+
+        sidebar_hours_term:
+          obtainer: ObtainArray
+          jobs:
+            - job: addSearch
+              method: arrayPluckSelector
+              arguments:
+                - '#main #sidebar .hoursBlock'
+                - html
+
+        sidebar_link_lists_titles:
+          obtainer: ObtainArray
+          jobs:
+            - job: addSearch
+              method: arrayPluckSelector
+              arguments:
+                - '#main #sidebar .link-list h1, #main #sidebar .link-list h2, #main #sidebar .link-list h3, #main #sidebar .link-list h4, #main #sidebar
+                .link-list h5, #main #sidebar
+                .link-list h6'
+                - innerHtml
+
+        sidebar_link_lists:
+          obtainer: ObtainArray
+          jobs:
+            - job: addSearch
+              method: arrayPluckSelector
+              arguments:
+                - '#main #sidebar .link-list'
+                - innerHtml
+
+        sidebar:
+          obtainer: ObtainHTML
+          jobs:
+            -
+              job: addSearch
+              method: pluckSelector
+              arguments:
+                - '#main #sidebar'
+                - 1
+                - innerHtml
+
+        non_sidebar:
+          obtainer: ObtainHTML
+          jobs:
+            -
+              job: addSearch
+              method: pluckSelector
+              arguments:
+                - '#main div.col-md-8'
+                - 1
+                - innerHtml
+
+        body:
+          obtainer: ObtainBody
+          jobs:
+            -
+              job: addSearch
+              method: pluckSelector
+              arguments:
+                - '#main'
+                - 1
+                - innerHtml
+
+      dom_operations:
+        -
+          operation: modifier
+          modifier: removeSelectorN
+          arguments:
+            - '#main #sidebar noscript'
+            - 1
+        -
+          operation: modifier
+          modifier: matchRemoveAll
+          arguments:
+            - '#main #sidebar h3'
+            - Instant Message
+            - text
+        -
+          operation: modifier
+          modifier: removeSelectorAll
+          arguments:
+            - 'p.top'
+        -
+          operation: modifier
+          modifier: changeClassName
+          arguments:
+            - 'pull-right'
+            - 'float-right'
+        -
+          operation: modifier
+          modifier: changeClassName
+          arguments:
+            - 'floatRt'
+            - 'float-right'
+        -
+          operation: modifier
+          modifier: changeClassName
+          arguments:
+            - 'floatRt-fade'
+            - 'float-right'
+        -
+          operation: modifier
+          modifier: changeClassName
+          arguments:
+            - 'pull-left'
+            - 'float-left'
+        -
+          operation: modifier
+          modifier: changeClassName
+          arguments:
+            - 'floatLf'
+            - 'float-left'
+        -
+          operation: get_field
+          field: title
+        -
+          operation: get_field
+          field: sidebar_hours_upcoming
+        -
+          operation: get_field
+          field: sidebar_hours_term
+        -
+          operation: get_field
+          field: sidebar_link_lists_titles
+        -
+          operation: get_field
+          field: sidebar_link_lists
+        -
+          operation: get_field
+          field: chatwidget_sidebar
+        -
+          operation: get_field
+          field: chatwidget_popup_sidebar
+        -
+          operation: get_field
+          field: chatwidget_offline_sidebar
+        -
+          operation: get_field
+          field: has_sidebar
+        -
+          operation: get_field
+          field: has_non_sidebar
+        -
+          operation: get_field
+          field: sidebar
+        -
+          operation: get_field
+          field: non_sidebar
+        -
+          operation: get_field
+          field: body
+
+process:
+  type:
+    plugin: default_value
+    default_value: library_page
+  title:
+    plugin: default_value
+    default_value: UNB Libraries
+    source: title
+
+destination:
+  plugin: entity:node
+
+dependencies:
+  module:
+    - lib_unb_ca_mediawiki
+  enforced:
+    module:
+      - lib_unb_ca_mediawiki

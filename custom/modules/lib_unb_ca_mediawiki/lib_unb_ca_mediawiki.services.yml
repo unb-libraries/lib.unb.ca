@@ -1,0 +1,5 @@
+services:
+  lib_unb_ca_mediawiki.0_post_page_creation_subscriber:
+    class: Drupal\lib_unb_ca_mediawiki\Event\AttachParagraphsToCreatedNodesEvent
+    tags:
+      - { name: event_subscriber }

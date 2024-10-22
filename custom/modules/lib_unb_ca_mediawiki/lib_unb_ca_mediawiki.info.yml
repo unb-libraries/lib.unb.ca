@@ -1,0 +1,11 @@
+name: MediaWiki Content Import
+type: module
+description: Import MediaWiki content.
+core: 8.x
+package: Migration
+dependencies:
+  - migrate:migrate
+  - migrate_plus:migrate_plus
+  - migrate_tools:migrate_tools
+  - migration_tools:migration_tools
+  - unb_libraries_page_paths:unb_libraries_page_paths
