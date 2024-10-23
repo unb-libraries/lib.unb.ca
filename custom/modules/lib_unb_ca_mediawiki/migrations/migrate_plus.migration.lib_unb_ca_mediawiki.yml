@@ -11,7 +11,7 @@ source:
 
   # A URL that lists all MediaWiki pages to process.
   urls:
-    - 'https://systems.lib.unb.ca/lib-import-urls.html'
+    - '/app/html/modules/custom/lib_unb_ca_mediawiki/data/wiki-import-urls.html'
 
   ids:
     url:
