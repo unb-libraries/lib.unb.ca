@@ -2,6 +2,7 @@ name: MediaWiki Content Import
 type: module
 description: Import MediaWiki content.
 core: 8.x
+core_version_requirement: ^8 || ^9
 package: Migration
 dependencies:
   - migrate:migrate
