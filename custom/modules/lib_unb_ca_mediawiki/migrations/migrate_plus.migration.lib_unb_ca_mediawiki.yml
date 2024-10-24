@@ -6,12 +6,12 @@ migration_tags:
 
 source:
   plugin: url
-  data_fetcher_plugin: http
+  data_fetcher_plugin: file
   data_parser_plugin: dom
 
   # A URL that lists all MediaWiki pages to process.
   urls:
-    - '/app/html/modules/custom/lib_unb_ca_mediawiki/data/wiki-import-urls.html'
+    - modules/custom/lib_unb_ca_mediawiki/data/wiki-import-urls.html
 
   ids:
     url:
