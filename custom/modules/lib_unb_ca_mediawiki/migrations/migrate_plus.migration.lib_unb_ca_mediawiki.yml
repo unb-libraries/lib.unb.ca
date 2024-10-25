@@ -60,7 +60,7 @@ source:
               job: addSearch
               method: pluckSelector
               arguments:
-                - '#main h1'
+                - '#content h1'
 
         has_sidebar:
           obtainer: ObtainHTML
