@@ -69,6 +69,9 @@
       },
       "drupal/footnotes": {
         "Fix warnings": "https://www.drupal.org/files/issues/2023-08-23/fix-warnings-when-leaving-values-empty-3381366-5.patch"
+      },
+      "drupal/migration_tools": {
+        "Add types to match upstream": "/build/patches/migrate_types.patch"
       }
     }
   },
@@ -401,7 +404,11 @@
     "unb-libraries/unb_lib_theme": "dev-10.x-4.x",
     "w8tcha/ckeditor-codemirror-plugin": "~1.18.1",
     "w8tcha/ckeditor-wordcount-plugin": "~1.17.8",
-    "wikimedia/composer-merge-plugin": "2.0.1"
+    "wikimedia/composer-merge-plugin": "2.0.1",
+    "drupal/migrate_plus": "^6",
+    "drupal/migrate_tools": "^6",
+    "drupal/migration_tools": "^2.8",
+    "querypath/querypath": "^3"
   },
   "require-dev": {
     "unb-libraries/drupal-development-libraries": "^9"

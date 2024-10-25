@@ -1,0 +1,22 @@
+diff --git a/src/Plugin/migrate_plus/data_parser/Dom.php b/src/Plugin/migrate_plus/data_parser/Dom.php
+index b1c2e55..4843e60 100644
+--- a/src/Plugin/migrate_plus/data_parser/Dom.php
++++ b/src/Plugin/migrate_plus/data_parser/Dom.php
+@@ -90,7 +90,7 @@ class Dom extends DataParserPluginBase implements ContainerFactoryPluginInterfac
+   /**
+    * {@inheritdoc}
+    */
+-  protected function openSourceUrl($url) {
++  protected function openSourceUrl($url): bool {
+     $data = $this->getSourceIterator($url);
+     if ($data) {
+       $this->iterator = new \ArrayIterator($data);
+@@ -102,7 +102,7 @@ class Dom extends DataParserPluginBase implements ContainerFactoryPluginInterfac
+   /**
+    * {@inheritdoc}
+    */
+-  protected function fetchNextRow() {
++  protected function fetchNextRow(): void {
+     $current = $this->iterator->current();
+     if ($current) {
+       $this->currentItem = $current;
