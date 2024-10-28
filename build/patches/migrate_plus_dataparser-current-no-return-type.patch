@@ -1,0 +1,13 @@
+diff --git a/src/DataParserPluginBase.php b/src/DataParserPluginBase.php
+index d4d3865..e60134a 100644
+--- a/src/DataParserPluginBase.php
++++ b/src/DataParserPluginBase.php
+@@ -195,7 +195,7 @@ abstract class DataParserPluginBase extends PluginBase implements DataParserPlug
+   /**
+    * {@inheritdoc}
+    */
+-  public function current(): mixed {
++  public function current() {
+     return $this->currentItem;
+   }
+ 
