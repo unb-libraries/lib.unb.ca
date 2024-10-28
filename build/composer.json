@@ -74,7 +74,7 @@
         "Add types to match upstream": "/build/patches/migrate_types.patch"
       },
       "drupal/migrate_plus": {
-        "Remove parser->current() strict return type to avoid error during migration": "/build/patches/migrate_plus_dataparser-current-no-return-type.patch"
+        "Remove parser->current() strict return type to avoid error during migration": "/build/patches/migrate_plus-dataparser-current-no-return-type.patch"
       }
     }
   },
