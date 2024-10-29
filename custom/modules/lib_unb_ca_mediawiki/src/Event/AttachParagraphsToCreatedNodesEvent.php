@@ -16,7 +16,7 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  */
 class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
 
-  const BASE_URI = 'https://lib.unb.ca';
+  const BASE_URI = 'https://unbhistory.lib.unb.ca';
   const MIGRATION_ID = 'lib_unb_mediawiki';
   const PATH_REWRITE_FILE = '/tmp/nginx_rewrites.txt;';
   const PATH_TAXONOMY_VID = 'unb_libraries_page_paths';
@@ -75,7 +75,6 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    */
   public function onPostRowSave(MigratePostRowSaveEvent $event) {
     $this->migration = $event->getMigration();
-    echo $this->migration->id();
 
     if ($this->migration->id() == self::MIGRATION_ID) {
       $this->destinationNids = $event->getDestinationIdValues();
@@ -108,7 +107,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     $old_url = trim($this->currentRow->getSourceProperty('url'));
     $old_path = str_replace(self::BASE_URI, '', $old_url);
 
-    $aliasManager = \Drupal::service('path.alias_manager');
+    $aliasManager = \Drupal::service('path_alias.manager');
     $new_path = $aliasManager->getAliasByPath('/node/' . $this->currentNode->id());
 
     $padded_old_string = str_pad($old_path, 50, " ");
@@ -126,6 +125,12 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    */
   private function addNodePathRelationship() {
     $url = trim($this->currentRow->getSourceProperty('url'));
+    // Add expected path for destination to source path.
+    $url = str_replace(
+      'https://unbhistory.lib.unb.ca',
+      'https://unbhistory.lib.unb.ca/unbhistory',
+      $url
+    );
 
     // Global URL replaces.
     $url = str_replace('gddm-new', 'gddm', $url);
