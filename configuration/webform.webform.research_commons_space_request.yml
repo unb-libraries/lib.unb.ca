@@ -77,9 +77,9 @@ elements: |-
         '#prepopulate': true
         '#options':
           '1st Floor':
-            milham: 'Milham Room (100)'
-            lamsoq: 'Lamsoq Polam (109)'
-            llab: 'Learning Lab (112)'
+            milham-room: 'Milham Room (100)'
+            lamsoq-polam: 'Lamsoq Polam (109)'
+            learning-lab: 'Learning Lab (112)'
           '3rd Floor (Research Commons)':
             active-learning-lab: 'Active Learning Lab (303)'
             data-visualization-lab: 'Data Visualization Lab (320D)'
@@ -90,7 +90,7 @@ elements: |-
             seminar-room-321a: 'Seminar Room (321A)'
             seminar-room-321b: 'Seminar Room (321B)'
           '4th Floor':
-            gis: 'Data/GIS Lab (417)'
+            data-gis-lab: 'Data/GIS Lab (417)'
         '#chosen': true
         '#required': true
       event_title:
