@@ -181,7 +181,7 @@ source:
               job: addSearch
               method: pluckSelector
               arguments:
-                - '#main'
+                - 'div.mw-parser-output'
                 - 1
                 - innerHtml
 
