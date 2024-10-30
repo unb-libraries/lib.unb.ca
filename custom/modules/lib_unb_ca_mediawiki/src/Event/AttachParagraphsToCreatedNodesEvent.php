@@ -437,10 +437,14 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    * Create the main content for a imported row with no sidebar.
    */
   private function addContentNoSidebar() {
+    // Replace <b> tags with <strong> for compatibility with format library_page_html.
+    $body = $this->currentRow->getSourceProperty('body');
+    $body = str_replace('b>', 'strong>', $body);
+
     $this->currentParagraph = Paragraph::create([
       'type' => 'fullwidth_body_section',
       'field_body' => [
-        'value' => $this->currentRow->getSourceProperty('body'),
+        'value' => $body,
         'format' => 'library_page_html',
       ],
     ]);
