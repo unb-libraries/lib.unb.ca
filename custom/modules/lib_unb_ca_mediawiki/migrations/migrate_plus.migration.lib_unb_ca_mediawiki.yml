@@ -282,9 +282,6 @@ process:
     plugin: default_value
     default_value: UNB Libraries
     source: title
-  sidebar:
-    plugin: default_value
-    default_value: TEST
       # <ul class="ak-ul" data-indent-level="1">
       #   <li><p><a href="https://unbhistory.lib.unb.ca/Main_Page">Main Page</a></p></li>
       #   <li><p><a href="https://unbhistory.lib.unb.ca/Anniversaries">Anniversaries</a></p></li>
@@ -303,7 +300,6 @@ process:
       #   <li><p><a href="https://unbhistory.lib.unb.ca/University_Publications">University Publications</a></p></li>
       #   <li><p><a href="https://unbhistory.lib.unb.ca/Women%27s_Sports_at_UNB">Women's Sports at UNB</a></p></li>
       # </ul>
-    source: sidebar
 
 destination:
   plugin: entity:node
