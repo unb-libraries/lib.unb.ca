@@ -422,6 +422,10 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    *   The paragraph containing the main content.
    */
   private function getNonSidebarContentParagraph() {
+    // Replace <b> tags with <strong> for compatibility with format library_page_html.
+    $non_sidebar = $this->currentRow->getSourceProperty('non_sidebar');
+    $non_sidebar = str_replace('b>', 'strong>', $non_sidebar);
+    
     $paragraph = Paragraph::create([
       'type' => 'body_section',
       'field_body' => [
@@ -437,14 +441,10 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    * Create the main content for a imported row with no sidebar.
    */
   private function addContentNoSidebar() {
-    // Replace <b> tags with <strong> for compatibility with format library_page_html.
-    $body = $this->currentRow->getSourceProperty('body');
-    $body = str_replace('b>', 'strong>', $body);
-
     $this->currentParagraph = Paragraph::create([
-      'type' => 'fullwidth_body_section',
-      'field_body' => [
-        'value' => $body,
+      'type' => 'body_section',
+      'body' => [
+        'value' => $this->currentRow->getSourceProperty('body'),
         'format' => 'library_page_html',
       ],
     ]);
