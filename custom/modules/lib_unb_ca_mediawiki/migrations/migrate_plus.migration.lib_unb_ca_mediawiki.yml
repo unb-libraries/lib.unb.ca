@@ -5,6 +5,9 @@ migration_tags:
   - html
 
 source:
+  constants:
+    ID_UNBHISTORY_NAV: 086738dd-d722-464b-9957-a75ecd18221e
+    ID_UNBHISTORY_HELP: 116
   plugin: url
   data_fetcher_plugin: http
   data_parser_plugin: dom
@@ -282,24 +285,6 @@ process:
     plugin: default_value
     default_value: UNB Libraries
     source: title
-      # <ul class="ak-ul" data-indent-level="1">
-      #   <li><p><a href="https://unbhistory.lib.unb.ca/Main_Page">Main Page</a></p></li>
-      #   <li><p><a href="https://unbhistory.lib.unb.ca/Anniversaries">Anniversaries</a></p></li>
-      #   <li><p><a href="https://unbhistory.lib.unb.ca/Brief_History_of_UNB">Brief History of UNB</a></p></li>
-      #   <li><p><a href="https://unbhistory.lib.unb.ca/Buildings">Buildings</a></p></li>
-      #   <li><p><a href="https://unbhistory.lib.unb.ca/Essay_Prizes">Essay Prizes</a></p></li>
-      #   <li><p><a href="https://unbhistory.lib.unb.ca/Faculties_and_Departments">Faculties &amp; Departments</a></p></li>
-      #   <li><p><a href="https://unbhistory.lib.unb.ca/UNB_Governance_and_Administrative_Positions">Governance and Administrative Positions</a></p></li>
-      #   <li><p><a href="https://unbhistory.lib.unb.ca/Lecture_Series">Lecture Series</a></p></li>
-      #   <li><p><a href="https://unbhistory.lib.unb.ca/Official_University_Events_and_Symbols">Official University Events &amp; Symbols</a></p></li>
-      #   <li><p><a href="https://unbhistory.lib.unb.ca/People">People of UNB</a></p></li>
-      #   <li><p><a href="https://unbhistory.lib.unb.ca/Plaques,_Monuments_and_Structures">Plaques, Monuments, &amp; Structures</a></p></li>
-      #   <li><p><a href="https://unbhistory.lib.unb.ca/Sports_%26_Athletics">Sports&nbsp;&amp; Athletics</a></p></li>
-      #   <li><p><a href="https://unbhistory.lib.unb.ca/Student_Clubs_and_Societies">Student Clubs &amp; Societies</a></p></li>
-      #   <li><p><a href="https://unbhistory.lib.unb.ca/Student_Events_and_Escapades">Student Events &amp; Escapades</a></p></li>
-      #   <li><p><a href="https://unbhistory.lib.unb.ca/University_Publications">University Publications</a></p></li>
-      #   <li><p><a href="https://unbhistory.lib.unb.ca/Women%27s_Sports_at_UNB">Women's Sports at UNB</a></p></li>
-      # </ul>
 
 destination:
   plugin: entity:node

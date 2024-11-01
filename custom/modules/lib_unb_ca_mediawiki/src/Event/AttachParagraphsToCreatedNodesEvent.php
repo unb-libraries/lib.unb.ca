@@ -395,33 +395,20 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    *   The paragraph containing the sidebar content.
    */
   private function getSidebarContentParagraph() {
-    $sidebar = 
-      "<ul>
-        <li><p><a href='/unbhistory/Main_Page'>Main Page</a></p></li>
-        <li><p><a href='/unbhistory/Anniversaries'>Anniversaries</a></p></li>
-        <li><p><a href='/unbhistory/Brief_History_of_UNB'>Brief History of UNB</a></p></li>
-        <li><p><a href='/unbhistory/Buildings'>Buildings</a></p></li>
-        <li><p><a href='/unbhistory/Essay_Prizes'>Essay Prizes</a></p></li>
-        <li><p><a href='/unbhistory/Faculties_and_Departments'>Faculties &amp; Departments</a></p></li>
-        <li><p><a href='/unbhistory/UNB_Governance_and_Administrative_Positions'>Governance and Administrative Positions</a></p></li>
-        <li><p><a href='/unbhistory/Lecture_Series'>Lecture Series</a></p></li>
-        <li><p><a href='/unbhistory/Official_University_Events_and_Symbols'>Official University Events &amp; Symbols</a></p></li>
-        <li><p><a href='/unbhistory/People'>People of UNB</a></p></li>
-        <li><p><a href='/unbhistory/Plaques,_Monuments_and_Structures'>Plaques, Monuments, &amp; Structures</a></p></li>
-        <li><p><a href='/unbhistory/Sports_%26_Athletics'>Sports&nbsp;&amp; Athletics</a></p></li>
-        <li><p><a href='/unbhistory/Student_Clubs_and_Societies'>Student Clubs &amp; Societies</a></p></li>
-        <li><p><a href='/unbhistory/Student_Events_and_Escapades'>Student Events &amp; Escapades</a></p></li>
-        <li><p><a href='/unbhistory/University_Publications'>University Publications</a></p></li>
-        <li><p><a href='/unbhistory/Women%27s_Sports_at_UNB'>Women's Sports at UNB</a></p></li>
-      </ul>";
+    $nav_id = $this->currentRow->getSourceProperty('constants')['ID_UNBHISTORY_NAV'];
+    $help_id = $this->currentRow->getSourceProperty('constants')['ID_UNBHISTORY_HELP'];
+    $paragraph = Paragraph::create(['type' => 'custom_block_section']);
+    $paragraph->field_selected_block->plugin_id = "block_content:$nav";
+    $paragraph->field_selected_block->settings = [
+      'id' => "block_content:$nav",
+      'label' => 'Archives & Special Collections Sidebar',
+      'label_display' => false,
+      'provider' => 'block_content',
+      'status' => true,
+      'info' => '',
+      'view_mode' => 'full',
+    ];
 
-    $paragraph = Paragraph::create([
-      'type' => 'body_section',
-      'field_body' => [
-        'value' => $sidebar,
-        'format' => 'library_page_html',
-      ],
-    ]);
     $paragraph->save();
     return $paragraph;
   }
