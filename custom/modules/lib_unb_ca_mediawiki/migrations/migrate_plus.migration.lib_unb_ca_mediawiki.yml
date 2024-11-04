@@ -6,8 +6,8 @@ migration_tags:
 
 source:
   constants:
-    ID_UNBHISTORY_NAV: 086738dd-d722-464b-9957-a75ecd18221e
-    ID_UNBHISTORY_HELP: 116
+    ID_UNBHISTORY_NAV: 1
+    ID_UNBHISTORY_HELP: 2
   plugin: url
   data_fetcher_plugin: http
   data_parser_plugin: dom

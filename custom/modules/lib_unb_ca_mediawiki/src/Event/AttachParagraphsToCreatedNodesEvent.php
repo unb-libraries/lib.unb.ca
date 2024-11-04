@@ -198,8 +198,11 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
         $sidebar_paragraphs[] = $sidebar_paragraph;
       }
     }
-    $sidebar_paragraphs[] = $this->getSidebarContentParagraph();
+
+    $sidebar_paragraphs[] = $this->getSidebarMediawikiParagraph('ID_UNBHISTORY_NAV');
+    $sidebar_paragraphs[] = $this->getSidebarMediawikiParagraph('ID_UNBHISTORY_HELP');
     $main_paragraphs[] = $this->getNonSidebarContentParagraph();
+
     $this->currentParagraph = Paragraph::create([
       'type' => 'body_sidebar_section',
       'field_column_1' => $main_paragraphs,
@@ -387,20 +390,27 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
   }
 
   /**
-   * Create the sidebar content for a sidebar-containing imported row.
+   * Create the sidebar content for a mediawiki imported row.
+   * 
+   * @param string $id_const
+   *  The migrate source constant cotaining the sidebar block's ID. 
    *
    * @throws \Drupal\Core\Entity\EntityStorageException
    *
    * @return \Drupal\Core\Entity\EntityInterface|\Drupal\paragraphs\Entity\Paragraph
    *   The paragraph containing the sidebar content.
    */
-  private function getSidebarContentParagraph() {
-    $nav_id = $this->currentRow->getSourceProperty('constants')['ID_UNBHISTORY_NAV'];
-    $help_id = $this->currentRow->getSourceProperty('constants')['ID_UNBHISTORY_HELP'];
+  private function getSidebarMediawikiParagraph($id_const) {
+    $block_storage = \Drupal::entityTypeManager()->getStorage('block_content');
+    $block_id = $this->currentRow->getSourceProperty('constants')[$id_const];
+    $block = $block_storage->load($block_id);
+    $uuid = $block->uuid();
+    $plugin_id = "block_content:$uuid";
     $paragraph = Paragraph::create(['type' => 'custom_block_section']);
-    $paragraph->field_selected_block->plugin_id = "block_content:$nav";
+    $paragraph->field_selected_block->plugin_id = $plugin_id;
+
     $paragraph->field_selected_block->settings = [
-      'id' => "block_content:$nav",
+      'id' => $plugin_id,
       'label' => 'Archives & Special Collections Sidebar',
       'label_display' => false,
       'provider' => 'block_content',
