@@ -438,8 +438,11 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     // Remove all classes.
     $match_class = '#(class\=")(.*?)(")#';
     $non_sidebar = preg_replace($match_class, '', $non_sidebar);
+    // Remove all comments.
+    $match_comment = '#(<!--)(.*?)(-->)#';
+    $non_sidebar = preg_replace($match_comment, '', $non_sidebar);
     // Remove all empty tags.
-    $match_empty = '#<[^/>]+>[ \n\r\t]*</[^>]+>#';
+    $match_empty = '#<(\w+)(\s[^>]*)?>\s*<\/\1>#';
     $non_sidebar = preg_replace($match_empty, '', $non_sidebar);
     
     $paragraph = Paragraph::create([
@@ -449,6 +452,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
         'format' => 'library_page_html',
       ],
     ]);
+    
     $paragraph->save();
     return $paragraph;
   }
