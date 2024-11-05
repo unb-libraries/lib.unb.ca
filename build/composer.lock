@@ -14521,12 +14521,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unb-libraries/unb_lib_theme.git",
-                "reference": "151683624f9f039d1be32f3051eb70e050cd3000"
+                "reference": "04233c6a3254b3ecd0e90fabde96cf629b0cecd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unb-libraries/unb_lib_theme/zipball/151683624f9f039d1be32f3051eb70e050cd3000",
-                "reference": "151683624f9f039d1be32f3051eb70e050cd3000",
+                "url": "https://api.github.com/repos/unb-libraries/unb_lib_theme/zipball/04233c6a3254b3ecd0e90fabde96cf629b0cecd1",
+                "reference": "04233c6a3254b3ecd0e90fabde96cf629b0cecd1",
                 "shasum": ""
             },
             "require-dev": {
@@ -14549,7 +14549,7 @@
                 "issues": "https://github.com/unb-libraries/unb_lib_theme/issues",
                 "source": "https://github.com/unb-libraries/unb_lib_theme/tree/10.x-4.x"
             },
-            "time": "2024-11-05T13:34:43+00:00"
+            "time": "2024-11-05T17:33:47+00:00"
         },
         {
             "name": "w8tcha/ckeditor-codemirror-plugin",
