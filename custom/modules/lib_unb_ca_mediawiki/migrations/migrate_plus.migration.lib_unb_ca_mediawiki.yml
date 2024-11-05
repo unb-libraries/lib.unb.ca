@@ -189,12 +189,16 @@ source:
         #         - innerHtml
 
       dom_operations:
-        # -
-        #   operation: modifier
-        #   modifier: removeSelectorN
-        #   arguments:
-        #     - '#main #sidebar noscript'
-        #     - 1
+        -
+          operation: modifier
+          modifier: removeSelectorAll
+          arguments:
+            - '>div.mw-parser-output div[style*="background-color:pink"]'
+        -
+          operation: modifier
+          modifier: removeSelectorAll
+          arguments:
+            - '>div.mw-parser-output a[href*="#top"]'
         # -
         #   operation: modifier
         #   modifier: matchRemoveAll

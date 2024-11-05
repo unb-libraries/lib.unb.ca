@@ -432,9 +432,15 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    *   The paragraph containing the main content.
    */
   private function getNonSidebarContentParagraph() {
-    // Replace <b> tags with <strong> for compatibility with format library_page_html.
     $non_sidebar = $this->currentRow->getSourceProperty('non_sidebar');
+    // Replace <b> tags with <strong> for compatibility with format library_page_html.
     $non_sidebar = str_replace('b>', 'strong>', $non_sidebar);
+    // Remove all classes.
+    $match_class = '#(class\=")(.*?)(")#';
+    $non_sidebar = preg_replace($match_class, '', $non_sidebar);
+    // Remove all empty tags.
+    $match_empty = '#<[^/>]+>[ \n\r\t]*</[^>]+>#';
+    $non_sidebar = preg_replace($match_empty, '', $non_sidebar);
     
     $paragraph = Paragraph::create([
       'type' => 'body_section',
