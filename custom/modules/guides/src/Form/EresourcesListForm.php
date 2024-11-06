@@ -231,7 +231,8 @@ class EresourcesListForm extends FormBase {
               }
             }
             if (!empty($emails)) {
-              $mailtoUrl = 'mailto:' . implode(',', array_unique($emails)) . '?subject=' . urlencode($record->label()) . ' in Research Guides';
+              $subject = rawurlencode(htmlspecialchars_decode($record->label() . ' in Research Guides'));
+              $mailtoUrl = 'mailto:' . implode(',', array_unique($emails)) . '?subject=' . $subject;
               $text .= '<a class="button" href="' . $mailtoUrl . '">Email Editors</a>';
             }
           }
