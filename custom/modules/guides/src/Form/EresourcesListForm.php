@@ -219,6 +219,22 @@ class EresourcesListForm extends FormBase {
         if ($this->currentUser()->hasPermission('update eresources_record entities')) {
           $recordUrl = Url::fromRoute('entity.eresources_record.canonical', ['eresources_record' => $id])->toString();
           $text .= '<a class="button" href="' . $recordUrl . '">View Record</a>';
+          if (!empty($links)) {
+            $emails = [];
+            foreach ($links as $link) {
+              $guide = $link->get('guide')->entity;
+              if ($guide) {
+                foreach ($guide->get('editors') as $editorItem) {
+                  $editor = $editorItem->entity->field_user->entity;
+                  $emails[] = $editor->getEmail();
+                }
+              }
+            }
+            if (!empty($emails)) {
+              $mailtoUrl = 'mailto:' . implode(',', array_unique($emails)) . '?subject=' . urlencode($record->label()) . ' in Research Guides';
+              $text .= '<a class="button" href="' . $mailtoUrl . '">Email Editors</a>';
+            }
+          }
         }
       }
 
