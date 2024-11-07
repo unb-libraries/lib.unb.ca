@@ -118,6 +118,18 @@ form.theme-dark>.webform-elements>.form-group>fieldset>legend {
   }
 }
 
+/* Managed file widget */
+.form-managed-file {
+  padding-bottom: 0;
+  padding-top: 0;
+
+  input {
+    &[value=Remove] {
+      width: auto;
+    }
+  }
+}
+
 /* Dataverse Data Deposit Request Style/Alignment Overrides */
 .webform-submission-data-deposit-request-form-form {
   .thead-dark th {
