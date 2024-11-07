@@ -15,15 +15,15 @@ function createMediaImageFromUrl($imageUrl) {
     // Generate a unique file name
     $fileName = basename(parse_url($imageUrl, PHP_URL_PATH));
     
-    // Create a temporary file
+    // Create a managed file
     $fileRepository = \Drupal::service('file.repository');
-    $managedFile = $fileRepository->writeData($fileContents, 'public://unbhistory/' . $fileName, FileSystemInterface::EXISTS_REPLACE);
+    $managedFile = $fileRepository->writeData($fileContents, 'public://unbhistory' . $fileName, FileSystemInterface::EXISTS_REPLACE);
     
     if ($managedFile === FALSE) {
         die("Error: Unable to save the file.");
     }
     
-    // Move the temporary file to the public file system
+    // Move the managed file to the public file system
     $file = File::create([
         'uri' => $managedFile->getFileUri(),
         'status' => 1,
@@ -83,6 +83,20 @@ function parseWebPage($url) {
     }
 
     return;
+}
+
+$directoryName = 'sites/default/files/unbhistory';
+
+// Check if the directory already exists
+if (!is_dir($directoryName)) {
+    // Create the directory
+    if (mkdir($directoryName, 0755, true)) {
+        echo "Directory created successfully.";
+    } else {
+        echo "Failed to create directory.";
+    }
+} else {
+    echo "Directory already exists.";
 }
 
 $url = 'https://unbhistory.lib.unb.ca/Special:ListFiles?limit=500';
