@@ -4,9 +4,7 @@ use Drupal\Core\File\FileSystemInterface;
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
 
-function createMediaImageFromUrl($imageUrl) {
-    echo "\n$imageUrl\n";
-    
+function createMediaImageFromUrl($imageUrl) {    
     // Download the image from the provided URL
     $fileContents = file_get_contents($imageUrl);
     
@@ -19,11 +17,10 @@ function createMediaImageFromUrl($imageUrl) {
     
     // Create a temporary file
     $fileRepository = \Drupal::service('file.repository');
-    $managedFile = $fileRepository->writeData($fileContents, 'public://' . $fileName, FileSystemInterface::EXISTS_REPLACE);
-    // $managedFile = file_save_data($fileContents, 'temporary://' . $fileName, FILE_EXISTS_REPLACE);
+    $managedFile = $fileRepository->writeData($fileContents, 'public://unbhistory/' . $fileName, FileSystemInterface::EXISTS_REPLACE);
     
     if ($managedFile === FALSE) {
-        die("Error: Unable to save the temporary file.");
+        die("Error: Unable to save the file.");
     }
     
     // Move the temporary file to the public file system
@@ -51,7 +48,6 @@ function createMediaImageFromUrl($imageUrl) {
 }
 
 function parseWebPage($url) {
-    echo "\n$url\n";
     // Initialize a new DOMDocument
     $dom = new DOMDocument();
 
@@ -72,7 +68,7 @@ function parseWebPage($url) {
     $links = $xpath->query("//td[@class='TablePager_col_img_name']/a[2]/@href");
     
     // Iterate over the links and create media
-    $limit = $extra[0];
+    $limit = $_SERVER['argv'][3];
     $i = 0;
 
     foreach ($links as $link) {
@@ -81,7 +77,7 @@ function parseWebPage($url) {
       echo "Media image created with ID: $mediaId\n";
       $i ++;
 
-      if ($limit and $i == $limit - 1) {
+      if ($limit and $i == $limit) {
         return;
       }
     }
