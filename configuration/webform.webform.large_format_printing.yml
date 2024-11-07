@@ -106,6 +106,7 @@ elements: |-
         '#title': 'Upload your file '
         '#description': '<strong>Please note:</strong> it is recommended that you format your image to its final&nbsp;size prior to submitting your request and that you save your file as a PDF for ease of printing.'
         '#required': true
+        '#max_filesize': '20'
         '#file_extensions': 'pdf tiff jpg'
         '#sanitize': true
         '#button': true
