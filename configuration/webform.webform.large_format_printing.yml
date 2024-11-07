@@ -76,7 +76,7 @@ elements: |-
         '#title': 'When do you need this image printed by?'
         '#description': '<small>Please allow 72-hours notice for a large-format printing request. Enter any time request in the a<em>dditional notes</em> field below.</small>'
         '#required': true
-        '#date_date_min': '+1 hour'
+        '#date_date_min': '+72 hours'
         '#date_date_format': ''
         '#date_year_range': '+1:2050'
         '#date_time_element': none
