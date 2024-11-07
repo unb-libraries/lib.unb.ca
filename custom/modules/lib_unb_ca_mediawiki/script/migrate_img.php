@@ -4,6 +4,61 @@ use Drupal\Core\File\FileSystemInterface;
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
 
+$directoryName = 'sites/default/files/unbhistory';
+
+// Check if the directory already exists
+if (!is_dir($directoryName)) {
+    // Create the directory
+    if (mkdir($directoryName, 0755, true)) {
+        echo "Directory created successfully.";
+    } else {
+        echo "Failed to create directory.";
+    }
+} else {
+    echo "Directory already exists.";
+}
+
+$url = 'https://unbhistory.lib.unb.ca/Special:ListFiles?limit=500';
+parseWebPage($url);
+
+function parseWebPage($url) {
+    // Initialize a new DOMDocument
+    $dom = new DOMDocument();
+
+    // Suppress errors due to malformed HTML
+    libxml_use_internal_errors(true);
+
+    // Load the HTML from the URL
+    $html = file_get_contents($url);
+    $dom->loadHTML($html);
+
+    // Clear any libxml errors
+    libxml_clear_errors();
+
+    // Initialize a new DOMXPath instance
+    $xpath = new DOMXPath($dom);
+
+    // Extract the 2nd link from each <td> with class TablePager_col_img_name
+    $links = $xpath->query("//td[@class='TablePager_col_img_name']/a[2]/@href");
+    
+    // Iterate over the links and create media
+    $limit = $_SERVER['argv'][3];
+    $i = 0;
+
+    foreach ($links as $link) {
+      $imageUrl = 'https://unbhistory.lib.unb.ca' . $link->nodeValue;
+      $mediaId = createMediaImageFromUrl($imageUrl);
+      echo "Media image created with ID: $mediaId\n";
+      $i ++;
+
+      if ($limit and $i == $limit) {
+        return;
+      }
+    }
+
+    return;
+}
+
 function createMediaImageFromUrl($imageUrl) {    
     // Download the image from the provided URL
     $fileContents = file_get_contents($imageUrl);
@@ -46,58 +101,3 @@ function createMediaImageFromUrl($imageUrl) {
     // Return the media entity ID
     return $media->id();
 }
-
-function parseWebPage($url) {
-    // Initialize a new DOMDocument
-    $dom = new DOMDocument();
-
-    // Suppress errors due to malformed HTML
-    libxml_use_internal_errors(true);
-
-    // Load the HTML from the URL
-    $html = file_get_contents($url);
-    $dom->loadHTML($html);
-
-    // Clear any libxml errors
-    libxml_clear_errors();
-
-    // Initialize a new DOMXPath instance
-    $xpath = new DOMXPath($dom);
-
-    // Extract the 2nd link from each <td> with class TablePager_col_img_name
-    $links = $xpath->query("//td[@class='TablePager_col_img_name']/a[2]/@href");
-    
-    // Iterate over the links and create media
-    $limit = $_SERVER['argv'][3];
-    $i = 0;
-
-    foreach ($links as $link) {
-      $imageUrl = 'https://unbhistory.lib.unb.ca' . $link->nodeValue;
-      $mediaId = createMediaImageFromUrl($imageUrl);
-      echo "Media image created with ID: $mediaId\n";
-      $i ++;
-
-      if ($limit and $i == $limit) {
-        return;
-      }
-    }
-
-    return;
-}
-
-$directoryName = 'sites/default/files/unbhistory';
-
-// Check if the directory already exists
-if (!is_dir($directoryName)) {
-    // Create the directory
-    if (mkdir($directoryName, 0755, true)) {
-        echo "Directory created successfully.";
-    } else {
-        echo "Failed to create directory.";
-    }
-} else {
-    echo "Directory already exists.";
-}
-
-$url = 'https://unbhistory.lib.unb.ca/Special:ListFiles?limit=500';
-parseWebPage($url);
