@@ -38,7 +38,7 @@ elements: |-
 
       <p class="card-text">It is recommended that you format your image to its final size prior to submitting your request and that you&nbsp;save your file as a pdf for ease of printing.</p>
 
-      <p class="card-text">You will be contacted via email to approve pricing prior to printing and once your print is completed</p>
+      <p class="card-text">You will be contacted via email to approve pricing prior to printing and once your print is completed.</p>
       </div>
       </div>
   wrapper:
@@ -237,10 +237,10 @@ settings:
   draft_loaded_message: ''
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
-  confirmation_type: page
+  confirmation_type: modal
   confirmation_url: ''
-  confirmation_title: ''
-  confirmation_message: ''
+  confirmation_title: 'Thank you for your submission'
+  confirmation_message: 'You will be contacted via email to approve pricing prior to printing and once your print is completed.'
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
