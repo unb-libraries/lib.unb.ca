@@ -14,7 +14,7 @@ uid: 1
 template: false
 archive: false
 id: large_format_printing
-title: 'Harriet Irving Library: Large Format/Poster Printing'
+title: 'Large Format/Poster Printing Request'
 description: 'An online submission form for patrons to submit requests for large format printing at the HIL.'
 category: ''
 elements: |-
@@ -136,7 +136,7 @@ settings:
   ajax_effect: ''
   ajax_speed: null
   page: true
-  page_submit_path: ''
+  page_submit_path: /services/printing-scanning-photocopying/large-print-request
   page_confirm_path: ''
   page_theme_name: ''
   form_title: source_entity_webform
