@@ -15,7 +15,8 @@
     float: none;
   }
 }
-// Fix Webform > Confirmation > Modal > Close button missing content.
+/* Fix Webform > Confirmation > Modal > Close button missing content */
+button.ui-dialog-titlebar-close::before {
   content: "X";
   position: absolute;
   top: 1px;
