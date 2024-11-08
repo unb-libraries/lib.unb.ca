@@ -72,7 +72,7 @@ function createMediaImageFromUrl($imageUrl) {
     
     // Create a managed file
     $fileRepository = \Drupal::service('file.repository');
-    $managedFile = $fileRepository->writeData($fileContents, 'public://unbhistory' . $fileName, FileSystemInterface::EXISTS_REPLACE);
+    $managedFile = $fileRepository->writeData($fileContents, 'public://unbhistory/' . $fileName, FileSystemInterface::EXISTS_REPLACE);
     
     if ($managedFile === FALSE) {
         die("Error: Unable to save the file.");

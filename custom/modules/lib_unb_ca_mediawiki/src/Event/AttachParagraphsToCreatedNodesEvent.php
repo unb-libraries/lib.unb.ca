@@ -2,6 +2,7 @@
 
 namespace Drupal\lib_unb_ca_mediawiki\Event;
 
+use Drupal\media\Entity\Media;
 use Drupal\migrate\Audit\AuditException;
 use Drupal\migrate\Event\MigrateEvents;
 use Drupal\migrate\Event\MigratePostRowSaveEvent;
@@ -433,6 +434,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    */
   private function getNonSidebarContentParagraph() {
     $non_sidebar = $this->currentRow->getSourceProperty('non_sidebar');
+    $non_sidebar = $this->swapImg($non_sidebar);
     // Replace <b> tags with <strong> for compatibility with format library_page_html.
     $non_sidebar = str_replace('b>', 'strong>', $non_sidebar);
     // Remove all classes.
@@ -455,6 +457,77 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     
     $paragraph->save();
     return $paragraph;
+  }
+
+  /**
+   * Swap source <img> tags for <figure> with Drupal Media image location.
+   *
+   * @param string $html
+   * A string containing the HTML before processing.
+   *
+   * @return string
+   * A string containing the HTML after processing.
+   */
+  private function swapImg($html) {
+    $html = '
+      <div class="thumbinner" style="width:402px;"><a href="/File:Plaque_to_commemorate_the_100th_anniversary_of_the_conferring_of_the_first_degrees.jpg" class="image"><img alt="" src="/images/f/ff/Plaque_to_commemorate_the_100th_anniversary_of_the_conferring_of_the_first_degrees.jpg" decoding="async" width="400" height="322" class="thumbimage"/></a>  <div class="thumbcaption">Plaque to commemorate the 100th anniversary of the conferring of the first degrees at UNB, 1967. PR; Series 2; Sub-series 3; File 721. Item 19.</div></div>
+      <div class="thumbinner" style="width:402px;"><a href="/File:first_degrees.jpg" class="image"><img alt="" src="/images/f/ff/first_degrees.jpg" decoding="async" width="400" height="322" class="thumbimage"/></a>  <div class="thumbcaption">Plaque to commemorate the 100th anniversary of the conferring of the first degrees at UNB, 1967. PR; Series 2; Sub-series 3; File 721. Item 19.</div></div>
+    ';
+    // Extract contents of elements div.thumbinner containing images
+    $pattern = '#(<div class="thumbinner")(.*?)(</div>)#';
+    $search = preg_match_all($pattern, $html, $thumbs);
+    
+    foreach ($thumbs[2] as $thumb) {
+      // Restore trailing </div>
+      $thumb = "$thumb</div>";
+      // Retrieve image filename from src attribute
+      $pattern = '#<img[^>]+src="([^">]*\/([^">\/]+))"#i';
+      $search = preg_match($pattern, $thumb, $filename);
+      // Retrieve media object UUID.
+      $media = $this->loadMediaByFilename($filename);
+      $uuid = $media->uuid();
+      echo "\n***\n";
+      echo var_dump($uuid);
+      echo "\n***\n";
+    }
+  }
+
+  /**
+   * Load Drupal image media by filename.
+   *
+   * @param string $filename
+   * A string containing name of the file.
+   *
+   * @return Drupal\media\Entity\Media
+   * The loaded Media object.
+   */
+  private function loadMediaByFilename($filename) {
+    // Load the file entity by filename.
+    $files = \Drupal::entityTypeManager()
+        ->getStorage('file')
+        ->loadByProperties(['filename' => $filename]);
+    
+    if ($files) {
+      $file = reset($files); // Get the first file entity.
+      
+      // Load the media entity by file ID.
+      $media_entities = \Drupal::entityTypeManager()
+      ->getStorage('media')
+      ->loadByProperties(['field_media_image' => $file]);
+      
+      echo "\n***\n";
+      echo var_dump($file->id());
+      echo "\n***\n";
+      echo "\n***\n";
+      echo var_dump($file->id());
+      echo "\n***\n";
+        if ($media_entities) {
+            $media = reset($media_entities); // Get the first media entity.
+            return $media;
+        }
+    }
+
+    return NULL;
   }
 
   /**

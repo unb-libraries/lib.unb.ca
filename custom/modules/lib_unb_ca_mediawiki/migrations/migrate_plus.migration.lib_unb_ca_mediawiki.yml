@@ -177,16 +177,6 @@ source:
                 - 1
                 - innerHtml
 
-        images:
-          obtainer: ObtainHTML
-          jobs:
-            -
-              job: addSearch
-              method: pluckSelector
-              arguments:
-                - 'div.thumb > div.thumbinner'
-                - innerHtml
-
         # body:
         #   obtainer: ObtainBody
         #   jobs:
