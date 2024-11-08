@@ -272,7 +272,7 @@ settings:
 access:
   create:
     roles:
-      - library_news_author
+      - library_page_author
     users: {  }
     permissions: {  }
   view_any:
