@@ -476,8 +476,11 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    */
   private function swapImg($html) {
     // Extract contents of elements div.thumbinner containing images
-    $pattern = '#(<div class="thumbinner".*?</div></div>)#';
+    $pattern = '#(<div class="thumb tright".*?</div></div>)#';
     $search = preg_match_all($pattern, $html, $thumbs);
+    echo "\n***thumbs***\n";
+    echo var_dump($thumbs);
+    echo "\n***thumbs***\n";
     
     foreach ($thumbs as $thumb) {
       $thumb = $thumb[0] ?? '';
