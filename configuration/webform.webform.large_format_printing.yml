@@ -59,10 +59,13 @@ elements: |-
         '#title': Email
         '#prepopulate': true
         '#required': true
-      university_affiliation:
-        '#type': textfield
+      university_affiliation_select:
+        '#type': webform_select_other
         '#title': 'University Affiliation'
-        '#prepopulate': true
+        '#options':
+          unb: UNB
+          stu: STU
+        '#empty_option': 'Please choose an option'
         '#required': true
       phone_number:
         '#type': tel
