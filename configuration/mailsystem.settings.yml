@@ -11,5 +11,9 @@ modules:
       formatter: mime_mail
   webform:
     none:
-      sender: webform_php_mail
-      formatter: webform_php_mail
+      sender: symfony_mailer_lite
+      formatter: symfony_mailer_lite
+  symfony_mailer_lite:
+    none:
+      sender: symfony_mailer_lite
+      formatter: symfony_mailer_lite
