@@ -59,14 +59,6 @@ elements: |-
         '#title': Email
         '#prepopulate': true
         '#required': true
-      university_affiliation_select:
-        '#type': webform_select_other
-        '#title': 'University Affiliation'
-        '#options':
-          unb: UNB
-          stu: STU
-        '#empty_option': 'Please choose an option'
-        '#required': true
       phone_number:
         '#type': tel
         '#title': 'Phone Number'
@@ -275,7 +267,7 @@ settings:
 access:
   create:
     roles:
-      - library_page_author
+      - authenticated
     users: {  }
     permissions: {  }
   view_any:
@@ -344,13 +336,13 @@ handlers:
       sender_mail: ''
       sender_name: ''
       subject: 'New HIL Large Format/Poster Printing Request'
-      body: "<p>The following information was submitted through our <b>Large Format/Poster Printing Request</b> form by {{ webform_token('[webform_submission:user]', webform_submission) }} on {{ webform_token('[webform_submission:created]', webform_submission) }}.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>"
+      body: "<p>The following information was submitted through our <b>Large Format/Poster Printing Request</b> form by {{ webform_token('[webform_submission:user]', webform_submission) }} on {{ webform_token('[webform_submission:created]', webform_submission) }}.</p>\r\n<blockquote>{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}</blockquote>\r\n<div><img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\"></div>"
       excluded_elements:
         intro_card: intro_card
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: false
-      exclude_attachments: false
+      exclude_attachments: true
       html: true
       attachments: true
       twig: true
@@ -381,15 +373,16 @@ handlers:
       return_path: ''
       sender_mail: ''
       sender_name: ''
-      subject: 'Your Large Format/Poster Print Request'
-      body: "<p>Thank you for submitting your Large Format/Poster Printing  Request. We will email you to approve pricing prior to printing and once your print is completed.</p>\r\n<p>Submitted information:</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n<div>\r\n\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>"
-      excluded_elements: {  }
+      subject: 'UNB Libraries Large Format/Poster Printing Request'
+      body: "<p>We have received your request and will email you to approve pricing prior to printing and once your print is completed. Your submitted information (minus the uploaded file) was:</p>\r\n<blockquote>{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}</blockquote>\r\n<div><img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\"></div>"
+      excluded_elements:
+        upload_your_file_: upload_your_file_
       ignore_access: false
       exclude_empty: true
-      exclude_empty_checkbox: false
+      exclude_empty_checkbox: true
       exclude_attachments: false
       html: true
-      attachments: true
+      attachments: false
       twig: true
       theme_name: ''
       parameters: {  }
