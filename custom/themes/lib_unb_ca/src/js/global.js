@@ -9,7 +9,14 @@
     Drupal.behaviors.lib_unb_ca = {
         attach: function(context, settings) {
             $(window).on('hashchange pageshow', function() {
-                adjustAnchor();
+              adjustAnchor();
+            });
+            
+             // Remove everthing but <img> and <figcaption> from Media figures
+            $('figure.media-figure').each(function() {
+              var img = $(this).find('img').first();
+              var caption = $(this).find('figcaption').first();
+              $(this).empty().append(img).append(caption);
             });
 
             // Mobile Quicklinks button: scroll to Quicklinks section when toggled on.

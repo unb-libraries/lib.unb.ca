@@ -478,9 +478,6 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     // Extract contents of elements div.thumbinner containing images
     $pattern = '#(<div class="thumb tright".*?</div></div>)#';
     $search = preg_match_all($pattern, $html, $thumbs);
-    echo "\n***thumbs***\n";
-    echo var_dump($thumbs);
-    echo "\n***thumbs***\n";
     
     foreach ($thumbs as $thumb) {
       $thumb = $thumb[0] ?? '';
@@ -505,7 +502,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
       $height = $height[2] ?? $height;
       // Build replacement <figure>
       $figure = "
-        <figure style='width: $width; height: $height;'>
+        <figure class='media-figure' style='width: $width; height: $height;'>
           <drupal-media data-align='right' data-entity-type='media' data-entity-uuid='$uuid'></drupal-media>
           <figcaption>$caption</figcaption>
         </figure>
