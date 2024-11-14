@@ -11,7 +11,7 @@
             $(window).on('hashchange pageshow', function() {
               adjustAnchor();
             });
-            
+
              // Remove everthing but <img> and <figcaption> from Media figures
             $('figure.media-figure').each(function() {
               var img = $(this).find('img').first();
