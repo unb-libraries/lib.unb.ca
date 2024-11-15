@@ -44,12 +44,15 @@ function parseWebPage($url) {
     // Iterate over the links and create media
     $limit = $_SERVER['argv'][3];
     $i = 0;
-
+        
     foreach ($links as $link) {
       $imageUrl = 'https://unbhistory.lib.unb.ca' . $link->nodeValue;
       $mediaId = createMediaImageFromUrl($imageUrl);
-      echo "Media image created with ID: $mediaId\n";
-      $i ++;
+
+      if ($mediaId) {
+        echo "Media image created with ID: $mediaId\n";
+        $i ++;
+      }
 
       if ($limit and $i == $limit) {
         return;
@@ -69,7 +72,7 @@ function createMediaImageFromUrl($imageUrl) {
 
     // Generate a unique file name
     $fileName = basename(parse_url($imageUrl, PHP_URL_PATH));
-    
+
     // Create a managed file
     $fileRepository = \Drupal::service('file.repository');
     $managedFile = $fileRepository->writeData($fileContents, 'public://unbhistory/' . $fileName, FileSystemInterface::EXISTS_REPLACE);
@@ -87,17 +90,38 @@ function createMediaImageFromUrl($imageUrl) {
 
     // Create the media entity
     $media = Media::create([
-        'bundle' => 'image',  // Ensure 'image' is the correct media type bundle for your setup
-        'name' => $fileName,
-        'status' => 1,
-        'field_media_image' => [
-            'target_id' => $file->id(),
-            // 'alt' => 'Alt text for the image',  // Replace with the appropriate alt text
-            'title' => $filename,  // Replace with the appropriate title
-        ],
+      'bundle' => 'image',  // Ensure 'image' is the correct media type bundle for your setup
+      'name' => $fileName,
+      'status' => 1,
+      'field_media_image' => [
+        'target_id' => $file->id(),
+        // 'alt' => 'Alt text for the image',  // Replace with the appropriate alt text
+        'title' => $filename,  // Replace with the appropriate title
+      ],
     ]);
     $media->save();
     
     // Return the media entity ID
     return $media->id();
+
+  return;
+}
+
+/**
+ * Retrieves all file filenames in the Drupal site.
+ */
+function getAllFileFilenames() {
+    // Load all file entities.
+    $file_ids = \Drupal::entityQuery('file')
+        ->execute();
+
+    $filenames = [];
+    foreach ($file_ids as $file_id) {
+        $file = File::load($file_id);
+        if ($file) {
+            $filenames[] = $file->getFilename();
+        }
+    }
+
+    return $filenames;
 }

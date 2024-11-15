@@ -478,6 +478,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     // Extract contents of elements div.thumbinner containing images
     $pattern = '#(<div class="thumb tright".*?</div></div>)#';
     $search = preg_match_all($pattern, $html, $thumbs);
+    $thumbs = array_unique($thumbs);
     
     foreach ($thumbs as $thumb) {
       $thumb = $thumb[0] ?? '';
@@ -485,6 +486,10 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
       $pattern = '#<img[^>]+src="([^">]*\/([^">\/]+))"#i';
       $search = preg_match($pattern, $thumb, $filename);
       $filename = $filename[2] ?? $filename;
+      $filename = str_replace('-', '_', $filename);
+      echo "\n***filename\n";
+      echo var_dump($filename);
+      echo "\n***filename\n";
       // Retrieve media object UUID
       $media = $filename ? $this->loadMediaByFilename($filename) : NULL;
       $uuid = $media ? $media->uuid() : NULL;

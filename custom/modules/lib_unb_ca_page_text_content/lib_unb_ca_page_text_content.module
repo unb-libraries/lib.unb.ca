@@ -40,6 +40,7 @@ function lib_unb_ca_page_text_content_node_presave(NodeInterface $node) {
 /**
  * Implements hook_node_view().
  */
+
 function lib_unb_ca_page_text_content_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) { 
   // Remove extraneous divs from html
   $build['#post_render'][] = function ($html, array $elements) {
@@ -54,7 +55,7 @@ function lib_unb_ca_page_text_content_node_view(array &$build, EntityInterface $
       // Match all <div*> tags
       $pattern = '#<figure class="media-figure">((.|[\r\n])*?)<img#';
       $search = preg_match($pattern, $mfig, $remove);
-      $remove = $remove[1];
+      $remove = $remove[1] ?? '';
       // Remove <div> tags
       $replace = str_replace($remove, '', $mfig);
       // Remove </div> closers
