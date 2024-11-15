@@ -7,6 +7,7 @@
 
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Render\Markup;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\lib_unb_ca_page_text_content\PageTextHelper;
 use Drupal\node\NodeInterface;
@@ -40,15 +41,29 @@ function lib_unb_ca_page_text_content_node_presave(NodeInterface $node) {
  * Implements hook_node_view().
  */
 function lib_unb_ca_page_text_content_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) { 
-  
+  // Remove extraneous divs from html
   $build['#post_render'][] = function ($html, array $elements) {
-    /*
-    $pattern = '#(<figure class="media-figure">)(.*?)(</figure>)#';
+    // Match media figures
+    $pattern = '#(<figure class="media-figure">)(.|[\r\n])*?(</figure>)#';
+    // Recover html string from markup object
     $markup = $html->__toString();
-    dump($markup);
     $search = preg_match_all($pattern, $markup, $mfigs);
-    dump($mfigs);
-    */
-    return $html;
+    
+    // Iterate through figures
+    foreach ($mfigs[0] as $mfig) {
+      // Match all <div*> tags
+      $pattern = '#<figure class="media-figure">((.|[\r\n])*?)<img#';
+      $search = preg_match($pattern, $mfig, $remove);
+      $remove = $remove[1];
+      // Remove <div> tags
+      $replace = str_replace($remove, '', $mfig);
+      // Remove </div> closers
+      $replace = str_replace('</div>', '', $replace);
+      // Replace original figure with one 
+      $markup = str_replace($mfig, $replace, $markup);
+    }
+
+    // Return markup object from new html
+    return Markup::create($markup);
   };
 }
