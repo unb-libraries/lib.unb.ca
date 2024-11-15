@@ -485,34 +485,45 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
       // Retrieve image filename from src attribute
       $pattern = '#<img[^>]+src="([^">]*\/([^">\/]+))"#i';
       $search = preg_match($pattern, $thumb, $filename);
-      $filename = $filename[2] ?? $filename;
-      $filename = str_replace('-', '_', $filename);
-      echo "\n***filename\n";
-      echo var_dump($filename);
-      echo "\n***filename\n";
-      // Retrieve media object UUID
-      $media = $filename ? $this->loadMediaByFilename($filename) : NULL;
-      $uuid = $media ? $media->uuid() : NULL;
-      // Retrieve caption
-      $pattern = '#(<div class="thumbcaption">)(.*?)(</div>)#';
-      $search = preg_match($pattern, $thumb, $caption);
-      $caption = $caption[2] ?? $caption;
-      // Retrieve image width
-      $pattern = '#(width=")(.*?)(")#';
-      $search = preg_match($pattern, $thumb, $width);
-      $width = $width[2] ?? $width;
-      // Retrieve image height
-      $pattern = '#(height=")(.*?)(")#';
-      $search = preg_match($pattern, $thumb, $height);
-      $height = $height[2] ?? $height;
-      // Build replacement <figure>
-      $figure = "
-        <figure class='media-figure' style='width: $width; height: $height;'>
-          <drupal-media data-align='right' data-entity-type='media' data-entity-uuid='$uuid'></drupal-media>
-          <figcaption>$caption</figcaption>
-        </figure>
-      ";
-      $html = str_replace($thumb, $figure, $html);
+
+      if (!empty($filename)) {
+        $filename = $filename[2] ?? $filename;
+        $filename = str_replace('-', '_', $filename);
+        $pattern = '#.*?px_#';
+        $search = preg_match($pattern, $filename, $remove);
+        $filename = str_replace($remove, '', $filename);
+        echo "\n***\n";
+        echo var_dump($filename);
+        echo var_dump($remove);
+        echo "\n***\n";
+
+        // Retrieve media object UUID
+        $media = $this->loadMediaByFilename($filename);
+
+        if (!empty($media)) {
+          $uuid = $media ? $media->uuid() : NULL;
+          // Retrieve caption
+          $pattern = '#(<div class="thumbcaption">)(.*?)(</div>)#';
+          $search = preg_match($pattern, $thumb, $caption);
+          $caption = $caption[2] ?? $caption;
+          // Retrieve image width
+          $pattern = '#(width=")(.*?)(")#';
+          $search = preg_match($pattern, $thumb, $width);
+          $width = $width[2] ?? $width;
+          // Retrieve image height
+          $pattern = '#(height=")(.*?)(")#';
+          $search = preg_match($pattern, $thumb, $height);
+          $height = $height[2] ?? $height;
+          // Build replacement <figure>
+          $figure = "
+            <figure class='media-figure' style='width: $width; height: $height;'>
+              <drupal-media data-align='right' data-entity-type='media' data-entity-uuid='$uuid'></drupal-media>
+              <figcaption>$caption</figcaption>
+            </figure>
+          ";
+          $html = str_replace($thumb, $figure, $html);
+        }
+      }
     }
 
     return $html;
