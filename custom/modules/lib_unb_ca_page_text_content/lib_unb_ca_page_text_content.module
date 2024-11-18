@@ -63,7 +63,7 @@ function lib_unb_ca_page_text_content_node_view(array &$build, EntityInterface $
       // Replace original figure with one 
       $markup = str_replace($mfig, $replace, $markup);
     }
-
+    
     // Return markup object from new html
     return Markup::create($markup);
   };

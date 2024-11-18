@@ -492,31 +492,22 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
         $pattern = '#.*?px_#';
         $search = preg_match($pattern, $filename, $remove);
         $filename = str_replace($remove, '', $filename);
-        echo "\n***\n";
-        echo var_dump($filename);
-        echo var_dump($remove);
-        echo "\n***\n";
-
         // Retrieve media object UUID
         $media = $this->loadMediaByFilename($filename);
 
         if (!empty($media)) {
-          $uuid = $media ? $media->uuid() : NULL;
           // Retrieve caption
           $pattern = '#(<div class="thumbcaption">)(.*?)(</div>)#';
           $search = preg_match($pattern, $thumb, $caption);
           $caption = $caption[2] ?? $caption;
-          // Retrieve image width
-          $pattern = '#(width=")(.*?)(")#';
-          $search = preg_match($pattern, $thumb, $width);
-          $width = $width[2] ?? $width;
-          // Retrieve image height
-          $pattern = '#(height=")(.*?)(")#';
-          $search = preg_match($pattern, $thumb, $height);
-          $height = $height[2] ?? $height;
+          // Add caption to media object alt
+          $media->field_media_image->alt = $caption;
+          $media->save();
+          // Retrieve media UUID
+          $uuid = $media->uuid();
           // Build replacement <figure>
           $figure = "
-            <figure class='media-figure' style='width: $width; height: $height;'>
+            <figure class='media-figure'>
               <drupal-media data-align='right' data-entity-type='media' data-entity-uuid='$uuid'></drupal-media>
               <figcaption>$caption</figcaption>
             </figure>

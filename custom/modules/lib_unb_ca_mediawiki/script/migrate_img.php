@@ -10,12 +10,12 @@ $directoryName = 'sites/default/files/unbhistory';
 if (!is_dir($directoryName)) {
     // Create the directory
     if (mkdir($directoryName, 0755, true)) {
-        echo "Directory created successfully.";
+        echo "Directory created successfully.\n";
     } else {
-        echo "Failed to create directory.";
+        echo "Failed to create directory.\n";
     }
 } else {
-    echo "Directory already exists.";
+    echo "Directory already exists.\n";
 }
 
 $url = 'https://unbhistory.lib.unb.ca/Special:ListFiles?limit=500';
@@ -95,8 +95,7 @@ function createMediaImageFromUrl($imageUrl) {
       'status' => 1,
       'field_media_image' => [
         'target_id' => $file->id(),
-        // 'alt' => 'Alt text for the image',  // Replace with the appropriate alt text
-        'title' => $filename,  // Replace with the appropriate title
+        'title' => $filename,  
       ],
     ]);
     $media->save();
