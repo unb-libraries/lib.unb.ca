@@ -12,7 +12,7 @@ third_party_settings:
     status: true
     scheme: public
     directory: media/documents
-    extensions: 'csv doc docx pdf ppt pptx rtf txt xls xlsx zip'
+    extensions: 'csv doc docx dotx pdf ppt pptx rtf txt xls xlsx zip'
     max_size: ''
 format: library_page_html
 editor: ckeditor
