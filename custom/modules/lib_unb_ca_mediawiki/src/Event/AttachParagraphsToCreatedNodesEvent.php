@@ -122,7 +122,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     // Add expected path for destination to source path.
     $url = str_replace(
       'https://unbhistory.lib.unb.ca',
-      'https://unbhistory.lib.unb.ca/unbhistory',
+      'https://unbhistory.lib.unb.ca/archives/unbhistory',
       $url
     );
 

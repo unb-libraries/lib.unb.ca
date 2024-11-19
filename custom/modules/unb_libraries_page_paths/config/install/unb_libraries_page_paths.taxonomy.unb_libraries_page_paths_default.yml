@@ -36,6 +36,7 @@ default_paths:
     unb-composites:
     pephotos:
     schoolbook:
+    unbhistory:
   openaccess:
   catalogues:
   disted:
@@ -62,7 +63,6 @@ default_paths:
   reserves:
   faculty:
   225:
-  unbhistory:
   winslow:
   services:
     rooms:
