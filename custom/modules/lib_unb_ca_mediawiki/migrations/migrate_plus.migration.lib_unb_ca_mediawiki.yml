@@ -86,6 +86,11 @@ source:
           arguments:
             - '>div.mw-parser-output a[href*="#top"]'
         -
+          operation: modifier
+          modifier: removeSelectorAll
+          arguments:
+            - '>div.mw-parser-output div.magnify'
+        -
           operation: get_field
           field: title
         -
