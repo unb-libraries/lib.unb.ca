@@ -10,6 +10,7 @@ third_party_settings:
     antibot: true
   honeypot:
     honeypot: true
+    time_restriction: true
 weight: 0
 open: null
 close: null
