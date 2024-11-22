@@ -456,6 +456,11 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     $non_sidebar = str_replace('http:', 'https:', $non_sidebar);
     // Migrate internal links
     $non_sidebar = $this->internalLinks($non_sidebar);
+    $non_sidebar = str_replace(
+      'archives/unbhistory/archives/unbhistory/',
+      'archives/unbhistory/',
+      $non_sidebar
+    );
 
     $paragraph = Paragraph::create([
       'type' => 'body_section',
