@@ -10,6 +10,7 @@ use Drupal\node\Entity\Node;
 use Drupal\node_path_taxonomy\Entity\NodeTaxonomyPath;
 use Drupal\node_path_taxonomy\Entity\NodeTaxonomyPathRelationship;
 use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\path_alias\Entity\PathAlias;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
@@ -440,18 +441,22 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
   private function getNonSidebarContentParagraph() {
     $non_sidebar = $this->currentRow->getSourceProperty('non_sidebar');    
     $non_sidebar = $this->swapImg($non_sidebar);
-    // Replace <b> tags with <strong> for compatibility with format library_page_html.
-    $non_sidebar = str_replace('b>', 'strong>', $non_sidebar);
-    // Remove all classes.
+    // Remove all classes
     $match_class = '#(class\=")(.*?)(")#';
     preg_replace($match_class, '', $non_sidebar);
-    // Remove all comments.
+    // Remove all comments
     $match_comment = '#(<!--)(.*?)(-->)#';
     preg_replace($match_comment, '', $non_sidebar);
-    // Remove all empty tags.
+    // Remove all empty tags
     $match_empty = '#<(\w+)(\s[^>]*)?>\s*<\/\1>#';
     preg_replace($match_empty, '', $non_sidebar);
-    
+    // Replace <b> tags with <strong> for compatibility with format library_page_html
+    $non_sidebar = str_replace('b>', 'strong>', $non_sidebar);
+    // Switch external http targets to https
+    $non_sidebar = str_replace('http:', 'https:', $non_sidebar);
+    // Migrate internal links
+    $non_sidebar = $this->internalLinks($non_sidebar);
+
     $paragraph = Paragraph::create([
       'type' => 'body_section',
       'field_body' => [
@@ -462,6 +467,37 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     
     $paragraph->save();
     return $paragraph;
+  }
+
+  /**
+   * Migrate target of interal links.
+   *
+   * @param string $html
+   * A string containing the HTML before processing.
+   *
+   * @return string
+   * A string containing the HTML after processing.
+   */
+  private function internalLinks($html) {
+    $match_href = '/href=["\'](.*?)["\']/i';
+    preg_match_all($match_href, $html, $matches);
+    
+    foreach($matches[1] as $match) {
+
+      if (!str_contains($match, 'https:')) {
+
+        if (str_contains($match, 'File:')) {
+          $replace = str_replace('File:', 'sites/default/files/unbhistory/', $match);
+          $html = str_replace($match, $replace, $html);
+        }
+        else {
+          $replace = "/archives/unbhistory$match";
+          $html = str_replace($match, $replace, $html);
+        }
+      }
+    }
+
+    return $html;
   }
 
   /**
@@ -572,6 +608,16 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
   private function writeNode() {
     $this->currentParagraph->save();
     $this->currentNode->set('field_page_content', [$this->currentParagraph]);
+    // Get original URL
+    $og_url = $this->currentRow->getSourceProperty('url');
+    // Update to lib URL
+    $url = str_replace('https://unbhistory.lib.unb.ca', '/archives/unbhistory', $og_url);
+    // Save the new alias
+    $alias = PathAlias::create([
+      'path' => '/node/' . $this->currentNode->id(),
+      'alias' => "$url",
+    ]);
+    $alias->save();
     $this->currentNode->save();
   }
 
