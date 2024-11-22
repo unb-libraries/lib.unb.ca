@@ -6,7 +6,7 @@ name: 'UNB Libraries'
 mail: admin@example.com
 slogan: ''
 page:
-  403: /node/1364
+  403: /403-page
   404: /404-page
   front: /node/69
 admin_compact_mode: false
