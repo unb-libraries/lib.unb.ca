@@ -8,6 +8,7 @@ dependencies:
     - core.entity_view_mode.media.bs_xl_extra_large
     - core.entity_view_mode.media.bs_xs_extra_small
     - core.entity_view_mode.media.bs_xxl_extra_extra_large
+    - core.entity_view_mode.media.colorbox_smr_linked_to_original
     - core.entity_view_mode.media.extra_large
     - core.entity_view_mode.media.md_linked_to_original
     - core.entity_view_mode.media.sm_linked_to_original
@@ -117,6 +118,7 @@ filters:
         bs_xl_extra_large: bs_xl_extra_large
         bs_xs_extra_small: bs_xs_extra_small
         bs_xxl_extra_extra_large: bs_xxl_extra_extra_large
+        colorbox_smr_linked_to_original: colorbox_smr_linked_to_original
         extra_large: extra_large
         md_linked_to_original: md_linked_to_original
         sm_linked_to_original: sm_linked_to_original
