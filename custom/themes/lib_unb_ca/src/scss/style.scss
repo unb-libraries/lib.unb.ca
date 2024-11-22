@@ -487,6 +487,13 @@ ul.field--name-field-categories:before {
       width: 1px;
     }
   }
+  &.search-all {
+    form {
+      margin-left: 0.55rem;
+      margin-top: 1rem;
+      max-width: 767px;
+    }
+  }
 
   /* Emulate BS4 input-group-lg */
   &.input-group-lg {
