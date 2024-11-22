@@ -440,9 +440,8 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
   private function getNonSidebarContentParagraph() {
     $non_sidebar = $this->currentRow->getSourceProperty('non_sidebar');    
     $non_sidebar = $this->swapImg($non_sidebar);
-
     // Replace <b> tags with <strong> for compatibility with format library_page_html.
-    str_replace('b>', 'strong>', $non_sidebar);
+    $non_sidebar = str_replace('b>', 'strong>', $non_sidebar);
     // Remove all classes.
     $match_class = '#(class\=")(.*?)(")#';
     preg_replace($match_class, '', $non_sidebar);
