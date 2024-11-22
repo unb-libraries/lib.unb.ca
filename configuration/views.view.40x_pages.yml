@@ -1,0 +1,381 @@
+uuid: 01e24ff2-f787-428d-8414-ed476e442909
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.library_page
+    - views.view.search_our_webpages
+  module:
+    - node
+    - paragraphs
+    - user
+id: 40x_pages
+label: '40x Pages'
+module: views
+description: ''
+tag: ''
+base_table: node_field_data
+base_field: nid
+display:
+  default:
+    id: default
+    display_title: Default
+    display_plugin: default
+    position: 0
+    display_options:
+      title: 'Sorry, something''s not right'
+      fields:
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: custom
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 1
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      cache:
+        type: tag
+        options: {  }
+      empty: {  }
+      sorts: {  }
+      arguments:
+        'null':
+          id: 'null'
+          table: views
+          field: 'null'
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: 'null'
+          default_action: ignore
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: fixed
+          default_argument_options:
+            argument: ''
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            override: false
+            items_per_page: 25
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          must_not_be: false
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            library_page: library_page
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+      style:
+        type: default
+      row:
+        type: fields
+      query:
+        type: views_query
+        options:
+          query_comment: ''
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_tags: {  }
+      relationships:
+        field_page_content_target_id:
+          id: field_page_content_target_id
+          table: node__field_page_content
+          field: field_page_content_target_id
+          relationship: none
+          group_type: group
+          admin_label: 'field_page_content: Paragraph'
+          plugin_id: standard
+          required: true
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: 'Header w/ current-page token'
+          plugin_id: text
+          empty: false
+          content:
+            value: "<div class=\"alert alert-light my-4\">\r\n<span class=\"fa-exclamation-circle fas fa-lg mr-1 text-unb-red\"></span><span class=\"font-weight-bold\">The page <span class=\"text-muted\">[current-page:url]</span> doesn't exist.</span>\r\n</div>"
+            format: library_page_html
+          tokenize: false
+      footer:
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: view
+          empty: true
+          view_to_insert: 'search_our_webpages:search_footer'
+          inherit_arguments: false
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  page_1:
+    id: page_1
+    display_title: '403 Page'
+    display_plugin: page
+    position: 1
+    display_options:
+      title: 'Sorry, access denied'
+      fields:
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: '403 Page Content'
+          plugin_id: custom
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: "<div class=\"mx-4 mb-5\">\r\n<h2 class=\"h3 text-primary\">May we suggest:</h3>\r\n<ul class=\"mb-0\">\r\n\t<li><strong>ASK US</strong> via <a href=\"/help/ask-us\">email, phone, chat or in person</a></li>\r\n\t<li><strong>SUBMIT</strong> a <a href=\"/help/ticket/new\">Trouble Ticket</a> if you believe you should have access</li>\r\n</ul>\r\n</div>"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+      defaults:
+        title: false
+        fields: false
+        header: false
+        footer: false
+      display_description: ''
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: 'Header w/ current-page token'
+          plugin_id: text
+          empty: false
+          content:
+            value: "<div class=\"alert alert-light my-4\">\r\n<span class=\"fa-exclamation-circle fas fa-lg mr-1 text-unb-red\"></span><span class=\"font-weight-bold\">You don't currently have permission to view the page <span class=\"text-muted\">[current-page:url]</span>.</span>\r\n</div>"
+            format: library_page_html
+          tokenize: false
+      footer: {  }
+      exposed_block: true
+      display_extenders:
+        simple_sitemap_display_extender:
+          variants: {  }
+      path: 403-page
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  page_404:
+    id: page_404
+    display_title: '404 Page'
+    display_plugin: page
+    position: 1
+    display_options:
+      fields:
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: '404 Page Content'
+          plugin_id: custom
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: "<div class=\"mx-4\">\r\n<h2 class=\"h3 text-primary\">May we suggest:</h3>\r\n<ul class=\"mb-0\">\r\n\t<li><strong>ASK US</strong> via <a href=\"/help/ask-us\">email, phone, chat or in person</a></li>\r\n\t<li><strong>BROWSE</strong> through our <a href=\"/sitemap\">A-to-Z Content Directory</a></li>\r\n\t<li><strong>SEARCH</strong> for the page below</li>\r\n</ul>\r\n</div>"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+      defaults:
+        fields: false
+      display_description: ''
+      exposed_block: true
+      display_extenders:
+        simple_sitemap_display_extender:
+          variants: {  }
+      path: 404-page
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
