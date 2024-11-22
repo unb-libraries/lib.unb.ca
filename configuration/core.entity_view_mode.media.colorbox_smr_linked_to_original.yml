@@ -1,0 +1,10 @@
+uuid: 36b11157-62cc-457b-b2d3-a99e0a9667e8
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.colorbox_smr_linked_to_original
+label: 'Colorbox Smaller (360px linked to original)'
+targetEntityType: media
+cache: true
