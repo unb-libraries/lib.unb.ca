@@ -63,6 +63,12 @@ elements: |-
           class:
             - bg-dark
             - px-5
+      processed_text_01:
+        '#type': processed_text
+        '#text': |-
+          <p class="mx-3 text-left"><span class="fa-exclamation-triangle fas"></span> <strong>Notice: Canada Post Labour Disruption</strong><br>
+          Due to the ongoing Canada Post labour disruption, UNB Libraries' interlibrary loan service for <strong>print materials</strong> will be assessed on a case-by-case basis. For assistance or inquiries, please contact <a href="mailto:docdel@unb.ca">docdel@unb.ca</a>.</p>
+        '#format': library_page_html
   additional_notes:
     '#type': fieldset
     '#title': 'Additional Notes'
@@ -80,8 +86,6 @@ elements: |-
         class:
           - m-0
       '#text': |
-        <p class="mx-3"><span class="fa-exclamation-triangle fas"></span> We have received inconsistent reports from users for “Bad Requests” when authenticating. Sometimes this is corrected on the second attempt. if you are unable to login, please submit a request directly to <a href="mailto:docdel@unb.ca">docdel@unb.ca</a>.</p>
-
         <ul class="m-0">
         	<li><strong>Faculty of Law</strong>&nbsp;-&nbsp;Use <a href="https://www.unb.ca/fredericton/law/library/interlibrary-loan/index.html">Law Library Document Delivery Service.</a></li>
         	<li><strong>Community / Alumni / CURBA patrons</strong>&nbsp;-&nbsp;Online document delivery services unavailable.&nbsp;<a href="/services/docdel/community-and-alumni-borrowers">Limited service is provided.</a></li>
