@@ -561,11 +561,8 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     }
 
     if (str_contains($html, 'thumbcaption')) {
-      echo "\n***HTML\n";
-      echo var_dump($html);
-      echo "\n***THUMBS\n";
-      echo var_dump($thumbs);
-      echo "\n***\n";
+      $title = $this->currentRow->getSourceProperty('title');
+      echo "\nUnmatched image in page [$title]\n";
     }
     return $html;
   }
