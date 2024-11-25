@@ -91,6 +91,16 @@ source:
           arguments:
             - '>div.mw-parser-output div.magnify'
         -
+          operation: modifier
+          modifier: removeSelectorAll
+          arguments:
+            - '>div.mw-parser-output a[href^="/User"]'
+        -
+          operation: modifier
+          modifier: removeSelectorAll
+          arguments:
+            - '>div.mw-parser-output a[href^="/index.php"]'
+        -
           operation: get_field
           field: title
         -

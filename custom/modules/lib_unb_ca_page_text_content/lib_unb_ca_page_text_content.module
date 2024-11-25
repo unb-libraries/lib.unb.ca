@@ -40,7 +40,7 @@ function lib_unb_ca_page_text_content_node_presave(NodeInterface $node) {
 /**
  * Implements hook_node_view().
  */
-
+/*
 function lib_unb_ca_page_text_content_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) { 
   // Remove extraneous divs from html
   $build['#post_render'][] = function ($html, array $elements) {
@@ -68,3 +68,4 @@ function lib_unb_ca_page_text_content_node_view(array &$build, EntityInterface $
     return Markup::create($markup);
   };
 }
+*/

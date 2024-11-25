@@ -456,11 +456,6 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     $non_sidebar = str_replace('http:', 'https:', $non_sidebar);
     // Migrate internal links
     $non_sidebar = $this->internalLinks($non_sidebar);
-    $non_sidebar = str_replace(
-      'archives/unbhistory/archives/unbhistory/',
-      'archives/unbhistory/',
-      $non_sidebar
-    );
 
     $paragraph = Paragraph::create([
       'type' => 'body_section',
@@ -502,6 +497,15 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
       }
     }
 
+    // Recursively remove redundant link paths
+    while (str_contains($html, 'archives/unbhistory/archives/unbhistory/')) {
+      $html = str_replace(
+        'archives/unbhistory/archives/unbhistory/',
+        'archives/unbhistory/',
+        $html
+      );
+    }
+    
     return $html;
   }
 
@@ -516,19 +520,18 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    */
   private function swapImg($html) {
     // Extract contents of elements div.thumbinner containing images
-    $pattern = '#(<div class="thumb tright".*?</div></div>)#';
+    $pattern = '#(<div class="thumb tright".*?</div>.*?</div>)#s';
     $search = preg_match_all($pattern, $html, $thumbs);
     $thumbs = array_unique($thumbs);
     
-    foreach ($thumbs as $thumb) {
-      $thumb = $thumb[0] ?? '';
+    foreach ($thumbs[0] as $thumb) {
       // Retrieve image filename from src attribute
-      $pattern = '#<img[^>]+src="([^">]*\/([^">\/]+))"#i';
+      $pattern = '#<img[^>]+src="([^">]*\/([^">\/]+))"#s';
       $search = preg_match($pattern, $thumb, $filename);
 
       if (!empty($filename)) {
         $filename = $filename[2] ?? $filename;
-        $filename = str_replace('-', '_', $filename);
+        $filename = str_replace('px-', 'px_', $filename);
         $pattern = '#.*?px_#';
         $search = preg_match($pattern, $filename, $remove);
         $filename = str_replace($remove, '', $filename);
@@ -548,7 +551,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
           // Build replacement <figure>
           $figure = "
             <figure class='media-figure'>
-              <drupal-media data-align='right' data-entity-type='media' data-entity-uuid='$uuid'></drupal-media>
+              <drupal-media data-align='center' data-entity-type='media' data-view-mode='colorbox_smr_linked_to_original' data-entity-uuid='$uuid'></drupal-media>
               <figcaption>$caption</figcaption>
             </figure>
           ";
@@ -557,6 +560,13 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
       }
     }
 
+    if (str_contains($html, 'thumbcaption')) {
+      echo "\n***HTML\n";
+      echo var_dump($html);
+      echo "\n***THUMBS\n";
+      echo var_dump($thumbs);
+      echo "\n***\n";
+    }
     return $html;
   }
 
