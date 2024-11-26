@@ -551,7 +551,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
           // Build replacement <figure>
           $figure = "
             <figure class='media-figure'>
-              <drupal-media data-align='center' data-entity-type='media' data-view-mode='colorbox_smr_linked_to_original' data-entity-uuid='$uuid'></drupal-media>
+              <drupal-media data-entity-type='media' data-view-mode='colorbox_smr_linked_to_original' data-entity-uuid='$uuid'></drupal-media>
               <figcaption>$caption</figcaption>
             </figure>
           ";
