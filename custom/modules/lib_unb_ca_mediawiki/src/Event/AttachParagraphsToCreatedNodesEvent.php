@@ -483,16 +483,33 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     preg_match_all($match_href, $html, $matches);
     
     foreach($matches[1] as $match) {
+      // Only process if link is not a self-link (starts w/ #)
+      if (!(strpos($match, '#') === 0)) {
 
-      if (!str_contains($match, 'https:')) {
+        // Only process interal links
+        if (!str_contains($match, 'https:')) {
 
-        if (str_contains($match, 'File:')) {
-          $replace = str_replace('File:', 'sites/default/files/unbhistory/', $match);
-          $html = str_replace($match, $replace, $html);
+          if (str_contains($match, 'File:')) {
+            $replace = str_replace('File:', 'sites/default/files/unbhistory/', $match);
+            $html = str_replace($match, $replace, $html);
+          }
+          else {
+            $replace = "/archives/unbhistory$match";
+            $html = str_replace($match, $replace, $html);
+          }
         }
         else {
-          $replace = "/archives/unbhistory$match";
-          $html = str_replace($match, $replace, $html);
+          // Handle internal-pointing "external" links
+          $html = str_replace(
+            'unbhistory.lib.unb.ca/index.php/',
+            'unbhistory.lib.unb.ca/',
+            $html
+          );
+          $html = str_replace(
+            'unbhistory.lib.unb.ca/',
+            'lib.unb.ca/archives/unbhistory/',
+            $html
+          );
         }
       }
     }
