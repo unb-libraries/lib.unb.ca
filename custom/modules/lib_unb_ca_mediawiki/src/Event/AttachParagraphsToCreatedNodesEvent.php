@@ -445,8 +445,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     $match_class = '#(class\=")(.*?)(")#';
     preg_replace($match_class, '', $non_sidebar);
     // Remove all comments
-    $match_comment = '#(<!--)(.*?)(-->)#';
-    preg_replace($match_comment, '', $non_sidebar);
+    $non_sidebar = $this->removeHtmlComments($non_sidebar);
     // Remove all empty tags
     $match_empty = '#<(\w+)(\s[^>]*)?>\s*<\/\1>#';
     preg_replace($match_empty, '', $non_sidebar);
@@ -545,7 +544,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
       // Retrieve image filename from src attribute
       $pattern = '#<img[^>]+src="([^">]*\/([^">\/]+))"#s';
       $search = preg_match($pattern, $thumb, $filename);
-
+      
       if (!empty($filename)) {
         $filename = $filename[2] ?? $filename;
         $filename = str_replace('px-', 'px_', $filename);
@@ -583,7 +582,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     }
     return $html;
   }
-
+  
   /**
    * Load Drupal image media by filename.
    *
@@ -596,24 +595,36 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
   private function loadMediaByFilename($filename) {
     // Load the file entity by filename.
     $files = \Drupal::entityTypeManager()
-        ->getStorage('file')
-        ->loadByProperties(['filename' => $filename]);
-    
+      ->getStorage('file')
+      ->loadByProperties(['filename' => $filename]);
+  
     if ($files) {
       $file = reset($files); // Get the first file entity.
-      
       // Load the media entity by file ID.
       $media_entities = \Drupal::entityTypeManager()
-      ->getStorage('media')
-      ->loadByProperties(['name' => $filename]);
-
-        if ($media_entities) {
-            $media = reset($media_entities); // Get the first media entity.
-            return $media;
-        }
+        ->getStorage('media')
+        ->loadByProperties(['name' => $filename]);
+  
+      if ($media_entities) {
+        $media = reset($media_entities); // Get the first media entity.
+        return $media;
+      }
     }
-
+    
     return NULL;
+  }
+    
+  /**
+   * Remove comments from HTML
+   *
+   * @param string $html
+   * A string containing the HTML before processing.
+   *
+   * @return string
+   * A string containing the HTML after processing.
+   */
+  private function removeHtmlComments($html) {
+    return preg_replace('/<!--(.|\s)*?-->/', '', $html);
   }
 
   /**
