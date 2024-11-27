@@ -456,6 +456,17 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     $non_sidebar = preg_replace($pattern, '', $non_sidebar);
     // Replace <b> tags with <strong> for compatibility with format library_page_html
     $non_sidebar = str_replace('b>', 'strong>', $non_sidebar);
+    // Add LIB table classes
+    $non_sidebar = str_replace(
+      'class="wikitable',
+      'class="table table-bordered table-hover table-striped wikitable',
+      $non_sidebar
+    );
+    // Add LIB caption classes
+    if (str_contains($non_sidebar, '<caption ')) {
+      echo "\n$non_sidebar\n";
+    }
+    $non_sidebar = str_replace('<caption>', '<caption class="h4">', $non_sidebar);
     // Remove all empty tags
     $match_empty = '#<(\w+)(\s[^>]*)?>\s*<\/\1>#';
     preg_replace($match_empty, '', $non_sidebar);
