@@ -566,8 +566,8 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
           $uuid = $media->uuid();
           // Build replacement <figure>
           $figure = "
-            <figure class='mediawiki-figure'>
-              <drupal-media data-entity-type='media' data-view-mode='colorbox_smr_linked_to_original' data-entity-uuid='$uuid'></drupal-media>
+            <figure class='mediawiki-figure caption caption-drupal-media image-style align-right'>
+              <drupal-media data-align='right' data-entity-type='media' data-view-mode='colorbox_smr_linked_to_original' data-entity-uuid='$uuid'></drupal-media>
               <figcaption>$caption</figcaption>
             </figure>
           ";
