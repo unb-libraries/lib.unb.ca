@@ -440,21 +440,25 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    */
   private function getNonSidebarContentParagraph() {
     $non_sidebar = $this->currentRow->getSourceProperty('non_sidebar');    
-    $non_sidebar = $this->swapImg($non_sidebar);
     // Remove all classes
     $match_class = '#(class\=")(.*?)(")#';
     preg_replace($match_class, '', $non_sidebar);
     // Remove all comments
     $non_sidebar = $this->removeHtmlComments($non_sidebar);
-    // Remove all empty tags
-    $match_empty = '#<(\w+)(\s[^>]*)?>\s*<\/\1>#';
-    preg_replace($match_empty, '', $non_sidebar);
-    // Replace <b> tags with <strong> for compatibility with format library_page_html
-    $non_sidebar = str_replace('b>', 'strong>', $non_sidebar);
     // Switch external http targets to https
     $non_sidebar = str_replace('http:', 'https:', $non_sidebar);
     // Migrate internal links
     $non_sidebar = $this->internalLinks($non_sidebar);
+    // Swap images with corresponding previously migrated Drupal media 
+    $non_sidebar = $this->swapImg($non_sidebar);
+    // Remove original copyright notice
+    $pattern = '/<p>\s*<br\/>\s*<b>© UNB Archives & Special Collections, \d{4}<\/b>.*?<\/p>/';
+    $non_sidebar = preg_replace($pattern, '', $non_sidebar);
+    // Replace <b> tags with <strong> for compatibility with format library_page_html
+    $non_sidebar = str_replace('b>', 'strong>', $non_sidebar);
+    // Remove all empty tags
+    $match_empty = '#<(\w+)(\s[^>]*)?>\s*<\/\1>#';
+    preg_replace($match_empty, '', $non_sidebar);
 
     $paragraph = Paragraph::create([
       'type' => 'body_section',
@@ -536,13 +540,13 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    */
   private function swapImg($html) {
     // Extract contents of elements div.thumbinner containing images
-    $pattern = '#(<div class="thumb tright".*?</div>.*?</div>)#s';
+    $pattern = '#(<div class="thumb tright".*?</div>.*?</div>)#';
     $search = preg_match_all($pattern, $html, $thumbs);
     $thumbs = array_unique($thumbs);
     
     foreach ($thumbs[0] as $thumb) {
       // Retrieve image filename from src attribute
-      $pattern = '#<img[^>]+src="([^">]*\/([^">\/]+))"#s';
+      $pattern = '#<img[^>]+src="([^">]*\/([^">\/]+))"#';
       $search = preg_match($pattern, $thumb, $filename);
       
       if (!empty($filename)) {
