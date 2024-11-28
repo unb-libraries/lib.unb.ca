@@ -290,7 +290,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: "<div class=\"alert alert-light my-4\">\r\n<span class=\"fa-exclamation-circle fas fa-lg mr-1 text-unb-red\"></span><span class=\"font-weight-bold\">You don't currently have permission to view the page <span class=\"text-muted\">[current-page:url]</span>.</span>\r\n</div>"
+            value: "<div class=\"alert alert-light my-4\">\r\n<span class=\"fa-exclamation-circle fas fa-lg mr-1 text-unb-red\"></span><span class=\"h4\">You don't currently have permission to view the page <span class=\"text-muted\">[current-page:url]</span>.</span>\r\n</div>"
             format: library_page_html
           tokenize: false
       footer: {  }
