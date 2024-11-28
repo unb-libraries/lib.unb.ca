@@ -441,7 +441,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
   private function getNonSidebarContentParagraph() {
     $non_sidebar = $this->currentRow->getSourceProperty('non_sidebar');    
     // Remove all classes
-    $match_class = '#(class\=")(.*?)(")#';
+    $match_class = '#(class\=")(.*?)(")#s';
     preg_replace($match_class, '', $non_sidebar);
     // Remove all comments
     $non_sidebar = $this->removeHtmlComments($non_sidebar);
@@ -452,24 +452,30 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     // Swap images with corresponding previously migrated Drupal media 
     $non_sidebar = $this->swapImg($non_sidebar);
     // Remove original copyright notice
-    $pattern = '/<p>\s*<br\/>\s*<b>© UNB Archives & Special Collections, \d{4}<\/b>.*?<\/p>/';
+    // $pattern = '/\<p\>(?!.*\<p\>).+?© UNB Archives & Special Collections, \d{4}.+?\<\/p\>/s';
+    $pattern = '/© UNB Archives & Special Collections, \d{4}/s';
     $non_sidebar = preg_replace($pattern, '', $non_sidebar);
     // Replace <b> tags with <strong> for compatibility with format library_page_html
     $non_sidebar = str_replace('b>', 'strong>', $non_sidebar);
-    // Add LIB table classes
-    $non_sidebar = str_replace(
-      'class="wikitable',
-      'class="table table-bordered table-hover table-striped wikitable',
+    // Add table classes
+    $pattern = '/\<table.+?\>/s';
+    $non_sidebar = preg_replace(
+      $pattern, 
+      '<table class="table table-bordered table-hover table-striped wikitable">',
       $non_sidebar
     );
-    // Add LIB caption classes
-    if (str_contains($non_sidebar, '<caption ')) {
-      echo "\n$non_sidebar\n";
-    }
+    // Add TOC classes
+    $non_sidebar = str_replace(
+      '<div id="toc" class="toc',
+      '<div id="toc" class="toc alert bg-light border mt-0',
+      $non_sidebar
+    );
+    // Add caption classes
     $non_sidebar = str_replace('<caption>', '<caption class="h4">', $non_sidebar);
+    // Remove <br>
+    $non_sidebar = str_replace('<br/>', '', $non_sidebar);
     // Remove all empty tags
-    $match_empty = '#<(\w+)(\s[^>]*)?>\s*<\/\1>#';
-    preg_replace($match_empty, '', $non_sidebar);
+    $non_sidebar = $this->removeEmptyTags($non_sidebar);
 
     $paragraph = Paragraph::create([
       'type' => 'body_section',
@@ -493,7 +499,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    * A string containing the HTML after processing.
    */
   private function internalLinks($html) {
-    $match_href = '/href=["\'](.*?)["\']/i';
+    $match_href = '/href=["\'](.*?)["\']/is';
     preg_match_all($match_href, $html, $matches);
     
     foreach($matches[1] as $match) {
@@ -551,13 +557,13 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    */
   private function swapImg($html) {
     // Extract contents of elements div.thumbinner containing images
-    $pattern = '#(<div class="thumb tright".*?</div>.*?</div>)#';
+    $pattern = '#(<div class="thumb tright".*?</div>.*?</div>)#s';
     $search = preg_match_all($pattern, $html, $thumbs);
     $thumbs = array_unique($thumbs);
     
     foreach ($thumbs[0] as $thumb) {
       // Retrieve image filename from src attribute
-      $pattern = '#<img[^>]+src="([^">]*\/([^">\/]+))"#';
+      $pattern = '#<img[^>]+src="([^">]*\/([^">\/]+))"#s';
       $search = preg_match($pattern, $thumb, $filename);
       
       if (!empty($filename)) {
@@ -571,7 +577,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
 
         if (!empty($media)) {
           // Retrieve caption
-          $pattern = '#(<div class="thumbcaption">)(.*?)(</div>)#';
+          $pattern = '#(<div class="thumbcaption">)(.*?)(</div>)#s';
           $search = preg_match($pattern, $thumb, $caption);
           $caption = $caption[2] ?? $caption;
           // Add caption to media object alt
@@ -639,8 +645,31 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    * A string containing the HTML after processing.
    */
   private function removeHtmlComments($html) {
-    return preg_replace('/<!--(.|\s)*?-->/', '', $html);
+    return preg_replace('/\<\!\-\-(.|\s)*?\-\-\>/s', '', $html);
   }
+  
+  /**
+   * Remove empty tags from HTML
+   *
+   * @param string $html
+   * A string containing the HTML before processing.
+   *
+   * @return string
+   * A string containing the HTML after processing.
+   */
+  private function removeEmptyTags($html) {
+    // Regular expression to match empty HTML tags
+    $pattern = '/\<(\w+)\b[^\>]*\>\s*\<\/\1\>/';
+    // Remove empty tags
+    $html = preg_replace($pattern, '', $html);
+    // Check if there are nested empty tags
+    while (preg_match($pattern, $html)) {
+        $html = preg_replace($pattern, '', $html);
+    }
+
+    return $html;
+}
+
 
   /**
    * Create the main content for a imported row with no sidebar.

@@ -99,6 +99,11 @@ source:
           operation: modifier
           modifier: removeSelectorAll
           arguments:
+            - '>div.mw-parser-output span.toctogglespan'
+        -
+          operation: modifier
+          modifier: removeSelectorAll
+          arguments:
             - '>div.mw-parser-output a[href^="/index.php"]'
         -
           operation: get_field
