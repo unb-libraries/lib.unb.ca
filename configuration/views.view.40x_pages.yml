@@ -192,7 +192,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: "<div class=\"alert alert-light my-4\">\r\n<span class=\"fa-exclamation-circle fas fa-lg mr-1 text-unb-red\"></span><span class=\"font-weight-bold\">The page <span class=\"text-muted\">[current-page:url]</span> doesn't exist.</span>\r\n</div>"
+            value: "<div class=\"alert alert-light my-4\">\r\n<span class=\"fa-exclamation-circle fas fa-lg mr-1 text-unb-red\"></span><span class=\"h4\">The page <span class=\"text-muted\">[current-page:url]</span> doesn't exist.</span>\r\n</div>"
             format: library_page_html
           tokenize: false
       footer:
