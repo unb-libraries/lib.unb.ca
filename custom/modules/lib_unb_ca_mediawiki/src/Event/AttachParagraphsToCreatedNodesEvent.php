@@ -449,6 +449,8 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     $non_sidebar = str_replace('http:', 'https:', $non_sidebar);
     // Migrate internal links
     $non_sidebar = $this->internalLinks($non_sidebar);
+    // Swap <a> segments starting with /index.php with <p>
+    $non_sidebar = $this->phpAtoP($non_sidebar);
     // Swap images with corresponding previously migrated Drupal media 
     $non_sidebar = $this->swapImg($non_sidebar);
     // Remove original copyright notice
@@ -470,10 +472,13 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
       '<div id="toc" class="toc alert bg-light border mt-0',
       $non_sidebar
     );
+    $non_sidebar = str_replace(
+      '<h2 id="mw-toc-heading"',
+      '<h2 id="mw-toc-heading" class="h4"',
+      $non_sidebar
+    );
     // Add caption classes
     $non_sidebar = str_replace('<caption>', '<caption class="h4">', $non_sidebar);
-    // Remove <br>
-    $non_sidebar = str_replace('<br/>', '', $non_sidebar);
     // Remove all empty tags
     $non_sidebar = $this->removeEmptyTags($non_sidebar);
 
@@ -658,18 +663,56 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    * A string containing the HTML after processing.
    */
   private function removeEmptyTags($html) {
+    // Remove paragraphs containing only breaks
+    $pattern = '/\<p\>(\<br\>|\<br\/\>|\s)*\<\/p\>/s';
+    $html = preg_replace($pattern, '', $html);
     // Regular expression to match empty HTML tags
     $pattern = '/\<(\w+)\b[^\>]*\>\s*\<\/\1\>/';
     // Remove empty tags
     $html = preg_replace($pattern, '', $html);
     // Check if there are nested empty tags
     while (preg_match($pattern, $html)) {
-        $html = preg_replace($pattern, '', $html);
+      $html = preg_replace($pattern, '', $html);
+    }
+    
+    return $html;
+  }
+  
+  /**
+   * Replace <a> tags containing index.php for <p> in HTML
+   *
+   * @param string $html
+   * A string containing the HTML before processing.
+   *
+   * @return string
+   * A string containing the HTML after processing.
+   */
+  private function phpAtoP($html) {
+    // Use DOMDocument to parse the HTML
+    $dom = new \DOMDocument();
+    @$dom->loadHTML($html, LIBXML_HTML_NODEFDTD | LIBXML_HTML_NOIMPLIED);
+
+    // Get all <a> tags
+    $anchorTags = $dom->getElementsByTagName('a');
+
+    // Loop through the <a> tags in reverse to avoid issues with node removal
+    for ($i = $anchorTags->length - 1; $i >= 0; $i--) {
+        $anchorTag = $anchorTags->item($i);
+        $href = $anchorTag->getAttribute('href');
+
+        // Check if the href starts with '/index.php'
+        if (strpos($href, '/index.php') === 0 or strpos($href, '/archives/unbhistory/index.php') === 0) {
+            // Create a new <p> element
+            $pTag = $dom->createElement('p', $anchorTag->nodeValue);
+
+            // Replace the <a> tag with the <p> tag
+            $anchorTag->parentNode->replaceChild($pTag, $anchorTag);
+        }
     }
 
-    return $html;
-}
-
+    // Return the modified HTML
+    return $dom->saveHTML();
+  }
 
   /**
    * Create the main content for a imported row with no sidebar.
@@ -696,10 +739,10 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     $og_url = $this->currentRow->getSourceProperty('url');
     // Update to lib URL
     $url = str_replace('https://unbhistory.lib.unb.ca', '/archives/unbhistory', $og_url);
-    // Save the new alias
+    // Save the new alias unencoded
     $alias = PathAlias::create([
       'path' => '/node/' . $this->currentNode->id(),
-      'alias' => "$url",
+      'alias' => rawurldecode($url),
     ]);
     $alias->save();
     $this->currentNode->save();
