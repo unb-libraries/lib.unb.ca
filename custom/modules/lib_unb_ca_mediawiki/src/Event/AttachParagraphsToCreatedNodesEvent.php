@@ -440,6 +440,9 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    */
   private function getNonSidebarContentParagraph() {
     $non_sidebar = $this->currentRow->getSourceProperty('non_sidebar');    
+    // Remove original copyright notice
+    $pattern = '/© UNB Archives & Special Collections, \d{4}/s';
+    $non_sidebar = preg_replace($pattern, '', $non_sidebar);
     // Remove all classes
     $match_class = '#(class\=")(.*?)(")#s';
     preg_replace($match_class, '', $non_sidebar);
@@ -449,14 +452,8 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     $non_sidebar = str_replace('http:', 'https:', $non_sidebar);
     // Migrate internal links
     $non_sidebar = $this->internalLinks($non_sidebar);
-    // Swap <a> segments starting with /index.php with <p>
-    $non_sidebar = $this->phpAtoP($non_sidebar);
     // Swap images with corresponding previously migrated Drupal media 
     $non_sidebar = $this->swapImg($non_sidebar);
-    // Remove original copyright notice
-    // $pattern = '/\<p\>(?!.*\<p\>).+?© UNB Archives & Special Collections, \d{4}.+?\<\/p\>/s';
-    $pattern = '/© UNB Archives & Special Collections, \d{4}/s';
-    $non_sidebar = preg_replace($pattern, '', $non_sidebar);
     // Replace <b> tags with <strong> for compatibility with format library_page_html
     $non_sidebar = str_replace('b>', 'strong>', $non_sidebar);
     // Add table classes
@@ -517,6 +514,9 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
           if (str_contains($match, 'File:')) {
             $replace = str_replace('File:', 'sites/default/files/unbhistory/', $match);
             $html = str_replace($match, $replace, $html);
+          }
+          elseif (strpos($match, '/index.php') === 0 or str_contains($match, 'unbhistory/index.php')) {
+            $html = str_replace($match, '', $html);
           }
           else {
             $replace = "/archives/unbhistory$match";
@@ -676,42 +676,6 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     }
     
     return $html;
-  }
-  
-  /**
-   * Replace <a> tags containing index.php for <p> in HTML
-   *
-   * @param string $html
-   * A string containing the HTML before processing.
-   *
-   * @return string
-   * A string containing the HTML after processing.
-   */
-  private function phpAtoP($html) {
-    // Use DOMDocument to parse the HTML
-    $dom = new \DOMDocument();
-    @$dom->loadHTML($html, LIBXML_HTML_NODEFDTD | LIBXML_HTML_NOIMPLIED);
-
-    // Get all <a> tags
-    $anchorTags = $dom->getElementsByTagName('a');
-
-    // Loop through the <a> tags in reverse to avoid issues with node removal
-    for ($i = $anchorTags->length - 1; $i >= 0; $i--) {
-        $anchorTag = $anchorTags->item($i);
-        $href = $anchorTag->getAttribute('href');
-
-        // Check if the href starts with '/index.php'
-        if (strpos($href, '/index.php') === 0 or strpos($href, '/archives/unbhistory/index.php') === 0) {
-            // Create a new <p> element
-            $pTag = $dom->createElement('p', $anchorTag->nodeValue);
-
-            // Replace the <a> tag with the <p> tag
-            $anchorTag->parentNode->replaceChild($pTag, $anchorTag);
-        }
-    }
-
-    // Return the modified HTML
-    return $dom->saveHTML();
   }
 
   /**
