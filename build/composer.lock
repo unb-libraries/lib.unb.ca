@@ -627,29 +627,29 @@
             "type": "library",
             "extra": {
                 "scenarios": {
-                    "symfony4": {
-                        "require-dev": {
-                            "symfony/console": "^4.0"
-                        },
-                        "config": {
-                            "platform": {
-                                "php": "7.1.3"
-                            }
-                        }
-                    },
                     "symfony2": {
-                        "require-dev": {
-                            "symfony/console": "^2.8",
-                            "symfony/event-dispatcher": "^2.8",
-                            "phpunit/phpunit": "^4.8.36"
-                        },
-                        "remove": [
-                            "php-coveralls/php-coveralls"
-                        ],
                         "config": {
                             "platform": {
                                 "php": "5.4.8"
                             }
+                        },
+                        "remove": [
+                            "php-coveralls/php-coveralls"
+                        ],
+                        "require-dev": {
+                            "phpunit/phpunit": "^4.8.36",
+                            "symfony/console": "^2.8",
+                            "symfony/event-dispatcher": "^2.8"
+                        }
+                    },
+                    "symfony4": {
+                        "config": {
+                            "platform": {
+                                "php": "7.1.3"
+                            }
+                        },
+                        "require-dev": {
+                            "symfony/console": "^4.0"
                         }
                     }
                 },
@@ -711,16 +711,16 @@
             "extra": {
                 "scenarios": {
                     "phpunit5": {
-                        "require-dev": {
-                            "phpunit/phpunit": "^5.7.27"
-                        },
-                        "remove": [
-                            "php-coveralls/php-coveralls"
-                        ],
                         "config": {
                             "platform": {
                                 "php": "5.6.33"
                             }
+                        },
+                        "remove": [
+                            "php-coveralls/php-coveralls"
+                        ],
+                        "require-dev": {
+                            "phpunit/phpunit": "^5.7.27"
                         }
                     }
                 },
@@ -7957,16 +7957,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.383.0",
+            "version": "v0.384.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "0da092376837d363ef0cfa5ef56e43308f7c3763"
+                "reference": "fcb190bb02cea2c939e67867bf9122fd8d02c351"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/0da092376837d363ef0cfa5ef56e43308f7c3763",
-                "reference": "0da092376837d363ef0cfa5ef56e43308f7c3763",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/fcb190bb02cea2c939e67867bf9122fd8d02c351",
+                "reference": "fcb190bb02cea2c939e67867bf9122fd8d02c351",
                 "shasum": ""
             },
             "require": {
@@ -7995,9 +7995,9 @@
             ],
             "support": {
                 "issues": "https://github.com/googleapis/google-api-php-client-services/issues",
-                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.383.0"
+                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.384.0"
             },
-            "time": "2024-11-20T01:10:23+00:00"
+            "time": "2024-11-27T01:08:46+00:00"
         },
         {
             "name": "google/auth",
@@ -10812,16 +10812,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.12.11",
+            "version": "1.12.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "0d1fc20a962a91be578bcfe7cf939e6e1a2ff733"
+                "reference": "b5ae1b88f471d3fd4ba1aa0046234b5ca3776dd0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/0d1fc20a962a91be578bcfe7cf939e6e1a2ff733",
-                "reference": "0d1fc20a962a91be578bcfe7cf939e6e1a2ff733",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/b5ae1b88f471d3fd4ba1aa0046234b5ca3776dd0",
+                "reference": "b5ae1b88f471d3fd4ba1aa0046234b5ca3776dd0",
                 "shasum": ""
             },
             "require": {
@@ -10866,7 +10866,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-11-17T14:08:01+00:00"
+            "time": "2024-11-28T22:13:23+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
@@ -15002,12 +15002,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unb-libraries/unb_lib_theme.git",
-                "reference": "7c91f4c0e66877cc03d3f14d1732e8aebbe03bdc"
+                "reference": "03d940a00dc0a164dc652cb6f3fdc4911fc18501"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unb-libraries/unb_lib_theme/zipball/7c91f4c0e66877cc03d3f14d1732e8aebbe03bdc",
-                "reference": "7c91f4c0e66877cc03d3f14d1732e8aebbe03bdc",
+                "url": "https://api.github.com/repos/unb-libraries/unb_lib_theme/zipball/03d940a00dc0a164dc652cb6f3fdc4911fc18501",
+                "reference": "03d940a00dc0a164dc652cb6f3fdc4911fc18501",
                 "shasum": ""
             },
             "require-dev": {
@@ -15030,7 +15030,7 @@
                 "issues": "https://github.com/unb-libraries/unb_lib_theme/issues",
                 "source": "https://github.com/unb-libraries/unb_lib_theme/tree/10.x-4.x"
             },
-            "time": "2024-11-25T19:24:53+00:00"
+            "time": "2024-11-28T18:43:10+00:00"
         },
         {
             "name": "w8tcha/ckeditor-codemirror-plugin",
@@ -16500,16 +16500,16 @@
         },
         {
             "name": "drupal/coder",
-            "version": "8.3.25",
+            "version": "8.3.26",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pfrenssen/coder.git",
-                "reference": "c58e5a0c44c0010bbc8a91fc468f4667e177b976"
+                "reference": "fd98546ce3373aa7767240901eda47963ce64c82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pfrenssen/coder/zipball/c58e5a0c44c0010bbc8a91fc468f4667e177b976",
-                "reference": "c58e5a0c44c0010bbc8a91fc468f4667e177b976",
+                "url": "https://api.github.com/repos/pfrenssen/coder/zipball/fd98546ce3373aa7767240901eda47963ce64c82",
+                "reference": "fd98546ce3373aa7767240901eda47963ce64c82",
                 "shasum": ""
             },
             "require": {
@@ -16547,7 +16547,7 @@
                 "issues": "https://www.drupal.org/project/issues/coder",
                 "source": "https://www.drupal.org/project/coder"
             },
-            "time": "2024-09-22T19:02:16+00:00"
+            "time": "2024-11-28T23:14:29+00:00"
         },
         {
             "name": "drupal/core-dev",
@@ -19019,16 +19019,16 @@
         },
         {
             "name": "sirbrillig/phpcs-variable-analysis",
-            "version": "v2.11.19",
+            "version": "v2.11.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sirbrillig/phpcs-variable-analysis.git",
-                "reference": "bc8d7e30e2005bce5c59018b7cdb08e9fb45c0d1"
+                "reference": "c3780f281e2e82ab1f2de7fa85a16532b1e44592"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sirbrillig/phpcs-variable-analysis/zipball/bc8d7e30e2005bce5c59018b7cdb08e9fb45c0d1",
-                "reference": "bc8d7e30e2005bce5c59018b7cdb08e9fb45c0d1",
+                "url": "https://api.github.com/repos/sirbrillig/phpcs-variable-analysis/zipball/c3780f281e2e82ab1f2de7fa85a16532b1e44592",
+                "reference": "c3780f281e2e82ab1f2de7fa85a16532b1e44592",
                 "shasum": ""
             },
             "require": {
@@ -19039,9 +19039,9 @@
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.7 || ^1.0",
                 "phpcsstandards/phpcsdevcs": "^1.1",
                 "phpstan/phpstan": "^1.7",
-                "phpunit/phpunit": "^4.8.36 || ^5.7.21 || ^6.5 || ^7.0 || ^8.0 || ^9.0",
+                "phpunit/phpunit": "^4.8.36 || ^5.7.21 || ^6.5 || ^7.0 || ^8.0 || ^9.0 || ^10.5.32 || ^11.3.3",
                 "sirbrillig/phpcs-import-detection": "^1.1",
-                "vimeo/psalm": "^0.2 || ^0.3 || ^1.1 || ^4.24 || ^5.0@beta"
+                "vimeo/psalm": "^0.2 || ^0.3 || ^1.1 || ^4.24 || ^5.0"
             },
             "type": "phpcodesniffer-standard",
             "autoload": {
@@ -19073,7 +19073,7 @@
                 "source": "https://github.com/sirbrillig/phpcs-variable-analysis",
                 "wiki": "https://github.com/sirbrillig/phpcs-variable-analysis/wiki"
             },
-            "time": "2024-06-26T20:08:34+00:00"
+            "time": "2024-12-01T22:31:44+00:00"
         },
         {
             "name": "slevomat/coding-standard",
@@ -19477,8 +19477,8 @@
             "type": "symfony-bridge",
             "extra": {
                 "thanks": {
-                    "name": "phpunit/phpunit",
-                    "url": "https://github.com/sebastianbergmann/phpunit"
+                    "url": "https://github.com/sebastianbergmann/phpunit",
+                    "name": "phpunit/phpunit"
                 }
             },
             "autoload": {
