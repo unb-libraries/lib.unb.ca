@@ -58,6 +58,11 @@ class LocalFormBase extends FormBase {
       '#required' => TRUE,
       '#options' => $this->getSearchOptions(),
       '#default_value' => 'title',
+      '#wrapper_attributes' => [
+        'class' => [
+          'custom-control-wrapper-inline',
+        ],
+      ],
     ];
 
     $form[$form_wrapper]['query_wrapper'] = [
