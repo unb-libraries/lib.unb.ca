@@ -54,6 +54,7 @@ elements: |-
           staff: Staff
           student: Student
           extramural: Extramural
+        '#options_display': side_by_side
         '#required': true
         '#wrapper_type': form_element
       unb_stu_email:

@@ -99,12 +99,14 @@ elements: |-
         '#options':
           'yes': 'yes'
           'no': 'no'
+        '#options_display': side_by_side
       pay_apc:
         '#type': radios
         '#title': 'Did you (or a co-author) pay an APC for this article?'
         '#options':
           'yes': 'yes'
           'no': 'no'
+        '#options_display': side_by_side
       version_submitted:
         '#type': webform_select_other
         '#title': 'Version Submitted'

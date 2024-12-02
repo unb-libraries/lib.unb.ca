@@ -91,7 +91,6 @@ elements: |-
           'yes': 'Yes'
           'no': 'No'
           not_sure: 'I''m not sure'
-        '#options_display': buttons_vertical
         '#required': true
       dimensions_of_your_file:
         '#type': textfield

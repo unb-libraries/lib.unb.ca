@@ -56,6 +56,7 @@ elements: |-
         '#options':
           fac: 'I am a faculty member'
           lib: 'I have been pre-approved by a librarian'
+        '#options_display': side_by_side
         '#other__option_label': Other
         '#other__placeholder': ''
         '#required': true
@@ -98,6 +99,7 @@ elements: |-
         '#options':
           systematic: 'Systematic review'
           scoping: 'Scoping review'
+        '#options_display': side_by_side
         '#other__option_label': Other
         '#other__placeholder': ''
         '#required': true
@@ -107,6 +109,7 @@ elements: |-
         '#options':
           publication: Publication
           grant: Grant
+        '#options_display': side_by_side
         '#other__option_label': Other
         '#required': true
       research_question:

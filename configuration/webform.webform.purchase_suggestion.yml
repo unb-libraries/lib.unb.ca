@@ -57,6 +57,7 @@ elements: |-
           status_faculty: Faculty
           status_staff: Staff
           status_student: Student
+        '#options_display': side_by_side
         '#required': true
         '#wrapper_type': form_element
       campus:
@@ -65,6 +66,7 @@ elements: |-
         '#options':
           campus_UNBFR: Fredericton
           campus_UNBSJ: 'Saint John'
+        '#options_display': side_by_side
         '#required': true
         '#wrapper_type': form_element
       email:
@@ -177,6 +179,7 @@ elements: |-
         '#options':
           type_Fiction: Fiction
           type_Non-fiction: Non-Fiction
+        '#options_display': side_by_side
         '#wrapper_type': form_element
       other_information:
         '#type': textarea

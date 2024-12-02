@@ -77,6 +77,7 @@ elements: |-
             pickup_hwk: 'Pick-up Hans W. Klohn Commons'
             pickup_law: 'Pick-up Gérard V. La Forest Law Library'
             Mail: Mail
+          '#options_display': side_by_side
           '#required': true
         mailing_address:
           '#type': address

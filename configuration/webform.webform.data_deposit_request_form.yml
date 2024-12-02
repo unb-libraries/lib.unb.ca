@@ -37,7 +37,7 @@ elements: |-
         '#options':
           pub: 'Public Domain'
           cus: 'Custom Dataset Terms'
-        '#options_display': two_columns
+        '#options_display': side_by_side
         '#required': true
       public_domain_info:
         '#type': webform_markup
@@ -57,6 +57,7 @@ elements: |-
           res: 'Restrict files and allow request access to files'
           emb: Embargoes
           dua: 'Data Use Agreement'
+        '#options_display': side_by_side
         '#states':
           visible:
             ':input[name="data_use_agreement"]':
