@@ -1,3 +1,13 @@
+.webform-options-display-one-column {
+  .custom-radio,
+  .custom-checkbox {
+    .description {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
 /* Visually identify required fields inside conditional fieldsets (not accessible - only decorative) */
 fieldset[data-drupal-states*='required'] legend .form-required:after {
   content: "(required)";
