@@ -40,21 +40,67 @@ fieldset[data-drupal-states*='required'] legend .form-required:after {
   }
 }
 
-.form-actions {
-  .webform-button--next,
-  .webform-button--previous {
-    background-color: #6c757d;
-    border-color: #6c757d;
-    color: $white;
+/* Webform multi-page forms */
+.webform-button--next,
+.webform-button--previous,
+.webform-multiple-add .form-submit {
+  background-color: $light;
+  border-color: $dark;
+  color: $dark;
 
-    &:focus,
-    &:hover {
-      background-color: #5a6268;
-      border-color: #545b62;
-      color: $white;
+  &:focus,
+  &:hover {
+    background-color: $gray-300!important;
+    border-color: $black!important;
+    color: $black!important;
+  }
+  &:active {
+    box-shadow: rgba(0, 123, 255, 0.25) 0px 0px 0px 4px!important;
+  }
+}
+/* Progress Tracker */
+.webform-progress-tracker {
+  margin: 2.5rem;
+
+  .progress-step {
+    .progress-marker {
+      &:before {
+        padding: .25rem;
+        width: 2rem;
+        height: 2rem;
+      }
+      &:after {
+        background-color: $gray-500;
+        top: 0.95rem;
+      }
+    }
+
+    &.is-active,
+    &.is-active:hover,
+    &.is-complete,
+    &.is-complete:hover {
+      .progress-marker {
+        &:before {
+          background-color: $unb-red !important;
+        }
+      }
+
+      .progress-text {
+        color: $black;
+      }
+    }
+
+    &.is-complete {
+      .progress-marker {
+        &:after {
+          background-color: $unb-red !important;
+        }
+      }
     }
   }
+}
 
+.form-actions {
   .webform-button--submit {
     background-color: $black;
     border-color: rgba(0, 0, 0, 0.5);
@@ -87,44 +133,6 @@ form.theme-dark>.webform-elements>.form-group>fieldset>legend {
     color: #743944;
     font-size: 95%;
     font-weight: bold;
-  }
-}
-
-/* Webform 6.x Progress Tracker */
-.webform-progress-tracker {
-  margin: 0.5rem 10%;
-
-  .progress-step {
-    .progress-marker {
-      &:before {
-        font-size: 85%;
-        padding: .25rem;
-      }
-    }
-
-    &.is-active,
-    &.is-active:hover {
-      .progress-marker {
-        &:before {
-          background-color: $unb-red;
-        }
-      }
-
-      .progress-text {
-        color: $black;
-      }
-    }
-
-    &.is-complete,
-    &.is-complete:hover {
-      .progress-text {
-        color: $text-muted-wcag;
-      }
-    }
-
-    .progress-text {
-      font-size: 90%;
-    }
   }
 }
 
