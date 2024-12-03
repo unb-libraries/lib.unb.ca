@@ -32,7 +32,6 @@ function getAllNodesOfContentType($content_type) {
 $new_bid = 116;
 $block_storage = \Drupal::entityTypeManager()->getStorage('block_content');
 $block = $block_storage->load($new_bid);
-echo var_dump($block);
 $pages = getAllNodesOfContentType('library_page');
 
 if ($block) {
@@ -43,20 +42,23 @@ if ($block) {
     if (str_contains($page->path->alias, 'archives/unbhistory')) { 
       $pid = $page->field_page_content->entity->field_column_2->getValue()[1]['target_id'];
       $paragraph = Paragraph::load($pid);
-      $paragraph->field_selected_block->plugin_id = $plugin_id;
-
-      $paragraph->field_selected_block->settings = [
-        'id' => $plugin_id,
-        'label' => 'Archives & Special Collections Sidebar',
-        'label_display' => false,
-        'provider' => 'block_content',
-        'status' => true,
-        'info' => '',
-        'view_mode' => 'full',
-      ];
       
-      echo "\nUpdating paragraph [$pid]\n";
-      $paragraph->save();  
+      if ($paragraph->field_selected_block) {
+        $paragraph->field_selected_block->plugin_id = $plugin_id;
+
+        $paragraph->field_selected_block->settings = [
+          'id' => $plugin_id,
+          'label' => 'Archives & Special Collections Sidebar',
+          'label_display' => false,
+          'provider' => 'block_content',
+          'status' => true,
+          'info' => '',
+          'view_mode' => 'full',
+        ];
+        
+        echo "\nUpdating paragraph [$pid]\n";
+        $paragraph->save();  
+      }
     }
   }
 }
