@@ -1,7 +1,12 @@
 uuid: cecc3a1b-3cbb-4850-a655-fd06c751cbf1
 langcode: en
 status: open
-dependencies: {  }
+dependencies:
+  module:
+    - antibot
+third_party_settings:
+  antibot:
+    antibot: true
 weight: 0
 open: null
 close: null
@@ -10,7 +15,7 @@ template: false
 archive: false
 id: library_instruction_session
 title: 'Request a Library Instruction Session'
-description: ''
+description: 'Clone NC State&#39;s&nbsp;<em>Request a Library Instruction Session</em> webform'
 category: ''
 elements: |-
   basic_details:
@@ -19,6 +24,9 @@ elements: |-
     '#format_attributes':
       class:
         - d-flex
+    '#access_create_roles':
+      - authenticated
+    '#next_button_label': 'Course Information ›'
     instruction_type_request:
       '#type': radios
       '#title': 'Which type of instruction would you like to request?'
@@ -34,15 +42,19 @@ elements: |-
   course_information:
     '#type': webform_wizard_page
     '#title': 'Course Information'
+    '#prev_button_label': '‹ Basic Details'
+    '#next_button_label': 'Complete ›'
     your_name:
       '#type': webform_name
       '#title': 'Your name'
+      '#required': true
       '#title__access': false
+      '#first__title': 'First name'
       '#middle__access': false
+      '#last__title': 'Last name'
       '#suffix__access': false
       '#degree__access': false
       '#flexbox': '1'
-      '#required': true
     your_email_address:
       '#type': email
       '#title': 'Your email address'
@@ -100,6 +112,10 @@ elements: |-
         'yes': 'Yes -- A library staff member will reach out to you after you submit this form to discuss details.'
         no_unsure: 'No / Not sure -- If you learn of an accommodation need, you can reach out to the library staff member who will be working with your class.'
       '#required': true
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit__label': 'Submit ›'
 css: ''
 javascript: ''
 settings:
