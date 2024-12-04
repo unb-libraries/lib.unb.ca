@@ -56,7 +56,7 @@ figure {
     padding-bottom: 0;
   }
 
-  &:not(.image-style) {
+  &:has(.field--name-field-media-oembed-video) {
     &.caption,
     &.caption > figcaption {
       display: block;
