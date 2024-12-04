@@ -74,3 +74,12 @@ figure {
   }
 }
 
+a.colorbox {
+  display: inline-block;
+
+  &.focus-ring,
+  &:hover {
+    outline: none;
+    box-shadow: 0 0 .33rem #000;
+  }
+}
