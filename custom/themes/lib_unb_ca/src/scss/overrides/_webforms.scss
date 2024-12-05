@@ -170,6 +170,16 @@ form.theme-dark>.webform-elements>.form-group>fieldset>legend {
   line-height: 18px;
 }
 
+.form-type-webform-custom-composite {
+  input:required {
+    background-image: url(/core/misc/icons/ee0000/required.svg);
+    background-position: 98% center;
+    background-repeat: no-repeat;
+    background-size: 0.5rem;
+    padding-right: 1rem;
+  }
+}
+
 /* Webform 5.x Progress Tracker
 .webform-progress-tracker {
   &.progress-tracker {
