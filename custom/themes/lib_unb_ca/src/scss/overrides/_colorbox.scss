@@ -1,10 +1,19 @@
 #cboxWrapper {
   background: rgb(128 128 128 / 10%);
 }
+
 #cboxTitle {
   font-size: 97%;
   line-height: 1rem;
+  padding: 0.25rem .5rem;
 }
+/* Restore stock cboxTitle right padding if slideshow controls are visible */
+#cboxContent:has(#cboxCurrent:not([style*="display: none"])) {
+  #cboxTitle {
+    padding-right: 140px;
+  }
+}
+
 #cboxCurrent {
   bottom: -31px;
 }
