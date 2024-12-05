@@ -27,6 +27,19 @@ elements: |-
     '#access_create_roles':
       - authenticated
     '#next_button_label': 'Course Information ›'
+    about_request:
+      '#type': webform_markup
+      '#wrapper_attributes':
+        class:
+          - my-5
+      '#markup': |-
+        <h2>About placing a request</h2>
+
+        <p>Instructors can use this form to request a library instruction session for their class. After we receive your request, we&#39;ll be in touch with you shortly by email. If you have questions, please email us at&nbsp;<a href="mailto:library_instruction@ncsu.edu">library_instruction@ncsu.edu</a>.</p>
+
+        <div class="alert alert-light border">
+        <p class="m-0"><strong>Are you a student seeking help from a librarian? </strong><a href="/researchconsultation">Request a Research Consultation</a> or a <a href="/digital-media-lab/techconsult">Technology Consultation</a>.</p>
+        </div>
     instruction_type_request:
       '#type': radios
       '#title': 'Which type of instruction would you like to request?'
@@ -42,76 +55,105 @@ elements: |-
   course_information:
     '#type': webform_wizard_page
     '#title': 'Course Information'
+    '#format': fieldset
     '#prev_button_label': '‹ Basic Details'
     '#next_button_label': 'Complete ›'
-    your_name:
-      '#type': webform_name
-      '#title': 'Your name'
-      '#required': true
-      '#title__access': false
-      '#first__title': 'First name'
-      '#middle__access': false
-      '#last__title': 'Last name'
-      '#suffix__access': false
-      '#degree__access': false
-      '#flexbox': '1'
-    your_email_address:
-      '#type': email
-      '#title': 'Your email address'
-      '#required': true
-    section_information:
-      '#type': webform_custom_composite
-      '#title': 'Section information'
-      '#required': true
-      '#multiple__sorting': false
-      '#multiple__add': false
-      '#multiple__add_more_input': false
-      '#multiple__add_more_button_label': '⊕ Add another section'
-      '#element':
-        course_section:
-          '#type': textfield
-          '#required': true
-          '#title': 'Course section'
-          '#description': |
-            Example: 001
-        number_students:
-          '#type': textfield
-          '#title': 'Number of students'
-        course_time:
-          '#type': textfield
-          '#required': true
-          '#title': 'Course time'
-          '#description': 'Example: MWF 10-11am'
-        date_first:
-          '#type': date
-          '#required': true
-          '#title': 'Date: 1st choice'
-          '#description': 'Must be at least 10 days in advance'
-          '#date_date_min': '+10 days'
-        date_second:
-          '#type': date
-          '#title': 'Date: 2nd choice'
-          '#description': 'Must be at least 10 days in advance'
-          '#date_date_min': '+10 days'
-        date_third:
-          '#type': date
-          '#title': 'Date: 3rd choice'
-          '#description': |-
-            Must be at least 10 days in advance
+    fieldset:
+      '#type': fieldset
+      '#title': 'Course Information Section'
+      '#title_display': invisible
+      summary_so_far:
+        '#type': webform_markup
+        '#markup': |-
+          <strong>Summary so far</strong>
+          <div class="bg-light border rounded my-2 p-2"><strong>Instruction type:</strong> [webform_submission:values:instruction_type_request]</div>
+      your_name:
+        '#type': webform_name
+        '#title': 'Your name'
+        '#required': true
+        '#title__access': false
+        '#first__title': 'First name'
+        '#first__required': true
+        '#middle__access': false
+        '#last__title': 'Last name'
+        '#last__required': true
+        '#suffix__access': false
+        '#degree__access': false
+        '#flexbox': '1'
+      your_email_address:
+        '#type': email
+        '#title': 'Your email address'
+        '#required': true
+        '#wrapper_attributes':
+          class:
+            - mb-5
+      course_id:
+        '#type': textfield
+        '#title': 'Course ID'
+        '#description': 'Example: ENG 333'
+        '#required': true
+        '#wrapper_attributes':
+          class:
+            - mb-5
+      section_information:
+        '#type': webform_custom_composite
+        '#title': 'Section information'
+        '#required': true
+        '#multiple__sorting': false
+        '#multiple__add': false
+        '#multiple__add_more_input': false
+        '#multiple__add_more_button_label': '⊕ Add another section'
+        '#wrapper_attributes':
+          class:
+            - mb-5
+        '#element':
+          course_section:
+            '#type': textfield
+            '#required': true
+            '#title': 'Course section'
+            '#description': |
+              Example: 001
+          number_students:
+            '#type': textfield
+            '#title': 'Number of students'
+          course_time:
+            '#type': textfield
+            '#required': true
+            '#title': 'Course time'
+            '#description': 'Example: MWF 10-11am'
+          date_first:
+            '#type': date
+            '#required': true
+            '#title': 'Date: 1st choice'
+            '#description': 'Must be at least 10 days in advance'
+            '#date_date_min': '+10 days'
+          date_second:
+            '#type': date
+            '#title': 'Date: 2nd choice'
+            '#description': 'Must be at least 10 days in advance'
+            '#date_date_min': '+10 days'
+          date_third:
+            '#type': date
+            '#title': 'Date: 3rd choice'
+            '#description': |-
+              Must be at least 10 days in advance
 
-            dd/mm/yyyy
-          '#date_date_min': '+10 days'
-    goals_for_this_session_:
-      '#type': textarea
-      '#title': 'What are your goals for this session?'
-      '#required': true
-    students_require_accommodations:
-      '#type': radios
-      '#title': 'Do you have any students who require special accommodations?'
-      '#options':
-        'yes': 'Yes -- A library staff member will reach out to you after you submit this form to discuss details.'
-        no_unsure: 'No / Not sure -- If you learn of an accommodation need, you can reach out to the library staff member who will be working with your class.'
-      '#required': true
+              dd/mm/yyyy
+            '#date_date_min': '+10 days'
+      goals_for_this_session_:
+        '#type': textarea
+        '#title': 'What are your goals for this session?'
+        '#required': true
+        '#wrapper_attributes':
+          class:
+            - mb-5
+      students_require_accommodations:
+        '#type': radios
+        '#title': 'Do you have any students who require special accommodations?'
+        '#options':
+          'yes': 'Yes -- A library staff member will reach out to you after you submit this form to discuss details.'
+          no_unsure: 'No / Not sure -- If you learn of an accommodation need, you can reach out to the library staff member who will be working with your class.'
+        '#required': true
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
@@ -133,7 +175,7 @@ settings:
   form_open_message: ''
   form_close_message: ''
   form_exception_message: ''
-  form_previous_submissions: true
+  form_previous_submissions: false
   form_confidential: false
   form_confidential_message: ''
   form_disable_remote_addr: false
@@ -223,7 +265,7 @@ settings:
   confirmation_type: page
   confirmation_url: ''
   confirmation_title: ''
-  confirmation_message: ''
+  confirmation_message: 'Thank you for your submission. We will be in touch.'
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
