@@ -35,7 +35,7 @@ elements: |-
       '#markup': |-
         <h2>About placing a request</h2>
 
-        <p>Instructors can use this form to request a library instruction session for their class. After we receive your request, we&#39;ll be in touch with you shortly by email. If you have questions, please email us at&nbsp;<a href="mailto:library_instruction@ncsu.edu">library_instruction@ncsu.edu</a>.</p>
+        <p>Instructors can use this form to request a library instruction session for their class. After we receive your request, we'll be in touch with you shortly by email. If you have questions, please email us at&nbsp;<a href="mailto:library_instruction@unb.ca">library_instruction@unb.ca</a>.</p>
 
         <div class="alert alert-light border">
         <p class="m-0"><strong>Are you a student seeking help from a librarian? </strong><a href="/researchconsultation">Request a Research Consultation</a> or a <a href="/digital-media-lab/techconsult">Technology Consultation</a>.</p>
@@ -66,7 +66,7 @@ elements: |-
         '#type': webform_markup
         '#markup': |-
           <strong>Summary so far</strong>
-          <div class="bg-light border rounded my-2 p-2"><strong>Instruction type:</strong> [webform_submission:values:instruction_type_request]</div>
+          <div class="alert alert-info mt-2"><strong>Instruction type:</strong> [webform_submission:values:instruction_type_request]</div>
       your_name:
         '#type': webform_name
         '#title': 'Your name'
@@ -157,7 +157,7 @@ elements: |-
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
-    '#submit__label': 'Submit ›'
+    '#submit__label': Submit
 css: ''
 javascript: ''
 settings:
