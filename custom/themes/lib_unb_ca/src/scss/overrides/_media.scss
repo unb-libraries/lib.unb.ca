@@ -34,9 +34,10 @@
 .align-center .field--name-field-media-oembed-video,
 .align-left .field--name-field-media-oembed-video,
 .align-right .field--name-field-media-oembed-video {
-  max-width: $max-breakpoint * 0.645;
+  max-width: $max-breakpoint * 0.51;
   width: 66vw;
 }
+
 .align-center .field--name-field-media-oembed-video {
   margin: 0 auto;
 }
