@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "99e722fffa67ca8d54228fca331226cb",
+    "content-hash": "617998ab1665a7636ba82d357b6dd3c0",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7233,21 +7233,24 @@
         },
         {
             "name": "drupal/views_data_export",
-            "version": "1.4.0",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/views_data_export.git",
-                "reference": "8.x-1.4"
+                "reference": "8.x-1.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_data_export-8.x-1.4.zip",
-                "reference": "8.x-1.4",
-                "shasum": "70dede9fdf50601232f068e67309d361341e88c5"
+                "url": "https://ftp.drupal.org/files/projects/views_data_export-8.x-1.5.zip",
+                "reference": "8.x-1.5",
+                "shasum": "2664bd52dd47b068dec60eecd3c6fc73f2d6c1b8"
             },
             "require": {
-                "drupal/core": "^9 || ^10",
+                "drupal/core": "^9 || ^10 || ^11",
                 "drupal/csv_serialization": "~1.4 || ~2.0 || ~3 || ~4"
+            },
+            "conflict": {
+                "phpoffice/phpspreadsheet": "<1.23.0"
             },
             "require-dev": {
                 "drupal/search_api": "~1.12",
@@ -7256,8 +7259,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.4",
-                    "datestamp": "1698948991",
+                    "version": "8.x-1.5",
+                    "datestamp": "1732280381",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7266,7 +7269,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -7532,23 +7535,23 @@
                     "sut/libraries/{$name}": [
                         "type:drupal-library"
                     ],
+                    "sut/themes/unish/{$name}": [
+                        "drupal/empty_theme"
+                    ],
+                    "sut/drush/contrib/{$name}": [
+                        "type:drupal-drush"
+                    ],
                     "sut/modules/unish/{$name}": [
                         "drupal/devel"
                     ],
-                    "sut/themes/unish/{$name}": [
-                        "drupal/empty_theme"
+                    "sut/themes/contrib/{$name}": [
+                        "type:drupal-theme"
                     ],
                     "sut/modules/contrib/{$name}": [
                         "type:drupal-module"
                     ],
                     "sut/profiles/contrib/{$name}": [
                         "type:drupal-profile"
-                    ],
-                    "sut/themes/contrib/{$name}": [
-                        "type:drupal-theme"
-                    ],
-                    "sut/drush/contrib/{$name}": [
-                        "type:drupal-drush"
                     ]
                 }
             },
@@ -9379,10 +9382,10 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.x-dev",
-                    "dev-3.x": "3.x-dev",
+                    "dev-1.x": "1.x-dev",
                     "dev-2.x": "2.x-dev",
-                    "dev-1.x": "1.x-dev"
+                    "dev-3.x": "3.x-dev",
+                    "dev-master": "3.x-dev"
                 }
             },
             "autoload": {
@@ -14578,21 +14581,21 @@
         },
         {
             "name": "typo3/phar-stream-wrapper",
-            "version": "v3.1.7",
+            "version": "v3.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3/phar-stream-wrapper.git",
-                "reference": "5cc2f04a4e2f5c7e9cc02a3bdf80fae0f3e11a8c"
+                "reference": "a931b28f422a60052db85c0a84a05a366453b2c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3/phar-stream-wrapper/zipball/5cc2f04a4e2f5c7e9cc02a3bdf80fae0f3e11a8c",
-                "reference": "5cc2f04a4e2f5c7e9cc02a3bdf80fae0f3e11a8c",
+                "url": "https://api.github.com/repos/TYPO3/phar-stream-wrapper/zipball/a931b28f422a60052db85c0a84a05a366453b2c0",
+                "reference": "a931b28f422a60052db85c0a84a05a366453b2c0",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "php": "^7.0 || ^8.0"
+                "php": "^7.0 || ~8.0 || ~8.1 || ~8.2 || ~8.3"
             },
             "require-dev": {
                 "ext-xdebug": "*",
@@ -14627,9 +14630,9 @@
             ],
             "support": {
                 "issues": "https://github.com/TYPO3/phar-stream-wrapper/issues",
-                "source": "https://github.com/TYPO3/phar-stream-wrapper/tree/v3.1.7"
+                "source": "https://github.com/TYPO3/phar-stream-wrapper/tree/v3.1.8"
             },
-            "time": "2021-09-20T19:19:13+00:00"
+            "time": "2024-12-09T23:06:33+00:00"
         },
         {
             "name": "unb-libraries/alert_scheduler",
