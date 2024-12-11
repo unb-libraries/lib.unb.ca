@@ -160,6 +160,20 @@ elements: |-
         '#wrapper_attributes':
           class:
             - mb-4
+      upload_doc:
+        '#type': webform_document_file
+        '#title': 'Upload your syllabus and/or assignment description'
+        '#wrapper_attributes':
+          class:
+            - mb-5
+        '#file_extensions': 'pdf doc docx'
+        '#sanitize': true
+        '#button': true
+        '#button__title': 'Select file<span class="fa-solid fa-paperclip ml-1"></span>'
+        '#button__attributes':
+          class:
+            - btn
+            - btn-primary
       about_assignment:
         '#type': textarea
         '#title': 'Tell us about the assignment students will be working on'
