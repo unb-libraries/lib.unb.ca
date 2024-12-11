@@ -78,24 +78,32 @@ elements: |-
         '#suffix__access': false
         '#degree__access': false
         '#flexbox': '1'
-      your_email_address:
+      unb_email_address:
         '#type': email
-        '#title': 'Your email address'
+        '#title': 'UNB email address'
+        '#autocomplete': email
         '#required': true
         '#wrapper_attributes':
           class:
             - mb-5
-      course_id:
+      course_no:
         '#type': textfield
-        '#title': 'Course ID'
-        '#description': 'Example: ENG 333'
+        '#title': 'Course No.'
+        '#description': 'Example: BIOL*1001, KIN*3041'
+        '#required': true
+        '#wrapper_attributes':
+          class:
+            - mb-5
+      course_name:
+        '#type': textfield
+        '#title': 'Course Name'
         '#required': true
         '#wrapper_attributes':
           class:
             - mb-5
       section_information:
         '#type': webform_custom_composite
-        '#title': 'Section information'
+        '#title': Section
         '#required': true
         '#multiple__sorting': false
         '#multiple__add': false
@@ -105,15 +113,9 @@ elements: |-
           class:
             - mb-5
         '#element':
-          course_section:
-            '#type': textfield
-            '#required': true
-            '#title': 'Course section'
-            '#description': |
-              Example: 001
           number_students:
             '#type': textfield
-            '#title': 'Number of students'
+            '#title': 'No. of students'
           course_time:
             '#type': textfield
             '#required': true
@@ -127,6 +129,7 @@ elements: |-
             '#date_date_min': '+10 days'
           date_second:
             '#type': date
+            '#required': true
             '#title': 'Date: 2nd choice'
             '#description': 'Must be at least 10 days in advance'
             '#date_date_min': '+10 days'
@@ -150,8 +153,48 @@ elements: |-
         '#title': 'Do you have any students who require special accommodations?'
         '#options':
           'yes': 'Yes -- A library staff member will reach out to you after you submit this form to discuss details.'
-          no_unsure: 'No / Not sure -- If you learn of an accommodation need, you can reach out to the library staff member who will be working with your class.'
+          no_unsure: 'No / Not sure -- If you learn of an accommodation need, you can contact us after we have received your initial request.'
         '#required': true
+        '#wrapper_attributes':
+          class:
+            - mb-4
+      about_assignment:
+        '#type': textarea
+        '#title': 'Tell us about the assignment students will be working on'
+        '#help': 'Briefly describe the assignment, instead of or in addition to uploading it. Tell us where in the assignment process your students will be at the time of the session: whether they have been introduced to the assignment, have chosen topics, or begun researching.'
+        '#wrapper_attributes':
+          class:
+            - mb-5
+      associated_research_course_guide:
+        '#type': radios
+        '#title': 'Is there an associated Research/Course Guide?'
+        '#options':
+          'yes': 'Yes'
+          'no': 'No'
+          donotknow: 'Don''t know'
+        '#options_display': side_by_side
+        '#wrapper_attributes':
+          class:
+            - webform-options-display-side-by-side
+            - mb-4
+      develop_library_course_guide:
+        '#type': radios
+        '#title': 'Would you like us to develop a library course guide?'
+        '#options':
+          'yes': 'Yes'
+          'no': 'No'
+        '#options_display': side_by_side
+        '#states':
+          visible:
+            ':input[name="associated_research_course_guide"]':
+              value: 'no'
+        '#wrapper_attributes':
+          class:
+            - webform-options-display-side-by-side
+            - mb-4
+      additional_comments:
+        '#type': textarea
+        '#title': 'Any additional comments?'
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
