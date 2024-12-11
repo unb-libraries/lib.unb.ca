@@ -35,10 +35,12 @@ elements: |-
       '#markup': |-
         <h2>About placing a request</h2>
 
-        <p>Thank you for taking the time to complete this form, which will help our subject librarians and Library Instruction team develop resources and sessions that suit your learners&rsquo; needs. After we receive your request, we&#39;ll be in touch with you by email. If you have questions, please <a href="/contact-unb-libraries-staff?recipient=hanratty?&ubject=Library%20Instruction%20Request">contact us</a>.</p>
+        <p>Thank you for taking the time to complete this form, which will help our subject librarians and Library Instruction team develop resources and sessions that suit your learners&rsquo; needs. After we receive your request, we&#39;ll be in touch with you by email. If you have questions, please <a href="/contact-unb-libraries-staff?recipient=hanratty?&amp;ubject=Library%20Instruction%20Request">contact us</a> <span class="fa-solid fa-arrow-up-right-from-square fa-xs text-muted" aria-hidden="true"></span>.</p>
 
-        <div class="alert alert-light border">
-        <p class="m-0"><strong>Are you a student seeking research support? Please see our <a href="/guides/view-all">Research Guides</a>, <a href="/connect">Get Specialized Help</a>, or contact <a href="/help/ask-us">Ask Us</a>.</strong></p>
+        <div class="alert alert-light border border-dark">
+        <p class="m-0">
+          <span class="fas fa-circle-info text-info fa-lg" aria-hidden="true"></span>
+          <strong>Are you a student seeking research support? Please visit our <a href="/guides/view-all">Research Guides</a> <span class="fa-solid fa-arrow-up-right-from-square fa-xs text-muted" aria-hidden="true"></span>, <a href="/connect">Get Specialized Help</a> <span class="fa-solid fa-arrow-up-right-from-square fa-xs text-muted" aria-hidden="true"></span>, or <a href="/help/ask-us">Ask Us</a> <span class="fa-solid fa-arrow-up-right-from-square fa-xs text-muted" aria-hidden="true"></span> pages.</strong></p>
         </div>
     instruction_type_request:
       '#type': radios
