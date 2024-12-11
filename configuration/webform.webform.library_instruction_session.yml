@@ -35,22 +35,20 @@ elements: |-
       '#markup': |-
         <h2>About placing a request</h2>
 
-        <p>Instructors can use this form to request a library instruction session for their class. After we receive your request, we'll be in touch with you shortly by email. If you have questions, please email us at&nbsp;<a href="mailto:library_instruction@unb.ca">library_instruction@unb.ca</a>.</p>
+        <p>Thank you for taking the time to complete this form, which will help our subject librarians and Library Instruction team develop resources and sessions that suit your learners&rsquo; needs. After we receive your request, we&#39;ll be in touch with you by email. If you have questions, please <a href="/contact-unb-libraries-staff?recipient=hanratty?&ubject=Library%20Instruction%20Request">contact us</a>.</p>
 
         <div class="alert alert-light border">
-        <p class="m-0"><strong>Are you a student seeking help from a librarian? </strong><a href="/researchconsultation">Request a Research Consultation</a> or a <a href="/digital-media-lab/techconsult">Technology Consultation</a>.</p>
+        <p class="m-0"><strong>Are you a student seeking research support? Please see our <a href="/guides/view-all">Research Guides</a>, <a href="/connect">Get Specialized Help</a>, or contact <a href="/help/ask-us">Ask Us</a>.</strong></p>
         </div>
     instruction_type_request:
       '#type': radios
       '#title': 'Which type of instruction would you like to request?'
       '#options':
-        writing_speaking: 'Library Instruction for Writing and Speaking Classes -- For courses in the First Year Writing Program, Intro to Public Speaking, and other related courses.'
-        discipline_specific: 'Discipline-Specific Research Instruction -- Subject Specialist Librarians will tailor instruction to fit the learning objectives of your course. We will highlight the databases, resources, and research methods that are most relevant to your discipline and will help your students succeed in their research assignments.'
-        special_collections: 'Special Collections Instruction -- We can help your students get excited about hands-on research using original materials, become familiar with viewing and using primary sources, get to know the range of materials in our Special Collections holdings, and learn about the evolution of their college or discipline at UNB.'
+        discipline_specific: 'Discipline-Specific Research Instruction -- Our Subject Librarians customize sessions to align with your course objectives, showcasing the most relevant databases, tools, and research strategies to empower your students in tackling research assignments effectively.'
+        special_collections: 'Special Collections Instruction -- We can help your students get excited about hands-on research using original materials, become familiar with viewing and using primary sources, get to know the range of materials in our Special Collections holdings.'
         data_visualization: 'Data & Visualization Instruction -- Get hands-on instruction support for your students on making effective data visualizations, data cleaning and analysis, and mapping with GIS.'
-        makerspace: 'Makerspace or Virtual Reality Instruction -- Engage your students with the tools and technologies of the maker movement and virtual reality to spur creativity, problem solving skills, and critical thinking.'
         digital_media: 'Digital Media Instruction -- Inspire students and enhance digital literacy and multimedia storytelling skills through podcast, video, and other media making assignments with planning, technology, and Libraries studio spaces support.'
-        other: Other
+        other: Workshop/Other
       '#required': true
   course_information:
     '#type': webform_wizard_page
