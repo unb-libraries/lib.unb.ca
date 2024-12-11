@@ -163,7 +163,7 @@ elements: |-
       about_assignment:
         '#type': textarea
         '#title': 'Tell us about the assignment students will be working on'
-        '#help': 'Briefly describe the assignment, instead of or in addition to uploading it. Tell us where in the assignment process your students will be at the time of the session: whether they have been introduced to the assignment, have chosen topics, or begun researching.'
+        '#description': 'Briefly describe the assignment, instead of or in addition to uploading it. Tell us where in the assignment process your students will be at the time of the session: whether they have been introduced to the assignment, have chosen topics, or begun researching.'
         '#wrapper_attributes':
           class:
             - mb-5
