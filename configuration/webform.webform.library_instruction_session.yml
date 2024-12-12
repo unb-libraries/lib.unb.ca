@@ -172,7 +172,8 @@ elements: |-
         '#button__attributes':
           class:
             - btn
-            - btn-primary
+            - btn-light
+            - border-secondary
       about_assignment:
         '#type': textarea
         '#title': 'Tell us about the assignment students will be working on'

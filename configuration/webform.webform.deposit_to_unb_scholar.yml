@@ -91,6 +91,13 @@ elements: |-
         '#uri_scheme': public
         '#file_extensions': pdf
         '#sanitize': true
+        '#button': true
+        '#button__title': 'Select file<span class="fa-solid fa-paperclip ml-1"></span>'
+        '#button__attributes':
+          class:
+            - btn
+            - btn-light
+            - border-secondary
       checked_policies:
         '#type': radios
         '#title': 'Have you checked policies to see which version(s) you’re allowed to share?'

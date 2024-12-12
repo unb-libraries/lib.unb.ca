@@ -147,6 +147,13 @@ elements: |-
         '#file_extensions': 'rtf odf pdf doc docx'
         '#file_name': '[webform_submission:webform:id]_protocol_[webform_submission:token]'
         '#sanitize': true
+        '#button': true
+        '#button__title': 'Select file<span class="fa-solid fa-paperclip ml-1"></span>'
+        '#button__attributes':
+          class:
+            - btn
+            - btn-light
+            - border-secondary
 css: ''
 javascript: ''
 settings:
