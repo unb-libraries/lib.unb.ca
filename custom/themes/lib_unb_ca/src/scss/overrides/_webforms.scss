@@ -179,6 +179,13 @@ form.theme-dark>.webform-elements>.form-group>fieldset>legend {
     padding-right: 1rem;
   }
 }
+.webform-options-display-one-column {
+  .custom-radio {
+    .description {
+      margin-bottom: 1rem;
+    }
+  }
+}
 
 /* Webform 5.x Progress Tracker
 .webform-progress-tracker {

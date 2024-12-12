@@ -157,15 +157,14 @@ elements: |-
           'yes': 'Yes -- A library staff member will reach out to you after you submit this form to discuss details.'
           no_unsure: 'No / Not sure -- If you learn of an accommodation need, you can contact us after we have received your initial request.'
         '#required': true
-        '#wrapper_attributes':
-          class:
-            - mb-4
       upload_doc:
         '#type': webform_document_file
         '#title': 'Upload your syllabus and/or assignment description'
+        '#multiple': 2
         '#wrapper_attributes':
           class:
             - mb-5
+            - mt-4
         '#file_extensions': 'pdf doc docx'
         '#sanitize': true
         '#button': true
