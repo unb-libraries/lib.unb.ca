@@ -213,6 +213,12 @@ form.theme-dark>.webform-elements>.form-group>fieldset>legend {
   }
 }
 
+.has-error {
+  .invalid-feedback {
+    display: inherit;
+  }
+}
+
 /* Webform 5.x Progress Tracker
 .webform-progress-tracker {
   &.progress-tracker {
