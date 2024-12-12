@@ -143,7 +143,7 @@ elements: |-
       protocol:
         '#type': managed_file
         '#title': Protocol
-        '#file_placeholder': 'If you have a protocol that meets PRISMA-P guidelines for protocols, please attach it. Note that preference will be given to applications with complete and well-defined protocols.'
+        '#description': '<div class="mb-n2">If you have a protocol that meets PRISMA-P guidelines for protocols, please attach it. Note that preference will be given to applications with complete and well-defined protocols.</div>'
         '#file_extensions': 'rtf odf pdf doc docx'
         '#file_name': '[webform_submission:webform:id]_protocol_[webform_submission:token]'
         '#sanitize': true
