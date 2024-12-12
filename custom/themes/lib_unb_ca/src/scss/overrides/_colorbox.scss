@@ -17,3 +17,16 @@
 #cboxCurrent {
   bottom: -31px;
 }
+
+a.colorbox {
+  display: inline-block;
+
+  &.focus-ring,
+  &:hover {
+    outline: none;
+
+    img {
+      box-shadow: 0 0 .3rem #000;
+    }
+  }
+}
