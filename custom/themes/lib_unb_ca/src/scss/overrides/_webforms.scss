@@ -138,12 +138,38 @@ form.theme-dark>.webform-elements>.form-group>fieldset>legend {
 
 /* Managed file widget */
 .form-managed-file {
-  padding-bottom: 0;
-  padding-top: 0;
+  padding: .5rem;
+
+  label {
+    margin: 0 0.5rem 0 0;
+
+    &.webform-file-button {
+      white-space: nowrap;
+    }
+  }
+
+  div.custom-control {
+    flex-grow: 1;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .custom-checkbox {
+    label {
+      &:before {
+        top: 0.3rem;
+        transform: scale(1.1);
+      }
+    }
+  }
 
   input {
-    &[value=Remove] {
-      width: auto;
+    &[value*=Remove] {
+      flex: 0;
+      margin-top: 0;
+      padding-bottom: 0.25;
+      padding-top: 0.25;
     }
   }
 }
