@@ -405,7 +405,7 @@ handlers:
       enabled:
         ':input[name="campus"]':
           value: campus_UNBSJ
-    weight: -49
+    weight: -47
     settings:
       states:
         - completed
@@ -442,7 +442,7 @@ handlers:
     notes: ''
     status: true
     conditions: {  }
-    weight: -48
+    weight: -49
     settings:
       states:
         - completed
@@ -608,6 +608,49 @@ handlers:
         -
           value: _other_
           text: jsmyth@unb.ca
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: '[webform_submission:values:email:raw]'
+      from_options: {  }
+      from_name: '[webform_submission:values:name:raw]'
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Purchase Suggestion'
+      body: "<p>The following information was submitted through our <b>Purchase Suggestion</b> form by <b>{{ webform_token('[webform_submission:user]', webform_submission) }}</b> on <b>{{ webform_token('[webform_submission:created]', webform_submission) }}</b>.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  tatiana_sabbatical_sj_temporary:
+    id: email
+    handler_id: tatiana_sabbatical_sj_temporary
+    label: 'Tatiana Sabbatical SJ Temporary'
+    notes: ''
+    status: true
+    conditions:
+      enabled:
+        ':input[name="subject_area[select]"]':
+          value:
+            pattern: jsmyth
+        ':input[name="campus"]':
+          value: campus_UNBSJ
+    weight: -48
+    settings:
+      states:
+        - completed
+      to_mail: Alex.Goudreau@unb.ca
+      to_options: {  }
       bcc_mail: ''
       bcc_options: {  }
       cc_mail: ''
