@@ -97,25 +97,25 @@ elements: |-
         '#title': 'Subject Area'
         '#options':
           Anthropology|ecmoore@unb.ca: Anthropology
-          Biology|t.zaraiskaya@unb.ca: Biology
+          Biology|jsmyth@unb.ca: Biology
           'Biomedical Engineering|saran.croos@unb.ca': 'Biomedical Engineering'
           'Chemical Engineering|saran.croos@unb.ca': 'Chemical Engineering'
-          Chemistry|t.zaraiskaya@unb.ca: Chemistry
+          Chemistry|jsmyth@unb.ca: Chemistry
           'Civil Engineering|saran.croos@unb.ca': 'Civil Engineering'
           'Classics & Ancient History|ecmoore@unb.ca': 'Classics & Ancient History'
           'Computer Science|saran.croos@unb.ca': 'Computer Science'
           'Culture & Media Studies|ecmoore@unb.ca': 'Culture & Media Studies'
-          'Earth Sciences|T.Zaraiskaya@unb.ca': 'Earth Sciences'
+          'Earth Sciences|jsmyth@unb.ca': 'Earth Sciences'
           Economics|bcull@unb.ca: Economics
           Education|bcull@unb.ca: Education
           'Electrical & Computer Engineering|saran.croos@unb.ca': 'Electrical & Computer Engineering'
           Engineering|saran.croos@unb.ca: Engineering
           'Engineering Library Reference Collection|saran.croos@unb.ca': 'Engineering Library Reference Collection'
           English|ecmoore@unb.ca: English
-          'Forestry & Environmental Management|t.zaraiskaya@unb.ca': 'Forestry & Environmental Management'
+          'Forestry & Environmental Management|jsmyth@unb.ca': 'Forestry & Environmental Management'
           French|ecmoore@unb.ca: French
           'Geodesy and Geomatics Engineering|saran.croos@unb.ca': 'Geodesy and Geomatics Engineering'
-          Geology|t.zaraiskaya@unb.ca: Geology
+          Geology|jsmyth@unb.ca: Geology
           'Harriet Irving Library Reference Collection|hanratty@unb.ca': 'Harriet Irving Library Reference Collection'
           'Health Sciences|r.whitherspoon@unb.ca': 'Health Sciences'
           History|ecmoore@unb.ca: History
@@ -123,15 +123,15 @@ elements: |-
           'Kinesiology & Recreation|r.witherspoon@unb.ca': 'Kinesiology & Recreation'
           Languages|ecmoore@unb.ca: Languages
           Management|julie.morris@unb.ca: Management/Business
-          'Mathematics & Statistics|t.zaraiskaya@unb.ca': 'Mathematics & Statistics'
+          'Mathematics & Statistics|jsmyth@unb.ca': 'Mathematics & Statistics'
           'Mechanical Engineering|saran.croos@unb.ca': 'Mechanical Engineering'
           Nursing|r.witherspoon@unb.ca: Nursing
           Philosophy|ecmoore@unb.ca: Philosophy
-          Physics|t.zaraiskaya@unb.ca: Physics
+          Physics|jsmyth@unb.ca: Physics
           'Political Science/Politics|bcull@unb.ca': 'Political Science/Politics'
           Psychology|r.witherspoon@unb.ca: Psychology
           'Renaissance College|bcull@unb.ca': 'Renaissance College'
-          'Science Library Reference Collection|t.zaraiskaya@unb.ca': 'Science Library Reference Collection'
+          'Science Library Reference Collection|jsmyth@unb.ca': 'Science Library Reference Collection'
           'Social Work|bcull@unb.ca': 'Social Work'
           Sociology|bcull@unb.ca: Sociology
           'Womens Studies|bcull@unb.ca': 'Womens Studies'
