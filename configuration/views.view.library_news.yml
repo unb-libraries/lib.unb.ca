@@ -898,7 +898,7 @@ display:
             sort_order: desc
             number_of_records: 0
             format: default_summary
-          specify_validation: false
+          specify_validation: true
           validate:
             type: none
             fail: 'not found'
@@ -3645,9 +3645,10 @@ display:
             format: default_summary
           specify_validation: true
           validate:
-            type: none
+            type: regex
             fail: 'not found'
-          validate_options: {  }
+          validate_options:
+            pattern: '/^(2\d{3})(0[1-9]|1[012])$/'
       style:
         type: default
         options:
