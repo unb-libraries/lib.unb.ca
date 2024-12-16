@@ -540,16 +540,16 @@
         },
         {
             "name": "consolidation/annotated-command",
-            "version": "4.10.0",
+            "version": "4.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/consolidation/annotated-command.git",
-                "reference": "1e830ba908c9ffb1ba7ca056203531b27188812c"
+                "reference": "362310b13ececa9f6f0a4a880811fa08fecc348b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/1e830ba908c9ffb1ba7ca056203531b27188812c",
-                "reference": "1e830ba908c9ffb1ba7ca056203531b27188812c",
+                "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/362310b13ececa9f6f0a4a880811fa08fecc348b",
+                "reference": "362310b13ececa9f6f0a4a880811fa08fecc348b",
                 "shasum": ""
             },
             "require": {
@@ -590,9 +590,9 @@
             "description": "Initialize Symfony Console commands from annotated command class methods.",
             "support": {
                 "issues": "https://github.com/consolidation/annotated-command/issues",
-                "source": "https://github.com/consolidation/annotated-command/tree/4.10.0"
+                "source": "https://github.com/consolidation/annotated-command/tree/4.10.1"
             },
-            "time": "2024-04-05T21:05:39+00:00"
+            "time": "2024-12-13T19:55:40+00:00"
         },
         {
             "name": "consolidation/config",
@@ -908,28 +908,28 @@
             "extra": {
                 "scenarios": {
                     "symfony4": {
-                        "require": {
-                            "symfony/console": "^4.4.11",
-                            "symfony/event-dispatcher": "^4.4.11",
-                            "symfony/filesystem": "^4.4.11",
-                            "symfony/finder": "^4.4.11",
-                            "symfony/process": "^4.4.11",
-                            "phpunit/phpunit": "^6",
-                            "nikic/php-parser": "^2"
-                        },
-                        "remove": [
-                            "codeception/phpunit-wrapper"
-                        ],
                         "config": {
                             "platform": {
                                 "php": "7.1.3"
                             }
+                        },
+                        "remove": [
+                            "codeception/phpunit-wrapper"
+                        ],
+                        "require": {
+                            "symfony/finder": "^4.4.11",
+                            "phpunit/phpunit": "^6",
+                            "symfony/console": "^4.4.11",
+                            "symfony/process": "^4.4.11",
+                            "nikic/php-parser": "^2",
+                            "symfony/filesystem": "^4.4.11",
+                            "symfony/event-dispatcher": "^4.4.11"
                         }
                     }
                 },
                 "branch-alias": {
-                    "dev-master": "2.x-dev",
-                    "dev-main": "2.x-dev"
+                    "dev-main": "2.x-dev",
+                    "dev-master": "2.x-dev"
                 }
             },
             "autoload": {
@@ -7958,16 +7958,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.385.0",
+            "version": "v0.386.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "d6a89ec1883ecd1de145179d44cb274cf4927da9"
+                "reference": "cd08601dd729977f7198c72cd10d05901833bec0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/d6a89ec1883ecd1de145179d44cb274cf4927da9",
-                "reference": "d6a89ec1883ecd1de145179d44cb274cf4927da9",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/cd08601dd729977f7198c72cd10d05901833bec0",
+                "reference": "cd08601dd729977f7198c72cd10d05901833bec0",
                 "shasum": ""
             },
             "require": {
@@ -7996,9 +7996,9 @@
             ],
             "support": {
                 "issues": "https://github.com/googleapis/google-api-php-client-services/issues",
-                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.385.0"
+                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.386.0"
             },
-            "time": "2024-12-09T01:08:31+00:00"
+            "time": "2024-12-16T01:04:20+00:00"
         },
         {
             "name": "google/auth",
@@ -9430,16 +9430,16 @@
         },
         {
             "name": "league/csv",
-            "version": "9.19.0",
+            "version": "9.20.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/csv.git",
-                "reference": "f81df48a012a9e86d077e74eaff666fd15bfab88"
+                "reference": "553579df208641ada6ffb450b3a151e2fcfa4f31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/csv/zipball/f81df48a012a9e86d077e74eaff666fd15bfab88",
-                "reference": "f81df48a012a9e86d077e74eaff666fd15bfab88",
+                "url": "https://api.github.com/repos/thephpleague/csv/zipball/553579df208641ada6ffb450b3a151e2fcfa4f31",
+                "reference": "553579df208641ada6ffb450b3a151e2fcfa4f31",
                 "shasum": ""
             },
             "require": {
@@ -9513,7 +9513,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-12-08T08:09:35+00:00"
+            "time": "2024-12-13T15:49:27+00:00"
         },
         {
             "name": "league/oauth2-client",
@@ -10699,16 +10699,16 @@
         },
         {
             "name": "phpseclib/phpseclib",
-            "version": "3.0.42",
+            "version": "3.0.43",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "db92f1b1987b12b13f248fe76c3a52cadb67bb98"
+                "reference": "709ec107af3cb2f385b9617be72af8cf62441d02"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/db92f1b1987b12b13f248fe76c3a52cadb67bb98",
-                "reference": "db92f1b1987b12b13f248fe76c3a52cadb67bb98",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/709ec107af3cb2f385b9617be72af8cf62441d02",
+                "reference": "709ec107af3cb2f385b9617be72af8cf62441d02",
                 "shasum": ""
             },
             "require": {
@@ -10789,7 +10789,7 @@
             ],
             "support": {
                 "issues": "https://github.com/phpseclib/phpseclib/issues",
-                "source": "https://github.com/phpseclib/phpseclib/tree/3.0.42"
+                "source": "https://github.com/phpseclib/phpseclib/tree/3.0.43"
             },
             "funding": [
                 {
@@ -10805,7 +10805,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-16T03:06:04+00:00"
+            "time": "2024-12-14T21:12:59+00:00"
         },
         {
             "name": "phpstan/phpstan",
@@ -15231,10 +15231,10 @@
             },
             "type": "composer-plugin",
             "extra": {
+                "class": "Wikimedia\\Composer\\Merge\\V2\\MergePlugin",
                 "branch-alias": {
                     "dev-master": "2.x-dev"
-                },
-                "class": "Wikimedia\\Composer\\Merge\\V2\\MergePlugin"
+                }
             },
             "autoload": {
                 "psr-4": {
@@ -19633,7 +19633,7 @@
     },
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "platform": {},
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
 }
