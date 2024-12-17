@@ -208,6 +208,18 @@ elements: |-
           class:
             - webform-options-display-side-by-side
             - mb-4
+      location:
+        '#type': radios
+        '#title': Location
+        '#options':
+          hil: 'Harriet Irving Library'
+          hwk: 'Hans W. Klohn Commons'
+          classroom: Classroom/lab
+          online: Online
+        '#required': true
+        '#wrapper_attributes':
+          class:
+            - mb-4
       additional_comments:
         '#type': textarea
         '#title': 'Any additional comments?'
