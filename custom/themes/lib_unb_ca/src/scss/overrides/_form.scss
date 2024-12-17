@@ -41,3 +41,13 @@ form {
     width: auto;
   }
 }
+
+/* Improve form keyboard accessibility */
+.form-managed-file ,
+input[type="date"] {
+  &:focus-within {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+  }
+}
