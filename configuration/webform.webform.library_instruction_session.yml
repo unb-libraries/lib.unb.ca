@@ -215,6 +215,10 @@ elements: |-
     '#type': webform_actions
     '#title': 'Submit button(s)'
     '#submit__label': Submit
+    '#submit__attributes':
+      class:
+        - mx-1
+        - px-3
 css: ''
 javascript: ''
 settings:
