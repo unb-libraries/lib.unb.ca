@@ -65,8 +65,17 @@ elements: |-
       summary_so_far:
         '#type': webform_markup
         '#markup': |-
-          <strong>Summary so far</strong>
-          <div class="alert alert-info mt-2"><strong>Instruction type:</strong> [webform_submission:values:instruction_type_request]</div>
+          <aside class="text-center">
+          <div class="card bg-light d-inline-block">
+          <div class="card-header h4">Summary so far</div>
+
+          <div class="card-body">
+          <p class="card-text">Selected instruction type:
+            <kbd class="bg-light text-unb-red">[webform_submission:values:instruction_type_request]</kbd>
+          </p>
+          </div>
+          </div>
+          </aside>
       your_name:
         '#type': webform_name
         '#title': 'Your name'
