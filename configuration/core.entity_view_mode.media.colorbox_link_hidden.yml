@@ -1,0 +1,10 @@
+uuid: 31cef899-1a73-4827-9aa2-09221451b7a9
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.colorbox_link_hidden
+label: 'Colorbox Link (hidden)'
+targetEntityType: media
+cache: true
