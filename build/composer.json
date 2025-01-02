@@ -334,7 +334,7 @@
     "drupal/file_management": "2.1",
     "drupal/fontawesome": "2.26",
     "drupal/footnotes": "3.1.0",
-    "drupal/google_analytics": "4.0.2",
+    "drupal/google_analytics": "4.0.3",
     "drupal/health_check": "<=2.0.1",
     "drupal/honeypot": "2.1.4",
     "drupal/inline_entity_form": "1.0-rc17",
