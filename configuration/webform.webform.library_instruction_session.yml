@@ -97,7 +97,7 @@ elements: |-
       course_no:
         '#type': textfield
         '#title': 'Course No.'
-        '#description': 'Example: BIOL*1001, KIN*3041'
+        '#description': 'Example: BIOL*1001, KIN*3041, MBA Orientation'
         '#required': true
         '#wrapper_attributes':
           class:
