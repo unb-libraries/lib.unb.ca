@@ -160,14 +160,37 @@ elements: |-
           'yes': 'Yes -- A library staff member will reach out to you after you submit this form to discuss details.'
           no_unsure: 'No / Not sure -- If you learn of an accommodation need, you can contact us after we have received your initial request.'
         '#required': true
+      about_assignment:
+        '#type': textarea
+        '#title': 'Tell us about the assignment students will be working on'
+        '#description': 'Briefly describe the assignment, instead of or in addition to uploading it. Tell us where in the assignment process your students will be at the time of the session: whether they have been introduced to the assignment, have chosen topics, or begun researching.'
+        '#wrapper_attributes':
+          class:
+            - mb-5
+      location:
+        '#type': radios
+        '#title': Location
+        '#options':
+          hil: 'Harriet Irving Library'
+          classroom: Classroom/lab
+          online: Online
+        '#required': true
+      campus:
+        '#type': textfield
+        '#title': Campus
+        '#wrapper_attributes':
+          class:
+            - mb-5
+      additional_comments:
+        '#type': textarea
+        '#title': 'Any additional comments?'
+        '#wrapper_attributes':
+          class:
+            - mb-5
       upload_doc:
         '#type': webform_document_file
         '#title': 'Upload your syllabus and/or assignment description'
         '#multiple': 2
-        '#wrapper_attributes':
-          class:
-            - mb-5
-            - mt-4
         '#file_extensions': 'pdf doc docx'
         '#sanitize': true
         '#button': true
@@ -177,55 +200,6 @@ elements: |-
             - btn
             - btn-light
             - border-secondary
-      about_assignment:
-        '#type': textarea
-        '#title': 'Tell us about the assignment students will be working on'
-        '#description': 'Briefly describe the assignment, instead of or in addition to uploading it. Tell us where in the assignment process your students will be at the time of the session: whether they have been introduced to the assignment, have chosen topics, or begun researching.'
-        '#wrapper_attributes':
-          class:
-            - mb-5
-      associated_research_course_guide:
-        '#type': radios
-        '#title': 'Is there an associated Research/Course Guide?'
-        '#options':
-          'yes': 'Yes'
-          'no': 'No'
-          donotknow: 'Don''t know'
-        '#options_display': side_by_side
-        '#wrapper_attributes':
-          class:
-            - webform-options-display-side-by-side
-            - mb-4
-      develop_library_course_guide:
-        '#type': radios
-        '#title': 'Would you like us to develop a library course guide?'
-        '#options':
-          'yes': 'Yes'
-          'no': 'No'
-        '#options_display': side_by_side
-        '#states':
-          visible:
-            ':input[name="associated_research_course_guide"]':
-              value: 'no'
-        '#wrapper_attributes':
-          class:
-            - webform-options-display-side-by-side
-            - mb-4
-      location:
-        '#type': radios
-        '#title': Location
-        '#options':
-          hil: 'Harriet Irving Library'
-          hwk: 'Hans W. Klohn Commons'
-          classroom: Classroom/lab
-          online: Online
-        '#required': true
-        '#wrapper_attributes':
-          class:
-            - mb-4
-      additional_comments:
-        '#type': textarea
-        '#title': 'Any additional comments?'
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
