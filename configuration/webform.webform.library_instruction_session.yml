@@ -46,7 +46,6 @@ elements: |-
       '#options':
         discipline_specific: 'Discipline-Specific Research Instruction -- Our Subject Librarians customize sessions to align with your course objectives, showcasing the most relevant databases, tools, and research strategies to empower your students in tackling research assignments effectively.'
         special_collections: 'Special Collections Instruction -- We can help your students get excited about hands-on research using original materials, become familiar with viewing and using primary sources, get to know the range of materials in our Special Collections holdings.'
-        data_visualization: 'Data & Visualization Instruction -- Get hands-on instruction support for your students on making effective data visualizations, data cleaning and analysis, and mapping with GIS.'
         digital_media: 'Digital Media Instruction -- Inspire students and enhance digital literacy and multimedia storytelling skills through podcast, video, and other media making assignments with planning, technology, and Libraries studio spaces support.'
         other: Workshop/Other
       '#required': true
