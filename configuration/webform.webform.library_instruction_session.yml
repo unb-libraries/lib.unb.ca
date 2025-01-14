@@ -26,7 +26,7 @@ elements: |-
         - d-flex
     '#access_create_roles':
       - authenticated
-    '#next_button_label': 'Course Information ›'
+    '#next_button_label': 'Continue ›'
     about_request:
       '#type': webform_markup
       '#wrapper_attributes':
@@ -53,7 +53,7 @@ elements: |-
     '#type': webform_wizard_page
     '#title': 'Course Information'
     '#format': fieldset
-    '#prev_button_label': '‹ Basic Details'
+    '#prev_button_label': '‹ Previous'
     '#next_button_label': 'Complete ›'
     fieldset:
       '#type': fieldset
