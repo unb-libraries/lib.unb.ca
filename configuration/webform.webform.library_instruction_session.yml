@@ -133,22 +133,19 @@ elements: |-
             '#type': date
             '#required': true
             '#title': 'Date: 1st choice'
-            '#description': 'Must be at least 10 days in advance'
-            '#date_date_min': '+10 days'
+            '#description': 'Please allow at least 5 days’ notice'
+            '#date_date_min': '+1 day'
           date_second:
             '#type': date
             '#required': true
             '#title': 'Date: 2nd choice'
-            '#description': 'Must be at least 10 days in advance'
-            '#date_date_min': '+10 days'
+            '#description': 'Please allow at least 5 days’ notice'
+            '#date_date_min': '+1 day'
           date_third:
             '#type': date
             '#title': 'Date: 3rd choice'
-            '#description': |-
-              Must be at least 10 days in advance
-
-              dd/mm/yyyy
-            '#date_date_min': '+10 days'
+            '#description': 'Please allow at least 5 days’ notice'
+            '#date_date_min': '+1 day'
       goals_for_this_session_:
         '#type': textarea
         '#title': 'What are your goals for this session?'
