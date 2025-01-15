@@ -273,10 +273,8 @@ class PortolanMarcParser implements ParserInterface {
     foreach ($marc_record->getFields('691') as $subfields) {
       foreach ($subfields->getSubfields() as $code => $value) {
         if ($code == 'a') {
-          $terms = explode(';', $value->getdata());
-          foreach ($terms as $term) {
-            $locations[] = rtrim($term, '.');
-          }
+          $location = preg_replace('/^[^0-9a-z]+|[^0-9a-z]+$/i', '', $value->getData());
+          $locations = array_merge($locations, array_filter(explode(';', $location)));
         }
       }
     }
@@ -298,10 +296,8 @@ class PortolanMarcParser implements ParserInterface {
     foreach ($marc_record->getFields('690') as $subfields) {
       foreach ($subfields->getSubfields() as $code => $value) {
         if ($code == 'a') {
-          $descriptor = explode(';', $value->getData());
-          foreach ($descriptor as $d) {
-            $descriptors[] = rtrim($d, '.');
-          }
+          $descriptor = preg_replace('/^[^0-9a-z]+|[^0-9a-z]+$/i', '', $value->getData());
+          $descriptors = array_merge($descriptors, array_filter(explode(';', $descriptor)));
         }
       }
     }
