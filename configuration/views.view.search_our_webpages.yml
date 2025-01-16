@@ -1221,7 +1221,7 @@ display:
       display_extenders:
         simple_sitemap_display_extender:
           variants: {  }
-      path: archives/unbhistory/search-block
+      path: archives/unbhistory/search
     cache_metadata:
       max-age: -1
       contexts:
