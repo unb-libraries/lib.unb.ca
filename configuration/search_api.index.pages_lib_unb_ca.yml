@@ -112,6 +112,12 @@ field_settings:
     dependencies:
       module:
         - node
+  url:
+    label: URI
+    property_path: search_api_url
+    type: text
+    configuration:
+      absolute: false
 datasource_settings:
   'entity:node':
     bundles:
@@ -125,16 +131,20 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
+  auto_aggregated_fulltext_field: {  }
   content_access:
     weights:
       preprocess_query: -30
+  custom_value: {  }
   entity_status: {  }
+  entity_type: {  }
   highlight:
     weights:
       postprocess_query: 0
     prefix: '<strong>'
     suffix: '</strong>'
     excerpt: true
+    excerpt_always: false
     excerpt_length: 345
     exclude_fields: {  }
     highlight: always
