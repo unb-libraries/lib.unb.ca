@@ -15,29 +15,41 @@
      * @type {object}
      *
      * @prop status
+     * @prop message
      */
     defaults: {
       status: false,
+      message: '',
     },
     url: '',
-    message: '',
     alert: '',
+    options: '',
 
     getStatus: function() {
       return this.get('status');
     },
 
+    getMessage: function() {
+      return this.get('message');
+    },
+
     initialize: function(status, options) {
       this.set('status', status);
-      this.message = options.message;
+      this.set('message', options.message);
       this.url = options.url;
 
-      this.alert = $(OCLCStatusTemplate({message: this.message}));
+      this.alert = $(OCLCStatusTemplate({message: this.getMessage()}));
+      this.options = options;
       $('#discovery-search').append(this.alert);
 
       this.fetch({
-          success: function(model, response, options) {
+          success: function(model, response) {
             model.set('status', response.status);
+            model.set('message', this.options.message);
+            if (response.message) {
+                model.set('message', response.message);
+            }
+            $('#oclc-service-alert-message').html(this.getMessage());
             model.toggleView();
           }
       });
@@ -59,8 +71,13 @@
       model = this;
       setInterval(function() {
           model.fetch({
-              success: function(model, response, options) {
+              success: function(model, response) {
                   model.set('status', response.status);
+                  model.set('message', this.options.message);
+                  if (response.message) {
+                      model.set('message', response.message);
+                  }
+                  $('#oclc-service-alert-message').html(this.getMessage());
                   model.toggleView();
               }
           });
