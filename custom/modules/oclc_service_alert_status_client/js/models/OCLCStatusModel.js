@@ -45,11 +45,11 @@
       this.fetch({
           success: function(model, response) {
             model.set('status', response.status);
-            model.set('message', this.options.message);
+            model.set('message', model.options.message);
             if (response.message) {
                 model.set('message', response.message);
             }
-            $('#oclc-service-alert-message').html(this.getMessage());
+            $('#oclc-service-alert-message').html(model.getMessage());
             model.toggleView();
           }
       });
@@ -73,11 +73,11 @@
           model.fetch({
               success: function(model, response) {
                   model.set('status', response.status);
-                  model.set('message', this.options.message);
+                  model.set('message', model.options.message);
                   if (response.message) {
                       model.set('message', response.message);
                   }
-                  $('#oclc-service-alert-message').html(this.getMessage());
+                  $('#oclc-service-alert-message').html(model.getMessage());
                   model.toggleView();
               }
           });
