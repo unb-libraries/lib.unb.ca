@@ -14932,12 +14932,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unb-libraries/oclc.git",
-                "reference": "26f5de490d07437ef6cbf3bc5886ecbfea7a0631"
+                "reference": "6975ad2e8534c6f66d8ba0daf7ced936bdb7d4fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unb-libraries/oclc/zipball/26f5de490d07437ef6cbf3bc5886ecbfea7a0631",
-                "reference": "26f5de490d07437ef6cbf3bc5886ecbfea7a0631",
+                "url": "https://api.github.com/repos/unb-libraries/oclc/zipball/6975ad2e8534c6f66d8ba0daf7ced936bdb7d4fc",
+                "reference": "6975ad2e8534c6f66d8ba0daf7ced936bdb7d4fc",
                 "shasum": ""
             },
             "require": {
@@ -14968,7 +14968,7 @@
                 "issues": "https://github.com/unb-libraries/oclc/issues",
                 "source": "https://github.com/unb-libraries/oclc/tree/8.x-1.x"
             },
-            "time": "2025-01-17T15:18:13+00:00"
+            "time": "2025-01-21T15:26:19+00:00"
         },
         {
             "name": "unb-libraries/saml_features",
@@ -15049,12 +15049,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unb-libraries/unb_lib_theme.git",
-                "reference": "ca8136f73435ad0856e51f7499b06704169d4926"
+                "reference": "3b6e1b18590cfd37b4f53f180ba80c59688a3bd7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unb-libraries/unb_lib_theme/zipball/ca8136f73435ad0856e51f7499b06704169d4926",
-                "reference": "ca8136f73435ad0856e51f7499b06704169d4926",
+                "url": "https://api.github.com/repos/unb-libraries/unb_lib_theme/zipball/3b6e1b18590cfd37b4f53f180ba80c59688a3bd7",
+                "reference": "3b6e1b18590cfd37b4f53f180ba80c59688a3bd7",
                 "shasum": ""
             },
             "require-dev": {
@@ -15077,7 +15077,7 @@
                 "issues": "https://github.com/unb-libraries/unb_lib_theme/issues",
                 "source": "https://github.com/unb-libraries/unb_lib_theme/tree/10.x-4.x"
             },
-            "time": "2025-01-21T14:59:13+00:00"
+            "time": "2025-01-21T15:35:33+00:00"
         },
         {
             "name": "w8tcha/ckeditor-codemirror-plugin",
