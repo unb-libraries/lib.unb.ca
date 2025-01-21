@@ -10859,16 +10859,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.12.15",
+            "version": "1.12.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "c91d4e8bc056f46cf653656e6f71004b254574d1"
+                "reference": "e0bb5cb78545aae631220735aa706eac633a6be9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/c91d4e8bc056f46cf653656e6f71004b254574d1",
-                "reference": "c91d4e8bc056f46cf653656e6f71004b254574d1",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/e0bb5cb78545aae631220735aa706eac633a6be9",
+                "reference": "e0bb5cb78545aae631220735aa706eac633a6be9",
                 "shasum": ""
             },
             "require": {
@@ -10913,7 +10913,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-01-05T16:40:22+00:00"
+            "time": "2025-01-21T14:50:05+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
@@ -15049,12 +15049,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unb-libraries/unb_lib_theme.git",
-                "reference": "d8e226a50b41913d8df453505c9e449ab7a73f60"
+                "reference": "ca8136f73435ad0856e51f7499b06704169d4926"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unb-libraries/unb_lib_theme/zipball/d8e226a50b41913d8df453505c9e449ab7a73f60",
-                "reference": "d8e226a50b41913d8df453505c9e449ab7a73f60",
+                "url": "https://api.github.com/repos/unb-libraries/unb_lib_theme/zipball/ca8136f73435ad0856e51f7499b06704169d4926",
+                "reference": "ca8136f73435ad0856e51f7499b06704169d4926",
                 "shasum": ""
             },
             "require-dev": {
@@ -15077,7 +15077,7 @@
                 "issues": "https://github.com/unb-libraries/unb_lib_theme/issues",
                 "source": "https://github.com/unb-libraries/unb_lib_theme/tree/10.x-4.x"
             },
-            "time": "2024-12-17T19:35:20+00:00"
+            "time": "2025-01-21T14:59:13+00:00"
         },
         {
             "name": "w8tcha/ckeditor-codemirror-plugin",
