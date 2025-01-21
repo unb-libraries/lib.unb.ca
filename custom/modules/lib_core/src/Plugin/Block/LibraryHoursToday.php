@@ -56,12 +56,12 @@ class LibraryHoursToday extends BlockBase {
             data-ch-days="0" data-ch-format-time="h:mma" data-ch-format-date="dd">Unavailable</td>
         </tr>
         <tr>
-          <th scope="row"><a href="/about/science-forestry-library">I.U.C.</a></th>
+          <th scope="row"><a href="/about/iuc-library">I.U.C.</a></th>
           <td class="ch-nd ch-live ch-live-co ch-live-nsdo ch-live-am" data-ch-id="sfl"
             data-ch-days="0" data-ch-format-time="h:mma" data-ch-format-date="dd">Unavailable</td>
         </tr>
         <tr>
-          <th scope="row"><a href="/about/engineering-computer-science-library">Head Hall</a></th>
+          <th scope="row"><a href="/about/head-hall-library">Head Hall</a></th>
           <td class="ch-nd ch-live ch-live-co ch-live-nsdo ch-live-am" data-ch-id="ecsl"
             data-ch-days="0" data-ch-format-time="h:mma" data-ch-format-date="dd">Unavailable</td>
         </tr>
