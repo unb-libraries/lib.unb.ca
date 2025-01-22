@@ -37,9 +37,9 @@ elements: |-
       '#options':
         none: 'No specific library'
         hil: 'Harriet Irving Library'
-        sfl: 'Science & Forestry Library'
-        ecsl: 'Engineering & Computer Science Library'
-        hwkc: 'Hans W. Klohn Commons (Saint John)'
+        sfl: 'I.U.C. Library'
+        ecsl: 'Head Hall Library'
+        hwkc: 'Hans W. Klohn (Saint John)'
       '#required': true
       '#default_value': none
       '#wrapper_type': form_element
