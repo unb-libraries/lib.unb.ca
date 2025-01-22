@@ -37,15 +37,15 @@ class DeansMessage extends BlockBase {
    */
   protected function getValue() {
     // Note: image manually resized to match Content Lg Breakpoint image style.
-    $html = '
+    $html = '<div class="front-page-border">
       <a href="/openaccess/open-access-policy">
-        <figure class="figcaption-overlay front-page-border">
+        <figure class="figcaption-overlay">
             <img src="/modules/custom/lib_core/img/towards_open_update.jpg"
              alt="Towards Open: Learn more about UNB\'s newly-adopted Open Access Policy and how the Library can support your publishing.">
             <figcaption class="caption-bottom caption-hover font-size-smaller">Review the new policy &raquo;</figcaption>
         </figure>
       </a>
-    ';
+    </div>';
 
     return $html;
   }
