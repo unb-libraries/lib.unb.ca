@@ -7,11 +7,15 @@ dependencies:
     - search_api.index.retention_schedules
     - taxonomy.vocabulary.retention_classification
   module:
+    - csv_serialization
     - datetime
     - records_management
+    - rest
     - search_api
+    - serialization
     - taxonomy
     - user
+    - views_data_export
 id: retention_schedules
 label: 'Retention Schedules'
 module: views
@@ -936,6 +940,54 @@ display:
       tags:
         - 'config:field.storage.taxonomy_term.field_code'
         - 'config:search_api.index.retention_schedules'
+        - 'search_api_list:retention_schedules'
+  data_export:
+    id: data_export
+    display_title: 'Data export'
+    display_plugin: data_export
+    position: 3
+    display_options:
+      style:
+        type: data_export
+        options:
+          formats:
+            csv: csv
+          csv_settings:
+            delimiter: ','
+            enclosure: '"'
+            escape_char: \
+            strip_tags: true
+            trim: true
+            encoding: utf8
+            utf8_bom: '0'
+            use_serializer_encode_only: false
+      display_extenders:
+        simple_sitemap_display_extender:
+          variants: {  }
+      path: export/schedules.csv
+      displays:
+        page: page
+        default: '0'
+        simple_search_form: '0'
+      filename: ''
+      automatic_download: false
+      store_in_public_file_directory: false
+      custom_redirect_path: false
+      redirect_to_display: none
+      include_query_params: false
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - request_format
+        - url
+        - user
+        - user.roles
+      tags:
+        - 'config:field.storage.taxonomy_term.field_code'
+        - 'config:search_api.index.retention_schedules'
+        - 'search_api_list:retention_schedules'
   page:
     id: page
     display_title: Page
@@ -1548,6 +1600,7 @@ display:
       tags:
         - 'config:field.storage.taxonomy_term.field_code'
         - 'config:search_api.index.retention_schedules'
+        - 'search_api_list:retention_schedules'
   simple_search_form:
     id: simple_search_form
     display_title: 'Simple Search'
@@ -2163,3 +2216,4 @@ display:
       tags:
         - 'config:field.storage.taxonomy_term.field_code'
         - 'config:search_api.index.retention_schedules'
+        - 'search_api_list:retention_schedules'
