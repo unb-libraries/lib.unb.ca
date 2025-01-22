@@ -4207,7 +4207,7 @@
             ],
             "authors": [
                 {
-                    "name": "Daniel.Moberly",
+                    "name": "daniel.moberly",
                     "homepage": "https://www.drupal.org/user/1160788"
                 },
                 {
@@ -15049,12 +15049,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unb-libraries/unb_lib_theme.git",
-                "reference": "3b6e1b18590cfd37b4f53f180ba80c59688a3bd7"
+                "reference": "31499c524322569819ef3b5728e9340103569e36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unb-libraries/unb_lib_theme/zipball/3b6e1b18590cfd37b4f53f180ba80c59688a3bd7",
-                "reference": "3b6e1b18590cfd37b4f53f180ba80c59688a3bd7",
+                "url": "https://api.github.com/repos/unb-libraries/unb_lib_theme/zipball/31499c524322569819ef3b5728e9340103569e36",
+                "reference": "31499c524322569819ef3b5728e9340103569e36",
                 "shasum": ""
             },
             "require-dev": {
@@ -15077,7 +15077,7 @@
                 "issues": "https://github.com/unb-libraries/unb_lib_theme/issues",
                 "source": "https://github.com/unb-libraries/unb_lib_theme/tree/10.x-4.x"
             },
-            "time": "2025-01-21T15:35:33+00:00"
+            "time": "2025-01-22T12:55:31+00:00"
         },
         {
             "name": "w8tcha/ckeditor-codemirror-plugin",
