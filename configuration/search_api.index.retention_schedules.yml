@@ -57,6 +57,22 @@ name: 'Retention schedules'
 description: ''
 read_only: false
 field_settings:
+  active:
+    label: 'Primary Office of Responsibility » Retention details » Active'
+    datasource_id: 'entity:schedule'
+    property_path: 'details_oopr:entity:active'
+    type: string
+    dependencies:
+      module:
+        - records_management
+  active_1:
+    label: 'Secondary Office of Responsibility » Retention details » Active'
+    datasource_id: 'entity:schedule'
+    property_path: 'details_oosr:entity:active'
+    type: string
+    dependencies:
+      module:
+        - records_management
   approved:
     label: 'Schedule creation date'
     datasource_id: 'entity:schedule'
@@ -93,6 +109,22 @@ field_settings:
       module:
         - records_management
         - taxonomy
+  disposition:
+    label: 'Primary Office of Responsibility » Retention details » Disposition'
+    datasource_id: 'entity:schedule'
+    property_path: 'details_oopr:entity:disposition'
+    type: string
+    dependencies:
+      module:
+        - records_management
+  disposition_1:
+    label: 'Secondary Office of Responsibility » Retention details » Disposition'
+    datasource_id: 'entity:schedule'
+    property_path: 'details_oosr:entity:disposition'
+    type: string
+    dependencies:
+      module:
+        - records_management
   name:
     label: 'Record series name'
     datasource_id: 'entity:schedule'
@@ -145,6 +177,22 @@ field_settings:
     dependencies:
       module:
         - records_management
+  semi_active:
+    label: 'Primary Office of Responsibility » Retention details » Semi-active'
+    datasource_id: 'entity:schedule'
+    property_path: 'details_oopr:entity:semi_active'
+    type: string
+    dependencies:
+      module:
+        - records_management
+  semi_active_1:
+    label: 'Secondary Office of Responsibility » Retention details » Semi-active'
+    datasource_id: 'entity:schedule'
+    property_path: 'details_oosr:entity:semi_active'
+    type: string
+    dependencies:
+      module:
+        - records_management
   summary:
     label: 'Description of Record'
     datasource_id: 'entity:schedule'
@@ -154,11 +202,29 @@ field_settings:
     dependencies:
       module:
         - records_management
+  trigger:
+    label: 'Primary Office of Responsibility » Retention details » Retention trigger'
+    datasource_id: 'entity:schedule'
+    property_path: 'details_oopr:entity:trigger'
+    type: string
+    dependencies:
+      module:
+        - records_management
+  trigger_1:
+    label: 'Secondary Office of Responsibility » Retention details » Retention trigger'
+    datasource_id: 'entity:schedule'
+    property_path: 'details_oosr:entity:trigger'
+    type: string
+    dependencies:
+      module:
+        - records_management
 datasource_settings:
   'entity:schedule': {  }
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
+  auto_aggregated_fulltext_field: {  }
+  custom_value: {  }
   entity_type: {  }
   language_with_fallback: {  }
   rendered_item: {  }
