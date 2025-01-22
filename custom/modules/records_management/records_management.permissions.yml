@@ -39,6 +39,9 @@ update schedule entities:
 delete schedule entities:
   title: "Delete retention schedules."
 
+download schedule entities:
+  title: "Download retention schedules."
+
 # Retention details entities
 administer retention_details entities:
   title: "Administer retention details."

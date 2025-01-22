@@ -620,9 +620,9 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
-        type: role
+        type: perm
         options:
-          role: {  }
+          perm: 'download schedule entities'
       cache:
         type: search_api_tag
         options: {  }
@@ -936,7 +936,7 @@ display:
         - url
         - url.query_args
         - user
-        - user.roles
+        - user.permissions
       tags:
         - 'config:field.storage.taxonomy_term.field_code'
         - 'config:search_api.index.retention_schedules'
@@ -983,7 +983,7 @@ display:
         - request_format
         - url
         - user
-        - user.roles
+        - user.permissions
       tags:
         - 'config:field.storage.taxonomy_term.field_code'
         - 'config:search_api.index.retention_schedules'
