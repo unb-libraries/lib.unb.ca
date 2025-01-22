@@ -13,3 +13,13 @@ schedule.add_form:
     - entity.schedule.collection
     - view.retention_schedules.page
     - view.retention_classifications.page_1
+
+schedule.download:
+  route_name: view.retention_schedules.data_export
+  title: "Download"
+  options:
+    attributes:
+      class:
+        - "link-no-icon"
+  appears_on:
+    - view.retention_schedules.page
