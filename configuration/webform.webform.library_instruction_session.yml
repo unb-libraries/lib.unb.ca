@@ -190,6 +190,16 @@ elements: |-
           visible-slide:
             ':input[name="would_you_like_us_to_teach_to_a_specific_assignment"]':
               value: 'yes'
+      would_you_like_help_creating_a_digital_or_information_literacy_a:
+        '#type': radios
+        '#title': 'Would you like help creating a digital or information literacy assignment?'
+        '#options':
+          'yes': 'Yes -- If yes, a library staff member will reach out to discuss after you submit this form'
+          'no': 'No'
+        '#options_display': two_columns
+        '#attributes':
+          class:
+            - mt-5
       location:
         '#type': radios
         '#title': Location
