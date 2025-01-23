@@ -86,7 +86,7 @@ elements: |-
         '#flexbox': '1'
       unb_email_address:
         '#type': email
-        '#title': 'UNB email address'
+        '#title': 'UNB Email Address'
         '#autocomplete': email
         '#required': true
         '#wrapper_attributes':
@@ -153,11 +153,21 @@ elements: |-
             - mb-5
       students_require_accommodations:
         '#type': radios
-        '#title': 'Do you have any students who require special accommodations?'
+        '#title': 'Do you have any students who require special accommodations that pertain to this request?'
         '#options':
-          'yes': 'Yes -- A library staff member will reach out to you after you submit this form to discuss details.'
+          'yes': 'Yes -- Please provide details below.'
           no_unsure: 'No / Not sure -- If you learn of an accommodation need, you can contact us after we have received your initial request.'
         '#required': true
+      accommodations_details:
+        '#type': textarea
+        '#title': 'Accommodations Details'
+        '#states':
+          visible-slide:
+            ':input[name="students_require_accommodations"]':
+              value: 'yes'
+        '#attributes':
+          class:
+            - mb-5
       about_assignment:
         '#type': textarea
         '#title': 'Tell us about the assignment students will be working on'
