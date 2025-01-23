@@ -170,7 +170,7 @@ elements: |-
             - mb-5
       about_assignment:
         '#type': textarea
-        '#title': 'Tell us about the assignment students will be working on'
+        '#title': 'Assignment Information'
         '#description': 'Briefly describe the assignment, instead of or in addition to uploading it. Tell us where in the assignment process your students will be at the time of the session: whether they have been introduced to the assignment, have chosen topics, or begun researching.'
         '#wrapper_attributes':
           class:
@@ -183,6 +183,9 @@ elements: |-
           classroom: Classroom/lab
           online: Online
         '#required': true
+        '#wrapper_attributes':
+          class:
+            - mb-3
       campus:
         '#type': textfield
         '#title': Campus
