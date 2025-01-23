@@ -157,6 +157,7 @@ elements: |-
         '#options':
           'yes': 'Yes -- Please provide details below.'
           no_unsure: 'No / Not sure -- If you learn of an accommodation need, you can contact us after we have received your initial request.'
+        '#options_display': two_columns
         '#required': true
       accommodations_details:
         '#type': textarea
@@ -175,6 +176,20 @@ elements: |-
         '#wrapper_attributes':
           class:
             - mb-5
+      would_you_like_us_to_teach_to_a_specific_assignment:
+        '#type': radios
+        '#title': 'Would you like us to teach to a specific assignment'
+        '#options':
+          'yes': 'Yes -- If yes, please describe below'
+          'no': 'No'
+        '#options_display': two_columns
+      assignment_description:
+        '#type': textarea
+        '#title': 'Teach an Assignment Description'
+        '#states':
+          visible-slide:
+            ':input[name="would_you_like_us_to_teach_to_a_specific_assignment"]':
+              value: 'yes'
       location:
         '#type': radios
         '#title': Location
@@ -185,7 +200,10 @@ elements: |-
         '#required': true
         '#wrapper_attributes':
           class:
-            - mb-3
+            - mb-2
+        '#attributes':
+          class:
+            - mt-5
       campus:
         '#type': textfield
         '#title': Campus
