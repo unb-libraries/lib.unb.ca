@@ -2510,6 +2510,11 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 9999
       style:
         type: data_export
         options:
@@ -2536,6 +2541,9 @@ display:
         simple_search_form: '0'
       filename: ''
       automatic_download: false
+      export_method: standard
+      export_batch_size: 1000
+      export_limit: 9999
       store_in_public_file_directory: false
       custom_redirect_path: false
       redirect_to_display: none
