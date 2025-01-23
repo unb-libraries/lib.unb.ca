@@ -39,7 +39,7 @@ elements: |-
 
         <h2>About placing a request</h2>
 
-        <p>Thank you for taking the time to complete this form, which will help our subject librarians and Library Instruction team develop resources and sessions that suit your learners&rsquo; needs. After we receive your request, we&#39;ll be in touch with you by email. If you have questions, please <a href="/contact-unb-libraries-staff?recipient=hanratty&amp;subject=Library%20Instruction%20Request">contact us</a> .</p>
+        <p>Thank you for taking the time to complete this form, which will help our subject librarians and Library Instruction team develop resources and sessions that suit your learners&rsquo; needs. After we receive your request, we&#39;ll be in touch with you by email. If you have questions, please <a href="/contact-unb-libraries-staff?recipient=hanratty&amp;subject=Library%20Instruction%20Request">contact us<span class="fa-solid fa-link fa-xs ml-1"></span></a>.</p>
     instruction_type_request:
       '#type': radios
       '#title': 'Which type of instruction would you like to request?'
@@ -63,13 +63,11 @@ elements: |-
         '#type': webform_markup
         '#markup': |-
           <aside class="text-center">
-          <div class="card bg-light d-inline-block">
+          <div class="card bg-light d-inline-block w-75">
           <div class="card-header h4">Summary so far</div>
 
           <div class="card-body">
-          <p class="card-text">Selected instruction type:
-            <kbd class="bg-light text-unb-red">[webform_submission:values:instruction_type_request]</kbd>
-          </p>
+          <p class="card-text">Selected instruction type: <kbd class="bg-light text-unb-red">[webform_submission:values:instruction_type_request]</kbd></p>
           </div>
           </div>
           </aside>
@@ -78,11 +76,11 @@ elements: |-
         '#title': 'Your name'
         '#required': true
         '#title__access': false
-        '#first__title': 'First name'
+        '#first__title': Name
         '#first__required': true
         '#middle__access': false
+        '#last__access': false
         '#last__title': 'Last name'
-        '#last__required': true
         '#suffix__access': false
         '#degree__access': false
         '#flexbox': '1'
