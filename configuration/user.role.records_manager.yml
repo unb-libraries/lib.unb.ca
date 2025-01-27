@@ -23,6 +23,7 @@ permissions:
   - 'create schedule entities'
   - 'delete retention_details entities'
   - 'delete schedule entities'
+  - 'download schedule entities'
   - 'edit field_file'
   - 'edit own field_file'
   - 'list classification entities'
