@@ -131,7 +131,7 @@ elements: |-
             '#required': true
             '#title': 'Date: 2nd choice'
             '#description': 'Please allow at least 5 days’ notice'
-            '#date_date_min': '+1 day'
+            '#date_date_min': '+2 day'
           date_third:
             '#type': date
             '#title': 'Date: 3rd choice'
@@ -226,6 +226,43 @@ elements: |-
           online: Online
         '#options_display': three_columns
         '#required': true
+      hil_rooms:
+        '#type': select
+        '#title': 'Room <small class="font-weight-light text-unb-red">(required)</small>'
+        '#options':
+          hil100: 'HIL 100 – Milham Room'
+          hil109: 'HIL 109 Lamsoq Polam'
+          hil112: 'HIL 112 – Learning Lab'
+          hil303: 'HIL 303 – Research Commons Active Learning Lab'
+          hil310: 'HIL 310 Research Commons Fabrication Lab'
+          hil316: 'HIL 316 – Research Commons Innovation Hub'
+          hil318: 'HIL 318 – Research Commons Event Space'
+          hil320a: 'HIL 320A – Research Commons Film Maker Studio'
+          hil320d: 'HIL 320D – Data Visualization Lab'
+          hil413: 'HIL 413 – Nan Gregg Room (CLC Collection)'
+          hil417: 'HIL 417 – Data/GIS Lab'
+          other: Other
+        '#chosen': true
+        '#states':
+          visible-slide:
+            ':input[name="location"]':
+              value: hil
+          required:
+            ':input[name="location"]':
+              value: hil
+        '#attributes':
+          class:
+            - w-100
+      building_room_number:
+        '#type': textfield
+        '#title': 'Building, Room Number <small class="font-weight-light text-unb-red">(required)</small>'
+        '#states':
+          visible-slide:
+            ':input[name="location"]':
+              value: classroom
+          required:
+            ':input[name="location"]':
+              value: classroom
       additional_comments:
         '#type': textarea
         '#title': 'Any additional comments?'
