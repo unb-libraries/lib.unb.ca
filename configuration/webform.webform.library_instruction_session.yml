@@ -94,15 +94,8 @@ elements: |-
             - mb-5
       course_no:
         '#type': textfield
-        '#title': 'Course No.'
+        '#title': 'Course Number'
         '#description': 'Example: BIOL*1001, KIN*3041, MBA Orientation'
-        '#required': true
-        '#wrapper_attributes':
-          class:
-            - mb-5
-      course_name:
-        '#type': textfield
-        '#title': 'Course Name'
         '#required': true
         '#wrapper_attributes':
           class:
@@ -158,7 +151,9 @@ elements: |-
           'yes': 'Yes -- Please provide details below.'
           no_unsure: 'No / Not sure -- If you learn of an accommodation need, you can contact us after we have received your initial request.'
         '#options_display': two_columns
-        '#required': true
+        '#attributes':
+          class:
+            - mb-5
       accommodations_details:
         '#type': textarea
         '#title': 'Accommodations Details'
@@ -169,67 +164,79 @@ elements: |-
         '#attributes':
           class:
             - mb-5
-      about_assignment:
-        '#type': textarea
-        '#title': 'Assignment Information'
-        '#description': 'Briefly describe the assignment, instead of or in addition to uploading it. Tell us where in the assignment process your students will be at the time of the session: whether they have been introduced to the assignment, have chosen topics, or begun researching.'
-        '#wrapper_attributes':
-          class:
-            - mb-5
       would_you_like_us_to_teach_to_a_specific_assignment:
         '#type': radios
-        '#title': 'Would you like us to teach to a specific assignment'
+        '#title': 'Would you like us to teach to a specific assignment?'
         '#options':
           'yes': 'Yes -- If yes, please describe below'
           'no': 'No'
         '#options_display': two_columns
-      assignment_description:
+        '#required': true
+        '#attributes':
+          class:
+            - mb-5
+      about_assignment:
         '#type': textarea
-        '#title': 'Teach an Assignment Description'
+        '#title': 'Assignment Information'
+        '#description': 'Briefly describe the assignment, instead of or in addition to uploading it. Tell us where in the assignment process your students will be at the time of the session: whether they have been introduced to the assignment, have chosen topics, or begun researching.'
         '#states':
           visible-slide:
             ':input[name="would_you_like_us_to_teach_to_a_specific_assignment"]':
               value: 'yes'
+        '#wrapper_attributes':
+          class:
+            - mb-5
       would_you_like_help_creating_a_digital_or_information_literacy_a:
         '#type': radios
         '#title': 'Would you like help creating a digital or information literacy assignment?'
         '#options':
-          'yes': 'Yes -- If yes, a library staff member will reach out to discuss after you submit this form'
+          'yes': 'Yes'
           'no': 'No'
         '#options_display': two_columns
         '#attributes':
           class:
-            - mt-5
+            - mb-5
+      information_d2l:
+        '#type': radios
+        '#title': 'Would you like to like any information about the self-paced D2L course, <a href="https://lms.unb.ca/d2l/home/147329">UNB Libraries’ Research Toolkit <i class="fa-solid fa-arrow-up-right-from-square fa-xs mr-1"></i></a>?'
+        '#options':
+          'yes': 'Yes'
+          'no': 'No'
+        '#options_display': two_columns
+        '#attributes':
+          class:
+            - mb-5
+      campus:
+        '#type': radios
+        '#title': Campus
+        '#options':
+          unbf: UNBF
+          unbsj: UNBSJ
+        '#options_display': two_columns
+        '#required': true
+        '#attributes':
+          class:
+            - mb-5
       location:
         '#type': radios
-        '#title': Location
+        '#title': 'Location of Session'
         '#options':
           hil: 'Harriet Irving Library'
           classroom: Classroom/lab
           online: Online
+        '#options_display': three_columns
         '#required': true
-        '#wrapper_attributes':
-          class:
-            - mb-2
-        '#attributes':
-          class:
-            - mt-5
-      campus:
-        '#type': textfield
-        '#title': Campus
-        '#wrapper_attributes':
-          class:
-            - mb-5
       additional_comments:
         '#type': textarea
         '#title': 'Any additional comments?'
         '#wrapper_attributes':
           class:
-            - mb-5
+            - my-5
       upload_doc:
         '#type': webform_document_file
         '#title': 'Upload your syllabus and/or assignment description'
         '#multiple': 2
+        '#max_filesize': '32'
         '#file_extensions': 'pdf doc docx'
         '#sanitize': true
         '#button': true
