@@ -31,8 +31,12 @@ fieldset input.form-autocomplete.ui-autocomplete-loading {
   font-size: 105%;
   line-height: 1.35;
 }
-.staff-pronouns {
+.staff-pronouns,
+.staff-leave {
   font-size: 88%;
+}
+.staff-leave {
+  color: #d82e3b;
 }
 .staff-title {
   line-height: 1.2;
