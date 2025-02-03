@@ -63,12 +63,6 @@ elements: |-
           class:
             - bg-dark
             - px-5
-      processed_text_01:
-        '#type': processed_text
-        '#text': |-
-          <p class="mx-3 text-left"><span class="fa-exclamation-triangle fas"></span> <strong>Notice: Canada Post Labour Disruption</strong><br>
-          Due to the ongoing Canada Post labour disruption, UNB Libraries' interlibrary loan service for <strong>print materials</strong> will be assessed on a case-by-case basis. For assistance or inquiries, please contact <a href="mailto:docdel@unb.ca">docdel@unb.ca</a>.</p>
-        '#format': library_page_html
   additional_notes:
     '#type': fieldset
     '#title': 'Additional Notes'
