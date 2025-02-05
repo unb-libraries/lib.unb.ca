@@ -4,12 +4,16 @@ status: open
 dependencies:
   module:
     - antibot
+    - honeypot
   enforced:
     module:
       - webform
 third_party_settings:
   antibot:
     antibot: true
+  honeypot:
+    honeypot: true
+    time_restriction: true
 _core:
   default_config_hash: Db1CJM6FchEqqeVz5YJThCK0WB599y4NjQ4GkPcGF5g
 weight: 0
@@ -94,7 +98,7 @@ settings:
   page_confirm_path: ''
   page_theme_name: ''
   form_title: source_entity_webform
-  form_submit_once: false
+  form_submit_once: true
   form_open_message: ''
   form_close_message: ''
   form_exception_message: ''
@@ -138,9 +142,7 @@ settings:
   submission_exclude_empty: false
   submission_exclude_empty_checkbox: false
   submission_views: {  }
-  submission_views_replace:
-    webform_routes: {  }
-    node_routes: {  }
+  submission_views_replace: {  }
   submission_user_columns: {  }
   submission_user_duplicate: false
   submission_access_denied: default
