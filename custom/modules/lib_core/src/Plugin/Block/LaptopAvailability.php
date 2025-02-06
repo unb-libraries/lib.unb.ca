@@ -54,7 +54,7 @@ class LaptopAvailability extends BlockBase implements ContainerFactoryPluginInte
       '2 hour loan',
     ],
     'ENG-MISC: Miscellaneous 7' => [
-      'Hrad Hall Library (Fredericton)',
+      'Head Hall Library (Fredericton)',
       '7 day loan',
     ],
     'SCI-MISC7D' => [
