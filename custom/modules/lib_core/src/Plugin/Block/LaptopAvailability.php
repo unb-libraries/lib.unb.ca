@@ -50,35 +50,35 @@ class LaptopAvailability extends BlockBase implements ContainerFactoryPluginInte
       '7 day loan',
     ],
     'ENG-MISC: Miscellaneous 2' => [
-      'Engineering Library (Fredericton)',
+      'Head Hall Library (Fredericton)',
       '2 hour loan',
     ],
     'ENG-MISC: Miscellaneous 7' => [
-      'Engineering Library (Fredericton)',
+      'Hrad Hall Library (Fredericton)',
       '7 day loan',
     ],
     'SCI-MISC7D' => [
-      'Science Library (Fredericton)',
+      'I.U.C. Library (Fredericton)',
       '7 day loan',
     ],
     'SCI-MISC1D' => [
-      'Science Library (Fredericton)',
+      'I.U.C. Library (Fredericton)',
       '1 day loan',
     ],
     'SCI-MISC: Miscellaneous 3 day loan' => [
-      'Science Library (Fredericton)',
+      'I.U.C. Library (Fredericton)',
       '3 day loan',
     ],
     'SCI-MISC: Miscellaneous 2 hour loan' => [
-      'Science Library (Fredericton)',
+      'I.U.C. Library (Fredericton)',
       '2 hour loan',
     ],
     'HWK-MISC1D1H' => [
-      'Saint John Library (Saint John)',
+      'Hans W. Klohn Library (Saint John)',
       '1 day loan',
     ],
     'HWK-MISC7D1H' => [
-      'Saint John Library (Saint John)',
+      'Hans W. Klohn Library (Saint John)',
       '7 day loan',
     ],
   ];
