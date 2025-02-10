@@ -14,7 +14,7 @@ uid: 1
 template: false
 archive: false
 id: application_for_use_manuscripts
-title: 'Application for Use of Manuscripts'
+title: 'Request to Access Archival Collections and Publication Policy'
 description: 'Form used to request photocopies of&nbsp; manuscripts from Archives and Special Collections.'
 category: ''
 elements: |-
@@ -220,6 +220,8 @@ settings:
   wizard_toggle: true
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
   preview: 0
   preview_label: ''
   preview_title: ''
