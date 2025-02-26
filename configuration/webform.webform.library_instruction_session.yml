@@ -430,7 +430,7 @@ settings:
 access:
   create:
     roles:
-      - library_page_author
+      - guide_editor
     users: {  }
     permissions: {  }
   view_any:
