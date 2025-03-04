@@ -63,7 +63,7 @@ class EresourcesDiscoverySearchBlock extends BlockBase {
 
     $build = '
      <div class="Accordion d-flex flex-column flex-lg-row">
-        <div id="eresources-discovery-search" class="flex-grow-1">
+        <div id="discovery-search" class="flex-grow-1">
         <div class="card">
           <div class="card-header bg-black px-2 pb-0 pb-md-1 rounded-0">
             <h2 class="sr-only">Search</h2>
@@ -151,6 +151,7 @@ class EresourcesDiscoverySearchBlock extends BlockBase {
           'lib_core/lib-selectize',
           'lib_core/accessible-accordion',
           'eresources/eresources',
+          'oclc_service_alert_status_client/oclc_status',
         ],
       ],
     ];

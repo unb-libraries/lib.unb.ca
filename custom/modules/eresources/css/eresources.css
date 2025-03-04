@@ -3,7 +3,7 @@
 }
 
 @media (min-width: 1200px) {
-  #eresources-discovery-search nav.navbar {
+  #discovery-search nav.navbar {
     max-width: 75%;
   }
 }
