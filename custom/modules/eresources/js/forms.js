@@ -51,6 +51,11 @@
                     scrollTop: $(resultsSelector).offset().top - 250
                 }, 'slow');
             }
+
+            // Correct select label for attributes.
+            $('#eres-databases #edit-guide-wrapper .form-type-select label').attr('for', 'database-guide');
+            $('#eres-databases #edit-database-wrapper .form-type-select label').attr('for', 'database');
+            $('#eres-reference .form-type-select label').attr('for', 'reference-guide');
         }
     }
 })(jQuery, Drupal);
