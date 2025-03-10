@@ -1,3 +1,3 @@
 OCLCStatusTemplate = _.template(
-    '<div id="oclc-service-alert" class="col-12 my-2 collapse alert alert-warning border-black"><i class="fa fa-lg fa-exclamation-triangle text-danger"></i> <strong id="oclc-service-alert-message"><%= message %></strong> <a href="https://lib.unb.ca/help/status" class="btn btn-sm btn-dark">More Info<span class="sr-only"> about online resource issues</span></a></div>'
+    '<div id="oclc-service-alert" class="col-12 my-0 collapse alert alert-warning rounded-0"><i class="fa fa-lg fa-exclamation-triangle text-danger"></i> <strong id="oclc-service-alert-message"><%= message %></strong> <a href="https://lib.unb.ca/help/status" class="btn btn-sm btn-dark">More Info<span class="sr-only"> about online resource issues</span></a></div>'
 );

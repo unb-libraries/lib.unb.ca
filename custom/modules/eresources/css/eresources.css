@@ -1,3 +1,9 @@
+.block-eresources-discovery-search-block {
+  #oclc-service-alert {
+    border: 1px solid #000;
+    margin: 0.5rem 0!important;
+  }
+}
 .local-description {
   border-left: 4px solid #ccc;
 }
