@@ -52,7 +52,7 @@
                 }, 'slow');
             }
 
-            // Correct select label for attributes.
+            // Correct selectize+select label for attributes.
             $('#eres-databases #edit-guide-wrapper .form-type-select label').attr('for', 'database-guide');
             $('#eres-databases #edit-database-wrapper .form-type-select label').attr('for', 'database');
             $('#eres-reference .form-type-select label').attr('for', 'reference-guide');
