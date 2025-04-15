@@ -1,0 +1,467 @@
+uuid: efc27947-6d04-4da7-a04e-57076c5f2822
+langcode: en
+status: open
+dependencies:
+  module:
+    - antibot
+    - honeypot
+third_party_settings:
+  antibot:
+    antibot: true
+  honeypot:
+    honeypot: true
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: request_access_unb_archival
+title: 'Request to Access UNB''s Archival Collections '
+description: 'Form used to request photocopies of manuscripts from UNB&#39;s Archival Collections.'
+category: ''
+elements: |-
+  top_markup:
+    '#type': processed_text
+    '#text': |
+      <div class="card border-dark mb-4 mt-2">
+      <div class="card-body p-0">
+      <h2 class="card-title h6 bg-dark text-white p-2">Your request will be sent to Archives &amp; Special Collections in UNB's Harriet Irving Library</h2>
+
+      <div class="p-2">
+      <address class="text-muted-wcag"><strong>Archives &amp; Special Collections</strong><br />
+      Harriet Irving Library<br />
+      University of New Brunswick<br />
+      P.O. Box 7500<br />
+      Fredericton, NB E3B 5H5<br />
+      Telephone: (506) 453-4748&nbsp; Fax: (506) 453-4595</address>
+      </div>
+      </div>
+      </div>
+    '#format': library_page_html
+  container:
+    '#type': container
+    '#attributes':
+      class:
+        - theme-dark
+    personal_information:
+      '#type': fieldset
+      '#title': 'Contact Information'
+      name:
+        '#type': textfield
+        '#title': Name
+        '#required': true
+        '#required_error': 'Please enter your full name'
+      mailing_address:
+        '#type': textarea
+        '#title': 'Mailing Address'
+        '#required_error': 'Please provide your address'
+      phone:
+        '#type': textfield
+        '#title': Phone
+        '#input_mask': '(999) 999-9999'
+        '#required': true
+        '#required_error': 'Please provide a phone number with area code'
+        '#pattern': '\(\d{3}\)\s\d{3}[\-]\d{4}'
+      email:
+        '#type': textfield
+        '#title': Email
+        '#input_mask': '''alias'': ''email'''
+        '#required': true
+        '#required_error': 'Please provide an email address'
+        '#pattern': '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$'
+    manuscript_information:
+      '#type': fieldset
+      '#title': 'Archives Fonds or Collection Information'
+      title_of_collection:
+        '#type': textfield
+        '#title': 'Title of Fonds or Collection'
+        '#required': true
+        '#required_error': 'Please enter collection name'
+      box_or_item_number_s_:
+        '#type': textfield
+        '#title': 'Series, Box and/or Item Number(s)'
+        '#wrapper_attributes':
+          id: series-box
+      subject_of_research:
+        '#type': textfield
+        '#title': 'Subject of Research'
+        '#required': true
+        '#required_error': 'Please outline your research subject'
+      purpose_of_research:
+        '#type': select
+        '#title': 'Purpose of Research'
+        '#options':
+          article: Article
+          thesis: Thesis
+          book: Book
+          exhibit: Exhibit
+          other: Other
+        '#required': true
+      will_the_material_be_used_for_research_purposes_only_:
+        '#type': checkbox
+        '#title': 'The material will be used for research purposes only'
+        '#required': true
+        '#required_error': 'You must agree that you will only use these materials for research'
+      i_intend_to_publish:
+        '#type': checkbox
+        '#title': 'I intend to publish'
+    permission_to_publish:
+      '#type': fieldset
+      '#title': 'Permission to Publish'
+      '#states':
+        visible-slide:
+          ':input[name="i_intend_to_publish"]':
+            checked: true
+      publishing_project_details:
+        '#type': webform_section
+        '#title': 'Publishing Project Details'
+        '#attributes':
+          class:
+            - h3
+        '#title_attributes':
+          class:
+            - h3
+        publication_type:
+          '#type': textfield
+          '#title': 'Publication Type'
+          '#description': 'e.g. exhibit, online, magazine, book, etc.'
+        how_images_used:
+          '#type': textarea
+          '#title': 'How will the images be used in the publication?'
+          '#description': 'e.g. illustration, title page, etc.'
+          '#rows': 2
+      image_details:
+        '#type': webform_section
+        '#title': 'Image Details'
+        '#title_attributes':
+          class:
+            - h3
+        description_of_images:
+          '#type': textarea
+          '#title': 'Description of Images'
+          '#rows': 2
+        retrieval_numbers:
+          '#type': textfield
+          '#title': 'Retrieval numbers'
+          '#description': 'If not noted in <a href="#series-box" id="series-box">Series, Box and/or Item numbers</a> above'
+      citation_information:
+        '#type': webform_section
+        '#title': 'Citation Information'
+        '#title_attributes':
+          class:
+            - h3
+        citation_text:
+          '#type': webform_markup
+          '#markup': '<p class="mb-1">Citation information for archival materials, including photographs, can be found at our <a href="/guides/archives-and-special-collections#section-5180" rel="noreferrer noopener" target="_blank">Archives and Special Collections Guide</a>. Please give credit to Archives &amp; Special Collections, UNB Libraries.</p>'
+      payment_information:
+        '#type': webform_section
+        '#title': 'Payment Information'
+        '#title_attributes':
+          class:
+            - h3
+        payment_info_text:
+          '#type': webform_markup
+          '#markup': |-
+            <p class="mb-1">
+            UNB Libraries may choose to waive fees if the publication is for education/non-commercial purposes.&nbsp; Staff will inform you of any charges after processing your request.
+            </p>
+      terms_and_conditions:
+        '#type': webform_section
+        '#title': 'Terms and Conditions'
+        '#title_attributes':
+          class:
+            - h3
+        markup:
+          '#type': webform_markup
+          '#markup': |-
+            <p paraeid="{e326727c-3302-4c08-a520-f22957d756dc}{234}" paraid="1442693308">To publish, the applicant/publisher is responsible for seeking written permission from the holder of any copyright or other rights. If UNB holds the copyright, please send a request for permission to publish to <a href="mailto:archives@unb.ca" rel="noreferrer noopener" target="_blank">archives@unb.ca</a>. Applicants must abide by the decision conveyed to them.&nbsp;</p>
+
+            <p paraeid="{71d6c0f7-2692-4ca9-b62d-5e0522e3767b}{8}" paraid="47696412">UNB Libraries, in giving its permission to publish, assumes no responsibility for infringement of copyright or publication rights.&nbsp;</p>
+
+            <p paraeid="{71d6c0f7-2692-4ca9-b62d-5e0522e3767b}{14}" paraid="728848265">UNB Libraries retains its own right to publish items from Archives &amp; Special Collections and its right to permit others to do so.&nbsp;&nbsp;</p>
+
+            <p paraeid="{71d6c0f7-2692-4ca9-b62d-5e0522e3767b}{24}" paraid="909631888">Acknowledgement of permission to publish must appear in the published work.&nbsp; A copy of the work must be donated to the Harriet Irving Library by the creator(s).&nbsp;</p>
+      agree_to_terms:
+        '#type': checkbox
+        '#title': ' I have read, understood and agree to the terms and conditions.  <small class="font-weight-light text-unb-red">(required)</small>'
+        '#required_error': 'You must agree to our terms and conditions'
+        '#states':
+          optional:
+            ':input[name="i_intend_to_publish"]':
+              empty: true
+    actions:
+      '#type': webform_actions
+      '#title': 'Submit button(s)'
+      '#attributes':
+        class:
+          - webform-actions-center
+      '#submit__label': 'Send Your Request'
+      '#reset__label': Cancel
+  privacy:
+    '#type': webform_markup
+    '#wrapper_attributes':
+      class:
+        - message-privacy
+    '#admin_title': 'Privacy Statement'
+    '#markup': '<div class="alert alert-info" role="alert"><strong>Privacy: </strong>UNB Libraries will only use the comments you send to improve our website and services. We are not storing any personal information.</div>'
+css: bg-light
+javascript: ''
+settings:
+  ajax: true
+  ajax_scroll_top: form
+  ajax_progress_type: fullscreen
+  ajax_effect: fade
+  ajax_speed: 500
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: source_entity_webform
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: false
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: true
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: true
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace:
+    webform_routes: {  }
+    node_routes: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: true
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: message
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: "<p class=\"h6\">Successfully Submitted</p>\r\n\r\n<p>Thank you for your submission. We appreciate your feedback.</p>"
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - library_page_author
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  email:
+    id: email
+    handler_id: email
+    label: Email
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: christine.lovelace@unb.ca
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: '[webform_submission:values:email:raw]'
+      from_options: {  }
+      from_name: '[webform_submission:values:name:raw]'
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Application for Use of Manuscripts'
+      body: "<p>The following information was submitted through our <b>Application for Use of Manuscripts</b> form by <b>{{ webform_token('[webform_submission:user]', webform_submission) }}</b> on <b>{{ webform_token('[webform_submission:created]', webform_submission) }}</b>.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n\r\n\r\n"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: false
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  email_1:
+    id: email
+    handler_id: email_1
+    label: 'Sender Confirmation Email'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:email:raw]'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: unb-libraries-no-reply@unb.ca
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'UNB Libraries submission confirmation'
+      body: "<p>Your Application for the Use of Manuscripts has been successfully been submitted to our Archives Department. Thank you for taking the time to fill it in. You will be notified by email if we require additional information.</p>\r\n\r\n\r\n<div>The following information was submitted:\r\n<br/>\r\n[webform_submission:values]\r\n</div>\r\n\r\n<div>\r\n<img alt=\"UNB Libraries\" src=\"https://dev-lib.unb.ca/themes/contrib/unb_lib_theme/img/unb-libraries-red-black.png\" />\r\n</div>\r\n"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      theme_name: ''
+      parameters: {  }
+      debug: false
+variants: {  }
