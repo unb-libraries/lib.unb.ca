@@ -89,14 +89,13 @@ elements: |-
         '#required': true
         '#required_error': 'Please outline your research subject'
       purpose_of_research:
-        '#type': select
+        '#type': webform_select_other
         '#title': 'Purpose of Research'
         '#options':
           article: Article
           thesis: Thesis
           book: Book
           exhibit: Exhibit
-          other: Other
         '#required': true
       will_the_material_be_used_for_research_purposes_only_:
         '#type': checkbox
@@ -184,12 +183,10 @@ elements: |-
             <p paraeid="{71d6c0f7-2692-4ca9-b62d-5e0522e3767b}{24}" paraid="909631888">Acknowledgement of permission to publish must appear in the published work.&nbsp; A copy of the work must be donated to the Harriet Irving Library by the creator(s).&nbsp;</p>
       agree_to_terms:
         '#type': checkbox
-        '#title': ' I have read, understood and agree to the terms and conditions.  <small class="font-weight-light text-unb-red">(required)</small>'
+        '#title': ' I have read, understood and agree to the terms and conditions. <small class="font-weight-light text-unb-red">(required)</small>'
+        '#required': true
         '#required_error': 'You must agree to our terms and conditions'
-        '#states':
-          optional:
-            ':input[name="i_intend_to_publish"]':
-              empty: true
+        '#states_clear': false
     actions:
       '#type': webform_actions
       '#title': 'Submit button(s)'
