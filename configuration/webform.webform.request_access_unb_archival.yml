@@ -183,7 +183,6 @@ elements: |-
         '#title': ' I have read, understood and agree to the terms and conditions. <small class="font-weight-light text-unb-red">(required)</small>'
         '#required': true
         '#required_error': 'You must agree to our terms and conditions'
-        '#states_clear': false
     actions:
       '#type': webform_actions
       '#title': 'Submit button(s)'

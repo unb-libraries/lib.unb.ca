@@ -219,6 +219,16 @@ form.theme-dark>.webform-elements>.form-group>fieldset>legend {
   }
 }
 
+/* Conditionally required when visible checkbox render fix */
+.custom-control-input[data-drupal-states] {
+  &:checked {
+    height: inherit;
+    opacity: inherit;
+    top: 0.35rem;
+    z-index: 1;
+  }
+}
+
 /* Webform 5.x Progress Tracker
 .webform-progress-tracker {
   &.progress-tracker {
