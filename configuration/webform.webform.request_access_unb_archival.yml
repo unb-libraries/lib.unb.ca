@@ -24,20 +24,9 @@ elements: |-
   top_markup:
     '#type': processed_text
     '#text': |
-      <div class="card border-dark mb-4 mt-2">
-      <div class="card-body p-0">
-      <h2 class="card-title h6 bg-dark text-white p-2">Your request will be sent to Archives &amp; Special Collections in UNB's Harriet Irving Library</h2>
-
-      <div class="p-2">
-      <address class="text-muted-wcag"><strong>Archives &amp; Special Collections</strong><br />
-      Harriet Irving Library<br />
-      University of New Brunswick<br />
-      P.O. Box 7500<br />
-      Fredericton, NB E3B 5H5<br />
-      Telephone: (506) 453-4748&nbsp; Fax: (506) 453-4595</address>
-      </div>
-      </div>
-      </div>
+      <div class="alert alert-dismissible fade show col-12 bg-dark text-white" role="alert"><button aria-label="Close" class="close" data-dismiss="alert" type="button"><span aria-hidden="true">×</span></button>
+      <h2 class="visually-hidden">Note:</h2>
+      Your request will be sent to Archives &amp; Special Collections in UNB's Harriet Irving Library</div>
     '#format': library_page_html
   container:
     '#type': container
