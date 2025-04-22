@@ -52,10 +52,6 @@ elements: |-
         '#title': Name
         '#required': true
         '#required_error': 'Please enter your full name'
-      mailing_address:
-        '#type': textarea
-        '#title': 'Mailing Address'
-        '#required_error': 'Please provide your address'
       phone:
         '#type': textfield
         '#title': Phone
