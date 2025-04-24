@@ -8310,16 +8310,16 @@
         },
         {
             "name": "google/protobuf",
-            "version": "v3.25.6",
+            "version": "v3.25.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/protocolbuffers/protobuf-php.git",
-                "reference": "fd843c68d1fb6d2f0010f4157f5febd08b723d6f"
+                "reference": "6901ac6aed67882732a47d877d4dbd6189cbdcf2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/fd843c68d1fb6d2f0010f4157f5febd08b723d6f",
-                "reference": "fd843c68d1fb6d2f0010f4157f5febd08b723d6f",
+                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/6901ac6aed67882732a47d877d4dbd6189cbdcf2",
+                "reference": "6901ac6aed67882732a47d877d4dbd6189cbdcf2",
                 "shasum": ""
             },
             "require": {
@@ -8348,9 +8348,9 @@
                 "proto"
             ],
             "support": {
-                "source": "https://github.com/protocolbuffers/protobuf-php/tree/v3.25.6"
+                "source": "https://github.com/protocolbuffers/protobuf-php/tree/v3.25.7"
             },
-            "time": "2025-01-24T20:17:25+00:00"
+            "time": "2025-04-23T22:37:01+00:00"
         },
         {
             "name": "grasmash/expander",
