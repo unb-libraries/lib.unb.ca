@@ -193,7 +193,7 @@ settings:
   ajax_speed: 500
   page: true
   page_submit_path: /archives/request-unb-archival-access
-  page_confirm_path: /archives/request-unb-archival-access
+  page_confirm_path: ''
   page_theme_name: ''
   form_title: source_entity_webform
   form_submit_once: false
