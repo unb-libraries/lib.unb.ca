@@ -1,6 +1,6 @@
 uuid: 4e889c4a-6424-4588-b255-90828484f471
 langcode: en
-status: open
+status: closed
 dependencies:
   module:
     - antibot
@@ -24,7 +24,7 @@ elements: |-
       <div class="card border-dark mb-4 mt-2">
       <div class="card-body p-0">
       <h2 class="card-title h6 bg-dark text-white p-2">Your request will be sent to the Archives &amp; Special Collections Department of the Harriet Irving Library.</h2>
-      
+
       <div class="p-2">
       <address class="text-muted-wcag"><strong>Archives &amp; Special Collections</strong><br />
       Harriet Irving Library<br />
@@ -35,7 +35,6 @@ elements: |-
       </div>
       </div>
       </div>
-      
     '#format': library_page_html
   container:
     '#type': container
@@ -100,21 +99,20 @@ elements: |-
         <div class="card border-dark my-2 mx-4">
         <div class="card-body p-0 mb-3">
         <h2 class="card-title bg-red h6 font-weight-bold p-2 text-white"><span class="fa-info-circle fas">&nbsp;</span> Publication of Manuscript Material</h2>
-        
+
         <div class="px-3 text-red">
         <p class="card-text">For permission to publish manuscript(s) in part or in full a&nbsp;<strong>separate written request</strong>&nbsp;must be submitted to the Head of Archives &amp; Special Collections, Christine Lovelace, at&nbsp;<a href="http://lib.unb.ca/contact-unb-libraries-staff?recipient=clovelac&amp;subject=Manuscript%20Request"><strong>clovelac@unb.ca</strong></a>. This must specify the manuscript(s) or excerpt(s) and supply details of the proposed publication. Applicants must abide by the decision conveyed to them.</p>
-        
+
         <p class="card-text">To publish or publish excerpts from a manuscript or letter which under common-law copyright is controlled by the writer, his heirs, executors or assigns, it is necessary that the applicant seek written permission from the holder of the rights.</p>
-        
+
         <p class="card-text">The Library, in giving its permission to publish, assumes no responsibility for infringement of copyright or publication rights.</p>
-        
+
         <p class="card-text">The Library retains its own right to publish the manuscripts and to permit others to do so.</p>
-        
+
         <p class="card-text">Acknowledgement of permission to publish must appear in the printed work. A copy of the printed work must be donated to the Harriet Irving Library by the writer.</p>
         </div>
         </div>
         </div>
-        
       '#format': library_page_html
     actions:
       '#type': webform_actions
@@ -140,7 +138,7 @@ settings:
   ajax_effect: fade
   ajax_speed: 500
   page: true
-  page_submit_path: /archives/application-manuscripts
+  page_submit_path: /archives/application-manuscripts/redirected
   page_confirm_path: ''
   page_theme_name: ''
   form_title: source_entity_webform
