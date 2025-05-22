@@ -1,5 +1,5 @@
 enable_toggle_shortcut: true
-menu_depth: 1
+menu_depth: 3
 sticky_behavior: enabled
 hoverintent_behavior:
   enabled: true

@@ -361,7 +361,7 @@
     "drupal/profile": "1.12",
     "drupal/protected_file": "1.5",
     "drupal/r4032login": "2.2.3",
-    "drupal/redirect": "<1.11",
+    "drupal/redirect": "<=1.10",
     "drupal/redis": "1.9",
     "drupal/samlauth": "3.11",
     "drupal/search_api": "<=1.30",
