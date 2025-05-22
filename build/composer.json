@@ -351,7 +351,7 @@
     "drupal/metatag": "<=1.26",
     "drupal/mimemail": "1.0.0-alpha6",
     "drupal/multiple_selects": "1.2",
-    "drupal/node_edit_protection": "1.1",
+    "drupal/node_edit_protection": "1.2",
     "drupal/noreqnewpass": "1.4",
     "drupal/oembed_providers": "2.1.2",
     "drupal/override_node_options": "2.9",
