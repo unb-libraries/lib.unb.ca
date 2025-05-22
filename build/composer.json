@@ -356,7 +356,7 @@
     "drupal/oembed_providers": "2.1.2",
     "drupal/override_node_options": "2.9",
     "drupal/panelbutton": "1.5",
-    "drupal/paragraphs": "1.17",
+    "drupal/paragraphs": "<=1.17",
     "drupal/pathauto": "1.13",
     "drupal/profile": "1.12",
     "drupal/protected_file": "1.5",
