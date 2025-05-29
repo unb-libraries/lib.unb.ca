@@ -8344,16 +8344,16 @@
         },
         {
             "name": "google/protobuf",
-            "version": "v3.25.7",
+            "version": "v3.25.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/protocolbuffers/protobuf-php.git",
-                "reference": "6901ac6aed67882732a47d877d4dbd6189cbdcf2"
+                "reference": "57d440fc54a00fda5b8781e8d9bf0140ea6d8e52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/6901ac6aed67882732a47d877d4dbd6189cbdcf2",
-                "reference": "6901ac6aed67882732a47d877d4dbd6189cbdcf2",
+                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/57d440fc54a00fda5b8781e8d9bf0140ea6d8e52",
+                "reference": "57d440fc54a00fda5b8781e8d9bf0140ea6d8e52",
                 "shasum": ""
             },
             "require": {
@@ -8382,9 +8382,9 @@
                 "proto"
             ],
             "support": {
-                "source": "https://github.com/protocolbuffers/protobuf-php/tree/v3.25.7"
+                "source": "https://github.com/protocolbuffers/protobuf-php/tree/v3.25.8"
             },
-            "time": "2025-04-23T22:37:01+00:00"
+            "time": "2025-05-27T21:04:40+00:00"
         },
         {
             "name": "grasmash/expander",
@@ -15488,16 +15488,16 @@
         },
         {
             "name": "composer/ca-bundle",
-            "version": "1.5.6",
+            "version": "1.5.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/ca-bundle.git",
-                "reference": "f65c239c970e7f072f067ab78646e9f0b2935175"
+                "reference": "d665d22c417056996c59019579f1967dfe5c1e82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/f65c239c970e7f072f067ab78646e9f0b2935175",
-                "reference": "f65c239c970e7f072f067ab78646e9f0b2935175",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/d665d22c417056996c59019579f1967dfe5c1e82",
+                "reference": "d665d22c417056996c59019579f1967dfe5c1e82",
                 "shasum": ""
             },
             "require": {
@@ -15544,7 +15544,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/ca-bundle/issues",
-                "source": "https://github.com/composer/ca-bundle/tree/1.5.6"
+                "source": "https://github.com/composer/ca-bundle/tree/1.5.7"
             },
             "funding": [
                 {
@@ -15560,7 +15560,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-03-06T14:30:56+00:00"
+            "time": "2025-05-26T15:08:54+00:00"
         },
         {
             "name": "composer/composer",
@@ -16587,16 +16587,16 @@
         },
         {
             "name": "drupal/coder",
-            "version": "8.3.29",
+            "version": "8.3.30",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pfrenssen/coder.git",
-                "reference": "92557b90d1e349d160be344b1000f8d7f13faca3"
+                "reference": "6b2edffac77582b1beb36ac155bfda5e7e055aff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pfrenssen/coder/zipball/92557b90d1e349d160be344b1000f8d7f13faca3",
-                "reference": "92557b90d1e349d160be344b1000f8d7f13faca3",
+                "url": "https://api.github.com/repos/pfrenssen/coder/zipball/6b2edffac77582b1beb36ac155bfda5e7e055aff",
+                "reference": "6b2edffac77582b1beb36ac155bfda5e7e055aff",
                 "shasum": ""
             },
             "require": {
@@ -16605,7 +16605,7 @@
                 "php": ">=7.2",
                 "sirbrillig/phpcs-variable-analysis": "^2.11.7",
                 "slevomat/coding-standard": "^8.11",
-                "squizlabs/php_codesniffer": "^3.12.2",
+                "squizlabs/php_codesniffer": "^3.13",
                 "symfony/yaml": ">=3.4.0"
             },
             "require-dev": {
@@ -16634,7 +16634,7 @@
                 "issues": "https://www.drupal.org/project/issues/coder",
                 "source": "https://www.drupal.org/project/coder"
             },
-            "time": "2025-05-03T11:56:22+00:00"
+            "time": "2025-05-25T09:52:20+00:00"
         },
         {
             "name": "drupal/core-dev",
