@@ -351,7 +351,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: 'library-bookings@unb.ca,mfonzo@unb.ca,mbragdon@unb.ca'
+      to_mail: 'library-bookings@unb.ca,mfonzo@unb.ca,mbragdon@unb.ca,k7y2u@unb.ca'
       to_options: {  }
       bcc_mail: ''
       bcc_options: {  }
