@@ -67,7 +67,7 @@ elements: |-
         '#type': container
         i_have_read_the_requirements_for_partnering_with_a_librarian_on_:
           '#type': checkbox
-          '#title': 'I have read the requirements for partnering with a librarian on my knowledge synthesis project.'
+          '#title': 'I have read the requirements for partnering with a librarian on my knowledge synthesis project'
           '#required': true
           '#required_error': 'You must agree that you have read the requirements for partnering with a librarian on my knowledge synthesis project'
         i_will_act_as_the_primary_contact_for_my_librarian_collaborator_:
@@ -75,6 +75,10 @@ elements: |-
           '#title': 'I will act as the primary contact and will respond promptly to requests for meetings and feedback / clarification'
           '#required': true
           '#required_error': 'You must agree that you will act as the primary contact and will respond promptly to requests ...'
+        agree_deposit_accepted_manuscript_review_scholar:
+          '#type': checkbox
+          '#title': 'I agree to deposit the accepted manuscript (postprint) of the review to UNB Scholar'
+          '#required': true
         i_will_seek_librarian_feedback_from_my_librarian_collaborator_on:
           '#type': checkbox
           '#title': 'I will seek librarian feedback on the manuscript for the review prior to submitting it for publication'
@@ -363,11 +367,7 @@ handlers:
       sender_name: ''
       subject: 'Your Knowledge Synthesis Service Request'
       body: "<p>On {{ webform_token('[webform_submission:created]', webform_submission, [], options) }} you submitted a Knowledge Synthesis Service Request with the following details:</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
-      excluded_elements:
-        i_have_read_the_requirements_for_partnering_with_a_librarian_on_: i_have_read_the_requirements_for_partnering_with_a_librarian_on_
-        i_will_act_as_the_primary_contact_for_my_librarian_collaborator_: i_will_act_as_the_primary_contact_for_my_librarian_collaborator_
-        i_will_seek_librarian_feedback_from_my_librarian_collaborator_on: i_will_seek_librarian_feedback_from_my_librarian_collaborator_on
-        i_will_offer_authorship_on_the_review_to_the_librarian: i_will_offer_authorship_on_the_review_to_the_librarian
+      excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: false
@@ -407,6 +407,7 @@ handlers:
       excluded_elements:
         i_have_read_the_requirements_for_partnering_with_a_librarian_on_: i_have_read_the_requirements_for_partnering_with_a_librarian_on_
         i_will_act_as_the_primary_contact_for_my_librarian_collaborator_: i_will_act_as_the_primary_contact_for_my_librarian_collaborator_
+        agree_deposit_accepted_manuscript_review_scholar: agree_deposit_accepted_manuscript_review_scholar
         i_will_seek_librarian_feedback_from_my_librarian_collaborator_on: i_will_seek_librarian_feedback_from_my_librarian_collaborator_on
         i_will_offer_authorship_on_the_review_to_the_librarian: i_will_offer_authorship_on_the_review_to_the_librarian
       ignore_access: false
