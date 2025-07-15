@@ -278,7 +278,8 @@ class StatsFormBase extends FormBase {
 
     // Tighter pagePath filtering.
     $results = array_filter($results, function ($v) use ($pagePath) {
-      return $v['pagePath'] == $pagePath || preg_match("/^\Q${pagePath}\E[#/]/", $v['pagePath']);
+      $pathRE = quotemeta($pagePath);
+      return $v['pagePath'] == $pagePath || preg_match("~^\Q{$pathRE}\E[#/]~", $v['pagePath']);
     });
 
     return $results;
