@@ -1,6 +1,6 @@
-enable_toggle_shortcut: true
+enable_toggle_shortcut: false
 menu_depth: 3
 sticky_behavior: enabled
 hoverintent_behavior:
   enabled: true
-  timeout: 250
+  timeout: 500
