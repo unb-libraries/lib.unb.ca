@@ -229,7 +229,7 @@ ul.pagination {
   justify-content: center !important;
   margin-top: 1.5rem;
 }
-.page-item {
+.page-item:not(.active) {
   a.page-link {
     color: $link-color;
 
@@ -447,7 +447,7 @@ ul.field--name-field-categories:before {
     }
 
     .form-group {
-      margin-bottom: .75rem;
+      margin-bottom: 0;
     }
 
     .form-select {

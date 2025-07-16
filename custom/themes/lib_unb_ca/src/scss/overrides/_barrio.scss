@@ -23,3 +23,15 @@ button.ui-dialog-titlebar-close::before {
   left: 3px;
   line-height: 1rem;
 }
+
+.pagination {
+  .page-item {
+    &.active {
+      .page-link {
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+}
