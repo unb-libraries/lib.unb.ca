@@ -1543,6 +1543,9 @@ display:
                   collapsible: false
                   collapsible_disable_automatic_open: false
                   is_secondary: false
+      cache:
+        type: search_api_tag
+        options: {  }
       empty:
         area_text_custom:
           id: area_text_custom
@@ -1768,6 +1771,7 @@ display:
           2: OR
       defaults:
         empty: false
+        cache: false
         title: false
         css_class: false
         use_ajax: false
@@ -2073,6 +2077,9 @@ display:
           sort_desc_label: Desc
           text_input_required: ''
           text_input_required_format: library_page_html
+      cache:
+        type: search_api_tag
+        options: {  }
       empty:
         area_text_custom:
           id: area_text_custom
@@ -2238,6 +2245,7 @@ display:
           2: OR
       defaults:
         empty: false
+        cache: false
         title: false
         css_class: false
         exposed_form: false
