@@ -198,7 +198,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: "<div class=\"alert alert-danger d-flex flex-row\">\r\n<div class=\"mr-2\"><i class=\"fas fa-book-dead\"></i></div>\r\n<div>Sorry, we couldn’t find any matches for your search in our webpages. Please modify your search query and try again.</div>\r\n</div>"
+          content: "<div class=\"alert alert-danger d-flex flex-row\">\r\n<div class=\"mr-2\"><i class=\"fa-solid fa-circle-exclamation\" aria-hidden=\"true\"></i></div>\r\n<div>Sorry, we couldn’t find any matches for your search in our webpages. Please modify your search query and try again.</div>\r\n</div>\r\n\r\n<div><a class=\"btn btn-light border\" href=\"/help/ask-us\"><i class=\"fa-solid fa-circle-question mr-1 text-secondary\" aria-hidden=\"true\"></i>Need help? Ask Us!</a></div>"
           tokenize: false
       sorts:
         search_api_relevance:
@@ -314,13 +314,13 @@ display:
           field: nothing
           relationship: none
           group_type: group
-          admin_label: 'Disclaimer Text'
+          admin_label: 'Default Disclaimer Text'
           plugin_id: custom
           label: ''
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"alert alert-light border\">\r\n<div class=\"d-flex flex-row\">\r\n<div class=\"mr-2\"><span class=\"fas fa-bell\"></span></div>\r\n<p class=\"mb-0\">This search interface <strong>DOES NOT</strong> search our catalogue, electronic databases or other online\r\nresources; it will only search for local web pages. To find resources, consult <a href=\"https://unb.on.worldcat.org\">our catalogue,\r\nUNB WorldCat</a> or the <a href=\"/eresources\">e-Resources section</a> of our website. To find a staff member please consult our <a href=\"/about/staff-directory\">staff directory</a>.</p>\r\n</div>\r\n</div>"
+            text: "<div class=\"alert alert-light border\">\r\n<div class=\"d-flex flex-row\">\r\n<div class=\"mr-2\"><i class=\"fa-solid fa-bell\" aria-hidden=\"true\"></i></div>\r\n<p class=\"mb-0\">This search interface <strong>DOES NOT</strong> search our catalogue, electronic databases or other online\r\nresources; it will only search for local web pages. To find resources, consult <a href=\"https://unb.on.worldcat.org\">our catalogue,\r\nUNB WorldCat</a> or the <a href=\"/eresources\">e-Resources section</a> of our website. To find a staff member please consult our <a href=\"/about/staff-directory\">staff directory</a>.</p>\r\n</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -385,7 +385,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: "<div class=\"alert alert-warning border\">\r\n<div class=\"d-flex flex-row\">\r\n<div class=\"mr-2\"><span class=\"fas fa-bell\"></span></div>\r\n<p class=\"mb-0\">This search interface <strong>DOES NOT</strong> search our catalogue, electronic databases or other online\r\nresources; it will only search for local web pages. To find resources, consult <a href=\"https://unb.on.worldcat.org\">our catalogue,\r\nUNB WorldCat</a> or the <a href=\"/eresources\">e-Resources section</a> of our website. To find a staff member please consult our <a href=\"/about/staff-directory\">staff directory</a></p>\r\n</div>\r\n</div>"
+          content: "<div class=\"alert alert-warning border\">\r\n<div class=\"d-flex flex-row\">\r\n<div class=\"mr-2\"><i class=\"fa-solid fa-bell\" aria-hidden=\"true\"></i></div>\r\n<p class=\"mb-0\">This search interface <strong>DOES NOT</strong> search our catalogue, electronic databases or other online\r\nresources; it will only search for local web pages. To find resources, consult <a href=\"https://unb.on.worldcat.org\">our catalogue,\r\nUNB WorldCat</a> or the <a href=\"/eresources\">e-Resources section</a> of our website. To find a staff member please consult our <a href=\"/about/staff-directory\">staff directory</a></p>\r\n</div>\r\n</div>"
           tokenize: false
       sorts: {  }
       filters: {  }
@@ -636,7 +636,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: "<div class=\"card border mt-4\">\r\n  <div class=\"card-header border-bottom h6\"><span class=\"fa-solid fa-exclamation-circle fa-lg mr-2 text-black\" aria-hidden=\"true\"></span>Hmm, we found no pages that matched your search.</div>\r\n  <div class=\"card-body m-2\">\r\n    <p class=\"card-title\">Notes for entering search terms:</p>\r\n    <ul class=\"mb-0\">\r\n      <li>Correct term spelling is important</li>\r\n      <li>Partial word search is supported, eg. <code>pub</code> also returns records that match <em>public, publisher</em> and <em>publication</em></li>\r\n     <li>For an exact match search, enclose multiple words in double quotes, eg. <code>&quot;Centre For Musical Arts&quot;</code></li>\r\n</ul>\r\n      <p class=\"mt-3 mb-1\"><a class=\"btn btn-light border\" href=\"/archives/archives-special-collections-staff\">Need help? Ask Us!</a></p>\r\n</div>\r\n</div>\r\n"
+          content: "<div class=\"card border mt-4\">\r\n  <div class=\"card-header border-bottom h6\"><span class=\"fa-solid fa-exclamation-circle fa-lg mr-2 text-black\" aria-hidden=\"true\"></span>Hmm, we found no pages that matched your search.</div>\r\n  <div class=\"card-body m-2\">\r\n    <p class=\"card-title\">Notes for entering search terms:</p>\r\n    <ul class=\"mb-0\">\r\n      <li>Correct term spelling is important</li>\r\n      <li>Partial word search is supported, eg. <code>pub</code> also returns records that match <em>public, publisher</em> and <em>publication</em></li>\r\n     <li>For an exact match search, enclose multiple words in double quotes, eg. <code>&quot;Centre For Musical Arts&quot;</code></li>\r\n    </ul>\r\n      <p class=\"mt-3 mb-1\"><a class=\"btn btn-light border\" href=\"/archives/archives-special-collections-staff\">Need help? Ask Us!</a></p>\r\n  </div>\r\n</div>\r\n"
           tokenize: false
       filters:
         search_api_fulltext:
@@ -822,7 +822,7 @@ display:
           admin_label: ''
           plugin_id: result
           empty: false
-          content: "<div class=\"alert alert-success d-flex flex-row\">\r\n  <div class=\"mr-2\"><i class=\"fas fa-check-circle\"></i></div>\r\n  <p class=\"mb-0\">Showing <b>@start - @end</b> of <b>@total</b> results.</p>\r\n</div>"
+          content: "<div class=\"alert alert-light border d-flex flex-row\">\r\n  <div class=\"mr-2\"><i class=\"fas fa-check-circle\"></i></div>\r\n  <p class=\"mb-0\">Showing <b>@start - @end</b> of <b>@total</b> results.</p>\r\n</div>"
       exposed_block: false
       display_extenders:
         simple_sitemap_display_extender:
@@ -1507,7 +1507,7 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
           input_required: true
-          text_input_required: "<div class=\"alert alert-info d-flex flex-row\">\r\n  <div class=\"mr-1\"><span class=\"fas fa-info-circle\"></span></div>\r\n  <p class=\"mb-0\">Alternatively, you can look through the <a href=\"/sitemap\"><span class=\"alert-link\">A to Z Index for UNB Libraries</span></a>.</p>\r\n</div>"
+          text_input_required: "<div class=\"alert alert-info d-flex flex-row\">\r\n  <div class=\"mr-1\"><span class=\"fa-solid fa-circle-info\" aria-hidden=\"true\"></span></div>\r\n  <p class=\"mb-0\">Alternatively, you can look through the <a href=\"/sitemap\"><span class=\"alert-link\">A to Z Index for UNB Libraries</span></a>.</p>\r\n</div>"
           text_input_required_format: library_page_html
           bef:
             general:
@@ -1553,7 +1553,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: "<div class=\"alert alert-danger d-flex flex-row\">\r\n<div class=\"mr-2\"><i class=\"fas fa-exclamation-circle\"></i></div>\r\n<p class=\"mb-0\">We're sorry, we found no results that match your search in our webpages. Please modify your query and try again.</p>\r\n</div>\r\n\r\n<div><a class=\"btn btn-light border\" href=\"/help/ask-us\"><span class=\"fas fa-question-circle mr-1 text-secondary\"></span>Need help? Ask Us!</a></div>\r\n"
+          content: "<div class=\"card border mt-4\">\r\n  <div class=\"card-header border-bottom h6\"><span class=\"fa-solid fa-exclamation-circle fa-lg mr-2 text-black\" aria-hidden=\"true\"></span>Sorry, we found no pages that matched your search.</div>\r\n  <div class=\"card-body m-2\">\r\n    <p class=\"card-title\">Notes for entering search terms:</p>\r\n    <ul class=\"mb-0\">\r\n      <li>Correct term spelling is important</li>\r\n      <li>Partial word search is supported, eg. <code>pub</code> also returns records that match <em>public, publisher</em> and <em>publication</em></li>\r\n     <li>For an exact match search, enclose multiple words in double quotes, eg. <code>&quot;Centre For Musical Arts&quot;</code></li>\r\n    </ul>\r\n      <p class=\"mt-3 mb-1\"><a class=\"btn btn-light border\" href=\"/help/ask-us\"><i class=\"fa-solid fa-circle-question mr-1 text-secondary\" aria-hidden=\"true\"></i>Need help? Ask Us!</a></p>\r\n\r\n  </div>\r\n</div>"
           tokenize: false
       filters:
         search_api_fulltext:
@@ -1789,7 +1789,7 @@ display:
           admin_label: ''
           plugin_id: result
           empty: false
-          content: "<div class=\"alert alert-success d-flex flex-row\">\r\n  <div class=\"mr-2\"><i class=\"fas fa-check-circle\"></i></div>\r\n  <p class=\"mb-0\">Showing <b>@start - @end</b> of <b>@total</b> results.</p>\r\n</div>"
+          content: "<div class=\"alert alert-light border d-flex flex-row align-items-center\">\r\n  <div class=\"mr-2\"><i class=\"fa-solid fa-circle-check\" aria-hidden=\"true\"></i></div>\r\n  <h2 class=\"h4 mb-0 text-secondary\">Showing @start - @end of @total results.</h2>\r\n</div>"
       display_extenders:
         simple_sitemap_display_extender:
           variants: {  }
@@ -2083,7 +2083,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: "<div class=\"alert alert-danger d-flex flex-row\">\r\n<div class=\"mr-2\"><i class=\"fas fa-exclamation-circle\"></i></div>\r\n<p class=\"mb-0\">We're sorry, we found no results that match your search in our webpages. Please modify your query and try again.</p>\r\n</div>\r\n\r\n<div><a class=\"btn btn-light border\" href=\"/help/ask-us\"><span class=\"fas fa-question-circle mr-1 text-secondary\"></span>Need help? Ask Us!</a></div>"
+          content: "<div class=\"alert alert-danger d-flex flex-row\">\r\n<div class=\"mr-2\"><i class=\"fa-solid fa-circle-exclamation\" aria-hidden=\"true\"></i></div>\r\n<p class=\"mb-0\">We're sorry, we found no results that match your search in our webpages. Please modify your query and try again.</p>\r\n</div>\r\n\r\n<div><a class=\"btn btn-light border\" href=\"/help/ask-us\"><i class=\"fa-solid fa-circle-question mr-1 text-secondary\" aria-hidden=\"true\"></i>Need help? Ask Us!</a></div>"
           tokenize: false
       filters:
         search_api_fulltext:
@@ -2257,7 +2257,7 @@ display:
           admin_label: ''
           plugin_id: result
           empty: false
-          content: "<div class=\"alert alert-success d-flex flex-row\">\r\n  <div class=\"mr-2\"><i class=\"fas fa-check-circle\"></i></div>\r\n  <p class=\"mb-0\">Showing <b>@start - @end</b> of <b>@total</b> results.</p>\r\n</div>"
+          content: "<div class=\"alert alert-light border d-flex flex-row\">\r\n  <div class=\"mr-2\"><i class=\"fa-solid fa-circle-check\" aria-hidden=\"true\"></i></div>\r\n  <p class=\"mb-0\">Showing <b>@start - @end</b> of <b>@total</b> results.</p>\r\n</div>"
       exposed_block: false
       display_extenders:
         simple_sitemap_display_extender:
