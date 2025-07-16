@@ -25,6 +25,26 @@ function lib_unb_ca_form_system_theme_settings_alter(&$form, FormStateInterface 
 }
 
 /**
+ * Implements hook_preprocess_input().
+ */
+function lib_unb_ca_preprocess_input(&$variables){
+  $input_type = $variables['attributes']['type'] ?? '';
+
+  if ($input_type == 'submit') {
+    $input_id = $variables['attributes']['id'] ?? '';
+    // Change "reset" form input classes to Bootstrap light.
+    if (str_contains($input_id, 'reset')) {
+      $variables['attributes']['class'] = [
+        'border',
+        'btn',
+        'btn-light',
+        'button',
+      ];
+    }
+  }
+}
+
+/**
  * Implements hook_theme_preprocess_page().
  */
 function lib_unb_ca_preprocess_page(&$variables) {
@@ -40,5 +60,4 @@ function lib_unb_ca_preprocess_views_view_table(&$variables) {
   $variables['table_class'] = theme_get_setting('bootstrap_barrio_table_style');
   $variables['hover'] = theme_get_setting('bootstrap_barrio_table_hover');
   $variables['thead_class'] = theme_get_setting('bootstrap_barrio_table_head');
-
 }
