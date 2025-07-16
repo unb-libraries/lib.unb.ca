@@ -28,6 +28,8 @@ button.ui-dialog-titlebar-close::before {
   .page-item {
     &.active {
       .page-link {
+        background-color: $dark;
+
         &:hover {
           color: $white;
         }
