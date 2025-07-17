@@ -1538,8 +1538,8 @@ display:
                 advanced:
                   sort_options: false
                   rewrite:
-                    filter_rewrite_values: "- Any -|Search all pages\r\nNews post|Omit library news"
-                    filter_rewrite_values_key: false
+                    filter_rewrite_values: "news_post|Exclude news posts\r\nAll|Include news posts\r\n"
+                    filter_rewrite_values_key: true
                   collapsible: false
                   collapsible_disable_automatic_open: false
                   is_secondary: false
@@ -1726,9 +1726,9 @@ display:
             operator: type_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: type
+            identifier: filter
             required: false
-            remember: true
+            remember: false
             multiple: false
             remember_roles:
               anonymous: anonymous
