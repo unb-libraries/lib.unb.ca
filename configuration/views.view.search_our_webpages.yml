@@ -1533,16 +1533,19 @@ display:
                   collapsible: false
                   collapsible_disable_automatic_open: false
                   is_secondary: false
-              type:
-                plugin_id: default
+              type_1:
+                plugin_id: bef
                 advanced:
                   sort_options: false
                   rewrite:
-                    filter_rewrite_values: "news_post|Exclude news posts\r\nAll|Include news posts\r\n"
+                    filter_rewrite_values: 'news_post|Exclude news posts'
                     filter_rewrite_values_key: true
                   collapsible: false
                   collapsible_disable_automatic_open: false
-                  is_secondary: false
+                  is_secondary: true
+                select_all_none: false
+                select_all_none_nested: false
+                display_inline: false
       cache:
         type: search_api_tag
         options: {  }
@@ -1704,8 +1707,8 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        type:
-          id: type
+        type_1:
+          id: type_1
           table: search_api_index_pages_lib_unb_ca
           field: type
           relationship: none
@@ -1714,25 +1717,24 @@ display:
           plugin_id: search_api_options
           operator: not
           value:
-            all: all
             news_post: news_post
           group: 1
           exposed: true
           expose:
-            operator_id: type_op
+            operator_id: type_1_op
             label: 'Content type'
             description: ''
             use_operator: false
-            operator: type_op
+            operator: type_1_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: filter
+            identifier: no_news
             required: false
             remember: false
-            multiple: false
+            multiple: true
             remember_roles:
-              anonymous: anonymous
               authenticated: authenticated
+              anonymous: '0'
               library_news_author: '0'
               library_page_author: '0'
               library_staff: '0'

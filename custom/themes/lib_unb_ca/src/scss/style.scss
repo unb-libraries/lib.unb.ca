@@ -441,8 +441,30 @@ ul.field--name-field-categories:before {
     margin: 3rem;
 
     .form-row {
-      & > fieldset {
-        flex: 1 1 auto;
+      align-items: center;
+      justify-content: center;
+
+      & > fieldset.form-item-query {
+        flex-grow: 2;
+      }
+      & > fieldset.fieldset {
+        flex-shrink: 2;
+      }
+    }
+    @media (max-width: 992px) {
+      .form-row {
+        & > fieldset.form-item-query {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    .checkbox {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+
+      .custom-control-label {
+        font-size: 20px;
       }
     }
 
@@ -486,7 +508,8 @@ ul.field--name-field-categories:before {
       }
     }
 
-    label {
+    .form-item-query label,
+    legend {
       /* Emulate BS4 sr-only: label accessibility */
       border: 0;
       clip: rect(0, 0, 0, 0);
