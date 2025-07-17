@@ -451,6 +451,13 @@ ul.field--name-field-categories:before {
         flex-shrink: 2;
       }
     }
+    @media (max-width: 505px) {
+      .form-row {
+        .form-actions:has(input[name="reset"]) {
+          margin-top: 0.75rem;
+        }
+      }
+    }
     @media (max-width: 992px) {
       .form-row {
         & > fieldset.form-item-query {
