@@ -50,6 +50,34 @@ class CourseLinkController extends ControllerBase {
       'link' => $defaultLink,
     ];
 
+    $storage = $this->entityTypeManager()->getStorage('course_link');
+    $queryBase = $storage->getQuery()
+      ->condition('guide.entity.status', 1);
+
+    // Exact match attempt.
+    $query = clone $queryBase;
+    $query = $query->condition('exact_name', $id);
+    $ids = $query->execute();
+
+    if (!empty($ids)) {
+      $course = $storage->load(reset($ids));
+      $guide = $course->guide->entity;
+      $link = $guide->toUrl('canonical', ['absolute' => TRUE])->toString();
+
+      if (!$toJson) {
+        $request->getSession()->set('guides.d2l', TRUE);
+        return new RedirectResponse($link);
+      }
+
+      $info['link'] = $link;
+      $info['title'] = $guide->label();
+      if (!$guide->is_subject_guide->getString()) {
+        $info['type'] = 'Course Guide';
+      }
+
+      return new JsonResponse($info);
+    }
+
     $pattern = '/^(?P<year>\d{4})(?P<term>\w{2})_(?P<prefix>\w+)\*(?P<course_number>\d+)\*?(?P<campus>\w{2})(?P<section>\S+)(\s+MULTI(\s\d+)?)?$/';
     $fields = ['prefix', 'course_number', 'campus', 'year', 'term', 'section'];
 
@@ -60,10 +88,6 @@ class CourseLinkController extends ControllerBase {
 
     $empties = [];
     if (preg_match($pattern, $id, $matches)) {
-      $storage = $this->entityTypeManager()->getStorage('course_link');
-      $queryBase = $storage->getQuery()
-        ->condition('guide.entity.status', 1);
-
       while (count($fields) != 0) {
         $query = clone $queryBase;
         foreach ($fields as $field) {

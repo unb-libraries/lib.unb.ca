@@ -124,7 +124,6 @@ class CourseLink extends ContentEntityBase implements ContentEntityInterface, Us
     $fields['prefix'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Prefix'))
       ->setDescription(t('E.g. ENGL (ONLY a single value is permitted)'))
-      ->setRequired(TRUE)
       ->addConstraint('SingleValue')
       ->setSettings(
         [
@@ -166,6 +165,21 @@ class CourseLink extends ContentEntityBase implements ContentEntityInterface, Us
       ->setDisplayOptions('form', [
         'type' => 'string_textfield',
         'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['exact_name'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Exact Name'))
+      ->setDescription(t('For D2L-borne courses only. Do NOT use in combination with fields above.'))
+      ->setRequired(FALSE)
+      ->setSettings(
+        [
+          'max_length' => 255,
+        ]
+      )
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 2,
       ])
       ->setDisplayConfigurable('form', TRUE);
 
