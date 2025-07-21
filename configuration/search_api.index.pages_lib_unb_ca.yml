@@ -8,6 +8,7 @@ dependencies:
     - field.storage.user.field_last_name
     - field.storage.paragraph.field_section_content
     - field.storage.paragraph.field_section_label
+    - field.storage.profile.field_biography
     - search_api.server.drupal_solr_lib_unb_ca
     - core.entity_view_mode.node.full
   module:
@@ -16,6 +17,7 @@ dependencies:
     - paragraphs
     - user
     - node
+    - profile
     - search_api
     - search_api_exclude
 third_party_settings:
@@ -144,6 +146,52 @@ field_settings:
     indexed_locked: true
     type_locked: true
     hidden: true
+  profile_active:
+    label: 'Profile » Active'
+    datasource_id: 'entity:profile'
+    property_path: status
+    type: boolean
+    dependencies:
+      module:
+        - profile
+  profile_bio:
+    label: 'Profile » Biography » Processed text'
+    datasource_id: 'entity:profile'
+    property_path: 'field_biography:processed'
+    type: text
+    dependencies:
+      config:
+        - field.storage.profile.field_biography
+  profile_first_name:
+    label: 'Profile » User » First Name'
+    datasource_id: 'entity:profile'
+    property_path: 'uid:entity:field_first_name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.user.field_first_name
+      module:
+        - profile
+        - user
+  profile_id:
+    label: 'Profile » ID'
+    datasource_id: 'entity:profile'
+    property_path: profile_id
+    type: integer
+    dependencies:
+      module:
+        - profile
+  profile_last_name:
+    label: 'Profile » User » Last Name'
+    datasource_id: 'entity:profile'
+    property_path: 'uid:entity:field_last_name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.user.field_last_name
+      module:
+        - profile
+        - user
   rendered_item:
     label: 'Rendered HTML output'
     property_path: rendered_item
@@ -207,6 +255,10 @@ datasource_settings:
         - library_page
         - news_post
     languages:
+      default: true
+      selected: {  }
+  'entity:profile':
+    bundles:
       default: true
       selected: {  }
 processor_settings:
