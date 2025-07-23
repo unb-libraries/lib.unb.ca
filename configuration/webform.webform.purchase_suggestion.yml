@@ -477,7 +477,7 @@ handlers:
     handler_id: fr_purchase_suggestion
     label: 'FR Purchase Suggestion'
     notes: ''
-    status: true
+    status: false
     conditions:
       enabled:
         ':input[name="campus"]':
@@ -581,6 +581,166 @@ handlers:
         -
           value: Philosophy|ecmoore@unb.ca
           text: ecmoore@unb.ca
+        -
+          value: Physics|t.zaraiskaya@unb.ca
+          text: t.zaraiskaya@unb.ca
+        -
+          value: 'Political Science/Politics|bcull@unb.ca'
+          text: bcull@unb.ca
+        -
+          value: Psychology|r.witherspoon@unb.ca
+          text: r.witherspoon@unb.ca
+        -
+          value: 'Renaissance College|bcull@unb.ca'
+          text: bcull@unb.ca
+        -
+          value: 'Science Library Reference Collection|t.zaraiskaya@unb.ca'
+          text: t.zaraiskaya@unb.ca
+        -
+          value: 'Social Work|bcull@unb.ca'
+          text: bcull@unb.ca
+        -
+          value: Sociology|bcull@unb.ca
+          text: bcull@unb.ca
+        -
+          value: 'Womens Studies|bcull@unb.ca'
+          text: bcull@unb.ca
+        -
+          value: _other_
+          text: jsmyth@unb.ca
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: '[webform_submission:values:email:raw]'
+      from_options: {  }
+      from_name: '[webform_submission:values:name:raw]'
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Purchase Suggestion'
+      body: "<p>The following information was submitted through our <b>Purchase Suggestion</b> form by <b>{{ webform_token('[webform_submission:user]', webform_submission) }}</b> on <b>{{ webform_token('[webform_submission:created]', webform_submission) }}</b>.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  fr_purchase_suggestion_ec_moore_sabbatical_:
+    id: email
+    handler_id: fr_purchase_suggestion_ec_moore_sabbatical_
+    label: 'FR Purchase Suggestion [EC Moore sabbatical]'
+    notes: ''
+    status: true
+    conditions:
+      enabled:
+        ':input[name="campus"]':
+          checked: true
+    weight: 3
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:subject_area:raw]'
+      to_options:
+        -
+          value: Anthropology|ecmoore@unb.ca
+          text: jsmyth@unb.ca
+        -
+          value: Biology|t.zaraiskaya@unb.ca
+          text: t.zaraiskaya@unb.ca
+        -
+          value: 'Biomedical Engineering|saran.croos@unb.ca'
+          text: saran.croos@unb.ca
+        -
+          value: 'Chemical Engineering|saran.croos@unb.ca'
+          text: saran.croos@unb.ca
+        -
+          value: Chemistry|t.zaraiskaya@unb.ca
+          text: t.zaraiskaya@unb.ca
+        -
+          value: 'Civil Engineering|saran.croos@unb.ca'
+          text: saran.croos@unb.ca
+        -
+          value: 'Classics & Ancient History|ecmoore@unb.ca'
+          text: jsmyth@unb.ca
+        -
+          value: 'Computer Science|saran.croos@unb.ca'
+          text: saran.croos@unb.ca
+        -
+          value: 'Culture & Media Studies|ecmoore@unb.ca'
+          text: jsmyth@unb.ca
+        -
+          value: 'Earth Sciences|T.Zaraiskaya@unb.ca'
+          text: T.Zaraiskaya@unb.ca
+        -
+          value: Economics|bcull@unb.ca
+          text: bcull@unb.ca
+        -
+          value: Education|bcull@unb.ca
+          text: bcull@unb.ca
+        -
+          value: 'Electrical & Computer Engineering|saran.croos@unb.ca'
+          text: saran.croos@unb.ca
+        -
+          value: Engineering|saran.croos@unb.ca
+          text: saran.croos@unb.ca
+        -
+          value: 'Engineering Library Reference Collection|saran.croos@unb.ca'
+          text: saran.croos@unb.ca
+        -
+          value: English|ecmoore@unb.ca
+          text: jsmyth@unb.ca
+        -
+          value: 'Forestry & Environmental Management|t.zaraiskaya@unb.ca'
+          text: t.zaraiskaya@unb.ca
+        -
+          value: French|ecmoore@unb.ca
+          text: jsmyth@unb.ca
+        -
+          value: 'Geodesy and Geomatics Engineering|saran.croos@unb.ca'
+          text: saran.croos@unb.ca
+        -
+          value: Geology|t.zaraiskaya@unb.ca
+          text: t.zaraiskaya@unb.ca
+        -
+          value: 'Harriet Irving Library Reference Collection|hanratty@unb.ca'
+          text: hanratty@unb.ca
+        -
+          value: 'Health Sciences|r.whitherspoon@unb.ca'
+          text: r.witherspoon@unb.ca
+        -
+          value: History|ecmoore@unb.ca
+          text: jsmyth@unb.ca
+        -
+          value: Interdisciplinary|bcull@unb.ca
+          text: bcull@unb.ca
+        -
+          value: 'Kinesiology & Recreation|r.witherspoon@unb.ca'
+          text: r.witherspoon@unb.ca
+        -
+          value: Languages|ecmoore@unb.ca
+          text: jsmyth@unb.ca
+        -
+          value: Management|julie.morris@unb.ca
+          text: julie.morris@unb.ca
+        -
+          value: 'Mathematics & Statistics|t.zaraiskaya@unb.ca'
+          text: t.zaraiskaya@unb.ca
+        -
+          value: 'Mechanical Engineering|saran.croos@unb.ca'
+          text: saran.croos@unb.ca
+        -
+          value: Nursing|r.witherspoon@unb.ca
+          text: r.witherspoon@unb.ca
+        -
+          value: Philosophy|ecmoore@unb.ca
+          text: jsmyth@unb.ca
         -
           value: Physics|t.zaraiskaya@unb.ca
           text: t.zaraiskaya@unb.ca
