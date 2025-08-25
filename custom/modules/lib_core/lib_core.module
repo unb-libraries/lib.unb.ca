@@ -412,6 +412,7 @@ function _lib_core_contactable_department($mailbox) {
     'lawlib' => 'Law Library',
     'lib' => 'UNB Libraries Administration',
     'library' => 'UNB Libraries Administration',
+    'library-instruction' => 'Library Instruction',
     'libweb' => 'Website Administrator',
     'maproom' => 'Map Room',
     'mic' => 'Microforms Collection',
