@@ -635,7 +635,7 @@ handlers:
   fr_purchase_suggestion_ec_moore_sabbatical_:
     id: email
     handler_id: fr_purchase_suggestion_ec_moore_sabbatical_
-    label: 'FR Purchase Suggestion [EC Moore sabbatical]'
+    label: 'FR Purchase Suggestion [Aug 2025 - E Moore sabbatical]'
     notes: ''
     status: true
     conditions:
@@ -650,7 +650,7 @@ handlers:
       to_options:
         -
           value: Anthropology|ecmoore@unb.ca
-          text: jsmyth@unb.ca
+          text: bcull@unb.ca
         -
           value: Biology|t.zaraiskaya@unb.ca
           text: t.zaraiskaya@unb.ca
@@ -668,16 +668,16 @@ handlers:
           text: saran.croos@unb.ca
         -
           value: 'Classics & Ancient History|ecmoore@unb.ca'
-          text: jsmyth@unb.ca
+          text: i093a@unb.ca
         -
           value: 'Computer Science|saran.croos@unb.ca'
           text: saran.croos@unb.ca
         -
           value: 'Culture & Media Studies|ecmoore@unb.ca'
-          text: jsmyth@unb.ca
+          text: i093a@unb.ca
         -
           value: 'Earth Sciences|T.Zaraiskaya@unb.ca'
-          text: T.Zaraiskaya@unb.ca
+          text: t.zaraiskaya@unb.ca
         -
           value: Economics|bcull@unb.ca
           text: bcull@unb.ca
@@ -695,13 +695,13 @@ handlers:
           text: saran.croos@unb.ca
         -
           value: English|ecmoore@unb.ca
-          text: jsmyth@unb.ca
+          text: i093a@unb.ca
         -
           value: 'Forestry & Environmental Management|t.zaraiskaya@unb.ca'
           text: t.zaraiskaya@unb.ca
         -
           value: French|ecmoore@unb.ca
-          text: jsmyth@unb.ca
+          text: i093a@unb.ca
         -
           value: 'Geodesy and Geomatics Engineering|saran.croos@unb.ca'
           text: saran.croos@unb.ca
@@ -716,7 +716,7 @@ handlers:
           text: r.witherspoon@unb.ca
         -
           value: History|ecmoore@unb.ca
-          text: jsmyth@unb.ca
+          text: i093a@unb.ca
         -
           value: Interdisciplinary|bcull@unb.ca
           text: bcull@unb.ca
@@ -725,7 +725,7 @@ handlers:
           text: r.witherspoon@unb.ca
         -
           value: Languages|ecmoore@unb.ca
-          text: jsmyth@unb.ca
+          text: i093a@unb.ca
         -
           value: Management|julie.morris@unb.ca
           text: julie.morris@unb.ca
@@ -740,7 +740,7 @@ handlers:
           text: r.witherspoon@unb.ca
         -
           value: Philosophy|ecmoore@unb.ca
-          text: jsmyth@unb.ca
+          text: i093a@unb.ca
         -
           value: Physics|t.zaraiskaya@unb.ca
           text: t.zaraiskaya@unb.ca
