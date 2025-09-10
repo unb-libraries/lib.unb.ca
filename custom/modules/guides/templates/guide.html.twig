@@ -69,20 +69,20 @@
                 {% for editor in editors %}
                   {% set account = editor.entity.field_user.entity %}
                   {% set profile = account.public_profiles.get(0).entity %}
-                  {% include '@guides/includes/editor.html.twig' with {account: account, profile: profile, show_extended_info: TRUE} %}
+                  {% include '@guides/includes/editor.html.twig' with {account: account, profile: profile, show_extended_info: TRUE, align: 'center'} %}
                   {% if loop.index < editorCount %}
                     <hr class="border-secondary w-75">
                   {% endif %}
                 {% endfor %}
                 {% set contacts = guide.other_contacts %}
                 {% if editors is empty and contacts is empty %}
-                  {% include '@guides/includes/other-contact-askus.html.twig' %}
+                  {% include '@guides/includes/other-contact-askus.html.twig' with {align: 'center'} %}
                 {% else %}
                   {% if editors is not empty and contacts is not empty %}
                     <hr class="border-secondary w-75">
                   {% endif %}
                   {% for contact in contacts %}
-                    {% include '@guides/includes/other-contact-' ~ contact.getString ~ '.html.twig' %}
+                    {% include '@guides/includes/other-contact-' ~ contact.getString ~ '.html.twig' with {align: 'center'} %}
                     {% if not loop.last %}
                       <hr class="border-secondary w-75">
                     {% endif %}

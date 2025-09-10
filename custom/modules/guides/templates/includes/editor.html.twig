@@ -6,7 +6,7 @@
     '#uri': profile.field_profile_picture.entity.uri.value,
     '#alt': profile.field_profile_picture.alt,
   } %}
-  <li class="text-center mt-0 mb-3">{{ picture }}</li>
+  <li class="{% if align %}text-{{ align }} {% endif %}mt-0 mb-3">{{ picture }}</li>
 {% endif %}
   <li>
 {% if profile %}
