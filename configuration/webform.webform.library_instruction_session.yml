@@ -493,12 +493,12 @@ handlers:
       cc_options: {  }
       from_mail: unb-libraries-no-reply@unb.ca
       from_options: {  }
-      from_name: 'Harriet Irving Library Request a Library Instruction Session Form'
+      from_name: 'UNB Libraries'
       reply_to: '[webform_submission:values:unb_email_address:raw]'
       return_path: ''
       sender_mail: ''
       sender_name: ''
-      subject: 'New Request Library Instruction Session Submission'
+      subject: 'Library Instruction Request Submitted'
       body: "<p>The following information was submitted through our <b>Harriet Irving Library Instruction Session Request</b> form on {{ webform_token('[webform_submission:created]', webform_submission) }}.</p>\r\n\r\n<blockquote>{{ webform_token('[webform_submission:values]', webform_submission) }}</blockquote>\r\n\r\n<div><img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\"></div>"
       excluded_elements: {  }
       ignore_access: false
