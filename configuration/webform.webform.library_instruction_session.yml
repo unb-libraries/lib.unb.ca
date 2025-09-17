@@ -57,7 +57,7 @@ elements: |-
     '#next_button_label': 'Complete ›'
     fieldset:
       '#type': fieldset
-      '#title': 'Course Information Section'
+      '#title': 'Course Information Details'
       '#title_display': invisible
       summary_so_far:
         '#type': webform_markup
