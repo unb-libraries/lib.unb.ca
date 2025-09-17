@@ -535,7 +535,7 @@ handlers:
       sender_mail: ''
       sender_name: ''
       subject: 'UNB Libraries Instruction Request'
-      body: "<p>We have received your library instruction request. Your submitted information (minus the uploaded file) was:</p>\r\n<blockquote>{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}</blockquote>\r\n<div><img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\"></div>"
+      body: "<p>Thank you for requesting a library instruction session. We look forward to working with you. We'll respond to you as soon as possible, and no later than 72 hours from now.</p>\r\n\r\n<p>Reminder: if you are a student seeking research assistance, visit our <a href=\"/guides/view-all\">Research Guides</a>, <a href=\"/connect\">Get Specialized Help</a>, or <a href=\"/help/ask-us\">Ask Us</a> pages.</p>\r\n\r\nYour submitted information (minus the uploaded file) was:</p>\r\n<blockquote>{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}</blockquote>\r\n<div><img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\"></div>"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
