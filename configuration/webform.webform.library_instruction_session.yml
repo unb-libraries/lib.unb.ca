@@ -397,7 +397,7 @@ settings:
   confirmation_type: page
   confirmation_url: ''
   confirmation_title: ''
-  confirmation_message: "<p class=\"alert alert-light border\">\r\n<span aria-hidden=\"true\" class=\"fa-check fas text-success\">&nbsp;</span>Thank you for your submission. We will be in touch.</p>"
+  confirmation_message: "<p>Thank you for requesting a library instruction session. We look forward to working with you. We&apos;ll respond to you as soon as possible, and no later than 72 hours from now.</p>\r\n\r\n<p>Reminder: if you are a student seeking research assistance, visit our <a href=\"/guides/view-all\">Research Guides</a>, <a href=\"/connect\">Get Specialized Help</a>, or <a href=\"/help/ask-us\">Ask Us</a> pages.</p>"
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
