@@ -535,7 +535,7 @@ handlers:
       return_path: ''
       sender_mail: ''
       sender_name: ''
-      subject: 'UNB Libraries Instruction Session Request'
+      subject: 'UNB Libraries Instruction Request'
       body: "<p>We have received your library instruction request. Your submitted information (minus the uploaded file) was:</p>\r\n<blockquote>{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}</blockquote>\r\n<div><img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\"></div>"
       excluded_elements: {  }
       ignore_access: false
