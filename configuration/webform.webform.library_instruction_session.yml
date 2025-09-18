@@ -492,7 +492,7 @@ handlers:
       cc_options: {  }
       from_mail: unb-libraries-no-reply@unb.ca
       from_options: {  }
-      from_name: 'UNB Libraries'
+      from_name: _default
       reply_to: '[webform_submission:values:unb_email_address:raw]'
       return_path: ''
       sender_mail: ''
@@ -503,7 +503,7 @@ handlers:
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: false
-      exclude_attachments: false
+      exclude_attachments: true
       html: true
       attachments: true
       twig: true
