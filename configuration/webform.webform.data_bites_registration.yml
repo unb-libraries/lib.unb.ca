@@ -43,7 +43,7 @@ elements: |-
         '#title': 'Your Name'
         '#autocomplete': name
         '#required': true
-        '#default_value': '[current-user:display-name]'
+        '#default_value': '[current-user:field_first_name] [current-user:field_last_name]'
       email:
         '#type': email
         '#title': 'Your Email'
