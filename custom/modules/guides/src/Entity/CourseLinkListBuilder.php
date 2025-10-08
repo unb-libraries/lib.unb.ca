@@ -78,7 +78,7 @@ class CourseLinkListBuilder extends EntityListBuilder {
 <p>For <strong>Colleague-borne courses</strong>:</p>
 <ul>
 <li>Specific course guides must minimally have a <strong>PREFIX</strong> and a <strong>COURSE NUMBER</strong>.</li>
-<li>to have further granularity, optionally add YEAR, TERM and SECTION</li>
+<li>to have further granularity, optionally add YEAR, TERM, CAMPUS and SECTION</li>
 <li>to link multiple D2L courses to a particular guide, i.e. History 2254 and HIST 4255 or ENGL 2134 and FILM 2134, multiple PREFIX/COURSE NUMBER sets may be entered. Each linked course <strong>MUST</strong> have a separate entry</li>
 <li>guides with <strong>ONLY a PREFIX</strong> entered, i.e. ANTH, are intended to be the default guide for linking all D2L courses with that course prefix</li>
 </ul>
