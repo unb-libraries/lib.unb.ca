@@ -117,6 +117,7 @@ class CourseLinkListBuilder extends EntityListBuilder {
       ->condition('guide', $guide->id())
       ->sort('prefix')
       ->sort('course_number')
+      ->sort('year')
       ->sort('section');
 
     if ($this->limit) {
@@ -131,11 +132,11 @@ class CourseLinkListBuilder extends EntityListBuilder {
    * {@inheritdoc}
    */
   public function buildHeader() {
+    $header['prefix'] = $this->t('Prefix');
+    $header['course_number'] = $this->t('Course Number');
     $header['year'] = $this->t('Year');
     $header['term'] = $this->t('Term');
     $header['campus'] = $this->t('Campus');
-    $header['prefix'] = $this->t('Prefix');
-    $header['course_number'] = $this->t('Course Number');
     $header['section'] = $this->t('Section');
     $header['exact_name'] = $this->t('Exact Name');
     return $header + parent::buildHeader();
@@ -145,11 +146,11 @@ class CourseLinkListBuilder extends EntityListBuilder {
    * {@inheritdoc}
    */
   public function buildRow(EntityInterface $entity) {
+    $row['prefix'] = $entity->prefix->value;
+    $row['coures_number'] = $entity->course_number->value;
     $row['year'] = $entity->year->value;
     $row['term'] = $entity->term->value;
     $row['campus'] = $entity->campus->value;
-    $row['prefix'] = $entity->prefix->value;
-    $row['coures_number'] = $entity->course_number->value;
     $row['section'] = $entity->section->value;
     $row['exact_name'] = $entity->exact_name->value;
 

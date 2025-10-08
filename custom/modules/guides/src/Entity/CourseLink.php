@@ -68,6 +68,37 @@ class CourseLink extends ContentEntityBase implements ContentEntityInterface, Us
         ],
       );
 
+    $fields['prefix'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Prefix'))
+      ->setDescription(t('E.g. ENGL (ONLY a single value is permitted)'))
+      ->addConstraint('SingleValue')
+      ->setSettings(
+        [
+          'max_length' => 255,
+        ]
+      )
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['course_number'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Course Number'))
+      ->setDescription(t('E.g. 1000 (ONLY a single value is permitted)'))
+      ->setRequired(FALSE)
+      ->addConstraint('SingleValue')
+      ->setSettings(
+        [
+          'max_length' => 255,
+        ]
+      )
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
     $fields['year'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Year'))
       ->setDescription(t('E.g. @year', ['@year' => date('Y')]))
@@ -97,6 +128,7 @@ class CourseLink extends ContentEntityBase implements ContentEntityInterface, Us
       ])
       ->setDisplayOptions('form', [
         'type' => 'options_select',
+        'weight' => 0,
       ])
       ->setDisplayConfigurable('form', TRUE);
 
@@ -118,36 +150,6 @@ class CourseLink extends ContentEntityBase implements ContentEntityInterface, Us
       ])
       ->setDisplayOptions('form', [
         'type' => 'options_select',
-      ])
-      ->setDisplayConfigurable('form', TRUE);
-
-    $fields['prefix'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Prefix'))
-      ->setDescription(t('E.g. ENGL (ONLY a single value is permitted)'))
-      ->addConstraint('SingleValue')
-      ->setSettings(
-        [
-          'max_length' => 255,
-        ]
-      )
-      ->setDisplayOptions('form', [
-        'type' => 'string_textfield',
-        'weight' => 0,
-      ])
-      ->setDisplayConfigurable('form', TRUE);
-
-    $fields['course_number'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Course Number'))
-      ->setDescription(t('E.g. 1000 (ONLY a single value is permitted)'))
-      ->setRequired(FALSE)
-      ->addConstraint('SingleValue')
-      ->setSettings(
-        [
-          'max_length' => 255,
-        ]
-      )
-      ->setDisplayOptions('form', [
-        'type' => 'string_textfield',
         'weight' => 0,
       ])
       ->setDisplayConfigurable('form', TRUE);
