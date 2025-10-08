@@ -79,16 +79,30 @@ class CourseLinkController extends ControllerBase {
     }
 
     $pattern = '/^(?P<year>\d{4})(?P<term>\w{2})_(?P<prefix>\w+)\*(?P<course_number>\d+)\*?(?P<campus>\w{2})(?P<section>\S+)(\s+MULTI(\s\d+)?)?$/';
-    $fields = ['prefix', 'course_number', 'campus', 'year', 'term', 'section'];
+    $allFields = ['prefix', 'course_number', 'year', 'term', 'campus', 'section'];
+    $searchOrder = [
+      ['prefix', 'course_number', 'year', 'term', 'campus', 'section'],
+      ['prefix', 'course_number', 'year', 'term', 'campus'],
+      ['prefix', 'course_number', 'year', 'term'],
+      ['prefix', 'course_number', 'year'],
+      ['prefix', 'course_number', 'campus'],
+      ['prefix', 'course_number', 'year', 'campus'],
+      ['prefix', 'course_number'],
+      ['prefix'],
+    ];
 
     if (preg_match('/^ONLINE_/', $id)) {
       $pattern = '/^ONLINE_(?P<prefix>\w+)\*(?P<course_number>\d+)\*?(?P<campus>\w{2})(?P<section>\S+)/';
-      $fields = ['prefix', 'course_number', 'section'];
+      $searchOrder = [
+        ['prefix', 'course_number', 'section'],
+        ['prefix', 'course_number'],
+        ['prefix'],
+      ];
     }
 
-    $empties = [];
     if (preg_match($pattern, $id, $matches)) {
-      while (count($fields) != 0) {
+      foreach ($searchOrder as $fields) {
+        $empties = array_values(array_diff($allFields, $fields));
         $query = clone $queryBase;
         foreach ($fields as $field) {
           $query = $query->condition($field, $matches[$field]);
@@ -116,8 +130,6 @@ class CourseLinkController extends ControllerBase {
 
           return new JsonResponse($info);
         }
-
-        $empties[] = array_pop($fields);
       }
     }
 
