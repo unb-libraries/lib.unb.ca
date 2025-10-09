@@ -5,11 +5,11 @@
   /* Mirror SVG settings for Link skin */
   background-color: $black;
   border-radius: 100%;
-  box-shadow: $ivy-boxshadow;
-  right: $ivy-position;
-  bottom: 108px;
-  width: $ivy-size;
-  height: $ivy-size;
+  box-shadow: inset 0 0 2px 1px $white;
+  right: 32px;
+  bottom: 32px;
+  width: 56px;
+  height: 56px;
   text-indent: -9999px;
   transition: none;
   transition: opacity $ivy-transition-duration ease-in-out, outline $ivy-transition-duration ease-in-out;
