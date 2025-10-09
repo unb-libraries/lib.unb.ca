@@ -94,6 +94,7 @@ class CourseLinkController extends ControllerBase {
     if (preg_match('/^ONLINE_/', $id)) {
       $pattern = '/^ONLINE_(?P<prefix>\w+)\*(?P<course_number>\d+)\*?(?P<campus>\w{2})(?P<section>\S+)/';
       $searchOrder = [
+        ['prefix', 'course_number', 'campus', 'section'],
         ['prefix', 'course_number', 'section'],
         ['prefix', 'course_number'],
         ['prefix'],
