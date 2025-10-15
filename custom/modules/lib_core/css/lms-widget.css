@@ -1,3 +1,17 @@
+@import url("//hello.myfonts.net/count/2e9ce8");
+
+@font-face {font-family: 'ProximaNovaA-Regular';src: url('/themes/contrib/unb_lib_theme/fonts/2E9CE8_5_0.eot');src: url('/themes/contrib/unb_lib_theme/fonts/2E9CE8_5_0.eot?#iefix') format('embedded-opentype'),url('/themes/contrib/unb_lib_theme/fonts/2E9CE8_5_0.woff2') format('woff2'),url('/themes/contrib/unb_lib_theme/fonts/2E9CE8_5_0.woff') format('woff'),url('/themes/contrib/unb_lib_theme/fonts/2E9CE8_5_0.ttf') format('truetype');}
+@font-face {font-family: 'ProximaNovaA-Semibold';src: url('/themes/contrib/unb_lib_theme/fonts/2E9CE8_6_0.eot');src: url('/themes/contrib/unb_lib_theme/fonts/2E9CE8_6_0.eot?#iefix') format('embedded-opentype'),url('/themes/contrib/unb_lib_theme/fonts/2E9CE8_6_0.woff2') format('woff2'),url('/themes/contrib/unb_lib_theme/fonts/2E9CE8_6_0.woff') format('woff'),url('/themes/contrib/unb_lib_theme/fonts/2E9CE8_6_0.ttf') format('truetype');}
+
+* {
+    font-family: 'ProximaNovaA-Regular', 'Century Gothic', AppleGothic, Arial, sans-serif;
+}
+
+strong {
+    font-family: 'ProximaNovaA-Semibold', 'Century Gothic', AppleGothic, Arial, sans-serif;
+    font-weight: normal;
+}
+
 #header, #footer {
   display: none;
 }
