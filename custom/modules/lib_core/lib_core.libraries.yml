@@ -104,3 +104,9 @@ toolbar-overrides:
   css:
     theme:
       css/toolbar-overrides.css: {}
+
+lms-widget:
+  version: VERSION
+  css:
+    theme:
+      css/lms-widget.css: {}

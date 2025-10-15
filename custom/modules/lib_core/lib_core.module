@@ -26,6 +26,14 @@ function lib_core_theme($existing, $type, $theme, $path) {
     'help_info' => [
       'variables' => ['info' => NULL],
     ],
+    'lms_widget' => [
+      'variables' => [
+        'chat' => NULL,
+        'guides' => NULL,
+        'is_post' => NULL,
+        'reserves' => NULL,
+      ],
+    ],
     'proxy_login' => [
       'variables' => ['url' => NULL],
     ],

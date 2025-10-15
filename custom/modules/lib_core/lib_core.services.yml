@@ -25,3 +25,7 @@ services:
     class: Drupal\lib_core\Services\RouteSubscriber
     tags:
       - { name: event_subscriber }
+  lib_core.theme_negotiator:
+    class: 'Drupal\lib_core\Services\ThemeNegotiator'
+    tags:
+      - { name: theme_negotiator, priority: 100 }

@@ -74,10 +74,49 @@ function _unb_libraries_askus_check_presence($queue = 'askus') {
  *   The offline re-open text.
  */
 function _unb_libraries_askus_get_offline_note() {
-  // Note: Integrate with Hours module when ready.
-  $note = 'Chat service will re-open at [time] [day].';
+  $base = 'Ask Us is currently <strong>offline</strong>.';
 
-  return $note;
+  $now = new Datetime();
+  $today = $now->format('Y-m-d');
+  $tomorrow = $now->add(\DateInterval::createFromDateString('1 day'))
+    ->format('Y-m-d');
+
+  if ($opens_at = _getAskUsOpening()) {
+    $date = $opens_at->format('Y-m-d');
+    if ($date === $today) {
+      $message = sprintf($base . ' Chat service will re-open at %s today.', $opens_at->format('g:i a'));
+    }
+    elseif ($date === $tomorrow) {
+      $message = sprintf($base . ' Chat service will re-open at %s tomorrow.', $opens_at->format('g:i a'));
+    }
+    else {
+      $message = sprintf($base . 'Chat service will re-open at %s on %s.', $opens_at->format('g:i a'), $opens_at->format('F jS'));
+    }
+  }
+  else {
+    $message = $base;
+  }
+  return $message;
+}
+
+/**
+ * Get the date and time when the askus chat reopens.
+ *
+ * @return object
+ *   An object for the reopening date/time.
+ */
+function _getAskUsOpening() {
+  try {
+    $client = \Drupal::httpClient();
+    $response = $client->get('https://intranet.lib.unb.ca/api/hours/hil_help');
+    $json_data = (string) $response->getBody();
+    $json = json_decode($json_data);
+    $opens_at = new Datetime($json->reopensAt);
+    return $opens_at;
+  }
+  catch (\Exception $e) {
+    return NULL;
+  }
 }
 
 /**

@@ -1,0 +1,33 @@
+{% if is_post %}
+<p id="guides">
+  {% if guides is empty %}
+    <strong>Guides:</strong> <a href="https://lib.unb.ca/guides/getting-started">Getting Started</a>
+  {% else %}
+    <strong>{{ guides.type }}/Librarian Contacts:</strong> <a href="{{ guides.link }}" target="_blank" rel="noopener noreferrer">{{ guides.title }}</a>
+  {% endif %}
+</p>
+
+<p id="reserves">
+  <strong>Course Reserves:</strong>
+  {% if reserves is not empty %}
+    {% if reserves.items == 0 %}
+      There are no items on reserve for this course.
+    {% else %}
+      <a href="https://web.lib.unb.ca/reserves/index.php/login?currentURI=/reserves/index.php/viewReserves/{{ reserves.sectionid }}" target="_blank">There are {{ reserves.items }} items on reserve for this course</a>
+    {% endif %}
+  {% else %}
+    No matches for course reserves.
+  {% endif %}
+</p>
+
+<p id="remote"><strong>Library FAQs:</strong> <a href="https://lib.unb.ca/what-to-expect" target="_blank" rel="noopener noreferrer">Find out about using library resources and services</a>.</p>
+
+<p id="contact">
+  {% if chat.status != 'available' %}
+    {{ chat.note|raw }} (<a href="https://lib.unb.ca/help/ask-us" target="_blank" rel="noopener noreferrer">Other ways to contact us</a>)
+  {% else %}
+    <a class="btn btn-inverse" role="button" href="https://lib.unb.ca/help/ask-us" target="_blank" rel="noopener noreferrer">Ask Us <i class="fa fa-comments fa-lg fa-wh"></i></a> Get research assistance
+  {% endif %}
+</p>
+{% endif %}
+<p class="text-right"><a href="https://lib.unb.ca" target="_blank" rel="noopener noreferrer">{{ include('@unb_lib_theme/includes/unb-lib-logo.html.twig') }}</a></p>

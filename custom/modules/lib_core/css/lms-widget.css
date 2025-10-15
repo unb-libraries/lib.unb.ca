@@ -1,0 +1,40 @@
+#header, #footer {
+  display: none;
+}
+
+/* UNB Libraries Logo SVG */
+.unb-lib-logo {
+  width: 320px;
+  max-width: 100%;
+}
+
+.unb-lib-logo .fill-libraries {
+  fill: #cd0000;
+}
+
+/* UNB Logo SVG */
+.unb-logo {
+  width: 185px;
+  max-width: 100%;
+}
+
+.unb-logo .fill-sail {
+  fill: #cd0000;
+}
+
+.unb-logo .fill-unb {
+  fill: #fff;
+}
+
+#contact .btn {
+  color: #FFF;
+  border-radius: 4px;
+  background-color: #363636;
+  background-image: linear-gradient(to bottom, #444, #222);
+  background-repeat: repeat-x;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+
+#contact .btn:hover, #contact .btn:focus {
+  color: #fc0;
+}

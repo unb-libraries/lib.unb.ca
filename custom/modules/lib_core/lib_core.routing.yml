@@ -16,6 +16,16 @@ lib_core.proxy_login:
     _permission: 'access content'
   options:
     no_cache: 'TRUE'
+lib_core.lms_widget:
+  path: '/lms-widget'
+  defaults:
+    _controller: '\Drupal\lib_core\Controller\LmsWidgetController::lmsWidgetPage'
+    _title: 'LMS Widget'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+    _custom_theme: 'bootstrap_barrio'
 lib_core.woldcat_search_helper:
   path: '/worldcat-search-helper'
   defaults:
