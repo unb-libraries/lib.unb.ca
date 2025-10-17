@@ -83,7 +83,10 @@ class LmsWidgetController extends ControllerBase {
       'status' => _unb_libraries_askus_check_presence('askus')
     ];
 
-    if ($chat['status'] != 'available') {
+    if (in_array($chat['status'], ['away', 'dnd'])) {
+      $chat['note'] = 'Ask Us is currently busy. Please try agin later.';
+    }
+    elseif (!in_array($chat['status'],['available', 'chat'])) {
       $chat['note'] = _unb_libraries_askus_get_offline_note();
     }
 

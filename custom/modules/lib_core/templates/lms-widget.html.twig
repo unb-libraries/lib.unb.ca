@@ -23,10 +23,10 @@
 <p id="remote"><strong>Library FAQs:</strong> <a href="https://lib.unb.ca/what-to-expect" target="_blank" rel="noopener noreferrer">Find out about using library resources and services</a>.</p>
 
 <p id="contact">
-  {% if chat.status != 'available' %}
-    {{ chat.note|raw }} (<a href="https://lib.unb.ca/help/ask-us" target="_blank" rel="noopener noreferrer">Other ways to contact us</a>)
-  {% else %}
+  {% if chat.status in ['available' or 'chat']  %}
     <a class="btn btn-inverse" role="button" href="https://lib.unb.ca/help/ask-us" target="_blank" rel="noopener noreferrer">Ask Us <i class="fas fa-comments fa-lg"></i></a> Get research assistance
+  {% else %}
+    {{ chat.note|raw }} (<a href="https://lib.unb.ca/help/ask-us" target="_blank" rel="noopener noreferrer">Other ways to contact us</a>)
   {% endif %}
 </p>
 {% endif %}
