@@ -3,6 +3,7 @@
 namespace Drupal\lib_core\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\guides\Controller\CourseLinkController;
 use GuzzleHttp\ClientInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -127,16 +128,8 @@ class LmsWidgetController extends ControllerBase {
    *   Guides info.
    */
   private function getGuidesInfo($label) {
-    $url = 'https://lib.unb.ca/guides/d2l/' . urlencode($label) . '?json';
-
-    try {
-      $response = $this->httpClient->get($url);
-      $json_data = (string) $response->getBody();
-      return json_decode($json_data, TRUE);
-    }
-    catch (\GuzzleHttp\Exception\RequestException $e) {
-      return [];
-    }
+    $guides = new CourseLinkController();
+    return $guides->findLmsMatch($label);
   }
 
 }

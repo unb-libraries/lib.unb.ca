@@ -37,6 +37,24 @@ class CourseLinkController extends ControllerBase {
    */
   public function d2lRedirect($id, Request $request) {
     $toJson = $request->query->has('json') ? TRUE : FALSE;
+
+    $info = $this->findLmsMatch($id);
+
+    if (!$toJson) {
+      $request->getSession()->set('guides.d2l', TRUE);
+      return new RedirectResponse($info['link']);
+    }
+
+    return new JsonResponse($info);
+  }
+
+  /**
+   * Locate the best guide match based on a course ID.
+   *
+   * @param string $id
+   *   D2L course ID.
+   */
+  public function findLmsMatch($id) {
     $startGuide = $this->config('guides.settings')->get('start_guide');
 
     $defaultLink = Url::fromRoute('guides.categories', [], ['absolute' => TRUE])->toString();
@@ -64,18 +82,13 @@ class CourseLinkController extends ControllerBase {
       $guide = $course->guide->entity;
       $link = $guide->toUrl('canonical', ['absolute' => TRUE])->toString();
 
-      if (!$toJson) {
-        $request->getSession()->set('guides.d2l', TRUE);
-        return new RedirectResponse($link);
-      }
-
       $info['link'] = $link;
       $info['title'] = $guide->label();
       if (!$guide->is_subject_guide->getString()) {
         $info['type'] = 'Course Guide';
       }
 
-      return new JsonResponse($info);
+      return $info;
     }
 
     $pattern = '/^(?P<year>\d{4})(?P<term>\w{2})_(?P<prefix>\w+)\*(?P<course_number>\d+)\*?(?P<campus>\w{2})(?P<section>\S+)(\s+MULTI(\s\d+)?)?$/';
@@ -118,27 +131,19 @@ class CourseLinkController extends ControllerBase {
           $guide = $course->guide->entity;
           $link = $guide->toUrl('canonical', ['absolute' => TRUE])->toString();
 
-          if (!$toJson) {
-            $request->getSession()->set('guides.d2l', TRUE);
-            return new RedirectResponse($link);
-          }
-
           $info['link'] = $link;
           $info['title'] = $guide->label();
           if (!$guide->is_subject_guide->getString()) {
             $info['type'] = 'Course Guide';
           }
 
-          return new JsonResponse($info);
+          return $info;
         }
       }
     }
 
     // Invalid D2L course id or no matches.
-    if ($toJson) {
-      return new JsonResponse($info);
-    }
-    return new RedirectResponse($defaultLink);
+    return $info;
   }
 
 }
