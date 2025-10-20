@@ -8114,16 +8114,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.416.0",
+            "version": "v0.417.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "a7b96415b22d85cee12ab730089f1d1b66bc191f"
+                "reference": "d09f54168a8886ed758b5973e5231abefb5d5667"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/a7b96415b22d85cee12ab730089f1d1b66bc191f",
-                "reference": "a7b96415b22d85cee12ab730089f1d1b66bc191f",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/d09f54168a8886ed758b5973e5231abefb5d5667",
+                "reference": "d09f54168a8886ed758b5973e5231abefb5d5667",
                 "shasum": ""
             },
             "require": {
@@ -8152,9 +8152,9 @@
             ],
             "support": {
                 "issues": "https://github.com/googleapis/google-api-php-client-services/issues",
-                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.416.0"
+                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.417.0"
             },
-            "time": "2025-10-13T01:08:26+00:00"
+            "time": "2025-10-20T00:54:22+00:00"
         },
         {
             "name": "google/auth",
@@ -9583,16 +9583,16 @@
         },
         {
             "name": "league/csv",
-            "version": "9.26.0",
+            "version": "9.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/csv.git",
-                "reference": "7fce732754d043f3938899e5183e2d0f3d31b571"
+                "reference": "cb491b1ba3c42ff2bcd0113814f4256b42bae845"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/csv/zipball/7fce732754d043f3938899e5183e2d0f3d31b571",
-                "reference": "7fce732754d043f3938899e5183e2d0f3d31b571",
+                "url": "https://api.github.com/repos/thephpleague/csv/zipball/cb491b1ba3c42ff2bcd0113814f4256b42bae845",
+                "reference": "cb491b1ba3c42ff2bcd0113814f4256b42bae845",
                 "shasum": ""
             },
             "require": {
@@ -9670,7 +9670,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-10-01T11:24:54+00:00"
+            "time": "2025-10-16T08:22:09+00:00"
         },
         {
             "name": "league/oauth2-client",
@@ -16670,16 +16670,16 @@
         },
         {
             "name": "drupal/coder",
-            "version": "8.3.30",
+            "version": "8.3.31",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pfrenssen/coder.git",
-                "reference": "6b2edffac77582b1beb36ac155bfda5e7e055aff"
+                "reference": "07c14cf2217c2b53cc4469e2ed360141e6bb18ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pfrenssen/coder/zipball/6b2edffac77582b1beb36ac155bfda5e7e055aff",
-                "reference": "6b2edffac77582b1beb36ac155bfda5e7e055aff",
+                "url": "https://api.github.com/repos/pfrenssen/coder/zipball/07c14cf2217c2b53cc4469e2ed360141e6bb18ea",
+                "reference": "07c14cf2217c2b53cc4469e2ed360141e6bb18ea",
                 "shasum": ""
             },
             "require": {
@@ -16717,7 +16717,7 @@
                 "issues": "https://www.drupal.org/project/issues/coder",
                 "source": "https://www.drupal.org/project/coder"
             },
-            "time": "2025-05-25T09:52:20+00:00"
+            "time": "2025-10-16T12:23:49+00:00"
         },
         {
             "name": "drupal/core-dev",
