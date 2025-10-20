@@ -29,3 +29,7 @@ services:
     class: 'Drupal\lib_core\Services\ThemeNegotiator'
     tags:
       - { name: theme_negotiator, priority: 100 }
+  lib_core.response_subscriber:
+    class: 'Drupal\lib_core\Services\ResponseSubscriber'
+    tags:
+      - { name: event_subscriber }
