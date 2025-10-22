@@ -886,3 +886,28 @@ function _lib_core_recalls_validate_handler(array &$form, FormStateInterface $fo
 function lib_core_entity_type_alter(&$entity_types) {
   $entity_types['user']->setClass(User::class);
 }
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function lib_core_module_implements_alter(&$implementations, $hook) {
+  if ($hook == 'page_top') {
+    if (isset($implementations['lib_core'])) {
+      $group = $implementations['lib_core'];
+      unset($implementations['lib_core']);
+      $implementations['lib_core'] = $group;
+    }
+  }
+}
+
+/**
+ * Implements hook_page_top().
+ */
+function lib_core_page_top(array &$page_top) {
+  $current_theme_name = \Drupal::theme()->getActiveTheme()->getName();
+  if ($current_theme_name == 'bootstrap_barrio') {
+    if (isset($page_top['toolbar'])) {
+      unset($page_top['toolbar']);
+    }
+  }
+}
