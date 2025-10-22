@@ -84,7 +84,6 @@ Course Linking is not cloned, as it is unique, but guide metadata is, so you sho
 
     $deep_clone_fields = [
       'sections',
-      'editors',
       'feeds',
     ];
 
@@ -112,6 +111,15 @@ Course Linking is not cloned, as it is unique, but guide metadata is, so you sho
         }
       }
     }
+
+    // Set current user as the editor.
+    $newEditor = $this->entityTypeManager->getStorage('paragraph')->create([
+      'type' => 'guide_editor',
+      'field_display_editor' => TRUE,
+      'field_user' => $this->currentUser()->id(),
+    ]);
+    $newEditor->save();
+    $guide->editors->appendItem($newEditor);
 
     // Set new title.
     $guide->set('title', '[CLONE OF] ' . $entity->label());
