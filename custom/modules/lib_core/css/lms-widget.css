@@ -17,12 +17,8 @@ strong {
     font-size: 1.1rem;
 }
 
-#header, #footer {
+#header, #footer, .site-footer {
     display: none;
-}
-
-#footer {
-  padding-bottom: 0;
 }
 
 #main a {
