@@ -21,6 +21,10 @@ strong {
     display: none;
 }
 
+#footer {
+  padding-bottom: 0;
+}
+
 #main a {
     color: #006c8a;
     text-decoration: none;
