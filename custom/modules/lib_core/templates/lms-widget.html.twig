@@ -13,7 +13,7 @@
     {% if reserves.items == 0 %}
       There are no items on reserve for this course.
     {% else %}
-      <a href="https://web.lib.unb.ca/reserves/index.php/viewReserves/{{ reserves.sectionid }}" target="_blank">There are {{ reserves.items }} items on reserve for this course</a>
+      <a href="https://web.lib.unb.ca/reserves/index.php/viewReserves/{{ reserves.sectionid }}" target="_blank">There {% if reserves.items == 1 %}is 1 item{% else %}are {{ reserves.items }} items{% endif %} on reserve for this course</a>
     {% endif %}
   {% else %}
     No matches for course reserves.
