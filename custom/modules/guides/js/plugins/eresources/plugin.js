@@ -67,7 +67,7 @@
               widget.element.setAttribute('keyresources', values.keyresources);
               widget.element.setAttribute('noheadings', values.noheadings);
               widget.element.setHtml(values.html);
-            }, {});
+            }, {dialogClass: 'eresources-dialog-widget'});
           });
         }
       });
