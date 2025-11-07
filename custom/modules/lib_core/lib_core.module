@@ -203,7 +203,7 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
           '</div>';
 
         // Set recipient to user profile's Email address value.
-        $user_email = user_load_by_name($username)
+        $user_email = $user
           ->get('mail')
           ->getString();
         $form['elements']['recipient']['#default_value'] = $user_email;
@@ -404,6 +404,7 @@ function _lib_core_contactable_department($mailbox) {
   $departments = [
     'archives' => 'Archives and Special Collections',
     'askus' => 'Ask Us',
+    'cdspublishing' => 'Centre for Digital Scholarship Publishing Services',
     'circhi' => 'Commons Service Desk',
     'copyright' => 'Copyright',
     'data.gis' => 'Data & GIS',
