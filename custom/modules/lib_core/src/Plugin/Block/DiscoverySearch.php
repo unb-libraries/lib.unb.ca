@@ -111,7 +111,7 @@ class DiscoverySearch extends BlockBase {
    */
   protected function getReservesForm() {
     $form_reserves =
-      '<form action="//web.lib.unb.ca/reserves/index.php/quickSearch" id="searchReserves" class="chosen-compact mb-2" method="post">
+      '<form action="//reserves.lib.unb.ca/quickSearch" id="searchReserves" class="chosen-compact mb-2" method="post">
         <div class="d-flex flex-column flex-md-row">
           <div class="flex-fill mb-2 mr-0 mr-md-2">
             <label class="visually-hidden" for="keywords">
@@ -132,7 +132,7 @@ class DiscoverySearch extends BlockBase {
       </form>
       <ul class="list inline m-0 p-0">
         <li class="list-inline-item mr-4 my-2 my-sm-1">
-          <a href="//web.lib.unb.ca/reserves/index.php?h=1"><i class="fa-solid fa-sign-in-alt" aria-hidden="true"></i>
+          <a href="//reserves.lib.unb.ca/?h=1"><i class="fa-solid fa-sign-in-alt" aria-hidden="true"></i>
             Login to My UNB Reserves
           </a>
         </li>
@@ -153,7 +153,7 @@ class DiscoverySearch extends BlockBase {
 
     try {
       $response = \Drupal::httpClient()
-        ->get('https://web.lib.unb.ca/reserves/index.php/semester', [
+        ->get('https://reserves.lib.unb.ca/semester', [
           'headers' => [
             'Accept' => 'application/vnd.api+json',
           ],

@@ -105,7 +105,7 @@ class LmsWidgetController extends ControllerBase {
    *   Reserves info.
    */
   private function getReservesInfo($ilpId, $login) {
-    $url = 'https://web.lib.unb.ca/reserves/index.php/d2l';
+    $url = 'https://reserves.lib.unb.ca/d2l';
     $params = [
       'id' => $ilpId,
       'login' => $login,
