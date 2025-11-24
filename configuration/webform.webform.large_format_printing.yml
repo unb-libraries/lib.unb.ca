@@ -63,6 +63,38 @@ elements: |-
         '#type': tel
         '#title': 'Phone Number'
         '#required': true
+      method_of_payment:
+        '#type': radios
+        '#title': 'Method of Payment'
+        '#options':
+          cash_credit: 'Cash/Debit/Credit Card'
+          unb_account: 'UNB Account'
+        '#required': true
+      signing_authority:
+        '#type': textfield
+        '#title': 'Signing Authority <small class="font-weight-light text-unb-red">(required)</small>'
+        '#description': 'The name of the person that endorsed the use of the UNB account.'
+        '#states':
+          visible-slide:
+            ':input[name="method_of_payment"]':
+              value: unb_account
+          required:
+            ':input[name="method_of_payment"]':
+              value: unb_account
+      account_number:
+        '#type': textfield
+        '#title': 'Account Number <small class="font-weight-light text-unb-red">(required)</small>'
+        '#description': 'Example format: <code>1-234567-89-01</code>'
+        '#input_mask': 9-999999-99-99
+        '#pattern': '^\d\-\d{6}\-\d{2}\-\d{2}$'
+        '#pattern_error': 'The expected format for the account number is: #-######-##-##'
+        '#states':
+          visible-slide:
+            ':input[name="method_of_payment"]':
+              value: unb_account
+          required:
+            ':input[name="method_of_payment"]':
+              value: unb_account
     printing_details:
       '#type': fieldset
       '#title': 'Printing Details'
