@@ -107,6 +107,10 @@ elements: |-
           visible-slide:
             ':input[name="format"]':
               value: ebook_multiple
+      open_text_notes:
+        '#type': textarea
+        '#title': Notes
+        '#rows': 3
     actions:
       '#type': webform_actions
       '#title': 'Submit button(s)'
