@@ -15,6 +15,18 @@ fieldset[data-drupal-states*='required'] legend .form-required:after {
   font-size: smaller;
   margin-left: .25rem;
 }
+/* Conditionally>Required label re: missing <small class="font-weight-light text-unb-red">(required)</small> child */
+label.form-required:not(:has(.text-unb-red)):after {
+  background-image: none;
+  color: $unb-red;
+  content: "(required)";
+  font-size: $spacer * 0.925;
+  font-weight: 300;
+  height:auto;
+  margin: 0;
+  vertical-align: top;
+  width: auto;
+}
 
 .choices[data-type*=select-one] .choices__inner {
   background-color: #fff;
