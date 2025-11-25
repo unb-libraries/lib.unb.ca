@@ -72,21 +72,23 @@ elements: |-
         '#required': true
       signing_authority:
         '#type': textfield
-        '#title': 'Signing Authority <small class="font-weight-light text-unb-red">(required)</small>'
+        '#title': 'Signing Authority'
         '#description': 'The name of the person that endorsed the use of the UNB account.'
         '#states':
           visible-slide:
             ':input[name="method_of_payment"]':
               value: unb_account
-          required:
+          optional:
             ':input[name="method_of_payment"]':
-              value: unb_account
+              value: cash_credit
+        '#label_attributes':
+          aria-label: 'Signing Authority (required)'
       account_number:
         '#type': textfield
-        '#title': 'Account Number <small class="font-weight-light text-unb-red">(required)</small>'
+        '#title': 'Account Number'
         '#description': 'Example format: <code>1-234567-89-01</code>'
         '#input_mask': 9-999999-99-99
-        '#pattern': '^\d\-\d{6}\-\d{2}\-\d{2}$'
+        '#pattern': '\d-\d{6}-\d{2}-\d{2}'
         '#pattern_error': 'The expected format for the account number is: #-######-##-##'
         '#states':
           visible-slide:
@@ -95,6 +97,8 @@ elements: |-
           required:
             ':input[name="method_of_payment"]':
               value: unb_account
+        '#label_attributes':
+          aria-label: 'Account Number (required)'
     printing_details:
       '#type': fieldset
       '#title': 'Printing Details'
