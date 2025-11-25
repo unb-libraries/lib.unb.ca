@@ -9,20 +9,28 @@
 }
 
 /* Visually identify required fields inside conditional fieldsets (not accessible - only decorative) */
-fieldset[data-drupal-states*='required'] legend .form-required:after {
-  content: "(required)";
-  color: $red;
-  font-size: smaller;
-  margin-left: .25rem;
+form fieldset[data-drupal-states*="required"],
+div[data-drupal-states*="required"] {
+  legend .form-required:after {
+    background-image: none;
+    content: "(required)";
+    display: inline-block;
+    color: $unb-red;
+    font-size: $spacer * 0.925;
+    font-weight: normal;
+    margin: 0;
+    vertical-align: baseline;
+  }
 }
+
 /* Conditionally>Required label re: missing <small class="font-weight-light text-unb-red">(required)</small> child */
 label.form-required:not(:has(.text-unb-red)):after {
   background-image: none;
   color: $unb-red;
   content: "(required)";
   font-size: $spacer * 0.925;
-  font-weight: 300;
-  height:auto;
+  font-weight: normal;
+  height: auto;
   margin: 0;
   vertical-align: top;
   width: auto;
