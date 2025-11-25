@@ -70,19 +70,51 @@ elements: |-
           cash_credit: 'Cash/Debit/Credit Card'
           unb_account: 'UNB Account'
         '#required': true
-      signing_authority:
-        '#type': textfield
-        '#title': 'Signing Authority'
-        '#description': 'The name of the person that endorsed the use of the UNB account.'
+      are_you_the_signing_authority_for_this_unb_account_:
+        '#type': radios
+        '#title': 'Are you the signing authority for this UNB account?'
+        '#options':
+          authority_yes: 'Yes'
+          authority_no: 'No'
         '#states':
           visible-slide:
             ':input[name="method_of_payment"]':
               value: unb_account
-          optional:
+          required:
             ':input[name="method_of_payment"]':
-              value: cash_credit
-        '#label_attributes':
-          aria-label: 'Signing Authority (required)'
+              value: unb_account
+        '#attributes':
+          aria-label: 'Are you the signing authority for this UNB account? (required)'
+      signing_authority_wrapper:
+        '#type': fieldset
+        '#title': 'Signing Authority Details'
+        '#states':
+          visible-slide:
+            ':input[name="are_you_the_signing_authority_for_this_unb_account_"]':
+              value: authority_no
+        '#attributes':
+          class:
+            - px-4
+        signing_authority:
+          '#type': textfield
+          '#title': Name
+          '#description': 'The name of the signing authority for this UNB account.'
+          '#states':
+            required:
+              ':input[name="are_you_the_signing_authority_for_this_unb_account_"]':
+                value: authority_no
+          '#label_attributes':
+            aria-label: 'Name of Signing Authority (required)'
+        signing_authority_email:
+          '#type': email
+          '#title': Email
+          '#description': 'The email address of the signing authority for this UNB account.'
+          '#states':
+            required:
+              ':input[name="are_you_the_signing_authority_for_this_unb_account_"]':
+                value: authority_no
+          '#label_attributes':
+            aria-label: 'Email address of Signing Authority (required)'
       account_number:
         '#type': textfield
         '#title': 'Account Number'
