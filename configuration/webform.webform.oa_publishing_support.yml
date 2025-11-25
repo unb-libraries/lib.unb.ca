@@ -27,17 +27,16 @@ elements: |-
       <div class="card border-dark mb-4 mt-2">
       <div class="card-body p-0">
       <h2 class="card-title h6 bg-dark text-white px-4 py-2">Hello! Thanks for reaching out to us for assistance meeting your open access requirements or navigating author processing charges (APCs)&nbsp;in&nbsp;scholarly&nbsp;journals.</h2>
-      
+
       <div class="px-4 py-2">
       <p lang="EN-US">UNB Libraries have been part of a large, national&nbsp;consortium that is reaching new, transformative agreements with major publishers that&nbsp;may&nbsp;lower&nbsp;your&nbsp;APC fees.&nbsp;&nbsp;&nbsp;</p>
-      
+
       <p lang="EN-US">Additionally, we offer OA support in terms of our institutional repository that may allow you to skip these fees altogether.&nbsp;&nbsp;</p>
-      
+
       <p lang="EN-US">Tell us more about your work so we can&nbsp;get back to you with details about eligibility and your options.&nbsp;Please note that some discounts are time sensitive.&nbsp;</p>
       </div>
       </div>
       </div>
-      
     '#format': library_page_html
   container:
     '#type': container
@@ -131,6 +130,8 @@ elements: |-
             mandate_info: 'Information about your funder OA mandate'
             journal_info: 'Information about a specific journal’s options'
           '#required': true
+          '#attributes':
+            aria-label: 'How can we help? (required)'
         let_us_know_some_of_the_journals_publishers_you_re_considering_s:
           '#type': textarea
           '#title': 'Let us know some of the journals/publishers you''re considering submitting to.'
