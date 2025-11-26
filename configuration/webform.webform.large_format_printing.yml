@@ -56,7 +56,7 @@ elements: |-
         '#required': true
       email:
         '#type': email
-        '#title': Email
+        '#title': 'UNB Email'
         '#prepopulate': true
         '#required': true
       phone_number:
@@ -107,7 +107,7 @@ elements: |-
             aria-label: 'Name of Signing Authority (required)'
         signing_authority_email:
           '#type': email
-          '#title': Email
+          '#title': 'UNB Email'
           '#description': 'The email address of the signing authority for this UNB account.'
           '#states':
             required:
