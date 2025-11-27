@@ -2568,7 +2568,7 @@ display:
             replace_spaces: false
             path_case: none
             trim_whitespace: false
-            alt: 'Visit {{ field_first_name }} {{ field_last_name }}''s Profile'
+            alt: 'Visit {{ field_first_name }} {{ field_last_name }}''s profile'
             rel: ''
             link_class: ''
             prefix: ''
