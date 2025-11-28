@@ -93,6 +93,22 @@ class QuickLinks extends BlockBase {
         )->toString(),
       ],
     ];
+    $ai_btn =[
+      '#children' => Link::fromTextAndUrl(
+        Markup::create('<span class="fas fa-microchip mr-1" style="font-size:.95rem"></span>' . $this->t('AI Literacy')),
+        Url::fromUri('base://ai-literacy', [
+          'attributes' => [
+            'id' => 'ai-btn',
+            'class' => [
+              'btn',
+              'btn-sm',
+              'btn-warning',
+              'text-nowrap',
+            ],
+          ],
+        ])
+      )->toString(),
+    ];
     $misc_btn = [
       '#children' => Link::fromTextAndUrl(
         Markup::create('<span class="fas fa-star mr-1"></span>' . $this->t('Research Commons')),
@@ -101,6 +117,7 @@ class QuickLinks extends BlockBase {
             'id' => 'misc-btn',
             'class' => [
               'btn',
+              'btn-sm',
               'btn-irving',
               'text-nowrap',
             ],
@@ -110,11 +127,12 @@ class QuickLinks extends BlockBase {
     ];
     $booking_btn = [
       '#children' => Link::fromTextAndUrl(
-        Markup::create('<span class="fas fa-calendar-check mr-1"></span>' . $this->t('Book a Study Space')),
+        Markup::create('<span class="fas fa-calendar-check mr-1"></span>' . $this->t('Book Study Space')),
         Url::fromUri('base://services/bookings', [
           'attributes' => [
             'class' => [
               'btn',
+              'btn-sm',
               'btn-dark',
               'text-nowrap',
             ],
@@ -175,6 +193,7 @@ class QuickLinks extends BlockBase {
             'd-flex',
             'flex-wrap',
             'justify-content-center',
+            'justify-content-md-end',
             'list-inline',
           ],
         ],
@@ -189,8 +208,9 @@ class QuickLinks extends BlockBase {
           'id' => ['quicklinks-buttons'],
         ],
         '#items' => [
-          'covid_button' => $misc_btn,
           'book_button' => $booking_btn,
+          'ai_literacy' => $ai_btn,
+          'research_button' => $misc_btn,
         ],
       ],
     ];
