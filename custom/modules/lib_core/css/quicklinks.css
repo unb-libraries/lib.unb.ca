@@ -1,7 +1,7 @@
 #quicklinks-wrapper h3,
 #quicklinks-wrapper .h3 {
     font-size: 1rem;
-    line-height: 1.9;
+    line-height: inherit;
     margin-bottom: .25rem;
 }
 #quicklinks .collapse:not(.show) {
@@ -18,14 +18,14 @@
   }
 }
 @media (min-width: 992px) {
+   #quicklinks-buttons ul li {
+     padding-right: 0.33rem;
+   }
+
     /* Force visible on large display */
     #quicklinks-wrapper.collapse:not(.show) {
+        align-items: baseline;
         display: flex!important;
-    }
-
-    #quicklinks-buttons .btn {
-        padding: 0.25rem 0.5rem;
-        font-size: 0.875rem;
     }
 }
 @media (max-width: 576px) {
