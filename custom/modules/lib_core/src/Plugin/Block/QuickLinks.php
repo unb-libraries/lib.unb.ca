@@ -41,18 +41,18 @@ class QuickLinks extends BlockBase {
           Url::fromUri('base://services/docdel')
         )->toString(),
       ],
-      [
+      /*[
         '#wrapper_attributes' => [
           'class' => [],
         ],
         '#children' => Link::fromTextAndUrl(
           /* Markup::create('<span class="fas fa-undo-alt fa-sm mr-1"></span>' .
-          $this->t('Recalls')),*/
+          $this->t('Recalls')),
           $this->t('Recalls'),
           Url::fromUri('base://services/recalls')
         )->toString(),
       ],
-      /*[
+      [
         '#wrapper_attributes' => [
           'class' => [
             'list-inline-item',
