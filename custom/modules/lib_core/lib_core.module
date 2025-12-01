@@ -92,6 +92,30 @@ function lib_core_entity_presave(EntityInterface $entity) {
 }
 
 /**
+* Implements hook_metatags_attachments_alter().
+*/
+function lib_core_metatags_attachments_alter(array &$attachments) {
+  // Add metatag title prefix for HAAG pages only (i.e. /unbhistory/).
+  $current_path = \Drupal::service('path.current')->getPath();
+  $url_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+  $position = strpos($url_alias, 'unbhistory');
+  if ($position !== false) {
+    $title_prefix = "UNB's History at a Glance";
+    foreach ($attachments['#attached']['html_head'] as $key => $htmlheadArray) {
+      // Locate nested 'title' array within metatag multi-dimensional array of attributes.
+      if (array_search('title', $htmlheadArray)) {
+        // Ensure expected metatag array key exists for matched title content attribute.
+        if (isset($attachments['#attached']['html_head'][$key][0]['#attributes']['content'])) {
+          $title = $attachments['#attached']['html_head'][$key][0]['#attributes']['content'];
+          $attachments['#attached']['html_head'][$key][0]['#attributes']['content'] = html_entity_decode("$title_prefix: $title");
+        }
+        break;
+      }
+    }
+  }
+}
+
+/**
 * Implements hook_webform_element_alter().
 */
 
