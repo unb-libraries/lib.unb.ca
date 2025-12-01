@@ -118,7 +118,7 @@ elements: |-
       account_number:
         '#type': textfield
         '#title': 'Account Number'
-        '#description': 'Example format: <code>1-234567-89-01</code>'
+        '#description': 'Example format: <code>1-234567-89-01</code> (LOC-UNIT-FUND-FC)'
         '#input_mask': 9-999999-99-99
         '#pattern': '\d-\d{6}-\d{2}-\d{2}'
         '#pattern_error': 'The expected format for the account number is: #-######-##-##'
