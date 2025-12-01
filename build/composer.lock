@@ -8114,16 +8114,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.421.0",
+            "version": "v0.422.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "d84e7301a52405677807564dab6b1a112dfd03bd"
+                "reference": "1854d325eb22e33fa6c1c0ce45718b64eca5c67b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/d84e7301a52405677807564dab6b1a112dfd03bd",
-                "reference": "d84e7301a52405677807564dab6b1a112dfd03bd",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/1854d325eb22e33fa6c1c0ce45718b64eca5c67b",
+                "reference": "1854d325eb22e33fa6c1c0ce45718b64eca5c67b",
                 "shasum": ""
             },
             "require": {
@@ -8152,9 +8152,9 @@
             ],
             "support": {
                 "issues": "https://github.com/googleapis/google-api-php-client-services/issues",
-                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.421.0"
+                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.422.0"
             },
-            "time": "2025-11-23T01:06:22+00:00"
+            "time": "2025-11-30T01:02:18+00:00"
         },
         {
             "name": "google/auth",
@@ -17382,16 +17382,16 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "5.6.4",
+            "version": "5.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "90a04bcbf03784066f16038e87e23a0a83cee3c2"
+                "reference": "90614c73d3800e187615e2dd236ad0e2a01bf761"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/90a04bcbf03784066f16038e87e23a0a83cee3c2",
-                "reference": "90a04bcbf03784066f16038e87e23a0a83cee3c2",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/90614c73d3800e187615e2dd236ad0e2a01bf761",
+                "reference": "90614c73d3800e187615e2dd236ad0e2a01bf761",
                 "shasum": ""
             },
             "require": {
@@ -17440,9 +17440,9 @@
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
             "support": {
                 "issues": "https://github.com/phpDocumentor/ReflectionDocBlock/issues",
-                "source": "https://github.com/phpDocumentor/ReflectionDocBlock/tree/5.6.4"
+                "source": "https://github.com/phpDocumentor/ReflectionDocBlock/tree/5.6.5"
             },
-            "time": "2025-11-17T21:13:10+00:00"
+            "time": "2025-11-27T19:50:05+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
