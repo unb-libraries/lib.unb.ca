@@ -11,7 +11,7 @@ field_name: field_featured_image
 entity_type: node
 bundle: news_post
 label: 'Featured Image'
-description: 'Used in conjunction with the <em>Promotion Options | Include in news carousel</em> checkbox'
+description: "Rendered carousel dimensions: <em>895 (width) x 220 (height)</em> pixels.<br>\r\nUse with the <em>Promotion Options > Include in news carousel</em> checkbox within this form.\r\n"
 required: false
 translatable: false
 default_value: {  }
