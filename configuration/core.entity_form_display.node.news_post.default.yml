@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.news_post.field_unb_lib_page_content
     - node.type.news_post
   module:
+    - content_moderation
     - media_library
     - paragraphs
     - path
