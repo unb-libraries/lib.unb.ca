@@ -10,8 +10,8 @@ id: node.news_post.field_categories
 field_name: field_categories
 entity_type: node
 bundle: news_post
-label: Categories
-description: ''
+label: 'News Categories'
+description: 'See <em>News page</em> sidebar for existing terms.'
 required: false
 translatable: false
 default_value: {  }
