@@ -13,7 +13,7 @@ field_name: field_page_content
 entity_type: node
 bundle: news_post
 label: 'Page content'
-description: '* Please enter a summary if your post <strong>begins with an image</strong>.'
+description: '** Please enter a <strong>summary</strong> if your <strong>content</strong> field begins with a <strong>media item</strong> else risk a blank teaser.'
 required: true
 translatable: true
 default_value: {  }
@@ -46,7 +46,22 @@ settings:
       fullwidth_body_section:
         weight: 10
         enabled: false
+      guide_editor:
+        weight: 21
+        enabled: false
+      guide_feed:
+        weight: 22
+        enabled: false
+      guide_section:
+        weight: 23
+        enabled: false
       linked_image:
         weight: 16
+        enabled: false
+      photo_gallery:
+        weight: 25
+        enabled: false
+      protected_file_section:
+        weight: 26
         enabled: false
 field_type: entity_reference_revisions
