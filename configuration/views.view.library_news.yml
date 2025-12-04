@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.full
     - core.entity_view_mode.node.teaser
     - field.storage.node.field_featured_image
     - field.storage.node.field_page_content
@@ -2011,7 +2010,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<span class="badge badge-stickied"><i class="fas fa-thumbtack"></i></span>'
+            text: '<span class="badge badge-stickied"><span class="fa-solid fa-thumbtack text-unb-red"></span></span>'
             make_link: false
             path: ''
             absolute: false
@@ -2064,69 +2063,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_page_content:
-          id: field_page_content
-          table: node__field_page_content
-          field: field_page_content
-          relationship: none
-          group_type: group
-          admin_label: 'Summary Fallback'
-          plugin_id: field
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: true
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: null
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: true
-            trim: false
-            preserve_tags: '<strong><em>'
-            html: true
-          element_type: div
-          element_class: news-teaser
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: '0'
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_revisions_entity_view
-          settings:
-            view_mode: default
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 1
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
         field_body:
           id: field_body
           table: paragraph__field_body
@@ -2172,7 +2108,7 @@ display:
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: false
-          empty: '{{ field_page_content }}'
+          empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
@@ -2447,7 +2383,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_page_content'
         - 'config:field.storage.paragraph.field_body'
   featured_block:
     id: featured_block
@@ -3232,7 +3167,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: full
+          view_mode: teaser
       defaults:
         empty: false
         title: false
