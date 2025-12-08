@@ -429,7 +429,7 @@ settings:
 access:
   create:
     roles:
-      - guide_editor
+      - authenticated
     users: {  }
     permissions: {  }
   view_any:
