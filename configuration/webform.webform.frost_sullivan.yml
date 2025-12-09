@@ -1,7 +1,12 @@
 uuid: 04db9e1b-f8ed-4c3a-9b89-da884e2a33fc
 langcode: en
 status: open
-dependencies: {  }
+dependencies:
+  module:
+    - antibot
+third_party_settings:
+  antibot:
+    antibot: true
 weight: 0
 open: null
 close: null
@@ -43,18 +48,21 @@ elements: |-
       <dl class="ml-4">
       	<dt>Students/Faculty:</dt>
       	<dd>Both faculty and students can view, print and download documents.</dd>
-
       </dl>
-      <p>For assistance using the resource contact Jeannie Bail (<a href="/contact-unb-libraries-staff?recipient=jbail">j.bail@unb.ca</a> | (506) 458-7212). Please include your university/departmental affiliation.</p>
+
+      <p>For assistance using the resource contact Julie Morris, Collections Analysis, Bibliometrics, Management and French Subject Librarian (<a href="/contact-unb-libraries-staff?recipient=jmorris9">julie.morris@unb.ca</a> | (506) 447-3220). Please include your university/departmental affiliation.</p>
     '#format': library_page_html
   frost_agree_container:
     '#type': container
     '#attributes':
       class:
-        - 'alert alert-danger mt-4 p-2'
+        - alert
+        - alert-info
+        - mt-4
+        - p-2
     i_agree_to_use_this_information_for_individual_educational_and_r:
       '#type': checkbox
-      '#title': 'I agree to use this information for individual educational and research purposes only, and not for commercial purposes.'
+      '#title': 'By clicking the Agree/Connect Frost & Sullivan button, I confirm I am a current student, faculty, or staff member, and my use of Frost & Sullivan is for individual, non-commercial, educational, and research purposes only.  I acknowledge and accept that UNB and Frost & Sullivan will monitor my use for internal purposes.'
       '#required': true
       '#required_error': 'Please check this box if you want to proceed'
       '#wrapper_attributes':
@@ -160,6 +168,8 @@ settings:
   wizard_toggle: true
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
   preview: 0
   preview_label: ''
   preview_title: ''
@@ -200,8 +210,8 @@ settings:
   entity_limit_user_interval: null
   purge: none
   purge_days: null
-  results_disabled: true
-  results_disabled_ignore: true
+  results_disabled: false
+  results_disabled_ignore: false
   results_customize: false
   token_view: false
   token_update: false
