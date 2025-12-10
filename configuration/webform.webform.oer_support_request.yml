@@ -9,7 +9,7 @@ uid: 1
 template: false
 archive: false
 id: oer_support_request
-title: 'OER Support Request'
+title: 'Open Educational Resources (OER) Request'
 description: 'Webform that allows instructors to ask for support with OER,'
 category: ''
 elements: |-
@@ -20,10 +20,8 @@ elements: |-
       <div class="card-body text-muted-wcag p-0 mb-3">
       <h2 class="card-title h6 bg-dark text-white p-2">Before you submit</h2>
 
-      <div class="p-2">
-      <p class="card-text"><span></span>Thank you for your interest in an OER collaboration. Before submitting this form, please review the information on our Website [link], and outline for collaboration [link].<br />
-      &nbsp;</p>
-      </div>
+      <p class="alert alert-light card-text">Thank you for your interest in an OER collaboration. Before submitting this form, please review the information on our <a href="/publishing/about-open-educational-resources">about page</a>, and outline for collaboration [link].</p>
+
       </div>
       </div>
     '#format': library_page_html
@@ -39,6 +37,7 @@ elements: |-
         '#type': textfield
         '#title': Name
         '#required': true
+        '#default_value': '[current-user:field_first_name] [current-user:field_last_name]'
       faculty_discipline:
         '#type': textfield
         '#title': Faculty
@@ -49,6 +48,7 @@ elements: |-
         '#input_mask': '''alias'': ''email'''
         '#required': true
         '#pattern': '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$'
+        '#default_value': '[current-user:mail]'
       home_campus:
         '#type': radios
         '#title': 'Home campus'
@@ -60,15 +60,78 @@ elements: |-
     project_information:
       '#type': fieldset
       '#title': 'Project Information'
-      i_am_looking_for_support_select_one_:
+      looking_for_support:
         '#type': checkboxes
-        '#title': 'I am looking for support [select one]'
+        '#title': 'I am looking for support'
         '#options':
           finding_oer: 'Finding OER'
           adapting_existing_oer: 'Adapting an Existing OER'
           creating_own_oer: 'Creating my own OER'
           unsure: Unsure
         '#required': true
+      conducted_initial_search:
+        '#type': radios
+        '#title': 'Have you conducted an initial search for relevant OER on the subject?'
+        '#options':
+          'yes': 'Yes'
+          'no': 'No'
+        '#options_display': side_by_side
+        '#required': true
+      for_credit_course_unb:
+        '#type': radios
+        '#title': 'Would this OER support a for-credit course at UNB?'
+        '#options':
+          'yes': 'Yes'
+          'no': 'No'
+        '#options_display': side_by_side
+        '#required': true
+      course_looking_oer_content:
+        '#type': textfield
+        '#title': 'What course(s) are you looking for OER content?'
+        '#states':
+          visible-slide:
+            ':input[name="for_credit_course_unb"]':
+              value: 'yes'
+      semester_course_offered:
+        '#type': checkboxes
+        '#title': 'What semester(s) is your course offered in?'
+        '#options':
+          f: Fall
+          w: Winter
+          s: Summer
+        '#options_display': side_by_side
+        '#required': true
+      how_many_students:
+        '#type': textfield
+        '#title': 'How many students are enrolled in this course?'
+      oer_replace_paid_textbook:
+        '#type': radios
+        '#title': 'Would this OER replace a paid textbook?'
+        '#options':
+          'yes': 'Yes'
+          'no': 'No'
+        '#options_display': side_by_side
+      current_course_looking_replace:
+        '#type': textfield
+        '#title': 'What is the current course material you are looking to replace?'
+        '#states':
+          visible-slide:
+            ':input[name="oer_replace_paid_textbook"]':
+              value: 'yes'
+      syllabus_upload:
+        '#type': webform_document_file
+        '#title': 'Please upload the course(s) syllabus you are seeking OER material for. This will help us get an understanding of the class as a whole'
+        '#sanitize': true
+        '#button': true
+        '#button__title': 'Select file<span class="fa-solid fa-paperclip ml-1"></span>'
+        '#button__attributes':
+          class:
+            - btn
+            - btn-light
+            - border-secondary
+      brief_project_description:
+        '#type': textarea
+        '#title': 'Provide a brief project description'
 css: ''
 javascript: ''
 settings:
@@ -78,7 +141,7 @@ settings:
   ajax_effect: ''
   ajax_speed: null
   page: true
-  page_submit_path: ''
+  page_submit_path: /publishing/oer-support-request
   page_confirm_path: ''
   page_theme_name: ''
   form_title: source_entity_webform
@@ -208,7 +271,7 @@ settings:
 access:
   create:
     roles:
-      - library_page_author
+      - authenticated
     users: {  }
     permissions: {  }
   view_any:
@@ -256,7 +319,7 @@ handlers:
     id: email
     handler_id: submission_confirmation
     label: 'Submission confirmation'
-    notes: ''
+    notes: 'Thank you email message to the submitter.'
     status: true
     conditions: {  }
     weight: 0
@@ -272,13 +335,14 @@ handlers:
       from_mail: unb-libraries-no-reply@unb.ca
       from_options: {  }
       from_name: _default
-      reply_to: knowledgesynthesis@unb.ca
+      reply_to: catherine.gracey@unb.ca
       return_path: ''
       sender_mail: ''
       sender_name: ''
-      subject: 'Your Knowledge Synthesis Service Request'
-      body: "<p>On {{ webform_token('[webform_submission:created]', webform_submission, [], options) }} you submitted a Knowledge Synthesis Service Request with the following details:</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
-      excluded_elements: {  }
+      subject: 'Your OER Support Request'
+      body: "<p>Thank you for your interest in an OER collaboration. We'll be in contact to discuss next steps within 5 business days. Below are your submission details:</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
+      excluded_elements:
+        note: note
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: false
@@ -300,7 +364,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: knowledgesynthesis@unb.ca
+      to_mail: catherine.gracey@unb.ca
       to_options: {  }
       bcc_mail: ''
       bcc_options: {  }
@@ -313,14 +377,10 @@ handlers:
       return_path: ''
       sender_mail: ''
       sender_name: ''
-      subject: 'New Knowledge Synthesis Service Request'
-      body: "<p>The following information was submitted through our <b>Knowledge Synthesis Service Request</b> form by {{ webform_token('[webform_submission:values:name]', webform_submission, [], options) }} on {{ webform_token('[webform_submission:created]', webform_submission, [], options) }}.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
+      subject: 'New OER Support Request'
+      body: "<p>The following information was submitted through our <b>OER Support Request</b> form by {{ webform_token('[webform_submission:values:name]', webform_submission, [], options) }} on {{ webform_token('[webform_submission:created]', webform_submission, [], options) }}.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
       excluded_elements:
-        i_have_read_the_requirements_for_partnering_with_a_librarian_on_: i_have_read_the_requirements_for_partnering_with_a_librarian_on_
-        i_will_act_as_the_primary_contact_for_my_librarian_collaborator_: i_will_act_as_the_primary_contact_for_my_librarian_collaborator_
-        agree_deposit_accepted_manuscript_review_scholar: agree_deposit_accepted_manuscript_review_scholar
-        i_will_seek_librarian_feedback_from_my_librarian_collaborator_on: i_will_seek_librarian_feedback_from_my_librarian_collaborator_on
-        i_will_offer_authorship_on_the_review_to_the_librarian: i_will_offer_authorship_on_the_review_to_the_librarian
+        note: note
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: false
