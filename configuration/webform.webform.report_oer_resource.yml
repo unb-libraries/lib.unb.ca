@@ -1,0 +1,348 @@
+uuid: 6f21355d-5a39-4075-a7d7-6cc6d252cff6
+langcode: en
+status: open
+dependencies:
+  module:
+    - antibot
+third_party_settings:
+  antibot:
+    antibot: true
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: report_oer_resource
+title: 'Report Open Educational Resources (OER) Adoption'
+description: 'Webform that allows faculty let us know that they&#39;ve adopted an OER.'
+category: ''
+elements: |-
+  container:
+    '#type': container
+    '#attributes':
+      class:
+        - theme-dark
+    personal_information:
+      '#type': fieldset
+      '#title': 'Personal information'
+      name:
+        '#type': textfield
+        '#title': Name
+        '#required': true
+        '#default_value': '[current-user:field_first_name] [current-user:field_last_name]'
+      faculty_discipline:
+        '#type': textfield
+        '#title': Faculty
+        '#required': true
+      email:
+        '#type': textfield
+        '#title': Email
+        '#input_mask': '''alias'': ''email'''
+        '#required': true
+        '#pattern': '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$'
+        '#default_value': '[current-user:mail]'
+      home_campus:
+        '#type': radios
+        '#title': 'Home campus'
+        '#options':
+          fredericton: Fredericton
+          saint_john: 'Saint John'
+          moncton: Moncton
+        '#options_display': side_by_side
+    project_information:
+      '#type': fieldset
+      '#title': 'Project Information'
+      course_code:
+        '#type': textfield
+        '#title': 'Course Code'
+      semester_course_offered:
+        '#type': checkboxes
+        '#title': 'What semester(s) is your course offered in?'
+        '#options':
+          f: Fall
+          w: Winter
+          s: Summer
+        '#options_display': side_by_side
+        '#required': true
+      how_many_students:
+        '#type': textfield
+        '#title': 'How many students are enrolled in this course?'
+      do_you_use:
+        '#type': checkboxes
+        '#title': 'Do you use'
+        '#options':
+          oer: OER
+          course_reserves: 'Course Reserves'
+        '#options_display': side_by_side
+      oer_link:
+        '#type': webform_link
+        '#title': 'OER link'
+        '#states':
+          visible-slide:
+            ':input[name="do_you_use[oer]"]':
+              checked: true
+        '#title__access': false
+        '#url__title': 'Please share the OER URL'
+        '#url__required': true
+      materials_cost_associated:
+        '#type': textfield
+        '#title': 'Does your course have any other materials that have a cost associated?'
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: /publishing/report-oer-adoption
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: source_entity_webform
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: true
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: true
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: true
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: message
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: 'Thank you for your submission. Your request will be reviewed by the team, and someone will contact you soon.'
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  submission_confirmation:
+    id: email
+    handler_id: submission_confirmation
+    label: 'Submission confirmation'
+    notes: 'Thank you email message to the submitter.'
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:email:raw]'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: unb-libraries-no-reply@unb.ca
+      from_options: {  }
+      from_name: _default
+      reply_to: catherine.gracey@unb.ca
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Your OER Support Request'
+      body: "<p>Thank you for reporting your adoption of an OER. Below are your submission details:</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: true
+      html: true
+      attachments: true
+      twig: true
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  email:
+    id: email
+    handler_id: email
+    label: Email
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: catherine.gracey@unb.ca
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: unb-libraries-no-reply@unb.ca
+      from_options: {  }
+      from_name: _default
+      reply_to: '[webform_submission:values:email:raw]'
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'New OER Support Request'
+      body: "<p>The following information was submitted through our <b>Report OER Adoption</b> form by {{ webform_token('[webform_submission:values:name]', webform_submission, [], options) }} on {{ webform_token('[webform_submission:created]', webform_submission, [], options) }}.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: true
+      html: true
+      attachments: true
+      twig: true
+      theme_name: ''
+      parameters: {  }
+      debug: false
+variants: {  }
