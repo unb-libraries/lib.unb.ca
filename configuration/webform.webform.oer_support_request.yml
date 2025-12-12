@@ -68,7 +68,6 @@ elements: |-
           adapting_existing_oer: 'Adapting an Existing OER'
           creating_own_oer: 'Creating my own OER'
           unsure: Unsure
-        '#required': true
       conducted_initial_search:
         '#type': radios
         '#title': 'Have you conducted an initial search for relevant OER on the subject?'
@@ -132,6 +131,7 @@ elements: |-
       brief_project_description:
         '#type': textarea
         '#title': 'Provide a brief project description'
+        '#required': true
 css: ''
 javascript: ''
 settings:
