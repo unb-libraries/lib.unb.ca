@@ -227,7 +227,7 @@ settings:
 access:
   create:
     roles:
-      - authenticated
+      - library_page_author
     users: {  }
     permissions: {  }
   view_any:
