@@ -86,8 +86,26 @@ elements: |-
         '#url__title': 'Please share the OER URL'
         '#url__required': true
       materials_cost_associated:
-        '#type': textfield
+        '#type': radios
         '#title': 'Does your course have any other materials that have a cost associated?'
+        '#options':
+          'yes': 'Yes'
+          'no': 'No'
+        '#options_display': side_by_side
+      previous_course_cost:
+        '#type': textfield
+        '#title': 'What did your previous textbook or course material (if relevant) cost?'
+        '#states':
+          visible-slide:
+            ':input[name="materials_cost_associated"]':
+              value: 'yes'
+      learn_more_about_your_experience:
+        '#type': radios
+        '#title': 'May we reach out to you to learn more about your experience using these resources? '
+        '#options':
+          'yes': 'Yes'
+          'no': 'No'
+        '#options_display': side_by_side
 css: ''
 javascript: ''
 settings:
