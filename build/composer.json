@@ -362,7 +362,7 @@
     "drupal/r4032login": "2.2.3",
     "drupal/redirect": "<=1.10",
     "drupal/redis": "1.11",
-    "drupal/samlauth": "3.11",
+    "drupal/samlauth": "3.12",
     "drupal/search_api": "<=1.30",
     "drupal/search_api_autocomplete": "<1.9",
     "drupal/search_api_exclude": "2.0.3",
