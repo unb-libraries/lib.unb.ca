@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b28eae39bf4527c0039fad7f8ee765cc",
+    "content-hash": "dea2f5d17eb9d926cd34b907854c898b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5600,57 +5600,6 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/mimemail",
                 "issues": "https://www.drupal.org/project/issues/mimemail"
-            }
-        },
-        {
-            "name": "drupal/multiple_selects",
-            "version": "1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/multiple_selects.git",
-                "reference": "8.x-1.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/multiple_selects-8.x-1.2.zip",
-                "reference": "8.x-1.2",
-                "shasum": "e7b5a6781e7a630c78b79ae64cf0081f3afc56b4"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9 || ^10 || ^11"
-            },
-            "require-dev": {
-                "drupal/select2": "^1.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.2",
-                    "datestamp": "1726239909",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "JeroenT",
-                    "homepage": "https://www.drupal.org/user/2228934"
-                },
-                {
-                    "name": "webadpro",
-                    "homepage": "https://www.drupal.org/user/708024"
-                }
-            ],
-            "description": "Adding a possibility to use multiple select fields rather than a multiselect field.",
-            "homepage": "https://www.drupal.org/project/multiple_selects",
-            "support": {
-                "source": "https://git.drupalcode.org/project/multiple_selects"
             }
         },
         {

@@ -6,7 +6,6 @@ dependencies:
     - allowed_formats
     - field_group
     - guides
-    - multiple_selects
     - paragraphs
     - path
     - text
