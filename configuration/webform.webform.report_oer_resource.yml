@@ -313,15 +313,8 @@ handlers:
       return_path: ''
       sender_mail: ''
       sender_name: ''
-      subject: 'Your OER Support Request'
-      body: |
-        <p>Thank you for reporting your adoption of an OER. Below are your submission details:</p>
-
-        {{ webform_token('[webform_submission:values]', webform_submission, [], options) }}
-
-        <div>
-        <img src="https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png" alt="UNB Libraries">
-        </div>
+      subject: 'Your OER Adoption Submission'
+      body: "<p>Thank you for reporting your adoption of an OER. Below are your submission details:</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
@@ -357,15 +350,8 @@ handlers:
       return_path: ''
       sender_mail: ''
       sender_name: ''
-      subject: 'New OER Support Request'
-      body: |
-        <p>The following information was submitted through our <b>Report OER Adoption</b> form by {{ webform_token('[webform_submission:values:name]', webform_submission, [], options) }} on {{ webform_token('[webform_submission:created]', webform_submission, [], options) }}.</p>
-
-        {{ webform_token('[webform_submission:values]', webform_submission, [], options) }}
-
-        <div>
-        <img src="https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png" alt="UNB Libraries">
-        </div>
+      subject: 'New OER Adoption Report'
+      body: "<p>The following information was submitted through our <b>Report OER Adoption</b> form by {{ webform_token('[webform_submission:values:name]', webform_submission, [], options) }} on {{ webform_token('[webform_submission:created]', webform_submission, [], options) }}.</p>\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
