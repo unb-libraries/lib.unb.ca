@@ -208,6 +208,28 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
 
     $options = [];
     $entries = $result->getResultItems();
+
+    $collator = new \Collator('en_CA');
+    $collator->setStrength(\Collator::PRIMARY)
+    usort($entries, function ($a, $b) use($collator) {
+      $titleA = $a->getField('title')->getValues()[0];
+      $titleB = $b->getField('title')->getValues()[0];
+      $canA = str_starts_with($titleA, '[CANCELLED]');
+      $canB = str_starts_with($titleB, '[CANCELLED]');
+
+      if ($canA === $canB) {
+        return $collator->compare($titleA, $titleB);
+      }
+
+      if ($canA) {
+        return 1;
+      }
+
+      if ($canB) {
+        return -1;
+      }
+    });
+
     foreach ($entries as $entry) {
       $id = $entry->getField('id')->getValues()[0];
       $options["id:{$id}"] = $entry->getField('title')->getValues()[0];
