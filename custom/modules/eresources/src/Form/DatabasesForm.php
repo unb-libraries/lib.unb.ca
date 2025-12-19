@@ -210,7 +210,7 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
     $entries = $result->getResultItems();
 
     $collator = new \Collator('en_CA');
-    $collator->setStrength(\Collator::PRIMARY)
+    $collator->setStrength(\Collator::PRIMARY);
     usort($entries, function ($a, $b) use($collator) {
       $titleA = $a->getField('title')->getValues()[0];
       $titleB = $b->getField('title')->getValues()[0];
