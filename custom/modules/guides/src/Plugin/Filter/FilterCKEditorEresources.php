@@ -80,6 +80,7 @@ class FilterCKEditorEresources extends FilterBase implements ContainerFactoryPlu
           $index = Index::load('eresources');
           $indexQuery = $index->query(['limit' => 1000]);
           $indexQuery->addCondition('id', $ids, 'IN');
+          $indexQuery->addCondition('metadata_local_license_status', 'C', '<>');
           $indexQuery->addCondition('status', TRUE);
           $results = $indexQuery->execute();
 
