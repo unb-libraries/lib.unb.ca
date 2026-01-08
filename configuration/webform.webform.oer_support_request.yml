@@ -20,8 +20,7 @@ elements: |-
       <div class="card-body text-muted-wcag p-0 mb-3">
       <h2 class="card-title h6 bg-dark text-white p-2">Before you submit</h2>
 
-      <p class="alert alert-light card-text">Thank you for your interest in an OER collaboration. Before submitting this form, please review the information on our <a href="/publishing/about-open-educational-resources">about page</a>, and outline for collaboration [link].</p>
-
+      <p class="alert alert-light card-text">Thank you for your interest in an OER collaboration. Before submitting this form, please review the <a href="/publishing/about-open-educational-resources">information on our Website</a>, and outline for <a href="/publishing/oer-collaborations">collaboration</a>.</p>
       </div>
       </div>
     '#format': library_page_html
