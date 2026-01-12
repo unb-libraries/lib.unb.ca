@@ -245,7 +245,7 @@ settings:
 access:
   create:
     roles:
-      - library_page_author
+      - authenticated
     users: {  }
     permissions: {  }
   view_any:
