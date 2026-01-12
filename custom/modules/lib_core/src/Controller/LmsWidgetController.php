@@ -60,7 +60,7 @@ class LmsWidgetController extends ControllerBase {
       return $render;
     }
 
-    $render['debug_data'] = $_POST;
+    $render['#debug_data'] = $_POST;
     $login = trim($_POST['ext_d2l_username']);
     $sourcedid = trim($_POST['lis_course_section_sourcedid']);
     $label = trim($_POST['context_label']);
