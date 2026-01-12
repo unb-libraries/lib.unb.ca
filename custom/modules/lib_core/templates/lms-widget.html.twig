@@ -1,4 +1,11 @@
 {% if is_post %}
+{% if debug_data %}
+<!--
+{% for key, value in debug_data %}
+{{ key }}: {{ value }}
+{% endfor %}
+-->
+{% endif %}
 <p id="guides">
   {% if guides is empty %}
     <strong>Guides:</strong> <a href="https://lib.unb.ca/guides/getting-started">Getting Started</a>

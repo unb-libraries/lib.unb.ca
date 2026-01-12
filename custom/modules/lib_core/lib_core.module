@@ -32,6 +32,7 @@ function lib_core_theme($existing, $type, $theme, $path) {
         'guides' => NULL,
         'is_post' => NULL,
         'reserves' => NULL,
+        'debug_data' => NULL,
       ],
     ],
     'proxy_login' => [
