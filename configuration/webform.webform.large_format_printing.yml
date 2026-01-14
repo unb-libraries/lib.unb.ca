@@ -62,7 +62,6 @@ elements: |-
       phone_number:
         '#type': tel
         '#title': 'Phone Number'
-        '#required': true
       method_of_payment:
         '#type': radios
         '#title': 'Method of Payment'
