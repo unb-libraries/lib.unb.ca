@@ -11,7 +11,7 @@ third_party_settings:
       - main
     parent: 'main:'
   search_api_exclude:
-    enabled: 1
+    enabled: true
 name: 'Library page'
 type: library_page
 description: 'Use <em>Library page</em> for static content, such as an ''About us'' page.'
