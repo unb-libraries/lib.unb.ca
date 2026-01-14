@@ -52,13 +52,13 @@ elements: |-
       name:
         '#type': textfield
         '#title': Name
-        '#prepopulate': true
         '#required': true
+        '#default_value': '[current-user:field_first_name] [current-user:field_last_name]'
       email:
         '#type': email
         '#title': 'UNB Email'
-        '#prepopulate': true
         '#required': true
+        '#default_value': '[current-user:mail]'
       phone_number:
         '#type': tel
         '#title': 'Phone Number'
@@ -440,7 +440,7 @@ handlers:
       return_path: ''
       sender_mail: ''
       sender_name: ''
-      subject: 'UNB Libraries Large Format/Poster Printing Request'
+      subject: 'Your UNB Libraries Large Format/Poster Printing Request'
       body: "<p>We have received your request and will email you to approve pricing prior to printing and once your print is completed. Your submitted information (minus the uploaded file) was:</p>\r\n<blockquote>{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}</blockquote>\r\n<div><img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\"></div>"
       excluded_elements:
         upload_your_file_: upload_your_file_
