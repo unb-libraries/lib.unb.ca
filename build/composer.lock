@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dea2f5d17eb9d926cd34b907854c898b",
+    "content-hash": "cd868dac4e9fb20b5544672b89287620",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1733,6 +1733,9 @@
             },
             "require": {
                 "drupal/core": "^9.5 || ^10 || ^11"
+            },
+            "conflict": {
+                "drupal/project_browser": "<2.1.0"
             },
             "type": "drupal-module",
             "extra": {
@@ -5059,6 +5062,10 @@
                 {
                     "name": "jcnventura",
                     "homepage": "https://www.drupal.org/user/122464"
+                },
+                {
+                    "name": "vitaliyb98",
+                    "homepage": "https://www.drupal.org/user/3514011"
                 },
                 {
                     "name": "yannickoo",
