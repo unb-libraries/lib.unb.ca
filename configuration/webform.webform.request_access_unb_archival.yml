@@ -89,7 +89,7 @@ elements: |-
         '#required_error': 'You must agree that you will only use these materials for research'
       i_intend_to_publish:
         '#type': checkbox
-        '#title': 'I intend to publish'
+        '#title': 'I intend to publish the results of my research or use the materials in an exhibit'
     permission_to_publish:
       '#type': fieldset
       '#title': 'Permission to Publish'
