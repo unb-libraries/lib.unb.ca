@@ -1,0 +1,127 @@
+id: lib_unb_finding
+label: Pages of UNB Libraries Core Website
+migration_group: UNBLIB
+migration_tags:
+  - html
+
+source:
+  constants:
+    ID_UNBHISTORY_NAV: 115
+    ID_UNBHISTORY_HELP: 116
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: dom
+
+  # A URL that lists all Finding pages to process.
+  urls:
+    - https://systems.lib.unb.ca/wiki-import-urls.html
+
+  ids:
+    url:
+      type: string
+  item_selector: url
+
+  dom_config:
+    migration_tools:
+      -
+        source_operations:
+          -
+            operation: modifier
+            modifier: basicCleanup
+        fields:
+          url:
+            obtainer: ObtainLinkFile
+            jobs:
+              -
+                job: addSearch
+                method: findFileLinksHref
+                arguments:
+                  - 'body'
+                  - []
+                  - [ 'unbhistory.lib.unb.ca' ]
+        dom_operations:
+          -
+            operation: modifier
+            modifier: convertBaseHrefLinks
+          -
+            operation: get_field
+            field: url
+
+  migration_tools:
+    -
+      source: url
+      source_type: url
+      source_operations:
+        -
+          operation: modifier
+          modifier: basicCleanup
+      fields:
+        title:
+          obtainer: ObtainTitle
+          jobs:
+            -
+              job: addSearch
+              method: pluckSelector
+              arguments:
+                - '#content h1'
+        non_sidebar:
+          obtainer: ObtainBody
+          jobs:
+            -
+              job: addSearch
+              method: pluckSelector
+              arguments:
+                - 'div.mw-parser-output'
+                - 1
+                - innerHtml
+      dom_operations:
+        -
+          operation: modifier
+          modifier: removeSelectorAll
+          arguments:
+            - '>div.mw-parser-output div[style*="background-color:pink"]'
+        -
+          operation: modifier
+          modifier: removeSelectorAll
+          arguments:
+            - '>div.mw-parser-output a[href*="#top"]'
+        -
+          operation: modifier
+          modifier: removeSelectorAll
+          arguments:
+            - '>div.mw-parser-output div.magnify'
+        -
+          operation: modifier
+          modifier: removeSelectorAll
+          arguments:
+            - '>div.mw-parser-output a[href^="/User"]'
+        -
+          operation: modifier
+          modifier: removeSelectorAll
+          arguments:
+            - '>div.mw-parser-output span.toctogglespan'
+        -
+          operation: get_field
+          field: title
+        -
+          operation: get_field
+          field: non_sidebar
+
+process:
+  type:
+    plugin: default_value
+    default_value: library_page
+  title:
+    plugin: default_value
+    default_value: UNB Libraries
+    source: title
+
+destination:
+  plugin: entity:node
+
+dependencies:
+  module:
+    - lib_unb_ca_finding
+  enforced:
+    module:
+      - lib_unb_ca_finding

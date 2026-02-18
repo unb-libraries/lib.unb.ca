@@ -1,0 +1,7 @@
+{
+  "name": "tobia/jquery-pause",
+  "description": "Pause and resume jQuery animations",
+  "type": "drupal-library",
+  "version": "0.1.0",
+  "license": "GPL-2.0-or-later"
+}

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\lib_unb_ca_mediawiki\Event;
+namespace Drupal\lib_unb_ca_finding\Event;
 
 use Drupal\media\Entity\Media;
 use Drupal\migrate\Audit\AuditException;
@@ -18,8 +18,8 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  */
 class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
 
-  const BASE_URI = 'https://unbhistory.lib.unb.ca';
-  const MIGRATION_ID = 'lib_unb_mediawiki';
+  const BASE_URI = 'https://web.lib.unb.ca/archives/finding';
+  const MIGRATION_ID = 'lib_unb_finding';
   const PATH_REWRITE_FILE = '/tmp/nginx_rewrites.txt;';
   const PATH_TAXONOMY_VID = 'unb_libraries_page_paths';
 
@@ -120,12 +120,6 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    */
   private function addNodePathRelationship() {
     $url = trim($this->currentRow->getSourceProperty('url'));
-    // Add expected path for destination to source path.
-    $url = str_replace(
-      'https://unbhistory.lib.unb.ca',
-      'https://unbhistory.lib.unb.ca/archives/unbhistory',
-      $url
-    );
 
     // Global URL replaces.
     $url = str_replace('gddm-new', 'gddm', $url);
@@ -201,8 +195,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
       }
     }
 
-    $sidebar_paragraphs[] = $this->getSidebarMediawikiParagraph('ID_UNBHISTORY_NAV');
-    $sidebar_paragraphs[] = $this->getSidebarMediawikiParagraph('ID_UNBHISTORY_HELP');
+    $sidebar_paragraphs[] = $this->getSidebarFindingParagraph('ID_FINDING_NAV');
     $main_paragraphs[] = $this->getNonSidebarContentParagraph();
 
     $this->currentParagraph = Paragraph::create([
@@ -392,7 +385,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
   }
 
   /**
-   * Create the sidebar content for a mediawiki imported row.
+   * Create the sidebar content for a finding imported row.
    * 
    * @param string $id_const
    *  The migrate source constant cotaining the sidebar block's ID. 
@@ -402,7 +395,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    * @return \Drupal\Core\Entity\EntityInterface|\Drupal\paragraphs\Entity\Paragraph
    *   The paragraph containing the sidebar content.
    */
-  private function getSidebarMediawikiParagraph($id_const) {
+  private function getSidebarFindingParagraph($id_const) {
     $block_storage = \Drupal::entityTypeManager()->getStorage('block_content');
     $block_id = $this->currentRow->getSourceProperty('constants')[$id_const];
     $block = $block_storage->load($block_id);
@@ -415,7 +408,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
 
       $paragraph->field_selected_block->settings = [
         'id' => $plugin_id,
-        'label' => 'Archives & Special Collections Sidebar',
+        'label' => 'Archives Finding Aids Sidebar',
         'label_display' => false,
         'provider' => 'block_content',
         'status' => true,
@@ -451,7 +444,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     // Switch external http targets to https
     $non_sidebar = str_replace('http:', 'https:', $non_sidebar);
     // Migrate internal links
-    $non_sidebar = $this->internalLinks($non_sidebar);
+    //$non_sidebar = $this->internalLinks($non_sidebar);
     // Swap images with corresponding previously migrated Drupal media 
     $non_sidebar = $this->swapImg($non_sidebar);
     // Replace <b> tags with <strong> for compatibility with format library_page_html
@@ -514,11 +507,8 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
         if (!str_contains($match, 'https:')) {
 
           if (str_contains($match, 'File:')) {
-            $replace = str_replace('File:', 'sites/default/files/unbhistory/', $match);
+            $replace = str_replace('File:', 'sites/default/files/finding/', $match);
             $html = str_replace($match, $replace, $html);
-          }
-          elseif (strpos($match, '/index.php') === 0 or str_contains($match, 'unbhistory/index.php')) {
-            $html = str_replace($match, '', $html);
           }
           else {
             $replace = "/archives/unbhistory$match";
@@ -594,7 +584,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
           $uuid = $media->uuid();
           // Build replacement <figure>
           $figure = "
-            <figure class='mediawiki-figure caption caption-drupal-media image-style align-right'>
+            <figure class='finding-figure caption caption-drupal-media image-style align-right'>
               <drupal-media data-align='right' data-entity-type='media' data-view-mode='colorbox_smr_linked_to_original' data-entity-uuid='$uuid'></drupal-media>
               <figcaption>$caption</figcaption>
             </figure>
@@ -704,7 +694,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     // Get original URL
     $og_url = $this->currentRow->getSourceProperty('url');
     // Update to lib URL
-    $url = str_replace('https://unbhistory.lib.unb.ca', '/archives/unbhistory', $og_url);
+    $url = str_replace('https://web.lib.unb.ca/archives/finding/', '/archives/finding-aids', $og_url);
     // Save the new alias unencoded
     $alias = PathAlias::create([
       'path' => '/node/' . $this->currentNode->id(),
