@@ -1,7 +1,8 @@
 <?php
 
-namespace Drupal\lib_unb_ca_mediawiki\Event;
+namespace Drupal\lib_unb_ca_finding\Event;
 
+use Drupal\media\Entity\Media;
 use Drupal\migrate\Audit\AuditException;
 use Drupal\migrate\Event\MigrateEvents;
 use Drupal\migrate\Event\MigratePostRowSaveEvent;
@@ -9,6 +10,7 @@ use Drupal\node\Entity\Node;
 use Drupal\node_path_taxonomy\Entity\NodeTaxonomyPath;
 use Drupal\node_path_taxonomy\Entity\NodeTaxonomyPathRelationship;
 use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\path_alias\Entity\PathAlias;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
@@ -16,8 +18,8 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  */
 class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
 
-  const BASE_URI = 'https://lib.unb.ca';
-  const MIGRATION_ID = 'lib_unb_mediawiki';
+  const BASE_URI = 'https://web.lib.unb.ca/archives/finding';
+  const MIGRATION_ID = 'lib_unb_finding';
   const PATH_REWRITE_FILE = '/tmp/nginx_rewrites.txt;';
   const PATH_TAXONOMY_VID = 'unb_libraries_page_paths';
 
@@ -85,14 +87,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
 
         if (!empty($this->currentNode)) {
           $this->addNodePathRelationship();
-
-          if ($this->pageHasSidebar()) {
-            $this->createContentWithSidebar();
-          }
-          else {
-            $this->addContentNoSidebar();
-          }
-
+          $this->createContentWithSidebar();
           $this->writeNode();
           $this->writeOutNodeRedirect();
         }
@@ -107,7 +102,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     $old_url = trim($this->currentRow->getSourceProperty('url'));
     $old_path = str_replace(self::BASE_URI, '', $old_url);
 
-    $aliasManager = \Drupal::service('path.alias_manager');
+    $aliasManager = \Drupal::service('path_alias.manager');
     $new_path = $aliasManager->getAliasByPath('/node/' . $this->currentNode->id());
 
     $padded_old_string = str_pad($old_path, 50, " ");
@@ -136,7 +131,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
       $path = '/';
     }
     else {
-      $path = str_replace(self::BASE_URI, '', $uri_dir);
+      $path = str_replace(self::BASE_URI, '/archives/finding-aids', $uri_dir);
     }
 
     // Add the relationship.
@@ -199,8 +194,10 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
         $sidebar_paragraphs[] = $sidebar_paragraph;
       }
     }
-    $sidebar_paragraphs[] = $this->getSidebarContentParagraph();
+
+    $sidebar_paragraphs[] = $this->getSidebarFindingParagraph('ID_FINDING_NAV');
     $main_paragraphs[] = $this->getNonSidebarContentParagraph();
+
     $this->currentParagraph = Paragraph::create([
       'type' => 'body_sidebar_section',
       'field_column_1' => $main_paragraphs,
@@ -311,7 +308,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     return $paragraph;
   }
 
-  /**
+  /**pid
    * Determine if the imported row sidebar contained hours for the term.
    *
    * @return bool
@@ -388,23 +385,42 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
   }
 
   /**
-   * Create the sidebar content for a sidebar-containing imported row.
+   * Create the sidebar content for a finding imported row.
+   * 
+   * @param string $id_const
+   *  The migrate source constant cotaining the sidebar block's ID. 
    *
    * @throws \Drupal\Core\Entity\EntityStorageException
    *
    * @return \Drupal\Core\Entity\EntityInterface|\Drupal\paragraphs\Entity\Paragraph
    *   The paragraph containing the sidebar content.
    */
-  private function getSidebarContentParagraph() {
-    $paragraph = Paragraph::create([
-      'type' => 'body_section',
-      'field_body' => [
-        'value' => $this->currentRow->getSourceProperty('sidebar'),
-        'format' => 'library_page_html',
-      ],
-    ]);
-    $paragraph->save();
-    return $paragraph;
+  private function getSidebarFindingParagraph($id_const) {
+    $block_storage = \Drupal::entityTypeManager()->getStorage('block_content');
+    $block_id = $this->currentRow->getSourceProperty('constants')[$id_const];
+    $block = $block_storage->load($block_id);
+
+    if ($block) {
+      $uuid = $block->uuid();
+      $plugin_id = "block_content:$uuid";
+      $paragraph = Paragraph::create(['type' => 'custom_block_section']);
+      $paragraph->field_selected_block->plugin_id = $plugin_id;
+
+      $paragraph->field_selected_block->settings = [
+        'id' => $plugin_id,
+        'label' => 'Archives Finding Aids Sidebar',
+        'label_display' => false,
+        'provider' => 'block_content',
+        'status' => true,
+        'info' => '',
+        'view_mode' => 'full',
+      ];
+
+      $paragraph->save();
+      return $paragraph;
+    }
+
+    return;
   }
 
   /**
@@ -416,15 +432,237 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    *   The paragraph containing the main content.
    */
   private function getNonSidebarContentParagraph() {
+    $non_sidebar = $this->currentRow->getSourceProperty('non_sidebar');    
+    // Remove original copyright notice
+    $pattern = '/© UNB Archives & Special Collections, \d{4}/s';
+    $non_sidebar = preg_replace($pattern, '', $non_sidebar);
+    // Remove all classes
+    $match_class = '#(class\=")(.*?)(")#s';
+    preg_replace($match_class, '', $non_sidebar);
+    // Remove all comments
+    $non_sidebar = $this->removeHtmlComments($non_sidebar);
+    // Switch external http targets to https
+    $non_sidebar = str_replace('http:', 'https:', $non_sidebar);
+    // Migrate internal links
+    //$non_sidebar = $this->internalLinks($non_sidebar);
+    // Swap images with corresponding previously migrated Drupal media 
+    $non_sidebar = $this->swapImg($non_sidebar);
+    // Replace <b> tags with <strong> for compatibility with format library_page_html
+    $non_sidebar = str_replace('b>', 'strong>', $non_sidebar);
+    // Add table classes
+    $pattern = '/\<table.+?\>/s';
+    $non_sidebar = preg_replace(
+      $pattern, 
+      '<table class="table table-bordered table-hover table-striped wikitable">',
+      $non_sidebar
+    );
+    // Add TOC classes
+    $non_sidebar = str_replace(
+      '<div id="toc" class="toc',
+      '<div id="toc" class="toc alert bg-light border mt-0',
+      $non_sidebar
+    );
+    $non_sidebar = str_replace(
+      '<h2 id="mw-toc-heading"',
+      '<h2 id="mw-toc-heading" class="h4"',
+      $non_sidebar
+    );
+    // Add caption classes
+    $non_sidebar = str_replace('<caption>', '<caption class="h4">', $non_sidebar);
+    // Remove all empty tags
+    $non_sidebar = $this->removeEmptyTags($non_sidebar);
+
     $paragraph = Paragraph::create([
       'type' => 'body_section',
       'field_body' => [
-        'value' => $this->currentRow->getSourceProperty('non_sidebar'),
+        'value' => $non_sidebar,
         'format' => 'library_page_html',
       ],
     ]);
+    
+    $title = $this->currentRow->getSourceProperty('title');
+    echo "\nSaving paragraph [$title]\n";
     $paragraph->save();
     return $paragraph;
+  }
+
+  /**
+   * Migrate target of interal links.
+   *
+   * @param string $html
+   * A string containing the HTML before processing.
+   *
+   * @return string
+   * A string containing the HTML after processing.
+   */
+  private function internalLinks($html) {
+    $match_href = '/href=["\'](.*?)["\']/is';
+    preg_match_all($match_href, $html, $matches);
+    
+    foreach($matches[1] as $match) {
+      // Only process if link is not a self-link (starts w/ #)
+      if (!(strpos($match, '#') === 0)) {
+
+        // Only process interal links
+        if (!str_contains($match, 'https:')) {
+
+          if (str_contains($match, 'File:')) {
+            $replace = str_replace('File:', 'sites/default/files/finding/', $match);
+            $html = str_replace($match, $replace, $html);
+          }
+          else {
+            $replace = "/archives/finding-aids$match";
+            $html = str_replace($match, $replace, $html);
+          }
+        }
+        else {
+          // Handle internal-pointing "external" links
+          $html = str_replace(
+            'web.lib.unb.ca/archives/finding/',
+            'lib.unb.ca/archives/finding-aids/',
+            $html
+          );
+        }
+      }
+    }
+
+    // Recursively remove redundant link paths
+    while (str_contains($html, 'archives/finding/archives/finding/')) {
+      $html = str_replace(
+        'archives/finding/archives/finding/',
+        'archives/finding/',
+        $html
+      );
+    }
+    
+    return $html;
+  }
+
+  /**
+   * Swap source <img> tags for <figure> with Drupal Media image location.
+   *
+   * @param string $html
+   * A string containing the HTML before processing.
+   *
+   * @return string
+   * A string containing the HTML after processing.
+   */
+  private function swapImg($html) {
+    // Extract contents of elements div.thumbinner containing images
+    $pattern = '#(<div class="thumb tright".*?</div>.*?</div>)#s';
+    $search = preg_match_all($pattern, $html, $thumbs);
+    $thumbs = array_unique($thumbs);
+    
+    foreach ($thumbs[0] as $thumb) {
+      // Retrieve image filename from src attribute
+      $pattern = '#<img[^>]+src="([^">]*\/([^">\/]+))"#s';
+      $search = preg_match($pattern, $thumb, $filename);
+      
+      if (!empty($filename)) {
+        $filename = $filename[2] ?? $filename;
+        $filename = str_replace('px-', 'px_', $filename);
+        $pattern = '#.*?px_#';
+        $search = preg_match($pattern, $filename, $remove);
+        $filename = str_replace($remove, '', $filename);
+        // Retrieve media object UUID
+        $media = $this->loadMediaByFilename($filename);
+
+        if (!empty($media)) {
+          // Retrieve caption
+          $pattern = '#(<div class="thumbcaption">)(.*?)(</div>)#s';
+          $search = preg_match($pattern, $thumb, $caption);
+          $caption = $caption[2] ?? $caption;
+          // Add caption to media object alt
+          $media->field_media_image->alt = $caption;
+          $media->save();
+          // Retrieve media UUID
+          $uuid = $media->uuid();
+          // Build replacement <figure>
+          $figure = "
+            <figure class='finding-figure caption caption-drupal-media image-style align-right'>
+              <drupal-media data-align='right' data-entity-type='media' data-view-mode='colorbox_smr_linked_to_original' data-entity-uuid='$uuid'></drupal-media>
+              <figcaption>$caption</figcaption>
+            </figure>
+          ";
+          $html = str_replace($thumb, $figure, $html);
+        }
+      }
+    }
+
+    if (str_contains($html, 'thumbcaption')) {
+      $title = $this->currentRow->getSourceProperty('title');
+      echo "\nUnmatched image in page [$title]\n";
+    }
+    return $html;
+  }
+  
+  /**
+   * Load Drupal image media by filename.
+   *
+   * @param string $filename
+   * A string containing name of the file.
+   *
+   * @return Drupal\media\Entity\Media
+   * The loaded Media object.
+   */
+  private function loadMediaByFilename($filename) {
+    // Load the file entity by filename.
+    $files = \Drupal::entityTypeManager()
+      ->getStorage('file')
+      ->loadByProperties(['filename' => $filename]);
+  
+    if ($files) {
+      $file = reset($files); // Get the first file entity.
+      // Load the media entity by file ID.
+      $media_entities = \Drupal::entityTypeManager()
+        ->getStorage('media')
+        ->loadByProperties(['name' => $filename]);
+  
+      if ($media_entities) {
+        $media = reset($media_entities); // Get the first media entity.
+        return $media;
+      }
+    }
+    
+    return NULL;
+  }
+    
+  /**
+   * Remove comments from HTML
+   *
+   * @param string $html
+   * A string containing the HTML before processing.
+   *
+   * @return string
+   * A string containing the HTML after processing.
+   */
+  private function removeHtmlComments($html) {
+    return preg_replace('/\<\!\-\-(.|\s)*?\-\-\>/s', '', $html);
+  }
+  
+  /**
+   * Remove empty tags from HTML
+   *
+   * @param string $html
+   * A string containing the HTML before processing.
+   *
+   * @return string
+   * A string containing the HTML after processing.
+   */
+  private function removeEmptyTags($html) {
+    // Remove paragraphs containing only breaks
+    $pattern = '/\<p\>(\<br\>|\<br\/\>|\s)*\<\/p\>/s';
+    $html = preg_replace($pattern, '', $html);
+    // Regular expression to match empty HTML tags
+    $pattern = '/\<(\w+)\b[^\>]*\>\s*\<\/\1\>/';
+    // Remove empty tags
+    $html = preg_replace($pattern, '', $html);
+    // Check if there are nested empty tags
+    while (preg_match($pattern, $html)) {
+      $html = preg_replace($pattern, '', $html);
+    }
+    
+    return $html;
   }
 
   /**
@@ -432,8 +670,8 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    */
   private function addContentNoSidebar() {
     $this->currentParagraph = Paragraph::create([
-      'type' => 'fullwidth_body_section',
-      'field_body' => [
+      'type' => 'body_section',
+      'body' => [
         'value' => $this->currentRow->getSourceProperty('body'),
         'format' => 'library_page_html',
       ],
@@ -448,6 +686,16 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
   private function writeNode() {
     $this->currentParagraph->save();
     $this->currentNode->set('field_page_content', [$this->currentParagraph]);
+    // Get original URL
+    $og_url = $this->currentRow->getSourceProperty('url');
+    // Update to lib URL
+    $url = str_replace('https://web.lib.unb.ca/archives/finding/', '/archives/finding-aids', $og_url);
+    // Save the new alias unencoded
+    $alias = PathAlias::create([
+      'path' => '/node/' . $this->currentNode->id(),
+      'alias' => rawurldecode($url),
+    ]);
+    $alias->save();
     $this->currentNode->save();
   }
 

@@ -28,7 +28,8 @@ default_paths:
     sbdb: null
     database: null
     gallery: null
-    finding: null
+    finding-aids:
+      bailey: null
     edu: null
     hathaway: null
     erdb: null

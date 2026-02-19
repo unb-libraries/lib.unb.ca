@@ -315,7 +315,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     return $paragraph;
   }
 
-  /**
+  /**pid
    * Determine if the imported row sidebar contained hours for the term.
    *
    * @return bool
@@ -487,6 +487,8 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
       ],
     ]);
     
+    $title = $this->currentRow->getSourceProperty('title');
+    echo "\nSaving paragraph [$title]\n";
     $paragraph->save();
     return $paragraph;
   }
