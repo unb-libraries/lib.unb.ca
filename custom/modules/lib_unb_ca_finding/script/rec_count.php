@@ -39,5 +39,5 @@ if ($pages) {
       $i++;
     }
   }
-  echo "\nUNBHISTORY RECORDS: $i\n";
+  echo "\FINDING AIDS RECORDS: $i\n";
 }

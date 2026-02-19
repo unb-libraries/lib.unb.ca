@@ -230,6 +230,21 @@
       "package": {
         "dist": {
           "type": "zip",
+          "url": "https://github.com/unb-libraries/upstream-library-mirror/raw/master/pause/pause.zip"
+        },
+        "extra": {
+          "installer-name": "jquery.pause"
+        },
+        "name": "jquery/pause",
+        "type": "drupal-library",
+        "version": "dev-master"
+      },
+      "type": "package"
+    },
+    {
+      "package": {
+        "dist": {
+          "type": "zip",
           "url": "https://github.com/markgoodyear/scrollup/archive/refs/heads/master.zip"
         },
         "extra": {
@@ -279,10 +294,6 @@
         "version": "1.17.10"
       },
       "type": "package"
-    },
-    {
-      "type": "path",
-      "url": "./repo/jquery-pause"
     }
   ],
   "require": {
@@ -383,7 +394,6 @@
     "npm-asset/fontawesome-iconpicker": "^1.3",
     "pear/file_marc": "^1.4",
     "scriptotek/marc": "^2.1",
-    "tobia/jquery-pause": "^0.1",
     "unb-libraries/alert_scheduler": "dev-8.x-1.x",
     "unb-libraries/calendar_hours": "dev-9.x-1.x",
     "unb-libraries/custom-entity": "dev-9.x-1.x",

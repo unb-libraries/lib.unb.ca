@@ -6,8 +6,7 @@ migration_tags:
 
 source:
   constants:
-    ID_UNBHISTORY_NAV: 115
-    ID_UNBHISTORY_HELP: 116
+    ID_FINDING_NAV: 115
   plugin: url
   data_fetcher_plugin: http
   data_parser_plugin: dom
@@ -38,7 +37,7 @@ source:
                 arguments:
                   - 'body'
                   - []
-                  - [ 'unbhistory.lib.unb.ca' ]
+                  - [ 'web.lib.unb.ca' ]
         dom_operations:
           -
             operation: modifier

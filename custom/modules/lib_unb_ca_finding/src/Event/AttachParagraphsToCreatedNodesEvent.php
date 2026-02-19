@@ -511,20 +511,15 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
             $html = str_replace($match, $replace, $html);
           }
           else {
-            $replace = "/archives/unbhistory$match";
+            $replace = "/archives/finding-aids$match";
             $html = str_replace($match, $replace, $html);
           }
         }
         else {
           // Handle internal-pointing "external" links
           $html = str_replace(
-            'unbhistory.lib.unb.ca/index.php/',
-            'unbhistory.lib.unb.ca/',
-            $html
-          );
-          $html = str_replace(
-            'unbhistory.lib.unb.ca/',
-            'lib.unb.ca/archives/unbhistory/',
+            'web.lib.unb.ca/archives/finding/',
+            'lib.unb.ca/archives/finding-aids/',
             $html
           );
         }
@@ -532,10 +527,10 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     }
 
     // Recursively remove redundant link paths
-    while (str_contains($html, 'archives/unbhistory/archives/unbhistory/')) {
+    while (str_contains($html, 'archives/finding/archives/finding/')) {
       $html = str_replace(
-        'archives/unbhistory/archives/unbhistory/',
-        'archives/unbhistory/',
+        'archives/finding/archives/finding/',
+        'archives/finding/',
         $html
       );
     }
