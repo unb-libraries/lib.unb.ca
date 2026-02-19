@@ -1,6 +1,6 @@
 id: lib_unb_finding
-label: Pages of UNB Libraries Core Website
-migration_group: UNBLIB
+label: Pages of UNB Libraries Finding Aids Website
+migration_group: FINDING
 migration_tags:
   - html
 
@@ -13,7 +13,7 @@ source:
 
   # A URL that lists all Finding pages to process.
   urls:
-    - https://systems.lib.unb.ca/wiki-import-urls.html
+    - https://systems.lib.unb.ca/archives.html
 
   ids:
     url:

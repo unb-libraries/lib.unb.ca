@@ -6,6 +6,7 @@
 
 // List of shell commands to execute
 $commands = [
+    'composer require drupal/migrate_plus:^5',
     'composer require drupal/migrate_tools:^5',
     'drush en --yes lib_unb_ca_finding',
     'drush ms'

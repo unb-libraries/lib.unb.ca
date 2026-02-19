@@ -131,7 +131,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
       $path = '/';
     }
     else {
-      $path = str_replace(self::BASE_URI, '', $uri_dir);
+      $path = str_replace(self::BASE_URI, '/archives/finding-aids', $uri_dir);
     }
 
     // Add the relationship.
