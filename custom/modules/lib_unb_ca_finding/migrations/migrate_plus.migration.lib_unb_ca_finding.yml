@@ -62,7 +62,7 @@ source:
               job: addSearch
               method: pluckSelector
               arguments:
-                - '#content h1'
+                - 'head title'
         non_sidebar:
           obtainer: ObtainBody
           jobs:
@@ -70,7 +70,7 @@ source:
               job: addSearch
               method: pluckSelector
               arguments:
-                - 'div.mw-parser-output'
+                - 'body'
                 - 1
                 - innerHtml
       dom_operations:
