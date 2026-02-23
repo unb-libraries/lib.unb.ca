@@ -78,27 +78,14 @@ source:
           operation: modifier
           modifier: removeSelectorAll
           arguments:
-            - '>div.mw-parser-output div[style*="background-color:pink"]'
+            - 'address'
         -
           operation: modifier
-          modifier: removeSelectorAll
+          modifier: matchRemoveAll
           arguments:
-            - '>div.mw-parser-output a[href*="#top"]'
-        -
-          operation: modifier
-          modifier: removeSelectorAll
-          arguments:
-            - '>div.mw-parser-output div.magnify'
-        -
-          operation: modifier
-          modifier: removeSelectorAll
-          arguments:
-            - '>div.mw-parser-output a[href^="/User"]'
-        -
-          operation: modifier
-          modifier: removeSelectorAll
-          arguments:
-            - '>div.mw-parser-output span.toctogglespan'
+            - 'a'
+            - 'back.gif'
+            - 'html'
         -
           operation: get_field
           field: title
