@@ -134,7 +134,6 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     // Add the relationship.
     NodeTaxonomyPathRelationship::addNodePathRelationshipFromPath($this->currentNode, self::PATH_TAXONOMY_VID, $path);
     $cur_path_term = NodeTaxonomyPath::getNodePathTerm($this->currentNode);
-    dump($cur_path_term->id());
 
     // No path entry?
     if (empty($cur_path_term)) {
