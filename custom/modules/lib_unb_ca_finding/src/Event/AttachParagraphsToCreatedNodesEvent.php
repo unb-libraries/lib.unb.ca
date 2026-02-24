@@ -121,9 +121,6 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
   private function addNodePathRelationship() {
     $url = trim($this->currentRow->getSourceProperty('url'));
 
-    // Global URL replaces.
-    $url = str_replace('gddm-new', 'gddm', $url);
-
     $file_parts = pathinfo($url);
     $uri_dir = $file_parts['dirname'];
 
@@ -137,6 +134,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     // Add the relationship.
     NodeTaxonomyPathRelationship::addNodePathRelationshipFromPath($this->currentNode, self::PATH_TAXONOMY_VID, $path);
     $cur_path_term = NodeTaxonomyPath::getNodePathTerm($this->currentNode);
+    dump($cur_path_term);
 
     // No path entry?
     if (empty($cur_path_term)) {

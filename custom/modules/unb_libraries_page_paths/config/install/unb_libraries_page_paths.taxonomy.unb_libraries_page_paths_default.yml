@@ -3,74 +3,127 @@ status: true
 mode: default
 default_paths:
   clc:
-    portolan:
+    portolan: null
   collections:
-    loyalist:
+    loyalist: null
   microforms:
-    newsdb:
-  copyright:
-  eresources:
-  proxy:
+    newsdb: null
+  copyright: null
+  eresources: null
+  proxy: null
   texts:
-    marston:
-    reserves:
-    theatre-restore:
-    acadiensis:
-    theatre:
-    special-collections:
-    wmwriters:
-    nb-history:
-  rdm:
+    marston: null
+    reserves: null
+    theatre-restore: null
+    acadiensis: null
+    theatre: null
+    special-collections: null
+    wmwriters: null
+    nb-history: null
+  rdm: null
   archives:
-    educrev:
-    sports:
-    kells:
-    sbdb:
-    database:
-    gallery:
-    finding:
-    edu:
-    hathaway:
-    erdb:
-    bennett:
-    unb-composites:
-    pephotos:
-    schoolbook:
-    unbhistory:
-  openaccess:
-  catalogues:
-  disted:
+    educrev: null
+    sports: null
+    kells: null
+    sbdb: null
+    database: null
+    gallery: null
+    finding-aids:
+      bailey: null
+      comptrol: null
+      fiddlehead: null
+      fraser: null
+      president: null
+      alumnae: null
+      annie: null
+      bridge: null
+      bskeirstead: null
+      buckner: null
+      chem: null
+      clark: null
+      cunning: null
+      dineen: null
+      downey: null
+      ferrari: null
+      gr: null
+      graham: null
+      hasek: null
+      hawkes: null
+      hazen: null
+      hubbard: null
+      hubener: null
+      ia: null
+      isabel: null
+      jarvis: null
+      jones: null
+      keirstead: null
+      ketchum: null
+      kinloch: null
+      lister: null
+      mmf: null
+      mnowlan: null
+      moore: null
+      mullan: null
+      music: null
+      myst: null
+      nbadhoc: null
+      ocsa: null
+      pacey: null
+      parkin: null
+      physed: null
+      prosser: null
+      roberts: null
+      sabat: null
+      shaw: null
+      smith: null
+      sterrycooper: null
+      stewart: null
+      stuart: null
+      task_force: null
+      trueman: null
+      vicepres: null
+      walker: null
+    edu: null
+    hathaway: null
+    erdb: null
+    bennett: null
+    unb-composites: null
+    pephotos: null
+    schoolbook: null
+    unbhistory: null
+  openaccess: null
+  catalogues: null
+  disted: null
   about:
-    facilities:
-    loc_call:
-    policies:
-    bio:
-  help:
+    facilities: null
+    loc_call: null
+    policies: null
+    bio: null
+  help: null
   research:
-    success:
-    video:
+    success: null
+    video: null
   data:
-    library-hours:
+    library-hours: null
   gddm:
-    dnr:
-    govdocs:
-    maps:
-    snb:
-    topos:
-  refworks:
+    dnr: null
+    govdocs: null
+    maps: null
+    snb: null
+    topos: null
+  refworks: null
   requests:
-    docdel:
-  reserves:
-  faculty:
-  225:
-  winslow:
+    docdel: null
+  reserves: null
+  faculty: null
+  225: null
+  winslow: null
   services:
-    rooms:
-    docdel:
-  worldcat:
-  zotero:
-  newbrunswickana:
-
+    rooms: null
+    docdel: null
+  worldcat: null
+  zotero: null
+  newbrunswickana: null
 dependencies:
   enforced:
     module:
