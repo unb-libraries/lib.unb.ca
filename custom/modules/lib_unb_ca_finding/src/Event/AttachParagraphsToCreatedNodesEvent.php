@@ -119,7 +119,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    * @see node_path_taxonomy_pathauto_alias_alter()
    */
   private function addNodePathRelationship() {
-    $url = trim($this->currentRow->getSourceProperty('url'));
+    $url = strtolower(trim($this->currentRow->getSourceProperty('url')));
 
     $file_parts = pathinfo($url);
     $uri_dir = $file_parts['dirname'];
@@ -134,7 +134,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     // Add the relationship.
     NodeTaxonomyPathRelationship::addNodePathRelationshipFromPath($this->currentNode, self::PATH_TAXONOMY_VID, $path);
     $cur_path_term = NodeTaxonomyPath::getNodePathTerm($this->currentNode);
-    dump($cur_path_term);
+    dump($cur_path_term->id());
 
     // No path entry?
     if (empty($cur_path_term)) {
@@ -687,7 +687,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     // Get original URL
     $og_url = $this->currentRow->getSourceProperty('url');
     // Update to lib URL
-    $url = str_replace('https://web.lib.unb.ca/archives/finding/', '/archives/finding-aids', $og_url);
+    $url = strtolower(str_replace('https://web.lib.unb.ca/archives/finding/', '/archives/finding-aids', $og_url));
     // Save the new alias unencoded
     $alias = PathAlias::create([
       'path' => '/node/' . $this->currentNode->id(),
