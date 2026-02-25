@@ -686,7 +686,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     // Get original URL
     $og_url = $this->currentRow->getSourceProperty('url');
     // Update to lib URL
-    $url = strtolower(str_replace('https://web.lib.unb.ca/archives/finding/', '/archives/finding-aids', $og_url));
+    $url = str_replace('https://web.lib.unb.ca/archives/finding/', '/archives/finding-aids/', $og_url);
     // Save the new alias unencoded
     $alias = PathAlias::create([
       'path' => '/node/' . $this->currentNode->id(),

@@ -10,7 +10,7 @@ third_party_settings:
     available_menus: {  }
     parent: ''
   search_api_exclude:
-    enabled: 0
+    enabled: false
 name: 'Images page'
 type: images_page
 description: 'Use <i>Images page</i> to create image collections for use in Slideshows, etc, eg. ''Videos & Tutorials'' block.'

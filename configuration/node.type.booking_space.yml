@@ -10,7 +10,7 @@ third_party_settings:
     available_menus: {  }
     parent: ''
   search_api_exclude:
-    enabled: 0
+    enabled: false
 name: 'Booking Space'
 type: booking_space
 description: 'Use <em>Booking Space</em> to create a bookable space in a <em>location > zone</em>.'

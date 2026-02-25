@@ -10,7 +10,7 @@ third_party_settings:
     available_menus: {  }
     parent: ''
   search_api_exclude:
-    enabled: 0
+    enabled: false
 name: 'News post'
 type: news_post
 description: 'Use <i>News post</i> for content to be dispalyed in the front page''s ''Library News'' section.'
