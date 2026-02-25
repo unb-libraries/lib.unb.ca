@@ -81,6 +81,11 @@ source:
             - 'address'
         -
           operation: modifier
+          modifier: removeSelectorAll
+          arguments:
+            - 'hr'
+        -
+          operation: modifier
           modifier: matchRemoveAll
           arguments:
             - 'a'
