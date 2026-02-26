@@ -4,7 +4,7 @@ use Drupal\Core\File\FileSystemInterface;
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
 
-$directoryName = 'sites/default/files/unbhistory';
+$directoryName = 'sites/default/files/finding-aids';
 
 // Check if the directory already exists
 if (!is_dir($directoryName)) {
@@ -18,7 +18,7 @@ if (!is_dir($directoryName)) {
     echo "Directory already exists.\n";
 }
 
-$url = 'https://unbhistory.lib.unb.ca/Special:ListFiles?limit=500';
+$url = DRUPAL_ROOT . '/modules/custom/lib_unb_ca_finding/data/finding-import-imgs.html';
 parseWebPage($url);
 
 function parseWebPage($url) {
@@ -38,15 +38,15 @@ function parseWebPage($url) {
     // Initialize a new DOMXPath instance
     $xpath = new DOMXPath($dom);
 
-    // Extract the 2nd link from each <td> with class TablePager_col_img_name
-    $links = $xpath->query("//td[@class='TablePager_col_img_name']/a[2]/@href");
+    // Extract attribute src of every image
+    $imgs = $xpath->query("//img/@src");
     
     // Iterate over the links and create media
     $limit = $_SERVER['argv'][3];
     $i = 0;
         
-    foreach ($links as $link) {
-      $imageUrl = 'https://unbhistory.lib.unb.ca' . $link->nodeValue;
+    foreach ($imgs as $img) {
+      $imageUrl = $img->nodeValue;
       $mediaId = createMediaImageFromUrl($imageUrl);
 
       if ($mediaId) {
@@ -75,7 +75,7 @@ function createMediaImageFromUrl($imageUrl) {
 
     // Create a managed file
     $fileRepository = \Drupal::service('file.repository');
-    $managedFile = $fileRepository->writeData($fileContents, 'public://unbhistory/' . $fileName, FileSystemInterface::EXISTS_REPLACE);
+    $managedFile = $fileRepository->writeData($fileContents, 'public://finding-aids/' . $fileName, FileSystemInterface::EXISTS_REPLACE);
     
     if ($managedFile === FALSE) {
         die("Error: Unable to save the file.");

@@ -545,8 +545,8 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    * A string containing the HTML after processing.
    */
   private function swapImg($html) {
-    // Extract contents of elements div.thumbinner containing images
-    $pattern = '#(<div class="thumb tright".*?</div>.*?</div>)#s';
+    // Extract all tags containing images
+    $pattern = '#<img\b[^>]*>#i';
     $search = preg_match_all($pattern, $html, $thumbs);
     $thumbs = array_unique($thumbs);
     
@@ -565,12 +565,8 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
         $media = $this->loadMediaByFilename($filename);
 
         if (!empty($media)) {
-          // Retrieve caption
-          $pattern = '#(<div class="thumbcaption">)(.*?)(</div>)#s';
-          $search = preg_match($pattern, $thumb, $caption);
-          $caption = $caption[2] ?? $caption;
           // Add caption to media object alt
-          $media->field_media_image->alt = $caption;
+          $media->field_media_image->alt = $filename;
           $media->save();
           // Retrieve media UUID
           $uuid = $media->uuid();
@@ -578,7 +574,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
           $figure = "
             <figure class='finding-figure caption caption-drupal-media image-style align-right'>
               <drupal-media data-align='right' data-entity-type='media' data-view-mode='colorbox_smr_linked_to_original' data-entity-uuid='$uuid'></drupal-media>
-              <figcaption>$caption</figcaption>
+              <figcaption>$filename</figcaption>
             </figure>
           ";
           $html = str_replace($thumb, $figure, $html);
