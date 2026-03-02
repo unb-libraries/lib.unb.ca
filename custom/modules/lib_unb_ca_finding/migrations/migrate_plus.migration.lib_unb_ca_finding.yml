@@ -6,7 +6,7 @@ migration_tags:
 
 source:
   constants:
-    ID_FINDING_NAV: 115
+    ID_FINDING_NAV: 120
   plugin: url
   data_fetcher_plugin: http
   data_parser_plugin: dom
@@ -64,7 +64,7 @@ source:
               arguments:
                 - 'head title'
         non_sidebar:
-          obtainer: ObtainBody
+          obtainer: '\Drupal\lib_unb_ca_finding\Obtainer\ObtainBodyPreservePre'
           jobs:
             -
               job: addSearch
