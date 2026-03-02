@@ -96,6 +96,11 @@ try {
 
   /** @var \Drupal\Core\Entity\Query\QueryInterface $query */
   $query = \Drupal::entityQuery('paragraph')->accessCheck(FALSE);
+  $or = $query->orConditionGroup()
+    ->condition('type', 'body_section')
+    ->condition('type', 'body_sidebar_section');
+  $query->condition($or);
+  
   if ($min_ts !== null) {
     $query->condition('created', $min_ts, '>=');
   }
