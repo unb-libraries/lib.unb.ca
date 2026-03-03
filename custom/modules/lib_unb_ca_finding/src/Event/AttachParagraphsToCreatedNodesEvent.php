@@ -497,18 +497,26 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     preg_match_all($match_href, $html, $matches);
     
     foreach($matches[1] as $match) {
-      // Only process if link is not a self-link (starts w/ #)
-      if (!(strpos($match, '#') === 0)) {
-
+      // Only process if not an in-document or relative link 
+      if (!str_contains($match, '#') and !str_contains($match, './')) {
+        
         // Only process internal links
         if (!str_contains($match, 'https:')) {
-
+          
           if (str_contains($match, 'File:')) {
             $replace = str_replace('File:', 'sites/default/files/finding/', $match);
             $html = str_replace($match, $replace, $html);
           }
           else {
-            $replace = "/archives/finding-aids$match";
+            $local = str_replace('archives/finding', '', $match);
+            // Remove leading slashes
+            while ($local[0] === '/') {
+              $local = substr($local, 1);
+            }
+            
+            $replace = "/archives/finding-aids/$local";
+            dump($match);
+            dump($replace);
             $html = str_replace($match, $replace, $html);
           }
         }
