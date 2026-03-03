@@ -35,7 +35,7 @@ if ($pages) {
   $i = 0;
 
   foreach ($pages as $page) { 
-    if (str_contains($page->path->alias, 'archives/finding')) { 
+    if (str_contains($page->path->alias, 'archives/finding-aids')) { 
       $i++;
     }
   }

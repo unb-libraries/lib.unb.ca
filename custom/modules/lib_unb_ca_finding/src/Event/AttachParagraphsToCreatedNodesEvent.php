@@ -441,7 +441,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     // Switch external http targets to https
     $non_sidebar = str_replace('http:', 'https:', $non_sidebar);
     // Migrate internal links
-    //$non_sidebar = $this->internalLinks($non_sidebar);
+    $non_sidebar = $this->internalLinks($non_sidebar);
     // Swap images with corresponding previously migrated Drupal media 
     $non_sidebar = $this->swapImg($non_sidebar);
     // Replace <b> tags with <strong> for compatibility with format library_page_html

@@ -39,7 +39,7 @@ if ($block) {
   $plugin_id = "block_content:$uuid";
 
   foreach ($pages as $page) { 
-    if (str_contains($page->path->alias, 'archives/finding')) { 
+    if (str_contains($page->path->alias, 'archives/finding-aids')) { 
       $pid = $page->field_page_content->entity->field_column_2->getValue()[1]['target_id'];
       $paragraph = Paragraph::load($pid);
       
