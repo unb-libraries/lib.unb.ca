@@ -500,7 +500,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
       // Only process if link is not a self-link (starts w/ #)
       if (!(strpos($match, '#') === 0)) {
 
-        // Only process interal links
+        // Only process internal links
         if (!str_contains($match, 'https:')) {
 
           if (str_contains($match, 'File:')) {
@@ -524,10 +524,10 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     }
 
     // Recursively remove redundant link paths
-    while (str_contains($html, 'archives/finding/archives/finding/')) {
+    while (str_contains($html, 'archives/finding-aids/archives/finding-aids/')) {
       $html = str_replace(
-        'archives/finding/archives/finding/',
-        'archives/finding/',
+        'archives/finding-aids/archives/finding-aids/',
+        'archives/finding-aids/',
         $html
       );
     }
