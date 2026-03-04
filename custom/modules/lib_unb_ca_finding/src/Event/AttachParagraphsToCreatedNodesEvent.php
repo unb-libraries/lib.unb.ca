@@ -442,6 +442,8 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     $non_sidebar = str_replace('http:', 'https:', $non_sidebar);
     // Migrate internal links
     $non_sidebar = $this->internalLinks($non_sidebar);
+    // Migrate spans with style="font-weight: bold" attributes
+    $non_sidebar = $this->replaceBoldSpans($non_sidebar);
     // Swap images with corresponding previously migrated Drupal media 
     $non_sidebar = $this->swapImg($non_sidebar);
     // Replace <b> tags with <strong> for compatibility with format library_page_html
@@ -499,26 +501,13 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     foreach($matches[1] as $match) {
       // Only process if not an in-document or relative link 
       if (!str_contains($match, '#') and !str_contains($match, './')) {
-        
         // Only process internal links
         if (!str_contains($match, 'https:')) {
-          
-          if (str_contains($match, 'File:')) {
-            $replace = str_replace('File:', 'sites/default/files/finding/', $match);
-            $html = str_replace($match, $replace, $html);
-          }
-          else {
-            $local = str_replace('archives/finding', '', $match);
-            // Remove leading slashes
-            while ($local[0] === '/') {
-              $local = substr($local, 1);
-            }
-            
-            $replace = "/archives/finding-aids/$local";
-            dump($match);
-            dump($replace);
-            $html = str_replace($match, $replace, $html);
-          }
+          $html = str_replace(
+            '/finding/',
+            '/finding-aids/',
+            $html
+          );
         }
         else {
           // Handle internal-pointing "external" links
@@ -697,6 +686,9 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
       'alias' => rawurldecode($url),
     ]);
     $alias->save();
+    $og_title = $this->currentNode->getTitle();
+    $new_title = $this->trimTitle($og_title);
+    $this->currentNode->setTitle($new_title);
     $this->currentNode->save();
   }
 
@@ -722,4 +714,95 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     ];
   }
 
+  /**
+   * Removes a leading UNB Archives- or UNB Archives - (case-insensitive),
+   * then trims and returns the remaining string in title case (multibyte-safe).
+   *
+   * Examples:
+   * - "UNB Archives-foo bar" => "Foo Bar"
+   * - "  UNB Archives -  the story of drupal" => "The Story Of Drupal"
+   * - "Some Other Title" => "Some Other Title"
+   */
+  private function trimTitle(string $title): string
+  {
+      // Remove leading whitespace and the prefix "UNB Archives-" or "UNB Archives -"
+      // ^\s*          -> optional leading whitespace
+      // UNB\s+Archives
+      // \s*-\s*       -> dash with optional surrounding spaces
+      $pattern = '/^\s*UNB\s+Archives\s*-\s*/iu';
+
+      $clean = preg_replace($pattern, '', $title);
+      if ($clean === null) {
+          // preg_replace can return null on error; fallback to original trimmed title
+          $clean = $title;
+      }
+
+      $clean = trim($clean);
+
+      if ($clean === '') {
+          return '';
+      }
+
+      // Convert to title case in a multibyte-safe way
+      return mb_convert_case($clean, MB_CASE_TITLE, 'UTF-8');
+  }
+
+  /**
+   * Replace <span> elements whose inline style contains "font-weight: bold"
+   * with <strong> elements preserving the inner HTML content.
+   *
+   * Notes:
+   * - Only looks for the literal "font-weight: bold" (case-insensitive). It will
+   *   match variants like "font-weight:bold", "font-weight : bold", and "font-weight: bold!important".
+   * - Other attributes on the original <span> are discarded.
+   *
+   * @param string $html HTML string
+   * @return string Transformed HTML
+   */
+  private function replaceBoldSpans(string $html): string
+  {
+      if ($html === '') {
+          return $html;
+      }
+
+      // Suppress warnings from malformed HTML and parse as fragment
+      libxml_use_internal_errors(true);
+      $doc = new \DOMDocument();
+
+      // Prepend XML encoding so DOMDocument treats the string as UTF-8.
+      // Use NOIMPLIED / NODEFDTD to avoid adding html/body when possible.
+      $wrapped = '<?xml encoding="utf-8" ?>' . $html;
+      $doc->loadHTML($wrapped, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+      libxml_clear_errors();
+
+      $xpath = new \DOMXPath($doc);
+      // Select spans that have a style attribute
+      $spans = $xpath->query('//span[@style]');
+
+      // Convert NodeList to array to avoid mutation issues while replacing nodes
+      foreach (iterator_to_array($spans) as $span) {
+          /** @var \DOMElement $span */
+          $style = $span->getAttribute('style');
+
+          // Match "font-weight: bold" (case-insensitive), allowing whitespace and other properties.
+          // The pattern checks that "font-weight" property exists and its value is "bold".
+          if (preg_match('/(^|;)\s*font-weight\s*:\s*bold\b/i', $style)) {
+              $strong = $doc->createElement('strong');
+
+              // Move all child nodes from the span into the new strong element,
+              // preserving inner HTML (elements, text, etc.)
+              while ($span->firstChild) {
+                  $strong->appendChild($span->firstChild);
+              }
+
+              $span->parentNode->replaceChild($strong, $span);
+          }
+      }
+
+      // Get HTML back. Remove the xml declaration we injected earlier.
+      $result = $doc->saveHTML();
+      $result = preg_replace('/^\s*<\?xml.*?\?>\s*/', '', $result);
+
+      return $result;
+  }
 }
