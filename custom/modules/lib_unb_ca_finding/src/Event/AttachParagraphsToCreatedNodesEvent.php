@@ -715,21 +715,44 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
   }
 
   /**
-   * Removes a leading UNB Archives- or UNB Archives - (case-insensitive),
-   * then trims and returns the remaining string in title case (multibyte-safe).
+   * Removes a leading UNB/University Of New Brunswick prefix (with a trailing dash),
+   * including common variants like:
+   * - University Of New Brunswick-Archives & Special Collections-
+   * - University Of New Brunswick Archives & Special Collections-
+   * - University Of New Brunswick Archives& Special Collections-
+   * - Unb Archives And Special Collections-
+   * - Unb Archives & Special Collections-
+   * - Unb-                (and UNB-, Unb - etc)
+   * - UNB Libraries-
+   * - University Of New Brunswick-
+   *
+   * The matching is case-insensitive and flexible about spaces around the dash.
+   * After removing the prefix the remaining string is trimmed and converted to
+   * title case (multibyte-safe). Finally any occurrence of "Unb" (in any case)
+   * is replaced with "UNB" (so "Unb" -> "UNB" after title-casing).
    *
    * Examples:
    * - "UNB Archives-foo bar" => "Foo Bar"
-   * - "  UNB Archives -  the story of drupal" => "The Story Of Drupal"
+   * - "  University Of New Brunswick -  the story of drupal" => "The Story Of Drupal"
+   * - "Unb Archives & Special Collections- some title" => "Some Title"
    * - "Some Other Title" => "Some Other Title"
    */
   private function trimTitle(string $title): string
   {
-      // Remove leading whitespace and the prefix "UNB Archives-" or "UNB Archives -"
-      // ^\s*          -> optional leading whitespace
-      // UNB\s+Archives
-      // \s*-\s*       -> dash with optional surrounding spaces
-      $pattern = '/^\s*UNB\s+Archives\s*-\s*/iu';
+      // Match a leading prefix (case-insensitive, unicode-aware) followed by a dash.
+      // The pattern covers:
+      //  - "University Of New Brunswick" or "UNB"
+      //  - optionally followed (after spaces or a hyphen) by "Archives", optionally
+      //    followed by "& Special Collections" or "and Special Collections"
+      //  - or "Libraries"
+      //  - allows flexible spacing and optional hyphen characters around separators
+      $pattern = '/^\s*' .
+          '(?:University\s+Of\s+New\s+Brunswick|UNB)' .
+          '(?:' .
+              '(?:\s*(?:-|–|—)\s*|\s+)?' .
+              '(?:Archives(?:\s*(?:&|and)\s*Special\s+Collections)?|Libraries|Archives&\s*Special\s*Collections)?' .
+          ')?' .
+          '\s*-\s*/iu';
 
       $clean = preg_replace($pattern, '', $title);
       if ($clean === null) {
@@ -744,7 +767,13 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
       }
 
       // Convert to title case in a multibyte-safe way
-      return mb_convert_case($clean, MB_CASE_TITLE, 'UTF-8');
+      $clean = mb_convert_case($clean, MB_CASE_TITLE, 'UTF-8');
+
+      // Ensure "Unb" (any case) becomes "UNB" after title-casing
+      // Use Unicode flag and case-insensitive match to catch any casing variant
+      $clean = preg_replace('/\bunb\b/iu', 'UNB', $clean);
+
+      return $clean;
   }
 
   /**
