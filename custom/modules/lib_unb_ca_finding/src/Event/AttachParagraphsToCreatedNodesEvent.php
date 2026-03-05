@@ -444,6 +444,8 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     $non_sidebar = $this->internalLinks($non_sidebar);
     // Migrate spans with style="font-weight: bold" attributes
     $non_sidebar = $this->replaceBoldSpans($non_sidebar);
+    // Remove maintained by...
+    $non_sidebar = $this->trimMaintained($non_sidebar);
     // Swap images with corresponding previously migrated Drupal media 
     $non_sidebar = $this->swapImg($non_sidebar);
     // Replace <b> tags with <strong> for compatibility with format library_page_html
@@ -833,5 +835,31 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
       $result = preg_replace('/^\s*<\?xml.*?\?>\s*/', '', $result);
 
       return $result;
+  }
+
+  /**
+   * Remove "document maintained by" (case-insensitive) and all following text
+   * until the next separator: tag delimiter '<', period '.', or newline.
+   *
+   * Examples:
+   * - "This is ... document maintained by ACME Corp. Next sentence" -> removes up to the period
+   * - "Info document maintained by ACME <a href=...>link</a>" -> removes up to the '<'
+   * - "Info document maintained by ACME\nMore text" -> removes up to the newline
+   *
+   * @param string $html HTML/text to trim
+   * @return string Trimmed HTML/text
+   */
+  private function trimMaintained(string $html): string
+  {
+      // 1) Remove occurrences followed by a separator (stop before the separator).
+      //    Uses a non-greedy match up to the next '<', '.' or line break.
+      $patternWithSeparator = '/document\s+maintained\s+by\b[\s\S]*?(?=[<\.\r\n])/i';
+      $html = preg_replace($patternWithSeparator, '', $html);
+
+      // 2) Remove any remaining occurrences that run to the end of the string.
+      $patternToEnd = '/document\s+maintained\s+by\b[\s\S]*/i';
+      $html = preg_replace($patternToEnd, '', $html);
+
+      return $html;
   }
 }
