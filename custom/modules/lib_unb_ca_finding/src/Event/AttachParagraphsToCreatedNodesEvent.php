@@ -472,6 +472,9 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     $non_sidebar = str_replace('<caption>', '<caption class="h4">', $non_sidebar);
     // Remove all empty tags
     $non_sidebar = $this->removeEmptyTags($non_sidebar);
+    // Remove 'BACK TO ARCHIVES'
+    $step = preg_replace('/\s*\bback\s+to\s+archives\b\s*/i', ' ', $non_sidebar);
+    $non_sidebar = trim(preg_replace('/\s+/', ' ', $step));
 
     $paragraph = Paragraph::create([
       'type' => 'body_section',
