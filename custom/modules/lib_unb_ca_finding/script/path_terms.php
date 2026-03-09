@@ -137,7 +137,7 @@ foreach ($nodes as $node) {
   if (!$href) {
     continue;
   }
-  // Look for "/finding/<segment>/" or "/finding/<segment>" patterns.
+  // Look for "/finding/<segment>/"
   if (preg_match('#/finding/([^/]+)#i', $href, $m)) {
     $segment = $m[1];
     // Lowercase per requirement, and trim whitespace.

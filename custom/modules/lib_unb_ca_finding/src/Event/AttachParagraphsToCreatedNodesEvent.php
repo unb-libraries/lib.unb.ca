@@ -125,7 +125,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     $uri_dir = $file_parts['dirname'];
 
     if ($uri_dir == self::BASE_URI) {
-      $path = '/';
+      $path = '/archives/finding-aids';
     }
     else {
       $path = str_replace(self::BASE_URI, '/archives/finding-aids', $uri_dir);

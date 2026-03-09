@@ -57,7 +57,8 @@ default_paths:
       jarvis: null
       jones: null
       keirstead: null
-      ketchum: null
+      ketchum:
+        documents: null
       kinloch: null
       lister: null
       mmf: null
