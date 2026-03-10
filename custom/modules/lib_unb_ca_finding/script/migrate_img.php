@@ -38,8 +38,55 @@ function parseWebPage($url) {
     // Initialize a new DOMXPath instance
     $xpath = new DOMXPath($dom);
 
-    // Extract attribute src of every image
-    $imgs = $xpath->query("//img/@src");
+    // Extract attribute src of every image or href that links to an image
+    $expr = "
+      //img/@src
+      |
+      //a[
+        substring(
+          translate(
+            substring-before(substring-before(@href, '?'), '#'),
+            'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+            'abcdefghijklmnopqrstuvwxyz'
+          ),
+          string-length(substring-before(substring-before(@href, '?'), '#')) - 3
+        ) = '.jpg'
+        or substring(
+          translate(
+            substring-before(substring-before(@href, '?'), '#'),
+            'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+            'abcdefghijklmnopqrstuvwxyz'
+          ),
+          string-length(substring-before(substring-before(@href, '?'), '#')) - 4
+        ) = '.jpeg'
+        or substring(
+          translate(
+            substring-before(substring-before(@href, '?'), '#'),
+            'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+            'abcdefghijklmnopqrstuvwxyz'
+          ),
+          string-length(substring-before(substring-before(@href, '?'), '#')) - 3
+        ) = '.png'
+        or substring(
+          translate(
+            substring-before(substring-before(@href, '?'), '#'),
+            'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+            'abcdefghijklmnopqrstuvwxyz'
+          ),
+          string-length(substring-before(substring-before(@href, '?'), '#')) - 3
+        ) = '.gif'
+        or substring(
+          translate(
+            substring-before(substring-before(@href, '?'), '#'),
+            'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+            'abcdefghijklmnopqrstuvwxyz'
+          ),
+          string-length(substring-before(substring-before(@href, '?'), '#')) - 3
+        ) = '.svg'
+      ]/@href
+    ";
+
+    $imgs = $xpath->query($expr);
     
     // Iterate over the links and create media
     $limit = $_SERVER['argv'][3];

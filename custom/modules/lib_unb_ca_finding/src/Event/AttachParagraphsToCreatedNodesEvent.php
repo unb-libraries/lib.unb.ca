@@ -502,24 +502,41 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     $match_href = '/href=["\'](.*?)["\']/is';
     preg_match_all($match_href, $html, $matches);
     
+    // Else redirect links to migrated pages
     foreach($matches[1] as $match) {
-      // Only process if not an in-document or relative link 
+      // If href seems to point to an image...
+      if (
+        strpos($match, '.jpg') or
+        strpos($match, '.jpeg') or
+        strpos($match, '.gif') or
+        strpos($match, '.png') or
+        strpos($match, '.bmp')
+        ) {
+        // Point reference to public files and continue
+        $replacement = '/sites/default/files/finding-aids/' . basename($match);
+        $html = str_replace($match, $replacement, $html);
+        echo "\nReplacing image href [$match] with [$replacement]\n";
+        continue;
+      }
+      // Only process if not an in-document or relative link
       if (!str_contains($match, '#') and !str_contains($match, './')) {
         // Only process internal links
         if (!str_contains($match, 'https:')) {
-          $html = str_replace(
+          $replacement = str_replace(
             '/finding/',
             '/finding-aids/',
-            $html
+            $match
           );
+          $html = str_replace($match, $replacement, $html);
         }
         else {
           // Handle internal-pointing "external" links
-          $html = str_replace(
+          $replacement = str_replace(
             'web.lib.unb.ca/archives/finding/',
             'lib.unb.ca/archives/finding-aids/',
-            $html
+            $match
           );
+          $html = str_replace($match, $replacement, $html);
         }
       }
     }
