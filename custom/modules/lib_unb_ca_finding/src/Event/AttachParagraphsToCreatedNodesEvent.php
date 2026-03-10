@@ -759,6 +759,7 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
           '\s*-\s*/iu';
 
       $clean = preg_replace($pattern, '', $title);
+
       if ($clean === null) {
           // preg_replace can return null on error; fallback to original trimmed title
           $clean = $title;
@@ -767,7 +768,28 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
       $clean = trim($clean);
 
       if ($clean === '') {
-          return '';
+          $clean = $title;
+      }
+
+      $exceptions = [
+        'University Of New Brusnwick Archives & Special Collections',
+        'University Of New Brunswick Archives & Special Collctions',
+        'University Of New Brunswick Archives & Special Collctions',
+        'Univesity Of New Brunswick Archives & Special Collections',
+        'University Of New Brunswick Archives & Special Collection',
+        'University Of New Brunswick Archives & Special Collectins',
+        'UNB Archives & Special Collections',
+        'UNB Archives & Special Collections',
+        'UNB Archives & Special Collection',
+        'Archvies & Special Collections',
+        'Archive & Special Collections',
+      ];
+ 
+      foreach ($exceptions as $except) {
+        $clean = str_replace($except, '', $clean);
+      }
+      while (in_array($clean[0], [' ', '-'])) {
+        $clean = substr($clean, 1);
       }
 
       // Convert to title case in a multibyte-safe way
