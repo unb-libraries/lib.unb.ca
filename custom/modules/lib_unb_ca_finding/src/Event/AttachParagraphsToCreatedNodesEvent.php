@@ -563,47 +563,62 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    * A string containing the HTML after processing.
    */
   private function swapImg($html) {
-    // Extract all tags containing images
-    $pattern = '#<img\b[^>]*>#i';
-    $search = preg_match_all($pattern, $html, $thumbs);
-    $thumbs = array_unique($thumbs);
-    
-    foreach ($thumbs[0] as $thumb) {
-      // Retrieve image filename from src attribute
-      $pattern = '#<img[^>]+src="([^">]*\/([^">\/]+))"#s';
-      $search = preg_match($pattern, $thumb, $filename);
-      
-      if (!empty($filename)) {
-        $filename = $filename[2] ?? $filename;
-        $filename = str_replace('px-', 'px_', $filename);
-        $pattern = '#.*?px_#';
-        $search = preg_match($pattern, $filename, $remove);
-        $filename = str_replace($remove, '', $filename);
-        // Retrieve media object UUID
-        $media = $this->loadMediaByFilename($filename);
+    $url = $this->currentRow->getSourceProperty('url');
+    // Don't replace <img> with Media if page comes from these folders 
+    if (
+      (strpos($url, '/ia/') !== FALSE) or
+      (strpos($url, '/gr/') !== FALSE) or
+      (strpos($url, '/ketchum/') !== FALSE) or
+      (strpos($url, '/isabel/') !== FALSE)
+    ) {
 
-        if (!empty($media)) {
-          // Add caption to media object alt
-          $media->field_media_image->alt = $filename;
-          $media->save();
-          // Retrieve media UUID
-          $uuid = $media->uuid();
-          // Build replacement <figure>
-          $figure = "
-            <figure class='finding-figure caption caption-drupal-media image-style align-right'>
-              <drupal-media data-align='right' data-entity-type='media' data-view-mode='colorbox_smr_linked_to_original' data-entity-uuid='$uuid'></drupal-media>
-              <figcaption>$filename</figcaption>
-            </figure>
-          ";
-          $html = str_replace($thumb, $figure, $html);
+      $match_href = '/src=["\'](.*?)["\']/is';
+      preg_match_all($match_href, $html, $matches);
+
+      foreach($matches[1] as $match) {
+        $replacement = '/sites/default/files/finding-aids/' . basename($match);
+        $html = str_replace($match, $replacement, $html);
+      }
+    }
+    else {
+      // Extract all tags containing images
+      $pattern = '#<img\b[^>]*>#i';
+      $search = preg_match_all($pattern, $html, $thumbs);
+      $thumbs = array_unique($thumbs);
+      
+      foreach ($thumbs[0] as $thumb) {
+        // Retrieve image filename from src attribute
+        $pattern = '#<img[^>]+src="([^">]*\/([^">\/]+))"#s';
+        $search = preg_match($pattern, $thumb, $filename);
+        
+        if (!empty($filename)) {
+          $filename = $filename[2] ?? $filename;
+          $filename = str_replace('px-', 'px_', $filename);
+          $pattern = '#.*?px_#';
+          $search = preg_match($pattern, $filename, $remove);
+          $filename = str_replace($remove, '', $filename);
+          // Retrieve media object UUID
+          $media = $this->loadMediaByFilename($filename);
+
+          if (!empty($media)) {
+            // Add caption to media object alt
+            $media->field_media_image->alt = $filename;
+            $media->save();
+            // Retrieve media UUID
+            $uuid = $media->uuid();
+            // Build replacement <figure>
+            $figure = "
+              <figure class='finding-figure caption caption-drupal-media image-style align-right'>
+                <drupal-media data-align='right' data-entity-type='media' data-view-mode='colorbox_smr_linked_to_original' data-entity-uuid='$uuid'></drupal-media>
+                <figcaption>$filename</figcaption>
+              </figure>
+            ";
+            $html = str_replace($thumb, $figure, $html);
+          }
         }
       }
     }
 
-    if (str_contains($html, 'thumbcaption')) {
-      $title = $this->currentRow->getSourceProperty('title');
-      echo "\nUnmatched image in page [$title]\n";
-    }
     return $html;
   }
   
