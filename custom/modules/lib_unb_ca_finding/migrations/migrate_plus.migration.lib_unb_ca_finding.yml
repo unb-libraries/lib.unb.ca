@@ -8,7 +8,7 @@ source:
   constants:
     ID_FINDING_NAV: 117
   plugin: url
-  data_fetcher_plugin: http
+  data_fetcher_plugin: http_encoded
   data_parser_plugin: dom
 
   # A URL that lists all Finding pages to process.

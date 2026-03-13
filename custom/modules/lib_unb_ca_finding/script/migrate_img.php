@@ -2,6 +2,7 @@
 
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\file\Entity\File;
+use Drupal\lib_unb_ca_finding\Url\UrlEncoder;
 use Drupal\media\Entity\Media;
 
 $directoryName = 'sites/default/files/finding-aids';
@@ -19,7 +20,8 @@ if (!is_dir($directoryName)) {
 }
 
 $url = DRUPAL_ROOT . '/modules/custom/lib_unb_ca_finding/data/finding-import-imgs.html';
-parseWebPage($url);
+$encoded = UrlEncoder::encodeUrl($url);
+parseWebPage($encoded);
 
 function parseWebPage($url) {
     // Initialize a new DOMDocument

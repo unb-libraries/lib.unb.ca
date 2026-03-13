@@ -2,6 +2,7 @@
 
 namespace Drupal\lib_unb_ca_finding\Event;
 
+use Drupal\Core\File\FileSystemInterface;
 use Drupal\media\Entity\Media;
 use Drupal\migrate\Audit\AuditException;
 use Drupal\migrate\Event\MigrateEvents;
@@ -518,6 +519,20 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
         echo "\nReplacing image href [$match] with [$replacement]\n";
         continue;
       }
+      // If href seems to point to a PDF... 
+      if (strpos($match, '.pdf')) {
+        // Add 'https:' if missing
+        if (!strpos($match, 'https:')) {
+          $match = "https:$match";
+        }
+        // Fetch PDF
+        $this->fetchPdf($match);
+        // Point reference to public files and continue
+        $replacement = '/sites/default/files/finding-aids/' . basename($match);
+        $html = str_replace($match, $replacement, $html);
+        echo "\nReplacing PDF href [$match] with [$replacement]\n";
+        continue;
+      }
       // Only process if not an in-document or relative link
       if (!str_contains($match, '#') and !str_contains($match, './')) {
         // Only process internal links
@@ -566,10 +581,11 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
     $url = $this->currentRow->getSourceProperty('url');
     // Don't replace <img> with Media if page comes from these folders 
     if (
-      (strpos($url, '/ia/') !== FALSE) or
       (strpos($url, '/gr/') !== FALSE) or
+      (strpos($url, '/ia/') !== FALSE) or
+      (strpos($url, '/isabel/') !== FALSE) or
       (strpos($url, '/ketchum/') !== FALSE) or
-      (strpos($url, '/isabel/') !== FALSE)
+      (strpos($url, '/hazen/water') !== FALSE)
     ) {
 
       $match_href = '/src=["\'](.*?)["\']/is';
@@ -917,5 +933,75 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
       $html = preg_replace($patternToEnd, '', $html);
 
       return $html;
+  }
+
+  /**
+   * Download a remote PDF and save as a managed file in public://
+   *
+   * @param string $url
+   *   The remote PDF URL (e.g. $match_ref).
+   * @return \Drupal\file\FileInterface|false
+   *   The saved managed file entity, or FALSE on failure.
+   */
+  private function fetchPdf(string $url) {
+    if (empty($url) || !filter_var($url, FILTER_VALIDATE_URL)) {
+      \Drupal::logger('mymodule')->error('Invalid PDF URL: @url', ['@url' => $url]);
+      return FALSE;
+    }
+
+    try {
+      // Download with Guzzle.
+      $client = \Drupal::httpClient();
+      $response = $client->get($url, ['timeout' => 30]);
+      if ($response->getStatusCode() !== 200) {
+        \Drupal::logger('mymodule')->error('Failed to download PDF (status @code) from @url', [
+          '@code' => $response->getStatusCode(),
+          '@url' => $url,
+        ]);
+        return FALSE;
+      }
+
+      $data = $response->getBody()->getContents();
+
+      // Ensure public directory exists.
+      $file_system = \Drupal::service('file_system');
+      $directory = 'public://';
+      $file_system->prepareDirectory(
+        $directory, 
+        FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS
+      );
+      // Choose a filename (use remote basename, fallback).
+      $path = parse_url($url, PHP_URL_PATH) ?: '';
+      $basename = basename($path) ?: 'download.pdf';
+      // Sanitize filename if needed.
+      $basename = preg_replace('/[^A-Za-z0-9_\-\.]+/', '_', $basename);
+
+      $destination = 'public://' . $basename;
+
+      // Save as a managed file. FILE_EXISTS_RENAME prevents overwrite.
+      $file = file_save_data($data, $destination, FileSystemInterface::EXISTS_RENAME);
+      if (!$file) {
+        \Drupal::logger('mymodule')->error('file_save_data failed for @dest', ['@dest' => $destination]);
+        return FALSE;
+      }
+
+      // Make the file permanent and save entity.
+      $file->setPermanent();
+      $file->save();
+
+      // Record file usage so garbage collection won't delete it (replace entity type/id as appropriate).
+      \Drupal::service('file.usage')->add($file, 'mymodule', 'user', \Drupal::currentUser()->id());
+
+      \Drupal::logger('mymodule')->notice('Saved remote PDF as public://@name (fid: @fid)', [
+        '@name' => $file->getFilename(),
+        '@fid' => $file->id(),
+      ]);
+
+      return $file;
+    }
+    catch (\Exception $e) {
+      \Drupal::logger('mymodule')->error('Exception downloading/saving PDF: @message', ['@message' => $e->getMessage()]);
+      return FALSE;
+    }
   }
 }
