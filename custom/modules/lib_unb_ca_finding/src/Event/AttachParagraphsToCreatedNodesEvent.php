@@ -815,22 +815,31 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
 
       $clean = trim($clean);
 
-      if ($clean === '') {
-          $clean = $title;
-      }
-
       $exceptions = [
-        'University Of New Brusnwick Archives & Special Collections',
-        'University Of New Brunswick Archives & Special Collctions',
-        'University Of New Brunswick Archives & Special Collctions',
-        'Univesity Of New Brunswick Archives & Special Collections',
-        'University Of New Brunswick Archives & Special Collection',
-        'University Of New Brunswick Archives & Special Collectins',
-        'UNB Archives & Special Collections',
-        'UNB Archives & Special Collections',
-        'UNB Archives & Special Collection',
-        'Archvies & Special Collections',
-        'Archive & Special Collections',
+        'University Of New Brusnwick Archives & Special Collections-',
+        'University Of New Brunswick Archives & Special Collctions-',
+        'University Of New Brunswick Archives & Special Collctions-',
+        'Univesity Of New Brunswick Archives & Special Collections-',
+        'University Of New Brunswick Archives & Special Collection-',
+        'University Of New Brunswick Archives & Special Collectins-',
+        'University Of New Brunswick-',
+        'UNB Archives & Special Collections-',
+        'UNB Archives & Special Collections-',
+        'UNB Archives & Special Collection-',
+        'Archvies & Special Collections-',
+        'Archive & Special Collections-',
+        'University Of New Brusnwick Archives & Special Collections -',
+        'University Of New Brunswick Archives & Special Collctions -',
+        'University Of New Brunswick Archives & Special Collctions -',
+        'Univesity Of New Brunswick Archives & Special Collections -',
+        'University Of New Brunswick Archives & Special Collection -',
+        'University Of New Brunswick Archives & Special Collectins -',
+        'University Of New Brunswick -',
+        'UNB Archives & Special Collections -',
+        'UNB Archives & Special Collections -',
+        'UNB Archives & Special Collection -',
+        'Archvies & Special Collections -',
+        'Archive & Special Collections -',
       ];
  
       foreach ($exceptions as $except) {
@@ -838,6 +847,10 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
       }
       while (in_array($clean[0], [' ', '-'])) {
         $clean = substr($clean, 1);
+      }
+
+      if ($clean === '') {
+          $clean = $title;
       }
 
       // Convert to title case in a multibyte-safe way

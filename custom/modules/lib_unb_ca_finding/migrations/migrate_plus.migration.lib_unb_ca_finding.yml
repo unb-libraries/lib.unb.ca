@@ -7,7 +7,7 @@ migration_tags:
 source:
   constants:
     ID_FINDING_NAV: 117
-  plugin: url
+  plugin: finding_url
   data_fetcher_plugin: http_encoded
   data_parser_plugin: dom
 
