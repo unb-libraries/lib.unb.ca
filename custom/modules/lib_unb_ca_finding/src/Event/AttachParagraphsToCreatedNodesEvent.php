@@ -579,13 +579,15 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
    */
   private function swapImg($html) {
     $url = $this->currentRow->getSourceProperty('url');
-    // Don't replace <img> with Media if page comes from these folders 
+    // Don't replace <img> with Media if page matches these domains 
     if (
       (strpos($url, '/gr/') !== FALSE) or
       (strpos($url, '/ia/') !== FALSE) or
       (strpos($url, '/isabel/') !== FALSE) or
       (strpos($url, '/ketchum/') !== FALSE) or
       (strpos($url, '/hazen/water') !== FALSE)
+      (strpos($url, '/mullan/mullan_letter') !== FALSE)
+      (strpos($url, '/mullan/mullan_poem') !== FALSE)
     ) {
 
       $match_href = '/src=["\'](.*?)["\']/is';
