@@ -585,8 +585,8 @@ class AttachParagraphsToCreatedNodesEvent implements EventSubscriberInterface {
       (strpos($url, '/ia/') !== FALSE) or
       (strpos($url, '/isabel/') !== FALSE) or
       (strpos($url, '/ketchum/') !== FALSE) or
-      (strpos($url, '/hazen/water') !== FALSE)
-      (strpos($url, '/mullan/mullan_letter') !== FALSE)
+      (strpos($url, '/hazen/water') !== FALSE) or
+      (strpos($url, '/mullan/mullan_letter') !== FALSE) or
       (strpos($url, '/mullan/mullan_poem') !== FALSE)
     ) {
 
