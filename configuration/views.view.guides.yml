@@ -495,7 +495,7 @@ display:
           entity_field: created
           plugin_id: field
           label: Created
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -1272,6 +1272,10 @@ display:
             editors_target_id: editors_target_id
             created: created
             edited: edited
+            title_1: title_1
+            edit_guide: edit_guide
+            delete_guide: delete_guide
+            dropbutton: dropbutton
           default: title
           info:
             id_1:
@@ -1318,7 +1322,7 @@ display:
               empty_column: false
               responsive: ''
             created:
-              sortable: false
+              sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
@@ -1326,6 +1330,34 @@ display:
               responsive: ''
             edited:
               sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            title_1:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            edit_guide:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            delete_guide:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            dropbutton:
+              sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
@@ -1409,7 +1441,9 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        simple_sitemap_display_extender:
+          variants: {  }
       path: admin/guides
       menu:
         type: normal
