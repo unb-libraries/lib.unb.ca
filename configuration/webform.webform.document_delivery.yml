@@ -1,7 +1,9 @@
 uuid: 4287b355-11e4-4fd2-8f01-2380db246f81
 langcode: en
 status: open
-dependencies: {  }
+dependencies:
+  module:
+    - lib_core
 weight: 0
 open: null
 close: null
@@ -176,6 +178,8 @@ settings:
   wizard_toggle: false
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
   preview: 0
   preview_label: ''
   preview_title: ''
@@ -191,7 +195,7 @@ settings:
   draft_loaded_message: ''
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
-  confirmation_type: url
+  confirmation_type: none
   confirmation_url: 'https://web.lib.unb.ca/docdel_auth'
   confirmation_title: ''
   confirmation_message: ''
@@ -270,5 +274,14 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers: {  }
+handlers:
+  document_delivery:
+    id: docdel
+    handler_id: document_delivery
+    label: 'Document Delivery'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings: {  }
 variants: {  }
