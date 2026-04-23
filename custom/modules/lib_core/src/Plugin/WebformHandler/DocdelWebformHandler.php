@@ -23,7 +23,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
 
 class DocdelWebformHandler extends WebformHandlerBase {
 
-  const DOCDEL_URL = 'https://unb.account.worldcat.org/account/route/openurl';
+  const DOCDEL_URL = 'https://web.lib.unb.ca/docdel_auth/';
 
   /**
    * The current request object.
