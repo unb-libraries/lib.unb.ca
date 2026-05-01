@@ -17,7 +17,16 @@ category: ''
 elements: |-
   docdel_introduction:
     '#type': webform_markup
-    '#markup': '<p>Document Delivery services are generally free to all UNB/STU patrons. If there are charges, we will contact you before proceeding with your request. Please review <a href="/services/docdel/policies-and-fees" target="_blank">Document Delivery Policies and Fees</a> prior to submitting requests.</p>'
+    '#markup': |-
+      <div class="alert alert-success">
+      <h2 class="h4">Document Delivery Transitions from Relais to Tipasa</h2>
+
+      <p>On Apr. 29, 2026, UNB Libraries switched to a new software platform for handling Document Delivery requests. Request Item links within the UNB WorldCat catalogue will appear as usual but the forms used to fill out the requests will be slightly different. Submitted requests can be viewed in your <a href="https://unb.account.worldcat.org/account/requests">UNB WorldCat account</a>.</p>
+
+      <p>Access to our previous system will remain until June 30, 2026. However, new requests will no longer be accepted on that platform. To access a history of your previous requests, login to the previous system at <a href="https://web.lib.unb.ca/docdel_auth">https://web.lib.unb.ca/docdel_auth</a>. Select the &quot;Completed Requests&quot; link in the left-hand menu. This will produce a list of requests that can be exported in csv format for viewing in Excel or other programs.</p>
+      </div>
+
+      <p>Document Delivery services are generally free to all UNB/STU patrons. If there are charges, we will contact you before proceeding with your request. Please review <a href="/services/docdel/policies-and-fees" target="_blank">Document Delivery Policies and Fees</a> prior to submitting requests.</p>
   docdel_please_note:
     '#type': processed_text
     '#text': |
@@ -65,6 +74,15 @@ elements: |-
           class:
             - bg-dark
             - px-5
+      processed_text:
+        '#type': processed_text
+        '#wrapper_attributes':
+          class:
+            - m-0
+        '#text': |-
+          <p class="mt-4"><strong>Faculty of Law</strong>&nbsp;-&nbsp;Use <a href="https://www.unb.ca/fredericton/law/library/interlibrary-loan/index.html">Law Library Document Delivery Service.</a></p>
+          	<p><strong>Community / Alumni / CURBA patrons</strong>&nbsp;-&nbsp;Online document delivery services unavailable.&nbsp;<a href="/services/docdel/community-and-alumni-borrowers">Limited service is provided.</a></p>
+        '#format': library_page_html
   additional_notes:
     '#type': fieldset
     '#title': 'Additional Notes'
@@ -76,17 +94,6 @@ elements: |-
         - mt-4
         - py-3
         - ''
-    processed_text:
-      '#type': processed_text
-      '#wrapper_attributes':
-        class:
-          - m-0
-      '#text': |
-        <ul class="m-0">
-        	<li><strong>Faculty of Law</strong>&nbsp;-&nbsp;Use <a href="https://www.unb.ca/fredericton/law/library/interlibrary-loan/index.html">Law Library Document Delivery Service.</a></li>
-        	<li><strong>Community / Alumni / CURBA patrons</strong>&nbsp;-&nbsp;Online document delivery services unavailable.&nbsp;<a href="/services/docdel/community-and-alumni-borrowers">Limited service is provided.</a></li>
-        </ul>
-      '#format': library_page_html
 css: ''
 javascript: ''
 settings:
