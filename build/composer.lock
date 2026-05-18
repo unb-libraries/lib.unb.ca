@@ -8100,16 +8100,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.441.0",
+            "version": "v0.441.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "9e3c10389ed39915261e5bc98a687c2b1307040d"
+                "reference": "b389588a2f9f375ec448d6cd8d0903d83c571ae0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/9e3c10389ed39915261e5bc98a687c2b1307040d",
-                "reference": "9e3c10389ed39915261e5bc98a687c2b1307040d",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/b389588a2f9f375ec448d6cd8d0903d83c571ae0",
+                "reference": "b389588a2f9f375ec448d6cd8d0903d83c571ae0",
                 "shasum": ""
             },
             "require": {
@@ -8138,9 +8138,9 @@
             ],
             "support": {
                 "issues": "https://github.com/googleapis/google-api-php-client-services/issues",
-                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.441.0"
+                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.441.1"
             },
-            "time": "2026-05-11T01:42:35+00:00"
+            "time": "2026-05-17T01:38:24+00:00"
         },
         {
             "name": "google/auth",
@@ -10361,21 +10361,21 @@
         },
         {
             "name": "onelogin/php-saml",
-            "version": "4.3.1",
+            "version": "4.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SAML-Toolkits/php-saml.git",
-                "reference": "b009f160e4ac11f49366a45e0d45706b48429353"
+                "reference": "26b3a47349415e5b7aa300ba4ab7fc316c65f19e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SAML-Toolkits/php-saml/zipball/b009f160e4ac11f49366a45e0d45706b48429353",
-                "reference": "b009f160e4ac11f49366a45e0d45706b48429353",
+                "url": "https://api.github.com/repos/SAML-Toolkits/php-saml/zipball/26b3a47349415e5b7aa300ba4ab7fc316c65f19e",
+                "reference": "26b3a47349415e5b7aa300ba4ab7fc316c65f19e",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.3",
-                "robrichards/xmlseclibs": ">=3.1.4"
+                "robrichards/xmlseclibs": "^3.1.5"
             },
             "require-dev": {
                 "pdepend/pdepend": "^2.8.0",
@@ -10421,7 +10421,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-12-09T10:50:49+00:00"
+            "time": "2026-05-07T22:38:04+00:00"
         },
         {
             "name": "paragonie/constant_time_encoding",
@@ -15610,16 +15610,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "2.2.27",
+            "version": "2.2.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "c800ff7ca5ade720cb3a46ab2c98856b9358615c"
+                "reference": "5104b27aaa735dcbadc1bd65f5ff1ef3552c543a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/c800ff7ca5ade720cb3a46ab2c98856b9358615c",
-                "reference": "c800ff7ca5ade720cb3a46ab2c98856b9358615c",
+                "url": "https://api.github.com/repos/composer/composer/zipball/5104b27aaa735dcbadc1bd65f5ff1ef3552c543a",
+                "reference": "5104b27aaa735dcbadc1bd65f5ff1ef3552c543a",
                 "shasum": ""
             },
             "require": {
@@ -15689,7 +15689,7 @@
             "support": {
                 "irc": "ircs://irc.libera.chat:6697/composer",
                 "issues": "https://github.com/composer/composer/issues",
-                "source": "https://github.com/composer/composer/tree/2.2.27"
+                "source": "https://github.com/composer/composer/tree/2.2.28"
             },
             "funding": [
                 {
@@ -15701,7 +15701,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-04-14T09:40:47+00:00"
+            "time": "2026-05-13T07:28:55+00:00"
         },
         {
             "name": "composer/metadata-minifier",
