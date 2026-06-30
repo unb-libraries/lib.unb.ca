@@ -19,11 +19,11 @@ elements: |-
     '#type': webform_markup
     '#markup': |-
       <div class="alert alert-success">
-      <h2 class="h4">Document Delivery Transitions from Relais to Tipasa</h2>
+      <h2 class="h4">Document Delivery Has Transitioned to Tipasa</h2>
 
-      <p>On Apr. 29, 2026, UNB Libraries switched to a new software platform for handling Document Delivery requests. Request Item links within the UNB WorldCat catalogue will appear as usual but the forms used to fill out the requests will be slightly different. Submitted requests can be viewed in your <a href="https://unb.account.worldcat.org/account/requests">UNB WorldCat account</a>.</p>
+      <p>On Apr. 29, 2026, UNB Libraries switched to a new software platform for handling Document Delivery requests. Request Item links within the UNB WorldCat catalogue will appear as usual but the forms used to fill out the requests have changed to the new system.</p>
 
-      <p>Access to our previous system will remain until June 30, 2026. However, new requests will no longer be accepted on that platform. To access a history of your previous requests, login to the previous system at <a href="https://web.lib.unb.ca/docdel_auth">https://web.lib.unb.ca/docdel_auth</a>. Select the &quot;Completed Requests&quot; link in the left-hand menu. This will produce a list of requests that can be exported in csv format for viewing in Excel or other programs.</p>
+      <p>Submitted requests are now fully integrated with your <a href="https://unb.account.worldcat.org/account/requests">UNB WorldCat account</a> and can be viewed in the <b>Requests</b> tab.</p>
       </div>
 
       <p>Document Delivery services are generally free to all UNB/STU patrons. If there are charges, we will contact you before proceeding with your request. Please review <a href="/services/docdel/policies-and-fees" target="_blank">Document Delivery Policies and Fees</a> prior to submitting requests.</p>
