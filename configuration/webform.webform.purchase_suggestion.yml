@@ -104,7 +104,7 @@ elements: |-
           'Civil Engineering|saran.croos@unb.ca': 'Civil Engineering'
           'Classics & Ancient History|ecmoore@unb.ca': 'Classics & Ancient History'
           'Computer Science|saran.croos@unb.ca': 'Computer Science'
-          'Culture & Media Studies|ecmoore@unb.ca': 'Culture & Media Studies'
+          'Culture & Media Studies|bcull@unb.ca': 'Culture & Media Studies'
           'Earth Sciences|T.Zaraiskaya@unb.ca': 'Earth Sciences'
           Economics|bcull@unb.ca: Economics
           Education|bcull@unb.ca: Education
@@ -116,12 +116,13 @@ elements: |-
           French|ecmoore@unb.ca: French
           'Geodesy and Geomatics Engineering|saran.croos@unb.ca': 'Geodesy and Geomatics Engineering'
           Geology|t.zaraiskaya@unb.ca: Geology
-          'Harriet Irving Library Reference Collection|hanratty@unb.ca': 'Harriet Irving Library Reference Collection'
+          'Harriet Irving Library Reference Collection|jsmyth@unb.ca': 'Harriet Irving Library Reference Collection'
           'Health Sciences|r.whitherspoon@unb.ca': 'Health Sciences'
           History|ecmoore@unb.ca: History
           Interdisciplinary|bcull@unb.ca: Interdisciplinary
           'Kinesiology & Recreation|r.witherspoon@unb.ca': 'Kinesiology & Recreation'
           Languages|ecmoore@unb.ca: Languages
+          'Leadership Studies|bcull@unb.ca': 'Leadership Studies'
           Management|julie.morris@unb.ca: Management/Business
           'Mathematics & Statistics|t.zaraiskaya@unb.ca': 'Mathematics & Statistics'
           'Mechanical Engineering|saran.croos@unb.ca': 'Mechanical Engineering'
@@ -130,7 +131,6 @@ elements: |-
           Physics|t.zaraiskaya@unb.ca: Physics
           'Political Science/Politics|bcull@unb.ca': 'Political Science/Politics'
           Psychology|r.witherspoon@unb.ca: Psychology
-          'Renaissance College|bcull@unb.ca': 'Renaissance College'
           'Science Library Reference Collection|t.zaraiskaya@unb.ca': 'Science Library Reference Collection'
           'Social Work|bcull@unb.ca': 'Social Work'
           Sociology|bcull@unb.ca: Sociology
