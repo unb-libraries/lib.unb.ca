@@ -833,6 +833,9 @@ handlers:
           value: 'Computer Science|saran.croos@unb.ca'
           text: saran.croos@unb.ca
         -
+          value: 'Culture & Media Studies|bcull@unb.ca'
+          text: bcull@unb.ca
+        -
           value: 'Earth Sciences|T.Zaraiskaya@unb.ca'
           text: t.zaraiskaya@unb.ca
         -
@@ -866,6 +869,9 @@ handlers:
           value: Geology|t.zaraiskaya@unb.ca
           text: t.zaraiskaya@unb.ca
         -
+          value: 'Harriet Irving Library Reference Collection|jsmyth@unb.ca'
+          text: jsmyth@unb.ca
+        -
           value: 'Health Sciences|r.whitherspoon@unb.ca'
           text: r.witherspoon@unb.ca
         -
@@ -880,6 +886,9 @@ handlers:
         -
           value: Languages|ecmoore@unb.ca
           text: ecmoore@unb.ca
+        -
+          value: 'Leadership Studies|bcull@unb.ca'
+          text: bcull@unb.ca
         -
           value: Management|julie.morris@unb.ca
           text: julie.morris@unb.ca
