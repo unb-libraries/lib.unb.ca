@@ -351,11 +351,11 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: 'library-bookings@unb.ca,mbragdon@unb.ca,rob.glencross@unb.ca'
+      to_mail: library-bookings@unb.ca
       to_options: {  }
       bcc_mail: ''
       bcc_options: {  }
-      cc_mail: ''
+      cc_mail: 'mfonzo@unb.ca,mbragdon@unb.ca,rob.glencross@unb.ca'
       cc_options: {  }
       from_mail: library-bookings@unb.ca
       from_options: {  }
