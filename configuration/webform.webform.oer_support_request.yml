@@ -50,11 +50,12 @@ elements: |-
         '#default_value': '[current-user:mail]'
       home_campus:
         '#type': radios
-        '#title': 'Home campus'
+        '#title': Campus
         '#options':
           fredericton: Fredericton
           saint_john: 'Saint John'
           moncton: Moncton
+          online: Online
         '#options_display': side_by_side
     project_information:
       '#type': fieldset
@@ -64,12 +65,13 @@ elements: |-
         '#title': 'I am looking for support'
         '#options':
           finding_oer: 'Finding OER'
-          adapting_existing_oer: 'Adapting an Existing OER'
+          adapting_existing_oer: 'Adapting an existing OER'
           creating_own_oer: 'Creating my own OER'
+          other: 'Exploring other Zero Textbook Cost options -- (such as: course reserves, licensed library resources, public domain materials, etc.)'
           unsure: Unsure
       conducted_initial_search:
         '#type': radios
-        '#title': 'Have you conducted an initial search for relevant OER on the subject?'
+        '#title': 'Have you conducted an initial search for relevant Zero Textbook Cost or OER materials  on the subject?'
         '#options':
           'yes': 'Yes'
           'no': 'No'
@@ -77,7 +79,7 @@ elements: |-
         '#required': true
       for_credit_course_unb:
         '#type': radios
-        '#title': 'Would this OER support a for-credit course at UNB?'
+        '#title': 'Would these materials support a for-credit course at UNB?'
         '#options':
           'yes': 'Yes'
           'no': 'No'
@@ -85,7 +87,7 @@ elements: |-
         '#required': true
       course_looking_oer_content:
         '#type': textfield
-        '#title': 'What course(s) are you looking for OER content?'
+        '#title': 'What course(s) are you looking for Zero Textbook Cost or OER materials for?'
         '#states':
           visible-slide:
             ':input[name="for_credit_course_unb"]':
@@ -97,14 +99,13 @@ elements: |-
           f: Fall
           w: Winter
           s: Summer
-        '#options_display': side_by_side
         '#required': true
       how_many_students:
         '#type': textfield
         '#title': 'How many students are enrolled in this course?'
       oer_replace_paid_textbook:
         '#type': radios
-        '#title': 'Would this OER replace a paid textbook?'
+        '#title': 'Would these materials replace a paid textbook?'
         '#options':
           'yes': 'Yes'
           'no': 'No'
@@ -118,7 +119,7 @@ elements: |-
               value: 'yes'
       syllabus_upload:
         '#type': webform_document_file
-        '#title': 'Please upload the course(s) syllabus you are seeking OER material for. This will help us get an understanding of the class as a whole'
+        '#title': 'Please upload the course(s) syllabus you are seeking support for. This will help us get an understanding of the class as a whole.'
         '#sanitize': true
         '#button': true
         '#button__title': 'Select file<span class="fa-solid fa-paperclip ml-1"></span>'
