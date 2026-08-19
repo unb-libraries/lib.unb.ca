@@ -14,7 +14,7 @@ uid: 1
 template: false
 archive: false
 id: report_oer_resource
-title: 'Report Open Educational Resources (OER) Adoption'
+title: 'Report Use of Zero Textbook Cost (ZTC) / Open Educational Resources (OER)'
 description: 'Webform that allows faculty let us know that they&#39;ve adopted an OER.'
 category: ''
 elements: |-
@@ -44,11 +44,12 @@ elements: |-
         '#default_value': '[current-user:mail]'
       home_campus:
         '#type': radios
-        '#title': 'Home campus'
+        '#title': 'Campus course is being offered on'
         '#options':
           fredericton: Fredericton
           saint_john: 'Saint John'
           moncton: Moncton
+          online: Online
         '#options_display': side_by_side
     project_information:
       '#type': fieldset
@@ -58,12 +59,11 @@ elements: |-
         '#title': 'Course Code'
       semester_course_offered:
         '#type': checkboxes
-        '#title': 'What semester(s) is your course offered in?'
+        '#title': 'In what semester(s) is your course offered?'
         '#options':
           f: Fall
           w: Winter
           s: Summer
-        '#options_display': side_by_side
         '#required': true
       how_many_students:
         '#type': textfield
@@ -74,7 +74,8 @@ elements: |-
         '#options':
           oer: OER
           course_reserves: 'Course Reserves'
-        '#options_display': side_by_side
+          library_licensed: 'Library Licensed materials (articles, e-books)'
+          free_public: 'Free/public domain web resources'
       oer_link:
         '#type': webform_link
         '#title': 'OER link'
@@ -87,7 +88,7 @@ elements: |-
         '#url__required': true
       materials_cost_associated:
         '#type': radios
-        '#title': 'Does your course have any other materials that have a cost associated?'
+        '#title': 'Does your course have any other materials (lab material, art supplies, etc.) that students pay for?'
         '#options':
           'yes': 'Yes'
           'no': 'No'
@@ -102,6 +103,13 @@ elements: |-
       learn_more_about_your_experience:
         '#type': radios
         '#title': 'May we reach out to you to learn more about your experience using these resources? '
+        '#options':
+          'yes': 'Yes'
+          'no': 'No'
+        '#options_display': side_by_side
+      do_we_have_your_consent_to_share_this_information_with_the_relev:
+        '#type': radios
+        '#title': 'Do we have your consent to share this information with the relevant student association?<br><small>(Fredericton’s Student Union and/or Saint John’s Students'' Representative Council)</small>'
         '#options':
           'yes': 'Yes'
           'no': 'No'
