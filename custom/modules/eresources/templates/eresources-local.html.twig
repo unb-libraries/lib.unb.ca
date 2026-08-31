@@ -80,7 +80,7 @@
           <dt>Collection Title List(s):</dt>
           <dd>
             <ul>
-            {% set links = entry.getLinkedCollections|split("\n") %}
+            {% set links = entry.getLinkedCollections|trim|split("\n") %}
             {% for link in links %}
               {% set info = link|split(',') %}
               {% set cid = info[1] | trim %}
