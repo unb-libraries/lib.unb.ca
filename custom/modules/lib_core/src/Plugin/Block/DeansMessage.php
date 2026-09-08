@@ -40,7 +40,7 @@ class DeansMessage extends BlockBase {
     $html = '<div class="front-page-border">
       <a href="/about/welcome-libraries">
         <figure class="figcaption-overlay">
-            <img src="/modules/custom/lib_core/img/lesley-balcomm-welcome-unb-libraries.png"
+            <img src="/modules/custom/lib_core/img/dean-welcome-james-mackenzie.png"
              alt="Welcome to UNB Libraries">
             <figcaption class="caption-bottom caption-hover font-size-smaller">Welcome and FAQs &raquo;</figcaption>
         </figure>
