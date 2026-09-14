@@ -2439,7 +2439,7 @@ display:
     position: 5
     display_options:
       enabled: true
-      title: 'Library News'
+      title: 'Library News & Events'
       fields:
         title:
           id: title
@@ -3030,7 +3030,8 @@ display:
         filter_groups: false
       css_class: news-featured
       display_description: ''
-      display_extenders: {  }
+      display_extenders:
+        simple_sitemap_display_extender: {  }
       block_description: 'Featured News Carousel (w/ Summary)'
       allow:
         items_per_page: false
