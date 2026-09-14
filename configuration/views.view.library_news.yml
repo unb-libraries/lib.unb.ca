@@ -2402,6 +2402,7 @@ display:
         sorts: false
         filters: false
         filter_groups: false
+        footer: false
       relationships:
         field_page_content:
           id: field_page_content
@@ -2414,12 +2415,27 @@ display:
           required: false
       css_class: library-news
       display_description: ''
-      use_more: true
+      use_more: false
       use_more_always: false
       use_more_text: 'More Library News'
       link_display: custom_url
       link_url: news
-      display_extenders: {  }
+      footer:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: "<div class=\"d-flex justify-content-between more-link\">\r\n<a href=\"/news\"><span class=\"fa-solid fa-newspaper fa-sm mr-1 me-1\" aria-hidden=\"true\"></span>More Library News</a>\r\n<a href=\"https://bookings.lib.unb.ca/calendar\"><span class=\"fa-solid fa-calendar-days fa-sm mr-1 me-1\" aria-hidden=\"true\"></span>More Library Events</a>\r\n</div>"
+            format: library_page_html
+          tokenize: false
+      display_extenders:
+        simple_sitemap_display_extender: {  }
       block_description: 'Library News: Teasers (w/ Summary)'
       allow:
         items_per_page: false
