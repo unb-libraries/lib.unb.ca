@@ -13,7 +13,6 @@ third_party_settings:
     antibot: true
   honeypot:
     honeypot: true
-    time_restriction: true
 _core:
   default_config_hash: Db1CJM6FchEqqeVz5YJThCK0WB599y4NjQ4GkPcGF5g
 weight: 0
