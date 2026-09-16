@@ -294,7 +294,7 @@ handlers:
       sender_mail: ''
       sender_name: ''
       subject: 'Data Bites Registration'
-      body: "<p>{{ webform_token('[webform_submission:values:name]', webform_submission) }} ({{ webform_token('[webform_submission:values:email]', webform_submission) }}) has registered for the following:<br>\r\n{{ webform_token('[webform_submission:values:which_sessions]', webform_submission) }}.\r\n</p>\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
+      body: "<p>{{ webform_token('[webform_submission:values:name]', webform_submission) }} ({{ webform_token('[webform_submission:values:email]', webform_submission) }}) has registered for the following:<br>\r\n{{ webform_token('[webform_submission:values:which_sessions]', webform_submission) }}.\r\n</p>\r\n\r\n<div>\r\n<img src=\"https://lib.unb.ca/sites/default/files/media/images/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
       excluded_elements:
         required: required
         name: name
@@ -335,7 +335,7 @@ handlers:
       sender_mail: ''
       sender_name: ''
       subject: 'Data Bites Registration Confirmation'
-      body: "<p>{{ webform_token('[webform_submission:values:name]', webform_submission) }}, thank you for registering for:<br>\r\n\r\n{{ webform_token('[webform_submission:values:which_sessions]', webform_submission) }}.\r\n</p>\r\n\r\n<p>Your response has been sent to UNB Libraries' RDM Services. Feel free to contact us with any questions at <a href=\"mailto:rdm.services@unb.ca\">rdm.services@unb.ca</a>. See you soon!</p>\r\n\r\n<div>\r\n<img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
+      body: "<p>{{ webform_token('[webform_submission:values:name]', webform_submission) }}, thank you for registering for:<br>\r\n\r\n{{ webform_token('[webform_submission:values:which_sessions]', webform_submission) }}.\r\n</p>\r\n\r\n<p>Your response has been sent to UNB Libraries' RDM Services. Feel free to contact us with any questions at <a href=\"mailto:rdm.services@unb.ca\">rdm.services@unb.ca</a>. See you soon!</p>\r\n\r\n<div>\r\n<img src=\"https://lib.unb.ca/sites/default/files/media/images/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
       excluded_elements:
         required: required
         name: name

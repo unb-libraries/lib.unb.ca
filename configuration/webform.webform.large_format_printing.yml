@@ -402,7 +402,7 @@ handlers:
       sender_mail: ''
       sender_name: ''
       subject: 'Large Format/Poster Printing Request Submitted'
-      body: "<p>The following information was submitted through our <b>Large Format/Poster Printing Request</b> form by {{ webform_token('[webform_submission:user]', webform_submission) }} on {{ webform_token('[webform_submission:created]', webform_submission) }}.</p>\r\n<blockquote>{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}</blockquote>\r\n<div><img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\"></div>"
+      body: "<p>The following information was submitted through our <b>Large Format/Poster Printing Request</b> form by {{ webform_token('[webform_submission:user]', webform_submission) }} on {{ webform_token('[webform_submission:created]', webform_submission) }}.</p>\r\n<blockquote>{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}</blockquote>\r\n<div><img src=\"https://lib.unb.ca/sites/default/files/media/images/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\"></div>"
       excluded_elements:
         intro_card: intro_card
       ignore_access: false
@@ -440,7 +440,7 @@ handlers:
       sender_mail: ''
       sender_name: ''
       subject: 'Your UNB Libraries Large Format/Poster Printing Request'
-      body: "<p>We have received your request and will email you to approve pricing prior to printing and once your print is completed. Your submitted information (minus the uploaded file) was:</p>\r\n<blockquote>{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}</blockquote>\r\n<div><img src=\"https://media.lib.unb.ca/core/img-2015/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\"></div>"
+      body: "<p>We have received your request and will email you to approve pricing prior to printing and once your print is completed. Your submitted information (minus the uploaded file) was:</p>\r\n<blockquote>{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}</blockquote>\r\n<div><img src=\"https://lib.unb.ca/sites/default/files/media/images/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\"></div>"
       excluded_elements:
         upload_your_file_: upload_your_file_
       ignore_access: false
