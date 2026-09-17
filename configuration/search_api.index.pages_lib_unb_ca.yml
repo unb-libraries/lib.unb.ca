@@ -271,6 +271,7 @@ processor_settings:
   custom_value: {  }
   entity_status: {  }
   entity_type: {  }
+  guide_hide_section: {  }
   highlight:
     weights:
       postprocess_query: 0
