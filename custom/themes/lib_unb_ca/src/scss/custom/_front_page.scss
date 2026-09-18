@@ -31,14 +31,9 @@
 
 .path-frontpage {
   .header-fluid {
-    #navbar-top {
-      background-color: initial;
-      background-image: linear-gradient(180deg, rgb(0 0 0 / 85%), rgb(0 0 0 / 80%));
-    }
-
     #navbar-main {
       &:not(.affix) {
-        background-image: linear-gradient(180deg, rgb(0 0 0 / 80%), rgb(0 0 0 / 65%));
+        /*background-image: linear-gradient(180deg, rgb(0 0 0 / 80%), rgb(0 0 0 / 65%));*/
       }
     }
 
