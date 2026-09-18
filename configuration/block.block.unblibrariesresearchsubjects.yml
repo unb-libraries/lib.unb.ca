@@ -3,7 +3,6 @@ langcode: en
 status: false
 dependencies:
   module:
-    - lib_core
     - system
   theme:
     - lib_unb_ca
