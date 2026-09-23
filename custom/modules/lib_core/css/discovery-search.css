@@ -121,11 +121,4 @@ fieldset.form-type-select {
   #navbar-main:not(.affix) #navbar-main-content {
     transition: background-color .35s ease-in;
   }
-  #navbar-main:not(.affix):focus-within #navbar-main-content,
-  #navbar-main:not(.affix) #navbar-main-content:hover {
-    background-color: rgb(55 63 68 / 99%);
-  }
-  #navbar-main:not(.affix):focus-within + #discovery-wrapper > div {
-    opacity: .45;
-  }
 }
