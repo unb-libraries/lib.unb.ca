@@ -452,7 +452,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: lawres@unb.ca
+      to_mail: lawcirc@unb.ca
       to_options: {  }
       bcc_mail: ''
       bcc_options: {  }
@@ -469,9 +469,7 @@ handlers:
       body: "<p>The following information was submitted through our <b>Recalls Form</b> on {{ webform_token('[webform_submission:created]', webform_submission) }} by {{ webform_token('[webform_submission:user]', webform_submission) }}.</p>\r\n        \r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://lib.unb.ca/sites/default/files/media/images/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>\r\n"
       excluded_elements:
         top_markup: top_markup
-        privacy_statement_step1: privacy_statement_step1
         note: note
-        privacy_statement_step2: privacy_statement_step2
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: true
@@ -575,7 +573,7 @@ handlers:
   sender_confirmation_email_lawres:
     id: email
     handler_id: sender_confirmation_email_lawres
-    label: 'Sender Confirmation Email (lawres)'
+    label: 'Sender Confirmation Email (lawcirc)'
     notes: ''
     status: true
     conditions:
@@ -601,12 +599,10 @@ handlers:
       sender_mail: ''
       sender_name: ''
       subject: 'Recalls Request'
-      body: "<p>UNB Libraries has received the following recall request. If this was not sent by you, please contact <a href=\"mailto:lawres@unb.ca\">lawres@unb.ca</a> immediately.</p>\r\n\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://lib.unb.ca/sites/default/files/media/images/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>"
+      body: "<p>UNB Libraries has received the following recall request. If this was not sent by you, please contact <a href=\"mailto:lawcirc@unb.ca\">lawcirc@unb.ca</a> immediately.</p>\r\n\r\n\r\n{{ webform_token('[webform_submission:values]', webform_submission) }}\r\n\r\n<div>\r\n<img src=\"https://lib.unb.ca/sites/default/files/media/images/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\">\r\n</div>"
       excluded_elements:
         top_markup: top_markup
-        privacy_statement_step1: privacy_statement_step1
         note: note
-        privacy_statement_step2: privacy_statement_step2
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: true
