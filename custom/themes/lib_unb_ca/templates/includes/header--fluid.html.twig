@@ -6,11 +6,29 @@
 <div id="header-overlay">
     <div id="navbar-top">
         <div class="container d-flex justify-content-between align-items-center">
-            <div class="d-flex branding">
+            <div class="d-flex flex-grow-1 branding">
                 <a href="https://lib.unb.ca">
                     {% include '@unb_lib_theme/includes/unb-lib-logo.html.twig' %}
                 </a>
             </div>
+            <ul class="nav d-flex d-md-none">
+                <li class="nav-item flex-fill text-center">
+                    <button id="btn-hours" class="btn btn-{{ nav_btn_style }}" aria-controls="banner" aria-expanded="false" data-target="#banner" data-toggle="collapse" aria-label="Toggle Hours">
+                        <span class="visually-hidden">Hours</span><span class="fas fa-clock"></span>
+                    </button>
+                </li>
+                <li class="nav-item flex-fill text-center">
+                    <a id="btn-askus" class="btn btn-{{ nav_btn_style }}" href="/help/ask-us"><span class="visually-hidden">AskUs</span><span class="fas fa-comments"></span></a>
+                </li>
+                <li class="nav-item flex-fill text-center">
+                    <button id="btn-menu" class="animated-menu-icon btn btn-{{ nav_btn_style }}" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="visually-hidden">Toggle navigation menu</span>
+                    </button>
+                </li>
+            </ul>
             <nav aria-label="Header Utility Menu" class="d-none d-md-block text-right">
                 <ul id="menu-secondary" class="list-inline mb-1">
                     <li class="list-inline-item">
@@ -47,25 +65,8 @@
         </div>
     </div>
     <nav aria-label="Main Menu" id="navbar-main" class="navbar navbar-expand-lg px-0">
-        <div class="w-100">
+        <div class="container">
             <div id="navbar-main-content" class="d-flex align-items-stretch flex-column flex-lg-row w-100">
-                <div id="nav-btn" class="d-flex d-lg-none py-2">
-                    <ul class="container nav nav-pills">
-                        <li class="nav-item flex-fill text-center">
-                            <button id="btn-menu" class="btn btn-{{ nav_btn_style }}" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">Menu</button>
-                        </li>
-                        <li class="nav-item flex-fill text-center">
-                            {% if (nav_btn_hours_toggle == true) %}
-                                <button id="btn-hours" class="btn btn-{{ nav_btn_style }}" aria-controls="banner" aria-expanded="false" data-target="#banner" data-toggle="collapse" aria-label="Toggle Hours">Hours <span class="fas fa-clock"></span></button>
-                            {% else %}
-                                <a id="btn-hours" class="btn btn-{{ nav_btn_style }}" href="/about/hours">Hours <span class="fas fa-clock"></span></a>
-                            {% endif %}
-                        </li>
-                        <li class="nav-item flex-fill text-center">
-                            <a id="btn-askus" class="btn btn-{{ nav_btn_style }}" href="/help/ask-us">AskUs <span class="fas fa-comments"></span></a>
-                        </li>
-                    </ul>
-                </div>
                 {% include '@unb_lib_theme/includes/megamenu.html.twig' %}
             </div>
         </div>
