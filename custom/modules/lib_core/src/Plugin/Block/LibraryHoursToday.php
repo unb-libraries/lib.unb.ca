@@ -28,6 +28,7 @@ class LibraryHoursToday extends BlockBase {
         ],
       ],
       '#attributes' => [
+        'id' => 'todays-lib-hours-block',
         'class' => [
           'table-lib-hours',
         ],
@@ -45,10 +46,12 @@ class LibraryHoursToday extends BlockBase {
   protected function getTodaysHours() {
     $todays_hours_html = '
     <table class="m-0">
-      <caption>
-        <span class="sr-only">Library hours for</span>' .
-        date("l, F j, Y") .
-      '</caption>
+      <caption><span class="visually-hidden">Library hours for</span>
+        <time datetime="' .
+          date("Y-m-j") . '">' .
+          date("l, F j, Y") .
+        '</time>
+      </caption>
       <tbody>
         <tr>
           <th scope="row"><a href="/about/harriet-irving-library">Harriet Irving</a></th>
