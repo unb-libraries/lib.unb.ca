@@ -67,70 +67,35 @@
  * @see html.html.twig
  */
 #}
-{%
-set banner_classes = [
-    'collapse',
-    'show',
-    is_front ? 'front d-flex align-items-end py-4 py-lg-5',
-]
-%}
-{% set container_class = 'container-fluid' %}
-<header id="header" class="header-fluid" style="background-image: url({{ banner_image }})">
-    {% include '@lib_unb_ca/includes/header--fluid.html.twig' %}
+{% extends '@unb_lib_theme/page.html.twig' %}
 
-    {% if page.header %}
-        <div id="discovery-wrapper" class="d-flex align-items-center">
-            <div class="container my-4">
-                {{ page.header }}
-            </div>
-        </div>
-    {% endif %}
-</header>
+{% block header %}
+  {% set container_class = 'container-fluid' %}
+  {%
+  set banner_classes = [
+      'collapse',
+      'show',
+      is_front ? 'front d-flex align-items-end py-4 py-lg-5',
+  ]
+  %}
+  <header id="header" class="header-fluid" style="background-image: url({{ banner_image }})">
+      {% include '@unb_lib_theme/includes/header.html.twig' %}
 
-{% block content %}
-  <main class="my-2 {{ container }}">
-    {{ page.breadcrumb }}
-    <div id="main-content" tabindex="-1">
-      <div class="row row-offcanvas row-offcanvas-left clearfix">
-        <div class="col order-first">
-            <h1 class="sr-only">UNB Libraries</h1>
-            {{ page.content }}
-          </section>
-        </div>
-        {% if page.sidebar_first %}
-          <div{{ sidebar_first_attributes }}>
-            <aside class="section" role="complementary">
-              {{ page.sidebar_first }}
-            </aside>
+      {% if page.header %}
+          <div id="discovery-wrapper" class="d-flex align-items-center">
+              <div class="container my-4">
+                  {{ page.header }}
+              </div>
           </div>
-        {% endif %}
-        {% if page.sidebar_second %}
-          <div{{ sidebar_second_attributes }}>
-            <aside class="section" role="complementary">
-              {{ page.sidebar_second }}
-            </aside>
-          </div>
-        {% endif %}
-      </div>
-    </div>
-  </main>
+      {% endif %}
+  </header>
 {% endblock %}
 
-{% include '@unb_lib_theme/includes/stats.html.twig' %}
+{% block content %}
+  {{ parent() }}
+  {% include '@unb_lib_theme/includes/stats.html.twig' %}
+{% endblock %}
 
-<footer class="site-footer">
-  {% include '@unb_lib_theme/includes/footer.html.twig' %}
-</footer>
-{% if env_indicator %}
-    {% if env_indicator == 'Development Server' %}
-      <script type="text/javascript" src="https://bot.ivy.ai/bot/script/category/Er19XwoBKRpe5G8w7XMj8zkZv7a4N0dq" referrerpolicy="no-referrer-when-downgrade" async></script>
-    {% endif %}
-    <div class="alert alert-{{ env_indicator_bg_color }} alert-dismissible fixed-bottom m-0 p-0 show fade" role="alert">
-        <div class="bg-{{ env_indicator_bg_color }} progress-bar progress-bar-striped py-1 text-{{ env_indicator_txt_color }} w-100">
-            <small><span class="fa-cog fas mr-1" aria-hidden="true"></span>{{ env_indicator }}</small>
-            <button type="button" class="close p-1" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    </div>
-{% endif %}
+{% block footer %}
+  {{ parent() }}
+{% endblock %}
