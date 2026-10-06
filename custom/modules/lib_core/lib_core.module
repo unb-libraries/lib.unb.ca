@@ -441,6 +441,7 @@ function _lib_core_contactable_department($mailbox) {
     'hilref' => 'Reference',
     'hwkacq' => 'HWK Acquisitions',
     'hwkcommons' => 'Hans W. Klohn Commons',
+    'hwkcinfo' => 'Hans W. Klohn Commons',
     'hwkcreserves' => 'HWK Reserves',
     'knowledgesynthesis' => 'Knowledge Synthesis',
     'lawlib' => 'Law Library',
