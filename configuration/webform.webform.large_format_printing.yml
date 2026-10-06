@@ -18,29 +18,6 @@ title: 'Large Format/Poster Printing Request'
 description: 'An online submission form for patrons to submit requests for large format printing at the HIL.'
 category: ''
 elements: |-
-  intro_card:
-    '#type': webform_markup
-    '#markup': |-
-      <div class="card mb-3">
-      <div class="card-header bg-dark">
-      <div class="h6 text-white m-0">Please Note</div>
-      </div>
-
-      <div class="card-body">
-      <p class="card-text">Large-format printing is available in the Harriet Irving Library Research Commons. The maximum width that can be&nbsp;printed is 36 inches; length is unlimited.<br />
-      Printing is currently available in two matte formats: draft and presentation (coated), and one glossy (satin) finish. Please allow three (3) business-days&#39; notice for a large format printing request. Large-format printing is not done on holidays and weekends.</p>
-
-      <ul class="card-text">
-      	<li><strong>matte draft paper:</strong> $0.50 per inch by the longest length</li>
-      	<li><strong>matte presentation (coated) paper:</strong> $0.75 per inch by longest length</li>
-      	<li><strong>satin photo paper:</strong> $1.00 per inch by longest length</li>
-      </ul>
-
-      <p class="card-text">It is recommended that you format your image to its final size prior to submitting your request and that you&nbsp;save your file as a pdf for ease of printing.</p>
-
-      <p class="card-text">You will be contacted via email to approve pricing prior to printing and once your print is completed.</p>
-      </div>
-      </div>
   wrapper:
     '#type': container
     '#attributes':
@@ -62,6 +39,7 @@ elements: |-
       phone_number:
         '#type': tel
         '#title': 'Phone Number'
+        '#default_value': '[current-user:field_phone_number]'
       method_of_payment:
         '#type': radios
         '#title': 'Method of Payment'
@@ -69,21 +47,24 @@ elements: |-
           cash_credit: 'Cash/Debit/Credit Card'
           unb_account: 'UNB Account'
         '#required': true
-      are_you_the_signing_authority_for_this_unb_account_:
-        '#type': radios
-        '#title': 'Are you the signing authority for this UNB account?'
-        '#options':
-          authority_yes: 'Yes'
-          authority_no: 'No'
+      signing_authority_radio_wrapper:
+        '#type': container
         '#states':
           visible-slide:
             ':input[name="method_of_payment"]':
               value: unb_account
-          required:
-            ':input[name="method_of_payment"]':
-              value: unb_account
-        '#attributes':
-          aria-label: 'Are you the signing authority for this UNB account? (required)'
+        are_you_the_signing_authority_for_this_unb_account_:
+          '#type': radios
+          '#title': 'Are you the signing authority for this UNB account?'
+          '#options':
+            authority_yes: 'Yes'
+            authority_no: 'No'
+          '#states':
+            required:
+              ':input[name="method_of_payment"]':
+                value: unb_account
+          '#attributes':
+            aria-label: 'Are you the signing authority for this UNB account? (required)'
       signing_authority_wrapper:
         '#type': fieldset
         '#title': 'Signing Authority Details'
@@ -133,10 +114,61 @@ elements: |-
     printing_details:
       '#type': fieldset
       '#title': 'Printing Details'
+      select_a_location_to_print:
+        '#type': radios
+        '#title': 'Select a campus for your print request'
+        '#options':
+          fredericton: Fredericton
+          saint_john: 'Saint John'
+        '#required': true
+      note_fredericton:
+        '#type': webform_markup
+        '#states':
+          visible-slide:
+            ':input[name="select_a_location_to_print"]':
+              value: fredericton
+        '#markup': |-
+          <div class="card mb-3">
+          <div class="card-body small py-2">
+          <p class="card-text">Large-format printing is available in the Harriet Irving Library Research Commons.</p>
+          <strong>Please Note:</strong>
+
+          <ul>
+          <li>At least 1 dimension (length or width) must be no longer than 36 inches while the other is unlimited</li>
+          <li>Please allow a minimum 0.25 inch margin on all sides to prevent accidental cropping of content</li>
+          <li>3 business-days&#39; notice is required for all printing requests</li>
+          <li>Printing is not done on holidays and weekends</li>
+          </ul>
+
+          <p class="card-text">You will be contacted via email to approve pricing prior to printing and once your print is completed. Please contact the <a href="/contact-unb-libraries-staff?recipient=researchcommons&amp;subject=Large%20Format%20Printing%20Request">Research Commons</a> with any questions.</p>
+          </div>
+          </div>
+      note_saint_john:
+        '#type': webform_markup
+        '#states':
+          visible-slide:
+            ':input[name="select_a_location_to_print"]':
+              value: saint_john
+        '#markup': |-
+          <div class="card mb-3">
+          <div class="card-body small py-2">
+          <p class="card-text">The Hans W. Klohn Library offers large-format printing to support students, faculty, and staff with academic and professional presentations, research posters, and more.</p>
+          <strong>Please Note:</strong>
+
+          <ul>
+          <li>Posters can be printed at any size, on paper that is 42 inches wide</li>
+          <li>The cost is $0.75 per inch (plus tax) by the longest side</li>
+          <li>3 business-days&#39; notice is required for all printing requests</li>
+          <li>Printing is not done on holidays and weekends</li>
+          </ul>
+
+          <p class="card-text">You will be contacted via email to approve pricing prior to printing and once your print is completed. Please contact the <a href="/contact-unb-libraries-staff?recipient=hwkcinfo&amp;subject=Large%20Format%20Printing%20Request">Hans W. Klohn Commons</a> with any questions.</p>
+          </div>
+          </div>
       when_do_you_need_this_printed_by:
         '#type': datetime
         '#title': 'When do you need this image printed by?'
-        '#description': '<small>Please allow three (3) business-days'' notice for a large format printing request. Enter any time request in the <a href="#edit-additional-information">a<em>dditional notes</em></a> field below.</small>'
+        '#description': '<small class="text-black">Enter any time request in the <a href="#edit-additional-information"><em>additional notes</em></a> field below. </small>'
         '#required': true
         '#date_date_min': '+72 hours'
         '#date_date_format': ''
@@ -146,29 +178,39 @@ elements: |-
         '#type': radios
         '#title': 'What type of paper would you like your image printed on?'
         '#options':
-          matte_draft: 'matte draft paper: <span class="badge text-secondary">$0.50 per inch by the longest length (not recommended for poster presentations)</span>'
-          'matte_presentation ': 'matte presentation (coated) paper: <span class="badge text-secondary">$0.75 per inch by longest length</span>'
-          satin_photo: 'satin photo paper: <span class="badge text-secondary">$1.00 per inch by longest length</span>'
+          matte_draft: 'matte draft <small class="lh-sm">(not recommended for poster presentations)</small>: <span class="badge text-dark">$0.50 per inch by the longest length</span>'
+          'matte_presentation ': 'matte presentation <small class="lh-sm">(coated)</small>: <span class="badge text-dark">$0.75 per inch by longest length</span>'
+          satin_photo: 'satin photo <small class="lh-sm">(glossy)</small>: <span class="badge text-dark">$1.00 per inch by longest length</span>'
         '#options_display': buttons_vertical
         '#required': true
+        '#states':
+          visible-slide:
+            ':input[name="select_a_location_to_print"]':
+              value: fredericton
       is_your_file_sized_for_printing:
         '#type': radios
         '#title': 'Is your file ready for printing and within the maximum 36" width?'
+        '#disabled': true
         '#options':
           'yes': 'Yes'
           'no': 'No'
           not_sure: 'I''m not sure'
         '#required': true
+        '#states':
+          invisible:
+            ':input[name="name"]':
+              filled: true
       dimensions_of_your_file:
         '#type': textfield
         '#title': 'What are the dimensions of your file (in inches)?'
+        '#required': true
       upload_your_file_:
         '#type': managed_file
         '#title': 'Upload your file '
-        '#description': '<strong>Please note:</strong> it is recommended that you format your image to its final&nbsp;size prior to submitting your request and that you save your file as a PDF for ease of printing.'
+        '#description': '<span class="text-black"><strong>Please note:</strong>&nbsp;format your image to its final size prior to submitting your request and save your file as a PDF.</span>'
         '#required': true
         '#max_filesize': '20'
-        '#file_extensions': 'pdf tiff jpg'
+        '#file_extensions': pdf
         '#sanitize': true
         '#button': true
         '#button__title': 'Select file<span class="fa-solid fa-paperclip ml-1"></span>'
@@ -377,52 +419,14 @@ access:
     users: {  }
     permissions: {  }
 handlers:
-  recipient_mail:
-    id: email
-    handler_id: recipient_mail
-    label: 'Recipient mail'
-    notes: ''
-    status: true
-    conditions: {  }
-    weight: 0
-    settings:
-      states:
-        - completed
-      to_mail: mfonzo@unb.ca
-      to_options: {  }
-      bcc_mail: ''
-      bcc_options: {  }
-      cc_mail: rob.glencross@unb.ca
-      cc_options: {  }
-      from_mail: unb-libraries-no-reply@unb.ca
-      from_options: {  }
-      from_name: _default
-      reply_to: '[webform_submission:values:email:raw]'
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
-      subject: 'Large Format/Poster Printing Request Submitted'
-      body: "<p>The following information was submitted through our <b>Large Format/Poster Printing Request</b> form by {{ webform_token('[webform_submission:user]', webform_submission) }} on {{ webform_token('[webform_submission:created]', webform_submission) }}.</p>\r\n<blockquote>{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}</blockquote>\r\n<div><img src=\"https://lib.unb.ca/sites/default/files/media/images/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\"></div>"
-      excluded_elements:
-        intro_card: intro_card
-      ignore_access: false
-      exclude_empty: true
-      exclude_empty_checkbox: false
-      exclude_attachments: true
-      html: true
-      attachments: true
-      twig: true
-      theme_name: ''
-      parameters: {  }
-      debug: false
   submitter_email:
     id: email
     handler_id: submitter_email
     label: 'Submitter Email'
     notes: ''
-    status: true
+    status: false
     conditions: {  }
-    weight: 0
+    weight: -46
     settings:
       states:
         - completed
@@ -442,6 +446,178 @@ handlers:
       subject: 'Your UNB Libraries Large Format/Poster Printing Request'
       body: "<p>We have received your request and will email you to approve pricing prior to printing and once your print is completed. Your submitted information (minus the uploaded file) was:</p>\r\n<blockquote>{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}</blockquote>\r\n<div><img src=\"https://lib.unb.ca/sites/default/files/media/images/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\"></div>"
       excluded_elements:
+        note_fredericton: note_fredericton
+        note_saint_john: note_saint_john
+        upload_your_file_: upload_your_file_
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: true
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  fredericton_recipient_mail:
+    id: email
+    handler_id: fredericton_recipient_mail
+    label: 'Fredericton recipient mail'
+    notes: ''
+    status: true
+    conditions:
+      enabled:
+        ':input[name="select_a_location_to_print"]':
+          value: fredericton
+    weight: -50
+    settings:
+      states:
+        - completed
+      to_mail: mfonzo@unb.ca
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: rob.glencross@unb.ca
+      cc_options: {  }
+      from_mail: unb-libraries-no-reply@unb.ca
+      from_options: {  }
+      from_name: _default
+      reply_to: '[webform_submission:values:email:raw]'
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Large Format/Poster Printing Request Submitted'
+      body: "<p>The following information was submitted through our <b>Large Format/Poster Printing Request</b> form by {{ webform_token('[webform_submission:user]', webform_submission) }} on {{ webform_token('[webform_submission:created]', webform_submission) }}.</p>\r\n<blockquote>{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}</blockquote>\r\n<div><img src=\"https://lib.unb.ca/sites/default/files/media/images/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\"></div>"
+      excluded_elements:
+        note_fredericton: note_fredericton
+        note_saint_john: note_saint_john
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: true
+      exclude_attachments: true
+      html: true
+      attachments: true
+      twig: true
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  saint_john_recipient_mail:
+    id: email
+    handler_id: saint_john_recipient_mail
+    label: 'Saint John recipient mail'
+    notes: ''
+    status: true
+    conditions:
+      enabled:
+        ':input[name="select_a_location_to_print"]':
+          value: saint_john
+    weight: -48
+    settings:
+      states:
+        - completed
+      to_mail: hwkcinfo@unb.ca
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: jenna.granger@unb.ca
+      cc_options: {  }
+      from_mail: unb-libraries-no-reply@unb.ca
+      from_options: {  }
+      from_name: _default
+      reply_to: '[webform_submission:values:email:raw]'
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Large Format/Poster Printing Request Submitted'
+      body: "<p>The following information was submitted through our <b>Large Format/Poster Printing Request</b> form by {{ webform_token('[webform_submission:user]', webform_submission) }} on {{ webform_token('[webform_submission:created]', webform_submission) }}.</p>\r\n<blockquote>{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}</blockquote>\r\n<div><img src=\"https://lib.unb.ca/sites/default/files/media/images/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\"></div>"
+      excluded_elements:
+        note_fredericton: note_fredericton
+        note_saint_john: note_saint_john
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: true
+      exclude_attachments: true
+      html: true
+      attachments: true
+      twig: true
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  fredericton_submitter_email:
+    id: email
+    handler_id: fredericton_submitter_email
+    label: 'Fredericton Submitter Email'
+    notes: ''
+    status: true
+    conditions:
+      enabled:
+        ':input[name="select_a_location_to_print"]':
+          value: fredericton
+    weight: -49
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:email:raw]'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: researchcommons@unb.ca
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Your UNB Libraries Large Format/Poster Printing Request'
+      body: "<p>We have received your request and will email you to approve pricing prior to printing and once your print is completed. Your submitted information (minus the uploaded file) was:</p>\r\n<blockquote>{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}</blockquote>\r\n<div><img src=\"https://lib.unb.ca/sites/default/files/media/images/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\"></div>"
+      excluded_elements:
+        note_fredericton: note_fredericton
+        note_saint_john: note_saint_john
+        upload_your_file_: upload_your_file_
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: true
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  saint_john_submitter_email:
+    id: email
+    handler_id: saint_john_submitter_email
+    label: 'Saint John Submitter Email'
+    notes: ''
+    status: true
+    conditions:
+      enabled:
+        ':input[name="select_a_location_to_print"]':
+          value: saint_john
+    weight: -47
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:email:raw]'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: hwkcinfo@unb.ca
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Your UNB Libraries Large Format/Poster Printing Request'
+      body: "<p>We have received your request and will email you to approve pricing prior to printing and once your print is completed. Your submitted information (minus the uploaded file) was:</p>\r\n<blockquote>{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}</blockquote>\r\n<div><img src=\"https://lib.unb.ca/sites/default/files/media/images/UNB_Lib_Black_Red.png\" alt=\"UNB Libraries\"></div>"
+      excluded_elements:
+        note_fredericton: note_fredericton
+        note_saint_john: note_saint_john
         upload_your_file_: upload_your_file_
       ignore_access: false
       exclude_empty: true
