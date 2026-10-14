@@ -12,17 +12,19 @@
   height: 56px;
   text-indent: -9999px;
   transition: none;
-  transition: opacity $ivy-transition-duration ease-in-out, outline $ivy-transition-duration ease-in-out;
+  transition: opacity $trans-timing-duration-fast $trans-timing-function,
+              outline $trans-timing-duration-fast $trans-timing-function;
 
   &:focus,
   &:hover {
+    background: $primary-red-800;
     opacity: 1;
   }
 
   &:hover,
   &.focus-ring {
-    outline-offset: -5px;
-    outline: 3px solid $white;
+    outline-offset: -4px;
+    outline: 3px solid $primary-red-800;
   }
   /* Mirror SVG settings for Link skin */
   &::after {
