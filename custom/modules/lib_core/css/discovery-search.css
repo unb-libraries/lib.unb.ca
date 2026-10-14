@@ -31,6 +31,7 @@
 #discovery-search .list a {
   text-decoration: underline;
   text-decoration-color: transparent;
+  text-underline-offset: 4px;
 }
 @media screen and (max-width: 767px) {
   #discovery-search .list a {
