@@ -234,14 +234,14 @@ class DiscoverySearch extends BlockBase {
             </div>
           </div>
       </form>
-      <ul class="list inline m-0 p-0">
-        <li class="list-inline-item mr-4 my-2 my-sm-1">
+      <ul class="d-flex gap-3 list inline m-0 p-0">
+        <li class="flex-fill list-inline-item">
             <a href="//unb.on.worldcat.org/advancedsearch">Advanced Search</a>
         </li>
-        <li class="list-inline-item mr-4 my-2 my-sm-1">
+        <li class="list-inline-item">
             <a href="/worldcat/unb-worldcat-frequently-asked-questions">Tips for Searching</a>
         </li>
-        <li class="list-inline-item mr-4 my-2 my-sm-1">
+        <li class="list-inline-item">
             <a href="/about/loc_call">Catalogue Locations</a>
         </li>
       </ul>';
