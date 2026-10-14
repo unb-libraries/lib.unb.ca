@@ -41,7 +41,7 @@ class DiscoverySearch extends BlockBase {
     $eres_href = '/eresources?form_id=eres_reference';
     $html =
       '<div class="Accordion d-flex flex-column flex-lg-row gap-4 px-4 px-lg-0">
-        <div id="discovery-search" class="flex-grow-1">
+        <div id="discovery-search" class="flex-grow-1 rounded-lg">
         <div class="card">
           <div class="card-header px-2 pb-0 pb-md-1">
             <h2 class="visually-hidden">Search</h2>
@@ -84,7 +84,7 @@ class DiscoverySearch extends BlockBase {
           </div>
         </div>
         </div>
-        <div id="ask-us" class="d-none d-lg-block bg-askus p-3">' . $askus_block . '</div>
+        <div id="ask-us" class="d-none d-lg-block bg-askus p-3 rounded-lg">' . $askus_block . '</div>
       </div>';
 
     return [
