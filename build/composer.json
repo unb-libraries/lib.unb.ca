@@ -301,7 +301,6 @@
     "ckeditor/fakeobjects": "~4.23",
     "ckeditor/panelbutton": "~4.20",
     "drupal/address": "<2.0.0",
-    "drupal/admin_toolbar": "3.6.3",
     "drupal/allowed_formats": "<3.0.0",
     "drupal/antibot": "2.0.4",
     "drupal/better_exposed_filters": "6.0.6",
