@@ -337,6 +337,7 @@
     "drupal/admin_toolbar": "^3",
     "drupal/allowed_formats": "^3",
     "drupal/antibot": "^2",
+    "drupal/back_to_top": "3.0.3",
     "drupal/better_exposed_filters": "^7",
     "drupal/block_field": "^1@RC",
     "drupal/bootstrap_barrio": "5.1.12",

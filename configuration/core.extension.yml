@@ -4,6 +4,7 @@ module:
   alert_scheduler_client: 0
   allowed_formats: 0
   antibot: 0
+  back_to_top: 0
   better_exposed_filters: 0
   big_pipe: 0
   block: 0
