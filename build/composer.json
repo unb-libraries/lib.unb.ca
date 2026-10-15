@@ -82,6 +82,9 @@
   "minimum-stability": "dev",
   "name": "unb-libraries/lib.unb.ca",
   "prefer-stable": true,
+  "provide": {
+    "drupal/toolbar": "9.5.11"
+  },
   "repositories": [
     {
       "type": "composer",
