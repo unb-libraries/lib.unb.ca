@@ -131,9 +131,10 @@ class DiscoverySearch extends BlockBase {
         </div>
       </form>
       <ul class="list inline m-0 p-0">
-        <li class="list-inline-item mr-4 my-2 my-sm-1">
-          <a href="//reserves.lib.unb.ca/login?ref=/"><i class="fa-solid fa-sign-in-alt" aria-hidden="true"></i>
+        <li class="list-inline-item">
+          <a href="//reserves.lib.unb.ca/login?ref=/">
             Login to My UNB Reserves
+            <span class="fa-solid fa-sign-in-alt fa-sm" aria-hidden="true"></span>
           </a>
         </li>
       </ul>';
@@ -235,11 +236,11 @@ class DiscoverySearch extends BlockBase {
           </div>
       </form>
       <ul class="d-flex gap-3 list inline m-0 p-0">
-        <li class="flex-fill list-inline-item">
-            <a href="//unb.on.worldcat.org/advancedsearch">Advanced Search</a>
-        </li>
         <li class="list-inline-item">
-            <a href="/worldcat/unb-worldcat-frequently-asked-questions">Tips for Searching</a>
+            <a href="//unb.on.worldcat.org/advancedsearch" class="external">Advanced Search</a>
+        </li>
+        <li class="flex-fill list-inline-item">
+            <a href="/worldcat/unb-worldcat-frequently-asked-questions" class="external">UNB WorldCat FAQ</a>
         </li>
         <li class="list-inline-item">
             <a href="/about/loc_call">Catalogue Locations</a>
@@ -270,7 +271,7 @@ class DiscoverySearch extends BlockBase {
         </div>
       </form>
       <ul class="list inline m-0 p-0">
-        <li class="list-inline-item mr-4 my-2 my-sm-1">
+        <li class="list-inline-item">
           <a href="/eresources?form_id=eres_databases">
             More Search Options
           </a>
@@ -335,13 +336,13 @@ class DiscoverySearch extends BlockBase {
           </div>
         </div>
       </form>
-      <ul class="list inline m-0 p-0">
-        <li class="list-inline-item mr-4 my-2 my-sm-1">
+      <ul class="d-flex gap-3 list inline m-0 p-0">
+        <li class="list-inline-item">
             <a href="/eresources?form_id=eres_journals">
                 More Search Options
             </a>
         </li>
-        <li class="list-inline-item mr-4 my-2 my-sm-1">
+        <li class="list-inline-item">
             <a href="/eresources/newspaper-guide" title="Guide to finding newspapers at UNB Libraries">
                 Newspaper Guide
             </a>
