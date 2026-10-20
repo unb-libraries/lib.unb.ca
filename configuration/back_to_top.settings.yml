@@ -1,6 +1,6 @@
 _core:
   default_config_hash: 2FJpva5SHitDi7Wb1AHm8af_JZHM6yY6nuspPmnZgtc
-back_to_top_prevent_on_mobile: false
+back_to_top_prevent_on_mobile: true
 back_to_top_prevent_in_admin: false
 back_to_top_prevent_in_front: false
 back_to_top_button_trigger: !!float 1080
