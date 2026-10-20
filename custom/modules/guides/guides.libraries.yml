@@ -9,6 +9,7 @@ guides:
   dependencies:
     - core/jquery
     - core/drupal
+    - core/once
 
 guides-connect:
   version: VERSION
