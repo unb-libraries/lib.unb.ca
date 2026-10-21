@@ -68,6 +68,13 @@ class StatsFormBase extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
+    if (empty($this->config('guides.settings')->get('analytics_property_id'))) {
+      $form['header'] = [
+        '#markup' => '<div class="alert alert-warning" role="alert"><p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Stats are unavailable: no Google Analytics 4 Property ID has been configured in the guides settings.</p></div>',
+      ];
+      return $form;
+    }
+
     $pagePath = $this->object->toUrl()->toString();
 
     $header = '<h2>Simplified Google Analytics Page Views</h2>
@@ -240,7 +247,7 @@ class StatsFormBase extends FormBase {
     ]);
 
     $response = $client->runReport([
-      'property' => 'properties/386623876',
+      'property' => 'properties/' . $this->config('guides.settings')->get('analytics_property_id'),
       'dateRanges' => $dateRanges,
       'dimensions' => $dimensions,
       'dimensionFilter' => new FilterExpression([
