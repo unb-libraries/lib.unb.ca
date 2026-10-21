@@ -1,3 +1,49 @@
+/* Ask Us */
+#ask-us {
+  background-color: #ffc14c;
+  background-color: rgb(255 193 7 / 89%);
+  width: 30%;
+}
+#ask-us .askus-header h2 {
+  background: none;
+  color: #000;
+  font-size: 2.4rem;
+  text-align: left;
+}
+#ask-us .askus-header h2 span.sr-only {
+  position: inherit;
+  width: auto;
+  height: auto;
+}
+#ask-us .askus-header .askus-icon {
+  display: block;
+}
+#ask-us .askus-header .askus-icon .fas:before {
+  font-size: 2.4rem;
+}
+#ask-us .askus-footer {
+  font-size: inherit;
+  margin-top: 1.75rem;
+  text-align: left;
+}
+#ask-us .askus-footer a {
+  border-bottom: 1px solid transparent;
+  color: #000;
+}
+#ask-us .askus-footer a:focus-visible {
+  background: inherit;
+  border-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  color: #900;
+  outline-offset: 3px;
+  outline: 2px dotted #900;
+}
+#ask-us .askus-footer a:hover {
+  border-bottom-color: #900;
+  color: #900;
+}
+
 .chat-embedded > h2 {
     color: #900;
 }
@@ -24,7 +70,7 @@
     background-color: #f0f0f0;
     text-decoration: none!important;
 }
-#lh3-chat .form-control .fas {
+#lh3-chat .form-control .fa-solid {
   margin-top: .58rem;
 }
 .chat-embedded #lh3-online {
@@ -40,9 +86,6 @@
 }
 .chat-popup .status a {
     color: inherit;
-}
-.chat-popup .media i {
-    /*padding-top: 2px;*/
 }
 #lh3-chat.col-auto {
     padding: 0;
@@ -67,8 +110,8 @@
 .askus-header .askus-icon {
     display: none;
 }
-.askus-header .askus-icon .fas:before {
-    font-size: 1.75rem;
+.askus-header .askus-icon .fa-comments:before {
+    font-size: 2.25rem;
 }
 .askus-footer {
     font-size: .975rem;
@@ -78,16 +121,6 @@
 #main .askus-footer a:focus,
 #main .askus-footer a:hover {
     color: #00607a;
-}
-.askus-footer span:not(.sr-only) {
-    margin-bottom: .5rem;
-    transition: all .3s ease-in-out;
-    white-space: nowrap;
-}
-.askus-footer a span:hover {
-    box-shadow: 0 1px 1px -1px;
-    color: #900;
-    text-decoration: none;
 }
 .requires-js {
     display: none;
