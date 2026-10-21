@@ -104,13 +104,13 @@ guides.user_stats:
     _form: '\Drupal\guides\Form\UserStatsForm'
     _title: 'User Statistics'
   requirements:
-    _permission: 'create guide entities'
+    _custom_access: '\Drupal\guides\Controller\GuidesStatsController::userStatsAccess'
 guides.profile_stats:
   path: '/profile/{profile}/stats'
   defaults:
     _controller: '\Drupal\guides\Controller\GuidesStatsController::redirectFromProfile'
   requirements:
-    _permission: 'create guide entities'
+    _custom_access: '\Drupal\guides\Controller\GuidesStatsController::profileStatsAccess'
 entity.course_link.collection:
   path: '/admin/guides/{guide}/courselink'
   defaults:
