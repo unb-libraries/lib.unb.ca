@@ -22,12 +22,22 @@ class UserStatsForm extends StatsFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state, UserInterface $user = NULL) {
-    $profile = $user->public_profiles->get(0)->entity;
+    $form['#title'] = 'Statistics for ' . $user->field_first_name->getString() . ' ' . $user->field_last_name->getString();
+
+    // Blocked users and users without the public_profile role have no
+    // active profile.
+    $profile = $user->public_profiles->isEmpty() ? NULL : $user->public_profiles->get(0)->entity;
+    if (empty($profile)) {
+      $form['header'] = [
+        '#markup' => '<div class="alert alert-info" role="alert"><p><i class="fa fa-info-circle" aria-hidden="true"></i> This user does not have an active public profile, so there are no stats to display.</p></div>',
+      ];
+      return $form;
+    }
+
     $this->setObject($profile);
 
     $form += parent::buildForm($form, $form_state);
 
-    $form['#title'] = 'Statistics for ' . $user->field_first_name->getString() . ' ' . $user->field_last_name->getString();
     return $form;
   }
 
