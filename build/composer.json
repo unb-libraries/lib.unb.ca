@@ -422,6 +422,7 @@
     "querypath/querypath": "^3"
   },
   "require-dev": {
+    "drupal/devel": "^5",
     "unb-libraries/drupal-development-libraries": "^9"
   },
   "scripts": {
