@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c0d3c581a9091fd21e8e20d4114721a5",
+    "content-hash": "10a32245155036b4cbb9482490f3d542",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -16753,28 +16753,29 @@
         },
         {
             "name": "drupal/devel",
-            "version": "4.2.1",
+            "version": "5.1.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/devel.git",
-                "reference": "4.2.1"
+                "reference": "5.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/devel-4.2.1.zip",
-                "reference": "4.2.1",
-                "shasum": "aa08379bad81cb2e604ee9a0b9e2aabd86fae13f"
+                "url": "https://ftp.drupal.org/files/projects/devel-5.1.2.zip",
+                "reference": "5.1.2",
+                "shasum": "9b35e38bf2043bf87f88585b3d9100f38da8f07f"
             },
             "require": {
-                "doctrine/common": "^2.7",
-                "drupal/core": "^8.8 || ^9",
-                "symfony/var-dumper": "^4 || ^5"
+                "doctrine/common": "^2.7 || ^3.4",
+                "drupal/core": "^9 || ^10",
+                "php": ">=7.4",
+                "symfony/var-dumper": "^4 || ^5 || ^6"
             },
             "conflict": {
                 "kint-php/kint": "<3"
             },
             "require-dev": {
-                "drush/drush": "^10"
+                "drush/drush": "^11"
             },
             "suggest": {
                 "kint-php/kint": "Kint provides an informative display of arrays/objects. Useful for debugging and developing."
@@ -16782,8 +16783,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.2.1",
-                    "datestamp": "1664317444",
+                    "version": "5.1.2",
+                    "datestamp": "1686161028",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -16791,7 +16792,7 @@
                 },
                 "drush": {
                     "services": {
-                        "drush.services.yml": "^9 || ^10"
+                        "drush.services.yml": "^9 || ^10 || ^11"
                     }
                 }
             },
@@ -19786,21 +19787,21 @@
         },
         {
             "name": "unb-libraries/drupal-development-libraries",
-            "version": "9.0.2",
+            "version": "9.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unb-libraries/drupal-development-libraries.git",
-                "reference": "d7ab48b4238b9eb979c96ee4d8020dc5659ab590"
+                "reference": "8e3661979bed3e89087093b4f1930bbf6cf3c167"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unb-libraries/drupal-development-libraries/zipball/d7ab48b4238b9eb979c96ee4d8020dc5659ab590",
-                "reference": "d7ab48b4238b9eb979c96ee4d8020dc5659ab590",
+                "url": "https://api.github.com/repos/unb-libraries/drupal-development-libraries/zipball/8e3661979bed3e89087093b4f1930bbf6cf3c167",
+                "reference": "8e3661979bed3e89087093b4f1930bbf6cf3c167",
                 "shasum": ""
             },
             "require": {
                 "drupal/core-dev": "^9.1",
-                "drupal/devel": "^4"
+                "drupal/devel": "^4 || ^5"
             },
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
@@ -19816,9 +19817,9 @@
             "description": "Libraries to append to Drupal builds for local development and testing.",
             "support": {
                 "issues": "https://github.com/unb-libraries/drupal-development-libraries/issues",
-                "source": "https://github.com/unb-libraries/drupal-development-libraries/tree/9.0.2"
+                "source": "https://github.com/unb-libraries/drupal-development-libraries/tree/9.0.3"
             },
-            "time": "2021-06-29T22:11:43+00:00"
+            "time": "2026-10-22T12:25:08+00:00"
         }
     ],
     "aliases": [],
@@ -19844,5 +19845,5 @@
     "prefer-lowest": false,
     "platform": {},
     "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }
