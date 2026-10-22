@@ -68,6 +68,13 @@ class StatsFormBase extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
+    if (empty($this->config('guides.settings')->get('analytics_property_id'))) {
+      $form['header'] = [
+        '#markup' => '<div class="alert alert-warning" role="alert"><p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Stats are unavailable: no Google Analytics 4 Property ID has been configured in the guides settings.</p></div>',
+      ];
+      return $form;
+    }
+
     $pagePath = $this->object->toUrl()->toString();
 
     $header = '<h2>Simplified Google Analytics Page Views</h2>
@@ -76,7 +83,7 @@ class StatsFormBase extends FormBase {
   <p>Stats are available for guides and category pages for which you are an editor, as well as your profile page.</p>';
 
     if ($this->getFormType() == 'guide') {
-      $header .= '<p>Guide stats will show the tab name where possible, i.e. deleted tabs still have stats but no longer have names. Each tab is considered a separate page with respect to views. The default start tab for the guide will appear first but it may also appear again using its tab ID. This occurs when patrons navigate back to the home tab after visiting others tabs.</p>';
+      $header .= '<p>Guide stats will show the tab name where possible, i.e. deleted tabs still have stats but no longer have names. Each tab is considered a separate page with respect to views. The guide\'s base path counts initial page loads; each <code>?tab=</code> row counts views of that tab after a patron selects it (or follows a direct link to it). Per-tab stats are only available from October 2026 onward.</p>';
     }
     $header .= '<p><i class="fa fa-exclamation-triangle"></i> Google has migrated from <i>Universal Analytics</i> to <i>Goggle Analytics 4</i>. The two formats are not compatible. If you are looking for stats prior to July 2023, please submit a <a href="https://intranet.lib.unb.ca/requests/trouble-tickets">Trouble Ticket</a>.</p></div>';
 
@@ -131,22 +138,26 @@ class StatsFormBase extends FormBase {
       ]),
     ];
     $dimensions = [
-      new Dimension(['name' => 'pagePath']),
+      new Dimension(['name' => 'pagePathPlusQueryString']),
       new Dimension(['name' => 'yearMonth']),
     ];
     $pagePath = $this->object->toUrl()->toString();
 
     $data = $this->getStatsFor($pagePath, $dateRanges, $dimensions);
-    $rows = $this->mergeStatsRows($data);
+    [$months, $rows] = $this->mergeStatsRows($data);
 
     if ($this->getFormType() == 'guide') {
       $rows = $this->addTabNames($rows);
     }
 
-    $output = '';
-    foreach ($rows as $row) {
-      $output .= implode(',', $row) . "\n";
+    $fh = fopen('php://temp', 'r+');
+    fputcsv($fh, array_merge(['Page'], $months));
+    foreach ($rows as $page => $row) {
+      fputcsv($fh, array_merge([$page], $row));
     }
+    rewind($fh);
+    $output = stream_get_contents($fh);
+    fclose($fh);
 
     $response = new Response();
     $response->setContent($output);
@@ -167,7 +178,7 @@ class StatsFormBase extends FormBase {
     ];
 
     $dimensions = [
-      new Dimension(['name' => 'pagePath']),
+      new Dimension(['name' => 'pagePathPlusQueryString']),
     ];
 
     $data = $this->getStatsFor($pagePath, $dateRanges, $dimensions);
@@ -215,7 +226,7 @@ class StatsFormBase extends FormBase {
 
     $newRows = [];
     foreach ($rows as $page => $data) {
-      if (preg_match('/#section-(\d+)/', $page, $matches)) {
+      if (preg_match('/\?tab=section-(\d+)$/', $page, $matches)) {
         if (!empty($tabs[$matches[1]])) {
           $page .= ' (' . $tabs[$matches[1]] . ')';
         }
@@ -236,12 +247,12 @@ class StatsFormBase extends FormBase {
     ]);
 
     $response = $client->runReport([
-      'property' => 'properties/386623876',
+      'property' => 'properties/' . $this->config('guides.settings')->get('analytics_property_id'),
       'dateRanges' => $dateRanges,
       'dimensions' => $dimensions,
       'dimensionFilter' => new FilterExpression([
         'filter' => new Filter([
-          'field_name' => 'pagePath',
+          'field_name' => 'pagePathPlusQueryString',
           'string_filter' => new StringFilter([
             'match_type' => MatchType::BEGINS_WITH,
             'value' => $pagePath,
@@ -273,16 +284,44 @@ class StatsFormBase extends FormBase {
         $data[$entry] = $metric->getValue();
       }
 
-      $results[] = $data;
+      // Expose as pagePath, keeping only the tab query param.
+      $data['pagePath'] = $this->normalizePagePath($data['pagePathPlusQueryString']);
+      unset($data['pagePathPlusQueryString']);
+
+      // Tighter pagePath filtering.
+      $pathRE = preg_quote($pagePath, '~');
+      if ($data['pagePath'] != $pagePath && !preg_match("~^{$pathRE}[?/]~", $data['pagePath'])) {
+        continue;
+      }
+
+      // Normalizing can collapse several GA rows into one; sum their views.
+      $id = implode('|', array_diff_key($data, ['screenPageViews' => 1]));
+      if (isset($results[$id])) {
+        $results[$id]['screenPageViews'] += $data['screenPageViews'];
+      }
+      else {
+        $results[$id] = $data;
+      }
     }
 
-    // Tighter pagePath filtering.
-    $results = array_filter($results, function ($v) use ($pagePath) {
-      $pathRE = quotemeta($pagePath);
-      return $v['pagePath'] == $pagePath || preg_match("~^\Q{$pathRE}\E[#/]~", $v['pagePath']);
-    });
+    return array_values($results);
+  }
 
-    return $results;
+  /**
+   * Strip all query params from a path except for a guide tab.
+   */
+  private function normalizePagePath($path) {
+    $parts = parse_url($path);
+    $normalized = $parts['path'] ?? $path;
+
+    if (!empty($parts['query'])) {
+      parse_str($parts['query'], $query);
+      if (!empty($query['tab']) && is_string($query['tab'])) {
+        $normalized .= '?tab=' . $query['tab'];
+      }
+    }
+
+    return $normalized;
   }
 
   /**
@@ -300,16 +339,16 @@ class StatsFormBase extends FormBase {
     ksort($dates);
     ksort($data);
 
-    $rows = [array_merge(['Page'], array_values($dates))];
+    $rows = [];
     foreach ($data as $page => $dateData) {
-      $row = [$page];
+      $row = [];
       foreach (array_keys($dates) as $date) {
         $row[] = empty($dateData[$date]) ? 0 : $dateData[$date];
       }
-      $rows[] = $row;
+      $rows[$page] = $row;
     }
 
-    return $rows;
+    return [array_values($dates), $rows];
   }
 
 }

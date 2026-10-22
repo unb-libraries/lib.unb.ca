@@ -85,13 +85,28 @@ class GuidesSettingsForm extends ConfigFormBase {
       '#default_value' => $help,
     ];
 
-    $form['analytics_view_id'] = [
+    $form['analytics_property_id'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Google Analytics View ID'),
-      '#default_value' => $config->get('analytics_view_id'),
+      '#title' => $this->t('Google Analytics 4 Property ID'),
+      '#description' => $this->t('The numeric GA4 property ID used for guide stats (Admin &gt; Property details), e.g. 123456789. This is not the "G-" measurement ID.'),
+      '#default_value' => $config->get('analytics_property_id'),
     ];
 
     return parent::buildForm($form, $form_state);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function validateForm(array &$form, FormStateInterface $form_state) {
+    // Accept the "properties/123" form the API uses, store just the number.
+    $id = preg_replace('~^properties/~', '', trim($form_state->getValue('analytics_property_id')));
+    if ($id !== '' && !ctype_digit($id)) {
+      $form_state->setErrorByName('analytics_property_id', $this->t('The GA4 Property ID must be numeric.'));
+    }
+    $form_state->setValue('analytics_property_id', $id);
+
+    parent::validateForm($form, $form_state);
   }
 
   /**
@@ -101,7 +116,8 @@ class GuidesSettingsForm extends ConfigFormBase {
     $this->config('guides.settings')
       ->set('start_guide', $form_state->getValue('getting_started_guide'))
       ->set('help_guide', $form_state->getValue('help_guide'))
-      ->set('analytics_view_id', $form_state->getValue('analytics_view_id'))
+      ->set('analytics_property_id', $form_state->getValue('analytics_property_id'))
+      ->clear('analytics_view_id')
       ->save();
 
     \Drupal::cache('menu')->invalidateAll();

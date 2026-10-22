@@ -38,5 +38,7 @@ sed -i "s|PATRON_DATABASE_PASSWORD|$PATRON_DATABASE_PASSWORD|g" $SETTINGS_FILE
 sed -i "s|PATRON_DATABASE_HOST|$PATRON_DATABASE_HOST|g" $SETTINGS_FILE
 sed -i "s|PATRON_DATABASE|$PATRON_DATABASE|g" $SETTINGS_FILE
 
-cp /app/keys/oclc-sftp.root.key /app/keys/oclc-sftp.key
-chown nginx /app/keys/oclc-sftp.key
+if [ -f /app/keys/oclc-sftp.root.key ]; then
+  cp /app/keys/oclc-sftp.root.key /app/keys/oclc-sftp.key
+  chown nginx /app/keys/oclc-sftp.key
+fi

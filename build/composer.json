@@ -23,7 +23,12 @@
     "preferred-install": {
       "*": "dist"
     },
-    "sort-packages": true
+    "sort-packages": true,
+    "policy": {
+      "advisories": {
+        "block": false
+      }
+    }
   },
   "conflict": {
     "drupal/drupal": "*"
@@ -417,6 +422,7 @@
     "wikimedia/composer-merge-plugin": "2.0.1"
   },
   "require-dev": {
+    "drupal/devel": "^5",
     "unb-libraries/drupal-development-libraries": "^9"
   },
   "scripts": {

@@ -13,3 +13,4 @@ dependencies:
   - node_edit_protection
   - public_profile
   - twig_tweak
+  - search_api

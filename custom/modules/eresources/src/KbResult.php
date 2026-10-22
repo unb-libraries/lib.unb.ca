@@ -135,17 +135,20 @@ class KbResult extends ResultBase implements ResultInterface {
     $debug = '<p class="h4">KB Record Fields</p>';
     $debug .= '<ul class="mb-2">';
 
-    $f = [
-      'entry_uid', 'title', 'collection_name', 'oclcnum', 'isbn', 'issn',
-      'eissn', 'url', 'author', 'publisher', 'coverage', 'coverageenum',
-      'coverage_notes', 'collection_user_notes', 'location',
-    ];
-    foreach ($f as $k) {
+    foreach (get_object_vars($this->item) as $k => $value) {
+      if ($k == 'links') {
+        foreach ($value as $link) {
+          $debug .= "<li class=\"text-break\"><b>links ({$link->rel}):</b> " . htmlspecialchars($link->href) . '</li>';
+        }
+        continue;
+      }
+      if (!is_scalar($value)) {
+        $value = json_encode($value);
+      }
       $class = '';
-      if ($k == 'url') {
+      if ($k == 'id') {
         $class = ' class="text-break"';
       }
-      $value = $this->item->{"kb:{$k}"} ?? '';
       $debug .= "<li{$class}><b>{$k}:</b> " . htmlspecialchars($value) . '</li>';
     }
 

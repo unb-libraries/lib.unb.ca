@@ -26,6 +26,10 @@ class GuideCategoryAccessControlHandler extends EntityAccessControlHandler {
   protected function hasEntityUpdateAccess(EntityInterface $entity, AccountInterface $account) {
     $hasAccess = FALSE;
     foreach ($entity->editors as $editor) {
+      // Skip editors whose paragraph or user account no longer exists.
+      if (empty($editor->entity) || empty($editor->entity->field_user->entity)) {
+        continue;
+      }
       $user = $editor->entity->field_user->entity;
       if ($user->id() == $account->id()) {
         $hasAccess = TRUE;
@@ -41,7 +45,7 @@ class GuideCategoryAccessControlHandler extends EntityAccessControlHandler {
   protected function checkAccess(EntityInterface $entity, $operation, AccountInterface $account) {
     $status = $entity->isPublished();
 
-    if ($operation === 'view' && !$status && !$account->hasPermission('view unpublished guide_categories entities')) {
+    if ($operation === 'view' && !$status && !$account->hasPermission('view unpublished guide_category entities')) {
       return AccessResult::forbidden()->addCacheableDependency($entity);
     }
 
