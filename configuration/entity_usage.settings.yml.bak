@@ -1,0 +1,82 @@
+_core:
+  default_config_hash: AXUBMTvVtpcNp0jKjDaWjSHqMy6HjuUf7j4yVbXgazI
+local_task_enabled_entity_types:
+  - media
+track_enabled_source_entity_types:
+  - ior_award
+  - ior_collection
+  - comment
+  - contact_message
+  - node
+  - content_moderation_state
+  - contest
+  - course_link
+  - block_content
+  - menu_link_content
+  - eresources_guide_link
+  - eresources_harvested_collection
+  - eresources_record
+  - entity_embed_fake_entity
+  - simple_group
+  - guide
+  - guide_category
+  - media
+  - node_taxonomy_path
+  - paragraph
+  - portolan_record
+  - profile
+  - redirect
+  - retention_details
+  - schedule
+  - search_api_task
+  - ior_submission
+  - taxonomy_term
+  - path_alias
+  - webform_submission
+track_enabled_target_entity_types:
+  - ior_award
+  - ior_collection
+  - comment
+  - contact_message
+  - node
+  - content_moderation_state
+  - contest
+  - course_link
+  - block_content
+  - menu_link_content
+  - eresources_guide_link
+  - eresources_harvested_collection
+  - eresources_record
+  - entity_embed_fake_entity
+  - simple_group
+  - guide
+  - guide_category
+  - media
+  - node_taxonomy_path
+  - paragraph
+  - portolan_record
+  - profile
+  - redirect
+  - retention_details
+  - schedule
+  - search_api_task
+  - ior_submission
+  - taxonomy_term
+  - path_alias
+  - webform_submission
+track_enabled_plugins:
+  - linkit
+  - media_embed
+  - html_link
+  - link
+  - dynamic_entity_reference
+  - entity_reference
+  - entity_embed
+  - ckeditor_image
+  - block_field
+  - layout_builder
+track_enabled_base_fields: false
+site_domains: {  }
+edit_warning_message_entity_types: {  }
+delete_warning_message_entity_types: {  }
+usage_controller_items_per_page: 25
