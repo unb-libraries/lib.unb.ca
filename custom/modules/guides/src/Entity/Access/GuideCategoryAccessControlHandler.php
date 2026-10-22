@@ -26,6 +26,10 @@ class GuideCategoryAccessControlHandler extends EntityAccessControlHandler {
   protected function hasEntityUpdateAccess(EntityInterface $entity, AccountInterface $account) {
     $hasAccess = FALSE;
     foreach ($entity->editors as $editor) {
+      // Skip editors whose paragraph or user account no longer exists.
+      if (empty($editor->entity) || empty($editor->entity->field_user->entity)) {
+        continue;
+      }
       $user = $editor->entity->field_user->entity;
       if ($user->id() == $account->id()) {
         $hasAccess = TRUE;
