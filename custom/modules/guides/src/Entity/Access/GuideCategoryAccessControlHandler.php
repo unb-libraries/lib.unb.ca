@@ -45,7 +45,7 @@ class GuideCategoryAccessControlHandler extends EntityAccessControlHandler {
   protected function checkAccess(EntityInterface $entity, $operation, AccountInterface $account) {
     $status = $entity->isPublished();
 
-    if ($operation === 'view' && !$status && !$account->hasPermission('view unpublished guide_categories entities')) {
+    if ($operation === 'view' && !$status && !$account->hasPermission('view unpublished guide_category entities')) {
       return AccessResult::forbidden()->addCacheableDependency($entity);
     }
 
