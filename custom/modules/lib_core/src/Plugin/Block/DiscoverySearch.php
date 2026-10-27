@@ -76,9 +76,9 @@ class DiscoverySearch extends BlockBase {
             <div aria-labelledby="searchBtn4" class="Accordion-panel" id="searchPanel4" role="region" hidden="">' . $this->getJournalsForm() . '</div>
             <div aria-labelledby="searchBtn5" class="Accordion-panel" id="searchPanel5" role="region" hidden="">
               <div class="d-flex justify-content-center pt-4">
-                <i class="fa-solid fa-arrow-up-right-from-square fa-bounce fa-lg" aria-hidden="true" style="line-height: inherit;"></i>
-                <span class="ml-2 mt-1">Redirecting to the
-                <a href="' . $eres_href . '" class="text-warning">e-Resources page</a>.</span>
+                <span class="ml-2 mt-1">Visit the <a href="' . $eres_href .
+                  '" class="text-warning">e-Resources page<span class="fa-solid fa-angles-right fa-xs ms-1 ml-1" aria-hidden="true"></span></a>
+                </span>
               </div>
             </div>
           </div>
@@ -133,8 +133,8 @@ class DiscoverySearch extends BlockBase {
       <ul class="list inline m-0 p-0">
         <li class="list-inline-item">
           <a href="//reserves.lib.unb.ca/login?ref=/">
-            Login to My UNB Reserves
-            <span class="fa-solid fa-sign-in-alt fa-sm" aria-hidden="true"></span>
+            Login to My UNB Reserves<span class="fa-solid fa-arrow-right-to-bracket fa-sm ms-1 ml-1"
+              aria-hidden="true"></span><span class="visually-hidden">(authentication required)</span>
           </a>
         </li>
       </ul>';
@@ -237,10 +237,10 @@ class DiscoverySearch extends BlockBase {
       </form>
       <ul class="d-flex gap-3 list inline m-0 p-0">
         <li class="list-inline-item">
-            <a href="//unb.on.worldcat.org/advancedsearch" class="external">Advanced Search</a>
+            <a href="//unb.on.worldcat.org/advancedsearch">Advanced Search</a>
         </li>
         <li class="flex-fill list-inline-item">
-            <a href="/worldcat/unb-worldcat-frequently-asked-questions" class="external">UNB WorldCat FAQ</a>
+            <a href="/worldcat/unb-worldcat-frequently-asked-questions">UNB WorldCat FAQ</a>
         </li>
         <li class="list-inline-item">
             <a href="/about/loc_call">Catalogue Locations</a>
