@@ -1,7 +1,7 @@
 name: Deploy lib.unb.ca
 on:
   push:
-    branches: [dev, prod]
+    branches: [dev, prod, new_front_page]
   pull_request:
   workflow_dispatch:
 concurrency:
@@ -11,11 +11,11 @@ jobs:
   deploy:
     uses: unb-libraries/github-workflows/.github/workflows/build-push-deploy-notify.yaml@1.x
     with:
-      branch-env-map: '{"dev":"dev","prod":"prod"}'
+      branch-env-map: '{"dev":"dev","prod":"prod","new_front_page":"newfront"}'
       build-themes: true
       check-logs: true
       log-check-profile: 'drupal'
-      deploy-branches: '["dev","prod"]'
+      deploy-branches: '["dev","prod","new_front_page"]'
       image-name: 'ghcr.io/unb-libraries/lib.unb.ca'
       k8s-deployment-name: 'lib-unb-ca'
       platforms: 'linux/amd64'
