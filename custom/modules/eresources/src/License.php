@@ -241,7 +241,7 @@ class License {
       }
 
       // Some notes are contained in $term->notes.
-      if (property_exists($term, 'notes')) {
+      if (isset($term->notes->note)) {
         $noteValues = [];
         foreach ($term->notes->note as $note) {
           $noteValues[] = $note->note;
@@ -321,7 +321,7 @@ class License {
    */
   private function getTerm($termName) {
     $terms = [];
-    if (property_exists($this->licenseData, 'terms') && property_exists($this->licenseData->terms, 'term')) {
+    if (isset($this->licenseData->terms->term)) {
       foreach ($this->licenseData->terms->term as $term) {
         $terms[] = $term;
         if (property_exists($term, 'type')) {
@@ -339,7 +339,7 @@ class License {
    */
   private function getCustomTerm($termName) {
     $terms = [];
-    if (property_exists($this->licenseData, 'terms') && property_exists($this->licenseData->terms, 'term')) {
+    if (isset($this->licenseData->terms->term)) {
       foreach ($this->licenseData->terms->term as $term) {
         $terms[] = $term;
         if (property_exists($term, 'name')) {
@@ -371,7 +371,7 @@ class License {
       return NULL;
     }
     $subTerms = [];
-    if (property_exists($term, 'subTerms') && property_exists($term->subTerms, 'subTerm')) {
+    if (isset($term->subTerms->subTerm)) {
       foreach ($term->subTerms->subTerm as $subTerm) {
         $subTerms[] = $subTerm;
         if ($subTermName && property_exists($subTerm, 'subTermName') && $subTerm->subTermName == $subTermName) {
@@ -390,7 +390,7 @@ class License {
       return NULL;
     }
     $options = [];
-    if (property_exists($subTerm, 'options') && property_exists($subTerm->options, 'option')) {
+    if (isset($subTerm->options->option)) {
       foreach ($subTerm->options->option as $option) {
         $options[] = $option;
         if ($optionName && property_exists($option, 'name') && $option->name == $optionName) {
