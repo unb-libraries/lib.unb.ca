@@ -1,3 +1,10 @@
 {
-  "wskey": "OCLC_API_KB"
+  "grantType": "client_credentials",
+  "authOptions": {
+    "urlAuthorize": "https://oauth.oclc.org/auth",
+    "urlAccessToken": "https://oauth.oclc.org/token",
+    "clientId": "OCLC_API_KB_WSKEY",
+    "clientSecret": "OCLC_API_KB_SECRET",
+    "urlResourceOwnerDetails": ""
+  }
 }

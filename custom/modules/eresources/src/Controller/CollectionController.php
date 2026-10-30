@@ -60,7 +60,7 @@ class CollectionController extends ControllerBase {
    *   The title.
    */
   public function title($collection_uid) {
-    $api = $this->oclcApi('worldcat_knowledge_base', ['authorization' => $this->oclcAuthorization()]);
+    $api = $this->oclcApi('worldcat_knowledge_base_v2', ['authorization' => $this->oclcAuthorization()]);
 
     try {
       $result = $api->get('read-collection', [
@@ -94,7 +94,7 @@ class CollectionController extends ControllerBase {
     $start = $perPage * $page + 1;
 
     try {
-      $api = $this->oclcApi('worldcat_knowledge_base', ['authorization' => $this->oclcAuthorization()]);
+      $api = $this->oclcApi('worldcat_knowledge_base_v2', ['authorization' => $this->oclcAuthorization()]);
       $params = [
         'collection_uid' => $collection_uid,
         'itemsPerPage' => $perPage,

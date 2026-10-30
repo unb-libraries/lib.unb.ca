@@ -54,7 +54,7 @@ class HarvestedCollectionController extends ControllerBase {
    * Sychronize remote KB collection with local data.
    */
   public function synchronize(HarvestedCollection $eresources_harvested_collection) {
-    $api = $this->oclcApi('worldcat_knowledge_base', ['authorization' => $this->oclcAuthorization()]);
+    $api = $this->oclcApi('worldcat_knowledge_base_v2', ['authorization' => $this->oclcAuthorization()]);
     $queue = \Drupal::queue('eresources_harvested_collection_page');
     $perPage = 50;
     $oclcId = $eresources_harvested_collection->getOclcId();

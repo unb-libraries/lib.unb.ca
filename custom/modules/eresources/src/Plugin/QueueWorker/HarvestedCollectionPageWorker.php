@@ -75,7 +75,7 @@ class HarvestedCollectionPageWorker extends QueueWorkerBase implements Container
 
     $storage = \Drupal::entityTypeManager()->getStorage('eresources_record');
 
-    $api = $this->oclcApi('worldcat_knowledge_base', ['authorization' => $this->oclcKbAuthorization]);
+    $api = $this->oclcApi('worldcat_knowledge_base_v2', ['authorization' => $this->oclcKbAuthorization]);
     $result = $api->get('search-entries', $data);
 
     if (!empty($result->entries)) {
