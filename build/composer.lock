@@ -15159,12 +15159,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unb-libraries/drupal-oclc_api.git",
-                "reference": "b381eb5fae31cf6cddf1f287c2d37e4268f83c18"
+                "reference": "79981441912879d4b32232269e0169fb7ac29b2b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unb-libraries/drupal-oclc_api/zipball/b381eb5fae31cf6cddf1f287c2d37e4268f83c18",
-                "reference": "b381eb5fae31cf6cddf1f287c2d37e4268f83c18",
+                "url": "https://api.github.com/repos/unb-libraries/drupal-oclc_api/zipball/79981441912879d4b32232269e0169fb7ac29b2b",
+                "reference": "79981441912879d4b32232269e0169fb7ac29b2b",
                 "shasum": ""
             },
             "require": {
@@ -15195,7 +15195,7 @@
                 "issues": "https://github.com/unb-libraries/drupal-oclc_api/issues",
                 "source": "https://github.com/unb-libraries/drupal-oclc_api/tree/8.x-1.x"
             },
-            "time": "2026-06-02T17:46:56+00:00"
+            "time": "2026-10-29T18:35:21+00:00"
         },
         {
             "name": "unb-libraries/saml_features",
@@ -15676,16 +15676,16 @@
         },
         {
             "name": "composer/ca-bundle",
-            "version": "1.6.0",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/ca-bundle.git",
-                "reference": "2c99cf2e92516985dea4914812b93d9daf01cdd6"
+                "reference": "0c64479fae6952ba4cf021a72c0ac530394c91d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/2c99cf2e92516985dea4914812b93d9daf01cdd6",
-                "reference": "2c99cf2e92516985dea4914812b93d9daf01cdd6",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/0c64479fae6952ba4cf021a72c0ac530394c91d4",
+                "reference": "0c64479fae6952ba4cf021a72c0ac530394c91d4",
                 "shasum": ""
             },
             "require": {
@@ -15732,7 +15732,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/ca-bundle/issues",
-                "source": "https://github.com/composer/ca-bundle/tree/1.6.0"
+                "source": "https://github.com/composer/ca-bundle/tree/1.6.1"
             },
             "funding": [
                 {
@@ -15744,24 +15744,24 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-10-20T20:14:05+00:00"
+            "time": "2026-10-29T14:10:42+00:00"
         },
         {
             "name": "composer/composer",
-            "version": "2.2.30",
+            "version": "2.2.31",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "dcf399dbf5a5d05b54169fe2caf018152edba181"
+                "reference": "f56443b38f8e7507b0289e55a4ab0bd4ba8e8a1d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/dcf399dbf5a5d05b54169fe2caf018152edba181",
-                "reference": "dcf399dbf5a5d05b54169fe2caf018152edba181",
+                "url": "https://api.github.com/repos/composer/composer/zipball/f56443b38f8e7507b0289e55a4ab0bd4ba8e8a1d",
+                "reference": "f56443b38f8e7507b0289e55a4ab0bd4ba8e8a1d",
                 "shasum": ""
             },
             "require": {
-                "composer/ca-bundle": "^1.0",
+                "composer/ca-bundle": "~1.4.16 || ^1.6",
                 "composer/metadata-minifier": "^1.0",
                 "composer/pcre": "^1.0",
                 "composer/semver": "^3.0",
@@ -15827,7 +15827,7 @@
             "support": {
                 "irc": "ircs://irc.libera.chat:6697/composer",
                 "issues": "https://github.com/composer/composer/issues",
-                "source": "https://github.com/composer/composer/tree/2.2.30"
+                "source": "https://github.com/composer/composer/tree/2.2.31"
             },
             "funding": [
                 {
@@ -15839,7 +15839,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-08-27T11:34:49+00:00"
+            "time": "2026-10-29T09:24:17+00:00"
         },
         {
             "name": "composer/metadata-minifier",
