@@ -1,6 +1,6 @@
 FROM ghcr.io/unb-libraries/drupal:9.x-4.x-unblib
 
-ENV ADDITIONAL_OS_PACKAGES="postfix php82-ldap php82-xmlreader php82-zip php82-pecl-redis php82-bcmath openssh-client"
+ENV ADDITIONAL_OS_PACKAGES="postfix php${PHP_VERSION}-ldap php${PHP_VERSION}-xmlreader php${PHP_VERSION}-zip php${PHP_VERSION}-pecl-redis php${PHP_VERSION}-bcmath openssh-client"
 ENV DRUPAL_PRIVATE_FILE_PATH="/app/private_filesystem"
 ENV DRUPAL_SITE_ID="libweb"
 ENV DRUPAL_SITE_URI="lib.unb.ca"
