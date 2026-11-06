@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - file
     - lib_core
 id: duplicate_id_checker
 label: 'Duplicate ID Checker'
@@ -10,3 +11,4 @@ weight: 10
 is_admin: null
 permissions:
   - 'can use duplicate id checker'
+  - 'delete own files'

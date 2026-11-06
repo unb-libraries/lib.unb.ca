@@ -134,7 +134,7 @@ class EresourcesListForm extends FormBase {
     $options = [];
 
     $storage = $this->entityTypeManager->getStorage('eresources_record');
-    $query = $storage->getQuery()
+    $query = $storage->getQuery()->accessCheck(TRUE)
       ->condition('status', 1)
       ->sort('title', 'ASC');
 
@@ -162,7 +162,7 @@ class EresourcesListForm extends FormBase {
     }
 
     $linkStorage = $this->entityTypeManager->getStorage('eresources_guide_link');
-    $query = $linkStorage->getQuery()
+    $query = $linkStorage->getQuery()->accessCheck(TRUE)
       ->sort('guide.entity.title');
     if ($id) {
       $query->condition('eresource', $id);

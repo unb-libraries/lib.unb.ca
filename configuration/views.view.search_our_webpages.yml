@@ -171,6 +171,7 @@ display:
             offset: false
             offset_label: Offset
           quantity: 9
+          pagination_heading_level: h4
       exposed_form:
         type: input_required
         options:
@@ -188,7 +189,7 @@ display:
         options:
           perm: 'access content'
       cache:
-        type: none
+        type: search_api_none
         options: {  }
       empty:
         area_text_custom:
@@ -375,7 +376,7 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       cache:
-        type: none
+        type: search_api_none
         options: {  }
       empty:
         area_text_custom:
@@ -437,7 +438,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      title: 'Search UNB''s History'
+      title: "Search UNB's History"
       fields:
         title:
           id: title
@@ -655,7 +656,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: 'Search UNB''s History'
+            label: "Search UNB's History"
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -848,7 +849,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      title: 'Search UNB''s History'
+      title: "Search UNB's History"
       fields:
         title:
           id: title
@@ -1055,7 +1056,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: 'Search UNB''s History'
+            label: "Search UNB's History"
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -1820,6 +1821,9 @@ display:
               text_input_required: "<div class=\"alert alert-primary d-flex flex-row\">\r\n  <div class=\"mr-2\"><span class=\"fas fa-info-circle\"></span></div>\r\n  <p class=\"mb-0\">Alternatively, you can look through the <a href=\"/sitemap\"><span class=\"alert-link\">A to Z Index for UNB Libraries</span></a>.</p>\r\n</div>"
               text_input_required_format: basic_html
               reset_button_always_show: false
+              autosubmit_textfield_minimum_length: 3
+              autosubmit_breakpoint: ''
+              auto_submit_sort_only: false
             filter:
               search_api_fulltext:
                 plugin_id: default
@@ -1831,6 +1835,12 @@ display:
                   collapsible: false
                   collapsible_disable_automatic_open: false
                   is_secondary: false
+                  hide_label: false
+                  field_classes: ''
+                  no_reset: false
+                  open_by_default: false
+                  sort_options_method: alphabetical_asc
+                  sort_options_natural: true
               type_1:
                 plugin_id: bef
                 advanced:
@@ -1841,9 +1851,21 @@ display:
                   collapsible: false
                   collapsible_disable_automatic_open: false
                   is_secondary: true
+                  hide_label: false
+                  field_classes: ''
+                  no_reset: false
+                  open_by_default: false
+                  sort_options_method: alphabetical_asc
+                  sort_options_natural: true
                 select_all_none: false
                 select_all_none_nested: false
                 display_inline: false
+                scrollable: false
+                scrollable_height: 300
+                soft_limit: 0
+                soft_limit_label_less: 'Show less'
+                soft_limit_label_more: 'Show more'
+                soft_limit_include_children: false
       cache:
         type: search_api_tag
         options: {  }

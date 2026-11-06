@@ -16,7 +16,7 @@ archive: false
 id: purchase_suggestion
 title: 'Purchase Suggestion'
 description: 'Form with repopulated personal info section - mail recipient varies based on two values - <strong>campus</strong> and&nbsp;<strong>subject area</strong>.'
-category: ''
+categories: {  }
 elements: |-
   markup:
     '#type': webform_markup
@@ -240,6 +240,7 @@ settings:
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  form_file_limit_message: ''
   form_attributes: {  }
   form_method: ''
   form_action: ''
@@ -433,6 +434,7 @@ handlers:
       attachments: false
       twig: true
       theme_name: ''
+      langcode: ''
       parameters: {  }
       debug: false
   sender_confirmation_email:
@@ -470,6 +472,7 @@ handlers:
       attachments: false
       twig: true
       theme_name: ''
+      langcode: ''
       parameters: {  }
       debug: false
   fr_purchase_suggestion:
@@ -630,6 +633,7 @@ handlers:
       attachments: false
       twig: true
       theme_name: ''
+      langcode: ''
       parameters: {  }
       debug: false
   fr_purchase_suggestion_ec_moore_sabbatical_:
@@ -790,6 +794,7 @@ handlers:
       attachments: false
       twig: true
       theme_name: ''
+      langcode: ''
       parameters: {  }
       debug: false
   fr_purchase_suggestion_july_2026_:
@@ -950,6 +955,7 @@ handlers:
       attachments: false
       twig: true
       theme_name: ''
+      langcode: ''
       parameters: {  }
       debug: false
 variants: {  }

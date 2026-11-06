@@ -6,5 +6,6 @@ dependencies:
     - ior
 id: ior_submission.edit
 label: Edit
+description: ''
 targetEntityType: ior_submission
 cache: true

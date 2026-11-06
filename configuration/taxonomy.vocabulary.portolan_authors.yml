@@ -7,5 +7,6 @@ dependencies:
       - portolan
 name: 'Authors (Portolan)'
 vid: portolan_authors
-description: ''
+description: null
 weight: 0
+new_revision: false

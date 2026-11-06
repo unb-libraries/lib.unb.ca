@@ -21,4 +21,7 @@ if (extension_loaded('newrelic')) {
 // Patron DB.
 require_once dirname(__FILE__) . "/settings.patrons.inc";
 
+// Symfony Mailer Lite 2.x only runs sendmail commands allowed here.
+$settings['mailer_sendmail_commands'] = ['/usr/sbin/sendmail -bs'];
+
 $settings['config_sync_directory'] = 'DRUPAL_CONFIGURATION_DIR';

@@ -47,7 +47,7 @@
             // Scroll to search results if available
             let resultsSelector = '.Accordion-panel:not([hidden]) .search-results-wrapper';
             if ($(resultsSelector).length) {
-                $('html, body').once().animate({
+                $(once('eresources-scroll', 'html, body')).animate({
                     scrollTop: $(resultsSelector).offset().top - 250
                 }, 'slow');
             }

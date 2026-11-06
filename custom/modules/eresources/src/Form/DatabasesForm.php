@@ -46,7 +46,7 @@ class DatabasesForm extends LocalFormBase implements KbFormInterface {
     ];
 
     $storage = \Drupal::entityTypeManager()->getStorage('guide_category');
-    $query = $storage->getQuery();
+    $query = $storage->getQuery()->accessCheck(TRUE);
     $ids = $query->sort('title')->execute();
     $categoryList = $storage->loadMultiple($ids);
 

@@ -44,7 +44,7 @@ class EresourcesEventSubscriber implements EventSubscriberInterface {
    */
   public function checkProxyIpOnResponse(ResponseEvent $event) {
     // Don't bother proceeding on sub-requests.
-    if (!$event->isMasterRequest()) {
+    if (!$event->isMainRequest()) {
       return;
     }
 

@@ -6,5 +6,6 @@ dependencies:
     - ior
 id: ior_submission.preview
 label: Preview
+description: ''
 targetEntityType: ior_submission
 cache: true

@@ -121,7 +121,7 @@ class AddLibUserDepartments extends ProcessPluginBase {
    *   Contains an INT of the tid if exists, FALSE otherwise.
    */
   public function taxTermExists($value, $field, $vocabulary) {
-    $query = \Drupal::entityQuery('taxonomy_term');
+    $query = \Drupal::entityQuery('taxonomy_term')->accessCheck(TRUE);
     $query->condition('vid', $vocabulary);
     $query->condition($field, $value);
     $tids = $query->execute();

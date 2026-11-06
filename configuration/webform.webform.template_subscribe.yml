@@ -16,7 +16,7 @@ archive: false
 id: template_subscribe
 title: Subscribe
 description: 'A subscribe to mailing list webform template.'
-category: ''
+categories: {  }
 elements: |
   first_name:
     '#title': 'First Name'
@@ -75,6 +75,7 @@ settings:
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  form_file_limit_message: ''
   form_attributes: {  }
   form_method: ''
   form_action: ''
@@ -121,6 +122,8 @@ settings:
   wizard_toggle: false
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
   preview: 0
   preview_label: ''
   preview_title: ''
@@ -251,6 +254,7 @@ handlers:
       attachments: false
       twig: false
       theme_name: ''
+      langcode: ''
       parameters: {  }
       debug: false
 variants: {  }

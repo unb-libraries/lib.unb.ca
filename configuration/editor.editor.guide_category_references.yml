@@ -5,7 +5,7 @@ dependencies:
   config:
     - filter.format.guide_category_references
   module:
-    - ckeditor
+    - ckeditor5
     - editor_file
 third_party_settings:
   editor_file:
@@ -15,24 +15,31 @@ third_party_settings:
     extensions: txt
     max_size: ''
 format: guide_category_references
-editor: ckeditor
+editor: ckeditor5
 settings:
   toolbar:
-    rows:
-      -
-        -
-          name: e-Resources
-          items:
-            - eresources
+    items:
+      - eresources
+      - sourceEditing
   plugins:
-    eresources:
+    ckeditor5_sourceEditing:
+      allowed_tags:
+        - '<eresources>'
+    ckeditor_codemirror_source_editing:
+      enable: false
+      mode: htmlmixed
+      options:
+        autoCloseBrackets: true
+        autoCloseTags: true
+        folding: true
+        lineNumbers: true
+        lineWrapping: true
+        matchBrackets: true
+        matchTags: true
+        searchBottom: true
+        styleActiveLine: true
+    guides_eresources:
       target_entity: category
       resource_type: REF
 image_upload:
   status: false
-  scheme: public
-  directory: inline-images
-  max_size: ''
-  max_dimensions:
-    width: null
-    height: null

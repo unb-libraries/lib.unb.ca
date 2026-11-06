@@ -1,5 +1,6 @@
 _core:
   default_config_hash: rVy2O64McXYEiFW4EF6opEWdSzWKMIPIXavzldAMUyY
+langcode: en
 buttonText: 'Back to top'
 preventOnMobile: 0
 preventOnAdminPages: 1

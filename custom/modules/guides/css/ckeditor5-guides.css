@@ -1,0 +1,26 @@
+/**
+ * @file
+ * Editing-view styles for the guides CKEditor 5 widgets.
+ */
+
+.ck-content .guides-eresources-widget {
+  border: 1px dashed #8a8a8a;
+  padding: 0.5rem 0.75rem;
+  margin: 0.5rem 0;
+  background: #f7f7f7;
+  cursor: default;
+}
+
+.ck-content .guides-eresources-widget__title {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.ck-content .guides-eresources-widget__preview ul {
+  margin-bottom: 0;
+}
+
+.ck-content .wc-search,
+.ck-content .scifree {
+  margin: 0.5rem 0;
+}

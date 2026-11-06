@@ -69,7 +69,7 @@ class CourseLinkController extends ControllerBase {
     ];
 
     $storage = $this->entityTypeManager()->getStorage('course_link');
-    $queryBase = $storage->getQuery()
+    $queryBase = $storage->getQuery()->accessCheck(TRUE)
       ->condition('guide.entity.status', 1);
 
     // Exact match attempt.

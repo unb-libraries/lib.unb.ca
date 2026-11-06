@@ -19,6 +19,8 @@ content:
     settings:
       max_width: 926
       max_height: 520
+      loading:
+        attribute: eager
     third_party_settings:
       field_formatter_class:
         class: ''

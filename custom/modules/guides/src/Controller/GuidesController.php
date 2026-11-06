@@ -20,7 +20,7 @@ class GuidesController extends ControllerBase {
    */
   public function legacyRedirect($id) {
     $storage = $this->entityTypeManager()->getStorage('guide');
-    $query = $storage->getQuery();
+    $query = $storage->getQuery()->accessCheck(TRUE);
     $ids = $query
       ->condition('status', 1)
       ->condition('old_guide_id', $id)
@@ -38,7 +38,7 @@ class GuidesController extends ControllerBase {
    */
   public function categories() {
     $storage = $this->entityTypeManager()->getStorage('guide_category');
-    $query = $storage->getQuery();
+    $query = $storage->getQuery()->accessCheck(TRUE);
     $ids = $query
       ->condition('status', 1)
       ->sort('title', 'ASC')

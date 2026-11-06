@@ -213,7 +213,7 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
    */
   public static function getConfiguredNodeTypes() {
     $configured_types = [];
-    $results = \Drupal::entityQuery('node_taxonomy_path_relationship')
+    $results = \Drupal::entityQuery('node_taxonomy_path_relationship')->accessCheck(TRUE)
       ->execute();
     foreach ($results as $result) {
       $configured_types[] = str_replace(NODE_PATH_TAXONOMY_RELATIONSHIP_CONFIG_ID_PREFIX, '', $result);
@@ -277,7 +277,7 @@ class NodeTaxonomyPathRelationship extends ConfigEntityBase implements NodeTaxon
    * {@inheritdoc}
    */
   public static function loadByNodeType($node_type) {
-    $results = \Drupal::entityQuery('node_taxonomy_path_relationship')
+    $results = \Drupal::entityQuery('node_taxonomy_path_relationship')->accessCheck(TRUE)
       ->condition('node_type', $node_type)
       ->execute();
     foreach ($results as $result) {

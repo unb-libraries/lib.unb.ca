@@ -7,5 +7,6 @@ dependencies:
       - portolan
 name: 'Geographical Locations (Portolan)'
 vid: portolan_locations
-description: ''
+description: null
 weight: 0
+new_revision: false

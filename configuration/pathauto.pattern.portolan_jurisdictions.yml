@@ -2,6 +2,8 @@ uuid: 50042882-3a3c-4c9d-bcb9-fe95a5bf6f94
 langcode: en
 status: true
 dependencies:
+  config:
+    - taxonomy.vocabulary.portolan_jurisdictions
   module:
     - taxonomy
 id: portolan_jurisdictions
@@ -12,7 +14,6 @@ selection_criteria:
   eb5a761a-d75a-4030-8d7d-f2961c1439b6:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: eb5a761a-d75a-4030-8d7d-f2961c1439b6
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:

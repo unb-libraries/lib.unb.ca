@@ -79,7 +79,7 @@ class ResearchGuides extends BlockBase implements ContainerFactoryPluginInterfac
    */
   protected function getResearchGuidesContainer() {
     $storage = $this->entityTypeManager->getStorage('guide_category');
-    $query = $storage->getQuery();
+    $query = $storage->getQuery()->accessCheck(TRUE);
     $ids = $query->sort('title')->execute();
     $categories = $storage->loadMultiple($ids);
 

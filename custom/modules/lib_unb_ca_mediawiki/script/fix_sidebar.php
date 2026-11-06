@@ -19,7 +19,7 @@ use Drupal\paragraphs\Entity\Paragraph;
  */
 function getAllNodesOfContentType($content_type) {
   // Load all nodes of the specified content type.
-  $nids = \Drupal::entityQuery('node')
+  $nids = \Drupal::entityQuery('node')->accessCheck(TRUE)
     ->condition('type', $content_type)
     ->execute();
 

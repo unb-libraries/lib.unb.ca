@@ -2,6 +2,8 @@ uuid: c34afdb1-f13a-401d-992d-221a57c9fefe
 langcode: en
 status: true
 dependencies:
+  config:
+    - taxonomy.vocabulary.portolan_locations
   module:
     - taxonomy
 id: portolan_geographic_locations
@@ -12,7 +14,6 @@ selection_criteria:
   a1109812-9c58-454d-a65e-135b585141ae:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: a1109812-9c58-454d-a65e-135b585141ae
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:

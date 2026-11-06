@@ -43,7 +43,7 @@ class FlushStorageSynchronizer extends SynchronizerBase {
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
   protected function clearStorage() {
-    $query = $this->storage()->getQuery()
+    $query = $this->storage()->getQuery()->accessCheck(TRUE)
       ->pager(self::DELETE_CHUNK_SIZE);
     while ($records = $this->storage()->loadMultiple($query->execute())) {
       $this->storage()->delete($records);

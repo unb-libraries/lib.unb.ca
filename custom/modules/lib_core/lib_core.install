@@ -23,7 +23,7 @@ function lib_core_install() {
  * LIB-107 Re-save all News articles to generate meta tags.
  */
 function lib_core_update_8001() {
-  $news_nids = \Drupal::entityQuery('node')
+  $news_nids = \Drupal::entityQuery('node')->accessCheck(TRUE)
     ->condition('type', 'news_post')
     ->execute();
 
@@ -37,7 +37,7 @@ function lib_core_update_8001() {
  * LIB-107 Re-save all Library Pages to generate meta tags.
  */
 function lib_core_update_8002() {
-  $page_nids = \Drupal::entityQuery('node')
+  $page_nids = \Drupal::entityQuery('node')->accessCheck(TRUE)
     ->condition('type', 'library_page')
     ->execute();
 
@@ -93,4 +93,113 @@ function lib_core_update_8003(&$sandbox) {
     $sandbox['#finished'] = 1;
   }
 
+}
+
+/**
+ * Implements hook_update_dependencies().
+ */
+function lib_core_update_dependencies() {
+  // CKEditor 5 must be installed before footnotes creates its CKEditor 5
+  // text format (and before core's editor post-updates load that editor).
+  $dependencies['footnotes'][10001] = [
+    'lib_core' => 10001,
+  ];
+  return $dependencies;
+}
+
+/**
+ * Install core CKEditor 5 ahead of the Drupal 10 editor migration.
+ */
+function lib_core_update_10001() {
+  if (!\Drupal::moduleHandler()->moduleExists('ckeditor5')) {
+    \Drupal::service('module_installer')->install(['ckeditor5']);
+    return t('Installed CKEditor 5.');
+  }
+  return t('CKEditor 5 was already installed.');
+}
+
+/**
+ * Swap the removed node_type condition for entity_bundle:node in pathauto.
+ *
+ * Drupal 10 no longer provides the node_type condition plugin, and
+ * pathauto_post_update_remove_uuid_config_key fails on patterns using it.
+ */
+function lib_core_update_10002() {
+  $config_factory = \Drupal::configFactory();
+  $count = 0;
+  foreach ($config_factory->listAll('pathauto.pattern.') as $name) {
+    $pattern = $config_factory->getEditable($name);
+    $changed = FALSE;
+    foreach ($pattern->get('selection_criteria') ?? [] as $uuid => $condition) {
+      if (($condition['id'] ?? NULL) === 'node_type') {
+        $pattern->set("selection_criteria.$uuid.id", 'entity_bundle:node');
+        $changed = TRUE;
+      }
+    }
+    if ($changed) {
+      $pattern->save(TRUE);
+      $count++;
+    }
+  }
+  return t('Updated @count pathauto patterns.', ['@count' => $count]);
+}
+
+/**
+ * Remove the Algolia Places location element from the user profile template.
+ *
+ * The Algolia Places service was shut down; Webform 6.3 moved the element to
+ * a separate webform_location_places module and its post-update tries to
+ * install that module for any webform still using the element.
+ */
+function lib_core_update_10003() {
+  $config = \Drupal::configFactory()->getEditable('webform.webform.template_user_profile');
+  $elements = $config->get('elements');
+  if (!$elements || !str_contains($elements, 'webform_location_places')) {
+    return t('No webform_location_places elements found.');
+  }
+  $decoded = \Drupal\Core\Serialization\Yaml::decode($elements);
+  $removed = 0;
+  $strip = function (array &$tree) use (&$strip, &$removed) {
+    foreach ($tree as $key => &$value) {
+      if (is_array($value)) {
+        if (($value['#type'] ?? NULL) === 'webform_location_places') {
+          unset($tree[$key]);
+          $removed++;
+          continue;
+        }
+        $strip($value);
+      }
+    }
+  };
+  $strip($decoded);
+  $config->set('elements', \Drupal\Core\Serialization\Yaml::encode($decoded))->save(TRUE);
+  return t('Removed @count webform_location_places element(s).', ['@count' => $removed]);
+}
+
+/**
+ * Replace NULL views pager offsets with 0.
+ *
+ * Drupal 10 types QueryPluginBase::$offset as int, so a NULL offset (e.g. on
+ * meet_with_a_librarian) fatals when the view is built.
+ */
+function lib_core_update_10004() {
+  $config_factory = \Drupal::configFactory();
+  $fixed = [];
+  foreach ($config_factory->listAll('views.view.') as $name) {
+    $view = $config_factory->getEditable($name);
+    $changed = FALSE;
+    foreach (array_keys($view->get('display') ?? []) as $display_id) {
+      $key = "display.$display_id.display_options.pager.options";
+      $options = $view->get($key);
+      if (is_array($options) && array_key_exists('offset', $options) && $options['offset'] === NULL) {
+        $view->set("$key.offset", 0);
+        $changed = TRUE;
+      }
+    }
+    if ($changed) {
+      $view->save(TRUE);
+      $fixed[] = $name;
+    }
+  }
+  return t('Fixed pager offsets in: @views', ['@views' => implode(', ', $fixed) ?: 'none']);
 }

@@ -541,6 +541,15 @@ display:
             date_format: medium
             custom_date_format: ''
             timezone: ''
+            tooltip:
+              date_format: ''
+              custom_date_format: ''
+            time_diff:
+              enabled: false
+              future_format: '@interval hence'
+              past_format: '@interval ago'
+              granularity: 2
+              refresh: 60
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -608,6 +617,15 @@ display:
             date_format: medium
             custom_date_format: ''
             timezone: ''
+            tooltip:
+              date_format: ''
+              custom_date_format: ''
+            time_diff:
+              enabled: false
+              future_format: '@interval hence'
+              past_format: '@interval ago'
+              granularity: 2
+              refresh: 60
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -870,6 +888,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+          pagination_heading_level: h4
       exposed_form:
         type: bef
         options:
@@ -893,6 +912,9 @@ display:
               secondary_label: 'Advanced options'
               secondary_open: false
               reset_button_always_show: false
+              autosubmit_textfield_minimum_length: 3
+              autosubmit_breakpoint: ''
+              auto_submit_sort_only: false
             filter:
               combine:
                 plugin_id: default
@@ -900,6 +922,12 @@ display:
                   placeholder_text: ''
                   collapsible: false
                   is_secondary: false
+                  hide_label: false
+                  field_classes: ''
+                  no_reset: false
+                  open_by_default: false
+                  sort_options_method: alphabetical_asc
+                  sort_options_natural: true
               status:
                 plugin_id: default
                 advanced:
@@ -908,6 +936,12 @@ display:
                     filter_rewrite_values: "- Any -|- Show All -\r\nTrue|Published\r\nFalse|Unpublished"
                   collapsible: false
                   is_secondary: false
+                  hide_label: false
+                  field_classes: ''
+                  no_reset: false
+                  open_by_default: false
+                  sort_options_method: alphabetical_asc
+                  sort_options_natural: true
               unlisted:
                 plugin_id: default
                 advanced:
@@ -916,6 +950,12 @@ display:
                     filter_rewrite_values: "- Any -|- Show All -\r\nTrue|Unlisted\r\nFalse|Listed"
                   collapsible: false
                   is_secondary: false
+                  hide_label: false
+                  field_classes: ''
+                  no_reset: false
+                  open_by_default: false
+                  sort_options_method: alphabetical_asc
+                  sort_options_natural: true
               uid_current:
                 plugin_id: default
                 advanced:
@@ -924,6 +964,12 @@ display:
                     filter_rewrite_values: "Yes|Yes\r\nNo|\r\n- Any -|All Guides"
                   collapsible: false
                   is_secondary: false
+                  hide_label: false
+                  field_classes: ''
+                  no_reset: false
+                  open_by_default: false
+                  sort_options_method: alphabetical_asc
+                  sort_options_natural: true
       access:
         type: perm
         options:

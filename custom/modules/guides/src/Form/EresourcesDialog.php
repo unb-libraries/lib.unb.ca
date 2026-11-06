@@ -55,8 +55,16 @@ class EresourcesDialog extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $userInput = $form_state->getUserInput();
     $input = $userInput['editor_object'] ?? [];
+    // CKEditor 5 passes the values of the list being edited in the query
+    // string rather than as editor_object.
+    $query = $this->getRequest()->query;
+    foreach (['ids', 'keyresources', 'noheadings'] as $key) {
+      if (!isset($input[$key]) && $query->has($key)) {
+        $input[$key] = $query->get($key);
+      }
+    }
 
-    $category = $this->getRequest()->query->get('category') ?? NULL;
+    $category = $query->get('category') ?? NULL;
 
     $form['eresources_selector'] = [
       '#prefix' => '<div class="eresources-selector">',
@@ -87,7 +95,7 @@ class EresourcesDialog extends FormBase {
     ];
 
     $selected = [];
-    if ($input['ids']) {
+    if (!empty($input['ids'])) {
       $ids = explode(',', $input['ids']);
       $selected = $this->getRecords($ids);
     }
@@ -196,7 +204,7 @@ class EresourcesDialog extends FormBase {
 
     $category = $this->getRequest()->query->get('category') ?? NULL;
     $storage = $this->entityTypeManager->getStorage('eresources_record');
-    $query = $storage->getQuery()
+    $query = $storage->getQuery()->accessCheck(TRUE)
       ->condition('status', 1)
       ->sort('title', 'ASC');
     if (!empty($selected)) {
@@ -211,7 +219,7 @@ class EresourcesDialog extends FormBase {
     // Allow only resources used in published guides from this category.
     if ($category) {
       $indexStorage = $this->entityTypeManager->getStorage('eresources_guide_link');
-      $indexQuery = $indexStorage->getQuery()
+      $indexQuery = $indexStorage->getQuery()->accessCheck(TRUE)
         ->condition('guide.entity.status', 1)
         ->condition('guide.entity.guide_categories', $category);
       $indexIds = $indexQuery->execute();

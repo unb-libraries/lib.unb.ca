@@ -2,6 +2,8 @@ uuid: 1f701868-7420-4c1e-b06a-4333f16901ab
 langcode: en
 status: true
 dependencies:
+  config:
+    - taxonomy.vocabulary.categories
   module:
     - taxonomy
 id: categories_pattern
@@ -12,7 +14,6 @@ selection_criteria:
   ffe3e6c7-5b8d-4ecd-80d5-4fadd8377fc3:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: ffe3e6c7-5b8d-4ecd-80d5-4fadd8377fc3
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:

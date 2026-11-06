@@ -6,3 +6,4 @@ name: 'Library Departments'
 vid: library_departments
 description: 'Use to group Library Staff by <em>Department</em>.'
 weight: 0
+new_revision: false

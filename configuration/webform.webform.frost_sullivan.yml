@@ -16,7 +16,7 @@ archive: false
 id: frost_sullivan
 title: 'Frost & Sullivan'
 description: 'Ported from&nbsp;https://web.lib.unb.ca/eresources/special/frost.php'
-category: ''
+categories: {  }
 elements: |-
   frost_intro:
     '#type': processed_text
@@ -120,6 +120,7 @@ settings:
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  form_file_limit_message: ''
   form_attributes:
     class:
       - mb-4

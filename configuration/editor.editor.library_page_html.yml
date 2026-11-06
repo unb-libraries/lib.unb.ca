@@ -5,7 +5,7 @@ dependencies:
   config:
     - filter.format.library_page_html
   module:
-    - ckeditor
+    - ckeditor5
     - editor_file
 third_party_settings:
   editor_file:
@@ -15,107 +15,174 @@ third_party_settings:
     extensions: 'csv doc docx dotx pdf ppt pptx rtf txt xls xlsx zip'
     max_size: ''
 format: library_page_html
-editor: ckeditor
+editor: ckeditor5
 settings:
   toolbar:
-    rows:
-      -
-        -
-          name: Formatting
-          items:
-            - Undo
-            - Redo
-            - Format
-            - '-'
-            - RemoveFormat
-            - footnotes
-            - Bold
-            - Italic
-            - TextColor
-            - Blockquote
-            - HorizontalRule
-        -
-          name: Alignment
-          items:
-            - JustifyLeft
-            - JustifyRight
-        -
-          name: Links
-          items:
-            - DrupalLink
-            - DrupalUnlink
-        -
-          name: 'Lists and Tables'
-          items:
-            - Table
-            - BulletedList
-            - NumberedList
-            - Outdent
-            - Indent
-        -
-          name: 'Media and Characters'
-          items:
-            - DrupalFile
-            - DrupalMediaLibrary
-            - SpecialChar
-            - DrupalFontAwesome
-        -
-          name: Actions
-          items:
-            - '-'
-            - Maximize
-            - Source
-            - '-'
-        -
-          name: e-Resources
-          items:
-            - Wc-search
-            - eresources
-            - Scifree
+    items:
+      - undo
+      - redo
+      - heading
+      - removeFormat
+      - footnotes
+      - bold
+      - italic
+      - blockQuote
+      - horizontalLine
+      - '|'
+      - alignment
+      - '|'
+      - link
+      - '|'
+      - insertTable
+      - bulletedList
+      - numberedList
+      - outdent
+      - indent
+      - '|'
+      - drupalMedia
+      - specialCharacters
+      - '|'
+      - sourceEditing
+      - '|'
+      - wcSearch
+      - eresources
+      - sciFree
+      - '|'
+      - code
+      - subscript
+      - superscript
+      - codeBlock
+      - drupalInsertFile
   plugins:
-    drupallink:
-      linkit_enabled: true
-      linkit_profile: default
-    codemirror:
-      enable: true
-      mode: application/x-httpd-php
-      theme: xq-dark
-      startupMode: wysiwyg
+    ckeditor5_alignment:
+      enabled_alignments:
+        - center
+        - justify
+        - left
+        - right
+    ckeditor5_codeBlock:
+      languages:
+        -
+          label: 'Plain text'
+          language: plaintext
+        -
+          label: C
+          language: c
+        -
+          label: 'C#'
+          language: cs
+        -
+          label: C++
+          language: cpp
+        -
+          label: CSS
+          language: css
+        -
+          label: Diff
+          language: diff
+        -
+          label: HTML
+          language: html
+        -
+          label: Java
+          language: java
+        -
+          label: JavaScript
+          language: javascript
+        -
+          label: PHP
+          language: php
+        -
+          label: Python
+          language: python
+        -
+          label: Ruby
+          language: ruby
+        -
+          label: TypeScript
+          language: typescript
+        -
+          label: XML
+          language: xml
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_list:
+      properties:
+        reversed: false
+        startIndex: true
+      multiBlock: true
+    ckeditor5_sourceEditing:
+      allowed_tags:
+        - '<cite>'
+        - '<eresources>'
+        - '<figcaption>'
+        - '<address class>'
+        - '<q class lang>'
+        - '<button aria-controls aria-expanded aria-haspopup aria-label data-dismiss data-reference data-target data-toggle type id class>'
+        - '<div aria-labelledby aria-modal data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date data-parent role tabindex id lang class>'
+        - '<dd id class>'
+        - '<dl id class>'
+        - '<dt id class>'
+        - '<img src alt width height data-entity-type data-entity-uuid data-align data-caption class>'
+        - '<small class>'
+        - '<iframe allow allowfullscreen frameborder height width src title class>'
+        - '<fn value>'
+        - '<figure class>'
+        - '<a target title aria-controls aria-expanded aria-selected hreflang data-toggle role name>'
+        - '<blockquote cite class>'
+        - '<h2 id class>'
+        - '<h3 id class>'
+        - '<h4 id class>'
+        - '<h5 id class>'
+        - '<h6 id class>'
+        - '<li id>'
+        - '<ol id type class>'
+        - '<p id class>'
+        - '<span id aria-hidden data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date data-color lang>'
+        - '<table id class>'
+        - '<td data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date id class>'
+        - '<th id scope class>'
+        - '<tr data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date id class>'
+        - '<ul id type role>'
+        - '<drupal-media title class>'
+        - '<drupal-entity data-entity-type data-embed-button class>'
+        - '<caption class>'
+        - '<em class>'
+        - '<hr class>'
+        - '<strong class>'
+        - '<tbody class>'
+        - '<thead class>'
+    ckeditor_codemirror_source_editing:
+      enable: false
+      mode: htmlmixed
       options:
+        autoCloseBrackets: true
+        autoCloseTags: true
+        folding: true
         lineNumbers: true
         lineWrapping: true
         matchBrackets: true
-        autoCloseTags: true
-        autoCloseBrackets: true
-        enableSearchTools: true
-        enableCodeFolding: true
-        enableCodeFormatting: true
-        autoFormatOnStart: true
-        autoFormatOnModeChange: true
-        autoFormatOnUncomment: true
-    wordcount:
-      enable: true
-      show_remaining: false
-      show_paragraphs: true
-      show_word_count: true
-      show_char_count: true
-      count_bytes: false
-      count_spaces: false
-      count_html: 0
-      count_line_breaks: false
-      max_words: -1
-      max_chars: -1
-      hard_limit: 1
-    colorbutton:
-      colors: ''
-    eresources:
+        matchTags: true
+        searchBottom: true
+        styleActiveLine: true
+    editor_file_file:
+      status: true
+      scheme: public
+      directory: media/documents
+      extensions: 'csv doc docx dotx pdf ppt pptx rtf txt xls xlsx zip'
+      max_size: ''
+    guides_eresources:
       target_entity: guide
       resource_type: ''
+    linkit_extension:
+      linkit_enabled: true
+      linkit_profile: default
+    media_media:
+      allow_view_mode_override: true
 image_upload:
   status: false
-  scheme: public
-  directory: inline-images
-  max_size: ''
-  max_dimensions:
-    width: null
-    height: null

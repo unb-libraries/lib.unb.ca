@@ -14,7 +14,7 @@ class HarvestedCollectionStorage extends SqlContentEntityStorage implements Harv
    * {@inheritDoc}
    */
   public function getRecordCount(EntityInterface $collection) {
-    $query = \Drupal::entityQuery('eresources_record');
+    $query = \Drupal::entityQuery('eresources_record')->accessCheck(TRUE);
     return $query->condition('collection_id', $collection->id())->count()->execute();
   }
 

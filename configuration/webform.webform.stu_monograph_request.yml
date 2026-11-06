@@ -16,7 +16,7 @@ archive: false
 id: stu_monograph_request
 title: 'St. Thomas University: UNB Libraries Monograph Request Form'
 description: 'Form similar to Purchase Request with reusable contact info at top and ability to submit multiple requests.'
-category: ''
+categories: {  }
 elements: |-
   introduction:
     '#type': webform_markup
@@ -167,6 +167,7 @@ settings:
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  form_file_limit_message: ''
   form_attributes: {  }
   form_method: ''
   form_action: ''
@@ -221,6 +222,8 @@ settings:
   wizard_toggle: true
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
   preview: 0
   preview_label: ''
   preview_title: ''
@@ -351,6 +354,7 @@ handlers:
       attachments: false
       twig: true
       theme_name: ''
+      langcode: ''
       parameters: {  }
       debug: false
   email_1:
@@ -388,6 +392,7 @@ handlers:
       attachments: false
       twig: true
       theme_name: ''
+      langcode: ''
       parameters: {  }
       debug: false
 variants: {  }

@@ -27,7 +27,7 @@ abstract class ComputedEntityReferenceFieldItemList extends EntityReferenceField
     $target_type_id = $this->getSetting('target_type');
     $target_storage = \Drupal::entityTypeManager()->getStorage($target_type_id);
     $target_ids = $target_storage
-      ->getQuery()
+      ->getQuery()->accessCheck(TRUE)
       ->condition($this->getTargetFieldId(), $this->getEntity()->id(), 'CONTAINS')
       ->execute();
     foreach ($target_ids as $index => $target_id) {

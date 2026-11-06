@@ -4,14 +4,10 @@ status: true
 dependencies:
   config:
     - field.storage.profile.field_biography
+    - filter.format.library_page_html
     - profile.type.public
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - library_page_html
 _core:
   default_config_hash: P0d-ozcvLsBJLLPW3XuwkSfgn8tKIKC82_Od0l6UQqA
 id: profile.public.field_biography
@@ -24,5 +20,7 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats:
+    - library_page_html
 field_type: text_long

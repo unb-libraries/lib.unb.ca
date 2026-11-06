@@ -6,3 +6,4 @@ name: 'Faculties (Programs)'
 vid: faculties
 description: 'Used to generate the <i>Liaison Librarians and Departmental Representatives</i> listing.'
 weight: 0
+new_revision: false

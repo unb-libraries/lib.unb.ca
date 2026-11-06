@@ -17,9 +17,9 @@ uid: 1
 template: false
 archive: false
 id: request_access_unb_archival
-title: 'Request to Access UNB''s Archival Collections '
+title: "Request to Access UNB's Archival Collections "
 description: 'Form used to request photocopies of manuscripts from UNB&#39;s Archival Collections.'
-category: ''
+categories: {  }
 elements: |-
   top_markup:
     '#type': processed_text
@@ -224,6 +224,7 @@ settings:
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  form_file_limit_message: ''
   form_attributes: {  }
   form_method: ''
   form_action: ''
@@ -404,6 +405,7 @@ handlers:
       attachments: false
       twig: true
       theme_name: ''
+      langcode: ''
       parameters: {  }
       debug: false
   email_1:
@@ -441,6 +443,7 @@ handlers:
       attachments: false
       twig: true
       theme_name: ''
+      langcode: ''
       parameters: {  }
       debug: false
 variants: {  }

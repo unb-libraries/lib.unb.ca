@@ -120,7 +120,7 @@ class ContestSelection extends SelectionPluginBase implements ContainerFactoryPl
   protected function buildQuery() {
     $contest_id = $this->getContest()->id();
     return $this->storage()
-      ->getQuery()
+      ->getQuery()->accessCheck(TRUE)
       ->condition('field_contest', $contest_id);
   }
 

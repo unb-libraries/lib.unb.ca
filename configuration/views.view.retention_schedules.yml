@@ -610,6 +610,7 @@ display:
             offset: false
             offset_label: Offset
           quantity: 10
+          pagination_heading_level: h4
       exposed_form:
         type: basic
         options:
@@ -2544,10 +2545,10 @@ display:
       export_method: standard
       export_batch_size: 1000
       export_limit: 9999
-      store_in_public_file_directory: false
       custom_redirect_path: false
       redirect_to_display: none
       include_query_params: false
+      export_filesystem: private
     cache_metadata:
       max-age: -1
       contexts:

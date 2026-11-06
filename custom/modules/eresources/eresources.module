@@ -141,7 +141,7 @@ function eresources_form_views_exposed_form_alter(&$form, FormStateInterface $fo
   }
 
   $storage = Drupal::getContainer()->get('entity_type.manager')->getStorage('eresources_harvested_collection');
-  $query = $storage->getQuery();
+  $query = $storage->getQuery()->accessCheck(TRUE);
 
   $ids = $query->sort('name')->execute();
 

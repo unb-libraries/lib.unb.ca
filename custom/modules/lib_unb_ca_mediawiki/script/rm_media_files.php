@@ -8,7 +8,7 @@ use Drupal\file\Entity\File;
  */
 function delete_all_media_and_files() {
   // Load all media entities.
-  $media_ids = \Drupal::entityQuery('media')
+  $media_ids = \Drupal::entityQuery('media')->accessCheck(TRUE)
     ->execute();
 
   // Load each media entity and delete it along with associated files.
@@ -28,7 +28,7 @@ function delete_all_media_and_files() {
   }
 
   // Load all file entities that might not be associated with media entities.
-  $file_ids = \Drupal::entityQuery('file')
+  $file_ids = \Drupal::entityQuery('file')->accessCheck(TRUE)
     ->execute();
 
   // Delete each file entity.

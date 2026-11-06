@@ -1,8 +1,7 @@
 name: 'UNB Libraries AskUs'
 type: module
 description: 'UNB Libraries chat feature powered by LibraryH3lp.'
-core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^10 || ^11
 package: 'UNB Libraries'
 dependencies:
   - calendar_hours_client

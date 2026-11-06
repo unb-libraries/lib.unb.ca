@@ -7,12 +7,11 @@ dependencies:
 id: replace_node_with_title
 label: 'Replace node/# with title'
 type: 'canonical_entities:node'
-pattern: '[node:title]'
+pattern: '/[node:title]'
 selection_criteria:
   604ca9d3-85a5-45cc-b630-4e7f7cc9560a:
-    id: node_type
+    id: 'entity_bundle:node'
     negate: false
-    uuid: 604ca9d3-85a5-45cc-b630-4e7f7cc9560a
     context_mapping:
       node: node
     bundles:

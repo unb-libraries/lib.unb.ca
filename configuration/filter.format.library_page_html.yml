@@ -40,17 +40,88 @@ filters:
     status: true
     weight: -47
     settings: {  }
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: true
+    weight: -49
+    settings: {  }
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: false
+    weight: -37
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: true
+    weight: -48
+    settings: {  }
+  filter_footnotes:
+    id: filter_footnotes
+    provider: footnotes
+    status: true
+    weight: -41
+    settings:
+      footnotes_collapse: false
+      footnotes_css: true
+      footnotes_clean_anchors: false
+      footnotes_dialog: false
+      footnotes_dialog_prevent_bubbling: false
+      footnotes_footer_disable: false
+      footnotes_preview_show_text: true
+      footnotes_preview_character: ''
+  filter_guides_ckeditor_eresources:
+    id: filter_guides_ckeditor_eresources
+    provider: guides
+    status: true
+    weight: -43
+    settings: {  }
+  filter_guides_ckeditor_scifree:
+    id: filter_guides_ckeditor_scifree
+    provider: guides
+    status: true
+    weight: 0
+    settings: {  }
+  filter_guides_ckeditor_wc-search:
+    id: filter_guides_ckeditor_wc-search
+    provider: guides
+    status: true
+    weight: -42
+    settings: {  }
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -50
+    settings:
+      allowed_html: '<br> <p id class> <h2 id class> <h3 id class> <h4 id class> <h5 id class> <h6 id class> <cite> <eresources ids keyresources noheadings> <figcaption> <address class> <q class> <button aria-controls aria-expanded aria-haspopup aria-label data-dismiss data-reference data-target data-toggle type id class> <div aria-labelledby aria-modal data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date data-parent role tabindex id class> <dd id class> <dl id class> <dt id class> <img src alt width height data-entity-type data-entity-uuid data-align data-caption class> <small class> <iframe allow allowfullscreen frameborder height width src title class> <fn value> <figure class> <a target title aria-controls aria-expanded aria-selected hreflang data-toggle role name href data-entity-uuid data-entity-type id class data-entity-substitution> <blockquote cite class> <li id class> <ol id type class start> <span id aria-hidden data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date data-color class> <table id class> <td data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date id class rowspan colspan> <th id scope class rowspan colspan> <tr data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date id class> <ul id type role class> <drupal-media title class data-entity-type data-entity-uuid alt data-view-mode data-caption data-align> <drupal-entity data-entity-type data-embed-button class alt title data-align data-caption data-entity-embed-display data-entity-embed-display-settings data-view-mode data-entity-uuid data-langcode> <caption class> <em class> <hr class> <strong class> <tbody class> <thead class> <code class="language-*"> <pre class="text-align-left text-align-center text-align-right text-align-justify"> <sub> <sup> <tfoot> <footnotes-placeholder> <footnotes data-text data-value>'
+      filter_html_help: true
+      filter_html_nofollow: false
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
+    status: false
+    weight: -38
+    settings: {  }
+  filter_html_image_secure:
+    id: filter_html_image_secure
+    provider: filter
+    status: false
+    weight: -36
+    settings: {  }
   filter_htmlcorrector:
     id: filter_htmlcorrector
     provider: filter
     status: false
     weight: -35
     settings: {  }
-  filter_html_escape:
-    id: filter_html_escape
+  filter_image_lazy_load:
+    id: filter_image_lazy_load
     provider: filter
-    status: false
-    weight: -38
+    status: true
+    weight: -45
     settings: {  }
   filter_url:
     id: filter_url
@@ -59,39 +130,6 @@ filters:
     weight: -39
     settings:
       filter_url_length: 72
-  filter_caption:
-    id: filter_caption
-    provider: filter
-    status: true
-    weight: -48
-    settings: {  }
-  filter_html_image_secure:
-    id: filter_html_image_secure
-    provider: filter
-    status: false
-    weight: -36
-    settings: {  }
-  filter_align:
-    id: filter_align
-    provider: filter
-    status: true
-    weight: -49
-    settings: {  }
-  filter_html:
-    id: filter_html
-    provider: filter
-    status: true
-    weight: -50
-    settings:
-      allowed_html: '<a href id target title aria-controls aria-expanded aria-selected hreflang data-entity-substitution data-entity-type data-entity-uuid data-toggle role name class> <address class> <blockquote cite class> <q lang class> <br> <button aria-controls aria-expanded aria-haspopup aria-label data-dismiss data-reference data-target data-toggle type id class> <caption class> <cite> <code> <div aria-labelledby aria-modal data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date data-parent lang role tabindex id class> <dd id class> <dl id class> <dt id class> <em class> <h2 id class> <h3 id class> <h4 id class> <h5 id class> <h6 id class> <hr class> <img src alt width height data-entity-type data-entity-uuid data-align data-caption class> <li id class> <ol id start type class> <p id class> <span id aria-hidden data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date data-color lang class> <small class> <strong class> <sub> <sup> <table id class> <tbody class> <td colspan data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date id rowspan class> <tfoot> <th colspan id rowspan scope class> <thead class> <tr data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date id class> <ul id type role class> <drupal-media data-align data-caption data-entity-type data-entity-uuid data-view-mode alt title class> <drupal-entity alt title data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button data-langcode class> <eresources ids keyresources noheadings> <iframe allow allowfullscreen frameborder height width src title class> <fn value> <figure class> <figcaption> <pre>'
-      filter_html_help: true
-      filter_html_nofollow: false
-  filter_autop:
-    id: filter_autop
-    provider: filter
-    status: false
-    weight: -37
-    settings: {  }
   linkit:
     id: linkit
     provider: linkit
@@ -99,12 +137,7 @@ filters:
     weight: -44
     settings:
       title: true
-  video_embed_wysiwyg:
-    id: video_embed_wysiwyg
-    provider: video_embed_wysiwyg
-    status: false
-    weight: -40
-    settings: {  }
+      media_substitution: metadata
   media_embed:
     id: media_embed
     provider: media
@@ -130,30 +163,9 @@ filters:
       allowed_media_types:
         image: image
         remote_video: remote_video
-  filter_guides_ckeditor_eresources:
-    id: filter_guides_ckeditor_eresources
-    provider: guides
-    status: true
-    weight: -43
-    settings: {  }
-  filter_guides_ckeditor_wc-search:
-    id: filter_guides_ckeditor_wc-search
-    provider: guides
-    status: true
-    weight: -42
-    settings: {  }
-  filter_footnotes:
-    id: filter_footnotes
-    provider: footnotes
-    status: true
-    weight: -41
-    settings:
-      footnotes_collapse: '0'
-      footnotes_html: '1'
-      footnotes_css: '1'
-  filter_guides_ckeditor_scifree:
-    id: filter_guides_ckeditor_scifree
-    provider: guides
-    status: true
-    weight: 0
+  video_embed_wysiwyg:
+    id: video_embed_wysiwyg
+    provider: video_embed_wysiwyg
+    status: false
+    weight: -40
     settings: {  }

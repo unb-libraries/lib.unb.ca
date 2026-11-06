@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Specialized Help Tags'
 vid: specialized_help_tags
-description: ''
+description: null
 weight: 0
+new_revision: false

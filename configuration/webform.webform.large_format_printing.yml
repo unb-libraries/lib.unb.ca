@@ -16,7 +16,7 @@ archive: false
 id: large_format_printing
 title: 'Large Format/Poster Printing Request'
 description: 'An online submission form for patrons to submit requests for large format printing at the HIL.'
-category: ''
+categories: {  }
 elements: |-
   wrapper:
     '#type': container
@@ -271,6 +271,7 @@ settings:
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  form_file_limit_message: ''
   form_attributes: {  }
   form_method: ''
   form_action: ''
@@ -457,6 +458,7 @@ handlers:
       attachments: false
       twig: true
       theme_name: ''
+      langcode: ''
       parameters: {  }
       debug: false
   fredericton_recipient_mail:
@@ -499,6 +501,7 @@ handlers:
       attachments: true
       twig: true
       theme_name: ''
+      langcode: ''
       parameters: {  }
       debug: false
   saint_john_recipient_mail:
@@ -541,6 +544,7 @@ handlers:
       attachments: true
       twig: true
       theme_name: ''
+      langcode: ''
       parameters: {  }
       debug: false
   fredericton_submitter_email:
@@ -584,6 +588,7 @@ handlers:
       attachments: false
       twig: true
       theme_name: ''
+      langcode: ''
       parameters: {  }
       debug: false
   saint_john_submitter_email:
@@ -627,6 +632,7 @@ handlers:
       attachments: false
       twig: true
       theme_name: ''
+      langcode: ''
       parameters: {  }
       debug: false
 variants: {  }

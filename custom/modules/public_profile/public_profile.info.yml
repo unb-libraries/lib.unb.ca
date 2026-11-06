@@ -2,7 +2,7 @@ name: UNB Libraries Public Profile
 description: Provides a public profile for select users.
 package: UNB Libraries
 type: module
-core_version_requirement: ^9
+core_version_requirement: ^10 || ^11
 dependencies:
   - guides
   - profile

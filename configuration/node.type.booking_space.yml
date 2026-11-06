@@ -14,7 +14,7 @@ third_party_settings:
 name: 'Booking Space'
 type: booking_space
 description: 'Use <em>Booking Space</em> to create a bookable space in a <em>location > zone</em>.'
-help: ''
+help: null
 new_revision: true
 preview_mode: 0
 display_submitted: false

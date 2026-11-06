@@ -1,6 +1,6 @@
-FROM ghcr.io/unb-libraries/drupal:9.x-4.x-unblib
+FROM ghcr.io/unb-libraries/drupal:10.x-1.x-unblib
 
-ENV ADDITIONAL_OS_PACKAGES="postfix php${PHP_VERSION}-ldap php${PHP_VERSION}-xmlreader php${PHP_VERSION}-zip php${PHP_VERSION}-pecl-redis php${PHP_VERSION}-bcmath openssh-client"
+ENV ADDITIONAL_OS_PACKAGES="postfix php${PHP_VERSION}-xmlreader php${PHP_VERSION}-zip php${PHP_VERSION}-pecl-redis php${PHP_VERSION}-bcmath openssh-client"
 ENV DRUPAL_PRIVATE_FILE_PATH="/app/private_filesystem"
 ENV DRUPAL_SITE_ID="libweb"
 ENV DRUPAL_SITE_URI="lib.unb.ca"
@@ -11,7 +11,6 @@ COPY ./build/ /build/
 RUN ${RSYNC_MOVE} /build/scripts/container/ /scripts/ && \
   ${RSYNC_MOVE} /build/keys/ /app/keys/ && \
   /scripts/addOsPackages.sh && \
-  /scripts/initOpenLdap.sh && \
   /scripts/setupStandardConf.sh && \
   /scripts/build.sh && \
   /scripts/linkDrupalCronEntryInitLib.sh
@@ -28,7 +27,7 @@ COPY ./custom/modules ${DRUPAL_ROOT}/modules/custom
 ARG BUILD_DATE
 ARG VCS_REF
 ARG VERSION
-LABEL ca.unb.lib.generator="drupal9" \
+LABEL ca.unb.lib.generator="drupal10" \
   org.opencontainers.image.title="lib.unb.ca" \
   org.opencontainers.image.description="lib.unb.ca is the core web application at UNB Libraries." \
   org.opencontainers.image.vendor="University of New Brunswick Libraries" \

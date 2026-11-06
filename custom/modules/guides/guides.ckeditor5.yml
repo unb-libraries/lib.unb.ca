@@ -1,0 +1,55 @@
+guides_eresources:
+  ckeditor5:
+    plugins:
+      - guides.Eresources
+    config:
+      guidesEresources:
+        openDialog:
+          func:
+            name: Drupal.ckeditor5.openDialog
+            invoke: false
+        dialogSettings:
+          dialogClass: eresources-dialog-widget
+          width: 80%
+          title: e-Resources
+  drupal:
+    label: e-Resources list
+    library: guides/ckeditor5
+    admin_library: guides/ckeditor5.admin
+    class: Drupal\guides\Plugin\CKEditor5Plugin\Eresources
+    toolbar_items:
+      eresources:
+        label: e-Resources
+    elements:
+      - <eresources ids keyresources noheadings>
+      - <p>
+      - <ul>
+      - <li>
+
+guides_wc_search:
+  ckeditor5:
+    plugins:
+      - guides.WcSearch
+  drupal:
+    label: UNB WorldCat search
+    library: guides/ckeditor5
+    admin_library: guides/ckeditor5.admin
+    toolbar_items:
+      wcSearch:
+        label: UNB WorldCat
+    elements:
+      - <div class="wc-search">
+
+guides_scifree:
+  ckeditor5:
+    plugins:
+      - guides.SciFree
+  drupal:
+    label: SciFree search
+    library: guides/ckeditor5
+    admin_library: guides/ckeditor5.admin
+    toolbar_items:
+      sciFree:
+        label: SciFree
+    elements:
+      - <div class="scifree">

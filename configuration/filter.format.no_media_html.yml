@@ -12,24 +12,6 @@ name: 'No-Media HTML'
 format: no_media_html
 weight: 0
 filters:
-  filter_html:
-    id: filter_html
-    provider: filter
-    status: true
-    weight: -49
-    settings:
-      allowed_html: '<em> <strong> <cite> <blockquote cite> <code> <ul type> <ol type start> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <u> <a href hreflang data-entity-substitution data-entity-type data-entity-uuid title> <p>'
-      filter_html_help: true
-      filter_html_nofollow: false
-  media_embed:
-    id: media_embed
-    provider: media
-    status: false
-    weight: -38
-    settings:
-      default_view_mode: default
-      allowed_view_modes: {  }
-      allowed_media_types: {  }
   editor_file_reference:
     id: editor_file_reference
     provider: editor
@@ -42,17 +24,56 @@ filters:
     status: false
     weight: -39
     settings: {  }
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: false
+    weight: -46
+    settings: {  }
   filter_autop:
     id: filter_autop
     provider: filter
     status: true
     weight: -45
     settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: false
+    weight: -44
+    settings: {  }
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -49
+    settings:
+      allowed_html: '<br> <p> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <cite> <dl> <dt> <dd> <blockquote cite> <ul type> <ol type start> <a hreflang data-entity-substitution title href data-entity-uuid data-entity-type> <strong> <em> <u> <code> <li>'
+      filter_html_help: true
+      filter_html_nofollow: false
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
+    status: false
+    weight: -48
+    settings: {  }
   filter_html_image_secure:
     id: filter_html_image_secure
     provider: filter
     status: false
     weight: -40
+    settings: {  }
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: false
+    weight: -50
+    settings: {  }
+  filter_image_lazy_load:
+    id: filter_image_lazy_load
+    provider: filter
+    status: true
+    weight: -46
     settings: {  }
   filter_url:
     id: filter_url
@@ -61,30 +82,6 @@ filters:
     weight: -43
     settings:
       filter_url_length: 72
-  filter_htmlcorrector:
-    id: filter_htmlcorrector
-    provider: filter
-    status: false
-    weight: -50
-    settings: {  }
-  filter_html_escape:
-    id: filter_html_escape
-    provider: filter
-    status: false
-    weight: -48
-    settings: {  }
-  filter_align:
-    id: filter_align
-    provider: filter
-    status: false
-    weight: -46
-    settings: {  }
-  filter_caption:
-    id: filter_caption
-    provider: filter
-    status: false
-    weight: -44
-    settings: {  }
   linkit:
     id: linkit
     provider: linkit
@@ -92,6 +89,16 @@ filters:
     weight: -42
     settings:
       title: true
+      media_substitution: metadata
+  media_embed:
+    id: media_embed
+    provider: media
+    status: false
+    weight: -38
+    settings:
+      default_view_mode: default
+      allowed_view_modes: {  }
+      allowed_media_types: {  }
   video_embed_wysiwyg:
     id: video_embed_wysiwyg
     provider: video_embed_wysiwyg

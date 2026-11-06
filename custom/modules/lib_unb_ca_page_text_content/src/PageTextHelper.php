@@ -34,7 +34,7 @@ class PageTextHelper {
     $builder = \Drupal::entityTypeManager()->getViewBuilder('paragraph');
     foreach ($content_paragraphs as $content_paragraph) {
       $render_array = $builder->view($content_paragraph, 'full');
-      $html .= \Drupal::service('renderer')->renderPlain($render_array);
+      $html .= \Drupal::service('renderer')->renderInIsolation($render_array);
     }
 
     $options = [

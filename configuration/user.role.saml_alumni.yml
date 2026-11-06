@@ -1,9 +1,12 @@
 uuid: 41a96e11-16c3-4e6e-94e3-980dd2d3808c
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - file
 id: saml_alumni
 label: '[saml] Alumni'
 weight: 2
 is_admin: null
-permissions: {  }
+permissions:
+  - 'delete own files'

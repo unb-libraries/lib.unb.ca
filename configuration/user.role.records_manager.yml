@@ -6,6 +6,7 @@ dependencies:
     - filter.format.no_media_html
   module:
     - field_permissions
+    - file
     - filter
     - records_management
     - toolbar
@@ -21,6 +22,7 @@ permissions:
   - 'create field_file'
   - 'create retention_details entities'
   - 'create schedule entities'
+  - 'delete own files'
   - 'delete retention_details entities'
   - 'delete schedule entities'
   - 'download schedule entities'

@@ -9,6 +9,7 @@ dependencies:
     - workflows.workflow.ior_submission_review
   module:
     - content_moderation
+    - file
     - filter
     - ior
     - ior_awards
@@ -29,6 +30,7 @@ permissions:
   - 'delete ior_award entities'
   - 'delete ior_collection entities'
   - 'delete own 3dmodel media'
+  - 'delete own files'
   - 'delete own remote_video media'
   - 'download 3dmodel file'
   - 'download full_resolution images'
@@ -50,7 +52,6 @@ permissions:
   - 'update published_anonymised_ ior_submission entities'
   - 'use ior_submission_review transition accept'
   - 'use ior_submission_review transition archive'
-  - 'use ior_submission_review transition edit'
   - 'use ior_submission_review transition publish'
   - 'use ior_submission_review transition publish_anonymised'
   - 'use ior_submission_review transition reject'

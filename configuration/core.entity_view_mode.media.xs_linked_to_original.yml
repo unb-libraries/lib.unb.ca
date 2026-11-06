@@ -6,5 +6,6 @@ dependencies:
     - media
 id: media.xs_linked_to_original
 label: 'Colorbox XS (320px linked to original)'
+description: ''
 targetEntityType: media
 cache: true

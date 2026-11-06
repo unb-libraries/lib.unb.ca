@@ -11,7 +11,7 @@ ls_entities('paragraph');
 
 function ls_entities($type) {
   // Load all paragraph entities.
-  $pids = \Drupal::entityQuery('paragraph')->execute();
+  $pids = \Drupal::entityQuery('paragraph')->accessCheck(TRUE)->execute();
   // Load paragraph entities.
   $paragraphs = Paragraph::loadMultiple($pids);
 

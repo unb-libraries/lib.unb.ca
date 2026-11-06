@@ -6,3 +6,4 @@ name: 'Booking Locations'
 vid: bookings
 description: 'Use <em>Booking Locations</em> to create bookable <em>location</em> and <em>floor (zone)</em> terms.'
 weight: 0
+new_revision: false

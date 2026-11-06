@@ -49,3 +49,20 @@ eresources:
     - core/jquery
     - core/drupal
     - core/once
+
+ckeditor5:
+  version: VERSION
+  js:
+    js/build/guides.js: { preprocess: false, minified: true }
+  css:
+    theme:
+      css/ckeditor5-guides.css: {}
+  dependencies:
+    - core/ckeditor5
+    - editor/drupal.editor.dialog
+
+ckeditor5.admin:
+  version: VERSION
+  css:
+    theme:
+      css/ckeditor5-guides.admin.css: {}

@@ -1,0 +1,19 @@
+ckeditor5.plugin.guides_eresources:
+  type: mapping
+  label: 'e-Resources list'
+  mapping:
+    target_entity:
+      type: string
+      label: 'Target entity type'
+      constraints:
+        Choice:
+          - guide
+          - category
+    resource_type:
+      type: string
+      label: 'Limit e-Resource selection'
+      constraints:
+        Choice:
+          - ''
+          - REF
+          - DATA

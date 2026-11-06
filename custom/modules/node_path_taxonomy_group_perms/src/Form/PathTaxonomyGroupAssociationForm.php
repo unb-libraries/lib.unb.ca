@@ -20,7 +20,7 @@ class PathTaxonomyGroupAssociationForm extends ContentEntityForm {
     $form = parent::buildForm($form, $form_state);
 
     $entity = $this->entity;
-    $simple_groups = \Drupal::entityQuery('simple_group')->execute();
+    $simple_groups = \Drupal::entityQuery('simple_group')->accessCheck(TRUE)->execute();
 
     if (empty($simple_groups)) {
       $this->messenger()->addError(

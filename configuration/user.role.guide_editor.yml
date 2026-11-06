@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.media_entity_browser
     - filter.format.guide_category_databases
     - filter.format.guide_category_references
     - media.type.file
@@ -10,6 +11,7 @@ dependencies:
     - media.type.remote_video
   module:
     - entity_browser
+    - file
     - filter
     - guides
     - media
@@ -27,12 +29,11 @@ permissions:
   - 'access toolbar'
   - 'create course_link entities'
   - 'create guide entities'
-  - 'create guides profile'
   - 'create image media'
   - 'create remote_video media'
   - 'delete course_link entities'
   - 'delete guide entities'
-  - 'delete own guides profile'
+  - 'delete own files'
   - 'delete own image media'
   - 'delete own remote_video media'
   - 'edit any image media'
@@ -48,7 +49,6 @@ permissions:
   - 'update course_link entities'
   - 'update guide entities'
   - 'update guide_category entities'
-  - 'update own guides profile'
   - 'use text format guide_category_databases'
   - 'use text format guide_category_references'
   - 'view the administration theme'

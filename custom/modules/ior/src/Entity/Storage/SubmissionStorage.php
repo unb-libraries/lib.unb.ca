@@ -21,7 +21,7 @@ class SubmissionStorage extends SqlContentEntityStorage implements SubmissionSto
       'published' => NULL,
     ], $options);
 
-    $query = $this->getQuery()
+    $query = $this->getQuery()->accessCheck(TRUE)
       ->condition(SubmissionInterface::FIELD_CONTEST, $contest_id);
 
     if (!is_null($options['published'])) {

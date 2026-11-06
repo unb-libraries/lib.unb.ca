@@ -115,7 +115,7 @@ class NodeTaxonomyPath extends ContentEntityBase implements NodeTaxonomyPathInte
    * {@inheritdoc}
    */
   public static function removeAllNodeTypePaths($node_type) {
-    $nids = \Drupal::entityQuery('node')
+    $nids = \Drupal::entityQuery('node')->accessCheck(TRUE)
       ->condition('type', $node_type)
       ->execute();
     $nodes = Node::loadMultiple($nids);
@@ -129,7 +129,7 @@ class NodeTaxonomyPath extends ContentEntityBase implements NodeTaxonomyPathInte
    * {@inheritdoc}
    */
   public static function removeNodePaths(NodeInterface $node) {
-    $result = \Drupal::entityQuery('node_taxonomy_path')
+    $result = \Drupal::entityQuery('node_taxonomy_path')->accessCheck(TRUE)
       ->condition('nid', $node->id())
       ->execute();
 
@@ -276,7 +276,7 @@ class NodeTaxonomyPath extends ContentEntityBase implements NodeTaxonomyPathInte
    * {@inheritdoc}
    */
   public static function getNodePathTerm(NodeInterface $node) {
-    $results = \Drupal::entityQuery('node_taxonomy_path')
+    $results = \Drupal::entityQuery('node_taxonomy_path')->accessCheck(TRUE)
       ->condition('nid', $node->id())
       ->execute();
     foreach ($results as $result) {

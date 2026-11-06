@@ -2,6 +2,8 @@ uuid: 88926843-0fc0-46e7-8650-40abc16fcc43
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.news_post
   module:
     - node
 id: new_post
@@ -10,9 +12,8 @@ type: 'canonical_entities:node'
 pattern: '/news/[node:title]'
 selection_criteria:
   d0b0512f-ce75-47b8-8bfe-d384375d1c93:
-    id: node_type
+    id: 'entity_bundle:node'
     negate: false
-    uuid: d0b0512f-ce75-47b8-8bfe-d384375d1c93
     context_mapping:
       node: node
     bundles:
