@@ -67,7 +67,7 @@
     },
     "patches": {
       "drupal/easy_breadcrumb": {
-        "Ignore entities in routes": "/build/patches/easy_breadcrumb-ignore-entity.patch"
+        "Ignore entities in routes": "https://raw.githubusercontent.com/unb-libraries/lib.unb.ca/dev/build/patches/easy_breadcrumb-ignore-entity.patch"
       },
       "drupal/entity_browser": {
         "Provide upload widget for media of media type file": "https://www.drupal.org/files/issues/2019-02-28/entity_browser-media-file-upload-2922885-15.patch"
@@ -76,7 +76,7 @@
         "Provide entity reference revision relation to Views": "https://www.drupal.org/files/issues/2022-06-01/entity_reference_revisions-relationship_host_id-2799479-176.patch"
       },
       "drupal/migrate_plus": {
-        "Remove parser->current() strict return type to avoid error during migration": "/build/patches/migrate_plus-dataparser-current-no-return-type.patch"
+        "Remove parser->current() strict return type to avoid error during migration": "https://raw.githubusercontent.com/unb-libraries/lib.unb.ca/dev/build/patches/migrate_plus-dataparser-current-no-return-type.patch"
       }
     }
   },
