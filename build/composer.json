@@ -358,7 +358,7 @@
     "drupal/entity": "^1",
     "drupal/entity_browser": "^2",
     "drupal/entity_embed": "^1",
-    "drupal/entity_reference_revisions": "^1",
+    "drupal/entity_reference_revisions": "1.14.0",
     "drupal/externalauth": "^2",
     "drupal/facets": "^3",
     "drupal/fakeobjects": "^1",
