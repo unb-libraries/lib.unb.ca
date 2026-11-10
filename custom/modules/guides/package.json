@@ -9,7 +9,7 @@
     "watch": "webpack --mode development --watch"
   },
   "devDependencies": {
-    "ckeditor5": "~47.6.2",
+    "ckeditor5": "~47.7.6",
     "raw-loader": "^4.0.2",
     "terser-webpack-plugin": "^5.3.10",
     "webpack": "^5.97.1",
