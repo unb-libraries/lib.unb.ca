@@ -154,6 +154,7 @@ display:
         type: full
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 10
           total_pages: null
           id: 0
@@ -171,7 +172,6 @@ display:
             offset: false
             offset_label: Offset
           quantity: 9
-          pagination_heading_level: h4
       exposed_form:
         type: input_required
         options:
@@ -668,24 +668,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              library_news_author: '0'
-              library_page_author: '0'
-              library_staff: '0'
-              data_administrator: '0'
-              records_manager: '0'
-              ior_manager: '0'
-              ior_reviewer: '0'
-              eresources_record_manager: '0'
-              saml_student: '0'
-              saml_faculty_staff: '0'
-              saml_alumni: '0'
-              saml_guest: '0'
-              saml_unb_active: '0'
-              saml_stu_active: '0'
-              guide_editor: '0'
-              public_profile: '0'
-              duplicate_id_checker: '0'
             expose_fields: false
             placeholder: 'Enter search terms'
             searched_fields_id: ''
@@ -1068,24 +1050,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              library_news_author: '0'
-              library_page_author: '0'
-              library_staff: '0'
-              data_administrator: '0'
-              records_manager: '0'
-              ior_manager: '0'
-              ior_reviewer: '0'
-              eresources_record_manager: '0'
-              saml_student: '0'
-              saml_faculty_staff: '0'
-              saml_alumni: '0'
-              saml_guest: '0'
-              saml_unb_active: '0'
-              saml_stu_active: '0'
-              guide_editor: '0'
-              public_profile: '0'
-              duplicate_id_checker: '0'
             expose_fields: false
             placeholder: 'Enter search terms'
             searched_fields_id: ''
@@ -1811,8 +1775,11 @@ display:
           bef:
             general:
               autosubmit: false
+              auto_submit_sort_only: false
+              autosubmit_breakpoint: ''
               autosubmit_exclude_textfield: false
               autosubmit_textfield_delay: 500
+              autosubmit_textfield_minimum_length: 3
               autosubmit_hide: false
               input_required: true
               allow_secondary: false
@@ -1821,51 +1788,48 @@ display:
               text_input_required: "<div class=\"alert alert-primary d-flex flex-row\">\r\n  <div class=\"mr-2\"><span class=\"fas fa-info-circle\"></span></div>\r\n  <p class=\"mb-0\">Alternatively, you can look through the <a href=\"/sitemap\"><span class=\"alert-link\">A to Z Index for UNB Libraries</span></a>.</p>\r\n</div>"
               text_input_required_format: basic_html
               reset_button_always_show: false
-              autosubmit_textfield_minimum_length: 3
-              autosubmit_breakpoint: ''
-              auto_submit_sort_only: false
             filter:
               search_api_fulltext:
                 plugin_id: default
                 advanced:
+                  sort_options_method: alphabetical_asc
+                  sort_options_natural: true
                   placeholder_text: ''
                   rewrite:
                     filter_rewrite_values: ''
                     filter_rewrite_values_key: false
                   collapsible: false
                   collapsible_disable_automatic_open: false
+                  open_by_default: false
                   is_secondary: false
+                  no_reset: false
                   hide_label: false
                   field_classes: ''
-                  no_reset: false
-                  open_by_default: false
-                  sort_options_method: alphabetical_asc
-                  sort_options_natural: true
               type_1:
                 plugin_id: bef
                 advanced:
                   sort_options: false
+                  sort_options_method: alphabetical_asc
+                  sort_options_natural: true
                   rewrite:
                     filter_rewrite_values: 'news_post|Exclude news posts'
                     filter_rewrite_values_key: true
                   collapsible: false
                   collapsible_disable_automatic_open: false
+                  open_by_default: false
                   is_secondary: true
+                  no_reset: false
                   hide_label: false
                   field_classes: ''
-                  no_reset: false
-                  open_by_default: false
-                  sort_options_method: alphabetical_asc
-                  sort_options_natural: true
                 select_all_none: false
                 select_all_none_nested: false
                 display_inline: false
-                scrollable: false
-                scrollable_height: 300
                 soft_limit: 0
                 soft_limit_label_less: 'Show less'
                 soft_limit_label_more: 'Show more'
                 soft_limit_include_children: false
+                scrollable: false
+                scrollable_height: 300
       cache:
         type: search_api_tag
         options: {  }
@@ -1908,24 +1872,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              library_news_author: '0'
-              library_page_author: '0'
-              library_staff: '0'
-              data_administrator: '0'
-              records_manager: '0'
-              ior_manager: '0'
-              ior_reviewer: '0'
-              eresources_record_manager: '0'
-              saml_student: '0'
-              saml_faculty_staff: '0'
-              saml_alumni: '0'
-              saml_guest: '0'
-              saml_unb_active: '0'
-              saml_stu_active: '0'
-              guide_editor: '0'
-              public_profile: '0'
-              duplicate_id_checker: '0'
             expose_fields: false
             placeholder: 'Enter search terms'
             searched_fields_id: ''
@@ -1978,24 +1924,6 @@ display:
             multiple: true
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              library_news_author: '0'
-              library_page_author: '0'
-              library_staff: '0'
-              data_administrator: '0'
-              records_manager: '0'
-              ior_manager: '0'
-              ior_reviewer: '0'
-              eresources_record_manager: '0'
-              saml_student: '0'
-              saml_faculty_staff: '0'
-              saml_alumni: '0'
-              saml_guest: '0'
-              saml_unb_active: '0'
-              saml_stu_active: '0'
-              guide_editor: '0'
-              public_profile: '0'
-              duplicate_id_checker: '0'
             reduce: true
           is_grouped: false
           group_info:
@@ -2482,24 +2410,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              library_news_author: '0'
-              library_page_author: '0'
-              library_staff: '0'
-              data_administrator: '0'
-              records_manager: '0'
-              ior_manager: '0'
-              ior_reviewer: '0'
-              eresources_record_manager: '0'
-              saml_student: '0'
-              saml_faculty_staff: '0'
-              saml_alumni: '0'
-              saml_guest: '0'
-              saml_unb_active: '0'
-              saml_stu_active: '0'
-              guide_editor: '0'
-              public_profile: '0'
-              duplicate_id_checker: '0'
             expose_fields: false
             placeholder: 'Enter search terms'
             searched_fields_id: ''

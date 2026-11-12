@@ -21,7 +21,7 @@ class GuideCategoryStatsForm extends StatsFormBase {
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state, EntityInterface $guide_category = NULL) {
+  public function buildForm(array $form, FormStateInterface $form_state, ?EntityInterface $guide_category = NULL) {
     $this->setObject($guide_category);
 
     $form += parent::buildForm($form, $form_state);

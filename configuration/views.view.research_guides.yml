@@ -190,44 +190,44 @@ display:
           bef:
             general:
               autosubmit: false
+              auto_submit_sort_only: false
+              autosubmit_breakpoint: ''
               autosubmit_exclude_textfield: false
               autosubmit_textfield_delay: 500
+              autosubmit_textfield_minimum_length: 3
               autosubmit_hide: false
               input_required: false
               allow_secondary: false
               secondary_label: 'Advanced options'
               secondary_open: false
               reset_button_always_show: false
-              autosubmit_textfield_minimum_length: 3
-              autosubmit_breakpoint: ''
-              auto_submit_sort_only: false
             filter:
               combine:
                 plugin_id: default
                 advanced:
-                  placeholder_text: ''
-                  collapsible: false
-                  is_secondary: false
-                  hide_label: false
-                  field_classes: ''
-                  no_reset: false
-                  open_by_default: false
                   sort_options_method: alphabetical_asc
                   sort_options_natural: true
+                  placeholder_text: ''
+                  collapsible: false
+                  open_by_default: false
+                  is_secondary: false
+                  no_reset: false
+                  hide_label: false
+                  field_classes: ''
               is_subject_guide:
                 plugin_id: default
                 advanced:
                   sort_options: false
+                  sort_options_method: alphabetical_asc
+                  sort_options_natural: true
                   rewrite:
                     filter_rewrite_values: "- Any -|- All -\r\nTrue|Subject Guide\r\nFalse|Course Guide"
                   collapsible: false
+                  open_by_default: false
                   is_secondary: false
+                  no_reset: false
                   hide_label: false
                   field_classes: ''
-                  no_reset: false
-                  open_by_default: false
-                  sort_options_method: alphabetical_asc
-                  sort_options_natural: true
       access:
         type: perm
         options:
@@ -347,24 +347,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              library_news_author: '0'
-              library_page_author: '0'
-              library_staff: '0'
-              data_administrator: '0'
-              records_manager: '0'
-              ior_manager: '0'
-              ior_reviewer: '0'
-              eresources_record_manager: '0'
-              saml_student: '0'
-              saml_faculty_staff: '0'
-              saml_alumni: '0'
-              saml_guest: '0'
-              saml_unb_active: '0'
-              saml_stu_active: '0'
-              guide_editor: '0'
-              public_profile: '0'
-              duplicate_id_checker: '0'
           is_grouped: false
           group_info:
             label: ''
@@ -408,6 +390,7 @@ display:
           empty_table: false
           caption: ''
           description: ''
+          class: ''
       row:
         type: fields
         options:
@@ -693,24 +676,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              library_news_author: '0'
-              library_page_author: '0'
-              library_staff: '0'
-              data_administrator: '0'
-              records_manager: '0'
-              ior_manager: '0'
-              ior_reviewer: '0'
-              eresources_record_manager: '0'
-              saml_student: '0'
-              saml_faculty_staff: '0'
-              saml_alumni: '0'
-              saml_guest: '0'
-              saml_unb_active: '0'
-              saml_stu_active: '0'
-              guide_editor: '0'
-              public_profile: '0'
-              duplicate_id_checker: '0'
             placeholder: 'Enter search terms'
             autocomplete_filter: 1
             autocomplete_min_chars: '3'
@@ -761,24 +726,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              library_news_author: '0'
-              library_page_author: '0'
-              library_staff: '0'
-              data_administrator: '0'
-              records_manager: '0'
-              ior_manager: '0'
-              ior_reviewer: '0'
-              eresources_record_manager: '0'
-              saml_student: '0'
-              saml_faculty_staff: '0'
-              saml_alumni: '0'
-              saml_guest: '0'
-              saml_unb_active: '0'
-              saml_stu_active: '0'
-              guide_editor: '0'
-              public_profile: '0'
-              duplicate_id_checker: '0'
           is_grouped: false
           group_info:
             label: ''

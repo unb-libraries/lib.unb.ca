@@ -16,7 +16,7 @@ class SubmissionTypeLocalEditTask extends LocalTaskDefault {
   /**
    * {@inheritDoc}
    */
-  public function getTitle(Request $request = NULL) {
+  public function getTitle(?Request $request = NULL) {
     return $this->t("Edit @submission_type", [
       '@submission_type' => strtolower($request
         ->attributes

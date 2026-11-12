@@ -7,13 +7,6 @@ dependencies:
   module:
     - ckeditor5
     - editor_file
-third_party_settings:
-  editor_file:
-    status: true
-    scheme: public
-    directory: media/documents
-    extensions: 'csv doc docx dotx pdf ppt pptx rtf txt xls xlsx zip'
-    max_size: ''
 format: library_page_html
 editor: ckeditor5
 settings:
@@ -115,6 +108,7 @@ settings:
       properties:
         reversed: false
         startIndex: true
+        styles: true
       multiBlock: true
     ckeditor5_sourceEditing:
       allowed_tags:
@@ -141,14 +135,14 @@ settings:
         - '<h5 id class>'
         - '<h6 id class>'
         - '<li id>'
-        - '<ol id type class>'
+        - '<ol id class>'
         - '<p id class>'
         - '<span id aria-hidden data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date data-color lang>'
         - '<table id class>'
         - '<td data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date id class>'
         - '<th id scope class>'
         - '<tr data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date id class>'
-        - '<ul id type role>'
+        - '<ul id role>'
         - '<drupal-media title class>'
         - '<drupal-entity data-entity-type data-embed-button class>'
         - '<caption class>'

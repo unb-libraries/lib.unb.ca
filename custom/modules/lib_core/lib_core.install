@@ -157,7 +157,7 @@ function lib_core_update_10003() {
   if (!$elements || !str_contains($elements, 'webform_location_places')) {
     return t('No webform_location_places elements found.');
   }
-  $decoded = \Drupal\Core\Serialization\Yaml::decode($elements);
+  $decoded = \Drupal\Component\Serialization\Yaml::decode($elements);
   $removed = 0;
   $strip = function (array &$tree) use (&$strip, &$removed) {
     foreach ($tree as $key => &$value) {
@@ -172,7 +172,7 @@ function lib_core_update_10003() {
     }
   };
   $strip($decoded);
-  $config->set('elements', \Drupal\Core\Serialization\Yaml::encode($decoded))->save(TRUE);
+  $config->set('elements', \Drupal\Component\Serialization\Yaml::encode($decoded))->save(TRUE);
   return t('Removed @count webform_location_places element(s).', ['@count' => $removed]);
 }
 

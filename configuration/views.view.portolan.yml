@@ -518,6 +518,7 @@ display:
         type: full
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 25
           total_pages: null
           id: 0
@@ -535,7 +536,6 @@ display:
             offset: false
             offset_label: Offset
           quantity: 10
-          pagination_heading_level: h4
       exposed_form:
         type: input_required
         options:
@@ -597,10 +597,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              library_news_author: '0'
-              library_page_author: '0'
-              data_administrator: '0'
             expose_fields: false
             placeholder: ''
             searched_fields_id: search_api_fulltext_searched_fields
@@ -671,6 +667,7 @@ display:
         - url.query_args
       tags:
         - 'config:search_api.index.portolan'
+        - 'search_api_list:portolan'
   page_1:
     id: page_1
     display_title: Page
@@ -692,6 +689,7 @@ display:
         - url.query_args
       tags:
         - 'config:search_api.index.portolan'
+        - 'search_api_list:portolan'
   simple_search_form:
     id: simple_search_form
     display_title: 'Simple Search'
@@ -716,3 +714,4 @@ display:
         - url.query_args
       tags:
         - 'config:search_api.index.portolan'
+        - 'search_api_list:portolan'

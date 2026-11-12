@@ -18,11 +18,13 @@
       "drupal/core-composer-scaffold": true,
       "php-http/discovery": true,
       "phpstan/extension-installer": true,
+      "symfony/runtime": true,
+      "tbachert/spi": true,
       "wikimedia/composer-merge-plugin": false
     },
     "discard-changes": true,
     "platform": {
-      "php": "8.2.35"
+      "php": "8.4.27"
     },
     "policy": {
       "advisories": {
@@ -37,7 +39,7 @@
   "conflict": {
     "drupal/drupal": "*"
   },
-  "description": "Drupal 10 component of lib.unb.ca",
+  "description": "Drupal 11 component of lib.unb.ca",
   "extra": {
     "drupal-scaffold": {
       "locations": {
@@ -75,6 +77,13 @@
       "drupal/entity_reference_revisions": {
         "Provide entity reference revision relation to Views": "https://www.drupal.org/files/issues/2022-06-01/entity_reference_revisions-relationship_host_id-2799479-176.patch"
       },
+      "drupal/file_management": {
+        "Drupal 11 compatibility": "https://raw.githubusercontent.com/unb-libraries/lib.unb.ca/dev/build/patches/file_management_2.x_d11.patch"
+      },
+      "drupal/jquery_scrollup": {
+        "D11 compatibility": "https://www.drupal.org/files/issues/2024-03-17/jquery_scrollup.2.0.0.rector.patch",
+        "PHP 8.2 string interpolation deprecations": "https://raw.githubusercontent.com/unb-libraries/lib.unb.ca/dev/build/patches/jquery_scrollup_2.0.x_php82.patch"
+      },
       "drupal/migrate_plus": {
         "Remove parser->current() strict return type to avoid error during migration": "https://raw.githubusercontent.com/unb-libraries/lib.unb.ca/dev/build/patches/migrate_plus-dataparser-current-no-return-type.patch"
       }
@@ -86,44 +95,46 @@
   "prefer-stable": true,
   "repositories": [
     {
+      "type": "package",
+      "package": {
+        "name": "drupal/file_management",
+        "version": "2.1.0",
+        "type": "drupal-module",
+        "description": "Allows you to edit existing files or images.",
+        "license": "GPL-2.0-or-later",
+        "require": {
+          "drupal/core": "^10 || ^11"
+        },
+        "dist": {
+          "type": "zip",
+          "url": "https://ftp.drupal.org/files/projects/file_management-8.x-2.1.zip",
+          "reference": "8.x-2.1",
+          "shasum": "6b7414c66ca772f9188941369a89a2e72477ae98"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "drupal/jquery_scrollup",
+        "version": "2.0.0",
+        "type": "drupal-module",
+        "description": "Integrates jquery ScrollUp plugin with Drupal",
+        "license": "GPL-2.0-or-later",
+        "require": {
+          "drupal/core": "^10 || ^11"
+        },
+        "dist": {
+          "type": "zip",
+          "url": "https://ftp.drupal.org/files/projects/jquery_scrollup-2.0.0.zip",
+          "reference": "2.0.0",
+          "shasum": "33a5d649135dd59ed325e9a1eac7b0d557e975c3"
+        }
+      }
+    },
+    {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
-    },
-    {
-      "package": {
-        "dist": {
-          "type": "zip",
-          "url": "https://github.com/unb-libraries/upstream-library-mirror/raw/master/colorbutton/colorbutton_4.20.2.zip"
-        },
-        "name": "ckeditor/colorbutton",
-        "type": "drupal-library",
-        "version": "4.20.2"
-      },
-      "type": "package"
-    },
-    {
-      "package": {
-        "dist": {
-          "type": "zip",
-          "url": "https://github.com/unb-libraries/upstream-library-mirror/raw/master/fakeobjects/fakeobjects_4.23.0-lts.zip"
-        },
-        "name": "ckeditor/fakeobjects",
-        "type": "drupal-library",
-        "version": "4.23.0"
-      },
-      "type": "package"
-    },
-    {
-      "package": {
-        "dist": {
-          "type": "zip",
-          "url": "https://github.com/unb-libraries/upstream-library-mirror/raw/master/panelbutton/panelbutton_4.20.2.zip"
-        },
-        "name": "ckeditor/panelbutton",
-        "type": "drupal-library",
-        "version": "4.20.2"
-      },
-      "type": "package"
     },
     {
       "package": {
@@ -270,33 +281,6 @@
       "type": "package"
     },
     {
-      "package": {
-        "dist": {
-          "type": "zip",
-          "url": "https://github.com/w8tcha/CKEditor-CodeMirror-Plugin/archive/refs/tags/v1.18.6.zip"
-        },
-        "extra": {
-          "installer-name": "ckeditor_codemirror"
-        },
-        "name": "w8tcha/ckeditor-codemirror-plugin",
-        "type": "drupal-library",
-        "version": "1.18.6"
-      },
-      "type": "package"
-    },
-    {
-      "package": {
-        "dist": {
-          "type": "zip",
-          "url": "https://github.com/w8tcha/CKEditor-WordCount-Plugin/archive/refs/tags/v1.17.10.zip"
-        },
-        "name": "w8tcha/ckeditor-wordcount-plugin",
-        "type": "drupal-library",
-        "version": "1.17.10"
-      },
-      "type": "package"
-    },
-    {
       "type": "package",
       "package": {
         "name": "codemirror/codemirror",
@@ -329,9 +313,6 @@
   ],
   "require": {
     "cdubz/ckeditor5-source-editing-codemirror": "35.1.0",
-    "ckeditor/colorbutton": "~4.20",
-    "ckeditor/fakeobjects": "~4.23",
-    "ckeditor/panelbutton": "~4.20",
     "codemirror/codemirror": "5.65.21",
     "drupal/address": "^2",
     "drupal/admin_toolbar": "^3",
@@ -343,14 +324,11 @@
     "drupal/cache_control_override": "^2",
     "drupal/changed_fields": "^3",
     "drupal/chosen": "^5",
-    "drupal/ckeditor": "^1",
     "drupal/ckeditor_codemirror": "^3",
-    "drupal/ckwordcount": "^2",
     "drupal/colorbox": "^2",
-    "drupal/colorbutton": "^1",
-    "drupal/core": "^10",
-    "drupal/core-composer-scaffold": "^10",
-    "drupal/core-recommended": "^10",
+    "drupal/core": "^11",
+    "drupal/core-composer-scaffold": "^11",
+    "drupal/core-recommended": "^11",
     "drupal/csv_serialization": "^4",
     "drupal/easy_breadcrumb": "^2",
     "drupal/editor_file": "^2",
@@ -361,18 +339,17 @@
     "drupal/entity_reference_revisions": "1.14.0",
     "drupal/externalauth": "^2",
     "drupal/facets": "^3",
-    "drupal/fakeobjects": "^1",
     "drupal/field_formatter_class": "^1",
     "drupal/field_group": "^4",
     "drupal/field_permissions": "^1",
-    "drupal/file_management": "^2",
+    "drupal/file_management": "2.1.0",
     "drupal/fontawesome": "^3",
     "drupal/footnotes": "^4@RC",
     "drupal/google_analytics": "^4",
     "drupal/health_check": "^3",
     "drupal/honeypot": "^2",
     "drupal/inline_entity_form": "^3",
-    "drupal/jquery_scrollup": "^2",
+    "drupal/jquery_scrollup": "2.0.0",
     "drupal/jquery_ui": "^1",
     "drupal/jquery_ui_datepicker": "^2",
     "drupal/jquery_ui_slider": "^2",
@@ -391,7 +368,6 @@
     "drupal/noreqnewpass": "^1",
     "drupal/oembed_providers": "^3",
     "drupal/override_node_options": "^2",
-    "drupal/panelbutton": "^1",
     "drupal/paragraphs": "^1",
     "drupal/pathauto": "^1",
     "drupal/profile": "^1",
@@ -434,24 +410,22 @@
     "pear/file_marc": "^1.4",
     "querypath/querypath": "^3",
     "scriptotek/marc": "^2.1",
-    "unb-libraries/alert_scheduler": "dev-10.x-1.x",
-    "unb-libraries/calendar_hours": "dev-10.x-1.x",
-    "unb-libraries/composer-drupal-scaffold": "^10",
-    "unb-libraries/custom-entity": "dev-10.x-1.x",
-    "unb-libraries/drupal-addon": "dev-10.x-1.x",
-    "unb-libraries/fogbugz_api": "dev-10.x-1.x",
-    "unb-libraries/gapi": "dev-10.x-1.x",
-    "unb-libraries/oclc_api": "dev-10.x-1.x",
+    "unb-libraries/alert_scheduler": "dev-11.x-1.x",
+    "unb-libraries/calendar_hours": "dev-11.x-1.x",
+    "unb-libraries/composer-drupal-scaffold": "^11",
+    "unb-libraries/custom-entity": "dev-11.x-1.x",
+    "unb-libraries/drupal-addon": "dev-11.x-1.x",
+    "unb-libraries/fogbugz_api": "dev-11.x-1.x",
+    "unb-libraries/gapi": "dev-11.x-1.x",
+    "unb-libraries/oclc_api": "dev-11.x-1.x",
     "unb-libraries/saml_features": "dev-10.x-1.x",
-    "unb-libraries/task-ui": "dev-10.x-1.x",
+    "unb-libraries/task-ui": "dev-11.x-1.x",
     "unb-libraries/unb_lib_theme": "dev-10.x-4.x",
-    "w8tcha/ckeditor-codemirror-plugin": "~1.18.1",
-    "w8tcha/ckeditor-wordcount-plugin": "~1.17.8",
     "wikimedia/composer-merge-plugin": "2.0.1"
   },
   "require-dev": {
     "drupal/devel": "^5",
-    "unb-libraries/drupal-development-libraries": "^10"
+    "unb-libraries/drupal-development-libraries": "^11"
   },
   "type": "project"
 }

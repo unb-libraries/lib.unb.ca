@@ -882,13 +882,13 @@ display:
       pager:
         type: full
         options:
+          pagination_heading_level: h4
           items_per_page: 50
           tags:
             next: 'Next ›'
             previous: '‹ Previous'
             first: '« First'
             last: 'Last »'
-          pagination_heading_level: h4
       exposed_form:
         type: basic
         options:
@@ -948,8 +948,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -989,9 +987,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              library_news_author: '0'
-              library_page_author: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -1100,10 +1095,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              library_news_author: '0'
-              library_page_author: '0'
-              data_administrator: '0'
             reduce: true
           is_grouped: false
           group_info:
@@ -1282,6 +1273,7 @@ display:
           empty_table: true
           caption: ''
           description: ''
+          class: ''
       row:
         type: fields
       query:
@@ -1356,8 +1348,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -1397,9 +1387,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              library_news_author: '0'
-              library_page_author: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -1508,10 +1495,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              library_news_author: '0'
-              library_page_author: '0'
-              data_administrator: '0'
             reduce: true
           is_grouped: false
           group_info:

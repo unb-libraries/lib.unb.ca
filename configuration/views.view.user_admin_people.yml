@@ -604,6 +604,7 @@ display:
         type: full
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 50
           total_pages: 0
           id: 0
@@ -621,7 +622,6 @@ display:
             offset: false
             offset_label: Offset
           quantity: 9
-          pagination_heading_level: h4
       exposed_form:
         type: basic
         options:
@@ -694,20 +694,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              library_news_author: '0'
-              library_page_author: '0'
-              library_staff: '0'
-              data_administrator: '0'
-              records_manager: '0'
-              ior_manager: '0'
-              ior_reviewer: '0'
-              eresources_record_manager: '0'
-              saml_student: '0'
-              saml_faculty_staff: '0'
-              saml_alumni: '0'
-              saml_guest: '0'
-              saml_unb_active: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -754,8 +740,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
           is_grouped: true
           group_info:
             label: Status
@@ -804,20 +788,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              library_news_author: '0'
-              library_page_author: '0'
-              library_staff: '0'
-              data_administrator: '0'
-              records_manager: '0'
-              ior_manager: '0'
-              ior_reviewer: '0'
-              eresources_record_manager: '0'
-              saml_student: '0'
-              saml_faculty_staff: '0'
-              saml_alumni: '0'
-              saml_guest: '0'
-              saml_unb_active: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -860,20 +830,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              library_news_author: '0'
-              library_page_author: '0'
-              library_staff: '0'
-              data_administrator: '0'
-              records_manager: '0'
-              ior_manager: '0'
-              ior_reviewer: '0'
-              eresources_record_manager: '0'
-              saml_student: '0'
-              saml_faculty_staff: '0'
-              saml_alumni: '0'
-              saml_guest: '0'
-              saml_unb_active: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -1065,6 +1021,7 @@ display:
           empty_table: true
           caption: ''
           description: ''
+          class: ''
       row:
         type: fields
       query:

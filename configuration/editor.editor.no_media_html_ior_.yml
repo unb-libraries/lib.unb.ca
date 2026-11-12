@@ -6,14 +6,6 @@ dependencies:
     - filter.format.no_media_html_ior_
   module:
     - ckeditor5
-    - editor_file
-third_party_settings:
-  editor_file:
-    status: true
-    scheme: public
-    directory: inline-files
-    extensions: txt
-    max_size: ''
 format: no_media_html_ior_
 editor: ckeditor5
 settings:
@@ -47,6 +39,7 @@ settings:
       properties:
         reversed: false
         startIndex: true
+        styles: true
       multiBlock: true
     ckeditor5_sourceEditing:
       allowed_tags:
@@ -61,8 +54,6 @@ settings:
         - '<h5 id>'
         - '<h6 id>'
         - '<a hreflang>'
-        - '<ul type>'
-        - '<ol type>'
     ckeditor_codemirror_source_editing:
       enable: false
       mode: htmlmixed

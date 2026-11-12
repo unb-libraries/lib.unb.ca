@@ -30,7 +30,7 @@ class IsSubjectGuideForm extends FormBase {
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state, EntityInterface $guide = NULL) {
+  public function buildForm(array $form, FormStateInterface $form_state, ?EntityInterface $guide = NULL) {
     $this->guide = $guide;
 
     $form['is_subject_guide_metadata'] = [

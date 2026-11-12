@@ -37,7 +37,7 @@ class HarvestedCollectionSyncWorker extends TaskQueueWorkerBase {
   /**
    * Class constructor.
    */
-  public function __construct(array $configuration, string $plugin_id, $plugin_definition, TaskStorageInterface $task_storage, EventDispatcherInterface $dispatcher, OclcApiManagerInterface $oclc_api_manager, OclcAuthorizationInterface $oclc_authorizer, LoggerChannelInterface $logger = NULL) {
+  public function __construct(array $configuration, string $plugin_id, $plugin_definition, TaskStorageInterface $task_storage, EventDispatcherInterface $dispatcher, OclcApiManagerInterface $oclc_api_manager, OclcAuthorizationInterface $oclc_authorizer, ?LoggerChannelInterface $logger = NULL) {
     parent::__construct($configuration, $plugin_id, $plugin_definition, $task_storage, $dispatcher, $logger);
     $this->oclcApiManager = $oclc_api_manager;
     $this->oclcAuthorization = $oclc_authorizer;

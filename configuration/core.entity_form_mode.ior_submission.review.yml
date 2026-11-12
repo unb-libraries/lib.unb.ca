@@ -6,6 +6,6 @@ dependencies:
     - ior
 id: ior_submission.review
 label: Review
-description: ''
+description: null
 targetEntityType: ior_submission
 cache: true
