@@ -15111,12 +15111,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unb-libraries/custom-entity.git",
-                "reference": "0e52eb4879fcd494ac5cee77bd551d7ddf3bb72c"
+                "reference": "067bee85a7fc66d65c9317a082a13730c8e5b89b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unb-libraries/custom-entity/zipball/0e52eb4879fcd494ac5cee77bd551d7ddf3bb72c",
-                "reference": "0e52eb4879fcd494ac5cee77bd551d7ddf3bb72c",
+                "url": "https://api.github.com/repos/unb-libraries/custom-entity/zipball/067bee85a7fc66d65c9317a082a13730c8e5b89b",
+                "reference": "067bee85a7fc66d65c9317a082a13730c8e5b89b",
                 "shasum": ""
             },
             "type": "drupal-module",
@@ -15139,7 +15139,7 @@
                 "issues": "https://github.com/unb-libraries/custom-entity/issues",
                 "source": "https://github.com/unb-libraries/custom-entity/tree/11.x-1.x"
             },
-            "time": "2026-11-11T03:20:45+00:00"
+            "time": "2026-11-12T16:17:59+00:00"
         },
         {
             "name": "unb-libraries/drupal-addon",
