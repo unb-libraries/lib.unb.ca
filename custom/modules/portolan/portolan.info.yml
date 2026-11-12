@@ -3,4 +3,6 @@ type: module
 description: 'Provides the data structure for the Portolan bibliography.'
 core_version_requirement: ^10 || ^11
 package: 'Portolan'
-dependencies: { }
+dependencies:
+  - drupal:taxonomy
+  - drupal:text
