@@ -24,13 +24,13 @@ content:
     type: colorbox
     label: hidden
     settings:
-      colorbox_node_style: content_lg_breakpoint
-      colorbox_node_style_first: ''
       colorbox_image_style: ''
       colorbox_gallery: page
       colorbox_gallery_custom: ''
       colorbox_caption: auto
       colorbox_caption_custom: ''
+      colorbox_node_style: content_lg_breakpoint
+      colorbox_node_style_first: ''
     third_party_settings: {  }
     weight: 1
     region: content

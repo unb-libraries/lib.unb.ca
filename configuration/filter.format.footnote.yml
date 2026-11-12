@@ -1,9 +1,12 @@
+uuid: 2e5ddbcf-66c4-478a-8164-f5550b775dc0
+langcode: en
 status: true
 dependencies:
   module:
     - footnotes
 name: Footnote
 format: footnote
+weight: 0
 filters:
   filter_footnotes:
     id: filter_footnotes
