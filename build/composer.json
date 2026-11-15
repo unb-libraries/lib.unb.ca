@@ -24,7 +24,7 @@
     },
     "discard-changes": true,
     "platform": {
-      "php": "8.4.27"
+      "php": "8.5.12"
     },
     "policy": {
       "advisories": {
