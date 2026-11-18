@@ -38,7 +38,7 @@ class EresourcesDiscoverySearchBlock extends BlockBase {
     $formBuilder = \Drupal::formBuilder();
     $renderer = \Drupal::service('renderer');
     $request = \Drupal::request();
-    $formId = $request->query->get('form_id') ?? $request->request->get('form_id');
+    $formId = $request->query->get('form_id') ?? $request->request->get('form_id') ?? '';
     $permalink = $request->query->get('id') ?? $request->request->get('id');
 
     $trials = FALSE;
