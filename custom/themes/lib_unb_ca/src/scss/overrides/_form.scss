@@ -14,6 +14,13 @@ form {
       }
     }
   }
+
+  input[type="search"],
+  input[type="text"],
+  textarea {
+    caret-color: rgb(0 123 255 / 60%);
+    caret-shape: block !important;
+  }
 }
 
 .user-login-form {
