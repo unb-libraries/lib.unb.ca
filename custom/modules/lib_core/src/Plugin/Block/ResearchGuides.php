@@ -63,8 +63,6 @@ class ResearchGuides extends BlockBase implements ContainerFactoryPluginInterfac
       '#children' => $this->getResearchGuidesContainer(),
       '#attached' => [
         'library' => [
-          'lib_core/lib-chosen',
-          'lib_core/chosen-bootstrap',
           'lib_core/research-guides',
         ],
       ],

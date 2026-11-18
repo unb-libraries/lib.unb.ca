@@ -90,7 +90,6 @@ class DiscoverySearch extends BlockBase {
     return [
       '#attached' => [
         'library' => [
-          'lib_core/lib-selectize',
           'lib_core/accessible-accordion',
           'lib_core/discoverysearch',
         ],
@@ -189,8 +188,9 @@ class DiscoverySearch extends BlockBase {
       '#value' => $default_value,
       '#attributes' => [
         'class' => [
-          'custom-chosen-select',
+          'custom-select',
           'form-control',
+          'selectize',
         ],
         'id' => 'semester',
         'name' => 'semester',

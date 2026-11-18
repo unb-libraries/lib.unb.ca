@@ -20,3 +20,16 @@ admin-linked-images:
   css:
     theme:
       dist/css/admin-linked-images.css: { minified: true }
+
+unblib-selectize:
+  version: 0.15.2
+  css:
+    base:
+      css/selectize.bootstrap5.min.css: { minified: true }
+    theme:
+      dist/css/selectize-bootstrap-overrides.css: { minified: true }
+  js:
+    dist/js/selectize.min.js: { minified: true }
+    dist/js/unblib-selectize.js: { }
+  dependencies:
+    - core/jquery

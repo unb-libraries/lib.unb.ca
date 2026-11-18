@@ -114,7 +114,6 @@ class EresourcesListForm extends FormBase {
       '#markup' => $this->recordInfo($form, $form_state),
     ];
 
-    $form['#attached']['library'][] = 'lib_core/lib-selectize';
     $form['#attached']['library'][] = 'guides/guides-selectize';
     $form['#attached']['library'][] = 'guides/guides-admin';
     return $form;
