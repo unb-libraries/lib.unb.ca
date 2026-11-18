@@ -6,7 +6,6 @@ dependencies:
     - filter.format.library_page_html
   module:
     - ckeditor5
-    - editor_file
 format: library_page_html
 editor: ckeditor5
 settings:
@@ -34,6 +33,7 @@ settings:
       - '|'
       - drupalMedia
       - specialCharacters
+      - icon
       - '|'
       - sourceEditing
       - '|'
@@ -104,6 +104,10 @@ settings:
         - heading4
         - heading5
         - heading6
+    ckeditor5_icons_icon:
+      custom_metadata: false
+      async_metadata: true
+      recommended_enabled: false
     ckeditor5_list:
       properties:
         reversed: false

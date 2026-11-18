@@ -325,6 +325,7 @@
     "drupal/changed_fields": "^3",
     "drupal/chosen": "^5",
     "drupal/ckeditor_codemirror": "^3",
+    "drupal/ckeditor5_icons": "^1",
     "drupal/colorbox": "^2",
     "drupal/core": "^11",
     "drupal/core-composer-scaffold": "^11",
