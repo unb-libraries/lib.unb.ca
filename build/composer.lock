@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7e0c8e0bc1565465be554bba8140670d",
+    "content-hash": "b0f038a1199ad6e25a3e37149df0448a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4249,6 +4249,59 @@
                 "source": "https://git.drupalcode.org/project/inline_entity_form"
             },
             "published-time": "2026-11-18T10:51:20+00:00"
+        },
+        {
+            "name": "drupal/jquery_deprecated_functions",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/jquery_deprecated_functions.git",
+                "reference": "1.0.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/jquery_deprecated_functions-1.0.5.zip",
+                "reference": "1.0.5",
+                "shasum": "0de11656e600f05d45747a3cb8dc08430cd31825"
+            },
+            "require": {
+                "drupal/core": "^10.3 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.5",
+                    "datestamp": "1790616204",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Rodriguez",
+                    "homepage": "https://www.drupal.org/u/danrod",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "This is a small module that implements some deprecated jQuery functions like trim, camelCase, etc",
+            "homepage": "https://www.drupal.org/project/jquery_deprecated_functions",
+            "keywords": [
+                "Drupal",
+                "Drupal 11",
+                "jQuery",
+                "jQuery 4"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/jquery_deprecated_functions",
+                "issues": "https://www.drupal.org/project/issues/jquery_deprecated_functions"
+            },
+            "published-time": "2026-09-28T17:23:04+00:00"
         },
         {
             "name": "drupal/jquery_scrollup",
