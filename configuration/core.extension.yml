@@ -14,6 +14,7 @@ module:
   calendar_hours_client: 0
   changed_fields: 0
   chosen: 0
+  chosen_field: 0
   chosen_lib: 0
   ckeditor5: 0
   ckeditor_codemirror: 0
@@ -69,6 +70,7 @@ module:
   inline_form_errors: 0
   ior: 0
   ior_awards: 0
+  jquery_deprecated_functions: 0
   jquery_scrollup: 0
   jquery_ui: 0
   jquery_ui_datepicker: 0
@@ -150,13 +152,11 @@ module:
   views_slideshow: 0
   views_slideshow_cycle: 0
   webform: 0
-  webform_jqueryui_datepicker: 0
   webform_templates: 0
   webform_ui: 0
   workflows: 0
   menu_link_content: 1
   pathauto: 1
-  webform_bootstrap: 1
   node_path_taxonomy: 2
   node_path_taxonomy_group_perms: 3
   views: 10

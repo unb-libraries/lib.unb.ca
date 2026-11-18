@@ -349,6 +349,7 @@
     "drupal/health_check": "^3",
     "drupal/honeypot": "^2",
     "drupal/inline_entity_form": "^3",
+    "drupal/jquery_deprecated_functions": "^1",
     "drupal/jquery_scrollup": "2.0.0",
     "drupal/jquery_ui": "^1",
     "drupal/jquery_ui_datepicker": "^2",
