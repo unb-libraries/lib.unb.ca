@@ -149,7 +149,6 @@ class EresourcesDiscoverySearchBlock extends BlockBase {
       '#children' => $build,
       '#attached' => [
         'library' => [
-          'lib_core/lib-selectize',
           'lib_core/accessible-accordion',
           'eresources/eresources',
           'oclc_service_alert_status_client/oclc_status',

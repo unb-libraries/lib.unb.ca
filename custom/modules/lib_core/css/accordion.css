@@ -25,6 +25,7 @@
   /* line-height: calc(1.5em + 0.75rem + 2px); */
 }
 .Accordion .form-control,
+.Accordion .form-control .selectize-input,
 .Accordion button.btn-primary {
   border: 2px #000 solid;
   border-radius: .5rem;

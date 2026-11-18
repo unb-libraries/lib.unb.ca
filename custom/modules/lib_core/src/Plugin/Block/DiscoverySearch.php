@@ -219,7 +219,7 @@ class DiscoverySearch extends BlockBase {
                 Please choose a search index:
               </label>
               <fieldset class="form-type-select form-group">
-                <select class="custom-chosen-select custom-select form-control" id="searchIndex_WCD" name="searchIndex">
+                <select class="custom-select form-control" id="searchIndex_WCD" name="searchIndex">
                   <option value="kw">keyword</option>
                   <option value="ti">title</option>
                   <option value="au">author</option>
@@ -302,6 +302,7 @@ class DiscoverySearch extends BlockBase {
         'class' => [
           'selectize',
           'form-control',
+          'custom-select',
           'required',
         ],
         'aria-required' => 'true',

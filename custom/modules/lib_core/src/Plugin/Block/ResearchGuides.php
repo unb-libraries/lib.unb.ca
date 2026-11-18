@@ -96,9 +96,9 @@ class ResearchGuides extends BlockBase implements ContainerFactoryPluginInterfac
             </label>
             <div class="input-group flex-fill mb-2 mr-0 mr-md-2">
               <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1"><i class="fas fa-database"></i></span>
+                <span class="input-group-text" id="basic-addon1"><span class="fa-solid fa-book-open" aria-hidden="true"></span></span>
              </div>
-              <select id="database-subjects" class="custom-chosen-select custom-select form-control required" name="category" aria-required="true" required="required">' .
+              <select id="database-subjects" class="selectize form-control custom-select required" name="category" aria-required="true" required="required">' .
                 $options .
               '</select>
             </div>
