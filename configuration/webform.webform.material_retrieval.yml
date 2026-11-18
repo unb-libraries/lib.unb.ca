@@ -40,7 +40,7 @@ elements: |-
         '#type': textfield
         '#title': 'UNB/STU Email'
         '#prepopulate': true
-        '#input_mask': '''alias'': ''email'''
+        '#input_mask': "'alias': 'email'"
         '#required': true
         '#pattern': '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$'
     bibliographic_information:
@@ -51,7 +51,6 @@ elements: |-
         '#markup': |
           <p class="text-red">
           Complete this section as accurately as possible. Your request may NOT be processed if there is insufficient information.</p>
-          
       title:
         '#type': textfield
         '#title': Title
@@ -97,13 +96,13 @@ elements: |-
           SCI-THS: SCI-THS
           STORAGE: STORAGE
         '#empty_option': '- Please choose an option -'
-        '#chosen': true
         '#other__option_label': 'Other ...'
         '#other__placeholder': 'Enter other shelving location'
         '#required': true
         '#wrapper_type': form_element
         '#attributes':
           class:
+            - custom-select
             - form-control
       comments_notes:
         '#type': textarea

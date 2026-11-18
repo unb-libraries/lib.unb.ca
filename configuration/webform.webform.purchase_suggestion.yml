@@ -75,7 +75,7 @@ elements: |-
         '#description': 'Only a <code>UNB</code> <code>address</code> is accepted.'
         '#title_display': inline
         '#placeholder': user@unb.ca
-        '#input_mask': '''alias'': ''email'''
+        '#input_mask': "'alias': 'email'"
         '#required': true
         '#pattern': '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@unb.ca$'
         '#pattern_error': 'Please use an email address with unb.ca domain'
@@ -136,10 +136,18 @@ elements: |-
           Sociology|bcull@unb.ca: Sociology
           'Womens Studies|bcull@unb.ca': 'Womens Studies'
         '#empty_option': '- Please choose an option -'
-        '#chosen': true
-        '#other__placeholder': ''
+        '#other__placeholder': 'Enter a custom subject area…'
         '#required': true
         '#wrapper_type': form_element
+        '#wrapper_attributes':
+          class:
+            - form-select
+            - selectize-control
+            - multi
+        '#attributes':
+          class:
+            - form-control
+            - custom-select
       title:
         '#type': textfield
         '#title': Title

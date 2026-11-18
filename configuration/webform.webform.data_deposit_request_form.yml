@@ -33,7 +33,7 @@ elements: |-
       data_use_agreement:
         '#type': radios
         '#title': 'Licence/Data Use Agreement'
-        '#description': 'See <a class="external" href="https://support.dataverse.harvard.edu/sample-data-usage-agreement" target="_blank"><span class="sr-only">(opens in new tab)</span>Sample Data Usage Agreement</a>'
+        '#description': '<p class="mt-2">See <a class="external" href="https://support.dataverse.harvard.edu/sample-data-usage-agreement" target="_blank"><span class="sr-only">(opens in new tab)</span>Sample Data Usage Agreement</a>.</p>'
         '#options':
           pub: 'Public Domain'
           cus: 'Custom Dataset Terms'
@@ -129,7 +129,7 @@ elements: |-
         unb_email:
           '#type': textfield
           '#title': 'UNB Email'
-          '#input_mask': '''alias'': ''email'''
+          '#input_mask': "'alias': 'email'"
           '#required': true
           '#pattern': '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$'
       authors:
@@ -179,6 +179,7 @@ elements: |-
         '#type': webform_select_other
         '#title': Subjects
         '#multiple': true
+        '#description': '<p>Select 1 or more subjects.</p>'
         '#options':
           agricultural_sciences: 'Agricultural Sciences'
           arts_humanities: 'Arts and Humanities'
@@ -193,8 +194,18 @@ elements: |-
           medicine_health_life_sciences: 'Medicine, Health and Life Sciences'
           physics: Physics
           social_sciences: 'Social Sciences'
-        '#chosen': true
+        '#other__placeholder': 'Enter custom subject…'
         '#required': true
+        '#wrapper_type': form_element
+        '#wrapper_attributes':
+          class:
+            - form-select
+            - selectize-control
+            - multi
+            - plugin-clear_button
+        '#attributes':
+          class:
+            - form-select
       keywords:
         '#type': textfield
         '#title': Keywords
