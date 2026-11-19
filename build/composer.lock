@@ -2047,6 +2047,10 @@
             ],
             "description": "Override page Cache-Control header based on bubbled cacheability metadata.",
             "homepage": "https://www.drupal.org/project/cache_control_override",
+            "keywords": [
+                "Actively maintained",
+                "Performance"
+            ],
             "support": {
                 "source": "https://git.drupalcode.org/project/cache_control_override"
             },
@@ -3043,20 +3047,20 @@
         },
         {
             "name": "drupal/embed",
-            "version": "1.11.0",
+            "version": "1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/embed.git",
-                "reference": "8.x-1.11"
+                "reference": "8.x-1.12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/embed-8.x-1.11.zip",
-                "reference": "8.x-1.11",
-                "shasum": "e0a6dc8d19fd52301574f9fca2e5880707ef3a70"
+                "url": "https://ftp.drupal.org/files/projects/embed-8.x-1.12.zip",
+                "reference": "8.x-1.12",
+                "shasum": "f4853bba99a399f1c914eb5bc9075c675caf5e33"
             },
             "require": {
-                "drupal/core": "^10.2 || ^11"
+                "drupal/core": "^11.3 || ^12"
             },
             "require-dev": {
                 "drupal/ckeditor": "^1.0"
@@ -3064,8 +3068,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.11",
-                    "datestamp": "1795024790",
+                    "version": "8.x-1.12",
+                    "datestamp": "1795029438",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3111,7 +3115,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/embed"
             },
-            "published-time": "2026-11-18T17:51:29+00:00"
+            "published-time": "2026-11-18T19:16:58+00:00"
         },
         {
             "name": "drupal/entity",
@@ -3442,6 +3446,10 @@
             ],
             "description": "Allows any entity to be embedded within a text area using a WYSIWYG editor.",
             "homepage": "https://www.drupal.org/project/entity_embed",
+            "keywords": [
+                "Actively maintained",
+                "Content editing experience"
+            ],
             "support": {
                 "source": "https://git.drupalcode.org/project/entity_embed"
             },
@@ -10903,11 +10911,11 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "2.3.6",
+            "version": "2.3.7",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/00cedebb76cc82c1592414fa4f616cefdccda16f",
-                "reference": "00cedebb76cc82c1592414fa4f616cefdccda16f",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/90c91c2498849ab8cc4e873864bbf1cb2bf6ea12",
+                "reference": "90c91c2498849ab8cc4e873864bbf1cb2bf6ea12",
                 "shasum": ""
             },
             "require": {
@@ -10963,8 +10971,8 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-11-15T19:58:26+00:00",
-            "published-time": "2026-11-15T19:58:39+00:00"
+            "time": "2026-11-19T10:31:11+00:00",
+            "published-time": "2026-11-19T10:31:27+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
