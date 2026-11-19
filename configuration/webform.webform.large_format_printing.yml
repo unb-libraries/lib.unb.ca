@@ -168,12 +168,17 @@ elements: |-
       when_do_you_need_this_printed_by:
         '#type': datetime
         '#title': 'When do you need this image printed by?'
-        '#description': '<small class="text-black">Enter any time request in the <a href="#edit-additional-information"><em>additional notes</em></a> field below. </small>'
+        '#description': '<p><a href="/about/hours/research-commons"><span class="fa-regular fa-clock mr-1 me-1" aria-hidden="true"></span>Research Commons Hours</a></p>'
         '#required': true
         '#date_date_min': '+72 hours'
-        '#date_date_format': ''
-        '#date_year_range': '+1:2050'
-        '#date_time_element': none
+        '#date_date_max': '1 month +72 hours'
+        '#date_year_range': '+0:+1'
+        '#date_time_element': timepicker
+        '#date_time_placeholder': '5:00 PM'
+        '#date_time_format': 'g:i A'
+        '#date_time_min': '09:00:00'
+        '#date_time_max': '20:00:00'
+        '#date_time_step': '1800'
       type_of_paper:
         '#type': radios
         '#title': 'What type of paper would you like your image printed on?'
@@ -194,7 +199,7 @@ elements: |-
         '#options':
           'yes': 'Yes'
           'no': 'No'
-          not_sure: 'I''m not sure'
+          not_sure: "I'm not sure"
         '#required': true
         '#states':
           invisible:
