@@ -23,9 +23,6 @@
       "wikimedia/composer-merge-plugin": false
     },
     "discard-changes": true,
-    "platform": {
-      "php": "8.5.12"
-    },
     "policy": {
       "advisories": {
         "block": false
