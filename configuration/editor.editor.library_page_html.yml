@@ -31,21 +31,17 @@ settings:
       - outdent
       - indent
       - '|'
+      - drupalInsertFile
       - drupalMedia
       - specialCharacters
       - icon
       - '|'
+      - fullscreen
       - sourceEditing
       - '|'
       - wcSearch
       - eresources
       - sciFree
-      - '|'
-      - code
-      - subscript
-      - superscript
-      - codeBlock
-      - drupalInsertFile
   plugins:
     ckeditor5_alignment:
       enabled_alignments:
@@ -53,50 +49,6 @@ settings:
         - justify
         - left
         - right
-    ckeditor5_codeBlock:
-      languages:
-        -
-          label: 'Plain text'
-          language: plaintext
-        -
-          label: C
-          language: c
-        -
-          label: 'C#'
-          language: cs
-        -
-          label: C++
-          language: cpp
-        -
-          label: CSS
-          language: css
-        -
-          label: Diff
-          language: diff
-        -
-          label: HTML
-          language: html
-        -
-          label: Java
-          language: java
-        -
-          label: JavaScript
-          language: javascript
-        -
-          label: PHP
-          language: php
-        -
-          label: Python
-          language: python
-        -
-          label: Ruby
-          language: ruby
-        -
-          label: TypeScript
-          language: typescript
-        -
-          label: XML
-          language: xml
     ckeditor5_heading:
       enabled_headings:
         - heading2
@@ -105,6 +57,11 @@ settings:
         - heading5
         - heading6
     ckeditor5_icons_icon:
+      fa_version: '6'
+      fa_styles:
+        - solid
+        - regular
+        - brands
       custom_metadata: false
       async_metadata: true
       recommended_enabled: false
