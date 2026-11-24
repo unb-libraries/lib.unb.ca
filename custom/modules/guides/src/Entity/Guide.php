@@ -343,7 +343,10 @@ class Guide extends RevisionableContentEntityBase implements ContentEntityInterf
         ];
       }
       catch (\Exception $e) {
-        \Drupal::logger('guides')->error("Unable to parse feed: $url $e");
+        \Drupal::logger('guides')->warning('Unable to parse feed: @url @message', [
+          '@url' => $url,
+          '@message' => $e->getMessage(),
+        ]);
       }
     }
 
