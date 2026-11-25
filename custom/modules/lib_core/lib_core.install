@@ -5,6 +5,7 @@
  * Contains install and update functions for lib_core.
  */
 
+use Drupal\Core\Serialization\Yaml;
 use Drupal\lib_core\TaxonomyHelper;
 use Drupal\node\Entity\Node;
 use Drupal\node_path_taxonomy\Entity\NodeTaxonomyPath;
@@ -157,7 +158,7 @@ function lib_core_update_10003() {
   if (!$elements || !str_contains($elements, 'webform_location_places')) {
     return t('No webform_location_places elements found.');
   }
-  $decoded = \Drupal\Core\Serialization\Yaml::decode($elements);
+  $decoded = Yaml::decode($elements);
   $removed = 0;
   $strip = function (array &$tree) use (&$strip, &$removed) {
     foreach ($tree as $key => &$value) {
@@ -172,7 +173,7 @@ function lib_core_update_10003() {
     }
   };
   $strip($decoded);
-  $config->set('elements', \Drupal\Core\Serialization\Yaml::encode($decoded))->save(TRUE);
+  $config->set('elements', Yaml::encode($decoded))->save(TRUE);
   return t('Removed @count webform_location_places element(s).', ['@count' => $removed]);
 }
 
