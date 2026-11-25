@@ -404,7 +404,7 @@
     "drupal/search_api_autocomplete": "^1",
     "drupal/search_api_exclude": "^2",
     "drupal/search_api_solr": "^4",
-    "drupal/seven": "^1",
+    "drupal/seven": "^2",
     "drupal/simple_sitemap": "^4",
     "drupal/symfony_mailer_lite": "^2",
     "drupal/token": "^1",
