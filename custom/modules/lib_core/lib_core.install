@@ -203,3 +203,28 @@ function lib_core_update_10004() {
   }
   return t('Fixed pager offsets in: @views', ['@views' => implode(', ', $fixed) ?: 'none']);
 }
+
+/**
+ * Remove jQuery Scrollup, replaced by Back to Top.
+ *
+ * The module's code is no longer in the codebase, so config import cannot
+ * uninstall it ("The module jquery_scrollup does not exist"). Uninstall it
+ * normally if the code is still present, otherwise drop the stale entries.
+ */
+function lib_core_update_10005() {
+  $module = 'jquery_scrollup';
+  $extension = \Drupal::configFactory()->getEditable('core.extension');
+  if ($extension->get("module.$module") === NULL) {
+    return t('jQuery Scrollup was not installed.');
+  }
+
+  if (\Drupal::service('extension.list.module')->exists($module)) {
+    \Drupal::service('module_installer')->uninstall([$module]);
+    return t('Uninstalled jQuery Scrollup.');
+  }
+
+  $extension->clear("module.$module")->save(TRUE);
+  \Drupal::configFactory()->getEditable("$module.settings")->delete();
+  \Drupal::keyValue('system.schema')->delete($module);
+  return t('Removed stale jQuery Scrollup entries (module code missing).');
+}
