@@ -299,10 +299,10 @@ processor_settings:
     title: false
     alt: false
     tags:
-      em: 2
-      h2: 4
-      h3: 3
-      strong: 2
+      em: 2.0
+      h2: 4.0
+      h3: 3.0
+      strong: 2.0
   language_with_fallback: {  }
   node_exclude: {  }
   rendered_item: {  }
