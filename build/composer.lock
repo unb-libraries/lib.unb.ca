@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c7ebf91b3422a6e882914dd3d1680e1f",
+    "content-hash": "3d4fe8a81bf0c45ade4d781769228ce3",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1863,6 +1863,67 @@
             "homepage": "https://www.drupal.org/project/antibot",
             "support": {
                 "source": "https://git.drupalcode.org/project/antibot"
+            }
+        },
+        {
+            "name": "drupal/back_to_top",
+            "version": "3.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/back_to_top.git",
+                "reference": "3.0.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/back_to_top-3.0.3.zip",
+                "reference": "3.0.3",
+                "shasum": "6c4485316f5d25ac56ce17c2a7b077fbf0701b81"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "3.0.3",
+                    "datestamp": "1742893225",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "acke",
+                    "homepage": "https://www.drupal.org/user/765764"
+                },
+                {
+                    "name": "dqd",
+                    "homepage": "https://www.drupal.org/user/1001934"
+                },
+                {
+                    "name": "nitesh sethia",
+                    "homepage": "https://www.drupal.org/user/2474982"
+                },
+                {
+                    "name": "sumitmadan",
+                    "homepage": "https://www.drupal.org/user/1538790"
+                },
+                {
+                    "name": "thomas alsén",
+                    "homepage": "https://www.drupal.org/user/1726528"
+                }
+            ],
+            "description": "Back To Top adds a button that hovers in the bottom of your screen and allow users to smoothly scroll up the page using jQuery.",
+            "homepage": "https://www.drupal.org/project/back_to_top",
+            "support": {
+                "source": "https://git.drupalcode.org/project/back_to_top",
+                "issues": "https://www.drupal.org/project/issues/back_to_top"
             }
         },
         {
@@ -4535,52 +4596,6 @@
             "homepage": "https://www.drupal.org/project/inline_entity_form",
             "support": {
                 "source": "https://git.drupalcode.org/project/inline_entity_form"
-            }
-        },
-        {
-            "name": "drupal/jquery_scrollup",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/jquery_scrollup.git",
-                "reference": "2.0.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/jquery_scrollup-2.0.0.zip",
-                "reference": "2.0.0",
-                "shasum": "33a5d649135dd59ed325e9a1eac7b0d557e975c3"
-            },
-            "require": {
-                "drupal/core": "^9.3 || ^10"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "2.0.0",
-                    "datestamp": "1672671622",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Dominique Clause (Dom.)",
-                    "homepage": "https://www.drupal.org/u/dom",
-                    "role": "Maintainer"
-                }
-            ],
-            "description": "Integrates jquery ScrollUp plugin with Drupal",
-            "homepage": "https://www.drupal.org/project/jquery_scrollup",
-            "support": {
-                "source": "https://git.drupalcode.org/project/jquery_scrollup",
-                "issues": "https://www.drupal.org/project/issues/jquery_scrollup?version=8.x"
             }
         },
         {
@@ -15206,16 +15221,16 @@
         },
         {
             "name": "unb-libraries/unb_lib_theme",
-            "version": "dev-10.x-4.x",
+            "version": "dev-9.x-4.x-refresh",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unb-libraries/unb_lib_theme.git",
-                "reference": "4d7d15b2ab3c956267198e74f2c8a61979bb5799"
+                "reference": "e154a6376947af203afb70437af78090a2b4eece"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unb-libraries/unb_lib_theme/zipball/4d7d15b2ab3c956267198e74f2c8a61979bb5799",
-                "reference": "4d7d15b2ab3c956267198e74f2c8a61979bb5799",
+                "url": "https://api.github.com/repos/unb-libraries/unb_lib_theme/zipball/e154a6376947af203afb70437af78090a2b4eece",
+                "reference": "e154a6376947af203afb70437af78090a2b4eece",
                 "shasum": ""
             },
             "require-dev": {
@@ -15236,9 +15251,9 @@
             "homepage": "https://github.com/unb-libraries/unb_lib_theme",
             "support": {
                 "issues": "https://github.com/unb-libraries/unb_lib_theme/issues",
-                "source": "https://github.com/unb-libraries/unb_lib_theme/tree/10.x-4.x"
+                "source": "https://github.com/unb-libraries/unb_lib_theme/tree/9.x-4.x-refresh"
             },
-            "time": "2026-11-05T18:41:38+00:00"
+            "time": "2026-10-27T17:36:20+00:00"
         },
         {
             "name": "w8tcha/ckeditor-codemirror-plugin",
@@ -20929,10 +20944,10 @@
     },
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": {},
-    "platform-dev": {},
+    "platform": [],
+    "platform-dev": [],
     "platform-overrides": {
         "php": "8.2.35"
     },
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.3.0"
 }
