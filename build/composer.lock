@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "12eab0faafd3f07765a51fa2d3f4fe63",
+    "content-hash": "4e4abcbd8532d8cde130501b605d451d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1862,7 +1862,8 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/back_to_top",
                 "issues": "https://www.drupal.org/project/issues/back_to_top"
-            }
+            },
+            "published-time": "2025-03-25T08:29:21+00:00"
         },
         {
             "name": "drupal/better_exposed_filters",
@@ -9470,34 +9471,34 @@
         },
         {
             "name": "league/csv",
-            "version": "9.29.1",
+            "version": "9.30.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/csv.git",
-                "reference": "fb9ea14460001b62fcb54d8ac247cc501f60e6e0"
+                "reference": "710d3c7db4a50691951b0465a10c552e08a56c07"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/csv/zipball/fb9ea14460001b62fcb54d8ac247cc501f60e6e0",
-                "reference": "fb9ea14460001b62fcb54d8ac247cc501f60e6e0",
+                "url": "https://api.github.com/repos/thephpleague/csv/zipball/710d3c7db4a50691951b0465a10c552e08a56c07",
+                "reference": "710d3c7db4a50691951b0465a10c552e08a56c07",
                 "shasum": ""
             },
             "require": {
                 "ext-filter": "*",
-                "php": "^8.2.0"
+                "php": "^8.3.0"
             },
             "require-dev": {
                 "ext-dom": "*",
                 "ext-xdebug": "*",
-                "friendsofphp/php-cs-fixer": "^3.92.3",
-                "phpbench/phpbench": "^1.4.3",
-                "phpstan/phpstan": "^2.2.8",
+                "friendsofphp/php-cs-fixer": "^3.95.30",
+                "phpbench/phpbench": "^1.7.0",
+                "phpstan/phpstan": "^2.3.6",
                 "phpstan/phpstan-deprecation-rules": "^2.0.5",
-                "phpstan/phpstan-phpunit": "^2.0.18",
-                "phpstan/phpstan-strict-rules": "^2.0.12",
-                "phpunit/phpunit": "^11.5.22 || ^12.5.4 || ^13.3.1",
-                "rector/rector": "^2.6.3",
-                "symfony/var-dumper": "^6.4.8 || ^7.4.0 || ^8.0"
+                "phpstan/phpstan-phpunit": "^2.1.2",
+                "phpstan/phpstan-strict-rules": "^2.1.1",
+                "phpunit/phpunit": "^12.5.4 || ^13.4.7",
+                "rector/rector": "^2.8.5",
+                "symfony/var-dumper": "^7.4.0 || ^8.1.10"
             },
             "suggest": {
                 "ext-dom": "Required to use the XMLConverter and the HTMLConverter classes",
@@ -9561,8 +9562,8 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-11-22T13:51:45+00:00",
-            "published-time": "2026-11-22T13:59:35+00:00"
+            "time": "2026-11-26T06:50:41+00:00",
+            "published-time": "2026-11-26T06:54:18+00:00"
         },
         {
             "name": "league/oauth2-client",
@@ -16165,7 +16166,7 @@
         },
         {
             "name": "unb-libraries/unb_lib_theme",
-            "version": "dev-9.x-4.x-refresh",
+            "version": "dev-10.x-4.x-refresh",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unb-libraries/unb_lib_theme.git",
@@ -16195,10 +16196,10 @@
             "homepage": "https://github.com/unb-libraries/unb_lib_theme",
             "support": {
                 "issues": "https://github.com/unb-libraries/unb_lib_theme/issues",
-                "source": "https://github.com/unb-libraries/unb_lib_theme/tree/9.x-4.x-refresh"
+                "source": "https://github.com/unb-libraries/unb_lib_theme/tree/10.x-4.x-refresh"
             },
             "time": "2026-11-26T16:43:10+00:00",
-            "published-time": "2026-11-26T16:43:31+00:00"
+            "published-time": "2026-11-26T17:16:05+00:00"
         },
         {
             "name": "webflo/drupal-finder",
