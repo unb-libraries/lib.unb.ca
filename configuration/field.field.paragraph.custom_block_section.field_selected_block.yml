@@ -22,12 +22,12 @@ settings:
   selection_settings:
     categories:
       'Content block': 'Content block'
+      'Content block fields': 'Content block fields'
       'UNB Libraries': 'UNB Libraries'
       Views: Views
       'Award fields': '0'
       Block: '0'
       'Collection fields': '0'
-      'Content block fields': '0'
       'Content fields': '0'
       'Content moderation state fields': '0'
       'Contest fields': '0'
