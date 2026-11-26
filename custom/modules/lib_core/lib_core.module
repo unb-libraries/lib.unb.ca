@@ -199,13 +199,6 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
       };
       break;
 
-    case 'webform_submission_purchase_suggestion_add_form':
-    case 'webform_submission_material_retrieval_add_form':
-    case 'webform_submission_research_commons_space_request_add_form':
-    case 'webform_submission_stu_monograph_request_add_form':
-      $form['#attached']['library'][] = 'lib_core/chosen-bootstrap';
-      break;
-
     case 'webform_submission_contact_add_form':
       // Move Recipient | Default value from hidden form input (Webform 8.x-5.7+).
       if (empty($form['elements']['recipient']['#default_value'])) {
@@ -281,8 +274,6 @@ function lib_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
       break;
 
     case 'webform_submission_recalls_add_form':
-      $form['#attached']['library'][] = 'lib_core/lib-chosen';
-      $form['#attached']['library'][] = 'lib_core/chosen-bootstrap';
       $form['elements']['step_1']['container_step1']['personal_information']['barcode']['#ajax'] = [
         'callback' => '_lib_core_recalls_barcode_ajax_handler',
         'disable-refocus' => TRUE,

@@ -6,22 +6,6 @@ accessible-accordion:
   js:
     js/accordion.js: {}
 
-chosen:
-  version: 1.8.7
-  css:
-    theme:
-      css/chosen.min.css: { minified: true }
-  js:
-    js/chosen.jquery.min.js: { minified: true }
-  dependencies:
-    - core/jquery
-
-chosen-bootstrap:
-  version: VERSION
-  css:
-    theme:
-      css/chosen-bootstrap.css: {}
-
 discoverysearch:
   version: VERSION
   css:
@@ -36,26 +20,6 @@ jquery-validate:
     js/jquery.validate.min.js: { minified: true }
   dependencies:
     - core/jquery
-
-lib-chosen:
-  version: VERSION
-  js:
-    js/lib-chosen.js: {}
-  dependencies:
-    - core/drupal
-    - lib_core/chosen
-
-lib-selectize:
-  version: VERSION
-  css:
-    theme:
-      css/lib-selectize.css: {}
-  js:
-    js/lib-selectize.js: {}
-  dependencies:
-    - core/drupal
-    - lib_core/jquery-validate
-    - lib_core/selectize
 
 library-lib-hours:
   version: VERSION
@@ -76,16 +40,6 @@ research-guides:
       css/research-guides.css: {}
   js:
     js/guides-subject-select.js: {}
-  dependencies:
-    - core/jquery
-
-selectize:
-  version: 0.13.6
-  css:
-    theme:
-      css/selectize.bootstrap4.min.css: { minified: true }
-  js:
-    js/selectize-standalone.min.js: { minified: true }
   dependencies:
     - core/jquery
 

@@ -5,7 +5,7 @@
  * Contains install and update functions for lib_core.
  */
 
-use Drupal\Core\Serialization\Yaml;
+use Drupal\Component\Serialization\Yaml;
 use Drupal\lib_core\TaxonomyHelper;
 use Drupal\node\Entity\Node;
 use Drupal\node_path_taxonomy\Entity\NodeTaxonomyPath;

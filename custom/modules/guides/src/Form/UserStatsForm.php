@@ -21,7 +21,7 @@ class UserStatsForm extends StatsFormBase {
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state, UserInterface $user = NULL) {
+  public function buildForm(array $form, FormStateInterface $form_state, ?UserInterface $user = NULL) {
     $form['#title'] = 'Statistics for ' . $user->field_first_name->getString() . ' ' . $user->field_last_name->getString();
 
     // Blocked users and users without the public_profile role have no

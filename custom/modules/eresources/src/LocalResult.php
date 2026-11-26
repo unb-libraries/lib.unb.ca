@@ -136,9 +136,9 @@ class LocalResult extends ResultBase implements ResultInterface {
       if ($k == 'url') {
         $class = ' class="text-break"';
       }
-      $debug .= "<li{$class}><b>{$k}:</b> " . htmlspecialchars($this->getFirstValue($k)) . '</li>';
+      $debug .= "<li{$class}><b>{$k}:</b> " . htmlspecialchars($this->getFirstValue($k) ?? '') . '</li>';
     }
-    $debug .= "<li><b>*kb_data_type:</b> " . htmlspecialchars($this->getFirstValue('kb_data_type')) . '</li>';
+    $debug .= "<li><b>*kb_data_type:</b> " . htmlspecialchars($this->getFirstValue('kb_data_type') ?? '') . '</li>';
 
     $debug .= '</ul>';
     $debug .= '<p>*Locally maintained data</p>';
@@ -151,7 +151,7 @@ class LocalResult extends ResultBase implements ResultInterface {
       'license_status', 'is_collection',
     ];
     foreach ($f as $k) {
-      $value = htmlspecialchars($this->getMetadataField($k, 'local'));
+      $value = htmlspecialchars($this->getMetadataField($k, 'local') ?? '');
       if (!empty($value)
         && in_array($k, ['subscription_start_date', 'subscription_end_date'])) {
         $value = date('Y-m-d H:i:s', (int) $value);
@@ -165,7 +165,7 @@ class LocalResult extends ResultBase implements ResultInterface {
 
     $f = ['description'];
     foreach ($f as $k) {
-      $debug .= "<li><b>{$k}:</b> " . htmlspecialchars($this->getMetadataField($k, 'oclc')) . '</li>';
+      $debug .= "<li><b>{$k}:</b> " . htmlspecialchars($this->getMetadataField($k, 'oclc') ?? '') . '</li>';
     }
 
     $debug .= '</ul>';

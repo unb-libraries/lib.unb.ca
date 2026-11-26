@@ -113,7 +113,7 @@ abstract class SynchronizerBase implements DataSynchronizerInterface {
    * @param \Drupal\Core\Logger\LoggerChannelInterface|null $logger
    *   (optional) A logger channel.
    */
-  public function __construct(DataImporterInterface $importer, DataProviderInterface $provider, ContentEntityStorageInterface $storage, LoggerChannelInterface $logger = NULL) {
+  public function __construct(DataImporterInterface $importer, DataProviderInterface $provider, ContentEntityStorageInterface $storage, ?LoggerChannelInterface $logger = NULL) {
     $this->importer = $importer;
     $this->dataProvider = $provider;
     $this->storage = $storage;

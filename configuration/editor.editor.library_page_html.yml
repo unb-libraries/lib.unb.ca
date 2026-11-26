@@ -6,14 +6,6 @@ dependencies:
     - filter.format.library_page_html
   module:
     - ckeditor5
-    - editor_file
-third_party_settings:
-  editor_file:
-    status: true
-    scheme: public
-    directory: media/documents
-    extensions: 'csv doc docx dotx pdf ppt pptx rtf txt xls xlsx zip'
-    max_size: ''
 format: library_page_html
 editor: ckeditor5
 settings:
@@ -39,21 +31,17 @@ settings:
       - outdent
       - indent
       - '|'
+      - drupalInsertFile
       - drupalMedia
       - specialCharacters
       - icon
       - '|'
+      - fullscreen
       - sourceEditing
       - '|'
       - wcSearch
       - eresources
       - sciFree
-      - '|'
-      - code
-      - subscript
-      - superscript
-      - codeBlock
-      - drupalInsertFile
   plugins:
     ckeditor5_alignment:
       enabled_alignments:
@@ -61,50 +49,6 @@ settings:
         - justify
         - left
         - right
-    ckeditor5_codeBlock:
-      languages:
-        -
-          label: 'Plain text'
-          language: plaintext
-        -
-          label: C
-          language: c
-        -
-          label: 'C#'
-          language: cs
-        -
-          label: C++
-          language: cpp
-        -
-          label: CSS
-          language: css
-        -
-          label: Diff
-          language: diff
-        -
-          label: HTML
-          language: html
-        -
-          label: Java
-          language: java
-        -
-          label: JavaScript
-          language: javascript
-        -
-          label: PHP
-          language: php
-        -
-          label: Python
-          language: python
-        -
-          label: Ruby
-          language: ruby
-        -
-          label: TypeScript
-          language: typescript
-        -
-          label: XML
-          language: xml
     ckeditor5_heading:
       enabled_headings:
         - heading2
@@ -113,6 +57,11 @@ settings:
         - heading5
         - heading6
     ckeditor5_icons_icon:
+      fa_version: '6'
+      fa_styles:
+        - solid
+        - regular
+        - brands
       custom_metadata: false
       async_metadata: true
       recommended_enabled: false
@@ -120,6 +69,7 @@ settings:
       properties:
         reversed: false
         startIndex: true
+        styles: true
       multiBlock: true
     ckeditor5_sourceEditing:
       allowed_tags:
@@ -146,14 +96,14 @@ settings:
         - '<h5 id class>'
         - '<h6 id class>'
         - '<li id>'
-        - '<ol id type class>'
+        - '<ol id class>'
         - '<p id class>'
         - '<span id aria-hidden data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date data-color lang>'
         - '<table id class>'
         - '<td data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date id class>'
         - '<th id scope class>'
         - '<tr data-ch-id data-ch-days data-ch-date data-ch-format-time data-ch-format-date id class>'
-        - '<ul id type role>'
+        - '<ul id role>'
         - '<drupal-media title class>'
         - '<drupal-entity data-entity-type data-embed-button class>'
         - '<caption class>'

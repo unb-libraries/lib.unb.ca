@@ -4,6 +4,7 @@ description: 'Administer UNB retention schedules.'
 core_version_requirement: ^10 || ^11
 package: 'UNB Libraries'
 dependencies:
+  - drupal:taxonomy
   - datetime_plus
   - custom_entity
   - field_permissions

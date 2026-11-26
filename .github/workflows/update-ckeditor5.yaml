@@ -1,0 +1,12 @@
+name: Update lib.unb.ca CKEditor 5 Modules
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 6 * * 1,4'
+
+jobs:
+  update:
+    uses: unb-libraries/github-workflows/.github/workflows/update-ckeditor5.yaml@1.x
+    secrets:
+      PAT_TOKEN: ${{ secrets.UNBLIBBOT_PAT_TOKEN }}

@@ -1,4 +1,4 @@
-FROM ghcr.io/unb-libraries/drupal:10.x-1.x-unblib
+FROM ghcr.io/unb-libraries/drupal:11.x-1.x-unblib
 
 ENV ADDITIONAL_OS_PACKAGES="postfix php${PHP_VERSION}-xmlreader php${PHP_VERSION}-zip php${PHP_VERSION}-pecl-redis php${PHP_VERSION}-bcmath openssh-client"
 ENV DRUPAL_PRIVATE_FILE_PATH="/app/private_filesystem"
@@ -27,7 +27,7 @@ COPY ./custom/modules ${DRUPAL_ROOT}/modules/custom
 ARG BUILD_DATE
 ARG VCS_REF
 ARG VERSION
-LABEL ca.unb.lib.generator="drupal10" \
+LABEL ca.unb.lib.generator="drupal11" \
   org.opencontainers.image.title="lib.unb.ca" \
   org.opencontainers.image.description="lib.unb.ca is the core web application at UNB Libraries." \
   org.opencontainers.image.vendor="University of New Brunswick Libraries" \

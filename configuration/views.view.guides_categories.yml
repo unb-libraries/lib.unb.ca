@@ -654,24 +654,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              library_news_author: '0'
-              library_page_author: '0'
-              library_staff: '0'
-              data_administrator: '0'
-              records_manager: '0'
-              ior_manager: '0'
-              ior_reviewer: '0'
-              eresources_record_manager: '0'
-              saml_student: '0'
-              saml_faculty_staff: '0'
-              saml_alumni: '0'
-              saml_guest: '0'
-              saml_unb_active: '0'
-              saml_stu_active: '0'
-              guide_editor: '0'
-              public_profile: '0'
-              duplicate_id_checker: '0'
             placeholder: ''
             autocomplete_filter: 1
             autocomplete_min_chars: '0'
@@ -720,23 +702,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              library_news_author: '0'
-              library_page_author: '0'
-              library_staff: '0'
-              data_administrator: '0'
-              records_manager: '0'
-              ior_manager: '0'
-              ior_reviewer: '0'
-              eresources_record_manager: '0'
-              saml_student: '0'
-              saml_faculty_staff: '0'
-              saml_alumni: '0'
-              saml_guest: '0'
-              saml_unb_active: '0'
-              saml_stu_active: '0'
-              guide_editor: '0'
-              public_profile: '0'
           is_grouped: false
           group_info:
             label: ''
@@ -776,24 +741,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              library_news_author: '0'
-              library_page_author: '0'
-              library_staff: '0'
-              data_administrator: '0'
-              records_manager: '0'
-              ior_manager: '0'
-              ior_reviewer: '0'
-              eresources_record_manager: '0'
-              saml_student: '0'
-              saml_faculty_staff: '0'
-              saml_alumni: '0'
-              saml_guest: '0'
-              saml_unb_active: '0'
-              saml_stu_active: '0'
-              guide_editor: '0'
-              public_profile: '0'
-              duplicate_id_checker: '0'
           is_grouped: false
           group_info:
             label: ''
@@ -881,6 +828,7 @@ display:
           empty_table: false
           caption: ''
           description: ''
+          class: ''
       row:
         type: fields
       query:

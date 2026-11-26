@@ -8,6 +8,7 @@ package: 'lib_unb_ca'
 
 libraries:
   - lib_unb_ca/global-styling
+  - lib_unb_ca/unblib-selectize
   - lib_core/ckeditor_stylesheets
 
 regions:

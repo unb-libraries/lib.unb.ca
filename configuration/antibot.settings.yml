@@ -2,4 +2,5 @@ _core:
   default_config_hash: f8-7hVX66ftHnUweoB4XDVx8q1hEr4PiqFvPvFB6yRc
 form_ids:
   - ''
+  - webform_submission_material_retrieval_add_form
 show_form_ids: false

@@ -6,14 +6,6 @@ dependencies:
     - filter.format.basic_html
   module:
     - ckeditor5
-    - editor_file
-third_party_settings:
-  editor_file:
-    status: true
-    scheme: public
-    directory: inline-files
-    extensions: txt
-    max_size: ''
 format: basic_html
 editor: ckeditor5
 settings:
@@ -50,6 +42,7 @@ settings:
       properties:
         reversed: false
         startIndex: true
+        styles: true
       multiBlock: true
     ckeditor5_sourceEditing:
       allowed_tags:
@@ -60,8 +53,6 @@ settings:
         - '<div class>'
         - '<a hreflang>'
         - '<blockquote cite>'
-        - '<ul type>'
-        - '<ol type>'
         - '<h1 id class>'
         - '<h2 id class>'
         - '<h3 id class>'

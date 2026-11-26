@@ -63,8 +63,6 @@ class ResearchGuides extends BlockBase implements ContainerFactoryPluginInterfac
       '#children' => $this->getResearchGuidesContainer(),
       '#attached' => [
         'library' => [
-          'lib_core/lib-chosen',
-          'lib_core/chosen-bootstrap',
           'lib_core/research-guides',
         ],
       ],
@@ -98,20 +96,20 @@ class ResearchGuides extends BlockBase implements ContainerFactoryPluginInterfac
             </label>
             <div class="input-group flex-fill mb-2 mr-0 mr-md-2">
               <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1"><span class="fa-solid fa-book-open"></span></span>
+                <span class="input-group-text" id="basic-addon1"><span class="fa-solid fa-book-open" aria-hidden="true"></span></span>
              </div>
-              <select id="database-subjects" class="custom-chosen-select custom-select form-control required" name="category" aria-required="true" required="required">' .
+              <select id="database-subjects" class="selectize form-control custom-select required" name="category" aria-required="true" required="required">' .
                 $options .
               '</select>
             </div>
             <div class="mb-2">
-              <button class="btn btn-unb-red form-control px-3" type="submit">GO</button>
+              <button class="btn btn-dark form-control px-3" type="submit">GO</button>
             </div>
           </div>
         </form>
         <div class="mt-4 text-left">
           <a href="/guides/view-all">
-            All Research Guides &raquo;
+            All Research Guides
           </a>
         </div>
       </div>

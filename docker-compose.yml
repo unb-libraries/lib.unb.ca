@@ -15,7 +15,7 @@ services:
     volumes:
       - mysql-data:/var/lib/mysql
   drupal-solr-lib-unb-ca:
-    image: ghcr.io/unb-libraries/solr-drupal:8.x-4.x
+    image: ghcr.io/unb-libraries/solr-drupal:9.x-11.x
     restart: unless-stopped
     env_file:
       - ./env/solr.env
@@ -24,10 +24,10 @@ services:
     networks:
       - lib.unb.ca
     entrypoint:
-      - docker-entrypoint-multiple.sh
+      - /scripts/docker-entrypoint-multiple.sh
       - pages.lib.unb.ca:/solr-conf
     volumes:
-      - solr-data:/opt/solr/server/solr/mycores
+      - solr-data:/var/solr/data
   drupal-redis-lib-unb-ca:
     image: ghcr.io/unb-libraries/redis:8.2-alpine
     restart: unless-stopped
@@ -66,6 +66,7 @@ services:
       - "3101:80"
     env_file:
       - ./env/drupal.env
+      - ./env/mysql.env
     volumes:
       - drupal-data:/app/html/sites/default
       - ./configuration:/app/configuration

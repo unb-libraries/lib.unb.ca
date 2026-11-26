@@ -37,8 +37,9 @@ class EresourcesDiscoverySearchBlock extends BlockBase {
     $formList = self::$forms;
     $formBuilder = \Drupal::formBuilder();
     $renderer = \Drupal::service('renderer');
-    $formId = \Drupal::request()->get('form_id');
-    $permalink = \Drupal::request()->get('id');
+    $request = \Drupal::request();
+    $formId = $request->query->get('form_id') ?? $request->request->get('form_id') ?? '';
+    $permalink = $request->query->get('id') ?? $request->request->get('id');
 
     $trials = FALSE;
     $trialsEntries = TrialsForm::getTrials();
@@ -148,7 +149,6 @@ class EresourcesDiscoverySearchBlock extends BlockBase {
       '#children' => $build,
       '#attached' => [
         'library' => [
-          'lib_core/lib-selectize',
           'lib_core/accessible-accordion',
           'eresources/eresources',
           'oclc_service_alert_status_client/oclc_status',

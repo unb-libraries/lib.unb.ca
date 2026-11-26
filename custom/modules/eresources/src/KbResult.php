@@ -138,7 +138,7 @@ class KbResult extends ResultBase implements ResultInterface {
     foreach (get_object_vars($this->item) as $k => $value) {
       if ($k == 'links') {
         foreach ($value as $link) {
-          $debug .= "<li class=\"text-break\"><b>links ({$link->rel}):</b> " . htmlspecialchars($link->href) . '</li>';
+          $debug .= "<li class=\"text-break\"><b>links ({$link->rel}):</b> " . htmlspecialchars($link->href ?? '') . '</li>';
         }
         continue;
       }

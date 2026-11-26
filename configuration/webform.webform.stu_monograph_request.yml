@@ -85,14 +85,11 @@ elements: |-
       format:
         '#type': select
         '#title': Format
-        '#description': |
-          <div>Note: the&nbsp;<code>Multiple simultaneous user license</code>&nbsp;ebook option is required for course readings, etc.<br />
-          See <a href="https://lib.unb.ca/faculty/e-books-information-faculty">https://lib.unb.ca/faculty/e-books-information-faculty</a> for more information.</div>
+        '#description': '<div>Note: the&nbsp;<code>Multiple simultaneous user license</code>&nbsp;ebook option is required for course readings, etc.<br>See <a href="https://lib.unb.ca/faculty/e-books-information-faculty">https://lib.unb.ca/faculty/e-books-information-faculty</a> for more information.</div>'
         '#options':
           print: Print
           ebook_single: 'Ebook: single user license'
           ebook_multiple: 'Ebook: multiple simultaneous user license'
-        '#chosen': true
         '#other__option_label': 'Ebook: multiple simultaneous user license'
         '#other__title': 'No. of students in class (if being purchased for a class reading)'
         '#other__placeholder': ''
@@ -100,6 +97,7 @@ elements: |-
         '#attributes':
           class:
             - form-control
+            - custom-select
       no_students_class:
         '#type': textfield
         '#title': 'No. of students in class (if being purchased for a class reading)'

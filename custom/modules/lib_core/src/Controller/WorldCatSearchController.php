@@ -17,9 +17,7 @@ class WorldCatSearchController extends ControllerBase {
    */
   public function worldCatSearchHelper(Request $request) {
     if (empty($request->request->get('queryString'))) {
-      $response = new RedirectResponse('/');
-      $response->send();
-      return;
+      return new RedirectResponse('/');
     }
 
     $keys = ['queryString', 'scope', 'format', 'databaseList'];
