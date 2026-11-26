@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "976ae78f8741a63c6991e54116612e20",
+    "content-hash": "12eab0faafd3f07765a51fa2d3f4fe63",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -16169,12 +16169,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unb-libraries/unb_lib_theme.git",
-                "reference": "e154a6376947af203afb70437af78090a2b4eece"
+                "reference": "42c7843356547831210ceccb18eeba5257817b08"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unb-libraries/unb_lib_theme/zipball/e154a6376947af203afb70437af78090a2b4eece",
-                "reference": "e154a6376947af203afb70437af78090a2b4eece",
+                "url": "https://api.github.com/repos/unb-libraries/unb_lib_theme/zipball/42c7843356547831210ceccb18eeba5257817b08",
+                "reference": "42c7843356547831210ceccb18eeba5257817b08",
                 "shasum": ""
             },
             "require-dev": {
@@ -16197,7 +16197,8 @@
                 "issues": "https://github.com/unb-libraries/unb_lib_theme/issues",
                 "source": "https://github.com/unb-libraries/unb_lib_theme/tree/9.x-4.x-refresh"
             },
-            "time": "2026-10-27T17:36:20+00:00"
+            "time": "2026-11-26T16:43:10+00:00",
+            "published-time": "2026-11-26T16:43:31+00:00"
         },
         {
             "name": "webflo/drupal-finder",

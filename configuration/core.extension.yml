@@ -52,6 +52,7 @@ module:
   field_formatter_class: 0
   field_group: 0
   field_permissions: 0
+  field_ui: 0
   file: 0
   file_management: 0
   filter: 0
