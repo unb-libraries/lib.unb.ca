@@ -1,0 +1,5 @@
+# Schema for the configuration files of the UNB Libraries Admin theme.
+
+lib_unb_ca_admin.settings:
+  type: theme_settings
+  label: 'UNB Libraries Admin settings'

@@ -1,0 +1,23 @@
+name: 'UNB Libraries Admin'
+type: theme
+description: 'Administration theme for lib.unb.ca, a sub-theme of Seven 2.x.'
+package: 'lib_unb_ca'
+core_version_requirement: ^11.3
+base theme: seven
+
+libraries:
+  - lib_unb_ca_admin/global-styling
+
+# Sub-themes do not inherit regions, so these repeat Seven's.
+regions:
+  header: Header
+  pre_content: Pre-content
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  help: Help
+  content: Content
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  sidebar_first: 'First sidebar'
+regions_hidden:
+  - sidebar_first
