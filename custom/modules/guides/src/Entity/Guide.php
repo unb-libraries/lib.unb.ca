@@ -16,7 +16,7 @@ use Drupal\custom_entity\Entity\EntityChangedTrait;
 use Drupal\custom_entity\Entity\EntityCreatedTrait;
 use Drupal\custom_entity\Entity\UserCreatedInterface;
 use Drupal\custom_entity\Entity\UserEditedInterface;
-use PicoFeed\Reader\Reader;
+use Laminas\Feed\Reader\Reader;
 
 /**
  * Defines a guide entity.
@@ -241,7 +241,7 @@ class Guide extends RevisionableContentEntityBase implements ContentEntityInterf
   public function delete() {
     if (!$this->isNew()) {
       $linkStorage = $this->entityTypeManager()->getStorage('eresources_guide_link');
-      $query = $linkStorage->getQuery();
+      $query = $linkStorage->getQuery()->accessCheck(TRUE);
       $ids = $query->condition('guide', $this->id())->execute();
       if ($ids) {
         $links = $linkStorage->loadMultiple($ids);
@@ -270,7 +270,7 @@ class Guide extends RevisionableContentEntityBase implements ContentEntityInterf
     $linkStorage = $this->entityTypeManager()->getStorage('eresources_guide_link');
 
     // Remove existing entries.
-    $query = $linkStorage->getQuery();
+    $query = $linkStorage->getQuery()->accessCheck(TRUE);
     $ids = $query->condition('guide', $this->id())->execute();
     if ($ids) {
       $links = $linkStorage->loadMultiple($ids);
@@ -322,24 +322,16 @@ class Guide extends RevisionableContentEntityBase implements ContentEntityInterf
       }
 
       try {
-        $reader = new Reader();
-        $resource = $reader->download($url);
-
-        $parser = $reader->getParser(
-          $resource->getUrl(),
-          $resource->getContent(),
-          $resource->getEncoding()
-        );
-
-        $parsedFeed = $parser->execute();
+        $response = \Drupal::httpClient()->get($url, ['timeout' => 10]);
+        $parsedFeed = Reader::importString((string) $response->getBody());
 
         $title = $feed->field_feed_title->getString() ?: $parsedFeed->getTitle();
         $max = $feed->field_feed_items->getString();
 
         $count = 1;
         $items = [];
-        foreach ($parsedFeed->items as $item) {
-          $items[] = ['title' => $item->getTitle(), 'url' => $item->getUrl()];
+        foreach ($parsedFeed as $item) {
+          $items[] = ['title' => $item->getTitle(), 'url' => $item->getLink()];
           if ($count == $max) {
             break;
           }

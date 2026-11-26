@@ -6,5 +6,6 @@ dependencies:
     - media
 id: media.media_image
 label: 'Media image'
+description: ''
 targetEntityType: media
 cache: true

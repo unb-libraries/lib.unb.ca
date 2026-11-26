@@ -5,7 +5,7 @@ dependencies:
   config:
     - filter.format.no_media_html_ior_
   module:
-    - ckeditor
+    - ckeditor5
     - editor_file
 third_party_settings:
   editor_file:
@@ -15,66 +15,66 @@ third_party_settings:
     extensions: txt
     max_size: ''
 format: no_media_html_ior_
-editor: ckeditor
+editor: ckeditor5
 settings:
   toolbar:
-    rows:
-      -
-        -
-          name: Formatting
-          items:
-            - Styles
-            - Bold
-            - Underline
-            - Strike
-            - Italic
-            - JustifyLeft
-            - JustifyRight
-            - JustifyCenter
-            - JustifyBlock
-            - Outdent
-            - Indent
-            - BulletedList
-            - NumberedList
-        -
-          name: Editing
-          items:
-            - Cut
-            - Copy
-            - Paste
-        -
-          name: Links
-          items:
-            - DrupalLink
-            - DrupalUnlink
-        -
-          name: Tools
-          items:
-            - Source
+    items:
+      - bold
+      - underline
+      - strikethrough
+      - italic
+      - outdent
+      - indent
+      - bulletedList
+      - numberedList
+      - '|'
+      - link
+      - '|'
+      - sourceEditing
+      - '|'
+      - blockQuote
+      - code
+      - heading
   plugins:
-    drupallink:
-      linkit_enabled: false
-      linkit_profile: ''
-    stylescombo:
-      styles: ''
-    wordcount:
-      enable: true
-      show_remaining: true
-      show_paragraphs: false
-      show_word_count: true
-      show_char_count: true
-      count_bytes: false
-      count_spaces: false
-      count_html: 0
-      count_line_breaks: false
-      max_words: 200
-      max_chars: 1200
-      hard_limit: 1
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_list:
+      properties:
+        reversed: false
+        startIndex: true
+      multiBlock: true
+    ckeditor5_sourceEditing:
+      allowed_tags:
+        - '<cite>'
+        - '<dl>'
+        - '<dt>'
+        - '<dd>'
+        - '<blockquote cite>'
+        - '<h2 id>'
+        - '<h3 id>'
+        - '<h4 id>'
+        - '<h5 id>'
+        - '<h6 id>'
+        - '<a hreflang>'
+        - '<ul type>'
+        - '<ol type>'
+    ckeditor_codemirror_source_editing:
+      enable: false
+      mode: htmlmixed
+      options:
+        autoCloseBrackets: true
+        autoCloseTags: true
+        folding: true
+        lineNumbers: true
+        lineWrapping: true
+        matchBrackets: true
+        matchTags: true
+        searchBottom: true
+        styleActiveLine: true
 image_upload:
   status: false
-  scheme: public
-  directory: inline-images
-  max_size: ''
-  max_dimensions:
-    width: null
-    height: null

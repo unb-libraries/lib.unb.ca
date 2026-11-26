@@ -4,10 +4,14 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - filter.format.footnote
     - filter.format.library_page_html
     - filter.format.no_media_html_ior_
+    - filter.format.webform_default
+    - search_api_autocomplete.search.search_our_webpages
   module:
     - field_permissions
+    - file
     - filter
     - google_analytics
     - guides
@@ -31,6 +35,7 @@ permissions:
   - 'access content'
   - 'bypass honeypot protection'
   - 'create ior_submission entities'
+  - 'delete own files'
   - 'download protected file'
   - 'list classification entities'
   - 'list contest entities'
@@ -41,8 +46,10 @@ permissions:
   - 'opt-in or out of google analytics tracking'
   - 'use search_api_autocomplete for search_our_webpages'
   - 'use text format basic_html'
+  - 'use text format footnote'
   - 'use text format library_page_html'
   - 'use text format no_media_html_ior_'
+  - 'use text format webform_default'
   - 'view any profile'
   - 'view contest entities'
   - 'view field_url_fragment'

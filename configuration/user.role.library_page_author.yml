@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.media_entity_browser
     - filter.format.no_media_html
     - media.type.file
     - media.type.image
@@ -12,6 +13,7 @@ dependencies:
   module:
     - content_moderation
     - entity_browser
+    - file
     - filter
     - media
     - node
@@ -26,12 +28,12 @@ permissions:
   - 'access content overview'
   - 'access media overview'
   - 'access media_entity_browser entity browser pages'
-  - 'access mycontent overview'
   - 'access toolbar'
   - 'create image media'
   - 'create library_page content'
   - 'create remote_video media'
   - 'delete any library_page content'
+  - 'delete own files'
   - 'delete own image media'
   - 'delete own remote_video media'
   - 'edit any image media'

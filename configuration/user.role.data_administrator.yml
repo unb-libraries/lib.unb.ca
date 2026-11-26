@@ -6,6 +6,7 @@ dependencies:
     - taxonomy.vocabulary.faculties
     - taxonomy.vocabulary.library_departments
   module:
+    - file
     - lib_unb_ca_user_protect
     - node
     - system
@@ -20,6 +21,7 @@ permissions:
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'administer users'
+  - 'delete own files'
   - 'edit any user details'
   - 'edit terms in faculties'
   - 'edit terms in library_departments'

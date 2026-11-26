@@ -99,7 +99,7 @@ class GuidesInfoBar extends BlockBase implements ContainerFactoryPluginInterface
     }
 
     $storage = $this->entityTypeManager->getStorage('course_link');
-    $query = $storage->getQuery();
+    $query = $storage->getQuery()->accessCheck(TRUE);
     $ids = $query
       ->condition('guide', $guide->id())
       ->execute();

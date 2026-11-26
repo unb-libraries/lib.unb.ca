@@ -7,5 +7,6 @@ dependencies:
       - portolan
 name: 'Descriptors (Portolan)'
 vid: portolan_descriptors
-description: ''
+description: null
 weight: 0
+new_revision: false

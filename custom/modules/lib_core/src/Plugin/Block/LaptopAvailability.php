@@ -207,7 +207,7 @@ class LaptopAvailability extends BlockBase implements ContainerFactoryPluginInte
 
       return $availability;
     }
-    catch (Throwable $error) {
+    catch (\Throwable $error) {
       return NULL;
     }
   }

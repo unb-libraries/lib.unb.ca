@@ -187,7 +187,7 @@ class KbFormBase extends FormBase {
       }
 
       try {
-        $api = $this->oclcApi('worldcat_knowledge_base', ['authorization' => $this->oclcAuthorization()]);
+        $api = $this->oclcApi('worldcat_knowledge_base_v2', ['authorization' => $this->oclcAuthorization()]);
         $result = $api->get('search-entries', $search + [
           'content' => $this->getKbContentType(),
           'itemsPerPage' => $perPage,

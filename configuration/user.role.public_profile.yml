@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - file
     - profile
     - toolbar
 id: public_profile
@@ -12,5 +13,6 @@ is_admin: null
 permissions:
   - 'access toolbar'
   - 'create public profile'
+  - 'delete own files'
   - 'delete own public profile'
   - 'update own public profile'

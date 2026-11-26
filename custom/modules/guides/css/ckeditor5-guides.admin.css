@@ -1,0 +1,23 @@
+/**
+ * @file
+ * Toolbar button styles for the guides CKEditor 5 plugins (text format admin).
+ */
+
+.ckeditor5-toolbar-button-eresources::before {
+  content: "e-Resources";
+}
+
+.ckeditor5-toolbar-button-wcSearch::before {
+  content: "WorldCat";
+}
+
+.ckeditor5-toolbar-button-sciFree::before {
+  content: "SciFree";
+}
+
+.ckeditor5-toolbar-button-eresources,
+.ckeditor5-toolbar-button-wcSearch,
+.ckeditor5-toolbar-button-sciFree {
+  width: auto;
+  padding: 0 0.5rem;
+}

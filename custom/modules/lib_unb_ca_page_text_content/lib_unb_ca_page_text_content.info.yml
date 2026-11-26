@@ -1,6 +1,5 @@
 name: 'UNB Libraries Page Textual Content'
 type: module
 description: 'Extract textual content from UNB Libraries pages'
-core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^10 || ^11
 package: 'UNB Libraries'

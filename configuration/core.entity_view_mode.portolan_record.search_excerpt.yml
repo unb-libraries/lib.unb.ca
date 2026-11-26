@@ -8,5 +8,6 @@ _core:
   default_config_hash: WXRimdS4S4DmQZks53QxRzeZqqYc_Hw85bWGRG1aO54
 id: portolan_record.search_excerpt
 label: 'Search excerpt'
+description: ''
 targetEntityType: portolan_record
 cache: true

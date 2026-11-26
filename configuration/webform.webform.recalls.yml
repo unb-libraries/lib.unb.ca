@@ -11,7 +11,7 @@ archive: false
 id: recalls
 title: Recalls
 description: 'OCLC WMS Recalls form'
-category: ''
+categories: {  }
 elements: |-
   step_1:
     '#type': webform_wizard_page
@@ -244,6 +244,7 @@ settings:
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  form_file_limit_message: ''
   form_attributes: {  }
   form_method: ''
   form_action: ''
@@ -297,6 +298,8 @@ settings:
   wizard_toggle: true
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
   preview: 0
   preview_label: ''
   preview_title: ''
@@ -435,6 +438,7 @@ handlers:
       attachments: false
       twig: true
       theme_name: ''
+      langcode: ''
       parameters: {  }
       debug: false
   unb_libraries_recall_law:
@@ -478,6 +482,7 @@ handlers:
       attachments: false
       twig: true
       theme_name: ''
+      langcode: ''
       parameters: {  }
       debug: false
   sender_confirmation_email_circhi:
@@ -523,6 +528,7 @@ handlers:
       attachments: false
       twig: true
       theme_name: ''
+      langcode: ''
       parameters: {  }
       debug: false
   sender_confirmation_email_hwk:
@@ -568,6 +574,7 @@ handlers:
       attachments: false
       twig: true
       theme_name: ''
+      langcode: ''
       parameters: {  }
       debug: false
   sender_confirmation_email_lawres:
@@ -611,6 +618,7 @@ handlers:
       attachments: false
       twig: true
       theme_name: ''
+      langcode: ''
       parameters: {  }
       debug: false
   unb_libraries_recall_circhi:
@@ -656,6 +664,7 @@ handlers:
       attachments: false
       twig: true
       theme_name: ''
+      langcode: ''
       parameters: {  }
       debug: false
 variants: {  }

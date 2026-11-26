@@ -22,9 +22,11 @@ sed -i "s|OCLC_API_LMAN_WSKEY|$OCLC_API_LMAN_WSKEY|g" $SETTINGS_FILE
 sed -i "s|OCLC_API_LMAN_SECRET|$OCLC_API_LMAN_SECRET|g" $SETTINGS_FILE
 
 # OCLC KB Key
-OCLC_API_KB=$(echo "$OCLC_API_KB" | sed 's/\//\\\//g')
-SETTINGS_FILE='/app/keys/api.knowledge_base.json'
-sed -i "s|OCLC_API_KB|$OCLC_API_KB|g" $SETTINGS_FILE
+OCLC_API_KB_WSKEY=$(echo "$OCLC_API_KB_WSKEY" | sed 's/\//\\\//g')
+OCLC_API_KB_SECRET=$(echo "$OCLC_API_KB_SECRET" | sed 's/\//\\\//g')
+SETTINGS_FILE='/app/keys/api.oclc-kb.json'
+sed -i "s|OCLC_API_KB_WSKEY|$OCLC_API_KB_WSKEY|g" $SETTINGS_FILE
+sed -i "s|OCLC_API_KB_SECRET|$OCLC_API_KB_SECRET|g" $SETTINGS_FILE
 
 # FogBugz Credentials
 SETTINGS_FILE='/app/keys/api.fogbugz.json'

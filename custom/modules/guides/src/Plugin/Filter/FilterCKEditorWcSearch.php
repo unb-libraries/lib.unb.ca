@@ -66,7 +66,13 @@ class FilterCKEditorWcSearch extends FilterBase implements ContainerFactoryPlugi
         '#theme' => 'ckeditor-wc-search',
       ];
       $widget = $this->renderer->render($render);
-      $text = str_replace('<div class="wc-search"><img src="/modules/custom/guides/img/wc-search-placeholder.png" /></div>', $widget, $text);
+      // Match the placeholder as saved by either CKEditor 4 (<img ... />) or
+      // CKEditor 5 (<img ...>).
+      $text = preg_replace_callback(
+        '#<div class="wc-search">\\s*<img src="/modules/custom/guides/img/wc-search-placeholder\\.png"[^>]*>\\s*</div>#',
+        fn() => (string) $widget,
+        $text
+      );
       $result->setProcessedText($text);
     }
     return $result;

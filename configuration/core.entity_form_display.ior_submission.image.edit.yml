@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.ior_submission.edit
-    - field.field.ior_submission.ior_submission.field_image
+    - field.field.ior_submission.image.field_image
     - image.style.thumbnail
   module:
     - allowed_formats

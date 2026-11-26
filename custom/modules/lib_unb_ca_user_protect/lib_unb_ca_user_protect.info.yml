@@ -1,8 +1,7 @@
 name: 'UNB Libraries User Protection'
 type: module
 description: 'Restricts user profile field editing to roles with <em>Edit details of all users</em> permission.'
-core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^10 || ^11
 package: 'UNB Libraries'
 dependencies:
   - user

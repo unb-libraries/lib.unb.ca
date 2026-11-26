@@ -1,8 +1,7 @@
 name: 'Images of Research Awards'
 type: module
 description: 'Administer award types, award "Images of Research" contest submissions.'
-core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^10 || ^11
 package: 'UNB Libraries'
 dependencies:
   - ior

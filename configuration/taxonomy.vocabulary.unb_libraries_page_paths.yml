@@ -11,3 +11,4 @@ name: 'UNB Libraries Page Paths'
 vid: unb_libraries_page_paths
 description: 'Page paths defined for UNB Libraries pages.'
 weight: 0
+new_revision: false

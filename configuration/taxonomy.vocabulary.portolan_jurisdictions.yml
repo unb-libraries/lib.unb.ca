@@ -7,5 +7,6 @@ dependencies:
       - portolan
 name: 'Jurisdictions (Portolan)'
 vid: portolan_jurisdictions
-description: ''
+description: null
 weight: 0
+new_revision: false

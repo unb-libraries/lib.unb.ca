@@ -13,8 +13,8 @@ third_party_settings:
     enabled: false
 name: 'News post'
 type: news_post
-description: 'Use <i>News post</i> for content to be dispalyed in the front page''s ''Library News'' section.'
-help: ''
+description: "Use <i>News post</i> for content to be dispalyed in the front page's 'Library News' section."
+help: null
 new_revision: true
 preview_mode: 0
 display_submitted: true

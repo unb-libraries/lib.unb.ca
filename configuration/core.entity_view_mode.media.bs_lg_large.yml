@@ -6,5 +6,6 @@ dependencies:
     - media
 id: media.bs_lg_large
 label: 'BS Large (scale: 992px width)'
+description: ''
 targetEntityType: media
 cache: true

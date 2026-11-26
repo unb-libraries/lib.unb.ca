@@ -2,6 +2,8 @@ uuid: 4958cfe5-86c6-47e6-9f24-00c9a706a380
 langcode: en
 status: true
 dependencies:
+  config:
+    - profile.type.public
   module:
     - profile
 id: public_profile
@@ -12,7 +14,6 @@ selection_criteria:
   c71bcce8-3f02-4ab3-b797-fc187fd665b3:
     id: 'entity_bundle:profile'
     negate: false
-    uuid: c71bcce8-3f02-4ab3-b797-fc187fd665b3
     context_mapping:
       profile: profile
     bundles:

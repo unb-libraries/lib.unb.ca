@@ -214,7 +214,7 @@ class GuideCategory extends ContentEntityBase implements GuideCategoryInterface,
       $listPath = "{$thisAlias['path']}/resources/{$type}";
 
       $alias = NULL;
-      $query = $aliasStorage->getQuery();
+      $query = $aliasStorage->getQuery()->accessCheck(TRUE);
       $ids = $query->condition('path', $listPath)->execute();
       if (!empty($ids)) {
         $id = reset($ids);
@@ -259,7 +259,7 @@ class GuideCategory extends ContentEntityBase implements GuideCategoryInterface,
    */
   public function getDetailedGuides() {
     $storage = $this->entityTypeManager()->getStorage('guide');
-    $query = $storage->getQuery();
+    $query = $storage->getQuery()->accessCheck(TRUE);
     $ids = $query
       ->condition('status', 1)
       ->condition('unlisted', FALSE)
@@ -280,7 +280,7 @@ class GuideCategory extends ContentEntityBase implements GuideCategoryInterface,
    */
   public function getCourseGuides() {
     $storage = $this->entityTypeManager()->getStorage('guide');
-    $query = $storage->getQuery();
+    $query = $storage->getQuery()->accessCheck(TRUE);
     $ids = $query
       ->condition('status', 1)
       ->condition('unlisted', FALSE)
@@ -301,7 +301,7 @@ class GuideCategory extends ContentEntityBase implements GuideCategoryInterface,
    */
   public function getRelatedGuides() {
     $storage = $this->entityTypeManager()->getStorage('guide');
-    $query = $storage->getQuery();
+    $query = $storage->getQuery()->accessCheck(TRUE);
     $ids = $query
       ->condition('status', 1)
       ->condition('unlisted', FALSE)
@@ -326,7 +326,7 @@ class GuideCategory extends ContentEntityBase implements GuideCategoryInterface,
     }
 
     $storage = $this->entityTypeManager()->getStorage('guide_category');
-    $query = $storage->getQuery();
+    $query = $storage->getQuery()->accessCheck(TRUE);
     $ids = $query
       ->condition('status', 1)
       ->condition('id', $target_ids, 'IN')
@@ -384,7 +384,7 @@ class GuideCategory extends ContentEntityBase implements GuideCategoryInterface,
    */
   public function getEresourcesByType($type, $count = NULL) {
     $storage = $this->entityTypeManager()->getStorage('eresources_guide_link');
-    $query = $storage->getQuery()
+    $query = $storage->getQuery()->accessCheck(TRUE)
       ->condition('eresource.entity.status', 1)
       ->condition('eresource.entity.kb_data_type', "%{$type}%", 'LIKE')
       ->condition('guide.entity.status', 1)

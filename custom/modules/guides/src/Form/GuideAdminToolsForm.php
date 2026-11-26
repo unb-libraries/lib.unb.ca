@@ -151,7 +151,7 @@ class GuideAdminToolsForm extends FormBase {
 
     if ($types['guides']) {
       $storage = $this->entityTypeManager->getStorage('guide');
-      $query = $storage->getQuery();
+      $query = $storage->getQuery()->accessCheck(TRUE);
       $ids = $query
         ->condition('editors.entity:paragraph.field_user.target_id', [$targetUserId], 'IN')
         ->sort('title', 'ASC')
@@ -197,7 +197,7 @@ class GuideAdminToolsForm extends FormBase {
 
     if ($types['categories']) {
       $storage = $this->entityTypeManager->getStorage('guide_category');
-      $query = $storage->getQuery();
+      $query = $storage->getQuery()->accessCheck(TRUE);
       $ids = $query
         ->condition('editors.entity:paragraph.field_user.target_id', [$targetUserId], 'IN')
         ->sort('title', 'ASC')

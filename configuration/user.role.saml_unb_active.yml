@@ -1,9 +1,12 @@
 uuid: 19576716-ec34-4740-be01-9417db2613a7
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - file
 id: saml_unb_active
 label: '[saml] UNB (Active)'
 weight: 4
 is_admin: null
-permissions: {  }
+permissions:
+  - 'delete own files'

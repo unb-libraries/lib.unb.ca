@@ -10,7 +10,7 @@ field_name: field_anchor
 entity_type: taxonomy_term
 bundle: library_departments
 label: Anchor
-description: 'Enter the target name for the term''s bookmark anchor <b>without</b> the <code>#</code> character.'
+description: "Enter the target name for the term's bookmark anchor <b>without</b> the <code>#</code> character."
 required: false
 translatable: false
 default_value: {  }

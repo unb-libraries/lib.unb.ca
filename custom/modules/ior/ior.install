@@ -1,0 +1,81 @@
+<?php
+
+/**
+ * @file
+ * Install and update functions for Images of Research.
+ */
+
+use Drupal\Core\Entity\Entity\EntityFormDisplay;
+use Drupal\Core\Entity\Entity\EntityViewDisplay;
+use Drupal\field\Entity\FieldConfig;
+
+/**
+ * Remove config for the orphaned "ior_submission" submission bundle.
+ *
+ * Field storages are kept (marked persist_with_no_fields).
+ *
+ * Fields and displays exist for an ior_submission bundle that has no
+ * ior_submission_type entity (and no submissions). Drupal 10 post-updates
+ * (e.g. allowed_formats_post_update_formats2core) fail on such fields with
+ * "Missing bundle entity", so this must run before post-updates.
+ */
+function ior_update_10001() {
+  $config_factory = \Drupal::configFactory();
+  $orphan = 'ior_submission.ior_submission';
+  $stale = "field.field.$orphan.field_image";
+  $correct = 'field.field.ior_submission.image.field_image';
+
+  // 1. The image bundle's displays list the orphan's field_image as a
+  // dependency instead of their own; fix that first so deleting the orphan
+  // field doesn't strip field_image from the real displays.
+  foreach (['core.entity_form_display', 'core.entity_view_display'] as $prefix) {
+    foreach ($config_factory->listAll("$prefix.ior_submission.image.") as $name) {
+      $config = $config_factory->getEditable($name);
+      $deps = $config->get('dependencies.config') ?? [];
+      if (in_array($stale, $deps, TRUE)) {
+        $deps = array_values(array_unique(array_map(
+          fn($d) => $d === $stale ? $correct : $d,
+          $deps
+        )));
+        sort($deps);
+        $config->set('dependencies.config', $deps)->save(TRUE);
+      }
+    }
+  }
+
+  // 2. Displays for the orphan bundle.
+  $removed = [];
+  foreach ($config_factory->listAll("core.entity_form_display.$orphan.") as $name) {
+    if ($display = EntityFormDisplay::load(substr($name, strlen('core.entity_form_display.')))) {
+      $display->delete();
+      $removed[] = $name;
+    }
+  }
+  foreach ($config_factory->listAll("core.entity_view_display.$orphan.") as $name) {
+    if ($display = EntityViewDisplay::load(substr($name, strlen('core.entity_view_display.')))) {
+      $display->delete();
+      $removed[] = $name;
+    }
+  }
+
+  // 3. Fields on the orphan bundle (their tables hold no rows). Keep their
+  // field storages: other config (e.g. views.view.ior_submissions) depends on
+  // them, and deleting a storage would cascade-delete those dependents.
+  foreach ($config_factory->listAll("field.field.$orphan.") as $name) {
+    $field_name = substr($name, strlen("field.field.$orphan."));
+    $storage = $config_factory->getEditable("field.storage.ior_submission.$field_name");
+    if (!$storage->isNew() && !$storage->get('persist_with_no_fields')) {
+      $storage->set('persist_with_no_fields', TRUE)->save(TRUE);
+    }
+  }
+  \Drupal::entityTypeManager()->getStorage('field_storage_config')->resetCache();
+  \Drupal::service('entity_field.manager')->clearCachedFieldDefinitions();
+  foreach ($config_factory->listAll("field.field.$orphan.") as $name) {
+    if ($field = FieldConfig::load(substr($name, strlen('field.field.')))) {
+      $field->delete();
+      $removed[] = $name;
+    }
+  }
+
+  return t('Removed @count config objects for the orphaned ior_submission bundle.', ['@count' => count($removed)]);
+}

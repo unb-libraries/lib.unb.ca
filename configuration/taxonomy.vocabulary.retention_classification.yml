@@ -9,3 +9,4 @@ name: 'Classification (Records Management)'
 vid: retention_classification
 description: 'Functional classification of records.'
 weight: 0
+new_revision: false

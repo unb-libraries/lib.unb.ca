@@ -111,7 +111,7 @@ function createMediaImageFromUrl($imageUrl) {
  */
 function getAllFileFilenames() {
     // Load all file entities.
-    $file_ids = \Drupal::entityQuery('file')
+    $file_ids = \Drupal::entityQuery('file')->accessCheck(TRUE)
         ->execute();
 
     $filenames = [];

@@ -3,8 +3,8 @@ _core:
 back_to_top_prevent_on_mobile: true
 back_to_top_prevent_in_admin: false
 back_to_top_prevent_in_front: false
-back_to_top_button_trigger: !!float 1080
-back_to_top_speed: !!float 1200
+back_to_top_button_trigger: 1080.0
+back_to_top_speed: 1200.0
 back_to_top_button_place: 1
 back_to_top_button_text: 'Back to Top &uarr;'
 back_to_top_button_type: text

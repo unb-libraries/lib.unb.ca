@@ -6,3 +6,4 @@ name: 'Functional Specializations'
 vid: functional_specializations
 description: 'Specialty terms associated with User profiles that are used for the Find A Specialist search.'
 weight: 0
+new_revision: false

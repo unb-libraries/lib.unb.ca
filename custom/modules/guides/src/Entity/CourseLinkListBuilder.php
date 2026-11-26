@@ -113,7 +113,7 @@ class CourseLinkListBuilder extends EntityListBuilder {
    */
   public function load() {
     $guide = $this->routeMatch->getParameters()->get('guide');
-    $query = $this->getStorage()->getQuery()
+    $query = $this->getStorage()->getQuery()->accessCheck(TRUE)
       ->condition('guide', $guide->id())
       ->sort('prefix')
       ->sort('course_number')

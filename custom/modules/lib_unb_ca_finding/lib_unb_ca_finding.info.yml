@@ -1,8 +1,7 @@
 name: Finding Aids Content Import
 type: module
 description: Import Finding Aids content from web.lib.unb.ca.
-core: 8.x
-core_version_requirement: ^8 | ^9
+core_version_requirement: ^10 || ^11
 package: Migration
 dependencies:
   - migrate:migrate

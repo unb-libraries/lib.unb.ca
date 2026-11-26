@@ -9,7 +9,7 @@
             var original = formId ? formId : id ? 'id=' + id : '';
 
             // Add history on tab change.
-            $('#navbarNav button').once().click(function(e, triggered) {
+            $(once('eresources-navbar', '#navbarNav button')).click(function(e, triggered) {
                 if(triggered) {
                   return;
                 }

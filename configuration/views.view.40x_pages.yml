@@ -23,7 +23,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Sorry, something''s not right'
+      title: "Sorry, something's not right"
       fields:
         nothing:
           id: nothing
@@ -117,7 +117,6 @@ display:
           default_argument_type: fixed
           default_argument_options:
             argument: ''
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true

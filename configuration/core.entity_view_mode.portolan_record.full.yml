@@ -8,5 +8,6 @@ _core:
   default_config_hash: 3fyMdu5auwekMxixGfLehz2_4QF9FXxUg3rLyg0kGrQ
 id: portolan_record.full
 label: 'Full record'
+description: ''
 targetEntityType: portolan_record
 cache: true

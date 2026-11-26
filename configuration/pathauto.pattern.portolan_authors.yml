@@ -2,6 +2,8 @@ uuid: 4857a851-c2a6-4ceb-ba74-551b473530a5
 langcode: en
 status: true
 dependencies:
+  config:
+    - taxonomy.vocabulary.portolan_authors
   module:
     - taxonomy
 id: portolan_authors
@@ -12,7 +14,6 @@ selection_criteria:
   28e32ab9-b921-4d78-bb9c-c269d03ce543:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: 28e32ab9-b921-4d78-bb9c-c269d03ce543
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:

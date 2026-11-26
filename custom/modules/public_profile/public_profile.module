@@ -32,7 +32,7 @@ function public_profile_preprocess_profile__public(&$variables) {
   $variables['account'] = $account;
 
   $storage = \Drupal::entityTypeManager()->getStorage('guide');
-  $query = $storage->getQuery();
+  $query = $storage->getQuery()->accessCheck(TRUE);
   $ids = $query
     ->condition('status', 1)
     ->condition('editors.entity:paragraph.field_user.target_id', $account->id(), 'IN')
@@ -78,7 +78,7 @@ function public_profile_user_update(EntityInterface $entity) {
 
   // Using the public_profiles relationship only gives active profiles.
   $storage = \Drupal::entityTypeManager()->getStorage('profile');
-  $query = $storage->getQuery();
+  $query = $storage->getQuery()->accessCheck(TRUE);
   $ids = $query
     ->condition('type', 'public')
     ->condition('uid', $entity->id())
@@ -102,7 +102,7 @@ function ensure_user_has_profile(EntityInterface $user) {
   }
 
   $storage = \Drupal::entityTypeManager()->getStorage('profile');
-  $query = $storage->getQuery();
+  $query = $storage->getQuery()->accessCheck(TRUE);
   $ids = $query
     ->condition('type', 'public')
     ->condition('uid', $user->id())

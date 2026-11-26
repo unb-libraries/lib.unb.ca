@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - file
     - ior
     - ior_awards
     - toolbar
@@ -12,6 +13,7 @@ weight: -2
 is_admin: null
 permissions:
   - 'access toolbar'
+  - 'delete own files'
   - 'download full_resolution images'
   - 'list accepted ior_submission entities'
   - 'list contest entities'

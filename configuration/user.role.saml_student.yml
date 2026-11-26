@@ -1,9 +1,12 @@
 uuid: 1b83f3d4-6f36-4cdf-9730-7b7dc1ed48ea
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - file
 id: saml_student
 label: '[saml] Student'
 weight: 0
 is_admin: null
-permissions: {  }
+permissions:
+  - 'delete own files'

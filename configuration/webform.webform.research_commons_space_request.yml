@@ -16,7 +16,7 @@ archive: false
 id: research_commons_space_request
 title: 'Harriet Irving Library Space Request'
 description: 'Form to request HIL spaces.'
-category: ''
+categories: {  }
 elements: |-
   notice:
     '#type': processed_text
@@ -190,6 +190,7 @@ settings:
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  form_file_limit_message: ''
   form_attributes: {  }
   form_method: ''
   form_action: ''
@@ -375,6 +376,7 @@ handlers:
       attachments: false
       twig: true
       theme_name: ''
+      langcode: ''
       parameters: {  }
       debug: false
   email_confirm:
@@ -412,6 +414,7 @@ handlers:
       attachments: false
       twig: true
       theme_name: ''
+      langcode: ''
       parameters: {  }
       debug: false
 variants: {  }

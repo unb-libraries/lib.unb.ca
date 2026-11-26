@@ -38,6 +38,20 @@ abstract class SynchronizerBase implements DataSynchronizerInterface {
   protected $storage;
 
   /**
+   * The cover image parser (set by implementations that use it).
+   *
+   * @var mixed
+   */
+  protected $coverImageParser;
+
+  /**
+   * The HTTP client (set by implementations that use it).
+   *
+   * @var \GuzzleHttp\ClientInterface
+   */
+  protected $http;
+
+  /**
    * Get the data importer.
    *
    * @return \Drupal\portolan_sync\DataImporterInterface

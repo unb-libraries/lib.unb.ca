@@ -13,8 +13,8 @@ third_party_settings:
     enabled: false
 name: 'Images page'
 type: images_page
-description: 'Use <i>Images page</i> to create image collections for use in Slideshows, etc, eg. ''Videos & Tutorials'' block.'
-help: ''
+description: "Use <i>Images page</i> to create image collections for use in Slideshows, etc, eg. 'Videos & Tutorials' block."
+help: null
 new_revision: false
 preview_mode: 0
 display_submitted: true

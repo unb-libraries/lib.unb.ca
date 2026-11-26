@@ -2,6 +2,8 @@ uuid: dc15bc8a-fef6-4bd9-b95c-a4a4a85fd618
 langcode: en
 status: true
 dependencies:
+  config:
+    - taxonomy.vocabulary.portolan_descriptors
   module:
     - taxonomy
 id: portolan_descriptors
@@ -12,7 +14,6 @@ selection_criteria:
   bee4132c-a931-4bbc-9bd1-5478840bd199:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: bee4132c-a931-4bbc-9bd1-5478840bd199
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:

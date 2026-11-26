@@ -18,13 +18,14 @@ services:
   oclc.api_key.worldcat_knowledge_base:
     class: Drupal\key\Entity\Key
     factory: [ '@key.repository', getKey ]
-    arguments: [ oclc_knowledge_base ]
+    arguments: [ oclc_kb_api ]
     public: false
   oclc_authorizer.worldcat_knowledge_base:
-    class: Drupal\oclc_api\Oclc\OclcV1Authorizer
+    class: Drupal\oclc_api\Oclc\OclcV2Authorizer
     arguments:
       - '@oclc.api_key.worldcat_knowledge_base'
       - '@plugin.manager.oclc_api'
+      - ['worldcat_knowledge_base_v2']
   oclc.api_key.worldcat_search_v2:
     class: Drupal\key\Entity\Key
     factory: [ '@key.repository', getKey ]

@@ -6,5 +6,6 @@ dependencies:
     - ior
 id: ior_submission.moderate
 label: Moderate
+description: ''
 targetEntityType: ior_submission
 cache: true

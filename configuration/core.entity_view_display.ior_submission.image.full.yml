@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.ior_submission.full
-    - field.field.ior_submission.ior_submission.field_image
+    - field.field.ior_submission.image.field_image
     - image.style.bs_lg_large
   module:
     - image

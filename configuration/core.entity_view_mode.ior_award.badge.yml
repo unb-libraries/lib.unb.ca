@@ -6,5 +6,6 @@ dependencies:
     - ior_awards
 id: ior_award.badge
 label: Badge
+description: ''
 targetEntityType: ior_award
 cache: true

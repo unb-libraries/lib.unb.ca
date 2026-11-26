@@ -16,7 +16,7 @@ archive: false
 id: library_instruction_session
 title: 'Request a Library Instruction Session'
 description: 'Clone NC State&#39;s&nbsp;<em>Request a Library Instruction Session</em> webform'
-category: ''
+categories: {  }
 elements: |-
   basic_details:
     '#type': webform_wizard_page
@@ -331,6 +331,7 @@ settings:
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  form_file_limit_message: ''
   form_attributes: {  }
   form_method: ''
   form_action: ''
@@ -508,6 +509,7 @@ handlers:
       attachments: true
       twig: true
       theme_name: ''
+      langcode: ''
       parameters: {  }
       debug: false
   submitter_email:
@@ -545,6 +547,7 @@ handlers:
       attachments: false
       twig: true
       theme_name: ''
+      langcode: ''
       parameters: {  }
       debug: false
 variants: {  }

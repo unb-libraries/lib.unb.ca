@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - eresources
+    - file
     - system
     - toolbar
 id: eresources_record_manager
@@ -13,12 +14,10 @@ is_admin: null
 permissions:
   - 'access toolbar'
   - 'administer eresources_harvested_collection entities'
-  - 'administer eresources_local_metadata entities'
   - 'administer eresources_record entities'
   - 'create eresources_harvested_collection entities'
-  - 'create eresources_local_metadata entities'
   - 'create eresources_record entities'
   - 'delete eresources_record entities'
-  - 'update eresources_local_metadata entities'
+  - 'delete own files'
   - 'update eresources_record entities'
   - 'view the administration theme'

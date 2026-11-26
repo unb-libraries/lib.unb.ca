@@ -77,7 +77,7 @@ class ContestManagerMailer extends EntityEventTemplateMailer {
   protected function loadContestManagers() {
     $user_ids = $this
       ->userStorage()
-      ->getQuery()
+      ->getQuery()->accessCheck(TRUE)
       ->condition('roles', 'ior_manager', 'CONTAINS')
       ->execute();
 

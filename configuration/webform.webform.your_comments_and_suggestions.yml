@@ -20,7 +20,7 @@ archive: false
 id: your_comments_and_suggestions
 title: 'Your Comments and Suggestions'
 description: 'Simple comment form that can be sent anonymously and optionally directed to a specific UNB Library.'
-category: ''
+categories: {  }
 elements: |-
   container:
     '#type': container
@@ -105,6 +105,7 @@ settings:
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  form_file_limit_message: ''
   form_attributes: {  }
   form_method: ''
   form_action: ''
@@ -302,6 +303,7 @@ handlers:
       attachments: false
       twig: true
       theme_name: ''
+      langcode: ''
       parameters: {  }
       debug: false
   email_1:
@@ -343,6 +345,7 @@ handlers:
       attachments: false
       twig: true
       theme_name: ''
+      langcode: ''
       parameters: {  }
       debug: false
   email_2:
@@ -398,6 +401,7 @@ handlers:
       attachments: false
       twig: true
       theme_name: ''
+      langcode: ''
       parameters: {  }
       debug: false
 variants: {  }
