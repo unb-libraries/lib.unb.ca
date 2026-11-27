@@ -1,0 +1,29 @@
+# Footnotes declares <a href id class>, <span class>, <ul class> and <li class>
+# as elements it provides, so Drupal won't let Source Editing allow them. Its
+# JavaScript only converts footnote markup, though, so CKEditor 5 strips those
+# attributes everywhere else (and drops a <span> left with no attributes).
+# Tell CKEditor's General HTML Support to keep them whenever Footnotes is on.
+lib_core_footnotes_html_support:
+  ckeditor5:
+    plugins:
+      - htmlSupport.GeneralHtmlSupport
+    config:
+      htmlSupport:
+        allow:
+          - name: a
+            attributes:
+              id: true
+            classes: true
+          - name: span
+            classes: true
+          - name: ul
+            classes: true
+          - name: li
+            classes: true
+  drupal:
+    label: Footnotes HTML support
+    library: core/ckeditor5.htmlSupport
+    elements: false
+    conditions:
+      plugins:
+        - footnotes_footnotes
