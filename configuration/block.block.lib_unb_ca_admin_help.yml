@@ -1,0 +1,22 @@
+uuid: 0a27f06a-4850-499e-af2a-f433bd110f08
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - lib_unb_ca_admin
+_core:
+  default_config_hash: 4q_tJ9t0OPsYpSg-FPAhByqHu_fxonpq0TVbotGe86o
+id: lib_unb_ca_admin_help
+theme: lib_unb_ca_admin
+region: help
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

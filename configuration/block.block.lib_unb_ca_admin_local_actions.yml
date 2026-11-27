@@ -1,0 +1,20 @@
+uuid: 90ca97ec-08c6-4fe4-8ebd-e4f6915ae761
+langcode: en
+status: true
+dependencies:
+  theme:
+    - lib_unb_ca_admin
+_core:
+  default_config_hash: KBwI7qoGAsK46ZJkWPRiL6H6aLYkmzo2yMz93b6WfBg
+id: lib_unb_ca_admin_local_actions
+theme: lib_unb_ca_admin
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

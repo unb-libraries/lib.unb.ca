@@ -1,0 +1,22 @@
+uuid: cc4121dc-2539-4190-bfa1-1858f2f6ade7
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - lib_unb_ca_admin
+_core:
+  default_config_hash: FNuH6M0hPJD4uF_gFH6BFPkpAm5Wu9r-UYgFC4tJSx0
+id: lib_unb_ca_admin_login
+theme: lib_unb_ca_admin
+region: content
+weight: 10
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  label_display: visible
+  provider: user
+visibility: {  }

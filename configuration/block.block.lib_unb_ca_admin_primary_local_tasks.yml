@@ -1,0 +1,22 @@
+uuid: 0431735e-7f88-4931-b180-3055f4a04b16
+langcode: en
+status: true
+dependencies:
+  theme:
+    - lib_unb_ca_admin
+_core:
+  default_config_hash: rA43VL4COF9YxZP1ZW2_rF6ucYbTNkpyMLfAJzzeows
+id: lib_unb_ca_admin_primary_local_tasks
+theme: lib_unb_ca_admin
+region: header
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

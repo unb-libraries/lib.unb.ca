@@ -1,0 +1,20 @@
+uuid: 350b58f5-3459-4898-af5b-ec501dc9aed4
+langcode: en
+status: true
+dependencies:
+  theme:
+    - lib_unb_ca_admin
+_core:
+  default_config_hash: kIbCuBkuPxc2uQR183iPNA8K4tNHqRc4k7HFi-qOkCY
+id: lib_unb_ca_admin_page_title
+theme: lib_unb_ca_admin
+region: header
+weight: -30
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: 78196532-a422-4858-a068-53af90075e77
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - lib_unb_ca_admin
+_core:
+  default_config_hash: PaSYo-IDU1_y5EavcRYTkFX5zS4jL0y_Mj6RZPIhxLI
+id: lib_unb_ca_admin_messages
+theme: lib_unb_ca_admin
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }
