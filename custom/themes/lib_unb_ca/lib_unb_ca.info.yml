@@ -9,7 +9,6 @@ package: 'lib_unb_ca'
 libraries:
   - lib_unb_ca/global-styling
   - lib_unb_ca/unblib-selectize
-  - lib_core/ckeditor_stylesheets
 
 regions:
   top_header: 'Top Header'
@@ -28,6 +27,6 @@ regions:
   featured_bottom_second: 'Featured bottom second'
   featured_bottom_third: 'Featured bottom third'
 
-ckeditor_stylesheets:
-  - dist/css/style.css
-  - ckeditor_stylesheets/overrides.css
+# Front-end styles scoped to .ck-content, so CKEditor 5 matches the site.
+ckeditor5-stylesheets:
+  - dist/css/ckeditor5.css

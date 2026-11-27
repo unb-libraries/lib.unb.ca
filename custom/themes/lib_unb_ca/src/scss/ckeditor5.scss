@@ -1,0 +1,26 @@
+/**
+ * @file
+ * Front-end styles scoped to the CKEditor 5 editing area.
+ *
+ * CKEditor 5 does not use an iframe, so the stylesheets listed under
+ * ckeditor5-stylesheets in lib_unb_ca.info.yml load on the admin page itself.
+ * Nesting the theme inside .ck-content keeps Bootstrap from restyling the
+ * admin theme.
+ */
+
+.ck-content {
+  @import 'style';
+
+  /* Reboot's html/body rules can't match inside .ck-content. */
+  color: $body-color;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-base;
+  line-height: $line-height-base;
+  text-align: left;
+
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+}
