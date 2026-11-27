@@ -21,16 +21,32 @@
       padding-right: 0;
     }
 
-    .layout-region-node-secondary {
-      // Sticky needs an inset; offset clears the fixed admin toolbar, which
-      // Drupal's displace.js exposes as --drupal-displace-offset-top.
-      --sticky-top: calc(var(--drupal-displace-offset-top, 0px) + 1rem);
+    .layout-region-node-main {
+        width: 100%;
+    }
 
-      max-height: calc(100vh - var(--sticky-top) - 1rem);
-      overflow-y: auto;
-      position: sticky;
-      top: var(--sticky-top);
-      width: 24%;
+    .layout-region-node-secondary {
+      width: 49%;
+
+      .entity-meta,
+      .entity-meta__header {
+        border-color: #888;
+      }
+      details:last-child {
+        border-bottom-color: #888;
+      }
+    }
+
+    .layout-region-node-footer {
+        margin-top: 0.95rem;
+        width: 49%;
+
+        .layout-region-node-footer__content {
+            background: #f6fff7;
+            border: 1px solid #2da811;
+            border-radius: 3px;
+            padding: 0 1.25rem;
+        }
     }
   }
 }
