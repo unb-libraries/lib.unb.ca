@@ -8,6 +8,32 @@
  * admin theme.
  */
 
+/**
+ * CKEditor4 OVERRIDES
+ * .cke_panel_list li {
+ *     margin: 0;
+ *     font-size: smaller;
+ * }
+ * .cke_editable img {
+ *    max-width: 100%;
+ *     height: auto;
+ * }
+ * .cke_editable img.cke_footnote {
+ *   max-width: 3rem;
+ * }
+ * strong,
+ * .font-weight-bold {
+ *     font-family: Helvetica, sans-serif;
+ *    font-weight: bold;
+ * }
+ * drupal-media {
+ *   display: block!important;
+ * }
+ * drupal-media > div {
+ *   min-width: 66%;
+ * }
+*/ 
+
 .ck-content {
   @import 'style';
 
