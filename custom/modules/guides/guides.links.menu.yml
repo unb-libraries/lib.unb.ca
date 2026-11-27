@@ -22,6 +22,12 @@ system.admin.unblib.guides.guide.clone:
   route_name: guides.clone
   parent: system.admin.unblib.guides
   weight: 0
+system.admin.unblib.guides.course_prefixes:
+  title: Current Course Prefixes
+  description: 'Course prefixes and their default D2L guide.'
+  route_name: guides.course_prefixes
+  parent: system.admin.unblib.guides
+  weight: 8
 system.admin.unblib.guides.guide.admin_tools:
   title: Admin tools
   Description: 'Guides admin tools.'

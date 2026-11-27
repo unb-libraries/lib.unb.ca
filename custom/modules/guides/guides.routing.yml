@@ -77,6 +77,13 @@ guides.clone:
     _title: 'Clone a guide'
   requirements:
     _permission: 'create guide entities'
+guides.course_prefixes:
+  path: '/admin/guides/course-prefixes'
+  defaults:
+    _controller: '\Drupal\guides\Controller\CoursePrefixesController::list'
+    _title: 'Current Course Prefixes'
+  requirements:
+    _permission: 'create guide entities'
 guides.admin_tools:
   path: '/admin/guides/admin_tools'
   defaults:
