@@ -104,41 +104,62 @@ class GuidesInfoBar extends BlockBase implements ContainerFactoryPluginInterface
       ->condition('guide', $guide->id())
       ->execute();
 
-    if (!empty($ids)) {
-      if (count($ids) > 1) {
-        $linkUrl = Url::fromRoute('entity.course_link.collection', ['guide' => $guide->id()])->toString();
-        $status .= ' AND matches several <a href="' . $linkUrl . '">specific D2L courses</a>';
+    $defaults = [];
+    $specifics = [];
+    foreach ($storage->loadMultiple($ids) as $course) {
+      $exactName = $course->get('exact_name')->getString();
+      $prefix = $course->get('prefix')->getString();
+      $number = $course->get('course_number')->getString();
+      $campus = $course->get('campus')->getString();
+
+      if (!empty($exactName)) {
+        $specifics[] = $exactName;
+      }
+      elseif (empty($number)) {
+        $defaults[] = $prefix . ($campus ? " ({$campus})" : '');
       }
       else {
-        $course = $storage->load(reset($ids));
-
-        $year = $course->get('year')->getString();
-        $term = $course->get('term')->getString();
-        $campus = $course->get('campus')->getString();
-        $prefix = $course->get('prefix')->getString();
-        $number = $course->get('course_number')->getString();
-
-        if (empty($number)) {
-          if ($campus) {
-            $campus = " ({$campus})";
-          }
-          $status .= " AND the default D2L guide for {$prefix}{$campus}";
-        }
-        else {
-          $courseCode = $year . $term . '_';
-          $courseCode .= implode('*', [
-            $prefix,
-            $number,
-            $campus . $course->get('section')->getString(),
-          ]);
-          $courseCode = trim($courseCode, '*_ ');
-          $status .= " for {$courseCode}";
-        }
+        $courseCode = $course->get('year')->getString() . $course->get('term')->getString() . '_';
+        $courseCode .= implode('*', [
+          $prefix,
+          $number,
+          $campus . $course->get('section')->getString(),
+        ]);
+        $specifics[] = trim($courseCode, '*_ ');
       }
+    }
+
+    $defaults = array_unique($defaults);
+    sort($defaults, SORT_STRING);
+
+    if (!empty($defaults)) {
+      $status .= ' AND the default D2L guide for ' . $this->joinList($defaults);
+    }
+
+    if (count($specifics) > 1) {
+      $linkUrl = Url::fromRoute('entity.course_link.collection', ['guide' => $guide->id()])->toString();
+      $status .= ' AND matches several <a href="' . $linkUrl . '">specific D2L courses</a>';
+    }
+    elseif (count($specifics) == 1) {
+      $status .= (empty($defaults) ? ' for ' : ' AND matches D2L course ') . reset($specifics);
     }
 
     $build['#markup'] = '<p class="alert alert-info"><span class="fas fa-certificate"></span> ' . $status . '.</p>';
     return $build;
+  }
+
+  /**
+   * Join items as "A, B and C".
+   *
+   * @param string[] $items
+   *   Items to join.
+   *
+   * @return string
+   *   The joined list.
+   */
+  protected function joinList(array $items) {
+    $last = array_pop($items);
+    return empty($items) ? $last : implode(', ', $items) . ' and ' . $last;
   }
 
 }
