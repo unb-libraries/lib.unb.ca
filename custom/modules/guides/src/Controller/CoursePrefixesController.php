@@ -59,7 +59,7 @@ class CoursePrefixesController extends ControllerBase {
         $url = $guide->toUrl('canonical', ['absolute' => TRUE]);
         $rows[] = [
           $prefix,
-          Link::fromTextAndUrl($guide->label(), $guide->toUrl()),
+          $guide->label(),
           Link::fromTextAndUrl($url->toString(), $url),
         ];
       }
@@ -90,8 +90,11 @@ class CoursePrefixesController extends ControllerBase {
     $build['unmatched'] = [
       '#theme' => 'item_list',
       '#items' => $unmatched,
+      '#attributes' => ['class' => ['course-prefixes-unmatched']],
       '#empty' => $this->t('Every known course prefix has a guide.'),
     ];
+
+    $build['#attached']['library'][] = 'guides/course-prefixes';
 
     $build['#cache'] = [
       'tags' => [

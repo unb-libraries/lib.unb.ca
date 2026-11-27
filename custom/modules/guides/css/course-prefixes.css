@@ -1,0 +1,8 @@
+.course-prefixes-unmatched {
+  column-count: 3;
+  column-gap: 2rem;
+}
+
+.course-prefixes-unmatched li {
+  break-inside: avoid;
+}

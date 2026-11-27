@@ -66,3 +66,9 @@ ckeditor5.admin:
   css:
     theme:
       css/ckeditor5-guides.admin.css: {}
+
+course-prefixes:
+  version: VERSION
+  css:
+    theme:
+      css/course-prefixes.css: {}
